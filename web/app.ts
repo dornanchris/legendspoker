@@ -143,6 +143,8 @@ function log(text: string, cls = '') {
 }
 
 const key = (c: Card) => `${c.rank}${c.suit[0]}`
+const cardText = (c: Card) => `${c.rank}${SUIT[c.suit]}`
+const handText = (cards: Card[]) => cards.map(cardText).join(' ')
 
 function clearWinHighlights() {
   for (const el of document.querySelectorAll('.card.win')) el.classList.remove('win')
@@ -267,7 +269,16 @@ function onEvent(e: HandEvent) {
           const ui = seatUI.get(seat)
           if (ui) ui.cards.replaceChildren(...hole.map((c) => cardEl(c, true)))
         }
-        if (e.revealed.length > 1) log('— showdown —', 'head')
+        if (e.revealed.length > 1) {
+          log('— showdown —', 'head')
+          // Write out what everyone actually held. The log is the reviewable
+          // record of the hand -- and the non-visual channel -- so it should
+          // not need the table to be readable after the fact.
+          for (const { seat, hole } of e.revealed) {
+            const verb = seat === HUMAN_SEAT ? 'show' : 'shows'
+            log(`${nameOf(seat)} ${verb} ${handText(hole)}`, seat === HUMAN_SEAT ? 'you' : '')
+          }
+        }
       }, PACE.reveal)
 
       // Beat two, once per pot: light up the five cards that actually won it
@@ -282,7 +293,9 @@ function onEvent(e: HandEvent) {
 
           const label =
             e.pots.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
-          const withWhat = pot.ranking ? ` with ${pot.ranking}` : ' uncontested'
+          const withWhat = pot.ranking
+            ? ` with ${pot.ranking}${pot.cards ? ` — ${handText(pot.cards)}` : ''}`
+            : ' uncontested'
           if (pot.winners.length > 1) {
             log(`${joinNames(pot.winners)} SPLIT ${label} (${pot.amount})${withWhat}`, 'big')
           } else {
