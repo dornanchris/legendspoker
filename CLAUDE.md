@@ -188,6 +188,12 @@ platform shell (Phase 4).
   and it is the only reason the poker-ts pot bug was found rather than shipped.
 - `patches/` is load-bearing. `npm install` runs `patch-package` via
   postinstall; if that step is ever skipped, chips start vanishing again.
+- **Dev machine is Windows.** `new URL('.', import.meta.url).pathname` gives
+  `/D:/...` there — a leading slash that path-joins into `\D:\...` and 404s
+  everything. Use `fileURLToPath`. Node scripts must not assume POSIX paths or
+  that npm runs them from the repo root.
+- After pulling, `npm install` before `npm run web`. The web build needs
+  esbuild, which older checkouts do not have.
 
 ## NEXT MILESTONE
 
