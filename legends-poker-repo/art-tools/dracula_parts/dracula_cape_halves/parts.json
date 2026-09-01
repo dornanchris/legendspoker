@@ -1,0 +1,66 @@
+{
+  "source": "dracula_cape_halves.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "dracula_cape_halves_01.png",
+      "label": "",
+      "x": 57,
+      "y": 282,
+      "w": 574,
+      "h": 703,
+      "pivot": [
+        287.0,
+        351.5
+      ],
+      "area": 159605
+    },
+    {
+      "index": 2,
+      "file": "dracula_cape_halves_02.png",
+      "label": "",
+      "x": 319,
+      "y": 3,
+      "w": 292,
+      "h": 278,
+      "pivot": [
+        146.0,
+        139.0
+      ],
+      "area": 37301
+    },
+    {
+      "index": 3,
+      "file": "dracula_cape_halves_03.png",
+      "label": "",
+      "x": 903,
+      "y": 284,
+      "w": 577,
+      "h": 704,
+      "pivot": [
+        288.5,
+        352.0
+      ],
+      "area": 161435
+    },
+    {
+      "index": 4,
+      "file": "dracula_cape_halves_04.png",
+      "label": "",
+      "x": 927,
+      "y": 3,
+      "w": 295,
+      "h": 283,
+      "pivot": [
+        147.5,
+        141.5
+      ],
+      "area": 38250
+    }
+  ]
+}

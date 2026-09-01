@@ -1,0 +1,23 @@
+{
+  "name": "character-poker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sim": "tsx src/sim.ts",
+    "play": "tsx src/play.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "poker-ts": "^1.5.0",
+    "pokersolver": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4.23.5",
+    "typescript": "^7.0.2"
+  },
+  "type": "module"
+}

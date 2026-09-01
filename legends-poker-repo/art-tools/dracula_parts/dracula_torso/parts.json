@@ -1,0 +1,24 @@
+{
+  "source": "dracula_torso.png",
+  "canvas": {
+    "w": 1145,
+    "h": 1374
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "dracula_torso_01.png",
+      "label": "",
+      "x": 82,
+      "y": 83,
+      "w": 989,
+      "h": 1217,
+      "pivot": [
+        494.5,
+        608.5
+      ],
+      "area": 818254
+    }
+  ]
+}

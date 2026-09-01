@@ -1,0 +1,24 @@
+{
+  "source": "dracula_cape.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "dracula_cape_01.png",
+      "label": "",
+      "x": 48,
+      "y": 10,
+      "w": 1438,
+      "h": 1000,
+      "pivot": [
+        719.0,
+        500.0
+      ],
+      "area": 711583
+    }
+  ]
+}
