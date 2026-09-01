@@ -128,9 +128,12 @@ is a one-way wait before the player is asked to act. That is the separation
 Phase 6's fast-forward needs. `?pace=0.1` scales the presentation clock and
 nothing else — the hand resolves identically at any speed.
 
-**Its exit test is not yet passed, because only you can run it:** play 20
-hands voluntarily and see whether you can name each character's style without
-reading the code.
+**Phase 3b's exit test is PASSED.** Played voluntarily, the three read as
+different people without reading the code: Cleopatra smart, Dracula patient,
+the Snowman calls everything — which maps exactly onto loose-aggressive-
+adaptive, tight-passive trapper, and calling station. That is the whole
+data-driven personality thesis confirmed by a person rather than a stats
+table, and it is what makes character #33 nearly free.
 
 **Not started:** Rive integration, dialogue system, audio, persistence, the
 platform shell (Phase 4).
@@ -205,14 +208,26 @@ platform shell (Phase 4).
 
 ## NEXT MILESTONE
 
-Run Phase 3b's exit test: play 20 hands (`npm run web`) and try to name each
-character's style without reading the code. If the three do not feel like
-different people, that is a dials problem and it is cheaper to find now than
-after the art.
+Phase 4 — the platform shell. Vite + React, Capacitor, a real device, audio
+unlock on first tap, safe-area handling, and the save schema.
 
-Then Phase 4 — platform shell: Vite + React, Capacitor, a real device, audio
-unlock on first tap, safe-area handling, and the save schema (which must
-capture MID-HAND state; retrofitting it is much worse).
+**Its exit test needs a physical phone, so it is yours to run**, the same way
+3b's was: the ugly DOM game running on a real device in landscape with one
+sound on a button press.
+
+Order within the phase, cheapest-risk first:
+1. **Seedable deck.** Still the open non-negotiable (#6) and it blocks replay
+   from a save, so it comes before the save schema rather than after. The
+   `patches/` mechanism already exists; this also removes the Web Crypto shim.
+2. **Save schema, capturing MID-HAND state.** The expensive-to-retrofit piece.
+   With a seeded deck it can be tested hard: save mid-hand, restore, play on,
+   and the hand must resolve identically.
+3. Vite + React, then Capacitor scaffolding.
+
+**Dev machine is Windows, so iOS is not available** — Capacitor's iOS target
+needs a Mac with Xcode plus $99/yr. Android is $25 one-off and works from
+Windows. BUILD-PLAN section 1 already argues web-first on a $0 budget, so
+Phase 4 in practice means web + Android, with iOS deferred.
 
 ## HOUSE STYLE
 
