@@ -8,6 +8,8 @@
     "play": "tsx src/play.ts",
     "tourney": "tsx src/tourney.ts",
     "check:pots": "tsx src/pot-conservation.ts",
+    "build:web": "node web/build.mjs",
+    "web": "node web/build.mjs && node web/serve.mjs",
     "postinstall": "patch-package"
   },
   "keywords": [],
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "^26.1.2",
+    "esbuild": "^0.28.2",
     "patch-package": "^8.0.1",
     "tsx": "^4.23.5",
     "typescript": "^7.0.2"

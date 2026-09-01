@@ -84,6 +84,12 @@ src/
   pot-conservation.ts `npm run check:pots` — guards the poker-ts pot patch
 data/
   dialogue/       one file per table; schema is established and working
+web/
+  app.ts          the Phase 3b table: human seat, DOM rendering, input
+  index.html      markup; style.css is landscape-only by design
+  shims/          browser stand-ins for the node builtins poker-ts needs
+  build.mjs       esbuild -> web/bundle.js (gitignored, regenerate it)
+  serve.mjs       dependency-free static server; Phase 4 replaces it with Vite
 art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   build_puppet.py init/render a layout to preview puppet assembly
@@ -109,8 +115,25 @@ has a stack-depth term, so short stacks widen and push instead of folding
 their way to death; it is neutral above 20bb, which is why the cash profiles
 above are unchanged.
 
-**Not started:** human seat (Phase 3b), any UI, dialogue system, Rive
-integration, audio, persistence.
+**Phase 3b is built: human seat + throwaway DOM table.** `npm run web` serves
+a playable landscape table at localhost:5173 — you sit at seat 0 against the
+three characters, in the tournament model from 3a. Action buttons are built
+from the engine's legal actions, and the engine rejects an illegal action
+outright rather than trusting the UI.
+
+The piece worth keeping when this UI is thrown away is the **presentation
+queue** in `web/app.ts`: the engine resolves as fast as it can and pushes
+events, the UI plays them back on its own clock, and the only place they meet
+is a one-way wait before the player is asked to act. That is the separation
+Phase 6's fast-forward needs. `?pace=0.1` scales the presentation clock and
+nothing else — the hand resolves identically at any speed.
+
+**Its exit test is not yet passed, because only you can run it:** play 20
+hands voluntarily and see whether you can name each character's style without
+reading the code.
+
+**Not started:** Rive integration, dialogue system, audio, persistence, the
+platform shell (Phase 4).
 
 ## KNOWN GAPS AND SIMPLIFICATIONS
 
@@ -168,9 +191,14 @@ integration, audio, persistence.
 
 ## NEXT MILESTONE
 
-Phase 3: human seat + plain DOM UI, no 3D, no art.
-**Exit test:** the dev voluntarily plays 20 hands and can name each
-character's style without reading the code.
+Run Phase 3b's exit test: play 20 hands (`npm run web`) and try to name each
+character's style without reading the code. If the three do not feel like
+different people, that is a dials problem and it is cheaper to find now than
+after the art.
+
+Then Phase 4 — platform shell: Vite + React, Capacitor, a real device, audio
+unlock on first tap, safe-area handling, and the save schema (which must
+capture MID-HAND state; retrofitting it is much worse).
 
 ## HOUSE STYLE
 

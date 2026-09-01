@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Legends Poker — Phase 3b</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Landscape is locked (design doc). Four opponents + dealer + your seat +
+     board + controls does not fit portrait, so say so rather than reflow. -->
+<div id="rotate"><p>Rotate your device.<br><small>Legends Poker is landscape only.</small></p></div>
+
+<main id="table" hidden>
+  <section id="opponents" aria-label="Opponents"></section>
+
+  <section id="middle">
+    <div id="board" aria-label="Community cards"></div>
+    <div id="pot"><span class="label">POT</span> <span id="pot-value">0</span></div>
+    <div id="level"></div>
+  </section>
+
+  <section id="you">
+    <div id="you-info">
+      <span id="you-name">You</span>
+      <span id="you-stack" class="stack">0</span>
+      <span id="you-position"></span>
+    </div>
+    <div id="you-cards" aria-label="Your cards"></div>
+  </section>
+
+  <section id="controls" aria-label="Your actions">
+    <div id="prompt">Waiting…</div>
+    <div id="buttons"></div>
+    <div id="raise-row" hidden>
+      <input type="range" id="raise-slider" aria-label="Bet size">
+      <output id="raise-value">0</output>
+      <button id="raise-confirm" type="button">Confirm</button>
+      <button id="raise-cancel" type="button" class="ghost">Cancel</button>
+    </div>
+  </section>
+</main>
+
+<aside id="log-panel" aria-label="Hand log">
+  <h2>Log</h2>
+  <!-- The log is the non-visual channel: it carries every action, and is the
+       accessibility fallback for a game built on watching faces. -->
+  <ol id="log" aria-live="polite"></ol>
+</aside>
+
+<script src="bundle.js"></script>
+</body>
+</html>

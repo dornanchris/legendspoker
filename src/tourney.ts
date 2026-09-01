@@ -54,7 +54,7 @@ for (let table = 0; table < TABLES; table++) {
 
   let hands = 0
   while (!game.isComplete() && hands < HAND_CAP) {
-    game.playHand()
+    await game.playHand()
     hands++
   }
 

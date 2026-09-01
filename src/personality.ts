@@ -135,4 +135,21 @@ export const CLEOPATRA: Personality = {
   ],
 }
 
+/**
+ * The human seat. Its dials are never read: Game routes that seat to
+ * onHumanTurn instead of decide(). It exists because a Seat still needs a
+ * name and somewhere to keep stats, like every other seat at the table.
+ */
+export const HUMAN: Personality = {
+  id: 'human',
+  name: 'You',
+  aggression: 0,
+  tightness: 0,
+  bluffFrequency: 0,
+  tiltSensitivity: 0,
+  adaptivity: 0,
+  quirks: [],
+  tells: [],
+}
+
 export const CAST = [DRACULA, YETI, CLEOPATRA]

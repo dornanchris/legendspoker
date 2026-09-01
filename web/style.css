@@ -1,0 +1,166 @@
+/* Phase 3b: a throwaway table. Legibility over looks -- the point is to prove
+   the loop is playable and that the characters read as different people. */
+:root {
+  --bg: #12100f;
+  --felt: #1d3a2b;
+  --edge: #2f2a26;
+  --ink: #ece5da;
+  --dim: #9a8f83;
+  --gold: #c9a227;
+  --live: #4a9e6d;
+  --dead: #6b3b3b;
+  --card-bg: #f4efe6;
+  --card-ink: #1a1512;
+  --red: #b3312b;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font: 14px/1.4 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  /* Safe-area insets: in landscape the notch and home indicator are on the
+     sides, and controls must not sit under either. */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+           env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* ---- portrait lock ---- */
+#rotate { display: none; }
+@media (orientation: portrait) {
+  body { grid-template-columns: 1fr; }
+  #rotate {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+  #rotate small { color: var(--dim); font-size: 13px; }
+  #table, #log-panel { display: none !important; }
+}
+
+/* ---- table ---- */
+#table {
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 8px;
+  padding: 10px 14px;
+  min-height: 0;
+  background: radial-gradient(120% 90% at 50% 40%, var(--felt) 0%, #14251c 70%, var(--bg) 100%);
+}
+
+#opponents { display: flex; gap: 10px; justify-content: center; align-items: start; }
+
+.seat {
+  flex: 1 1 0;
+  max-width: 240px;
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #00000055;
+  transition: border-color .15s, opacity .2s;
+  min-width: 0;
+}
+.seat.acting { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
+.seat.folded { opacity: .45; }
+.seat.out { opacity: .3; border-style: dashed; }
+
+.seat .name { font-weight: 600; display: flex; justify-content: space-between; gap: 8px; }
+.seat .name .stack { color: var(--gold); font-variant-numeric: tabular-nums; }
+.seat .cards { display: flex; gap: 4px; margin: 6px 0 4px; min-height: 34px; }
+.seat .last { color: var(--dim); font-size: 12px; min-height: 16px; }
+/* Tells are italic and quiet on purpose: they are ambient noise until the
+   player learns which combinations matter. */
+.seat .tell { color: #b9a68c; font-size: 12px; font-style: italic; min-height: 16px; }
+
+/* ---- middle ---- */
+#middle { display: grid; place-content: center; gap: 8px; justify-items: center; }
+#board { display: flex; gap: 6px; min-height: 58px; align-items: center; }
+#pot { font-size: 18px; font-variant-numeric: tabular-nums; }
+#pot .label { color: var(--dim); font-size: 12px; letter-spacing: .12em; }
+#level { color: var(--dim); font-size: 12px; }
+
+/* ---- your seat ---- */
+#you { display: flex; align-items: center; gap: 16px; justify-content: center; }
+#you-info { display: flex; gap: 12px; align-items: baseline; }
+#you-name { font-weight: 700; }
+#you-stack { color: var(--gold); font-variant-numeric: tabular-nums; }
+#you-position { color: var(--dim); font-size: 12px; }
+#you-cards { display: flex; gap: 6px; }
+
+/* ---- cards ---- */
+.card {
+  width: 38px; height: 54px;
+  border-radius: 5px;
+  background: var(--card-bg);
+  color: var(--card-ink);
+  display: grid;
+  place-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  border: 1px solid #0006;
+  font-variant-numeric: tabular-nums;
+}
+.card.small { width: 26px; height: 34px; font-size: 12px; border-radius: 4px; }
+.card.red { color: var(--red); }
+.card.back {
+  background: repeating-linear-gradient(45deg, #43324a, #43324a 4px, #35283b 4px, #35283b 8px);
+  color: transparent;
+  border-color: #0008;
+}
+.card.muck { visibility: hidden; }
+
+/* ---- controls ---- */
+#controls { display: grid; gap: 6px; justify-items: center; min-height: 76px; }
+#prompt { color: var(--dim); font-size: 13px; min-height: 18px; }
+#buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 6px;
+  border: 1px solid var(--edge);
+  background: #2a2622;
+  color: var(--ink);
+  cursor: pointer;
+  min-width: 92px;
+}
+button:hover:not(:disabled) { background: #3a342e; }
+button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+button:disabled { opacity: .4; cursor: default; }
+button.primary { background: #2f5c40; border-color: #3f7a55; }
+button.danger { background: #4a2b2b; border-color: #6b3b3b; }
+button.ghost { background: transparent; min-width: 0; }
+
+#raise-row { display: flex; gap: 10px; align-items: center; }
+/* An explicit display rule beats the `hidden` attribute's UA default, so the
+   attribute has to be honoured back explicitly or the slider never hides. */
+#raise-row[hidden] { display: none; }
+#raise-slider { width: 260px; }
+#raise-value { color: var(--gold); font-variant-numeric: tabular-nums; min-width: 60px; text-align: right; }
+
+/* ---- log ---- */
+#log-panel {
+  border-left: 1px solid var(--edge);
+  padding: 10px 12px;
+  overflow-y: auto;
+  background: #0e0d0c;
+  min-height: 0;
+}
+#log-panel h2 { font-size: 11px; letter-spacing: .14em; color: var(--dim); margin: 0 0 8px; text-transform: uppercase; }
+#log { list-style: none; margin: 0; padding: 0; font-size: 12px; }
+#log li { padding: 3px 0; border-bottom: 1px solid #ffffff08; color: #cbc2b6; }
+#log li.head { color: var(--gold); font-weight: 600; margin-top: 6px; }
+#log li.you { color: #9ec9ff; }
+#log li.big { color: #f0e0b0; }

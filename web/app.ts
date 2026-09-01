@@ -1,0 +1,393 @@
+import { Game, type HandEvent, type TurnView } from '../src/game.js'
+import { CAST, HUMAN } from '../src/personality.js'
+import type { Action, Decision } from '../src/decide.js'
+import type { Card } from '../src/equity.js'
+
+/**
+ * PHASE 3b — human seat + throwaway DOM table. No art, no Rive, no 3D.
+ *
+ * Exit test: play 20 hands voluntarily and be able to name each character's
+ * style without reading the code.
+ *
+ * The one piece of architecture worth keeping: the PRESENTATION QUEUE below.
+ * The engine resolves a hand as fast as it can and pushes events; the UI plays
+ * them back on its own clock. The two clocks never touch, which is the
+ * non-negotiable that fast-forward depends on later -- speeding up playback
+ * must not change a single card or decision.
+ */
+
+const HUMAN_SEAT = 0
+const SEATS = [HUMAN, ...CAST]
+const BUY_IN = 2000
+
+// Presentation clock only. Nothing here is allowed to reach the game loop.
+// ?pace=0.2 speeds playback up for testing; it scales these delays and NOTHING
+// else, which is the same separation Phase 6's fast-forward will need: the hand
+// must resolve identically however fast it is drawn.
+const PACE_SCALE = Math.max(0, Number(new URLSearchParams(location.search).get('pace') ?? 1))
+const BASE = { action: 620, street: 700, showdown: 1900, result: 1000, level: 900 }
+const PACE = Object.fromEntries(
+  Object.entries(BASE).map(([k, v]) => [k, v * PACE_SCALE]),
+) as typeof BASE
+
+const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+const els = {
+  table: $('table'),
+  opponents: $('opponents'),
+  board: $('board'),
+  pot: $('pot-value'),
+  level: $('level'),
+  youStack: $('you-stack'),
+  youCards: $('you-cards'),
+  youPosition: $('you-position'),
+  prompt: $('prompt'),
+  buttons: $('buttons'),
+  raiseRow: $('raise-row'),
+  slider: $('raise-slider') as unknown as HTMLInputElement,
+  raiseValue: $('raise-value'),
+  raiseConfirm: $('raise-confirm'),
+  raiseCancel: $('raise-cancel'),
+  log: $('log'),
+}
+
+// ---------------------------------------------------------------- presentation
+
+type Step = { apply: () => void; delay: number }
+const queue: Step[] = []
+let draining = false
+let waiters: (() => void)[] = []
+
+function step(apply: () => void, delay: number) {
+  queue.push({ apply, delay })
+  void drain()
+}
+
+async function drain() {
+  if (draining) return
+  draining = true
+  while (queue.length) {
+    const s = queue.shift()!
+    s.apply()
+    await sleep(s.delay)
+  }
+  draining = false
+  const w = waiters
+  waiters = []
+  for (const f of w) f()
+}
+
+/** Resolves once everything queued has actually been shown. */
+function settled(): Promise<void> {
+  if (!draining && queue.length === 0) return Promise.resolve()
+  return new Promise((r) => waiters.push(r))
+}
+
+// ---------------------------------------------------------------- rendering
+
+const SUIT = { clubs: '♣', diamonds: '♦', hearts: '♥', spades: '♠' } as const
+const isRed = (c: Card) => c.suit === 'hearts' || c.suit === 'diamonds'
+
+function cardEl(c: Card | null, small = false): HTMLElement {
+  const d = document.createElement('div')
+  d.className = `card${small ? ' small' : ''}${c && isRed(c) ? ' red' : ''}${c ? '' : ' back'}`
+  d.textContent = c ? `${c.rank}${SUIT[c.suit]}` : '??'
+  if (c) d.setAttribute('aria-label', `${c.rank} of ${c.suit}`)
+  return d
+}
+
+type SeatUI = {
+  root: HTMLElement
+  stack: HTMLElement
+  cards: HTMLElement
+  last: HTMLElement
+  tell: HTMLElement
+}
+const seatUI = new Map<number, SeatUI>()
+
+function buildOpponents() {
+  els.opponents.replaceChildren()
+  for (let i = 0; i < SEATS.length; i++) {
+    if (i === HUMAN_SEAT) continue
+    const root = document.createElement('div')
+    root.className = 'seat'
+    root.innerHTML =
+      `<div class="name"><span>${SEATS[i].name}</span><span class="stack">0</span></div>` +
+      `<div class="cards"></div><div class="last"></div><div class="tell"></div>`
+    els.opponents.append(root)
+    seatUI.set(i, {
+      root,
+      stack: root.querySelector('.stack')!,
+      cards: root.querySelector('.cards')!,
+      last: root.querySelector('.last')!,
+      tell: root.querySelector('.tell')!,
+    })
+  }
+}
+
+function setStacks(stacks: number[]) {
+  for (const [i, ui] of seatUI) ui.stack.textContent = String(stacks[i] ?? 0)
+  els.youStack.textContent = String(stacks[HUMAN_SEAT] ?? 0)
+}
+
+function log(text: string, cls = '') {
+  const li = document.createElement('li')
+  if (cls) li.className = cls
+  li.textContent = text
+  els.log.append(li)
+  els.log.parentElement!.scrollTop = els.log.parentElement!.scrollHeight
+}
+
+const TELL_TEXT: Record<string, string> = {
+  steeples_fingers: 'steeples his fingers',
+  glances_at_exit: 'glances toward the exit',
+  stares_blankly: 'stares blankly at the board',
+  shifts_forward: 'shifts forward in his seat',
+  adjusts_headdress: 'adjusts her headdress',
+  goes_still: 'goes completely still',
+}
+
+/**
+ * The human seat is called "You", so everything about it has to read in the
+ * second person or the log says "You folds" and "You is out".
+ */
+function describe(d: Decision, you = false): string {
+  const v = (third: string, second: string) => (you ? second : third)
+  switch (d.action) {
+    case 'fold': return v('folds', 'fold')
+    case 'check': return v('checks', 'check')
+    case 'call': return v('calls', 'call')
+    case 'bet': return `${v('bets', 'bet')} ${d.betSize}`
+    case 'raise': return `${v('raises', 'raise')} to ${d.betSize}`
+  }
+}
+
+// ---------------------------------------------------------------- game state
+
+const folded = new Set<number>()
+const out = new Set<number>()
+let handNo = 0
+
+function clearForNewHand() {
+  folded.clear()
+  for (const [i, ui] of seatUI) {
+    ui.cards.replaceChildren(cardEl(null, true), cardEl(null, true))
+    ui.last.textContent = ''
+    ui.tell.textContent = ''
+    ui.root.classList.remove('folded', 'acting')
+    if (out.has(i)) ui.root.classList.add('out')
+  }
+  els.board.replaceChildren()
+  els.youCards.replaceChildren()
+  els.pot.textContent = '0'
+}
+
+function onEvent(e: HandEvent) {
+  switch (e.type) {
+    case 'street': {
+      step(() => {
+        setStacks(e.stacks)
+        els.board.replaceChildren(...e.board.map((c) => cardEl(c)))
+        if (e.street !== 'preflop') log(`— ${e.street} —`, 'head')
+        for (const ui of seatUI.values()) ui.tell.textContent = ''
+      }, e.street === 'preflop' ? 0 : PACE.street)
+      break
+    }
+    case 'tell': {
+      const ui = seatUI.get(e.seat)
+      if (!ui) break
+      step(() => { ui.tell.textContent = `${SEATS[e.seat].name} ${TELL_TEXT[e.signal] ?? e.signal}` }, 340)
+      break
+    }
+    case 'action': {
+      const you = e.seat === HUMAN_SEAT
+      const ui = seatUI.get(e.seat)
+      // The seat card is always an opponent, so it stays third person; only
+      // the log has to agree with "You".
+      const text = describe(e.decision)
+      const logText = describe(e.decision, you)
+      step(() => {
+        for (const u of seatUI.values()) u.root.classList.remove('acting')
+        if (ui) {
+          ui.root.classList.add('acting')
+          ui.last.textContent = text
+        }
+        if (e.decision.action === 'fold') {
+          folded.add(e.seat)
+          ui?.root.classList.add('folded')
+          // Mucked cards are gone, not face-down: leaving backs up reads as
+          // "still in the hand".
+          ui?.cards.replaceChildren()
+          if (e.seat === HUMAN_SEAT) els.youCards.replaceChildren()
+        }
+        setStacks(e.stacks)
+        els.pot.textContent = String(e.pot)
+        log(`${SEATS[e.seat].name} ${logText}`, you ? 'you' : '')
+      }, e.seat === HUMAN_SEAT ? 220 : PACE.action)
+      break
+    }
+    case 'showdown': {
+      step(() => {
+        for (const { seat, hole } of e.revealed) {
+          const ui = seatUI.get(seat)
+          if (ui) ui.cards.replaceChildren(...hole.map((c) => cardEl(c, true)))
+        }
+        for (const w of e.winners) {
+          log(`${SEATS[w].name} ${w === HUMAN_SEAT ? 'win' : 'wins'} the pot`, 'big')
+        }
+      }, PACE.showdown)
+      break
+    }
+    case 'result': {
+      if (e.delta === 0) break
+      step(() => {
+        const sign = e.delta > 0 ? '+' : ''
+        log(`  ${SEATS[e.seat].name} ${sign}${e.delta}`, e.seat === HUMAN_SEAT ? 'you' : '')
+      }, 0)
+      break
+    }
+    case 'level': {
+      step(() => {
+        els.level.textContent = `blinds ${e.smallBlind}/${e.bigBlind}`
+        log(`Blinds up: ${e.smallBlind}/${e.bigBlind}`, 'head')
+      }, PACE.level)
+      break
+    }
+    case 'eliminated': {
+      step(() => {
+        out.add(e.seat)
+        seatUI.get(e.seat)?.root.classList.add('out')
+        const ord = `${e.place}${['st', 'nd', 'rd', 'th'][e.place - 1] ?? 'th'}`
+        log(`${SEATS[e.seat].name} ${e.seat === HUMAN_SEAT ? 'are' : 'is'} out (${ord})`, 'big')
+      }, PACE.result)
+      break
+    }
+  }
+}
+
+// ---------------------------------------------------------------- your turn
+
+let resolveTurn: ((d: Decision) => void) | null = null
+
+function button(label: string, cls: string, onClick: () => void): HTMLButtonElement {
+  const b = document.createElement('button')
+  b.textContent = label
+  if (cls) b.className = cls
+  b.addEventListener('click', onClick)
+  return b
+}
+
+function endTurn(d: Decision) {
+  els.buttons.replaceChildren()
+  els.raiseRow.hidden = true
+  els.prompt.textContent = ''
+  const r = resolveTurn
+  resolveTurn = null
+  r?.(d)
+}
+
+async function onHumanTurn(view: TurnView): Promise<Decision> {
+  // Do not ask for a decision until the player has actually SEEN what led to
+  // it. This is the only place the two clocks meet, and it is a one-way wait:
+  // presentation never feeds back into how the hand resolves.
+  await settled()
+
+  for (const u of seatUI.values()) u.root.classList.remove('acting')
+  setStacks(view.stacks)
+  els.youCards.replaceChildren(...view.hole.map((c) => cardEl(c)))
+  els.pot.textContent = String(view.pot)
+  els.prompt.textContent =
+    view.toCall > 0 ? `${view.toCall} to call` : 'Check or bet'
+
+  const b = els.buttons
+  b.replaceChildren()
+
+  if (view.legal.includes('fold')) {
+    b.append(button('Fold', 'danger', () => endTurn({ action: 'fold', reason: 'human' })))
+  }
+  if (view.legal.includes('check')) {
+    b.append(button('Check', '', () => endTurn({ action: 'check', reason: 'human' })))
+  }
+  if (view.legal.includes('call')) {
+    const amount = Math.min(view.toCall, view.stack)
+    const label = amount >= view.stack ? `Call all in (${amount})` : `Call ${amount}`
+    b.append(button(label, 'primary', () => endTurn({ action: 'call', reason: 'human' })))
+  }
+
+  const raise: Action | null = view.legal.includes('raise')
+    ? 'raise'
+    : view.legal.includes('bet')
+      ? 'bet'
+      : null
+
+  if (raise && view.maxRaise >= view.minRaise) {
+    b.append(
+      button(raise === 'bet' ? 'Bet…' : 'Raise…', '', () => {
+        els.raiseRow.hidden = false
+        const s = els.slider
+        s.min = String(view.minRaise)
+        s.max = String(view.maxRaise)
+        s.step = '1'
+        s.value = String(Math.min(view.maxRaise, Math.max(view.minRaise, Math.round(view.pot * 0.6))))
+        const sync = () => {
+          const v = Number(s.value)
+          els.raiseValue.textContent = v >= view.maxRaise ? `${v} (all in)` : String(v)
+        }
+        s.oninput = sync
+        sync()
+        s.focus()
+      }),
+    )
+  }
+
+  els.raiseConfirm.onclick = () => {
+    if (!raise) return
+    endTurn({ action: raise, betSize: Number(els.slider.value), reason: 'human' })
+  }
+  els.raiseCancel.onclick = () => { els.raiseRow.hidden = true }
+
+  return new Promise<Decision>((resolve) => { resolveTurn = resolve })
+}
+
+// ---------------------------------------------------------------- driver
+
+async function main() {
+  buildOpponents()
+  els.table.hidden = false
+
+  const game = new Game(SEATS, {
+    mode: 'tournament',
+    buyIn: BUY_IN,
+    rollouts: 60,
+    humanSeat: HUMAN_SEAT,
+    onHumanTurn,
+    onEvent,
+  })
+
+  els.level.textContent = `blinds ${game.bigBlind() / 2}/${game.bigBlind()}`
+  setStacks(game.stacks())
+
+  while (!game.isComplete()) {
+    handNo++
+    clearForNewHand()
+    log(`Hand ${handNo}`, 'head')
+    els.youPosition.textContent = `hand ${handNo}`
+    await game.playHand()
+    await settled()
+    setStacks(game.stacks())
+    if (out.has(HUMAN_SEAT)) break
+    await sleep(500 * PACE_SCALE)
+  }
+
+  await settled()
+  els.buttons.replaceChildren()
+  els.raiseRow.hidden = true
+  const won = game.survivors()[0] === HUMAN_SEAT
+  els.prompt.textContent = won
+    ? 'You hold every chip. Table cleared.'
+    : 'You are out.'
+  log(won ? 'You win the table.' : 'You are out.', 'big')
+}
+
+void main()

@@ -108,8 +108,20 @@ to 2bb brought him to a realistic −66.
   a position term to `tightness` is probably the single highest-value
   improvement to realism.
 
+## Playing it
+
+```bash
+npm run web          # build + serve the table at localhost:5173
+```
+
+You are seat 0 against the three characters, in an elimination tournament:
+stacks persist, blinds climb every 25 hands, and the table ends when someone
+holds all 8000 chips. Landscape only. Add `?pace=0.2` to speed the
+presentation up — it scales the display clock and nothing else, so the hand
+resolves exactly the same either way.
+
 ## Next
 
-Phase 3 is a human seat and plain DOM output — no 3D yet. The exit test:
-you play twenty hands voluntarily and can name each character's style
-without reading the code.
+The exit test for this phase is subjective and yours to run: play twenty
+hands voluntarily and see whether you can name each character's style without
+reading the code. Then Phase 4, the platform shell.

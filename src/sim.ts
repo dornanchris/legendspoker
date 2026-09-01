@@ -40,8 +40,11 @@ const game = new Game(CAST, {
 })
 
 const t0 = Date.now()
+// playHand is async so a human seat can be awaited; the bots resolve
+// immediately. Await it in sequence -- firing hands concurrently would
+// interleave them on one table.
 for (let i = 0; i < HANDS; i++) {
-  game.playHand()
+  await game.playHand()
   if ((i + 1) % 1000 === 0) {
     process.stdout.write(`\r  ${i + 1}/${HANDS} hands...`)
   }

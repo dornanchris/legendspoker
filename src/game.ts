@@ -66,13 +66,54 @@ export const DEFAULT_LEVELS: BlindLevel[] = [
 
 export type HandEvent =
   | { type: 'deal'; seat: number; hole: Card[] }
-  | { type: 'street'; street: string; board: Card[] }
+  | { type: 'street'; street: string; board: Card[]; stacks: number[] }
   | { type: 'tell'; seat: number; signal: string }
-  | { type: 'action'; seat: number; decision: Decision; equity: number }
+  /** Emitted AFTER the table applies the action, so pot and stacks are the result of it. */
+  | {
+      type: 'action'
+      seat: number
+      decision: Decision
+      equity: number
+      pot: number
+      stacks: number[]
+    }
   | { type: 'result'; seat: number; delta: number; won: boolean }
   | { type: 'level'; level: number; smallBlind: number; bigBlind: number }
+  /**
+   * Fired when cards are actually turned over. This is where the player finds
+   * out how someone played a hand they folded to, which the design doc calls
+   * the main source of reads -- so it is a first-class event, not a detail of
+   * 'result'.
+   */
+  | {
+      type: 'showdown'
+      revealed: { seat: number; hole: Card[] }[]
+      winners: number[]
+    }
   /** `place` is the finishing position: 1 is the winner, so 4 busts first. */
   | { type: 'eliminated'; seat: number; place: number }
+
+/**
+ * What a human seat is handed on their turn. Deliberately NOT a
+ * DecisionContext: it carries no equity estimate and no opponent hole cards,
+ * because handing those to the player would solve the game for them. They get
+ * exactly what someone sitting at the table can see.
+ */
+export type TurnView = {
+  seat: number
+  hole: Card[]
+  /** Every seat's chips, so the view the player acts on is self-consistent. */
+  stacks: number[]
+  board: Card[]
+  pot: number
+  toCall: number
+  stack: number
+  bigBlind: number
+  street: 'preflop' | 'flop' | 'turn' | 'river'
+  legal: Action[]
+  minRaise: number
+  maxRaise: number
+}
 
 export type GameOptions = {
   smallBlind: number
@@ -93,6 +134,15 @@ export type GameOptions = {
    * holds every chip.
    */
   mode: 'cash' | 'tournament'
+
+  /**
+   * Seat played by a human. That seat never calls decide() -- it awaits
+   * onHumanTurn instead -- so it needs no dials, and no equity is computed
+   * for it.
+   */
+  humanSeat?: number
+  /** Resolves with the human's action. Awaited, so it can take as long as it likes. */
+  onHumanTurn?: (view: TurnView) => Promise<Decision>
 
   /** Tournament only. */
   levels: BlindLevel[]
@@ -190,12 +240,37 @@ export class Game {
   }
 
   /**
+   * Chips still BEHIND each player -- not yet pushed in. Distinct from
+   * stacks(), which reports totalChips (behind + current bet). Between hands
+   * the two agree; mid-hand they do not, and mixing them up double-counts the
+   * live bets, because potTotal() already includes them.
+   *
+   * Display uses this; survivorship and settlement use stacks().
+   */
+  stacksBehind(): number[] {
+    const seated = this.table.seats()
+    return this.seats.map((_, i) => seated[i]?.stack ?? 0)
+  }
+
+  /** Everything in the middle: settled pots plus the bets still on the felt. */
+  private potTotal(): number {
+    const settled = this.table
+      .pots()
+      .reduce((a: number, p: any) => a + p.size, 0)
+    const live = this.table
+      .seats()
+      .filter(Boolean)
+      .reduce((a: number, x: any) => a + x.betSize, 0)
+    return settled + live
+  }
+
+  /**
    * Plays one hand. Stacks are reset to the buy-in each hand so we measure
    * decision quality rather than tournament survivorship — that keeps the
    * win-rate numbers clean and comparable.
    */
-  playHand(): void {
-    const { rng, buyIn, rollouts, onEvent, mode } = this.opts
+  async playHand(): Promise<void> {
+    const { rng, buyIn, rollouts, onEvent, mode, humanSeat, onHumanTurn } = this.opts
     const tournament = mode === 'tournament'
     if (tournament && this.isComplete()) return
 
@@ -250,6 +325,9 @@ export class Game {
             type: 'street',
             street,
             board: this.table.communityCards(),
+            // Carries stacks so the display picks up the posted blinds, which
+            // are not an 'action' and would otherwise show stale.
+            stacks: this.stacksBehind(),
           })
         }
 
@@ -262,59 +340,90 @@ export class Game {
         )
         const myBet = seatState[seat].betSize
         const toCall = maxBet - myBet
-        const potsTotal = this.table
-          .pots()
-          .reduce((a: number, p: any) => a + p.size, 0)
-        const liveBets = seatState
-          .filter(Boolean)
-          .reduce((a: number, x: any) => a + x.betSize, 0)
-        const pot = potsTotal + liveBets
+        const pot = this.potTotal()
 
+        // The human seat never gets an equity number -- they read the board
+        // like anyone else -- so there is nothing to roll out for them.
+        const isHuman = seat === humanSeat && onHumanTurn !== undefined
         const key = `${seat}:${street}`
-        let equity = equityCache.get(key)
-        if (equity === undefined) {
-          equity = handStrength(
-            hole,
-            board,
-            Math.max(1, this.table.numActivePlayers() - 1),
-            rollouts,
-            rng,
-          )
-          equityCache.set(key, equity)
+        let equity = 0
+        if (!isHuman) {
+          const cached = equityCache.get(key)
+          if (cached === undefined) {
+            equity = handStrength(
+              hole,
+              board,
+              Math.max(1, this.table.numActivePlayers() - 1),
+              rollouts,
+              rng,
+            )
+            equityCache.set(key, equity)
+          } else {
+            equity = cached
+          }
         }
 
         const legalRaw = this.table.legalActions()
         const legal: Action[] = legalRaw.actions
         const range = legalRaw.chipRange
+        const minRaise = range?.min ?? bigBlind
+        const maxRaise = range?.max ?? seatState[seat].stack
 
-        const foldRate = this.tableFoldRate(seat)
-
-        const decision = decide({
-          personality: s.personality,
-          equity,
-          pot,
-          toCall,
-          stack: seatState[seat].stack,
-          bigBlind,
-          effectiveStackBB: seatState[seat].stack / bigBlind,
-          minRaise: range?.min ?? bigBlind,
-          maxRaise: range?.max ?? seatState[seat].stack,
-          street: street as any,
-          legal,
-          numOpponents: Math.max(1, this.table.numActivePlayers() - 1),
-          tilt: s.tilt,
-          opponentFoldRate: foldRate,
-          rng,
-        })
-
-        if (onEvent) {
-          const tell = emitTell(
-            s.personality,
-            { equity, decision, tilt: s.tilt },
+        let decision: Decision
+        if (isHuman) {
+          decision = await onHumanTurn!({
+            seat,
+            hole,
+            stacks: this.stacksBehind(),
+            board,
+            pot,
+            toCall,
+            stack: seatState[seat].stack,
+            bigBlind,
+            street: street as any,
+            legal,
+            minRaise,
+            maxRaise,
+          })
+          // Never trust the UI: a stale button or a hand-edited slider must not
+          // be able to put the table into an illegal state.
+          if (!legal.includes(decision.action)) {
+            throw new Error(
+              `illegal action from human seat ${seat}: ${decision.action} (legal: ${legal.join(', ')})`,
+            )
+          }
+          if (decision.betSize !== undefined) {
+            decision.betSize = Math.max(minRaise, Math.min(maxRaise, Math.round(decision.betSize)))
+          }
+        } else {
+          decision = decide({
+            personality: s.personality,
+            equity,
+            pot,
+            toCall,
+            stack: seatState[seat].stack,
+            bigBlind,
+            effectiveStackBB: seatState[seat].stack / bigBlind,
+            minRaise,
+            maxRaise,
+            street: street as any,
+            legal,
+            numOpponents: Math.max(1, this.table.numActivePlayers() - 1),
+            tilt: s.tilt,
+            opponentFoldRate: this.tableFoldRate(seat),
             rng,
-          )
-          if (tell) onEvent({ type: 'tell', seat, signal: tell.signal })
-          onEvent({ type: 'action', seat, decision, equity })
+          })
+
+          if (onEvent) {
+            // The tell precedes the action: it is a leak about the decision
+            // already made, which is what makes it readable at all.
+            const tell = emitTell(
+              s.personality,
+              { equity, decision, tilt: s.tilt },
+              rng,
+            )
+            if (tell) onEvent({ type: 'tell', seat, signal: tell.signal })
+          }
         }
 
         // Stats
@@ -337,15 +446,38 @@ export class Game {
         this.table.actionTaken(decision.action, decision.betSize)
         const after = this.table.seats()[seat]
         if (after) contributed[seat] += before - (after.stack + after.betSize)
+
+        onEvent?.({
+          type: 'action',
+          seat,
+          decision,
+          equity: isHuman ? 0 : equity,
+          pot: this.potTotal(),
+          stacks: this.stacksBehind(),
+        })
       }
 
       this.table.endBettingRound()
 
       if (this.table.areBettingRoundsCompleted()) {
+        const hole = this.table.holeCards()
+        const revealed: { seat: number; hole: Card[] }[] = []
         for (let i = 0; i < this.seats.length; i++) {
-          if (this.table.holeCards()[i]) wentToShowdown.add(i)
+          if (hole[i]) {
+            wentToShowdown.add(i)
+            revealed.push({ seat: i, hole: hole[i]! })
+          }
         }
         this.table.showdown()
+        if (onEvent) {
+          // winners() is per-pot, and a pot can be split; flatten to the set of
+          // seats that got paid.
+          const winners = new Set<number>()
+          for (const pot of this.table.winners() ?? []) {
+            for (const w of pot) winners.add(w[0])
+          }
+          onEvent({ type: 'showdown', revealed, winners: [...winners] })
+        }
       }
     }
 

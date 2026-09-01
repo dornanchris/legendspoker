@@ -25,3 +25,7 @@ Thumbs.db
 # is still empty, so the contact sheets are currently the only
 # index -> body-part map, which Phase 5 rigging needs.
 art/parts/
+
+# Bundled web output (regenerate with npm run build:web)
+web/bundle.js
+web/bundle.js.map

@@ -87,7 +87,7 @@ const game = new Game(CAST, {
   onEvent,
 })
 
-for (let i = 0; i < HANDS; i++) game.playHand()
+for (let i = 0; i < HANDS; i++) await game.playHand()
 
 console.log(
   C.dim(`
