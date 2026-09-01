@@ -1,0 +1,33 @@
+diff --git a/node_modules/poker-ts/dist/lib/dealer.js b/node_modules/poker-ts/dist/lib/dealer.js
+index f51d9e3..4e914fa 100644
+--- a/node_modules/poker-ts/dist/lib/dealer.js
++++ b/node_modules/poker-ts/dist/lib/dealer.js
+@@ -256,7 +256,27 @@ var Dealer = /** @class */ (function () {
+             // TODO: Also, no reveals in this case. Reveals are only necessary when there is >=2 players.
+         }
+         var _loop_1 = function (pot) {
+-            var playerResults = pot.eligiblePlayers().map(function (seatIndex) {
++            // PATCHED: a pot's eligible list is fixed when its bets are
++            // collected, and a player who folds in a LATER betting round is
++            // never removed from it. Their hole cards survive too, so showdown
++            // could pick a folded player as the winner and then pay them via
++            // `this._players[seatIndex]?.addToStack(...)` -- which is null for
++            // a folder, so the optional chaining silently destroyed the pot.
++            // Folding is the only thing that nulls _players[seat], so the real
++            // contenders are the eligible seats that still have a player.
++            var contenders = pot.eligiblePlayers().filter(function (seatIndex) {
++                return _this._players[seatIndex] != null;
++            });
++            // If every eligible player folded, the chips still have to go
++            // somewhere: the players left in the hand are the only candidates.
++            if (contenders.length === 0) {
++                contenders = _this._players.reduce(function (acc, player, index) {
++                    if (player != null)
++                        acc.push(index);
++                    return acc;
++                }, []);
++            }
++            var playerResults = contenders.map(function (seatIndex) {
+                 return [seatIndex, hand_1.default.create(_this._holeCards[seatIndex], _this._communityCards)];
+             });
+             playerResults.sort(function (_a, _b) {

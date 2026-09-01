@@ -81,7 +81,7 @@ src/
   sim.ts          `npm run sim [hands]` — the balance/exit test (cash)
   play.ts         `npm run play [hands]` — watchable CLI with tells
   tourney.ts      `npm run tourney [tables]` — the Phase 3a exit test
-  potleak-repro.ts `npm run repro:potleak` — isolates a poker-ts pot bug
+  pot-conservation.ts `npm run check:pots` — guards the poker-ts pot patch
 data/
   dialogue/       one file per table; schema is established and working
 art-tools/
@@ -120,13 +120,16 @@ integration, audio, persistence.
 - **No position awareness.** Adding a position term to effective tightness is
   the single highest-value realism improvement available.
 - Adaptivity is table-wide, not per-opponent.
-- **Chips are destroyed by a poker-ts bug, roughly 1 hand in 300.** When side
-  pots form, a pot is sometimes awarded to nobody. It is the dependency, not
-  our loop — our loop matches poker-ts's own documented example, and
-  `npm run repro:potleak` reproduces it with no engine code at all. The cash
-  sim never saw it because equal reset stacks barely ever make a side pot.
-  **This must be resolved before real money-shaped play**: patch, fork, or
-  replace poker-ts. Not decided — see BUILD-PLAN.
+- **poker-ts destroyed chips when side pots formed — FIXED via a patch.**
+  A pot's eligible-player list is fixed when its bets are collected, so a
+  player who folded on a later street stayed eligible, could be judged the
+  winner, and was paid via `_players[seat]?.addToStack()` — null for a
+  folder, so the pot silently ceased to exist. Roughly 1 hand in 300 with
+  uneven stacks. Fix lives in `patches/poker-ts+1.5.0.patch`, applied by
+  `patch-package` on `npm install`; `npm run check:pots` is the regression
+  guard. 1.5.0 is the latest release, so there is no upgrade to take instead.
+  **If you ever bump poker-ts, re-run `npm run check:pots`** — the patch is
+  pinned to 1.5.0 and will refuse to apply to a different version.
 - **Deals are not reproducible.** poker-ts shuffles with `crypto.randomInt`
   and takes no seed, so the same seed deals different cards. Decisions and
   equity rollouts *are* seeded. This blocks the non-negotiable that a
@@ -160,6 +163,8 @@ integration, audio, persistence.
   on an empty chair.
 - Any new chip-handling code needs a conservation check. `tourney.ts` has one,
   and it is the only reason the poker-ts pot bug was found rather than shipped.
+- `patches/` is load-bearing. `npm install` runs `patch-package` via
+  postinstall; if that step is ever skipped, chips start vanishing again.
 
 ## NEXT MILESTONE
 

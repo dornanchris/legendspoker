@@ -114,9 +114,9 @@ A table ends when one player holds all ${chips} chips. Blinds climb every
 ${HANDS_PER_LEVEL} hands and never come back down, so the schedule -- not the
 players -- is what puts a floor under how long a table can run.
 
-Chip leaks are NOT this model's doing: they are a poker-ts defect that side
-pots trigger, which uneven tournament stacks are the first thing to produce.
-See src/potleak-repro.ts.
+Chip leaks were a poker-ts defect that side pots trigger -- uneven tournament
+stacks are the first thing to produce them. Fixed in
+patches/poker-ts+1.5.0.patch; src/pot-conservation.ts guards it.
 
 Stalls and chip leaks must both be zero. Everything else is a balance
 question, not a correctness one.`)

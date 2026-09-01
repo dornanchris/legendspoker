@@ -1,27 +1,30 @@
 /**
- * MINIMAL REPRO: poker-ts loses a pot when side pots form.
+ * REGRESSION GUARD: poker-ts must not destroy chips when side pots form.
  *
- * Found by the chip-conservation check in tourney.ts. Roughly 1 hand in 300
- * with uneven stacks ends with chips destroyed -- the main pot is never
- * awarded to anyone. There is no personality or engine code below: this is
- * poker-ts driven directly with random legal actions, so the defect is in
- * the dependency, not in ours.
+ * This started as a repro. Phase 3a's chip-conservation check caught poker-ts
+ * losing a whole pot in roughly 1 hand in 300 with uneven stacks; the fix now
+ * lives in patches/poker-ts+1.5.0.patch and is applied on npm install.
  *
- * Mechanism, in poker-ts/dist/lib/dealer.js showdown():
+ * The bug: Pot.collectBetsFrom() fixes a pot's eligible-player list when its
+ * bets are collected. A player who folds in a LATER betting round is never
+ * removed from that list, and their hole cards are never cleared -- so
+ * showdown could evaluate a folded player, decide they had the best hand, and
+ * pay them via:
  *
  *   this._players[seatIndex]?.addToStack(payout)
  *
- * When a pot's eligible-player list still names a seat whose player object
- * is gone, the optional chaining silently drops the payout and the chips
- * cease to exist. The early-return above it only covers a SINGLE pot with
- * one eligible player, so a main-pot/side-pot split walks into it.
+ * Folding is the one thing that sets _players[seat] = null, so the optional
+ * chaining silently swallowed the payout and the pot ceased to exist.
  *
- * Why this never showed up before Phase 3a: the cash sim resets every stack
- * to the buy-in each hand, so all-ins are for equal amounts and side pots
- * essentially never form. Uneven stacks are the whole point of a tournament,
- * which is what exposed it.
+ * Why it hid for so long: the cash sim resets every stack to the buy-in each
+ * hand, so all-ins are for equal amounts and side pots essentially never form.
+ * Uneven stacks are the whole point of a tournament, which is what exposed it.
  *
- * Run: npm run repro:potleak
+ * There is no engine code below -- this drives poker-ts directly with random
+ * legal actions, exactly as its own README documents. If this ever fails
+ * again, the patch did not apply.
+ *
+ * Run: npm run check:pots [hands]
  */
 import pokerPkg from 'poker-ts'
 const { Table: Poker } = pokerPkg as any
@@ -66,8 +69,10 @@ for (let trial = 0; trial < TRIALS; trial++) {
 
 const rate = ((leaks / TRIALS) * 100).toFixed(2)
 console.log(`\n${leaks}/${TRIALS} hands destroyed chips (${rate}%), worst ${worst} chips.`)
-console.log(
-  leaks === 0
-    ? 'No leak in this run -- it is intermittent, try more trials.'
-    : 'Chips must be conserved. Every one of these is a pot that no player received.',
-)
+if (leaks === 0) {
+  console.log('PASS: chips conserved. The poker-ts patch is applied and working.')
+} else {
+  console.log('FAIL: every one of these is a pot that no player received.')
+  console.log('Check that patches/poker-ts+1.5.0.patch applied -- try npm install.')
+  process.exit(1)
+}
