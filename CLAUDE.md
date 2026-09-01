@@ -78,6 +78,7 @@ src/
   personality.ts  the dials + quirks + tells; characters as DATA
   decide.ts       THE shared decision function. Read this first.
   game.ts         loop over poker-ts; stats (VPIP/PFR/AF), tilt, events
+  rng.ts          the one seeded RNG; state() is what makes saves resumable
   sim.ts          `npm run sim [hands]` — the balance/exit test (cash)
   play.ts         `npm run play [hands]` — watchable CLI with tells
   tourney.ts      `npm run tourney [tables]` — the Phase 3a exit test
@@ -156,10 +157,17 @@ platform shell (Phase 4).
   guard. 1.5.0 is the latest release, so there is no upgrade to take instead.
   **If you ever bump poker-ts, re-run `npm run check:pots`** — the patch is
   pinned to 1.5.0 and will refuse to apply to a different version.
-- **Deals are not reproducible.** poker-ts shuffles with `crypto.randomInt`
-  and takes no seed, so the same seed deals different cards. Decisions and
-  equity rollouts *are* seeded. This blocks the non-negotiable that a
-  fast-forwarded hand resolves identically, and it blocks replay from a save.
+- **Deals are reproducible — FIXED, same patch file.** poker-ts shuffled with
+  `crypto.randomInt` and `Table` hardcoded its own `Deck`, so nothing was
+  seedable. `Deck` already accepted a shuffle; `Table` just never passed one
+  through. The patch adds an optional third constructor argument, and `Game`
+  injects a Fisher-Yates drawing from `opts.rng`. One seed now determines
+  cards, decisions and rollouts together — a 298-event transcript replays
+  byte-identical. This is what non-negotiable #6 rested on, and what makes
+  replay-from-save possible.
+- `src/rng.ts` is the only RNG. `mulberry32(seed).state()` returns the whole
+  generator state as one integer, so a save can resume the exact stream —
+  without that, a restored game deals different cards and the save is a lie.
 - Cash mode still resets stacks to the buy-in each hand. That is deliberate
   and must stay: it is what keeps the tuning numbers comparable.
 - **Save/resume must capture MID-HAND state** — stacks, blind level, button,

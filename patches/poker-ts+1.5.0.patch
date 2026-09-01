@@ -1,3 +1,33 @@
+diff --git a/node_modules/poker-ts/dist/facade/poker.d.ts b/node_modules/poker-ts/dist/facade/poker.d.ts
+index 364d82f..24089a6 100644
+--- a/node_modules/poker-ts/dist/facade/poker.d.ts
++++ b/node_modules/poker-ts/dist/facade/poker.d.ts
+@@ -13,7 +13,7 @@ export default class Poker {
+         ante?: number;
+         bigBlind: number;
+         smallBlind: number;
+-    }, numSeats?: number);
++    }, numSeats?: number, shuffle?: (cards: unknown[]) => void);
+     playerToAct(): number;
+     button(): number;
+     seats(): ({
+diff --git a/node_modules/poker-ts/dist/facade/poker.js b/node_modules/poker-ts/dist/facade/poker.js
+index 5a0570b..1dc0e75 100644
+--- a/node_modules/poker-ts/dist/facade/poker.js
++++ b/node_modules/poker-ts/dist/facade/poker.js
+@@ -84,9 +84,10 @@ var stringToAutomaticActionFlag = function (automaticAction) {
+     }
+ };
+ var Poker = /** @class */ (function () {
+-    function Poker(forcedBets, numSeats) {
++    function Poker(forcedBets, numSeats, shuffle) {
+         var ante = forcedBets.ante, big = forcedBets.bigBlind, small = forcedBets.smallBlind;
+-        this._table = new table_1.default({ ante: ante, blinds: { big: big, small: small } }, numSeats);
++        // PATCHED: third argument is an optional seeded shuffle. See lib/table.js.
++        this._table = new table_1.default({ ante: ante, blinds: { big: big, small: small } }, numSeats, shuffle);
+     }
+     Poker.prototype.playerToAct = function () {
+         return this._table.playerToAct();
 diff --git a/node_modules/poker-ts/dist/lib/dealer.js b/node_modules/poker-ts/dist/lib/dealer.js
 index f51d9e3..4e914fa 100644
 --- a/node_modules/poker-ts/dist/lib/dealer.js
@@ -31,3 +61,32 @@ index f51d9e3..4e914fa 100644
                  return [seatIndex, hand_1.default.create(_this._holeCards[seatIndex], _this._communityCards)];
              });
              playerResults.sort(function (_a, _b) {
+diff --git a/node_modules/poker-ts/dist/lib/table.js b/node_modules/poker-ts/dist/lib/table.js
+index fdf337e..d963da3 100644
+--- a/node_modules/poker-ts/dist/lib/table.js
++++ b/node_modules/poker-ts/dist/lib/table.js
+@@ -39,7 +39,7 @@ var AutomaticAction;
+     AutomaticAction[AutomaticAction["ALL_IN"] = 32] = "ALL_IN";
+ })(AutomaticAction = exports.AutomaticAction || (exports.AutomaticAction = {}));
+ var Table = /** @class */ (function () {
+-    function Table(forcedBets, numSeats) {
++    function Table(forcedBets, numSeats, shuffle) {
+         if (numSeats === void 0) { numSeats = 9; }
+         this._firstTimeButton = true;
+         this._buttonSetManually = false; // has the button been set manually
+@@ -49,7 +49,14 @@ var Table = /** @class */ (function () {
+         this._forcedBets = forcedBets;
+         this._tablePlayers = new Array(numSeats).fill(null);
+         this._staged = new Array(numSeats).fill(false);
+-        this._deck = new deck_1.default();
++        // PATCHED: accept a shuffle so the deal can be seeded. poker-ts
++        // shuffles with crypto.randomInt, which takes no seed, so the same
++        // seed dealt different cards -- which breaks replaying a hand from a
++        // save, and breaks the rule that a fast-forwarded hand must resolve
++        // identically to a watched one. Deck already took a shuffleAlgorithm;
++        // Table just never passed one through. Undefined keeps the original
++        // crypto-backed default.
++        this._deck = new deck_1.default(shuffle);
+     }
+     Table.prototype.playerToAct = function () {
+         assert_1.default(this.bettingRoundInProgress(), 'Betting round must be in progress');

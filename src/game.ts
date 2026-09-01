@@ -4,6 +4,7 @@ const { Table: Poker } = pokerPkg as any
 import { decide, emitTell, type Action, type Decision } from './decide.js'
 import { handStrength, type Card } from './equity.js'
 import type { Personality } from './personality.js'
+import { seededShuffle } from './rng.js'
 
 export type Seat = {
   personality: Personality
@@ -216,6 +217,10 @@ export class Game {
     this.table = new Poker(
       { smallBlind: opening.smallBlind, bigBlind: opening.bigBlind },
       personalities.length,
+      // The deal draws from the same seeded stream as decisions and equity
+      // rollouts, so one seed determines an entire hand. Without this the
+      // cards came from crypto.randomInt and nothing was reproducible.
+      seededShuffle(this.opts.rng),
     )
     // A tournament seats everyone once and never re-seats: that is the whole
     // point. Cash mode re-seats per hand, in playHand.
