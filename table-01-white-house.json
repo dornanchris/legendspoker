@@ -1,0 +1,195 @@
+{
+  "table": "white_house",
+  "display_name": "The White House",
+  "tour_position": 1,
+  "champion": "washington",
+  "notes": {
+    "tone": "All four are HEROES in their own stories -> warm humor, from mannerism and earnestness, not cutting wit. Death is the only dry voice at this table.",
+    "difficulty": "Beginner table. Contempt is real but not cruel; these are dignified men, not bullies. The sting is being dismissed, not insulted.",
+    "dealer_plant": "The single 'the dealer arranged it' line for this table is wh_plant_01. Do NOT add a second.",
+    "washington": "Barely speaks until heads-up. His silence is the point — every line he gets lands harder because he spends most of the table saying nothing.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "Champion (Washington) + Death are voiced. Lincoln/Roosevelt/FDR are text + vocalization for now."
+  },
+
+  "respect_tiers": {
+    "0": "Contempt. The player is not addressed by any name.",
+    "1": "Grudging notice. A dismissive nickname appears.",
+    "2": "Real address. They speak TO the player, not about them.",
+    "3": "Title. Earned. Washington uses it first."
+  },
+
+  "table_intro": [
+    {
+      "id": "wh_intro_01",
+      "speaker": "death",
+      "text": "Four men who each believed the republic would not outlast them. It did. They find that less comforting than you would think.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "wh_intro_02",
+      "speaker": "death",
+      "text": "I have dealt to all of them before. Under different circumstances.",
+      "trigger": "table_open",
+      "foreshadow": "Reads as poker flavor. Actually means he was present at each of their deaths. True, as always."
+    },
+    {
+      "id": "wh_intro_03",
+      "speaker": "death",
+      "text": "They have agreed to make room for you. Not gladly.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "wh_plant_01",
+      "speaker": "roosevelt",
+      "text": "General — who let this one in?",
+      "trigger": "hand_03_start",
+      "sequence": "wh_plant_02"
+    },
+    {
+      "id": "wh_plant_02",
+      "speaker": "washington",
+      "text": "The dealer arranged it.",
+      "sequence": "wh_plant_03",
+      "note": "Washington's first words at the table. Weight comes from his silence."
+    },
+    {
+      "id": "wh_plant_03",
+      "speaker": "roosevelt",
+      "text": "...Well. That's that, then.",
+      "note": "THE SHRUG. Nobody questions the dealer. The player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "roosevelt_fdr": {
+      "relationship": "Fifth cousins. FDR married Theodore's niece Eleanor, and Theodore personally gave her away at the wedding. Real family friction — the richest pair at this table.",
+      "exchanges": [
+        [
+          { "id": "wh_tr_fdr_01a", "speaker": "roosevelt", "text": "Franklin. Still playing every hand like it's a negotiation." },
+          { "id": "wh_tr_fdr_01b", "speaker": "fdr", "text": "And you still play yours like a cavalry charge." },
+          { "id": "wh_tr_fdr_01c", "speaker": "roosevelt", "text": "It worked." },
+          { "id": "wh_tr_fdr_01d", "speaker": "fdr", "text": "Once." }
+        ],
+        [
+          { "id": "wh_tr_fdr_02a", "speaker": "roosevelt", "text": "You married my niece, Franklin. I have never forgiven the presumption." },
+          { "id": "wh_tr_fdr_02b", "speaker": "fdr", "text": "You gave her away, Theodore. At the ceremony. Personally." },
+          { "id": "wh_tr_fdr_02c", "speaker": "roosevelt", "text": "Under duress." }
+        ],
+        [
+          { "id": "wh_tr_fdr_03a", "speaker": "fdr", "text": "Cousin. You're bleeding chips." },
+          { "id": "wh_tr_fdr_03b", "speaker": "roosevelt", "text": "I am investing them." }
+        ]
+      ]
+    },
+
+    "lincoln_roosevelt": {
+      "relationship": "Patience against force. Lincoln folds and waits; Theodore cannot sit still. The comic engine of the table.",
+      "exchanges": [
+        [
+          { "id": "wh_al_tr_01a", "speaker": "roosevelt", "text": "You have folded six hands, Abraham." },
+          { "id": "wh_al_tr_01b", "speaker": "lincoln", "text": "Seven." },
+          { "id": "wh_al_tr_01c", "speaker": "roosevelt", "text": "That is not poker. That is a filibuster." },
+          { "id": "wh_al_tr_01d", "speaker": "lincoln", "text": "It has worked so far." }
+        ],
+        [
+          { "id": "wh_al_tr_02a", "speaker": "lincoln", "text": "Theodore. You do not have to win every hand." },
+          { "id": "wh_al_tr_02b", "speaker": "roosevelt", "text": "I do not have to. I choose to." },
+          { "id": "wh_al_tr_02c", "speaker": "lincoln", "text": "That is the part that worries me." }
+        ]
+      ]
+    },
+
+    "washington_table": {
+      "relationship": "They all defer to him. He rarely responds. Comedy from the size of the gap.",
+      "exchanges": [
+        [
+          { "id": "wh_gw_01a", "speaker": "roosevelt", "text": "General — tell him he plays too slowly." },
+          { "id": "wh_gw_01b", "speaker": "washington", "text": "He plays correctly." },
+          { "id": "wh_gw_01c", "speaker": "roosevelt", "text": "That is the same thing!" }
+        ],
+        [
+          { "id": "wh_gw_02a", "speaker": "fdr", "text": "The General has not spoken in an hour." },
+          { "id": "wh_gw_02b", "speaker": "lincoln", "text": "He has spoken twice. You were not listening." }
+        ]
+      ]
+    },
+
+    "lincoln_fdr": {
+      "relationship": "Two wartime presidents. Quiet mutual recognition — the table's one serious beat. Use sparingly.",
+      "exchanges": [
+        [
+          { "id": "wh_al_fdr_01a", "speaker": "fdr", "text": "You had a war as well." },
+          { "id": "wh_al_fdr_01b", "speaker": "lincoln", "text": "I had the one where we were the enemy." },
+          { "id": "wh_al_fdr_01c", "speaker": "fdr", "text": "...Yes. I would take mine." }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "wh_p0_01", "speaker": "roosevelt", "text": "Sit down, tenderfoot. Try not to embarrass yourself." },
+      { "id": "wh_p0_02", "speaker": "fdr", "text": "Don't trouble yourself. Nobody remembers who came fourth." },
+      { "id": "wh_p0_03", "speaker": "lincoln", "text": "You have the look of a man who has read about poker." },
+      { "id": "wh_p0_04", "speaker": "roosevelt", "text": "We are not here to teach. Watch, or leave." },
+      { "id": "wh_p0_05", "speaker": "washington", "text": "[does not acknowledge the player]", "type": "stage_direction" }
+    ],
+    "tier_1": [
+      { "id": "wh_p1_01", "speaker": "roosevelt", "text": "Huh. The tenderfoot has teeth." },
+      { "id": "wh_p1_02", "speaker": "fdr", "text": "You are harder to read than you were an hour ago." },
+      { "id": "wh_p1_03", "speaker": "lincoln", "text": "You are learning. That is more than most manage here." },
+      { "id": "wh_p1_04", "speaker": "washington", "text": "[looks at the player for the first time]", "type": "stage_direction" }
+    ],
+    "tier_2": [
+      { "id": "wh_p2_01", "speaker": "roosevelt", "text": "Very well. You have earned the chair. Now earn the pot." },
+      { "id": "wh_p2_02", "speaker": "fdr", "text": "I have stopped underestimating you. Take that as the compliment it is." },
+      { "id": "wh_p2_03", "speaker": "lincoln", "text": "I have watched a great many men bluff. You are getting good at it." },
+      { "id": "wh_p2_04", "speaker": "washington", "text": "You play well." }
+    ],
+    "tier_3": [
+      { "id": "wh_p3_01", "speaker": "washington", "text": "Challenger.", "note": "First time anyone gives the player a title. Washington uses it first." },
+      { "id": "wh_p3_02", "speaker": "roosevelt", "text": "By God, I hope you take the whole tour." },
+      {
+        "id": "wh_p3_03",
+        "speaker": "fdr",
+        "text": "When you reach the last table — and you will — remember they are only men. Mostly.",
+        "foreshadow": "'Mostly.' Reads as a joke about monsters ahead. Isn't."
+      },
+      {
+        "id": "wh_p3_04",
+        "speaker": "lincoln",
+        "text": "Whatever waits at the end of your road, I suspect it has been waiting a long while.",
+        "foreshadow": "Sounds like a homily. Is a description of the dealer sitting three feet away."
+      }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "wh_death_01", "speaker": "death", "text": "Take your time. I have nothing but.", "trigger": "player_thinking_long" },
+    { "id": "wh_death_02", "speaker": "death", "text": "Everyone gets the same fifty-two.", "trigger": "player_bad_beat" },
+    { "id": "wh_death_03", "speaker": "death", "text": "The cards do not care who you were.", "trigger": "champion_loses_pot" },
+    {
+      "id": "wh_death_04",
+      "speaker": "death",
+      "text": "They all played like this at the end.",
+      "trigger": "first_elimination",
+      "foreshadow": "Reads as 'desperate players play alike.' Means what it says."
+    }
+  ],
+
+  "champion_headsup": [
+    { "id": "wh_gw_hu_01", "speaker": "washington", "text": "Now we begin.", "trigger": "headsup_start" },
+    { "id": "wh_gw_hu_02", "speaker": "washington", "text": "I have had few opponents. Fewer I remembered." },
+    { "id": "wh_gw_hu_03", "speaker": "washington", "text": "Discipline is not caution. You will learn the difference or you will not." },
+    { "id": "wh_gw_hu_04", "speaker": "washington", "text": "Good. Again.", "trigger": "player_wins_pot" }
+  ],
+
+  "champion_defeat": [
+    { "id": "wh_gw_end_01", "speaker": "washington", "text": "The chair is yours. I never held one I did not intend to give up." },
+    { "id": "wh_gw_end_02", "speaker": "death", "text": "One. Seven remain. They will have heard by the time you arrive.", "foreshadow": "Sets up per-table respect propagation AND implies Death travels ahead of you." }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "source": "dracula_arms.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "dracula_arms_01.png",
+      "label": "",
+      "x": 152,
+      "y": 6,
+      "w": 328,
+      "h": 359,
+      "pivot": [
+        164.0,
+        179.5
+      ],
+      "area": 56067
+    },
+    {
+      "index": 2,
+      "file": "dracula_arms_02.png",
+      "label": "",
+      "x": 434,
+      "y": 1,
+      "w": 230,
+      "h": 351,
+      "pivot": [
+        115.0,
+        175.5
+      ],
+      "area": 41751
+    },
+    {
+      "index": 3,
+      "file": "dracula_arms_03.png",
+      "label": "",
+      "x": 872,
+      "y": 1,
+      "w": 230,
+      "h": 351,
+      "pivot": [
+        115.0,
+        175.5
+      ],
+      "area": 41940
+    },
+    {
+      "index": 4,
+      "file": "dracula_arms_04.png",
+      "label": "",
+      "x": 1057,
+      "y": 6,
+      "w": 328,
+      "h": 360,
+      "pivot": [
+        164.0,
+        180.0
+      ],
+      "area": 56079
+    },
+    {
+      "index": 5,
+      "file": "dracula_arms_05.png",
+      "label": "",
+      "x": 185,
+      "y": 376,
+      "w": 225,
+      "h": 291,
+      "pivot": [
+        112.5,
+        145.5
+      ],
+      "area": 34997
+    },
+    {
+      "index": 6,
+      "file": "dracula_arms_06.png",
+      "label": "",
+      "x": 467,
+      "y": 357,
+      "w": 215,
+      "h": 300,
+      "pivot": [
+        107.5,
+        150.0
+      ],
+      "area": 35551
+    },
+    {
+      "index": 7,
+      "file": "dracula_arms_07.png",
+      "label": "",
+      "x": 839,
+      "y": 362,
+      "w": 235,
+      "h": 288,
+      "pivot": [
+        117.5,
+        144.0
+      ],
+      "area": 34347
+    },
+    {
+      "index": 8,
+      "file": "dracula_arms_08.png",
+      "label": "",
+      "x": 1120,
+      "y": 372,
+      "w": 234,
+      "h": 296,
+      "pivot": [
+        117.0,
+        148.0
+      ],
+      "area": 35798
+    },
+    {
+      "index": 9,
+      "file": "dracula_arms_09.png",
+      "label": "",
+      "x": 28,
+      "y": 702,
+      "w": 193,
+      "h": 297,
+      "pivot": [
+        96.5,
+        148.5
+      ],
+      "area": 30437
+    },
+    {
+      "index": 10,
+      "file": "dracula_arms_10.png",
+      "label": "",
+      "x": 234,
+      "y": 729,
+      "w": 200,
+      "h": 248,
+      "pivot": [
+        100.0,
+        124.0
+      ],
+      "area": 27461
+    },
+    {
+      "index": 11,
+      "file": "dracula_arms_11.png",
+      "label": "",
+      "x": 419,
+      "y": 717,
+      "w": 239,
+      "h": 150,
+      "pivot": [
+        119.5,
+        75.0
+      ],
+      "area": 21600
+    },
+    {
+      "index": 12,
+      "file": "dracula_arms_12.png",
+      "label": "",
+      "x": 681,
+      "y": 741,
+      "w": 151,
+      "h": 221,
+      "pivot": [
+        75.5,
+        110.5
+      ],
+      "area": 24713
+    },
+    {
+      "index": 13,
+      "file": "dracula_arms_13.png",
+      "label": "",
+      "x": 875,
+      "y": 662,
+      "w": 186,
+      "h": 344,
+      "pivot": [
+        93.0,
+        172.0
+      ],
+      "area": 36590
+    },
+    {
+      "index": 14,
+      "file": "dracula_arms_14.png",
+      "label": "",
+      "x": 1069,
+      "y": 686,
+      "w": 246,
+      "h": 257,
+      "pivot": [
+        123.0,
+        128.5
+      ],
+      "area": 29585
+    },
+    {
+      "index": 15,
+      "file": "dracula_arms_15.png",
+      "label": "",
+      "x": 1358,
+      "y": 689,
+      "w": 159,
+      "h": 282,
+      "pivot": [
+        79.5,
+        141.0
+      ],
+      "area": 27432
+    }
+  ]
+}
