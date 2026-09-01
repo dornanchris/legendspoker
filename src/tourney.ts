@@ -1,5 +1,6 @@
 import { Game, DEFAULT_LEVELS } from './game.js'
 import { CAST } from './personality.js'
+import { mulberry32 } from './rng.js'
 
 /**
  * PHASE 3a EXIT TEST
@@ -16,25 +17,15 @@ import { CAST } from './personality.js'
  * A table that never ends is not a slow table, it is a broken one, so the
  * stall count is the number that actually gates this phase.
  *
- * Note on seeds: the rng below drives decisions and equity rollouts, but
- * poker-ts deals from crypto.randomInt and takes no seed, so runs are not
- * reproducible. That is fine here -- "every table ends" is a claim about
- * random deals, and fixed deals would prove less, not more.
+ * Note on seeds: each table is seeded, so a stall can be reproduced exactly
+ * by re-running with the same seed rather than hunted for. The seeds differ
+ * per table, so "every table ends" is still a claim about varied deals.
  */
 
 const TABLES = Number(process.argv[2] ?? 100)
 const HAND_CAP = 2000 // far past any sane table; only a stall reaches it
 const HANDS_PER_LEVEL = 25
 
-function mulberry32(seed: number) {
-  return () => {
-    seed |= 0
-    seed = (seed + 0x6d2b79f5) | 0
-    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed)
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
-}
 
 const lengths: number[] = []
 const finishes = new Map<string, number[]>()

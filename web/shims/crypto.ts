@@ -5,8 +5,10 @@
  * Crypto rather than Math.random, and rejects out-of-range samples instead of
  * taking a modulus, which would bias low values.
  *
- * Note this does NOT make deals reproducible: like node's randomInt, there is
- * no seed. Seeding the deal is a separate known gap (see CLAUDE.md).
+ * Still required even though the deal is now seeded: poker-ts's util/array.js
+ * does `require("crypto")` at module load, so the import has to resolve in a
+ * browser whether or not the default shuffle is ever called. The game injects
+ * its own seeded shuffle and never reaches randomInt below.
  */
 export function randomInt(max: number): number {
   if (max <= 0) throw new RangeError('max must be positive')
