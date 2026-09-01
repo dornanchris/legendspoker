@@ -39,6 +39,7 @@ for (let table = 0; table < TABLES; table++) {
     mode: 'tournament',
     buyIn: 2000,
     rollouts: 60,
+    seed: 20260901 + table,
     rng: mulberry32(20260901 + table),
     handsPerLevel: HANDS_PER_LEVEL,
   })

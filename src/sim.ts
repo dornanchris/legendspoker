@@ -27,6 +27,7 @@ const game = new Game(CAST, {
   smallBlind: BB / 2,
   buyIn: 100 * BB,
   rollouts: 60,
+  seed: 20260804,
   rng: mulberry32(20260804),
 })
 

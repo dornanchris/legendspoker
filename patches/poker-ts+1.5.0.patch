@@ -61,6 +61,46 @@ index f51d9e3..4e914fa 100644
                  return [seatIndex, hand_1.default.create(_this._holeCards[seatIndex], _this._communityCards)];
              });
              playerResults.sort(function (_a, _b) {
+diff --git a/node_modules/poker-ts/dist/lib/deck.js b/node_modules/poker-ts/dist/lib/deck.js
+index cb2d6f1..d586fa3 100644
+--- a/node_modules/poker-ts/dist/lib/deck.js
++++ b/node_modules/poker-ts/dist/lib/deck.js
+@@ -54,12 +54,35 @@ var Deck = /** @class */ (function (_super) {
+                 _this[index++] = new card_1.default(rank, suit);
+             }
+         }
++        // PATCHED: keep the canonical order the deck was built in. Built by
++        // hand rather than with slice(), which would go through
++        // ArraySpeciesCreate and re-enter this constructor.
++        var pristine = [];
++        for (var i = 0; i < 52; i++) {
++            pristine.push(_this[i]);
++        }
++        _this._pristine = pristine;
+         _this.shuffle = shuffleAlgorithm.bind(null, _this);
+         _this._size = 52;
+         _this.shuffle();
+         return _this;
+     }
+     Deck.prototype.fillAndShuffle = function () {
++        // PATCHED: refill in the canonical order before shuffling.
++        //
++        // The original only reset _size and re-shuffled whatever order the
++        // previous hand left behind, which makes the deck's contents
++        // cross-hand state: the same shuffle algorithm at the same RNG
++        // position deals different cards depending on how many hands came
++        // before. That defeats resuming a saved game -- a checkpoint would
++        // have to carry all 52 cards to reproduce a single deal.
++        //
++        // Fisher-Yates gives a uniform permutation from ANY starting order,
++        // so shuffling a fresh ordered deck is not a weaker shuffle; it just
++        // makes the result a function of the RNG alone.
++        for (var i = 0; i < 52; i++) {
++            this[i] = this._pristine[i];
++        }
+         this._size = 52;
+         this.shuffle();
+     };
 diff --git a/node_modules/poker-ts/dist/lib/table.js b/node_modules/poker-ts/dist/lib/table.js
 index fdf337e..d963da3 100644
 --- a/node_modules/poker-ts/dist/lib/table.js

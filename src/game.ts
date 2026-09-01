@@ -4,7 +4,8 @@ const { Table: Poker } = pokerPkg as any
 import { decide, emitTell, type Action, type Decision } from './decide.js'
 import { handStrength, type Card } from './equity.js'
 import type { Personality } from './personality.js'
-import { seededShuffle } from './rng.js'
+import { mulberry32, seededShuffle, type SeededRng } from './rng.js'
+import { SAVE_VERSION, type Checkpoint, type SaveGame } from './save.js'
 
 export type Seat = {
   personality: Personality
@@ -147,6 +148,12 @@ export type GameOptions = {
   buyIn: number
   rollouts: number
   rng: () => number
+  /**
+   * Recorded in a save so a bug report can quote a seed that reproduces the
+   * whole game from hand one. The stream itself resumes from rng.state();
+   * this is provenance, not mechanism.
+   */
+  seed: number
   onEvent?: (e: HandEvent) => void
 
   /**
@@ -190,8 +197,42 @@ export class Game {
   private opts: GameOptions
   private handsPlayed = 0
   private level = 0
+
+  /**
+   * The live generator. Held behind `draw` rather than used directly so that
+   * load() can rewind the stream AFTER construction: building a poker-ts
+   * Table shuffles a deck, which burns draws, and a restored game has to
+   * start its first hand at exactly the position the checkpoint recorded.
+   */
+  private rng: () => number = Math.random
+  private draw = (): number => this.rng()
   /** Seat indexes in bust order, first out first. */
   private bustOrder: number[] = []
+
+  /**
+   * The button poker-ts used for the last hand, or -1 before the first.
+   * Recorded because Table.button() asserts a hand is in progress, so it
+   * cannot be read at the moment a save is written between hands.
+   */
+  private lastButton = -1
+  /**
+   * Set by load(): the button for the FIRST hand after a restore, which
+   * poker-ts would otherwise derive from internal state we did not restore.
+   * Cleared after that hand starts, so normal play goes back to letting
+   * poker-ts advance the button itself.
+   */
+  private restoredButton: number | null = null
+
+  /** State at the start of the hand in progress. See src/save.ts. */
+  private checkpoint: Checkpoint | null = null
+  /** The human's decisions in the hand in progress, in order. */
+  private journal: Decision[] = []
+  /** Decisions from a loaded save, consumed by the human seat before it is asked. */
+  private replayQueue: Decision[] = []
+  /** True from a mid-hand restore until the human is asked for a live decision. */
+  private replaying = false
+  /** The campaign layer's state. Carried through a save; never read here. */
+  private tour: Record<string, unknown> | undefined
 
   constructor(personalities: Personality[], opts: Partial<GameOptions> = {}) {
     this.opts = {
@@ -200,11 +241,13 @@ export class Game {
       buyIn: 2000,
       rollouts: 60,
       rng: Math.random,
+      seed: 0,
       mode: 'cash',
       levels: DEFAULT_LEVELS,
       handsPerLevel: 25,
       ...opts,
     }
+    this.rng = this.opts.rng
     this.seats = personalities.map((p) => ({
       personality: p,
       tilt: 0,
@@ -220,7 +263,7 @@ export class Game {
       // The deal draws from the same seeded stream as decisions and equity
       // rollouts, so one seed determines an entire hand. Without this the
       // cards came from crypto.randomInt and nothing was reproducible.
-      seededShuffle(this.opts.rng),
+      seededShuffle(this.draw),
     )
     // A tournament seats everyone once and never re-seats: that is the whole
     // point. Cash mode re-seats per hand, in playHand.
@@ -270,6 +313,159 @@ export class Game {
   }
 
   /**
+   * True while a restored hand is still answering the human's turns out of
+   * the journal. The UI uses it to redraw the replayed part of the hand
+   * instantly instead of at playing speed -- presentation only, as ever.
+   */
+  isReplaying(): boolean {
+    return this.replaying
+  }
+
+  /**
+   * The campaign layer's state -- respect, dialogue already used. Stored and
+   * handed back verbatim; nothing in here reads it. Phase 5 owns its shape.
+   */
+  setTour(tour: Record<string, unknown> | undefined): void {
+    this.tour = tour
+  }
+
+  getTour(): Record<string, unknown> | undefined {
+    return this.tour
+  }
+
+  // ------------------------------------------------------------------ saving
+
+  /**
+   * A save is the checkpoint at the start of the current hand plus the
+   * human's decisions since. See src/save.ts for why it is not a snapshot of
+   * the table.
+   *
+   * Callable mid-hand -- from inside onHumanTurn, which is when a player
+   * actually reaches for it.
+   */
+  save(): SaveGame {
+    const inHand: boolean = this.table.isHandInProgress()
+    const checkpoint = inHand && this.checkpoint ? this.checkpoint : this.captureCheckpoint()
+    return {
+      version: SAVE_VERSION,
+      savedAt: new Date().toISOString(),
+      seed: this.opts.seed,
+      cast: this.seats.map((s) => s.personality.id),
+      humanSeat: this.opts.humanSeat ?? null,
+      mode: this.opts.mode,
+      buyIn: this.opts.buyIn,
+      rollouts: this.opts.rollouts,
+      smallBlind: this.opts.smallBlind,
+      bigBlind: this.opts.bigBlind,
+      handsPerLevel: this.opts.handsPerLevel,
+      levels: this.opts.levels.map((l) => ({ ...l })),
+      checkpoint: copyCheckpoint(checkpoint),
+      journal: inHand ? this.journal.map((d) => ({ ...d })) : null,
+      tour: this.tour,
+    }
+  }
+
+  /**
+   * Rebuilds a game from a save. The returned Game is positioned at the START
+   * of the saved hand with the human's journalled turns queued: the first
+   * playHand() call replays them and then hands control back at exactly the
+   * decision the player was looking at.
+   *
+   * Characters come from `personalities` rather than the save, because quirks
+   * are functions and functions do not survive JSON. The save carries ids;
+   * this binds them back to code.
+   */
+  static load(
+    save: SaveGame,
+    personalities: Personality[],
+    opts: Pick<GameOptions, 'onEvent' | 'onHumanTurn'> = {},
+  ): Game {
+    const byId = new Map(personalities.map((p) => [p.id, p]))
+    const cast = save.cast.map((id) => {
+      const p = byId.get(id)
+      if (!p) throw new Error(`save names character "${id}", which this build does not have`)
+      return p
+    })
+
+    const c = save.checkpoint
+    const game = new Game(cast, {
+      mode: save.mode,
+      buyIn: save.buyIn,
+      rollouts: save.rollouts,
+      smallBlind: save.smallBlind,
+      bigBlind: save.bigBlind,
+      handsPerLevel: save.handsPerLevel,
+      levels: save.levels,
+      seed: save.seed,
+      // Resuming the stream, not restarting it: mulberry32's state IS its
+      // seed, so handing the saved state back continues where it left off.
+      rng: mulberry32(c.rngState),
+      humanSeat: save.humanSeat ?? undefined,
+      onEvent: opts.onEvent,
+      onHumanTurn: opts.onHumanTurn,
+    })
+    // Construction shuffled a deck and so moved the stream on. Rewind it: the
+    // first restored hand must deal from the checkpoint's position, not from
+    // wherever building the table left off.
+    game.rng = mulberry32(c.rngState)
+
+    game.handsPlayed = c.handsPlayed
+    game.level = c.level
+    game.button = c.button
+    game.lastButton = c.lastButton
+    game.bustOrder = [...c.bustOrder]
+    game.tour = save.tour
+    for (let i = 0; i < game.seats.length; i++) {
+      game.seats[i].stats = { ...c.stats[i] }
+      game.seats[i].tilt = c.tilt[i]
+    }
+
+    if (save.mode === 'tournament') {
+      // The constructor seats everyone at the buy-in. A restored table has its
+      // own stacks and its own casualties, so re-seat from the checkpoint.
+      for (let i = 0; i < cast.length; i++) {
+        if (game.table.seats()[i]) game.table.standUp(i)
+        if (c.stacks[i] > 0) game.table.sitDown(i, c.stacks[i])
+      }
+      game.restoredButton = nextButtonSeat(c.lastButton, c.stacks)
+      // applyBlindLevel only acts on a CHANGE of level, so a restore into the
+      // middle of a schedule would otherwise keep playing level 0 blinds.
+      const level = save.levels[Math.min(c.level, save.levels.length - 1)]
+      game.table.setForcedBets({
+        smallBlind: level.smallBlind,
+        bigBlind: level.bigBlind,
+        ante: level.ante,
+      })
+    }
+    // Cash mode re-seats every player from scratch each hand, so its stacks
+    // are not restored: the buy-in reset is the whole point of that mode.
+
+    game.replayQueue = save.journal ? save.journal.map((d) => ({ ...d })) : []
+    game.replaying = game.replayQueue.length > 0
+    return game
+  }
+
+  private captureCheckpoint(): Checkpoint {
+    const rng = this.rng as Partial<SeededRng>
+    if (typeof rng.state !== 'function') {
+      throw new Error(
+        'cannot save a game whose RNG is not seeded -- construct Game with { rng: mulberry32(seed), seed }',
+      )
+    }
+    return {
+      rngState: rng.state(),
+      handsPlayed: this.handsPlayed,
+      level: this.level,
+      button: this.button,
+      lastButton: this.lastButton,
+      stacks: this.stacks(),
+      tilt: this.seats.map((s) => s.tilt),
+      stats: this.seats.map((s) => ({ ...s.stats })),
+      bustOrder: [...this.bustOrder],
+    }
+  }
+
+  /**
    * Chips still BEHIND each player -- not yet pushed in. Distinct from
    * stacks(), which reports totalChips (behind + current bet). Between hands
    * the two agree; mid-hand they do not, and mixing them up double-counts the
@@ -300,9 +496,16 @@ export class Game {
    * win-rate numbers clean and comparable.
    */
   async playHand(): Promise<void> {
-    const { rng, buyIn, rollouts, onEvent, mode, humanSeat, onHumanTurn } = this.opts
+    const { buyIn, rollouts, onEvent, mode, humanSeat, onHumanTurn } = this.opts
     const tournament = mode === 'tournament'
     if (tournament && this.isComplete()) return
+
+    // Taken BEFORE anything mutates -- before the blind level advances, before
+    // players are re-seated, before the deal. A save written mid-hand restores
+    // to here and replays the hand out of the journal, so this has to be the
+    // state the hand actually began from, not an approximation of it.
+    this.checkpoint = this.captureCheckpoint()
+    this.journal = []
 
     const bigBlind = this.bigBlind()
 
@@ -321,14 +524,24 @@ export class Game {
     const before = this.stacks()
 
     if (tournament) {
-      // No seat argument: poker-ts then advances the button itself, skipping
-      // the seats of players who have busted. Doing it by hand would land the
-      // button on an empty chair.
-      this.table.startHand()
+      if (this.restoredButton !== null) {
+        // First hand after a restore. poker-ts advances the button from
+        // internal state a save does not carry, so the seat is named
+        // explicitly once and then never again.
+        this.table.startHand(this.restoredButton)
+        this.restoredButton = null
+      } else {
+        // No seat argument: poker-ts then advances the button itself, skipping
+        // the seats of players who have busted. Doing it by hand would land the
+        // button on an empty chair.
+        this.table.startHand()
+      }
     } else {
       this.table.startHand(this.button)
       this.button = (this.button + 1) % this.seats.length
     }
+    // Only readable while a hand is in progress, which is why it is kept.
+    this.lastButton = this.table.button()
     this.handsPlayed++
 
     // Cache equity per (seat, street) — recomputing it on every action is
@@ -392,7 +605,7 @@ export class Game {
               board,
               Math.max(1, this.table.numActivePlayers() - 1),
               rollouts,
-              rng,
+              this.draw,
             )
             equityCache.set(key, equity)
           } else {
@@ -408,22 +621,33 @@ export class Game {
 
         let decision: Decision
         if (isHuman) {
-          decision = await onHumanTurn!({
-            seat,
-            hole,
-            stacks: this.stacksBehind(),
-            board,
-            pot,
-            toCall,
-            stack: seatState[seat].stack,
-            bigBlind,
-            street: street as any,
-            legal,
-            minRaise,
-            maxRaise,
-          })
-          // Never trust the UI: a stale button or a hand-edited slider must not
-          // be able to put the table into an illegal state.
+          // A restored hand answers the human's earlier turns from the journal
+          // rather than asking again. The AI seats are not journalled: they are
+          // deterministic given the same RNG stream, so replaying them IS the
+          // recording.
+          const replayed = this.replayQueue.shift()
+          if (replayed) {
+            decision = replayed
+          } else {
+            this.replaying = false
+            decision = await onHumanTurn!({
+              seat,
+              hole,
+              stacks: this.stacksBehind(),
+              board,
+              pot,
+              toCall,
+              stack: seatState[seat].stack,
+              bigBlind,
+              street: street as any,
+              legal,
+              minRaise,
+              maxRaise,
+            })
+          }
+          // Never trust the UI -- or a hand-edited save file: a stale button or
+          // a tampered journal must not be able to put the table into an
+          // illegal state.
           if (!legal.includes(decision.action)) {
             throw new Error(
               `illegal action from human seat ${seat}: ${decision.action} (legal: ${legal.join(', ')})`,
@@ -432,6 +656,9 @@ export class Game {
           if (decision.betSize !== undefined) {
             decision.betSize = Math.max(minRaise, Math.min(maxRaise, Math.round(decision.betSize)))
           }
+          // Journalled AFTER clamping, so a replay applies the same number the
+          // table applied rather than re-deriving it.
+          this.journal.push(decision)
         } else {
           decision = decide({
             personality: s.personality,
@@ -448,7 +675,7 @@ export class Game {
             numOpponents: Math.max(1, this.table.numActivePlayers() - 1),
             tilt: s.tilt,
             opponentFoldRate: this.tableFoldRate(seat),
-            rng,
+            rng: this.draw,
           })
 
           if (onEvent) {
@@ -457,7 +684,7 @@ export class Game {
             const tell = emitTell(
               s.personality,
               { equity, decision, tilt: s.tilt },
-              rng,
+              this.draw,
             )
             if (tell) onEvent({ type: 'tell', seat, signal: tell.signal })
           }
@@ -614,4 +841,32 @@ export class Game {
     }
     return faced < 20 ? 0.4 : folded / faced
   }
+}
+
+const copyCheckpoint = (c: Checkpoint): Checkpoint => ({
+  ...c,
+  stacks: [...c.stacks],
+  tilt: [...c.tilt],
+  stats: c.stats.map((s) => ({ ...s })),
+  bustOrder: [...c.bustOrder],
+})
+
+/**
+ * The seat the button lands on for the next hand, given the seat it was on
+ * last and who still has chips.
+ *
+ * This mirrors poker-ts's own incrementButton: next occupied seat clockwise,
+ * wrapping. It is duplicated rather than called because Table only exposes
+ * the button mid-hand and only advances it from state a save does not carry.
+ * `npm run check:save` is what keeps the two from drifting -- a wrong button
+ * moves the blinds, and the replay stops matching immediately.
+ *
+ * Returns null when no hand has been played yet, which is poker-ts's own
+ * "first hand" case: it picks the first occupied seat itself.
+ */
+function nextButtonSeat(lastButton: number, stacks: number[]): number | null {
+  if (lastButton < 0) return null
+  for (let i = lastButton + 1; i < stacks.length; i++) if (stacks[i] > 0) return i
+  for (let i = 0; i <= lastButton; i++) if (stacks[i] > 0) return i
+  return null
 }

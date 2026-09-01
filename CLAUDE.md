@@ -79,10 +79,12 @@ src/
   decide.ts       THE shared decision function. Read this first.
   game.ts         loop over poker-ts; stats (VPIP/PFR/AF), tilt, events
   rng.ts          the one seeded RNG; state() is what makes saves resumable
+  save.ts         THE SAVE SCHEMA: checkpoint + journal. Read its header.
   sim.ts          `npm run sim [hands]` — the balance/exit test (cash)
   play.ts         `npm run play [hands]` — watchable CLI with tells
   tourney.ts      `npm run tourney [tables]` — the Phase 3a exit test
   pot-conservation.ts `npm run check:pots` — guards the poker-ts pot patch
+  save-fidelity.ts    `npm run check:save` — guards the save schema
 data/
   dialogue/       one file per table; schema is established and working
 web/
@@ -136,8 +138,19 @@ adaptive, tight-passive trapper, and calling station. That is the whole
 data-driven personality thesis confirmed by a person rather than a stats
 table, and it is what makes character #33 nearly free.
 
-**Not started:** Rive integration, dialogue system, audio, persistence, the
-platform shell (Phase 4).
+**Phase 4 steps 1 and 2 are done: the deal is seeded and the game saves.**
+One seed determines cards, decisions and rollouts together. A save is a
+CHECKPOINT (the state at the start of the hand in progress, RNG state
+included) plus a JOURNAL (the human's decisions since), so restoring replays
+at most one hand — ~16ms — and lands on exactly the decision the player was
+looking at. `npm run check:save` is the invariant: save mid-hand, restore,
+play the table out, and every event must match the run that was never
+interrupted. 80 saves restored across 5672 replayed hands, zero mismatches.
+The throwaway web table has a Save button and resumes from localStorage, so
+the schema can be tried by hand as well as by test.
+
+**Not started:** Rive integration, dialogue system, audio, the platform shell
+(Vite/React/Capacitor — Phase 4 steps 3 and 4).
 
 ## KNOWN GAPS AND SIMPLIFICATIONS
 
@@ -155,8 +168,9 @@ platform shell (Phase 4).
   uneven stacks. Fix lives in `patches/poker-ts+1.5.0.patch`, applied by
   `patch-package` on `npm install`; `npm run check:pots` is the regression
   guard. 1.5.0 is the latest release, so there is no upgrade to take instead.
-  **If you ever bump poker-ts, re-run `npm run check:pots`** — the patch is
-  pinned to 1.5.0 and will refuse to apply to a different version.
+  **If you ever bump poker-ts, re-run `npm run check:pots` AND
+  `npm run check:save`** — the patch is pinned to 1.5.0 and will refuse to
+  apply to a different version, and it now carries three fixes, not one.
 - **Deals are reproducible — FIXED, same patch file.** poker-ts shuffled with
   `crypto.randomInt` and `Table` hardcoded its own `Deck`, so nothing was
   seedable. `Deck` already accepted a shuffle; `Table` just never passed one
@@ -165,14 +179,29 @@ platform shell (Phase 4).
   cards, decisions and rollouts together — a 298-event transcript replays
   byte-identical. This is what non-negotiable #6 rested on, and what makes
   replay-from-save possible.
+- **The deck carried its order between hands — FIXED, same patch file.**
+  `Deck.fillAndShuffle` only reset the size counter and re-shuffled whatever
+  order the previous hand left behind, so the deck's contents were cross-hand
+  state: the same RNG position dealt different cards depending on how many
+  hands had been played before it. A checkpoint would have had to carry all
+  52 cards to reproduce one deal. The patch keeps the canonical order the
+  deck was built in and refills from it before shuffling — Fisher-Yates
+  gives a uniform permutation from any starting order, so this is not a
+  weaker shuffle, it just makes the result a function of the RNG alone.
 - `src/rng.ts` is the only RNG. `mulberry32(seed).state()` returns the whole
   generator state as one integer, so a save can resume the exact stream —
   without that, a restored game deals different cards and the save is a lie.
 - Cash mode still resets stacks to the buy-in each hand. That is deliberate
   and must stay: it is what keeps the tuning numbers comparable.
-- **Save/resume must capture MID-HAND state** — stacks, blind level, button,
-  whose turn, pot, board, tilt values, respect tier, dialogue already used.
-  Build the schema in Phase 4; retrofitting is much worse.
+- **Save/resume captures MID-HAND state — BUILT, see `src/save.ts`.** Whose
+  turn, pot and board are not stored: they are reproduced by replaying the
+  hand from its checkpoint, which is why the schema does not have to
+  serialise poker-ts's private deck and pot state. Respect tier and dialogue
+  already used have a slot (`tour`) that nothing reads yet — Phase 5 defines
+  its shape without having to retrofit the container.
+  **Anything that is game state and not derivable from the checkpoint has to
+  be added to the schema**, and `npm run check:save` is what catches it if it
+  isn't.
 - Monte Carlo equity is ±6% at 60 rollouts.
 - `MOTION-SPEC.md` layer 3 (per-character vocabulary) is an empty template.
   No character has an authored tell cluster yet.
@@ -203,6 +232,18 @@ platform shell (Phase 4).
   runs the board out internally and no further street fires, so a display
   driven only by those events freezes on the flop. The showdown event carries
   the final board for exactly this reason.
+- **`Table.button()` asserts a hand is in progress**, so it cannot be read at
+  the moment a save is written between hands. `Game` records it during the
+  hand instead, and derives the next one on restore.
+- **A game built without a seeded RNG cannot be saved** — there is no stream
+  position to write down. `Game.save()` throws rather than write a save that
+  would deal different cards on resume. Construct with
+  `{ seed, rng: mulberry32(seed) }`.
+- **Nothing on the human's turn may draw from the game RNG.** A restored hand
+  answers earlier human turns from the journal instead of asking again, so
+  anything that consumed the shared stream there would leave the replay at a
+  different generator position. This is why the scripted player in
+  `save-fidelity.ts` is a pure function of what it can see.
 - Any new chip-handling code needs a conservation check. `tourney.ts` has one,
   and it is the only reason the poker-ts pot bug was found rather than shipped.
 - `patches/` is load-bearing. `npm install` runs `patch-package` via
@@ -224,13 +265,13 @@ unlock on first tap, safe-area handling, and the save schema.
 sound on a button press.
 
 Order within the phase, cheapest-risk first:
-1. **Seedable deck.** Still the open non-negotiable (#6) and it blocks replay
-   from a save, so it comes before the save schema rather than after. The
-   `patches/` mechanism already exists; this also removes the Web Crypto shim.
-2. **Save schema, capturing MID-HAND state.** The expensive-to-retrofit piece.
-   With a seeded deck it can be tested hard: save mid-hand, restore, play on,
-   and the hand must resolve identically.
-3. Vite + React, then Capacitor scaffolding.
+1. ~~**Seedable deck.**~~ DONE. The `patches/` mechanism carried it; it did
+   NOT remove the Web Crypto shim (see gotchas).
+2. ~~**Save schema, capturing MID-HAND state.**~~ DONE, `src/save.ts`, with
+   `npm run check:save` proving the hand resolves identically across a save.
+3. **Vite + React, then Capacitor scaffolding.** Next. The presentation queue
+   in `web/app.ts` and the save schema are the two pieces that survive the
+   rewrite; the DOM rendering is not.
 
 **Dev machine is Windows, so iOS is not available** — Capacitor's iOS target
 needs a Mac with Xcode plus $99/yr. Android is $25 one-off and works from

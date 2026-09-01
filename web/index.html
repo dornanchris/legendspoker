@@ -34,6 +34,12 @@
   <section id="controls" aria-label="Your actions">
     <div id="prompt">Waiting…</div>
     <div id="buttons"></div>
+    <!-- Save is always available, mid-hand included: that is the case the
+         schema exists for, so it is the case worth being able to try. -->
+    <div id="save-row">
+      <button id="save" type="button" class="ghost">Save</button>
+      <span id="save-note"></span>
+    </div>
     <div id="raise-row" hidden>
       <input type="range" id="raise-slider" aria-label="Bet size">
       <output id="raise-value">0</output>

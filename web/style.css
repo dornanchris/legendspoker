@@ -140,6 +140,8 @@ body {
 #controls { display: grid; gap: 6px; justify-items: center; min-height: 76px; }
 #prompt { color: var(--dim); font-size: 13px; min-height: 18px; }
 #buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+#save-row { display: flex; gap: 8px; align-items: center; font-size: 12px; opacity: 0.75; }
+#save-note { min-width: 120px; }
 
 button {
   font: inherit;

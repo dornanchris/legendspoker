@@ -2,6 +2,8 @@ import { Game, type HandEvent, type TurnView } from '../src/game.js'
 import { CAST, HUMAN } from '../src/personality.js'
 import type { Action, Decision } from '../src/decide.js'
 import type { Card } from '../src/equity.js'
+import { mulberry32 } from '../src/rng.js'
+import { fromJson, toJson, type SaveGame } from '../src/save.js'
 
 /**
  * PHASE 3b — human seat + throwaway DOM table. No art, no Rive, no 3D.
@@ -20,6 +22,28 @@ const HUMAN_SEAT = 0
 const SEATS = [HUMAN, ...CAST]
 const BUY_IN = 2000
 
+const params = new URLSearchParams(location.search)
+/**
+ * One slot, in localStorage. A real save UI is Phase 4's job; this exists so
+ * the schema can be exercised by hand -- save mid-hand, close the tab, come
+ * back -- which is the only way to find out whether it holds up.
+ */
+const SAVE_KEY = 'legends.save'
+
+function readSave(): SaveGame | null {
+  if (params.has('new')) return null
+  const raw = localStorage.getItem(SAVE_KEY)
+  if (!raw) return null
+  try {
+    return fromJson(raw)
+  } catch (e) {
+    // A save this build cannot read is dropped rather than half-applied.
+    console.warn('discarding an unreadable save:', e)
+    localStorage.removeItem(SAVE_KEY)
+    return null
+  }
+}
+
 // Presentation clock only. Nothing here is allowed to reach the game loop.
 // ?pace=0.2 speeds playback up for testing; it scales these delays and NOTHING
 // else, which is the same separation Phase 6's fast-forward will need: the hand
@@ -29,6 +53,14 @@ const BASE = { action: 620, street: 700, reveal: 1300, showdown: 2600, result: 1
 const PACE = Object.fromEntries(
   Object.entries(BASE).map(([k, v]) => [k, v * PACE_SCALE]),
 ) as typeof BASE
+
+/**
+ * The running game, so the Save button can reach it. Also how the
+ * presentation queue knows a restored hand is replaying: those events are
+ * catching the display up to a position the player was already at, so they
+ * are drawn instantly rather than acted out.
+ */
+let game: Game
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
@@ -49,6 +81,8 @@ const els = {
   raiseValue: $('raise-value'),
   raiseConfirm: $('raise-confirm'),
   raiseCancel: $('raise-cancel'),
+  save: $<HTMLButtonElement>('save'),
+  saveNote: $('save-note'),
   log: $('log'),
 }
 
@@ -60,7 +94,8 @@ let draining = false
 let waiters: (() => void)[] = []
 
 function step(apply: () => void, delay: number) {
-  queue.push({ apply, delay })
+  // Still presentation only: replaying changes the CLOCK, never the events.
+  queue.push({ apply, delay: game?.isReplaying() ? 0 : delay })
   void drain()
 }
 
@@ -424,14 +459,36 @@ async function main() {
   buildOpponents()
   els.table.hidden = false
 
-  const game = new Game(SEATS, {
-    mode: 'tournament',
-    buyIn: BUY_IN,
-    rollouts: 60,
-    humanSeat: HUMAN_SEAT,
-    onHumanTurn,
-    onEvent,
-  })
+  const saved = readSave()
+  if (saved) {
+    game = Game.load(saved, SEATS, { onHumanTurn, onEvent })
+    // Eliminations happened in hands this session never saw, so the busted
+    // seats are read back from the chips rather than from past events.
+    game.stacks().forEach((chips, i) => { if (chips === 0) out.add(i) })
+    handNo = game.handCount()
+    log(`Resumed at hand ${handNo + 1}.`, 'head')
+  } else {
+    // Seeded, always. An unseeded game cannot be saved -- there would be no
+    // stream position to write down -- so the table is seeded even when
+    // nobody asked for a particular one.
+    const seed = Number(params.get('seed') ?? Date.now() % 0x7fffffff)
+    game = new Game(SEATS, {
+      mode: 'tournament',
+      buyIn: BUY_IN,
+      rollouts: 60,
+      seed,
+      rng: mulberry32(seed),
+      humanSeat: HUMAN_SEAT,
+      onHumanTurn,
+      onEvent,
+    })
+  }
+
+  els.save.onclick = () => {
+    localStorage.setItem(SAVE_KEY, toJson(game.save()))
+    els.saveNote.textContent = 'Saved.'
+    setTimeout(() => { els.saveNote.textContent = '' }, 2500)
+  }
 
   els.level.textContent = `blinds ${game.bigBlind() / 2}/${game.bigBlind()}`
   setStacks(game.stacks())
@@ -449,6 +506,10 @@ async function main() {
   }
 
   await settled()
+  // A finished table must not resume: the save would restore a game with
+  // nothing left to play.
+  localStorage.removeItem(SAVE_KEY)
+  els.save.disabled = true
   els.buttons.replaceChildren()
   els.raiseRow.hidden = true
   const won = game.survivors()[0] === HUMAN_SEAT
