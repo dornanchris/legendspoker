@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "sim": "tsx src/sim.ts",
-    "play": "tsx src/play.ts"
+    "play": "tsx src/play.ts",
+    "tourney": "tsx src/tourney.ts",
+    "repro:potleak": "tsx src/potleak-repro.ts"
   },
   "keywords": [],
   "author": "",

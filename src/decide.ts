@@ -16,6 +16,12 @@ export type DecisionContext = {
   toCall: number
   stack: number
   bigBlind: number
+  /**
+   * The acting player's own stack measured in big blinds. Drives short-stack
+   * play; in a cash game this is effectively constant, in a tournament it is
+   * the number that matters most as the blinds climb.
+   */
+  effectiveStackBB: number
   minRaise: number
   maxRaise: number
   street: 'preflop' | 'flop' | 'turn' | 'river'
@@ -46,8 +52,22 @@ export function decide(ctx: DecisionContext): Decision {
 
   // Tilt makes a player looser and more aggressive, scaled by sensitivity.
   const tiltEffect = ctx.tilt * p.tiltSensitivity
-  const effectiveTightness = Math.max(0, p.tightness - tiltEffect * 0.6)
-  const effectiveAggression = Math.min(1, p.aggression + tiltEffect * 0.5)
+
+  // Stack depth. Below ~20bb, waiting for a premium stops being an option:
+  // the blinds eat the stack faster than a better spot arrives, so a short
+  // stack has to widen and lead rather than call. Neutral at 20bb and above,
+  // which leaves deep play unchanged -- including the cash sim, which always
+  // starts a hand at 100bb.
+  const shortness = Math.max(0, 1 - ctx.effectiveStackBB / 20)
+
+  const effectiveTightness = Math.max(
+    0,
+    p.tightness - tiltEffect * 0.6 - shortness * 0.35,
+  )
+  const effectiveAggression = Math.min(
+    1,
+    p.aggression + tiltEffect * 0.5 + shortness * 0.3,
+  )
 
   // Pot odds: the equity we need for calling to break even.
   const potOdds = ctx.toCall === 0 ? 0 : ctx.toCall / (ctx.pot + ctx.toCall)
@@ -119,7 +139,14 @@ export function decide(ctx: DecisionContext): Decision {
 /** Bet sizing as a fraction of pot, scaled by strength and aggression. */
 function sizeBet(ctx: DecisionContext, strength: number, aggression: number): number {
   const fraction = 0.4 + strength * 0.4 + aggression * 0.3
-  const target = Math.round(ctx.pot * fraction)
+  let target = Math.round(ctx.pot * fraction)
+
+  // Leaving a stub behind is the worst of both worlds: the chips are
+  // committed but there is not enough left to make anyone fold. If the bet
+  // would leave under 1.5bb back, put the rest in. Deep stacks never reach
+  // this branch, so it only bites where it should.
+  if (target > ctx.stack - ctx.bigBlind * 1.5) target = ctx.maxRaise
+
   return Math.max(ctx.minRaise, Math.min(ctx.maxRaise, target))
 }
 

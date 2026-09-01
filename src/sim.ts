@@ -17,7 +17,10 @@ import { CAST } from './personality.js'
 const HANDS = Number(process.argv[2] ?? 2000)
 const BB = 20
 
-// Seeded RNG so runs are reproducible while you tune.
+// Seeds the decisions and the equity rollouts. NOT the deal: poker-ts
+// shuffles with crypto.randomInt and exposes no way in, so two runs of the
+// same seed still see different cards. Runs are therefore comparable, not
+// reproducible -- which is the other reason not to tune on a small sample.
 function mulberry32(seed: number) {
   return () => {
     seed |= 0

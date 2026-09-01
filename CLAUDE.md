@@ -78,8 +78,12 @@ src/
   personality.ts  the dials + quirks + tells; characters as DATA
   decide.ts       THE shared decision function. Read this first.
   game.ts         loop over poker-ts; stats (VPIP/PFR/AF), tilt, events
-  sim.ts          `npm run sim [hands]` — the balance/exit test
+  sim.ts          `npm run sim [hands]` — the balance/exit test (cash)
   play.ts         `npm run play [hands]` — watchable CLI with tells
+  tourney.ts      `npm run tourney [tables]` — the Phase 3a exit test
+  potleak-repro.ts `npm run repro:potleak` — isolates a poker-ts pot bug
+data/
+  dialogue/       one file per table; schema is established and working
 art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   build_puppet.py init/render a layout to preview puppet assembly
@@ -98,8 +102,15 @@ Stack: Node 22, TypeScript, ESM, run via `tsx`. `poker-ts` v1.5.0 for rules
 1000-hand run: Dracula VPIP 33.7 / AF 0.66 (tight trapper), Snowman VPIP 74.5
 / AF 0.24 (calling station), Cleopatra VPIP 62.7 / AF 3.18 (aggressive).
 
-**Not started:** human seat, any UI, dialogue system, Rive integration,
-audio, persistence.
+**Phase 3a is complete: the tournament model.** Stacks persist, players are
+eliminated, blinds climb every 25 hands, and a table ends when one player
+holds every chip. 100/100 tables terminate with zero stalls. `decide()` now
+has a stack-depth term, so short stacks widen and push instead of folding
+their way to death; it is neutral above 20bb, which is why the cash profiles
+above are unchanged.
+
+**Not started:** human seat (Phase 3b), any UI, dialogue system, Rive
+integration, audio, persistence.
 
 ## KNOWN GAPS AND SIMPLIFICATIONS
 
@@ -109,9 +120,19 @@ audio, persistence.
 - **No position awareness.** Adding a position term to effective tightness is
   the single highest-value realism improvement available.
 - Adaptivity is table-wide, not per-opponent.
-- **Stacks reset to the buy-in each hand — this must go.** A table now ends
-  when the player holds ALL the chips (elimination tournament), so real play
-  needs a chip model with escalating blinds. Deliberate for the sim only.
+- **Chips are destroyed by a poker-ts bug, roughly 1 hand in 300.** When side
+  pots form, a pot is sometimes awarded to nobody. It is the dependency, not
+  our loop — our loop matches poker-ts's own documented example, and
+  `npm run repro:potleak` reproduces it with no engine code at all. The cash
+  sim never saw it because equal reset stacks barely ever make a side pot.
+  **This must be resolved before real money-shaped play**: patch, fork, or
+  replace poker-ts. Not decided — see BUILD-PLAN.
+- **Deals are not reproducible.** poker-ts shuffles with `crypto.randomInt`
+  and takes no seed, so the same seed deals different cards. Decisions and
+  equity rollouts *are* seeded. This blocks the non-negotiable that a
+  fast-forwarded hand resolves identically, and it blocks replay from a save.
+- Cash mode still resets stacks to the buy-in each hand. That is deliberate
+  and must stay: it is what keeps the tuning numbers comparable.
 - **Save/resume must capture MID-HAND state** — stacks, blind level, button,
   whose turn, pot, board, tilt values, respect tier, dialogue already used.
   Build the schema in Phase 4; retrofitting is much worse.
@@ -131,6 +152,14 @@ audio, persistence.
 - `poker-ts` exports `Table` as a named export.
 - Guard seat occupancy before `standUp` on busted players.
 - Track VPIP per-hand, not per-action, or it double-counts.
+- `poker-ts` calls `standUpBustedPlayers()` only inside `showdown()`, so a
+  player who busts posting a blind into an all-fold hand is left sitting there
+  with an empty stack. The tournament loop removes them itself.
+- Call `startHand()` with NO seat argument in a tournament: poker-ts then
+  advances the button past eliminated seats. Passing a button by hand lands it
+  on an empty chair.
+- Any new chip-handling code needs a conservation check. `tourney.ts` has one,
+  and it is the only reason the poker-ts pot bug was found rather than shipped.
 
 ## NEXT MILESTONE
 

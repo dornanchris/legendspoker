@@ -60,6 +60,13 @@ export function equityVs(
   board: Card[],
   numOpponents: number,
   rollouts = 60,
+  /**
+   * Must be the same seeded source the game loop uses. A hand has to resolve
+   * identically every time it is replayed from a seed -- if the rollouts pull
+   * from Math.random, two runs of the same seed diverge, and a fast-forwarded
+   * hand would not match the one the player watched.
+   */
+  rng: () => number = Math.random,
 ): number {
   const known = new Set([...hole, ...board].map(toStr))
   const deck: string[] = []
@@ -85,7 +92,7 @@ export function equityVs(
     // Partial Fisher-Yates: we only need the first few cards.
     const draws = needed + numOpponents * 2
     for (let j = 0; j < draws; j++) {
-      const k = j + Math.floor(Math.random() * (deck.length - j))
+      const k = j + Math.floor(rng() * (deck.length - j))
       ;[deck[j], deck[k]] = [deck[k], deck[j]]
     }
 
@@ -112,7 +119,8 @@ export function handStrength(
   board: Card[],
   numOpponents: number,
   rollouts = 60,
+  rng: () => number = Math.random,
 ): number {
   if (board.length === 0) return preflopStrength(hole)
-  return equityVs(hole, board, numOpponents, rollouts)
+  return equityVs(hole, board, numOpponents, rollouts, rng)
 }
