@@ -42,6 +42,12 @@ export const newStats = (): Stats => ({
 
 export type BlindLevel = { smallBlind: number; bigBlind: number; ante?: number }
 
+/** poker-ts reports a hand ranking as an enum ordinal; these are its names. */
+const RANKINGS = [
+  'high card', 'a pair', 'two pair', 'three of a kind', 'a straight',
+  'a flush', 'a full house', 'four of a kind', 'a straight flush', 'a royal flush',
+]
+
 /**
  * Levels climb until the big blind is a large share of the chips in play,
  * which is what guarantees a table actually ends rather than grinding on
@@ -84,11 +90,30 @@ export type HandEvent =
    * out how someone played a hand they folded to, which the design doc calls
    * the main source of reads -- so it is a first-class event, not a detail of
    * 'result'.
+   *
+   * Structured PER POT, deliberately. Flattening to "who got paid" makes a
+   * split pot and a main-pot/side-pot pair indistinguishable, which is
+   * exactly the question a player asks when two names come up as winners.
    */
   | {
       type: 'showdown'
+      /**
+       * The complete final board. When everyone is all-in early, poker-ts runs
+       * the remaining cards out internally and no further 'street' events
+       * fire -- there is nobody left to act -- so a display driven only by
+       * those events would still be showing a flop at showdown.
+       */
+      board: Card[]
       revealed: { seat: number; hole: Card[] }[]
-      winners: number[]
+      pots: {
+        amount: number
+        /** More than one seat here means the pot was SPLIT. */
+        winners: number[]
+        /** e.g. "two pair". Absent when the pot was never contested. */
+        ranking?: string
+        /** The five cards that actually won it, for highlighting. */
+        cards?: Card[]
+      }[]
     }
   /** `place` is the finishing position: 1 is the winner, so 4 busts first. */
   | { type: 'eliminated'; seat: number; place: number }
@@ -307,6 +332,13 @@ export class Game {
     const contributed = new Array(this.seats.length).fill(0)
     let lastStreet = ''
     const wentToShowdown = new Set<number>()
+    /**
+     * Tracked here rather than read back from poker-ts: it never clears
+     * _holeCards on a fold, so holeCards() still returns a mucked hand. Using
+     * it to decide who is still in would expose folded players' cards at
+     * showdown -- free reads the player has not earned.
+     */
+    const foldedSeats = new Set<number>()
     // VPIP is a per-hand statistic, not a per-action one.
     const putMoneyIn = new Set<number>()
     const raisedPreflop = new Set<number>()
@@ -430,6 +462,7 @@ export class Game {
         if (toCall > 0) s.stats.facedAggression++
         if (decision.action === 'fold') {
           s.stats.folds++
+          foldedSeats.add(seat)
           if (toCall > 0) s.stats.foldsToAggression++
         } else if (decision.action === 'call') {
           s.stats.calls++
@@ -461,22 +494,44 @@ export class Game {
 
       if (this.table.areBettingRoundsCompleted()) {
         const hole = this.table.holeCards()
+        const finalBoard: Card[] = this.table.communityCards()
         const revealed: { seat: number; hole: Card[] }[] = []
         for (let i = 0; i < this.seats.length; i++) {
-          if (hole[i]) {
+          if (hole[i] && !foldedSeats.has(i)) {
             wentToShowdown.add(i)
             revealed.push({ seat: i, hole: hole[i]! })
           }
         }
+        // Pot sizes have to be read BEFORE the showdown pays them out.
+        const potsBefore = this.table
+          .pots()
+          .map((p: any) => ({ size: p.size, eligible: p.eligiblePlayers as number[] }))
         this.table.showdown()
         if (onEvent) {
-          // winners() is per-pot, and a pot can be split; flatten to the set of
-          // seats that got paid.
-          const winners = new Set<number>()
-          for (const pot of this.table.winners() ?? []) {
-            for (const w of pot) winners.add(w[0])
-          }
-          onEvent({ type: 'showdown', revealed, winners: [...winners] })
+          const perPot: any[] = this.table.winners() ?? []
+          const pots = potsBefore.map((p: any, i: number) => {
+            const won = perPot[i]
+            if (!won || won.length === 0) {
+              // No winners recorded means the pot was uncontested -- poker-ts
+              // pays the lone eligible player without evaluating a hand.
+              //
+              // eligiblePlayers is the stale list that caused the pot bug in
+              // the first place: it can still name someone who folded later.
+              // Only seats that reached showdown with cards are real
+              // candidates, or we would announce the wrong winner.
+              const live = p.eligible.filter((seat: number) =>
+                revealed.some((r) => r.seat === seat),
+              )
+              return { amount: p.size, winners: (live.length ? live : p.eligible).slice(0, 1) }
+            }
+            return {
+              amount: p.size,
+              winners: won.map((w: any) => w[0] as number),
+              ranking: RANKINGS[won[0][1].ranking] ?? 'a hand',
+              cards: won[0][1].cards as Card[],
+            }
+          })
+          onEvent({ type: 'showdown', board: finalBoard, revealed, pots })
         }
       }
     }

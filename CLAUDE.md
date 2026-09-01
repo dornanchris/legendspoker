@@ -184,6 +184,14 @@ platform shell (Phase 4).
 - Call `startHand()` with NO seat argument in a tournament: poker-ts then
   advances the button past eliminated seats. Passing a button by hand lands it
   on an empty chair.
+- **poker-ts never clears `_holeCards` on a fold**, so `holeCards()` still
+  returns a mucked hand. Same root cause as the pot bug. Do not use it to ask
+  "who is still in" — the game loop tracks folds itself, or showdown exposes
+  folded players' cards and hands the player free reads.
+- **`street` events stop when nobody can act.** With everyone all-in, poker-ts
+  runs the board out internally and no further street fires, so a display
+  driven only by those events freezes on the flop. The showdown event carries
+  the final board for exactly this reason.
 - Any new chip-handling code needs a conservation check. `tourney.ts` has one,
   and it is the only reason the poker-ts pot bug was found rather than shipped.
 - `patches/` is load-bearing. `npm install` runs `patch-package` via

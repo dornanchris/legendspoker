@@ -25,7 +25,7 @@ const BUY_IN = 2000
 // else, which is the same separation Phase 6's fast-forward will need: the hand
 // must resolve identically however fast it is drawn.
 const PACE_SCALE = Math.max(0, Number(new URLSearchParams(location.search).get('pace') ?? 1))
-const BASE = { action: 620, street: 700, showdown: 1900, result: 1000, level: 900 }
+const BASE = { action: 620, street: 700, reveal: 1300, showdown: 2600, result: 1000, level: 900 }
 const PACE = Object.fromEntries(
   Object.entries(BASE).map(([k, v]) => [k, v * PACE_SCALE]),
 ) as typeof BASE
@@ -93,7 +93,10 @@ function cardEl(c: Card | null, small = false): HTMLElement {
   const d = document.createElement('div')
   d.className = `card${small ? ' small' : ''}${c && isRed(c) ? ' red' : ''}${c ? '' : ' back'}`
   d.textContent = c ? `${c.rank}${SUIT[c.suit]}` : '??'
-  if (c) d.setAttribute('aria-label', `${c.rank} of ${c.suit}`)
+  if (c) {
+    d.setAttribute('aria-label', `${c.rank} of ${c.suit}`)
+    d.dataset.card = `${c.rank}${c.suit[0]}`
+  }
   return d
 }
 
@@ -139,6 +142,31 @@ function log(text: string, cls = '') {
   els.log.parentElement!.scrollTop = els.log.parentElement!.scrollHeight
 }
 
+const key = (c: Card) => `${c.rank}${c.suit[0]}`
+
+function clearWinHighlights() {
+  for (const el of document.querySelectorAll('.card.win')) el.classList.remove('win')
+  for (const el of document.querySelectorAll('.seat.winner')) el.classList.remove('winner')
+}
+
+/** Gold-outline the exact five cards that took the pot, wherever they sit. */
+function highlightCards(cards: Card[]) {
+  for (const c of cards) {
+    for (const el of document.querySelectorAll(`[data-card="${key(c)}"]`)) {
+      el.classList.add('win')
+    }
+  }
+}
+
+const nameOf = (seat: number) => SEATS[seat].name
+
+/** "You and Dracula" / "Dracula, Cleopatra and You" */
+function joinNames(seats: number[]): string {
+  const names = seats.map(nameOf)
+  if (names.length <= 1) return names[0] ?? ''
+  return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
+}
+
 const TELL_TEXT: Record<string, string> = {
   steeples_fingers: 'steeples his fingers',
   glances_at_exit: 'glances toward the exit',
@@ -171,6 +199,7 @@ let handNo = 0
 
 function clearForNewHand() {
   folded.clear()
+  clearWinHighlights()
   for (const [i, ui] of seatUI) {
     ui.cards.replaceChildren(cardEl(null, true), cardEl(null, true))
     ui.last.textContent = ''
@@ -228,15 +257,41 @@ function onEvent(e: HandEvent) {
       break
     }
     case 'showdown': {
+      // Beat one: turn the cards over and let them sit there.
       step(() => {
+        for (const u of seatUI.values()) u.root.classList.remove('acting')
+        // Show the full run-out. On an all-in the board finished without any
+        // further action, so this is the first chance to draw the last cards.
+        els.board.replaceChildren(...e.board.map((c) => cardEl(c)))
         for (const { seat, hole } of e.revealed) {
           const ui = seatUI.get(seat)
           if (ui) ui.cards.replaceChildren(...hole.map((c) => cardEl(c, true)))
         }
-        for (const w of e.winners) {
-          log(`${SEATS[w].name} ${w === HUMAN_SEAT ? 'win' : 'wins'} the pot`, 'big')
-        }
-      }, PACE.showdown)
+        if (e.revealed.length > 1) log('— showdown —', 'head')
+      }, PACE.reveal)
+
+      // Beat two, once per pot: light up the five cards that actually won it
+      // and say so. Separate beats because a side pot is a separate result,
+      // and running them together is what made two winners look like one
+      // confusing event.
+      e.pots.forEach((pot, i) => {
+        step(() => {
+          clearWinHighlights()
+          if (pot.cards) highlightCards(pot.cards)
+          for (const w of pot.winners) seatUI.get(w)?.root.classList.add('winner')
+
+          const label =
+            e.pots.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
+          const withWhat = pot.ranking ? ` with ${pot.ranking}` : ' uncontested'
+          if (pot.winners.length > 1) {
+            log(`${joinNames(pot.winners)} SPLIT ${label} (${pot.amount})${withWhat}`, 'big')
+          } else {
+            const w = pot.winners[0]
+            const verb = w === HUMAN_SEAT ? 'win' : 'wins'
+            log(`${nameOf(w)} ${verb} ${label} (${pot.amount})${withWhat}`, 'big')
+          }
+        }, PACE.showdown)
+      })
       break
     }
     case 'result': {
