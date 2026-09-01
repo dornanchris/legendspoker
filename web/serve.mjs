@@ -2,7 +2,7 @@
 // dependency, not a framework, and not shipped -- Phase 4 replaces it with
 // Vite.
 import { createServer } from 'node:http'
-import { readFile } from 'node:fs/promises'
+import { readFile, access } from 'node:fs/promises'
 import { extname, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -18,6 +18,10 @@ const TYPES = {
 
 createServer(async (req, res) => {
   const send = (code, body, type = 'text/plain') => {
+    // Log every request. A bare "not found" in the browser with no way to see
+    // what was asked for is a miserable thing to debug, especially across
+    // platforms.
+    console.log(`  ${code}  ${req.method} ${req.url}`)
     res.writeHead(code, { 'content-type': type })
     res.end(body)
   }
@@ -37,4 +41,15 @@ createServer(async (req, res) => {
   } catch {
     send(404, 'not found')
   }
-}).listen(PORT, () => console.log(`table at http://localhost:${PORT}`))
+}).listen(PORT, async () => {
+  // If ROOT is wrong, say so at boot rather than 404ing every request and
+  // leaving the cause invisible.
+  try {
+    await access(resolve(ROOT, 'index.html'))
+  } catch {
+    console.error(`WARNING: no index.html under ${ROOT}`)
+    console.error('The server is looking in the wrong place; every request will 404.')
+  }
+  console.log(`serving ${ROOT}`)
+  console.log(`table at http://localhost:${PORT}`)
+})
