@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+
+# Derived art — regenerable from sheets via art-tools/split_parts.py.
+# NOTE: the existing dracula_parts/ files are already tracked, so these
+# patterns only take effect once they are removed from the index as part
+# of the pending repo cleanup (see BUILD-PLAN.md section 8).
+art-tools/*_parts/
+art-tools/**/_contact_sheet.png
