@@ -15,9 +15,13 @@ build/
 Thumbs.db
 *.swp
 
-# Derived art — regenerable from sheets via art-tools/split_parts.py.
-# NOTE: the existing dracula_parts/ files are already tracked, so these
-# patterns only take effect once they are removed from the index as part
-# of the pending repo cleanup (see BUILD-PLAN.md section 8).
-art-tools/*_parts/
-art-tools/**/_contact_sheet.png
+# Derived art (BUILD-PLAN.md section 8: do not commit derived files).
+# This applies to art/parts/ once source sheets live in art/sheets/.
+#
+# IMPORTANT: art-tools/dracula_parts/ is deliberately NOT ignored. The
+# source parts sheets are not in this repo, so those 41 layers plus their
+# parts.json are the only copy of that art -- they are not regenerable
+# here. The _contact_sheet.png files stay too: every "label" in parts.json
+# is still empty, so the contact sheets are currently the only
+# index -> body-part map, which Phase 5 rigging needs.
+art/parts/

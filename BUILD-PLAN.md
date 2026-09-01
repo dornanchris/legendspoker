@@ -468,12 +468,12 @@ Everything content-shaped is data, never code.
 data/
   characters/     one file per character: dials, quirks, tell clusters, riv path
   tables/         seats, champion, entrance trigger, room plate, ambience
-  dialogue/       one file per table (see dialogue/table-01-white-house.json)
+  dialogue/       one file per table (see data/dialogue/table-01-white-house.json)
   audio/          id → file mapping, including voice lookup
 ```
 
 The dialogue schema is already established and working — see
-`dialogue/table-01-white-house.json`. It carries: table intro, the single
+`data/dialogue/table-01-white-house.json`. It carries: table intro, the single
 rationed dealer plant, banter organised by *relationship pair*, player-directed
 lines by respect tier, Death's asides, champion heads-up, and champion defeat.
 Foreshadowing lines carry a `foreshadow` field explaining the double meaning so
