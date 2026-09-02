@@ -272,6 +272,23 @@ the schema can be tried by hand as well as by test.
 - `#root` is `display: contents`. The body is the landscape grid and its two
   columns are the table and the log, so the React mount point must not
   introduce a box between them.
+- **A grid track's and a grid/flex item's automatic minimum is MIN-CONTENT.**
+  This broke the phone layout three separate ways: `1fr` would not shrink past
+  the table's widest row, `#table` would not shrink past its own content, and
+  the seats would not shrink past the longest word in a character's name. The
+  symptom is not a scrollbar — the body is `overflow: hidden` — it is one
+  column silently painting underneath the other. `minmax(0, 1fr)` on tracks
+  and `min-width: 0` on items, at every level, or it comes back.
+- **`scrollWidth`/`scrollHeight` cannot detect overflow on an `overflow:
+  hidden` element** — they are clamped to the client box, so a broken layout
+  measures as a perfect fit. Compare `getBoundingClientRect()` against the
+  viewport AND against the containing column; a control can be on screen and
+  still be painted over by the log panel. A screenshot found this when the
+  numbers said everything was fine.
+- **`localStorage` can throw, not just fail.** Reading the property throws
+  when a browser blocks site data, and Safari in Private Browsing has thrown
+  on `setItem`. `web/table.ts` wraps every access; an unguarded save turns the
+  Save button into an uncaught error on the platform we cannot test here.
 
 ## NEXT MILESTONE
 
@@ -297,10 +314,19 @@ Order within the phase, cheapest-risk first:
    container — so the first `npm run android:open` is where that gets found
    out.
 
-**Dev machine is Windows, so iOS is not available** — Capacitor's iOS target
-needs a Mac with Xcode plus $99/yr. Android is $25 one-off and works from
-Windows. BUILD-PLAN section 1 already argues web-first on a $0 budget, so
-Phase 4 in practice means web + Android, with iOS deferred.
+**An iPhone can run this today — a NATIVE iPhone build cannot.** The two are
+worth keeping apart. `npm run web` listens on the LAN, so Safari on an iPhone
+opens the same build over Wi-Fi and exercises landscape, the safe-area insets,
+touch targets and the audio unlock — which is most of Phase 4's exit test, on
+the strictest browser we target. What needs a Mac with Xcode plus $99/yr is
+`cap add ios`: an installable app, and the App Store. Android is $25 one-off
+and works from Windows. `capacitor.config.ts` already carries its `ios` block
+so that day is one command, not a configuration exercise.
+
+**iOS silences Web Audio when the ring/silent switch is on.** If the one sound
+does not play on an iPhone, check the physical switch before the code — this
+is the single most likely way that exit test fails for a reason that is not a
+bug.
 
 ## HOUSE STYLE
 

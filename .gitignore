@@ -28,9 +28,9 @@ art/parts/
 
 # Vite build output goes to dist/, already ignored above.
 #
-# android/ IS committed, deliberately. Capacitor generates it once and you
-# then edit it -- the landscape lock lives in its AndroidManifest -- so
-# regenerating would silently drop those edits. Its own android/.gitignore
-# already excludes the parts that ARE generated: the copied web assets, the
-# gradle build output and local.properties.
-ios/
+# android/ IS committed, deliberately, and ios/ should be too when it exists.
+# Capacitor generates a native project once and you then edit it -- the
+# landscape lock lives in android/'s AndroidManifest, and Info.plist would
+# hold the iOS equivalent -- so ignoring them would silently drop those edits
+# on the next checkout. Each carries its own .gitignore for the parts that
+# ARE generated: the copied web assets and the build output.

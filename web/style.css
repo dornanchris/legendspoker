@@ -24,11 +24,27 @@ html, body {
   color: var(--ink);
   font: 14px/1.4 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   overflow: hidden;
+  /* iOS Safari inflates text on rotation into landscape unless told not to,
+     which on a layout that only just fits pushes the controls off screen. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* The page never scrolls; without this, a drag rubber-bands the whole table
+     and on iOS can pull down the page behind it. */
+  overscroll-behavior: none;
+  /* No grey flash on tap, and no waiting to see whether a tap was the first
+     half of a double-tap zoom. Note that iOS ignores user-scalable=no, so
+     touch-action is what actually stops the zoom on the controls. */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 body {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  /* minmax(0, 1fr), not 1fr: a grid track's automatic minimum is its
+     MIN-CONTENT width, so a plain 1fr refuses to shrink past the widest row
+     inside the table and pushes the whole body wider than the screen. On a
+     667px-wide iPhone in landscape that put the log panel off the edge. */
+  grid-template-columns: minmax(0, 1fr) 260px;
   /* Safe-area insets: in landscape the notch and home indicator are on the
      sides, and controls must not sit under either. */
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
@@ -57,13 +73,26 @@ body {
 /* ---- table ---- */
 #table {
   display: grid;
-  grid-template-rows: auto 1fr auto auto;
+  /* minmax(0, 1fr) for the same reason as the body's columns: a plain 1fr
+     will not shrink below the middle's min-content, so when the viewport is
+     short the overflow lands on the CONTROLS at the bottom -- off screen, on
+     a body that does not scroll. Pressure has to land on the board area,
+     which can afford it, never on the buttons. */
+  grid-template-rows: auto minmax(0, 1fr) auto auto;
   gap: 8px;
   padding: 10px 14px;
+  /* Both minimums matter, and for the same reason: a grid or flex item's
+     automatic minimum size is its MIN-CONTENT, so without these the table
+     refuses to shrink and simply paints out over the log panel instead. The
+     minmax(0, 1fr) on the body track is only half the fix -- that frees the
+     TRACK, this frees the ITEM. */
   min-height: 0;
+  min-width: 0;
   background: radial-gradient(120% 90% at 50% 40%, var(--felt) 0%, #14251c 70%, var(--bg) 100%);
 }
 
+/* Same story one level down: these are grid items of #table. */
+#opponents, #middle, #you, #controls { min-width: 0; }
 #opponents { display: flex; gap: 10px; justify-content: center; align-items: start; }
 
 .seat {
@@ -76,6 +105,10 @@ body {
   transition: border-color .15s, opacity .2s;
   min-width: 0;
 }
+/* Nothing may paint outside the seat box: at the narrowest sizes the cards
+   are wider than the box, and spilling them over the neighbouring seat is
+   worse than clipping them. */
+.seat > * { min-width: 0; overflow: hidden; }
 .seat.acting { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
 .seat.winner {
   border-color: var(--gold);
@@ -87,6 +120,17 @@ body {
 .seat.out { opacity: .3; border-style: dashed; }
 
 .seat .name { font-weight: 600; display: flex; justify-content: space-between; gap: 8px; }
+/* Truncate rather than wrap. A name's longest WORD otherwise sets a floor
+   under how narrow the seat can be, and three of those floors are what pushed
+   the table off a 667px screen -- but breaking mid-word to escape that gives
+   you "Abo/mina/ble/Sno/wma/n", which is worse than an ellipsis. At any width
+   the table is actually played at, nothing truncates. */
+.seat .name > span:first-child {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .seat .name .stack { color: var(--gold); font-variant-numeric: tabular-nums; }
 .seat .cards { display: flex; gap: 4px; margin: 6px 0 4px; min-height: 34px; }
 .seat .last { color: var(--dim); font-size: 12px; min-height: 16px; }
@@ -143,6 +187,9 @@ body {
 
 /* ---- controls ---- */
 #controls { display: grid; gap: 6px; justify-items: center; min-height: 76px; }
+/* Grid items again: without this the rows keep their min-content width and
+   the raise row slides out under the log panel instead of shrinking. */
+#prompt, #buttons, #save-row, #raise-row { min-width: 0; max-width: 100%; }
 #prompt { color: var(--dim); font-size: 13px; min-height: 18px; }
 #buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 #save-row { display: flex; gap: 8px; align-items: center; font-size: 12px; opacity: 0.75; }
@@ -171,11 +218,17 @@ button.primary { background: #2f5c40; border-color: #3f7a55; }
 button.danger { background: #4a2b2b; border-color: #6b3b3b; }
 button.ghost { background: transparent; min-width: 0; }
 
-#raise-row { display: flex; gap: 10px; align-items: center; }
+/* nowrap, deliberately: wrapping this row was worse than tightening it. On a
+   short landscape viewport a second line of controls goes below the fold, and
+   the body does not scroll -- so Confirm simply stopped existing. The slider
+   gives up its width instead. */
+#raise-row { display: flex; gap: 10px; align-items: center; flex-wrap: nowrap; justify-content: center; }
 /* An explicit display rule beats the `hidden` attribute's UA default, so the
    attribute has to be honoured back explicitly or the slider never hides. */
 #raise-row[hidden] { display: none; }
-#raise-slider { width: 260px; }
+/* Flexible rather than fixed: this row is the widest thing on the table, so
+   it is what decides whether the layout fits a narrow phone. */
+#raise-slider { width: 260px; flex: 1 1 120px; min-width: 40px; max-width: 100%; }
 #raise-value { color: var(--gold); font-variant-numeric: tabular-nums; min-width: 60px; text-align: right; }
 
 /* ---- log ---- */
@@ -218,4 +271,39 @@ button.ghost { background: transparent; min-width: 0; }
   #prompt { min-height: 0; }
   #save-row button { min-height: 30px; padding: 3px 10px; }
   #raise-slider { width: 200px; }
+}
+
+/* ---- narrow viewports ---- */
+/* A phone in landscape is wide in pixels but not in CSS pixels: 667 on an SE,
+   and the safe-area insets take another ~118 of it. The log is a debug panel,
+   not the game, so it gives up width first; the controls then shrink to stay
+   on ONE row each, because a wrapped row costs height a short viewport does
+   not have. */
+@media (max-width: 760px) {
+  body { grid-template-columns: minmax(0, 1fr) 200px; }
+  #buttons button { min-width: 76px; padding: 9px 10px; }
+  #raise-row button { min-width: 0; padding: 6px 10px; }
+  #raise-slider { flex-basis: 90px; }
+  #raise-value { min-width: 44px; }
+  #log-panel { padding: 8px; }
+}
+
+/* ---- very short viewports ---- */
+/* Below ~400px of usable height -- a small phone in landscape, or a notched
+   one once the safe-area inset is taken off the bottom -- the table still has
+   to show every control. Cards and spacing give up more; the action buttons
+   keep their 44px targets. */
+@media (max-height: 400px) {
+  #table { gap: 2px; padding: 4px 8px; }
+  #middle { gap: 2px; }
+  .card { width: 26px; height: 38px; font-size: 12px; }
+  .card.small { width: 18px; height: 26px; font-size: 10px; }
+  .seat .cards { min-height: 26px; margin: 2px 0; }
+  .seat .last, .seat .tell { min-height: 12px; font-size: 10px; }
+  #pot { font-size: 14px; }
+  #controls { gap: 2px; }
+  #prompt { font-size: 12px; }
+  /* While the slider is open the player is mid-decision, and Save is a whole
+     row of height they need for Confirm. It comes back on Cancel. */
+  #controls:has(#raise-row:not([hidden])) #save-row { display: none; }
 }

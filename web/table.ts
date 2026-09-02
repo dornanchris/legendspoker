@@ -366,16 +366,49 @@ async function onHumanTurn(turn: TurnView): Promise<Decision> {
 
 // --------------------------------------------------------------------- saving
 
+/**
+ * localStorage, defensively.
+ *
+ * Reading the `localStorage` property itself throws when a browser is set to
+ * block site data, and Safari in Private Browsing has historically thrown on
+ * setItem with a zero quota. Unguarded, that turns the Save button into an
+ * uncaught error on the one platform this repo cannot test locally.
+ */
+function readStore(key: string): string | null {
+  try {
+    return localStorage.getItem(key)
+  } catch {
+    return null
+  }
+}
+
+function writeStore(key: string, value: string): boolean {
+  try {
+    localStorage.setItem(key, value)
+    return true
+  } catch {
+    return false
+  }
+}
+
+function clearStore(key: string): void {
+  try {
+    localStorage.removeItem(key)
+  } catch {
+    // Nothing to clean up if the store was never readable.
+  }
+}
+
 function readSave(): SaveGame | null {
   if (params.has('new')) return null
-  const raw = localStorage.getItem(SAVE_KEY)
+  const raw = readStore(SAVE_KEY)
   if (!raw) return null
   try {
     return fromJson(raw)
   } catch (e) {
     // A save this build cannot read is dropped rather than half-applied.
     console.warn('discarding an unreadable save:', e)
-    localStorage.removeItem(SAVE_KEY)
+    clearStore(SAVE_KEY)
     return null
   }
 }
@@ -386,8 +419,10 @@ function readSave(): SaveGame | null {
  * and the restore replays them.
  */
 export function saveGame(): void {
-  localStorage.setItem(SAVE_KEY, toJson(game.save()))
-  set({ saveNote: 'Saved.' })
+  const ok = writeStore(SAVE_KEY, toJson(game.save()))
+  // Say so when it did not work. A Save button that silently does nothing is
+  // worse than no Save button.
+  set({ saveNote: ok ? 'Saved.' : 'Could not save — storage is blocked.' })
   setTimeout(() => set({ saveNote: '' }), 2500)
 }
 
@@ -440,7 +475,7 @@ export async function start(): Promise<void> {
   await settled()
   // A finished table must not resume: the save would restore a game with
   // nothing left to play.
-  localStorage.removeItem(SAVE_KEY)
+  clearStore(SAVE_KEY)
   const won = game.survivors()[0] === HUMAN_SEAT
   set({
     status: won ? 'won' : 'lost',

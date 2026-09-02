@@ -123,7 +123,12 @@ holds all 8000 chips. Landscape only.
 
 The dev server listens on the LAN, so a phone on the same network can open it
 by IP — the cheapest way to see the game on a real device before there is an
-APK.
+APK, and the only way to try it on an **iPhone**: a native iOS build needs a
+Mac with Xcode plus $99/yr, but Safari over Wi-Fi runs the same code and
+covers landscape, the safe-area insets, touch targets and the audio unlock.
+
+(If the sound does not play on an iPhone, check the ring/silent switch. iOS
+mutes Web Audio when it is on.)
 
 Query parameters, all for testing:
 
