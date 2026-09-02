@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Legends Poker</string>
+    <string name="title_activity_main">Legends Poker</string>
+    <string name="package_name">com.legendspoker.app</string>
+    <string name="custom_url_scheme">com.legendspoker.app</string>
+</resources>

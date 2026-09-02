@@ -111,14 +111,32 @@ to 2bb brought him to a realistic −66.
 ## Playing it
 
 ```bash
-npm run web          # build + serve the table at localhost:5173
+npm run web          # Vite dev server at localhost:5173 (and on the LAN)
+npm run build:web    # production build into dist/
+npm run android:sync # build, then copy into the Capacitor Android project
+npm run android:open # open android/ in Android Studio
 ```
 
 You are seat 0 against the three characters, in an elimination tournament:
 stacks persist, blinds climb every 25 hands, and the table ends when someone
-holds all 8000 chips. Landscape only. Add `?pace=0.2` to speed the
-presentation up — it scales the display clock and nothing else, so the hand
-resolves exactly the same either way.
+holds all 8000 chips. Landscape only.
+
+The dev server listens on the LAN, so a phone on the same network can open it
+by IP — the cheapest way to see the game on a real device before there is an
+APK.
+
+Query parameters, all for testing:
+
+| | |
+|---|---|
+| `?pace=0.2` | speeds the presentation up. It scales the display clock and nothing else, so the hand resolves exactly the same either way. |
+| `?seed=123` | a specific deal. Every game is seeded whether you ask or not; this pins it. |
+| `?new` | ignore any save and start a fresh table. |
+
+**Save** writes the game to localStorage, mid-hand included — reload and it
+picks up at exactly the decision you were looking at. `npm run check:save` is
+the proof: save mid-hand, restore, play the table out, and every event has to
+match the run that was never interrupted.
 
 ## Next
 

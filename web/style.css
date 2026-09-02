@@ -1,5 +1,6 @@
-/* Phase 3b: a throwaway table. Legibility over looks -- the point is to prove
-   the loop is playable and that the characters read as different people. */
+/* Still the ugly table: legibility over looks. Art is Phase 5. What this has
+   to get right is landscape, the safe-area insets, and touch targets big
+   enough to hit on a phone. */
 :root {
   --bg: #12100f;
   --felt: #1d3a2b;
@@ -33,6 +34,10 @@ body {
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
            env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
+
+/* React mounts here. `display: contents` keeps #table and #log-panel as direct
+   participants in the body grid instead of nesting a layout box between. */
+#root { display: contents; }
 
 /* ---- portrait lock ---- */
 #rotate { display: none; }
@@ -153,6 +158,11 @@ button {
   color: var(--ink);
   cursor: pointer;
   min-width: 92px;
+  /* 44px is the smallest target both platforms' guidelines call reliable, and
+     these are the buttons you commit chips with. touch-action stops the
+     browser waiting to see whether a tap was a double-tap zoom. */
+  min-height: 44px;
+  touch-action: manipulation;
 }
 button:hover:not(:disabled) { background: #3a342e; }
 button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
@@ -182,3 +192,30 @@ button.ghost { background: transparent; min-width: 0; }
 #log li.head { color: var(--gold); font-weight: 600; margin-top: 6px; }
 #log li.you { color: #9ec9ff; }
 #log li.big { color: #f0e0b0; }
+
+/* ---- short viewports ---- */
+/* A phone in landscape is WIDE and SHORT: 844x390 on an iPhone, less on a
+   small Android. Everything here is size only — nothing is removed, because
+   the failure mode this fixes was the action buttons rendering below the fold
+   with `overflow: hidden` on the body, which does not scroll. A control you
+   cannot see is a control that does not exist.
+   The action buttons keep their 44px targets; the space comes from padding,
+   card sizes and the secondary Save row. */
+@media (max-height: 470px) {
+  #table { padding: 6px 10px; gap: 4px; }
+  .seat { padding: 5px 8px; }
+  .seat .cards { min-height: 30px; margin: 4px 0 2px; }
+  .seat .last, .seat .tell { min-height: 14px; font-size: 11px; }
+
+  #middle { gap: 4px; }
+  #board { min-height: 0; }
+  #pot { font-size: 15px; }
+
+  .card { width: 32px; height: 46px; font-size: 14px; }
+  .card.small { width: 22px; height: 30px; font-size: 11px; }
+
+  #controls { min-height: 0; gap: 4px; }
+  #prompt { min-height: 0; }
+  #save-row button { min-height: 30px; padding: 3px 10px; }
+  #raise-slider { width: 200px; }
+}

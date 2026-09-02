@@ -2,60 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Legends Poker — Phase 3b</title>
+<!-- viewport-fit=cover so the page reaches under the notch; style.css pays
+     that back with env(safe-area-inset-*) padding. user-scalable=no because a
+     pinch-zoom on a fixed landscape table only ever loses the controls. -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#12100f">
+<title>Legends Poker</title>
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- Landscape is locked (design doc). Four opponents + dealer + your seat +
-     board + controls does not fit portrait, so say so rather than reflow. -->
+     board + controls does not fit portrait, so say so rather than reflow.
+     Static markup, not React: it has to be right before any JS runs. -->
 <div id="rotate"><p>Rotate your device.<br><small>Legends Poker is landscape only.</small></p></div>
 
-<main id="table" hidden>
-  <section id="opponents" aria-label="Opponents"></section>
-
-  <section id="middle">
-    <div id="board" aria-label="Community cards"></div>
-    <div id="pot"><span class="label">POT</span> <span id="pot-value">0</span></div>
-    <div id="level"></div>
-  </section>
-
-  <section id="you">
-    <div id="you-info">
-      <span id="you-name">You</span>
-      <span id="you-stack" class="stack">0</span>
-      <span id="you-position"></span>
-    </div>
-    <div id="you-cards" aria-label="Your cards"></div>
-  </section>
-
-  <section id="controls" aria-label="Your actions">
-    <div id="prompt">Waiting…</div>
-    <div id="buttons"></div>
-    <!-- Save is always available, mid-hand included: that is the case the
-         schema exists for, so it is the case worth being able to try. -->
-    <div id="save-row">
-      <button id="save" type="button" class="ghost">Save</button>
-      <span id="save-note"></span>
-    </div>
-    <div id="raise-row" hidden>
-      <input type="range" id="raise-slider" aria-label="Bet size">
-      <output id="raise-value">0</output>
-      <button id="raise-confirm" type="button">Confirm</button>
-      <button id="raise-cancel" type="button" class="ghost">Cancel</button>
-    </div>
-  </section>
-</main>
-
-<aside id="log-panel" aria-label="Hand log">
-  <h2>Log</h2>
-  <!-- The log is the non-visual channel: it carries every action, and is the
-       accessibility fallback for a game built on watching faces. -->
-  <ol id="log" aria-live="polite"></ol>
-</aside>
-
-<script src="bundle.js"></script>
+<div id="root"></div>
+<script type="module" src="/main.tsx"></script>
 </body>
 </html>

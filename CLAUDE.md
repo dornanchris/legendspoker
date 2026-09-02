@@ -88,11 +88,15 @@ src/
 data/
   dialogue/       one file per table; schema is established and working
 web/
-  app.ts          the Phase 3b table: human seat, DOM rendering, input
-  index.html      markup; style.css is landscape-only by design
+  table.ts        THE PRESENTATION QUEUE + the view React renders. Read it.
+  App.tsx         the table, as components; renders, never drives
+  main.tsx        mount, audio unlock on first gesture, start the loop
+  audio.ts        one synthesised sound; the point of it is the UNLOCK
+  index.html      Vite entry; style.css is landscape-only by design
   shims/          browser stand-ins for the node builtins poker-ts needs
-  build.mjs       esbuild -> web/bundle.js (gitignored, regenerate it)
-  serve.mjs       dependency-free static server; Phase 4 replaces it with Vite
+vite.config.ts    root is web/, output is dist/, aliases the shims
+capacitor.config.ts  the Android wrapper; webDir is dist/
+android/          generated ONCE by `cap add android`, then committed
 art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   build_puppet.py init/render a layout to preview puppet assembly
@@ -103,6 +107,7 @@ ASSETS.md         every free/CC0 source + licensing traps
 
 Stack: Node 22, TypeScript, ESM, run via `tsx`. `poker-ts` v1.5.0 for rules
 (exports a **named** `Table`, not default), `pokersolver` v2.1.4 for eval.
+The app is Vite 8 + React 19, wrapped for Android by Capacitor 8.
 
 ## CURRENT STATE
 
@@ -252,13 +257,27 @@ the schema can be tried by hand as well as by test.
   `/D:/...` there — a leading slash that path-joins into `\D:\...` and 404s
   everything. Use `fileURLToPath`. Node scripts must not assume POSIX paths or
   that npm runs them from the repo root.
-- After pulling, `npm install` before `npm run web`. The web build needs
-  esbuild, which older checkouts do not have.
+- After pulling, `npm install` before `npm run web` — the toolchain moved from
+  esbuild to Vite, and older checkouts do not have it.
+- **Audio must be created inside a real user gesture.** A browser makes an
+  AudioContext suspended and only lets it start from a gesture, so building
+  one at load is silent on a phone and perfect on a desktop — the worst kind
+  of bug. `web/audio.ts` builds it on the first `pointerdown`. Note that
+  `element.click()` from a script is NOT a gesture, which is why a headless
+  test has to drive real mouse events to exercise this.
+- **React does not drive the game.** `table.ts` owns the engine loop and the
+  presentation queue and publishes a view; `App.tsx` subscribes. Nothing is
+  in StrictMode, because double-invoking the driver would deal two games into
+  one view.
+- `#root` is `display: contents`. The body is the landscape grid and its two
+  columns are the table and the log, so the React mount point must not
+  introduce a box between them.
 
 ## NEXT MILESTONE
 
 Phase 4 — the platform shell. Vite + React, Capacitor, a real device, audio
-unlock on first tap, safe-area handling, and the save schema.
+unlock on first tap, safe-area handling, and the save schema. **All four
+steps are built; only the exit test is left, and it needs your phone.**
 
 **Its exit test needs a physical phone, so it is yours to run**, the same way
 3b's was: the ugly DOM game running on a real device in landscape with one
@@ -269,9 +288,14 @@ Order within the phase, cheapest-risk first:
    NOT remove the Web Crypto shim (see gotchas).
 2. ~~**Save schema, capturing MID-HAND state.**~~ DONE, `src/save.ts`, with
    `npm run check:save` proving the hand resolves identically across a save.
-3. **Vite + React, then Capacitor scaffolding.** Next. The presentation queue
-   in `web/app.ts` and the save schema are the two pieces that survive the
-   rewrite; the DOM rendering is not.
+3. ~~**Vite + React, then Capacitor scaffolding.**~~ DONE. The presentation
+   queue moved to `web/table.ts` intact and the save schema came across
+   unchanged; the DOM rendering did not survive, as planned. `npm run web` is
+   now the Vite dev server, listening on the LAN so a phone can open it
+   directly. `npm run android:sync` builds and copies into `android/`.
+   **The APK has never been built here** — no Android SDK in the dev
+   container — so the first `npm run android:open` is where that gets found
+   out.
 
 **Dev machine is Windows, so iOS is not available** — Capacitor's iOS target
 needs a Mac with Xcode plus $99/yr. Android is $25 one-off and works from

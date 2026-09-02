@@ -9,23 +9,35 @@
     "tourney": "tsx src/tourney.ts",
     "check:pots": "tsx src/pot-conservation.ts",
     "check:save": "tsx src/save-fidelity.ts",
-    "build:web": "node web/build.mjs",
-    "web": "node web/build.mjs && node web/serve.mjs",
-    "postinstall": "patch-package"
+    "build:web": "vite build",
+    "web": "vite",
+    "postinstall": "patch-package",
+    "preview": "vite preview",
+    "android:add": "cap add android",
+    "android:sync": "npm run build:web && cap sync android",
+    "android:open": "cap open android"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@capacitor/android": "^8.5.1",
+    "@capacitor/core": "^8.5.1",
     "poker-ts": "^1.5.0",
-    "pokersolver": "^2.1.4"
+    "pokersolver": "^2.1.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.1",
     "@types/node": "^26.1.2",
-    "esbuild": "^0.28.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.1",
     "patch-package": "^8.0.1",
     "tsx": "^4.23.5",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2"
   },
   "type": "module"
 }
