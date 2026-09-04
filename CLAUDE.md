@@ -76,6 +76,7 @@ story, it's noise on an already-busy landscape screen.
 src/
   equity.ts       hand strength: Chen-ish preflop, Monte Carlo postflop
   personality.ts  the dials + quirks + tells; characters as DATA
+  roster.ts       THE TOUR: 8 tables, 36 seats, dials. Locked roster as data.
   decide.ts       THE shared decision function. Read this first.
   game.ts         loop over poker-ts; stats (VPIP/PFR/AF), tilt, events
   rng.ts          the one seeded RNG; state() is what makes saves resumable
@@ -88,6 +89,7 @@ src/
   pot-conservation.ts `npm run check:pots` — guards the poker-ts pot patch
   save-fidelity.ts    `npm run check:save` — guards the save schema
   puppet-contract.ts  `npm run check:puppet` — guards the rig contract
+  roster-check.ts     `npm run check:roster` — the casting rule, measured
 data/
   dialogue/       one file per table; schema is established and working
 web/
@@ -171,6 +173,16 @@ rely on: 0 violations over 87k frames and 47k triggers. `?puppet=1` draws the
 live inputs on each seat, so the contract can be watched against a real hand
 before a single .riv file exists. **Rigging can start against it now.**
 
+**The tour exists as data.** `src/roster.ts` carries the design doc's LOCKED
+v4 roster — eight tables, every seat, every champion and entrance, each
+character's casting reason, temperament, dials and licensing caution.
+`npm run check:roster` validates the structure, cross-checks every dialogue
+speaker against who is actually in the room, and then PLAYS every table to
+report whether its cast reads as distinct players. It found 13 blurred pairs
+on the first run and now reports none — the fixes were making the numbers
+agree with the temperament already written beside them, which is the cheapest
+possible time to find that out.
+
 **Not started:** Rive files themselves, dialogue system, audio beyond the one
 unlock sound.
 
@@ -180,6 +192,30 @@ unlock sound.
   second difficulty axis: skill UP through the dials, legibility DOWN through
   this. Dracula 0.2, Snowman 0.1, Cleopatra 0.45. Death, with no tells at all,
   is where the curve ends.
+- **The playable CAST is not the shipping roster.** `personality.ts` exports
+  Dracula, the Abominable Snowman and Cleopatra, and every tuning baseline in
+  this file is measured on those three. Only Dracula is in the locked roster:
+  the Snowman appears nowhere in the design doc, and Cleopatra is explicitly
+  moved to the sequel (she is Egyptian, never Roman). **They are test
+  fixtures, and they should stay that way** — they are the instrument the
+  numbers are comparable against. Roster characters get a `Personality` from
+  `personalityFor()` instead.
+  Note that roster-Dracula's dials match `personality.ts` exactly, but
+  `sharpen()` raises his adaptivity and noise for table 7. Reconcile
+  deliberately when he is brought into play.
+- **Roster gaps carried from the design doc, not invented here:** Imperial
+  Rome names only three seats but Caesar arrives late, so its fourth chair is
+  `rome_fourth_tbd` and is flagged `uncast`. And the doc's "32 characters"
+  is its own arithmetic — it holds for seated champions, but the four late
+  champions need a fourth NPC each, so the named cast is 36.
+- **Every roster character has ZERO quirks and ZERO tells.** Quirks are
+  functions, so they belong in `personality.ts` when a character is brought
+  into play; a tell's index is its rig slot, so authoring one before the art
+  exists binds an animation to a number nobody has drawn. `signatureRule`
+  carries the intent for both in prose.
+- **Seven of the eight dialogue files do not exist.** Only
+  `table-01-white-house.json` is authored; `check:roster` warns about the
+  rest and validates the one that is.
 - **`tellC` has never fired**, because no character has a third tell yet.
   `personality.tells` is capped at three because the contract exposes exactly
   tellA/B/C, and a tell's INDEX is its slot. Authoring the clusters is
