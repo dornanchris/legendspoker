@@ -75,7 +75,13 @@ export const DEFAULT_LEVELS: BlindLevel[] = [
 export type HandEvent =
   | { type: 'deal'; seat: number; hole: Card[] }
   | { type: 'street'; street: string; board: Card[]; stacks: number[] }
-  | { type: 'tell'; seat: number; signal: string }
+  /**
+   * `slot` is the character's tell vocabulary position -- 0, 1 or 2, which the
+   * puppet contract fires as tellA/tellB/tellC. The engine picks the slot; what
+   * the slot MEANS lives in the character's Rive file, never here. See
+   * BUILD-PLAN section 4.
+   */
+  | { type: 'tell'; seat: number; signal: string; slot: number }
   /** Emitted AFTER the table applies the action, so pot and stacks are the result of it. */
   | {
       type: 'action'
@@ -85,7 +91,10 @@ export type HandEvent =
       pot: number
       stacks: number[]
     }
-  | { type: 'result'; seat: number; delta: number; won: boolean }
+  /** `tilt` is the seat's tilt AFTER this hand's bump and decay, 0..1. It is
+   *  carried here because it is the one piece of hidden character state the
+   *  presentation legitimately needs -- it drives the puppet's tilt input. */
+  | { type: 'result'; seat: number; delta: number; won: boolean; tilt: number }
   | { type: 'level'; level: number; smallBlind: number; bigBlind: number }
   /**
    * Fired when cards are actually turned over. This is where the player finds
@@ -678,15 +687,23 @@ export class Game {
             rng: this.draw,
           })
 
-          if (onEvent) {
-            // The tell precedes the action: it is a leak about the decision
-            // already made, which is what makes it readable at all.
-            const tell = emitTell(
-              s.personality,
-              { equity, decision, tilt: s.tilt },
-              this.draw,
-            )
-            if (tell) onEvent({ type: 'tell', seat, signal: tell.signal })
+          // ALWAYS drawn, never inside an `if (onEvent)`. emitTell consumes the
+          // shared RNG, so skipping it when nobody is listening made the same
+          // seed play a different game depending on whether the UI was
+          // attached -- seed 4242 ran 10 hands headless and 77 with a
+          // listener, with a different winner. Presentation must never change
+          // how a hand resolves (non-negotiable #6), and a listener is
+          // presentation.
+          //
+          // The tell precedes the action: it is a leak about the decision
+          // already made, which is what makes it readable at all.
+          const tell = emitTell(
+            s.personality,
+            { equity, decision, tilt: s.tilt },
+            this.draw,
+          )
+          if (tell) {
+            onEvent?.({ type: 'tell', seat, signal: tell.tell.signal, slot: tell.slot })
           }
         }
 
@@ -788,7 +805,7 @@ export class Game {
       }
       s.tilt *= 0.85 // decay
 
-      onEvent?.({ type: 'result', seat: i, delta, won: delta > 0 })
+      onEvent?.({ type: 'result', seat: i, delta, won: delta > 0, tilt: s.tilt })
       // Cash mode tears the table down between hands. A tournament must not:
       // standing a player up would hand back their stack and the table would
       // never end.

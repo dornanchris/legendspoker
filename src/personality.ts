@@ -18,6 +18,16 @@ export type Personality = {
   tiltSensitivity: number
   /** How much they adjust to observed opponent patterns. */
   adaptivity: number
+  /**
+   * NOISE-TO-SIGNAL: how often a tell fires meaning nothing at all. 0 is a
+   * character whose tells always relate to the hand; 1 is pure noise.
+   *
+   * This is the SECOND difficulty axis, and it is not the same as skill.
+   * Later opponents are harder because they are quieter, not only because
+   * they play better -- so this goes UP across the tour while the dials
+   * sharpen. Death, with no tells at all, is where the curve ends.
+   */
+  noiseToSignal: number
 
   /**
    * 1-2 rules that break the pattern. This is what makes a character
@@ -28,7 +38,15 @@ export type Personality = {
    */
   quirks: Quirk[]
 
-  /** Observable signals, correlated with hidden state plus noise. */
+  /**
+   * Observable signals, correlated with hidden state plus noise.
+   *
+   * AT MOST THREE. The puppet contract (BUILD-PLAN section 4) exposes exactly
+   * tellA, tellB and tellC, and a tell's index here IS its slot: tells[0]
+   * fires tellA. The cap is deliberate -- a cluster of two coincident signals
+   * out of three is readable, and more than three stops being learnable and
+   * starts being a slot machine.
+   */
   tells: Tell[]
 }
 
@@ -55,6 +73,8 @@ export const DRACULA: Personality = {
   bluffFrequency: 0.12,
   tiltSensitivity: 0.05,
   adaptivity: 0.55,
+  // Composed and deliberate: when he leaks, it usually means something.
+  noiseToSignal: 0.2,
   quirks: [
     {
       // Traps: with a monster before the river, just call and let them hang
@@ -83,6 +103,8 @@ export const YETI: Personality = {
   bluffFrequency: 0.02,
   tiltSensitivity: 0.3,
   adaptivity: 0.05,
+  // Guileless. He is not hiding anything, so almost nothing he does is noise.
+  noiseToSignal: 0.1,
   quirks: [
     {
       // The calling station. Will not fold to a single small bet, ever.
@@ -111,6 +133,8 @@ export const CLEOPATRA: Personality = {
   bluffFrequency: 0.34,
   tiltSensitivity: 0.15,
   adaptivity: 0.9,
+  // Performs constantly, and half of it is for your benefit.
+  noiseToSignal: 0.45,
   quirks: [
     {
       // Punishes passivity. If an opponent has been folding to aggression,
@@ -148,6 +172,7 @@ export const HUMAN: Personality = {
   bluffFrequency: 0,
   tiltSensitivity: 0,
   adaptivity: 0,
+  noiseToSignal: 0,
   quirks: [],
   tells: [],
 }

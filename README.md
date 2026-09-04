@@ -137,6 +137,7 @@ Query parameters, all for testing:
 | `?pace=0.2` | speeds the presentation up. It scales the display clock and nothing else, so the hand resolves exactly the same either way. |
 | `?seed=123` | a specific deal. Every game is seeded whether you ask or not; this pins it. |
 | `?new` | ignore any save and start a fresh table. |
+| `?puppet=1` | draw the live state machine inputs on every seat — what a Rive rig will read. |
 
 **Save** writes the game to localStorage, mid-hand included — reload and it
 picks up at exactly the decision you were looking at. `npm run check:save` is

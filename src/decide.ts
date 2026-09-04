@@ -160,11 +160,35 @@ const pct = (n: number) => `${Math.round(n * 100)}%`
  * Design note: in the real build these should be *idle variants*, not
  * triggered one-shots. A tell that fires on cue can't be missed.
  */
+/**
+ * Which tell fires, and which SLOT it occupies in the character's vocabulary.
+ * The slot is the tell's index in `personality.tells` -- 0, 1, 2 -- and it is
+ * what the puppet contract fires as tellA/tellB/tellC. What a slot means is
+ * decided inside the character's Rive file, never here.
+ */
+export type EmittedTell = { tell: Tell; slot: number }
+
+/**
+ * ALWAYS call this, listener or not: it draws from the shared RNG, so making
+ * it conditional makes the same seed play a different game depending on
+ * whether anything is watching. Returning null still costs its draws.
+ */
 export function emitTell(
   p: Personality,
   ctx: { equity: number; decision: Decision; tilt: number },
   rng: () => number,
-): Tell | null {
+): EmittedTell | null {
+  const emit = (t: Tell | undefined): EmittedTell | null =>
+    t ? { tell: t, slot: p.tells.indexOf(t) } : null
+  const pick = (from: Tell[]): Tell | undefined =>
+    from.length ? from[Math.floor(rng() * from.length)] : undefined
+
+  // Draw first and unconditionally, so the number of draws does not depend on
+  // which branch is taken -- the stream position has to be the same whatever
+  // this character's dials say.
+  const noiseRoll = rng()
+  const honestRoll = rng()
+
   const state = ctx.tilt > 0.5
     ? 'tilted'
     : ctx.decision.reason.startsWith('bluff')
@@ -173,13 +197,21 @@ export function emitTell(
         ? 'strong'
         : 'weak'
 
+  // NOISE-TO-SIGNAL: the second difficulty axis (BUILD-PLAN 2.4). Skill goes
+  // UP through the dials; legibility goes DOWN through this. A high-noise
+  // character fires tells that correlate with nothing, so the player cannot
+  // learn them by watching one signal -- only a coincident CLUSTER during a
+  // live hand means anything. Death having no tells at all is the endpoint of
+  // this curve, not a special case.
+  if (noiseRoll < p.noiseToSignal) return emit(pick(p.tells))
+
   const honest = p.tells.filter((t) => t.correlate === state)
   if (honest.length === 0) return null
 
-  const tell = honest[Math.floor(rng() * honest.length)]
-  if (rng() < tell.reliability) return tell
+  const tell = pick(honest)
+  if (!tell) return null
+  if (honestRoll < tell.reliability) return emit(tell)
 
   // Unreliable: fire a different tell instead, misleading the player.
-  const others = p.tells.filter((t) => t !== tell)
-  return others.length ? others[Math.floor(rng() * others.length)] : null
+  return emit(pick(p.tells.filter((t) => t !== tell)))
 }

@@ -307,3 +307,23 @@ button.ghost { background: transparent; min-width: 0; }
      row of height they need for Confirm. It comes back on Cancel. */
   #controls:has(#raise-row:not([hidden])) #save-row { display: none; }
 }
+
+/* ---- puppet debug overlay (?puppet=1) ---- */
+/* The state machine inputs, drawn where the character will eventually be.
+   Deliberately inside the seat card: these are what the rig reads, so the
+   place to sanity-check them is the seat they belong to. */
+.puppet { margin-top: 4px; font-size: 10px; color: var(--dim); }
+.puppet .bar { display: flex; align-items: center; gap: 4px; height: 8px; }
+.puppet .bar .k { width: 8px; text-transform: uppercase; }
+.puppet .bar i {
+  display: block;
+  height: 4px;
+  background: var(--dim);
+  border-radius: 2px;
+  transition: width .18s linear;
+}
+.puppet .bar i[data-k="mood"] { background: var(--live); }
+.puppet .bar i[data-k="tilt"] { background: #b3312b; }
+.puppet .bar i[data-k="attention"] { background: var(--gold); }
+.puppet .flags { margin-top: 2px; letter-spacing: .06em; }
+.puppet .flags b { color: var(--gold); font-weight: 700; }

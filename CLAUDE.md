@@ -80,11 +80,14 @@ src/
   game.ts         loop over poker-ts; stats (VPIP/PFR/AF), tilt, events
   rng.ts          the one seeded RNG; state() is what makes saves resumable
   save.ts         THE SAVE SCHEMA: checkpoint + journal. Read its header.
+  puppet.ts       THE STATE MACHINE INPUT CONTRACT (BUILD-PLAN s4). Read it
+                  before touching anything animation-shaped.
   sim.ts          `npm run sim [hands]` — the balance/exit test (cash)
   play.ts         `npm run play [hands]` — watchable CLI with tells
   tourney.ts      `npm run tourney [tables]` — the Phase 3a exit test
   pot-conservation.ts `npm run check:pots` — guards the poker-ts pot patch
   save-fidelity.ts    `npm run check:save` — guards the save schema
+  puppet-contract.ts  `npm run check:puppet` — guards the rig contract
 data/
   dialogue/       one file per table; schema is established and working
 web/
@@ -112,9 +115,10 @@ The app is Vite 8 + React 19, wrapped for Android by Capacitor 8.
 ## CURRENT STATE
 
 **Working:** the engine. Phases 1 and 2 are complete and pass their exit test
-— three distinct play profiles emerge from one shared function. Representative
-1000-hand run: Dracula VPIP 33.7 / AF 0.66 (tight trapper), Snowman VPIP 74.5
-/ AF 0.24 (calling station), Cleopatra VPIP 62.7 / AF 3.18 (aggressive).
+— three distinct play profiles emerge from one shared function. 10,000-hand
+run: Dracula VPIP 34.5 / AF 0.71 (tight trapper), Snowman VPIP 74.4 / AF 0.24
+(calling station), Cleopatra VPIP 63.8 / AF 3.23 (aggressive). The profiles
+have not moved across every change since Phase 1, which is the point of them.
 
 **Phase 3a is complete: the tournament model.** Stacks persist, players are
 eliminated, blinds climb every 25 hands, and a table ends when one player
@@ -154,14 +158,37 @@ interrupted. 80 saves restored across 5672 replayed hands, zero mismatches.
 The throwaway web table has a Save button and resumes from localStorage, so
 the schema can be tried by hand as well as by test.
 
-**Not started:** Rive integration, dialogue system, audio, the platform shell
-(Vite/React/Capacitor — Phase 4 steps 3 and 4).
+**Phase 5 has begun on the code side: the rig contract exists.**
+`src/puppet.ts` implements BUILD-PLAN section 4 — the inputs every character's
+Rive state machine exposes (mood, tilt, attention, isInHand, isThinking,
+isTurn, and the fire*/tell* triggers). It is derived from engine events on the
+PRESENTATION clock, draws no randomness, and never reaches back into the game.
+`npm run check:puppet` plays whole tables and checks the promises a rig will
+rely on: 0 violations over 87k frames and 47k triggers. `?puppet=1` draws the
+live inputs on each seat, so the contract can be watched against a real hand
+before a single .riv file exists. **Rigging can start against it now.**
+
+**Not started:** Rive files themselves, dialogue system, audio beyond the one
+unlock sound.
 
 ## KNOWN GAPS AND SIMPLIFICATIONS
 
-- **No noise-to-signal dial.** Difficulty runs on two axes: skill UP (dials)
-  and legibility DOWN (tells). The second axis needs a per-character
-  noise-to-signal ratio in `personality.ts`. Doesn't exist yet.
+- ~~**No noise-to-signal dial.**~~ DONE. `personality.noiseToSignal` is the
+  second difficulty axis: skill UP through the dials, legibility DOWN through
+  this. Dracula 0.2, Snowman 0.1, Cleopatra 0.45. Death, with no tells at all,
+  is where the curve ends.
+- **`tellC` has never fired**, because no character has a third tell yet.
+  `personality.tells` is capped at three because the contract exposes exactly
+  tellA/B/C, and a tell's INDEX is its slot. Authoring the clusters is
+  MOTION-SPEC layer 3, still an empty template.
+- **Cleopatra loses, consistently.** Across three independent 6000-hand
+  streams she runs -188, -111 and -42 bb/100 while Dracula runs +106, +47,
+  +93. The sign is stable, so it is not variance. It is also not obviously
+  wrong — she is a high-bluff player at a three-handed table containing a
+  calling station, and you cannot bluff someone who never folds — but a
+  character who reliably loses will not read as the smart one. This is a dial
+  tuning job, not a correctness one, and it needs several thousand hands per
+  change. **The numbers are only now honest** (see the listener gotcha).
 - **No position awareness.** Adding a position term to effective tightness is
   the single highest-value realism improvement available.
 - Adaptivity is table-wide, not per-opponent.
@@ -249,6 +276,18 @@ the schema can be tried by hand as well as by test.
   anything that consumed the shared stream there would leave the replay at a
   different generator position. This is why the scripted player in
   `save-fidelity.ts` is a pure function of what it can see.
+- **Anything that draws from the RNG must draw UNCONDITIONALLY.** `emitTell`
+  used to be called inside `if (onEvent)`, so the same seed played a different
+  game depending on whether the UI was attached — seed 4242 ran 10 hands
+  headless and 77 with a listener, with a different winner. It also meant the
+  sim and tourney tuning numbers were measured on a stream the real game never
+  ran. If a draw is conditional on presentation, presentation is deciding the
+  hand, and non-negotiable #6 is broken. Draw first, branch after.
+- **A derived animation input has to be right at the EXTREMES**, because that
+  is where the player is looking hardest. The first mood formula read "twice
+  an even stack is 1.0", which is unreachable heads-up: the player who had
+  just won every chip at the table read 0.39 — miserable, at the moment of
+  winning. `check:puppet` asserts the anchors now.
 - Any new chip-handling code needs a conservation check. `tourney.ts` has one,
   and it is the only reason the poker-ts pot bug was found rather than shipped.
 - `patches/` is load-bearing. `npm install` runs `patch-package` via
@@ -305,6 +344,10 @@ Order within the phase, cheapest-risk first:
    NOT remove the Web Crypto shim (see gotchas).
 2. ~~**Save schema, capturing MID-HAND state.**~~ DONE, `src/save.ts`, with
    `npm run check:save` proving the hand resolves identically across a save.
+4. **Phase 5's code half is started** — the rig contract is in and guarded.
+   What is left there is art and Rive, which need a person: Dracula's missing
+   parts (chalice, talking mouth set, brow variants, separate pupil layers),
+   then rigging against the contract.
 3. ~~**Vite + React, then Capacitor scaffolding.**~~ DONE. The presentation
    queue moved to `web/table.ts` intact and the save schema came across
    unchanged; the DOM rendering did not survive, as planned. `npm run web` is

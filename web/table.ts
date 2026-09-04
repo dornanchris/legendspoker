@@ -4,6 +4,13 @@ import type { Decision } from '../src/decide.js'
 import type { Card } from '../src/equity.js'
 import { mulberry32 } from '../src/rng.js'
 import { fromJson, toJson, type SaveGame } from '../src/save.js'
+import {
+  PuppetDirector,
+  beats,
+  type CharacterInputs,
+  type PuppetEvent,
+  type PuppetTrigger,
+} from '../src/puppet.js'
 
 /**
  * THE PRESENTATION QUEUE, and the view model it writes into.
@@ -44,6 +51,16 @@ const PACE = Object.fromEntries(
 /** One slot, in localStorage. A real save UI is not this phase's job. */
 const SAVE_KEY = 'legends.save'
 
+/**
+ * ?puppet=1 shows the live state machine inputs on every seat.
+ *
+ * This is how the contract in BUILD-PLAN section 4 gets watched before a
+ * single .riv file exists: the values a rig will consume, changing in real
+ * time against a real hand. If mood reads miserable while a character is
+ * winning, that is visible here rather than after ninety hours of animation.
+ */
+const SHOW_PUPPET = params.get('puppet') === '1'
+
 // ------------------------------------------------------------------- the view
 
 export type SeatView = {
@@ -62,6 +79,9 @@ export type SeatView = {
 
 export type LogLine = { id: number; text: string; kind: '' | 'head' | 'you' | 'big' }
 
+/** What a rig would be reading, per seat. Debug view only. */
+export type PuppetView = CharacterInputs & { fired: PuppetTrigger[] }
+
 export type TableView = {
   opponents: SeatView[]
   you: SeatView
@@ -77,6 +97,8 @@ export type TableView = {
   log: LogLine[]
   status: 'playing' | 'won' | 'lost'
   saveNote: string
+  /** Empty unless ?puppet=1. Indexed by seat. */
+  puppets: PuppetView[]
 }
 
 export const cardKey = (c: Card) => `${c.rank}${c.suit[0]}`
@@ -107,6 +129,7 @@ let view: TableView = {
   log: [],
   status: 'playing',
   saveNote: '',
+  puppets: [],
 }
 
 const listeners = new Set<() => void>()
@@ -158,6 +181,33 @@ const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
 
 let game: Game
 
+/**
+ * The puppet director runs HERE, on the presentation clock, and not in the
+ * engine. A character has to react when the player SEES an event, not when
+ * the engine computed it -- the engine resolves a whole hand in about 16ms.
+ * That is the same separation the queue itself exists for.
+ *
+ * It draws no randomness and never reaches back into the game, so having it
+ * attached cannot change how a hand resolves.
+ */
+let director = new PuppetDirector(SEATS.length, { humanSeat: HUMAN_SEAT })
+/** Triggers fired by the beat currently being shown, for the debug overlay. */
+let firedNow: PuppetTrigger[][] = SEATS.map(() => [])
+
+/** Feeds one beat to the director, from inside the step that displays it. */
+function puppet(e: PuppetEvent): void {
+  const fired = director.apply(e)
+  firedNow = SEATS.map(() => [])
+  for (const f of fired) firedNow[f.seat]?.push(f.trigger)
+}
+
+function publishPuppets(): void {
+  if (!SHOW_PUPPET) return
+  set({
+    puppets: SEATS.map((_, i) => ({ ...director.inputs(i), fired: firedNow[i] ?? [] })),
+  })
+}
+
 function step(apply: () => void, delay: number): void {
   // A restored hand is catching the display up to a position the player was
   // already at, so it is drawn instantly. Still presentation only: replaying
@@ -172,7 +222,12 @@ async function drain(): Promise<void> {
   while (queue.length) {
     const s = queue.shift()!
     s.apply()
+    publishPuppets()
     await sleep(s.delay)
+    // Ticked with the delay actually waited, so attention decays against what
+    // the player watched rather than against how fast the engine ran.
+    director.tick(s.delay)
+    publishPuppets()
   }
   draining = false
   const w = waiters
@@ -230,6 +285,7 @@ function onEvent(e: HandEvent): void {
   switch (e.type) {
     case 'street': {
       step(() => {
+        puppet(e)
         setStacks(e.stacks)
         set({ board: e.board })
         if (e.street !== 'preflop') log(`— ${e.street} —`, 'head')
@@ -239,6 +295,7 @@ function onEvent(e: HandEvent): void {
     }
     case 'tell': {
       step(() => {
+        puppet(e)
         setSeat(e.seat, { tell: `${nameOf(e.seat)} ${TELL_TEXT[e.signal] ?? e.signal}` })
       }, 340)
       break
@@ -249,8 +306,23 @@ function onEvent(e: HandEvent): void {
       // the log has to agree with "You".
       const text = describe(e.decision)
       const logText = describe(e.decision, you)
+      const total = you ? 220 : PACE.action
+
+      // ONE engine event, TWO presentation beats. The engine decides and acts
+      // in the same instant; the pause between them is something the display
+      // invents, and it is the only window in which a character can be seen
+      // to be thinking -- which is where a tell lives. Splitting it is what
+      // makes `isThinking` mean anything.
+      //
+      // The two delays sum to what the single step used to take, so the pace
+      // of a hand is unchanged.
+      const [thinking, acting] = beats(e)
       step(() => {
+        puppet(thinking)
         eachSeat((s) => ({ acting: s.seat === e.seat }))
+      }, total * 0.45)
+      step(() => {
+        puppet(acting)
         setSeat(e.seat, { last: text })
         if (e.decision.action === 'fold') {
           // Mucked cards are gone, not face-down: leaving backs up reads as
@@ -260,12 +332,13 @@ function onEvent(e: HandEvent): void {
         setStacks(e.stacks)
         set({ pot: e.pot })
         log(`${nameOf(e.seat)} ${logText}`, you ? 'you' : '')
-      }, you ? 220 : PACE.action)
+      }, total * 0.55)
       break
     }
     case 'showdown': {
       // Beat one: turn the cards over and let them sit there.
       step(() => {
+        puppet(e)
         eachSeat(() => ({ acting: false }))
         // Show the full run-out. On an all-in the board finished without any
         // further action, so this is the first chance to draw the last cards.
@@ -309,8 +382,14 @@ function onEvent(e: HandEvent): void {
       break
     }
     case 'result': {
-      if (e.delta === 0) break
+      // Tilt rides on this event, so the director must see it even when there
+      // is nothing worth writing in the log.
+      if (e.delta === 0) {
+        step(() => puppet(e), 0)
+        break
+      }
       step(() => {
+        puppet(e)
         const sign = e.delta > 0 ? '+' : ''
         log(`  ${nameOf(e.seat)} ${sign}${e.delta}`, e.seat === HUMAN_SEAT ? 'you' : '')
       }, 0)
@@ -325,6 +404,7 @@ function onEvent(e: HandEvent): void {
     }
     case 'eliminated': {
       step(() => {
+        puppet(e)
         setSeat(e.seat, { out: true })
         const ord = `${e.place}${['st', 'nd', 'rd', 'th'][e.place - 1] ?? 'th'}`
         log(`${nameOf(e.seat)} ${e.seat === HUMAN_SEAT ? 'are' : 'is'} out (${ord})`, 'big')
@@ -434,6 +514,11 @@ export async function start(): Promise<void> {
   if (started) return
   started = true
 
+  // A restored game restarts the director from the seats it finds, not from a
+  // saved copy: nothing in here is game state, it is all derived from the
+  // events of the hand being replayed.
+  director = new PuppetDirector(SEATS.length, { humanSeat: HUMAN_SEAT })
+
   const saved = readSave()
   if (saved) {
     game = Game.load(saved, SEATS, { onHumanTurn, onEvent })
@@ -467,6 +552,10 @@ export async function start(): Promise<void> {
     newHand(handNo)
     await game.playHand()
     await settled()
+    // Mood moves once per hand, at settlement, against the stacks the next
+    // hand will start from.
+    director.apply({ type: 'handEnd', stacks: game.stacks() })
+    publishPuppets()
     setStacks(game.stacks())
     if (view.you.out) break
     await sleep(500 * PACE_SCALE)
@@ -485,6 +574,8 @@ export async function start(): Promise<void> {
 }
 
 function newHand(handNo: number): void {
+  director.apply({ type: 'handStart', stacks: game.stacks() })
+  publishPuppets()
   set({ board: [], pot: 0, winning: new Set(), handNo })
   eachSeat((s) => ({
     // Two backs for an opponent still in the hand; your own are dealt to you

@@ -10,6 +10,7 @@ import {
   snapshot,
   subscribe,
   type LogLine,
+  type PuppetView,
   type SeatView,
   type TableView,
 } from './table.js'
@@ -65,7 +66,42 @@ function Cards({
   )
 }
 
-function Seat({ seat, winning }: { seat: SeatView; winning: ReadonlySet<string> }) {
+/**
+ * The state machine inputs, as the rig will read them (BUILD-PLAN section 4).
+ * Debug only, behind ?puppet=1 -- but it is what lets the contract be watched
+ * against a real hand before a single .riv file exists.
+ */
+function Puppet({ p }: { p: PuppetView }) {
+  const flags = [
+    p.isInHand ? 'HAND' : '',
+    p.isTurn ? 'TURN' : '',
+    p.isThinking ? 'THINK' : '',
+  ].filter(Boolean)
+  return (
+    <div className="puppet">
+      {(['mood', 'tilt', 'attention'] as const).map((k) => (
+        <div className="bar" key={k} title={`${k} ${p[k].toFixed(2)}`}>
+          <span className="k">{k[0]}</span>
+          <i style={{ width: `${Math.round(p[k] * 100)}%` }} data-k={k} />
+        </div>
+      ))}
+      <div className="flags">
+        {flags.join(' ') || '—'}
+        {p.fired.length > 0 && <b> {p.fired.join(' ')}</b>}
+      </div>
+    </div>
+  )
+}
+
+function Seat({
+  seat,
+  winning,
+  puppet,
+}: {
+  seat: SeatView
+  winning: ReadonlySet<string>
+  puppet?: PuppetView
+}) {
   const cls = [
     'seat',
     seat.acting ? 'acting' : '',
@@ -86,6 +122,7 @@ function Seat({ seat, winning }: { seat: SeatView; winning: ReadonlySet<string> 
       </div>
       <div className="last">{seat.last}</div>
       <div className="tell">{seat.tell}</div>
+      {puppet && <Puppet p={puppet} />}
     </div>
   )
 }
@@ -214,7 +251,7 @@ export function App() {
       <main id="table">
         <section id="opponents" aria-label="Opponents">
           {view.opponents.map((s) => (
-            <Seat key={s.seat} seat={s} winning={view.winning} />
+            <Seat key={s.seat} seat={s} winning={view.winning} puppet={view.puppets[s.seat]} />
           ))}
         </section>
 
