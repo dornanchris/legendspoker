@@ -27,9 +27,18 @@ export type DecisionContext = {
   street: 'preflop' | 'flop' | 'turn' | 'river'
   legal: Action[]
   numOpponents: number
+  /**
+   * 0 = first to act after the flop, 1 = on the button. Acting last is worth
+   * more than most hands: you watch everyone commit before you do.
+   */
+  position: number
   /** 0..1, decays over hands. Set by the game loop after bad beats. */
   tilt: number
-  /** Observed fold-to-aggression rate of the table, for adaptivity. */
+  /**
+   * Observed fold-to-aggression rate of the opponents STILL IN THIS HAND --
+   * not the whole table. Heads-up in a pot that is exactly the one player
+   * being played against, which is where adaptivity is supposed to bite.
+   */
   opponentFoldRate: number
   rng: () => number
 }
@@ -60,13 +69,22 @@ export function decide(ctx: DecisionContext): Decision {
   // starts a hand at 100bb.
   const shortness = Math.max(0, 1 - ctx.effectiveStackBB / 20)
 
+  // Position. -1 is first to act, +1 is the button. Acting last means every
+  // decision is made with more information than anyone else at the table had,
+  // so a late seat can enter wider and bet thinner, and an early one has to
+  // be tighter because there are still players behind it who might wake up.
+  // This is the same adjustment for every character -- position is a property
+  // of the seat, not the person -- so it moves the whole cast together and
+  // leaves the profiles that separate them intact.
+  const positionEdge = (ctx.position - 0.5) * 2
+
   const effectiveTightness = Math.max(
     0,
-    p.tightness - tiltEffect * 0.6 - shortness * 0.35,
+    p.tightness - tiltEffect * 0.6 - shortness * 0.35 - positionEdge * 0.25,
   )
   const effectiveAggression = Math.min(
     1,
-    p.aggression + tiltEffect * 0.5 + shortness * 0.3,
+    p.aggression + tiltEffect * 0.5 + shortness * 0.3 + positionEdge * 0.1,
   )
 
   // Pot odds: the equity we need for calling to break even.
@@ -119,7 +137,10 @@ export function decide(ctx: DecisionContext): Decision {
   const streetBoost = { preflop: 0.4, flop: 0.8, turn: 1.0, river: 1.2 }[ctx.street]
   const oppPenalty = Math.pow(0.55, ctx.numOpponents - 1)
   const adaptBoost = 1 + (ctx.opponentFoldRate - 0.4) * p.adaptivity
-  const bluffChance = p.bluffFrequency * streetBoost * oppPenalty * adaptBoost
+  // A bluff from late position is the same story told with more information:
+  // everyone else has already shown weakness by checking to you.
+  const posBoost = 0.7 + 0.6 * ctx.position
+  const bluffChance = p.bluffFrequency * streetBoost * oppPenalty * adaptBoost * posBoost
 
   if (canRaise && ctx.rng() < bluffChance) {
     return {

@@ -116,9 +116,12 @@ The app is Vite 8 + React 19, wrapped for Android by Capacitor 8.
 
 **Working:** the engine. Phases 1 and 2 are complete and pass their exit test
 — three distinct play profiles emerge from one shared function. 10,000-hand
-run: Dracula VPIP 34.5 / AF 0.71 (tight trapper), Snowman VPIP 74.4 / AF 0.24
-(calling station), Cleopatra VPIP 63.8 / AF 3.23 (aggressive). The profiles
-have not moved across every change since Phase 1, which is the point of them.
+run: Dracula VPIP 33.0 / AF 0.75 (tight trapper), Snowman VPIP 74.7 / AF 0.24
+(calling station), Cleopatra VPIP 68.2 / AF 2.71 (aggressive). The three have
+stayed recognisably themselves through every change since Phase 1, which is
+the point of them — position awareness moved Cleopatra's AF from 3.23 to 2.71
+because a loose-aggressive player who respects position is less
+indiscriminate, not less aggressive.
 
 **Phase 3a is complete: the tournament model.** Stacks persist, players are
 eliminated, blinds climb every 25 hands, and a table ends when one player
@@ -181,17 +184,31 @@ unlock sound.
   `personality.tells` is capped at three because the contract exposes exactly
   tellA/B/C, and a tell's INDEX is its slot. Authoring the clusters is
   MOTION-SPEC layer 3, still an empty template.
-- **Cleopatra loses, consistently.** Across three independent 6000-hand
-  streams she runs -188, -111 and -42 bb/100 while Dracula runs +106, +47,
-  +93. The sign is stable, so it is not variance. It is also not obviously
-  wrong — she is a high-bluff player at a three-handed table containing a
-  calling station, and you cannot bluff someone who never folds — but a
-  character who reliably loses will not read as the smart one. This is a dial
-  tuning job, not a correctness one, and it needs several thousand hands per
-  change. **The numbers are only now honest** (see the listener gotcha).
-- **No position awareness.** Adding a position term to effective tightness is
-  the single highest-value realism improvement available.
-- Adaptivity is table-wide, not per-opponent.
+- ~~**Cleopatra loses, consistently.**~~ FIXED, and not by tuning her dials.
+  She ran -188, -111 and -42 bb/100 across three 6000-hand streams. Position
+  awareness plus the per-opponent fold read put her at +5, -1, -1 across the
+  same three, and moved the losses onto the calling station (-118, -152, -116)
+  where they belong: Dracula +113, +153, +117. The table now reads correctly —
+  the trapper wins, the aggressive player breaks even against a station she
+  cannot bluff, and the station pays for it. Finishing positions over 60
+  tournaments: Dracula 29 firsts, Cleopatra 18, Snowman 13.
+  **No dial was touched**, which was the right outcome: the imbalance was a
+  missing concept, not a wrong number.
+- ~~**No position awareness.**~~ DONE. `DecisionContext.position` is 0 for
+  first to act after the flop and 1 on the button, and it moves effective
+  tightness, aggression and bluff frequency. Dracula and Cleopatra enter a pot
+  ~13 points wider on the button than first to act; the Snowman is unmoved,
+  because his never-folds quirk fires before any of it — which is exactly what
+  a calling station should do with position.
+  **Simplification:** postflop order is used preflop too. The blinds really
+  act last preflop, so their true preflop position is better than this
+  reports. Modelling it properly means special-casing heads-up, and the thing
+  position is mostly worth is captured either way.
+- ~~Adaptivity is table-wide, not per-opponent.~~ PARTLY DONE. The fold-rate
+  read now covers only the opponents still in the hand, so heads-up in a pot
+  it is exactly the one player being played against. It is still their rate
+  across the whole session, not per-matchup or per-street — a real opponent
+  model is the next step, not this one.
 - **poker-ts destroyed chips when side pots formed — FIXED via a patch.**
   A pot's eligible-player list is fixed when its bets are collected, so a
   player who folded on a later street stayed eligible, could be judged the

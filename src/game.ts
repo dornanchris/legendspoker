@@ -553,6 +553,12 @@ export class Game {
     this.lastButton = this.table.button()
     this.handsPlayed++
 
+    // Position is fixed for the whole hand, so it is computed once. Seats that
+    // were dealt in set the order; who folds later does not move anybody's
+    // chair.
+    const dealtIn = before.map((chips, i) => (chips > 0 ? i : -1)).filter((i) => i >= 0)
+    const positions = this.positions(dealtIn)
+
     // Cache equity per (seat, street) — recomputing it on every action is
     // where a naive implementation burns all its time.
     const equityCache = new Map<string, number>()
@@ -566,6 +572,7 @@ export class Game {
      * showdown -- free reads the player has not earned.
      */
     const foldedSeats = new Set<number>()
+    const stillIn = new Set<number>(dealtIn)
     // VPIP is a per-hand statistic, not a per-action one.
     const putMoneyIn = new Set<number>()
     const raisedPreflop = new Set<number>()
@@ -671,6 +678,7 @@ export class Game {
         } else {
           decision = decide({
             personality: s.personality,
+            position: positions[seat],
             equity,
             pot,
             toCall,
@@ -683,7 +691,7 @@ export class Game {
             legal,
             numOpponents: Math.max(1, this.table.numActivePlayers() - 1),
             tilt: s.tilt,
-            opponentFoldRate: this.tableFoldRate(seat),
+            opponentFoldRate: this.opponentFoldRate(seat, stillIn),
             rng: this.draw,
           })
 
@@ -712,6 +720,7 @@ export class Game {
         if (decision.action === 'fold') {
           s.stats.folds++
           foldedSeats.add(seat)
+          stillIn.delete(seat)
           if (toCall > 0) s.stats.foldsToAggression++
         } else if (decision.action === 'call') {
           s.stats.calls++
@@ -847,16 +856,56 @@ export class Game {
     this.opts.onEvent?.({ type: 'level', level: this.level, smallBlind, bigBlind })
   }
 
-  /** Average fold-to-aggression across the other seats, for adaptivity. */
-  private tableFoldRate(exclude: number): number {
+  /**
+   * Fold-to-aggression of the opponents STILL IN THIS HAND, for adaptivity.
+   *
+   * It used to average the whole table, which meant a read was diluted by
+   * players who had already folded and were not the ones being bluffed. Once
+   * a pot is heads-up this is exactly the one opponent, which is the case the
+   * adaptivity dial exists for -- and it is what lets Cleopatra's
+   * punish-passivity quirk aim at somebody rather than at an average.
+   *
+   * Still not a full opponent model: it is their fold rate across the whole
+   * session, not per-matchup or per-street. That is the next step, not this
+   * one.
+   */
+  private opponentFoldRate(exclude: number, stillIn: Set<number>): number {
     let faced = 0
     let folded = 0
-    for (let i = 0; i < this.seats.length; i++) {
+    for (const i of stillIn) {
       if (i === exclude) continue
       faced += this.seats[i].stats.facedAggression
       folded += this.seats[i].stats.foldsToAggression
     }
+    // Below a sample worth trusting, assume an average table rather than
+    // reading noise as a tendency.
     return faced < 20 ? 0.4 : folded / faced
+  }
+
+  /**
+   * Where each seat sits relative to the button: 0 is first to act after the
+   * flop, 1 is the button itself.
+   *
+   * SIMPLIFICATION, deliberate: this is postflop order, used preflop too. The
+   * blinds actually act LAST preflop, so their true preflop position is
+   * better than this reports. Modelling that means special-casing heads-up
+   * (where the button posts the small blind and acts first preflop, last
+   * after), and the thing position is mostly worth -- entering pots wider
+   * near the button, betting thinner with everyone already checked to you --
+   * is captured by closeness to the button either way.
+   */
+  private positions(dealtIn: number[]): number[] {
+    const n = this.seats.length
+    const order: number[] = []
+    for (let i = 1; i <= n; i++) {
+      const seat = (this.lastButton + i) % n
+      if (dealtIn.includes(seat)) order.push(seat)
+    }
+    // order[0] is first to act after the flop; the last entry is the button.
+    const out = new Array(n).fill(0.5)
+    const last = order.length - 1
+    for (let i = 0; i < order.length; i++) out[order[i]] = last <= 0 ? 1 : i / last
+    return out
   }
 }
 
