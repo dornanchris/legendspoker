@@ -1,7 +1,7 @@
 # Drop-in chart art
 
-Put the world tour map here as **`chart.png`** (or `.jpg` / `.webp`, and change
-`CHART_IMAGE` in `web/Map.tsx` to match). Vite copies this directory verbatim,
+Put the world tour map here as **`chart.webp`** (any format works — change
+`CHART_IMAGE` in `web/Map.tsx` to match the name). Vite copies this directory verbatim,
 so no build step and no import — if the file is missing the map falls back to
 the drawn placeholder chart, which is what ships today.
 

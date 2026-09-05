@@ -74,4 +74,4 @@ before any chart art goes into a build:
 
 | File | Source | Licence / terms | Commercial OK? |
 |---|---|---|---|
-| `web/public/chart.png` | *(unfilled)* | | |
+| `web/public/chart.webp` | *(unfilled — AI-generated, generator not recorded)* | | |

@@ -26,6 +26,11 @@ Thumbs.db
 # index -> body-part map, which Phase 5 rigging needs.
 art/parts/
 
+# Dead esbuild output. The toolchain is Vite now and nothing regenerates these,
+# but an old checkout still has them sitting in the working tree.
+web/bundle.js
+web/bundle.js.map
+
 # Vite build output goes to dist/, already ignored above.
 #
 # android/ IS committed, deliberately, and ios/ should be too when it exists.

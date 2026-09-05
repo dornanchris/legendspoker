@@ -455,7 +455,8 @@ button.ghost { background: transparent; min-width: 0; }
 #map .pin {
   display: grid;
   place-items: center;
-  width: 26px; height: 26px;
+  /* Big enough to hit on a phone and to read against a busy chart. */
+  width: 30px; height: 30px;
   border-radius: 50%;
   font-size: 12px;
   font-weight: 700;

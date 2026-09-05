@@ -45,19 +45,23 @@ const VIEW = { w: 1000, h: 520 }
  * ASSETS.md governs anything that ships: record where the file came from and
  * whether its licence allows commercial use before this goes anywhere public.
  */
-const CHART_IMAGE = '/chart.png'
+const CHART_IMAGE = '/chart.webp'
 
 /** Chart positions, roughly geographic and adjusted for legibility. */
 const MARKS: Record<TableId, { x: number; y: number; anchor: 'start' | 'end' | 'middle'; dy: number }> = {
-  white_house: { x: 168, y: 236, anchor: 'start', dy: -16 },
-  pirate_cove: { x: 214, y: 372, anchor: 'start', dy: 26 },
-  camelot: { x: 660, y: 140, anchor: 'end', dy: 22 },
-  baker_street: { x: 704, y: 92, anchor: 'start', dy: -14 },
-  rome: { x: 790, y: 214, anchor: 'start', dy: 24 },
-  athens: { x: 856, y: 264, anchor: 'end', dy: 26 },
-  transylvania: { x: 874, y: 166, anchor: 'end', dy: -14 },
-  // Inside the cartouche: this one is not on Earth.
-  station: { x: 922, y: 62, anchor: 'middle', dy: 24 },
+  white_house: { x: 120, y: 250, anchor: 'start', dy: -16 },
+  pirate_cove: { x: 150, y: 300, anchor: 'start', dy: -16 },
+  camelot: { x: 505, y: 193, anchor: 'end', dy: 20 },
+  baker_street: { x: 523, y: 174, anchor: 'start', dy: -14 },
+  rome: { x: 609, y: 262, anchor: 'start', dy: 22 },
+  athens: { x: 713, y: 299, anchor: 'start', dy: 26 },
+  transylvania: { x: 764, y: 234, anchor: 'start', dy: -16 },
+  /**
+   * Not on Earth. It sits on the northern edge, past the last of the land and
+   * clear of the scroll in the corner -- the tour's final destination being
+   * off the edge of the chart is the point of putting it there.
+   */
+  station: { x: 778, y: 68, anchor: 'middle', dy: 24 },
 }
 
 /** Land, simplified to the point of honesty: this is a chart, not an atlas. */
