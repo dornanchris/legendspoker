@@ -378,12 +378,15 @@ button.ghost { background: transparent; min-width: 0; }
 #map { container-type: size; }
 #map .chart {
   position: relative;
+  /* Overridden inline once chart art loads, from the image's own dimensions. */
   aspect-ratio: 1000 / 520;
   /* Fallback for anything without container queries: full width, capped. */
   width: 100%;
   max-width: 100%;
   max-height: 100%;
-  width: min(100%, calc(100cqh * 1000 / 520));
+  /* The container-height cap has to use the SAME ratio the box is using, so it
+     reads it back off the box rather than repeating the literal. */
+  width: min(100%, calc(100cqh * var(--chart-ratio, calc(1000 / 520))));
 }
 /* Drop-in art, when web/public/chart.png exists. It fills the same box the
    drawn chart does, so the marks land in the same places either way. */

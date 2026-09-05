@@ -14,11 +14,20 @@ the drawn placeholder chart, which is what ships today.
 - **No route line and no X marks.** Those are game state — they change as the
   player wins — so they are drawn as real buttons over the art. A baked-in set
   fights them.
-- **Roughly 2:1**, matching `VIEW` in `web/Map.tsx`. A different ratio is fine,
-  but change `VIEW` and the `aspect-ratio` in `style.css` to match or the art
-  will be stretched.
+- **Any ratio.** The chart box takes its shape from the image's own dimensions
+  once it loads, so the art is never stretched and the marks never drift. Wide
+  landscape suits the screen best -- roughly 2:1 -- but nothing breaks if it
+  is not.
 - **Compressed.** This is one screen of a $0 mobile game. Aim well under 400KB
   — WebP at quality ~80 usually gets there without a visible difference.
+
+## Leave the top-right corner alone, or tell me
+
+The eighth destination is in orbit, so it is drawn in a cartouche rather than
+as a dot on the sea, and the top-right corner is where that goes. If the art
+puts a scroll or a title there, the Station needs a different home -- the
+clearest options are the top-left over the Arctic, or the empty ocean west of
+Africa. It is one line in `MARKS`.
 
 ## Re-registering the marks
 

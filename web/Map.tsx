@@ -99,6 +99,13 @@ export function WorldMap() {
   // dropped in. A 404 is the signal, which is why this is a public/ asset and
   // not an import -- an import of a missing file fails the build.
   const [art, setArt] = useState(true)
+  /**
+   * The chart box takes its ratio FROM THE IMAGE once it loads. The marks are
+   * positioned in percentages, so they only land correctly if the box and the
+   * art have the same shape -- and making that automatic removes a whole class
+   * of "did you update the ratio too?" mistake when swapping art in and out.
+   */
+  const [ratio, setRatio] = useState(VIEW.w / VIEW.h)
   const params = new URLSearchParams(location.search)
   /**
    * ?calibrate=1 prints the viewBox coordinates of wherever you click, so
@@ -112,6 +119,7 @@ export function WorldMap() {
     <main id="map" aria-label="World tour">
       <div
         className="chart"
+        style={{ aspectRatio: String(ratio), ['--chart-ratio' as string]: String(ratio) }}
         onClick={
           calibrate
             ? (e) => {
@@ -125,7 +133,18 @@ export function WorldMap() {
         }
       >
       {art && (
-        <img className="art" src={CHART_IMAGE} alt="" onError={() => setArt(false)} />
+        <img
+          className="art"
+          src={CHART_IMAGE}
+          alt=""
+          onError={() => setArt(false)}
+          onLoad={(e) => {
+            const img = e.currentTarget
+            if (img.naturalWidth && img.naturalHeight) {
+              setRatio(img.naturalWidth / img.naturalHeight)
+            }
+          }}
+        />
       )}
       {calibrate && probe && <output className="probe">{probe}</output>}
       <svg
