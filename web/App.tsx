@@ -1,4 +1,14 @@
 import { useEffect, useState, useSyncExternalStore } from 'react'
+import { TABLES } from '../src/roster.js'
+import { WorldMap } from './Map.js'
+import {
+  goMap,
+  hasProgress,
+  markState,
+  newTour,
+  snapshot as tourSnapshot,
+  subscribe as tourSubscribe,
+} from './tour.js'
 import type { Card } from '../src/equity.js'
 import type { Action, Decision } from '../src/decide.js'
 import type { TurnView } from '../src/game.js'
@@ -6,8 +16,10 @@ import { click } from './audio.js'
 import {
   act,
   cardKey,
+  leave,
   saveGame,
   snapshot,
+  start,
   subscribe,
   type LogLine,
   type PuppetView,
@@ -244,11 +256,63 @@ function callLabel(turn: TurnView): string {
   return amount >= turn.stack ? `Call all in (${amount})` : `Call ${amount}`
 }
 
-export function App() {
+/**
+ * The title screen. A Phase 4 STUB by design: BUILD-PLAN 3B says stand
+ * navigation up early and fill the screens in late, because retrofitting
+ * routing into a single-view app is the expensive way round.
+ *
+ * Journal, Settings and Multiplayer are listed here because the doc lists
+ * them, and disabled because they do not exist. Showing where they will go is
+ * cheaper than discovering later that there was never room for them.
+ */
+function Home() {
+  const tour = useSyncExternalStore(tourSubscribe, tourSnapshot)
+  const next = TABLES.find((t) => markState(t.id) === 'current')
+  return (
+    <main id="home">
+      <div className="titles">
+        <h1>Legends Poker</h1>
+        <p className="sub">Death&rsquo;s Invitational</p>
+      </div>
+      <nav>
+        {hasProgress() && (
+          <button type="button" className="primary" onClick={() => { click(); goMap() }}>
+            Continue
+          </button>
+        )}
+        <button type="button" onClick={() => { click(); newTour() }}>
+          {hasProgress() ? 'New tour' : 'Begin the tour'}
+        </button>
+        <button type="button" className="ghost" disabled>Journal</button>
+        <button type="button" className="ghost" disabled>Settings</button>
+        <button type="button" className="ghost" disabled>Multiplayer</button>
+      </nav>
+      <p className="whereami">
+        {tour.beaten.length > 0
+          ? `${tour.beaten.length} of ${TABLES.length} cleared — next: ${next?.displayName ?? 'the last crossing'}`
+          : 'Eight tables. One dealer. He has been at every one of them before.'}
+      </p>
+    </main>
+  )
+}
+
+function Table() {
   const view = useSyncExternalStore(subscribe, snapshot)
+  const tour = useSyncExternalStore(tourSubscribe, tourSnapshot)
+
+  // The engine loop is started here and owned by table.ts. React does not
+  // drive it; it only says which destination to deal.
+  useEffect(() => { void start(tour.playing) }, [tour.playing])
+
   return (
     <>
       <main id="table">
+        <header id="table-head">
+          <button type="button" className="ghost" onClick={() => { click(); leave() }}>
+            ‹ Map
+          </button>
+          <span>{view.title}</span>
+        </header>
         <section id="opponents" aria-label="Opponents">
           {view.opponents.map((s) => (
             <Seat key={s.seat} seat={s} winning={view.winning} puppet={view.puppets[s.seat]} />
@@ -281,4 +345,11 @@ export function App() {
       <Log lines={view.log} />
     </>
   )
+}
+
+export function App() {
+  const tour = useSyncExternalStore(tourSubscribe, tourSnapshot)
+  if (tour.screen === 'home') return <Home />
+  if (tour.screen === 'map') return <WorldMap />
+  return <Table />
 }

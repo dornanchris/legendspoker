@@ -94,8 +94,10 @@ data/
   dialogue/       one file per table; schema is established and working
 web/
   table.ts        THE PRESENTATION QUEUE + the view React renders. Read it.
-  App.tsx         the table, as components; renders, never drives
-  main.tsx        mount, audio unlock on first gesture, start the loop
+  tour.ts         screen routing + unlock state; progression is RESPECT only
+  App.tsx         home, the table, and the router; renders, never drives
+  Map.tsx         the world tour chart (placeholder art, real navigation)
+  main.tsx        mount, audio unlock on first gesture
   audio.ts        one synthesised sound; the point of it is the UNLOCK
   index.html      Vite entry; style.css is landscape-only by design
   shims/          browser stand-ins for the node builtins poker-ts needs
@@ -172,6 +174,16 @@ PRESENTATION clock, draws no randomness, and never reaches back into the game.
 rely on: 0 violations over 87k frames and 47k triggers. `?puppet=1` draws the
 live inputs on each seat, so the contract can be watched against a real hand
 before a single .riv file exists. **Rigging can start against it now.**
+
+**The game is no longer one screen.** `npm run web` opens on a title screen,
+which leads to a world tour chart, which leads to a table. BUILD-PLAN 3B calls
+for exactly this in Phase 4 — "stand navigation up early and fill the screens
+in late, because retrofitting routing into a single-view app is the expensive
+way round" — so the routing, the unlock state and the persistence are real and
+the chart's art is a placeholder (its illustrated version is Phase 7).
+Entering a destination seats that table's ROSTER cast; `?cast=proto` still
+seats the prototype three, which are the only characters with authored quirks
+and tells and the instrument every tuning baseline is measured against.
 
 **The tour exists as data.** `src/roster.ts` carries the design doc's LOCKED
 v4 roster — eight tables, every seat, every champion and entrance, each
@@ -377,6 +389,18 @@ unlock sound.
   viewport AND against the containing column; a control can be on screen and
   still be painted over by the log panel. A screenshot found this when the
   numbers said everything was fine.
+- **`aspect-ratio` yields to a definite size, so `max-width` never clamps it.**
+  The chart sized with `aspect-ratio` + `height: 100%` + `max-width: 100%`
+  simply grew past the edge of a narrow screen and took a destination mark
+  with it — the ratio wins over the clamp. `width: min(100%, calc(100cqh *
+  W / H))` with `container-type: size` on the parent computes it instead of
+  hoping. The related trap: an SVG sized `width/height: 100%` letterboxes
+  inside its box, so anything positioned in percentages OVER it drifts off the
+  drawing. Give the wrapper the viewBox's exact ratio.
+- **A save belongs to the table it was taken at.** `save.tour.table` records
+  the destination; arriving anywhere else starts a new tournament rather than
+  restoring someone else's. Without that check the map would deal you the
+  White House's saved hand at Pirate Cove.
 - **`localStorage` can throw, not just fail.** Reading the property throws
   when a browser blocks site data, and Safari in Private Browsing has thrown
   on `setItem`. `web/table.ts` wraps every access; an unguarded save turns the

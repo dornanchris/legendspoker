@@ -1,5 +1,7 @@
 import { Game, type HandEvent, type TurnView } from '../src/game.js'
-import { CAST, HUMAN } from '../src/personality.js'
+import { CAST, HUMAN, type Personality } from '../src/personality.js'
+import { castFor, personalityFor, tableOf, type TableId } from '../src/roster.js'
+import { adoptFromSave, beat, forSave, goMap } from './tour.js'
 import type { Decision } from '../src/decide.js'
 import type { Card } from '../src/equity.js'
 import { mulberry32 } from '../src/rng.js'
@@ -32,8 +34,28 @@ import {
  */
 
 const HUMAN_SEAT = 0
-const SEATS = [HUMAN, ...CAST]
 const BUY_IN = 2000
+
+/**
+ * Who is at the table. Set when a table is entered, because that is now a
+ * choice made on the map rather than a constant.
+ *
+ * By default a destination seats its ROSTER cast. `?cast=proto` seats the
+ * prototype three instead -- Dracula, the Snowman and Cleopatra -- which are
+ * the tuning fixtures every baseline in CLAUDE.md is measured against, and
+ * the only characters with authored quirks and tells. Keeping that switch is
+ * what stops the roster quietly replacing the instrument.
+ */
+let seats: Personality[] = [HUMAN, ...CAST]
+
+function castForTable(id: TableId | null): Personality[] {
+  if (!id || params.get('cast') === 'proto') return [HUMAN, ...CAST]
+  // The champion of a late-entrance table is NOT seated: they arrive after an
+  // elimination, and that beat is Phase 7. Only the four chairs are dealt in.
+  const table = tableOf(id)
+  const npcs = castFor(id).filter((e) => table && table.seats.includes(e.id))
+  return [HUMAN, ...npcs.map(personalityFor)]
+}
 
 const params = new URLSearchParams(location.search)
 
@@ -97,6 +119,8 @@ export type TableView = {
   log: LogLine[]
   status: 'playing' | 'won' | 'lost'
   saveNote: string
+  /** The destination being played, for the table header. */
+  title: string
   /** Empty unless ?puppet=1. Indexed by seat. */
   puppets: PuppetView[]
 }
@@ -105,7 +129,7 @@ export const cardKey = (c: Card) => `${c.rank}${c.suit[0]}`
 
 const emptySeat = (seat: number): SeatView => ({
   seat,
-  name: SEATS[seat].name,
+  name: seats[seat].name,
   stack: 0,
   cards: [],
   last: '',
@@ -116,8 +140,8 @@ const emptySeat = (seat: number): SeatView => ({
   winner: false,
 })
 
-let view: TableView = {
-  opponents: SEATS.map((_, i) => i).filter((i) => i !== HUMAN_SEAT).map(emptySeat),
+const blankView = (): TableView => ({
+  opponents: seats.map((_, i) => i).filter((i) => i !== HUMAN_SEAT).map(emptySeat),
   you: emptySeat(HUMAN_SEAT),
   board: [],
   pot: 0,
@@ -129,8 +153,11 @@ let view: TableView = {
   log: [],
   status: 'playing',
   saveNote: '',
+  title: '',
   puppets: [],
-}
+})
+
+let view: TableView = blankView()
 
 const listeners = new Set<() => void>()
 
@@ -190,21 +217,21 @@ let game: Game
  * It draws no randomness and never reaches back into the game, so having it
  * attached cannot change how a hand resolves.
  */
-let director = new PuppetDirector(SEATS.length, { humanSeat: HUMAN_SEAT })
+let director = new PuppetDirector(seats.length, { humanSeat: HUMAN_SEAT })
 /** Triggers fired by the beat currently being shown, for the debug overlay. */
-let firedNow: PuppetTrigger[][] = SEATS.map(() => [])
+let firedNow: PuppetTrigger[][] = seats.map(() => [])
 
 /** Feeds one beat to the director, from inside the step that displays it. */
 function puppet(e: PuppetEvent): void {
   const fired = director.apply(e)
-  firedNow = SEATS.map(() => [])
+  firedNow = seats.map(() => [])
   for (const f of fired) firedNow[f.seat]?.push(f.trigger)
 }
 
 function publishPuppets(): void {
   if (!SHOW_PUPPET) return
   set({
-    puppets: SEATS.map((_, i) => ({ ...director.inputs(i), fired: firedNow[i] ?? [] })),
+    puppets: seats.map((_, i) => ({ ...director.inputs(i), fired: firedNow[i] ?? [] })),
   })
 }
 
@@ -246,7 +273,7 @@ function settled(): Promise<void> {
 const SUIT = { clubs: '♣', diamonds: '♦', hearts: '♥', spades: '♠' } as const
 const cardText = (c: Card) => `${c.rank}${SUIT[c.suit]}`
 const handText = (cards: Card[]) => cards.map(cardText).join(' ')
-const nameOf = (seat: number) => SEATS[seat].name
+const nameOf = (seat: number) => seats[seat].name
 
 const TELL_TEXT: Record<string, string> = {
   steeples_fingers: 'steeples his fingers',
@@ -498,8 +525,13 @@ function readSave(): SaveGame | null {
  * case the schema exists for: the save carries the human's decisions so far
  * and the restore replays them.
  */
-export function saveGame(): void {
-  const ok = writeStore(SAVE_KEY, toJson(game.save()))
+export function saveGame(quiet = false): void {
+  const save = game.save()
+  // The campaign context rides along, so a save is self-contained: which
+  // destination it belongs to, and the tour progress at the time.
+  save.tour = { ...forSave(), table: playing }
+  const ok = writeStore(SAVE_KEY, toJson(save))
+  if (quiet) return
   // Say so when it did not work. A Save button that silently does nothing is
   // worse than no Save button.
   set({ saveNote: ok ? 'Saved.' : 'Could not save — storage is blocked.' })
@@ -510,18 +542,39 @@ export function saveGame(): void {
 
 let started = false
 
-export async function start(): Promise<void> {
+/** Which destination is being played. Recorded in the save so a resume knows. */
+let playing: TableId | null = null
+
+/**
+ * Leaves the table for the map. The game is written down first: a table is an
+ * elimination tournament that can run three quarters of an hour, so walking
+ * away from one has to be free.
+ */
+export function leave(): void {
+  if (started && view.status === 'playing') saveGame(true)
+  goMap()
+}
+
+export async function start(id: TableId | null): Promise<void> {
   if (started) return
   started = true
+  playing = id
+  seats = castForTable(id)
+  view = blankView()
+  set({ title: (id && tableOf(id)?.displayName) || 'Exhibition table' })
 
   // A restored game restarts the director from the seats it finds, not from a
   // saved copy: nothing in here is game state, it is all derived from the
   // events of the hand being replayed.
-  director = new PuppetDirector(SEATS.length, { humanSeat: HUMAN_SEAT })
+  director = new PuppetDirector(seats.length, { humanSeat: HUMAN_SEAT })
 
   const saved = readSave()
-  if (saved) {
-    game = Game.load(saved, SEATS, { onHumanTurn, onEvent })
+  // A save belongs to the table it was taken at. Arriving somewhere else is
+  // not a resume, it is a new tournament.
+  const belongsHere = saved && (saved.tour?.table ?? null) === playing
+  if (saved && belongsHere) {
+    adoptFromSave(saved.tour)
+    game = Game.load(saved, seats, { onHumanTurn, onEvent })
     // Eliminations happened in hands this session never saw, so the busted
     // seats are read back from the chips rather than from past events.
     eachSeat((s) => ({ out: game.stacks()[s.seat] === 0 }))
@@ -532,7 +585,7 @@ export async function start(): Promise<void> {
     // stream position to write down -- so the table is seeded even when
     // nobody asked for a particular one.
     const seed = Number(params.get('seed') ?? Date.now() % 0x7fffffff)
-    game = new Game(SEATS, {
+    game = new Game(seats, {
       mode: 'tournament',
       buyIn: BUY_IN,
       rollouts: 60,
@@ -566,11 +619,15 @@ export async function start(): Promise<void> {
   // nothing left to play.
   clearStore(SAVE_KEY)
   const won = game.survivors()[0] === HUMAN_SEAT
+  // Progression is respect, per the design doc: beating the table is the
+  // unlock, and there is no score attached to it.
+  if (won && playing) beat(playing)
   set({
     status: won ? 'won' : 'lost',
     prompt: won ? 'You hold every chip. Table cleared.' : 'You are out.',
   })
   log(won ? 'You win the table.' : 'You are out.', 'big')
+  started = false
 }
 
 function newHand(handNo: number): void {

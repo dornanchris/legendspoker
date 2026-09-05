@@ -1,7 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { App } from './App.js'
 import { unlock } from './audio.js'
-import { start } from './table.js'
 import './style.css'
 
 /**
@@ -15,5 +14,3 @@ createRoot(document.getElementById('root')!).render(<App />)
 // guaranteed to happen before the player expects sound. Capture-phase so it
 // runs before the button's own handler tries to make a noise.
 addEventListener('pointerdown', unlock, { capture: true })
-
-void start()
