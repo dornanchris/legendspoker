@@ -110,6 +110,13 @@ to 2bb brought him to a realistic −66.
 
 ## Playing it
 
+It is also deployed from this branch to GitHub Pages on every push:
+
+**https://dornanchris.github.io/legendspoker/**
+
+That is the easiest way to try it on a phone — an iPhone included — without
+being on the same Wi-Fi as the dev machine.
+
 ```bash
 npm run web          # Vite dev server at localhost:5173 (and on the LAN)
 npm run build:web    # production build into dist/

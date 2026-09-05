@@ -45,7 +45,9 @@ const VIEW = { w: 1000, h: 520 }
  * ASSETS.md governs anything that ships: record where the file came from and
  * whether its licence allows commercial use before this goes anywhere public.
  */
-const CHART_IMAGE = '/chart.webp'
+// Through BASE_URL, so it survives being served from a subpath. A literal
+// '/chart.webp' works on localhost and 404s on GitHub Pages.
+const CHART_IMAGE = `${import.meta.env.BASE_URL}chart.webp`
 
 /** Chart positions, roughly geographic and adjusted for legibility. */
 const MARKS: Record<TableId, { x: number; y: number; anchor: 'start' | 'end' | 'middle'; dy: number }> = {

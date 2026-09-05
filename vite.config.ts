@@ -12,6 +12,11 @@ export default defineConfig({
   // The app lives in web/; the engine in src/ is imported across that boundary
   // and Vite allows it because the workspace root is the repo, not web/.
   root: 'web',
+  // RELATIVE, not '/'. GitHub Pages serves a project site from a subpath --
+  // /legendspoker/ -- so absolute asset URLs 404 there while working perfectly
+  // on localhost, which is the worst way to find out. Relative works for both,
+  // and for a file:// open too.
+  base: './',
   // Capacitor copies whatever webDir points at, so the build lands outside the
   // source tree rather than inside it.
   build: { outDir: '../dist', emptyOutDir: true, sourcemap: true },

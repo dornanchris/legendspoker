@@ -1,0 +1,75 @@
+# Publishes the web build to GitHub Pages so the game can be opened on a real
+# phone without being on the same Wi-Fi as the dev machine.
+#
+# It deploys THIS BRANCH, deliberately: the point right now is to look at work
+# in progress on a device, not to ship. Point `branches` at main when that
+# changes.
+name: Deploy to Pages
+
+on:
+  push:
+    branches: ['claude/seeded-rng-determinism-b0x3iq']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time, and a newer push wins -- there is no value in watching
+# an older build finish.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # `npm ci` runs patch-package through postinstall, and that patch is
+      # load-bearing: without it poker-ts destroys pots when side pots form and
+      # the deal stops being reproducible. If it ever fails, the build should
+      # fail with it rather than deploy a broken engine.
+      - run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit -p .
+
+      - run: npm run build:web
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # The engine's invariants. Runs alongside the deploy rather than gating it,
+  # so a red guard is loud without stopping you looking at the build on a
+  # phone -- and so the slowest check does not sit between a push and a test.
+  guards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Chips are conserved
+        run: npm run check:pots
+      - name: Saves restore identically
+        run: npm run check:save
+      - name: The rig contract holds
+        run: npm run check:puppet
+      - name: Every seat reads as a different player
+        run: npm run check:roster 600
