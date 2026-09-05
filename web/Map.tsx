@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { TABLES, type TableId } from '../src/roster.js'
 import { canEnter, enter, markState, type MarkState } from './tour.js'
 import { click } from './audio.js'
@@ -21,6 +22,30 @@ import { click } from './audio.js'
  */
 
 const VIEW = { w: 1000, h: 520 }
+
+/**
+ * DROP-IN CHART ART.
+ *
+ * Put a file at `web/public/chart.png` and it becomes the map. Nothing else
+ * changes: the destination marks float above it either way, because they are
+ * buttons carrying locked/current/beaten state and cannot be part of a
+ * picture. Without the file, the drawn chart below is used instead.
+ *
+ * WHAT THE ART HAS TO BE, and it is the same argument as the globe: framed to
+ * the ATLANTIC AND MEDITERRANEAN, not the world. Seven of the eight
+ * destinations sit between the American east coast and the Black Sea. On a
+ * full world map they occupy about a tenth of the image, which on a phone
+ * leaves a few hundred pixels to hold seven pins and their labels -- they
+ * collide, and the other nine tenths is beautifully drawn content the tour
+ * never visits.
+ *
+ * It also must NOT have a route or X marks drawn on it. Those are state, they
+ * change as the player wins, and a baked-in set fights the real ones.
+ *
+ * ASSETS.md governs anything that ships: record where the file came from and
+ * whether its licence allows commercial use before this goes anywhere public.
+ */
+const CHART_IMAGE = '/chart.png'
 
 /** Chart positions, roughly geographic and adjusted for legibility. */
 const MARKS: Record<TableId, { x: number; y: number; anchor: 'start' | 'end' | 'middle'; dy: number }> = {
@@ -70,10 +95,44 @@ const LABEL: Record<MarkState, string> = {
 }
 
 export function WorldMap() {
+  // Absent by default, so the drawn chart is what you get until a file is
+  // dropped in. A 404 is the signal, which is why this is a public/ asset and
+  // not an import -- an import of a missing file fails the build.
+  const [art, setArt] = useState(true)
+  const params = new URLSearchParams(location.search)
+  /**
+   * ?calibrate=1 prints the viewBox coordinates of wherever you click, so
+   * re-registering the eight marks against a new piece of art is a click each
+   * rather than an afternoon of guessing.
+   */
+  const calibrate = params.get('calibrate') === '1'
+  const [probe, setProbe] = useState<string>('')
+
   return (
     <main id="map" aria-label="World tour">
-      <div className="chart">
-      <svg viewBox={`0 0 ${VIEW.w} ${VIEW.h}`} role="presentation">
+      <div
+        className="chart"
+        onClick={
+          calibrate
+            ? (e) => {
+                const r = e.currentTarget.getBoundingClientRect()
+                const x = Math.round(((e.clientX - r.left) / r.width) * VIEW.w)
+                const y = Math.round(((e.clientY - r.top) / r.height) * VIEW.h)
+                setProbe(`{ x: ${x}, y: ${y} }`)
+                void navigator.clipboard?.writeText(`{ x: ${x}, y: ${y} }`).catch(() => {})
+              }
+            : undefined
+        }
+      >
+      {art && (
+        <img className="art" src={CHART_IMAGE} alt="" onError={() => setArt(false)} />
+      )}
+      {calibrate && probe && <output className="probe">{probe}</output>}
+      <svg
+        viewBox={`0 0 ${VIEW.w} ${VIEW.h}`}
+        role="presentation"
+        style={art ? { display: 'none' } : undefined}
+      >
         <defs>
           <radialGradient id="vignette" cx="50%" cy="45%" r="74%">
             <stop offset="55%" stopColor="#6b4a1e" stopOpacity="0" />

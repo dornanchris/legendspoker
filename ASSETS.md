@@ -60,3 +60,18 @@ out-of-copyright literary characters like Sherlock/Nemo/Javert/Wells' Martian)
 are free to depict. Modern/copyrighted franchises (Star Wars, Star Trek, Alien,
 Doctor Who, Terminator) are OFF the table. Verify each character's copyright
 status before committing art time.
+
+## The world tour chart
+
+The map screen takes a drop-in image at `web/public/chart.png`; without one it
+draws a placeholder. See `web/public/README.md` for what the art has to be.
+
+⚠ **AI-generated art is not automatically clear to ship.** The question is not
+whether the image depicts anything owned — a chart of the Atlantic does not —
+it is what the GENERATOR'S terms say about commercial use of its output, and
+those differ by service and by plan. Record the source and the licence here
+before any chart art goes into a build:
+
+| File | Source | Licence / terms | Commercial OK? |
+|---|---|---|---|
+| `web/public/chart.png` | *(unfilled)* | | |

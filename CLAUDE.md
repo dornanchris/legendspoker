@@ -97,6 +97,7 @@ web/
   tour.ts         screen routing + unlock state; progression is RESPECT only
   App.tsx         home, the table, and the router; renders, never drives
   Map.tsx         the world tour chart (placeholder art, real navigation)
+  public/         drop-in chart art: chart.png replaces the drawn map
   main.tsx        mount, audio unlock on first gesture
   audio.ts        one synthesised sound; the point of it is the UNLOCK
   index.html      Vite entry; style.css is landscape-only by design
