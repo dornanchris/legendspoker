@@ -513,3 +513,37 @@ button.ghost { background: transparent; min-width: 0; }
   min-height: 0;
 }
 #table-head button { min-height: 28px; padding: 2px 8px; font-size: 12px; }
+
+/* ---- end of table ---- */
+/* Spans the whole landscape grid, log column included: finishing a table is
+   the one moment nothing else on screen matters. */
+#table-over {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #0b0908cc;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+           env(safe-area-inset-bottom) env(safe-area-inset-left);
+  z-index: 10;
+}
+#table-over .panel {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 20px 28px;
+  max-width: min(90vw, 420px);
+  text-align: center;
+  border: 1px solid var(--edge);
+  border-radius: 10px;
+  background: linear-gradient(#1b1613, #141110);
+  box-shadow: 0 12px 40px #000a;
+}
+#table-over h2 {
+  margin: 0;
+  font-size: clamp(18px, 4.5vh, 26px);
+  color: var(--gold);
+  letter-spacing: .03em;
+}
+#table-over .where { margin: 0; color: var(--dim); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+#table-over .next { margin: 2px 0 6px; color: var(--ink); font-size: 13px; }

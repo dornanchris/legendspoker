@@ -506,6 +506,22 @@ function clearStore(key: string): void {
   }
 }
 
+/**
+ * Is there a table part-way through? The home screen needs to know, or leaving
+ * a table mid-hand strands you: Continue does not appear, and the only button
+ * left says "Begin the tour" and wipes your progress to get back in.
+ */
+export function savedTable(): TableId | null {
+  const raw = readStore(SAVE_KEY)
+  if (!raw) return null
+  try {
+    const t = fromJson(raw).tour?.table
+    return typeof t === 'string' ? (t as TableId) : null
+  } catch {
+    return null
+  }
+}
+
 function readSave(): SaveGame | null {
   if (params.has('new')) return null
   const raw = readStore(SAVE_KEY)

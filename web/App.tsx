@@ -18,6 +18,7 @@ import {
   cardKey,
   leave,
   saveGame,
+  savedTable,
   snapshot,
   start,
   subscribe,
@@ -268,6 +269,10 @@ function callLabel(turn: TurnView): string {
 function Home() {
   const tour = useSyncExternalStore(tourSubscribe, tourSnapshot)
   const next = TABLES.find((t) => markState(t.id) === 'current')
+  // A table left part-way through counts as progress, or Continue vanishes and
+  // the only way back in is a button that says it starts over.
+  const inProgress = savedTable()
+  const resumable = hasProgress() || !!inProgress
   return (
     <main id="home">
       <div className="titles">
@@ -275,24 +280,57 @@ function Home() {
         <p className="sub">Death&rsquo;s Invitational</p>
       </div>
       <nav>
-        {hasProgress() && (
+        {resumable && (
           <button type="button" className="primary" onClick={() => { click(); goMap() }}>
             Continue
           </button>
         )}
         <button type="button" onClick={() => { click(); newTour() }}>
-          {hasProgress() ? 'New tour' : 'Begin the tour'}
+          {resumable ? 'New tour' : 'Begin the tour'}
         </button>
         <button type="button" className="ghost" disabled>Journal</button>
         <button type="button" className="ghost" disabled>Settings</button>
         <button type="button" className="ghost" disabled>Multiplayer</button>
       </nav>
       <p className="whereami">
-        {tour.beaten.length > 0
-          ? `${tour.beaten.length} of ${TABLES.length} cleared — next: ${next?.displayName ?? 'the last crossing'}`
-          : 'Eight tables. One dealer. He has been at every one of them before.'}
+        {inProgress
+          ? `A hand is still in play at ${TABLES.find((t) => t.id === inProgress)?.displayName ?? 'the table'}.`
+          : tour.beaten.length > 0
+            ? `${tour.beaten.length} of ${TABLES.length} cleared — next: ${next?.displayName ?? 'the last crossing'}`
+            : 'Eight tables. One dealer. He has been at every one of them before.'}
       </p>
     </main>
+  )
+}
+
+/**
+ * The end of a table. Not the results screen the design doc wants -- that is
+ * screen 9, and it is Phase 7 with a respect-tier change and an unlock
+ * celebration -- but enough that finishing a forty-five minute tournament is
+ * an event rather than a dead table with a small link in the corner. It is
+ * also the only place the unlock is VISIBLE, which is what makes progression
+ * checkable on a device.
+ */
+function TableOver({ view }: { view: TableView }) {
+  const won = view.status === 'won'
+  const next = TABLES.find((t) => markState(t.id) === 'current')
+  return (
+    <div id="table-over">
+      <div className="panel">
+        <h2>{won ? 'Table cleared' : 'You are out'}</h2>
+        <p className="where">{view.title}</p>
+        <p className="next">
+          {won
+            ? next
+              ? `${next.displayName} is open.`
+              : 'There is nowhere left on the chart.'
+            : 'The chair is still there. So are they.'}
+        </p>
+        <button type="button" className="primary" onClick={() => { click(); leave() }}>
+          Return to the chart
+        </button>
+      </div>
+    </div>
   )
 }
 
@@ -343,6 +381,7 @@ function Table() {
         <Controls view={view} />
       </main>
       <Log lines={view.log} />
+      {view.status !== 'playing' && <TableOver view={view} />}
     </>
   )
 }
