@@ -277,6 +277,13 @@ they land. Most are cheap code but need a frame/art pass, and several are the
 | 11 | **Multiplayer lobby + avatar select** | Choosing an unlocked legend to play as | 10 |
 | 12 | **Achievements** | In-world framing only — part of the Journal, not a trophy cabinet | 9 |
 
+**Status:** screens 2–7, 9, 10 and 12 exist as plain-DOM render functions
+(`web/screens/`), with the Journal built as **The Ledger** and achievements
+as its **Marks**. Screen 1 is folded into the title (there is nothing to
+preload yet, and the audio-unlock tap arrives with audio). Screen 8
+(Collection) and 11 (multiplayer) are not built: both depend on art and on
+multiplayer, and a screen that leads nowhere is noise.
+
 ### Notes that affect the build
 
 - **The map is the game's spine, not decoration.** It carries unlock state,

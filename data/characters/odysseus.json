@@ -1,0 +1,69 @@
+{
+  "id": "odysseus",
+  "name": "Odysseus",
+  "short": "Odysseus",
+  "epithet": "The Man of Many Turns",
+  "pronoun": "he",
+  "table": "athens",
+  "role": "champion",
+  "arrives": true,
+  "origin": "Myth",
+  "era": "Homer's Odyssey · King of Ithaca",
+  "dials": {
+    "aggression": 0.66,
+    "tightness": 0.64,
+    "bluffFrequency": 0.28,
+    "tiltSensitivity": 0.05,
+    "adaptivity": 0.6,
+    "noise": 0.15
+  },
+  "quirks": [
+    {
+      "type": "river_bluff",
+      "chance": 0.35
+    },
+    {
+      "type": "steal",
+      "chance": 0.4,
+      "minEquity": 0.32
+    }
+  ],
+  "tells": [
+    {
+      "signal": "twists_ring",
+      "text": "twists the ring on his finger",
+      "correlate": "bluffing",
+      "reliability": 0.8
+    },
+    {
+      "signal": "looks_door",
+      "text": "looks toward the door as if it led home",
+      "correlate": "weak",
+      "reliability": 0.78
+    },
+    {
+      "signal": "leans_satisfied",
+      "text": "leans back, satisfied",
+      "correlate": "strong",
+      "reliability": 0.8
+    }
+  ],
+  "idles": [
+    "wrings sea water from the hem of his cloak",
+    "counts the exits",
+    "rubs an old scar on his thigh",
+    "smiles at no one in particular"
+  ],
+  "profile": {
+    "ledger": "Ten years at war, ten more getting home. Arrived last, alone and in disguise, and still won. He is late here too.",
+    "ledger_beaten": "Beaten. He has already begun telling it as a story in which he very nearly won.",
+    "history": [
+      "Odysseus, king of the small rocky island of Ithaca, was the cleverest of the Greeks at Troy; the wooden horse was his idea. The war took ten years. Getting home took ten more: the Cyclops, the enchantress Circe, a visit to the land of the dead, the Sirens, Scylla and Charybdis, and seven years kept on the island of the nymph Calypso. He lost every ship and every man, and reached Ithaca alone.",
+      "In the Odyssey's first line Homer calls him polytropos, a man of many turns, and he earns it: he lies easily, well, and for pleasure, and he tells long, splendid stories about himself. He came home disguised as a beggar, and his old dog was the first to know him. He is the champion here because nobody at a Greek table lies better. He is late because he is always late."
+    ],
+    "at_the_table": "The most adaptable player at the table, and the most comfortable lying. He raises a great many pots that nobody else has opened, and when the last card is checked to him he is very likely to tell a story with his chips, true or not. He learns the table quickly and changes to suit it. Bad luck does not bother him. He has had worse.",
+    "look": "Silhouette: a head shorter than the kings around him but broader in the chest and shoulders (Homer says so), a sea-stained cloak, and the conical felt sailor's cap he wears in Greek vase painting. Face: weathered, grizzled curly beard, amused eyes that are always doing sums. Prop: a heavy gold ring — make it big enough to catch the light, because his hands are the tell surface.",
+    "prop": "Heavy gold ring",
+    "public_domain": "Homer is public domain. Build from Greek vase painting (the pilos cap, the Sirens vase in the British Museum). Avoid every screen Odysseus, including Kirk Douglas's Ulysses (1954) and Christopher Nolan's The Odyssey (2026), the Coen brothers' O Brother, Where Art Thou?, and EPIC: The Musical."
+  }
+}

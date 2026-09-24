@@ -1,0 +1,70 @@
+{
+  "id": "sherlock",
+  "name": "Sherlock Holmes",
+  "short": "Holmes",
+  "epithet": "The Consulting Detective",
+  "pronoun": "he",
+  "table": "baker_street",
+  "role": "champion",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "The Holmes stories (Conan Doyle, 1887–1927)",
+  "dials": {
+    "aggression": 0.6,
+    "tightness": 0.7,
+    "bluffFrequency": 0.18,
+    "tiltSensitivity": 0.02,
+    "adaptivity": 0.8,
+    "noise": 0.35
+  },
+  "quirks": [
+    {
+      "type": "check_raise",
+      "minEquity": 0.7,
+      "chance": 0.55
+    },
+    {
+      "type": "heads_up_pressure",
+      "minEquity": 0.5,
+      "chance": 0.5
+    }
+  ],
+  "tells": [
+    {
+      "signal": "fingertips",
+      "text": "puts his fingertips together",
+      "correlate": "strong",
+      "reliability": 0.66
+    },
+    {
+      "signal": "draws_pipe",
+      "text": "draws on his pipe",
+      "correlate": "bluffing",
+      "reliability": 0.64
+    },
+    {
+      "signal": "pipe_teeth",
+      "text": "taps his pipe stem against his teeth",
+      "correlate": "weak",
+      "reliability": 0.64
+    }
+  ],
+  "idles": [
+    "examines a speck on the tablecloth",
+    "glances at your hands",
+    "turns his lens over in his fingers",
+    "looks at the mantel as if it had lied to him"
+  ],
+  "profile": {
+    "ledger": "Faked his own death for three years. I was not consulted.",
+    "ledger_beaten": "Beaten, he asked how. I suspect he is still working on it.",
+    "history": [
+      "Arthur Conan Doyle's consulting detective first appeared in A Study in Scarlet (1887), lodging at 221B Baker Street with Dr Watson, who tells nearly all of his stories. The police bring him the cases they cannot solve, and he solves them by observing what everyone else has merely seen. In 1893 Doyle killed him off at a Swiss waterfall. Ten years later, he brought him back.",
+      "He never guesses — \"a shocking habit,\" he says, \"destructive to the logical faculty.\" He plays the violin, keeps an enormous index of people and crimes, and grows unbearable when bored. He once told Watson he had been beaten only four times in his life. At a card table he does what he does everywhere: reads everyone in the room, and says so."
+    ],
+    "at_the_table": "He plays fairly few hands, and plays them well. With something strong on the flop he likes to check, let you bet into him, and then raise. Alone in a pot with you, he leans on you relentlessly. He adapts faster than anyone at the table; within the hour he is playing against you in particular. Nothing tilts him. He finds losing interesting.",
+    "look": "Silhouette: tall and very thin, hawk-nosed, high-foreheaded — Sidney Paget's Holmes, in a dark frock coat or a mouse-coloured dressing gown. No deerstalker (Paget gave him one only for the country) and no curved calabash pipe (a stage invention). Prop: a straight black clay pipe, whose angle against the jaw is the tell surface.",
+    "prop": "Black clay pipe",
+    "public_domain": "Every Holmes story is now public domain in the US. Work from Doyle's text and Paget's Strand illustrations only. Nothing from any modern screen version, no \"Elementary, my dear Watson\" (Doyle never wrote it), and no Moriarty — he is not in this game."
+  }
+}

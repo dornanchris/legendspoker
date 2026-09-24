@@ -1,0 +1,53 @@
+{
+  "first_map": [
+    { "id": "dl_map_01", "speaker": "death", "text": "Eight tables. I deal at every one of them, so you will see at least one familiar face." },
+    { "id": "dl_map_02", "speaker": "death", "text": "You take them in order. People have asked me to change the order. I never have." },
+    {
+      "id": "dl_map_03",
+      "speaker": "death",
+      "text": "It is further than it looks. Most people say afterwards that it went quickly.",
+      "foreshadow": "Reads as a remark about the tour. It is what people say to him about their lives."
+    }
+  ],
+
+  "player_loses_table": [
+    { "id": "dl_lose_01", "speaker": "death", "text": "That was not the end of anything. I would know." },
+    { "id": "dl_lose_02", "speaker": "death", "text": "You may try again. I do not say that to many people." },
+    { "id": "dl_lose_03", "speaker": "death", "text": "You lost the table, not the tour. I would tell you if it were otherwise." },
+    { "id": "dl_lose_04", "speaker": "death", "text": "The cards were fair. I do not know how to deal them any other way." },
+    { "id": "dl_lose_05", "speaker": "death", "text": "Most people only get to lose once. You may do it as often as you need." },
+    { "id": "dl_lose_06", "speaker": "death", "text": "Come back when you are ready. I will be dealing either way." }
+  ],
+
+  "rematch_table": [
+    { "id": "dl_rematch_01", "speaker": "death", "text": "Back again. They remember you. So do I." },
+    { "id": "dl_rematch_02", "speaker": "death", "text": "The same chairs, the same deck. You, I hope, somewhat different." },
+    { "id": "dl_rematch_03", "speaker": "death", "text": "They have been talking about you since you left. Not kindly, but at length." },
+    { "id": "dl_rematch_04", "speaker": "death", "text": "I shuffled while you were away. I do a great deal of shuffling." }
+  ],
+
+  "replay_cleared": [
+    { "id": "dl_replay_01", "speaker": "death", "text": "You have beaten this table already. They have not forgotten, and they would like to discuss it." },
+    { "id": "dl_replay_02", "speaker": "death", "text": "Visiting? They will play you anyway. They have nowhere else to be." },
+    { "id": "dl_replay_03", "speaker": "death", "text": "Once is an event. Twice would be a habit." }
+  ],
+
+  "open_table": [
+    { "id": "dl_open_01", "speaker": "death", "text": "No champion tonight. Just whoever was in the room. It is how most games have always been." },
+    { "id": "dl_open_02", "speaker": "death", "text": "The champion is not playing. The regulars are, and they have been waiting for this." },
+    { "id": "dl_open_03", "speaker": "death", "text": "I deal to whoever sits down. Nobody gets better cards for being famous." },
+    { "id": "dl_open_04", "speaker": "death", "text": "No stakes worth mentioning tonight. Only cards. Some people prefer it." }
+  ],
+
+  "resume": [
+    { "id": "dl_resume_01", "speaker": "death", "text": "You left in the middle of a hand. Nobody moved. Nobody could." },
+    { "id": "dl_resume_02", "speaker": "death", "text": "Your seat is exactly where you left it. So is everyone else." },
+    { "id": "dl_resume_03", "speaker": "death", "text": "You were gone a while. I am not the right one to ask how long." }
+  ],
+
+  "table_won": [
+    { "id": "dl_won_01", "speaker": "death", "text": "Well played. I do not say it often. Keep that one." },
+    { "id": "dl_won_02", "speaker": "death", "text": "All the chips. Enjoy them. They do not travel." },
+    { "id": "dl_won_03", "speaker": "death", "text": "The table is yours for tonight. It will want you back. They always do." }
+  ]
+}

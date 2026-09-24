@@ -1,0 +1,68 @@
+{
+  "id": "green_knight",
+  "name": "The Green Knight",
+  "short": "Green Knight",
+  "epithet": "Knight of the Green Chapel",
+  "pronoun": "he",
+  "table": "camelot",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Legend",
+  "era": "Sir Gawain and the Green Knight (14th c.)",
+  "dials": {
+    "aggression": 0.4,
+    "tightness": 0.5,
+    "bluffFrequency": 0.1,
+    "tiltSensitivity": 0.05,
+    "adaptivity": 0.2,
+    "noise": 0.25
+  },
+  "quirks": [
+    {
+      "type": "calls_small",
+      "maxBB": 2
+    },
+    {
+      "type": "committed",
+      "fraction": 0.3
+    }
+  ],
+  "tells": [
+    {
+      "signal": "holly_rustles",
+      "text": "the holly branch at his side rustles",
+      "correlate": "strong",
+      "reliability": 0.74
+    },
+    {
+      "signal": "laughs_rafters",
+      "text": "laughs, and the rafters shake",
+      "correlate": "bluffing",
+      "reliability": 0.72
+    },
+    {
+      "signal": "thumb_axe",
+      "text": "runs a thumb along the head of his axe",
+      "correlate": "weak",
+      "reliability": 0.74
+    }
+  ],
+  "idles": [
+    "moss creeps a little further along his sleeve",
+    "somewhere outside, his horse stamps",
+    "the chair creaks under his weight",
+    "he studies the table as if measuring it for a blow"
+  ],
+  "profile": {
+    "ledger": "Rode into Camelot at New Year and offered anyone the first blow with his own axe. Someone took it. He took it well.",
+    "ledger_beaten": "Lost, laughed, and asked when it would be his turn. He always asks.",
+    "history": [
+      "The Green Knight comes from Sir Gawain and the Green Knight, a Middle English poem of the late fourteenth century by an unknown author. At Arthur's New Year feast a giant of a man, green from his hair to his horse, rides into the hall with a holly branch in one hand and a huge axe in the other, and proposes a game: anyone may strike him one blow, if he may return it a year and a day later. Gawain takes the axe. The Knight is not inconvenienced.",
+      "A year on, Gawain keeps the bargain. On the way he is the guest of a lord who proposes another game — each evening they will exchange whatever they have won that day — and Gawain cheats once, keeping back a green girdle meant to save his life. At the Green Chapel the Knight feints twice and nicks him with the third blow, for the girdle. The host was the Green Knight all along. He loves a game with rules, and people who keep them."
+    ],
+    "at_the_table": "He accepts challenges. Small bets he simply calls — he will not fold to one, whatever he holds — and he plays a good many hands to see what happens. He rarely leads the betting and almost never bluffs; he would rather take your blow and then give you his. A big enough bet can still move him, which he seems to think is fair. Losing a pot only amuses him.",
+    "look": "Silhouette: enormous — a head taller than anyone seated, broad as a door, with a great bush of green beard and green hair to the shoulders. Green skin, green clothes worked with gold, and no armour: the poem says he came in peace. Face: green, grinning, bright-eyed. Prop: the holly branch at his side, a big dark spiky shape that rustles; the axe leans against the table.",
+    "prop": "A holly branch",
+    "public_domain": "The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman."
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "table": "rome",
+  "display_name": "Imperial Rome",
+  "tour_position": 5,
+  "champion": "caesar",
+  "status": "draft",
+  "notes": {
+    "tone": "Rome mixes eras freely; Death deals across all of history. Three kinds of Roman power at one table: the man Rome owned (Spartacus), the man who bought Rome's highest office (the Pope), and the man whose name became the word for emperor (Caesar). Plus a dog who is pure instinct. Gothic and grand, funny from mannerism: Caesar's third person, the Pope's charm, the dog's three opinions.",
+    "difficulty": "Mid-tour. The contempt here is Roman: status, ownership and price, never personal insult. Spartacus sizes you up like stock at a market; the Pope is charming at you rather than to you.",
+    "dealer_plant": "The single 'the dealer arranged it' beat is ro_plant_01-03. It fires on champion_arrival and plays straight after the arrival beat (ro_arrive_01-03): Caesar sits, reads the table like a muster roll, and finds one name he did not enrol; his secretary's record gives the answer, because the arrival lines play without a presence check and any seat may be the chair Caesar just took. Do NOT add a second.",
+    "caesar": "Arrives after the first elimination, procedurally rather than grandly: a vacancy was reported and he filled it. He takes the chair the first eliminated player leaves; the presence line (his laurel wreath waiting by the door, its owner promised the next free chair) sets it up. He speaks of himself in the third person some of the time, as his Commentaries do; keep it to about half his lines so it stays a mannerism, not a gimmick. No 'Et tu, Brute' (Shakespeare's, not the sources'). There is deliberately no first_elimination Death aside at this table: that moment belongs to the arrival.",
+    "cerberus": "Never speaks. Every Cerberus line is a stage direction, written to follow his name ('Cerberus sniffs at...'). Only Death translates him, drily, and only in banter. No other character understands him, though the Pope pretends to.",
+    "spartacus": "Ancient sources only: Plutarch (Life of Crassus 8-11) and Appian (Civil Wars 1.116-120). Nothing from the 1960 film or the TV series. Never 'I am Spartacus'.",
+    "pope": "Historical Alexander VI: nepotism, deals, charm, the conclave. The jokes are about his politics and his family, never about the faith. Display name is still an open design question.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "Champion (Caesar) + Death are voiced. Spartacus and the Pope are text + vocalization. Cerberus needs no voice at all: growls, whines and yawns, three of each."
+  },
+
+  "earned_names": {
+    "tier_1": "tiro",
+    "tier_3": "Imperator"
+  },
+
+  "respect_tiers": {
+    "0": "Contempt. The player is not addressed by any name. Stock at a market.",
+    "1": "Grudging notice. Spartacus calls the player 'tiro', the arena's word for a fighter who has never had a bout.",
+    "2": "Real address. They use the player's name. The Pope starts asking about them, which is worse.",
+    "3": "Title. 'Imperator': what soldiers shouted for a victorious general. Spartacus says it first, and it costs him."
+  },
+
+  "table_intro": [
+    {
+      "id": "ro_intro_01",
+      "speaker": "death",
+      "text": "Hadrian built this as his tomb. Later it was a fortress, a prison and a refuge for popes. Rome never wastes a building, or a grudge.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "ro_intro_02",
+      "speaker": "death",
+      "text": "A runaway gladiator, a Borgia pope and the dog from the gate of the underworld. The first chair to come free is already spoken for. In Rome, it usually is.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "ro_intro_03",
+      "speaker": "death",
+      "text": "Sit. The dog has already decided about you.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "ro_plant_01",
+      "speaker": "caesar",
+      "text": "And who enrolled this one?",
+      "trigger": "champion_arrival",
+      "sequence": "ro_plant_02",
+      "note": "Plays immediately after the champion_arrival beat. Caesar has just sat down and is reading the table like a muster roll."
+    },
+    {
+      "id": "ro_plant_02",
+      "speaker": "narration",
+      "text": "The secretary consults his tablet and holds it up. One line, in a neat hand: the dealer arranged it.",
+      "sequence": "ro_plant_03",
+      "note": "The answer comes from the record, not a seated player: any of the three seats may be the chair Caesar has just taken."
+    },
+    {
+      "id": "ro_plant_03",
+      "speaker": "caesar",
+      "text": "...Then Caesar will not contest it.",
+      "note": "THE SHRUG. The man who crossed the Rubicon rather than obey the Senate does not contest the dealer. The player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "spartacus_caesar": {
+      "relationship": "The one man at the table Rome owned, and the man whose name became Rome's word for emperor. Both dealt with Cilician pirates: Spartacus paid them to ferry his army to Sicily and they sailed off with the money (Plutarch, Crassus 10); Caesar was held by them for thirty-eight days, then came back and crucified them (Plutarch, Caesar 2). Only fires once Caesar has arrived.",
+      "exchanges": [
+        [
+          { "id": "ro_sp_jc_01a", "speaker": "spartacus", "text": "I paid Cilician pirates once, to carry my army to Sicily. They took the money and sailed away." },
+          { "id": "ro_sp_jc_01b", "speaker": "caesar", "text": "Cilicians held Caesar for thirty-eight days. He told them to ask a higher ransom." },
+          { "id": "ro_sp_jc_01c", "speaker": "spartacus", "text": "Did they get it?" },
+          { "id": "ro_sp_jc_01d", "speaker": "caesar", "text": "For a while." }
+        ],
+        [
+          { "id": "ro_sp_jc_02a", "speaker": "caesar", "text": "They say you killed your own horse before your last battle." },
+          { "id": "ro_sp_jc_02b", "speaker": "spartacus", "text": "If I won, Rome would supply the horses. If I lost, I wouldn't need one." },
+          { "id": "ro_sp_jc_02c", "speaker": "caesar", "text": "Sound reasoning." },
+          { "id": "ro_sp_jc_02d", "speaker": "spartacus", "text": "It was. I didn't need one.", "note": "Plutarch, Crassus 11. The horse story is genuine." }
+        ],
+        [
+          { "id": "ro_sp_jc_03a", "speaker": "spartacus", "text": "In Gaul, they say, you took a million captives." },
+          { "id": "ro_sp_jc_03b", "speaker": "caesar", "text": "Caesar did not count them himself." },
+          { "id": "ro_sp_jc_03c", "speaker": "spartacus", "text": "Someone did. Someone always counts.", "note": "The table's one serious beat. Plutarch gives the million. Use sparingly." }
+        ]
+      ]
+    },
+
+    "spartacus_pope": {
+      "relationship": "The gladiator who shared his plunder equally among runaway slaves (Appian) and the Renaissance pope who shared everything with his own children. Two very different ideas of family. The Pope smiles at Spartacus a great deal; Spartacus has been sold by men who smiled.",
+      "exchanges": [
+        [
+          { "id": "ro_sp_pope_01a", "speaker": "pope", "text": "I hear you shared your plunder equally." },
+          { "id": "ro_sp_pope_01b", "speaker": "spartacus", "text": "Every man the same share." },
+          { "id": "ro_sp_pope_01c", "speaker": "pope", "text": "...Even the ones who weren't family?" }
+        ],
+        [
+          { "id": "ro_sp_pope_02a", "speaker": "spartacus", "text": "You gave your son an army." },
+          { "id": "ro_sp_pope_02b", "speaker": "pope", "text": "And my uncle gave me a cardinal's hat. That is what families are for." },
+          { "id": "ro_sp_pope_02c", "speaker": "spartacus", "text": "Mine was the men I broke out with. We armed ourselves from a cook-shop." },
+          { "id": "ro_sp_pope_02d", "speaker": "pope", "text": "Kitchen knives. How very sincere." }
+        ],
+        [
+          { "id": "ro_sp_pope_03a", "speaker": "spartacus", "text": "You smile at me a great deal." },
+          { "id": "ro_sp_pope_03b", "speaker": "pope", "text": "I smile at everyone." },
+          { "id": "ro_sp_pope_03c", "speaker": "spartacus", "text": "I was sold by men who smiled like that." },
+          { "id": "ro_sp_pope_03d", "speaker": "pope", "text": "[smiles]", "type": "stage_direction" }
+        ]
+      ]
+    },
+
+    "caesar_pope": {
+      "relationship": "Two kinds of Roman power. Both held the title Pontifex Maximus: Caesar won it in 63 BC on borrowed money, telling his mother he would come home as pontifex or not at all (Plutarch, Suetonius); Alexander VI's own election was widely said to have been bought. And the Pope's son was Cesare Borgia, whose motto was 'Aut Caesar aut nihil': Caesar, or nothing.",
+      "exchanges": [
+        [
+          { "id": "ro_jc_pope_01a", "speaker": "pope", "text": "We share a title, you and I. Pontifex Maximus." },
+          { "id": "ro_jc_pope_01b", "speaker": "caesar", "text": "Caesar won it on borrowed money. He told his mother that morning he would come home with it or not at all." },
+          { "id": "ro_jc_pope_01c", "speaker": "pope", "text": "My mother was spared the suspense. I had counted the votes the night before." }
+        ],
+        [
+          { "id": "ro_jc_pope_02a", "speaker": "pope", "text": "My son's name was Cesare. His motto was 'Caesar or nothing'." },
+          { "id": "ro_jc_pope_02b", "speaker": "caesar", "text": "And which did he get?" },
+          { "id": "ro_jc_pope_02c", "speaker": "pope", "text": "He was very nearly Caesar." },
+          { "id": "ro_jc_pope_02d", "speaker": "caesar", "text": "Nearly is the other one." }
+        ],
+        [
+          { "id": "ro_jc_pope_03a", "speaker": "caesar", "text": "Caesar does not trust a man who smiles at the table." },
+          { "id": "ro_jc_pope_03b", "speaker": "pope", "text": "You trusted Brutus." },
+          { "id": "ro_jc_pope_03c", "speaker": "caesar", "text": "Once." }
+        ]
+      ]
+    },
+
+    "cerberus_table": {
+      "relationship": "Nobody at the table can talk to the dog, so Death translates, drily. Each exchange fires after Cerberus contests a pot with the character in it. The escaped slave meets the guard of the one door nobody gets back out of (Hesiod: he fawns on those who enter and devours those who try to leave); the Pope tries a bribe, which worked on Cerberus exactly once, with a honey cake (Aeneid 6); Caesar recognises a three-headed arrangement.",
+      "exchanges": [
+        [
+          { "id": "ro_cer_01a", "speaker": "spartacus", "text": "What does the dog guard?" },
+          { "id": "ro_cer_01b", "speaker": "death", "text": "A door." },
+          { "id": "ro_cer_01c", "speaker": "spartacus", "text": "To keep people in, or out?" },
+          { "id": "ro_cer_01d", "speaker": "death", "text": "He has never minded anyone coming in." }
+        ],
+        [
+          { "id": "ro_cer_02a", "speaker": "pope", "text": "[offers the nearest head a sugared almond]", "type": "stage_direction" },
+          { "id": "ro_cer_02b", "speaker": "cerberus", "text": "[considers the almond with two heads, and turns the third away in disgust]", "type": "stage_direction" },
+          { "id": "ro_cer_02c", "speaker": "death", "text": "He was bought once before, with a honey cake. He doesn't like to talk about it." }
+        ],
+        [
+          { "id": "ro_cer_03a", "speaker": "caesar", "text": "Three heads on one body. Caesar was in an arrangement like that once." },
+          { "id": "ro_cer_03b", "speaker": "cerberus", "text": "[consults himself, three times over]", "type": "stage_direction" },
+          { "id": "ro_cer_03c", "speaker": "death", "text": "He asks how it ended." },
+          { "id": "ro_cer_03d", "speaker": "caesar", "text": "With one head.", "note": "The First Triumvirate: Caesar, Pompey and Crassus. Crassus died in Parthia; Caesar beat Pompey in the civil war." }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "ro_p0_01", "speaker": "spartacus", "text": "Fresh from the market. Nobody's even looked at your teeth yet." },
+      { "id": "ro_p0_02", "speaker": "pope", "text": "Sit, sit. Anywhere you like. No, not there. There." },
+      { "id": "ro_p0_03", "speaker": "cerberus", "text": "[sniffs at the player with two heads; the third cannot be bothered]", "type": "stage_direction" },
+      { "id": "ro_p0_04", "speaker": "spartacus", "text": "Don't bother looking at the doors. I've already checked them." },
+      { "id": "ro_p0_05", "speaker": "pope", "text": "What a pleasure to meet someone of no importance. It is so rarely allowed me." }
+    ],
+    "tier_1": [
+      { "id": "ro_p1_01", "speaker": "spartacus", "text": "Tiro. That's what the arena calls a fighter who hasn't had a bout yet. Keep this up and I'll stop calling you it." },
+      { "id": "ro_p1_02", "speaker": "pope", "text": "You are learning to smile when you lose. Good. That is most of what Rome can teach anyone." },
+      { "id": "ro_p1_03", "speaker": "cerberus", "text": "[turns his middle head to watch the player, and keeps watching]", "type": "stage_direction" },
+      { "id": "ro_p1_04", "speaker": "caesar", "text": "Caesar has made a note of you. It is a short note." }
+    ],
+    "tier_2": [
+      { "id": "ro_p2_01", "speaker": "spartacus", "text": "{name}. Good. A free person should be called by their own name." },
+      { "id": "ro_p2_02", "speaker": "pope", "text": "I have been asking about you. Nobody can tell me anything. I find that enormously attractive in a person." },
+      { "id": "ro_p2_03", "speaker": "cerberus", "text": "[lays one head on the table beside the player's chips]", "type": "stage_direction" },
+      { "id": "ro_p2_04", "speaker": "caesar", "text": "Caesar remembers everyone who takes a pot from him. Ask the pirates." }
+    ],
+    "tier_3": [
+      { "id": "ro_p3_01", "speaker": "spartacus", "text": "Imperator.", "note": "The soldiers' acclamation for a victorious general. Appian says Spartacus once served with the Romans; from the one man here who led an army against Rome, the word costs him something. Caesar arrives late, so the gladiator gets to say it first." },
+      { "id": "ro_p3_02", "speaker": "caesar", "text": "Caesar's soldiers hailed him Imperator. He had earned it. So have you." },
+      { "id": "ro_p3_03", "speaker": "pope", "text": "If you ever want a city, come and see me. I have given away several." },
+      { "id": "ro_p3_04", "speaker": "cerberus", "text": "[bows all three heads, very slightly, at the same moment]", "type": "stage_direction" }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "ro_death_01", "speaker": "death", "text": "Take as long as you like. Everyone else in this building has.", "trigger": "player_thinking_long", "note": "The building is Hadrian's tomb." },
+    { "id": "ro_death_02", "speaker": "death", "text": "The Romans built temples to Fortune. She was not grateful then, either.", "trigger": "player_bad_beat" },
+    {
+      "id": "ro_death_03",
+      "speaker": "death",
+      "text": "The night before the Ides, he told a dinner party the best death was an unexpected one. I have never liked being announced either.",
+      "trigger": "champion_loses_pot",
+      "foreshadow": "Reads as gallows wit about Caesar (Plutarch and Suetonius both record the dinner). It is also the dealer describing how he means to take his own seat at the end of the tour: unannounced."
+    },
+    { "id": "ro_death_04", "speaker": "death", "text": "In the old days, thumbs were involved at this point. Nobody now agrees which way they pointed.", "trigger": "player_eliminates" },
+    {
+      "id": "ro_death_05",
+      "speaker": "death",
+      "text": "Caesar called it casting the die. He was standing at a river at the time. People usually are.",
+      "trigger": "player_all_in",
+      "foreshadow": "Reads as Rubicon trivia. The last table of the tour is a river crossing at night, and every all-in is a small rehearsal for it."
+    },
+    { "id": "ro_death_06", "speaker": "death", "text": "Two left. In Rome it always did come down to two.", "trigger": "headsup_start" },
+    { "id": "ro_death_07", "speaker": "death", "text": "The price of a seat goes up. Rome has never been cheap to sit in.", "trigger": "blinds_up" }
+  ],
+
+  "champion_arrival": [
+    {
+      "id": "ro_arrive_01",
+      "speaker": "narration",
+      "text": "The chair is still warm when the door opens. A man in a purple-bordered toga walks in dictating to a secretary, takes the laurel wreath from its cushion, puts it on, and sits.",
+      "trigger": "champion_arrival",
+      "sequence": "ro_arrive_02"
+    },
+    {
+      "id": "ro_arrive_02",
+      "speaker": "caesar",
+      "text": "A vacancy was reported. Caesar has filled it.",
+      "sequence": "ro_arrive_03",
+      "note": "Caesar's first words. Administrative, not grand: a seat became available."
+    },
+    {
+      "id": "ro_arrive_03",
+      "speaker": "spartacus",
+      "text": "Of course. Rome always sends someone.",
+      "note": "Rome sent praetor after praetor against him, then both consuls, then Crassus. Works whether Spartacus is still seated or was the one just knocked out (then it is his parting shot). The dealer_plant follows."
+    }
+  ],
+
+  "champion_headsup": [
+    { "id": "ro_jc_hu_01", "speaker": "caesar", "text": "Alea iacta est.", "trigger": "headsup_start", "note": "Suetonius's words at the Rubicon. The die is cast; no translation needed." },
+    { "id": "ro_jc_hu_02", "speaker": "caesar", "text": "The pirates asked twenty talents for me. I told them to ask fifty. Never let anyone set your price." },
+    { "id": "ro_jc_hu_03", "speaker": "caesar", "text": "Better to die once than to spend a lifetime expecting it. Caesar bets the same way.", "note": "Plutarch, Caesar 57: his answer when friends urged him to keep a bodyguard." },
+    { "id": "ro_jc_hu_04", "speaker": "caesar", "text": "Enjoy it. The pirates enjoyed their thirty-eight days as well.", "trigger": "player_wins_pot" }
+  ],
+
+  "eliminated": {
+    "spartacus": [
+      { "id": "ro_out_spartacus_01", "speaker": "spartacus", "text": "Don't go looking for me afterwards. Last time, nobody found me.", "note": "Appian: his body was never found." },
+      { "id": "ro_out_spartacus_02", "speaker": "spartacus", "text": "[rolls his neck, looks once at the doors, and walks out through them]", "type": "stage_direction" }
+    ],
+    "pope": [
+      { "id": "ro_out_pope_01", "speaker": "pope", "text": "Tell them I was poisoned. It will do the family less harm than the truth." },
+      { "id": "ro_out_pope_02", "speaker": "pope", "text": "[rises, gathers his robes, and congratulates the winner as though it had all been his idea]", "type": "stage_direction" }
+    ],
+    "cerberus": [
+      { "id": "ro_out_cerberus_01", "speaker": "cerberus", "text": "[lies down with all three heads at once, with enormous dignity]", "type": "stage_direction" },
+      { "id": "ro_out_cerberus_02", "speaker": "cerberus", "text": "[whines from the left head; the other two pretend not to know it]", "type": "stage_direction" }
+    ],
+    "caesar": [
+      { "id": "ro_out_caesar_01", "speaker": "caesar", "text": "Unexpected. Good. Caesar always said that was the best kind.", "note": "Pays off ro_death_03 if it has fired; stands alone if it has not." },
+      { "id": "ro_out_caesar_02", "speaker": "caesar", "text": "Put it in the commentaries: Caesar was beaten. In the third person. It reads better." }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "ro_bust_01", "speaker": "spartacus", "text": "Everyone goes down in their first fight. The ones worth watching get up." },
+    { "id": "ro_bust_02", "speaker": "pope", "text": "Come back when you have made some friends. It helps enormously, in Rome." },
+    { "id": "ro_bust_03", "speaker": "death", "text": "Come back whenever you like. The dog will let you in. That part he has never minded." }
+  ],
+
+  "champion_defeat": [
+    { "id": "ro_jc_end_01", "speaker": "caesar", "text": "You came. You saw. Caesar leaves the third word to you.", "note": "Veni, vidi, vici, with the last word handed to the player." },
+    { "id": "ro_jc_end_02", "speaker": "death", "text": "Five. Three remain. He has lost a room before. This one had fewer knives." }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "grey_alien",
+  "name": "The Grey",
+  "short": "The Grey",
+  "epithet": "Stranger of the Lonely Roads",
+  "pronoun": "it",
+  "table": "station",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Folklore",
+  "era": "Modern folklore · the abduction-story visitor",
+  "dials": {
+    "aggression": 0.5,
+    "tightness": 0.6,
+    "bluffFrequency": 0.25,
+    "tiltSensitivity": 0.0,
+    "adaptivity": 0.7,
+    "noise": 0.5
+  },
+  "quirks": [
+    {
+      "type": "trap",
+      "minEquity": 0.8
+    }
+  ],
+  "tells": [
+    {
+      "signal": "blinks_sideways",
+      "text": "blinks sideways",
+      "correlate": "strong",
+      "reliability": 0.5
+    },
+    {
+      "signal": "head_tilts",
+      "text": "its head tilts forty degrees",
+      "correlate": "bluffing",
+      "reliability": 0.5
+    },
+    {
+      "signal": "fingers_splay",
+      "text": "its long fingers splay on the table",
+      "correlate": "weak",
+      "reliability": 0.5
+    }
+  ],
+  "idles": [
+    "stares at the backs of your cards",
+    "hums at a pitch you feel in your teeth",
+    "touches the table as if it had never seen wood",
+    "watches someone breathe, with interest"
+  ],
+  "profile": {
+    "ledger": "It stops people on lonely roads at night and asks them to come quietly. I have always admired the method.",
+    "ledger_beaten": "It left without a word, as it came. I believe it enjoyed itself.",
+    "history": [
+      "The Grey is the visitor of modern folklore: small, grey-skinned and large-headed, with great black almond eyes and almost no mouth. It took shape in the second half of the twentieth century, out of accounts from people on lonely roads at night who described bright lights, lost hours, and small grey figures who examined them and let them go. Nobody owns it. Like the older folk tales, it was assembled by thousands of retellings.",
+      "At this table it is the Astronaut's rescuer. It found her drifting and brought her aboard, and it has watched her ever since with an attention nobody can read: kindness, or study, or both. It touches wood as if it had never seen any. It stares at the backs of the cards. It has never once explained itself, and it does not seem to think that it should."
+    ],
+    "at_the_table": "Unhurried, and hard to shake. It plays a middling number of hands, bluffs now and then, and never tilts; it does not seem to know what losing is meant to feel like. It learns a table quickly. With its best hands it goes quiet rather than loud, and lets someone else do the betting. Its face was not built for your benefit.",
+    "look": "Silhouette: a huge smooth head on a thin neck and narrow shoulders; at a fifth of a screen it reads as an upturned teardrop. Grey skin, enormous black almond eyes with no whites, a slit for a nose, a small lipless mouth that never moves. Long thin fingers resting on the felt. The head and the fingers are the tell surface; it carries nothing.",
+    "prop": "Long grey fingers",
+    "public_domain": "The grey is modern folklore, built by many retellings and owned by nobody. Particular depictions are owned: avoid the 1987 Communion book cover, the aliens of Close Encounters of the Third Kind, every television series, and any real person's abduction account. Keep the design generic and build it from the archetype."
+  }
+}

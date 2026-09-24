@@ -1,0 +1,64 @@
+{
+  "id": "arthur",
+  "name": "King Arthur",
+  "short": "Arthur",
+  "epithet": "Lord of the Round Table",
+  "pronoun": "he",
+  "table": "camelot",
+  "role": "champion",
+  "arrives": false,
+  "origin": "Legend",
+  "era": "Arthurian legend · King of the Britons",
+  "dials": {
+    "aggression": 0.6,
+    "tightness": 0.82,
+    "bluffFrequency": 0.16,
+    "tiltSensitivity": 0.05,
+    "adaptivity": 0.45,
+    "noise": 0.25
+  },
+  "quirks": [
+    {
+      "type": "snap",
+      "minEquity": 0.75
+    }
+  ],
+  "tells": [
+    {
+      "signal": "touches_hilt",
+      "text": "rests his hand on Excalibur's hilt",
+      "correlate": "strong",
+      "reliability": 0.74
+    },
+    {
+      "signal": "looks_round",
+      "text": "looks round the table at each of his knights",
+      "correlate": "weak",
+      "reliability": 0.72
+    },
+    {
+      "signal": "crown_slips",
+      "text": "his crown slips a fraction; he does not fix it",
+      "correlate": "bluffing",
+      "reliability": 0.72
+    }
+  ],
+  "idles": [
+    "raises his cup to the table",
+    "rubs the dent in his crown",
+    "listens to the wind at the window",
+    "nods to a servant who is not there"
+  ],
+  "profile": {
+    "ledger": "Drew a sword from a stone because his foster-brother had left his own behind. Some say he is not dead. I have never commented.",
+    "ledger_beaten": "Lost with better grace than anyone at this table. He has had practice.",
+    "history": [
+      "Arthur grew out of scraps of early Welsh tradition into Geoffrey of Monmouth's great king of Britain (c. 1136): son of Uther Pendragon, victor over the Saxons, conqueror of much of Europe, betrayed at the last by Mordred. Wace, a generation later, gave him the Round Table, made so that no knight could claim a higher place than another. Malory's Le Morte d'Arthur (1485) gives the fullest telling: the sword in the stone, Excalibur from the Lady of the Lake, the fellowship, and its breaking.",
+      "In Malory he pulls the sword from the stone as a boy, fetching one for his foster-brother Kay, without knowing it is a test. As an old king he knows exactly what he is losing: when the fellowship breaks, he grieves more for his knights than for his queen, since queens might be found, but never such a fellowship again. Wounded in the last battle, he is carried away by barge, and men say he will come again. He hosts this table because a king should."
+    ],
+    "at_the_table": "Disciplined and fair. He plays fewer hands than his knights, bluffs seldom, and with a strong hand he never pretends otherwise: he raises at once, every time, as though slow-playing were a kind of lying. He watches how the table is playing and adjusts, slowly. He loses with perfect grace, and it does not change his game in the least.",
+    "look": "Silhouette: a plain gold crown with a visible dent, a red mantle over broad mailed shoulders, a greying beard kept short. Face: open, lined, kind, and tired around the eyes. Prop: Excalibur, sheathed and standing upright beside his chair with the hilt at his hand — a big cross-shape his hand can rest on, and leave.",
+    "prop": "Excalibur, hilt to hand",
+    "public_domain": "Geoffrey, Wace, Chrétien and Malory are centuries out of copyright. Avoid Monty Python and the Holy Grail, the musical Camelot, Disney's The Sword in the Stone, Boorman's Excalibur (1981), T. H. White and the BBC's Merlin. No coconuts, and no 'once and future king': the Latin is Malory's, but the English phrase is White's title now."
+  }
+}

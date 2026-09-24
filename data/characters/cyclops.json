@@ -1,0 +1,69 @@
+{
+  "id": "cyclops",
+  "name": "Polyphemus the Cyclops",
+  "short": "The Cyclops",
+  "epithet": "Son of the Sea-God",
+  "pronoun": "he",
+  "table": "athens",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Myth",
+  "era": "Homer's Odyssey · son of Poseidon",
+  "dials": {
+    "aggression": 0.7,
+    "tightness": 0.5,
+    "bluffFrequency": 0.05,
+    "tiltSensitivity": 0.45,
+    "adaptivity": 0.05,
+    "noise": 0.12
+  },
+  "quirks": [
+    {
+      "type": "snap",
+      "minEquity": 0.66
+    },
+    {
+      "type": "berserk",
+      "tilt": 0.3,
+      "minEquity": 0.38
+    }
+  ],
+  "tells": [
+    {
+      "signal": "eye_narrows",
+      "text": "his eye narrows",
+      "correlate": "strong",
+      "reliability": 0.85
+    },
+    {
+      "signal": "sniffs",
+      "text": "sniffs at the air",
+      "correlate": "weak",
+      "reliability": 0.82
+    },
+    {
+      "signal": "thumps_table",
+      "text": "thumps the table",
+      "correlate": "tilted",
+      "reliability": 0.85
+    }
+  ],
+  "idles": [
+    "counts his sheep on his fingers",
+    "blinks, very slowly",
+    "scratches his beard with a thumbnail the size of a spoon",
+    "the table groans as he shifts"
+  ],
+  "profile": {
+    "ledger": "Ate six of Odysseus's men, then took offence when their captain lied about his name. He has held the grudge ever since.",
+    "ledger_beaten": "Beaten. He has gone back to his sheep. He counts them twice now.",
+    "history": [
+      "In Book Nine of Homer's Odyssey, Polyphemus is a one-eyed giant, a son of Poseidon, who keeps sheep and makes cheese in a cave on the island of the Cyclopes — a people who, Homer says, have no assemblies and no laws. Odysseus and twelve of his men walked into the cave uninvited and helped themselves. Polyphemus shut them in with a stone that twenty-two wagons could not have shifted, and ate them two at a time.",
+      "Odysseus got him drunk on unmixed wine, told him his name was Nobody, and blinded him with a stake of olive wood. When the other Cyclopes came running, Polyphemus bellowed that Nobody was hurting him, so they went home. In the morning he sat at the cave mouth, feeling the backs of his sheep, and spoke gently to his favourite ram. The man was clinging underneath."
+    ],
+    "at_the_table": "Direct to a fault. He plays plenty of hands, and when he likes one he raises at once — every time, with no patience for slow play. He almost never bluffs; he does not see the point of saying something untrue. He does not adjust to anybody. And he has a temper: cost him a big pot and, for a while, he stops thinking and starts pushing everything in.",
+    "look": "Silhouette: enormous, head and shoulders above everyone, filling his fifth of the screen and some of his neighbours'. Face: one great eye in the middle of the brow with an old burn scar around it, a shaggy black beard, a sheepskin over the shoulders. Prop: his club of green olive wood, a fathom shorter than it used to be. Tells live on the eye and the fist.",
+    "prop": "Olive-wood club, leaning on the table",
+    "public_domain": "Homer's Odyssey is public domain, as are Euripides' Cyclops and Theocritus. Avoid Harryhausen's cyclops from The 7th Voyage of Sinbad (1958): no horn, no goat legs. Nothing like the Marvel X-Men Cyclops either. Homer's giant is a shepherd with a beard, not a monster costume."
+  }
+}

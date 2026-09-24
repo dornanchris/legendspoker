@@ -1,13 +1,18 @@
 {
-  "name": "character-poker",
+  "name": "legends-poker",
   "version": "1.0.0",
-  "description": "",
+  "description": "Legends Poker: Death's Invitational -- a character-driven Texas Hold'em tour.",
   "main": "index.js",
   "scripts": {
     "sim": "tsx src/sim.ts",
     "play": "tsx src/play.ts",
     "tourney": "tsx src/tourney.ts",
     "check:pots": "tsx src/pot-conservation.ts",
+    "check:data": "tsx src/data-check.ts",
+    "check:replay": "tsx src/replay-check.ts",
+    "roster": "tsx src/roster.ts",
+    "typecheck": "tsc --noEmit -p .",
+    "check": "npm run typecheck && npm run check:data && npm run check:pots && npm run check:replay",
     "build:web": "node web/build.mjs",
     "web": "node web/build.mjs && node web/serve.mjs",
     "postinstall": "patch-package"

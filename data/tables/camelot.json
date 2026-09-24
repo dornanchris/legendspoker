@@ -1,0 +1,35 @@
+{
+  "id": "camelot",
+  "kind": "tour",
+  "position": 4,
+  "name": "Camelot",
+  "seats": [
+    "merlin",
+    "lancelot",
+    "green_knight",
+    "arthur"
+  ],
+  "champion": "arthur",
+  "arrival": null,
+  "handsPerLevel": 25,
+  "dialogue": "table-04-camelot.json",
+  "buyIn": 2000,
+  "respectStart": 0,
+  "place": "Camelot, which Malory says is Winchester",
+  "region": "Britain",
+  "era": "The height of the Round Table, before the Grail quest and the war",
+  "teaser": "Prove you belong at a table with no head.",
+  "hook": "It is a feast day, and Arthur will not eat until he has seen a marvel. Tonight you are it: a stranger in the empty chair, playing to prove you belong at the Round Table.",
+  "room": "The great hall at Camelot, where the game is played around one curve of the Round Table and the rest of its circle runs off into the dark, past a hundred empty chairs, each with a knight's name in gold. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.",
+  "music": "Harp and vielle over a low drone, stately and slow as a procession, with a single horn call when the stakes rise — warm and noble on top, faintly mournful underneath.",
+  "entrance": "Seated from hand one. Arthur rises to greet you when you are shown in — the only one who does — and does not sit again until you have.",
+  "ambience": [
+    "a great hearth fire",
+    "wind at a high window",
+    "a horse stamping in the yard",
+    "cups set down on oak",
+    "a far-off chapel bell"
+  ],
+  "presence": null,
+  "writer_notes": "No numbers changed. Flags: (1) The design doc describes the Green Knight in 'green armour', but the poem is explicit that he rode in unarmoured, carrying holly as a sign of peace. His 'look' follows the poem; flagging rather than silently overriding the doc — the art pass decides. (2) The Green Knight's fiction is that he accepts every challenge, but calls_small caps at 4bb, so a big enough bet folds him like anyone. at_the_table is written to match the numbers. If he should feel unshakeable, adding the existing 'committed' quirk alongside calls_small would do it — a suggestion only. (3) Merlin's bluffing tell ('strokes his beard, looking somewhere else') lands one table after Blackbeard's strong tell ('strokes his braided beard'): same gesture, opposite meaning, back to back. Possibly deliberate (reads don't carry between tables); flagging in case not. (4) The player's chair is written as the Siege Perilous (Malory: Merlin's seat kept for the knight who would achieve the Grail). It is a plant, not an explanation of the invitation, but together with the gold-letters tier-2 beat it leans toward 'you are the chosen one'. If that is too loud, cut cm_plant_01's naming of it and cm_bust_02."
+}

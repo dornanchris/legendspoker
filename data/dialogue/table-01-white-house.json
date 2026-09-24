@@ -12,6 +12,11 @@
     "voice": "Champion (Washington) + Death are voiced. Lincoln/Roosevelt/FDR are text + vocalization for now."
   },
 
+  "earned_names": {
+    "tier_1": "tenderfoot",
+    "tier_3": "Challenger"
+  },
+
   "respect_tiers": {
     "0": "Contempt. The player is not addressed by any name.",
     "1": "Grudging notice. A dismissive nickname appears.",
@@ -145,6 +150,7 @@
       { "id": "wh_p1_04", "speaker": "washington", "text": "[looks at the player for the first time]", "type": "stage_direction" }
     ],
     "tier_2": [
+      { "id": "wh_p2_00", "speaker": "roosevelt", "text": "{name}. There — the tenderfoot is retired. I was one myself, out in the Dakotas, until I wasn't.", "note": "First use of the player's real name. Roosevelt coined 'tenderfoot', so he retires it. True: he ranched in Dakota Territory in the 1880s and arrived there as an Eastern greenhorn." },
       { "id": "wh_p2_01", "speaker": "roosevelt", "text": "Very well. You have earned the chair. Now earn the pot." },
       { "id": "wh_p2_02", "speaker": "fdr", "text": "I have stopped underestimating you. Take that as the compliment it is." },
       { "id": "wh_p2_03", "speaker": "lincoln", "text": "I have watched a great many men bluff. You are getting good at it." },
@@ -178,7 +184,10 @@
       "text": "They all played like this at the end.",
       "trigger": "first_elimination",
       "foreshadow": "Reads as 'desperate players play alike.' Means what it says."
-    }
+    },
+    { "id": "wh_death_05", "speaker": "death", "text": "All of it. Every man at this table has staked more than chips before.", "trigger": "player_all_in" },
+    { "id": "wh_death_06", "speaker": "death", "text": "Don't trouble yourself over him. He has had worse evenings.", "trigger": "player_eliminates" },
+    { "id": "wh_death_07", "speaker": "death", "text": "Blinds up. In this house nothing is meant to last more than two terms. One of them disagreed.", "trigger": "blinds_up", "note": "True: Washington set the two-term precedent; FDR broke it." }
   ],
 
   "champion_headsup": [
@@ -186,6 +195,31 @@
     { "id": "wh_gw_hu_02", "speaker": "washington", "text": "I have had few opponents. Fewer I remembered." },
     { "id": "wh_gw_hu_03", "speaker": "washington", "text": "Discipline is not caution. You will learn the difference or you will not." },
     { "id": "wh_gw_hu_04", "speaker": "washington", "text": "Good. Again.", "trigger": "player_wins_pot" }
+  ],
+
+  "eliminated": {
+    "lincoln": [
+      { "id": "wh_al_out_01", "speaker": "lincoln", "text": "I lost to Douglas once. It did not go the way he expected afterwards.", "note": "True: lost the 1858 Senate race to Stephen Douglas, beat him for the presidency in 1860." },
+      { "id": "wh_al_out_02", "speaker": "lincoln", "text": "Don't get up. I'll sit by the fire and see how it comes out." }
+    ],
+    "roosevelt": [
+      { "id": "wh_tr_out_01", "speaker": "roosevelt", "text": "Bully! Well fought. I was shot once and gave the speech anyway — I can stand this." },
+      { "id": "wh_tr_out_02", "speaker": "roosevelt", "text": "Out! Fine. I am going for a walk. Over the obstacles, not around them.", "note": "His 'point to point' walks, famous for going over, under or through obstacles, never around." }
+    ],
+    "fdr": [
+      { "id": "wh_fdr_out_01", "speaker": "fdr", "text": "Splendid. I shall tell everyone I let you have that one, and half of them will believe me." },
+      { "id": "wh_fdr_out_02", "speaker": "fdr", "text": "[laughs as though it had been his idea all along, and settles his cape]", "type": "stage_direction" }
+    ],
+    "washington": [
+      { "id": "wh_gw_out_01", "speaker": "washington", "text": "I know how to leave a room.", "note": "He resigned his commission in 1783 and declined a third term in 1796." },
+      { "id": "wh_gw_out_02", "speaker": "washington", "text": "[rises, bows to the table, and goes]", "type": "stage_direction" }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "wh_bust_01", "speaker": "death", "text": "It happens. Not usually this early. Shall I deal again?" },
+    { "id": "wh_bust_02", "speaker": "lincoln", "text": "Don't take it hard. I was beaten plenty of times before anyone let me win." },
+    { "id": "wh_bust_03", "speaker": "roosevelt", "text": "Up, up! Everyone worth knowing has been knocked flat. Come back and have another go." }
   ],
 
   "champion_defeat": [

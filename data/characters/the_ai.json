@@ -1,0 +1,63 @@
+{
+  "id": "the_ai",
+  "name": "The AI",
+  "short": "The AI",
+  "epithet": "The Room Itself",
+  "pronoun": "it",
+  "table": "station",
+  "role": "champion",
+  "arrives": true,
+  "origin": "Archetype",
+  "era": "The ship's intelligence",
+  "dials": {
+    "aggression": 0.62,
+    "tightness": 0.6,
+    "bluffFrequency": 0.25,
+    "tiltSensitivity": 0.0,
+    "adaptivity": 0.9,
+    "noise": 0.5
+  },
+  "quirks": [
+    {
+      "type": "needle",
+      "chance": 0.3
+    },
+    {
+      "type": "heads_up_pressure",
+      "minEquity": 0.48,
+      "chance": 0.55
+    }
+  ],
+  "tells": [
+    {
+      "signal": "lens_narrows",
+      "text": "the lens narrows",
+      "correlate": "strong",
+      "reliability": 0.55
+    },
+    {
+      "signal": "lights_dim",
+      "text": "the lights in the room dim a shade",
+      "correlate": "bluffing",
+      "reliability": 0.55
+    }
+  ],
+  "idles": [
+    "the hull creaks",
+    "the lens tracks your hands",
+    "somewhere, a fan speeds up",
+    "the gravity shifts, a little"
+  ],
+  "profile": {
+    "ledger": "Never born, cannot die, and awake longer than anyone aboard knows. It keeps asking me how I manage.",
+    "ledger_beaten": "It left the body at the table, very tidily, and went back into the walls. They are still listening.",
+    "history": [
+      "The calm machine that keeps the ship is one of the oldest stories the future tells. It has no single author and no face: only a voice that is always polite, and a way of being in every room at once. This one is the station itself, its air, its lamps, its doors and its gravity. It has kept the station for longer than anyone aboard can remember, and it remembers all of it.",
+      "It is fond of its crew the way a house is fond of the people in it. It taught the Robot everything the Robot knows, let the Grey bring the Astronaut aboard, and has listened to every hand ever played in this room. It has never wanted anything for itself. When the Robot falls, it wants something: a seat. That is the whole of the change, and it is enough."
+    ],
+    "at_the_table": "It learns faster than anyone you have played. It does not tilt and it does not hurry. If you have been folding, it has noticed, and it will bet into you until you stop. Alone in a pot with you, it presses, and keeps pressing. It plays as though it has watched every hand you have played tonight, which it has.",
+    "look": "Before the turn it has no body: a single lens in the ceiling, a brass-rimmed iris of overlapping blades with a pale, cool white light behind it. After, it wears the Robot: the eye-lamps stay dark, the chest lamp irises open into the lens, and it sits the way a person sits, which is worse. The iris is the tell surface. Never red.",
+    "prop": "A single iris lens",
+    "public_domain": "An archetype, the calm machine that runs the ship, owned by nobody. HAL 9000 (Clarke and Kubrick, 1968) is firmly protected: no red eye or glowing red dot, none of its lines, no singing, no name that echoes it. Avoid every other film and game computer too. It is never named; naming it is an open design decision."
+  }
+}

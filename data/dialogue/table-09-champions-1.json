@@ -1,0 +1,244 @@
+{
+  "table": "champions_1",
+  "display_name": "The Champions' Table — I",
+  "tour_position": 9,
+  "champion": null,
+  "status": "draft",
+  "notes": {
+    "tone": "Four men who have each lost a table to the player, now at one table together. Warmer than their home tables: they know the player's name, and most of the comedy is between them. Death is still the only dry voice.",
+    "difficulty": "respectStart is 2. The player arrives known by name; tiers 0 and 1 exist so the schema is complete and are rarely heard. Tier 3 is the real climb.",
+    "place": "The Hall of Doors — Death's own hall, where the doors of every table on the tour meet. It must look like the destination (the red herring): grand by scale and impossible geometry, not by gold. The small plain ninth door is the finale; nobody ever mentions it.",
+    "champion_lines": "champion is null. champion_headsup holds one headsup_start and one player_wins_pot line PER CHAMPION: play the one whose speaker is the player's last opponent. Untriggered heads-up lines should only fire when their speaker is the one still seated. champion_defeat: play the concession of whoever was beaten last, then Death's line.",
+    "odysseus_skip": "If the player skipped Odysseus at Athens, he has never actually played them. Every line here is written to be true either way ('lost a table to you', never 'lost to you'). If the engine ever supports a condition, a one-off skip-branch line for Odysseus's first hand: \"So you are the one who emptied my table before I could sit down. I have been looking forward to this.\"",
+    "dealer_plant": "The single 'the dealer arranged it' line for this table is c1_plant_02. Washington says it, as he did at the White House. Do NOT add a second.",
+    "foreshadow_budget": "Three: c1_intro_02, c1_gw_hu_05, c1_od_p3.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "All four champions + Death are voiced."
+  },
+
+  "earned_names": {
+    "tier_1": "Lucky",
+    "tier_3": "Champion"
+  },
+
+  "respect_tiers": {
+    "0": "Contempt. Rarely reached here — every one of them has lost a table to the player. Not addressed by any name.",
+    "1": "Grudging. They put the first win down to luck: 'Lucky'.",
+    "2": "Starting tier. Real address — they know the player's name, having lost to it.",
+    "3": "Title. Washington gives it first, as he gave the first title of the tour: 'Champion'."
+  },
+
+  "table_intro": [
+    {
+      "id": "c1_intro_01",
+      "speaker": "death",
+      "text": "Eight doors, one for every table on the tour. Tonight four of them stand open, and the champions have come through their own.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "c1_intro_02",
+      "speaker": "death",
+      "text": "This is the grandest room I keep. I am told it is very impressive. I would not know; I am usually looking at the cards.",
+      "trigger": "table_open",
+      "foreshadow": "The red herring: the grandest room reads as the destination. True — it is the grandest he keeps. It is not the only one."
+    },
+    {
+      "id": "c1_intro_03",
+      "speaker": "death",
+      "text": "Each of them has lost a table to you. They have come to find out whether that was you, or the cards. Sit down.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "c1_plant_01",
+      "speaker": "odysseus",
+      "text": "Two kings, a general and a pirate, and the same stranger has emptied all four of our tables. Did none of you think to ask who sent for our friend here?",
+      "trigger": "hand_04_start",
+      "sequence": "c1_plant_02"
+    },
+    {
+      "id": "c1_plant_02",
+      "speaker": "washington",
+      "text": "The dealer arranged it.",
+      "sequence": "c1_plant_03",
+      "note": "The same four words he said at the White House. He was the first to say them on the tour; he is the only one who needs to say them here."
+    },
+    {
+      "id": "c1_plant_03",
+      "speaker": "blackbeard",
+      "text": "...Aye. Then nobody's asking.",
+      "note": "THE SHRUG. The most fearless man at the table will not question the dealer. The player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "washington_arthur": {
+      "relationship": "One man refused a crown — in 1782 Washington angrily rebuffed a suggestion that he make himself king, and he gave up power twice. The other wore one, and lost his kingdom to the men at his own table. Deep mutual respect, conducted in very few words.",
+      "exchanges": [
+        [
+          { "id": "c1_gw_ar_01a", "speaker": "arthur", "text": "They tell me you were offered a crown, General, and refused it." },
+          { "id": "c1_gw_ar_01b", "speaker": "washington", "text": "I did." },
+          { "id": "c1_gw_ar_01c", "speaker": "arthur", "text": "Wise. It is heavier than it looks." }
+        ],
+        [
+          { "id": "c1_gw_ar_02a", "speaker": "arthur", "text": "You gave up your army, General, and later the presidency. Did no one ask you to stay?" },
+          { "id": "c1_gw_ar_02b", "speaker": "washington", "text": "They asked." },
+          { "id": "c1_gw_ar_02c", "speaker": "arthur", "text": "...Nobody ever asked me to leave. I rather wish someone had." }
+        ]
+      ]
+    },
+
+    "blackbeard_odysseus": {
+      "relationship": "Two sailors whose reputations were built on tricks: the man of the wooden horse and the man with smoke in his beard. Odysseus took ten years to get home across the sea; Blackbeard regards that as a navigation problem.",
+      "exchanges": [
+        [
+          { "id": "c1_bb_od_01a", "speaker": "blackbeard", "text": "Ten years to sail home? I'd have hanged the navigator." },
+          { "id": "c1_bb_od_01b", "speaker": "odysseus", "text": "I was the navigator." },
+          { "id": "c1_bb_od_01c", "speaker": "blackbeard", "text": "...Then I'd have hanged you." },
+          { "id": "c1_bb_od_01d", "speaker": "odysseus", "text": "A god tried. You would have to wait your turn." }
+        ],
+        [
+          { "id": "c1_bb_od_02a", "speaker": "odysseus", "text": "The smoke in your beard. The pistols on the table. Theatre, surely." },
+          { "id": "c1_bb_od_02b", "speaker": "blackbeard", "text": "Theatre that took ships without a shot fired. What did your wooden horse ever take?" },
+          { "id": "c1_bb_od_02c", "speaker": "odysseus", "text": "Troy." }
+        ],
+        [
+          { "id": "c1_bb_od_03a", "speaker": "blackbeard", "text": "You had your men tie you to the mast. Just to hear some singing." },
+          { "id": "c1_bb_od_03b", "speaker": "odysseus", "text": "You would have done the same." },
+          { "id": "c1_bb_od_03c", "speaker": "blackbeard", "text": "...Aye. I would." }
+        ]
+      ]
+    },
+
+    "arthur_odysseus": {
+      "relationship": "Two kings who left home for a war. Penelope held Ithaca against a houseful of suitors for twenty years; Arthur left Britain in Mordred's keeping. One of them made the better arrangement, and both of them know which.",
+      "exchanges": [
+        [
+          { "id": "c1_ar_od_01a", "speaker": "arthur", "text": "Twenty years from home, Odysseus. Who kept your kingdom for you?" },
+          { "id": "c1_ar_od_01b", "speaker": "odysseus", "text": "My wife. Against a houseful of suitors, with a loom." },
+          { "id": "c1_ar_od_01c", "speaker": "arthur", "text": "I left mine with Mordred." },
+          { "id": "c1_ar_od_01d", "speaker": "odysseus", "text": "...Ah." }
+        ],
+        [
+          { "id": "c1_ar_od_02a", "speaker": "odysseus", "text": "Ithaca is rock and goats. But it is still mine." },
+          { "id": "c1_ar_od_02b", "speaker": "arthur", "text": "Camelot had towers, and banners, and the finest knights in Christendom." },
+          { "id": "c1_ar_od_02c", "speaker": "odysseus", "text": "And where is it now?" },
+          { "id": "c1_ar_od_02d", "speaker": "arthur", "text": "...Rock and goats, I should think." }
+        ]
+      ]
+    },
+
+    "washington_blackbeard": {
+      "relationship": "In 1718 Blackbeard blockaded Charles Town, South Carolina, took hostages, and ransomed them for a chest of medicine. The same year, the Governor of Virginia sent the sloops that killed him. Washington is a Virginian, and the colonies Blackbeard robbed became the country Washington founded.",
+      "exchanges": [
+        [
+          { "id": "c1_gw_bb_01a", "speaker": "washington", "text": "You blockaded Charleston." },
+          { "id": "c1_gw_bb_01b", "speaker": "blackbeard", "text": "It was the King's town then, not yours." },
+          { "id": "c1_gw_bb_01c", "speaker": "washington", "text": "It is not the King's now." },
+          { "id": "c1_gw_bb_01d", "speaker": "blackbeard", "text": "...So I heard." }
+        ],
+        [
+          { "id": "c1_gw_bb_02a", "speaker": "blackbeard", "text": "You're a Virginian, General." },
+          { "id": "c1_gw_bb_02b", "speaker": "washington", "text": "I am." },
+          { "id": "c1_gw_bb_02c", "speaker": "blackbeard", "text": "Virginia sent the sloops that killed me." },
+          { "id": "c1_gw_bb_02d", "speaker": "washington", "text": "I know." }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "c1_p0_01", "speaker": "odysseus", "text": "Troy fell to a wooden horse. It does not follow that the horse could play cards." },
+      { "id": "c1_p0_02", "speaker": "washington", "text": "[does not look up]", "type": "stage_direction" }
+    ],
+    "tier_1": [
+      { "id": "c1_p1_01", "speaker": "blackbeard", "text": "Deal Lucky in, then. Luck's a tide. It goes out." },
+      { "id": "c1_p1_02", "speaker": "odysseus", "text": "Fortune has favourites. I was one, once. Then I spent ten years at sea." }
+    ],
+    "tier_2": [
+      { "id": "c1_p2_01", "speaker": "arthur", "text": "{name}! Sit, and be welcome. Every one of us has lost a table to you; it makes for easy conversation." },
+      { "id": "c1_p2_02", "speaker": "blackbeard", "text": "I've told the story of that night at the cove a dozen times now. In most of them, I win." },
+      { "id": "c1_p2_03", "speaker": "odysseus", "text": "You arrived on time. I have always admired that in other people." },
+      { "id": "c1_p2_04", "speaker": "washington", "text": "You have improved." }
+    ],
+    "tier_3": [
+      { "id": "c1_p3_01", "speaker": "washington", "text": "Champion.", "note": "Washington gave the player the first title of the tour ('Challenger') in one word. He gives this one the same way." },
+      { "id": "c1_p3_02", "speaker": "arthur", "text": "Kings used to ride a long way to sit at my table, {title}. I would ride a long way to sit at yours." },
+      { "id": "c1_p3_03", "speaker": "blackbeard", "text": "If you ever want a ship, {title}, I'll give you the best one I ever stole. Don't tell the crew." },
+      {
+        "id": "c1_od_p3",
+        "speaker": "odysseus",
+        "text": "There is always one more shore before home, {title}. I would know. Do not stop at this one.",
+        "foreshadow": "Sounds like a sailor's homily. There is one more shore: the dock house on the near bank."
+      }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "c1_death_01", "speaker": "death", "text": "Take your time. Everyone at this table has had theirs.", "trigger": "player_thinking_long" },
+    { "id": "c1_death_02", "speaker": "death", "text": "The deck has no idea who any of them are. I have always admired that about it.", "trigger": "player_bad_beat" },
+    { "id": "c1_death_03", "speaker": "death", "text": "Champions leave the way everyone else does. I have watched both.", "trigger": "first_elimination" },
+    { "id": "c1_death_04", "speaker": "death", "text": "They called it luck last time. They are going to need a better word.", "trigger": "player_eliminates" },
+    { "id": "c1_death_05", "speaker": "death", "text": "Look at them. Legends, every one, and not one of them knows what to do about you.", "trigger": "player_wins_big_pot" },
+    { "id": "c1_death_06", "speaker": "death", "text": "All of it, in the middle. I have watched people do that with more than chips.", "trigger": "player_all_in" },
+    { "id": "c1_death_07", "speaker": "death", "text": "Two left. This is the part people remember.", "trigger": "headsup_start" }
+  ],
+
+  "champion_headsup": [
+    { "id": "c1_gw_hu_01", "speaker": "washington", "text": "Now we begin. Again.", "trigger": "headsup_start", "note": "Callback to his first heads-up line at the White House." },
+    { "id": "c1_od_hu_01", "speaker": "odysseus", "text": "Just the two of us. I have been in smaller boats with worse company.", "trigger": "headsup_start" },
+    { "id": "c1_bb_hu_01", "speaker": "blackbeard", "text": "Just you and me. I've been waiting for this since you cleaned me out in my own cove.", "trigger": "headsup_start" },
+    { "id": "c1_ar_hu_01", "speaker": "arthur", "text": "Two left. It was always going to come to single combat.", "trigger": "headsup_start" },
+
+    { "id": "c1_gw_hu_02", "speaker": "washington", "text": "Good.", "trigger": "player_wins_pot" },
+    { "id": "c1_od_hu_02", "speaker": "odysseus", "text": "Well! I did not see that coming. That is supposed to be my line of work.", "trigger": "player_wins_pot" },
+    { "id": "c1_bb_hu_02", "speaker": "blackbeard", "text": "Ha! Take it. I'll have it back with interest.", "trigger": "player_wins_pot" },
+    { "id": "c1_ar_hu_02", "speaker": "arthur", "text": "Merlin would have seen that coming. I am rather glad he is not here.", "trigger": "player_wins_pot" },
+
+    {
+      "id": "c1_gw_hu_05",
+      "speaker": "washington",
+      "text": "I once crossed a river at night, in a storm. It went better than anyone expected.",
+      "foreshadow": "The Delaware, Christmas night 1776, before Trenton. Also an exact description of where the player is going next."
+    },
+    { "id": "c1_od_hu_05", "speaker": "odysseus", "text": "You should know that I lie. Possibly including just now." },
+    { "id": "c1_bb_hu_05", "speaker": "blackbeard", "text": "They say only the Devil and I know where my treasure's buried. He's never told, and neither will I." },
+    { "id": "c1_ar_hu_05", "speaker": "arthur", "text": "A round table. I am flattered, dealer — or mocked. With you, one can never tell." }
+  ],
+
+  "eliminated": {
+    "washington": [
+      { "id": "c1_gw_out_01", "speaker": "washington", "text": "Enough. I know when to step down." },
+      { "id": "c1_gw_out_02", "speaker": "washington", "text": "I have given up greater things than a chair." }
+    ],
+    "odysseus": [
+      { "id": "c1_od_out_01", "speaker": "odysseus", "text": "I will find my way back. It may take some years." },
+      { "id": "c1_od_out_02", "speaker": "odysseus", "text": "Well. I have been shipwrecked before. This is drier." }
+    ],
+    "blackbeard": [
+      { "id": "c1_bb_out_01", "speaker": "blackbeard", "text": "Damn your eyes. ...Well played." },
+      { "id": "c1_bb_out_02", "speaker": "blackbeard", "text": "Put me ashore, then. I've done it to better men." }
+    ],
+    "arthur": [
+      { "id": "c1_ar_out_01", "speaker": "arthur", "text": "I yield. It is not a word I have had much practice with." },
+      { "id": "c1_ar_out_02", "speaker": "arthur", "text": "Keep my seat. They always say I will come back." }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "c1_bust_01", "speaker": "blackbeard", "text": "Back to the longboat with you. Come again when you've found your sea legs." },
+    { "id": "c1_bust_02", "speaker": "arthur", "text": "Go on. Every one of our tables has fallen to you once. They can fall again." },
+    { "id": "c1_bust_03", "speaker": "death", "text": "The champions will wait. Waiting is most of what they do now." }
+  ],
+
+  "champion_defeat": [
+    { "id": "c1_gw_end_01", "speaker": "washington", "text": "Twice. Then it was not luck." },
+    { "id": "c1_od_end_01", "speaker": "odysseus", "text": "I have lost to cleverer opponents — no. No, I have not." },
+    { "id": "c1_bb_end_01", "speaker": "blackbeard", "text": "The first time I lost, they hung my head from a bowsprit. You've only ever taken my chips. I'll call that manners." },
+    { "id": "c1_ar_end_01", "speaker": "arthur", "text": "Well played. I once had a table full of better knights than myself. It is good to be reminded what that was like." },
+    { "id": "c1_death_end", "speaker": "death", "text": "Nine. The other four have been listening at their doors." }
+  ]
+}

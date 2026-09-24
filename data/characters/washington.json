@@ -1,0 +1,65 @@
+{
+  "id": "washington",
+  "name": "George Washington",
+  "short": "Washington",
+  "epithet": "Father of His Country",
+  "pronoun": "he",
+  "table": "white_house",
+  "role": "champion",
+  "arrives": false,
+  "origin": "History",
+  "era": "1732–1799 · 1st President of the United States",
+  "dials": {
+    "aggression": 0.68,
+    "tightness": 0.8,
+    "bluffFrequency": 0.12,
+    "tiltSensitivity": 0.02,
+    "adaptivity": 0.3,
+    "noise": 0.1
+  },
+  "quirks": [
+    {
+      "type": "heads_up_pressure",
+      "minEquity": 0.45,
+      "chance": 0.6
+    }
+  ],
+  "tells": [
+    {
+      "signal": "straightens_cuffs",
+      "text": "straightens his cuffs",
+      "correlate": "strong",
+      "reliability": 0.85
+    },
+    {
+      "signal": "hand_flat",
+      "text": "rests one hand flat on the table",
+      "correlate": "weak",
+      "reliability": 0.83
+    },
+    {
+      "signal": "sits_straighter",
+      "text": "sits a fraction straighter",
+      "correlate": "bluffing",
+      "reliability": 0.8
+    }
+  ],
+  "idles": [
+    "smooths his waistcoat",
+    "glances toward the window",
+    "works his jaw, briefly",
+    "squares the edges of his chips"
+  ],
+  "profile": {
+    "ledger": "Gave back an army, then a country, and nobody made him do either. His last words were 'Tis well. I saw no reason to argue.",
+    "ledger_beaten": "Beaten. He stood, bowed, and gave up the chair as though he had planned to all along.",
+    "history": [
+      "George Washington (1732–1799) was a Virginia surveyor and planter who commanded the Continental Army for the whole of the Revolutionary War. He lost more battles than he won and kept the army alive anyway; on Christmas night 1776 he took it across the icy Delaware to surprise the garrison at Trenton. He presided over the convention that wrote the Constitution and was elected president twice, both times unanimously by the electors.",
+      "In 1783 he resigned his commission to Congress when he could have kept it, and in 1796 he declined a third term. Jefferson wrote that his temper was naturally high but that reflection and resolution had mastered it. For years he kept careful accounts, down to his small winnings and losses at cards. He chose the site for this house and never lived in it."
+    ],
+    "at_the_table": "Tight, and aggressive once he commits. He folds most hands without comment, and when he plays he bets rather than calls. He rarely bluffs, and nothing that happens at the table appears to reach him. Take the table down to the two of you and he changes: alone in a pot against one opponent he presses, hand after hand, and does not let up.",
+    "look": "Silhouette: the straightest back at the table, high collar, his own hair powdered and tied at the nape — not a wig. Face: long, heavy-jawed, the mouth set firm. Prop: the buff-and-blue general's coat with gold epaulettes; its cuffs and shoulders are the tell surface, so any change in that upright line reads at once.",
+    "prop": "Buff-and-blue general's coat",
+    "public_domain": "Historical figure, died 1799. Build from the Gilbert Stuart and Charles Willson Peale portraits, which are public domain. Avoid the look and staging of the musical Hamilton and any modern screen likeness. No wooden teeth: that is a myth."
+  }
+}

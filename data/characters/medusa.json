@@ -1,0 +1,65 @@
+{
+  "id": "medusa",
+  "name": "Medusa",
+  "short": "Medusa",
+  "epithet": "The Gorgon",
+  "pronoun": "she",
+  "table": "athens",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Myth",
+  "era": "Greek myth · the mortal Gorgon",
+  "dials": {
+    "aggression": 0.55,
+    "tightness": 0.55,
+    "bluffFrequency": 0.3,
+    "tiltSensitivity": 0.15,
+    "adaptivity": 0.4,
+    "noise": 0.18
+  },
+  "quirks": [
+    {
+      "type": "check_raise",
+      "minEquity": 0.72,
+      "chance": 0.6
+    }
+  ],
+  "tells": [
+    {
+      "signal": "snakes_still",
+      "text": "the snakes in her hair go still",
+      "correlate": "strong",
+      "reliability": 0.3
+    },
+    {
+      "signal": "snakes_hiss",
+      "text": "the snakes in her hair coil and hiss",
+      "correlate": "weak",
+      "reliability": 0.3
+    },
+    {
+      "signal": "lowers_gaze",
+      "text": "lowers her gaze to the table",
+      "correlate": "bluffing",
+      "reliability": 0.3
+    }
+  ],
+  "idles": [
+    "one snake tastes the air",
+    "two snakes knot themselves together",
+    "one snake nips another",
+    "she tucks a snake behind her ear"
+  ],
+  "profile": {
+    "ledger": "The only one of three sisters who could die. Perseus managed it by looking the other way.",
+    "ledger_beaten": "Beaten by someone who knew better than to look. It has happened to her once before.",
+    "history": [
+      "In Hesiod, Medusa is one of three Gorgon sisters, daughters of the old sea-powers Phorcys and Ceto, and the only one of the three who was mortal. Ovid tells the version most people know: she was a beautiful girl, famous above all for her hair, until Neptune violated her in Minerva's temple — and the goddess punished her, not him, by turning her hair to snakes. Whoever met her eyes turned to stone.",
+      "Perseus cut off her head while she slept, watching her only in the reflection of a polished bronze shield, and the winged horse Pegasus sprang from her neck. She was punished for what was done to her, then killed for what the punishment made her. She has had a long time to think about faces, and about what people believe they see in them."
+    ],
+    "at_the_table": "Measured, with a patience that feels like waiting. She plays a middling range, likes to check to the table after the flop and answer a bet with a raise, and bluffs often enough to matter. Everyone watches her; the snakes give them plenty to watch. Those who study her face longest leave with the most confident conclusions. I have not often seen them leave with her chips.",
+    "look": "Silhouette: a head of living snakes, a moving crown nobody else at the table has, readable at any size. Face: a young woman's, pale and calm, heavy-lidded; the eyes are drawn as ordinary, which is the unsettling choice. Prop: the snakes themselves — their stillness, coiling and hissing are her whole tell surface.",
+    "prop": "Her hair of snakes",
+    "public_domain": "Greek myth (Hesiod, Pindar, Ovid), all public domain; classical art such as the Rondanini Medusa is fair reference. Avoid Harryhausen's Medusa from Clash of the Titans (1981: serpent body, rattle tail, bow) and its 2010 remake, and the Percy Jackson Medusa (sunglasses, garden statues). She has legs and sits in a chair."
+  }
+}

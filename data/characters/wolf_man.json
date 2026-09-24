@@ -1,0 +1,70 @@
+{
+  "id": "wolf_man",
+  "name": "The Wolf Man",
+  "short": "Wolf Man",
+  "epithet": "Loup-Garou",
+  "pronoun": "he",
+  "table": "transylvania",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Folklore",
+  "era": "European werewolf folklore",
+  "dials": {
+    "aggression": 0.72,
+    "tightness": 0.48,
+    "bluffFrequency": 0.15,
+    "tiltSensitivity": 0.5,
+    "adaptivity": 0.2,
+    "noise": 0.45
+  },
+  "quirks": [
+    {
+      "type": "berserk",
+      "tilt": 0.22,
+      "minEquity": 0.38
+    },
+    {
+      "type": "chaser",
+      "maxPotFraction": 0.35,
+      "minEquity": 0.25
+    }
+  ],
+  "tells": [
+    {
+      "signal": "sniffs_pot",
+      "text": "sniffs at the pot",
+      "correlate": "strong",
+      "reliability": 0.62
+    },
+    {
+      "signal": "ears_flatten",
+      "text": "his ears flatten",
+      "correlate": "weak",
+      "reliability": 0.6
+    },
+    {
+      "signal": "claws_scrape",
+      "text": "his claws scrape the felt",
+      "correlate": "tilted",
+      "reliability": 0.64
+    }
+  ],
+  "idles": [
+    "glances at the window and the moon",
+    "growls at a draught",
+    "scratches behind one ear",
+    "sheds on the tablecloth"
+  ],
+  "profile": {
+    "ledger": "A decent man for most of the month. On the other nights, the villages nearby keep me busy.",
+    "ledger_beaten": "He left before he could embarrass himself. It was close.",
+    "history": [
+      "Europe told werewolf stories for as long as it had wolves; the Old English word means simply man-wolf. In Petronius a Roman soldier strips off his clothes among the tombstones and runs off as a wolf. In Marie de France's twelfth-century Bisclavret, a Breton lord turns wolf three days a week and needs his clothes to turn back. Gervase of Tilbury, in the early 1200s, wrote that in England men were often seen to change into wolves with the moon.",
+      "In the oldest stories he is seldom a villain by choice: he is cursed, or born to it, or a man who took his clothes off at the wrong moment. Gerald of Wales tells of an Irish wolf that spoke to a priest and begged him to bring the last sacrament to its dying mate. That is the werewolf at this table: polite, ashamed of himself, and hungry. He came for the company and is trying not to think about the menu."
+    ],
+    "at_the_table": "He plays too many hands and pushes most of them. Put a small bet in front of him on the flop or the turn and he will follow it the way a nose follows a scent. He does not adjust; he has instincts instead, and they are the same every night. Beat him in a big pot and the man goes out of him, and what is left moves all in.",
+    "look": "Silhouette: a real wolf's head, long muzzle and tall pointed ears, on a big man's shoulders, in the remains of a good shirt and waistcoat split at the seams. Grey-brown fur, a man's tired eyes. The ears are the tell surface and the biggest moving shape he has: up, back, flat. Not a hairy man's face; that is the film's design, not folklore's.",
+    "prop": "Tall wolf's ears",
+    "public_domain": "The werewolf is European folklore, told from Petronius onward, and belongs to nobody. Universal owns its Wolf Man films and their lore: no Larry Talbot, no silver-headed cane, no pentagram, no fortune-teller's verse, and no hairy-faced human makeup. Build him from folklore, as a wolf's head on a man's frame."
+  }
+}

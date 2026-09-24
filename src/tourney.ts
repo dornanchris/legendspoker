@@ -1,5 +1,5 @@
-import { Game, DEFAULT_LEVELS } from './game.js'
-import { CAST } from './personality.js'
+import { Game, DEFAULT_LEVELS, type Arrival } from './game.js'
+import { CAST, type Personality } from './personality.js'
 import { mulberry32 } from './rng.js'
 
 /**
@@ -24,23 +24,75 @@ import { mulberry32 } from './rng.js'
 
 const TABLES = Number(process.argv[2] ?? 100)
 const HAND_CAP = 2000 // far past any sane table; only a stall reaches it
-const HANDS_PER_LEVEL = 25
 
+/**
+ * Optional second argument: a table id from data/tables, to run that table
+ * as the tour plays it -- its cast, its blind pace, and its late arrival.
+ * Without one this is the Phase 3a test against the frozen Phase 2 cast.
+ *
+ *   npm run tourney 100 athens
+ */
+const TABLE_ID = process.argv[3]
+let cast: Personality[] = CAST
+let arrivals: Arrival[] = []
+let HANDS_PER_LEVEL = 25
+let BUY_IN = 2000
+let title = ''
+if (TABLE_ID) {
+  const content = await import('./content.js')
+  const t = content.TABLE_BY_ID[TABLE_ID]
+  if (!t) {
+    console.error(`no table "${TABLE_ID}". Tables: ${content.TABLES.map((x) => x.id).join(', ')}`)
+    process.exit(1)
+  }
+  title = t.name
+  cast = t.seats.map(content.personality)
+  // The finale is you against the dealer: one seat. Measure it against a
+  // stand-in -- the first champion of the tour -- in place of the player.
+  if (cast.length < 2) {
+    const standIn = content.TOUR[0].champion!
+    cast = [content.personality(standIn), ...cast]
+    title += ` (${content.CHARACTERS[standIn].short} standing in for the player)`
+  }
+  HANDS_PER_LEVEL = t.handsPerLevel
+  BUY_IN = t.buyIn
+  if (t.arrival) {
+    arrivals = [{
+      personality: content.personality(t.arrival.character),
+      afterEliminations: t.arrival.afterEliminations,
+      afterEliminationOf: t.arrival.afterEliminationOf,
+      delayHands: t.arrival.delayHands,
+      stack: t.arrival.stack,
+    }]
+  }
+}
+const everyone = [...cast, ...arrivals.map((a) => a.personality)]
 
 const lengths: number[] = []
 const finishes = new Map<string, number[]>()
-for (const p of CAST) finishes.set(p.name, new Array(CAST.length).fill(0))
+for (const p of everyone) finishes.set(p.name, new Array(everyone.length).fill(0))
+const arrived = new Map<string, number>()
 let stalls = 0
 let leaks = 0
 
 const t0 = Date.now()
 for (let table = 0; table < TABLES; table++) {
-  const game = new Game(CAST, {
+  // Finishing places come from the elimination events, by character: a chair
+  // can be filled twice once someone arrives late.
+  const placed: { name: string; place: number }[] = []
+  const game: Game = new Game(cast, {
     mode: 'tournament',
-    buyIn: 2000,
+    buyIn: BUY_IN,
     rollouts: 60,
     rng: mulberry32(20260901 + table),
     handsPerLevel: HANDS_PER_LEVEL,
+    arrivals,
+    onEvent: arrivals.length
+      ? (e) => {
+          if (e.type === 'eliminated') placed.push({ name: nameOf(e.id), place: e.place })
+          if (e.type === 'arrival') arrived.set(nameOf(e.id), (arrived.get(nameOf(e.id)) ?? 0) + 1)
+        }
+      : undefined,
   })
 
   let hands = 0
@@ -51,14 +103,21 @@ for (let table = 0; table < TABLES; table++) {
 
   if (game.isComplete()) {
     lengths.push(hands)
-    game.standings().forEach((seat, place) => {
-      finishes.get(CAST[seat].name)![place]++
-    })
+    if (arrivals.length) {
+      const winner = game.survivors()[0]
+      placed.push({ name: game.getSeats()[winner].personality.name, place: 1 })
+      for (const { name, place } of placed) finishes.get(name)![place - 1]++
+    } else {
+      game.standings().forEach((seat, place) => {
+        finishes.get(cast[seat].name)![place]++
+      })
+    }
     // Chips are conserved: the winner must hold exactly what everyone
-    // brought. A mismatch means the settlement is inventing or eating chips,
-    // which no amount of "it looked fine" play-testing would surface.
+    // brought, late arrivals included. A mismatch means the settlement is
+    // inventing or eating chips, which no amount of "it looked fine"
+    // play-testing would surface.
     const total = game.stacks().reduce((a, b) => a + b, 0)
-    if (total !== 2000 * CAST.length) leaks++
+    if (total !== game.chipsInPlay()) leaks++
   } else {
     stalls++
   }
@@ -72,10 +131,16 @@ process.stdout.write('\r' + ' '.repeat(40) + '\r')
 const elapsed = ((Date.now() - t0) / 1000).toFixed(1)
 const sorted = [...lengths].sort((a, b) => a - b)
 const at = (q: number) => sorted[Math.floor((sorted.length - 1) * q)]
-const chips = 2000 * CAST.length
+const chips = BUY_IN * cast.length
 
+function nameOf(id: string): string {
+  return everyone.find((p) => p.id === id)?.name ?? id
+}
+
+if (title) console.log(`\n== ${title} ==`)
 console.log(`\n${TABLES} tables in ${elapsed}s`)
-console.log(`${CAST.length}-handed, ${chips} chips in play, ${DEFAULT_LEVELS.length} blind levels\n`)
+console.log(`${cast.length}-handed, ${chips} chips at the start, ${DEFAULT_LEVELS.length} blind levels` +
+  (arrivals.length ? `, plus ${arrivals.map((a) => a.personality.name).join(', ')} arriving late` : '') + '\n')
 
 console.log(`Completed     ${lengths.length}/${TABLES}`)
 console.log(`Stalled       ${stalls}${stalls ? '   <-- FAIL: a table never ended' : ''}`)
@@ -93,15 +158,16 @@ const pad = (s: string, n: number) => s.padEnd(n)
 const num = (s: string | number, n: number) => String(s).padStart(n)
 
 console.log(`\nFinishing position (count)`)
-console.log(pad('Character', 22) + CAST.map((_, i) => num(`${i + 1}${['st','nd','rd','th'][i] ?? 'th'}`, 7)).join(''))
-console.log('-'.repeat(22 + 7 * CAST.length))
-for (const p of CAST) {
+console.log(pad('Character', 22) + everyone.map((_, i) => num(`${i + 1}${['st','nd','rd','th'][i] ?? 'th'}`, 7)).join('') + (arrivals.length ? num('sat', 7) : ''))
+console.log('-'.repeat(22 + 7 * everyone.length + (arrivals.length ? 7 : 0)))
+for (const p of everyone) {
   const row = finishes.get(p.name)!
-  console.log(pad(p.name, 22) + row.map((n) => num(n, 7)).join(''))
+  const sat = arrivals.some((a) => a.personality === p) ? arrived.get(p.name) ?? 0 : TABLES
+  console.log(pad(p.name, 22) + row.map((n) => num(n, 7)).join('') + (arrivals.length ? num(sat, 7) : ''))
 }
 
 console.log(`
-A table ends when one player holds all ${chips} chips. Blinds climb every
+A table ends when one player holds every chip in play. Blinds climb every
 ${HANDS_PER_LEVEL} hands and never come back down, so the schedule -- not the
 players -- is what puts a floor under how long a table can run.
 

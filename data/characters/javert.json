@@ -1,0 +1,68 @@
+{
+  "id": "javert",
+  "name": "Inspector Javert",
+  "short": "Javert",
+  "epithet": "The Card-Reader's Son",
+  "pronoun": "he",
+  "table": "baker_street",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "Les Misérables (Hugo, 1862) · police inspector",
+  "dials": {
+    "aggression": 0.55,
+    "tightness": 0.72,
+    "bluffFrequency": 0.05,
+    "tiltSensitivity": 0.45,
+    "adaptivity": 0.1,
+    "noise": 0.35
+  },
+  "quirks": [
+    {
+      "type": "committed",
+      "fraction": 0.25
+    },
+    {
+      "type": "patient",
+      "minEquity": 0.6
+    }
+  ],
+  "tells": [
+    {
+      "signal": "buttons_coat",
+      "text": "buttons his coat to the collar",
+      "correlate": "strong",
+      "reliability": 0.68
+    },
+    {
+      "signal": "unblinking",
+      "text": "stares at you without blinking",
+      "correlate": "weak",
+      "reliability": 0.66
+    },
+    {
+      "signal": "hand_shakes",
+      "text": "his hand shakes, very slightly",
+      "correlate": "tilted",
+      "reliability": 0.7
+    }
+  ],
+  "idles": [
+    "straightens his stock",
+    "consults a small black notebook",
+    "glances at the door like a man expecting an escape",
+    "taps his cane on the floor once"
+  ],
+  "profile": {
+    "ledger": "Followed one man for years because the law said so. Then met a mercy the law did not cover.",
+    "ledger_beaten": "He wrote down his own defeat, accurately, and signed it.",
+    "history": [
+      "In Victor Hugo's Les Misérables (1862), Javert is a police inspector who was born in a prison, the son of a fortune-teller — Hugo's phrase is tireuse de cartes, a reader of cards — whose husband was in the galleys. Shut out of society from birth, he chose to stand with those who guard it rather than those who attack it, and serves the law with total devotion. For years he hunts the ex-convict Jean Valjean.",
+      "Hugo compares him to the dog that Asturian peasants say is born in every litter of wolves. He is as hard on himself as on anyone: when he believes he has wrongly denounced his mayor, he asks to be dismissed. When the convict he is chasing spares his life, he cannot fit mercy into the law, and Hugo titles that part of the book \"Javert Derailed\". At Baker Street he is the only guest present in an official capacity."
+    ],
+    "at_the_table": "He plays very few hands and almost never bluffs; a lie is a lie, even in cards. He will not call a raise before the flop without a premium hand, whatever the price. But once a quarter of his stack is in the middle, he will not let the hand go for anything. He does not adjust to you. The law does not adjust. And a big loss stays with him.",
+    "look": "Silhouette: tall, in a long greatcoat that buttons to the chin, hat brim low over the eyes, and — Hugo's own detail — enormous side-whiskers climbing toward a flat nose with deep nostrils. A face that almost never moves, so any movement reads. Prop: the greatcoat's high collar and its row of buttons; that is the tell surface.",
+    "prop": "Greatcoat buttoned to the collar",
+    "public_domain": "Hugo's novel (1862) and its nineteenth-century illustrations are public domain. Nothing from the stage musical or its films: no lyrics, no \"Stars\", no prisoner-number chant, no costume from any production. Hugo's text only."
+  }
+}

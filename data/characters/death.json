@@ -1,0 +1,45 @@
+{
+  "id": "death",
+  "name": "Death",
+  "short": "Death",
+  "epithet": "The Dealer",
+  "pronoun": "he",
+  "table": "finale",
+  "role": "dealer",
+  "arrives": false,
+  "origin": "Archetype",
+  "era": "Always",
+  "dials": {
+    "aggression": 0.45,
+    "tightness": 0.8,
+    "bluffFrequency": 0.1,
+    "tiltSensitivity": 0,
+    "adaptivity": 0.85,
+    "noise": 0
+  },
+  "quirks": [
+    {
+      "type": "patient",
+      "minEquity": 0.58
+    },
+    {
+      "type": "check_raise",
+      "minEquity": 0.75,
+      "chance": 0.5
+    }
+  ],
+  "tells": [],
+  "idles": [],
+  "profile": {
+    "ledger": "The dealer. He has dealt every table in this ledger, and every other table there has ever been. He has never once been late.",
+    "ledger_beaten": "Lost the last hand. Handed over the deck, and this ledger with it. The handwriting changes here.",
+    "history": [
+      "Europe gave him his best-known face in the late Middle Ages, when plague made him a regular subject for church walls. The danse macabre painted him leading popes, emperors, merchants and children in the same dance. Holbein drew him for a book of woodcuts. In a church at Täby, in Sweden, Albertus Pictor painted him at a chessboard, playing a man. The scythe was other people's idea. He has been drawn a great many ways, and answers to all of them.",
+      "What makes him a person is that he is tired. He has done one job for longer than anyone has done anything, and done it well, and in all that time nobody has once offered to take a turn. He does not hurry, and he is never late. He arranged this Invitational himself, and he is at every table of it. He has not told anyone why."
+    ],
+    "at_the_table": "He deals. He has always dealt. He does not hurry the cards and has never misdealt them, and he watches every hand through to the end, as if it had something to do with him. People have looked for his tells. He has none. He remembers every hand he has ever dealt. He is at his most attentive when only two players are left, and he takes his time over the last card. He always has.",
+    "look": "Silhouette: tall, narrow, hooded — a grey burial shroud worn as a cloak, the way the danse macabre painted him, never a monk's black robe. Face: a plain skull half in the hood's shadow, drawn like a woodcut; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal.",
+    "prop": "The deck",
+    "public_domain": "Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor)."
+  }
+}

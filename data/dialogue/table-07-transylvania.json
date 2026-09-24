@@ -1,0 +1,284 @@
+{
+  "table": "transylvania",
+  "display_name": "Transylvania",
+  "tour_position": 7,
+  "champion": "dracula",
+  "status": "draft",
+  "notes": {
+    "tone": "Gothic with the lights on. Every monster here treats its own legend as ordinary: Dracula asks your blood type the way anyone asks where you are from. Jokes come from the characters' own books (Stoker, Shelley, Irving, the folk tales), never from the films.",
+    "difficulty": "Penultimate table. The contempt has teeth now, but it is aristocratic rather than rowdy. Van Helsing is the one kind voice, and he is kind the way a doctor is.",
+    "arrival": "Dracula watches from the chair by the fire and says nothing until champion_arrival (after two eliminations). The table's presence line carries him until then. His lines anywhere else must not fire before he is seated.",
+    "dealer_plant": "The single 'the dealer arranged it' beat is tv_plant_01..03, fired straight after the arrival beat (tv_arrive_01..03). 'The dealer's little project' lives inside it on purpose, so it is part of the one beat rather than a second. Do NOT add another.",
+    "earned_names": "Tier 1 usually lands before Dracula sits down, so the nickname comes from the seated monsters ('lamb': prey), and the title comes from Van Helsing ('Hunter'), the one man here with the right to give it. Prey to hunter is the arc.",
+    "horseman": "The Horseman has no mouth. Every line of his is a stage direction and the table answers for him. Unvoiced: hooves, a sword in its scabbard, silence. Scripted beats avoid his tell animations (the candle) so they do not teach false reads.",
+    "banter": "Pair keys join ids that themselves contain underscores; parse against the id list. headless_horseman_table follows the washington_table pattern: it fires after the Horseman contests a pot, using the exchange whose other speaker was in that pot. van_helsing_dracula can only fire after the arrival.",
+    "seating": "Two of the four seats are gone by the time Dracula sits down, so nothing scripted after the arrival depends on a particular guest. The arrival reaction is narration; the plant is Van Helsing's even if he is out (tv_elim_vh_02 has him stay to watch). Anywhere else, skip a line whose speaker is out. Each earned name can be announced by a second line if the first speaker has gone.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "Champion (Dracula) + Death are voiced. Van Helsing, the Monster and the Wolf Man are text + vocalization. The Horseman is silent."
+  },
+
+  "earned_names": {
+    "tier_1": "lamb",
+    "tier_3": "Hunter"
+  },
+
+  "respect_tiers": {
+    "0": "Contempt. The player is not addressed by any name. This table has been hunted by experts; it does not waste manners on supper.",
+    "1": "Grudging notice. The monsters start calling the player 'lamb'.",
+    "2": "Real address. They speak TO the player, by name. Dracula starts asking personal questions.",
+    "3": "Title. Earned. Van Helsing gives it first, because he is the hunter here."
+  },
+
+  "table_intro": [
+    {
+      "id": "tv_intro_01",
+      "speaker": "death",
+      "text": "A castle past the Borgo Pass. The fire is lit for the guests. The host prefers to watch it.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "tv_intro_02",
+      "speaker": "death",
+      "text": "Most of this table has met me before. They were not, on the whole, cooperative.",
+      "trigger": "table_open",
+      "note": "True: Dracula, the Horseman and the parts that make the Monster have all been through Death's hands once."
+    },
+    {
+      "id": "tv_intro_03",
+      "speaker": "death",
+      "text": "The chair by the fire is his. The one at the table is yours, for now.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "tv_plant_01",
+      "speaker": "van_helsing",
+      "text": "Count. Why bring an amateur to a table such as this?",
+      "trigger": "champion_arrival",
+      "sequence": "tv_plant_02",
+      "note": "Plays immediately after the champion_arrival beat (tv_arrive_01..03), never before it. Van Helsing speaks this beat even if he has already been knocked out: he has not left a castle with the Count in it (see tv_elim_vh_02) and speaks from the edge of the room, text only, no puppet needed."
+    },
+    {
+      "id": "tv_plant_02",
+      "speaker": "dracula",
+      "text": "Not my guest, Professor. The dealer's little project. Even I abide by his wishes.",
+      "sequence": "tv_plant_03",
+      "foreshadow": "An insult on first read. On second: the tour IS the dealer's project, the player is being made into something, and the most powerful thing at this table defers to the man dealing the cards."
+    },
+    {
+      "id": "tv_plant_03",
+      "speaker": "van_helsing",
+      "text": "...Even you. Well. Deal, then.",
+      "note": "THE SHRUG. The man who questions everything does not question this. The player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "van_helsing_dracula": {
+      "relationship": "In Stoker's novel Van Helsing names the Count, hunts him out of England and back to this castle, and destroys the three women who share it. The killing blows fell to Jonathan Harker's knife and Quincey Morris's at sunset, while Van Helsing watched with a rifle. They have a great deal to say to each other, all of it polite. Only possible after the arrival.",
+      "exchanges": [
+        [
+          { "id": "tv_vh_dr_01a", "speaker": "dracula", "text": "You smell of garlic, Professor." },
+          { "id": "tv_vh_dr_01b", "speaker": "van_helsing", "text": "It is for my health." },
+          { "id": "tv_vh_dr_01c", "speaker": "dracula", "text": "It does nothing for mine." },
+          { "id": "tv_vh_dr_01d", "speaker": "van_helsing", "text": "That is the idea." }
+        ],
+        [
+          { "id": "tv_vh_dr_02a", "speaker": "van_helsing", "text": "I watched you turn to dust, Count." },
+          { "id": "tv_vh_dr_02b", "speaker": "dracula", "text": "You watched. A solicitor and a Texan did the work." },
+          { "id": "tv_vh_dr_02c", "speaker": "van_helsing", "text": "I had done mine already. In your house." },
+          { "id": "tv_vh_dr_02d", "speaker": "dracula", "text": "[runs a fingernail slowly along the edge of the table]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "tv_vh_dr_03a", "speaker": "van_helsing", "text": "Your kind may not enter a house unless invited. So who invited you to this one?" },
+          { "id": "tv_vh_dr_03b", "speaker": "dracula", "text": "It is my house, Professor." },
+          { "id": "tv_vh_dr_03c", "speaker": "van_helsing", "text": "...Ah. Yes." }
+        ]
+      ]
+    },
+
+    "monster_van_helsing": {
+      "relationship": "Science and its sins. Van Helsing is a doctor who pours one man's blood into another and still believes in the soul; the Monster is what a doctor's ambition made and then abandoned. Each is the other's best evidence.",
+      "exchanges": [
+        [
+          { "id": "tv_mo_vh_01a", "speaker": "van_helsing", "text": "I have read of your maker. A brilliant man." },
+          { "id": "tv_mo_vh_01b", "speaker": "monster", "text": "For nearly two years. Then I opened my eyes, and he ran." },
+          { "id": "tv_mo_vh_01c", "speaker": "van_helsing", "text": "Then he was no doctor. A doctor stays." },
+          { "id": "tv_mo_vh_01d", "speaker": "monster", "text": "...You are the first to say so." }
+        ],
+        [
+          { "id": "tv_mo_vh_02a", "speaker": "monster", "text": "They say you put four men's blood into one young woman." },
+          { "id": "tv_mo_vh_02b", "speaker": "van_helsing", "text": "To save her life." },
+          { "id": "tv_mo_vh_02c", "speaker": "monster", "text": "Did it?" },
+          { "id": "tv_mo_vh_02d", "speaker": "van_helsing", "text": "For a time. Then something else came." }
+        ],
+        [
+          { "id": "tv_mo_vh_03a", "speaker": "van_helsing", "text": "A question, if you permit. Have you a soul?" },
+          { "id": "tv_mo_vh_03b", "speaker": "monster", "text": "I had hoped you would tell me. You have the degrees." },
+          { "id": "tv_mo_vh_03c", "speaker": "van_helsing", "text": "I have many degrees. None of them in that." }
+        ]
+      ]
+    },
+
+    "wolf_man_monster": {
+      "relationship": "Two creatures who never asked to be what they are. The Monster was made without being consulted; the werewolf of folklore is cursed, or born to it. Both have been driven out of villages. They are the only two at the table who understand each other without trying.",
+      "exchanges": [
+        [
+          { "id": "tv_wm_mo_01a", "speaker": "monster", "text": "Were you born to it, or made?" },
+          { "id": "tv_wm_mo_01b", "speaker": "wolf_man", "text": "Depends which village you ask." },
+          { "id": "tv_wm_mo_01c", "speaker": "monster", "text": "I was made. Nobody asked me." },
+          { "id": "tv_wm_mo_01d", "speaker": "wolf_man", "text": "Nobody asked me either. That part's the same everywhere." }
+        ],
+        [
+          { "id": "tv_wm_mo_02a", "speaker": "wolf_man", "text": "What do you eat, anyway? Big fellow like you." },
+          { "id": "tv_wm_mo_02b", "speaker": "monster", "text": "Acorns. Berries. I will not kill a lamb to fill my stomach." },
+          { "id": "tv_wm_mo_02c", "speaker": "wolf_man", "text": "[glances at the player, then quickly away]", "type": "stage_direction", "note": "Pays off the tier-1 nickname if it has landed; plain embarrassment if it has not." }
+        ],
+        [
+          { "id": "tv_wm_mo_03a", "speaker": "wolf_man", "text": "They ever throw things at you?" },
+          { "id": "tv_wm_mo_03b", "speaker": "monster", "text": "Stones. A whole village, once." },
+          { "id": "tv_wm_mo_03c", "speaker": "wolf_man", "text": "With me it's dogs." },
+          { "id": "tv_wm_mo_03d", "speaker": "monster", "text": "I would take the dogs. Dogs are honest about it." }
+        ]
+      ]
+    },
+
+    "headless_horseman_table": {
+      "relationship": "He has no mouth, so he speaks in gestures and the table answers for him. Irving's Horseman is a Hessian trooper, a hired soldier in a foreign war, who rides out nightly for his lost head and must be back in the churchyard by daybreak. Everyone here is a little afraid of him, and nobody will admit it. Fire the exchange whose first speaker was in the pot with him.",
+      "exchanges": [
+        [
+          { "id": "tv_hh_01a", "speaker": "van_helsing", "text": "I have read that the rider who chased your schoolmaster was only a farmer named Abraham, with a pumpkin." },
+          { "id": "tv_hh_01b", "speaker": "headless_horseman", "text": "[draws his sword an inch from its scabbard, and holds it there]", "type": "stage_direction" },
+          { "id": "tv_hh_01c", "speaker": "van_helsing", "text": "A different Abraham. It is a very common name in Holland.", "note": "Irving's Brom Bones is 'Abraham, or, according to the Dutch abbreviation, Brom Van Brunt'. Van Helsing is also an Abraham." }
+        ],
+        [
+          { "id": "tv_hh_02a", "speaker": "monster", "text": "I was made from too many men. You are missing part of one." },
+          { "id": "tv_hh_02b", "speaker": "headless_horseman", "text": "[is perfectly still for a long moment; then offers a gauntlet across the table]", "type": "stage_direction" },
+          { "id": "tv_hh_02c", "speaker": "monster", "text": "[shakes it, gravely]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "tv_hh_03a", "speaker": "wolf_man", "text": "You smell like cold leaves and gunpowder." },
+          { "id": "tv_hh_03b", "speaker": "headless_horseman", "text": "[turns his whole body toward the Wolf Man]", "type": "stage_direction" },
+          { "id": "tv_hh_03c", "speaker": "wolf_man", "text": "...And pumpkin. That's a pumpkin, isn't it." },
+          { "id": "tv_hh_03d", "speaker": "headless_horseman", "text": "[settles it more firmly on his collar, and turns away]", "type": "stage_direction" }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "tv_p0_01", "speaker": "van_helsing", "text": "This one has read about monsters in books. It is not the same thing." },
+      { "id": "tv_p0_02", "speaker": "wolf_man", "text": "Something over there smells scared. Oh. It's the new one." },
+      { "id": "tv_p0_03", "speaker": "monster", "text": "Look, then. Everyone does. Then play your cards." },
+      { "id": "tv_p0_04", "speaker": "headless_horseman", "text": "[turns his whole body away from the player]", "type": "stage_direction" },
+      { "id": "tv_p0_05", "speaker": "dracula", "text": "How kind. Somebody has brought supper.", "note": "Only after the arrival." }
+    ],
+    "tier_1": [
+      { "id": "tv_p1_01", "speaker": "wolf_man", "text": "You still smell like a {nickname}. You've stopped playing like one." },
+      { "id": "tv_p1_02", "speaker": "van_helsing", "text": "So. The {nickname} learns to watch before acting. In this house, that is how one lives long enough to write it down." },
+      { "id": "tv_p1_03", "speaker": "headless_horseman", "text": "[turns his whole body toward the player, and holds it there]", "type": "stage_direction" },
+      { "id": "tv_p1_04", "speaker": "dracula", "text": "[looks up from the player's throat to the player's face]", "type": "stage_direction", "note": "Only after the arrival." }
+    ],
+    "tier_2": [
+      { "id": "tv_p2_01", "speaker": "monster", "text": "{name}. Forgive me. When someone has a name, I like to use it.", "note": "He was never given one." },
+      { "id": "tv_p2_02", "speaker": "wolf_man", "text": "All right, {name}. No more 'lamb'. You've earned that." },
+      { "id": "tv_p2_03", "speaker": "headless_horseman", "text": "[lifts the pumpkin an inch from his collar, as a gentleman tips his hat]", "type": "stage_direction" },
+      { "id": "tv_p2_04", "speaker": "dracula", "text": "Tell me, {name}, what is your blood type? Forgive me. Habit.", "note": "Only after the arrival. The register of the whole table: a legend treating its legend as small talk." }
+    ],
+    "tier_3": [
+      { "id": "tv_p3_01", "speaker": "van_helsing", "text": "Hunter. I have called four men that in my life. I lost one of them.", "note": "First time anyone gives the player a title here. Dracula is usually not yet seated, and Van Helsing has the most right to the word. The one he lost is Quincey Morris." },
+      { "id": "tv_p3_02", "speaker": "wolf_man", "text": "Hunter. Yeah. I know the smell." },
+      {
+        "id": "tv_p3_03",
+        "speaker": "monster",
+        "text": "I was a man's great work, once, and he could not bear the sight of me. I hope whoever is finishing you has more nerve.",
+        "foreshadow": "First read: a grim joke, someone at this table will finish you off. Second read: someone is finishing you the way a maker finishes a work; the tour is the making, and the dealer is the maker. Said by the one person here who knows what it is to be someone's project."
+      },
+      { "id": "tv_p3_04", "speaker": "dracula", "text": "Come back any night you like, Hunter. You will not need an invitation.", "note": "Only after the arrival. The rule of his legend, turned inside out as a courtesy." }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "tv_death_01", "speaker": "death", "text": "Take your time. Only the Horseman is ever in a hurry, and he always is.", "trigger": "player_thinking_long", "note": "Irving: he rides hard to be back in the churchyard before daybreak." },
+    { "id": "tv_death_02", "speaker": "death", "text": "The Horseman never saw his coming either. A cannonball, in a battle nobody bothered to name.", "trigger": "player_bad_beat" },
+    { "id": "tv_death_03", "speaker": "death", "text": "He will want that back. He once shipped fifty boxes of his own earth to England. He does not travel light.", "trigger": "champion_loses_pot" },
+    { "id": "tv_death_04", "speaker": "death", "text": "One chair empty. Beside the fire, someone has started counting.", "trigger": "first_elimination" },
+    { "id": "tv_death_05", "speaker": "death", "text": "Neatly done. This house has seen stakes before. Not usually this kind.", "trigger": "player_eliminates", "note": "True: Van Helsing staked the three women who lived in this castle." },
+    { "id": "tv_death_06", "speaker": "death", "text": "Good. The Count likes his guests well fed.", "trigger": "player_wins_big_pot" },
+    {
+      "id": "tv_death_07",
+      "speaker": "death",
+      "text": "Heads-up. The Count prefers it this way. So do I.",
+      "trigger": "headsup_start",
+      "foreshadow": "Reads as Death enjoying a duel. It is also true of the last table of all, which is heads-up against him."
+    }
+  ],
+
+  "champion_arrival": [
+    {
+      "id": "tv_arrive_01",
+      "speaker": "narration",
+      "text": "The fire sinks to embers. The chair beside it is empty. The empty chair at the table is not.",
+      "trigger": "champion_arrival",
+      "sequence": "tv_arrive_02",
+      "note": "No walk-on needed: the room dims, the fireside chair is empty, and he is simply seated. Staging, not animation."
+    },
+    {
+      "id": "tv_arrive_02",
+      "speaker": "dracula",
+      "text": "Please, go on. I have already dined.",
+      "sequence": "tv_arrive_03",
+      "note": "His first words at the table. Stoker's Count keeps his guest company at supper and does not sup."
+    },
+    {
+      "id": "tv_arrive_03",
+      "speaker": "narration",
+      "text": "Nobody at the table moves. Outside, the wolves have gone quiet.",
+      "note": "The room's reaction, so it never depends on which two guests are left. Stoker's Count commands the wolves."
+    }
+  ],
+
+  "champion_headsup": [
+    { "id": "tv_dr_hu_01", "speaker": "dracula", "text": "Now we are alone. It is always easier once the others have gone to bed.", "trigger": "headsup_start" },
+    { "id": "tv_dr_hu_02", "speaker": "dracula", "text": "Before I went to England, I read its railway timetables. I study what I mean to take." },
+    { "id": "tv_dr_hu_03", "speaker": "dracula", "text": "You are wondering what is in the cup. Everyone does. Nobody asks twice." },
+    { "id": "tv_dr_hu_04", "speaker": "dracula", "text": "Ah. So the supper bites back.", "trigger": "player_wins_pot" }
+  ],
+
+  "eliminated": {
+    "van_helsing": [
+      { "id": "tv_elim_vh_01", "speaker": "van_helsing", "text": "Somebody write it down. In this house, writing it down is how we win." },
+      { "id": "tv_elim_vh_02", "speaker": "van_helsing", "text": "I am not leaving. Not with him in the house. I shall watch from the wall.", "note": "Sets up tv_plant_01..03, which he speaks even after elimination." }
+    ],
+    "monster": [
+      { "id": "tv_elim_mo_01", "speaker": "monster", "text": "It is all right. I have been turned away from warmer houses than this." },
+      { "id": "tv_elim_mo_02", "speaker": "monster", "text": "I shall go north, where it is cold and nobody stares." }
+    ],
+    "wolf_man": [
+      { "id": "tv_elim_wm_01", "speaker": "wolf_man", "text": "[howls once, then looks embarrassed about it]", "type": "stage_direction" },
+      { "id": "tv_elim_wm_02", "speaker": "wolf_man", "text": "Fine. I'll be outside. Don't open the window." }
+    ],
+    "headless_horseman": [
+      { "id": "tv_elim_hh_01", "speaker": "headless_horseman", "text": "[stands, bows stiffly from the waist, tucks the pumpkin under one arm and strides out]", "type": "stage_direction" },
+      { "id": "tv_elim_hh_02", "speaker": "headless_horseman", "text": "[from the courtyard: hooves, going hard for the churchyard, in a hurry to beat the dawn]", "type": "stage_direction" }
+    ],
+    "dracula": [
+      { "id": "tv_elim_dr_01", "speaker": "dracula", "text": "A rare sensation. I shall have to decide whether I like it." },
+      { "id": "tv_elim_dr_02", "speaker": "dracula", "text": "The sun is nearly up. I was leaving in any case." }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "tv_bust_01", "speaker": "van_helsing", "text": "Go. Sleep. Come back by daylight; everything in this house is weaker then." },
+    { "id": "tv_bust_02", "speaker": "wolf_man", "text": "Don't take it hard. Everybody gets eaten the first time." },
+    { "id": "tv_bust_03", "speaker": "death", "text": "The chair will keep. Most things in this house do." }
+  ],
+
+  "champion_defeat": [
+    { "id": "tv_dr_end_01", "speaker": "dracula", "text": "Take them. I spread my losses over centuries. You have rather less time. Spend it well.", "note": "Echoes the Count's boast in Stoker that he spreads his revenge over the centuries, with time on his side." },
+    { "id": "tv_dr_end_02", "speaker": "death", "text": "Seven. One remains, and it has not happened yet.", "note": "Literally true: the Station is the one table set in the future." }
+  ]
+}

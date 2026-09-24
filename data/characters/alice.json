@@ -1,0 +1,69 @@
+{
+  "id": "alice",
+  "name": "Alice",
+  "short": "Alice",
+  "epithet": "Late of Wonderland",
+  "pronoun": "she",
+  "table": "baker_street",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "Alice's Adventures in Wonderland (Carroll, 1865)",
+  "dials": {
+    "aggression": 0.4,
+    "tightness": 0.38,
+    "bluffFrequency": 0.05,
+    "tiltSensitivity": 0.2,
+    "adaptivity": 0.1,
+    "noise": 0.1
+  },
+  "quirks": [
+    {
+      "type": "whim",
+      "chance": 0.08
+    },
+    {
+      "type": "calls_small",
+      "maxBB": 3,
+      "chance": 0.6
+    }
+  ],
+  "tells": [
+    {
+      "signal": "eyes_wide",
+      "text": "her eyes go very wide",
+      "correlate": "strong",
+      "reliability": 0.9
+    },
+    {
+      "signal": "frowns_cards",
+      "text": "frowns at her cards as if they had said something rude",
+      "correlate": "weak",
+      "reliability": 0.9
+    },
+    {
+      "signal": "bites_lip",
+      "text": "bites her lip",
+      "correlate": "bluffing",
+      "reliability": 0.88
+    }
+  ],
+  "idles": [
+    "smooths her pinafore",
+    "counts the pips on a card",
+    "tries to see what the dealer is holding",
+    "swings her feet under the chair"
+  ],
+  "profile": {
+    "ledger": "Told a pack of cards they were nothing but a pack of cards. She has never once been afraid of me.",
+    "ledger_beaten": "She lost, said it had been very curious, and asked to play again at once.",
+    "history": [
+      "Lewis Carroll's Alice falls down a rabbit-hole in Alice's Adventures in Wonderland (1865) and climbs through a mirror in Through the Looking-Glass (1871). She grows and shrinks, argues with a caterpillar, sits through a mad tea-party, and ends up a witness at the trial of the Knave of Hearts, where she tells the whole court — a pack of playing cards — that they are nothing but a pack of cards.",
+      "What makes her a person is that nothing in Wonderland frightens her for long. She argues with duchesses, queens and caterpillars as equals, and corrects them when they are wrong, which is often. Tenniel drew her for both books. She is at Baker Street because curiosity would get her anywhere — and because, at a table of practised faces, hers is the one that shows exactly what she thinks."
+    ],
+    "at_the_table": "She plays a great many hands, because she wants to see what happens, and she seldom folds to a small bet for the same reason. Every so often she does something nobody can account for — a call, a raise, a check — just to find out. She almost never bluffs; she cannot see the point of pretending. She does not adjust to anyone. Why would she?",
+    "look": "Silhouette: a small figure in a full-skirted dress and white pinafore, long hair held back by a band — Tenniel's Alice. Keep the blue the design doc wants, but a deep Victorian blue, never Disney's powder blue with a black bow. Large, expressive eyes: by design her face, not a prop, is the tell surface. Prop: a little bottle labelled DRINK ME, beside her chips.",
+    "prop": "A little bottle labelled DRINK ME",
+    "public_domain": "Carroll's books and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely — its dress, bow, character designs and songs — and the 2010 Burton film. Keep the Cheshire Cat out of this table; he is saved for later."
+  }
+}

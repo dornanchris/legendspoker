@@ -1,0 +1,64 @@
+{
+  "id": "merlin",
+  "name": "Merlin",
+  "short": "Merlin",
+  "epithet": "The King's Prophet",
+  "pronoun": "he",
+  "table": "camelot",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Legend",
+  "era": "Arthurian legend · the king's enchanter",
+  "dials": {
+    "aggression": 0.45,
+    "tightness": 0.66,
+    "bluffFrequency": 0.25,
+    "tiltSensitivity": 0.02,
+    "adaptivity": 0.7,
+    "noise": 0.25
+  },
+  "quirks": [
+    {
+      "type": "trap",
+      "minEquity": 0.8
+    }
+  ],
+  "tells": [
+    {
+      "signal": "staff_hums",
+      "text": "his staff hums, faintly",
+      "correlate": "strong",
+      "reliability": 0.72
+    },
+    {
+      "signal": "gazes_elsewhere",
+      "text": "gazes somewhere past the table, as if the hand were already over",
+      "correlate": "bluffing",
+      "reliability": 0.7
+    },
+    {
+      "signal": "murmurs",
+      "text": "murmurs a word nobody catches",
+      "correlate": "weak",
+      "reliability": 0.72
+    }
+  ],
+  "idles": [
+    "the candle nearest him bends the wrong way",
+    "stares at something that has not happened yet",
+    "brushes ash from his sleeve",
+    "taps his staff twice"
+  ],
+  "profile": {
+    "ledger": "Foresaw his own end and arrived for it on time. I appreciate punctuality.",
+    "ledger_beaten": "He saw this coming and sat down anyway. That is either wisdom or the other thing.",
+    "history": [
+      "Merlin enters written history with Geoffrey of Monmouth, around 1136: a boy with no mortal father who prophesies to the usurper Vortigern about two dragons fighting beneath his tower, and who later brings the Giants' Dance — Stonehenge — from Ireland to Salisbury Plain. It is Merlin's craft that gives Uther Pendragon the likeness of Gorlois at Tintagel, and so Arthur is conceived. Geoffrey also wrote a Life of Merlin, in which the prophet goes mad after a battle and lives wild in the forest.",
+      "In Malory's Le Morte d'Arthur (1485) he gives the infant Arthur to Sir Ector to raise, arranges the test of the sword in the stone, and warns the young king that Lancelot and the queen will love each other. He also foretells his own end — shut alive under a stone by Nimue, a pupil he taught too well — and goes to meet it regardless. He sits at this table knowing how the evening ends, and plays anyway."
+    ],
+    "at_the_table": "Impossible to rattle and hard to read. He plays a careful number of hands, bluffs just often enough to keep everyone honest, and adjusts to how the table is playing once he has watched it a while. With his very best hands he goes quiet before the river — checking, calling, letting others do the betting. Losing a pot does not seem to reach him at all.",
+    "look": "Silhouette: lean and tall in a hooded, undyed wool robe, hood usually up; a long, wild grey beard; a rough knotted staff taller than he is, planted upright beside his chair. Face: weathered, with deep-set eyes that never quite settle on the table. No pointed hat, no stars, no owl. Prop: the staff — a tall vertical line that can hum and glow faintly without being touched.",
+    "prop": "A tall knotted staff",
+    "public_domain": "Geoffrey of Monmouth (c. 1136) and Malory (1485) are centuries out of copyright. T. H. White's Merlyn — living backwards, the owl Archimedes — is still in copyright and must not appear. Also avoid Disney's The Sword in the Stone (blue robe, starry pointed hat), the metal skullcap and chant from the film Excalibur (1981), and the BBC's Merlin."
+  }
+}

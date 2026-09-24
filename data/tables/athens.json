@@ -1,0 +1,38 @@
+{
+  "id": "athens",
+  "kind": "tour",
+  "position": 2,
+  "name": "Athens — The Symposium",
+  "seats": [
+    "socrates",
+    "leonidas",
+    "medusa",
+    "cyclops"
+  ],
+  "champion": "odysseus",
+  "arrival": {
+    "character": "odysseus",
+    "afterEliminations": 1,
+    "delayHands": 10,
+    "stack": "average"
+  },
+  "handsPerLevel": 22,
+  "dialogue": "table-02-athens.json",
+  "buyIn": 2000,
+  "respectStart": 0,
+  "place": "Athens",
+  "region": "Greece",
+  "era": "One long night, with myth and history on the same couches",
+  "teaser": "A drinking party has argued its way to one question: you.",
+  "hook": "A symposium has argued all night over whether a mortal nobody can be worth anything, and it has run out of hypotheticals. You are the test case.",
+  "room": "The men's dining room of a rich Athenian house: painted plaster, oil lamps, couches drawn up around a card table. A great mixing bowl of wine and water stands in the middle of the floor, and nobody has fetched water in hours. One couch is empty, with a full cup set before it.",
+  "music": "Double pipes and lyre over a slow hand drum, loose and a little wine-softened, at an unhurried walking pace; the pipes turn sly when the table starts to argue.",
+  "entrance": "Odysseus is not in the room when the game begins. About ten hands after the first guest leaves the table he comes in from the street, soaking wet and apologising; if the table is already cleared, he comes in anyway and finds it over.",
+  "ambience": [
+    "oil lamps guttering",
+    "wine ladled from the mixing bowl",
+    "crickets in the courtyard",
+    "pipes from a party down the street"
+  ],
+  "presence": "A cup has been poured for a guest who has not come."
+}

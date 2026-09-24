@@ -1,0 +1,71 @@
+{
+  "id": "caesar",
+  "name": "Julius Caesar",
+  "short": "Caesar",
+  "epithet": "Dictator for Life",
+  "pronoun": "he",
+  "table": "rome",
+  "role": "champion",
+  "arrives": true,
+  "origin": "History",
+  "era": "100–44 BC · dictator of Rome",
+  "dials": {
+    "aggression": 0.72,
+    "tightness": 0.66,
+    "bluffFrequency": 0.26,
+    "tiltSensitivity": 0.05,
+    "adaptivity": 0.6,
+    "noise": 0.3
+  },
+  "quirks": [
+    {
+      "type": "steal",
+      "chance": 0.5,
+      "minEquity": 0.32
+    },
+    {
+      "type": "overbet",
+      "minEquity": 0.74,
+      "potFraction": 1.4,
+      "chance": 0.6
+    }
+  ],
+  "tells": [
+    {
+      "signal": "adjusts_laurel",
+      "text": "adjusts his laurel wreath",
+      "correlate": "bluffing",
+      "reliability": 0.7
+    },
+    {
+      "signal": "drums_edge",
+      "text": "drums his fingers on the table's edge",
+      "correlate": "weak",
+      "reliability": 0.68
+    },
+    {
+      "signal": "counting_votes",
+      "text": "smiles like a man counting votes",
+      "correlate": "strong",
+      "reliability": 0.7
+    }
+  ],
+  "idles": [
+    "dictates something to no one",
+    "rubs his temple",
+    "glances round the table with suspicion",
+    "straightens the purple border of his toga"
+  ],
+  "profile": {
+    "ledger": "Twenty-three wounds. A physician said afterwards that only one of them was fatal. It only ever takes one.",
+    "ledger_beaten": "He conceded in the third person. I think it helped.",
+    "history": [
+      "Gaius Julius Caesar (100–44 BC) conquered Gaul, and in 49 BC led his army across the Rubicon into Italy — \"the die is cast\", Suetonius has him say — and won the civil war that followed. Early in 44 BC he was named dictator for life. A month or so later, on the Ides of March, he was stabbed to death at a meeting of the Senate. His name outlived the Republic: \"Caesar\" became the title of emperors.",
+      "As a young man he was captured by Cilician pirates, who asked twenty talents for his ransom. Plutarch says he laughed at them for not knowing whom they had caught and offered fifty instead. For thirty-eight days he joined their games, read them his speeches and cheerfully promised to crucify them. They thought he was joking. Once ransomed, he came back with ships and did it. He sits down at this table the same way: already counting."
+    ],
+    "at_the_table": "He raises unopened pots as if the blinds were provinces nobody had thought to defend, and when he holds something strong he bets more than the pot is worth. Losing does not rattle him; he re-reads the ground and adjusts, and within an orbit or two he is playing you in particular. He is not there when the table opens. He arrives when a chair comes free.",
+    "look": "Silhouette: the laurel wreath, worn low over a high forehead — Suetonius says no honour pleased him more than the right to wear it at all times, because it hid his thinning hair. Tall, fair-skinned, keen dark eyes; a toga with a broad purple border. Prop: the wreath itself. Its angle on his head is the tell surface.",
+    "prop": "Laurel wreath",
+    "public_domain": "Historical figure, died 44 BC. Build from the coins of 44 BC, the first Roman coinage to carry a living man's portrait. Avoid every film and television likeness and the Asterix caricature. No \"Et tu, Brute?\" — that is Shakespeare's line, not the ancient sources'."
+  }
+}

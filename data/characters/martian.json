@@ -1,0 +1,71 @@
+{
+  "id": "martian",
+  "name": "The Martian",
+  "short": "The Martian",
+  "epithet": "Intellect Vast and Cool",
+  "pronoun": "it",
+  "table": "station",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "The War of the Worlds (Wells, 1898)",
+  "dials": {
+    "aggression": 0.7,
+    "tightness": 0.5,
+    "bluffFrequency": 0.3,
+    "tiltSensitivity": 0.2,
+    "adaptivity": 0.5,
+    "noise": 0.5
+  },
+  "quirks": [
+    {
+      "type": "steal",
+      "chance": 0.5,
+      "minEquity": 0.3
+    },
+    {
+      "type": "punish_passivity",
+      "foldRate": 0.5,
+      "chance": 0.55,
+      "potFraction": 0.7
+    }
+  ],
+  "tells": [
+    {
+      "signal": "tentacles_curl",
+      "text": "its tentacles curl",
+      "correlate": "strong",
+      "reliability": 0.58
+    },
+    {
+      "signal": "eyes_blink",
+      "text": "its great eyes blink out of time with each other",
+      "correlate": "bluffing",
+      "reliability": 0.56
+    },
+    {
+      "signal": "recalculates",
+      "text": "works something out on its tentacle-tips",
+      "correlate": "weak",
+      "reliability": 0.58
+    }
+  ],
+  "idles": [
+    "drums three tentacles in sequence",
+    "its skin shifts colour, faintly",
+    "breathes heavily in the heavy air",
+    "looks down at Earth through the window"
+  ],
+  "profile": {
+    "ledger": "Came to take the Earth and was killed by its bacteria. I only signed for the bodies.",
+    "ledger_beaten": "It lost as it lost the first time: to something smaller that it never took seriously.",
+    "history": [
+      "The Martians of H. G. Wells's The War of the Worlds (1898) cross space in great cylinders fired from Mars, come down in the Surrey countryside, and walk out across England in towering three-legged fighting-machines, burning what they meet with a Heat-Ray. Wells's narrator, who sees them close, says they were heads, merely heads, about four feet across, with two huge dark eyes, a quivering beak of a mouth, and sixteen whip-like tentacles in two bunches.",
+      "They do not eat; they take the living blood of other creatures straight into their veins. On Earth they breathe hard and move with pain under the heavier gravity. After every human weapon has failed, they are killed by bacteria against which they have no defence. The Martian at this table has had a long time to think about that, and about the blue planet in the window, which it still regards with envious eyes."
+    ],
+    "at_the_table": "It plays like an invasion: steadily, and on whatever is left undefended. Unopened pots before the flop are simply annexed. If the table has been folding, it bets into the silence and keeps betting while the silence lasts. It bluffs more than most, and minds losing less than you would expect of something that has already lost a planet.",
+    "look": "Silhouette: one great rounded head, four feet across, set low in a three-legged brass seat, a small cousin of the fighting-machines. Two enormous dark eyes, a V-shaped quivering mouth, oily grey-brown skin, sixteen whip-thin tentacles in two bunches of eight; the tentacles are the tell surface. No brain under glass, no bubble helmet, no green skin, no ray-gun.",
+    "prop": "A three-legged brass seat",
+    "public_domain": "Wells's novel (1898) is public domain in the U.S. and the U.K. (Wells died in 1946). The films, the musical version, Mars Attacks! and Marvin the Martian are not. Build from Wells's text alone: a head with tentacles and huge eyes. No exposed brain, no bubble helmet, no little green men."
+  }
+}

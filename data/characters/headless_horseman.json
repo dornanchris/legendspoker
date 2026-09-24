@@ -1,0 +1,69 @@
+{
+  "id": "headless_horseman",
+  "name": "The Headless Horseman",
+  "short": "Horseman",
+  "epithet": "The Galloping Hessian",
+  "pronoun": "he",
+  "table": "transylvania",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "The Legend of Sleepy Hollow (Irving, 1820)",
+  "dials": {
+    "aggression": 0.6,
+    "tightness": 0.55,
+    "bluffFrequency": 0.3,
+    "tiltSensitivity": 0.1,
+    "adaptivity": 0.45,
+    "noise": 0.45
+  },
+  "quirks": [
+    {
+      "type": "river_bluff",
+      "chance": 0.35
+    },
+    {
+      "type": "steal",
+      "chance": 0.4,
+      "minEquity": 0.32
+    }
+  ],
+  "tells": [
+    {
+      "signal": "pumpkin_brightens",
+      "text": "the candle in his pumpkin burns brighter",
+      "correlate": "strong",
+      "reliability": 0.6
+    },
+    {
+      "signal": "flame_gutters",
+      "text": "the flame in his pumpkin gutters",
+      "correlate": "bluffing",
+      "reliability": 0.58
+    },
+    {
+      "signal": "drums_gauntlet",
+      "text": "drums a gauntlet on the table",
+      "correlate": "weak",
+      "reliability": 0.6
+    }
+  ],
+  "idles": [
+    "settles the pumpkin on his collar",
+    "his sword rattles in its scabbard",
+    "turns his whole body to look at you",
+    "a smell of cold leaves drifts from him"
+  ],
+  "profile": {
+    "ledger": "A hired soldier in a foreign war. Lost his head to a cannonball, and has been in a hurry ever since.",
+    "ledger_beaten": "He rode for the churchyard. He will be there before daybreak. He always is.",
+    "history": [
+      "The Headless Horseman haunts Washington Irving's The Legend of Sleepy Hollow (1820), set in a drowsy Dutch valley near Tarry Town on the Hudson. The country folk say he is the ghost of a Hessian trooper, one of the German soldiers hired by the British, whose head was carried away by a cannonball in some nameless battle of the Revolutionary War. He rides out nightly in search of it, hurrying to be back in the churchyard before daybreak.",
+      "He is Irving's great joke, and he never gets the punchline. When he chases the schoolmaster Ichabod Crane to the church bridge and hurls his head, all that is found next morning is a hat and a shattered pumpkin, and Irving hints that the rider was a local rival called Brom Bones. The Horseman has never commented. He has no mouth. He sits at this table because nobody here will ask whether he is real."
+    ],
+    "at_the_table": "Always in a hurry: he raises unopened pots before the flop just to have done with them. He does not tilt; there is nothing left to lose his head over. His best work is at the end of the chase. Checked to on the river he will often charge, and what he hurls at you then is sometimes a head and sometimes, as the schoolmaster found, a pumpkin.",
+    "look": "Silhouette: huge, cloaked and square-shouldered, stopping abruptly at the collar; the missing head is the strongest shape at the table. A Hessian trooper's coat under a heavy riding cloak, gauntlets, a cavalry sword. On his collar sits a carved pumpkin with a plain candle inside, and its light is the tell surface. No leering flaming grin, no laugh.",
+    "prop": "A candlelit pumpkin",
+    "public_domain": "Irving's story (1820) is public domain. Disney's 1949 cartoon and Tim Burton's 1999 film are not: no flaming jack-o'-lantern with a leering grin, no cackle, no filed teeth, no actor's head, no tree of the dead. The candle in the pumpkin is our own addition, not Irving's, and should stay a plain candle."
+  }
+}

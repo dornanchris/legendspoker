@@ -1,0 +1,69 @@
+{
+  "id": "monster",
+  "name": "Frankenstein's Monster",
+  "short": "The Monster",
+  "epithet": "The Creature of Ingolstadt",
+  "pronoun": "he",
+  "table": "transylvania",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "Frankenstein (Shelley, 1818)",
+  "dials": {
+    "aggression": 0.4,
+    "tightness": 0.55,
+    "bluffFrequency": 0.1,
+    "tiltSensitivity": 0.55,
+    "adaptivity": 0.4,
+    "noise": 0.4
+  },
+  "quirks": [
+    {
+      "type": "committed",
+      "fraction": 0.3
+    },
+    {
+      "type": "check_raise",
+      "minEquity": 0.78,
+      "chance": 0.5
+    }
+  ],
+  "tells": [
+    {
+      "signal": "book_down",
+      "text": "sets his book face-down on the table",
+      "correlate": "strong",
+      "reliability": 0.64
+    },
+    {
+      "signal": "turns_page",
+      "text": "turns a page he is not reading",
+      "correlate": "weak",
+      "reliability": 0.62
+    },
+    {
+      "signal": "table_creaks",
+      "text": "the table creaks under his grip",
+      "correlate": "tilted",
+      "reliability": 0.66
+    }
+  ],
+  "idles": [
+    "reads a line of Milton, lips moving",
+    "flinches from the firelight",
+    "stares at his own hands",
+    "straightens a coat that was never made for him"
+  ],
+  "profile": {
+    "ledger": "Built from people I had already collected. Never given a name, so the world lent him his maker's.",
+    "ledger_beaten": "He left politely and walked north. It is where he goes.",
+    "history": [
+      "The creature of Mary Shelley's Frankenstein; or, The Modern Prometheus (1818), built by the student Victor Frankenstein at Ingolstadt from materials gathered in charnel houses and the dissecting room. He is eight feet tall, with yellow skin, lustrous black hair and watery eyes. He wakes on a dreary November night to see his maker run from the room, and teaches himself to speak and read by watching a family through a chink in a cottage wall.",
+      "In a leather portmanteau he finds Paradise Lost, a volume of Plutarch's Lives and The Sorrows of Werter, and reads them as true histories. He asks for kindness, then for a companion, and is refused both; his revenge is terrible, and his grief at the end is worse. He is at this table because he was invited, which has not happened to him often. He is resigned to being called Frankenstein."
+    ],
+    "at_the_table": "Courteous, careful, and nearly impossible to bet out of a small pot: he will not be turned away for the price of two blinds. He almost never bluffs. He takes his losses quietly, one after another, until the day he does not, and then he stops thinking and pushes everything in. He is slow to anger and very hard to bring back from it.",
+    "look": "Silhouette: enormous. Eight feet tall, shoulders filling his fifth of the screen, head near the top of the frame. Long, lustrous black hair; yellow skin stretched thin over muscle; watery eyes nearly the colour of their sockets; straight black lips. A good coat that was never cut for him. Prop: a small battered book in a very large hand; where he puts it is the tell surface.",
+    "prop": "A battered copy of Paradise Lost",
+    "public_domain": "Shelley's novel (1818) is public domain. Universal's 1931 makeup is not, and is still protected as a design: no neck bolts, no flat-topped head, no green skin, no stitches or forehead scar, no grunting or stiff-armed walk. Shelley's creature is articulate and well read, yellow-skinned with flowing black hair."
+  }
+}

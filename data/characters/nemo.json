@@ -1,0 +1,64 @@
+{
+  "id": "nemo",
+  "name": "Captain Nemo",
+  "short": "Nemo",
+  "epithet": "Master of the Nautilus",
+  "pronoun": "he",
+  "table": "baker_street",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "Twenty Thousand Leagues Under the Seas (Verne, 1870)",
+  "dials": {
+    "aggression": 0.5,
+    "tightness": 0.7,
+    "bluffFrequency": 0.2,
+    "tiltSensitivity": 0.15,
+    "adaptivity": 0.55,
+    "noise": 0.35
+  },
+  "quirks": [
+    {
+      "type": "trap",
+      "minEquity": 0.8
+    }
+  ],
+  "tells": [
+    {
+      "signal": "eyes_closed",
+      "text": "closes his eyes, as if listening to distant music",
+      "correlate": "strong",
+      "reliability": 0.66
+    },
+    {
+      "signal": "gaze_window",
+      "text": "lets his gaze drift to the window",
+      "correlate": "weak",
+      "reliability": 0.64
+    },
+    {
+      "signal": "turns_pearl",
+      "text": "turns a pearl between his fingers",
+      "correlate": "bluffing",
+      "reliability": 0.64
+    }
+  ],
+  "idles": [
+    "consults a pocket chronometer",
+    "hums a fugue under his breath",
+    "sketches something in a notebook",
+    "taps the table as if sounding a hull"
+  ],
+  "profile": {
+    "ledger": "Told a guest he was already dead to the world. He was early. They buried him in his own boat.",
+    "ledger_beaten": "He surfaced, bowed, and went back down without a word. He does that.",
+    "history": [
+      "In Jules Verne's Twenty Thousand Leagues Under the Seas (1870), Professor Aronnax is taken aboard the Nautilus, an electric submarine commanded by a man who calls himself Nemo — Latin for \"no one\". He has renounced the land and all its nations, lives entirely on what the sea provides, and keeps a library of twelve thousand books and an organ he plays alone at night. His motto: Mobilis in mobili.",
+      "Verne kept his secret for a second novel. In The Mysterious Island he is revealed as Prince Dakkar, an Indian prince who fought the British in 1857, lost his wife and children, and went to sea to be free of every flag. He has come to London, of all places, to play cards. He is courteous to everyone and trusts no one who lives on land."
+    ],
+    "at_the_table": "He plays few hands, and gives nothing away in the ones he does. Holding something very strong, he goes quiet — checks, calls, lets the table come to him — and saves the reckoning for later. He corrects to the room the way a navigator corrects a heading: patiently, a degree at a time. He is hard to rattle and impossible to hurry.",
+    "look": "Silhouette: tall and broad-shouldered, full dark beard, a flat sea-captain's cap; take the costume from the Neuville and Riou engravings for Hetzel's edition, not from any film. Severe dark clothes, eyes set rather wide apart, as Verne describes them. Prop: a great pearl, large enough that its white glint reads against the dark coat whenever he turns it.",
+    "prop": "A great pearl",
+    "public_domain": "Verne's novels (1870, 1875) and their Hetzel engravings are public domain. Avoid the 1954 Disney film entirely — no riveted, spined Nautilus, no uniformed Nemo — and the Nemo of Alan Moore's League of Extraordinary Gentlemen comics and their 2003 film."
+  }
+}

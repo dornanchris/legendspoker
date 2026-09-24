@@ -1,0 +1,259 @@
+[
+  {
+    "id": "pulled_up_a_chair",
+    "title": "Pulled Up a Chair",
+    "text": "Arrived. Sat down. Did not leave immediately. Better than some.",
+    "hint": "Play a hand at the Invitational.",
+    "when": { "type": "hands_played", "count": 1 }
+  },
+  {
+    "id": "first_pot",
+    "title": "Something to Show for It",
+    "text": "A pot of your own, won from people who did not expect to lose one to you.",
+    "hint": "Win a pot worth at least ten big blinds.",
+    "when": { "type": "pot_win", "minBB": 10 }
+  },
+  {
+    "id": "one_fewer",
+    "title": "One Fewer",
+    "text": "You put someone out of the game. I see a great deal of that. It was still nicely done.",
+    "hint": "Knock a player out.",
+    "when": { "type": "knockout" }
+  },
+  {
+    "id": "two_for_one",
+    "title": "Two for One",
+    "text": "Two chairs emptied by a single hand. Efficient. I approve of efficiency.",
+    "hint": "Knock out two players in the same hand.",
+    "when": { "type": "knockouts_in_hand", "count": 2 }
+  },
+  {
+    "id": "dead_mans_hand",
+    "title": "Dead Man's Hand",
+    "text": "Aces and eights. The last man I saw holding them did not finish the hand. I was there. You did finish it.",
+    "hint": "Win a showdown with two pair, aces and eights.",
+    "when": { "type": "showdown_win", "rank": "two pair", "ranks": ["A", "A", "8", "8"] }
+  },
+  {
+    "id": "four_horsemen",
+    "title": "Four Horsemen",
+    "text": "Four of a kind. I know the other three.",
+    "hint": "Win a showdown with four of a kind.",
+    "when": { "type": "showdown_win", "minRank": "four of a kind" }
+  },
+  {
+    "id": "royalty",
+    "title": "Royalty",
+    "text": "A royal flush. I have seen more kings than you have. I have seen very few of these.",
+    "hint": "Win a showdown with a royal flush.",
+    "when": { "type": "showdown_win", "rank": "a royal flush" }
+  },
+  {
+    "id": "nothing_at_all",
+    "title": "Nothing at All",
+    "text": "Seven and two, different suits. The worst cards in the deck, and they won. Do not make a habit of it.",
+    "hint": "Win a pot holding seven-two of different suits.",
+    "when": { "type": "hole_win", "ranks": ["7", "2"], "offsuit": true }
+  },
+  {
+    "id": "nerve",
+    "title": "Nerve",
+    "text": "You had nothing, said otherwise with chips, and they believed you. I will remember that.",
+    "hint": "Win a pot uncontested by betting a weak hand.",
+    "when": { "type": "bluff_win" }
+  },
+  {
+    "id": "all_of_it",
+    "title": "All of It",
+    "text": "Everything in the middle on one run of the cards. I see that often. I rarely see it work.",
+    "hint": "Go all in and win.",
+    "when": { "type": "all_in_win" }
+  },
+  {
+    "id": "the_cards_do_not_care",
+    "title": "The Cards Do Not Care",
+    "text": "A full house, and it lost. Everyone gets the same fifty-two. Some nights they get them in a worse order.",
+    "hint": "Lose a showdown holding a full house or better.",
+    "when": { "type": "showdown_loss", "minRank": "a full house" }
+  },
+  {
+    "id": "a_chip_and_a_chair",
+    "title": "A Chip and a Chair",
+    "text": "Down to almost nothing, and then holding everything. There is a saying about a chip and a chair. I had assumed it was a joke.",
+    "hint": "Win a table after falling to five big blinds or fewer.",
+    "when": { "type": "table_won_from_short", "maxBB": 5 }
+  },
+  {
+    "id": "never_in_doubt",
+    "title": "Never in Doubt",
+    "text": "You never held less than you sat down with. They noticed. They did not enjoy noticing.",
+    "hint": "Win a table without ever dropping below your starting stack.",
+    "when": { "type": "table_won_leading" }
+  },
+  {
+    "id": "brief_acquaintance",
+    "title": "Brief Acquaintance",
+    "text": "In and out before the blinds had a chance to matter. Rude, and effective.",
+    "hint": "Win a table in forty hands or fewer.",
+    "when": { "type": "table_won_fast", "maxHands": 40 }
+  },
+  {
+    "id": "known_by_name",
+    "title": "Known by Name",
+    "text": "Somebody at a table used your name, without being asked to. It is the first thing they give up.",
+    "hint": "Earn enough respect that a table calls you by name.",
+    "when": { "type": "respect_tier", "tier": 2 }
+  },
+  {
+    "id": "titled",
+    "title": "Titled",
+    "text": "A title, given rather than taken. Legends are stingy with those.",
+    "hint": "Earn a title at a table.",
+    "when": { "type": "respect_tier", "tier": 3 }
+  },
+  {
+    "id": "challenger",
+    "title": "Challenger",
+    "text": "The General gave up his chair. He has done that before. It is a habit of his.",
+    "hint": "Clear the White House.",
+    "when": { "type": "table_won", "table": "white_house", "mode": "tour" }
+  },
+  {
+    "id": "worth_something",
+    "title": "Worth Something After All",
+    "text": "The symposium's question has an answer now. They are still arguing about it.",
+    "hint": "Clear the Symposium.",
+    "when": { "type": "table_won", "table": "athens", "mode": "tour" }
+  },
+  {
+    "id": "the_long_way_home",
+    "title": "The Long Way Home",
+    "text": "Odysseus arrived to an empty room. Ten years at sea, and he still missed it.",
+    "hint": "Clear the Symposium before its champion arrives.",
+    "hidden": true,
+    "when": { "type": "table_won_missing", "table": "athens", "character": "odysseus" }
+  },
+  {
+    "id": "nobody",
+    "title": "Nobody",
+    "text": "The Cyclops was put out by someone he had not bothered to learn the name of. It keeps happening to him.",
+    "hint": "Knock out the Cyclops yourself.",
+    "when": { "type": "knockout", "character": "cyclops" }
+  },
+  {
+    "id": "pieces_of_eight",
+    "title": "Pieces of Eight",
+    "text": "Blackbeard's matches have gone out. The parrot has already changed sides.",
+    "hint": "Clear Pirate Cove.",
+    "when": { "type": "table_won", "table": "pirate_cove", "mode": "tour" }
+  },
+  {
+    "id": "round_table",
+    "title": "A Seat at the Round Table",
+    "text": "There is no head of a round table. You sat there anyway.",
+    "hint": "Clear Camelot.",
+    "when": { "type": "table_won", "table": "camelot", "mode": "tour" }
+  },
+  {
+    "id": "alea_iacta_est",
+    "title": "Alea Iacta Est",
+    "text": "The die is cast. He said it first, at a river. You rolled it better.",
+    "hint": "Go all in and win at Imperial Rome.",
+    "when": { "type": "all_in_win", "table": "rome" }
+  },
+  {
+    "id": "worse_in_march",
+    "title": "He Has Had Worse Days",
+    "text": "Caesar came, and saw, and did not conquer. He has had worse days. One in March comes to mind.",
+    "hint": "Clear Imperial Rome.",
+    "when": { "type": "table_won", "table": "rome", "mode": "tour" }
+  },
+  {
+    "id": "the_game_is_afoot",
+    "title": "The Game Was Afoot",
+    "text": "Holmes deduced everything about you except the ending.",
+    "hint": "Clear Baker Street.",
+    "when": { "type": "table_won", "table": "baker_street", "mode": "tour" }
+  },
+  {
+    "id": "stake",
+    "title": "Through the Heart",
+    "text": "You put out the Count yourself. He will be back. They always come back. Not tonight.",
+    "hint": "Knock out Count Dracula yourself.",
+    "hidden": true,
+    "when": { "type": "knockout", "character": "dracula" }
+  },
+  {
+    "id": "before_dawn",
+    "title": "Before Dawn",
+    "text": "You beat him at night, in his own house. Most people who try that wait for morning.",
+    "hint": "Clear Transylvania.",
+    "when": { "type": "table_won", "table": "transylvania", "mode": "tour" }
+  },
+  {
+    "id": "signal_lost",
+    "title": "Signal Lost",
+    "text": "The station's lights came back on. The station itself has gone quiet. It is thinking about you.",
+    "hint": "Clear the Station.",
+    "when": { "type": "table_won", "table": "station", "mode": "tour" }
+  },
+  {
+    "id": "eight_tables",
+    "title": "Eight Tables",
+    "text": "Eight tables. That is all of them. Nearly.",
+    "hint": "Clear all eight tables of the tour.",
+    "when": { "type": "tour_complete" }
+  },
+  {
+    "id": "first_among_equals",
+    "title": "First Among Equals",
+    "text": "Four champions at one table, and you left it holding their chips. They will tell it differently.",
+    "hint": "Clear the first Champions' Table.",
+    "when": { "type": "table_cleared", "table": "champions_1" }
+  },
+  {
+    "id": "last_chair",
+    "title": "The Last Chair But One",
+    "text": "No champions left to beat. There is one more chair. It has been at every table.",
+    "hint": "Clear the second Champions' Table.",
+    "hidden": true,
+    "when": { "type": "table_cleared", "table": "champions_2" }
+  },
+  {
+    "id": "the_deck",
+    "title": "The Deck",
+    "text": "The deck is yours. I would wish you luck. You will not need it, and neither, it turns out, did I.",
+    "hint": "An entry not yet written.",
+    "hidden": true,
+    "when": { "type": "table_cleared", "table": "finale" }
+  },
+  {
+    "id": "again",
+    "title": "Again",
+    "text": "Three times across that table from me. I have begun to look forward to it. Do not tell anyone.",
+    "hint": "An entry not yet written.",
+    "hidden": true,
+    "when": { "type": "lost_to", "table": "finale", "count": 3 }
+  },
+  {
+    "id": "regulars",
+    "title": "Regulars",
+    "text": "No champion, no occasion, just the house game. You won that too.",
+    "hint": "Win an open table at a place you have cleared.",
+    "when": { "type": "table_won", "mode": "open" }
+  },
+  {
+    "id": "nothing_but_time",
+    "title": "Nothing but Time",
+    "text": "A thousand hands. I have dealt more. Not many more, to one person.",
+    "hint": "Play a thousand hands.",
+    "when": { "type": "hands_played", "count": 1000 }
+  },
+  {
+    "id": "full_ledger",
+    "title": "The Full Ledger",
+    "text": "Every name in this book has a line through it but one.",
+    "hint": "Beat every legend of the Invitational.",
+    "when": { "type": "beaten_roster" }
+  }
+]

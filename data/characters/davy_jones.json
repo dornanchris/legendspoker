@@ -1,0 +1,65 @@
+{
+  "id": "davy_jones",
+  "name": "Davy Jones",
+  "short": "Davy Jones",
+  "epithet": "The Fiend of the Deep",
+  "pronoun": "he",
+  "table": "pirate_cove",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Folklore",
+  "era": "Sailors' folklore · the devil of the deep",
+  "dials": {
+    "aggression": 0.5,
+    "tightness": 0.72,
+    "bluffFrequency": 0.18,
+    "tiltSensitivity": 0.05,
+    "adaptivity": 0.35,
+    "noise": 0.22
+  },
+  "quirks": [
+    {
+      "type": "check_raise",
+      "minEquity": 0.72,
+      "chance": 0.6
+    }
+  ],
+  "tells": [
+    {
+      "signal": "drips",
+      "text": "sea water drips from his sleeve",
+      "correlate": "strong",
+      "reliability": 0.78
+    },
+    {
+      "signal": "drums_rain",
+      "text": "drums on the table like rain on a deck",
+      "correlate": "weak",
+      "reliability": 0.76
+    },
+    {
+      "signal": "lamp_flickers",
+      "text": "the lamp nearest him flickers",
+      "correlate": "bluffing",
+      "reliability": 0.75
+    }
+  ],
+  "idles": [
+    "a crab climbs out of his pocket",
+    "hums a shanty under his breath",
+    "wrings out his beard",
+    "the smell of low tide drifts across the table"
+  ],
+  "profile": {
+    "ledger": "Sailors named him, feared him, and never agreed on his face. We are in related lines of work.",
+    "ledger_beaten": "Beaten, and not in the least concerned. The sea has never needed to win every hand.",
+    "history": [
+      "Davy Jones belongs to sailors' folklore rather than to any one book: the fiend of the deep, and 'Davy Jones's locker' is the bottom of the sea, where drowned men go. Nobody knows where the name came from. By 1751 it was familiar enough for Tobias Smollett, in Peregrine Pickle, to explain that in the mythology of sailors Davy Jones presides over all the evil spirits of the deep, and is seen in the rigging on the eve of hurricanes and shipwrecks.",
+      "What makes him a person is that he is never in a hurry. Every sailor at this table has spent a life on the water with him somewhere underneath, and every one of them knows it. He does not threaten anyone; he has never needed to. He sits among pirates because they are the men he knows best, and he plays the way the sea takes ships: quietly, and then all at once."
+    ],
+    "at_the_table": "Patient and quiet. He plays fewer hands than the captains, seldom bluffs, and never shows a flicker when a pot goes against him. After the flop he checks a great deal, and not every check is what it looks like: bet into him and he will sometimes raise you, calmly, and wait. He does not chase anyone. He lets them come to him.",
+    "look": "Silhouette: tall and hunched in a long, waterlogged sea-coat and a broad hat whose brim sheds a thread of water, weed caught in the folds. Face: grey as a drowned man's, mostly in shadow, with a sodden grey beard — plainly hair — and two pale, round, unblinking eyes that catch the lamplight. Prop: the dripping sleeve, the one wet thing at a dry table.",
+    "prop": "His dripping coat-sleeve",
+    "public_domain": "Sailors' folklore, in print by 1751 and owned by nobody. The famous screen version is Disney's (Pirates of the Caribbean, 2006–07) and is strictly off limits: no tentacle beard, no crab claw, no pipe organ, no heart in a chest, no sea-creature crew, no Flying Dutchman, no dice for souls. Ours has a human face and never raises his voice."
+  }
+}

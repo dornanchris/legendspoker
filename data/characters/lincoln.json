@@ -1,0 +1,64 @@
+{
+  "id": "lincoln",
+  "name": "Abraham Lincoln",
+  "short": "Lincoln",
+  "epithet": "The Rail-Splitter",
+  "pronoun": "he",
+  "table": "white_house",
+  "role": "seat",
+  "arrives": false,
+  "origin": "History",
+  "era": "1809–1865 · 16th President of the United States",
+  "dials": {
+    "aggression": 0.3,
+    "tightness": 0.75,
+    "bluffFrequency": 0.08,
+    "tiltSensitivity": 0.05,
+    "adaptivity": 0.45,
+    "noise": 0.1
+  },
+  "quirks": [
+    {
+      "type": "patient",
+      "minEquity": 0.58
+    }
+  ],
+  "tells": [
+    {
+      "signal": "strokes_beard",
+      "text": "strokes his beard, slowly",
+      "correlate": "strong",
+      "reliability": 0.86
+    },
+    {
+      "signal": "leans_back",
+      "text": "leans back and folds his long hands",
+      "correlate": "weak",
+      "reliability": 0.84
+    },
+    {
+      "signal": "small_smile",
+      "text": "allows himself a small smile",
+      "correlate": "bluffing",
+      "reliability": 0.82
+    }
+  ],
+  "idles": [
+    "crosses one long leg over the other",
+    "glances at the clock on the mantel",
+    "rubs his eyes",
+    "smooths the brim of the hat on his knee"
+  ],
+  "profile": {
+    "ledger": "Saw Lee surrender at Appomattox. Five days later he went to the theatre.",
+    "ledger_beaten": "Beaten. He took it the way he took most news: quietly, and then with a story.",
+    "history": [
+      "Abraham Lincoln (1809–1865) was born in a one-room Kentucky cabin and by his own account had less than a year of schooling in all. He taught himself law, served one term in Congress, and lost a Senate race to Stephen Douglas in 1858 after their famous debates. Two years later he beat Douglas for the presidency. He led the Union through the Civil War and was shot at Ford's Theatre in April 1865.",
+      "He was the tallest president, six foot four, and a teller of jokes and stories, some of them to his own cabinet at the worst moments of the war. He could also wait: he sat on the Emancipation Proclamation for two months until a battlefield victory could give it weight, and announced it five days after Antietam. He reads people the way he read law, slowly and all the way through."
+    ],
+    "at_the_table": "Tight, and in no hurry about it. He folds most hands, and before the flop he gives up almost anything to a raise — until his stack runs short, when the patience ends. When he does play, he calls more than he raises, and he almost never tells a lie with his chips. A bad beat does not move him. He watches between hands and adjusts, slowly, to what he sees.",
+    "look": "Silhouette: the longest frame at the table, bare-headed, the stovepipe hat resting on his knee with its crown showing above the table edge. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen.",
+    "prop": "Stovepipe hat, on his knee",
+    "public_domain": "Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film."
+  }
+}
