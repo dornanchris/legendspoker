@@ -6,6 +6,7 @@ import { resultsScreen } from './screens/results.js'
 import { ledgerScreen } from './screens/ledger.js'
 import { settingsScreen, aboutScreen } from './screens/settings.js'
 import { endingScreen } from './screens/ending.js'
+import * as sound from './sound.js'
 
 /**
  * The shell: one hash router over plain screens.
@@ -63,6 +64,13 @@ function boot() {
   // Decisions are written as they are made; this only catches the habits
   // noted since the last hand ended.
   window.addEventListener('pagehide', () => store.flush())
+  // Browsers only let a page make sound after it has been touched, and iOS
+  // quietly fails for good if you ask any earlier. Every tap and key press
+  // offers; the first one opens the audio, later ones wake it after the OS
+  // has suspended it.
+  for (const ev of ['pointerdown', 'keydown', 'touchend']) {
+    window.addEventListener(ev, sound.unlock, { passive: true, capture: true })
+  }
   route()
 }
 

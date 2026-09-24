@@ -105,6 +105,8 @@ web/
   store.ts        the Save in localStorage, guarded; live-only persistence
   screens/        title, invitation, map+intro, table, results, ledger,
                   settings+about, ending. table.ts keeps the 3b presentation queue
+  fx.ts           flights: cards out of Death's hands, chips across the felt
+  sound.ts        card/chip sounds SYNTHESISED with Web Audio (no files)
   index.html      markup; style.css is landscape-only by design
   shims/          browser stand-ins for the node builtins poker-ts needs
   build.mjs       esbuild -> web/bundle.js (gitignored, regenerate it)
@@ -185,8 +187,22 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   scheduler shows idles and tell texts at that rate. Death is 0 with no tells.
 - **Fast-forward:** offered when folded / all in; presentation clock only;
   lines are cut, not sped; cancels at the showdown reveal and new deals.
+- **Table motion and sound (an early slice of Phase 6):** Death shuffles and
+  deals every card to every seat; blinds and bets slide from a stack to a
+  chip pile in front of the seat; each street rakes them into the pot; the
+  flop lands as three and turns one at a time; showdown hands flip over; an
+  all-in is revealed FIRST and the board then runs out a street at a time;
+  the pot slides to the winner. Every movement is on the presentation clock
+  (pace and fast-forward scale it), zero in a resume replay and under
+  Reduce motion. Sounds (riffle, deal, flip, chip clacks scaled to the bet,
+  a knock for a check, muck, rake, your-turn) are generated, not recorded,
+  with pitch jitter on every play; Settings has Sound and Volume. Audio
+  unlocks on the first tap or key press anywhere.
+- A pot nobody called is won **without showing**: the winner's cards stay
+  face down. (The screen used to turn them up, a free read.)
 
-**Not started:** Rive integration, audio, Capacitor + a real device.
+**Not started:** Rive integration, recorded audio and music, Capacitor + a
+real device.
 
 ## KNOWN GAPS AND SIMPLIFICATIONS
 
@@ -248,6 +264,11 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   blinds, button, pot, board, tilt, respect and dialogue-already-used exactly.
   No field can drift from the engine because there are no such fields.
 - Monte Carlo equity is ±6% at 60 rollouts.
+- **Sounds are synthesised placeholders**, tuned from recipes, not by ear.
+  Recordings (Kenney's CC0 casino pack, or our own chips and deck) can
+  replace any of them by name in `web/sound.ts`; the table only ever asks for
+  "chips" or "knock", never a file. Bundle them (esbuild `binary` loader)
+  rather than fetch them, or file:// stops working.
 - `MOTION-SPEC.md` layer 3 (per-character vocabulary) is an empty template.
   No character has an authored tell cluster yet.
 - Dracula's parts are incomplete: **no chalice** (his signature prop and half
@@ -266,6 +287,12 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   has its own seeded stream (seed XOR a constant); ambient idles and
   "thinking long" use Math.random. Picking a line from the game RNG would
   change the next card. `check:replay` catches it.
+- **The table keeps TWO copies of where the chips are.** The engine runs
+  ahead of the screen within a hand, so `chipsAt` in `table.ts` follows the
+  events (updated as each arrives) and `shown` follows the screen (updated
+  as each step plays). Work out what a step shows at EVENT time, draw it at
+  STEP time. Reading event-time state inside a step, or step-time state
+  while queueing, puts the next street's bets on the felt early.
 - **Persist only LIVE hands.** During a resume replay the web layer records
   nothing (it was recorded the first time); marks earned in replay are
   written with earnMark, which dedups.
@@ -313,7 +340,8 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 ## NEXT MILESTONE
 
 Phase 4 — the platform shell. What is left of it: Capacitor, a real device,
-audio unlock on first tap, and checking the safe-area handling on hardware.
+and checking the safe-area handling and the audio unlock on hardware (the
+unlock is built; iOS is where it breaks if it breaks).
 The screen shell and the save schema are done. **Vite + React is now a
 choice, not a given:** every screen is a plain render function, so porting is
 one-for-one, but the shell works without either — decide whether they still

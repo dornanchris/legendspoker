@@ -12,6 +12,11 @@ surprise.
 
 ## SOUND — free sources (captured from voice session)
 
+**What ships today: no sound files at all.** Every card and chip sound is
+synthesised at play time in `web/sound.ts` (noise + sine partials, Web
+Audio), so there is nothing to license. They are placeholders. Anything
+below can replace one by name without touching the table.
+
 Target license tier: **CC0** wherever possible.
 
 - **Freesound.org** — the big library. Search terms: "poker chips", "chip

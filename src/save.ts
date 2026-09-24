@@ -41,6 +41,10 @@ export type Settings = {
   fastForward: boolean
   /** Larger text across the whole game. */
   largeText: boolean
+  /** Card and chip sounds. */
+  sound: boolean
+  /** 0..1. */
+  volume: number
 }
 
 export type TableRecord = {
@@ -131,6 +135,8 @@ export const defaultSettings = (): Settings => ({
   reduceMotion: false,
   fastForward: true,
   largeText: false,
+  sound: true,
+  volume: 0.8,
 })
 
 export const newTableRecord = (): TableRecord => ({

@@ -12,6 +12,7 @@
 import { freshSave, migrate, characterRecord, type Save } from '../src/save.js'
 import type { HandSummary } from '../src/director.js'
 import { CHARACTERS } from '../src/content.js'
+import * as sound from './sound.js'
 
 const KEY = 'legends-poker/save'
 
@@ -139,4 +140,5 @@ export function applySettings(): void {
   const html = document.documentElement
   html.classList.toggle('large-text', s.largeText)
   html.classList.toggle('reduce-motion', s.reduceMotion)
+  sound.setVolume(s.sound ? s.volume : 0)
 }

@@ -241,6 +241,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .setting small { color: var(--dim); }
 .setting.stacked { flex-direction: column; gap: 6px; cursor: default; }
 .setting.stacked input[type="text"] { font: 1.1rem var(--serif); background: var(--panel-2); color: var(--ink); border: 1px solid var(--edge); border-radius: 6px; padding: 6px 10px; }
+.setting .volume { width: 100%; accent-color: var(--gold); }
+.setting .volume:disabled { opacity: .4; }
 .segmented { display: flex; gap: 0; }
 .segmented button { border-radius: 0; flex: 1; }
 .segmented button:first-child { border-radius: 6px 0 0 6px; }
@@ -340,6 +342,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .card.back {
   background: repeating-linear-gradient(45deg, #43324a, #43324a 4px, #35283b 4px, #35283b 8px);
   border-color: #0008;
+  /* The white border every real card back has. */
+  box-shadow: inset 0 0 0 2px #e9e1d2, inset 0 0 0 3px #0005;
 }
 /* The five cards that took the pot: the payoff beat of the hand. */
 .card.win {
@@ -400,7 +404,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   background: var(--ink); color: var(--bg); font-size: .66rem; font-weight: 800; flex: none;
 }
 .button-chip[hidden] { display: none; }
-.seat .cards { display: flex; gap: 3px; margin: 5px 0 3px; min-height: 38px; }
+.seat .hand-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: 5px 0 3px; min-height: 38px; }
+.seat .cards { display: flex; gap: 3px; }
 .seat .last { color: var(--dim); font-size: .8rem; min-height: 1.2em; }
 /* Tells are italic and quiet on purpose: ambient noise until the player learns
    which combinations matter. */
@@ -443,7 +448,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .narration.show { animation: narrate 6s ease-out both; }
 @keyframes narrate { 0% { opacity: 0; } 6% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; } }
 .board { display: flex; gap: 6px; min-height: 58px; align-items: center; }
-.pot { font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+.pot { font-size: 1.1rem; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; }
+.pot .pile { min-width: 20px; }
 .pot .label { color: var(--dim); font-size: .72rem; letter-spacing: .14em; }
 
 .you { display: flex; align-items: center; gap: 16px; justify-content: center; }
@@ -452,6 +458,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .you-name.earned { color: var(--gold-soft); }
 .you .stack { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 600; }
 .you-cards { display: flex; gap: 6px; min-height: 56px; }
+.you .bet { min-width: 64px; }
 
 .controls { display: grid; gap: 5px; justify-items: center; min-height: 74px; }
 .prompt { color: var(--dim); font-size: .85rem; min-height: 1.2em; }
@@ -490,6 +497,51 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .log li.say.death { color: #e8dcc0; }
 .log li.respect, .log li.mark { color: var(--gold-soft); }
 
+/* ---------------------------------------------------------------- things that move
+   Cards out of Death's hands, chips across the felt. Flights live in their
+   own layer over the felt so nothing that moves can shift the layout. */
+.fx { position: absolute; inset: 0; pointer-events: none; z-index: 4; overflow: hidden; }
+.flyer { position: absolute; will-change: transform, opacity; }
+.fx .card { box-shadow: 0 6px 14px #0009; }
+.fx .card.back { box-shadow: inset 0 0 0 2px #e9e1d2, inset 0 0 0 3px #0005, 0 6px 14px #0009; }
+
+/* A chip from above (in flight) and from the side (in a pile). --c is the
+   body, --e the edge inserts. Colours follow the casino convention. */
+.chip, .chip-side { --c: #b3312b; --e: #f3ecdf; }
+.chip.white, .chip-side.white { --c: #e9e4d8; --e: #3f6fa8; }
+.chip.green, .chip-side.green { --c: #2d7a4b; }
+.chip.black, .chip-side.black { --c: #1f1d1c; }
+.chip.purple, .chip-side.purple { --c: #6a3d9a; }
+.chip.gold, .chip-side.gold { --c: #cf9f22; --e: #fff4d2; }
+.chip.orange, .chip-side.orange { --c: #d0652a; }
+.chip {
+  display: block; width: 15px; height: 15px; border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--c) 0 40%, var(--e) 41% 47%, var(--c) 48% 62%, transparent 63%),
+    repeating-conic-gradient(var(--c) 0 30deg, var(--e) 30deg 45deg);
+  box-shadow: 0 2px 4px #000b, inset 0 0 0 1px #0005;
+}
+.pile { display: inline-flex; align-items: flex-end; gap: 2px; min-height: 22px; }
+.pile .col { display: flex; flex-direction: column-reverse; }
+.chip-side {
+  display: block; width: 18px; height: 5px; border-radius: 3px / 2px;
+  /* Shading for a cylinder over the edge inserts; a dark seam under each chip. */
+  background:
+    linear-gradient(90deg, #0005, transparent 28%, transparent 68%, #0006),
+    repeating-linear-gradient(90deg, var(--c) 0 4px, var(--e) 4px 6px);
+  box-shadow: inset 0 -1px 0 #0007;
+}
+/* No two chips in a stack line their inserts up. */
+.chip-side:nth-child(3n + 2) { background-position: 0 0, 2px 0; }
+.chip-side:nth-child(3n) { background-position: 0 0, 4px 0; }
+.pile .col .chip-side:last-child { box-shadow: inset 0 -1px 0 #0007, inset 0 1px 0 #fff5; }
+
+/* Chips in front of a seat: this street's bet. Always takes its room, so a
+   bet appearing never nudges the cards beside it. */
+.bet { display: flex; align-items: flex-end; gap: 4px; flex: none; }
+.bet.empty { visibility: hidden; }
+.bet .amt { color: var(--gold-soft); font-size: .78rem; font-weight: 650; font-variant-numeric: tabular-nums; line-height: 1; }
+
 /* ---------------------------------------------------------------- small landscape */
 @media (max-width: 900px) {
   .title-screen { grid-template-columns: 1fr 1fr; }
@@ -508,7 +560,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .screen-bar { padding: 2px 0 6px; margin-bottom: 8px; }
   .felt { gap: 3px; padding: 5px 10px 5px; }
   .seat { padding: 4px 6px; }
-  .seat .cards { min-height: 30px; margin: 3px 0 2px; }
+  .seat .hand-row { min-height: 30px; margin: 3px 0 2px; }
+  .chip-side { width: 16px; height: 4px; }
   .card { width: 34px; height: 48px; font-size: .95rem; }
   .card.small { width: 23px; height: 31px; font-size: .7rem; }
   .board { min-height: 50px; }
