@@ -1,0 +1,64 @@
+{
+  "id": "socrates",
+  "name": "Socrates",
+  "short": "Socrates",
+  "epithet": "The Gadfly of Athens",
+  "pronoun": "he",
+  "table": "athens",
+  "role": "seat",
+  "arrives": false,
+  "origin": "History",
+  "era": "c. 470–399 BC · Athenian philosopher",
+  "dials": {
+    "aggression": 0.45,
+    "tightness": 0.5,
+    "bluffFrequency": 0.2,
+    "tiltSensitivity": 0.0,
+    "adaptivity": 0.5,
+    "noise": 0.15
+  },
+  "quirks": [
+    {
+      "type": "needle",
+      "chance": 0.35
+    }
+  ],
+  "tells": [
+    {
+      "signal": "scratches_nose",
+      "text": "scratches his snub nose",
+      "correlate": "bluffing",
+      "reliability": 0.82
+    },
+    {
+      "signal": "private_joke",
+      "text": "smiles as if at a private joke",
+      "correlate": "strong",
+      "reliability": 0.8
+    },
+    {
+      "signal": "asks_ceiling",
+      "text": "frowns up at the ceiling, as if it had asked him something",
+      "correlate": "weak",
+      "reliability": 0.8
+    }
+  ],
+  "idles": [
+    "sips from his cup and seems no drunker",
+    "rubs his bare feet together",
+    "pulls his plain cloak tighter",
+    "scratches his beard thoughtfully"
+  ],
+  "profile": {
+    "ledger": "Drank the hemlock, walked about until his legs grew heavy, lay down, and remembered a debt. The calmest appointment I have kept.",
+    "ledger_beaten": "Beaten. He thanked you for the refutation, then asked whether you had a moment for one more question.",
+    "history": [
+      "Socrates (c. 470–399 BC) was the son of an Athenian midwife, and he wrote nothing; we know him through his pupils Plato and Xenophon, and through Aristophanes, who mocked him on stage. He fought as an infantryman at Potidaea, Delium and Amphipolis. When the oracle at Delphi said no one was wiser than he was, he spent years questioning everyone who claimed to know anything. In 399 BC Athens condemned him to drink hemlock.",
+      "Plato's Symposium puts him at exactly this kind of party. He arrived late, having stopped in a neighbour's porch to think; he out-talked the room; and at dawn, with the others asleep, he got up, washed, and spent the day as usual. Alcibiades swore nobody had ever seen him drunk. He was famously ugly and did not mind at all. He cannot resist a question, and tonight the question is you."
+    ],
+    "at_the_table": "Moderate in everything except curiosity. He plays a middling number of hands, and when the table checks to him after the flop he often puts out a small bet, not so much to win as to see what you will do about it. He adjusts to what he learns. Losing does not trouble him in the least; no one has ever seen him rattled, and nobody here expects to be the first.",
+    "look": "Silhouette: bald dome, big untidy beard, a short thick body in one plain, shabby cloak — the only unadorned figure at the table, which is exactly why he reads. Face: snub nose, wide bulging eyes, a satyr's face with a good-humoured mouth. Prop: a shallow wine cup, drained and refilled all night. Tells live on the big shapes of the face: nose, smile, the upward glance.",
+    "prop": "Shallow wine cup",
+    "public_domain": "Historical figure, died 399 BC; Plato, Xenophon and Aristophanes are all public domain. Build from the Roman copies of Greek portrait busts. Avoid Bill & Ted's Excellent Adventure and any other modern screen likeness. He is barefoot, but that is below the table."
+  }
+}

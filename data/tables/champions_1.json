@@ -1,0 +1,34 @@
+{
+  "id": "champions_1",
+  "kind": "champions",
+  "position": 9,
+  "name": "The Champions' Table",
+  "seats": [
+    "washington",
+    "odysseus",
+    "blackbeard",
+    "arthur"
+  ],
+  "champion": null,
+  "arrival": null,
+  "handsPerLevel": 22,
+  "dialogue": "table-09-champions-1.json",
+  "buyIn": 2000,
+  "respectStart": 2,
+  "place": "The Hall of Doors",
+  "region": "Off the map",
+  "era": "Every era you have visited, at once",
+  "teaser": "The first four champions, together, and every one remembers you.",
+  "hook": "You have taken a table from each of them. Now all four are sitting at one, and they have compared notes.",
+  "room": "A round hall whose ceiling is lost in the dark, floored in polished black stone, with eight tall doors set around its wall — one for every table on the tour. Tonight the first four stand open, each spilling its own room's light and weather across the floor, and the round table sits where those four lights cross. Between the first door and the eighth there is a ninth, small, plain and shut; nobody at the table looks at it.",
+  "music": "The tour's main theme at last in full — a slow, stately processional for full orchestra, the first four rooms' motifs passing through it in turn — grand and warm, and sounding very much like a finale.",
+  "entrance": "All four are seated from hand one, each in the chair nearest their own door, and Death is already shuffling when you sit down.",
+  "ambience": [
+    "a hush under a ceiling too high to see",
+    "surf on a beach, faintly, through one doorway",
+    "wind at a castle window, through another",
+    "chips clicking on felt, echoing upward",
+    "a heavy door settling in its frame"
+  ],
+  "presence": null
+}

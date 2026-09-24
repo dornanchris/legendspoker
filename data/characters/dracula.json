@@ -1,0 +1,64 @@
+{
+  "id": "dracula",
+  "name": "Count Dracula",
+  "short": "Dracula",
+  "epithet": "The Un-Dead",
+  "pronoun": "he",
+  "table": "transylvania",
+  "role": "champion",
+  "arrives": true,
+  "origin": "Literature",
+  "era": "Dracula (Stoker, 1897) · the Count",
+  "dials": {
+    "aggression": 0.35,
+    "tightness": 0.78,
+    "bluffFrequency": 0.12,
+    "tiltSensitivity": 0.05,
+    "adaptivity": 0.55,
+    "noise": 0.42
+  },
+  "quirks": [
+    {
+      "type": "trap",
+      "minEquity": 0.82
+    }
+  ],
+  "tells": [
+    {
+      "signal": "eyebrow",
+      "text": "raises one eyebrow",
+      "correlate": "strong",
+      "reliability": 0.62
+    },
+    {
+      "signal": "chalice_sip",
+      "text": "sips from his chalice",
+      "correlate": "bluffing",
+      "reliability": 0.6
+    },
+    {
+      "signal": "steeples",
+      "text": "steeples his fingers",
+      "correlate": "weak",
+      "reliability": 0.6
+    }
+  ],
+  "idles": [
+    "sips from his chalice",
+    "runs a fingernail along the table",
+    "smiles without showing his teeth",
+    "watches the pulse in someone's throat"
+  ],
+  "profile": {
+    "ledger": "Crumbled to dust at sunset with a look of peace on his face. He would prefer nobody mentioned the peace.",
+    "ledger_beaten": "He conceded like a host seeing out a guest: graciously, and watching your throat to the door.",
+    "history": [
+      "Count Dracula is the Transylvanian nobleman of Bram Stoker's Dracula (1897), a novel told entirely in letters, diaries and newspaper cuttings. He lives in a crumbling castle past the Borgo Pass, keeps no servants, casts no reflection, and crawls head-first down the castle wall like a lizard. He buys a house in England, ships fifty boxes of his native earth there and sails with them, and is hunted home again by a Dutch professor and a handful of friends.",
+      "Stoker's Count is not a caped seducer. He is an old man dressed in black, with a long white moustache and eyebrows that almost meet, who grows younger as he feeds, keeps his guest company at supper without eating, and studies English law, English idiom and English railway timetables so that in London nobody will take him for a stranger. He sits down late at this table because it is his house, and the host eats last."
+    ],
+    "at_the_table": "The tightest player at the table and the least hurried. He plays very few hands and says little about them. He would rather call three times than raise once, and he is at his most comfortable when you are the one doing the betting. He almost never bluffs, and he does not tilt. He watches who has been folding, the way a good host notices who drinks too much.",
+    "look": "Silhouette: tall and thin, in black without a speck of colour, a long white moustache drooping past the chin. Stoker's face: a thin, high-bridged nose, pointed ears, extreme pallor, very red lips, sharp white teeth, and eyebrows so massive they almost meet over the nose. The brows are half the tell surface; the other half is the prop, a dark, heavy chalice.",
+    "prop": "A dark chalice",
+    "public_domain": "Stoker's novel (1897) is public domain. Bela Lugosi's likeness and Universal's 1931 design are not, nor are the later screen Draculas: no slicked hair and widow's peak, no high-collared opera cape, no medallion, no evening dress, no film lines. Nosferatu's bald Orlok is out too. Build him from Stoker: old, white-moustached, heavy-browed, all in black."
+  }
+}

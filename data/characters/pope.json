@@ -1,0 +1,70 @@
+{
+  "id": "pope",
+  "name": "Pope Alexander VI",
+  "short": "The Pope",
+  "epithet": "The Borgia Pope",
+  "pronoun": "he",
+  "table": "rome",
+  "role": "seat",
+  "arrives": false,
+  "origin": "History",
+  "era": "1431–1503 · Rodrigo Borgia, Renaissance pope",
+  "dials": {
+    "aggression": 0.6,
+    "tightness": 0.58,
+    "bluffFrequency": 0.38,
+    "tiltSensitivity": 0.05,
+    "adaptivity": 0.6,
+    "noise": 0.3
+  },
+  "quirks": [
+    {
+      "type": "river_bluff",
+      "chance": 0.4
+    },
+    {
+      "type": "punish_passivity",
+      "foldRate": 0.52,
+      "chance": 0.5,
+      "potFraction": 0.7
+    }
+  ],
+  "tells": [
+    {
+      "signal": "smooths_robes",
+      "text": "smooths his robes, unhurried",
+      "correlate": "bluffing",
+      "reliability": 0.68
+    },
+    {
+      "signal": "turns_ring",
+      "text": "turns the ring on his finger",
+      "correlate": "strong",
+      "reliability": 0.7
+    },
+    {
+      "signal": "hands_in_lap",
+      "text": "folds his hands in his lap",
+      "correlate": "weak",
+      "reliability": 0.68
+    }
+  ],
+  "idles": [
+    "murmurs something in Latin",
+    "adjusts his mitre",
+    "admires his own ring",
+    "smiles benevolently at the whole table"
+  ],
+  "profile": {
+    "ledger": "Said to have bought the votes that made him pope. Said to have been poisoned. I was there for one of those.",
+    "ledger_beaten": "He lost gracefully, and was arranging the story before he stood up.",
+    "history": [
+      "Rodrigo de Borja, from Xàtiva near Valencia, was made a cardinal young by his uncle, Pope Callixtus III, and served some thirty-five years as vice-chancellor of the Church before his election as Alexander VI in 1492 — an election contemporaries said he bought. He advanced his children openly: his son Cesare became a cardinal, then a duke with an army, and his daughter Lucrezia's three marriages were moves in Italian politics.",
+      "Contemporaries found him charming, eloquent and tireless. In 1493 he drew a line down the Atlantic and granted Spain the newly found lands beyond it. The word \"nepotism\" comes from the favours popes gave their nephews, and he had been one of those nephews. He sits at this table as he sat in Rome: smiling at everyone, counting everything, and quietly certain the arrangement will favour his family."
+    ],
+    "at_the_table": "He plays a middling number of hands and bluffs more than anyone else at the table, most of all at the end of a hand, when a good story costs only one more bet. Fold to him often and he will notice, and start collecting. Nothing rattles him. He survived conclaves, French kings and his own children; a bad beat is merely weather.",
+    "look": "Silhouette: the tall mitre — nothing else at this table points straight up. A heavy, genial face with a strong nose, after Pinturicchio's fresco of him in the Borgia Apartments. Gold-embroidered vestments that swallow the chair. Prop: the papal ring, drawn oversized so that turning it throws a flash of gold the eye catches at a fifth of the screen.",
+    "prop": "The papal ring",
+    "public_domain": "Historical figure, died 1503; Pinturicchio's portrait is public domain. Avoid the 2011 television series (\"The Borgias\", \"Borgia\") and any poison-ring cliché. The jokes stay on his politics and his family, never on the faith. The display name is still an open design question; \"the Pope\" may yet be renamed."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "invitation": {
+    "heading": "The Invitational",
+    "body": [
+      "The pleasure of your company is requested at a tournament of hold 'em, to be played at eight tables across the ages, and at one or two places besides.",
+      "Your fellow guests are legends. Every one of them has accepted. They generally do.",
+      "Stakes are in chips. No guest will be asked to wager anything else.",
+      "The same dealer will attend every table.",
+      "Kindly reply below. Everyone attends in the end, but it does help with the seating."
+    ],
+    "signature": "— D.",
+    "sign_prompt": "Your name, for the ledger",
+    "accept": "Accept with pleasure"
+  },
+  "ending": {
+    "title": "Your Deal",
+    "paragraphs": [
+      "When he had gone, the dock house was very quiet. The rain kept on. The lamp kept burning. The deck sat on your side of the table, squared and waiting, the way it had sat in front of him at every table on the tour.",
+      "Later, the ferryman's lantern went out across the water again. You did not see who was in the boat. You did not need to.",
+      "He had left the ledger on the bench by the door. Every hand at every table is in it, in one patient hand, all the way to the last page, where the writing changes.",
+      "Someone will come in out of the weather wanting a game. Someone always does. They will sit down across from you, not knowing what you are, and you will deal.",
+      "You will deal to kings and pirates and machines and people nobody remembers, and to every one of them the same, because that is the job.",
+      "And one day, a long way from now, you will be tired. You will write out a card in your best hand and leave the name blank. Somebody will sign it.",
+      "Somebody has to deal."
+    ]
+  },
+  "epigraph": "Somebody has to deal."
+}

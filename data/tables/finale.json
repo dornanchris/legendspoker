@@ -1,0 +1,31 @@
+{
+  "id": "finale",
+  "kind": "finale",
+  "position": 11,
+  "name": "The Last Crossing",
+  "seats": [
+    "death"
+  ],
+  "champion": "death",
+  "arrival": null,
+  "handsPerLevel": 30,
+  "dialogue": "table-11-finale.json",
+  "buyIn": 5000,
+  "respectStart": 3,
+  "place": "A dock house on the river, at night",
+  "region": "The near bank",
+  "era": "The small hours",
+  "teaser": "The smallest room on the tour. One lamp. One table.",
+  "hook": "Every champion on the tour has lost a table to you. There is one table left, down by the water, and one chair across from yours.",
+  "room": "A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on one small square table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.",
+  "music": "Almost nothing: one low cello, very slow, with long rests that the rain fills in — no percussion, no choir, and the tour's main theme conspicuously absent until, perhaps, the very last hand.",
+  "entrance": "He is already seated when you come in through the ninth door — in a player's chair for the first time, forearms on the table in the lamplight, waiting.",
+  "ambience": [
+    "rain on the windows",
+    "wind worrying at a door that will not quite shut",
+    "the river pulling at the pilings",
+    "an oar, far out on the water",
+    "the lamp flame guttering"
+  ],
+  "presence": null
+}

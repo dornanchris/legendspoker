@@ -1,0 +1,242 @@
+{
+  "table": "camelot",
+  "display_name": "Camelot",
+  "tour_position": 4,
+  "champion": "arthur",
+  "status": "draft",
+  "notes": {
+    "tone": "The noble table, and the sad one: everyone here knows how Camelot ends, and nobody says it. Humour comes from pride (Lancelot), prophecy (Merlin), and a green giant who enjoys everything. Arthur's register is grace, not wit.",
+    "difficulty": "Fourth table, halfway. The contempt is courteous — a stranger at the Round Table is tolerated, not welcomed. The sting is being politely overlooked.",
+    "dealer_plant": "The single 'the dealer arranged it' line for this table is cm_plant_02. Do NOT add a second.",
+    "arthur": "Gracious host, seated from hand one, and the only one who stands when the player arrives. Nothing from Monty Python, the musical, or any film.",
+    "merlin": "Geoffrey of Monmouth and Malory only. NOTHING from T. H. White (no living backwards, no 'Merlyn', no owl) and nothing Disney. He knows how everything ends and is politely bored by it.",
+    "lancelot": "The Guinevere affair is canon and is only ever alluded to — a glance at the empty chair beside the king, a line that stops short. Never crude. Guinevere is not at the table.",
+    "green_knight": "From the poem. The beheading game can be mentioned; never describe or stage him holding his own head (that image belongs to the Headless Horseman at table 7). Quote no modern translation (Tolkien, Armitage).",
+    "siege_perilous": "The player's chair is the Siege Perilous — in Malory, the seat Merlin made at the Round Table for the one knight who would achieve the Grail; anyone else who sits in it is destroyed. It is a plant, not an answer: nobody explains why the player is in it.",
+    "player_address": "Nickname and title are gender-neutral: 'Beaumains', 'Knight'. Never 'Sir' or 'Dame' for the player.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "Champion (Arthur) + Death are voiced. Merlin/Lancelot/the Green Knight are text + vocalization. The Green Knight's laugh deserves a real recording."
+  },
+
+  "earned_names": {
+    "tier_1": "Beaumains",
+    "tier_3": "Knight"
+  },
+
+  "respect_tiers": {
+    "0": "Courteous contempt. The player is a stranger at the Round Table and is not addressed by any name.",
+    "1": "Grudging notice. The court gives the player a kitchen name: Beaumains.",
+    "2": "Real address. The chair learns the player's name, and so does the table.",
+    "3": "Title. Earned. Arthur confers it."
+  },
+
+  "table_intro": [
+    {
+      "id": "cm_intro_01",
+      "speaker": "death",
+      "text": "Camelot, at its height. A table built round so that no one could sit at its head, and a room full of men who know exactly where it would be.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "cm_intro_02",
+      "speaker": "death",
+      "text": "Most of them know how Camelot ends. They have agreed not to mention it. So have I.",
+      "trigger": "table_open",
+      "foreshadow": "Reads as Death being discreet about the fall of Camelot. It is also exactly what he is doing with the player: he knows how this tour ends, and has agreed with himself not to mention it."
+    },
+    {
+      "id": "cm_intro_03",
+      "speaker": "death",
+      "text": "They have left you the one chair without a name. It has a reputation. Sit down anyway.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "cm_plant_01",
+      "speaker": "lancelot",
+      "text": "Sire. The stranger is sitting in the Siege Perilous.",
+      "trigger": "hand_02_start",
+      "sequence": "cm_plant_02",
+      "note": "In Malory, the Siege Perilous is kept for the one knight who will achieve the Grail — Lancelot's own son, Galahad. Lancelot takes it personally."
+    },
+    {
+      "id": "cm_plant_02",
+      "speaker": "arthur",
+      "text": "I know. The dealer arranged it.",
+      "sequence": "cm_plant_03"
+    },
+    {
+      "id": "cm_plant_03",
+      "speaker": "lancelot",
+      "text": "...Then the chair can decide.",
+      "note": "THE SHRUG. The proudest man at the table lets it go. Nobody questions the dealer. The player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "arthur_lancelot": {
+      "relationship": "Arthur's greatest knight and closest friend, who loves Arthur's queen. Malory says the king had a suspicion and would not hear of it; the fellowship broke over it anyway. Never said aloud at this table. Guinevere is not here, and her chair beside the king stays empty.",
+      "exchanges": [
+        [
+          { "id": "cm_ar_la_01a", "speaker": "arthur", "text": "There will be other pots, Lancelot." },
+          { "id": "cm_ar_la_01b", "speaker": "lancelot", "text": "Sire?" },
+          { "id": "cm_ar_la_01c", "speaker": "arthur", "text": "There will never be another knight like you. I have looked.", "note": "Echoes Malory: Arthur grieves more for the fellowship than for his queen, since queens might be found, but never such a fellowship again." }
+        ],
+        [
+          { "id": "cm_ar_la_02a", "speaker": "arthur", "text": "I have never once doubted you, Lancelot." },
+          { "id": "cm_ar_la_02b", "speaker": "lancelot", "text": "No, sire." },
+          { "id": "cm_ar_la_02c", "speaker": "lancelot", "text": "[looks toward the empty chair beside the king]", "type": "stage_direction", "note": "The whole affair, in one glance. Never more explicit than this." }
+        ],
+        [
+          { "id": "cm_ar_la_03a", "speaker": "arthur", "text": "The best knight in the world." },
+          { "id": "cm_ar_la_03b", "speaker": "lancelot", "text": "You say it as though it costs you something." },
+          { "id": "cm_ar_la_03c", "speaker": "arthur", "text": "Everything worth saying does." }
+        ]
+      ]
+    },
+
+    "merlin_arthur": {
+      "relationship": "Merlin arranged Arthur's conception, his fostering and the sword in the stone, and told him early how it would end — Mordred, and Lancelot and the queen. Arthur built Camelot anyway. The mentor who knows the ending, and the king who keeps asking.",
+      "exchanges": [
+        [
+          { "id": "cm_me_ar_01a", "speaker": "arthur", "text": "You are smiling, Merlin." },
+          { "id": "cm_me_ar_01b", "speaker": "merlin", "text": "I was remembering how this ends." },
+          { "id": "cm_me_ar_01c", "speaker": "arthur", "text": "The game?" },
+          { "id": "cm_me_ar_01d", "speaker": "merlin", "text": "Yes. The game." }
+        ],
+        [
+          { "id": "cm_me_ar_02a", "speaker": "merlin", "text": "Do you still prefer the sword to the scabbard?" },
+          { "id": "cm_me_ar_02b", "speaker": "arthur", "text": "The sword wins." },
+          { "id": "cm_me_ar_02c", "speaker": "merlin", "text": "The scabbard keeps you alive. I told you so the day she gave you both.", "note": "Malory: the Lady of the Lake gives Arthur Excalibur, and Merlin tells him the scabbard is worth ten of the sword — while he wears it he will lose no blood. Arthur preferred the sword." },
+          { "id": "cm_me_ar_02d", "speaker": "arthur", "text": "You told me a great many things, old man." }
+        ],
+        [
+          { "id": "cm_me_ar_03a", "speaker": "arthur", "text": "Tell me how the evening goes, Merlin." },
+          { "id": "cm_me_ar_03b", "speaker": "merlin", "text": "You would not thank me." },
+          { "id": "cm_me_ar_03c", "speaker": "arthur", "text": "I never have." },
+          { "id": "cm_me_ar_03d", "speaker": "merlin", "text": "No. But you always ask." }
+        ]
+      ]
+    },
+
+    "green_knight_lancelot": {
+      "relationship": "The Green Knight rode into Arthur's hall one New Year and offered anyone a blow with his axe, to be returned in a year and a day. The court sat silent; Arthur rose, and Gawain took the axe from him. The poem gives the challenge to Gawain, not to the best knight in the world. The Green Knight has noticed.",
+      "exchanges": [
+        [
+          { "id": "cm_gk_la_01a", "speaker": "green_knight", "text": "The best knight in the world. I heard that said in this hall once. Then I asked for a volunteer." },
+          { "id": "cm_gk_la_01b", "speaker": "lancelot", "text": "I would have taken your axe." },
+          { "id": "cm_gk_la_01c", "speaker": "green_knight", "text": "Everyone is brave in the hall. It is at the chapel that they flinch.", "note": "In the poem, Gawain flinches at the first stroke at the Green Chapel, and the Knight mocks him for it." }
+        ],
+        [
+          { "id": "cm_gk_la_02a", "speaker": "lancelot", "text": "Do you ever refuse a challenge, Green Knight?" },
+          { "id": "cm_gk_la_02b", "speaker": "green_knight", "text": "Never. Do you?" },
+          { "id": "cm_gk_la_02c", "speaker": "lancelot", "text": "Never." },
+          { "id": "cm_gk_la_02d", "speaker": "green_knight", "text": "Ha! Then one of us is going to be very tired." }
+        ]
+      ]
+    },
+
+    "merlin_green_knight": {
+      "relationship": "The poem names the power behind the Green Knight: Morgan le Fay, who learned her craft from Merlin. Merlin's other famous pupil, Nimue, shut him alive under a stone. Two men at a table of knights who are not quite men, and one of them taught the magic that made the other green.",
+      "exchanges": [
+        [
+          { "id": "cm_me_gk_01a", "speaker": "green_knight", "text": "It was your pupil's magic that made me green, old man." },
+          { "id": "cm_me_gk_01b", "speaker": "merlin", "text": "One of my pupils made you green. Another shut me under a stone." },
+          { "id": "cm_me_gk_01c", "speaker": "green_knight", "text": "Ha!" },
+          { "id": "cm_me_gk_01d", "speaker": "merlin", "text": "I have stopped taking pupils." }
+        ],
+        [
+          { "id": "cm_me_gk_02a", "speaker": "green_knight", "text": "Try not knowing how it ends, Merlin. It is the best part." },
+          { "id": "cm_me_gk_02b", "speaker": "merlin", "text": "You say that because you always get up again." }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "cm_p0_01", "speaker": "lancelot", "text": "Another of Arthur's strays. Do we feed this one, or knight it?" },
+      { "id": "cm_p0_02", "speaker": "green_knight", "text": "Ha! When I last rode in, Arthur's hall was full of beardless children. I see it still is.", "note": "The poem's Green Knight calls Arthur's court 'beardless children'." },
+      { "id": "cm_p0_03", "speaker": "merlin", "text": "Nothing you do tonight will surprise me. Sit down." },
+      { "id": "cm_p0_04", "speaker": "arthur", "text": "You are welcome at my table, stranger. For now, that is all you are." },
+      { "id": "cm_p0_05", "speaker": "lancelot", "text": "Do not address me until you have unhorsed someone." }
+    ],
+    "tier_1": [
+      { "id": "cm_p1_01", "speaker": "lancelot", "text": "Beaumains, then. Fair-hands. Let us see if they are good for anything but the kitchen.", "note": "Announcement. In Malory, 'Beaumains' is Sir Kay's mocking name for an unknown stranger who asks only for a year's keep and is put to work in the kitchens — Gareth, who became one of the best knights of the Round Table. Lancelot knighted him." },
+      { "id": "cm_p1_02", "speaker": "arthur", "text": "We had a Beaumains once. He did rather well." },
+      { "id": "cm_p1_03", "speaker": "green_knight", "text": "Ha! The child hits back!" },
+      { "id": "cm_p1_04", "speaker": "merlin", "text": "Yes. This is the part where you surprise them." }
+    ],
+    "tier_2": [
+      { "id": "cm_p2_01", "speaker": "merlin", "text": "Your chair has your name on it now, {name}. In gold. It took its time.", "note": "In Malory, each knight's name appears in gold letters on his seat at the Round Table. The player's chair has been blank until now." },
+      { "id": "cm_p2_02", "speaker": "lancelot", "text": "In gold, no less. Mine took rather more than an evening." },
+      { "id": "cm_p2_03", "speaker": "green_knight", "text": "You have a good arm. I would trade blows with you." },
+      { "id": "cm_p2_04", "speaker": "arthur", "text": "You have a place here now. Keep it better than some of us did." }
+    ],
+    "tier_3": [
+      { "id": "cm_p3_01", "speaker": "arthur", "text": "Knight. Of the Round Table. I have not said that to a stranger in a long while.", "note": "First time anyone gives the player a title. Arthur confers it; he does not ask the player to kneel." },
+      { "id": "cm_p3_02", "speaker": "lancelot", "text": "Welcome to the fellowship. It is not as simple as it looks from the kitchen." },
+      { "id": "cm_p3_03", "speaker": "green_knight", "text": "Come and find me at the Green Chapel some New Year. I will give you a game worth a year and a day." },
+      {
+        "id": "cm_p3_04",
+        "speaker": "merlin",
+        "text": "You will be offered a great deal at the last table. Think before you take it.",
+        "foreshadow": "Reads as a prophet's warning about stakes. Literally: at the last table the player is offered Death's deck."
+      }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "cm_death_01", "speaker": "death", "text": "Take your time. At this court, a single blow once took a year and a day to return.", "trigger": "player_thinking_long" },
+    { "id": "cm_death_02", "speaker": "death", "text": "Chivalry says the better knight wins. Chivalry has never dealt a card.", "trigger": "player_bad_beat" },
+    { "id": "cm_death_03", "speaker": "death", "text": "He has lost more than that to people he loved.", "trigger": "champion_loses_pot" },
+    { "id": "cm_death_04", "speaker": "death", "text": "The first empty chair. This table has had a great many.", "trigger": "first_elimination" },
+    { "id": "cm_death_05", "speaker": "death", "text": "The Round Table took years to break. You are faster.", "trigger": "player_eliminates" },
+    { "id": "cm_death_06", "speaker": "death", "text": "In this hall, that is called a vow. They take vows seriously. Most of them.", "trigger": "player_all_in" },
+    { "id": "cm_death_07", "speaker": "death", "text": "The stakes rise. Here, they call that a quest.", "trigger": "blinds_up" }
+  ],
+
+  "champion_headsup": [
+    { "id": "cm_ar_hu_01", "speaker": "arthur", "text": "Just the two of us. The table is round so that no one sits at its head. Let us find out who does.", "trigger": "headsup_start" },
+    { "id": "cm_ar_hu_02", "speaker": "arthur", "text": "I pulled a sword from a stone because my brother had left his behind. I did not know it was a test until afterwards.", "note": "Malory: young Arthur, as squire to his foster-brother Kay, fetches the sword from the stone because Kay has left his own at their lodging." },
+    { "id": "cm_ar_hu_03", "speaker": "arthur", "text": "Merlin told me how it would end, the first year. I built it anyway." },
+    { "id": "cm_ar_hu_04", "speaker": "arthur", "text": "Well struck! Again, if you can.", "trigger": "player_wins_pot" }
+  ],
+
+  "eliminated": {
+    "merlin": [
+      { "id": "cm_elim_merlin_01", "speaker": "merlin", "text": "Ah. So it was this hand. I did wonder." },
+      { "id": "cm_elim_merlin_02", "speaker": "merlin", "text": "I knew. I always know. It has never once helped." }
+    ],
+    "lancelot": [
+      { "id": "cm_elim_lancelot_01", "speaker": "lancelot", "text": "Impossible. I am the best knight in the world." },
+      { "id": "cm_elim_lancelot_02", "speaker": "lancelot", "text": "Tell no one. Least of all the queen." }
+    ],
+    "green_knight": [
+      { "id": "cm_elim_gk_01", "speaker": "green_knight", "text": "Well struck! I will have my blow back in a year and a day." },
+      { "id": "cm_elim_gk_02", "speaker": "green_knight", "text": "Ha! A fair game, fairly lost. My horse is waiting." }
+    ],
+    "arthur": [
+      { "id": "cm_elim_arthur_01", "speaker": "arthur", "text": "Well fought. There is no shame in losing to the worthy." },
+      { "id": "cm_elim_arthur_02", "speaker": "arthur", "text": "I have watched this table empty before. It was harder the last time." }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "cm_bust_01", "speaker": "arthur", "text": "No shame in it. Rest, and come back to us." },
+    { "id": "cm_bust_02", "speaker": "lancelot", "text": "The Siege Perilous destroys the unworthy. You got off lightly." },
+    {
+      "id": "cm_bust_03",
+      "speaker": "death",
+      "text": "The chair will keep. It has waited far longer than this.",
+      "foreshadow": "Reads as a kindness about the Siege Perilous, which waited centuries for the one knight worthy of it. Death, too, has been waiting a very long time for someone."
+    }
+  ],
+
+  "champion_defeat": [
+    { "id": "cm_ar_end_01", "speaker": "arthur", "text": "The table is yours. I built it so that no one could sit at its head, and you have found a way anyway." },
+    { "id": "cm_ar_end_02", "speaker": "death", "text": "Four. Four remain. Halfway. I have always found the second half goes quicker.", "note": "Reads as a dry truism about a life. It is also true of the tour." }
+  ]
+}

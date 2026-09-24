@@ -1,0 +1,34 @@
+{
+  "id": "champions_2",
+  "kind": "champions",
+  "position": 10,
+  "name": "The Champions' Table",
+  "seats": [
+    "caesar",
+    "sherlock",
+    "dracula",
+    "the_ai"
+  ],
+  "champion": null,
+  "arrival": null,
+  "handsPerLevel": 22,
+  "dialogue": "table-10-champions-2.json",
+  "buyIn": 2000,
+  "respectStart": 2,
+  "place": "The Hall of Doors",
+  "region": "Off the map",
+  "era": "Every era you have visited, at once",
+  "teaser": "The last four champions. They heard how the first four went.",
+  "hook": "The last four champions have each lost a table to you, and none of them is used to losing. They have come through their own doors to settle it.",
+  "room": "The same hall, turned: now the last four doors stand open — brazier-light from Rome, gaslight and fog from Baker Street, red firelight from the Count's hall, the Station's blue Earthlight — and the first four are shut. Their light crosses at the round table, so every champion sits lit by their own room. The small, plain ninth door is still shut.",
+  "music": "The same theme in its darkest arrangement — low brass, organ pedal, strings pressing a little faster than is comfortable, the last four rooms' motifs folded in — still grand, still sounding like the end of something.",
+  "entrance": "All four are seated from hand one, each before their own door. The fourth chair holds the Robot's body, sitting far too straight, and whatever looks out through its lens now is not the Robot.",
+  "ambience": [
+    "a hush under a ceiling too high to see",
+    "a dog growling, three times over, through one doorway",
+    "hooves and cab wheels on wet cobbles, through another",
+    "a great fire settling in its hearth",
+    "a station's low hum from the fourth door"
+  ],
+  "presence": null
+}

@@ -1,0 +1,66 @@
+{
+  "id": "kidd",
+  "name": "Captain William Kidd",
+  "short": "Kidd",
+  "epithet": "Privateer, by His Own Account",
+  "pronoun": "he",
+  "table": "pirate_cove",
+  "role": "seat",
+  "arrives": false,
+  "origin": "History",
+  "era": "c. 1645–1701 · privateer, hanged for piracy",
+  "dials": {
+    "aggression": 0.6,
+    "tightness": 0.5,
+    "bluffFrequency": 0.22,
+    "tiltSensitivity": 0.3,
+    "adaptivity": 0.2,
+    "noise": 0.2
+  },
+  "quirks": [
+    {
+      "type": "overbet",
+      "minEquity": 0.72,
+      "potFraction": 1.6,
+      "chance": 0.7
+    }
+  ],
+  "tells": [
+    {
+      "signal": "pats_coat",
+      "text": "pats his coat where a map might be",
+      "correlate": "strong",
+      "reliability": 0.8
+    },
+    {
+      "signal": "chews_lip",
+      "text": "chews his lip",
+      "correlate": "bluffing",
+      "reliability": 0.76
+    },
+    {
+      "signal": "over_shoulder",
+      "text": "glances over his shoulder",
+      "correlate": "weak",
+      "reliability": 0.78
+    }
+  ],
+  "idles": [
+    "rubs his neck",
+    "counts coins that aren't there",
+    "tips his hat to the room",
+    "squints at the lamp"
+  ],
+  "profile": {
+    "ledger": "Sailed with the King's commission to hunt pirates, and came home one. Hanged twice on the same day; the first rope broke.",
+    "ledger_beaten": "Lost the pot and maintained it was a lawful prize. Some habits survive the rope.",
+    "history": [
+      "William Kidd was a Scottish-born sea captain who settled in New York, married a wealthy widow, and lent his ship's tackle to help raise Trinity Church. In 1696 he sailed in the Adventure Galley under a royal commission to hunt pirates in the Indian Ocean, backed by the Earl of Bellomont and a group of powerful Whig lords. He found few pirates and a restless crew. In 1698 he took a rich Armenian-chartered merchantman, the Quedagh Merchant, and in London he was declared a pirate.",
+      "He buried part of his takings on Gardiners Island, off Long Island, and went to Boston trusting Bellomont to protect him; Bellomont arrested him. In 1701 he was tried in London for piracy and for killing his gunner, William Moore, with a bucket, and the French passes he said made his prize lawful were not produced. He was hanged at Wapping, and his body was left in an iron cage over the Thames. He is still sure he was owed his share."
+    ],
+    "at_the_table": "Greedy, and not subtle about it. He plays a fair share of hands at a steady pace, and when he likes his cards he does not bet the pot — he bets a good deal more than the pot, as though the size of the claim settled who owns it. He pays little attention to how anyone else plays. A lost pot sours him for a while; he takes it as a legal wrong rather than a card game.",
+    "look": "Silhouette: a respectable merchant captain — full-bottomed wig under a plain three-cornered hat, a good broadcloth coat buttoned high, a cravat he keeps loosening at the throat. Face: heavy, anxious, forever checking behind him. Prop: the coat itself — the broad buttoned chest, where one hand keeps patting for something that may or may not be in the inside pocket.",
+    "prop": "His buttoned coat and its inside pocket",
+    "public_domain": "Historical figure, hanged 1701. Build from the trial record and period portraits of New York merchant captains. Avoid Charles Laughton's Hollywood Kidd (1945 and 1952) and the cartoon buried-treasure buccaneer. He should look like what he always claimed to be: an honest captain with papers."
+  }
+}

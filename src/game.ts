@@ -44,7 +44,7 @@ export const newStats = (): Stats => ({
 export type BlindLevel = { smallBlind: number; bigBlind: number; ante?: number }
 
 /** poker-ts reports a hand ranking as an enum ordinal; these are its names. */
-const RANKINGS = [
+export const RANKINGS = [
   'high card', 'a pair', 'two pair', 'three of a kind', 'a straight',
   'a flush', 'a full house', 'four of a kind', 'a straight flush', 'a royal flush',
 ]
@@ -72,9 +72,24 @@ export const DEFAULT_LEVELS: BlindLevel[] = [
 ]
 
 export type HandEvent =
+  /**
+   * A hand begins. Fired after the blinds are posted and before any action,
+   * so it is the one safe moment to say something at the table: no cards
+   * have been looked at, so nothing said here can leak a hand.
+   */
+  | {
+      type: 'hand'
+      hand: number
+      button: number
+      bigBlind: number
+      /** Personality id per seat; null for an empty chair. */
+      seats: (string | null)[]
+      stacks: number[]
+    }
+  /** The human seat's own hole cards. Never fired for anyone else. */
   | { type: 'deal'; seat: number; hole: Card[] }
   | { type: 'street'; street: string; board: Card[]; stacks: number[] }
-  | { type: 'tell'; seat: number; signal: string }
+  | { type: 'tell'; seat: number; signal: string; text: string }
   /** Emitted AFTER the table applies the action, so pot and stacks are the result of it. */
   | {
       type: 'action'
@@ -116,8 +131,18 @@ export type HandEvent =
         cards?: Card[]
       }[]
     }
+  /**
+   * The hand is completely over: pots paid, busts swept, arrivals seated.
+   * The one moment it is always safe to talk -- no cards are live.
+   */
+  | { type: 'handEnd'; hand: number; stacks: number[] }
   /** `place` is the finishing position: 1 is the winner, so 4 busts first. */
-  | { type: 'eliminated'; seat: number; place: number }
+  | { type: 'eliminated'; seat: number; id: string; place: number }
+  /**
+   * A late arrival takes an empty chair between hands, bringing chips of
+   * their own. See Arrival.
+   */
+  | { type: 'arrival'; seat: number; id: string; stack: number; replaces: string | null }
 
 /**
  * What a human seat is handed on their turn. Deliberately NOT a
@@ -139,6 +164,31 @@ export type TurnView = {
   legal: Action[]
   minRaise: number
   maxRaise: number
+}
+
+/**
+ * A champion who is not at the table when it opens. Odysseus is late, Caesar
+ * waits for the first body, Dracula watches from the fireplace, and the
+ * station's intelligence takes the Robot's chair when the Robot falls.
+ *
+ * This is table CONFIGURATION, keyed by ids in data -- it is not a branch on
+ * identity inside a decision, which non-negotiable #1 forbids.
+ */
+export type Arrival = {
+  personality: Personality
+  /** Triggers once this many players have been eliminated... */
+  afterEliminations?: number
+  /** ...or once this character is eliminated, taking their chair. */
+  afterEliminationOf?: string
+  /**
+   * Hands to wait after the trigger. 0 seats them before the next hand, even
+   * if the table would otherwise be over -- which is how the station's
+   * intelligence still arrives when the Robot is the last to fall. Anything
+   * larger can be MISSED: clear the table first and they never sit down.
+   */
+  delayHands: number
+  /** Chips they bring. 'average' matches the average stack still in play. */
+  stack: 'average' | number
 }
 
 export type GameOptions = {
@@ -181,6 +231,9 @@ export type GameOptions = {
    * it, so revisit once the roster has four.
    */
   handsPerLevel: number
+
+  /** Tournament only: champions who arrive mid-table. */
+  arrivals?: Arrival[]
 }
 
 export class Game {
@@ -192,6 +245,13 @@ export class Game {
   private level = 0
   /** Seat indexes in bust order, first out first. */
   private bustOrder: number[] = []
+  /** Who busted, by character, in order -- a chair can be filled twice. */
+  private busts: { seat: number; id: string; hand: number }[] = []
+  /** Whether each chair's CURRENT occupant has been knocked out. */
+  private seatBusted: boolean[] = []
+  /** Every chip that has entered play, arrivals included. */
+  private chipsTotal = 0
+  private pending: { rule: Arrival; triggeredAt?: number; done: boolean }[] = []
 
   constructor(personalities: Personality[], opts: Partial<GameOptions> = {}) {
     this.opts = {
@@ -222,13 +282,37 @@ export class Game {
       // cards came from crypto.randomInt and nothing was reproducible.
       seededShuffle(this.opts.rng),
     )
+    this.seatBusted = this.seats.map(() => false)
     // A tournament seats everyone once and never re-seats: that is the whole
     // point. Cash mode re-seats per hand, in playHand.
     if (this.opts.mode === 'tournament') {
       for (let i = 0; i < this.seats.length; i++) {
         this.table.sitDown(i, this.opts.buyIn)
       }
+      this.chipsTotal = this.opts.buyIn * this.seats.length
+      this.pending = (this.opts.arrivals ?? []).map((rule) => ({ rule, done: false }))
     }
+  }
+
+  /**
+   * Chips that should exist at the table: every buy-in plus every arrival's
+   * stack. The conservation check compares against this, not a constant.
+   */
+  chipsInPlay(): number {
+    return this.chipsTotal
+  }
+
+  /** Eliminations by character, first out first. */
+  eliminations(): { seat: number; id: string; hand: number }[] {
+    return [...this.busts]
+  }
+
+  /**
+   * Late arrivals that will now never happen because the table ended first.
+   * Only meaningful once isComplete().
+   */
+  missedArrivals(): string[] {
+    return this.pending.filter((p) => !p.done).map((p) => p.rule.personality.id)
   }
 
   getSeats(): Seat[] {
@@ -331,10 +415,30 @@ export class Game {
     }
     this.handsPlayed++
 
+    if (onEvent) {
+      const seated = this.table.seats()
+      onEvent({
+        type: 'hand',
+        hand: this.handsPlayed,
+        button: this.table.button(),
+        bigBlind,
+        seats: this.seats.map((s, i) => (seated[i] ? s.personality.id : null)),
+        stacks: this.stacks(),
+      })
+      if (humanSeat !== undefined && seated[humanSeat]) {
+        const hole: Card[] | null = this.table.holeCards()[humanSeat]
+        if (hole) onEvent({ type: 'deal', seat: humanSeat, hole })
+      }
+    }
+
     // Cache equity per (seat, street) — recomputing it on every action is
     // where a naive implementation burns all its time.
     const equityCache = new Map<string, number>()
-    const contributed = new Array(this.seats.length).fill(0)
+    // Chips each seat has put in this hand, starting from the posted blinds.
+    const contributed: number[] = this.table
+      .seats()
+      .map((x: any) => x?.betSize ?? 0)
+    while (contributed.length < this.seats.length) contributed.push(0)
     let lastStreet = ''
     const wentToShowdown = new Set<number>()
     /**
@@ -448,6 +552,7 @@ export class Game {
             numOpponents: Math.max(1, this.table.numActivePlayers() - 1),
             tilt: s.tilt,
             opponentFoldRate: this.tableFoldRate(seat),
+            committed: contributed[seat],
             rng,
           })
 
@@ -459,7 +564,7 @@ export class Game {
               { equity, decision, tilt: s.tilt },
               rng,
             )
-            if (tell) onEvent({ type: 'tell', seat, signal: tell.signal })
+            if (tell) onEvent({ type: 'tell', seat, signal: tell.signal, text: tell.text })
           }
         }
 
@@ -568,7 +673,11 @@ export class Game {
       if (!tournament && final[i]) this.table.standUp(i)
     }
 
-    if (tournament) this.removeBustedPlayers(before)
+    if (tournament) {
+      this.removeBustedPlayers(before)
+      this.processArrivals()
+    }
+    onEvent?.({ type: 'handEnd', hand: this.handsPlayed, stacks: this.stacks() })
   }
 
   /**
@@ -579,14 +688,79 @@ export class Game {
    */
   private removeBustedPlayers(before: number[]): void {
     const seated = this.table.seats()
+    const out: number[] = []
     for (let i = 0; i < this.seats.length; i++) {
       const busted = (seated[i]?.totalChips ?? 0) === 0 && before[i] > 0
-      if (!busted || this.bustOrder.includes(i)) continue
+      if (!busted || this.seatBusted[i]) continue
+      out.push(i)
+    }
+    // Places fill from the bottom: busting with k players left finishes kth.
+    // Counted from who is left rather than from the seat count, because a
+    // late arrival makes the field bigger than the table.
+    const alive = this.survivors().length
+    out.forEach((i, j) => {
       if (seated[i]) this.table.standUp(i)
+      this.seatBusted[i] = true
       this.bustOrder.push(i)
-      // Places fill from the bottom: the first player out finishes last.
-      const place = this.seats.length - this.bustOrder.length + 1
-      this.opts.onEvent?.({ type: 'eliminated', seat: i, place })
+      const id = this.seats[i].personality.id
+      this.busts.push({ seat: i, id, hand: this.handsPlayed })
+      const place = alive + (out.length - j)
+      this.opts.onEvent?.({ type: 'eliminated', seat: i, id, place })
+    })
+  }
+
+  /**
+   * Seat any late arrival whose moment has come. Runs after the busts are
+   * swept, so an arrival with no delay beats the table-complete check: that
+   * is the difference between "the Robot was the last to fall, so the ship
+   * sits down" and "the table is over".
+   */
+  private processArrivals(): void {
+    for (const p of this.pending) {
+      if (p.done) continue
+      const { rule } = p
+      if (p.triggeredAt === undefined) {
+        const hit = rule.afterEliminationOf
+          ? this.busts.some((b) => b.id === rule.afterEliminationOf)
+          : this.busts.length >= (rule.afterEliminations ?? Infinity)
+        if (hit) p.triggeredAt = this.handsPlayed
+      }
+      if (p.triggeredAt === undefined) continue
+      if (this.handsPlayed - p.triggeredAt < rule.delayHands) continue
+      // A delayed arrival to a finished table never happens.
+      if (rule.delayHands > 0 && this.survivors().length <= 1) continue
+
+      const seated = this.table.seats()
+      let chair = -1
+      let replaces: string | null = null
+      if (rule.afterEliminationOf) {
+        const b = this.busts.find((x) => x.id === rule.afterEliminationOf)!
+        if (!seated[b.seat]) chair = b.seat
+        replaces = rule.afterEliminationOf
+      }
+      if (chair < 0) {
+        const empty = this.busts.find((b) => !seated[b.seat])
+        if (empty) chair = empty.seat
+      }
+      if (chair < 0) continue // no empty chair yet; try again next hand
+
+      const live = this.survivors().map((i) => this.stacks()[i])
+      const stack =
+        rule.stack === 'average'
+          ? Math.round(live.reduce((a, b) => a + b, 0) / Math.max(1, live.length))
+          : rule.stack
+      this.seats[chair] = { personality: rule.personality, tilt: 0, stats: newStats() }
+      this.seatBusted[chair] = false
+      this.table.sitDown(chair, stack)
+      this.chipsTotal += stack
+      p.done = true
+      this.opts.onEvent?.({
+        type: 'arrival',
+        seat: chair,
+        id: rule.personality.id,
+        stack,
+        replaces,
+      })
     }
   }
 

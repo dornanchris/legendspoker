@@ -1,0 +1,302 @@
+{
+  "table": "athens",
+  "display_name": "Athens — The Symposium",
+  "tour_position": 2,
+  "champion": "odysseus",
+  "status": "draft",
+  "notes": {
+    "tone": "A drinking party that has argued itself into a question. Socrates is enjoying it, Leonidas is enduring it, Medusa is bored by it, the Cyclops has not followed it. The comedy is legends treating their own legends as ordinary.",
+    "difficulty": "Second table. The contempt is sharper than at the White House: the player is not a guest here, they are an exhibit. It turns when the table starts arguing WITH the player instead of ABOUT them.",
+    "dealer_plant": "The single 'the dealer arranged it' beat is at_plant_01 to at_plant_04. Do NOT add a second. It is also the only question Socrates ever declines to ask.",
+    "nickname": "Tier 1 is 'Nobody' — the false name Odysseus gave Polyphemus (Odyssey 9). It is the symposium's word for its test case, it is a running sore for the Cyclops, and Nobody -> {name} -> Hero is the answer to the table's question.",
+    "odysseus": "Arrives about 10 hands after the first elimination (tables/athens.json). Every line with speaker 'odysseus', and the cyclops_odysseus banter, fires only once he is seated. If the player clears the table first, champion_missed plays INSTEAD of champion_arrival / champion_headsup / champion_defeat's first line; Death's count line at_od_end_02 still closes the table.",
+    "medusa": "Her tells are inverted in the data. No line explains this. Lines may hint that watching her face teaches the wrong lesson; none may say so outright.",
+    "cyclops_eye": "Homer's Polyphemus is blinded by Odysseus. At this table the eye is scarred but works, and no line draws attention to it. He recognises Odysseus by VOICE on purpose, which reads correctly either way.",
+    "gods": "Gods are reserved for the sequel. They are only ever mentioned in passing ('my father', 'the sea-god', Ovid's Neptune and Minerva). None appears or speaks.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "Champion (Odysseus) + Death are voiced. Socrates / Leonidas / Medusa / the Cyclops are text + vocalization for now.",
+    "sources": "Homer (Odyssey 9, 11, 12, 17), Plato (Symposium, Apology, Phaedo), Herodotus (6.106, 6.120, 7.220), Plutarch (Sayings of Spartans), Hesiod (Theogony), Ovid (Metamorphoses 4). Nothing from the film 300."
+  },
+
+  "earned_names": {
+    "tier_1": "Nobody",
+    "tier_3": "Hero"
+  },
+
+  "respect_tiers": {
+    "0": "Contempt. The player is the question under discussion, not a person anyone speaks to.",
+    "1": "Grudging notice. Socrates names the test case 'Nobody'. The Cyclops objects.",
+    "2": "Real address. They argue WITH the player now, not about them.",
+    "3": "Title. Earned. The question is answered: Hero. Socrates says it first — he asked the question."
+  },
+
+  "table_intro": [
+    {
+      "id": "at_intro_01",
+      "speaker": "death",
+      "text": "A symposium. Couches, lamps, a bowl of wine and water, and an argument that has been going since dusk.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "at_intro_02",
+      "speaker": "death",
+      "text": "They asked for the best dealer. I was available.",
+      "trigger": "table_open",
+      "foreshadow": "Reads as dry self-regard. He is the dealer every mortal gets in the end, and he is always available."
+    },
+    {
+      "id": "at_intro_03",
+      "speaker": "death",
+      "text": "The question is whether a mortal nobody can be worth anything. They needed a nobody. Take the chair.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "at_plant_01",
+      "speaker": "leonidas",
+      "text": "Philosopher. Who chose this one?",
+      "trigger": "hand_04_start",
+      "sequence": "at_plant_02"
+    },
+    {
+      "id": "at_plant_02",
+      "speaker": "socrates",
+      "text": "The dealer arranged it.",
+      "sequence": "at_plant_03"
+    },
+    {
+      "id": "at_plant_03",
+      "speaker": "leonidas",
+      "text": "And you did not ask him why? You ask everyone why.",
+      "sequence": "at_plant_04"
+    },
+    {
+      "id": "at_plant_04",
+      "speaker": "socrates",
+      "text": "[glances at the dealer, then back to his cup, and lets it go]",
+      "type": "stage_direction",
+      "note": "THE SHRUG. The one man who questions everything does not question the dealer. The player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "socrates_leonidas": {
+      "relationship": "Athens against Sparta: talk against silence, and a long rivalry. Herodotus says the Spartans reached Marathon only after the battle, having waited for the full moon, and then went to look at the Persian dead and praised the Athenians. Plato has Socrates praise Sparta's laws, which a Spartan would find more suspicious than an insult.",
+      "exchanges": [
+        [
+          { "id": "at_so_le_01a", "speaker": "socrates", "text": "Tell me, King. When the Persians landed at Marathon, where was Sparta?" },
+          { "id": "at_so_le_01b", "speaker": "leonidas", "text": "Waiting for the full moon." },
+          { "id": "at_so_le_01c", "speaker": "socrates", "text": "And did the Persians wait for it too?" },
+          { "id": "at_so_le_01d", "speaker": "leonidas", "text": "We came afterwards. We said well done. Once." }
+        ],
+        [
+          { "id": "at_so_le_02a", "speaker": "leonidas", "text": "You have drunk every cup they poured you." },
+          { "id": "at_so_le_02b", "speaker": "socrates", "text": "And have I once seemed drunk to you?" },
+          { "id": "at_so_le_02c", "speaker": "leonidas", "text": "No. That is what I dislike about you." }
+        ],
+        [
+          { "id": "at_so_le_03a", "speaker": "socrates", "text": "You answer every question in a single word, King. Is that because the answer is simple, or because the question is?" },
+          { "id": "at_so_le_03b", "speaker": "leonidas", "text": "Yes." }
+        ]
+      ]
+    },
+
+    "cyclops_odysseus": {
+      "relationship": "Odyssey, Book 9. Odysseus walked into the Cyclops's cave, got him drunk, told him his name was Nobody, blinded him, and escaped clinging under his favourite ram — then shouted his real name from the boat. Polyphemus prayed to his father Poseidon, which is why the voyage home took ten years. Fires only once Odysseus is seated.",
+      "exchanges": [
+        [
+          { "id": "at_cy_od_01a", "speaker": "cyclops", "text": "You. Little man. Say your name." },
+          { "id": "at_cy_od_01b", "speaker": "odysseus", "text": "Nobody." },
+          { "id": "at_cy_od_01c", "speaker": "cyclops", "text": "[the table groans as he half rises]", "type": "stage_direction" },
+          { "id": "at_cy_od_01d", "speaker": "odysseus", "text": "A joke! It's Odysseus. I did tell you. From the boat." }
+        ],
+        [
+          { "id": "at_cy_od_02a", "speaker": "cyclops", "text": "I told my father what you did." },
+          { "id": "at_cy_od_02b", "speaker": "odysseus", "text": "Yes. I noticed. For ten years, I noticed." }
+        ],
+        [
+          { "id": "at_cy_od_03a", "speaker": "cyclops", "text": "A seer told me a man would take my eye. I watched for a big one. Handsome. Strong." },
+          { "id": "at_cy_od_03b", "speaker": "odysseus", "text": "Well. Two out of three." },
+          { "id": "at_cy_od_03c", "speaker": "cyclops", "text": "Which two?" }
+        ]
+      ]
+    },
+
+    "socrates_cyclops": {
+      "relationship": "The man of the marketplace and the giant with no marketplace: Homer says the Cyclopes hold no assemblies and have no laws. And when the oracle at Delphi was asked whether anyone was wiser than Socrates, it answered that no one was — which is the wrong way to put it in front of Polyphemus.",
+      "exchanges": [
+        [
+          { "id": "at_so_cy_01a", "speaker": "socrates", "text": "Someone once asked the oracle at Delphi who was wiser than me. The answer was: nobody." },
+          { "id": "at_so_cy_01b", "speaker": "cyclops", "text": "Do not say that word." },
+          { "id": "at_so_cy_01c", "speaker": "socrates", "text": "Which word? 'Wiser'?" }
+        ],
+        [
+          { "id": "at_so_cy_02a", "speaker": "socrates", "text": "Tell me, how do the Cyclopes make their laws?" },
+          { "id": "at_so_cy_02b", "speaker": "cyclops", "text": "No laws. Each one rules his own cave." },
+          { "id": "at_so_cy_02c", "speaker": "socrates", "text": "And if two of you want the same sheep?" },
+          { "id": "at_so_cy_02d", "speaker": "cyclops", "text": "Then there is one Cyclops." }
+        ]
+      ]
+    },
+
+    "leonidas_medusa": {
+      "relationship": "The man who is not afraid of anything, and the face that was made to cause fear — Greek soldiers painted it on their shields. Also, as Herodotus records, Leonidas's wife was named Gorgo.",
+      "exchanges": [
+        [
+          { "id": "at_le_me_01a", "speaker": "medusa", "text": "You are looking straight at me, Spartan." },
+          { "id": "at_le_me_01b", "speaker": "leonidas", "text": "Spartans do not look away." },
+          { "id": "at_le_me_01c", "speaker": "medusa", "text": "No. In my experience, they stop looking all at once." }
+        ],
+        [
+          { "id": "at_le_me_02a", "speaker": "leonidas", "text": "My wife's name is Gorgo." },
+          { "id": "at_le_me_02b", "speaker": "medusa", "text": "Is it. And is she frightening?" },
+          { "id": "at_le_me_02c", "speaker": "leonidas", "text": "She is Spartan." }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "at_p0_01", "speaker": "socrates", "text": "So this is what we have been arguing about all night. It is smaller than I pictured." },
+      { "id": "at_p0_02", "speaker": "leonidas", "text": "In Sparta the elders look at every newborn. They would have had questions about you." },
+      { "id": "at_p0_03", "speaker": "cyclops", "text": "Small. Soft. I have eaten bigger guests than this." },
+      { "id": "at_p0_04", "speaker": "medusa", "text": "Go on, look at me. Everyone does, once." },
+      { "id": "at_p0_05", "speaker": "leonidas", "text": "[turns his shoulder to the player]", "type": "stage_direction" }
+    ],
+    "tier_1": [
+      { "id": "at_p1_01", "speaker": "socrates", "text": "Well. You are not nothing, it seems. Then let us call you Nobody, and see what Nobody can do.", "note": "The announcement. Speaks the nickname literally." },
+      { "id": "at_p1_02", "speaker": "cyclops", "text": "Nobody. Of all the names. I hate that name.", "note": "Odysseus told him his name was Nobody before blinding him (Odyssey 9)." },
+      { "id": "at_p1_03", "speaker": "leonidas", "text": "You stood when you were pushed. Barely. It is more than most Athenians manage." },
+      { "id": "at_p1_04", "speaker": "medusa", "text": "You looked away at the right moment. Most people learn that too late." }
+    ],
+    "tier_2": [
+      { "id": "at_p2_01", "speaker": "socrates", "text": "{name}. I withdraw 'Nobody'. The evidence no longer supports it.", "note": "First use of the player's real name. Socrates named the test case, so he retires the name." },
+      { "id": "at_p2_02", "speaker": "medusa", "text": "You don't flinch from me any more. Or stare. Either one would have been a mistake." },
+      { "id": "at_p2_03", "speaker": "cyclops", "text": "You are small. But you are not soft." },
+      { "id": "at_p2_04", "speaker": "odysseus", "text": "I was Nobody once myself. It's an excellent place to start from.", "note": "Only if Odysseus is seated." }
+    ],
+    "tier_3": [
+      { "id": "at_p3_01", "speaker": "socrates", "text": "Hero. The question is settled, and against me. I have always enjoyed being refuted.", "note": "Socrates gives the title because he asked the question. If he is already out, at_p3_04 (Odysseus) also opens with the title and can carry the announcement. Plato's Socrates says he would rather be refuted than refute (Gorgias)." },
+      { "id": "at_p3_02", "speaker": "leonidas", "text": "In Sparta, praise is one word. Good." },
+      { "id": "at_p3_03", "speaker": "medusa", "text": "Perseus had a mirror, and help. You had neither." },
+      { "id": "at_p3_04", "speaker": "odysseus", "text": "Hero. Careful. The next thing they do is send you somewhere far away for twenty years.", "note": "Only if Odysseus is seated." }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "at_death_01", "speaker": "death", "text": "Take your time. At Potidaea, Socrates stood thinking from one dawn to the next. Soldiers brought their bedding out to watch.", "trigger": "player_thinking_long", "note": "True: Plato, Symposium 220c-d." },
+    { "id": "at_death_02", "speaker": "death", "text": "The Greeks would blame three sisters with a thread. I only shuffled.", "trigger": "player_bad_beat" },
+    { "id": "at_death_03", "speaker": "death", "text": "Twenty years getting home. He can stand to lose a pot.", "trigger": "champion_loses_pot" },
+    { "id": "at_death_04", "speaker": "death", "text": "One chair empty. Someone has been expected for some time.", "trigger": "first_elimination", "note": "Starts the clock on Odysseus's arrival." },
+    { "id": "at_death_05", "speaker": "death", "text": "In Athens they voted people out with broken pottery. You have found a quicker way.", "trigger": "player_eliminates", "note": "Ostracism: names scratched on potsherds." },
+    { "id": "at_death_06", "speaker": "death", "text": "All of it. The Greeks had a word for this. Two, depending on how it goes.", "trigger": "player_all_in" },
+    {
+      "id": "at_death_07",
+      "speaker": "death",
+      "text": "Two left. They always think this is the last table.",
+      "trigger": "headsup_start",
+      "foreshadow": "Reads as poker talk, or fatalism about mortals. The last table is his, and they are always wrong about which one it is."
+    }
+  ],
+
+  "champion_arrival": [
+    {
+      "id": "at_arr_01",
+      "speaker": "narration",
+      "text": "The street door opens on a gust of salt air. A weathered man stands in it, dripping on the floor, and counts the exits before he counts the guests.",
+      "trigger": "champion_arrival",
+      "sequence": "at_arr_02"
+    },
+    {
+      "id": "at_arr_02",
+      "speaker": "odysseus",
+      "text": "Forgive me. I was held up. There was a whirlpool, and then an island, and the island took seven years.",
+      "sequence": "at_arr_03",
+      "note": "Charybdis, then Calypso's island (Odyssey 12, 7)."
+    },
+    {
+      "id": "at_arr_03",
+      "speaker": "cyclops",
+      "text": "I know that voice.",
+      "sequence": "at_arr_04",
+      "note": "The grudge payoff. If the Cyclops is already out, end the sequence at at_arr_02."
+    },
+    {
+      "id": "at_arr_04",
+      "speaker": "odysseus",
+      "text": "Do you? I have one of those voices."
+    }
+  ],
+
+  "champion_missed": [
+    {
+      "id": "at_miss_01",
+      "speaker": "narration",
+      "text": "The street door opens on a gust of salt air. A weathered man stands in it, dripping, and looks at an empty table.",
+      "trigger": "champion_missed",
+      "sequence": "at_miss_02"
+    },
+    {
+      "id": "at_miss_02",
+      "speaker": "odysseus",
+      "text": "Over? Already? I was told dusk. Nobody said which dusk.",
+      "sequence": "at_miss_03"
+    },
+    {
+      "id": "at_miss_03",
+      "speaker": "odysseus",
+      "text": "Well. Next time save me a chair, and don't win quite so quickly.",
+      "note": "Mildly put out, not angry. The visible cost of the skip: he is greyed out in the ledger until the table is replayed. Death's count line at_od_end_02 follows."
+    }
+  ],
+
+  "champion_headsup": [
+    { "id": "at_od_hu_01", "speaker": "odysseus", "text": "Just the two of us. Good. I've talked my way out of worse rooms with fewer friends.", "trigger": "headsup_start" },
+    { "id": "at_od_hu_02", "speaker": "odysseus", "text": "I came home dressed as a beggar once. The only one who knew me on sight was the dog." },
+    { "id": "at_od_hu_03", "speaker": "odysseus", "text": "I had myself tied to a mast once, to hear a song and not die of it. This is easier. Slightly." },
+    { "id": "at_od_hu_04", "speaker": "odysseus", "text": "Oh, well done. Truly. I'd have tried that myself.", "trigger": "player_wins_pot" }
+  ],
+
+  "eliminated": {
+    "socrates": [
+      { "id": "at_so_out_01", "speaker": "socrates", "text": "Out. Good — now I can ask questions without anyone suspecting a motive." },
+      { "id": "at_so_out_02", "speaker": "socrates", "text": "I have left gatherings in worse circumstances. Someone remember that I owe a rooster.", "note": "His last words in the Phaedo: a debt of a cockerel to Asclepius." }
+    ],
+    "leonidas": [
+      { "id": "at_le_out_01", "speaker": "leonidas", "text": "Beaten. Not routed." },
+      { "id": "at_le_out_02", "speaker": "leonidas", "text": "[takes up his helmet and goes without a word]", "type": "stage_direction" }
+    ],
+    "medusa": [
+      { "id": "at_me_out_01", "speaker": "medusa", "text": "Don't watch me go. It never ends well for anyone who does." },
+      { "id": "at_me_out_02", "speaker": "medusa", "text": "Well. At least this time I keep my head." }
+    ],
+    "cyclops": [
+      { "id": "at_cy_out_01", "speaker": "cyclops", "text": "Nobody beat me! Nobody!", "note": "What he shouted to the other Cyclopes, who went home (Odyssey 9)." },
+      { "id": "at_cy_out_02", "speaker": "cyclops", "text": "I go back to my sheep. Sheep do not cheat." }
+    ],
+    "odysseus": [
+      { "id": "at_od_out_01", "speaker": "odysseus", "text": "Well. I've been shipwrecked before. I'll wash up somewhere." },
+      { "id": "at_od_out_02", "speaker": "odysseus", "text": "I'm going home. It may take a while." }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "at_bust_01", "speaker": "death", "text": "Sit a while. The argument is not over, and they will want their test case back." },
+    { "id": "at_bust_02", "speaker": "socrates", "text": "Don't be downcast. One result is not a proof. Come back, and we will examine it again." },
+    { "id": "at_bust_03", "speaker": "leonidas", "text": "You fell facing forward. That counts." }
+  ],
+
+  "champion_defeat": [
+    { "id": "at_od_end_01", "speaker": "odysseus", "text": "Well played. I've lost twelve ships in my time. I can lose a table." },
+    {
+      "id": "at_od_end_02",
+      "speaker": "death",
+      "text": "Two. Six remain. Take the long way round, if you like. Everyone arrives in the end.",
+      "foreshadow": "Sounds like a nod to Odysseus's voyage. Everyone does arrive in the end — at him.",
+      "note": "Also closes the table after champion_missed."
+    }
+  ]
+}

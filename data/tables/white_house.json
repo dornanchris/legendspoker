@@ -1,0 +1,34 @@
+{
+  "writer_notes": "FDR is written as the hard-to-read one (design doc: socially deceptive), but his dials make him barely harder to read than Lincoln: noise 0.12 vs 0.10, tell reliability 0.78-0.80 vs 0.82-0.86. That may be right for a beginner table; if he is meant to be the table's first lesson in unreadability, his noise could go up a step. Not changed.",
+  "id": "white_house",
+  "kind": "tour",
+  "position": 1,
+  "name": "The White House",
+  "seats": [
+    "lincoln",
+    "roosevelt",
+    "fdr",
+    "washington"
+  ],
+  "champion": "washington",
+  "arrival": null,
+  "handsPerLevel": 25,
+  "dialogue": "table-01-white-house.json",
+  "buyIn": 2000,
+  "respectStart": 0,
+  "place": "Washington, D.C.",
+  "region": "United States",
+  "era": "Every administration at once",
+  "teaser": "Four presidents at one table. The first never lived here.",
+  "hook": "You have been seated at a private game in the President's house, among men who have each run the country. They have agreed to deal you in, and to make sure you feel it.",
+  "room": "An oval drawing room upstairs, curtains drawn, a fire under a marble mantel with a clock on it. Portraits of all four players hang on the walls and watch their subjects play. Green felt, brass lamps, and cigar smoke gathering under a high white ceiling.",
+  "music": "Chamber strings and a parlour piano, stately and restrained, with a quiet march underneath at a walking tempo.",
+  "entrance": "Washington is seated at the head of the table from the first hand. He does not speak, and does not need to.",
+  "ambience": [
+    "fire crackle",
+    "mantel clock ticking",
+    "rain on tall sash windows",
+    "footsteps in a far corridor"
+  ],
+  "presence": null
+}

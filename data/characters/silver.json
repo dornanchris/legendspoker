@@ -1,0 +1,66 @@
+{
+  "id": "silver",
+  "name": "Long John Silver",
+  "short": "Silver",
+  "epithet": "The Sea-Cook",
+  "pronoun": "he",
+  "table": "pirate_cove",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "Treasure Island (Stevenson, 1883) · ship's cook",
+  "dials": {
+    "aggression": 0.5,
+    "tightness": 0.5,
+    "bluffFrequency": 0.3,
+    "tiltSensitivity": 0.1,
+    "adaptivity": 0.65,
+    "noise": 0.2
+  },
+  "quirks": [
+    {
+      "type": "punish_passivity",
+      "foldRate": 0.5,
+      "chance": 0.6,
+      "potFraction": 0.66
+    }
+  ],
+  "tells": [
+    {
+      "signal": "parrot_squawks",
+      "text": "his parrot squawks 'Pieces of eight!'",
+      "correlate": "strong",
+      "reliability": 0.76
+    },
+    {
+      "signal": "parrot_sidles",
+      "text": "his parrot sidles along his shoulder",
+      "correlate": "bluffing",
+      "reliability": 0.75
+    },
+    {
+      "signal": "strokes_parrot",
+      "text": "strokes the parrot's head",
+      "correlate": "weak",
+      "reliability": 0.76
+    }
+  ],
+  "idles": [
+    "the parrot preens",
+    "grins at everyone at once",
+    "raps his crutch against the table leg",
+    "wipes his hands on his apron"
+  ],
+  "profile": {
+    "ledger": "Changed sides on one island, then changed back, and came out ahead both times. Left with a bag of coin. I am still waiting.",
+    "ledger_beaten": "Lost the pot, kept the smile. I would count your chips.",
+    "history": [
+      "Long John Silver is the ship's cook on the Hispaniola in Robert Louis Stevenson's Treasure Island (1883), signed on for a voyage to dig up Captain Flint's buried gold. He is tall, one-legged, quick on a crutch, and liked by everyone who meets him — until young Jim Hawkins, hiding in an apple barrel, hears him planning mutiny. Silver was Flint's quartermaster. He leads the rising, loses control of it, changes sides to save his neck, and at the end slips away with a bag of coin.",
+      "What makes him a person is the parrot. Captain Flint, named after the old buccaneer, shrieks 'Pieces of eight!' — and once, in the dark, gave Jim away by doing it. Silver says she may be two hundred years old. He is kind and ruthless in the same breath and means both. He sits at this table because there is a pot in the middle of it, and because a man who can change sides is never quite losing."
+    ],
+    "at_the_table": "Friendly, talkative, and paying attention the whole time. He plays a middling number of hands and never seems to hurry; what he is really doing is watching who gives up. Once the table has been folding too easily, he starts betting whenever it is checked to him, whatever he holds. Losing does not seem to bother him at all — or he makes very sure it does not look that way.",
+    "look": "Silhouette: very tall and broad, a big pale smiling face, a cook's apron over a sailor's coat, the top of a crutch under one arm — and the parrot on his shoulder, the brightest, busiest thing at the table. Everything else distinctive about him is below the table's edge. Prop: Captain Flint, the parrot — she preens, sidles and shrieks, and she is the part of him that moves.",
+    "prop": "Captain Flint, his parrot",
+    "public_domain": "Stevenson's Treasure Island (1883) is public domain. Avoid Robert Newton's performance in Disney's 1950 film — his rolling West Country 'Arr!' now owns the pirate voice — and the Muppet, Treasure Planet and Black Sails Silvers. The book gives us enough: tall, pale, smiling, one leg, a crutch, and a parrot."
+  }
+}

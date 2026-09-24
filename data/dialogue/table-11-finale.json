@@ -1,0 +1,166 @@
+{
+  "table": "finale",
+  "display_name": "The Last Crossing",
+  "tour_position": 11,
+  "champion": "death",
+  "status": "draft",
+  "notes": {
+    "tone": "The quietest room in the game. After eight theatrical bosses, the last one is calm. Death is lit like a person and talks like one: tired, dry, faintly bored, never theatrical, and he still never lies. Understatement everywhere; the room does the rest.",
+    "reveal": "table_intro IS the reveal. The dealer, the one constant all game, is sitting in a player's chair. Nobody explains it. He gets one dry line about the location and then asks to be dealt in.",
+    "dealer": "Who deals this table is deliberately left unstated in every line, so either choice works (the design doc suggests a reskin of the dealer character; heads-up players dealing in turn also fits the empty room). 'Tonight I would like to be dealt in' is true either way.",
+    "no_permadeath": "Losing here costs nothing but the attempt. player_busted keeps the door open; rematch_ladder plays on the NEXT visit, keyed by attempt number ('5' covers five and beyond), and escalates toward interest, not boredom.",
+    "title": "'Colleague' (tier 3, the starting tier) reads as one card player to another. After champion_defeat it is literal. Do not swap it for anything that says successor, heir or replacement.",
+    "ending": "champion_defeat hands straight into story.json's ending. Death hands over the deck: the story reward and the mechanical reward (Death unlocked) are the same event. Keep it quiet.",
+    "dealer_plant": "None. The dealer is the opponent.",
+    "leak_rule": "No line may reference hand strength while cards are live. Death has no tells; nothing here should imply one.",
+    "voice": "Death only. No contractions in his lines, as everywhere else."
+  },
+
+  "earned_names": {
+    "tier_1": "tourist",
+    "tier_3": "Colleague"
+  },
+
+  "respect_tiers": {
+    "0": "Never reached in practice. He does not look at the player.",
+    "1": "Dismissal: 'tourist'. Never reached in practice.",
+    "2": "The player's own name, as signed on the invitation.",
+    "3": "Starting tier. 'Colleague' — how he addresses an equal."
+  },
+
+  "table_intro": [
+    {
+      "id": "fn_intro_01",
+      "speaker": "narration",
+      "text": "A dock house on the near bank, at night. Rain on the windows. One lamp. Far out on the black water, a ferryman's lantern is taking someone else across.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "fn_intro_02",
+      "speaker": "narration",
+      "text": "[The dealer is already here — not in the dealer's place, but in the chair across from yours. Forearms on the wood, in the lamplight, waiting.]",
+      "type": "stage_direction",
+      "trigger": "table_open"
+    },
+    {
+      "id": "fn_intro_03",
+      "speaker": "death",
+      "text": "What, did you think I lived in Hell?",
+      "trigger": "table_open"
+    },
+    {
+      "id": "fn_intro_04",
+      "speaker": "death",
+      "text": "I have dealt every hand you have played, and every hand anyone else ever has. Tonight I would like to be dealt in.",
+      "trigger": "table_open",
+      "note": "The reveal, said as plainly as a man asking for a chair."
+    },
+    {
+      "id": "fn_intro_05",
+      "speaker": "death",
+      "text": "Sit down. Nobody else is coming. It is just the two of us, and the rain.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "rematch_ladder": {
+    "2": [
+      { "id": "fn_rematch_2_01", "speaker": "death", "text": "Everyone knows you cannot cheat death. Or should I say — you cannot cheat me." },
+      { "id": "fn_rematch_2_02", "speaker": "death", "text": "Sit down. It was a reasonable attempt. Most first attempts are." }
+    ],
+    "3": [
+      { "id": "fn_rematch_3_01", "speaker": "death", "text": "Third time. Very few people come back twice. I had begun to wonder whether you would." },
+      { "id": "fn_rematch_3_02", "speaker": "death", "text": "I have been thinking about our last game. I do not usually think about games afterwards." }
+    ],
+    "4": [
+      { "id": "fn_rematch_4_01", "speaker": "death", "text": "Four. I kept your chair dry." },
+      { "id": "fn_rematch_4_02", "speaker": "death", "text": "I find I have been looking forward to this. I had forgotten that I could." }
+    ],
+    "5": [
+      { "id": "fn_rematch_5_01", "speaker": "death", "text": "You again. Good. I had not expected to be glad of anything again." },
+      { "id": "fn_rematch_5_02", "speaker": "death", "text": "Sit down. I stopped thinking of this as a formality some time ago." }
+    ]
+  },
+
+  "dealer_plant": [],
+
+  "banter_pairs": {},
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "fn_p0_01", "speaker": "death", "text": "[looks at the rain instead of at the player]", "type": "stage_direction" }
+    ],
+    "tier_1": [
+      { "id": "fn_p1_01", "speaker": "death", "text": "Sit down, tourist. You have seen the sights." }
+    ],
+    "tier_2": [
+      { "id": "fn_p2_01", "speaker": "death", "text": "{name}. You signed the card very neatly. I noticed." }
+    ],
+    "tier_3": [
+      {
+        "id": "fn_p3_01",
+        "speaker": "death",
+        "text": "Colleague.",
+        "foreshadow": "Reads as one card player to another. After the last hand, it is simply accurate."
+      },
+      { "id": "fn_p3_02", "speaker": "death", "text": "You play like someone who has been paying attention. Most people only start at the very end." },
+      { "id": "fn_p3_03", "speaker": "death", "text": "They all ask me for something at the end. More time, mostly. You have not asked me for anything." },
+      { "id": "fn_p3_04", "speaker": "death", "text": "I have not enjoyed a game in a very long time. Do not let it go to your head." }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "fn_death_01", "speaker": "death", "text": "Take your time. I have always had plenty. I am beginning to wonder what I was keeping it for.", "trigger": "player_thinking_long", "note": "Answers his first aside of the tour ('Take your time. I have nothing but.')." },
+    { "id": "fn_death_02", "speaker": "death", "text": "Everyone gets the same fifty-two. Even now. Even me.", "trigger": "player_bad_beat", "note": "Callback to the White House." },
+    { "id": "fn_death_03", "speaker": "death", "text": "Hm. So that is what that is like.", "trigger": "champion_loses_pot", "note": "The first pot he has ever lost. He has never played one before." },
+    { "id": "fn_death_04", "speaker": "death", "text": "All of it. I have watched a great many people do that. It looks different from this side of the table.", "trigger": "player_all_in" },
+    { "id": "fn_death_05", "speaker": "death", "text": "Blinds up. Somebody has to keep the game moving. It has always been me.", "trigger": "blinds_up" },
+    { "id": "fn_death_06", "speaker": "death", "text": "That was a good deal of my stack. I had not expected to mind.", "trigger": "player_wins_big_pot" }
+  ],
+
+  "champion_headsup": [
+    { "id": "fn_hu_01", "speaker": "death", "text": "Two players, one deck. That is how it nearly always ends. I have simply never been one of the two.", "trigger": "headsup_start" },
+    { "id": "fn_hu_02", "speaker": "death", "text": "Well played. I had wondered whether you would find that.", "trigger": "player_wins_pot" },
+    { "id": "fn_hu_03", "speaker": "death", "text": "If you are looking for my tells, you are not the first. People have looked." },
+    { "id": "fn_hu_04", "speaker": "death", "text": "I have watched every hand you have ever played. This is the first of mine you have seen." },
+    { "id": "fn_hu_05", "speaker": "death", "text": "I remember every hand ever dealt. You would think it would help more than it does." },
+    { "id": "fn_hu_06", "speaker": "death", "text": "Do not watch the water. He is not there for you." },
+    { "id": "fn_hu_07", "speaker": "death", "text": "It is strange, holding cards. I have handed out so many." }
+  ],
+
+  "eliminated": {
+    "death": [
+      { "id": "fn_out_death_01", "speaker": "death", "text": "Ah. There it is." }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "fn_bust_01", "speaker": "death", "text": "That is all of your chips. It is not all of you." },
+    { "id": "fn_bust_02", "speaker": "death", "text": "Closer than most. I do not say that to be kind; I have never really known how." },
+    { "id": "fn_bust_03", "speaker": "death", "text": "Go and get warm. The chair will be here. So will I." },
+    { "id": "fn_bust_04", "speaker": "narration", "text": "[He is already shuffling for the next game.]", "type": "stage_direction" }
+  ],
+
+  "champion_defeat": [
+    {
+      "id": "fn_end_01",
+      "speaker": "narration",
+      "text": "[He looks at the last card for a long moment. Then he gathers the deck, squares it once, the way he has squared it at every table, and slides it across to you.]",
+      "type": "stage_direction"
+    },
+    {
+      "id": "fn_end_02",
+      "speaker": "death",
+      "text": "Your deal.",
+      "note": "Two words. In poker, 'your deal' means it is your turn with the cards. Here it also means the job is yours. No fanfare."
+    },
+    { "id": "fn_end_03", "speaker": "death", "text": "It does not get any lighter. You stop noticing." },
+    { "id": "fn_end_04", "speaker": "death", "text": "Deal to all of them the same. Kings, pirates, machines, people nobody remembers. That is the whole of the job. The rest is weather." },
+    {
+      "id": "fn_end_05",
+      "speaker": "narration",
+      "text": "[He gets up, slowly, and goes out into the rain without looking back. The lamp is still lit.]",
+      "type": "stage_direction"
+    }
+  ]
+}

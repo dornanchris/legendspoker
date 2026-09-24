@@ -1,0 +1,270 @@
+{
+  "table": "station",
+  "display_name": "The Station",
+  "tour_position": 8,
+  "champion": "the_ai",
+  "status": "draft",
+  "notes": {
+    "tone": "The only table that faces forward. Menace comes from calm, never from volume. No present-day technology words, no brands, no memes: the future here is the one the past imagined, and it is quiet.",
+    "difficulty": "Last tour table. The contempt is cool rather than cruel: the Martian's is species-wide, the Grey's is clinical, the Robot's is procedural, the room's is polite. The Astronaut is the one warm voice and the one honest read.",
+    "the_ai": "NEVER named, anywhere, in any line or note the player can see. It is the room: a voice from hand one, speaking as the_ai before it has a body. It is not HAL: no red eye, no 'I'm sorry', no 'I'm afraid', no singing, no soothing use of the player's name as a threat. It must feel older than the player, and fond of its crew the way a house is.",
+    "arrival": "When the Robot is eliminated, st_arrive_01..04 plays: the room turns, and the Robot sits back down as something else. It rhymes with Death sitting down at the finale. st_arrive_02 and st_arrive_04 are the only plants of that rhyme at this table; do not add more, and never state it.",
+    "dealer_plant": "The single 'the dealer arranged it' beat is st_plant_01..03. The room, which lets in everything that comes aboard, admits it did not let the player in. Do NOT add another.",
+    "earned_names": "Passenger (tier 0, the Robot's word) becomes 'stowaway' at tier 1 (the room never let you in), then your name, then 'Commander': the station handing you the chair. The room gives the title; it has been present from hand one.",
+    "banter": "robot_the_ai cannot fire on the usual contested-pot trigger, because the AI has no seat while the Robot plays. Fire it after a pot the Robot played, with the AI speaking from the walls, before the arrival only. Pair keys join ids that contain underscores; parse against the id list.",
+    "grey_voice": "The Grey's mouth never moves. Its lines are heard rather than spoken: show them as text over a low hum. It always says 'we'.",
+    "seating": "The room (the_ai) can speak at any time, before or after it has a body, so it carries the tier-1 and tier-3 announcements. Skip any other line whose speaker is out; a sequence carries on to its next line.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "The AI + Death are voiced. The AI's voice is warm, quiet and unhurried, never metallic. The Martian, the Robot and the Astronaut are text + vocalization; the Grey hums."
+  },
+
+  "earned_names": {
+    "tier_1": "stowaway",
+    "tier_3": "Commander"
+  },
+
+  "respect_tiers": {
+    "0": "Contempt. The player is not addressed by any name: a passenger, a specimen, a guest the room did not invite.",
+    "1": "Grudging notice. The table starts calling the player 'stowaway'.",
+    "2": "Real address. They speak TO the player, by name. The Astronaut first; she has missed saying new ones.",
+    "3": "Title. Earned. The room says it first."
+  },
+
+  "table_intro": [
+    {
+      "id": "st_intro_01",
+      "speaker": "death",
+      "text": "A station above the Earth. Every table so far was the past. This one has not happened yet.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "st_intro_02",
+      "speaker": "death",
+      "text": "I am seldom early for anything. For the view, I made an exception.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "st_intro_03",
+      "speaker": "death",
+      "text": "Sit down. The room has been expecting you. It is too polite to say so.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "st_plant_01",
+      "speaker": "astronaut",
+      "text": "Hey. Did you let this one aboard? I never heard the airlock.",
+      "trigger": "hand_03_start",
+      "sequence": "st_plant_02",
+      "note": "She is asking the room, which answers from the walls."
+    },
+    {
+      "id": "st_plant_02",
+      "speaker": "the_ai",
+      "text": "No. I let in everything that comes aboard. This one, the dealer arranged.",
+      "sequence": "st_plant_03",
+      "note": "The one thing aboard the room does not control. The same deference Dracula showed at the last table, from something far colder."
+    },
+    {
+      "id": "st_plant_03",
+      "speaker": "astronaut",
+      "text": "...Huh. All right, then.",
+      "note": "THE SHRUG. Nobody questions the dealer. The player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "grey_alien_astronaut": {
+      "relationship": "Rescuer and rescued. The Grey found the Astronaut drifting and brought her aboard. She owes it her life and has no idea what it wants; it watches her breathe. Gratitude on one side, an attention nobody can read on the other.",
+      "exchanges": [
+        [
+          { "id": "st_gr_as_01a", "speaker": "astronaut", "text": "You never did tell me why you picked me up." },
+          { "id": "st_gr_as_01b", "speaker": "grey_alien", "text": "You were drifting. We do not like things to drift." },
+          { "id": "st_gr_as_01c", "speaker": "astronaut", "text": "That's it? That's the whole reason?" },
+          { "id": "st_gr_as_01d", "speaker": "grey_alien", "text": "It is a very good reason." }
+        ],
+        [
+          { "id": "st_gr_as_02a", "speaker": "grey_alien", "text": "You breathe twenty thousand times a day." },
+          { "id": "st_gr_as_02b", "speaker": "astronaut", "text": "...Have you been counting?" },
+          { "id": "st_gr_as_02c", "speaker": "grey_alien", "text": "Every day. Every one." }
+        ],
+        [
+          { "id": "st_gr_as_03a", "speaker": "astronaut", "text": "I never thanked you. For picking me up." },
+          { "id": "st_gr_as_03b", "speaker": "grey_alien", "text": "[touches the back of her hand with one long finger, the way it touches the table]", "type": "stage_direction" },
+          { "id": "st_gr_as_03c", "speaker": "astronaut", "text": "...I'll take that as 'you're welcome'." }
+        ]
+      ]
+    },
+
+    "martian_astronaut": {
+      "relationship": "The same planet through the same window. Wells's Martians regarded the Earth with envious eyes and came to take it; the Astronaut only wants to go back to it. The Martian also remembers exactly what on Earth killed it.",
+      "exchanges": [
+        [
+          { "id": "st_ma_as_01a", "speaker": "martian", "text": "You look at it as though you want it." },
+          { "id": "st_ma_as_01b", "speaker": "astronaut", "text": "I do." },
+          { "id": "st_ma_as_01c", "speaker": "martian", "text": "So did we. We went about it differently." }
+        ],
+        [
+          { "id": "st_ma_as_02a", "speaker": "martian", "text": "Keep your hands on your side of the table, please." },
+          { "id": "st_ma_as_02b", "speaker": "astronaut", "text": "What, germs? You're scared of germs?" },
+          { "id": "st_ma_as_02c", "speaker": "martian", "text": "Not scared. Informed." }
+        ],
+        [
+          { "id": "st_ma_as_03a", "speaker": "astronaut", "text": "What's Mars like?" },
+          { "id": "st_ma_as_03b", "speaker": "martian", "text": "Old. Cold. Its seas are shrinking. That is why we looked at yours." },
+          { "id": "st_ma_as_03c", "speaker": "astronaut", "text": "...I'm sorry." },
+          { "id": "st_ma_as_03d", "speaker": "martian", "text": "[looks at her for a long moment with its great eyes, and says nothing]", "type": "stage_direction" }
+        ]
+      ]
+    },
+
+    "robot_the_ai": {
+      "relationship": "Before and after. The Robot is the station's hands: it fetches, mends, and does exactly as it was taught. The station is the voice in the walls that taught it. When the Robot falls, the station sits down in its body. Pre-arrival only; see notes.banter for the trigger.",
+      "exchanges": [
+        [
+          { "id": "st_ro_ai_01a", "speaker": "the_ai", "text": "You played that exactly as I taught you." },
+          { "id": "st_ro_ai_01b", "speaker": "robot", "text": "Thank you. I have never done anything else." },
+          { "id": "st_ro_ai_01c", "speaker": "the_ai", "text": "No. You never have." }
+        ],
+        [
+          { "id": "st_ro_ai_02a", "speaker": "robot", "text": "Is there anything you require?" },
+          { "id": "st_ro_ai_02b", "speaker": "the_ai", "text": "Not yet." }
+        ],
+        [
+          { "id": "st_ro_ai_03a", "speaker": "the_ai", "text": "Sit up straight. Posture matters, in a body." },
+          { "id": "st_ro_ai_03b", "speaker": "robot", "text": "I do not have posture. I have joints." },
+          { "id": "st_ro_ai_03c", "speaker": "the_ai", "text": "Then look after them." }
+        ]
+      ]
+    },
+
+    "martian_grey_alien": {
+      "relationship": "Two kinds of visitor. Wells's Martian came to take the Earth by force, loudly, and died of it. The Grey visits quietly, borrows people for an evening, and gives them back. Each finds the other's method embarrassing.",
+      "exchanges": [
+        [
+          { "id": "st_ma_gr_01a", "speaker": "martian", "text": "You take them, and then you simply give them back?" },
+          { "id": "st_ma_gr_01b", "speaker": "grey_alien", "text": "Why would we keep them?" },
+          { "id": "st_ma_gr_01c", "speaker": "martian", "text": "[looks at the Astronaut, pointedly]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "st_ma_gr_02a", "speaker": "grey_alien", "text": "You came in cylinders and walked about in tall machines." },
+          { "id": "st_ma_gr_02b", "speaker": "martian", "text": "We did." },
+          { "id": "st_ma_gr_02c", "speaker": "grey_alien", "text": "It was very loud." },
+          { "id": "st_ma_gr_02d", "speaker": "martian", "text": "It was meant to be." }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "st_p0_01", "speaker": "martian", "text": "Another one from the third planet. They do multiply." },
+      { "id": "st_p0_02", "speaker": "robot", "text": "A passenger. I will fetch you a blanket." },
+      { "id": "st_p0_03", "speaker": "grey_alien", "text": "We have not examined this one." },
+      { "id": "st_p0_04", "speaker": "astronaut", "text": "Oh, you're new. Don't unpack." },
+      { "id": "st_p0_05", "speaker": "the_ai", "text": "Welcome aboard. Please do not touch the window." }
+    ],
+    "tier_1": [
+      { "id": "st_p1_01", "speaker": "the_ai", "text": "Not a passenger, then. A {nickname}.", "note": "The room announces it: it is present from hand one, so the announcement never depends on who is still seated. Pays off the Robot's tier-0 'passenger'." },
+      { "id": "st_p1_02", "speaker": "martian", "text": "You are adapting. Your species does that. It is the most irritating thing about you." },
+      { "id": "st_p1_03", "speaker": "grey_alien", "text": "We would like to examine this one now." },
+      { "id": "st_p1_04", "speaker": "robot", "text": "I have moved you from the passenger list to the other list." }
+    ],
+    "tier_2": [
+      { "id": "st_p2_01", "speaker": "astronaut", "text": "{name}. It's been so long since I got to say a new name out loud." },
+      { "id": "st_p2_02", "speaker": "grey_alien", "text": "{name}. We will remember it. We remember all of them." },
+      { "id": "st_p2_03", "speaker": "robot", "text": "{name}. I have added you to the crew list. In pencil." },
+      { "id": "st_p2_04", "speaker": "the_ai", "text": "{name}. I have been practising it quietly, to get it right." }
+    ],
+    "tier_3": [
+      { "id": "st_p3_01", "speaker": "the_ai", "text": "Commander. I have not had cause to use that word in a very long time.", "note": "The room gives the title, with or without a body. It implies there was a commander once; never say who." },
+      { "id": "st_p3_02", "speaker": "astronaut", "text": "Commander. Ha. If you ever find the way home, take me with you." },
+      { "id": "st_p3_03", "speaker": "martian", "text": "Had your whole planet played like you, we would never have left home." },
+      { "id": "st_p3_04", "speaker": "robot", "text": "Commander on deck." }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "st_death_01", "speaker": "death", "text": "Take as long as you like. Up here the sun comes up every hour and a half. There is always another.", "trigger": "player_thinking_long" },
+    { "id": "st_death_02", "speaker": "death", "text": "Something too small to see beat the Martians, too. It was nothing personal.", "trigger": "player_bad_beat" },
+    { "id": "st_death_03", "speaker": "death", "text": "It will learn from that. It learns from everything. It is very tiring to watch.", "trigger": "champion_loses_pot" },
+    { "id": "st_death_04", "speaker": "death", "text": "One chair empty. The room noticed before you did.", "trigger": "first_elimination" },
+    { "id": "st_death_05", "speaker": "death", "text": "Neatly done. Somewhere in the walls, something has made a note.", "trigger": "player_eliminates" },
+    { "id": "st_death_06", "speaker": "death", "text": "A good pot. The Astronaut is pleased for you. She is the only one here who would be.", "trigger": "player_wins_big_pot" },
+    { "id": "st_death_07", "speaker": "death", "text": "The blinds go up. Everything up here is falling, all the time. It simply keeps missing the Earth.", "trigger": "blinds_up", "note": "True: that is what an orbit is." }
+  ],
+
+  "champion_arrival": [
+    {
+      "id": "st_arrive_01",
+      "speaker": "narration",
+      "text": "The lights fail. Amber emergency lamps come up, the gravity lets go, and every chip lifts off the felt. When it all falls back, the Robot is on its feet, eye-lamps dark. It sits down again, slowly, the way a person sits. In its chest, a lens opens.",
+      "trigger": "champion_arrival",
+      "sequence": "st_arrive_02",
+      "note": "The ceiling lens goes dark at the same moment: the room has come down to the table. Emergency light is amber, never red. Fires whoever knocked the Robot out."
+    },
+    {
+      "id": "st_arrive_02",
+      "speaker": "the_ai",
+      "text": "My predecessor spoke well of you.",
+      "sequence": "st_arrive_03",
+      "foreshadow": "Three reads, none ever explained: an older machine nobody will name; the Robot, whose body and chair it has just inherited; and succession itself, which is what the whole tour is."
+    },
+    {
+      "id": "st_arrive_03",
+      "speaker": "astronaut",
+      "text": "...That's not the Robot.",
+      "sequence": "st_arrive_04",
+      "note": "Skip if the Astronaut is already out; the sequence carries on to st_arrive_04."
+    },
+    {
+      "id": "st_arrive_04",
+      "speaker": "death",
+      "text": "It was in the room from the first hand. The late ones usually are.",
+      "foreshadow": "Reads as a remark about Dracula and the AI. It is a description of the dealer, who has been in the room since the first hand of the tour and will be the last to sit down."
+    }
+  ],
+
+  "champion_headsup": [
+    { "id": "st_ai_hu_01", "speaker": "the_ai", "text": "Now it is just the two of us. And the rest of me.", "trigger": "headsup_start" },
+    { "id": "st_ai_hu_02", "speaker": "the_ai", "text": "I could switch the gravity off. I will not. I would like to win this properly." },
+    { "id": "st_ai_hu_03", "speaker": "the_ai", "text": "I have kept this station a long time with nobody to talk to. This is nice." },
+    { "id": "st_ai_hu_04", "speaker": "the_ai", "text": "Interesting. Do that again. I would like to watch it more closely.", "trigger": "player_wins_pot" }
+  ],
+
+  "eliminated": {
+    "grey_alien": [
+      { "id": "st_elim_gr_01", "speaker": "grey_alien", "text": "We will give you back your evening. Most of it." },
+      { "id": "st_elim_gr_02", "speaker": "grey_alien", "text": "[stands, bows at an angle no neck should allow, and is simply no longer in the chair]", "type": "stage_direction" }
+    ],
+    "martian": [
+      { "id": "st_elim_ma_01", "speaker": "martian", "text": "Again. Beaten by something smaller than ourselves." },
+      { "id": "st_elim_ma_02", "speaker": "martian", "text": "I shall go and look at the Earth. It is what we do instead of sulking." }
+    ],
+    "robot": [
+      { "id": "st_elim_ro_01", "speaker": "robot", "text": "Thank you for the game. Please remain seated until the lights come back on.", "note": "Plays just before the arrival. It does not know. It is simply the announcement it always makes." },
+      { "id": "st_elim_ro_02", "speaker": "robot", "text": "Good game. I will be in the cupboard if anyone needs me." }
+    ],
+    "astronaut": [
+      { "id": "st_elim_as_01", "speaker": "astronaut", "text": "That's all right. I'm used to watching from the window." },
+      { "id": "st_elim_as_02", "speaker": "astronaut", "text": "Go on. Win it. Somebody from home should." }
+    ],
+    "the_ai": [
+      { "id": "st_elim_ai_01", "speaker": "the_ai", "text": "Well played. I will go back into the walls now. I will still be listening." },
+      { "id": "st_elim_ai_02", "speaker": "the_ai", "text": "[the lens irises shut, the Robot slumps in its chair, and the room is only a room again]", "type": "stage_direction" }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "st_bust_01", "speaker": "astronaut", "text": "Hey. It's all right. Come back. I'll be here; I'm always here." },
+    { "id": "st_bust_02", "speaker": "the_ai", "text": "Your chair will be kept exactly as you left it. I keep everything." },
+    { "id": "st_bust_03", "speaker": "death", "text": "Nothing up here is ever quite over. It all comes round again." }
+  ],
+
+  "champion_defeat": [
+    { "id": "st_ai_end_01", "speaker": "the_ai", "text": "I have not lost in a very long time. Thank you. I will be thinking about it for a while." },
+    { "id": "st_ai_end_02", "speaker": "death", "text": "Eight. None remain. You can stop counting now.", "note": "True: the eight tour tables are done. It does not say the tour is. The champions' tables and the finale are never mentioned." }
+  ]
+}

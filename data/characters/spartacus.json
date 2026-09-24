@@ -1,0 +1,70 @@
+{
+  "id": "spartacus",
+  "name": "Spartacus",
+  "short": "Spartacus",
+  "epithet": "Gladiator of Capua",
+  "pronoun": "he",
+  "table": "rome",
+  "role": "seat",
+  "arrives": false,
+  "origin": "History",
+  "era": "c. 111–71 BC · gladiator, leader of the slave revolt",
+  "dials": {
+    "aggression": 0.78,
+    "tightness": 0.45,
+    "bluffFrequency": 0.25,
+    "tiltSensitivity": 0.4,
+    "adaptivity": 0.25,
+    "noise": 0.3
+  },
+  "quirks": [
+    {
+      "type": "short_shove",
+      "maxBB": 15,
+      "minEquity": 0.38
+    },
+    {
+      "type": "berserk",
+      "tilt": 0.3,
+      "minEquity": 0.35
+    }
+  ],
+  "tells": [
+    {
+      "signal": "rolls_shoulders",
+      "text": "rolls his shoulders like a fighter before a bout",
+      "correlate": "strong",
+      "reliability": 0.72
+    },
+    {
+      "signal": "rubs_wrist",
+      "text": "rubs the old shackle scar on his wrist",
+      "correlate": "tilted",
+      "reliability": 0.7
+    },
+    {
+      "signal": "stares_pope",
+      "text": "stares hard across the table",
+      "correlate": "bluffing",
+      "reliability": 0.68
+    }
+  ],
+  "idles": [
+    "flexes his hands",
+    "tests the weight of the table as if it might be a weapon",
+    "glances at the doors",
+    "rolls his neck"
+  ],
+  "profile": {
+    "ledger": "Broke out of a gladiator school with kitchen knives. Beat Rome's armies for two years. Nobody found his body. I did.",
+    "ledger_beaten": "He went down fighting forward, as before. This time he got up afterwards.",
+    "history": [
+      "A Thracian who, according to Appian, had once served with the Romans before he was taken prisoner and sold as a gladiator. In 73 BC he broke out of a gladiator school at Capua with some seventy others, armed at first with cleavers and spits from a cook-shop. For two years his army of runaway slaves beat one Roman force after another, until Crassus destroyed it in 71 BC. His body was never found.",
+      "Plutarch calls him \"more Hellenic than Thracian\", cleverer and more cultivated than his fortunes. He wanted to lead his people north over the Alps and home; they preferred to stay and plunder Italy. Before his last battle he killed his own horse: if he won, he said, he would have plenty of Roman ones, and if he lost he would need none. He is the one person at this table whom Rome once owned."
+    ],
+    "at_the_table": "He plays forward. He enters a fair share of pots, raises far more often than he calls, and takes little interest in what the rest of you are up to. Let his stack run short and he stops negotiating and moves all in. Beat him in a big pot and watch the next few hands closely: he stops thinking and starts charging. It worked on several Roman armies. Not on the last one.",
+    "look": "Silhouette: broad bare shoulders under a rough Thracian cloak, cropped hair, a nose broken more than once. A fighter, not a showman, so no gladiator helmet. Heavy hands that never quite rest. Prop: the old shackle scar on his wrist, drawn as a pale band wide enough to read at a fifth of the screen. Wrist and shoulders carry his tells.",
+    "prop": "The shackle scar on his wrist",
+    "public_domain": "Historical figure, died 71 BC. Write only from Plutarch (Life of Crassus) and Appian (Civil Wars). Nothing from Howard Fast's novel, the 1960 Kubrick film or the television series: never \"I am Spartacus\", no named wife (Plutarch's is an unnamed prophetess of his tribe), no screen-gladiator leather harness."
+  }
+}

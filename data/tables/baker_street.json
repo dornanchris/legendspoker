@@ -1,0 +1,34 @@
+{
+  "id": "baker_street",
+  "kind": "tour",
+  "position": 6,
+  "name": "Baker Street",
+  "seats": [
+    "nemo",
+    "javert",
+    "alice",
+    "sherlock"
+  ],
+  "champion": "sherlock",
+  "arrival": null,
+  "handsPerLevel": 25,
+  "dialogue": "table-06-baker-street.json",
+  "buyIn": 2000,
+  "respectStart": 0,
+  "place": "221B Baker Street, London",
+  "region": "England",
+  "era": "The nineteenth century, as its novelists wrote it",
+  "teaser": "Four readers at one table, and only one honest face.",
+  "hook": "Holmes has asked three guests from other people's novels to an evening of cards. He has a file on each of them, and nothing at all on you.",
+  "room": "The first-floor sitting room at 221B, as Watson described it: the acid-stained chemistry table shoved against the wall, letters jack-knifed to the mantelpiece, V.R. picked out in bullet holes. Gaslight, a coal fire, fog pressing at the bow window, and a violin case nobody else may open.",
+  "music": "An unaccompanied violin, restless and searching, over a low cello and the tick of a mantel clock: Victorian chamber music played by someone thinking about something else.",
+  "entrance": "Holmes is seated from the first hand, in his own chair by the fire, as though the rest of you had called on him. Which you have.",
+  "ambience": [
+    "coal settling in the grate",
+    "hansom cab wheels on wet cobbles",
+    "a clock ticking on the mantel",
+    "a single violin string, plucked",
+    "street cries muffled by fog"
+  ],
+  "presence": null
+}

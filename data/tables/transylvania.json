@@ -1,0 +1,40 @@
+{
+  "id": "transylvania",
+  "kind": "tour",
+  "position": 7,
+  "name": "Transylvania",
+  "seats": [
+    "van_helsing",
+    "monster",
+    "wolf_man",
+    "headless_horseman"
+  ],
+  "champion": "dracula",
+  "arrival": {
+    "character": "dracula",
+    "afterEliminations": 2,
+    "delayHands": 0,
+    "stack": "average"
+  },
+  "handsPerLevel": 22,
+  "dialogue": "table-07-transylvania.json",
+  "buyIn": 2000,
+  "respectStart": 0,
+  "place": "Castle Dracula, past the Borgo Pass",
+  "region": "Romania",
+  "era": "The nineteenth century, after sundown",
+  "teaser": "A castle past the Borgo Pass. The host has not sat down.",
+  "hook": "The Count keeps a table for the century's monsters and the one man who hunts them, and he watches it from beside the fire. Empty two of its chairs and he will sit down across from you.",
+  "room": "The great hall of Castle Dracula: bare stone, black oak, and a hearth big enough to stand in, with one high-backed chair beside it that nobody else uses. Tall windows look out on the Carpathians and far too much moon. There is not a mirror in the building; the Count threw the last one out of a window.",
+  "music": "Slow strings in a courtly three-time over a low drone, with a cimbalom that enters only when the Count sits down, and distant wolves where the percussion would be.",
+  "entrance": "The Count watches from a high-backed chair beside the fire. When the second guest leaves, the fire sinks to embers, his chair is suddenly empty, and he is sitting at the table as if he always had been.",
+  "ambience": [
+    "a great hearth crackling",
+    "wolves, far off in the pass",
+    "wind worrying the shutters",
+    "water dripping somewhere in the stone",
+    "hooves pacing in the courtyard"
+  ],
+  "presence": "The chair by the fire is not empty.",
+  "writer_notes": "No dial looks wrong to me. Two small flags. (1) The Horseman's tells assume a candle in his pumpkin. Irving never lights it; it is our addition and it works, but the art must keep it a plain candle, not Disney's flaming grin. (2) The Monster and the Wolf Man both carry berserk. That rhymes nicely for the pair who never asked to be what they are, but it puts two all-in shovers at one table; if playtests find it swingy, move one to 'committed' rather than cutting the tilt."
+}

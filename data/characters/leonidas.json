@@ -1,0 +1,64 @@
+{
+  "id": "leonidas",
+  "name": "Leonidas",
+  "short": "Leonidas",
+  "epithet": "King of Sparta",
+  "pronoun": "he",
+  "table": "athens",
+  "role": "seat",
+  "arrives": false,
+  "origin": "History",
+  "era": "d. 480 BC · King of Sparta",
+  "dials": {
+    "aggression": 0.72,
+    "tightness": 0.68,
+    "bluffFrequency": 0.1,
+    "tiltSensitivity": 0.1,
+    "adaptivity": 0.15,
+    "noise": 0.15
+  },
+  "quirks": [
+    {
+      "type": "committed",
+      "fraction": 0.3
+    }
+  ],
+  "tells": [
+    {
+      "signal": "plants_fists",
+      "text": "plants both fists on the table",
+      "correlate": "strong",
+      "reliability": 0.83
+    },
+    {
+      "signal": "lifts_chin",
+      "text": "lifts his chin",
+      "correlate": "bluffing",
+      "reliability": 0.8
+    },
+    {
+      "signal": "exhales",
+      "text": "exhales hard through his nose",
+      "correlate": "weak",
+      "reliability": 0.8
+    }
+  ],
+  "idles": [
+    "tugs his red cloak straight",
+    "glances across the table with open disdain",
+    "sets his crested helmet an inch to the left",
+    "cracks his knuckles"
+  ],
+  "profile": {
+    "ledger": "An oracle said Sparta would fall or a king would die. He chose, and kept the appointment.",
+    "ledger_beaten": "Beaten. He would not give an inch of ground, which is why it took so long.",
+    "history": [
+      "Leonidas became one of Sparta's two kings around 490 BC, succeeding his half-brother Cleomenes and marrying Cleomenes' daughter Gorgo. In 480 BC he marched north with three hundred Spartans and several thousand other Greeks to hold the pass at Thermopylae against the army of Xerxes. They held it for three days, until a local man showed the Persians a mountain path around them. Leonidas sent most of the allies home, and stayed.",
+      "Herodotus says the oracle at Delphi had warned Sparta that either the city would be destroyed or one of its kings would die, and that Leonidas stayed to win the glory for Sparta. Spartans ate in common messes, drank in moderation, and had little patience for Athenian talk; Plutarch collected a whole book of them answering long speeches in a word or two. He will answer yours the same way."
+    ],
+    "at_the_table": "Disciplined, and stubborn well past the point of sense. He picks his hands with care, plays them forward, and rarely bluffs. The trouble starts once a real share of his chips is in the middle: after that he will not fold to anything, whatever it costs him. He changes his approach for no one and is hard to rattle. Push him early, or not at all.",
+    "look": "Silhouette: a red cloak over a bronze breastplate, long hair and full beard, fists on the felt. Face: level eyes, jaw set, a man already bored of the conversation. Prop: the bronze Corinthian helmet with its tall horsehair crest, set on the table at his elbow — the biggest shape at the table. Tells live on the fists and the lift of the chin.",
+    "prop": "Crested bronze helmet, on the table",
+    "public_domain": "Historical figure, died 480 BC; Herodotus and Plutarch are public domain. Nothing from the film 300 or its graphic novel: no bare chest, no leather trunks, none of its lines or slogans. Avoid The 300 Spartans (1962) as well. Build from Greek vase painting and the marble warrior bust from Sparta known as 'Leonidas'."
+  }
+}

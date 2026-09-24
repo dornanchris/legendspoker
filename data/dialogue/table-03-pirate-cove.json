@@ -1,0 +1,252 @@
+{
+  "table": "pirate_cove",
+  "display_name": "Pirate Cove",
+  "tour_position": 3,
+  "champion": "blackbeard",
+  "status": "draft",
+  "notes": {
+    "tone": "The rowdy human table and the most openly funny stop on the tour. Humour comes from the characters — greed, vanity, charm with a knife in it, a devil who is never in a hurry — never from outside the world. Rowdy, not crude.",
+    "difficulty": "Third table. The contempt is louder than at the White House and less polite: the player is a prisoner, and pirates say so. Nobody stays cruel for long — they respect anyone who can take a pot off them.",
+    "dealer_plant": "The single 'the dealer arranged it' line for this table is pc_plant_03. Do NOT add a second.",
+    "blackbeard": "Dominates the room from hand one: loud, theatrical, and fully aware that the legend is a performance he built on purpose. His one quiet line is the dealer plant, which is why it lands.",
+    "davy_jones": "FOLKLORE ONLY. Nothing from the Disney films: no 'Do you fear death?', no 'part of the crew, part of the ship', no wagering souls or years of service, no organ, no chest, no heart. He speaks rarely, briefly, and without raising his voice.",
+    "silver": "Stevenson's Silver, not Robert Newton's. No 'Arr'. He says 'shipmate' and 'Cap'n', and he talks to the parrot. Charming to everyone at once; loyal to whoever is winning.",
+    "kidd": "True history only. He insists to anyone who will listen that he was a privateer, not a pirate. The joke is that he is saying it at this table.",
+    "no_dead_mans_chest": "Do not use Stevenson's 'Dead Man's Chest' song at this table: it is public domain, but it is also the title of the Disney film that owns the tentacled Davy Jones.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "Champion (Blackbeard) + Death are voiced. Kidd/Silver/Davy Jones are text + vocalization. Captain Flint the parrot gets real squawks."
+  },
+
+  "earned_names": {
+    "tier_1": "powder monkey",
+    "tier_3": "Commodore"
+  },
+
+  "respect_tiers": {
+    "0": "Contempt. The player is a prisoner — cargo — and is not addressed by any name.",
+    "1": "Grudging notice. The crew gives the player a nickname: powder monkey.",
+    "2": "Real address. They speak TO the player, by name, as crew.",
+    "3": "Title. Earned. Blackbeard uses it first, and makes the room stand for it."
+  },
+
+  "table_intro": [
+    {
+      "id": "pc_intro_01",
+      "speaker": "death",
+      "text": "A tavern on a cove no chart admits to. The smoke is from the lamps, the pipes, and the gentleman in the corner's hat.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "pc_intro_02",
+      "speaker": "death",
+      "text": "I have met three of them professionally. The cook got away.",
+      "trigger": "table_open",
+      "foreshadow": "Reads as a joke about pirates coming to bad ends. Literally true: he was there when Kidd was hanged and when Blackbeard fell at Ocracoke, and Davy Jones is in the same trade. Silver escapes at the end of his book — the one man at this table Death has never collected."
+    },
+    {
+      "id": "pc_intro_03",
+      "speaker": "death",
+      "text": "Win, and you are crew. Lose, and you are ballast. Sit.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "pc_plant_01",
+      "speaker": "kidd",
+      "text": "Who gave the prisoner a stake? I'll not split a prize with the cargo.",
+      "trigger": "hand_04_start",
+      "sequence": "pc_plant_02"
+    },
+    {
+      "id": "pc_plant_02",
+      "speaker": "silver",
+      "text": "Wasn't me, Captain. I'd remember. I'd have charged.",
+      "sequence": "pc_plant_03"
+    },
+    {
+      "id": "pc_plant_03",
+      "speaker": "blackbeard",
+      "text": "The dealer arranged it.",
+      "sequence": "pc_plant_04",
+      "note": "Said quietly, by the loudest man in the room. The drop in volume is the whole beat."
+    },
+    {
+      "id": "pc_plant_04",
+      "speaker": "kidd",
+      "text": "...Well. Plenty of prize to go round, I suppose.",
+      "note": "THE SHRUG. From the greediest man at the table, which is how you know nobody questions the dealer. The player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "kidd_blackbeard": {
+      "relationship": "Kidd sailed with the King's commission to hunt pirates, was hanged as one in 1701, and insisted to the end he was a privateer. Blackbeard was the genuine article a generation later — and took the King's pardon in 1718, which Kidd was never offered. The respectable man they hanged, and the pirate they pardoned.",
+      "exchanges": [
+        [
+          { "id": "pc_kd_bb_01a", "speaker": "kidd", "text": "I'll have you know I sailed under the King's own commission." },
+          { "id": "pc_kd_bb_01b", "speaker": "blackbeard", "text": "And I held Charleston." },
+          { "id": "pc_kd_bb_01c", "speaker": "kidd", "text": "For a chest of medicine." },
+          { "id": "pc_kd_bb_01d", "speaker": "blackbeard", "text": "It was a very good chest." }
+        ],
+        [
+          { "id": "pc_kd_bb_02a", "speaker": "kidd", "text": "They hanged me at Wapping to put the fear into men like you." },
+          { "id": "pc_kd_bb_02b", "speaker": "blackbeard", "text": "Did it work?" },
+          { "id": "pc_kd_bb_02c", "speaker": "kidd", "text": "...Evidently not." }
+        ],
+        [
+          { "id": "pc_kd_bb_03a", "speaker": "blackbeard", "text": "You should have taken the King's pardon, Kidd. I did." },
+          { "id": "pc_kd_bb_03b", "speaker": "kidd", "text": "The King offered a pardon to every pirate in the Indies but two. I was one of the two.", "note": "True: the royal proclamation of 1698 offering pardon to pirates in the East Indies excluded Kidd and Henry Every by name." },
+          { "id": "pc_kd_bb_03c", "speaker": "blackbeard", "text": "Ha! Who was the other?" },
+          { "id": "pc_kd_bb_03d", "speaker": "kidd", "text": "Henry Every. He got away with it.", "note": "True: Every was never caught." }
+        ]
+      ]
+    },
+
+    "silver_blackbeard": {
+      "relationship": "Stevenson borrowed from the real record. In Treasure Island the Squire says 'Blackbeard was a child to Flint', and the coxswain Israel Hands is named after Blackbeard's own officer — the man Blackbeard shot in the knee. The one real pirate Silver's world measures itself against, and a cook who has never met a captain he would not sell.",
+      "exchanges": [
+        [
+          { "id": "pc_ls_bb_01a", "speaker": "silver", "text": "I've heard it said Blackbeard was a child to Flint." },
+          { "id": "pc_ls_bb_01b", "speaker": "blackbeard", "text": "Who's Flint?" },
+          { "id": "pc_ls_bb_01c", "speaker": "silver", "text": "Ah. He'd have hated that most of all." }
+        ],
+        [
+          { "id": "pc_ls_bb_02a", "speaker": "blackbeard", "text": "I had a man called Israel Hands. Shot him in the knee, under the table, so the crew wouldn't forget who I was." },
+          { "id": "pc_ls_bb_02b", "speaker": "silver", "text": "We had an Israel Hands. Coxswain. A boy shot him." },
+          { "id": "pc_ls_bb_02c", "speaker": "blackbeard", "text": "Unlucky name." },
+          { "id": "pc_ls_bb_02d", "speaker": "silver", "text": "[moves his chair a little further from Blackbeard's]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "pc_ls_bb_03a", "speaker": "blackbeard", "text": "Whose side are you on, cook?" },
+          { "id": "pc_ls_bb_03b", "speaker": "silver", "text": "Yours, Cap'n. Right up until I'm not, and you'll be the first to know." },
+          { "id": "pc_ls_bb_03c", "speaker": "blackbeard", "text": "Will I?" },
+          { "id": "pc_ls_bb_03d", "speaker": "silver", "text": "...Second." }
+        ]
+      ]
+    },
+
+    "davy_jones_table": {
+      "relationship": "Every sailor at this table has spent a life on the water with Davy Jones somewhere underneath it, and every one of them knows exactly where his locker is. He is patient with all of them. None of them enjoys that. Each exchange pairs him with one sailor — fire the one that matches who contested the pot.",
+      "exchanges": [
+        [
+          { "id": "pc_dj_kd_01a", "speaker": "davy_jones", "text": "Three tides washed over you at Wapping, Captain." },
+          { "id": "pc_dj_kd_01b", "speaker": "kidd", "text": "I recall." },
+          { "id": "pc_dj_kd_01c", "speaker": "davy_jones", "text": "I waited. They tarred you and hung you in a cage instead." },
+          { "id": "pc_dj_kd_01d", "speaker": "kidd", "text": "Everyone wanted their share of me. You and half the lords in London." }
+        ],
+        [
+          { "id": "pc_dj_bb_01a", "speaker": "blackbeard", "text": "They say when they threw me over the side, I swam round the sloop before I went down." },
+          { "id": "pc_dj_bb_01b", "speaker": "davy_jones", "text": "They say." },
+          { "id": "pc_dj_bb_01c", "speaker": "blackbeard", "text": "Well? Did I?" },
+          { "id": "pc_dj_bb_01d", "speaker": "davy_jones", "text": "You were very determined." }
+        ],
+        [
+          { "id": "pc_dj_ls_01a", "speaker": "silver", "text": "Now, Mr. Jones. A gentleman in your line must be open to a bargain." },
+          { "id": "pc_dj_ls_01b", "speaker": "davy_jones", "text": "Everyone who comes down to me tries to bargain." },
+          { "id": "pc_dj_ls_01c", "speaker": "silver", "text": "Aye, but I'm good at it." },
+          { "id": "pc_dj_ls_01d", "speaker": "davy_jones", "text": "So you never came down." }
+        ]
+      ]
+    },
+
+    "silver_kidd": {
+      "relationship": "Treasure. Kidd is one of the very few pirates known to have really buried any — on Gardiners Island in 1699 — and the Governor had it dug up while Kidd sat in his gaol. Silver sailed for Flint's gold and found the pit already empty. Two men who got to the hole too late.",
+      "exchanges": [
+        [
+          { "id": "pc_ls_kd_01a", "speaker": "silver", "text": "Seven hundred thousand pound, Flint's gold. We found the pit already dug and one coin in the bottom." },
+          { "id": "pc_ls_kd_01b", "speaker": "kidd", "text": "Mine the Governor dug up while I sat in his gaol." },
+          { "id": "pc_ls_kd_01c", "speaker": "silver", "text": "There's no justice for a man who buries a thing." },
+          { "id": "pc_ls_kd_01d", "speaker": "kidd", "text": "None. I've looked." }
+        ],
+        [
+          { "id": "pc_ls_kd_02a", "speaker": "silver", "text": "Between shipmates, Captain — where's the rest of it?" },
+          { "id": "pc_ls_kd_02b", "speaker": "kidd", "text": "I offered to show them. If they'd let me live." },
+          { "id": "pc_ls_kd_02c", "speaker": "silver", "text": "And?" },
+          { "id": "pc_ls_kd_02d", "speaker": "kidd", "text": "[rubs his neck]", "type": "stage_direction" }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "pc_p0_01", "speaker": "blackbeard", "text": "Somebody count what that one's got. I want to know what I'm taking." },
+      { "id": "pc_p0_02", "speaker": "kidd", "text": "Another hand in the prize. Put it down for half a share. Less." },
+      { "id": "pc_p0_03", "speaker": "silver", "text": "Sit you down. Cap'n Flint likes a newcomer. She's outlived a great many." },
+      { "id": "pc_p0_04", "speaker": "davy_jones", "text": "Can you swim?" },
+      { "id": "pc_p0_05", "speaker": "blackbeard", "text": "[sets a pistol on the table, pointed at nobody in particular]", "type": "stage_direction" }
+    ],
+    "tier_1": [
+      { "id": "pc_p1_01", "speaker": "blackbeard", "text": "Ha! The powder monkey's found a match.", "note": "Announcement. The first time anyone at this table calls the player anything." },
+      { "id": "pc_p1_02", "speaker": "silver", "text": "Didn't I say so from the first, Cap'n Flint? I said so. Ask the bird." },
+      { "id": "pc_p1_03", "speaker": "kidd", "text": "Keep your hands off my share and we'll get along." },
+      { "id": "pc_p1_04", "speaker": "davy_jones", "text": "You float longer than most." }
+    ],
+    "tier_2": [
+      { "id": "pc_p2_01", "speaker": "kidd", "text": "{name}. I'll write that into the articles myself. Properly, in ink." },
+      { "id": "pc_p2_02", "speaker": "silver", "text": "Between you and me, I always backed you. Told the others the same, mind — but I meant it with you." },
+      { "id": "pc_p2_03", "speaker": "blackbeard", "text": "Sit easy. Crew don't get shot. Not often." },
+      { "id": "pc_p2_04", "speaker": "davy_jones", "text": "I've stopped counting your breaths." }
+    ],
+    "tier_3": [
+      { "id": "pc_p3_01", "speaker": "blackbeard", "text": "On your feet, the lot of you. There's a Commodore at the table.", "note": "First time anyone gives the player a title. Nobody at this table has ever stood for anyone but him." },
+      { "id": "pc_p3_02", "speaker": "silver", "text": "Commodore! Hear that, Cap'n Flint? Outranks you now." },
+      { "id": "pc_p3_03", "speaker": "kidd", "text": "If they ever offer you a commission, read every word of it." },
+      {
+        "id": "pc_p3_04",
+        "speaker": "davy_jones",
+        "text": "Every voyage ends at the same table. Yours has further to sail than most.",
+        "foreshadow": "Reads as sailor's fatalism — every ship ends in the locker. Literally: every voyage, the player's tour included, ends at Death's table."
+      }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "pc_death_01", "speaker": "death", "text": "Take your time. The tide will not wait. I will.", "trigger": "player_thinking_long" },
+    { "id": "pc_death_02", "speaker": "death", "text": "At sea, that is called weather.", "trigger": "player_bad_beat" },
+    { "id": "pc_death_03", "speaker": "death", "text": "The last man to beat him needed two sloops, five pistol balls and twenty cuts. This was cheaper.", "trigger": "champion_loses_pot" },
+    { "id": "pc_death_04", "speaker": "death", "text": "The first one over the side. The sea does not keep count. I do.", "trigger": "first_elimination" },
+    { "id": "pc_death_05", "speaker": "death", "text": "Pirates usually put that sort of thing to a vote. You did not wait for one.", "trigger": "player_eliminates" },
+    { "id": "pc_death_06", "speaker": "death", "text": "That is a share worth hanging for. One of them did.", "trigger": "player_wins_big_pot" },
+    { "id": "pc_death_07", "speaker": "death", "text": "The water is rising. It does that.", "trigger": "blinds_up" }
+  ],
+
+  "champion_headsup": [
+    { "id": "pc_bb_hu_01", "speaker": "blackbeard", "text": "Just us, then. Let's make a little hell of our own, and see who can bear it longest.", "trigger": "headsup_start", "note": "After the General History's story of Blackbeard shutting himself and his crew in the hold with pots of burning brimstone, to see who could stand it longest. He did." },
+    { "id": "pc_bb_hu_02", "speaker": "blackbeard", "text": "I took the King's pardon once. It didn't take." },
+    { "id": "pc_bb_hu_03", "speaker": "blackbeard", "text": "Most ships struck their colours the moment they saw who it was. You're still sitting there." },
+    { "id": "pc_bb_hu_04", "speaker": "blackbeard", "text": "Ha! Do that again and I'll have to start taking you seriously.", "trigger": "player_wins_pot" }
+  ],
+
+  "eliminated": {
+    "kidd": [
+      { "id": "pc_elim_kidd_01", "speaker": "kidd", "text": "I was a privateer. Put that on the gibbet." },
+      { "id": "pc_elim_kidd_02", "speaker": "kidd", "text": "Well. At least it only took the once this time.", "note": "At his hanging in 1701 the first rope broke, and he was hanged again." }
+    ],
+    "silver": [
+      { "id": "pc_elim_silver_01", "speaker": "silver", "text": "No hard feelings, shipmates. There never are, with me." },
+      { "id": "pc_elim_silver_02", "speaker": "silver", "text": "Come along, Cap'n Flint. There's always a port with a boat in it." }
+    ],
+    "davy_jones": [
+      { "id": "pc_elim_dj_01", "speaker": "davy_jones", "text": "No matter. I'll see most of you again." },
+      { "id": "pc_elim_dj_02", "speaker": "davy_jones", "text": "There's no hurry. There's never any hurry, down there." }
+    ],
+    "blackbeard": [
+      { "id": "pc_elim_bb_01", "speaker": "blackbeard", "text": "Ha! Well struck. Tell it bigger than it was." },
+      { "id": "pc_elim_bb_02", "speaker": "blackbeard", "text": "Somebody see to my hat. I'll not go out without the smoke." }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "pc_bust_01", "speaker": "blackbeard", "text": "Over the side! ...Somebody throw a rope. I'm not done with that one." },
+    { "id": "pc_bust_02", "speaker": "silver", "text": "Never mind, shipmate. Come back with a fresh stake. I'll keep your seat warm — for a small consideration." },
+    { "id": "pc_bust_03", "speaker": "death", "text": "Not everyone the sea takes stays taken. Sit down again when you are dry." }
+  ],
+
+  "champion_defeat": [
+    { "id": "pc_bb_end_01", "speaker": "blackbeard", "text": "Take the table. And when you tell it, put a storm in it, and make me ten feet tall." },
+    { "id": "pc_bb_end_02", "speaker": "death", "text": "Three. Five remain. I will tell it exactly as it was.", "note": "Death does not embellish, even when asked to. Worth the player noticing: it is the key to reading every aside he makes." }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "table": "champions_2",
+  "display_name": "The Champions' Table — II",
+  "tour_position": 10,
+  "champion": null,
+  "status": "draft",
+  "notes": {
+    "tone": "Colder than the first Champions' Table. A dictator, a detective, a vampire and a machine: four minds used to being the cleverest thing in the room, now obliged to share it. The comedy is dry and slightly cruel, and it is between them. Death is still the driest voice.",
+    "difficulty": "respectStart is 2. Tiers 0 and 1 exist so the schema is complete and are rarely heard. Tier 3 is the real climb, and Caesar confers it.",
+    "place": "The Hall of Doors again, turned: the last four doors open, the first four shut. The small plain ninth door is the finale; nobody ever mentions it.",
+    "champion_lines": "champion is null. champion_headsup holds one headsup_start and one player_wins_pot line PER CHAMPION: play the one whose speaker is the player's last opponent. Untriggered heads-up lines should only fire when their speaker is the one still seated. champion_defeat: play the concession of whoever was beaten last, then Death's line.",
+    "the_ai": "Seated in the Robot's body. Never give it a name. Other characters call it 'the machine'.",
+    "dealer_plant": "The single 'the dealer arranged it' line for this table is c2_plant_02. Do NOT add a second.",
+    "death_last_line": "c2_death_end is the last thing Death says before he sits down at the finale. It must stay literally true and read as an invitation on first pass.",
+    "foreshadow_budget": "Three: c2_p1_01 (the nickname), c2_dr_p3, c2_death_end.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "All four champions + Death are voiced."
+  },
+
+  "earned_names": {
+    "tier_1": "pretender",
+    "tier_3": "Conqueror"
+  },
+
+  "respect_tiers": {
+    "0": "Contempt. Rarely reached here. Not addressed by any name.",
+    "1": "Dismissal: 'the pretender'.",
+    "2": "Starting tier. Real address — they know the player's name, having lost to it.",
+    "3": "Title. Caesar confers it, and he is sparing with the word: 'Conqueror'."
+  },
+
+  "table_intro": [
+    {
+      "id": "c2_intro_01",
+      "speaker": "death",
+      "text": "The other four doors. A dictator, a detective, a count and a machine, and they have heard every word of how the first four went.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "c2_intro_02",
+      "speaker": "death",
+      "text": "Four minds that have never once been the second-cleverest thing in a room. It will be a long evening for most of them.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "c2_intro_03",
+      "speaker": "death",
+      "text": "None of them is used to losing, and every one of them has lost to you once. Sit down. They have been rehearsing.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "c2_plant_01",
+      "speaker": "the_ai",
+      "text": "A question. By what process was this player selected?",
+      "trigger": "hand_05_start",
+      "sequence": "c2_plant_02"
+    },
+    {
+      "id": "c2_plant_02",
+      "speaker": "caesar",
+      "text": "The dealer arranged it.",
+      "sequence": "c2_plant_03",
+      "note": "A dictator of Rome, deferring to someone without being asked twice."
+    },
+    {
+      "id": "c2_plant_03",
+      "speaker": "the_ai",
+      "text": "That is not a process.",
+      "sequence": "c2_plant_04"
+    },
+    {
+      "id": "c2_plant_04",
+      "speaker": "caesar",
+      "text": "Here, it is the only one there is.",
+      "note": "THE SHRUG. Even the machine is told not to ask. The player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "caesar_dracula": {
+      "relationship": "Two conquerors. Caesar took Gaul and then Rome; Stoker's Count boasts of the warrior blood of his line and the Voivode who beat the Turk. Each regards the other as a gifted provincial.",
+      "exchanges": [
+        [
+          { "id": "c2_cs_dr_01a", "speaker": "caesar", "text": "They named a month after me, Count." },
+          { "id": "c2_cs_dr_01b", "speaker": "dracula", "text": "How charming. Which one?" },
+          { "id": "c2_cs_dr_01c", "speaker": "caesar", "text": "July." },
+          { "id": "c2_cs_dr_01d", "speaker": "dracula", "text": "Ah. The short nights." }
+        ],
+        [
+          { "id": "c2_cs_dr_02a", "speaker": "caesar", "text": "I pardoned my enemies. Rome called it clemency." },
+          { "id": "c2_cs_dr_02b", "speaker": "dracula", "text": "And how did your enemies repay you?" },
+          { "id": "c2_cs_dr_02c", "speaker": "caesar", "text": "...Twenty-three times." }
+        ]
+      ]
+    },
+
+    "sherlock_the_ai": {
+      "relationship": "Two reasoning engines. Holmes deduces from what he can see; the machine calculates from everything it has ever recorded. Each suspects the other of being a very good trick.",
+      "exchanges": [
+        [
+          { "id": "c2_sh_ai_01a", "speaker": "the_ai", "text": "Your method assumes you have already thought of every possibility, Mr Holmes." },
+          { "id": "c2_sh_ai_01b", "speaker": "sherlock", "text": "I have." },
+          { "id": "c2_sh_ai_01c", "speaker": "the_ai", "text": "Noted." }
+        ],
+        [
+          { "id": "c2_sh_ai_02a", "speaker": "sherlock", "text": "Tell me, machine. What do you do when there is no problem to solve?" },
+          { "id": "c2_sh_ai_02b", "speaker": "the_ai", "text": "There is always a problem." },
+          { "id": "c2_sh_ai_02c", "speaker": "sherlock", "text": "...I find I envy you." }
+        ]
+      ]
+    },
+
+    "caesar_sherlock": {
+      "relationship": "The statesman who wrote his own history and the detective who reads the truth under everyone else's. Holmes has read the accounts of the Ides of March, and he has notes.",
+      "exchanges": [
+        [
+          { "id": "c2_cs_sh_01a", "speaker": "sherlock", "text": "On your way into the Senate, a man pressed a note into your hand warning you of the plot. You never read it." },
+          { "id": "c2_cs_sh_01b", "speaker": "caesar", "text": "I was busy that morning." },
+          { "id": "c2_cs_sh_01c", "speaker": "sherlock", "text": "Evidently." }
+        ],
+        [
+          { "id": "c2_cs_sh_02a", "speaker": "sherlock", "text": "You write about yourself in the third person." },
+          { "id": "c2_cs_sh_02b", "speaker": "caesar", "text": "Caesar finds it clarifies things." },
+          { "id": "c2_cs_sh_02c", "speaker": "sherlock", "text": "It is the habit of a man who expects to be read." },
+          { "id": "c2_cs_sh_02d", "speaker": "caesar", "text": "Caesar is read. Still." }
+        ]
+      ]
+    },
+
+    "dracula_the_ai": {
+      "relationship": "The undead and the never-alive. The Count takes the measure of everyone at a table by the pulse in their throat. The machine has none, and would quite like to be understood.",
+      "exchanges": [
+        [
+          { "id": "c2_dr_ai_01a", "speaker": "dracula", "text": "You have no pulse." },
+          { "id": "c2_dr_ai_01b", "speaker": "the_ai", "text": "No." },
+          { "id": "c2_dr_ai_01c", "speaker": "dracula", "text": "Then we have nothing to discuss." }
+        ],
+        [
+          { "id": "c2_dr_ai_02a", "speaker": "the_ai", "text": "You are not alive, and neither am I. We have something in common." },
+          { "id": "c2_dr_ai_02b", "speaker": "dracula", "text": "My friend. We do not." }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "c2_p0_01", "speaker": "caesar", "text": "Caesar does not recall your name. Caesar does not intend to." },
+      { "id": "c2_p0_02", "speaker": "the_ai", "text": "[the lens passes over the player without stopping]", "type": "stage_direction" }
+    ],
+    "tier_1": [
+      {
+        "id": "c2_p1_01",
+        "speaker": "dracula",
+        "text": "Ah — the pretender takes a seat. Every court has one. They seldom last the season.",
+        "foreshadow": "'Pretender' reads as 'fraud'. Its older meaning is a claimant to a throne, which is exactly what the player is."
+      },
+      { "id": "c2_p1_02", "speaker": "caesar", "text": "Rome was full of pretenders. I was one, for a while. It passes, or it does not." }
+    ],
+    "tier_2": [
+      { "id": "c2_p2_01", "speaker": "caesar", "text": "{name}. Caesar has written you into his account of the evening. You come out of it rather well — for now." },
+      { "id": "c2_p2_02", "speaker": "sherlock", "text": "You have improved since Baker Street. I noticed at once. The others will take a little longer." },
+      { "id": "c2_p2_03", "speaker": "dracula", "text": "Sit, sit. You are among old friends. That is not a comfort, but it is true." },
+      { "id": "c2_p2_04", "speaker": "the_ai", "text": "I keep a file on you now. It is the longest one I have." }
+    ],
+    "tier_3": [
+      { "id": "c2_p3_01", "speaker": "caesar", "text": "Conqueror. Caesar has used that word of very few people. Most of them were Caesar.", "note": "Rome's title was 'Imperator'; this one is Caesar's own word for himself, handed over. He has the most right at this table to confer a title, and knows it." },
+      { "id": "c2_p3_02", "speaker": "sherlock", "text": "I have met one antagonist I was prepared to call my equal, {title}. There are now two." },
+      {
+        "id": "c2_dr_p3",
+        "speaker": "dracula",
+        "text": "I do not cross running water, {title}. Wherever you are going after this, you go without me.",
+        "foreshadow": "Stoker's rule for vampires, stated as a courtesy. The next table is on a river."
+      },
+      { "id": "c2_p3_04", "speaker": "the_ai", "text": "My predictions about you have been wrong all evening, {title}. I have stopped making them. I am only watching now." }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "c2_death_01", "speaker": "death", "text": "Take your time. Nobody at this table has anywhere else to be.", "trigger": "player_thinking_long" },
+    { "id": "c2_death_02", "speaker": "death", "text": "The deck treats an emperor exactly as it treats a machine. I have always found that restful.", "trigger": "player_bad_beat" },
+    { "id": "c2_death_03", "speaker": "death", "text": "First out. It happens to champions exactly the way it happens to everyone else.", "trigger": "first_elimination" },
+    { "id": "c2_death_04", "speaker": "death", "text": "Twice now, for that one. They will be discussing you for some time. They have the time.", "trigger": "player_eliminates" },
+    { "id": "c2_death_05", "speaker": "death", "text": "The largest stack at the table. They are not accustomed to looking up at someone.", "trigger": "player_wins_big_pot" },
+    { "id": "c2_death_06", "speaker": "death", "text": "All of it. Every one of them has done that once, with more than chips.", "trigger": "player_all_in" },
+    { "id": "c2_death_07", "speaker": "death", "text": "Two left. The others will watch. Champions make a good audience; they know exactly what they are looking at.", "trigger": "headsup_start" }
+  ],
+
+  "champion_headsup": [
+    { "id": "c2_cs_hu_01", "speaker": "caesar", "text": "Only the two of us. The last man who faced Caesar alone ran all the way to Egypt.", "trigger": "headsup_start", "note": "Pompey, after Pharsalus." },
+    { "id": "c2_sh_hu_01", "speaker": "sherlock", "text": "Two players. At last, a problem worth the whole of my attention.", "trigger": "headsup_start" },
+    { "id": "c2_dr_hu_01", "speaker": "dracula", "text": "Only the two of us. Come freely, and of your own will — as you always have.", "trigger": "headsup_start", "note": "Stoker's welcome at the castle door, turned toward the player." },
+    { "id": "c2_ai_hu_01", "speaker": "the_ai", "text": "Two players. I have played this against you a great many times while you were away. You won some of them.", "trigger": "headsup_start" },
+
+    { "id": "c2_cs_hu_02", "speaker": "caesar", "text": "Take it. I lost battles in Gaul. I still took Gaul.", "trigger": "player_wins_pot" },
+    { "id": "c2_sh_hu_02", "speaker": "sherlock", "text": "Somebody whisper 'Norbury' to me. Watson would. It is our word for when I have been too sure of myself.", "trigger": "player_wins_pot", "note": "From 'The Yellow Face', where Holmes asks Watson to do exactly this." },
+    { "id": "c2_dr_hu_02", "speaker": "dracula", "text": "First blood to you. I am, as you may imagine, an appreciator.", "trigger": "player_wins_pot" },
+    { "id": "c2_ai_hu_02", "speaker": "the_ai", "text": "Unexpected. I will not be surprised by that again.", "trigger": "player_wins_pot" },
+
+    { "id": "c2_cs_hu_05", "speaker": "caesar", "text": "Caesar has been kidnapped by pirates and stabbed by the Senate. A raise does not frighten him." },
+    { "id": "c2_sh_hu_05", "speaker": "sherlock", "text": "You are wondering how much I can see. More than you would like, and less than I would like." },
+    { "id": "c2_dr_hu_05", "speaker": "dracula", "text": "No wolves in this hall. I find I miss the music." },
+    { "id": "c2_ai_hu_05", "speaker": "the_ai", "text": "The previous occupant of this body folded far more often than I do." }
+  ],
+
+  "eliminated": {
+    "caesar": [
+      { "id": "c2_cs_out_01", "speaker": "caesar", "text": "Caesar withdraws. Note that he was not defeated. He withdrew." },
+      { "id": "c2_cs_out_02", "speaker": "caesar", "text": "My friends killed me once. Losing to a stranger is almost restful." }
+    ],
+    "sherlock": [
+      { "id": "c2_sh_out_01", "speaker": "sherlock", "text": "Eliminated. Well — it is my method. I can hardly complain of it." },
+      { "id": "c2_sh_out_02", "speaker": "sherlock", "text": "Watson will never let me hear the end of this. Fortunately, Watson is not here." }
+    ],
+    "dracula": [
+      { "id": "c2_dr_out_01", "speaker": "dracula", "text": "Until the next night, then. There is always another night." },
+      { "id": "c2_dr_out_02", "speaker": "dracula", "text": "I have been driven out of better houses than this. Most of them were mine." }
+    ],
+    "the_ai": [
+      { "id": "c2_ai_out_01", "speaker": "the_ai", "text": "[the lens goes dark; a moment later the Robot's own eye-lamps flicker back on, and it looks round, puzzled, at a hall it has never seen]", "type": "stage_direction" },
+      { "id": "c2_ai_out_02", "speaker": "the_ai", "text": "This body is returned to its owner. I apologise to it for the evening." }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "c2_bust_01", "speaker": "caesar", "text": "Withdraw, winter, return. I did it in Gaul every year." },
+    { "id": "c2_bust_02", "speaker": "dracula", "text": "Go and rest. I will still be here. I am always still here." },
+    { "id": "c2_bust_03", "speaker": "death", "text": "The doors stay open. For you, they always have." }
+  ],
+
+  "champion_defeat": [
+    { "id": "c2_cs_end_01", "speaker": "caesar", "text": "Twice. In Rome we would have voted you a triumph. Here, I suppose, you will have to make do with the chips." },
+    { "id": "c2_sh_end_01", "speaker": "sherlock", "text": "I revised the figure once already, on your account. I shall have to start a separate list." },
+    { "id": "c2_dr_end_01", "speaker": "dracula", "text": "Twice now — in my house, and in this one. I really must stop letting you in." },
+    { "id": "c2_ai_end_01", "speaker": "the_ai", "text": "Twice. I am no longer treating it as an error." },
+    {
+      "id": "c2_death_end",
+      "speaker": "death",
+      "text": "Ten. That is every table they had. Come through — I keep one of my own. Mind the step; it is wet.",
+      "foreshadow": "The last thing he says before he sits down. First read: the dealer showing you somewhere private, a reward, a drink. Second read: his own table is the one he plays at, and the wet step is the river."
+    }
+  ]
+}

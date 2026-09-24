@@ -1,0 +1,70 @@
+{
+  "id": "blackbeard",
+  "name": "Blackbeard",
+  "short": "Blackbeard",
+  "epithet": "Captain of the Queen Anne's Revenge",
+  "pronoun": "he",
+  "table": "pirate_cove",
+  "role": "champion",
+  "arrives": false,
+  "origin": "History",
+  "era": "d. 1718 · Edward Teach, pirate captain",
+  "dials": {
+    "aggression": 0.78,
+    "tightness": 0.6,
+    "bluffFrequency": 0.24,
+    "tiltSensitivity": 0.15,
+    "adaptivity": 0.35,
+    "noise": 0.2
+  },
+  "quirks": [
+    {
+      "type": "steal",
+      "chance": 0.4,
+      "minEquity": 0.32
+    },
+    {
+      "type": "charge",
+      "minEquity": 0.64,
+      "chance": 0.35
+    }
+  ],
+  "tells": [
+    {
+      "signal": "strokes_beard",
+      "text": "strokes his braided beard",
+      "correlate": "strong",
+      "reliability": 0.78
+    },
+    {
+      "signal": "goes_still",
+      "text": "goes very still",
+      "correlate": "bluffing",
+      "reliability": 0.76
+    },
+    {
+      "signal": "fuses_flare",
+      "text": "the slow-matches under his hat smoulder brighter",
+      "correlate": "tilted",
+      "reliability": 0.78
+    }
+  ],
+  "idles": [
+    "the fuses in his beard smoke",
+    "sets a pistol on the table, then picks it up again",
+    "laughs too loud",
+    "stares down the nearest man"
+  ],
+  "profile": {
+    "ledger": "Put smoke in his hat so that ships would surrender without a fight. Most did. The last one did not.",
+    "ledger_beaten": "He will tell it as a storm. It was a card game.",
+    "history": [
+      "Edward Teach — or Thatch; the spelling was never settled — sailed out of the Bahamas in the years around 1717. In November of that year he took a French slave ship, La Concorde, and made her his flagship, Queen Anne's Revenge. In May 1718 he blockaded Charleston, seizing ships and hostages, and ransomed them for a chest of medicine. He accepted the King's pardon that summer and did not keep to it for long. That November, a Royal Navy party under Lieutenant Robert Maynard killed him at Ocracoke Inlet.",
+      "He built the legend on purpose. The General History of the Pyrates, published in 1724 under the name Captain Charles Johnson, describes a black beard that covered most of his face, twisted into ribbon-tied tails, and lit slow-matches tucked under his hat, smoking on either side of it. The same book says he shot one of his own officers, Israel Hands, in the knee under the table, so the crew would not forget who he was. He sits at this table because he likes to be looked at."
+    ],
+    "at_the_table": "The loudest player at the table, and the most aggressive. If nobody has opened a pot before the flop, he usually raises it; bet into him with anything he likes and he tends to raise you back rather than call. He is not reckless — he folds more often than his reputation would suggest — and losing does not unsettle him much. It makes him louder, which is not the same thing.",
+    "look": "Silhouette: a broad black hat with smoke curling from under the brim on both sides, over a huge black beard in ribbon-tied braids that covers most of his face. Heavy dark coat, a sling of pistols across the chest. Eyes that hold a stare. Prop: the braided beard — big, dark, dead centre in his fifth of the screen, and the shape his hand keeps going back to.",
+    "prop": "His braided black beard",
+    "public_domain": "Historical figure, died 1718. Build from the 1724 General History and its early engravings of him with lit matches under his hat. Avoid Disney's Blackbeard in Pirates of the Caribbean: On Stranger Tides (2011) — no magic sword, no zombie crew — and the television versions in Black Sails and Our Flag Means Death."
+  }
+}

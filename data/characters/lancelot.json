@@ -1,0 +1,65 @@
+{
+  "id": "lancelot",
+  "name": "Sir Lancelot",
+  "short": "Lancelot",
+  "epithet": "The Best Knight in the World",
+  "pronoun": "he",
+  "table": "camelot",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Legend",
+  "era": "Arthurian legend · first knight of the Round Table",
+  "dials": {
+    "aggression": 0.75,
+    "tightness": 0.56,
+    "bluffFrequency": 0.28,
+    "tiltSensitivity": 0.35,
+    "adaptivity": 0.2,
+    "noise": 0.25
+  },
+  "quirks": [
+    {
+      "type": "charge",
+      "minEquity": 0.55,
+      "chance": 0.7
+    }
+  ],
+  "tells": [
+    {
+      "signal": "polishes_gauntlet",
+      "text": "polishes his gauntlet",
+      "correlate": "strong",
+      "reliability": 0.75
+    },
+    {
+      "signal": "tosses_hair",
+      "text": "tosses his hair",
+      "correlate": "bluffing",
+      "reliability": 0.72
+    },
+    {
+      "signal": "glances_door",
+      "text": "glances toward the door",
+      "correlate": "weak",
+      "reliability": 0.74
+    }
+  ],
+  "idles": [
+    "admires his reflection in his breastplate",
+    "adjusts his sword belt",
+    "sighs, for no clear reason",
+    "looks toward an empty chair"
+  ],
+  "profile": {
+    "ledger": "The best knight in the world, by general agreement, his own included. Died a hermit. It surprised everyone but me.",
+    "ledger_beaten": "Unhorsed at last. He will want it put about that the horse stumbled.",
+    "history": [
+      "Lancelot is a French addition to the legend. He takes centre stage in Chrétien de Troyes's Knight of the Cart, around 1180, riding in a criminal's cart to rescue Queen Guinevere — and she is cold to him afterwards because he hesitated two steps before climbing in. Raised, in the prose romances, by the Lady of the Lake, he becomes the best knight in the world, and knows it.",
+      "In Malory he is Arthur's greatest knight and closest friend, and he loves the queen, and she him. Merlin foresaw it; Arthur, Malory says, had a suspicion and would not hear of it. When the love is finally exposed, the fellowship breaks, and the war that follows leaves the kingdom open to Mordred. Lancelot ends his days a hermit. At this table he is a man who has rarely lost a fight, and is still not sure how he lost everything else."
+    ],
+    "at_the_table": "Aggressive and proud. He plays plenty of hands and hates merely to call: bet into him with anything respectable and he is likely to raise you back. He does not study his opponents — he assumes he is better than all of them — and a pot lost to someone he considers beneath him gets under his armour. For a while afterwards, he rides harder than he should.",
+    "look": "Silhouette: the handsomest man at the table and dressed for it — polished plate at the shoulders, a bright surcoat, a fall of dark hair he keeps tossing back. Face: fine-boned, proud, faintly bored until someone challenges him. Prop: the right gauntlet, polished steel that catches the light, large enough at a fifth of the screen to be seen being buffed.",
+    "prop": "A polished steel gauntlet",
+    "public_domain": "Chrétien (c. 1180) and Malory (1485) are public domain. Avoid T. H. White's ugly, self-loathing Lancelot, the musical Camelot (1960) and its film, the film First Knight (1995), and the BBC's Merlin. The love affair with Guinevere is canon: allude to it with care, and never play it for smut."
+  }
+}

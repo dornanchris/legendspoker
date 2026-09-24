@@ -24,15 +24,6 @@ const C = {
 const NAMES = CAST.map((p) => p.name)
 const width = Math.max(...NAMES.map((n) => n.length))
 
-const TELL_TEXT: Record<string, string> = {
-  steeples_fingers: 'steeples his fingers',
-  glances_at_exit: 'glances toward the exit',
-  stares_blankly: 'stares blankly at the board',
-  shifts_forward: 'shifts forward in his seat',
-  adjusts_headdress: 'adjusts her headdress',
-  goes_still: 'goes completely still',
-}
-
 let handNo = 0
 
 const onEvent = (e: HandEvent) => {
@@ -47,7 +38,7 @@ const onEvent = (e: HandEvent) => {
       break
     }
     case 'tell': {
-      const text = TELL_TEXT[e.signal] ?? e.signal
+      const text = e.text
       console.log(C.dim(`  ${NAMES[e.seat].padEnd(width)}  ${C.cyan(text)}`))
       break
     }

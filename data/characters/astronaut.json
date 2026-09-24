@@ -1,0 +1,65 @@
+{
+  "id": "astronaut",
+  "name": "The Astronaut",
+  "short": "The Astronaut",
+  "epithet": "Far From Home",
+  "pronoun": "she",
+  "table": "station",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Archetype",
+  "era": "The lost explorer",
+  "dials": {
+    "aggression": 0.4,
+    "tightness": 0.55,
+    "bluffFrequency": 0.1,
+    "tiltSensitivity": 0.35,
+    "adaptivity": 0.3,
+    "noise": 0.15
+  },
+  "quirks": [
+    {
+      "type": "chaser",
+      "maxPotFraction": 0.45,
+      "minEquity": 0.25
+    }
+  ],
+  "tells": [
+    {
+      "signal": "hides_grin",
+      "text": "grins, then hides it",
+      "correlate": "strong",
+      "reliability": 0.85
+    },
+    {
+      "signal": "looks_earth",
+      "text": "glances out of the window at Earth",
+      "correlate": "weak",
+      "reliability": 0.85
+    },
+    {
+      "signal": "checks_gauge",
+      "text": "checks the oxygen gauge on her wrist",
+      "correlate": "bluffing",
+      "reliability": 0.82
+    }
+  ],
+  "idles": [
+    "rubs a scuff on her helmet, which sits beside her chips",
+    "floats a chip an inch off the table and catches it",
+    "yawns",
+    "touches a photograph tucked in her sleeve"
+  ],
+  "profile": {
+    "ledger": "I am not due to meet her for years yet. It is the best news at this table, and she does not know it.",
+    "ledger_beaten": "She lost cheerfully, and asked whether you had seen her photograph. You should have looked.",
+    "history": [
+      "The lost explorer is as old as exploring: the sailor blown off every chart, the castaway on the island, the traveller who went further than anyone and could not find the way back. The astronaut is the newest version of that story. She has no single source and belongs to nobody. She is everyone who has looked down at the whole Earth from a small window and felt, all at once, how far away it was.",
+      "Her ship failed a long way out. Something found her drifting and brought her here: the Grey, though it has never said so, and she has never quite managed to thank it. She has been aboard longer than she likes to count. She keeps a photograph up her sleeve, her helmet beside her chips, and her hope where everyone can see it. She is exactly what she looks like."
+    ],
+    "at_the_table": "She plays like someone waiting to be rescued: she will nearly always pay a little to see one more card, in case it is the one. She rarely bluffs, and she is not good at pretending. A bad beat stays with her for a few hands. She is the easiest person at this table to read, and she knows it, and she plays anyway.",
+    "look": "Silhouette: a bulky, scuffed pressure suit, its round helmet off and set on the table beside her chips; the helmet says astronaut at a glance. Short practical hair, tired kind eyes, a grin she cannot quite hide. Prop: the oxygen gauge on her wrist, which she lifts to eye level to read. No flags, no agency patches, no real insignia.",
+    "prop": "A wrist oxygen gauge",
+    "public_domain": "An archetype, not a person: the lost explorer. She must not resemble any real astronaut, any real agency's suit, or any film's. No NASA or other agency insignia, no flags, no named missions, and nothing taken from any space film. Her suit is our own design, built for a readable silhouette rather than accuracy."
+  }
+}

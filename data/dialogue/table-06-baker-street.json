@@ -1,0 +1,264 @@
+{
+  "table": "baker_street",
+  "display_name": "Baker Street",
+  "tour_position": 6,
+  "champion": "sherlock",
+  "status": "draft",
+  "notes": {
+    "tone": "A 19th-century LITERATURE table, not a detective table: four books, four temperaments. Holmes reads, Nemo withholds, Javert enforces, Alice wonders. Humor from mannerism: Holmes insufferable, Javert literal, Nemo courteous and elsewhere, Alice logical in a way nobody else at the table is.",
+    "difficulty": "Late-middle table, so legibility drops: Holmes, Nemo and Javert are practised faces. Alice is the deliberate exception, the one face at the reading table that means what it shows. Holmes says so once in banter (bs_al_sh_03a); that is a hint about how to read the table, not about anyone's cards.",
+    "dealer_plant": "The single 'the dealer arranged it' line for this table is bs_plant_02. Holmes, who investigates everything, answers instantly and does not investigate this. Do NOT add a second.",
+    "sherlock": "Seated from hand one. His reveal is reads_you: once he has enough data, he narrates the PLAYER's real, observed habits back to them. Those lines describe behaviour only, never cards. This is Holmes's alone; Socrates at Athens must never do it.",
+    "reads_you": "One line per matching condition, spoken between hands. Conditions: loose (enters a lot of pots), tight (enters very few), aggressive (bets and raises far more than calls), passive (calls far more than bets), bluffed (just won a pot uncontested by betting a weak hand), folds_fast (folds much faster than calls or raises), thinks_long (takes much longer before a bet or raise than before a call or check). The 'bluffed' lines never say what the player held.",
+    "canon": "Doyle, Verne, Hugo and Carroll text only; Paget, Neuville/Riou, Hugo's period illustrators and Tenniel for pictures. No Moriarty (not in this game), no Irene Adler by name, no Les Miserables musical, no Disney Alice or Nautilus, nothing from any modern Holmes adaptation.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "Champion (Holmes) + Death are voiced. Nemo, Javert and Alice are text + vocalization."
+  },
+
+  "earned_names": {
+    "tier_1": "Irregular",
+    "tier_3": "Detective"
+  },
+
+  "respect_tiers": {
+    "0": "Contempt. The player is not addressed by any name. Holmes has read them in a glance and filed them as unremarkable.",
+    "1": "Grudging notice. Holmes calls the player an 'Irregular', his name for the street children he pays to be his eyes and ears.",
+    "2": "Real address. They speak TO the player. Holmes opens an entry for them in his index.",
+    "3": "Title. 'Detective.' Holmes uses it first: from the only consulting detective in the world, the highest compliment he has."
+  },
+
+  "table_intro": [
+    {
+      "id": "bs_intro_01",
+      "speaker": "death",
+      "text": "The sitting room at 221B Baker Street. Letters knifed to the mantelpiece, tobacco in a Persian slipper, the Queen's initials shot into the wallpaper.",
+      "trigger": "table_open",
+      "note": "All three details are Watson's, from The Musgrave Ritual."
+    },
+    {
+      "id": "bs_intro_02",
+      "speaker": "death",
+      "text": "He has deduced where every guest has been this evening. He has not once looked closely at the dealer.",
+      "trigger": "table_open",
+      "foreshadow": "Reads as a joke about servants being invisible to gentlemen. It is the plot: the best reader in literature never reads the one person at the table who matters."
+    },
+    {
+      "id": "bs_intro_03",
+      "speaker": "death",
+      "text": "Four characters from four books, and one chair for someone who isn't in any of them. Sit.",
+      "trigger": "table_open"
+    }
+  ],
+
+  "dealer_plant": [
+    {
+      "id": "bs_plant_01",
+      "speaker": "javert",
+      "text": "This one has no papers. No name in any register I know.",
+      "trigger": "hand_04_start",
+      "sequence": "bs_plant_02"
+    },
+    {
+      "id": "bs_plant_02",
+      "speaker": "sherlock",
+      "text": "The dealer arranged it.",
+      "sequence": "bs_plant_03",
+      "note": "The one question Holmes does not investigate. No deduction, no elaboration."
+    },
+    {
+      "id": "bs_plant_03",
+      "speaker": "javert",
+      "text": "[closes his notebook without writing anything]",
+      "type": "stage_direction",
+      "note": "THE SHRUG. The most rigid man in literature lets it go. Nobody questions the dealer; the player never gets an answer."
+    }
+  ],
+
+  "banter_pairs": {
+    "sherlock_javert": {
+      "relationship": "Two ideas of the law. Javert serves it absolutely; he once asked to be dismissed for his own mistake, and his superior refused. Holmes is an amateur the police send for when they are stuck, and more than once lets a guilty man go: 'I am not retained by the police to supply their deficiencies' (The Blue Carbuncle, where he lets a thief go at Christmas).",
+      "exchanges": [
+        [
+          { "id": "bs_sh_jv_01a", "speaker": "sherlock", "text": "I once let a thief go at Christmas. It seemed the season for it." },
+          { "id": "bs_sh_jv_01b", "speaker": "javert", "text": "Then you are his accomplice." },
+          { "id": "bs_sh_jv_01c", "speaker": "sherlock", "text": "I am not retained by the police to supply their deficiencies." },
+          { "id": "bs_sh_jv_01d", "speaker": "javert", "text": "I am the police." }
+        ],
+        [
+          { "id": "bs_sh_jv_02a", "speaker": "javert", "text": "I once asked my superior to dismiss me. I had made an error." },
+          { "id": "bs_sh_jv_02b", "speaker": "sherlock", "text": "And did he?" },
+          { "id": "bs_sh_jv_02c", "speaker": "javert", "text": "No. That was his error." }
+        ],
+        [
+          { "id": "bs_sh_jv_03a", "speaker": "javert", "text": "An amateur should never be allowed near a case." },
+          { "id": "bs_sh_jv_03b", "speaker": "sherlock", "text": "Scotland Yard agrees with you entirely. Then it sends for me." }
+        ]
+      ]
+    },
+
+    "nemo_javert": {
+      "relationship": "The fugitive and the pursuer. Nemo has renounced every nation and its laws ('the sea does not belong to despots'; thirty feet down, he says, their power ends). Javert has never renounced anything, and spent years hunting one man who escaped the galleys. Nemo's name is Latin for 'no one', which to Javert is simply an alias.",
+      "exchanges": [
+        [
+          { "id": "bs_nm_jv_01a", "speaker": "javert", "text": "Nemo. Latin for 'no one'. That is not a name. It is an alias." },
+          { "id": "bs_nm_jv_01b", "speaker": "nemo", "text": "It is the only name the sea has ever asked of me." },
+          { "id": "bs_nm_jv_01c", "speaker": "javert", "text": "[writes it in his notebook anyway]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "bs_nm_jv_02a", "speaker": "nemo", "text": "Thirty feet below the surface, Inspector, your laws do not reach." },
+          { "id": "bs_nm_jv_02b", "speaker": "javert", "text": "Then I will wait at the surface." },
+          { "id": "bs_nm_jv_02c", "speaker": "nemo", "text": "You would wait a long time." },
+          { "id": "bs_nm_jv_02d", "speaker": "javert", "text": "I have waited a long time before." }
+        ],
+        [
+          { "id": "bs_nm_jv_03a", "speaker": "javert", "text": "You fly no nation's flag." },
+          { "id": "bs_nm_jv_03b", "speaker": "nemo", "text": "I fly my own. Black, with an N." },
+          { "id": "bs_nm_jv_03c", "speaker": "javert", "text": "That is not a country." },
+          { "id": "bs_nm_jv_03d", "speaker": "nemo", "text": "No. That is the point of it.", "note": "Verne: Nemo raises a black flag bearing a gold N." }
+        ]
+      ]
+    },
+
+    "alice_javert": {
+      "relationship": "The most rigid man in literature and the least intimidated child. Alice has already faced down a Queen who wanted 'sentence first, verdict afterwards'. Oddly, on that point she and Javert agree completely.",
+      "exchanges": [
+        [
+          { "id": "bs_al_jv_01a", "speaker": "alice", "text": "I was at a trial once where the Queen wanted the sentence first and the verdict afterwards." },
+          { "id": "bs_al_jv_01b", "speaker": "javert", "text": "That is a disgrace to the court." },
+          { "id": "bs_al_jv_01c", "speaker": "alice", "text": "That's exactly what I told her!" },
+          { "id": "bs_al_jv_01d", "speaker": "javert", "text": "[regards her for a moment with something very like approval]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "bs_al_jv_02a", "speaker": "alice", "text": "What does an inspector inspect?" },
+          { "id": "bs_al_jv_02b", "speaker": "javert", "text": "Everyone." },
+          { "id": "bs_al_jv_02c", "speaker": "alice", "text": "How very tiring for you." }
+        ]
+      ]
+    },
+
+    "alice_sherlock": {
+      "relationship": "The man who observes everything and the child who notices everything. Holmes famously scolds Watson for climbing the seventeen steps at 221B hundreds of times without counting them (A Scandal in Bohemia); Alice has counted them. And the reading table's two poles: the best reader in literature, and the one face at the table that means what it shows.",
+      "exchanges": [
+        [
+          { "id": "bs_al_sh_01a", "speaker": "sherlock", "text": "Miss Alice. How many steps are there from the hall up to this room?" },
+          { "id": "bs_al_sh_01b", "speaker": "alice", "text": "Seventeen." },
+          { "id": "bs_al_sh_01c", "speaker": "sherlock", "text": "...My friend Watson has climbed them hundreds of times and could not tell me." },
+          { "id": "bs_al_sh_01d", "speaker": "alice", "text": "I expect he wasn't bored enough. I count things when I'm bored." }
+        ],
+        [
+          { "id": "bs_al_sh_02a", "speaker": "sherlock", "text": "Eliminate the impossible, and whatever remains, however improbable, must be the truth." },
+          { "id": "bs_al_sh_02b", "speaker": "alice", "text": "The White Queen believes six impossible things before breakfast." },
+          { "id": "bs_al_sh_02c", "speaker": "sherlock", "text": "Then she is a very poor witness." },
+          { "id": "bs_al_sh_02d", "speaker": "alice", "text": "She says it only wants practice." }
+        ],
+        [
+          { "id": "bs_al_sh_03a", "speaker": "sherlock", "text": "Yours is the only honest face at this table, Miss Alice. It is extraordinarily restful." },
+          { "id": "bs_al_sh_03b", "speaker": "alice", "text": "I don't see why everyone says that as if it were a pity." }
+        ]
+      ]
+    }
+  },
+
+  "player_directed": {
+    "tier_0": [
+      { "id": "bs_p0_01", "speaker": "sherlock", "text": "You have come from Rome, I perceive. There is dog hair on your cuff: three distinct kinds, and yet I believe it was only one dog.", "note": "Echoes his first words to Watson ('You have been in Afghanistan, I perceive'). Rome is always the previous table." },
+      { "id": "bs_p0_02", "speaker": "javert", "text": "Keep your hands on the table, where I can see them." },
+      { "id": "bs_p0_03", "speaker": "nemo", "text": "Another visitor from the land. They always bring the noise in with them." },
+      { "id": "bs_p0_04", "speaker": "alice", "text": "Are you one of the players, or one of the cards? It's so hard to tell, in some places." },
+      { "id": "bs_p0_05", "speaker": "sherlock", "text": "Please don't speak. You will only confirm what I have already deduced." }
+    ],
+    "tier_1": [
+      { "id": "bs_p1_01", "speaker": "sherlock", "text": "An Irregular, then. My Irregulars go everywhere, see everything and overhear everyone, for a shilling apiece. You may yet be worth the shilling." },
+      { "id": "bs_p1_02", "speaker": "javert", "text": "You have broken no rule yet. I am waiting for the first." },
+      { "id": "bs_p1_03", "speaker": "nemo", "text": "You are quieter than most people from the land. It is a beginning." },
+      { "id": "bs_p1_04", "speaker": "alice", "text": "You're not nearly as dull as I thought you'd be. I thought you'd be very dull." }
+    ],
+    "tier_2": [
+      { "id": "bs_p2_01", "speaker": "sherlock", "text": "{name}. You have an entry in my index now, under V: 'Visitors, unaccountable'. It falls just below 'Vampires in Transylvania'.", "note": "Holmes's index is canon; in The Sussex Vampire he reads out 'Vampires in Transylvania' from it. A wink at the next table, not a Death foreshadow." },
+      { "id": "bs_p2_02", "speaker": "javert", "text": "I have looked for something against you. I have found nothing. I will keep looking, but you should know that." },
+      { "id": "bs_p2_03", "speaker": "nemo", "text": "You would do well at sea. Nobody there asks where you came from." },
+      { "id": "bs_p2_04", "speaker": "alice", "text": "When you win, the Inspector's whiskers bristle. I do like watching it." }
+    ],
+    "tier_3": [
+      { "id": "bs_p3_01", "speaker": "sherlock", "text": "Detective.", "note": "From the only consulting detective in the world, the word means one thing: he considers you a reader of people, like him. First time anyone here gives the player a title." },
+      { "id": "bs_p3_02", "speaker": "javert", "text": "I misjudged you. It will go in my report." },
+      { "id": "bs_p3_03", "speaker": "nemo", "text": "There is a spare cabin aboard the Nautilus. It has not had a guest worth the name in a long time." },
+      {
+        "id": "bs_p3_04",
+        "speaker": "alice",
+        "text": "Have you noticed nobody ever looks at the dealer? I do. Sometimes he looks back.",
+        "foreshadow": "Sounds like a child's spooky aside. The one honest face at the reading table is the only one watching the right person, and the dealer is watching back."
+      }
+    ]
+  },
+
+  "reads_you": [
+    { "id": "bs_read_loose_01", "speaker": "sherlock", "when": "loose", "text": "You have entered nearly every pot since you sat down. Either your cards are extraordinary with extraordinary regularity, or you simply dislike being left out. I incline to the second." },
+    { "id": "bs_read_loose_02", "speaker": "sherlock", "when": "loose", "text": "You treat every deal as an invitation addressed to you personally. Most of them, I assure you, were meant for someone else." },
+
+    { "id": "bs_read_tight_01", "speaker": "sherlock", "when": "tight", "text": "You fold with admirable consistency. Rather too admirable. When you do finally play a hand, the whole table will know why." },
+    { "id": "bs_read_tight_02", "speaker": "sherlock", "when": "tight", "text": "You have played so few hands that I could list them from memory. I have, in fact. It did not take long." },
+
+    { "id": "bs_read_aggressive_01", "speaker": "sherlock", "when": "aggressive", "text": "You bet, and raise, and bet again. You call as though calling were a small personal defeat." },
+    { "id": "bs_read_aggressive_02", "speaker": "sherlock", "when": "aggressive", "text": "You prefer to ask the questions. You have hardly answered one all evening, which tells me a good deal about how much you dislike being asked." },
+
+    { "id": "bs_read_passive_01", "speaker": "sherlock", "when": "passive", "text": "You call. You call again. You let everyone else decide what a pot is worth, and then you pay it." },
+    { "id": "bs_read_passive_02", "speaker": "sherlock", "when": "passive", "text": "Every call is an agreement with someone else's account of the hand. You have been remarkably agreeable tonight." },
+
+    { "id": "bs_read_bluffed_01", "speaker": "sherlock", "when": "bluffed", "text": "Nobody called, so nobody will ever know what you held. Nobody but me, and I shan't say." },
+    { "id": "bs_read_bluffed_02", "speaker": "sherlock", "when": "bluffed", "text": "A handsome bet. Rather more handsome than whatever it was protecting, I suspect. No, don't tell me. I prefer to be right in private." },
+
+    { "id": "bs_read_folds_fast_01", "speaker": "sherlock", "when": "folds_fast", "text": "You fold at once and play at leisure. The difference is a clock, and you have hung it on the wall where all of us can see it." },
+    { "id": "bs_read_folds_fast_02", "speaker": "sherlock", "when": "folds_fast", "text": "When you mean to let a hand go, you let it go immediately. When you mean to keep it, you pause. You might as well hand out programmes." },
+
+    { "id": "bs_read_thinks_long_01", "speaker": "sherlock", "when": "thinks_long", "text": "You call almost without thinking, but before a raise you go perfectly still, as though composing a letter. I have learned to wait for the letter." },
+    { "id": "bs_read_thinks_long_02", "speaker": "sherlock", "when": "thinks_long", "text": "Your silences have become informative. The short ones end in a call. The long ones end in a bet. I merely mention it." }
+  ],
+
+  "death_asides": [
+    { "id": "bs_death_01", "speaker": "death", "text": "Take your time. He is counting it.", "trigger": "player_thinking_long" },
+    { "id": "bs_death_02", "speaker": "death", "text": "Improbable is not the same as impossible. He will explain the difference, at length, if you let him.", "trigger": "player_bad_beat" },
+    { "id": "bs_death_03", "speaker": "death", "text": "Don't worry about him. He has been bored since the first hand, and this is the cure.", "trigger": "champion_loses_pot" },
+    { "id": "bs_death_04", "speaker": "death", "text": "Somebody always leaves the story early. It is rarely the one who expected to.", "trigger": "first_elimination" },
+    { "id": "bs_death_05", "speaker": "death", "text": "He will want to know how you did that. Don't tell him. It will be good for him.", "trigger": "player_eliminates" },
+    { "id": "bs_death_06", "speaker": "death", "text": "Three people at this table keep notebooks. You are in all three of them now.", "trigger": "player_wins_big_pot", "note": "Holmes's index, Javert's black notebook, Nemo's sketchbook." },
+    { "id": "bs_death_07", "speaker": "death", "text": "Two left. At this table, that is when the explanations begin.", "trigger": "headsup_start" }
+  ],
+
+  "champion_headsup": [
+    { "id": "bs_sh_hu_01", "speaker": "sherlock", "text": "Come, then. The game is afoot.", "trigger": "headsup_start", "note": "Canon (The Abbey Grange). He means both games." },
+    { "id": "bs_sh_hu_02", "speaker": "sherlock", "text": "This is quite a three-pipe problem. I may need all three.", "note": "The Red-Headed League." },
+    { "id": "bs_sh_hu_03", "speaker": "sherlock", "text": "I never guess. It is a shocking habit, destructive to the logical faculty. Cards, regrettably, insist on it.", "note": "The Sign of Four." },
+    { "id": "bs_sh_hu_04", "speaker": "sherlock", "text": "Excellent! No, I mean it. I was beginning to fear I should be bored.", "trigger": "player_wins_pot" }
+  ],
+
+  "eliminated": {
+    "nemo": [
+      { "id": "bs_out_nemo_01", "speaker": "nemo", "text": "Mobilis in mobili. I shall find calmer water." },
+      { "id": "bs_out_nemo_02", "speaker": "nemo", "text": "[rises, bows to the table, and says something in a language nobody else here speaks]", "type": "stage_direction", "note": "Verne: the Nautilus crew speak a language Aronnax cannot identify." }
+    ],
+    "javert": [
+      { "id": "bs_out_javert_01", "speaker": "javert", "text": "Defeated. I will report it exactly as it happened, including my own errors." },
+      { "id": "bs_out_javert_02", "speaker": "javert", "text": "[stands, sets his hat square, and goes out without looking back]", "type": "stage_direction" }
+    ],
+    "alice": [
+      { "id": "bs_out_alice_01", "speaker": "alice", "text": "Who cares for you? You're nothing but a pack of cards!", "note": "Carroll's own line, from the trial at the end of Wonderland. At a card table it was always going to come out." },
+      { "id": "bs_out_alice_02", "speaker": "alice", "text": "Oh, what a curious game! I'm sure I shall dream about it." }
+    ],
+    "sherlock": [
+      { "id": "bs_out_sherlock_01", "speaker": "sherlock", "text": "Beaten. A novel sensation. I shall want to examine it at leisure." },
+      { "id": "bs_out_sherlock_02", "speaker": "sherlock", "text": "Forgive me if I don't congratulate you. I am busy working out how you did it." }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "bs_bust_01", "speaker": "sherlock", "text": "Come back. You are not yet solved." },
+    { "id": "bs_bust_02", "speaker": "alice", "text": "The King says: begin at the beginning, go on till you come to the end, then stop. You haven't come to the end yet." },
+    { "id": "bs_bust_03", "speaker": "death", "text": "Most of this table has come back from an ending at least once. You can manage it.", "note": "True: Holmes after the waterfall, Nemo in a second novel, Alice through the looking-glass. Not Javert." }
+  ],
+
+  "champion_defeat": [
+    { "id": "bs_sh_end_01", "speaker": "sherlock", "text": "I once told Watson I had been beaten four times: three times by men, and once by a woman. I must revise the figure.", "note": "The Five Orange Pips. The revision deliberately leaves the player unclassified." },
+    { "id": "bs_sh_end_02", "speaker": "death", "text": "Six. Two remain. The rooms get darker from here." }
+  ]
+}

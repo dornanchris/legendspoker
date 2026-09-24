@@ -1,0 +1,64 @@
+{
+  "id": "robot",
+  "name": "The Robot",
+  "short": "The Robot",
+  "epithet": "The Faithful Machine",
+  "pronoun": "it",
+  "table": "station",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Archetype",
+  "era": "Retro-futurist archetype",
+  "dials": {
+    "aggression": 0.55,
+    "tightness": 0.62,
+    "bluffFrequency": 0.15,
+    "tiltSensitivity": 0.0,
+    "adaptivity": 0.3,
+    "noise": 0.5
+  },
+  "quirks": [
+    {
+      "type": "patient",
+      "minEquity": 0.56
+    }
+  ],
+  "tells": [
+    {
+      "signal": "lamp_flickers",
+      "text": "its chest lamp flickers",
+      "correlate": "strong",
+      "reliability": 0.56
+    },
+    {
+      "signal": "whirs",
+      "text": "whirs, briefly",
+      "correlate": "weak",
+      "reliability": 0.55
+    },
+    {
+      "signal": "head_rotates",
+      "text": "rotates its head to the pot and back",
+      "correlate": "bluffing",
+      "reliability": 0.55
+    }
+  ],
+  "idles": [
+    "recalibrates with a click",
+    "its antennae twitch",
+    "vents a thin puff of steam",
+    "its eye-lamps dim and brighten"
+  ],
+  "profile": {
+    "ledger": "It has no appointment with me. It keeps offering to help me anyway.",
+    "ledger_beaten": "It stood up again afterwards. That was not it standing.",
+    "history": [
+      "The robot is older than it looks. The word comes from R.U.R., a 1920 play by the Czech writer Karel Čapek, who credited his brother Josef with it; it is drawn from robota, the Czech for forced labour, and Čapek's robots were made of synthetic flesh. The tin came later, from the pulp magazines, world's fairs and toy shops of the following decades: a riveted barrel of a body, lamp eyes, a grille for a mouth, antennae.",
+      "At this table it is the station's crew. It fetches, carries and mends, and keeps the Astronaut company when the Grey is being strange. It is cheerful, literal and entirely sincere, and it plays cards exactly as it was taught, from the first page of the instructions to the last. It has always done what the station asked. It has never once asked what the station wants."
+    ],
+    "at_the_table": "It plays by the book, and the book is a sound one: fairly tight, raises when it has something, seldom bluffs. Before the flop it folds to a raise unless it holds a real hand, every time, without resentment. It never tilts, because it does not know how, and it barely adjusts, which is the price of never tilting. It is exactly as good as its instructions.",
+    "look": "Silhouette: a riveted barrel of a body, a square head with two round lamp eyes and a speaker-grille mouth, and a pair of antennae that give it height at a fifth of a screen. Brushed steel and brass, worn bright at the joints. Prop: the round lamp set in its chest. Its glow is the tell surface, and it is the slot the AI's lens takes later.",
+    "prop": "A round chest lamp",
+    "public_domain": "The tin robot is an archetype of pulp covers, toys and world's fairs, owned by nobody, and Čapek's 1920 play is public domain. Specific robots are owned: no Robby the Robot and his domed head, no Gort and his smooth visor, no Metropolis Maria, no 1939 Tin Man, no Lost in Space robot and no modern film droid."
+  }
+}

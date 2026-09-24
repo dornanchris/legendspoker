@@ -6,6 +6,11 @@ export type Decision = {
   action: Action
   betSize?: number
   reason: string
+  /**
+   * Human seat only: how long the player took, in ms. Recorded with the
+   * decision so a replayed game carries it too -- Holmes reads it.
+   */
+  thinkMs?: number
 }
 
 export type DecisionContext = {
@@ -31,6 +36,11 @@ export type DecisionContext = {
   tilt: number
   /** Observed fold-to-aggression rate of the table, for adaptivity. */
   opponentFoldRate: number
+  /**
+   * Chips this player has already put into THIS hand, blinds included. Lets a
+   * quirk know when someone is pot-committed. Read only by quirks.
+   */
+  committed: number
   rng: () => number
 }
 

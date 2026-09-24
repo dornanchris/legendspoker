@@ -1,0 +1,64 @@
+{
+  "id": "fdr",
+  "name": "Franklin D. Roosevelt",
+  "short": "FDR",
+  "epithet": "The Four-Term President",
+  "pronoun": "he",
+  "table": "white_house",
+  "role": "seat",
+  "arrives": false,
+  "origin": "History",
+  "era": "1882–1945 · 32nd President of the United States",
+  "dials": {
+    "aggression": 0.55,
+    "tightness": 0.55,
+    "bluffFrequency": 0.3,
+    "tiltSensitivity": 0.1,
+    "adaptivity": 0.35,
+    "noise": 0.12
+  },
+  "quirks": [
+    {
+      "type": "river_bluff",
+      "chance": 0.35
+    }
+  ],
+  "tells": [
+    {
+      "signal": "holder_up",
+      "text": "tilts his cigarette holder upward",
+      "correlate": "strong",
+      "reliability": 0.8
+    },
+    {
+      "signal": "broad_smile",
+      "text": "smiles broadly at the whole table",
+      "correlate": "bluffing",
+      "reliability": 0.78
+    },
+    {
+      "signal": "taps_ash",
+      "text": "taps the ash from his holder",
+      "correlate": "weak",
+      "reliability": 0.8
+    }
+  ],
+  "idles": [
+    "adjusts his pince-nez",
+    "laughs at something nobody said",
+    "settles his cape across his shoulders",
+    "nods to someone across the room"
+  ],
+  "profile": {
+    "ledger": "Charming to everyone; candid with no one. He was sitting for a portrait when I arrived. It was never finished.",
+    "ledger_beaten": "Beaten. He congratulated you so warmly that the whole room assumed it had been his idea.",
+    "history": [
+      "Franklin Delano Roosevelt (1882–1945) was Theodore's fifth cousin and married Theodore's niece Eleanor, who was given away by the President himself. At thirty-nine a paralytic illness, diagnosed as polio, left him unable to walk unaided. He was elected four times, the only president to serve more than two terms, and led the country through the Depression and most of the Second World War, talking to it over the radio in what the papers called fireside chats.",
+      "He spent his presidency making sure almost nobody photographed him in his wheelchair. He once told his Treasury Secretary that he was a juggler who never let his right hand know what his left hand did. When he kept the country guessing about a third term, Washington's press club built a great papier-mâché sphinx with his face and his cigarette holder. Nobody ever learned much by looking at him."
+    ],
+    "at_the_table": "Middle of the road on paper, which is the trouble. He plays a reasonable number of hands, bets when he means it and sometimes when he doesn't, and his favourite moment to tell a story is the last card, once the hand has been checked to him. Losses slide off him. He is warm to everyone, all evening, and he has had long practice at letting people believe whatever they like.",
+    "look": "Silhouette: the naval cape across his shoulders and the long cigarette holder cocked upward from his teeth — a diagonal nobody else at the table has. Face: broad, chin lifted, pince-nez, a wide and ready smile. Prop: the cigarette holder; its angle is the tell surface and reads from across the room.",
+    "prop": "Long cigarette holder",
+    "public_domain": "Historical figure, died 1945; US government photographs of him are public domain. Build from 1930s–40s press photographs. Avoid any modern screen or stage likeness, including the FDR of the musical Annie. Do not stage or joke about the wheelchair: he kept it out of frame all his life, and so do we."
+  }
+}

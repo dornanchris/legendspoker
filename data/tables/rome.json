@@ -1,0 +1,39 @@
+{
+  "id": "rome",
+  "kind": "tour",
+  "position": 5,
+  "name": "Imperial Rome",
+  "seats": [
+    "spartacus",
+    "pope",
+    "cerberus"
+  ],
+  "champion": "caesar",
+  "arrival": {
+    "character": "caesar",
+    "afterEliminations": 1,
+    "delayHands": 0,
+    "stack": "average"
+  },
+  "handsPerLevel": 25,
+  "dialogue": "table-05-rome.json",
+  "buyIn": 2000,
+  "respectStart": 0,
+  "place": "Castel Sant'Angelo, Rome",
+  "region": "Italy",
+  "era": "The Republic, the Renaissance and the underworld, all at once",
+  "teaser": "A slave, a pope, a three-headed dog, and a chair spoken for.",
+  "hook": "In Rome, every seat is inherited, bought or taken by force. You are about to find out which kind yours is.",
+  "room": "A high hall inside Castel Sant'Angelo: the emperor Hadrian's tomb, later walled into a papal fortress. Ancient brick below, Renaissance frescoes above, braziers for light. An iron chain runs from the wall to the dog's chair, and nobody is certain who holds the other end.",
+  "music": "A slow processional for low brass and frame drum, with a Renaissance lute figure drifting in and out: martial and courtly by turns, never hurried.",
+  "entrance": "Caesar arrives the moment the first chair empties. He walks in dictating to a secretary, takes his laurel wreath from its cushion by the door, puts it on and sits in the warm chair, as though a vacancy had been posted and he had applied.",
+  "ambience": [
+    "brazier crackle",
+    "a heavy chain shifting on stone",
+    "distant bells over the city",
+    "a far-off arena crowd, rising and falling",
+    "a pen scratching on parchment"
+  ],
+  "presence": "A laurel wreath waits on a cushion by the door. Its owner has been promised the next free chair.",
+  "writer_notes": "Dials and quirks fit the characters; three flags. (1) The Pope's 'blesses_cards' tell correlates with BLUFFING. Pairing a blessing with a lie is the one place this table could read as mocking the faith rather than the man. Suggest a secular gesture for the bluff tell (spreading his hands magnanimously, smoothing his vestments) and keep 'folds his hands as if in prayer', which reads as piety, not deceit. (2) Spartacus's adaptivity 0.15 undersells the man Plutarch describes (clever, cultivated, a tactician who got his army down a cliff on vine ladders); 0.25 would still leave him the least adaptive human here. Minor. (3) Several tells and idles aim at another seat: Spartacus 'stares hard at the Pope' (a bluffing tell), Cerberus 'sniffs at the Pope's robes', Caesar 'glances at the Pope', the Pope 'smiles benevolently at Spartacus'. They need a fallback once that seat is empty; Spartacus staring at Caesar would suit him even better."
+}

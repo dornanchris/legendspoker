@@ -1,0 +1,65 @@
+{
+  "id": "roosevelt",
+  "name": "Theodore Roosevelt",
+  "short": "Roosevelt",
+  "epithet": "The Rough Rider",
+  "pronoun": "he",
+  "table": "white_house",
+  "role": "seat",
+  "arrives": false,
+  "origin": "History",
+  "era": "1858–1919 · 26th President of the United States",
+  "dials": {
+    "aggression": 0.78,
+    "tightness": 0.45,
+    "bluffFrequency": 0.28,
+    "tiltSensitivity": 0.3,
+    "adaptivity": 0.1,
+    "noise": 0.1
+  },
+  "quirks": [
+    {
+      "type": "charge",
+      "minEquity": 0.55,
+      "chance": 0.65
+    }
+  ],
+  "tells": [
+    {
+      "signal": "grins_teeth",
+      "text": "grins, all teeth",
+      "correlate": "strong",
+      "reliability": 0.86
+    },
+    {
+      "signal": "drums_fingers",
+      "text": "drums his fingers on the felt",
+      "correlate": "bluffing",
+      "reliability": 0.84
+    },
+    {
+      "signal": "polishes_spectacles",
+      "text": "polishes his spectacles, hard",
+      "correlate": "tilted",
+      "reliability": 0.86
+    }
+  ],
+  "idles": [
+    "squares his shoulders",
+    "checks his pocket watch",
+    "leans forward on both elbows",
+    "tugs at his moustache"
+  ],
+  "profile": {
+    "ledger": "Shot in Milwaukee, and gave the speech anyway. When I came for him he was asleep. It seemed wiser.",
+    "ledger_beaten": "Beaten. He shook your hand hard enough to hurt, which is how he says well done.",
+    "history": [
+      "Theodore Roosevelt (1858–1919) was a sickly, asthmatic New York child who built himself up by exercise and never stopped. After his mother and his wife died on the same day in 1884, he went west to ranch in the Dakota Badlands. In 1898 he resigned from the Navy Department to lead the Rough Riders in Cuba, and three years later, at forty-two, he became the youngest president in history.",
+      "In 1912, campaigning for a third party, he was shot in the chest in Milwaukee. The bullet was slowed by his folded speech and his spectacle case, and he spoke for well over an hour before he let anyone take him to hospital. He won the Nobel Peace Prize, and he still believed most problems gave way if you charged them. That is how he plays."
+    ],
+    "at_the_table": "Loose and loud. He plays a great many hands and would rather raise than call — above all when someone else has bet first, which he takes as an invitation. He bluffs often enough that you cannot assume he has it, and he changes his approach for nobody. Beat him in a big pot and it stays with him for a while: the next few hands come faster and harder.",
+    "look": "Silhouette: barrel chest, leaning forward on both elbows — the broadest shape at the table. Face: the heavy moustache and the enormous grin; the teeth must read at a fifth of a screen. Prop: round steel-rimmed spectacles. Taking them off to polish them is a big, readable gesture, and the grin does the rest.",
+    "prop": "Round steel-rimmed spectacles",
+    "public_domain": "Historical figure, died 1919; period photographs are public domain. Build from photographs and the 1898 Rough Rider uniform. Avoid the Night at the Museum portrayal (horseback, waxwork) and any modern screen likeness. No teddy bears."
+  }
+}

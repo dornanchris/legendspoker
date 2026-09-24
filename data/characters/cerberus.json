@@ -1,0 +1,64 @@
+{
+  "id": "cerberus",
+  "name": "Cerberus",
+  "short": "Cerberus",
+  "epithet": "The Hound at the Gate",
+  "pronoun": "he",
+  "table": "rome",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Myth",
+  "era": "Greek myth · hound of the underworld",
+  "dials": {
+    "aggression": 0.65,
+    "tightness": 0.6,
+    "bluffFrequency": 0.02,
+    "tiltSensitivity": 0.3,
+    "adaptivity": 0.0,
+    "noise": 0.3
+  },
+  "quirks": [
+    {
+      "type": "snap",
+      "minEquity": 0.66
+    }
+  ],
+  "tells": [
+    {
+      "signal": "heads_attention",
+      "text": "all three heads snap to attention",
+      "correlate": "strong",
+      "reliability": 0.72
+    },
+    {
+      "signal": "left_yawns",
+      "text": "the left head yawns",
+      "correlate": "weak",
+      "reliability": 0.7
+    },
+    {
+      "signal": "heads_growl",
+      "text": "the heads growl at each other",
+      "correlate": "tilted",
+      "reliability": 0.72
+    }
+  ],
+  "idles": [
+    "the middle head scratches behind an ear",
+    "one head falls asleep",
+    "two heads watch you; one watches the pot",
+    "the right head sniffs at the nearest robe"
+  ],
+  "profile": {
+    "ledger": "Lets everyone in. Lets nobody out. We have kept the same hours for a very long time.",
+    "ledger_beaten": "Drugged, charmed and carried off before, but never outplayed. He is taking it well. Two of him are.",
+    "history": [
+      "In Hesiod's Theogony he is the child of Typhon and Echidna: a brazen-voiced hound with fifty heads, who fawns on the dead as they enter the underworld and devours anyone who tries to leave. Later writers settled on three heads, and Apollodorus adds a serpent's tail and snakes along his back. Heracles dragged him up into daylight as his last labour, bare-handed, and afterwards took him home again.",
+      "He is in Rome's own epic. In Virgil's Aeneid the Sibyl gets Aeneas past him by throwing him a honey cake laced with a sleeping drug, which he snaps up with all three mouths. That is his claim on this table — that, and being the one player here who cannot scheme, bluff or calculate. He reacts. Three heads, three opinions, one stack of chips."
+    ],
+    "at_the_table": "He does not bluff. Nobody has explained it to him, and all three heads would object. He plays a middling number of hands, and when he likes what he holds he bets it hard, at once, every time; patience with a good hand is not in his nature. He learns nothing about you and never will. Beat him in a big pot and he sulks, for about as long as a dog does.",
+    "look": "Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a low ridge of small snakes along the neck and spine after Apollodorus, kept subtle so it never clutters the read. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.",
+    "prop": "Three iron collars on one chain",
+    "public_domain": "Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads."
+  }
+}

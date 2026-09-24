@@ -1,0 +1,41 @@
+{
+  "id": "station",
+  "kind": "tour",
+  "position": 8,
+  "name": "The Station",
+  "seats": [
+    "grey_alien",
+    "martian",
+    "robot",
+    "astronaut"
+  ],
+  "champion": "the_ai",
+  "arrival": {
+    "character": "the_ai",
+    "afterEliminationOf": "robot",
+    "delayHands": 0,
+    "stack": "average",
+    "watching": true
+  },
+  "handsPerLevel": 22,
+  "dialogue": "table-08-station.json",
+  "buyIn": 2000,
+  "respectStart": 0,
+  "place": "A station above the Earth",
+  "region": "Earth orbit",
+  "era": "Not yet",
+  "teaser": "Earth in the window. Four at the table. And the room.",
+  "hook": "Everyone aboard ended up here by accident: drifting, lost, or passing through. You are the newest arrival, and the station would very much like to know what you are for.",
+  "room": "A round lounge on a slowly turning station: brushed steel, soft lamps, a felt table bolted to the floor, and one enormous window full of the Earth. The gravity is made, not given, and it is not quite right; now and then a chip lifts off the felt and settles again. A single lens sits in the ceiling, pale and unblinking.",
+  "music": "Slow and weightless: glass harmonica and soft electronic tones over a pulse like a sleeping heartbeat, which falters and stops when the room turns.",
+  "entrance": "The station is in the room from the first hand: a voice, and a pale lens in the ceiling. When the Robot is knocked out, the lights fail, the gravity lets go, and the Robot sits back down with a lens where its chest lamp used to be.",
+  "ambience": [
+    "air handlers breathing, slightly out of step",
+    "the hull ticking as it turns into sunlight",
+    "a soft chime from nowhere in particular",
+    "a chip lifting off the felt and clicking back down",
+    "a deep, slow hum under everything"
+  ],
+  "presence": "The room is listening.",
+  "writer_notes": "(1) The AI shares punish_passivity with the Martian. The design doc wants the AI to play differently from the body it takes and to 'start messing with you'; the needle quirk (small probing bets when checked to) says that more clearly than a quirk the Martian has already shown the table. Suggest swapping it in, or adding it. (2) robot_the_ai banter cannot fire on the contested-pot trigger, because the AI has no seat while the Robot plays; see notes.banter in the dialogue file. (3) The AI's lens must never be red, and the emergency lighting is written as amber for the same reason."
+}
