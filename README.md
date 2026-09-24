@@ -1,127 +1,107 @@
-# Character Poker — Phase 1 + 2
+# Legends Poker: Death's Invitational
 
-Headless Texas Hold'em engine plus the personality layer, per the project
-plan. No graphics, deliberately. This exists to answer one question:
+A single-player, character-driven Texas Hold'em "world tour". Eight themed
+tables of legends from history, myth and public-domain literature, one dealer
+at every table — Death — and a finale where the dealer sits down. Spiritual
+successor to *Imagine Poker* (Candywriter, 2008).
 
-> **Do three characters built from the same decision function, differing only
-> in their dials, actually feel like different players?**
+The design lives in [`character-poker-design-doc.md`](character-poker-design-doc.md),
+the build order in [`BUILD-PLAN.md`](BUILD-PLAN.md), and the rules every session
+must follow in [`CLAUDE.md`](CLAUDE.md). The casting book — every character's
+dials, tells, history and art notes — is [`ROSTER.md`](ROSTER.md).
 
-If the answer is no, no amount of art fixes it. If yes, everything else is
-expansion at linear cost.
-
-## Run it
+## Play it
 
 ```bash
-npm install
-npm run sim          # 2000 hands bot-vs-bot, prints the stats table
-npm run sim 10000    # more hands, tighter numbers (~3 min)
-npm run play         # watch 3 hands with tells and reasoning
-npm run play 10
+npm install          # also applies patches/ -- do not skip it
+npm run web          # build + serve at http://localhost:5173
 ```
 
-## What you should see
+Landscape only. Add `?pace=0.2` to the URL to speed the presentation up for
+testing; it scales the display clock and nothing else.
 
-```
-Character                VPIP    PFR     AF   Fold%    bb/100
--------------------------------------------------------------
-Dracula                  33.7   10.0   0.66    52.7     87.26
-Abominable Snowman       74.5    3.3   0.24    10.1    -66.00
-Cleopatra                62.7   39.1   3.18    28.1    -21.26
+What is in it today:
+
+- **The whole tour, playable.** Eight story tables, two Champions' Tables and
+  the finale, each an elimination tournament. Late champions arrive the way the
+  design doc stages them: Odysseus ten hands after the first bust (clear Athens
+  first and you miss him), Caesar the moment a chair empties, Dracula after two
+  eliminations, and the station's intelligence in the Robot's body.
+- **Dialogue.** ~940 lines: Death's table intros, the one "the dealer arranged
+  it" plant per table, banter between pairs who have history, lines aimed at
+  you that change as the table's respect for you grows, bust-out lines, and
+  Holmes reading *your* habits back to you. All of it is **draft**: written,
+  checked, but not yet edited by a human.
+- **Respect, not XP.** Each table calls you nothing, then a nickname, then your
+  name, then a title — announced when it flips, remembered per table.
+- **The Ledger.** Death's book: a page for everyone you meet (who they were,
+  how they play, what you have seen them do), the tables, your account, the
+  house rules, and **marks** — the game's achievements, written as entries in
+  his book rather than a trophy cabinet.
+- **Save and resume, mid-hand.** Leave any table and come back to exactly the
+  same card. A saved seat is a seed plus your decisions; resuming replays it.
+- **Fast-forward** once you are out of a hand. Presentation only; it stops by
+  itself at the showdown.
+
+Not yet: art (characters are initials in a medallion until the Rive puppets
+exist), audio, the Capacitor phone build, multiplayer.
+
+## Checks
+
+```bash
+npm run check          # typecheck + all three checks below
+npm run check:data     # every character, table, line and mark is well-formed
+npm run check:pots     # the poker-ts side-pot patch is applied and working
+npm run check:replay   # save mid-hand, restore, play on: identical to the end
 ```
 
-Three genuinely different profiles: a tight passive trapper, a loose
-calling station, an aggressive raiser. **Read the spread, not the absolute
-numbers.** Profits sum to ~zero, which is also your check that the pot
-accounting is correct.
+## Tuning and tools
+
+```bash
+npm run sim 5000               # the Phase 2 balance instrument (frozen cast)
+npm run sim 5000 white_house   # one tour table's whole cast, cash mode
+npm run sim 3000 all           # every tour table
+npm run tourney 100            # Phase 3a exit test: every table must end
+npm run tourney 100 athens     # one tour table as it is played, arrivals included
+npm run play 5                 # watch a few hands in the terminal, with tells
+npm run roster                 # regenerate ROSTER.md from data/
+```
+
+Read the spread, not the absolute numbers, and **never tune on fewer than a
+few thousand hands** — win rates swing wildly below that.
+
+The four archetype targets (VPIP = % of hands played, AF = raises per call):
+
+| Style | VPIP | AF |
+|---|---|---|
+| Tight-passive rock | 15–25 | < 1 |
+| Calling station | 60–80 | < 0.5 |
+| Loose-aggressive | 50–70 | > 2.5 |
+| Tight-aggressive | 20–30 | > 2 |
+
+## How characters work
+
+**One decision function for everyone.** `src/decide.ts` never branches on who
+is playing. Personality is data: five dials (`aggression`, `tightness`,
+`bluffFrequency`, `tiltSensitivity`, `adaptivity`), a `noise` dial for how much
+meaningless fidgeting buries their real tells, one or two **quirks** from the
+generic library in `src/quirks.ts`, and a vocabulary of tells and idles. A new
+character is a JSON file in `data/characters/` and one import line in
+`src/content.ts`.
+
+**Tells are signal plus noise.** Each tell has a reliability below 1, so some
+fire honestly and some mislead; idles and ambient repeats of the tells
+themselves fire at a rate set by `noise`. Early tables fidget little, so their
+real tells stand out; late tables bury them; Death has none at all.
 
 ## Layout
 
 ```
-src/
-  equity.ts       hand strength — Chen-ish heuristic preflop,
-                  Monte Carlo postflop. Cached per street.
-  personality.ts  the dials + the three characters. Data only.
-  decide.ts       ONE decision function shared by everyone,
-                  plus tell emission.
-  game.ts         loop wrapping poker-ts; stats, tilt, events.
-  sim.ts          the Phase 2 exit test.
-  play.ts         watchable CLI.
+src/          engine (poker-ts wrapper, decide, quirks, equity, rng) and the
+              pure game logic around it: content loader, tour rules, the
+              director (dialogue/respect/marks), marks, save schema, checks
+data/         characters/, tables/, dialogue/, marks.json, story.json
+web/          the shell: app.ts (router), store.ts (saves), screens/, style.css
+art-tools/    parts-sheet splitter and puppet preview for the Rive pipeline
+patches/      the poker-ts fixes (side pots, seedable deck) -- load-bearing
 ```
-
-**The rule that keeps this portable:** nothing in `decide.ts` or
-`personality.ts` branches on character identity. If you find yourself
-writing `if (personality.id === 'dracula')`, that logic belongs in a quirk.
-This is also why the personality layer survives a change of mind about 2D
-vs 3D — it has no rendering dependency at all.
-
-## Dials
-
-| Dial | Effect |
-|---|---|
-| `aggression` | bet/raise frequency when ahead |
-| `tightness` | equity margin required to enter a pot |
-| `bluffFrequency` | how often they fire with nothing |
-| `tiltSensitivity` | degradation after a big loss, decays 15%/hand |
-| `adaptivity` | how much they exploit an opponent who folds too much |
-| `quirks` | 1-2 signature rules that break the pattern |
-
-**Quirks matter more than they look.** Dials alone converge on same-y bots.
-The current three:
-
-- Dracula — *trap*: flats monsters before the river instead of raising
-- Snowman — *never folds small*: calls any bet up to 2bb, always
-- Cleopatra — *punish passivity*: attacks opponents who fold too often
-
-## Tells
-
-Derived from the same state that drove the decision, never authored
-separately. Each has a `reliability` below 1.0, so some fire honestly and
-some mislead — which is what makes them learnable rather than a readout.
-
-In the real build these should be **idle variants**, not triggered
-one-shots. A tell that fires on cue can't be missed; one woven into how a
-character sits while thinking has to be learned.
-
-## Tuning loop
-
-1. `npm run sim 5000`
-2. Look for: anyone at an extreme bb/100, anyone whose VPIP/AF collapses
-   toward the others, quirks that never trigger
-3. Adjust the numbers in `personality.ts` only
-4. Repeat
-
-The first pass here found the Snowman at −307 bb/100 — losing three
-buy-ins per 100 hands, a caricature rather than a character. Raising his
-`tightness` from 0.18 to 0.38 and tightening the quirk threshold from 3bb
-to 2bb brought him to a realistic −66.
-
-## Known simplifications
-
-- Stacks reset to the buy-in every hand, so this measures decision quality
-  rather than tournament survivorship. Clean comparable win rates; no ICM.
-- Monte Carlo at 60 rollouts has roughly ±6% error. Fine for a bot
-  decision, and it's the difference between 50 hands/sec and 15.
-- `adaptivity` currently models the table as a whole rather than tracking
-  each opponent individually. Per-opponent modelling is the obvious next
-  step and is where Cleopatra gets genuinely interesting.
-- No position awareness. Real players open far wider on the button. Adding
-  a position term to `tightness` is probably the single highest-value
-  improvement to realism.
-
-## Playing it
-
-```bash
-npm run web          # build + serve the table at localhost:5173
-```
-
-You are seat 0 against the three characters, in an elimination tournament:
-stacks persist, blinds climb every 25 hands, and the table ends when someone
-holds all 8000 chips. Landscape only. Add `?pace=0.2` to speed the
-presentation up — it scales the display clock and nothing else, so the hand
-resolves exactly the same either way.
-
-## Next
-
-The exit test for this phase is subjective and yours to run: play twenty
-hands voluntarily and see whether you can name each character's style without
-reading the code. Then Phase 4, the platform shell.

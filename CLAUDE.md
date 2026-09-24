@@ -75,22 +75,41 @@ story, it's noise on an already-busy landscape screen.
 ```
 src/
   equity.ts       hand strength: Chen-ish preflop, Monte Carlo postflop
-  personality.ts  the dials + quirks + tells; characters as DATA
+  personality.ts  Personality/Quirk/Tell types + the FROZEN Phase 2 cast
+  quirks.ts       the generic, parameterised quirk library (data picks them)
   decide.ts       THE shared decision function. Read this first.
-  game.ts         loop over poker-ts; stats (VPIP/PFR/AF), tilt, events
+  game.ts         loop over poker-ts; stats, tilt, events, late ARRIVALS
   rng.ts          the one seeded RNG; state() is what makes saves resumable
-  sim.ts          `npm run sim [hands]` — the balance/exit test (cash)
+  content.ts      loads data/ and builds Personalities; the only file that
+                  knows where content lives (explicit imports, see gotchas)
+  tour.ts         pure tour rules: unlocks, respect tiers, earned names
+  director.ts     one sitting as the ROOM sees it: dialogue, respect flips,
+                  marks, observations. Own seeded RNG. Event-driven.
+  marks.ts        mark (achievement) conditions, generic over data/marks.json
+  save.ts         the save schema; mid-table state = seed + decision log
+  sim.ts          `npm run sim [hands] [table|all]` — balance test (cash)
   play.ts         `npm run play [hands]` — watchable CLI with tells
-  tourney.ts      `npm run tourney [tables]` — the Phase 3a exit test
+  tourney.ts      `npm run tourney [tables] [table]` — every table must end
   pot-conservation.ts `npm run check:pots` — guards the poker-ts pot patch
+  data-check.ts   `npm run check:data` — the type checker for content
+  replay-check.ts `npm run check:replay` — save mid-hand, resume, identical
+  roster.ts       `npm run roster` — regenerates ROSTER.md from data/
 data/
-  dialogue/       one file per table; schema is established and working
+  characters/     one file per character: dials, quirks, tells, idles, profile
+  tables/         one file per table: seats, champion, arrival, room, hook
+  dialogue/       one file per table + dealer.json (Death's general lines)
+  marks.json      the ledger's marks (achievements), with generic conditions
+  story.json      the invitation, the ending, the epigraph
 web/
-  app.ts          the Phase 3b table: human seat, DOM rendering, input
+  app.ts          boot + hash router (#/tour, #/ledger/..., works from file://)
+  store.ts        the Save in localStorage, guarded; live-only persistence
+  screens/        title, invitation, map+intro, table, results, ledger,
+                  settings+about, ending. table.ts keeps the 3b presentation queue
   index.html      markup; style.css is landscape-only by design
   shims/          browser stand-ins for the node builtins poker-ts needs
   build.mjs       esbuild -> web/bundle.js (gitignored, regenerate it)
   serve.mjs       dependency-free static server; Phase 4 replaces it with Vite
+ROSTER.md         GENERATED casting book: never edit by hand
 art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   build_puppet.py init/render a layout to preview puppet assembly
@@ -116,14 +135,14 @@ has a stack-depth term, so short stacks widen and push instead of folding
 their way to death; it is neutral above 20bb, which is why the cash profiles
 above are unchanged.
 
-**Phase 3b is built: human seat + throwaway DOM table.** `npm run web` serves
-a playable landscape table at localhost:5173 — you sit at seat 0 against the
-three characters, in the tournament model from 3a. Action buttons are built
-from the engine's legal actions, and the engine rejects an illegal action
-outright rather than trusting the UI.
+**Phase 3b is built: human seat + throwaway DOM table.** (It was played
+against the frozen Phase 2 cast; the tour tables have since replaced that
+cast in the web build — see below.) Action buttons are built from the
+engine's legal actions, and the engine rejects an illegal action outright
+rather than trusting the UI.
 
 The piece worth keeping when this UI is thrown away is the **presentation
-queue** in `web/app.ts`: the engine resolves as fast as it can and pushes
+queue**, now in `web/screens/table.ts`: the engine resolves as fast as it can and pushes
 events, the UI plays them back on its own clock, and the only place they meet
 is a one-way wait before the player is asked to act. That is the separation
 Phase 6's fast-forward needs. `?pace=0.1` scales the presentation clock and
@@ -136,14 +155,67 @@ adaptive, tight-passive trapper, and calling station. That is the whole
 data-driven personality thesis confirmed by a person rather than a stats
 table, and it is what makes character #33 nearly free.
 
-**Not started:** Rive integration, dialogue system, audio, persistence, the
-platform shell (Phase 4).
+**The shell, the tour and the save schema are built — ahead of the plan's
+order, at the owner's request.** This is Phase 4's "screen shell early"
+plus a first pass of Phase 7 and 9 *content*, all still without art:
+
+- **Screens:** title → invitation (sign your name; onboarding without a
+  tutorial) → tour map → table intro (Death's narration) → table → results →
+  ledger / settings / about → ending. Hash-routed plain DOM, no framework.
+- **All 11 tables playable:** the 8 story tables, Champions' Tables I and II
+  ("The Hall of Doors"), and the finale ("The Last Crossing", hidden from the
+  map until it opens). 35 roster characters + Death, all data. Late champions
+  arrive per the design doc via `Arrival` rules in `game.ts`; Odysseus is
+  missable. Open tables (random play) unlock at cleared tables.
+- **Dialogue system:** `src/director.ts` plays the established schema — intro,
+  the one plant, pair banter, tiered player-directed lines, Death's asides,
+  arrivals, heads-up, bust-outs, defeat — plus Holmes's `reads_you` (lines
+  keyed to the PLAYER's observed habits: his signature, as data). ~940 lines,
+  **all draft**, written to the design doc's rules, not yet human-edited.
+- **Respect:** per table, points from pots / showdowns / knockouts, tiers at
+  4 / 10 / 18, heads-up with the champion forces tier 2, a win forces tier 3.
+  The name flip is always announced (toast + the tier's first line).
+- **The Ledger:** character pages (history, how they play in Death's voice,
+  what YOU have seen them do in words, habits noted), venues, account,
+  house rules, and **marks** — 36 achievements framed as Death's entries.
+- **Save/resume:** `npm run check:replay` is the exit test the plan asked
+  for — save mid-hand, restore, play on, identical — and it passes on every
+  table. Saved seats carry `ENGINE_VERSION`; see gotchas.
+- **Noise dial:** exists (`noise`, 0–1). Presentation-only: an ambient idle
+  scheduler shows idles and tell texts at that rate. Death is 0 with no tells.
+- **Fast-forward:** offered when folded / all in; presentation clock only;
+  lines are cut, not sped; cancels at the showdown reveal and new deals.
+
+**Not started:** Rive integration, audio, Capacitor + a real device.
 
 ## KNOWN GAPS AND SIMPLIFICATIONS
 
-- **No noise-to-signal dial.** Difficulty runs on two axes: skill UP (dials)
-  and legibility DOWN (tells). The second axis needs a per-character
-  noise-to-signal ratio in `personality.ts`. Doesn't exist yet.
+- **The tell model is still one-signal-per-decision** (`emitTell`) plus
+  ambient noise. The design doc's real model — meaning only in COMBINATIONS
+  during a live hand — is Phase 7's cluster logic and needs the Rive rig.
+- **All content is draft.** Profiles, table text and dialogue were written to
+  the design doc's rules and pass `check:data`, but no human has edited them.
+  Facts writers flagged to spot-check: Kidd's exclusion from the 1698 pardon,
+  Javert's mother as a "tireuse de cartes", the Transylvania references
+  (Lucy's four transfusions, "King Laugh", Van Helsing's rifle).
+- **Roster count is 35, not 32.** The v4 table lists 5 characters at Athens,
+  Transylvania and the Station (4 seats + a late champion). And Rome has only
+  3 seated NPCs where the "late champion needs a fourth NPC holding the
+  chair" rule implies 4 — Caesar takes the first vacated chair instead.
+- **Dials are tuned on 3000-hand cash sims** per table (`npm run sim 3000
+  all`) — enough for VPIP/AF, not for win rates. Retune on more hands. The
+  early tables keep deliberate caricatures (Roosevelt, Lancelot, the Cyclops
+  lose heavily to bots) because beginner tables should be exploitable.
+- **Tight play dominates heads-up in this engine.** Every aggressive Death
+  lost to Lincoln 2:1. The tuned Death is tight and patient with a
+  check-raise (dials in `data/characters/death.json`) and beats Lincoln,
+  Washington, Arthur and Roosevelt 53–70% heads-up over 60 matches each. The finale
+  buy-in is 5000 so the match runs long enough for skill to show.
+- **Tightness saturates.** Above ~0.75 the dial barely moves VPIP; the
+  quirks (`patient`, `calls_small`, `steal`) move it far more. Tune with them.
+- **An existing White House line genders the player** (`wh_p0_03`, "the look
+  of a man who has read about poker"). Every newer line avoids it; this one is
+  the owner's to change.
 - **No position awareness.** Adding a position term to effective tightness is
   the single highest-value realism improvement available.
 - Adaptivity is table-wide, not per-opponent.
@@ -170,9 +242,11 @@ platform shell (Phase 4).
   without that, a restored game deals different cards and the save is a lie.
 - Cash mode still resets stacks to the buy-in each hand. That is deliberate
   and must stay: it is what keeps the tuning numbers comparable.
-- **Save/resume must capture MID-HAND state** — stacks, blind level, button,
-  whose turn, pot, board, tilt values, respect tier, dialogue already used.
-  Build the schema in Phase 4; retrofitting is much worse.
+- **Save/resume captures MID-HAND state — DONE, by replay.** `active` in the
+  save is the seed plus the human's decision log (with think times). Resuming
+  replays silently to the next undecided action, which reconstructs stacks,
+  blinds, button, pot, board, tilt, respect and dialogue-already-used exactly.
+  No field can drift from the engine because there are no such fields.
 - Monte Carlo equity is ±6% at 60 rollouts.
 - `MOTION-SPEC.md` layer 3 (per-character vocabulary) is an empty template.
   No character has an authored tell cluster yet.
@@ -182,6 +256,28 @@ platform shell (Phase 4).
   for look-direction).
 
 ## GOTCHAS THAT COST TIME BEFORE
+
+- **Bump `ENGINE_VERSION` in `src/save.ts`** whenever a change would make an
+  old decision log replay differently: engine rules, decide(), a quirk, ANY
+  dial, a table's cast, anything that draws from the game RNG. A seat saved
+  under another version is released with an explanation rather than replayed
+  into different cards; a replay that hits an illegal action does the same.
+- **Nothing on the presentation side may touch the game RNG.** The director
+  has its own seeded stream (seed XOR a constant); ambient idles and
+  "thinking long" use Math.random. Picking a line from the game RNG would
+  change the next card. `check:replay` catches it.
+- **Persist only LIVE hands.** During a resume replay the web layer records
+  nothing (it was recorded the first time); marks earned in replay are
+  written with earnMark, which dedups.
+- `src/content.ts` imports every data file explicitly — no glob — so the
+  bundle opens from disk. A new character/table/dialogue file needs an import
+  line there, and `npm run check:data` must pass.
+- The default `npm run sim` / `tourney` never import data/: they run the
+  frozen Phase 2 cast so old and new numbers stay comparable. Table args load
+  content lazily.
+- A late arrival marked `"watching": true` (only the Station's AI) may speak
+  and banter before sitting down. Dracula watches from the fire in SILENCE:
+  the Transylvania notes forbid his lines before the arrival.
 
 - Win rates swing wildly under a few thousand hands. **Do not tune dials on
   fewer than several thousand hands** — you will be chasing variance, not
@@ -216,21 +312,26 @@ platform shell (Phase 4).
 
 ## NEXT MILESTONE
 
-Phase 4 — the platform shell. Vite + React, Capacitor, a real device, audio
-unlock on first tap, safe-area handling, and the save schema.
+Phase 4 — the platform shell. What is left of it: Capacitor, a real device,
+audio unlock on first tap, and checking the safe-area handling on hardware.
+The screen shell and the save schema are done. **Vite + React is now a
+choice, not a given:** every screen is a plain render function, so porting is
+one-for-one, but the shell works without either — decide whether they still
+earn their place.
 
 **Its exit test needs a physical phone, so it is yours to run**, the same way
 3b's was: the ugly DOM game running on a real device in landscape with one
 sound on a button press.
 
 Order within the phase, cheapest-risk first:
-1. **Seedable deck.** Still the open non-negotiable (#6) and it blocks replay
-   from a save, so it comes before the save schema rather than after. The
-   `patches/` mechanism already exists; this also removes the Web Crypto shim.
-2. **Save schema, capturing MID-HAND state.** The expensive-to-retrofit piece.
-   With a seeded deck it can be tested hard: save mid-hand, restore, play on,
-   and the hand must resolve identically.
-3. Vite + React, then Capacitor scaffolding.
+1. ~~Seedable deck.~~ Done (patch).
+2. ~~Save schema, capturing MID-HAND state.~~ Done (seed + decision log;
+   `npm run check:replay`).
+3. Capacitor scaffolding (and Vite/React only if they earn it), then the
+   device test.
+
+Also owed before Phase 5: a human edit pass on the draft dialogue, and the
+open naming decisions (the AI, the Pope, and "The Wolf Man" — see ASSETS.md).
 
 **Dev machine is Windows, so iOS is not available** — Capacitor's iOS target
 needs a Mac with Xcode plus $99/yr. Android is $25 one-off and works from
