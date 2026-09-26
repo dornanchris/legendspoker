@@ -608,6 +608,7 @@ export class TableRun {
       knockouts,
       lostShowdownRank,
       bluffWon,
+      splitPot: !!sd?.pots.some((p) => p.winners.length > 1 && p.winners.includes(HUMAN)),
     }
     for (const id of marksForHand(facts, this.earned)) {
       this.earned.add(id)

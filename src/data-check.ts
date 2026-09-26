@@ -13,7 +13,7 @@
  */
 import { CHARACTERS, TABLES, DIALOGUE, DEALER, MARKS, STORY, fullCast, type Line } from './content.js'
 import { QUIRKS } from './quirks.js'
-import { CONDITION_TYPES } from './marks.js'
+import { CONDITION_TYPES, conditionErrors } from './marks.js'
 
 const errors: string[] = []
 const warnings: string[] = []
@@ -196,6 +196,7 @@ for (const m of MARKS) {
   if (!CONDITION_TYPES.has(m.when?.type)) err(w, `unknown condition "${m.when?.type}"`)
   if (m.when?.table && !TABLES.some((t) => t.id === m.when.table)) err(w, `unknown table "${m.when.table}"`)
   if (m.when?.character && !CHARACTERS[m.when.character]) err(w, `unknown character "${m.when.character}"`)
+  if (m.when) for (const e of conditionErrors(m.when)) err(w, e)
 }
 
 if (!STORY?.invitation?.heading || !STORY.invitation.body?.length) err('story', 'invitation is not written')

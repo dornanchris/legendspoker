@@ -34,6 +34,8 @@ export type HandFacts = {
   lostShowdownRank: number | null
   /** Won uncontested by betting with a weak hand. */
   bluffWon: boolean
+  /** The player tied at showdown and shared a pot with another hand. */
+  splitPot: boolean
 }
 
 export type TableFacts = {
@@ -76,6 +78,17 @@ function containsRanks(cards: Card[], ranks: string[]): boolean {
   return true
 }
 
+/** The player's two hole cards are exactly `w.ranks`, in either order. */
+function holeMatches(w: MarkCondition, hole: Card[] | null): boolean {
+  if (!hole) return false
+  const [a, b] = hole
+  const want = [...w.ranks].sort().join('')
+  if ([a.rank, b.rank].sort().join('') !== want) return false
+  if (w.offsuit && a.suit === b.suit) return false
+  if (w.suited && a.suit !== b.suit) return false
+  return true
+}
+
 function handCondition(w: MarkCondition, h: HandFacts): boolean {
   if (w.table && w.table !== h.table) return false
   switch (w.type) {
@@ -90,15 +103,12 @@ function handCondition(w: MarkCondition, h: HandFacts): boolean {
           (w.rank === undefined || p.rank === rankIndex(w.rank)) &&
           (!w.ranks || (p.cards !== null && containsRanks(p.cards, w.ranks))),
       )
-    case 'hole_win': {
-      if (!h.hole || h.wonPots.length === 0) return false
-      const [a, b] = h.hole
-      const want = [...w.ranks].sort().join('')
-      if ([a.rank, b.rank].sort().join('') !== want) return false
-      if (w.offsuit && a.suit === b.suit) return false
-      if (w.suited && a.suit !== b.suit) return false
-      return true
-    }
+    case 'hole_win':
+      return h.wonPots.length > 0 && holeMatches(w, h.hole)
+    case 'hole_loss':
+      return h.lostShowdownRank !== null && holeMatches(w, h.hole)
+    case 'split_pot':
+      return h.splitPot
     case 'all_in_win':
       return h.allInWon
     case 'knockout':
@@ -153,8 +163,8 @@ function careerCondition(w: MarkCondition, s: Save): boolean {
 }
 
 const HAND_TYPES = new Set([
-  'pot_win', 'showdown_win', 'hole_win', 'all_in_win', 'knockout',
-  'knockouts_in_hand', 'showdown_loss', 'bluff_win',
+  'pot_win', 'showdown_win', 'hole_win', 'hole_loss', 'all_in_win', 'knockout',
+  'knockouts_in_hand', 'showdown_loss', 'bluff_win', 'split_pot',
 ])
 const TABLE_TYPES = new Set([
   'table_won', 'table_won_missing', 'table_won_from_short', 'table_won_leading',
@@ -164,6 +174,27 @@ const CAREER_TYPES = new Set(['hands_played', 'tour_complete', 'table_cleared', 
 
 /** Every condition type this build understands. check:data uses it. */
 export const CONDITION_TYPES = new Set([...HAND_TYPES, ...TABLE_TYPES, ...CAREER_TYPES])
+
+const CARD_RANKS = new Set(['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'])
+
+/**
+ * What is wrong with a condition's parameters. A misspelt hand name is not a
+ * crash but a silent match: rankIndex() gives -1, and every hand is >= -1.
+ * check:data reports these.
+ */
+export function conditionErrors(w: MarkCondition): string[] {
+  const out: string[] = []
+  for (const k of ['rank', 'minRank']) {
+    if (w[k] !== undefined && rankIndex(w[k]) < 0) out.push(`unknown ${k} "${w[k]}" (one of: ${RANKINGS.join(', ')})`)
+  }
+  if (w.ranks !== undefined && !(Array.isArray(w.ranks) && w.ranks.every((r: string) => CARD_RANKS.has(r)))) {
+    out.push('ranks must be a list of card ranks: 2-9, T, J, Q, K, A')
+  }
+  if ((w.type === 'hole_win' || w.type === 'hole_loss') && w.ranks?.length !== 2) {
+    out.push(`${w.type} needs exactly two ranks`)
+  }
+  return out
+}
 
 export function marksForHand(h: HandFacts, earned: Set<string>): string[] {
   return MARKS.filter((m) => !earned.has(m.id) && HAND_TYPES.has(m.when.type) && handCondition(m.when, h))
