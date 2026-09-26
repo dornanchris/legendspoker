@@ -67,5 +67,38 @@
     "look": "Silhouette: square and solid, shoulders set back over a deep chest, in a plain black professor's frock coat, a doctor's bag at his feet. Clean-shaven, square-jawed, bushy brows, reddish hair swept back off a broad forehead, wide-set blue eyes. Prop: his spectacles. They are small, so the tell is the whole gesture: off, polished on a big white handkerchief, back on.",
     "prop": "His spectacles",
     "public_domain": "Stoker's Dracula (1897) is public domain. Build him from the novel: clean-shaven, reddish hair, bushy brows, a professor's black coat. Nothing from the 2004 Van Helsing film: no broad-brimmed hat, long leather coat, crossbow or gadgets, and no likeness of any actor who has played him. His Dutch English is used lightly, never as a comic accent."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. We must be patient, my friends.",
+      "I fold. There is no shame in waiting for daylight.",
+      "Fold. A doctor knows when not to operate.",
+      "So. I withdraw."
+    ],
+    "check": [
+      "Check. We watch, and we wait.",
+      "Check. I make my observations.",
+      "Check."
+    ],
+    "call": [
+      "I call. We shall see what we shall see.",
+      "Call. I must know the end of it.",
+      "Call. It is a doctor's duty to look."
+    ],
+    "bet": [
+      "I bet. A small dose, to begin.",
+      "Bet. Let us take its temperature.",
+      "Bet. Write it down, someone."
+    ],
+    "raise": [
+      "I raise the stake.",
+      "Raise. We have a duty to do.",
+      "Raise. And I have brought garlic."
+    ],
+    "all_in": [
+      "The whole stake. Into the heart of it.",
+      "All in. At sunset, as it must be done.",
+      "Everything. Somebody write it down."
+    ]
   }
 }

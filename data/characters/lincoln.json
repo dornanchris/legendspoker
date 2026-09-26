@@ -61,5 +61,40 @@
     "look": "Silhouette: the longest frame at the table, bare-headed, the stovepipe hat resting on his knee with its crown showing above the table edge. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen.",
     "prop": "Stovepipe hat, on his knee",
     "public_domain": "Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film."
+  },
+  "callouts": {
+    "fold": [
+      "I'll let this one go by.",
+      "Fold. I sat on a proclamation for two months. I can sit on this.",
+      "I'll sit by the fire for this one.",
+      "Fold. There is a time for everything, and this isn't it."
+    ],
+    "check": [
+      "Check.",
+      "I'll hold my peace.",
+      "Check. Go on, I'm listening."
+    ],
+    "call": [
+      "I'll see that.",
+      "Call. Best not to swap horses mid-stream.",
+      "Call. I'd like to hear the rest of the argument.",
+      "I'll pay to hear the end of the story."
+    ],
+    "bet": [
+      "I'll put something on it.",
+      "Bet. A modest sum. I was a country lawyer.",
+      "Let's see who's in earnest."
+    ],
+    "raise": [
+      "Raise.",
+      "Raise. I am a slow walker, but I never walk back.",
+      "I'll raise. Events have controlled me long enough.",
+      "Raise, and I'll say no more about it."
+    ],
+    "all_in": [
+      "All in. With malice toward none.",
+      "All of it. Let's settle it, one way or the other.",
+      "Everything. I've split heavier things than this pile."
+    ]
   }
 }

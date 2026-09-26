@@ -430,6 +430,26 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .say.stage::before { border-bottom-color: #2a2622; }
 .say.show { animation: say 5.2s ease-out both; }
 @keyframes say { 0% { opacity: 0; transform: translateY(-4px); } 6% { opacity: 1; transform: none; } 85% { opacity: 1; } 100% { opacity: 0; } }
+/* Callouts: the words that go in with the chips. Smaller and briefer than a
+   line, tucked against the bottom of the seat, one on screen at a time. The
+   duration is set per callout on the presentation clock (table.ts). */
+.callout {
+  position: absolute; left: 50%; top: calc(100% - 8px); z-index: 4;
+  width: max-content; max-width: calc(100% + 20px);
+  background: #efe5cf; color: var(--parchment-ink); font-family: var(--serif);
+  font-size: .8rem; line-height: 1.3; padding: 3px 10px; border-radius: 10px;
+  box-shadow: 0 4px 12px #0009; opacity: 0; pointer-events: none; transform: translate(-50%, 3px);
+}
+.callout.stage { font-style: italic; background: #2a2622; color: #d9ccb4; border: 1px solid #ffffff14; }
+/* Hidden by display, not opacity: the folded/out seat rules set opacity. */
+.callout:not(.show) { display: none; }
+.callout.show { animation: callout 1.8s ease-out both; }
+/* Reduce motion switches animations off: show it still, for as long as it is up. */
+:root.reduce-motion .callout.show { opacity: 1; transform: translate(-50%, 0); }
+@keyframes callout {
+  0% { opacity: 0; transform: translate(-50%, 3px); } 10% { opacity: 1; transform: translate(-50%, 0); }
+  80% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; transform: translate(-50%, 0); }
+}
 
 .dealer { display: flex; gap: 8px; align-items: baseline; justify-content: center; min-height: 1.5em; font-size: .85rem; margin-top: 2px; }
 .dealer-name { font-family: var(--serif); color: var(--dim); letter-spacing: .12em; text-transform: uppercase; font-size: .72rem; }
@@ -499,6 +519,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .log li.delta { color: var(--faint); }
 .log li.say { font-family: var(--serif); font-style: italic; color: #d8ccb2; }
 .log li.say.death { color: #e8dcc0; }
+.log li.say.callout { color: #b8ad9a; }
 .log li.respect, .log li.mark { color: var(--gold-soft); }
 
 /* ---------------------------------------------------------------- things that move

@@ -66,5 +66,39 @@
     "look": "Silhouette: enormous. Eight feet tall, shoulders filling his fifth of the screen, head near the top of the frame. Long, lustrous black hair; yellow skin stretched thin over muscle; watery eyes nearly the colour of their sockets; straight black lips. A good coat that was never cut for him. Prop: a small battered book in a very large hand; where he puts it is the tell surface.",
     "prop": "A battered copy of Paradise Lost",
     "public_domain": "Shelley's novel (1818) is public domain. Universal's 1931 makeup is not, and is still protected as a design: no neck bolts, no flat-topped head, no green skin, no stitches or forehead scar, no grunting or stiff-armed walk. Shelley's creature is articulate and well read, yellow-skinned with flowing black hair."
+  },
+  "callouts": {
+    "fold": [
+      "I will go. I am used to being turned away.",
+      "Fold. Forgive me.",
+      "I withdraw. Politely, as I taught myself.",
+      "Fold. I shall watch, as I used to through the wall."
+    ],
+    "check": [
+      "Check. If that is permitted.",
+      "Check.",
+      "Check. I am still learning the customs."
+    ],
+    "call": [
+      "I will not be turned away. Call.",
+      "Call. I have been refused enough for one lifetime.",
+      "Call. I read the whole of Paradise Lost. I can sit through this.",
+      "Call. A bet is a kind of invitation. I get so few."
+    ],
+    "bet": [
+      "A bet. I hope that is not too forward.",
+      "Bet. Forgive the presumption.",
+      "Bet. I learned this by watching through a wall."
+    ],
+    "raise": [
+      "Raise. I am tired of asking.",
+      "I raise. Misery made me bold.",
+      "Raise. I was made larger than other men. It may as well be of use."
+    ],
+    "all_in": [
+      "All in. I, too, can create desolation.",
+      "Everything. Beware, for I am fearless.",
+      "All in. There is no one left to turn me away."
+    ]
   }
 }

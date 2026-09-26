@@ -62,5 +62,39 @@
     "look": "Silhouette: tall and hunched in a long, waterlogged sea-coat and a broad hat whose brim sheds a thread of water, weed caught in the folds. Face: grey as a drowned man's, mostly in shadow, with a sodden grey beard — plainly hair — and two pale, round, unblinking eyes that catch the lamplight. Prop: the dripping sleeve, the one wet thing at a dry table.",
     "prop": "His dripping coat-sleeve",
     "public_domain": "Sailors' folklore, in print by 1751 and owned by nobody. The famous screen version is Disney's (Pirates of the Caribbean, 2006–07) and is strictly off limits: no tentacle beard, no crab claw, no pipe organ, no heart in a chest, no sea-creature crew, no Flying Dutchman, no dice for souls. Ours has a human face and never raises his voice."
+  },
+  "callouts": {
+    "fold": [
+      "Let it go. The sea keeps what it wants.",
+      "Fold. There's no hurry.",
+      "Fold. It'll come round again. It always does.",
+      "I'll wait for the tide."
+    ],
+    "check": [
+      "Check.",
+      "Check. I can wait.",
+      "Check. The water is patient."
+    ],
+    "call": [
+      "Call.",
+      "I'll follow that down.",
+      "Call. Quietly.",
+      "Call. I'm in no hurry."
+    ],
+    "bet": [
+      "A little weight in the water.",
+      "Bet. Mind the depth.",
+      "Bet. Quietly, now."
+    ],
+    "raise": [
+      "Raise. The tide is coming in.",
+      "Raise. Mind the locker.",
+      "Raise. No need to shout."
+    ],
+    "all_in": [
+      "All in. All at once, the way the sea does it.",
+      "Everything. Down it goes.",
+      "All in. Fathoms deep."
+    ]
   }
 }

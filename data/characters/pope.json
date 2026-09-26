@@ -67,5 +67,39 @@
     "look": "Silhouette: the tall mitre — nothing else at this table points straight up. A heavy, genial face with a strong nose, after Pinturicchio's fresco of him in the Borgia Apartments. Gold-embroidered vestments that swallow the chair. Prop: the papal ring, drawn oversized so that turning it throws a flash of gold the eye catches at a fifth of the screen.",
     "prop": "The papal ring",
     "public_domain": "Historical figure, died 1503; Pinturicchio's portrait is public domain. Avoid the 2011 television series (\"The Borgias\", \"Borgia\") and any poison-ring cliché. The jokes stay on his politics and his family, never on the faith. The display name is still an open design question; \"the Pope\" may yet be renamed."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. I shall make other arrangements.",
+      "Fold. For the good of the family.",
+      "I withdraw. Graciously. Publicly.",
+      "Fold. There are always more votes to buy."
+    ],
+    "check": [
+      "Check, my children.",
+      "Check. Let us negotiate.",
+      "Check. I am listening, as always."
+    ],
+    "call": [
+      "Call. Everyone has a price. That is mine.",
+      "I'll see that. Count it twice.",
+      "Call. It would be rude not to."
+    ],
+    "bet": [
+      "A small contribution to the family.",
+      "Bet. Consider it an endowment.",
+      "Bet. I have divided whole oceans for less."
+    ],
+    "raise": [
+      "Raise. My son will want to hear about this.",
+      "Raise. Consider the votes counted.",
+      "Raise. Caesar or nothing, as my boy says.",
+      "Raise. Put it on the family's account."
+    ],
+    "all_in": [
+      "All in. For Cesare. For Lucrezia. For me, mostly.",
+      "Everything. Rome was bought before.",
+      "All in. I was elected on less."
+    ]
   }
 }

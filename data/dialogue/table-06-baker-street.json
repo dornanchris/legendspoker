@@ -92,6 +92,23 @@
         [
           { "id": "bs_sh_jv_03a", "speaker": "javert", "text": "An amateur should never be allowed near a case." },
           { "id": "bs_sh_jv_03b", "speaker": "sherlock", "text": "Scotland Yard agrees with you entirely. Then it sends for me." }
+        ],
+        [
+          { "id": "bs_sh_jv_04a", "speaker": "javert", "text": "You keep an index of criminals, Mr Holmes." },
+          { "id": "bs_sh_jv_04b", "speaker": "sherlock", "text": "Of everyone. Criminals are merely the interesting entries." },
+          { "id": "bs_sh_jv_04c", "speaker": "javert", "text": "Am I in it?" },
+          { "id": "bs_sh_jv_04d", "speaker": "sherlock", "text": "Under J. Between 'Jackals' and 'Jezail bullets'." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "bs_nd_01a", "speaker": "sherlock", "to": "javert", "text": "You yield, Inspector? Scotland Yard always does, in the end." },
+          { "id": "bs_nd_01b", "speaker": "javert", "text": "I am not Scotland Yard." },
+          { "id": "bs_nd_01c", "speaker": "sherlock", "text": "No. They yield sooner." }
+        ],
+        [
+          { "id": "bs_nd_02a", "speaker": "javert", "to": "sherlock", "text": "The amateur withdraws." },
+          { "id": "bs_nd_02b", "speaker": "sherlock", "text": "The amateur gathers data. Watch closely, Inspector. You may learn the method." }
         ]
       ]
     },
@@ -115,6 +132,23 @@
           { "id": "bs_nm_jv_03b", "speaker": "nemo", "text": "I fly my own. Black, with an N." },
           { "id": "bs_nm_jv_03c", "speaker": "javert", "text": "That is not a country." },
           { "id": "bs_nm_jv_03d", "speaker": "nemo", "text": "No. That is the point of it.", "note": "Verne: Nemo raises a black flag bearing a gold N." }
+        ],
+        [
+          { "id": "bs_nm_jv_04a", "speaker": "javert", "text": "Your crew. Where are they registered?" },
+          { "id": "bs_nm_jv_04b", "speaker": "nemo", "text": "Nowhere. They chose the sea, as I did." },
+          { "id": "bs_nm_jv_04c", "speaker": "javert", "text": "Then they are deserters." },
+          { "id": "bs_nm_jv_04d", "speaker": "nemo", "text": "From what, Inspector?" },
+          { "id": "bs_nm_jv_04e", "speaker": "javert", "text": "From everything." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "bs_nd_03a", "speaker": "nemo", "to": "javert", "text": "You are out of your depth, Inspector." },
+          { "id": "bs_nd_03b", "speaker": "javert", "text": "I am on dry land. So are you." }
+        ],
+        [
+          { "id": "bs_nd_04a", "speaker": "javert", "to": "nemo", "text": "You surfaced." },
+          { "id": "bs_nd_04b", "speaker": "nemo", "text": "Briefly, for air. Do not wait for it to happen twice." }
         ]
       ]
     },
@@ -132,6 +166,22 @@
           { "id": "bs_al_jv_02a", "speaker": "alice", "text": "What does an inspector inspect?" },
           { "id": "bs_al_jv_02b", "speaker": "javert", "text": "Everyone." },
           { "id": "bs_al_jv_02c", "speaker": "alice", "text": "How very tiring for you." }
+        ],
+        [
+          { "id": "bs_al_jv_03a", "speaker": "javert", "text": "You fell down a hole, trespassed in a royal garden, and contradicted a Queen." },
+          { "id": "bs_al_jv_03b", "speaker": "alice", "text": "She was ever so rude first." },
+          { "id": "bs_al_jv_03c", "speaker": "javert", "text": "That is not a defence." },
+          { "id": "bs_al_jv_03d", "speaker": "alice", "text": "It is in Wonderland. It's the only defence anybody there has." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "bs_nd_05a", "speaker": "alice", "to": "javert", "text": "You folded! Is that allowed, for a policeman?" },
+          { "id": "bs_nd_05b", "speaker": "javert", "text": "It is permitted. It is not encouraged." }
+        ],
+        [
+          { "id": "bs_nd_06a", "speaker": "javert", "to": "alice", "text": "Correct procedure. You may go." },
+          { "id": "bs_nd_06b", "speaker": "alice", "text": "I'm not going anywhere. I'm only folded, not arrested." }
         ]
       ]
     },
@@ -154,6 +204,76 @@
         [
           { "id": "bs_al_sh_03a", "speaker": "sherlock", "text": "Yours is the only honest face at this table, Miss Alice. It is extraordinarily restful." },
           { "id": "bs_al_sh_03b", "speaker": "alice", "text": "I don't see why everyone says that as if it were a pity." }
+        ],
+        [
+          { "id": "bs_al_sh_04a", "speaker": "sherlock", "text": "There is a crumb of cake on your sleeve, Miss Alice. Iced. Recent." },
+          { "id": "bs_al_sh_04b", "speaker": "alice", "text": "It said EAT ME. I didn't see why not." },
+          { "id": "bs_al_sh_04c", "speaker": "sherlock", "text": "I can think of at least four reasons." },
+          { "id": "bs_al_sh_04d", "speaker": "alice", "text": "I expect I grew too tall to hear them." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "bs_nd_07a", "speaker": "sherlock", "to": "alice", "text": "Retreating, Miss Alice? That is unlike you." },
+          { "id": "bs_nd_07b", "speaker": "alice", "text": "I'm not retreating. I'm being curious from further away." }
+        ],
+        [
+          { "id": "bs_nd_08a", "speaker": "alice", "to": "sherlock", "text": "You folded! Didn't you deduce anything?" },
+          { "id": "bs_nd_08b", "speaker": "sherlock", "text": "I deduced that the evening is young." }
+        ]
+      ]
+    },
+
+    "alice_nemo": {
+      "relationship": "Alice cannot see the use of a book without pictures or conversations. Nemo carried twelve thousand books to the bottom of the sea and has not spoken to a stranger in years. She is the one person at this table he answers at length.",
+      "exchanges": [
+        [
+          { "id": "bs_al_nm_01a", "speaker": "alice", "text": "Is it true you have a library under the sea?" },
+          { "id": "bs_al_nm_01b", "speaker": "nemo", "text": "Twelve thousand volumes." },
+          { "id": "bs_al_nm_01c", "speaker": "alice", "text": "With pictures?" },
+          { "id": "bs_al_nm_01d", "speaker": "nemo", "text": "...Some. I will have more drawn." }
+        ],
+        [
+          { "id": "bs_al_nm_02a", "speaker": "nemo", "text": "You fell a very long way, I am told, and were not afraid." },
+          { "id": "bs_al_nm_02b", "speaker": "alice", "text": "It was all very slow. I took a jar of marmalade off a shelf on the way down." },
+          { "id": "bs_al_nm_02c", "speaker": "nemo", "text": "I have been deeper than anyone living. Never so politely." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "bs_nd_09a", "speaker": "alice", "to": "nemo", "text": "You folded! Is it because we're not underwater?" },
+          { "id": "bs_nd_09b", "speaker": "nemo", "text": "Partly. I am out of my element. You are always in yours." }
+        ],
+        [
+          { "id": "bs_nd_10a", "speaker": "nemo", "to": "alice", "text": "Even the curious must surface sometimes, Miss Alice." },
+          { "id": "bs_nd_10b", "speaker": "alice", "text": "I'll go down again. I always do." }
+        ]
+      ]
+    },
+
+    "nemo_sherlock": {
+      "relationship": "Verne kept Nemo's secret for two books: in The Mysterious Island he is revealed as Prince Dakkar, a raja's son who fought the British in 1857. Holmes can read a man's history from his cuff. Nemo has not been read by anyone in a very long time, and does not intend to start in London.",
+      "exchanges": [
+        [
+          { "id": "bs_nm_sh_01a", "speaker": "sherlock", "text": "You were not born to the sea, Captain. Your bearing says a court, and a long way east of here." },
+          { "id": "bs_nm_sh_01b", "speaker": "nemo", "text": "My bearing says the Nautilus, Mr Holmes. Nothing else." },
+          { "id": "bs_nm_sh_01c", "speaker": "sherlock", "text": "As you wish. I shall not say the rest aloud." },
+          { "id": "bs_nm_sh_01d", "speaker": "nemo", "text": "That would be wise." }
+        ],
+        [
+          { "id": "bs_nm_sh_02a", "speaker": "nemo", "text": "You play the violin, I hear." },
+          { "id": "bs_nm_sh_02b", "speaker": "sherlock", "text": "When I am thinking. And you, the organ." },
+          { "id": "bs_nm_sh_02c", "speaker": "nemo", "text": "When I am remembering." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "bs_nd_11a", "speaker": "sherlock", "to": "nemo", "text": "Diving, Captain?" },
+          { "id": "bs_nd_11b", "speaker": "nemo", "text": "Withdrawing to a depth your deductions do not reach." }
+        ],
+        [
+          { "id": "bs_nd_12a", "speaker": "nemo", "to": "sherlock", "text": "You let it go, Mr Holmes." },
+          { "id": "bs_nd_12b", "speaker": "sherlock", "text": "I let it go to be examined later. Everything is examined later." }
         ]
       ]
     }

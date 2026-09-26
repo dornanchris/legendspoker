@@ -62,5 +62,38 @@
     "look": "Silhouette: a bulky, scuffed pressure suit, its round helmet off and set on the table beside her chips; the helmet says astronaut at a glance. Short practical hair, tired kind eyes, a grin she cannot quite hide. Prop: the oxygen gauge on her wrist, which she lifts to eye level to read. No flags, no agency patches, no real insignia.",
     "prop": "A wrist oxygen gauge",
     "public_domain": "An archetype, not a person: the lost explorer. She must not resemble any real astronaut, any real agency's suit, or any film's. No NASA or other agency insignia, no flags, no named missions, and nothing taken from any space film. Her suit is our own design, built for a readable silhouette rather than accuracy."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Copy that.",
+      "I'm out. Wake me for the next one.",
+      "Fold. Saving my air.",
+      "Fold. Next orbit."
+    ],
+    "check": [
+      "Check.",
+      "Check. Holding position.",
+      "Check. Drifting."
+    ],
+    "call": [
+      "Call. I'll come along for the ride.",
+      "Call. Roger that.",
+      "I'll call. Somebody has to keep me company."
+    ],
+    "bet": [
+      "Bet. Ignition.",
+      "Bet. Let's see if this thing flies.",
+      "Bet. Small burn."
+    ],
+    "raise": [
+      "Raise. Full thrust.",
+      "Raise. Let's go home.",
+      "Raise. Hold on to something."
+    ],
+    "all_in": [
+      "All in. Everything I brought up with me.",
+      "All in. Point me at home.",
+      "All in. Brace for re-entry."
+    ]
   }
 }

@@ -520,6 +520,14 @@ beta problem; it is a "how does this ship" problem. Phase 10 at the earliest.
 The title is a **franchise slot**: *Legends Poker: [Campaign]*. Nothing below is
 locked, but this material is deliberately kept OUT of the base game.
 
+*[DECISION, owner] One exception, as a teaser: **Loki appears once in game one
+as a hidden cameo.** Win a pot holding six-seven, an opponent says "six seven",
+Death shows them out for the anachronism (the tone rule below, enforced by the
+house), and Loki is sitting in the empty chair. He foreshadows Gods' Challenge
+(other halls have opinions about a mortal among legends; "You're not invited.
+Yet.") without explaining it. His reservation for the sequel stands; the cameo
+spends none of the sequel's premise.*
+
 - **Gods' Challenge** *(leading candidate)* — the pantheons dispute that a
   mortal belongs among legends, so they run their own tour: Olympus, Asgard,
   Egypt, Mesoamerica. The premise is already written into this doc as a

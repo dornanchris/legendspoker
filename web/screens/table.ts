@@ -3,7 +3,7 @@ import { HUMAN } from '../../src/personality.js'
 import type { Action, Decision } from '../../src/decide.js'
 import type { Card } from '../../src/equity.js'
 import { mulberry32 } from '../../src/rng.js'
-import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, personality, arrivalRules, type Line } from '../../src/content.js'
+import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, UNINVITED, personality, arrivalRules, banishmentFor, type Line } from '../../src/content.js'
 import { TableRun, type Beat } from '../../src/director.js'
 import { applyOutcome, fillLine, type TableOutcome } from '../../src/tour.js'
 import { tableRecord, ENGINE_VERSION } from '../../src/save.js'
@@ -77,6 +77,11 @@ const nudge = (p: Pt, by: number): Pt => ({ x: p.x + (Math.random() * 2 - 1) * b
 
 function readingTime(text: string): number {
   return Math.max(1500, Math.min(5200, 900 + text.length * 48))
+}
+
+/** A callout's time on screen, before pace: long enough to read, short enough to keep up. */
+function calloutTime(text: string): number {
+  return Math.max(1400, Math.min(3000, 700 + text.length * 40))
 }
 
 type SeatUI = {
@@ -501,7 +506,50 @@ export function tableScreen(root: HTMLElement): () => void {
     }, 0, { line: true })
   }
 
+  // ------------------------------------------------------------ callouts
+
+  /**
+   * A callout rides on its action: its bubble goes up in the same instant as
+   * the chips (so it is queued just BEFORE the action's step), lives on its
+   * own short timer, and adds nothing to the queue -- the player's turn never
+   * waits for one. Cut, not sped up, while fast-forwarding. One on screen at
+   * a time. The words go in the log just AFTER the action, where they read.
+   */
+  let calloutToken = 0
+  function showCallout(b: Extract<Beat, { kind: 'callout' }>) {
+    step(() => {
+      if (ff) return
+      const ui = seatUI.get(seatIds.indexOf(b.speaker))
+      if (!ui) return
+      for (const el of els.opponents.querySelectorAll('.callout.show')) el.classList.remove('show')
+      const el = ui.root.querySelector<HTMLElement>('.callout') ?? h('div', { class: 'callout', 'aria-hidden': 'true' })
+      if (!el.parentElement) ui.root.append(el)
+      const text = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
+      const ms = Math.round(calloutTime(text) * paceScale)
+      el.textContent = text
+      el.classList.toggle('stage', b.stage)
+      el.style.animationDuration = `${ms}ms`
+      // Any line this seat said earlier has had its reading time: the queue
+      // waited for it. Do not stack two bubbles on one chair.
+      ui.say.classList.remove('show')
+      el.classList.remove('show')
+      void el.offsetWidth
+      el.classList.add('show')
+      // Taken down on the same clock, so it also goes away under reduce-motion,
+      // where there is no animation to fade it.
+      const token = String(++calloutToken)
+      el.dataset.token = token
+      later(() => { if (el.dataset.token === token) el.classList.remove('show') }, ms)
+    }, 0)
+  }
+
+  function logCallout(b: Extract<Beat, { kind: 'callout' }>) {
+    const who = CHARACTERS[b.speaker]?.short ?? b.speaker
+    step(() => log(b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`, 'say callout'), 0)
+  }
+
   function presentBeat(b: Beat) {
+    if (b.kind === 'callout') return logCallout(b)
     if (b.kind === 'line') return sayLine(b)
     if (b.kind === 'respect') {
       step(() => {
@@ -532,7 +580,9 @@ export function tableScreen(root: HTMLElement): () => void {
       seatIds[e.seat] = e.id
       out.delete(e.seat)
       buildSeat(e.seat)
-      els.presence.textContent = ''
+      // A chair that changed hands without emptying says nothing about a
+      // champion who is still to come.
+      if (e.cause !== 'banishment') els.presence.textContent = ''
     } else if (e.type === 'eliminated') {
       out.add(e.seat)
       if (e.seat === HUMAN_SEAT) humanPlace = e.place
@@ -547,6 +597,12 @@ export function tableScreen(root: HTMLElement): () => void {
 
   function onEvent(e: HandEvent) {
     const beats = run.onEvent(e)
+    // The uninvited guest is met the moment he sits down, live OR in a resume
+    // replay, and off the presentation clock: his ledger page and his mark
+    // hang off `met`, and career marks are checked when this hand's record is
+    // written, before the queue gets round to showing him. Meeting someone
+    // twice changes nothing, so a replay cannot double-count it.
+    if (e.type === 'arrival' && e.cause === 'banishment') store.meet(e.id)
     if (e.type === 'arrival' || e.type === 'eliminated' || e.type === 'level') {
       if (replaying) applyStructural(e)
     }
@@ -558,6 +614,7 @@ export function tableScreen(root: HTMLElement): () => void {
       for (const b of beats) if (b.kind === 'mark') store.earnMark(b.id, table.id)
       return
     }
+    for (const b of beats) if (b.kind === 'callout') showCallout(b)
     present(e, false)
     for (const b of beats) presentBeat(b)
     if (e.type === 'handEnd') recordLive()
@@ -886,6 +943,7 @@ export function tableScreen(root: HTMLElement): () => void {
         break
       }
       case 'arrival': {
+        if (e.cause === 'banishment') { presentGuestArrival(e, instant); break }
         step(() => {
           applyStructural(e)
           const ui = seatUI.get(e.seat)
@@ -971,6 +1029,38 @@ export function tableScreen(root: HTMLElement): () => void {
         if (loud && moving.length) sound.sweep(moving.length, (ms / 1000) * 0.6)
       }, moving.length ? room(MOVE.sweep) : 0)
     }
+  }
+
+  // ------------------------------------------------------------ the uninvited guest
+
+  /**
+   * The chair changes hands without ever standing empty for a hand. The
+   * offender's words and the dealer's ruling have already been queued by the
+   * director (the 'banished' beats); these are the two beats between them and
+   * the guest's first line: the chair empties, and he is in it, behind the
+   * very same chips. Both run on the presentation clock, so fast-forward
+   * speeds them like anything else, and the lines around them are cut.
+   */
+  function presentGuestArrival(e: Extract<HandEvent, { type: 'arrival' }>, instant: boolean) {
+    const t = (ms: number) => (instant ? 0 : ms)
+    const leaving = e.replaces ? CHARACTERS[e.replaces]?.short ?? e.replaces : null
+    step(() => {
+      const ui = seatUI.get(e.seat)
+      if (ui) {
+        ui.root.classList.add('out')
+        ui.cards.replaceChildren()
+        ui.last.textContent = ''
+        ui.tell.textContent = ''
+      }
+      if (leaving) log(`${leaving} is shown out of the Invitational. The chips stay where they are.`, 'big')
+    }, t(BASE.result))
+    step(() => {
+      applyStructural(e)
+      const ui = seatUI.get(e.seat)
+      ui?.root.classList.add('arriving')
+      if (ui) ui.stack.textContent = formatChips(e.stack)
+      log(`${CHARACTERS[e.id]?.short ?? e.id} is sitting in the chair, behind the same ${formatChips(e.stack)} chips.`, 'big')
+    }, t(BASE.level))
   }
 
   // ------------------------------------------------------------ fast-forward
@@ -1161,6 +1251,9 @@ export function tableScreen(root: HTMLElement): () => void {
 
   const arrivals = arrivalRules(table, active.mode, active.seats)
 
+  // The house rule that lets the uninvited guest in. Absent at the finale.
+  const banishment = banishmentFor(table)
+
   const run = new TableRun({
     table,
     dialogue,
@@ -1171,6 +1264,7 @@ export function tableScreen(root: HTMLElement): () => void {
     respectPoints: active.respectPoints,
     earnedMarks: Object.keys(save.marks),
     buyIn: table.buyIn,
+    uninvited: banishment ? UNINVITED : undefined,
   })
 
   const game = new Game([HUMAN, ...active.seats.map(personality)], {
@@ -1183,6 +1277,7 @@ export function tableScreen(root: HTMLElement): () => void {
     onHumanTurn,
     onEvent,
     arrivals,
+    banishment,
   })
 
   refreshName()

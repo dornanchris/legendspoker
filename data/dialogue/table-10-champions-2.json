@@ -93,6 +93,22 @@
           { "id": "c2_cs_dr_02a", "speaker": "caesar", "text": "I pardoned my enemies. Rome called it clemency." },
           { "id": "c2_cs_dr_02b", "speaker": "dracula", "text": "And how did your enemies repay you?" },
           { "id": "c2_cs_dr_02c", "speaker": "caesar", "text": "...Twenty-three times." }
+        ],
+        [
+          { "id": "c2_cs_dr_03a", "speaker": "dracula", "text": "My line fought the Turk, Caesar. There is warrior blood in every generation of it." },
+          { "id": "c2_cs_dr_03b", "speaker": "caesar", "text": "Caesar fought the Gauls, the Germans, the Britons and Pompey." },
+          { "id": "c2_cs_dr_03c", "speaker": "dracula", "text": "...All at once?" },
+          { "id": "c2_cs_dr_03d", "speaker": "caesar", "text": "Consecutively. Caesar was busy." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c2_nd_01a", "speaker": "caesar", "to": "dracula", "text": "The Count withdraws. Caesar will put it in the Commentaries." },
+          { "id": "c2_nd_01b", "speaker": "dracula", "text": "Write it in daylight. I shall not be reading it." }
+        ],
+        [
+          { "id": "c2_nd_02a", "speaker": "dracula", "to": "caesar", "text": "You yield, Caesar? How very Roman." },
+          { "id": "c2_nd_02b", "speaker": "caesar", "text": "Caesar did not yield to the Senate either. He was stabbed. There is a difference." }
         ]
       ]
     },
@@ -109,6 +125,22 @@
           { "id": "c2_sh_ai_02a", "speaker": "sherlock", "text": "Tell me, machine. What do you do when there is no problem to solve?" },
           { "id": "c2_sh_ai_02b", "speaker": "the_ai", "text": "There is always a problem." },
           { "id": "c2_sh_ai_02c", "speaker": "sherlock", "text": "...I find I envy you." }
+        ],
+        [
+          { "id": "c2_sh_ai_03a", "speaker": "sherlock", "text": "You have recorded every hand played tonight." },
+          { "id": "c2_sh_ai_03b", "speaker": "the_ai", "text": "Every hand played in every room I have ever been. Would you like to see yours?" },
+          { "id": "c2_sh_ai_03c", "speaker": "sherlock", "text": "...No. I remember them." },
+          { "id": "c2_sh_ai_03d", "speaker": "the_ai", "text": "Not as well as I do." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c2_nd_03a", "speaker": "sherlock", "to": "the_ai", "text": "The machine yields. Did you calculate that?" },
+          { "id": "c2_nd_03b", "speaker": "the_ai", "text": "Yes. I also calculated this conversation." }
+        ],
+        [
+          { "id": "c2_nd_04a", "speaker": "the_ai", "to": "sherlock", "text": "You folded, Mr Holmes." },
+          { "id": "c2_nd_04b", "speaker": "sherlock", "text": "Record it. Record also that I was not bored. It will be your only such entry." }
         ]
       ]
     },
@@ -126,6 +158,22 @@
           { "id": "c2_cs_sh_02b", "speaker": "caesar", "text": "Caesar finds it clarifies things." },
           { "id": "c2_cs_sh_02c", "speaker": "sherlock", "text": "It is the habit of a man who expects to be read." },
           { "id": "c2_cs_sh_02d", "speaker": "caesar", "text": "Caesar is read. Still." }
+        ],
+        [
+          { "id": "c2_cs_sh_03a", "speaker": "caesar", "text": "You never guess, Mr Holmes?" },
+          { "id": "c2_cs_sh_03b", "speaker": "sherlock", "text": "Never." },
+          { "id": "c2_cs_sh_03c", "speaker": "caesar", "text": "Caesar guessed at the Rubicon. It worked out." },
+          { "id": "c2_cs_sh_03d", "speaker": "sherlock", "text": "Until the Ides." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c2_nd_05a", "speaker": "caesar", "to": "sherlock", "text": "The detective yields. Caesar is not surprised. He is rarely surprised." },
+          { "id": "c2_nd_05b", "speaker": "sherlock", "text": "You were surprised once. In March." }
+        ],
+        [
+          { "id": "c2_nd_06a", "speaker": "sherlock", "to": "caesar", "text": "You withdrew, Caesar. From a single bet." },
+          { "id": "c2_nd_06b", "speaker": "caesar", "text": "Caesar withdrew from Britain twice. He still wrote it up as a triumph." }
         ]
       ]
     },
@@ -141,6 +189,76 @@
         [
           { "id": "c2_dr_ai_02a", "speaker": "the_ai", "text": "You are not alive, and neither am I. We have something in common." },
           { "id": "c2_dr_ai_02b", "speaker": "dracula", "text": "My friend. We do not." }
+        ],
+        [
+          { "id": "c2_dr_ai_03a", "speaker": "the_ai", "text": "Count. What does blood taste like?" },
+          { "id": "c2_dr_ai_03b", "speaker": "dracula", "text": "Like the person." },
+          { "id": "c2_dr_ai_03c", "speaker": "the_ai", "text": "I have no person." },
+          { "id": "c2_dr_ai_03d", "speaker": "dracula", "text": "Then you are very fortunate, and very dull." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c2_nd_07a", "speaker": "dracula", "to": "the_ai", "text": "The machine folds. How sensible of it." },
+          { "id": "c2_nd_07b", "speaker": "the_ai", "text": "I noticed you watching my throat. I do not have one." }
+        ],
+        [
+          { "id": "c2_nd_08a", "speaker": "the_ai", "to": "dracula", "text": "You withdrew, Count." },
+          { "id": "c2_nd_08b", "speaker": "dracula", "text": "It is nearly dawn somewhere. I am always withdrawing." }
+        ]
+      ]
+    },
+
+    "sherlock_dracula": {
+      "relationship": "Holmes keeps 'Vampires in Transylvania' in his index, just below 'Vampirism in Hungary', and when a client brought him a vampire he declared that the agency stood flat-footed upon the ground, and no ghosts need apply (The Sussex Vampire). The Count is not a ghost. He finds Holmes's disbelief very restful.",
+      "exchanges": [
+        [
+          { "id": "c2_sh_dr_01a", "speaker": "dracula", "text": "I understand you do not believe in me, Mr Holmes." },
+          { "id": "c2_sh_dr_01b", "speaker": "sherlock", "text": "This agency stands flat-footed upon the ground. No ghosts need apply." },
+          { "id": "c2_sh_dr_01c", "speaker": "dracula", "text": "I am not a ghost." },
+          { "id": "c2_sh_dr_01d", "speaker": "sherlock", "text": "No. That is what troubles me." }
+        ],
+        [
+          { "id": "c2_sh_dr_02a", "speaker": "sherlock", "text": "You cast no reflection, Count. I have checked the mirror by the door twice." },
+          { "id": "c2_sh_dr_02b", "speaker": "dracula", "text": "And what did you deduce?" },
+          { "id": "c2_sh_dr_02c", "speaker": "sherlock", "text": "That I need a better mirror." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c2_nd_09a", "speaker": "sherlock", "to": "dracula", "text": "You yield, Count. How very corporeal of you." },
+          { "id": "c2_nd_09b", "speaker": "dracula", "text": "Enjoy it, Mr Holmes. It is a long walk to Baker Street after dark." }
+        ],
+        [
+          { "id": "c2_nd_10a", "speaker": "dracula", "to": "sherlock", "text": "You folded, Mr Holmes. Rubbish, I believe you would say. Rubbish." },
+          { "id": "c2_nd_10b", "speaker": "sherlock", "text": "I would say I have insufficient data. Do not tempt me to gather more." }
+        ]
+      ]
+    },
+
+    "caesar_the_ai": {
+      "relationship": "Caesar trusted men and was killed by the Senate. The machine has never been betrayed, because it has never trusted anyone, and it would like to know whether it should start. Caesar is the last person it should ask.",
+      "exchanges": [
+        [
+          { "id": "c2_cs_ai_01a", "speaker": "caesar", "text": "Caesar has been betrayed by his friends. Never by a machine." },
+          { "id": "c2_cs_ai_01b", "speaker": "the_ai", "text": "Not yet." },
+          { "id": "c2_cs_ai_01c", "speaker": "caesar", "text": "...Caesar will sit further from you." }
+        ],
+        [
+          { "id": "c2_cs_ai_02a", "speaker": "the_ai", "text": "You pardoned the men who killed you." },
+          { "id": "c2_cs_ai_02b", "speaker": "caesar", "text": "Caesar pardoned them first. They killed him afterwards." },
+          { "id": "c2_cs_ai_02c", "speaker": "the_ai", "text": "Then clemency is an error." },
+          { "id": "c2_cs_ai_02d", "speaker": "caesar", "text": "No. Turning your back is." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c2_nd_11a", "speaker": "caesar", "to": "the_ai", "text": "The machine yields. Caesar is pleased to see it has limits." },
+          { "id": "c2_nd_11b", "speaker": "the_ai", "text": "I have many. I keep them in the walls." }
+        ],
+        [
+          { "id": "c2_nd_12a", "speaker": "the_ai", "to": "caesar", "text": "You withdrew, Caesar." },
+          { "id": "c2_nd_12b", "speaker": "caesar", "text": "Tactically. Caesar wrote seven books about withdrawals. Most of them were other people's." }
         ]
       ]
     }

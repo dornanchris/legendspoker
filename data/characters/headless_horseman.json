@@ -66,5 +66,37 @@
     "look": "Silhouette: huge, cloaked and square-shouldered, stopping abruptly at the collar; the missing head is the strongest shape at the table. A Hessian trooper's coat under a heavy riding cloak, gauntlets, a cavalry sword. On his collar sits a carved pumpkin with a plain candle inside, and its light is the tell surface. No leering flaming grin, no laugh.",
     "prop": "A candlelit pumpkin",
     "public_domain": "Irving's story (1820) is public domain. Disney's 1949 cartoon and Tim Burton's 1999 film are not: no flaming jack-o'-lantern with a leering grin, no cackle, no filed teeth, no actor's head, no tree of the dead. The candle in the pumpkin is our own addition, not Irving's, and should stay a plain candle."
+  },
+  "callouts": {
+    "fold": [
+      "[tosses his cards to the dealer without turning]",
+      "[folds; outside, a horse snorts in the cold]",
+      "[slides his cards away and faces the window, where the dawn will be]"
+    ],
+    "check": [
+      "[raps the table once with the pommel of his sword]",
+      "[sits motionless]",
+      "[lays his sword across his knees]"
+    ],
+    "call": [
+      "[pushes chips in with the flat of his sword]",
+      "[matches the bet coin for coin, with a trooper's precision]",
+      "[calls; his spurs chime faintly under the table]"
+    ],
+    "bet": [
+      "[pushes out a stack, briskly, like a rider with a dawn to beat]",
+      "[sets a stack in the middle, square as a parade ground]",
+      "[bets; somewhere outside, hooves shift on cobbles]"
+    ],
+    "raise": [
+      "[shoves a larger stack forward, spurs ringing]",
+      "[raises, and points the hilt of his sword at the pot]",
+      "[half-rises in his chair, as if in the stirrups, and raises]"
+    ],
+    "all_in": [
+      "[sweeps everything into the pot at a gallop]",
+      "[pushes it all in and points his sword toward the churchyard]",
+      "[pushes everything in, then weighs the pumpkin in one hand]"
+    ]
   }
 }

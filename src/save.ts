@@ -36,8 +36,10 @@ export const SAVE_VERSION = 1
  * 4: the Green Knight keeps his appointment -- knocked out, he retakes his
  *    own chair 50 hands later. Built on a branch that numbered it 2; merged
  *    on top of 2 and 3 above, so every older save is released.
+ * 5: the uninvited guest (the six-seven banishment and Loki) and the table's
+ *    callouts, from the same branch, which numbered them 3.
  */
-export const ENGINE_VERSION = 4
+export const ENGINE_VERSION = 5
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

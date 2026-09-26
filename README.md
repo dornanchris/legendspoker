@@ -49,10 +49,11 @@ exist), audio, the Capacitor phone build, multiplayer.
 ## Checks
 
 ```bash
-npm run check          # typecheck + all three checks below
+npm run check          # typecheck + all four checks below
 npm run check:data     # every character, table, line and mark is well-formed
 npm run check:pots     # the poker-ts side-pot patch is applied and working
 npm run check:replay   # save mid-hand, restore, play on: identical to the end
+npm run check:loki     # a hidden event, forced and checked (spoilers inside)
 ```
 
 ## Tuning and tools

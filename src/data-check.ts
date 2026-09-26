@@ -11,9 +11,10 @@
  *
  *   npm run check:data
  */
-import { CHARACTERS, TABLES, DIALOGUE, DEALER, MARKS, STORY, fullCast, type Line } from './content.js'
+import { CHARACTERS, TABLES, DIALOGUE, DEALER, MARKS, STORY, UNINVITED, fullCast, type Line } from './content.js'
 import { QUIRKS } from './quirks.js'
 import { CONDITION_TYPES, conditionErrors } from './marks.js'
+import { CALLOUT_ACTIONS, isStage } from './chatter.js'
 
 const errors: string[] = []
 const warnings: string[] = []
@@ -30,7 +31,11 @@ const PROFILE = ['ledger', 'ledger_beaten', 'history', 'at_the_table', 'look', '
 
 for (const c of Object.values(CHARACTERS)) {
   const w = `character ${c.id}`
-  if (!TABLES.some((t) => t.id === c.table)) err(w, `unknown table "${c.table}"`)
+  if (c.role === 'guest') {
+    // On a table, he would be on the map, in the intro and in the ledger.
+    if (c.table !== null) err(w, 'a guest belongs to no table: "table" must be null')
+    if (c.arrives) err(w, 'a guest is not a late arrival')
+  } else if (!TABLES.some((t) => t.id === c.table)) err(w, `unknown table "${c.table}"`)
   if (!['he', 'she', 'it', 'they'].includes(c.pronoun)) err(w, `bad pronoun "${c.pronoun}"`)
   for (const d of DIALS) {
     const v = c.dials?.[d]
@@ -66,6 +71,9 @@ for (const t of TABLES) {
   if (positions.has(t.position)) err(w, `duplicate position ${t.position}`)
   positions.add(t.position)
   for (const id of t.seats) if (!CHARACTERS[id]) err(w, `seat "${id}" is not a character`)
+  for (const id of fullCast(t)) {
+    if (CHARACTERS[id]?.role === 'guest') err(w, `"${id}" is a guest: seating him here puts him on the map`)
+  }
   if (t.champion && !fullCast(t).includes(t.champion)) err(w, `champion "${t.champion}" never sits at this table`)
   if (t.arrival) {
     const a = t.arrival
@@ -97,10 +105,18 @@ const TRIPWIRES = [
   /i am spartacus/i, /this is sparta/i, /\bHAL\b/, /\bdave\b/i, /larry talbot/i,
   /elementary, my dear/i, /flying dutchman/i, /\barchimedes\b/i, /\bmerlyn\b/i,
   /\bnasa\b/i, /\bklaatu\b/i, /\brobby\b/i, /one does not simply/i,
+  /god of mischief/i, /glorious purpose/i, /puny god/i, /\bavengers?\b/i, /\bmarvel\b/i,
 ]
+/**
+ * The one meme in the game, allowed in exactly one place: the line that gets
+ * its speaker shown out (uninvited.json, offence). Anywhere else it is the
+ * anachronistic wink the design doc bans.
+ */
+const SIX_SEVEN = /\b(six|6)\W*(seven|7)\b/i
+TRIPWIRES.push(SIX_SEVEN)
 
 const ids = new Map<string, string>()
-function checkLine(l: Line, where: string, speakers: Set<string>) {
+function checkLine(l: Line, where: string, speakers: Set<string>, allow: RegExp[] = []) {
   if (!l || typeof l !== 'object') return err(where, 'not a line object')
   if (!l.id) err(where, 'line without id')
   else if (ids.has(l.id)) err(where, `duplicate line id "${l.id}" (also in ${ids.get(l.id)})`)
@@ -113,7 +129,7 @@ function checkLine(l: Line, where: string, speakers: Set<string>) {
   for (const m of (l.text ?? '').matchAll(PLACEHOLDER)) {
     if (!KNOWN_PLACEHOLDERS.has(m[1])) err(where, `line ${l.id}: unknown placeholder {${m[1]}}`)
   }
-  for (const re of TRIPWIRES) if (re.test(l.text ?? '')) err(where, `line ${l.id}: tripwire ${re}`)
+  for (const re of TRIPWIRES) if (!allow.includes(re) && re.test(l.text ?? '')) err(where, `line ${l.id}: tripwire ${re}`)
   if (l.type === 'stage_direction' && !/^\[.*\]$/.test(l.text.trim())) warn(where, `line ${l.id}: stage direction without [brackets]`)
 }
 
@@ -176,6 +192,97 @@ for (const t of TABLES) {
   if (foreshadow > 4) warn(w, `${foreshadow} foreshadow lines: ration them (design doc)`)
 }
 
+// ---------------------------------------------------------------- needles
+
+// Old friends needling (banter_pairs.*.needles). The first line names who is
+// being needled; both must be at the table, and they must be two people.
+for (const t of TABLES) {
+  const d = DIALOGUE[t.id]
+  if (!d) continue
+  const speakers = new Set(['death', 'narration', ...fullCast(t)])
+  for (const [key, pair] of Object.entries(d.banter_pairs ?? {})) {
+    const w = `dialogue ${t.id} needles ${key}`
+    // Needles belong to a pair with a relationship: both people must be in it.
+    const inPair = new Set((pair.exchanges ?? []).flat().map((l) => l.speaker))
+    for (const x of pair.needles ?? []) {
+      if (!x.length) { err(w, 'empty needle'); continue }
+      x.forEach((l) => checkLine(l, w, speakers))
+      const [first] = x
+      if (!first.to) err(w, `needle ${first.id}: the first line must say who it is aimed at ("to")`)
+      else if (!fullCast(t).includes(first.to)) err(w, `needle ${first.id}: "${first.to}" is not at this table`)
+      else if (first.to === first.speaker) err(w, `needle ${first.id}: aimed at the speaker`)
+      if (!fullCast(t).includes(first.speaker)) err(w, `needle ${first.id}: only a player can take a pot, not "${first.speaker}"`)
+      for (const who of [first.speaker, first.to]) {
+        if (who && !inPair.has(who)) err(w, `needle ${first.id}: "${who}" has no exchange in this pair; needles are for pairs with a relationship`)
+      }
+      if (first.trigger || x.some((l) => l.foreshadow)) err(w, `needle ${first.id}: needles carry no trigger and no foreshadowing`)
+    }
+  }
+}
+
+// ---------------------------------------------------------------- callouts
+
+/**
+ * Callouts are spoken while cards are live, so the words themselves must not
+ * be a tell: they may pun on the ACTION, never claim or deny a hand ("I've
+ * got you", "nothing here"), and a fold never says what was folded. These are
+ * the phrases that give a hand away; the list is blunt on purpose.
+ */
+const CALLOUT_LEAKS = [
+  /\bbluff/i, /\bnuts\b/i, /\bgot (you|it|this)\b/i, /\bhave you now\b/i, /\bnothing (here|to|at all)\b/i,
+  /\b(good|bad|strong|weak|great|poor|lousy|terrible|fine|best|worst) (hand|cards)\b/i,
+  /\b(my|these|this) (hand|cards)\b/i, /\bbeat (this|that|me|mine)\b/i, /\bslow.?play/i, /\btrap/i,
+  /\bdraw(s|ing)?\b/i, /\bsure thing\b/i, /\bwinner\b/i, /\bmonster hand\b/i,
+]
+const CONTRACTION = /n't\b|'(re|ve|ll|m|d)\b/i
+
+// A character whose every line of dialogue is a stage direction does not
+// speak (the Horseman, Cerberus): every callout of theirs must be a gesture.
+const spoken = new Map<string, { lines: number; stage: number }>()
+const walk = (v: unknown): void => {
+  if (Array.isArray(v)) return v.forEach(walk)
+  if (!v || typeof v !== 'object') return
+  const l = v as Partial<Line>
+  if (typeof l.speaker === 'string' && typeof l.text === 'string') {
+    const s = spoken.get(l.speaker) ?? { lines: 0, stage: 0 }
+    s.lines++
+    if (l.type === 'stage_direction') s.stage++
+    spoken.set(l.speaker, s)
+    return
+  }
+  Object.values(v).forEach(walk)
+}
+Object.values(DIALOGUE).forEach(walk)
+
+let calloutCount = 0
+for (const c of Object.values(CHARACTERS)) {
+  const w = `character ${c.id} callouts`
+  const co = c.callouts as Record<string, unknown> | undefined
+  if (!co) { warn(`character ${c.id}`, 'no callouts: silent at the table'); continue }
+  const mute = (spoken.get(c.id)?.lines ?? 0) > 0 && spoken.get(c.id)!.stage === spoken.get(c.id)!.lines
+  const tells = (c.tells ?? []).map((t) => t.text.toLowerCase())
+  for (const [action, lines] of Object.entries(co)) {
+    if (!(CALLOUT_ACTIONS as string[]).includes(action)) { err(w, `unknown action "${action}"`); continue }
+    if (!Array.isArray(lines) || !lines.length) { err(w, `${action} must be a non-empty list of lines`); continue }
+    const seen = new Set<string>()
+    for (const text of lines) {
+      if (typeof text !== 'string' || !text.trim()) { err(w, `${action}: empty line`); continue }
+      calloutCount++
+      if (seen.has(text)) err(w, `${action}: duplicate "${text}"`)
+      seen.add(text)
+      const stage = isStage(text)
+      if (!stage && /[[\]]/.test(text)) err(w, `${action}: "${text}" -- a stage direction is the whole line in [brackets]`)
+      if (mute && !stage) err(w, `${action}: "${text}" -- ${c.short} does not speak; callouts must be [stage directions]`)
+      if (/\{\w+\}/.test(text)) err(w, `${action}: "${text}" -- callouts address the table, not the player: no placeholders`)
+      for (const re of TRIPWIRES) if (re.test(text)) err(w, `${action}: "${text}" -- tripwire ${re}`)
+      for (const re of CALLOUT_LEAKS) if (re.test(text)) err(w, `${action}: "${text}" -- reads as hand strength (${re})`)
+      for (const t of tells) if (text.toLowerCase().includes(t)) err(w, `${action}: "${text}" -- repeats the tell "${t}" and would teach a false read`)
+      if (c.role === 'dealer' && CONTRACTION.test(text)) err(w, `${action}: "${text}" -- Death does not use contractions`)
+      if (text.length > 70) warn(w, `${action}: "${text}" is long for a callout (${text.length} chars)`)
+    }
+  }
+}
+
 const dealerSpeakers = new Set(['death'])
 for (const [key, lines] of Object.entries(DEALER)) {
   if (!Array.isArray(lines)) continue
@@ -197,6 +304,48 @@ for (const c of Object.values(CHARACTERS)) {
   for (const l of r.lines ?? []) checkLine(l, w, new Set(['death', 'narration', c.id]))
 }
 
+// ---------------------------------------------------------------- the uninvited guest
+
+{
+  const w = 'uninvited'
+  const u = UNINVITED
+  const guest = CHARACTERS[u?.guest]
+  if (!guest) err(w, `guest "${u?.guest}" is not a character`)
+  else if (guest.role !== 'guest') err(w, `"${u.guest}" must have role "guest", or the ROSTER and the map give him away`)
+  const ranks = u?.trigger?.hole_ranks ?? []
+  const RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
+  if (ranks.length !== 2 || !ranks.every((r) => RANKS.includes(r))) err(w, 'trigger.hole_ranks must be two card ranks')
+  const scene = new Set(['death', 'narration', u?.guest])
+  const only = (...xs: string[]) => new Set(xs)
+  const all = (xs: Line[] | undefined, sub: string, speakers: Set<string>, need = true, allow: RegExp[] = []) => {
+    if (need && !xs?.length) err(w, `${sub} is empty`)
+    ;(xs ?? []).forEach((l) => checkLine(l, `${w} ${sub}`, speakers, allow))
+  }
+  all(u?.reveal, 'reveal', only('narration', 'death'))
+  // 'banished' is whoever is being shown out: any seated opponent.
+  all(u?.offence, 'offence', only('banished'), true, [SIX_SEVEN])
+  for (const l of u?.offence ?? []) {
+    if (!SIX_SEVEN.test(l.text)) err(w, `offence ${l.id} must still say "six seven"`)
+  }
+  all(u?.offence_mimed, 'offence_mimed', only('banished'))
+  for (const l of u?.offence_mimed ?? []) {
+    if (l.type !== 'stage_direction') err(w, `offence_mimed ${l.id} must be a stage direction: it is for those who never speak`)
+    if (!/\bsix\b/i.test(l.text) || !/\bseven\b/i.test(l.text)) err(w, `offence_mimed ${l.id} must still come to six, then seven`)
+  }
+  all(u?.banishment, 'banishment', only('death'))
+  all(u?.entrance, 'entrance', scene)
+  if (u?.entrance?.length && !u.entrance.some((l) => l.speaker === u.guest)) err(w, 'the guest never speaks in his own entrance')
+  ;(u?.sitting ?? []).forEach((x, i) => all(x, `sitting[${i}]`, scene))
+  all(u?.busted, 'busted', only(u?.guest))
+  all(u?.farewell_won, 'farewell_won', scene)
+  all(u?.farewell_lost, 'farewell_lost', only(u?.guest))
+  for (const l of [...(u?.entrance ?? []), ...(u?.sitting ?? []).flat(), ...(u?.busted ?? []), ...(u?.farewell_won ?? []), ...(u?.farewell_lost ?? [])]) {
+    if (l.trigger) err(w, `line ${l.id}: scene lines take no trigger`)
+    if (PLACEHOLDER.test(l.text)) err(w, `line ${l.id}: the guest's scenes do not use the table's names`)
+    PLACEHOLDER.lastIndex = 0
+  }
+}
+
 // ---------------------------------------------------------------- marks, story
 
 const markIds = new Set<string>()
@@ -209,6 +358,11 @@ for (const m of MARKS) {
   if (m.when?.table && !TABLES.some((t) => t.id === m.when.table)) err(w, `unknown table "${m.when.table}"`)
   if (m.when?.character && !CHARACTERS[m.when.character]) err(w, `unknown character "${m.when.character}"`)
   if (m.when) for (const e of conditionErrors(m.when)) err(w, e)
+  if (m.when?.type === 'met' && !m.when.character) err(w, '"met" needs a character')
+  // Earned by meeting a guest, it would be a blank line hinting at him.
+  if (m.when?.type === 'met' && CHARACTERS[m.when.character]?.role === 'guest' && !m.secret) {
+    err(w, 'a mark for meeting a guest must be secret, or the ledger counts him before he exists')
+  }
 }
 
 if (!STORY?.invitation?.heading || !STORY.invitation.body?.length) err('story', 'invitation is not written')
@@ -221,7 +375,7 @@ for (const p of [...(STORY?.invitation?.body ?? []), ...(STORY?.ending?.paragrap
 // ---------------------------------------------------------------- report
 
 const cast = Object.values(CHARACTERS)
-console.log(`${cast.length} characters, ${TABLES.length} tables, ${ids.size} lines of dialogue, ${MARKS.length} marks.`)
+console.log(`${cast.length} characters, ${TABLES.length} tables, ${ids.size} lines of dialogue, ${calloutCount} callouts, ${MARKS.length} marks.`)
 for (const x of warnings) console.log(`  warn  ${x}`)
 for (const x of errors) console.log(`  ERROR ${x}`)
 if (errors.length) {

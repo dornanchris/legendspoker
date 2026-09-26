@@ -93,6 +93,21 @@
           { "id": "ro_sp_jc_03a", "speaker": "spartacus", "text": "In Gaul, they say, you took a million captives." },
           { "id": "ro_sp_jc_03b", "speaker": "caesar", "text": "Caesar did not count them himself." },
           { "id": "ro_sp_jc_03c", "speaker": "spartacus", "text": "Someone did. Someone always counts.", "note": "The table's one serious beat. Plutarch gives the million. Use sparingly." }
+        ],
+        [
+          { "id": "ro_sp_jc_04a", "speaker": "caesar", "text": "Crassus broke your army. He was also Caesar's banker." },
+          { "id": "ro_sp_jc_04b", "speaker": "spartacus", "text": "Then you owe me a share of it." },
+          { "id": "ro_sp_jc_04c", "speaker": "caesar", "text": "Caesar owed everyone. He found it kept them loyal.", "note": "Plutarch: Crassus stood surety for Caesar's enormous debts before he left for Spain." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "ro_nd_01a", "speaker": "caesar", "to": "spartacus", "text": "The gladiator yields. Caesar notes it." },
+          { "id": "ro_nd_01b", "speaker": "spartacus", "text": "Note this, then. I stopped. I didn't kneel." }
+        ],
+        [
+          { "id": "ro_nd_02a", "speaker": "spartacus", "to": "caesar", "text": "Rome gives ground." },
+          { "id": "ro_nd_02b", "speaker": "caesar", "text": "Caesar gives ground. Rome takes it back later." }
         ]
       ]
     },
@@ -116,6 +131,24 @@
           { "id": "ro_sp_pope_03b", "speaker": "pope", "text": "I smile at everyone." },
           { "id": "ro_sp_pope_03c", "speaker": "spartacus", "text": "I was sold by men who smiled like that." },
           { "id": "ro_sp_pope_03d", "speaker": "pope", "text": "[smiles]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "ro_sp_pope_04a", "speaker": "pope", "text": "You could have had Italy, you know. Your men wanted to stay." },
+          { "id": "ro_sp_pope_04b", "speaker": "spartacus", "text": "I wanted to take them home over the Alps." },
+          { "id": "ro_sp_pope_04c", "speaker": "pope", "text": "Home! What a waste of an army." },
+          { "id": "ro_sp_pope_04d", "speaker": "spartacus", "text": "They were people, not an army." },
+          { "id": "ro_sp_pope_04e", "speaker": "pope", "text": "People! Worse still. An army can at least be paid off." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "ro_nd_03a", "speaker": "pope", "to": "spartacus", "text": "There, you see? Everyone can be persuaded." },
+          { "id": "ro_nd_03b", "speaker": "spartacus", "text": "I folded. Nobody persuaded me." },
+          { "id": "ro_nd_03c", "speaker": "pope", "text": "[smiles]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "ro_nd_04a", "speaker": "spartacus", "to": "pope", "text": "You backed down, Borgia." },
+          { "id": "ro_nd_04b", "speaker": "pope", "text": "I made a small donation to your cause. You're welcome." }
         ]
       ]
     },
@@ -138,6 +171,20 @@
           { "id": "ro_jc_pope_03a", "speaker": "caesar", "text": "Caesar does not trust a man who smiles at the table." },
           { "id": "ro_jc_pope_03b", "speaker": "pope", "text": "You trusted Brutus." },
           { "id": "ro_jc_pope_03c", "speaker": "caesar", "text": "Once." }
+        ],
+        [
+          { "id": "ro_jc_pope_04a", "speaker": "caesar", "text": "Your son took Caesar's name as his motto and wore it badly." },
+          { "id": "ro_jc_pope_04b", "speaker": "pope", "text": "He wore it beautifully. It simply did not fit." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "ro_nd_05a", "speaker": "caesar", "to": "pope", "text": "The Pontiff withdraws. Caesar has seen that before." },
+          { "id": "ro_nd_05b", "speaker": "pope", "text": "From the other side of the ballot, I expect." }
+        ],
+        [
+          { "id": "ro_nd_06a", "speaker": "pope", "to": "caesar", "text": "Caesar, withdrawing? I'll have it painted. Pinturicchio does lovely retreats." },
+          { "id": "ro_nd_06b", "speaker": "caesar", "text": "Caesar has never retreated. He has redeployed." }
         ]
       ]
     },
@@ -161,6 +208,47 @@
           { "id": "ro_cer_03b", "speaker": "cerberus", "text": "[consults himself, three times over]", "type": "stage_direction" },
           { "id": "ro_cer_03c", "speaker": "death", "text": "He asks how it ended." },
           { "id": "ro_cer_03d", "speaker": "caesar", "text": "With one head.", "note": "The First Triumvirate: Caesar, Pompey and Crassus. Crassus died in Parthia; Caesar beat Pompey in the civil war." }
+        ],
+        [
+          { "id": "ro_cer_04a", "speaker": "spartacus", "text": "You and I both know chains, dog." },
+          { "id": "ro_cer_04b", "speaker": "cerberus", "text": "[looks down at the chain that joins his three collars]", "type": "stage_direction" },
+          { "id": "ro_cer_04c", "speaker": "death", "text": "He says his was never locked. He simply never left." }
+        ],
+        [
+          { "id": "ro_cer_05a", "speaker": "pope", "text": "Good dog. Nice dog. Which of you is in charge?" },
+          { "id": "ro_cer_05b", "speaker": "cerberus", "text": "[all three heads turn slowly to look at one another]", "type": "stage_direction" },
+          { "id": "ro_cer_05c", "speaker": "death", "text": "They have been discussing that since Hesiod." }
+        ],
+        [
+          { "id": "ro_cer_06a", "speaker": "caesar", "text": "Caesar crossed the Rubicon. And what river do you keep?" },
+          { "id": "ro_cer_06b", "speaker": "cerberus", "text": "[licks his chops with all three tongues]", "type": "stage_direction" },
+          { "id": "ro_cer_06c", "speaker": "death", "text": "The last one. He would like you to know he has had emperors through it." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "ro_nd_07a", "speaker": "cerberus", "to": "pope", "text": "[wags his serpent tail at the Pope, slowly]", "type": "stage_direction" },
+          { "id": "ro_nd_07b", "speaker": "death", "text": "He says the almond was not enough." }
+        ],
+        [
+          { "id": "ro_nd_08a", "speaker": "cerberus", "to": "spartacus", "text": "[stands over the pot, three heads low, watching Spartacus]", "type": "stage_direction" },
+          { "id": "ro_nd_08b", "speaker": "death", "text": "He says everyone gets in. Nobody gets out." }
+        ],
+        [
+          { "id": "ro_nd_09a", "speaker": "cerberus", "to": "caesar", "text": "[pants happily at Caesar from all three mouths]", "type": "stage_direction" },
+          { "id": "ro_nd_09b", "speaker": "death", "text": "He likes you. He likes everyone who comes through his door, and in the end that is everyone." }
+        ],
+        [
+          { "id": "ro_nd_10a", "speaker": "spartacus", "to": "cerberus", "text": "Down, dog." },
+          { "id": "ro_nd_10b", "speaker": "cerberus", "text": "[lies down with one head; the other two refuse]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "ro_nd_11a", "speaker": "pope", "to": "cerberus", "text": "You see? Even the hound of Hades can be reasoned with." },
+          { "id": "ro_nd_11b", "speaker": "death", "text": "He folded because you smell of honey cake. He has not forgiven himself." }
+        ],
+        [
+          { "id": "ro_nd_12a", "speaker": "caesar", "to": "cerberus", "text": "Three heads, and not one of them could hold." },
+          { "id": "ro_nd_12b", "speaker": "cerberus", "text": "[puts his chins on the table and sulks, three times over]", "type": "stage_direction" }
         ]
       ]
     }
