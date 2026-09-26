@@ -48,7 +48,7 @@ for (const id of ids) {
   const ctx = (o: Partial<DecisionContext>): DecisionContext => ({
     personality: p, equity: 0, strength: 0, pot: 0, toCall: 0, stack: 0, bigBlind: 20,
     effectiveStackBB: 0, minRaise: 0, maxRaise: 0, street: 'preflop', legal: ['fold', 'call'],
-    numOpponents: 1, tilt: 0, opponentFoldRate: 0.4, committed: 0, facingAllIn: false, rng, ...o,
+    numOpponents: 1, tilt: 0, opponentFoldRate: 0.4, committed: 0, facingAllIn: false, bet: 0, initiative: false, outs: 0, wet: 0, rng, ...o,
   })
   let shove = 0
   let seen = 0
@@ -58,7 +58,7 @@ for (const id of ids) {
     let hole = draw(fresh(), 2)
     let r = range(betRange({ street: 'preflop', toCall: 80, pot: 130, bigBlind: 20, allIn: true, bettorBB: 5 }))
     const eq = handStrength(hole, [], 1, 60, rng, r)
-    const d1 = decide(ctx({ equity: eq, strength: preflopStrength(hole), pot: 130, toCall: 80, stack: 1980, effectiveStackBB: 99, committed: 20, facingAllIn: true }))
+    const d1 = decide(ctx({ equity: eq, strength: preflopStrength(hole), pot: 130, toCall: 80, stack: 1980, effectiveStackBB: 99, committed: 20, bet: 20, facingAllIn: true }))
     if (d1.action === 'call') shove++
 
     const deck = fresh()

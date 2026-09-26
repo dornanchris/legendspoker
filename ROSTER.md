@@ -40,7 +40,7 @@ He was the tallest president, six foot four, and a teller of jokes and stories, 
 |---|---|---|---|---|---|---|
 | .30 | .75 | .08 | .05 | .45 | .80 | .10 |
 
-- Quirk: `patient` (minEquity 0.58) — Folds to any raise before the flop without a premium hand, unless calling an all-in costs next to nothing.
+- Quirk: `patient` (minEquity 0.58) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
 - Tell (strong, 0.86): *strokes his beard, slowly*
 - Tell (weak, 0.84): *leans back and folds his long hands*
 - Tell (bluffing, 0.82): *allows himself a small smile*
@@ -704,7 +704,7 @@ Hugo compares him to the dog that Asturian peasants say is born in every litter 
 | .55 | .72 | .05 | .45 | .10 | .65 | .35 |
 
 - Quirk: `committed` (fraction 0.25) — Once a share of the stack is in the pot, will not fold a hand with a real chance.
-- Quirk: `patient` (minEquity 0.6) — Folds to any raise before the flop without a premium hand, unless calling an all-in costs next to nothing.
+- Quirk: `patient` (minEquity 0.56) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
 - Tell (strong, 0.68): *buttons his coat to the collar*
 - Tell (weak, 0.66): *stares at you without blinking*
 - Tell (tilted, 0.7): *his hand shakes, very slightly*
@@ -802,7 +802,7 @@ Seward describes him as a man with a temper of the ice-brook and the kindliest a
 |---|---|---|---|---|---|---|
 | .55 | .58 | .20 | .10 | .60 | .75 | .42 |
 
-- Quirk: `patient` (minEquity 0.58) — Folds to any raise before the flop without a premium hand, unless calling an all-in costs next to nothing.
+- Quirk: `patient` (minEquity 0.58) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
 - Quirk: `overbet` (minEquity 0.8, potFraction 1.3, chance 0.6) — With a strong hand, bets far more than the pot.
 - Tell (strong, 0.64): *takes off his spectacles and cleans them*
 - Tell (weak, 0.62): *touches the crucifix at his collar*
@@ -1007,7 +1007,7 @@ At this table it is the station's crew. It fetches, carries and mends, and keeps
 |---|---|---|---|---|---|---|
 | .55 | .62 | .15 | .00 | .30 | .70 | .50 |
 
-- Quirk: `patient` (minEquity 0.56) — Folds to any raise before the flop without a premium hand, unless calling an all-in costs next to nothing.
+- Quirk: `patient` (minEquity 0.56) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
 - Tell (strong, 0.56): *its chest lamp flickers*
 - Tell (weak, 0.55): *whirs, briefly*
 - Tell (bluffing, 0.55): *rotates its head to the pot and back*
@@ -1135,7 +1135,7 @@ What makes him a person is that he is tired. He has done one job for longer than
 
 **At the table.** He deals. He has always dealt. He does not hurry the cards and has never misdealt them, and he watches every hand through to the end, as if it had something to do with him. People have looked for his tells. He has none. He remembers every hand he has ever dealt. He is at his most attentive when only two players are left, and he takes his time over the last card. He always has.
 
-No tells, no noise: the endpoint of the legibility curve. Quirks: `patient` (minEquity 0.58) — Folds to any raise before the flop without a premium hand, unless calling an all-in costs next to nothing.; `check_raise` (minEquity 0.75, chance 0.5) — Checks strength on the flop and turn, then raises when bet into..
+No tells, no noise: the endpoint of the legibility curve. Quirks: `check_raise` (minEquity 0.75, chance 0.5) — Checks strength on the flop and turn, then raises when bet into.; `heads_up_pressure` (minEquity 0.6, chance 0.35) — Alone in a pot with one opponent, applies relentless pressure.; `punish_passivity` (foldRate 0.55, chance 0.5, potFraction 0.6) — Bets into a table that has been folding too often..
 
 **Look.** Silhouette: tall, narrow, hooded — a grey burial shroud worn as a cloak, the way the danse macabre painted him, never a monk's black robe. Face: a plain skull half in the hood's shadow, drawn like a woodcut; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal. **Prop:** The deck.
 

@@ -2,7 +2,7 @@
 import pokerPkg from 'poker-ts'
 const { Table: Poker } = pokerPkg as any
 import { decide, emitTell, betRange, type Action, type Decision } from './decide.js'
-import { handStrength, preflopStrength, type Card } from './equity.js'
+import { handStrength, preflopStrength, drawOuts, boardWetness, type Card } from './equity.js'
 import type { Personality } from './personality.js'
 import { seededShuffle } from './rng.js'
 
@@ -521,6 +521,11 @@ export class Game {
       .map((x: any) => x?.betSize ?? 0)
     while (contributed.length < this.seats.length) contributed.push(0)
     let lastStreet = ''
+    // Who bet or raised last on this street, and who had done so on the one
+    // before it: that player holds the initiative, and a bet from them now
+    // carries on the story their raise began (a continuation bet).
+    let aggressor = -1
+    let initiative = -1
     const wentToShowdown = new Set<number>()
     /**
      * Tracked here rather than read back from poker-ts: it never clears
@@ -543,6 +548,8 @@ export class Game {
 
         if (street !== lastStreet) {
           lastStreet = street
+          initiative = aggressor
+          aggressor = -1
           onEvent?.({
             type: 'street',
             street,
@@ -662,6 +669,10 @@ export class Game {
             opponentFoldRate: this.tableFoldRate(seat),
             committed: contributed[seat],
             facingAllIn,
+            bet: myBet,
+            initiative: seat === initiative,
+            outs: drawOuts(hole, board),
+            wet: boardWetness(board),
             rng,
           })
 
@@ -688,6 +699,7 @@ export class Game {
           if (street === 'preflop') putMoneyIn.add(seat)
         } else if (decision.action === 'bet' || decision.action === 'raise') {
           s.stats.bets++
+          aggressor = seat
           if (street === 'preflop') {
             putMoneyIn.add(seat)
             raisedPreflop.add(seat)

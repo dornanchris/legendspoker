@@ -1,4 +1,4 @@
-import type { DecisionContext, Decision } from './decide.js'
+import { raiseTo, type DecisionContext, type Decision } from './decide.js'
 import type { Quirk } from './personality.js'
 
 /**
@@ -29,11 +29,11 @@ export type QuirkSpec = { type: string } & Record<string, number | string | bool
 
 type Factory = (params: Record<string, any>) => (ctx: DecisionContext) => Decision | null
 
-/** Raise-to size as a multiple of the pot, clamped to what the table allows. */
-function potSized(ctx: DecisionContext, fraction: number): number {
-  const target = Math.round(ctx.pot * fraction)
-  return Math.max(ctx.minRaise, Math.min(ctx.maxRaise, target))
-}
+/**
+ * A bet of `fraction` of the pot; facing a bet, a raise that calls first and
+ * then adds that fraction of the pot (see raiseTo). Clamped to the table.
+ */
+const potSized = (ctx: DecisionContext, fraction: number): number => raiseTo(ctx, fraction)
 
 const raiseVerb = (ctx: DecisionContext) =>
   ctx.legal.includes('raise') ? 'raise' : 'bet'
@@ -215,9 +215,14 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
 
   heads_up_pressure: {
     summary: 'Alone in a pot with one opponent, applies relentless pressure.',
-    make: ({ minEquity = 0.45, chance = 0.6, potFraction = 0.75 }) => (ctx) => {
+    // Pressure is betting when checked to and raising a hand that is ahead.
+    // Facing a bet after the flop, strength is measured against the bettor's
+    // range, and half of that is middle pair: raising it into a bet is not
+    // pressure, it is a donation. So a raise there needs raiseEquity.
+    make: ({ minEquity = 0.45, raiseEquity = 0.62, chance = 0.6, potFraction = 0.75 }) => (ctx) => {
       if (ctx.numOpponents !== 1) return null
-      if (ctx.strength < minEquity || !canRaise(ctx)) return null
+      const need = ctx.toCall > 0 && ctx.street !== 'preflop' ? Math.max(minEquity, raiseEquity) : minEquity
+      if (ctx.strength < need || !canRaise(ctx)) return null
       if (ctx.rng() > chance) return null
       return {
         action: raiseVerb(ctx),
@@ -228,10 +233,15 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
   },
 
   patient: {
-    summary: 'Folds to any raise before the flop without a premium hand, unless calling an all-in costs next to nothing.',
-    make: ({ minEquity = 0.6, maxAllInCost = 0.1 }) => (ctx) => {
+    summary: 'Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.',
+    make: ({ minEquity = 0.6, maxAllInCost = 0.1, openBB = 2 }) => (ctx) => {
       if (ctx.street !== 'preflop') return null
-      if (ctx.toCall <= ctx.bigBlind) return null // only a real raise
+      // Only a real raise: more than openBB big blinds to call. An ordinary
+      // 2.5-3bb open costs the big blind 1.5-2bb, and defending a pot it is
+      // already in is not a test of patience. While every AI raise was a
+      // min-raise this read "more than one big blind", which let the blind
+      // defend; with real opens it would fold every blind to every open.
+      if (ctx.toCall <= ctx.bigBlind * openBB) return null
       if (ctx.strength >= minEquity) return null
       if (ctx.effectiveStackBB < 12) return null // patience ends when the stack does
       // A short stack's shove for a sliver of their chips is not a test of patience.

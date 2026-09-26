@@ -55,6 +55,23 @@ export type DecisionContext = {
    * so there is nothing more to lose than the call itself.
    */
   facingAllIn: boolean
+  /**
+   * Chips already in front of this player in THIS betting round, a posted
+   * blind included. A raise is sized from here: call first, then add.
+   */
+  bet: number
+  /**
+   * This player made the last bet or raise of the previous street: a bet now
+   * continues a story the table has already been told.
+   */
+  initiative: boolean
+  /**
+   * Cards that would complete a draw (see drawOuts): 9 a flush draw, 8 an
+   * open-ender, 4 a gutshot, 0 without one. Chooses which hands semi-bluff.
+   */
+  outs: number
+  /** How many draws the board offers, 0 dry to 1 wet (see boardWetness). */
+  wet: number
   rng: () => number
 }
 
@@ -149,26 +166,49 @@ export function decide(ctx: DecisionContext): Decision {
   const raiseAction: Action = ctx.legal.includes('raise') ? 'raise' : 'bet'
 
   // --- Strong: value bet or raise -----------------------------------------
-  if (ctx.equity > required + 0.15) {
+  const bar = valueBar(ctx, required, margin, effectiveAggression)
+  if (ctx.equity > bar) {
     if (canRaise && ctx.rng() < effectiveAggression) {
       return {
         action: raiseAction,
-        betSize: sizeBet(ctx, ctx.equity, effectiveAggression),
-        reason:
-          ctx.equity > 0.55
-            ? `value (${pct(ctx.equity)} vs ${pct(required)} needed)`
-            : `probe (${pct(ctx.equity)}, nobody has bet)`,
+        betSize: sizeBet(ctx, effectiveAggression),
+        reason: `value (${pct(ctx.equity)} vs ${pct(bar)} needed)`,
       }
     }
     if (ctx.toCall === 0 && ctx.legal.includes('check')) {
       return { action: 'check', reason: 'strong but passive this street' }
     }
-    if (ctx.legal.includes('call')) {
+    // An aggressive player opens some hands they would not limp with: raise
+    // or fold, never a call the price does not justify.
+    if (ctx.legal.includes('call') && ctx.equity >= required) {
       return { action: 'call', reason: `value call (${pct(ctx.equity)})` }
     }
   }
 
-  // --- Marginal: call if the price is right --------------------------------
+  // --- Bluff or semi-bluff --------------------------------------------------
+  // A hand not good enough to bet for value. Checked to, it may bet instead of
+  // checking; facing a bet, it may raise instead of folding -- or, holding a
+  // real draw, instead of calling. Bluffing gets more attractive with fewer
+  // opponents and on later streets, where the story is more believable and
+  // there's more to win. WHICH hands bluff is bluffWeight's job.
+  if (canRaise && (ctx.toCall === 0 || ctx.equity < required || ctx.outs >= 8)) {
+    const streetBoost = { preflop: 0.4, flop: 0.8, turn: 1.0, river: 1.2 }[ctx.street]
+    const oppPenalty = Math.pow(0.55, ctx.numOpponents - 1)
+    const adaptBoost = 1 + (ctx.opponentFoldRate - 0.4) * p.adaptivity
+    const bluffChance =
+      p.bluffFrequency * streetBoost * oppPenalty * adaptBoost * bluffWeight(ctx)
+    if (ctx.rng() < bluffChance) {
+      return {
+        action: raiseAction,
+        betSize: sizeBet(ctx, effectiveAggression),
+        reason: ctx.outs >= 4
+          ? `bluff with a draw (${ctx.outs} outs, ${pct(ctx.equity)})`
+          : `bluff (${pct(ctx.equity)} equity)`,
+      }
+    }
+  }
+
+  // --- Marginal: check, or call if the price is right ----------------------
   if (ctx.equity >= required) {
     if (ctx.toCall === 0 && ctx.legal.includes('check')) {
       return { action: 'check', reason: 'marginal, taking a free card' }
@@ -181,22 +221,7 @@ export function decide(ctx: DecisionContext): Decision {
     }
   }
 
-  // --- Weak: bluff, check, or fold -----------------------------------------
-  // Bluffing gets more attractive with fewer opponents and on later streets,
-  // where the story is more believable and there's more to win.
-  const streetBoost = { preflop: 0.4, flop: 0.8, turn: 1.0, river: 1.2 }[ctx.street]
-  const oppPenalty = Math.pow(0.55, ctx.numOpponents - 1)
-  const adaptBoost = 1 + (ctx.opponentFoldRate - 0.4) * p.adaptivity
-  const bluffChance = p.bluffFrequency * streetBoost * oppPenalty * adaptBoost
-
-  if (canRaise && ctx.rng() < bluffChance) {
-    return {
-      action: raiseAction,
-      betSize: sizeBet(ctx, 0.3, effectiveAggression),
-      reason: `bluff (${pct(ctx.equity)} equity)`,
-    }
-  }
-
+  // --- Weak: check or fold ---------------------------------------------------
   if (ctx.toCall === 0 && ctx.legal.includes('check')) {
     return { action: 'check', reason: 'weak, checking' }
   }
@@ -204,16 +229,93 @@ export function decide(ctx: DecisionContext): Decision {
   return { action: 'fold', reason: `fold (${pct(ctx.equity)} < ${pct(required)})` }
 }
 
-/** Bet sizing as a fraction of pot, scaled by strength and aggression. */
-function sizeBet(ctx: DecisionContext, strength: number, aggression: number): number {
-  const fraction = 0.4 + strength * 0.4 + aggression * 0.3
-  let target = Math.round(ctx.pot * fraction)
+/**
+ * The equity a hand needs to bet or raise with.
+ *
+ * Facing a bet it is the price plus a cushion. But with nothing to call the
+ * price is zero, and a bar of "zero plus a cushion" made anything over ~20%
+ * strong: 4-2 raised from the big blind, air bet the flop at the aggression
+ * rate, bottom pair raised a bet. So the bar never drops below a real hand.
+ *
+ * Before the flop, with no raise yet, it is a hand worth opening with (the
+ * strength score of a first-in call, plus the tightness margin), and wider
+ * for an aggressive player: a good player opens by raising, not limping, and
+ * an aggressive one opens more hands. After the flop, it is a clear share
+ * above an even split of the pot among the players in it: heads-up about
+ * two-thirds, which is top pair against any two cards or a bettor's range.
+ * Tightness stays out of that one: it is about which pots to enter, and a
+ * tight player who has entered bets a made hand like anyone else (with the
+ * margin in, the tight characters checked their top pairs and lost value).
+ */
+function valueBar(ctx: DecisionContext, required: number, margin: number, aggression: number): number {
+  if (ctx.street === 'preflop') {
+    if (ctx.toCall > ctx.bigBlind) return required + 0.15
+    return OPEN + margin - 0.2 * (aggression - 0.5)
+  }
+  const fair = 1 / (ctx.numOpponents + 1)
+  return Math.max(required + 0.15, fair + (1 - fair) * VALUE_SHARE)
+}
+
+/** The strength score a first-in call costs: one big blind into the blinds. */
+const OPEN = 0.4
+
+/** How far above an even split a hand must be to bet for value after the flop. */
+const VALUE_SHARE = 0.35
+
+/**
+ * Which hands bluff, as a multiplier on the bluff chance. Not uniformly any
+ * hand below the line -- that is how 7-2 got raised and air got bet into
+ * three players. Before the flop, hands with something to play for: the
+ * strength score already rewards suited, connected and high cards, and gives
+ * 7-2 nothing. On the flop and turn, draws first: called, they can still
+ * win. Then the player who raised last street, whose bet now is the natural
+ * next line of the story (a continuation bet). On the river, and with no
+ * draw, only hands that cannot win a showdown -- a hand that can is a reason
+ * to check, not to bet.
+ */
+function bluffWeight(ctx: DecisionContext): number {
+  if (ctx.street === 'preflop') return clamp((ctx.strength - 0.2) / 0.2, 0, 1.5)
+  if (ctx.outs >= 8) return 2.5
+  if (ctx.outs >= 4) return 1.2
+  const fair = 1 / (ctx.numOpponents + 1)
+  if (ctx.equity >= fair) return 0.15
+  if (ctx.initiative && ctx.toCall === 0 && ctx.street !== 'river') return 1.5
+  // Raising a bettor with nothing needs them to fold a hand they chose to
+  // bet; betting into a check only needs them to fold one they checked.
+  const facing = ctx.toCall > 0 ? 0.4 : 1
+  return (ctx.street === 'river' ? 1.2 : 0.5) * facing
+}
+
+/**
+ * Bet and raise sizes. A raise calls first and then adds a share of the pot:
+ * sizing it as a share of a pot that already holds the bet made nearly half
+ * of all raises a min-raise, which offers every draw the price it wants.
+ *
+ * The share grows with aggression and with the draws the board offers (a
+ * made hand charges them), and wobbles a little. It does NOT grow with the
+ * hand: a size that tracks strength is a tell anyone can learn, so a bluff
+ * is sized exactly like a value bet. Before the flop it is larger, so an
+ * open is two and a half to three big blinds, not a min-raise.
+ */
+function sizeBet(ctx: DecisionContext, aggression: number): number {
+  const base = ctx.street === 'preflop' ? 0.6 : 0.45
+  const share = base + aggression * 0.25 + ctx.wet * 0.2 + (ctx.rng() - 0.5) * 0.15
+  return raiseTo(ctx, share)
+}
+
+/**
+ * The raise-to amount for a bet of `share` of the pot: call what is owed,
+ * then add that share of the pot as it stands after the call. With nothing
+ * owed it is simply that share of the pot. Clamped to what the table allows.
+ */
+export function raiseTo(ctx: DecisionContext, share: number): number {
+  let target = Math.round(ctx.bet + ctx.toCall + share * (ctx.pot + ctx.toCall))
 
   // Leaving a stub behind is the worst of both worlds: the chips are
   // committed but there is not enough left to make anyone fold. If the bet
   // would leave under 1.5bb back, put the rest in. Deep stacks never reach
   // this branch, so it only bites where it should.
-  if (target > ctx.stack - ctx.bigBlind * 1.5) target = ctx.maxRaise
+  if (target > ctx.maxRaise - ctx.bigBlind * 1.5) target = ctx.maxRaise
 
   return Math.max(ctx.minRaise, Math.min(ctx.maxRaise, target))
 }
