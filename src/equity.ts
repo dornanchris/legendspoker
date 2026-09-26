@@ -53,6 +53,63 @@ export function preflopStrength(hole: Card[]): number {
   return Math.max(0.05, Math.min(0.95, (score + 4) / 26))
 }
 
+/** Distinct rank values present, the ace counted high and low. */
+function rankSet(cards: Card[]): Set<number> {
+  const v = new Set(cards.map((c) => rankValue(c.rank)))
+  if (v.has(14)) v.add(1)
+  return v
+}
+
+/**
+ * Cards that would complete a draw that uses a hole card: 9 for a flush
+ * draw, 8 for an open-ended (or double gutshot) straight draw, 4 for a
+ * gutshot. 0 before the flop, on the river, with the hand already made, or
+ * when the draw is all on the board and belongs to everyone.
+ *
+ * Rough on purpose. It chooses WHICH hands bluff -- a draw has somewhere to
+ * go when it is called -- and never prices them: equity does that.
+ */
+export function drawOuts(hole: Card[], board: Card[]): number {
+  if (board.length < 3 || board.length >= 5) return 0
+  const all = [...hole, ...board]
+  let flush = 0
+  for (const s of SUITS) {
+    const n = all.filter((c) => c.suit === s).length
+    if (n >= 5) return 0
+    if (n === 4 && hole.some((c) => c.suit === s)) flush = 9
+  }
+  const have = rankSet(all)
+  const mine = rankSet(hole)
+  const missing = new Set<number>()
+  for (let lo = 1; lo <= 10; lo++) {
+    const run = [lo, lo + 1, lo + 2, lo + 3, lo + 4]
+    const gaps = run.filter((r) => !have.has(r))
+    if (gaps.length === 0) return 0 // already a straight
+    if (gaps.length === 1 && run.some((r) => mine.has(r))) missing.add(gaps[0] === 1 ? 14 : gaps[0])
+  }
+  return Math.min(15, flush + Math.min(8, missing.size * 4))
+}
+
+/**
+ * How many draws the board offers, 0 (dry) to 1 (soaking wet): two or more
+ * of a suit, and ranks close enough together to make straights. Bets grow
+ * with it, so a made hand charges the draws instead of pricing them in.
+ */
+export function boardWetness(board: Card[]): number {
+  if (board.length < 3) return 0
+  let wet = 0
+  const suited = Math.max(...SUITS.map((s) => board.filter((c) => c.suit === s).length))
+  if (suited >= 3) wet += 0.5
+  else if (suited === 2 && board.length < 5) wet += 0.4
+  // Three ranks inside one straight's span make straight draws easy; two
+  // within a gap of each other make them possible.
+  const v = [...rankSet(board)]
+  const within = (span: number) => Math.max(...v.map((lo) => v.filter((x) => x >= lo && x <= lo + span).length))
+  if (within(4) >= 3) wet += 0.5
+  else if (within(2) >= 2) wet += 0.25
+  return Math.min(1, wet)
+}
+
 /**
  * Share of a narrowed range kept back for bluffs and draws: hands that bet
  * without holding anything yet. Without it, a range is all made hands and a
