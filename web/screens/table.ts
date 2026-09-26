@@ -3,7 +3,7 @@ import { HUMAN } from '../../src/personality.js'
 import type { Action, Decision } from '../../src/decide.js'
 import type { Card } from '../../src/equity.js'
 import { mulberry32 } from '../../src/rng.js'
-import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, personality, type Line } from '../../src/content.js'
+import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, UNINVITED, personality, banishmentFor, type Line } from '../../src/content.js'
 import { TableRun, type Beat } from '../../src/director.js'
 import { applyOutcome, fillLine, type TableOutcome } from '../../src/tour.js'
 import { tableRecord, ENGINE_VERSION } from '../../src/save.js'
@@ -397,7 +397,9 @@ export function tableScreen(root: HTMLElement): () => void {
       seatIds[e.seat] = e.id
       out.delete(e.seat)
       buildSeat(e.seat)
-      els.presence.textContent = ''
+      // A chair that changed hands without emptying says nothing about a
+      // champion who is still to come.
+      if (e.cause !== 'banishment') els.presence.textContent = ''
     } else if (e.type === 'eliminated') {
       out.add(e.seat)
       if (e.seat === HUMAN_SEAT) humanPlace = e.place
@@ -409,6 +411,12 @@ export function tableScreen(root: HTMLElement): () => void {
 
   function onEvent(e: HandEvent) {
     const beats = run.onEvent(e)
+    // The uninvited guest is met the moment he sits down, live OR in a resume
+    // replay, and off the presentation clock: his ledger page and his mark
+    // hang off `met`, and career marks are checked when this hand's record is
+    // written, before the queue gets round to showing him. Meeting someone
+    // twice changes nothing, so a replay cannot double-count it.
+    if (e.type === 'arrival' && e.cause === 'banishment') store.meet(e.id)
     if (e.type === 'arrival' || e.type === 'eliminated' || e.type === 'level') {
       if (replaying) applyStructural(e)
     }
@@ -574,6 +582,7 @@ export function tableScreen(root: HTMLElement): () => void {
         break
       }
       case 'arrival': {
+        if (e.cause === 'banishment') { presentGuestArrival(e, instant); break }
         step(() => {
           applyStructural(e)
           const ui = seatUI.get(e.seat)
@@ -587,6 +596,38 @@ export function tableScreen(root: HTMLElement): () => void {
       case 'handEnd':
         break
     }
+  }
+
+  // ------------------------------------------------------------ the uninvited guest
+
+  /**
+   * The chair changes hands without ever standing empty for a hand. The
+   * offender's words and the dealer's ruling have already been queued by the
+   * director (the 'banished' beats); these are the two beats between them and
+   * the guest's first line: the chair empties, and he is in it, behind the
+   * very same chips. Both run on the presentation clock, so fast-forward
+   * speeds them like anything else, and the lines around them are cut.
+   */
+  function presentGuestArrival(e: Extract<HandEvent, { type: 'arrival' }>, instant: boolean) {
+    const t = (ms: number) => (instant ? 0 : ms)
+    const leaving = e.replaces ? CHARACTERS[e.replaces]?.short ?? e.replaces : null
+    step(() => {
+      const ui = seatUI.get(e.seat)
+      if (ui) {
+        ui.root.classList.add('out')
+        ui.cards.replaceChildren()
+        ui.last.textContent = ''
+        ui.tell.textContent = ''
+      }
+      if (leaving) log(`${leaving} is shown out of the Invitational. The chips stay where they are.`, 'big')
+    }, t(BASE.result))
+    step(() => {
+      applyStructural(e)
+      const ui = seatUI.get(e.seat)
+      ui?.root.classList.add('arriving')
+      if (ui) ui.stack.textContent = formatChips(e.stack)
+      log(`${CHARACTERS[e.id]?.short ?? e.id} is sitting in the chair, behind the same ${formatChips(e.stack)} chips.`, 'big')
+    }, t(BASE.level))
   }
 
   // ------------------------------------------------------------ fast-forward
@@ -785,6 +826,9 @@ export function tableScreen(root: HTMLElement): () => void {
     })
   }
 
+  // The house rule that lets the uninvited guest in. Absent at the finale.
+  const banishment = banishmentFor(table)
+
   const run = new TableRun({
     table,
     dialogue,
@@ -795,6 +839,7 @@ export function tableScreen(root: HTMLElement): () => void {
     respectPoints: active.respectPoints,
     earnedMarks: Object.keys(save.marks),
     buyIn: table.buyIn,
+    uninvited: banishment ? UNINVITED : undefined,
   })
 
   const game = new Game([HUMAN, ...active.seats.map(personality)], {
@@ -807,6 +852,7 @@ export function tableScreen(root: HTMLElement): () => void {
     onHumanTurn,
     onEvent,
     arrivals,
+    banishment,
   })
 
   refreshName()

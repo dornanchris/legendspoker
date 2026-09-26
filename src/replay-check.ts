@@ -26,7 +26,7 @@ import { Game, type HandEvent, type TurnView, type Arrival } from './game.js'
 import { HUMAN } from './personality.js'
 import type { Decision } from './decide.js'
 import { mulberry32 } from './rng.js'
-import { TABLES, DIALOGUE, personality, type TableData } from './content.js'
+import { TABLES, DIALOGUE, UNINVITED, personality, banishmentFor, type TableData } from './content.js'
 import { TableRun } from './director.js'
 import { preflopStrength } from './equity.js'
 import { handRank } from './marks.js'
@@ -84,6 +84,8 @@ async function play(table: TableData, seed: number, replay: Decision[] | null): 
         stack: table.arrival.stack,
       }]
     : []
+  // As the web plays it. The event itself is forced in check:loki.
+  const banishment = banishmentFor(table)
   const run = new TableRun({
     table,
     dialogue: DIALOGUE[table.id],
@@ -94,6 +96,7 @@ async function play(table: TableData, seed: number, replay: Decision[] | null): 
     respectPoints: 0,
     earnedMarks: [],
     buyIn: table.buyIn,
+    uninvited: banishment ? UNINVITED : undefined,
   })
   let humanOut = false
   const onEvent = (e: HandEvent) => {
@@ -117,6 +120,7 @@ async function play(table: TableData, seed: number, replay: Decision[] | null): 
     onHumanTurn,
     onEvent,
     arrivals,
+    banishment,
   })
   let hands = 0
   while (!game.isComplete() && hands < HAND_CAP && !humanOut) {

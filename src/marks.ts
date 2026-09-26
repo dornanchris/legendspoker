@@ -147,6 +147,8 @@ function careerCondition(w: MarkCondition, s: Save): boolean {
       return (s.tables[w.table]?.losses ?? 0) >= w.count
     case 'beaten_roster':
       return ROSTER.every((c) => s.characters[c.id]?.beaten)
+    case 'met':
+      return !!s.characters[w.character]?.met
     default:
       return false
   }
@@ -160,7 +162,7 @@ const TABLE_TYPES = new Set([
   'table_won', 'table_won_missing', 'table_won_from_short', 'table_won_leading',
   'table_won_fast', 'respect_tier',
 ])
-const CAREER_TYPES = new Set(['hands_played', 'tour_complete', 'table_cleared', 'lost_to', 'beaten_roster'])
+const CAREER_TYPES = new Set(['hands_played', 'tour_complete', 'table_cleared', 'lost_to', 'beaten_roster', 'met'])
 
 /** Every condition type this build understands. check:data uses it. */
 export const CONDITION_TYPES = new Set([...HAND_TYPES, ...TABLE_TYPES, ...CAREER_TYPES])

@@ -255,5 +255,14 @@
     "text": "Every name in this book has a line through it but one.",
     "hint": "Beat every legend of the Invitational.",
     "when": { "type": "beaten_roster" }
+  },
+  {
+    "id": "uninvited",
+    "title": "Uninvited",
+    "text": "Two words from the wrong century, and I showed the speaker out. The chair was not empty long. I did not invite the one who sat in it. I have written him down anyway.",
+    "hint": "An entry not yet written.",
+    "hidden": true,
+    "secret": true,
+    "when": { "type": "met", "character": "loki" }
   }
 ]

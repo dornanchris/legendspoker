@@ -1,4 +1,4 @@
-import { CHARACTERS, MARKS, TABLES, TABLE_BY_ID, TOUR, DIALOGUE, fullCast, type CharacterData, type TableData } from '../../src/content.js'
+import { CHARACTERS, MARKS, TABLES, TABLE_BY_ID, TOUR, DIALOGUE, ROSTER, GUESTS, fullCast, type CharacterData, type TableData } from '../../src/content.js'
 import { tableState, isVisible, earnedName, beatenCount } from '../../src/tour.js'
 import { RANKINGS } from '../../src/game.js'
 import type { CharacterRecord } from '../../src/save.js'
@@ -20,7 +20,9 @@ import { text } from './map.js'
  *
  * Spoilers are handled by what the page is allowed to know: late arrivals
  * stay out of the book until they have sat down, sealed tables keep their
- * guests to themselves, and the finale is not listed until it is open.
+ * guests to themselves, and the finale is not listed until it is open. A
+ * guest nobody invited, and a secret mark, are not in the book at all --
+ * not even as a blank or in a count -- until they have happened.
  */
 
 type Tab = 'invited' | 'tour' | 'marks' | 'account' | 'rules'
@@ -40,6 +42,8 @@ function visibility(c: CharacterData): Visibility {
   if (rec?.beaten) return 'beaten'
   if (rec?.met) return 'met'
   if (c.role === 'dealer') return 'met' // he has dealt every hand you have played
+  // Nobody invited him, so until he sits down there is nothing to show.
+  if (c.role === 'guest' || c.table === null) return 'hidden'
   const state = tableState(save, c.table)
   if (c.arrives) {
     // A late champion's existence is the surprise. The exception is a missed
@@ -78,20 +82,23 @@ export function ledgerScreen(root: HTMLElement, params: string[]): void {
 
 function invited(book: HTMLElement, selected?: string) {
   const save = store.get()
-  const groups: { table: TableData | null; ids: string[] }[] = TOUR.map((t) => ({ table: t, ids: fullCast(t) }))
+  const groups: { table: TableData | null; title?: string; ids: string[] }[] = TOUR.map((t) => ({ table: t, ids: fullCast(t) }))
   groups.push({ table: null, ids: ['death'] })
+  // No heading, no "unknown" row, nothing, until one of them has been met.
+  const guests = GUESTS.map((c) => c.id).filter((id) => visibility(CHARACTERS[id]) !== 'hidden')
+  if (guests.length) groups.push({ table: null, title: 'Uninvited', ids: guests })
 
   const firstVisible = groups.flatMap((g) => g.ids).find((id) => visibility(CHARACTERS[id]) !== 'hidden')
   const current = selected && CHARACTERS[selected] && visibility(CHARACTERS[selected]) !== 'hidden'
     ? selected : firstVisible
 
   const index = h('aside', { class: 'ledger-index' },
-    h('p', { class: 'count' }, `${beatenCount(save)} of ${Object.values(CHARACTERS).filter((c) => c.role !== 'dealer').length} beaten`),
+    h('p', { class: 'count' }, `${beatenCount(save)} of ${ROSTER.length} beaten`),
     groups.map((g) => {
       const sealed = g.table ? tableState(save, g.table.id) === 'sealed' : false
       const shown = g.ids.filter((id) => visibility(CHARACTERS[id]) !== 'hidden')
       return h('section', { class: 'index-group' },
-        h('h4', null, g.table ? (sealed ? 'A sealed table' : g.table.name) : 'The House'),
+        h('h4', null, g.title ?? (g.table ? (sealed ? 'A sealed table' : g.table.name) : 'The House')),
         h('ul', null,
           shown.map((id) => {
             const c = CHARACTERS[id]
@@ -116,10 +123,10 @@ function characterPage(page: HTMLElement, c: CharacterData) {
   const save = store.get()
   const rec = save.characters[c.id]
   const v = visibility(c)
-  const table = TABLE_BY_ID[c.table]
+  const table = c.table ? TABLE_BY_ID[c.table] : undefined
   const p = c.profile
-  const role = c.role === 'dealer' ? 'The dealer' : c.role === 'champion' ? 'Champion' : 'Seated'
-  const tableName = c.role === 'dealer' ? 'Every table' : table?.name ?? ''
+  const role = c.role === 'dealer' ? 'The dealer' : c.role === 'champion' ? 'Champion' : c.role === 'guest' ? 'Uninvited' : 'Seated'
+  const tableName = c.role === 'dealer' ? 'Every table' : c.role === 'guest' ? 'Not on the tour' : table?.name ?? ''
 
   page.append(
     h('header', { class: 'page-head' },
@@ -135,7 +142,7 @@ function characterPage(page: HTMLElement, c: CharacterData) {
   if (v === 'beaten') status = `Beaten ${formatDate(rec?.beaten)}.`
   else if (c.role === 'dealer') status = 'Has dealt every hand you have played.'
   else if (v === 'met') status = `Met ${formatDate(rec?.met)}. Not yet beaten.`
-  else if (c.arrives && tableState(save, c.table) === 'cleared') {
+  else if (c.arrives && c.table && tableState(save, c.table) === 'cleared') {
     const obj = c.pronoun === 'she' ? 'her' : c.pronoun === 'it' ? 'it' : c.pronoun === 'they' ? 'them' : 'him'
     status = `Never sat down: the table was over before ${pronoun(c)} arrived. Play it again to meet ${obj}.`
   }
@@ -273,13 +280,15 @@ function venuePage(page: HTMLElement, t: TableData) {
 
 function marksTab(book: HTMLElement) {
   const save = store.get()
-  const earned = MARKS.filter((m) => save.marks[m.id])
+  // A secret mark is not in the book, or in its total, until it is written.
+  const listed = MARKS.filter((m) => !m.secret || save.marks[m.id])
+  const earned = listed.filter((m) => save.marks[m.id])
   const page = h('article', { class: 'ledger-page wide' },
     h('header', { class: 'page-head' }, h('div', null,
       h('h2', null, 'Marks'),
-      h('p', { class: 'meta' }, `${earned.length} entries written of ${MARKS.length}.`),
+      h('p', { class: 'meta' }, `${earned.length} entries written of ${listed.length}.`),
       h('p', { class: 'dim' }, 'What Death saw fit to write down about you. Not a trophy cabinet: a record.'))),
-    h('ol', { class: 'marks-list' }, MARKS.map((m) => {
+    h('ol', { class: 'marks-list' }, listed.map((m) => {
       const e = save.marks[m.id]
       if (e) {
         const where = e.table ? TABLE_BY_ID[e.table]?.name : null

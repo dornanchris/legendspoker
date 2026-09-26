@@ -10,9 +10,10 @@
     "check:pots": "tsx src/pot-conservation.ts",
     "check:data": "tsx src/data-check.ts",
     "check:replay": "tsx src/replay-check.ts",
+    "check:loki": "tsx src/loki-check.ts",
     "roster": "tsx src/roster.ts",
     "typecheck": "tsc --noEmit -p .",
-    "check": "npm run typecheck && npm run check:data && npm run check:pots && npm run check:replay",
+    "check": "npm run typecheck && npm run check:data && npm run check:pots && npm run check:replay && npm run check:loki",
     "build:web": "node web/build.mjs",
     "web": "node web/build.mjs && node web/serve.mjs",
     "postinstall": "patch-package"
