@@ -8,7 +8,7 @@
  * screen. What the player sees is what the table CALLS them, which changes
  * as they climb, and is announced explicitly when it flips.
  */
-import { TABLES, TOUR, TABLE_BY_ID, ROSTER, type TableData } from './content.js'
+import { TABLES, TOUR, TABLE_BY_ID, ROSTER, fullCast, type TableData } from './content.js'
 import { characterRecord, tableRecord, type Save } from './save.js'
 
 export type TableState = 'sealed' | 'open' | 'cleared'
@@ -118,25 +118,26 @@ function shuffled<T>(xs: T[], rng: () => number): T[] {
 
 /**
  * Random play at a cleared table: a mix-and-match of everyone the player has
- * unlocked. The design doc's original rule kept the cast to "non-boss
- * characters for that setting"; the owner widened it to the whole tour, so
- * Van Helsing can turn up at the Pirate Cove once you have beaten him.
+ * unlocked -- beaten -- champions included. The design doc's original rule
+ * kept the cast to "non-boss characters for that setting"; the owner widened
+ * it to the whole roster, so Van Helsing or Blackbeard can turn up at
+ * Camelot once you have beaten them.
  *
- * Still NON-BOSS: champions sit out, because the Champions' Tables are where
- * the bosses meet and that mix is their payoff. One chair always goes to a
- * regular of this room, so its own banter and player-directed lines still
- * have someone to say them. The other chairs draw from every unlocked
- * non-champion -- this room's regulars included -- so early in the tour,
- * with little unlocked, the table looks the way it always did.
+ * One chair always goes to someone from this room, so its own banter and
+ * player-directed lines still have a speaker. The other chairs draw from
+ * everyone unlocked -- this room's cast included -- so early in the tour,
+ * with little unlocked, the table looks much as it always did.
  */
 export function openTableCast(table: TableData, save: Save, rng: () => number): string[] {
-  const regulars = shuffled(table.seats.filter((id) => id !== table.champion), rng)
-  const host = regulars.slice(0, 1)
-  const unlocked = ROSTER.filter((c) => c.role === 'seat' && save.characters[c.id]?.beaten && !host.includes(c.id))
-    .map((c) => c.id)
+  const beaten = (id: string) => !!save.characters[id]?.beaten
+  const room = fullCast(table)
+  // A missable champion who never sat down is not unlocked, and cannot host.
+  const locals = shuffled(room.some(beaten) ? room.filter(beaten) : table.seats, rng)
+  const host = locals.slice(0, 1)
+  const unlocked = ROSTER.filter((c) => beaten(c.id) && !host.includes(c.id)).map((c) => c.id)
   const pool = shuffled(unlocked, rng)
-  // Fall back on the room's own regulars if not enough is unlocked yet.
-  for (const id of regulars) if (!pool.includes(id)) pool.push(id)
+  // Fall back on the room's own cast if not enough is unlocked yet.
+  for (const id of locals) if (!pool.includes(id) && !host.includes(id)) pool.push(id)
   return shuffled([...host, ...pool.slice(0, OPEN_TABLE_CHAIRS - host.length)], rng)
 }
 

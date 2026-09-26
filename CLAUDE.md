@@ -166,8 +166,8 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   ("The Hall of Doors"), and the finale ("The Last Crossing", hidden from the
   map until it opens). 35 roster characters + Death, all data. Late champions
   arrive per the design doc via `Arrival` rules in `game.ts`; Odysseus is
-  missable. Open tables (random play) unlock at cleared tables and seat a mix of every
-  non-boss the player has beaten, one chair kept for a regular of the room.
+  missable. Open tables (random play) unlock at cleared tables and seat a mix of anyone
+  the player has beaten, champions included, one chair kept for the room.
 - **Dialogue system:** `src/director.ts` plays the established schema — intro,
   the one plant, pair banter, tiered player-directed lines, Death's asides,
   arrivals, heads-up, bust-outs, defeat — plus Holmes's `reads_you` (lines

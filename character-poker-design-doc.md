@@ -109,10 +109,9 @@ avatar-unlock tracker.
      un-confined to a single opponent lineup). Reuses the same table + dealer
      art; new opponents only.
      *[DECISION, owner] Widened to **mix-and-match**: an open table seats
-     any non-boss the player has already beaten, from any table, with one
-     chair kept for a regular of the room so its own banter still has a
-     voice. Champions still sit out: their mix is the Champions' Tables'
-     payoff.*
+     anyone the player has already beaten, from any table, champions
+     included, with one chair kept for someone from the room so its own
+     banter still has a voice.*
 - After all eight: **two champion tiers** — Champions' Table for the first
   four bosses, then Champions' Table for the last four — played at Death's
   transcendent table.
