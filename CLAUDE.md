@@ -140,8 +140,11 @@ After bets started being read (ENGINE_VERSION 3), `npm run sim 2000`: Dracula
 35.2 / 0.73, Snowman 75.1 / 0.23, Cleopatra 63.7 / 3.54 -- same three people.
 
 **Phase 3a is complete: the tournament model.** Stacks persist, players are
-eliminated, blinds climb every 25 hands, and a table ends when one player
-holds every chip. 100/100 tables terminate with zero stalls. `decide()` now
+eliminated, blinds climb on a hand count (each table's `handsPerLevel`: 9 at
+a five-seat table, 8 where a sixth player arrives and at the champions'
+tables, 12 at the finale; the frozen Phase 2 instrument keeps 25), and a
+table ends when one player holds every chip. 100/100 tables terminate with
+zero stalls. `decide()` now
 has a stack-depth term, so short stacks widen and push instead of folding
 their way to death; it is neutral above 20bb, which is why the cash profiles
 above are unchanged.
@@ -178,7 +181,7 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   map until it opens). 35 roster characters + Death, all data. Late champions
   arrive per the design doc via `Arrival` rules in `game.ts`; Odysseus is
   missable. The Green Knight keeps his appointment: knocked out, he retakes
-  his chair 50 hands later if the table is still going, at any table he sits
+  his chair 20 hands later if the table is still going, at any table he sits
   at (`returns` in his character file; an Arrival whose `afterEliminationOf`
   is himself, so the event has `replaces === id`). Open tables (random
   play) unlock at cleared tables and seat a mix of anyone the player has
@@ -272,6 +275,15 @@ real device.
   Lincoln 65%, Washington 62%, Roosevelt 77%, and is level with Arthur (47%,
   inside the noise of 60 matches). Under version 2 it was 60/58/43/57. The
   finale buy-in is 5000 so the match runs long enough for skill to show.
+- **Blind pace (the owner: "blinds need to go up sooner").** Levels last 8-9
+  hands (12 at the finale), under two orbits five-handed; the first three
+  orbits are still 100bb/67bb deep. With a scripted player seated, tables
+  take ~51 hands (were ~92) and the finale ~81 (was 140). The first bust
+  comes at hand 5-9 at any pace -- the bots stack off deep -- so the pace
+  only governs the 3-handed/heads-up back half. Anything counted in hands is
+  coupled to this pace: the Green Knight's return (20), Odysseus's delay
+  (10), Brief Acquaintance (25). `npm run tourney <table>` plays 4-handed
+  with no player seat, so it understates real table length.
 - **Tightness saturates.** Above ~0.75 the dial barely moves VPIP; the
   quirks (`patient`, `calls_small`, `steal`) move it far more. Tune with them.
 - **An existing White House line genders the player** (`wh_p0_03`, "the look
@@ -312,7 +324,7 @@ real device.
   "Arthur wins side pot 1 with two pair". `game.ts` marks such a pot
   `returned`; the table says "takes back", and the director does not count
   it as a pot won.
-- **Bets are READ -- ENGINE_VERSION 3.** Equity used to be measured against
+- **Bets are READ (since ENGINE_VERSION 3).** Equity used to be measured against
   any two cards, so a pair of eights was a 65% favourite against a pot-sized
   bet and the AI called it down: on calls into big bets the AI estimated 46%
   and actually held 10% against the bettor's real hand. Now, facing a bet,
