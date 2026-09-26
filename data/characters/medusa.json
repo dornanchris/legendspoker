@@ -61,5 +61,38 @@
     "look": "Silhouette: a head of living snakes, a moving crown nobody else at the table has, readable at any size. Face: a young woman's, pale and calm, heavy-lidded; the eyes are drawn as ordinary, which is the unsettling choice. Prop: the snakes themselves — their stillness, coiling and hissing are her whole tell surface.",
     "prop": "Her hair of snakes",
     "public_domain": "Greek myth (Hesiod, Pindar, Ovid), all public domain; classical art such as the Rondanini Medusa is fair reference. Avoid Harryhausen's Medusa from Clash of the Titans (1981: serpent body, rattle tail, bow) and its 2010 remake, and the Percy Jackson Medusa (sunglasses, garden statues). She has legs and sits in a chair."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Carry on. Don't mind me.",
+      "Fold. I'm used to waiting in dark places.",
+      "Fold. Another time, then.",
+      "Let it go. I have learned to be patient."
+    ],
+    "check": [
+      "Check.",
+      "Check. I'm in no hurry. Nothing near me moves much.",
+      "Check. Take your time. Everyone does, near me."
+    ],
+    "call": [
+      "I'll call. Don't stare.",
+      "Call.",
+      "Call. Keep your eyes on your own chips."
+    ],
+    "bet": [
+      "A bet. It won't bite. Most of it won't.",
+      "Bet. Look at it as long as you like.",
+      "Bet."
+    ],
+    "raise": [
+      "Raise. Perseus needed a mirror. What have you brought?",
+      "I raise.",
+      "Raise. The snakes are tired of waiting."
+    ],
+    "all_in": [
+      "All in. Look upon it.",
+      "Everything. The snakes insisted.",
+      "All of it. Face it, if you can."
+    ]
   }
 }

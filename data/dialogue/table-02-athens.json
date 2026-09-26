@@ -99,6 +99,23 @@
         [
           { "id": "at_so_le_03a", "speaker": "socrates", "text": "You answer every question in a single word, King. Is that because the answer is simple, or because the question is?" },
           { "id": "at_so_le_03b", "speaker": "leonidas", "text": "Yes." }
+        ],
+        [
+          { "id": "at_so_le_04a", "speaker": "socrates", "text": "King. What is courage?" },
+          { "id": "at_so_le_04b", "speaker": "leonidas", "text": "Staying." },
+          { "id": "at_so_le_04c", "speaker": "socrates", "text": "And if staying is foolish?" },
+          { "id": "at_so_le_04d", "speaker": "leonidas", "text": "Then it is foolish courage. Still courage." },
+          { "id": "at_so_le_04e", "speaker": "socrates", "text": "...I have had worse answers from generals.", "note": "Plato's Laches: two generals try to define courage for Socrates, and the first offers 'staying at one's post'." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "at_nd_01a", "speaker": "socrates", "to": "leonidas", "text": "A Spartan, withdrawing? Is that permitted?" },
+          { "id": "at_nd_01b", "speaker": "leonidas", "text": "Once a century." }
+        ],
+        [
+          { "id": "at_nd_02a", "speaker": "leonidas", "to": "socrates", "text": "You yielded. Without a question." },
+          { "id": "at_nd_02b", "speaker": "socrates", "text": "I asked it silently. You answered it loudly." }
         ]
       ]
     },
@@ -120,6 +137,29 @@
           { "id": "at_cy_od_03a", "speaker": "cyclops", "text": "A seer told me a man would take my eye. I watched for a big one. Handsome. Strong." },
           { "id": "at_cy_od_03b", "speaker": "odysseus", "text": "Well. Two out of three." },
           { "id": "at_cy_od_03c", "speaker": "cyclops", "text": "Which two?" }
+        ],
+        [
+          { "id": "at_cy_od_04a", "speaker": "odysseus", "text": "I brought you wine, as I recall. The best on my ship." },
+          { "id": "at_cy_od_04b", "speaker": "cyclops", "text": "It was good wine." },
+          { "id": "at_cy_od_04c", "speaker": "odysseus", "text": "It was very good wine." },
+          { "id": "at_cy_od_04d", "speaker": "cyclops", "text": "...I still hate you." }
+        ],
+        [
+          { "id": "at_cy_od_05a", "speaker": "odysseus", "text": "How are the sheep?" },
+          { "id": "at_cy_od_05b", "speaker": "cyclops", "text": "Do not talk about the sheep." },
+          { "id": "at_cy_od_05c", "speaker": "odysseus", "text": "The big ram, with the thick fleece —" },
+          { "id": "at_cy_od_05d", "speaker": "cyclops", "text": "[half rises; every cup on the table jumps]", "type": "stage_direction" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "at_nd_03a", "speaker": "cyclops", "to": "odysseus", "text": "Run, little man. Like from the cave." },
+          { "id": "at_nd_03b", "speaker": "odysseus", "text": "Walked, actually. Under a sheep. There's a difference." }
+        ],
+        [
+          { "id": "at_nd_04a", "speaker": "odysseus", "to": "cyclops", "text": "Folded? And I'd brought more wine." },
+          { "id": "at_nd_04b", "speaker": "cyclops", "text": "NOBODY BRINGS ME WINE." },
+          { "id": "at_nd_04c", "speaker": "odysseus", "text": "...Exactly right." }
         ]
       ]
     },
@@ -137,6 +177,22 @@
           { "id": "at_so_cy_02b", "speaker": "cyclops", "text": "No laws. Each one rules his own cave." },
           { "id": "at_so_cy_02c", "speaker": "socrates", "text": "And if two of you want the same sheep?" },
           { "id": "at_so_cy_02d", "speaker": "cyclops", "text": "Then there is one Cyclops." }
+        ],
+        [
+          { "id": "at_so_cy_03a", "speaker": "socrates", "text": "Tell me, Polyphemus. Is it just to eat one's guests?" },
+          { "id": "at_so_cy_03b", "speaker": "cyclops", "text": "They came into my cave. They ate my cheese." },
+          { "id": "at_so_cy_03c", "speaker": "socrates", "text": "Then what does a host owe a guest who has wronged him?" },
+          { "id": "at_so_cy_03d", "speaker": "cyclops", "text": "Dinner." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "at_nd_05a", "speaker": "socrates", "to": "cyclops", "text": "You gave way, my friend. Was it wisdom, or appetite?" },
+          { "id": "at_nd_05b", "speaker": "cyclops", "text": "Stop asking me things." }
+        ],
+        [
+          { "id": "at_nd_06a", "speaker": "cyclops", "to": "socrates", "text": "Ha! The little talker is quiet." },
+          { "id": "at_nd_06b", "speaker": "socrates", "text": "Not quiet. Thinking. From outside they look much the same." }
         ]
       ]
     },
@@ -153,6 +209,79 @@
           { "id": "at_le_me_02a", "speaker": "leonidas", "text": "My wife's name is Gorgo." },
           { "id": "at_le_me_02b", "speaker": "medusa", "text": "Is it. And is she frightening?" },
           { "id": "at_le_me_02c", "speaker": "leonidas", "text": "She is Spartan." }
+        ],
+        [
+          { "id": "at_le_me_03a", "speaker": "medusa", "text": "Greek soldiers paint my face on their shields." },
+          { "id": "at_le_me_03b", "speaker": "leonidas", "text": "Some do." },
+          { "id": "at_le_me_03c", "speaker": "medusa", "text": "Does it work?" },
+          { "id": "at_le_me_03d", "speaker": "leonidas", "text": "It worked on the Persians. For three days." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "at_nd_07a", "speaker": "medusa", "to": "leonidas", "text": "You looked away, Spartan." },
+          { "id": "at_nd_07b", "speaker": "leonidas", "text": "I folded. It is not the same." },
+          { "id": "at_nd_07c", "speaker": "medusa", "text": "It is from here." }
+        ],
+        [
+          { "id": "at_nd_08a", "speaker": "leonidas", "to": "medusa", "text": "Gorgon. You yielded." },
+          { "id": "at_nd_08b", "speaker": "medusa", "text": "Enjoy it quickly. Men who stare at me tend to stay where they are." }
+        ]
+      ]
+    },
+
+    "socrates_medusa": {
+      "relationship": "Two famous faces. At exactly this kind of party, Alcibiades said Socrates was like the Silenus figures in the sculptors' shops: ugly outside, full of little gods within (Plato, Symposium 215). Medusa's is the face everyone believes they understand at a glance. Socrates has never trusted a first impression, his own included. One hint about her face, no more (see notes.medusa).",
+      "exchanges": [
+        [
+          { "id": "at_so_me_01a", "speaker": "medusa", "text": "You are the first man tonight to look straight at me, old man." },
+          { "id": "at_so_me_01b", "speaker": "socrates", "text": "I have the ugliest face in Athens. Faces hold no terror for me." },
+          { "id": "at_so_me_01c", "speaker": "medusa", "text": "Then what does?" },
+          { "id": "at_so_me_01d", "speaker": "socrates", "text": "Being certain." }
+        ],
+        [
+          { "id": "at_so_me_02a", "speaker": "socrates", "text": "They say you were beautiful, once." },
+          { "id": "at_so_me_02b", "speaker": "medusa", "text": "They say a great many things about my face." },
+          { "id": "at_so_me_02c", "speaker": "socrates", "text": "And how much of it is true?" },
+          { "id": "at_so_me_02d", "speaker": "medusa", "text": "Less than they think. That is the useful part." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "at_nd_09a", "speaker": "socrates", "to": "medusa", "text": "You gave way. I confess I did not see it coming." },
+          { "id": "at_nd_09b", "speaker": "medusa", "text": "Don't look so pleased with yourself. It shows." }
+        ],
+        [
+          { "id": "at_nd_10a", "speaker": "medusa", "to": "socrates", "text": "You folded, philosopher. Afraid?" },
+          { "id": "at_nd_10b", "speaker": "socrates", "text": "Persuaded. It comes to much the same thing, but it sounds better." }
+        ]
+      ]
+    },
+
+    "leonidas_odysseus": {
+      "relationship": "Sparta started Odysseus's war: Helen was a Spartan king's wife, and all Greece sailed to Troy to fetch her back. Odysseus tried to dodge it by feigning madness, sowing his fields with salt, until someone laid his infant son in front of the plough (Hyginus, Apollodorus). A Spartan would have gone at once, and says so. Fires only once Odysseus is seated.",
+      "exchanges": [
+        [
+          { "id": "at_le_od_01a", "speaker": "leonidas", "text": "You went to Troy for a Spartan queen." },
+          { "id": "at_le_od_01b", "speaker": "odysseus", "text": "I went to Troy because someone put my son in front of my plough. The queen was Menelaus's idea." },
+          { "id": "at_le_od_01c", "speaker": "leonidas", "text": "You pretended to be mad." },
+          { "id": "at_le_od_01d", "speaker": "odysseus", "text": "I pretended very well." }
+        ],
+        [
+          { "id": "at_le_od_02a", "speaker": "odysseus", "text": "Ten years at Troy, and we got in with a wooden horse. What would Sparta have done?" },
+          { "id": "at_le_od_02b", "speaker": "leonidas", "text": "Knocked on the gate." },
+          { "id": "at_le_od_02c", "speaker": "odysseus", "text": "For ten years?" },
+          { "id": "at_le_od_02d", "speaker": "leonidas", "text": "Harder." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "at_nd_11a", "speaker": "leonidas", "to": "odysseus", "text": "You ran." },
+          { "id": "at_nd_11b", "speaker": "odysseus", "text": "Sailed. At some length. It's the family style." }
+        ],
+        [
+          { "id": "at_nd_12a", "speaker": "odysseus", "to": "leonidas", "text": "A Spartan, turning back? I'll tell Menelaus. He'll be delighted." },
+          { "id": "at_nd_12b", "speaker": "leonidas", "text": "Tell him nothing." }
         ]
       ]
     }

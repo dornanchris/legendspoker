@@ -53,6 +53,11 @@ function readingTime(text: string): number {
   return Math.max(1500, Math.min(5200, 900 + text.length * 48))
 }
 
+/** A callout's time on screen, before pace: long enough to read, short enough to keep up. */
+function calloutTime(text: string): number {
+  return Math.max(1400, Math.min(3000, 700 + text.length * 40))
+}
+
 type SeatUI = {
   id: string
   root: HTMLElement
@@ -366,7 +371,50 @@ export function tableScreen(root: HTMLElement): () => void {
     }, 0, { line: true })
   }
 
+  // ------------------------------------------------------------ callouts
+
+  /**
+   * A callout rides on its action: its bubble goes up in the same instant as
+   * the chips (so it is queued just BEFORE the action's step), lives on its
+   * own short timer, and adds nothing to the queue -- the player's turn never
+   * waits for one. Cut, not sped up, while fast-forwarding. One on screen at
+   * a time. The words go in the log just AFTER the action, where they read.
+   */
+  let calloutToken = 0
+  function showCallout(b: Extract<Beat, { kind: 'callout' }>) {
+    step(() => {
+      if (ff) return
+      const ui = seatUI.get(seatIds.indexOf(b.speaker))
+      if (!ui) return
+      for (const el of els.opponents.querySelectorAll('.callout.show')) el.classList.remove('show')
+      const el = ui.root.querySelector<HTMLElement>('.callout') ?? h('div', { class: 'callout', 'aria-hidden': 'true' })
+      if (!el.parentElement) ui.root.append(el)
+      const text = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
+      const ms = Math.round(calloutTime(text) * paceScale)
+      el.textContent = text
+      el.classList.toggle('stage', b.stage)
+      el.style.animationDuration = `${ms}ms`
+      // Any line this seat said earlier has had its reading time: the queue
+      // waited for it. Do not stack two bubbles on one chair.
+      ui.say.classList.remove('show')
+      el.classList.remove('show')
+      void el.offsetWidth
+      el.classList.add('show')
+      // Taken down on the same clock, so it also goes away under reduce-motion,
+      // where there is no animation to fade it.
+      const token = String(++calloutToken)
+      el.dataset.token = token
+      later(() => { if (el.dataset.token === token) el.classList.remove('show') }, ms)
+    }, 0)
+  }
+
+  function logCallout(b: Extract<Beat, { kind: 'callout' }>) {
+    const who = CHARACTERS[b.speaker]?.short ?? b.speaker
+    step(() => log(b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`, 'say callout'), 0)
+  }
+
   function presentBeat(b: Beat) {
+    if (b.kind === 'callout') return logCallout(b)
     if (b.kind === 'line') return sayLine(b)
     if (b.kind === 'respect') {
       step(() => {
@@ -428,6 +476,7 @@ export function tableScreen(root: HTMLElement): () => void {
       for (const b of beats) if (b.kind === 'mark') store.earnMark(b.id, table.id)
       return
     }
+    for (const b of beats) if (b.kind === 'callout') showCallout(b)
     present(e, false)
     for (const b of beats) presentBeat(b)
     if (e.type === 'handEnd') recordLive()

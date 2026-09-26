@@ -87,6 +87,28 @@
         [
           { "id": "wh_tr_fdr_03a", "speaker": "fdr", "text": "Cousin. You're bleeding chips." },
           { "id": "wh_tr_fdr_03b", "speaker": "roosevelt", "text": "I am investing them." }
+        ],
+        [
+          { "id": "wh_tr_fdr_04a", "speaker": "roosevelt", "text": "Franklin, you have smiled at everyone at this table tonight.", "status": "draft" },
+          { "id": "wh_tr_fdr_04b", "speaker": "fdr", "text": "And every one of them smiled back. That is the job, Theodore.", "status": "draft" },
+          { "id": "wh_tr_fdr_04c", "speaker": "roosevelt", "text": "The job is to win.", "status": "draft" },
+          { "id": "wh_tr_fdr_04d", "speaker": "fdr", "text": "That is winning. It just doesn't make as much noise.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_tr_fdr_05a", "speaker": "fdr", "text": "Uncle Ted —", "status": "draft" },
+          { "id": "wh_tr_fdr_05b", "speaker": "roosevelt", "text": "Do not call me that at the table.", "status": "draft" },
+          { "id": "wh_tr_fdr_05c", "speaker": "fdr", "text": "Eleanor does.", "status": "draft" },
+          { "id": "wh_tr_fdr_05d", "speaker": "roosevelt", "text": "Eleanor has earned it.", "status": "draft" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "wh_nd_01a", "speaker": "roosevelt", "to": "fdr", "text": "Ha! Franklin folds! Somebody write it down; nobody will believe it.", "status": "draft" },
+          { "id": "wh_nd_01b", "speaker": "fdr", "text": "Nobody ever believes anything about me, Theodore. It's very restful.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_02a", "speaker": "fdr", "to": "roosevelt", "text": "There goes the cavalry. Round the long way, for once.", "status": "draft" },
+          { "id": "wh_nd_02b", "speaker": "roosevelt", "text": "A strategic withdrawal, cousin. I've read about them.", "status": "draft" }
         ]
       ]
     },
@@ -104,6 +126,28 @@
           { "id": "wh_al_tr_02a", "speaker": "lincoln", "text": "Theodore. You do not have to win every hand." },
           { "id": "wh_al_tr_02b", "speaker": "roosevelt", "text": "I do not have to. I choose to." },
           { "id": "wh_al_tr_02c", "speaker": "lincoln", "text": "That is the part that worries me." }
+        ],
+        [
+          { "id": "wh_al_tr_03a", "speaker": "roosevelt", "text": "Abraham, how do you stand it? Sitting there, hand after hand?", "status": "draft" },
+          { "id": "wh_al_tr_03b", "speaker": "lincoln", "text": "I once waited two months for the right battle before I said anything important.", "status": "draft" },
+          { "id": "wh_al_tr_03c", "speaker": "roosevelt", "text": "Two months! I'd have gone mad.", "status": "draft" },
+          { "id": "wh_al_tr_03d", "speaker": "lincoln", "text": "You'd have gone to Cuba.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_al_tr_04a", "speaker": "lincoln", "text": "They tell me you were shot once, and gave the speech anyway.", "status": "draft" },
+          { "id": "wh_al_tr_04b", "speaker": "roosevelt", "text": "The bullet went through the manuscript first. Fifty pages, folded double. Long speeches save lives!", "status": "draft" },
+          { "id": "wh_al_tr_04c", "speaker": "lincoln", "text": "Mine was two minutes.", "status": "draft" },
+          { "id": "wh_al_tr_04d", "speaker": "roosevelt", "text": "...Well. Yours was better.", "status": "draft" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "wh_nd_03a", "speaker": "roosevelt", "to": "lincoln", "text": "Folded again, Abraham! That's not patience, that's hibernation.", "status": "draft" },
+          { "id": "wh_nd_03b", "speaker": "lincoln", "text": "Bears come out in the spring, Theodore. Rested.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_04a", "speaker": "lincoln", "to": "roosevelt", "text": "Theodore. Did you just go around an obstacle?", "status": "draft" },
+          { "id": "wh_nd_04b", "speaker": "roosevelt", "text": "...Once. Tell no one.", "status": "draft" }
         ]
       ]
     },
@@ -119,6 +163,43 @@
         [
           { "id": "wh_gw_02a", "speaker": "fdr", "text": "The General has not spoken in an hour." },
           { "id": "wh_gw_02b", "speaker": "lincoln", "text": "He has spoken twice. You were not listening." }
+        ],
+        [
+          { "id": "wh_gw_03a", "speaker": "fdr", "text": "General. About your two-term tradition.", "status": "draft" },
+          { "id": "wh_gw_03b", "speaker": "washington", "text": "Yes.", "status": "draft" },
+          { "id": "wh_gw_03c", "speaker": "fdr", "text": "I did give it a great deal of thought.", "status": "draft" },
+          { "id": "wh_gw_03d", "speaker": "washington", "text": "Four times, I am told.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_gw_04a", "speaker": "lincoln", "text": "I said once that nobody could add glory to the name of Washington.", "status": "draft" },
+          { "id": "wh_gw_04b", "speaker": "washington", "text": "[inclines his head, very slightly]", "type": "stage_direction", "status": "draft" },
+          { "id": "wh_gw_04c", "speaker": "lincoln", "text": "I stand by it. I'd just like to take a pot off him.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_gw_05a", "speaker": "roosevelt", "text": "General! You crossed the Delaware at night, in the ice!", "status": "draft" },
+          { "id": "wh_gw_05b", "speaker": "washington", "text": "I did.", "status": "draft" },
+          { "id": "wh_gw_05c", "speaker": "roosevelt", "text": "Bully! What was it like?", "status": "draft" },
+          { "id": "wh_gw_05d", "speaker": "washington", "text": "Cold.", "status": "draft" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "wh_nd_05a", "speaker": "washington", "to": "roosevelt", "text": "Sit down, Colonel.", "status": "draft" },
+          { "id": "wh_nd_05b", "speaker": "roosevelt", "text": "...Sir.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_06a", "speaker": "washington", "to": "fdr", "text": "[looks at FDR for a long moment, and says nothing at all]", "type": "stage_direction", "status": "draft" },
+          { "id": "wh_nd_06b", "speaker": "fdr", "text": "I know that look. My mother had that look.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_07a", "speaker": "washington", "to": "lincoln", "text": "[inclines his head to Lincoln: one commander to another]", "type": "stage_direction", "status": "draft" },
+          { "id": "wh_nd_07b", "speaker": "lincoln", "text": "Thank you, General. I'd rather have had the pot.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_08a", "speaker": "roosevelt", "to": "washington", "text": "The General folded! To me! Did everyone see that?", "status": "draft" },
+          { "id": "wh_nd_08b", "speaker": "washington", "text": "Everyone saw.", "status": "draft" },
+          { "id": "wh_nd_08c", "speaker": "roosevelt", "text": "...That's all? No word of praise?", "status": "draft" },
+          { "id": "wh_nd_08d", "speaker": "washington", "text": "That was it.", "status": "draft" }
         ]
       ]
     },

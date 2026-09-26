@@ -61,5 +61,41 @@
     "look": "Silhouette: barrel chest, leaning forward on both elbows — the broadest shape at the table. Face: the heavy moustache and the enormous grin; the teeth must read at a fifth of a screen. Prop: round steel-rimmed spectacles. Taking them off to polish them is a big, readable gesture, and the grin does the rest.",
     "prop": "Round steel-rimmed spectacles",
     "public_domain": "Historical figure, died 1919; period photographs are public domain. Build from photographs and the 1898 Rough Rider uniform. Avoid the Night at the Museum portrayal (horseback, waxwork) and any modern screen likeness. No teddy bears."
+  },
+  "callouts": {
+    "fold": [
+      "Bah! Fold.",
+      "Fold! A tactical withdrawal. I'll charge the next one.",
+      "I retire from the field. Briefly!",
+      "Fold. Even a Rough Rider has to water the horses."
+    ],
+    "check": [
+      "Check. Don't get used to it.",
+      "Check! Speak softly.",
+      "Check. I am resting. Strenuously."
+    ],
+    "call": [
+      "Call! I never turn down a scrap.",
+      "I'll see that, and gladly!",
+      "Call! Into the arena!",
+      "Call. Up the hill we go!"
+    ],
+    "bet": [
+      "Bully! Bet!",
+      "Bet. And a big stick behind it.",
+      "Here's a wager with some vim in it!",
+      "Bet! The strenuous life!"
+    ],
+    "raise": [
+      "Raise! Charge!",
+      "Raise. It takes more than that to stop a Bull Moose.",
+      "Raise! Up the hill!",
+      "Raise! Delighted!"
+    ],
+    "all_in": [
+      "All in! Charge!",
+      "Everything! Over the obstacles, not around them!",
+      "All of it! I've been shot before!"
+    ]
   }
 }

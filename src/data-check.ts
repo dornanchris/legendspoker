@@ -14,6 +14,7 @@
 import { CHARACTERS, TABLES, DIALOGUE, DEALER, MARKS, STORY, UNINVITED, fullCast, type Line } from './content.js'
 import { QUIRKS } from './quirks.js'
 import { CONDITION_TYPES, conditionErrors } from './marks.js'
+import { CALLOUT_ACTIONS, isStage } from './chatter.js'
 
 const errors: string[] = []
 const warnings: string[] = []
@@ -191,6 +192,97 @@ for (const t of TABLES) {
   if (foreshadow > 4) warn(w, `${foreshadow} foreshadow lines: ration them (design doc)`)
 }
 
+// ---------------------------------------------------------------- needles
+
+// Old friends needling (banter_pairs.*.needles). The first line names who is
+// being needled; both must be at the table, and they must be two people.
+for (const t of TABLES) {
+  const d = DIALOGUE[t.id]
+  if (!d) continue
+  const speakers = new Set(['death', 'narration', ...fullCast(t)])
+  for (const [key, pair] of Object.entries(d.banter_pairs ?? {})) {
+    const w = `dialogue ${t.id} needles ${key}`
+    // Needles belong to a pair with a relationship: both people must be in it.
+    const inPair = new Set((pair.exchanges ?? []).flat().map((l) => l.speaker))
+    for (const x of pair.needles ?? []) {
+      if (!x.length) { err(w, 'empty needle'); continue }
+      x.forEach((l) => checkLine(l, w, speakers))
+      const [first] = x
+      if (!first.to) err(w, `needle ${first.id}: the first line must say who it is aimed at ("to")`)
+      else if (!fullCast(t).includes(first.to)) err(w, `needle ${first.id}: "${first.to}" is not at this table`)
+      else if (first.to === first.speaker) err(w, `needle ${first.id}: aimed at the speaker`)
+      if (!fullCast(t).includes(first.speaker)) err(w, `needle ${first.id}: only a player can take a pot, not "${first.speaker}"`)
+      for (const who of [first.speaker, first.to]) {
+        if (who && !inPair.has(who)) err(w, `needle ${first.id}: "${who}" has no exchange in this pair; needles are for pairs with a relationship`)
+      }
+      if (first.trigger || x.some((l) => l.foreshadow)) err(w, `needle ${first.id}: needles carry no trigger and no foreshadowing`)
+    }
+  }
+}
+
+// ---------------------------------------------------------------- callouts
+
+/**
+ * Callouts are spoken while cards are live, so the words themselves must not
+ * be a tell: they may pun on the ACTION, never claim or deny a hand ("I've
+ * got you", "nothing here"), and a fold never says what was folded. These are
+ * the phrases that give a hand away; the list is blunt on purpose.
+ */
+const CALLOUT_LEAKS = [
+  /\bbluff/i, /\bnuts\b/i, /\bgot (you|it|this)\b/i, /\bhave you now\b/i, /\bnothing (here|to|at all)\b/i,
+  /\b(good|bad|strong|weak|great|poor|lousy|terrible|fine|best|worst) (hand|cards)\b/i,
+  /\b(my|these|this) (hand|cards)\b/i, /\bbeat (this|that|me|mine)\b/i, /\bslow.?play/i, /\btrap/i,
+  /\bdraw(s|ing)?\b/i, /\bsure thing\b/i, /\bwinner\b/i, /\bmonster hand\b/i,
+]
+const CONTRACTION = /n't\b|'(re|ve|ll|m|d)\b/i
+
+// A character whose every line of dialogue is a stage direction does not
+// speak (the Horseman, Cerberus): every callout of theirs must be a gesture.
+const spoken = new Map<string, { lines: number; stage: number }>()
+const walk = (v: unknown): void => {
+  if (Array.isArray(v)) return v.forEach(walk)
+  if (!v || typeof v !== 'object') return
+  const l = v as Partial<Line>
+  if (typeof l.speaker === 'string' && typeof l.text === 'string') {
+    const s = spoken.get(l.speaker) ?? { lines: 0, stage: 0 }
+    s.lines++
+    if (l.type === 'stage_direction') s.stage++
+    spoken.set(l.speaker, s)
+    return
+  }
+  Object.values(v).forEach(walk)
+}
+Object.values(DIALOGUE).forEach(walk)
+
+let calloutCount = 0
+for (const c of Object.values(CHARACTERS)) {
+  const w = `character ${c.id} callouts`
+  const co = c.callouts as Record<string, unknown> | undefined
+  if (!co) { warn(`character ${c.id}`, 'no callouts: silent at the table'); continue }
+  const mute = (spoken.get(c.id)?.lines ?? 0) > 0 && spoken.get(c.id)!.stage === spoken.get(c.id)!.lines
+  const tells = (c.tells ?? []).map((t) => t.text.toLowerCase())
+  for (const [action, lines] of Object.entries(co)) {
+    if (!(CALLOUT_ACTIONS as string[]).includes(action)) { err(w, `unknown action "${action}"`); continue }
+    if (!Array.isArray(lines) || !lines.length) { err(w, `${action} must be a non-empty list of lines`); continue }
+    const seen = new Set<string>()
+    for (const text of lines) {
+      if (typeof text !== 'string' || !text.trim()) { err(w, `${action}: empty line`); continue }
+      calloutCount++
+      if (seen.has(text)) err(w, `${action}: duplicate "${text}"`)
+      seen.add(text)
+      const stage = isStage(text)
+      if (!stage && /[[\]]/.test(text)) err(w, `${action}: "${text}" -- a stage direction is the whole line in [brackets]`)
+      if (mute && !stage) err(w, `${action}: "${text}" -- ${c.short} does not speak; callouts must be [stage directions]`)
+      if (/\{\w+\}/.test(text)) err(w, `${action}: "${text}" -- callouts address the table, not the player: no placeholders`)
+      for (const re of TRIPWIRES) if (re.test(text)) err(w, `${action}: "${text}" -- tripwire ${re}`)
+      for (const re of CALLOUT_LEAKS) if (re.test(text)) err(w, `${action}: "${text}" -- reads as hand strength (${re})`)
+      for (const t of tells) if (text.toLowerCase().includes(t)) err(w, `${action}: "${text}" -- repeats the tell "${t}" and would teach a false read`)
+      if (c.role === 'dealer' && CONTRACTION.test(text)) err(w, `${action}: "${text}" -- Death does not use contractions`)
+      if (text.length > 70) warn(w, `${action}: "${text}" is long for a callout (${text.length} chars)`)
+    }
+  }
+}
+
 const dealerSpeakers = new Set(['death'])
 for (const [key, lines] of Object.entries(DEALER)) {
   if (!Array.isArray(lines)) continue
@@ -283,7 +375,7 @@ for (const p of [...(STORY?.invitation?.body ?? []), ...(STORY?.ending?.paragrap
 // ---------------------------------------------------------------- report
 
 const cast = Object.values(CHARACTERS)
-console.log(`${cast.length} characters, ${TABLES.length} tables, ${ids.size} lines of dialogue, ${MARKS.length} marks.`)
+console.log(`${cast.length} characters, ${TABLES.length} tables, ${ids.size} lines of dialogue, ${calloutCount} callouts, ${MARKS.length} marks.`)
 for (const x of warnings) console.log(`  warn  ${x}`)
 for (const x of errors) console.log(`  ERROR ${x}`)
 if (errors.length) {

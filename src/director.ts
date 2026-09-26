@@ -8,10 +8,15 @@
  *
  * Three rules keep it honest:
  *
- * 1. It never talks while cards are live, except to react to something the
- *    player just did in public (going all in). Banter, needling and respect
- *    all happen at hand boundaries, so nothing said can leak a hand -- the
- *    design doc's hardest dialogue rule.
+ * 1. It never talks while cards are live, with two exceptions, both chosen
+ *    from public information only: reacting to something the player just did
+ *    in public (going all in), and callouts -- a character's word or gesture
+ *    as their own action lands ("Raise.", "Too rich for my blood."), picked
+ *    from the action itself, whether it emptied the stack, and the street,
+ *    never from cards or equity, and never worded to claim or deny a hand
+ *    (src/chatter.ts). Banter, needling and respect all happen at hand
+ *    boundaries, so nothing said can leak a hand -- the design doc's hardest
+ *    dialogue rule.
  *
  * 2. It has its OWN seeded RNG. Choosing a line must never consume a draw
  *    from the game's RNG, or saying something would change the next card.
@@ -32,12 +37,15 @@ import { CHARACTERS, type TableData, type DialogueData, type Line, type Uninvite
 import { preflopStrength, type Card } from './equity.js'
 import { fillLine, tierFor, RESPECT_POINTS, RESPECT_THRESHOLDS, earnedName } from './tour.js'
 import { handRank, marksForHand, marksForTable, type HandFacts, type TableFacts } from './marks.js'
+import { Chatter, type CalloutBeat } from './chatter.js'
 
 export type Beat =
   | { kind: 'line'; id: string; speaker: string; text: string; stage: boolean }
   /** The table's name for you just changed. Always announced. */
   | { kind: 'respect'; tier: number; name: string | null }
   | { kind: 'mark'; id: string }
+  /** Words that go in with the chips. Quick, rationed, public information only. */
+  | CalloutBeat
 
 export type ObservationDelta = {
   hands: number
@@ -132,6 +140,8 @@ export class TableRun {
   private uninvited: UninvitedData | undefined
   /** The uninvited guest, once seated: who, since when, and what is left to say. */
   private guest: { id: string; since: number; last: number; said: number; gone: boolean } | null = null
+  /** Callouts and needles: their own seeded stream (src/chatter.ts). */
+  private chatter: Chatter
 
   // Per-hand state, reset on every 'hand' event.
   private h = this.freshHand(0, 0, [])
@@ -155,6 +165,7 @@ export class TableRun {
     this.points = Math.max(o.respectPoints, RESPECT_THRESHOLDS[this.tier])
     // Offset so the director's stream never coincides with the game's.
     this.rng = mulberry32((o.seed ^ 0x5eed1e55) >>> 0)
+    this.chatter = new Chatter(o.seed)
     // Open tables have no champion and no plot: no plant, no arrival.
     if (o.mode === 'open') this.plantDone = true
   }
@@ -454,6 +465,7 @@ export class TableRun {
         if (aggressive) o.bets++
       }
     }
+    beats.push(...this.callout(e, faced))
     return beats
   }
 
@@ -632,6 +644,7 @@ export class TableRun {
 
     // --- banter, between hands, from the two who just fought over a pot
     beats.push(...this.banter(e.hand))
+    beats.push(...this.needle(e.hand, beats))
 
     // --- marks
     const facts: HandFacts = {
@@ -795,6 +808,47 @@ export class TableRun {
     if (!pool.length) return []
     const x = pool[Math.floor(this.rng() * pool.length)]
     this.lastBanterHand = hand
+    this.lastOptionalHand = hand
+    return x.map((l) => this.say(l))
+  }
+
+  // ------------------------------------------------------------ chatter
+
+  /**
+   * A callout as an opponent's action lands. Built from public facts only:
+   * who acted, what they did, whether it emptied their stack, the street.
+   * `e.equity` and `e.decision.reason` are deliberately never read here.
+   */
+  private callout(e: Extract<HandEvent, { type: 'action' }>, faced: boolean): Beat[] {
+    const a = e.decision.action
+    this.chatter.observe(e.seat, a, faced, this.h.no, this.h.street)
+    const id = this.h.ids[e.seat]
+    if (e.seat === HUMAN || !id || !this.canSpeak(id)) return []
+    const allIn = (a === 'call' || a === 'bet' || a === 'raise') && e.stacks[e.seat] === 0
+    const seated = this.seats.filter((s) => s !== null).length
+    const c = this.chatter.callout({ id, hand: this.h.no, street: this.h.street, action: a, allIn, seated })
+    return c ? [c] : []
+  }
+
+  /**
+   * Old friends needling, between hands: the one who bet and took the pot, at
+   * a tablemate who folded to that bet. Only pairs with a relationship have
+   * needles (they live under banter_pairs), and only when nothing else has
+   * been said at this boundary.
+   */
+  private needle(hand: number, said: Beat[]): Beat[] {
+    const pairs = this.dialogue.banter_pairs
+    if (!pairs || hand - this.lastOptionalHand < 1 || said.some((b) => b.kind === 'line')) return []
+    const earned = new Set<string>()
+    for (const [x, y] of this.chatter.foldsTo(hand)) {
+      if (y !== HUMAN && x !== HUMAN && (this.h.deltas.get(y) ?? 0) > 0) earned.add(`${this.h.ids[y]}>${this.h.ids[x]}`)
+    }
+    if (!earned.size) return []
+    const offered = Object.values(pairs).flatMap((p) => p.needles ?? []).filter((x) =>
+      x.length > 0 && earned.has(`${x[0].speaker}>${x[0].to}`) &&
+      !x.some((l) => this.used.has(l.id)) && x.every((l) => this.canSpeak(l.speaker)))
+    const x = this.chatter.needle(hand, offered)
+    if (!x) return []
     this.lastOptionalHand = hand
     return x.map((l) => this.say(l))
   }

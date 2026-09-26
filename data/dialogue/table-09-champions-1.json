@@ -86,6 +86,22 @@
           { "id": "c1_gw_ar_02a", "speaker": "arthur", "text": "You gave up your army, General, and later the presidency. Did no one ask you to stay?" },
           { "id": "c1_gw_ar_02b", "speaker": "washington", "text": "They asked." },
           { "id": "c1_gw_ar_02c", "speaker": "arthur", "text": "...Nobody ever asked me to leave. I rather wish someone had." }
+        ],
+        [
+          { "id": "c1_gw_ar_03a", "speaker": "arthur", "text": "You never wanted a table of your own, General?" },
+          { "id": "c1_gw_ar_03b", "speaker": "washington", "text": "I wanted a farm." },
+          { "id": "c1_gw_ar_03c", "speaker": "arthur", "text": "And did you get it?" },
+          { "id": "c1_gw_ar_03d", "speaker": "washington", "text": "Twice.", "note": "He went home to Mount Vernon in 1783 after resigning his commission, and again in 1797 after declining a third term." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c1_nd_01a", "speaker": "washington", "to": "arthur", "text": "Your Majesty." },
+          { "id": "c1_nd_01b", "speaker": "arthur", "text": "General. Well taken." }
+        ],
+        [
+          { "id": "c1_nd_02a", "speaker": "arthur", "to": "washington", "text": "You yield, General?" },
+          { "id": "c1_nd_02b", "speaker": "washington", "text": "I know when to." }
         ]
       ]
     },
@@ -108,6 +124,23 @@
           { "id": "c1_bb_od_03a", "speaker": "blackbeard", "text": "You had your men tie you to the mast. Just to hear some singing." },
           { "id": "c1_bb_od_03b", "speaker": "odysseus", "text": "You would have done the same." },
           { "id": "c1_bb_od_03c", "speaker": "blackbeard", "text": "...Aye. I would." }
+        ],
+        [
+          { "id": "c1_bb_od_04a", "speaker": "odysseus", "text": "Tell me how you really died, Captain." },
+          { "id": "c1_bb_od_04b", "speaker": "blackbeard", "text": "Five pistol balls and twenty cuts, and I was still reaching for a pistol." },
+          { "id": "c1_bb_od_04c", "speaker": "odysseus", "text": "Twenty! A good story." },
+          { "id": "c1_bb_od_04d", "speaker": "blackbeard", "text": "It's true." },
+          { "id": "c1_bb_od_04e", "speaker": "odysseus", "text": "That's never stopped me." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c1_nd_03a", "speaker": "blackbeard", "to": "odysseus", "text": "Folded! The great tactician runs for his boat." },
+          { "id": "c1_nd_03b", "speaker": "odysseus", "text": "I always run for my boat. It's why I'm still alive. Relatively speaking." }
+        ],
+        [
+          { "id": "c1_nd_04a", "speaker": "odysseus", "to": "blackbeard", "text": "Well! The terror of the Carolinas, backing water." },
+          { "id": "c1_nd_04b", "speaker": "blackbeard", "text": "Enjoy it. I'll be coming about." }
         ]
       ]
     },
@@ -126,6 +159,22 @@
           { "id": "c1_ar_od_02b", "speaker": "arthur", "text": "Camelot had towers, and banners, and the finest knights in Christendom." },
           { "id": "c1_ar_od_02c", "speaker": "odysseus", "text": "And where is it now?" },
           { "id": "c1_ar_od_02d", "speaker": "arthur", "text": "...Rock and goats, I should think." }
+        ],
+        [
+          { "id": "c1_ar_od_03a", "speaker": "odysseus", "text": "They say you'll come again, Arthur. When Britain needs you." },
+          { "id": "c1_ar_od_03b", "speaker": "arthur", "text": "They say so." },
+          { "id": "c1_ar_od_03c", "speaker": "odysseus", "text": "I came again. It took twenty years, and then I had to deal with everyone in my house." },
+          { "id": "c1_ar_od_03d", "speaker": "arthur", "text": "...Perhaps I will wait a little longer." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c1_nd_05a", "speaker": "arthur", "to": "odysseus", "text": "You yielded, Odysseus." },
+          { "id": "c1_nd_05b", "speaker": "odysseus", "text": "Strategically. I'll be back. Eventually. Possibly in disguise." }
+        ],
+        [
+          { "id": "c1_nd_06a", "speaker": "odysseus", "to": "arthur", "text": "The king of the Britons, folding to a goatherd from Ithaca." },
+          { "id": "c1_nd_06b", "speaker": "arthur", "text": "A king of Ithaca. I have been beaten by worse men, at my own table." }
         ]
       ]
     },
@@ -144,6 +193,80 @@
           { "id": "c1_gw_bb_02b", "speaker": "washington", "text": "I am." },
           { "id": "c1_gw_bb_02c", "speaker": "blackbeard", "text": "Virginia sent the sloops that killed me." },
           { "id": "c1_gw_bb_02d", "speaker": "washington", "text": "I know." }
+        ],
+        [
+          { "id": "c1_gw_bb_03a", "speaker": "blackbeard", "text": "A general who forbade swearing in his camp, they tell me." },
+          { "id": "c1_gw_bb_03b", "speaker": "washington", "text": "I did." },
+          { "id": "c1_gw_bb_03c", "speaker": "blackbeard", "text": "Damn." },
+          { "id": "c1_gw_bb_03d", "speaker": "washington", "text": "[looks at him]", "type": "stage_direction" },
+          { "id": "c1_gw_bb_03e", "speaker": "blackbeard", "text": "...Sorry, General.", "note": "True: Washington issued general orders against 'profane cursing, swearing and drunkenness' in the Continental Army (1776)." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c1_nd_07a", "speaker": "washington", "to": "blackbeard", "text": "Strike your colours, Captain." },
+          { "id": "c1_nd_07b", "speaker": "blackbeard", "text": "Ha! To a Virginian. I'll never hear the end of it." }
+        ],
+        [
+          { "id": "c1_nd_08a", "speaker": "blackbeard", "to": "washington", "text": "Ha! I made the General back down!" },
+          { "id": "c1_nd_08b", "speaker": "washington", "text": "You made me fold. It is not the same." }
+        ]
+      ]
+    },
+
+    "washington_odysseus": {
+      "relationship": "The man history remembers for refusing to lie, and the man literature remembers for lying beautifully. The cherry-tree story was invented after Washington's death by a biographer, which Odysseus finds professionally admirable. Washington does not find it anything.",
+      "exchanges": [
+        [
+          { "id": "c1_gw_od_01a", "speaker": "odysseus", "text": "They say you could not tell a lie, General." },
+          { "id": "c1_gw_od_01b", "speaker": "washington", "text": "They say a great many things." },
+          { "id": "c1_gw_od_01c", "speaker": "odysseus", "text": "I could teach you. It is a very useful skill." },
+          { "id": "c1_gw_od_01d", "speaker": "washington", "text": "No." }
+        ],
+        [
+          { "id": "c1_gw_od_02a", "speaker": "washington", "text": "Twenty years away from home." },
+          { "id": "c1_gw_od_02b", "speaker": "odysseus", "text": "Ten at the war, ten getting back." },
+          { "id": "c1_gw_od_02c", "speaker": "washington", "text": "I was eight years at mine. I did not get lost." },
+          { "id": "c1_gw_od_02d", "speaker": "odysseus", "text": "Nor did I. I was delayed." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c1_nd_09a", "speaker": "washington", "to": "odysseus", "text": "You retreat." },
+          { "id": "c1_nd_09b", "speaker": "odysseus", "text": "I withdraw, General. As you did from Long Island, and you won the war." },
+          { "id": "c1_nd_09c", "speaker": "washington", "text": "[inclines his head: the point is conceded]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "c1_nd_10a", "speaker": "odysseus", "to": "washington", "text": "The Father of His Country folds! I'll tell it bigger when I get home." },
+          { "id": "c1_nd_10b", "speaker": "washington", "text": "I expect you will." }
+        ]
+      ]
+    },
+
+    "arthur_blackbeard": {
+      "relationship": "Blackbeard sailed a ship named for a queen of Britain and robbed her subjects from it. Arthur was king of Britain before there was an England to rob. Neither thinks much of the other's idea of loyalty, and both are enjoying it.",
+      "exchanges": [
+        [
+          { "id": "c1_ar_bb_01a", "speaker": "arthur", "text": "You named your ship for a queen of Britain, Captain." },
+          { "id": "c1_ar_bb_01b", "speaker": "blackbeard", "text": "Queen Anne. Dead by then. She didn't mind." },
+          { "id": "c1_ar_bb_01c", "speaker": "arthur", "text": "I would have minded." }
+        ],
+        [
+          { "id": "c1_ar_bb_02a", "speaker": "blackbeard", "text": "A round table. So nobody sits at the head of it." },
+          { "id": "c1_ar_bb_02b", "speaker": "arthur", "text": "So that no knight is above another." },
+          { "id": "c1_ar_bb_02c", "speaker": "blackbeard", "text": "On my ship everyone knew who sat at the head. I shot the ones who forgot." },
+          { "id": "c1_ar_bb_02d", "speaker": "arthur", "text": "And did your crew love you?" },
+          { "id": "c1_ar_bb_02e", "speaker": "blackbeard", "text": "...They were very punctual." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "c1_nd_11a", "speaker": "arthur", "to": "blackbeard", "text": "Yield, pirate." },
+          { "id": "c1_nd_11b", "speaker": "blackbeard", "text": "Just this once, your Majesty. Don't tell the crew." }
+        ],
+        [
+          { "id": "c1_nd_12a", "speaker": "blackbeard", "to": "arthur", "text": "Ha! The king strikes his colours!" },
+          { "id": "c1_nd_12b", "speaker": "arthur", "text": "Kings fold, Captain. Only pirates think they must win every fight." }
         ]
       ]
     }

@@ -78,5 +78,39 @@
     "look": "Silhouette: enormous — a head taller than anyone seated, broad as a door, with a great bush of green beard and green hair to the shoulders. Green skin, green clothes worked with gold, and no armour: the poem says he came in peace. Face: green, grinning, bright-eyed. Prop: the holly branch at his side, a big dark spiky shape that rustles; the axe leans against the table.",
     "prop": "A holly branch",
     "public_domain": "The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Ha! Somebody else take a swing.",
+      "I'll take no blow this round.",
+      "Fold. I shall be back in a year and a day.",
+      "Fold. A game is a game."
+    ],
+    "check": [
+      "Check. Your blow first.",
+      "Check. Strike, if you will.",
+      "Check. I can wait a year and a day."
+    ],
+    "call": [
+      "I accept!",
+      "Call! I never refuse a challenge.",
+      "Call. Let the axe fall where it may.",
+      "Call! Now that is a game."
+    ],
+    "bet": [
+      "Bet. Your turn to take a blow.",
+      "Bet. A game, with rules. Excellent.",
+      "Bet! Here is my holly branch."
+    ],
+    "raise": [
+      "Raise! The return blow, as agreed.",
+      "Raise! A blow for a blow.",
+      "Raise! This is the best part."
+    ],
+    "all_in": [
+      "All in! Meet me at the Green Chapel.",
+      "Everything! One stroke, and no flinching.",
+      "All of it! A year and a day, all at once."
+    ]
   }
 }

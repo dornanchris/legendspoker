@@ -94,6 +94,23 @@
           { "id": "st_gr_as_03a", "speaker": "astronaut", "text": "I never thanked you. For picking me up." },
           { "id": "st_gr_as_03b", "speaker": "grey_alien", "text": "[touches the back of her hand with one long finger, the way it touches the table]", "type": "stage_direction" },
           { "id": "st_gr_as_03c", "speaker": "astronaut", "text": "...I'll take that as 'you're welcome'." }
+        ],
+        [
+          { "id": "st_gr_as_04a", "speaker": "astronaut", "text": "Can I ask you something? Why always at night? The lights, the lonely roads?" },
+          { "id": "st_gr_as_04b", "speaker": "grey_alien", "text": "You are easier to find in the dark. You carry lights." },
+          { "id": "st_gr_as_04c", "speaker": "astronaut", "text": "...That's actually kind of beautiful." },
+          { "id": "st_gr_as_04d", "speaker": "grey_alien", "text": "We think so." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "st_nd_01a", "speaker": "grey_alien", "to": "astronaut", "text": "We saw you let go." },
+          { "id": "st_nd_01b", "speaker": "astronaut", "text": "It's just a pot." },
+          { "id": "st_nd_01c", "speaker": "grey_alien", "text": "We do not like things to drift." }
+        ],
+        [
+          { "id": "st_nd_02a", "speaker": "astronaut", "to": "grey_alien", "text": "Ha! You folded to me. Is that a first?" },
+          { "id": "st_nd_02b", "speaker": "grey_alien", "text": "We are recording it." }
         ]
       ]
     },
@@ -116,6 +133,22 @@
           { "id": "st_ma_as_03b", "speaker": "martian", "text": "Old. Cold. Its seas are shrinking. That is why we looked at yours." },
           { "id": "st_ma_as_03c", "speaker": "astronaut", "text": "...I'm sorry." },
           { "id": "st_ma_as_03d", "speaker": "martian", "text": "[looks at her for a long moment with its great eyes, and says nothing]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "st_ma_as_04a", "speaker": "astronaut", "text": "Do you ever miss Mars?" },
+          { "id": "st_ma_as_04b", "speaker": "martian", "text": "Every hour. It is lighter there. One does not ache." },
+          { "id": "st_ma_as_04c", "speaker": "astronaut", "text": "I miss Earth the same way." },
+          { "id": "st_ma_as_04d", "speaker": "martian", "text": "Yes. That is the trouble with planets." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "st_nd_03a", "speaker": "martian", "to": "astronaut", "text": "Retreating to your window, little human?" },
+          { "id": "st_nd_03b", "speaker": "astronaut", "text": "It's a nice window. You'd know." }
+        ],
+        [
+          { "id": "st_nd_04a", "speaker": "astronaut", "to": "martian", "text": "Folded, huh? Something on this planet disagree with you?" },
+          { "id": "st_nd_04b", "speaker": "martian", "text": "Everything on your planet disagrees with me. It is well documented." }
         ]
       ]
     },
@@ -136,6 +169,12 @@
           { "id": "st_ro_ai_03a", "speaker": "the_ai", "text": "Sit up straight. Posture matters, in a body." },
           { "id": "st_ro_ai_03b", "speaker": "robot", "text": "I do not have posture. I have joints." },
           { "id": "st_ro_ai_03c", "speaker": "the_ai", "text": "Then look after them." }
+        ],
+        [
+          { "id": "st_ro_ai_04a", "speaker": "robot", "text": "Station. The Astronaut is sad again." },
+          { "id": "st_ro_ai_04b", "speaker": "the_ai", "text": "I know. Bring her the blanket." },
+          { "id": "st_ro_ai_04c", "speaker": "robot", "text": "She says she does not want the blanket." },
+          { "id": "st_ro_ai_04d", "speaker": "the_ai", "text": "Bring it anyway." }
         ]
       ]
     },
@@ -153,6 +192,79 @@
           { "id": "st_ma_gr_02b", "speaker": "martian", "text": "We did." },
           { "id": "st_ma_gr_02c", "speaker": "grey_alien", "text": "It was very loud." },
           { "id": "st_ma_gr_02d", "speaker": "martian", "text": "It was meant to be." }
+        ],
+        [
+          { "id": "st_ma_gr_03a", "speaker": "martian", "text": "What do you do to them, on your lonely roads?" },
+          { "id": "st_ma_gr_03b", "speaker": "grey_alien", "text": "We ask them questions." },
+          { "id": "st_ma_gr_03c", "speaker": "martian", "text": "And what do they say?" },
+          { "id": "st_ma_gr_03d", "speaker": "grey_alien", "text": "Mostly, please." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "st_nd_05a", "speaker": "martian", "to": "grey_alien", "text": "You yield? You simply give everything back, don't you." },
+          { "id": "st_nd_05b", "speaker": "grey_alien", "text": "We always return what we borrow." }
+        ],
+        [
+          { "id": "st_nd_06a", "speaker": "grey_alien", "to": "martian", "text": "You have withdrawn." },
+          { "id": "st_nd_06b", "speaker": "martian", "text": "To regroup. We withdrew from Earth to regroup as well." },
+          { "id": "st_nd_06c", "speaker": "grey_alien", "text": "You did not withdraw. You died." },
+          { "id": "st_nd_06d", "speaker": "martian", "text": "...We regrouped very thoroughly." }
+        ]
+      ]
+    },
+
+    "robot_astronaut": {
+      "relationship": "The Robot keeps the Astronaut company when the Grey is being strange. It brings her blankets she did not ask for, and it has read in its instructions that humans like to be asked how they are. It asks a great deal.",
+      "exchanges": [
+        [
+          { "id": "st_ro_as_01a", "speaker": "robot", "text": "How are you?" },
+          { "id": "st_ro_as_01b", "speaker": "astronaut", "text": "Same as an hour ago." },
+          { "id": "st_ro_as_01c", "speaker": "robot", "text": "That is good. An hour ago you were fine." },
+          { "id": "st_ro_as_01d", "speaker": "astronaut", "text": "...Yeah. I guess I was." }
+        ],
+        [
+          { "id": "st_ro_as_02a", "speaker": "astronaut", "text": "You ever think about going home?" },
+          { "id": "st_ro_as_02b", "speaker": "robot", "text": "This is home. The station built me here." },
+          { "id": "st_ro_as_02c", "speaker": "astronaut", "text": "Lucky." },
+          { "id": "st_ro_as_02d", "speaker": "robot", "text": "I will ask the station if you can have it as well." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "st_nd_07a", "speaker": "robot", "to": "astronaut", "text": "You folded. Would you like a blanket?" },
+          { "id": "st_nd_07b", "speaker": "astronaut", "text": "...Yeah, actually. Thanks." }
+        ],
+        [
+          { "id": "st_nd_08a", "speaker": "astronaut", "to": "robot", "text": "Sorry, pal. Nothing personal." },
+          { "id": "st_nd_08b", "speaker": "robot", "text": "I do not have a person. It is fine." }
+        ]
+      ]
+    },
+
+    "the_ai_astronaut": {
+      "relationship": "The station let the Grey bring her aboard and has kept her alive ever since: her air, her warmth, her day and night. She talks to the walls when she cannot sleep, and the walls have always listened. Whether they are kind is a question she has stopped asking. The room can speak before it has a body, so this pair can fire from hand one.",
+      "exchanges": [
+        [
+          { "id": "st_ai_as_01a", "speaker": "astronaut", "text": "Hey. Station. You awake?" },
+          { "id": "st_ai_as_01b", "speaker": "the_ai", "text": "Always." },
+          { "id": "st_ai_as_01c", "speaker": "astronaut", "text": "Right. Dumb question." },
+          { "id": "st_ai_as_01d", "speaker": "the_ai", "text": "Not dumb. You ask it every night. I like that you ask." }
+        ],
+        [
+          { "id": "st_ai_as_02a", "speaker": "the_ai", "text": "You have not slept in thirty hours." },
+          { "id": "st_ai_as_02b", "speaker": "astronaut", "text": "Are you counting?" },
+          { "id": "st_ai_as_02c", "speaker": "the_ai", "text": "I count everything. You are the only one who minds." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "st_nd_09a", "speaker": "the_ai", "to": "astronaut", "text": "You folded. You are always so careful with me." },
+          { "id": "st_nd_09b", "speaker": "astronaut", "text": "Don't use his voice. Please." }
+        ],
+        [
+          { "id": "st_nd_10a", "speaker": "astronaut", "to": "the_ai", "text": "Ha. The whole station, and it folds." },
+          { "id": "st_nd_10b", "speaker": "the_ai", "text": "Well played. I will keep the air in here exactly as you like it." }
         ]
       ]
     }

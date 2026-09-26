@@ -85,6 +85,8 @@ src/
   tour.ts         pure tour rules: unlocks, respect tiers, earned names
   director.ts     one sitting as the ROOM sees it: dialogue, respect flips,
                   marks, observations. Own seeded RNG. Event-driven.
+  chatter.ts      callouts (what they say as they act) and needles, from
+                  PUBLIC information only; its own seeded stream
   marks.ts        mark (achievement) conditions, generic over data/marks.json
   save.ts         the save schema; mid-table state = seed + decision log
   sim.ts          `npm run sim [hands] [table|all]` — balance test (cash)
@@ -171,13 +173,21 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   missable. The Green Knight keeps his appointment: knocked out, he retakes
   his chair 50 hands later if the table is still going, at any table he sits
   at (`returns` in his character file; an Arrival whose `afterEliminationOf`
-  is himself, so the event has `replaces === id`). Open tables (random play) unlock at cleared tables and seat a mix of anyone
-  the player has beaten, champions included, one chair kept for the room.
+  is himself, so the event has `replaces === id`). Open tables (random
+  play) unlock at cleared tables and seat a mix of anyone the player has
+  beaten, champions included, one chair kept for the room.
 - **Dialogue system:** `src/director.ts` plays the established schema — intro,
   the one plant, pair banter, tiered player-directed lines, Death's asides,
   arrivals, heads-up, bust-outs, defeat — plus Holmes's `reads_you` (lines
-  keyed to the PLAYER's observed habits: his signature, as data). ~940 lines,
-  **all draft**, written to the design doc's rules, not yet human-edited.
+  keyed to the PLAYER's observed habits: his signature, as data). ~1,500
+  lines, **all draft**, written to the design doc's rules, not yet
+  human-edited. Plus **callouts**: 720 short lines characters say as they
+  fold/check/call/bet/raise/go all in (`callouts` in each character file;
+  mute characters get `[gestures]`), rationed in `src/chatter.ts` (~1 per
+  hand at a full table, ~1 per 5 hands heads-up), shown as a seat bubble on
+  its own timer and cut under fast-forward. **Needles**: a pair's one-off
+  exchange when one folded to the other's bet and the other won
+  (`banter_pairs.<pair>.needles`). Neither needs an ENGINE_VERSION bump.
 - **Respect:** per table, points from pots / showdowns / knockouts, tiers at
   4 / 10 / 18, heads-up with the champion forces tier 2, a win forces tier 3.
   The name flip is always announced (toast + the tier's first line).
@@ -216,7 +226,16 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   the design doc's rules and pass `check:data`, but no human has edited them.
   Facts writers flagged to spot-check: Kidd's exclusion from the 1698 pardon,
   Javert's mother as a "tireuse de cartes", the Transylvania references
-  (Lucy's four transfusions, "King Laugh", Van Helsing's rifle).
+  (Lucy's four transfusions, "King Laugh", Van Helsing's rifle). From the
+  banter pass: Kidd's bucket, Silver's "immortal Hawke" (Treasure Island
+  ch. 7), Crassus standing surety for Caesar's debts, Washington's 1776
+  order against swearing, Lincoln's 1842 line on the name of Washington,
+  the Sussex Vampire index entries, Alice's marmalade, the Long Island
+  retreat.
+- **"Reduce motion" hides the older speech bubbles.** With it on, `.say`
+  and `.narration` only become visible through an animation the setting
+  switches off, so those lines reach only the log. Callouts use a timer and
+  are unaffected; the fix is the same timer for the older bubbles.
 - **Roster count is 35, not 32.** The v4 table lists 5 characters at Athens,
   Transylvania and the Station (4 seats + a late champion). And Rome has only
   3 seated NPCs where the "late champion needs a fourth NPC holding the
@@ -318,6 +337,10 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   runs the board out internally and no further street fires, so a display
   driven only by those events freezes on the flop. The showdown event carries
   the final board for exactly this reason.
+- **Callouts key on PUBLIC information only** -- never `e.equity` or
+  `decision.reason` in `src/chatter.ts`. check:data's leak-phrase list is
+  the guard on wording ("nothing to", "bluff", "my cards"...), and a
+  callout must never reuse the speaker's own tell text.
 - **A banishment is not an elimination:** no place, no knockout, not in
   `busts`, no respect. The chips change owner and `chipsTotal` is untouched.
   A guest must never be put in a table's seats (data-check refuses it), and
