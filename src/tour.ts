@@ -8,7 +8,7 @@
  * screen. What the player sees is what the table CALLS them, which changes
  * as they climb, and is announced explicitly when it flips.
  */
-import { TABLES, TOUR, TABLE_BY_ID, ROSTER, fullCast, type TableData } from './content.js'
+import { TABLES, TOUR, TABLE_BY_ID, ROSTER, GUESTS, fullCast, type TableData } from './content.js'
 import { characterRecord, tableRecord, type Save } from './save.js'
 
 export type TableState = 'sealed' | 'open' | 'cleared'
@@ -118,7 +118,7 @@ function shuffled<T>(xs: T[], rng: () => number): T[] {
 
 /**
  * Random play at a cleared table: a mix-and-match of everyone the player has
- * unlocked -- beaten -- champions included. The design doc's original rule
+ * unlocked -- beaten, champions included, or a guest they have met. The design doc's original rule
  * kept the cast to "non-boss characters for that setting"; the owner widened
  * it to the whole roster, so Van Helsing or Blackbeard can turn up at
  * Camelot once you have beaten them.
@@ -134,7 +134,11 @@ export function openTableCast(table: TableData, save: Save, rng: () => number): 
   // A missable champion who never sat down is not unlocked, and cannot host.
   const locals = shuffled(room.some(beaten) ? room.filter(beaten) : table.seats, rng)
   const host = locals.slice(0, 1)
-  const unlocked = ROSTER.filter((c) => beaten(c.id) && !host.includes(c.id)).map((c) => c.id)
+  // A guest is unlocked by meeting him: nobody beats their way to Loki.
+  const unlocked = [
+    ...ROSTER.filter((c) => beaten(c.id)),
+    ...GUESTS.filter((c) => save.characters[c.id]?.met),
+  ].filter((c) => !host.includes(c.id)).map((c) => c.id)
   const pool = shuffled(unlocked, rng)
   // Fall back on the room's own cast if not enough is unlocked yet.
   for (const id of locals) if (!pool.includes(id) && !host.includes(id)) pool.push(id)

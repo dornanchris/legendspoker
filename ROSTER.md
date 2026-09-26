@@ -1140,3 +1140,38 @@ No tells, no noise: the endpoint of the legibility curve. Quirks: `patient` (min
 **Look.** Silhouette: tall, narrow, hooded — a grey burial shroud worn as a cloak, the way the danse macabre painted him, never a monk's black robe. Face: a plain skull half in the hood's shadow, drawn like a woodcut; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal. **Prop:** The deck.
 
 **Public domain.** Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
+
+## The Uninvited — SPOILER
+
+> Hidden. Never on the map, in an intro, in a cast list or in the Ledger until met.
+> Win a pot holding 6-7 (any suits) and one seated opponent — never the
+> champion, the dealer, or anyone a late arrival waits on — says it out loud. Death shows
+> them out, and the guest sits down in the same chair behind the same chips. Once per
+> sitting, never at the finale. Script: `data/dialogue/uninvited.json`.
+
+### Loki — *The Sly God*
+
+**Guest.** Myth · The Eddas · a giant's son among the gods
+
+> Nobody invited him. He came anyway, which is the only way he has ever arrived anywhere. His daughter keeps a hall of the dead in the north, so professionally we are in touch.
+
+Loki is the trickster of the Norse gods as the Poetic Edda and Snorri Sturluson's Prose Edda tell him, both written down in Iceland in the thirteenth century from much older poems. He is a giant's son counted among the gods of Asgard: handsome, clever, changeable, and never to be relied on. He changes his shape when it suits him, into a mare, a salmon, a fly, an old woman, and he gets the gods out of trouble almost exactly as often as he gets them into it.
+
+He once wagered his own head with a dwarf named Brokkr that Brokkr's brother could not forge three treasures as fine as three the gods already had. The gods judged that he had lost. He argued his way out of paying: the head was the dwarf's, he said, but not an inch of the neck. So Brokkr took his brother's awl and sewed Loki's lips shut instead. He is the father of Hel, who keeps a hall for the dead, of the wolf Fenrir and of the serpent that lies around the whole world, and the mother of Odin's eight-legged horse. He has no table on this tour. He did not ask for one.
+
+**At the table.** He plays a great many hands and raises most of the ones he plays, and a good share of what he bets he does not have. A pot nobody has opened is a pot lying about unattended, and he takes it. Checked to on the river, he will tell you a story. He learns a table quickly, and he fidgets more than anyone sitting at it. Very little of that means anything.
+
+| aggression | tightness | bluff | tilt | adaptivity | noise |
+|---|---|---|---|---|---|
+| .78 | .55 | .42 | .25 | .85 | .55 |
+
+- Quirk: `river_bluff` (chance 0.4) — Checked to on the river with nothing, tells a story.
+- Quirk: `steal` (chance 0.45, minEquity 0.3) — Raises unopened pots before the flop with a wide range.
+- Tell (bluffing, 0.45): *touches the old stitch-scars on his lips*
+- Tell (strong, 0.5): *smiles with only half his mouth*
+- Tell (weak, 0.4): *his eyes are a different colour for a moment*
+- Idle noise: *rolls a chip across his knuckles; for a moment it is a fish scale*; *counts the players at the table, twice, and gets two different answers*; *glances up at the ceiling as if someone up there were listening*; *hums something in a language nobody else at the table speaks*; *turns a small golden game piece over in his fingers*
+
+**Look.** Silhouette: lean and restless, sharp-featured and handsome, as the Prose Edda insists he is. Plain Norse dress in ash-grey, rust and smoke: a wool tunic, a short cloak pinned at one shoulder, bare-headed, fair hair worn loose. No crown and no helmet of any kind. The mouth is the tell surface: a row of pale, old stitch-scars across both lips from Brokkr's awl, and a smile that uses only half of them. Hands never still. **Prop:** A small golden game piece from the gods' own board.
+
+**Public domain.** Norse myth as the Poetic Edda and Snorri's Prose Edda record it (13th century), and their old English translations (Brodeur 1916, Bellows 1923): all public domain. Must NOT resemble Marvel's Loki in any way: no green-and-gold costume, no curved golden horned helmet, no slicked-back black hair, no likeness of any actor who has played him, no lines or catchphrases from the films or comics, and not the 'God of Mischief' branding. Avoid Wagner's Loge and modern retellings as sources too. Build him from the Eddas: fair-faced, bare-headed, the stitched mouth.

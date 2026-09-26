@@ -93,11 +93,13 @@ src/
   pot-conservation.ts `npm run check:pots` — guards the poker-ts pot patch
   data-check.ts   `npm run check:data` — the type checker for content
   replay-check.ts `npm run check:replay` — save mid-hand, resume, identical
+  loki-check.ts   `npm run check:loki` — the hidden six-seven event, forced (spoilers)
   roster.ts       `npm run roster` — regenerates ROSTER.md from data/
 data/
   characters/     one file per character: dials, quirks, tells, idles, profile
   tables/         one file per table: seats, champion, arrival, room, hook
   dialogue/       one file per table + dealer.json (Death's general lines)
+                  + uninvited.json (the hidden guest's scenes; spoilers)
   marks.json      the ledger's marks (achievements), with generic conditions
   story.json      the invitation, the ending, the epigraph
 web/
@@ -181,7 +183,20 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   The name flip is always announced (toast + the tier's first line).
 - **The Ledger:** character pages (history, how they play in Death's voice,
   what YOU have seen them do in words, habits noted), venues, account,
-  house rules, and **marks** — 36 achievements framed as Death's entries.
+  house rules, and **marks** — 46 achievements framed as Death's entries,
+  including some for levity (six-nine is "Nice"; the owner's call, and the
+  one meme-adjacent joke the tone rules allow). A `secret` mark is neither
+  listed nor counted until earned; `hidden` (older) lists it as a blank.
+- **The uninvited guest (hidden event — keep it out of every UI until it
+  happens).** Win a pot holding a six and a seven and one eligible opponent
+  says "six seven"; Death shows them out for the anachronism and Loki (role
+  `guest`: on no table, off the ROSTER, Ledger page only once met) sits in
+  that chair behind the same chips. `Banishment` in `game.ts`, built by
+  `banishmentFor()`; lines in `data/dialogue/uninvited.json`; secret mark
+  "Uninvited". Never at the finale, never the champion or the dealer, never
+  anyone a late arrival waits on, once per sitting, never when Loki is
+  already seated. Once met, he can be dealt in at open tables. He is the
+  sequel's teaser (design doc, SEQUEL SLOT): he foreshadows, never explains.
 - **Save/resume:** `npm run check:replay` is the exit test the plan asked
   for — save mid-hand, restore, play on, identical — and it passes on every
   table. Saved seats carry `ENGINE_VERSION`; see gotchas.
@@ -303,6 +318,13 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   runs the board out internally and no further street fires, so a display
   driven only by those events freezes on the flop. The showdown event carries
   the final board for exactly this reason.
+- **A banishment is not an elimination:** no place, no knockout, not in
+  `busts`, no respect. The chips change owner and `chipsTotal` is untouched.
+  A guest must never be put in a table's seats (data-check refuses it), and
+  "six seven" may appear only in `uninvited.offence` (a data-check tripwire).
+- In a mark condition `minRank` means "this or better"; use `rank` for an
+  exact hand. data-check rejects unknown rank names, which used to match
+  every hand silently.
 - Any new chip-handling code needs a conservation check. `tourney.ts` has one,
   and it is the only reason the poker-ts pot bug was found rather than shipped.
 - `patches/` is load-bearing. `npm install` runs `patch-package` via

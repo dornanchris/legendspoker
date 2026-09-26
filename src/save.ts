@@ -28,7 +28,7 @@ export const SAVE_VERSION = 1
  * saved under a different number is not replayed -- it would deal different
  * cards and the "save" would be a lie -- and the player is told why.
  */
-export const ENGINE_VERSION = 2
+export const ENGINE_VERSION = 3
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

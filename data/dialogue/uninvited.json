@@ -1,0 +1,131 @@
+{
+  "event": "uninvited",
+  "status": "draft",
+  "notes": {
+    "what": "A hidden event, never hinted at anywhere in the game. Win a pot holding a six and a seven (any suits) and one opponent says 'six seven'. Death shows them out of the Invitational on the spot, and Loki is sitting in the chair, behind the same chips, before it is cold. Once per sitting, never at the finale. The engine half is Banishment in src/game.ts; content.ts's banishmentFor() builds it from this file.",
+    "tone": "'Six seven' is the only meme in the whole feature, and it is there so that it can be punished. The design doc bans anachronistic winks; this is the house enforcing that rule diegetically. Death is not amused, and does not hurry. Everything else here must play completely straight.",
+    "who": "'banished' in offence stands for whoever is being shown out: any seated opponent except the table's champion, Death, a character a late arrival is waiting on, or anyone who has not sat down yet. Their lines must therefore work in anyone's mouth: the words and nothing else.",
+    "sequel": "Loki is reserved for the sequel (design doc, SEQUEL SLOT: Gods' Challenge). This is a cameo and a teaser. His lines foreshadow that other halls have opinions about a mortal among legends, and NEVER explain it: no tour, no pantheons, no challenge by name.",
+    "canon": "Poetic and Prose Edda only. Hel, who keeps a hall for the dead, is his daughter, which is why Death tolerates him. Brokkr sewed his lips shut over a lost wager. Baldr died by his contrivance. Nothing from Marvel, Wagner or any modern retelling.",
+    "reveal": "Played only when the pot was won without a showdown the table saw: the table has to see the cards for the joke to land."
+  },
+
+  "guest": "loki",
+  "trigger": { "hole_ranks": ["6", "7"] },
+
+  "reveal": [
+    {
+      "id": "uv_reveal_01",
+      "speaker": "narration",
+      "text": "[Before you can muck them, Death reaches over and turns your cards face up. A six. A seven.]",
+      "type": "stage_direction"
+    }
+  ],
+
+  "offence": [
+    { "id": "uv_offence_01", "speaker": "banished", "text": "Six seven." },
+    { "id": "uv_offence_02", "speaker": "banished", "text": "Six... seven." },
+    { "id": "uv_offence_03", "speaker": "banished", "text": "Six. Seven." }
+  ],
+
+  "offence_mimed": [
+    {
+      "id": "uv_mimed_01",
+      "speaker": "banished",
+      "text": "[taps the felt six times. A pause. Then seven.]",
+      "type": "stage_direction",
+      "note": "For whoever only ever acts in stage directions: the Horseman has no mouth, and Cerberus does not talk. A paw and a gauntlet both tap."
+    },
+    {
+      "id": "uv_mimed_02",
+      "speaker": "banished",
+      "text": "[raps on the table six times, and then, very deliberately, seven]",
+      "type": "stage_direction"
+    }
+  ],
+
+  "banishment": [
+    {
+      "id": "uv_banish_01",
+      "speaker": "death",
+      "text": "We do not say that here. Nobody will be saying it for several centuries. Out.",
+      "note": "True, and it sounds like fussiness: he has heard everything anyone will ever say."
+    },
+    { "id": "uv_banish_02", "speaker": "death", "text": "The house has one rule I enforce personally. Leave the chips. Go." },
+    { "id": "uv_banish_03", "speaker": "death", "text": "I have heard a great many last words. Those will not be yours. Leave, before they are." },
+    { "id": "uv_banish_04", "speaker": "death", "text": "Not at my table. Not in any century I deal in. The chips stay." }
+  ],
+
+  "entrance": [
+    {
+      "id": "uv_enter_01",
+      "speaker": "narration",
+      "text": "[Nobody saw him sit down. A lean, bare-headed man with a row of old stitch-scars across his lips, squaring up the chips as if he had always been there.]",
+      "type": "stage_direction",
+      "note": "Follows the chair emptying and filling on screen, so it describes him already seated."
+    },
+    { "id": "uv_enter_02", "speaker": "loki", "text": "Someone left in a hurry. It seemed a pity to waste a warm chair." },
+    { "id": "uv_enter_03", "speaker": "death", "text": "You were not invited." },
+    { "id": "uv_enter_04", "speaker": "loki", "text": "I never am. It has never once stopped me. Hel sends her regards, by the way. She says you never stay." },
+    {
+      "id": "uv_enter_05",
+      "speaker": "death",
+      "text": "Your daughter keeps an orderly hall. She did not learn it from you. Cards.",
+      "note": "Colleagues, more or less: Hel keeps a hall for the dead, and Death keeps it supplied."
+    }
+  ],
+
+  "sitting": [
+    [
+      {
+        "id": "uv_sit_01a",
+        "speaker": "loki",
+        "text": "My family keeps a table of its own, you know. Bigger hall. Worse losers.",
+        "foreshadow": "Asgard. Never named."
+      }
+    ],
+    [
+      {
+        "id": "uv_sit_02a",
+        "speaker": "loki",
+        "text": "Some of the other halls have heard about you. They have opinions. They always have opinions.",
+        "foreshadow": "The pantheons dispute that a mortal belongs among legends. Said as gossip, never explained."
+      },
+      { "id": "uv_sit_02b", "speaker": "death", "text": "They are not dealing tonight." }
+    ],
+    [
+      { "id": "uv_sit_03a", "speaker": "loki", "text": "You would hate my family's table. Everyone cheats, and nobody admits it." },
+      {
+        "id": "uv_sit_03b",
+        "speaker": "loki",
+        "text": "Don't look so worried. You're not invited. Yet.",
+        "foreshadow": "The sequel's premise, in one word."
+      }
+    ]
+  ],
+
+  "busted": [
+    { "id": "uv_bust_01", "speaker": "loki", "text": "Lost a wager. It happens. The last time, a dwarf sewed my mouth shut. This is much more civilised." },
+    { "id": "uv_bust_02", "speaker": "loki", "text": "Keep the chair warm. I know a great many other tables." }
+  ],
+
+  "farewell_won": [
+    {
+      "id": "uv_farewell_won_01",
+      "speaker": "narration",
+      "text": "[Nobody saw the uninvited guest leave. Nobody ever does.]",
+      "type": "stage_direction"
+    },
+    {
+      "id": "uv_farewell_won_02",
+      "speaker": "death",
+      "text": "He will tell them about you. I would rather he had not been here to see it.",
+      "foreshadow": "'Them' is never explained."
+    }
+  ],
+
+  "farewell_lost": [
+    { "id": "uv_farewell_lost_01", "speaker": "loki", "text": "Chin up. The gods lose to me all the time. They just take longer to notice." },
+    { "id": "uv_farewell_lost_02", "speaker": "loki", "text": "Everyone loses to me eventually. Ask Baldr." }
+  ]
+}

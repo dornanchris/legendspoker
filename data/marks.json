@@ -318,5 +318,14 @@
     "text": "He came back. They do not, as a rule; I am the rule. At this table a year and a day is fifty hands, and he had counted every one of them.",
     "hint": "See the Green Knight off, and still be sitting there when he keeps his appointment.",
     "when": { "type": "returned", "character": "green_knight" }
+  },
+  {
+    "id": "uninvited",
+    "title": "Uninvited",
+    "text": "Two words from the wrong century, and I showed the speaker out. The chair was not empty long. I did not invite the one who sat in it. I have written him down anyway.",
+    "hint": "An entry not yet written.",
+    "hidden": true,
+    "secret": true,
+    "when": { "type": "met", "character": "loki" }
   }
 ]

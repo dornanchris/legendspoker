@@ -141,8 +141,27 @@ export type HandEvent =
   /**
    * A late arrival takes an empty chair between hands, bringing chips of
    * their own. See Arrival.
+   *
+   * `cause: 'banishment'` is the other way a chair changes hands: the chair
+   * was never empty, its occupant was removed by the house a moment ago (see
+   * 'banished'), and the newcomer brings no chips -- they sit behind the
+   * ones already there. No cause is an ordinary late arrival.
    */
-  | { type: 'arrival'; seat: number; id: string; stack: number; replaces: string | null }
+  | {
+      type: 'arrival'
+      seat: number
+      id: string
+      stack: number
+      replaces: string | null
+      cause?: 'banishment'
+    }
+  /**
+   * The house removes a player between hands (see Banishment). NOT an
+   * elimination: no finishing place, no knockout, nobody's bust. Their chips
+   * stay on the felt, and an 'arrival' with cause 'banishment' follows at
+   * once for whoever takes the chair.
+   */
+  | { type: 'banished'; seat: number; id: string; stack: number; by: string }
 
 /**
  * What a human seat is handed on their turn. Deliberately NOT a
@@ -195,6 +214,35 @@ export type Arrival = {
   stack: 'average' | number
 }
 
+/**
+ * A house rule with teeth. When the human seat wins chips in a hand holding
+ * exactly `holeRanks` (any suits), the house removes one opponent between
+ * hands and `personality` takes that chair with that opponent's exact stack.
+ * At most once per sitting; if nobody is eligible when it triggers, nothing
+ * happens and a later win can still set it off.
+ *
+ * Like Arrival this is table CONFIGURATION built from data, not a branch on
+ * identity: the engine knows ranks, seats and a list of ids to leave alone,
+ * never who anybody is. Who may be removed:
+ *  - seated opponents who were dealt into the hand and still have chips;
+ *  - never anyone in `exclude` (the table's champion, the dealer);
+ *  - never a character a late Arrival waits on (`afterEliminationOf`):
+ *    removing them would silently cancel that arrival;
+ *  - never the newcomer themselves.
+ *
+ * The pick draws once from the game RNG, and only when the rule fires, so a
+ * replayed decision log removes the same player. Tournament mode only, and it
+ * needs a human seat.
+ */
+export type Banishment = {
+  /** Who takes the chair. */
+  personality: Personality
+  /** The two ranks the human must hold, e.g. ['6', '7']. Suits do not matter. */
+  holeRanks: string[]
+  /** Ids never removed. */
+  exclude: string[]
+}
+
 export type GameOptions = {
   smallBlind: number
   bigBlind: number
@@ -238,6 +286,9 @@ export type GameOptions = {
 
   /** Tournament only: champions who arrive mid-table. */
   arrivals?: Arrival[]
+
+  /** Tournament only, with a human seat. See Banishment. */
+  banishment?: Banishment
 }
 
 export class Game {
@@ -256,6 +307,8 @@ export class Game {
   /** Every chip that has entered play, arrivals included. */
   private chipsTotal = 0
   private pending: { rule: Arrival; triggeredAt?: number; done: boolean }[] = []
+  /** Set once the banishment rule has fired: it fires at most once a sitting. */
+  private banishmentDone = false
 
   constructor(personalities: Personality[], opts: Partial<GameOptions> = {}) {
     this.opts = {
@@ -440,6 +493,11 @@ export class Game {
         if (hole) onEvent({ type: 'deal', seat: humanSeat, hole })
       }
     }
+    // Only the banishment rule wants these. Reading them draws nothing.
+    const humanHole: Card[] | null =
+      tournament && this.opts.banishment && humanSeat !== undefined
+        ? this.table.holeCards()[humanSeat] ?? null
+        : null
 
     // Cache equity per (seat, street) — recomputing it on every action is
     // where a naive implementation burns all its time.
@@ -685,6 +743,7 @@ export class Game {
 
     if (tournament) {
       this.removeBustedPlayers(before)
+      this.processBanishment(before, humanHole)
       this.processArrivals()
     }
     onEvent?.({ type: 'handEnd', hand: this.handsPlayed, stacks: this.stacks() })
@@ -772,6 +831,60 @@ export class Game {
         replaces,
       })
     }
+  }
+
+  /**
+   * The house removes a player and someone else sits down in the same chair,
+   * behind the same chips. Runs after the busts are swept and BEFORE the
+   * arrivals, so it reacts to the hand just played -- and so a champion
+   * seated this instant (who never saw that hand) is not in the running.
+   *
+   * No chip enters or leaves play: the stack changes owner, nothing more, so
+   * chipsTotal is untouched. The removed player is not a bust -- no place, no
+   * knockout, not in `busts` -- because nobody beat them.
+   */
+  private processBanishment(before: number[], hole: Card[] | null): void {
+    const rule = this.opts.banishment
+    const human = this.opts.humanSeat
+    if (!rule || this.banishmentDone || human === undefined || !hole) return
+    // Already at this table (an open table can seat him once he is met):
+    // nobody needs showing out to let him in a second time.
+    if (this.seats.some((s) => s.personality.id === rule.personality.id)) return
+    const after = this.stacks()
+    if (after[human] <= before[human]) return // the player has to have won chips
+    const held = hole.map((c) => c.rank as string).sort().join()
+    if (held !== [...rule.holeRanks].sort().join()) return
+
+    // Characters a late arrival is waiting on: removing one would cancel it.
+    const awaited = new Set(this.pending.map((p) => p.rule.afterEliminationOf).filter(Boolean))
+    const eligible: number[] = []
+    for (let i = 0; i < this.seats.length; i++) {
+      if (i === human || this.seatBusted[i]) continue
+      // Dealt into the hand just played, and still holding chips after it.
+      if (before[i] <= 0 || after[i] <= 0) continue
+      const id = this.seats[i].personality.id
+      if (rule.exclude.includes(id) || awaited.has(id) || id === rule.personality.id) continue
+      eligible.push(i)
+    }
+    // Nobody to remove: the rule stays armed for a later hand.
+    if (eligible.length === 0) return
+
+    const seat = eligible[Math.floor(this.opts.rng() * eligible.length)]
+    const id = this.seats[seat].personality.id
+    const stack = after[seat]
+    this.banishmentDone = true
+    this.opts.onEvent?.({ type: 'banished', seat, id, stack, by: rule.personality.id })
+    this.table.standUp(seat)
+    this.seats[seat] = { personality: rule.personality, tilt: 0, stats: newStats() }
+    this.table.sitDown(seat, stack)
+    this.opts.onEvent?.({
+      type: 'arrival',
+      seat,
+      id: rule.personality.id,
+      stack,
+      replaces: id,
+      cause: 'banishment',
+    })
   }
 
   /** Raise the blinds if this hand starts a new level. */
