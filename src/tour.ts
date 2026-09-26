@@ -104,21 +104,40 @@ export function fillLine(
 
 // ---------------------------------------------------------------- open tables
 
-/**
- * Random play at a cleared table (design doc: beating a table unlocks "random
- * play at the location you just beat -- a rotating cast of non-boss
- * characters for that setting"). The champion sits out. Tables with more than
- * three regulars rotate who gets a chair; a secondary-cast DLC would widen
- * this pool without touching code.
- */
-export function openTableCast(table: TableData, rng: () => number): string[] {
-  const regulars = table.seats.filter((id) => id !== table.champion)
-  const pool = [...regulars]
-  for (let i = pool.length - 1; i > 0; i--) {
+/** Chairs at an open table, besides the player's. */
+export const OPEN_TABLE_CHAIRS = 3
+
+function shuffled<T>(xs: T[], rng: () => number): T[] {
+  const a = [...xs]
+  for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1))
-    ;[pool[i], pool[j]] = [pool[j], pool[i]]
+    ;[a[i], a[j]] = [a[j], a[i]]
   }
-  return pool.slice(0, Math.min(3, pool.length))
+  return a
+}
+
+/**
+ * Random play at a cleared table: a mix-and-match of everyone the player has
+ * unlocked. The design doc's original rule kept the cast to "non-boss
+ * characters for that setting"; the owner widened it to the whole tour, so
+ * Van Helsing can turn up at the Pirate Cove once you have beaten him.
+ *
+ * Still NON-BOSS: champions sit out, because the Champions' Tables are where
+ * the bosses meet and that mix is their payoff. One chair always goes to a
+ * regular of this room, so its own banter and player-directed lines still
+ * have someone to say them. The other chairs draw from every unlocked
+ * non-champion -- this room's regulars included -- so early in the tour,
+ * with little unlocked, the table looks the way it always did.
+ */
+export function openTableCast(table: TableData, save: Save, rng: () => number): string[] {
+  const regulars = shuffled(table.seats.filter((id) => id !== table.champion), rng)
+  const host = regulars.slice(0, 1)
+  const unlocked = ROSTER.filter((c) => c.role === 'seat' && save.characters[c.id]?.beaten && !host.includes(c.id))
+    .map((c) => c.id)
+  const pool = shuffled(unlocked, rng)
+  // Fall back on the room's own regulars if not enough is unlocked yet.
+  for (const id of regulars) if (!pool.includes(id)) pool.push(id)
+  return shuffled([...host, ...pool.slice(0, OPEN_TABLE_CHAIRS - host.length)], rng)
 }
 
 export function canPlayOpenTable(save: Save, table: TableData): boolean {
