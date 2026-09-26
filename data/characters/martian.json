@@ -67,5 +67,38 @@
     "look": "Silhouette: one great rounded head, four feet across, set low in a three-legged brass seat, a small cousin of the fighting-machines. Two enormous dark eyes, a V-shaped quivering mouth, oily grey-brown skin, sixteen whip-thin tentacles in two bunches of eight; the tentacles are the tell surface. No brain under glass, no bubble helmet, no green skin, no ray-gun.",
     "prop": "A three-legged brass seat",
     "public_domain": "Wells's novel (1898) is public domain in the U.S. and the U.K. (Wells died in 1946). The films, the musical version, Mars Attacks! and Marvin the Martian are not. Build from Wells's text alone: a head with tentacles and huge eyes. No exposed brain, no bubble helmet, no little green men."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Your gravity is exhausting.",
+      "Fold. A temporary withdrawal.",
+      "Fold. I withdraw to the pit.",
+      "Fold. Even we retreat, occasionally."
+    ],
+    "check": [
+      "Check. I am regarding the pot with envious eyes.",
+      "Check. The air here is heavy.",
+      "Check."
+    ],
+    "call": [
+      "Call. I will match your primitive wager.",
+      "Call. Slowly. Your gravity.",
+      "Call. We crossed space for less."
+    ],
+    "bet": [
+      "Bet. The cylinder opens.",
+      "Bet. The first cylinder lands.",
+      "Bet. Annexed."
+    ],
+    "raise": [
+      "Raise. The Heat-Ray is warming up.",
+      "Raise. We came a long way for this.",
+      "Raise. Intellects vast and cool. Raise."
+    ],
+    "all_in": [
+      "All in. The fighting-machines are walking.",
+      "Everything. For the red planet.",
+      "All in. Wash your hands first."
+    ]
   }
 }

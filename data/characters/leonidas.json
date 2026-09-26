@@ -60,5 +60,38 @@
     "look": "Silhouette: a red cloak over a bronze breastplate, long hair and full beard, fists on the felt. Face: level eyes, jaw set, a man already bored of the conversation. Prop: the bronze Corinthian helmet with its tall horsehair crest, set on the table at his elbow — the biggest shape at the table. Tells live on the fists and the lift of the chin.",
     "prop": "Crested bronze helmet, on the table",
     "public_domain": "Historical figure, died 480 BC; Herodotus and Plutarch are public domain. Nothing from the film 300 or its graphic novel: no bare chest, no leather trunks, none of its lines or slogans. Avoid The 300 Spartans (1962) as well. Build from Greek vase painting and the marble warrior bust from Sparta known as 'Leonidas'."
+  },
+  "callouts": {
+    "fold": [
+      "No.",
+      "Fold.",
+      "Fold. We wait for the full moon.",
+      "Not today."
+    ],
+    "check": [
+      "Check.",
+      "Wait.",
+      "[says nothing, and checks]"
+    ],
+    "call": [
+      "Call.",
+      "I stand.",
+      "Hold."
+    ],
+    "bet": [
+      "Bet.",
+      "Forward.",
+      "Enough talk. Bet."
+    ],
+    "raise": [
+      "Raise.",
+      "More.",
+      "Forward. Raise."
+    ],
+    "all_in": [
+      "All.",
+      "All in. The pass holds.",
+      "Everything. We stay."
+    ]
   }
 }

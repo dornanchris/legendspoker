@@ -65,5 +65,38 @@
     "look": "Silhouette: a head shorter than the kings around him but broader in the chest and shoulders (Homer says so), a sea-stained cloak, and the conical felt sailor's cap he wears in Greek vase painting. Face: weathered, grizzled curly beard, amused eyes that are always doing sums. Prop: a heavy gold ring — make it big enough to catch the light, because his hands are the tell surface.",
     "prop": "Heavy gold ring",
     "public_domain": "Homer is public domain. Build from Greek vase painting (the pilos cap, the Sirens vase in the British Museum). Avoid every screen Odysseus, including Kirk Douglas's Ulysses (1954) and Christopher Nolan's The Odyssey (2026), the Coen brothers' O Brother, Where Art Thou?, and EPIC: The Musical."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. I'm going home. The long way.",
+      "I'll sail round this one.",
+      "Fold. Sometimes the clever thing is to hang on under a sheep.",
+      "Fold. Plenty of sea left."
+    ],
+    "check": [
+      "Check. Tie me to the mast.",
+      "Check. Let the tide turn.",
+      "Check. I'm listening. I'm always listening."
+    ],
+    "call": [
+      "Call. Nobody is going anywhere.",
+      "I'll see it. I always want to see.",
+      "Call. I've been curious for twenty years; why stop now?"
+    ],
+    "bet": [
+      "Bet. I'll tell you a story about it later.",
+      "A modest wager, from a modest king.",
+      "Bet. Ithaca is small, but it pays its debts."
+    ],
+    "raise": [
+      "I raise. Somewhere a god is annoyed.",
+      "Raise. My ships are all gone; my nerve isn't.",
+      "Raise. Ten years at sea teaches patience. Then impatience."
+    ],
+    "all_in": [
+      "All in. I've lost every ship I ever had. What's one more?",
+      "Everything. Home, or the bottom of the sea.",
+      "All in. Twenty years, one pot."
+    ]
   }
 }

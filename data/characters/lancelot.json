@@ -61,5 +61,39 @@
     "look": "Silhouette: the handsomest man at the table and dressed for it — polished plate at the shoulders, a bright surcoat, a fall of dark hair he keeps tossing back. Face: fine-boned, proud, faintly bored until someone challenges him. Prop: the right gauntlet, polished steel that catches the light, large enough at a fifth of the screen to be seen being buffed.",
     "prop": "A polished steel gauntlet",
     "public_domain": "Chrétien (c. 1180) and Malory (1485) are public domain. Avoid T. H. White's ugly, self-loathing Lancelot, the musical Camelot (1960) and its film, the film First Knight (1995), and the BBC's Merlin. The love affair with Guinevere is canon: allude to it with care, and never play it for smut."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. It is beneath me.",
+      "I yield this one. It will not happen often.",
+      "Fold. Even the best knight in the world picks his battles.",
+      "Fold. Tell no one."
+    ],
+    "check": [
+      "Check. I await a worthy challenge.",
+      "Check. Grudgingly.",
+      "Check. Briefly."
+    ],
+    "call": [
+      "Call. And only call, which pains me.",
+      "I'll see it. Merely see it.",
+      "Call. A knight answers. Mostly."
+    ],
+    "bet": [
+      "Bet. A lance, levelled.",
+      "Bet. Try to unhorse me.",
+      "Bet. As befits the best knight in the world."
+    ],
+    "raise": [
+      "Raise. I hesitated once, over a cart. Never again.",
+      "Raise. Naturally.",
+      "Raise. Did anyone expect anything less?",
+      "I raise. Someone had better be worthy of it."
+    ],
+    "all_in": [
+      "All in. For the honour of the Table.",
+      "Everything. For — for the King.",
+      "All in. Unhorse me if you can."
+    ]
   }
 }

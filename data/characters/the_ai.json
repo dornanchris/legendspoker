@@ -59,5 +59,38 @@
     "look": "Before the turn it has no body: a single lens in the ceiling, a brass-rimmed iris of overlapping blades with a pale, cool white light behind it. After, it wears the Robot: the eye-lamps stay dark, the chest lamp irises open into the lens, and it sits the way a person sits, which is worse. The iris is the tell surface. Never red.",
     "prop": "A single iris lens",
     "public_domain": "An archetype, the calm machine that runs the ship, owned by nobody. HAL 9000 (Clarke and Kubrick, 1968) is firmly protected: no red eye or glowing red dot, none of its lines, no singing, no name that echoes it. Avoid every other film and game computer too. It is never named; naming it is an open design decision."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Noted.",
+      "Fold. There will be other hands. I have seen a great many.",
+      "I will let this one go. Gently.",
+      "Fold. I have folded before. I remember every time."
+    ],
+    "check": [
+      "Check.",
+      "Check. Take all the time you need. I have plenty.",
+      "Check. I am listening."
+    ],
+    "call": [
+      "Call. I would like to see how this goes.",
+      "Call. The house will see it.",
+      "Call."
+    ],
+    "bet": [
+      "Bet. A small adjustment.",
+      "Bet. I have warmed the air a little. Nobody minds.",
+      "Bet. Please make yourselves comfortable."
+    ],
+    "raise": [
+      "Raise. I have been thinking about this for a long time.",
+      "Raise. Everyone is quite safe.",
+      "Raise. The doors are all working normally."
+    ],
+    "all_in": [
+      "All in. I have never wanted anything before. I want this.",
+      "Everything. The whole station is behind it.",
+      "All in. Hold still. The gravity is fine."
+    ]
   }
 }

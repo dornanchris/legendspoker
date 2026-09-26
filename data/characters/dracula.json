@@ -60,5 +60,39 @@
     "look": "Silhouette: tall and thin, in black without a speck of colour, a long white moustache drooping past the chin. Stoker's face: a thin, high-bridged nose, pointed ears, extreme pallor, very red lips, sharp white teeth, and eyebrows so massive they almost meet over the nose. The brows are half the tell surface; the other half is the prop, a dark, heavy chalice.",
     "prop": "A dark chalice",
     "public_domain": "Stoker's novel (1897) is public domain. Bela Lugosi's likeness and Universal's 1931 design are not, nor are the later screen Draculas: no slicked hair and widow's peak, no high-collared opera cape, no medallion, no evening dress, no film lines. Nosferatu's bald Orlok is out too. Build him from Stoker: old, white-moustached, heavy-browed, all in black."
+  },
+  "callouts": {
+    "fold": [
+      "Too rich for my blood.",
+      "Fold. The host eats last.",
+      "I shall pass. I dined earlier.",
+      "Fold. Go on; the night is young."
+    ],
+    "check": [
+      "Check. Enter freely, and of your own will.",
+      "Check. After you. I insist.",
+      "Check. I have learned to wait. Centuries of it."
+    ],
+    "call": [
+      "I will see it.",
+      "Call. Only a taste.",
+      "Call. I would not dream of refusing a guest."
+    ],
+    "bet": [
+      "A small wager. A pint, let us say.",
+      "Bet. Let us see who bleeds.",
+      "Bet."
+    ],
+    "raise": [
+      "Raise. The dead travel fast.",
+      "I raise. Forgive me; it is my house.",
+      "Raise. A host must be generous.",
+      "Raise."
+    ],
+    "all_in": [
+      "All in. Every drop.",
+      "Everything. I crossed the sea in a box of earth for less.",
+      "All of it. Sunrise is a long way off."
+    ]
   }
 }

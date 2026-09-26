@@ -65,5 +65,39 @@
     "look": "Silhouette: a small figure in a full-skirted dress and white pinafore, long hair held back by a band — Tenniel's Alice. Keep the blue the design doc wants, but a deep Victorian blue, never Disney's powder blue with a black bow. Large, expressive eyes: by design her face, not a prop, is the tell surface. Prop: a little bottle labelled DRINK ME, beside her chips.",
     "prop": "A little bottle labelled DRINK ME",
     "public_domain": "Carroll's books and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely — its dress, bow, character designs and songs — and the 2010 Burton film. Keep the Cheshire Cat out of this table; he is saved for later."
+  },
+  "callouts": {
+    "fold": [
+      "Oh, very well. Fold.",
+      "Fold. I shall try again when I'm bigger.",
+      "Fold. It's getting curiouser, and I'd rather watch.",
+      "Fold. I don't care for this game just now."
+    ],
+    "check": [
+      "Check. Is that the right word?",
+      "Check. Your turn. That's how turns work.",
+      "Check. I'm thinking."
+    ],
+    "call": [
+      "Curiouser and curiouser. Call!",
+      "Call! I want to see what happens.",
+      "I'll call. It would be rude to leave in the middle.",
+      "Call. I shan't be frightened by a pack of cards."
+    ],
+    "bet": [
+      "Bet! Just to see.",
+      "Bet. That's a perfectly sensible number.",
+      "I'll bet. Somebody ought to."
+    ],
+    "raise": [
+      "Raise! Off with its head!",
+      "Raise! I've always wanted to say that.",
+      "I raise. It seemed the logical thing."
+    ],
+    "all_in": [
+      "All in! Drink me!",
+      "Everything! Down the rabbit-hole!",
+      "All in. I've been much bigger and much smaller than this."
+    ]
   }
 }

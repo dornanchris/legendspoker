@@ -61,5 +61,35 @@
     "look": "Silhouette: the straightest back at the table, high collar, his own hair powdered and tied at the nape — not a wig. Face: long, heavy-jawed, the mouth set firm. Prop: the buff-and-blue general's coat with gold epaulettes; its cuffs and shoulders are the tell surface, so any change in that upright line reads at once.",
     "prop": "Buff-and-blue general's coat",
     "public_domain": "Historical figure, died 1799. Build from the Gilbert Stuart and Charles Willson Peale portraits, which are public domain. Avoid the look and staging of the musical Hamilton and any modern screen likeness. No wooden teeth: that is a myth."
+  },
+  "callouts": {
+    "fold": [
+      "[folds without a word]",
+      "[returns his cards to the dealer, edges squared]",
+      "No."
+    ],
+    "check": [
+      "[a single tap on the table]",
+      "Check."
+    ],
+    "call": [
+      "Call.",
+      "[writes the sum in a small account book, then calls]",
+      "Very well."
+    ],
+    "bet": [
+      "Bet.",
+      "[sets out a measured stack and says nothing]"
+    ],
+    "raise": [
+      "Raise.",
+      "I raise.",
+      "[raises, and offers no remark]"
+    ],
+    "all_in": [
+      "All.",
+      "Across the river, then.",
+      "[pushes every chip forward in one even motion]"
+    ]
   }
 }

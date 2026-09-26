@@ -64,5 +64,38 @@
     "look": "Silhouette: tall, in a long greatcoat that buttons to the chin, hat brim low over the eyes, and — Hugo's own detail — enormous side-whiskers climbing toward a flat nose with deep nostrils. A face that almost never moves, so any movement reads. Prop: the greatcoat's high collar and its row of buttons; that is the tell surface.",
     "prop": "Greatcoat buttoned to the collar",
     "public_domain": "Hugo's novel (1862) and its nineteenth-century illustrations are public domain. Nothing from the stage musical or its films: no lyrics, no \"Stars\", no prisoner-number chant, no costume from any production. Hugo's text only."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. It is noted.",
+      "Fold. I will be watching.",
+      "Fold. The law is patient.",
+      "I withdraw. Provisionally."
+    ],
+    "check": [
+      "Check. According to the rules.",
+      "Check.",
+      "Check. Proceed. Correctly."
+    ],
+    "call": [
+      "Call. I will see it through to the end.",
+      "I will see it. I see everything.",
+      "Call. My mother read cards. I only play them."
+    ],
+    "bet": [
+      "Bet. The amount is exact.",
+      "Bet. Entered in the register.",
+      "Bet, in accordance with the rules."
+    ],
+    "raise": [
+      "Raise. The law does not negotiate.",
+      "Raise. I will pursue this.",
+      "Raise. You will find me thorough."
+    ],
+    "all_in": [
+      "All in. I do not let go.",
+      "Everything. I pursued one man for twenty years. I can pursue a pot.",
+      "All in. To the end of the road."
+    ]
   }
 }
