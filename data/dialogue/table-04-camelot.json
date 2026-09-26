@@ -93,6 +93,23 @@
           { "id": "cm_ar_la_03a", "speaker": "arthur", "text": "The best knight in the world." },
           { "id": "cm_ar_la_03b", "speaker": "lancelot", "text": "You say it as though it costs you something." },
           { "id": "cm_ar_la_03c", "speaker": "arthur", "text": "Everything worth saying does." }
+        ],
+        [
+          { "id": "cm_ar_la_04a", "speaker": "lancelot", "text": "Sire, you look tired." },
+          { "id": "cm_ar_la_04b", "speaker": "arthur", "text": "I have been king a long time, Lancelot. It grows heavier every year." },
+          { "id": "cm_ar_la_04c", "speaker": "lancelot", "text": "Let me carry some of it." },
+          { "id": "cm_ar_la_04d", "speaker": "arthur", "text": "You have always carried more of it than I knew." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "cm_nd_01a", "speaker": "arthur", "to": "lancelot", "text": "Rest, Lancelot. The next quest is yours." },
+          { "id": "cm_nd_01b", "speaker": "lancelot", "text": "Sire." }
+        ],
+        [
+          { "id": "cm_nd_02a", "speaker": "lancelot", "to": "arthur", "text": "You yielded to me, sire." },
+          { "id": "cm_nd_02b", "speaker": "arthur", "text": "I did. You were always the better knight." },
+          { "id": "cm_nd_02c", "speaker": "lancelot", "text": "Not always, sire." }
         ]
       ]
     },
@@ -117,6 +134,25 @@
           { "id": "cm_me_ar_03b", "speaker": "merlin", "text": "You would not thank me." },
           { "id": "cm_me_ar_03c", "speaker": "arthur", "text": "I never have." },
           { "id": "cm_me_ar_03d", "speaker": "merlin", "text": "No. But you always ask." }
+        ],
+        [
+          { "id": "cm_me_ar_04a", "speaker": "arthur", "text": "Merlin. How does this game end?" },
+          { "id": "cm_me_ar_04b", "speaker": "merlin", "text": "You will play it beautifully." },
+          { "id": "cm_me_ar_04c", "speaker": "arthur", "text": "That is not what I asked." },
+          { "id": "cm_me_ar_04d", "speaker": "merlin", "text": "No. It is what I answered." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "cm_nd_03a", "speaker": "merlin", "to": "arthur", "text": "You yielded. I did tell you." },
+          { "id": "cm_nd_03b", "speaker": "arthur", "text": "You did not." },
+          { "id": "cm_nd_03c", "speaker": "merlin", "text": "I was going to." }
+        ],
+        [
+          { "id": "cm_nd_04a", "speaker": "arthur", "to": "merlin", "text": "Did you see that coming, old man?" },
+          { "id": "cm_nd_04b", "speaker": "merlin", "text": "Yes." },
+          { "id": "cm_nd_04c", "speaker": "arthur", "text": "Then why —" },
+          { "id": "cm_nd_04d", "speaker": "merlin", "text": "I wanted to see your face." }
         ]
       ]
     },
@@ -134,6 +170,23 @@
           { "id": "cm_gk_la_02b", "speaker": "green_knight", "text": "Never. Do you?" },
           { "id": "cm_gk_la_02c", "speaker": "lancelot", "text": "Never." },
           { "id": "cm_gk_la_02d", "speaker": "green_knight", "text": "Ha! Then one of us is going to be very tired." }
+        ],
+        [
+          { "id": "cm_gk_la_03a", "speaker": "green_knight", "text": "Would you strike first, Lancelot, if I bent my neck here and now?" },
+          { "id": "cm_gk_la_03b", "speaker": "lancelot", "text": "Gladly." },
+          { "id": "cm_gk_la_03c", "speaker": "green_knight", "text": "And bend your own, a year and a day from now?" },
+          { "id": "cm_gk_la_03d", "speaker": "lancelot", "text": "...I am promised elsewhere, most years." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "cm_nd_05a", "speaker": "green_knight", "to": "lancelot", "text": "Ha! The best knight in the world, bending his neck!" },
+          { "id": "cm_nd_05b", "speaker": "lancelot", "text": "I did not flinch. I folded. Those are different things." },
+          { "id": "cm_nd_05c", "speaker": "green_knight", "text": "Gawain said something very like that." }
+        ],
+        [
+          { "id": "cm_nd_06a", "speaker": "lancelot", "to": "green_knight", "text": "You gave way, Green Knight." },
+          { "id": "cm_nd_06b", "speaker": "green_knight", "text": "I did! Take it. I will have it back in a year and a day." }
         ]
       ]
     },
@@ -150,6 +203,83 @@
         [
           { "id": "cm_me_gk_02a", "speaker": "green_knight", "text": "Try not knowing how it ends, Merlin. It is the best part." },
           { "id": "cm_me_gk_02b", "speaker": "merlin", "text": "You say that because you always get up again." }
+        ],
+        [
+          { "id": "cm_me_gk_03a", "speaker": "merlin", "text": "What was it like, the blow at New Year?" },
+          { "id": "cm_me_gk_03b", "speaker": "green_knight", "text": "Brief." },
+          { "id": "cm_me_gk_03c", "speaker": "merlin", "text": "And afterwards?" },
+          { "id": "cm_me_gk_03d", "speaker": "green_knight", "text": "Afterwards I rode home. It is a long ride, with a draught." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "cm_nd_07a", "speaker": "merlin", "to": "green_knight", "text": "You yielded. I foresaw it." },
+          { "id": "cm_nd_07b", "speaker": "green_knight", "text": "Ha! You say that every time." },
+          { "id": "cm_nd_07c", "speaker": "merlin", "text": "And every time it is true." }
+        ],
+        [
+          { "id": "cm_nd_08a", "speaker": "green_knight", "to": "merlin", "text": "The prophet folds! Did you not see it coming?" },
+          { "id": "cm_nd_08b", "speaker": "merlin", "text": "I saw it. I did it anyway. It is something of a habit." }
+        ]
+      ]
+    },
+
+    "arthur_green_knight": {
+      "relationship": "When the Green Knight rode into Camelot at New Year and offered a blow for a blow, the whole court sat silent until Arthur, stung by the stranger's mockery, rose to take the axe himself; only then did Gawain ask for the game. The Knight has liked the king ever since for standing up.",
+      "exchanges": [
+        [
+          { "id": "cm_ar_gk_01a", "speaker": "green_knight", "text": "You stood up, king. When I asked for a volunteer." },
+          { "id": "cm_ar_gk_01b", "speaker": "arthur", "text": "Someone had to. You were laughing at my court." },
+          { "id": "cm_ar_gk_01c", "speaker": "green_knight", "text": "And Gawain took the axe out of your hands." },
+          { "id": "cm_ar_gk_01d", "speaker": "arthur", "text": "He was quicker than I was. He was quicker than everyone." }
+        ],
+        [
+          { "id": "cm_ar_gk_02a", "speaker": "arthur", "text": "Do you ever lose, Green Knight?" },
+          { "id": "cm_ar_gk_02b", "speaker": "green_knight", "text": "Often! It is the best part of a game. Then you get to play it again." },
+          { "id": "cm_ar_gk_02c", "speaker": "arthur", "text": "I have never thought of it like that." },
+          { "id": "cm_ar_gk_02d", "speaker": "green_knight", "text": "You should. You will have to, one day." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "cm_nd_09a", "speaker": "arthur", "to": "green_knight", "text": "You yielded, Green Knight." },
+          { "id": "cm_nd_09b", "speaker": "green_knight", "text": "Well struck, king! I will want my blow back." },
+          { "id": "cm_nd_09c", "speaker": "arthur", "text": "In a year and a day?" },
+          { "id": "cm_nd_09d", "speaker": "green_knight", "text": "In a hand or two." }
+        ],
+        [
+          { "id": "cm_nd_10a", "speaker": "green_knight", "to": "arthur", "text": "Ha! The king sits down again!" },
+          { "id": "cm_nd_10b", "speaker": "arthur", "text": "As I did at New Year. Someone quicker will stand." }
+        ]
+      ]
+    },
+
+    "merlin_lancelot": {
+      "relationship": "Malory's Merlin warned the young king that Lancelot would love the queen and she him, long before Lancelot came to court. Lancelot knows the old man saw him coming, and has never asked what else he saw. Never said aloud; the queen is not at this table.",
+      "exchanges": [
+        [
+          { "id": "cm_me_la_01a", "speaker": "lancelot", "text": "They say you spoke of me before I was born, old man." },
+          { "id": "cm_me_la_01b", "speaker": "merlin", "text": "I did." },
+          { "id": "cm_me_la_01c", "speaker": "lancelot", "text": "What did you say?" },
+          { "id": "cm_me_la_01d", "speaker": "merlin", "text": "That you would be the best knight in the world." },
+          { "id": "cm_me_la_01e", "speaker": "lancelot", "text": "...Is that all?" },
+          { "id": "cm_me_la_01f", "speaker": "merlin", "text": "It is all I will say at this table." }
+        ],
+        [
+          { "id": "cm_me_la_02a", "speaker": "merlin", "text": "You glance at that empty chair a great deal." },
+          { "id": "cm_me_la_02b", "speaker": "lancelot", "text": "I do not." },
+          { "id": "cm_me_la_02c", "speaker": "merlin", "text": "No. Of course not." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "cm_nd_11a", "speaker": "merlin", "to": "lancelot", "text": "You yielded. How unlike you." },
+          { "id": "cm_nd_11b", "speaker": "lancelot", "text": "You knew I would." },
+          { "id": "cm_nd_11c", "speaker": "merlin", "text": "I know most things you will do. I rarely enjoy one this much." }
+        ],
+        [
+          { "id": "cm_nd_12a", "speaker": "lancelot", "to": "merlin", "text": "Surely you foresaw that, old man." },
+          { "id": "cm_nd_12b", "speaker": "merlin", "text": "I foresaw that you would enjoy it. I was right about that, too." }
         ]
       ]
     }
