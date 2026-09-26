@@ -15,8 +15,17 @@ export type Decision = {
 
 export type DecisionContext = {
   personality: Personality
-  /** 0..1 estimate of winning at showdown. */
+  /**
+   * 0..1 estimate of winning at showdown -- against the range a bet like the
+   * one being faced comes from, not against any two cards (see betRange).
+   */
   equity: number
+  /**
+   * The hand's quality on the scale the quirk thresholds were tuned on:
+   * before the flop the Chen-style strength score, after it the same as
+   * equity. For "is this a premium hand" questions; use equity for prices.
+   */
+  strength: number
   pot: number
   toCall: number
   stack: number
@@ -41,7 +50,49 @@ export type DecisionContext = {
    * quirk know when someone is pot-committed. Read only by quirks.
    */
   committed: number
+  /**
+   * The bet being faced is someone's whole stack: calling ends the betting,
+   * so there is nothing more to lose than the call itself.
+   */
+  facingAllIn: boolean
   rng: () => number
+}
+
+const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v))
+
+/**
+ * How strong a bet says the bettor is: the share of hands, strongest first,
+ * that a bet like this usually comes from. 1 is any two cards.
+ *
+ * Deliberately plain. A bigger bet comes from a stronger hand, and a bigger
+ * raise before the flop from a narrower range -- but a SHORT stack moving all
+ * in is shoving to survive, so its range is wide, and widest when shortest.
+ * Each character believes this only as far as their `betRespect` dial says;
+ * the game loop narrows equity with the result (see handStrength).
+ */
+export function betRange(b: {
+  street: string
+  toCall: number
+  pot: number
+  bigBlind: number
+  allIn: boolean
+  /** Everything the bettor has put in this hand, in big blinds. */
+  bettorBB: number
+}): number {
+  if (b.toCall <= 0) return 1
+  let range: number
+  if (b.street === 'preflop') {
+    if (b.toCall <= b.bigBlind) return 1 // only the blind to match
+    range = clamp(0.55 - 0.06 * (b.toCall / b.bigBlind), 0.12, 0.5)
+    if (b.allIn && b.bettorBB <= 20) range = Math.max(range, clamp(0.75 - 0.03 * b.bettorBB, 0.15, 0.7))
+  } else {
+    // Measured against what the bettor actually held (see the calibration
+    // notes in CLAUDE.md): pot-sized bets and river bets are stronger than a
+    // plain slope says -- by the river there are no draws left to bet.
+    const before = Math.max(1, b.pot - b.toCall)
+    range = clamp(0.8 - 0.4 * (b.toCall / before) - (b.street === 'river' ? 0.08 : 0), 0.2, 0.75)
+  }
+  return range
 }
 
 /**
@@ -84,7 +135,14 @@ export function decide(ctx: DecisionContext): Decision {
 
   // Tightness raises the bar for entering a pot. A tight player wants a
   // margin over the break-even point; a loose one will take it thin.
-  const margin = (effectiveTightness - 0.5) * 0.25
+  let margin = (effectiveTightness - 0.5) * 0.25
+  // Caution is about what a call risks. Against an all-in nothing can follow
+  // the call, so when it costs a sliver of the stack -- a short stack's shove
+  // into a big one -- the price alone decides, not a tight player's margin.
+  if (ctx.facingAllIn && margin > 0) {
+    const risk = ctx.toCall / Math.max(1, ctx.stack)
+    margin *= Math.min(1, risk / 0.25)
+  }
   const required = Math.max(0, potOdds + margin)
 
   const canRaise = ctx.legal.includes('raise') || ctx.legal.includes('bet')

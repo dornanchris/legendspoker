@@ -96,6 +96,7 @@ src/
   data-check.ts   `npm run check:data` — the type checker for content
   replay-check.ts `npm run check:replay` — save mid-hand, resume, identical
   roster.ts       `npm run roster` — regenerates ROSTER.md from data/
+  reads.ts        `npm run reads` — how each character reads a bet (a report)
 data/
   characters/     one file per character: dials, quirks, tells, idles, profile
   tables/         one file per table: seats, champion, arrival, room, hook
@@ -131,6 +132,8 @@ Stack: Node 22, TypeScript, ESM, run via `tsx`. `poker-ts` v1.5.0 for rules
 — three distinct play profiles emerge from one shared function. Representative
 1000-hand run: Dracula VPIP 33.7 / AF 0.66 (tight trapper), Snowman VPIP 74.5
 / AF 0.24 (calling station), Cleopatra VPIP 62.7 / AF 3.18 (aggressive).
+After bets started being read (ENGINE_VERSION 3), `npm run sim 2000`: Dracula
+35.2 / 0.73, Snowman 75.1 / 0.23, Cleopatra 63.7 / 3.54 -- same three people.
 
 **Phase 3a is complete: the tournament model.** Stacks persist, players are
 eliminated, blinds climb every 25 hands, and a table ends when one player
@@ -226,9 +229,11 @@ real device.
   lose heavily to bots) because beginner tables should be exploitable.
 - **Tight play dominates heads-up in this engine.** Every aggressive Death
   lost to Lincoln 2:1. The tuned Death is tight and patient with a
-  check-raise (dials in `data/characters/death.json`) and beats Lincoln,
-  Washington, Arthur and Roosevelt 53–70% heads-up over 60 matches each. The finale
-  buy-in is 5000 so the match runs long enough for skill to show.
+  check-raise (dials in `data/characters/death.json`). Heads-up at the
+  finale's 5000 buy-in, 60 matches each, ENGINE_VERSION 3: Death beats
+  Lincoln 65%, Washington 62%, Roosevelt 77%, and is level with Arthur (47%,
+  inside the noise of 60 matches). Under version 2 it was 60/58/43/57. The
+  finale buy-in is 5000 so the match runs long enough for skill to show.
 - **Tightness saturates.** Above ~0.75 the dial barely moves VPIP; the
   quirks (`patient`, `calls_small`, `steal`) move it far more. Tune with them.
 - **An existing White House line genders the player** (`wh_p0_03`, "the look
@@ -269,12 +274,41 @@ real device.
   "Arthur wins side pot 1 with two pair". `game.ts` marks such a pot
   `returned`; the table says "takes back", and the director does not count
   it as a pot won.
-- **The `committed` quirk is effectively dead -- NOT fixed.** `contributed`
-  in `game.ts` adds the change in a seat's totalChips per action, and a bet
-  does not change totalChips (stack + betSize), so it only ever holds the
-  blinds. `decide()` passes it as `committed`, so the "will not back down
-  once pot-committed" quirk almost never fires. Fixing it changes how every
-  character with that quirk plays: bump ENGINE_VERSION and retune on sims.
+- **Bets are READ -- ENGINE_VERSION 3.** Equity used to be measured against
+  any two cards, so a pair of eights was a 65% favourite against a pot-sized
+  bet and the AI called it down: on calls into big bets the AI estimated 46%
+  and actually held 10% against the bettor's real hand. Now, facing a bet,
+  the bettor is dealt from a range (`betRange` in decide.ts: bigger bets and
+  river bets narrower, a short stack's preflop shove wide), and each
+  character believes it as far as its `betRespect` dial says -- low is
+  the calling station, and Green Knight and Alice keep that job. Clearly bad
+  calls into bets of 40%+ of the pot fell from 1180 to 759 per 4800 hands,
+  on the river from 285 to 105.
+  Calibrated against what AI bettors actually held: preflop the estimate
+  matches (48% vs 46%); pot-sized and river bets needed the extra narrowing.
+  Half-pot bets read PESSIMISTIC against AI bettors, because the AI's own
+  "probe" bets weak hands at about half pot. That is left alone on purpose:
+  people do not bet like that, and matching it would make the AI call the
+  player's half-pot bets more.
+- **Facing a raise before the flop, equity is real Monte Carlo** against the
+  raiser's range, not the Chen strength score -- which rated 7-2 at 19%
+  against a short stack's shove it beats 40% of the time, so big stacks
+  folded for pennies. With nothing but the blind to call it is still the
+  strength score. Quirks read `ctx.strength` (the scale they were tuned on)
+  for hand quality and `ctx.equity` for prices.
+- **A cheap call against an all-in needs only the price.** A tight player's
+  margin shrinks with the share of their stack the call risks, and `patient`
+  no longer folds to an all-in costing under 10% of the stack. A 5bb shove
+  costing the big blind 5% of their chips: called 2-18% before, 71-77% now.
+- **`committed` counts chips put in -- FIXED.** `contributed` in `game.ts`
+  summed the change in stack + betSize per action, which a bet never
+  changes, so it held only the blinds and the quirk never fired. It now
+  measures the stack, and the quirk has a `minEquity` floor (default 0.2):
+  stubborn, not suicidal. The "won't fold 8-3" calls were NOT this quirk --
+  they were the any-two-cards equity above.
+- **Still odd, not yet addressed:** the AI "probes" -- checked to with
+  anything over ~20% equity it bets about half the pot at a rate set by its
+  aggression, so many half-pot bets are air.
 - **Deals are reproducible — FIXED, same patch file.** poker-ts shuffled with
   `crypto.randomInt` and `Table` hardcoded its own `Deck`, so nothing was
   seedable. `Deck` already accepted a shuffle; `Table` just never passed one

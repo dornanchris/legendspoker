@@ -77,9 +77,9 @@ for (const t of TABLES) {
     w(`**At the table.** ${p.at_the_table}`)
     w()
     const dl = c.dials
-    w(`| aggression | tightness | bluff | tilt | adaptivity | noise |`)
-    w(`|---|---|---|---|---|---|`)
-    w(`| ${dial(dl.aggression)} | ${dial(dl.tightness)} | ${dial(dl.bluffFrequency)} | ${dial(dl.tiltSensitivity)} | ${dial(dl.adaptivity)} | ${dial(dl.noise)} |`)
+    w(`| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |`)
+    w(`|---|---|---|---|---|---|---|`)
+    w(`| ${dial(dl.aggression)} | ${dial(dl.tightness)} | ${dial(dl.bluffFrequency)} | ${dial(dl.tiltSensitivity)} | ${dial(dl.adaptivity)} | ${dial(dl.betRespect)} | ${dial(dl.noise)} |`)
     w()
     for (const q of c.quirks) w(`- Quirk: ${quirkLine(q)}`)
     for (const tl of c.tells) w(`- Tell (${tl.correlate}, ${tl.reliability}): *${tl.text}*`)

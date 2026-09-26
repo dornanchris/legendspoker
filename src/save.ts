@@ -31,8 +31,10 @@ export const SAVE_VERSION = 1
  * 2: poker-ts's hand ranking and side pots fixed (two sets of trips, the
  *    quads kicker, all-in players dropped from pots). Some pots now go to a
  *    different player, so the stacks after them differ.
+ * 3: bets are read (equity against the bettor's range, the `respect` dial),
+ *    the `committed` quirk counts chips put in, cheap all-ins get called.
  */
-export const ENGINE_VERSION = 2
+export const ENGINE_VERSION = 3
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

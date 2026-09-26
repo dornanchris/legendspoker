@@ -20,6 +20,12 @@ export type Personality = {
   /** How much they adjust to observed opponent patterns. */
   adaptivity: number
   /**
+   * How far they believe a bet. High reads a bet as a strong hand and folds
+   * the junk; low treats every bet as any two cards and calls it down -- the
+   * calling station. Scales the range equity is measured against.
+   */
+  betRespect: number
+  /**
    * Noise-to-signal: how much ambient, meaningless movement buries the real
    * tells. The second difficulty axis -- skill goes UP through the dials
    * above, legibility goes DOWN through this one. Early tables fire clean
@@ -72,6 +78,7 @@ export const DRACULA: Personality = {
   bluffFrequency: 0.12,
   tiltSensitivity: 0.05,
   adaptivity: 0.55,
+  betRespect: 0.8,
   noise: 0,
   // Traps: with a monster before the river, just call and let them hang
   // themselves rather than raising them off the hand.
@@ -90,6 +97,7 @@ export const YETI: Personality = {
   bluffFrequency: 0.02,
   tiltSensitivity: 0.3,
   adaptivity: 0.05,
+  betRespect: 0.2,
   noise: 0,
   // The calling station. Will not fold to a single small bet, ever. You
   // cannot bluff him -- which is exactly what makes him a good teacher for
@@ -109,6 +117,7 @@ export const CLEOPATRA: Personality = {
   bluffFrequency: 0.34,
   tiltSensitivity: 0.15,
   adaptivity: 0.9,
+  betRespect: 0.75,
   noise: 0,
   // Punishes passivity. If opponents have been folding to aggression, she
   // attacks regardless of her cards.
@@ -134,6 +143,7 @@ export const HUMAN: Personality = {
   bluffFrequency: 0,
   tiltSensitivity: 0,
   adaptivity: 0,
+  betRespect: 0,
   noise: 0,
   quirks: [],
   tells: [],

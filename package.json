@@ -12,6 +12,7 @@
     "check:data": "tsx src/data-check.ts",
     "check:replay": "tsx src/replay-check.ts",
     "roster": "tsx src/roster.ts",
+    "reads": "tsx src/reads.ts",
     "typecheck": "tsc --noEmit -p .",
     "check": "npm run typecheck && npm run check:data && npm run check:pots && npm run check:hands && npm run check:replay",
     "build:web": "node web/build.mjs",

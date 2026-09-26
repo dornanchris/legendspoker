@@ -1,8 +1,8 @@
 // poker-ts exports the facade as a named `Table`, not a default export.
 import pokerPkg from 'poker-ts'
 const { Table: Poker } = pokerPkg as any
-import { decide, emitTell, type Action, type Decision } from './decide.js'
-import { handStrength, type Card } from './equity.js'
+import { decide, emitTell, betRange, type Action, type Decision } from './decide.js'
+import { handStrength, preflopStrength, type Card } from './equity.js'
 import type { Personality } from './personality.js'
 import { seededShuffle } from './rng.js'
 
@@ -441,8 +441,8 @@ export class Game {
       }
     }
 
-    // Cache equity per (seat, street) — recomputing it on every action is
-    // where a naive implementation burns all its time.
+    // Cache equity per (seat, street, what they are facing) -- recomputing it
+    // on every action is where a naive implementation burns all its time.
     const equityCache = new Map<string, number>()
     // Chips each seat has put in this hand, starting from the posted blinds.
     const contributed: number[] = this.table
@@ -496,7 +496,32 @@ export class Game {
         // The human seat never gets an equity number -- they read the board
         // like anyone else -- so there is nothing to roll out for them.
         const isHuman = seat === humanSeat && onHumanTurn !== undefined
-        const key = `${seat}:${street}`
+        // Who they are facing. Somebody who bets usually has something, so
+        // equity is measured against the hands a bet like this comes from,
+        // not against any two cards -- which is what made a pair of eights
+        // look like a 65% favourite against a pot-sized bet. How far each
+        // character believes it is their `betRespect` dial.
+        let bettor = -1
+        if (toCall > 0) {
+          seatState.forEach((x: any, i: number) => {
+            if (x && i !== seat && (bettor < 0 || x.betSize > seatState[bettor].betSize)) bettor = i
+          })
+        }
+        const facingAllIn = bettor >= 0 && seatState[bettor].stack === 0
+        let oppRange = 1
+        if (!isHuman && bettor >= 0) {
+          const base = betRange({
+            street,
+            toCall,
+            pot,
+            bigBlind,
+            allIn: facingAllIn,
+            bettorBB: contributed[bettor] / bigBlind,
+          })
+          // In steps of 5%, so a street's equity is worked out a few times at most.
+          oppRange = Math.round((1 - s.personality.betRespect * (1 - base)) * 20) / 20
+        }
+        const key = `${seat}:${street}:${oppRange}`
         let equity = 0
         if (!isHuman) {
           const cached = equityCache.get(key)
@@ -507,6 +532,7 @@ export class Game {
               Math.max(1, this.table.numActivePlayers() - 1),
               rollouts,
               rng,
+              oppRange,
             )
             equityCache.set(key, equity)
           } else {
@@ -550,6 +576,7 @@ export class Game {
           decision = decide({
             personality: s.personality,
             equity,
+            strength: board.length === 0 ? preflopStrength(hole) : equity,
             pot,
             toCall,
             stack: seatState[seat].stack,
@@ -563,6 +590,7 @@ export class Game {
             tilt: s.tilt,
             opponentFoldRate: this.tableFoldRate(seat),
             committed: contributed[seat],
+            facingAllIn,
             rng,
           })
 
@@ -595,10 +623,13 @@ export class Game {
           }
         }
 
-        const before = seatState[seat].stack + seatState[seat].betSize
+        // Measured on the STACK: a bet moves chips from the stack to the bet
+        // in front, which leaves stack + betSize unchanged. Measuring that sum
+        // counted nothing but the blinds, so no one was ever pot-committed.
+        const before = seatState[seat].stack
         this.table.actionTaken(decision.action, decision.betSize)
         const after = this.table.seats()[seat]
-        if (after) contributed[seat] += before - (after.stack + after.betSize)
+        if (after) contributed[seat] += before - after.stack
 
         onEvent?.({
           type: 'action',

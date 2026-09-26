@@ -85,6 +85,8 @@ export type Dials = {
   bluffFrequency: number
   tiltSensitivity: number
   adaptivity: number
+  /** How far they believe a bet: low is a calling station. */
+  betRespect: number
   noise: number
 }
 

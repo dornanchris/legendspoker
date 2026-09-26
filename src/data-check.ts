@@ -24,7 +24,7 @@ const TODO = (v: unknown) => v === 'TODO' || (Array.isArray(v) && v.includes('TO
 
 // ---------------------------------------------------------------- characters
 
-const DIALS = ['aggression', 'tightness', 'bluffFrequency', 'tiltSensitivity', 'adaptivity', 'noise'] as const
+const DIALS = ['aggression', 'tightness', 'bluffFrequency', 'tiltSensitivity', 'adaptivity', 'betRespect', 'noise'] as const
 const CORRELATES = new Set(['strong', 'weak', 'bluffing', 'tilted'])
 const PROFILE = ['ledger', 'ledger_beaten', 'history', 'at_the_table', 'look', 'prop', 'public_domain'] as const
 

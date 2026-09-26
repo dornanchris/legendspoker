@@ -17,6 +17,9 @@ import type { Quirk } from './personality.js'
  * these can express, the answer is a NEW generic quirk with parameters -- not
  * a branch on an id.
  *
+ * Thresholds on hand quality read ctx.strength, the scale they were tuned on;
+ * a question about the PRICE reads ctx.equity (see DecisionContext).
+ *
  * Each quirk returns a Decision to force it, or null to defer to decide().
  * decide() drops any forced action that is not legal, so a quirk may be
  * optimistic about legality but must never assume it.
@@ -43,7 +46,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
     summary: 'With a monster before the river, checks or flats instead of raising.',
     make: ({ minEquity = 0.82 }) => (ctx) => {
       if (ctx.street === 'river') return null
-      if (ctx.equity < minEquity) return null
+      if (ctx.strength < minEquity) return null
       if (ctx.toCall === 0) return { action: 'check', reason: 'trap: checking a monster' }
       if (ctx.legal.includes('call')) return { action: 'call', reason: 'trap: flatting a monster' }
       return null
@@ -81,7 +84,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
   charge: {
     summary: 'Facing a bet with a decent hand, raises rather than calls.',
     make: ({ minEquity = 0.6, chance = 0.7, potFraction = 1 }) => (ctx) => {
-      if (ctx.toCall === 0 || ctx.equity < minEquity) return null
+      if (ctx.toCall === 0 || ctx.strength < minEquity) return null
       if (!canRaise(ctx)) return null
       if (ctx.rng() > chance) return null
       return {
@@ -93,11 +96,14 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
   },
 
   committed: {
-    summary: 'Once a share of the stack is in the pot, never folds.',
-    make: ({ fraction = 0.35 }) => (ctx) => {
+    summary: 'Once a share of the stack is in the pot, will not fold a hand with a real chance.',
+    // Stubborn, not suicidal: the floor is what keeps a busted 8-3 out. Until
+    // the game loop counted chips put in correctly this never fired at all.
+    make: ({ fraction = 0.35, minEquity = 0.2 }) => (ctx) => {
       if (ctx.toCall === 0) return null
       const invested = ctx.committed / Math.max(1, ctx.committed + ctx.stack)
       if (invested < fraction) return null
+      if (ctx.equity < minEquity) return null
       if (!ctx.legal.includes('call')) return null
       return { action: 'call', reason: 'committed: will not back down' }
     },
@@ -107,7 +113,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
     summary: 'Checked to on the river with nothing, tells a story.',
     make: ({ chance = 0.3, maxEquity = 0.35, potFraction = 0.75 }) => (ctx) => {
       if (ctx.street !== 'river' || ctx.toCall > 0) return null
-      if (ctx.equity > maxEquity) return null
+      if (ctx.strength > maxEquity) return null
       if (!ctx.legal.includes('bet')) return null
       if (ctx.rng() > chance) return null
       return {
@@ -122,7 +128,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
     summary: 'Checks strength on the flop and turn, then raises when bet into.',
     make: ({ minEquity = 0.75, chance = 0.6, potFraction = 1.1 }) => (ctx) => {
       if (ctx.street === 'preflop' || ctx.street === 'river') return null
-      if (ctx.equity < minEquity) return null
+      if (ctx.strength < minEquity) return null
       if (ctx.toCall === 0) {
         if (!ctx.legal.includes('check')) return null
         if (ctx.rng() > chance) return null
@@ -140,7 +146,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
   overbet: {
     summary: 'With a strong hand, bets far more than the pot.',
     make: ({ minEquity = 0.75, potFraction = 1.5, chance = 0.7 }) => (ctx) => {
-      if (ctx.equity < minEquity || !canRaise(ctx)) return null
+      if (ctx.strength < minEquity || !canRaise(ctx)) return null
       if (ctx.rng() > chance) return null
       return {
         action: raiseVerb(ctx),
@@ -154,7 +160,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
     summary: 'Short-stacked, moves all in with any reasonable hand.',
     make: ({ maxBB = 12, minEquity = 0.4 }) => (ctx) => {
       if (ctx.effectiveStackBB > maxBB) return null
-      if (ctx.equity < minEquity || !canRaise(ctx)) return null
+      if (ctx.strength < minEquity || !canRaise(ctx)) return null
       return { action: raiseVerb(ctx), betSize: ctx.maxRaise, reason: 'short stack: all in' }
     },
   },
@@ -164,7 +170,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
     make: ({ chance = 0.5, minEquity = 0.3, bigBlinds = 2.5 }) => (ctx) => {
       if (ctx.street !== 'preflop') return null
       if (ctx.toCall > ctx.bigBlind) return null // someone has already raised
-      if (ctx.equity < minEquity || !canRaise(ctx)) return null
+      if (ctx.strength < minEquity || !canRaise(ctx)) return null
       if (ctx.rng() > chance) return null
       const size = Math.max(ctx.minRaise, Math.min(ctx.maxRaise, Math.round(ctx.bigBlind * bigBlinds)))
       return { action: raiseVerb(ctx), betSize: size, reason: 'steal: raising an unopened pot' }
@@ -184,7 +190,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
   snap: {
     summary: 'Never slow-plays: raises every strong hand at once.',
     make: ({ minEquity = 0.7, potFraction = 0.9 }) => (ctx) => {
-      if (ctx.equity < minEquity || !canRaise(ctx)) return null
+      if (ctx.strength < minEquity || !canRaise(ctx)) return null
       return {
         action: raiseVerb(ctx),
         betSize: potSized(ctx, potFraction),
@@ -211,7 +217,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
     summary: 'Alone in a pot with one opponent, applies relentless pressure.',
     make: ({ minEquity = 0.45, chance = 0.6, potFraction = 0.75 }) => (ctx) => {
       if (ctx.numOpponents !== 1) return null
-      if (ctx.equity < minEquity || !canRaise(ctx)) return null
+      if (ctx.strength < minEquity || !canRaise(ctx)) return null
       if (ctx.rng() > chance) return null
       return {
         action: raiseVerb(ctx),
@@ -222,12 +228,14 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
   },
 
   patient: {
-    summary: 'Folds to any raise before the flop without a premium hand, whatever the price.',
-    make: ({ minEquity = 0.6 }) => (ctx) => {
+    summary: 'Folds to any raise before the flop without a premium hand, unless calling an all-in costs next to nothing.',
+    make: ({ minEquity = 0.6, maxAllInCost = 0.1 }) => (ctx) => {
       if (ctx.street !== 'preflop') return null
       if (ctx.toCall <= ctx.bigBlind) return null // only a real raise
-      if (ctx.equity >= minEquity) return null
+      if (ctx.strength >= minEquity) return null
       if (ctx.effectiveStackBB < 12) return null // patience ends when the stack does
+      // A short stack's shove for a sliver of their chips is not a test of patience.
+      if (ctx.facingAllIn && ctx.toCall <= ctx.stack * maxAllInCost) return null
       return { action: 'fold', reason: 'patient: waiting for a better spot' }
     },
   },
@@ -236,7 +244,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
     summary: 'Calls cheap bets on the flop and turn to see another card.',
     make: ({ maxPotFraction = 0.5, minEquity = 0.2 }) => (ctx) => {
       if (ctx.street !== 'flop' && ctx.street !== 'turn') return null
-      if (ctx.toCall === 0 || ctx.equity < minEquity) return null
+      if (ctx.toCall === 0 || ctx.strength < minEquity) return null
       if (ctx.toCall > ctx.pot * maxPotFraction) return null
       if (!ctx.legal.includes('call')) return null
       return { action: 'call', reason: 'chasing: one more card' }
@@ -247,7 +255,7 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
     summary: 'Once rattled, stops thinking and moves in.',
     make: ({ tilt = 0.25, minEquity = 0.35 }) => (ctx) => {
       if (ctx.tilt < tilt) return null
-      if (ctx.equity < minEquity || !canRaise(ctx)) return null
+      if (ctx.strength < minEquity || !canRaise(ctx)) return null
       return { action: raiseVerb(ctx), betSize: ctx.maxRaise, reason: 'berserk: all in' }
     },
   },

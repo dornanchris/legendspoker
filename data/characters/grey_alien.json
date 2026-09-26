@@ -15,6 +15,7 @@
     "bluffFrequency": 0.25,
     "tiltSensitivity": 0.0,
     "adaptivity": 0.7,
+    "betRespect": 0.75,
     "noise": 0.5
   },
   "quirks": [
