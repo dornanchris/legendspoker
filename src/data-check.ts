@@ -13,7 +13,7 @@
  */
 import { CHARACTERS, TABLES, DIALOGUE, DEALER, MARKS, STORY, fullCast, type Line } from './content.js'
 import { QUIRKS } from './quirks.js'
-import { CONDITION_TYPES } from './marks.js'
+import { CONDITION_TYPES, conditionErrors } from './marks.js'
 
 const errors: string[] = []
 const warnings: string[] = []
@@ -185,6 +185,18 @@ for (const k of ['first_map', 'player_loses_table', 'rematch_table', 'replay_cle
   if (!DEALER[k]?.length) err('dealer', `no "${k}" lines`)
 }
 
+// ---------------------------------------------------------------- returns
+
+for (const c of Object.values(CHARACTERS)) {
+  const r = c.returns
+  if (!r) continue
+  const w = `character ${c.id} returns`
+  if (!Number.isInteger(r.afterHands) || r.afterHands < 1) err(w, 'afterHands must be a whole number of hands, 1 or more')
+  if (r.stack !== 'average' && !(typeof r.stack === 'number' && r.stack > 0)) err(w, 'stack must be "average" or a positive number')
+  if (!r.lines?.some((l) => l.speaker === c.id)) err(w, 'the returner has nothing to say')
+  for (const l of r.lines ?? []) checkLine(l, w, new Set(['death', 'narration', c.id]))
+}
+
 // ---------------------------------------------------------------- marks, story
 
 const markIds = new Set<string>()
@@ -196,6 +208,7 @@ for (const m of MARKS) {
   if (!CONDITION_TYPES.has(m.when?.type)) err(w, `unknown condition "${m.when?.type}"`)
   if (m.when?.table && !TABLES.some((t) => t.id === m.when.table)) err(w, `unknown table "${m.when.table}"`)
   if (m.when?.character && !CHARACTERS[m.when.character]) err(w, `unknown character "${m.when.character}"`)
+  if (m.when) for (const e of conditionErrors(m.when)) err(w, e)
 }
 
 if (!STORY?.invitation?.heading || !STORY.invitation.body?.length) err('story', 'invitation is not written')

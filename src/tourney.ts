@@ -56,17 +56,10 @@ if (TABLE_ID) {
   }
   HANDS_PER_LEVEL = t.handsPerLevel
   BUY_IN = t.buyIn
-  if (t.arrival) {
-    arrivals = [{
-      personality: content.personality(t.arrival.character),
-      afterEliminations: t.arrival.afterEliminations,
-      afterEliminationOf: t.arrival.afterEliminationOf,
-      delayHands: t.arrival.delayHands,
-      stack: t.arrival.stack,
-    }]
-  }
+  arrivals = content.arrivalRules(t, 'tour', t.seats)
 }
-const everyone = [...cast, ...arrivals.map((a) => a.personality)]
+// A returner (the Green Knight) is already in the cast: list them once.
+const everyone = [...new Set([...cast, ...arrivals.map((a) => a.personality)])]
 
 const lengths: number[] = []
 const finishes = new Map<string, number[]>()
@@ -106,7 +99,9 @@ for (let table = 0; table < TABLES; table++) {
     if (arrivals.length) {
       const winner = game.survivors()[0]
       placed.push({ name: game.getSeats()[winner].personality.name, place: 1 })
-      for (const { name, place } of placed) finishes.get(name)![place - 1]++
+      // Someone knocked out twice (a returner) finishes where they LAST fell.
+      const final = new Map(placed.map(({ name, place }) => [name, place]))
+      for (const [name, place] of final) finishes.get(name)![place - 1]++
     } else {
       game.standings().forEach((seat, place) => {
         finishes.get(cast[seat].name)![place]++
@@ -140,7 +135,9 @@ function nameOf(id: string): string {
 if (title) console.log(`\n== ${title} ==`)
 console.log(`\n${TABLES} tables in ${elapsed}s`)
 console.log(`${cast.length}-handed, ${chips} chips at the start, ${DEFAULT_LEVELS.length} blind levels` +
-  (arrivals.length ? `, plus ${arrivals.map((a) => a.personality.name).join(', ')} arriving late` : '') + '\n')
+  (arrivals.length
+    ? `, plus ${arrivals.map((a) => `${a.personality.name} ${cast.includes(a.personality) ? 'returning' : 'arriving late'}`).join(', ')}`
+    : '') + '\n')
 
 console.log(`Completed     ${lengths.length}/${TABLES}`)
 console.log(`Stalled       ${stalls}${stalls ? '   <-- FAIL: a table never ended' : ''}`)
@@ -162,7 +159,7 @@ console.log(pad('Character', 22) + everyone.map((_, i) => num(`${i + 1}${['st','
 console.log('-'.repeat(22 + 7 * everyone.length + (arrivals.length ? 7 : 0)))
 for (const p of everyone) {
   const row = finishes.get(p.name)!
-  const sat = arrivals.some((a) => a.personality === p) ? arrived.get(p.name) ?? 0 : TABLES
+  const sat = cast.includes(p) ? TABLES : arrived.get(p.name) ?? 0
   console.log(pad(p.name, 22) + row.map((n) => num(n, 7)).join('') + (arrivals.length ? num(sat, 7) : ''))
 }
 

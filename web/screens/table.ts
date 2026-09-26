@@ -1,9 +1,9 @@
-import { Game, type HandEvent, type TurnView, type Arrival } from '../../src/game.js'
+import { Game, type HandEvent, type TurnView } from '../../src/game.js'
 import { HUMAN } from '../../src/personality.js'
 import type { Action, Decision } from '../../src/decide.js'
 import type { Card } from '../../src/equity.js'
 import { mulberry32 } from '../../src/rng.js'
-import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, personality, type Line } from '../../src/content.js'
+import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, personality, arrivalRules, type Line } from '../../src/content.js'
 import { TableRun, type Beat } from '../../src/director.js'
 import { applyOutcome, fillLine, type TableOutcome } from '../../src/tour.js'
 import { tableRecord, ENGINE_VERSION } from '../../src/save.js'
@@ -891,7 +891,10 @@ export function tableScreen(root: HTMLElement): () => void {
           const ui = seatUI.get(e.seat)
           ui?.root.classList.add('arriving')
           if (ui) ui.stack.textContent = formatChips(e.stack)
-          log(`${CHARACTERS[e.id]?.short ?? e.id} takes the empty chair with ${formatChips(e.stack)} chips.`, 'big')
+          const who = CHARACTERS[e.id]?.short ?? e.id
+          log(e.replaces === e.id
+            ? `${who} is back, and takes the old chair again with ${formatChips(e.stack)} chips.`
+            : `${who} takes the empty chair with ${formatChips(e.stack)} chips.`, 'big')
           if (!replaying) store.meet(e.id)
         }, t(BASE.level))
         break
@@ -1156,16 +1159,7 @@ export function tableScreen(root: HTMLElement): () => void {
 
   // ------------------------------------------------------------ the game
 
-  const arrivals: Arrival[] = []
-  if (active.mode === 'tour' && table.arrival) {
-    arrivals.push({
-      personality: personality(table.arrival.character),
-      afterEliminations: table.arrival.afterEliminations,
-      afterEliminationOf: table.arrival.afterEliminationOf,
-      delayHands: table.arrival.delayHands,
-      stack: table.arrival.stack,
-    })
-  }
+  const arrivals = arrivalRules(table, active.mode, active.seats)
 
   const run = new TableRun({
     table,

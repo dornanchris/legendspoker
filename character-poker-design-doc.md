@@ -108,6 +108,10 @@ avatar-unlock tracker.
      non-boss characters for that setting (this is classic Imagine Poker,
      un-confined to a single opponent lineup). Reuses the same table + dealer
      art; new opponents only.
+     *[DECISION, owner] Widened to **mix-and-match**: an open table seats
+     anyone the player has already beaten, from any table, champions
+     included, with one chair kept for someone from the room so its own
+     banter still has a voice.*
 - After all eight: **two champion tiers** — Champions' Table for the first
   four bosses, then Champions' Table for the last four — played at Death's
   transcendent table.

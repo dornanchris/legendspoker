@@ -181,6 +181,10 @@ export type TurnView = {
  * waits for the first body, Dracula watches from the fireplace, and the
  * station's intelligence takes the Robot's chair when the Robot falls.
  *
+ * A rule whose afterEliminationOf is the arriving character themselves is a
+ * RETURN: the Green Knight retakes his own chair some hands after he falls.
+ * The 'arrival' event then has replaces === id.
+ *
  * This is table CONFIGURATION, keyed by ids in data -- it is not a branch on
  * identity inside a decision, which non-negotiable #1 forbids.
  */
@@ -322,7 +326,13 @@ export class Game {
    * Only meaningful once isComplete().
    */
   missedArrivals(): string[] {
-    return this.pending.filter((p) => !p.done).map((p) => p.rule.personality.id)
+    // Someone due to come BACK has already sat here, whether they fell or
+    // never did: a table that ends before their return has not missed them.
+    const sat = (id: string) =>
+      this.busts.some((b) => b.id === id) || this.seats.some((s) => s.personality.id === id)
+    return this.pending
+      .filter((p) => !p.done && !sat(p.rule.personality.id))
+      .map((p) => p.rule.personality.id)
   }
 
   getSeats(): Seat[] {

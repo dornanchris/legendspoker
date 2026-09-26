@@ -31,10 +31,13 @@ export const SAVE_VERSION = 1
  * 2: poker-ts's hand ranking and side pots fixed (two sets of trips, the
  *    quads kicker, all-in players dropped from pots). Some pots now go to a
  *    different player, so the stacks after them differ.
- * 3: bets are read (equity against the bettor's range, the `respect` dial),
- *    the `committed` quirk counts chips put in, cheap all-ins get called.
+ * 3: bets are read (equity against the bettor's range, the `betRespect`
+ *    dial), the `committed` quirk counts chips put in, cheap all-ins get called.
+ * 4: the Green Knight keeps his appointment -- knocked out, he retakes his
+ *    own chair 50 hands later. Built on a branch that numbered it 2; merged
+ *    on top of 2 and 3 above, so every older save is released.
  */
-export const ENGINE_VERSION = 3
+export const ENGINE_VERSION = 4
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 
