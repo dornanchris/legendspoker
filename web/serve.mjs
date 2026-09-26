@@ -4,6 +4,7 @@
 import { createServer } from 'node:http'
 import { readFile, access } from 'node:fs/promises'
 import { extname, resolve, sep } from 'node:path'
+import { networkInterfaces } from 'node:os'
 import { fileURLToPath } from 'node:url'
 
 // fileURLToPath, NOT new URL(...).pathname: on Windows the latter yields
@@ -52,4 +53,12 @@ createServer(async (req, res) => {
   }
   console.log(`serving ${ROOT}`)
   console.log(`table at http://localhost:${PORT}`)
+  // A phone on the same Wi-Fi opens one of these instead. No host is passed
+  // to listen(), so the server already answers on every interface; this only
+  // saves digging the address out of ipconfig.
+  for (const addrs of Object.values(networkInterfaces())) {
+    for (const a of addrs ?? []) {
+      if (a.family === 'IPv4' && !a.internal) console.log(`  on a phone: http://${a.address}:${PORT}`)
+    }
+  }
 })
