@@ -22,11 +22,11 @@
  *
  *   npm run check:replay [seeds-per-table]
  */
-import { Game, type HandEvent, type TurnView, type Arrival } from './game.js'
+import { Game, type HandEvent, type TurnView } from './game.js'
 import { HUMAN } from './personality.js'
 import type { Decision } from './decide.js'
 import { mulberry32 } from './rng.js'
-import { TABLES, DIALOGUE, personality, type TableData } from './content.js'
+import { TABLES, DIALOGUE, personality, arrivalRules, type TableData } from './content.js'
 import { TableRun } from './director.js'
 import { preflopStrength } from './equity.js'
 import { handRank } from './marks.js'
@@ -75,15 +75,7 @@ type Run = { transcript: string[]; decisions: Decision[]; chipsOk: boolean; hand
 async function play(table: TableData, seed: number, replay: Decision[] | null): Promise<Run> {
   const transcript: string[] = []
   const decisions: Decision[] = []
-  const arrivals: Arrival[] = table.arrival
-    ? [{
-        personality: personality(table.arrival.character),
-        afterEliminations: table.arrival.afterEliminations,
-        afterEliminationOf: table.arrival.afterEliminationOf,
-        delayHands: table.arrival.delayHands,
-        stack: table.arrival.stack,
-      }]
-    : []
+  const arrivals = arrivalRules(table, 'tour', table.seats)
   const run = new TableRun({
     table,
     dialogue: DIALOGUE[table.id],

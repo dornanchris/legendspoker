@@ -36,6 +36,8 @@ export type HandFacts = {
   bluffWon: boolean
   /** The player tied at showdown and shared a pot with another hand. */
   splitPot: boolean
+  /** Characters who came back to the table at the end of this hand. */
+  returned: string[]
 }
 
 export type TableFacts = {
@@ -109,6 +111,8 @@ function handCondition(w: MarkCondition, h: HandFacts): boolean {
       return h.lostShowdownRank !== null && holeMatches(w, h.hole)
     case 'split_pot':
       return h.splitPot
+    case 'returned':
+      return w.character ? h.returned.includes(w.character) : h.returned.length > 0
     case 'all_in_win':
       return h.allInWon
     case 'knockout':
@@ -164,7 +168,7 @@ function careerCondition(w: MarkCondition, s: Save): boolean {
 
 const HAND_TYPES = new Set([
   'pot_win', 'showdown_win', 'hole_win', 'hole_loss', 'all_in_win', 'knockout',
-  'knockouts_in_hand', 'showdown_loss', 'bluff_win', 'split_pot',
+  'knockouts_in_hand', 'showdown_loss', 'bluff_win', 'split_pot', 'returned',
 ])
 const TABLE_TYPES = new Set([
   'table_won', 'table_won_missing', 'table_won_from_short', 'table_won_leading',

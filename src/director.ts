@@ -28,7 +28,7 @@
  */
 import { mulberry32 } from './rng.js'
 import { RANKINGS, type HandEvent } from './game.js'
-import type { TableData, DialogueData, Line } from './content.js'
+import { CHARACTERS, type TableData, type DialogueData, type Line } from './content.js'
 import { preflopStrength, type Card } from './equity.js'
 import { fillLine, tierFor, RESPECT_POINTS, RESPECT_THRESHOLDS, earnedName } from './tour.js'
 import { handRank, marksForHand, marksForTable, type HandFacts, type TableFacts } from './marks.js'
@@ -182,6 +182,8 @@ export class TableRun {
       showdown: null as Extract<HandEvent, { type: 'showdown' }> | null,
       deltas: new Map<number, number>(),
       busted: [] as { seat: number; id: string }[],
+      /** Knocked-out characters who came back at the end of this hand. */
+      returned: [] as string[],
     }
   }
 
@@ -463,6 +465,9 @@ export class TableRun {
     this.arrived.add(e.id)
     this.seats[e.seat] = e.id
     this.sat.add(e.id)
+    // Retaking your own chair is a RETURN, not the table's champion arriving:
+    // it plays the returner's own scene, at any table, open ones included.
+    if (e.replaces === e.id) return this.onReturn(e.id)
     if (this.mode === 'open') return []
     const beats: Beat[] = []
     // The entrance is a scene: play it in order, and stop at the first line
@@ -476,6 +481,20 @@ export class TableRun {
     if (!this.plantDone && plant[0]?.trigger === 'champion_arrival') {
       this.plantDone = true
       for (const l of plant) beats.push(this.say(l))
+    }
+    this.lastOptionalHand = this.handNo
+    return beats
+  }
+
+  /** One line per speaker of the returner's scene, in order. */
+  private onReturn(id: string): Beat[] {
+    this.h.returned.push(id)
+    const lines = CHARACTERS[id]?.returns?.lines ?? []
+    const beats: Beat[] = []
+    for (const speaker of new Set(lines.map((l) => l.speaker))) {
+      if (!this.canSpeak(speaker)) continue
+      const own = lines.filter((l) => l.speaker === speaker)
+      beats.push(this.say(own[Math.floor(this.rng() * own.length)]))
     }
     this.lastOptionalHand = this.handNo
     return beats
@@ -609,6 +628,7 @@ export class TableRun {
       lostShowdownRank,
       bluffWon,
       splitPot: !!sd?.pots.some((p) => p.winners.length > 1 && p.winners.includes(HUMAN)),
+      returned: h.returned,
     }
     for (const id of marksForHand(facts, this.earned)) {
       this.earned.add(id)

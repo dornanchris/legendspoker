@@ -311,5 +311,12 @@
     "text": "You put the Green Knight out of the game. He asked when he might return the blow. I told him a year and a day. He wrote it down.",
     "hint": "Knock out the Green Knight yourself.",
     "when": { "type": "knockout", "character": "green_knight" }
+  },
+  {
+    "id": "the_return_blow",
+    "title": "The Return Blow",
+    "text": "He came back. They do not, as a rule; I am the rule. At this table a year and a day is fifty hands, and he had counted every one of them.",
+    "hint": "See the Green Knight off, and still be sitting there when he keeps his appointment.",
+    "when": { "type": "returned", "character": "green_knight" }
   }
 ]

@@ -10,6 +10,7 @@
  * game still opens straight from disk with no server and no fetch.
  */
 import type { Personality, Tell } from './personality.js'
+import type { Arrival } from './game.js'
 import { buildQuirks, type QuirkSpec } from './quirks.js'
 
 import lincoln from '../data/characters/lincoln.json'
@@ -99,6 +100,8 @@ export type CharacterData = {
   role: 'seat' | 'champion' | 'dealer'
   /** A late arrival: kept out of the ledger until met, so it stays a surprise. */
   arrives: boolean
+  /** Comes back after being knocked out. See ReturnData. */
+  returns?: ReturnData
   origin: string
   era: string
   dials: Dials
@@ -114,6 +117,19 @@ export type CharacterData = {
     prop: string
     public_domain: string
   }
+}
+
+/**
+ * A character who comes BACK after being knocked out: the Green Knight took
+ * the first blow at Camelot and rides in again for his own. They retake their
+ * old chair this many hands after they fell, if the table is still going.
+ * It travels with the character, so it happens at any table they sit at.
+ */
+export type ReturnData = {
+  afterHands: number
+  stack: 'average' | number
+  /** The scene: one line per speaker, in the order the speakers first appear. */
+  lines: Line[]
 }
 
 export type ArrivalData = {
@@ -300,4 +316,29 @@ export function fullCast(table: TableData): string[] {
   const cast = [...table.seats]
   if (table.arrival && !cast.includes(table.arrival.character)) cast.push(table.arrival.character)
   return cast
+}
+
+/**
+ * The late-arrival rules for one sitting: a tour table's own champion
+ * arrival, plus a return for anyone seated whose data says they come back.
+ * Returns are configuration keyed by ids in data, like arrivals -- never a
+ * branch on identity in the engine.
+ */
+export function arrivalRules(table: TableData, mode: 'tour' | 'open', seats: string[]): Arrival[] {
+  const a = mode === 'tour' ? table.arrival : null
+  const rules: Arrival[] = []
+  if (a) {
+    rules.push({
+      personality: personality(a.character),
+      afterEliminations: a.afterEliminations,
+      afterEliminationOf: a.afterEliminationOf,
+      delayHands: a.delayHands,
+      stack: a.stack,
+    })
+  }
+  for (const id of a ? [...seats, a.character] : seats) {
+    const r = CHARACTERS[id]?.returns
+    if (r) rules.push({ personality: personality(id), afterEliminationOf: id, delayHands: r.afterHands, stack: r.stack })
+  }
+  return rules
 }
