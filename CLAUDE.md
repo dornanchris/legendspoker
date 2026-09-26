@@ -138,6 +138,8 @@ Stack: Node 22, TypeScript, ESM, run via `tsx`. `poker-ts` v1.5.0 for rules
 / AF 0.24 (calling station), Cleopatra VPIP 62.7 / AF 3.18 (aggressive).
 After bets started being read (ENGINE_VERSION 3), `npm run sim 2000`: Dracula
 35.2 / 0.73, Snowman 75.1 / 0.23, Cleopatra 63.7 / 3.54 -- same three people.
+After bets got reasons (ENGINE_VERSION 7): Dracula 18.4 / 0.67, Snowman
+76.0 / 0.11, Cleopatra 53.0 / 3.18 -- still three, all a little tighter.
 
 **Phase 3a is complete: the tournament model.** Stacks persist, players are
 eliminated, blinds climb on a hand count (each table's `handsPerLevel`: 9 at
@@ -268,13 +270,18 @@ real device.
   all`) — enough for VPIP/AF, not for win rates. Retune on more hands. The
   early tables keep deliberate caricatures (Roosevelt, Lancelot, the Cyclops
   lose heavily to bots) because beginner tables should be exploitable.
-- **Tight play dominates heads-up in this engine.** Every aggressive Death
-  lost to Lincoln 2:1. The tuned Death is tight and patient with a
-  check-raise (dials in `data/characters/death.json`). Heads-up at the
-  finale's 5000 buy-in, 60 matches each, ENGINE_VERSION 3: Death beats
-  Lincoln 65%, Washington 62%, Roosevelt 77%, and is level with Arthur (47%,
-  inside the noise of 60 matches). Under version 2 it was 60/58/43/57. The
-  finale buy-in is 5000 so the match runs long enough for skill to show.
+- **Tight play dominates heads-up in this engine, and Death has no clear
+  edge -- OPEN.** Every aggressive Death lost to Lincoln 2:1. Death is
+  tight, check-raises, presses heads-up and punishes folders (dials in
+  `data/characters/death.json`). At the finale's pace (5000 buy-in, 12
+  hands a level), ENGINE_VERSION 7, 300 matches each (+-3 pts): Death beats
+  Lincoln 48%, Washington 57%, Arthur 54%, Roosevelt 64%. Much of his older
+  edge came from opponents' bugs (`patient` never fired against min-raises,
+  his check-raise fed on air bets); a dozen dial and quirk mixes did not buy
+  it back. A real boss edge needs a new skill lever: position awareness,
+  per-opponent adaptivity, or fold-rate reading that engages sooner than 20
+  faced bets. The finale is against the PLAYER, not Lincoln, so this is
+  about how hard Death feels, not whether the finale works.
 - **Blind pace (the owner: "blinds need to go up sooner").** Levels last 8-9
   hands (12 at the finale), under two orbits five-handed; the first three
   orbits are still 100bb/67bb deep. With a scripted player seated, tables
@@ -356,9 +363,25 @@ real device.
   measures the stack, and the quirk has a `minEquity` floor (default 0.2):
   stubborn, not suicidal. The "won't fold 8-3" calls were NOT this quirk --
   they were the any-two-cards equity above.
-- **Still odd, not yet addressed:** the AI "probes" -- checked to with
-  anything over ~20% equity it bets about half the pot at a rate set by its
-  aggression, so many half-pot bets are air.
+- **Bets have reasons (ENGINE_VERSION 7; the owner's Baker Street notes:
+  Javert tight yet raising bottom pair, Nemo raising 7-2, predictable
+  sizing).** With nothing to call, the value bar used to fall to about 20%
+  equity, so the AI raised junk from the big blind and bet air at its
+  aggression rate. Now: before the flop, unraised, the bar is a hand worth
+  opening; after it, a share above an even split of the pot (heads-up about
+  top pair; tightness is kept out -- it decides which pots to enter, not
+  whether to bet a made hand). `bluffWeight` chooses bluffs: by strength
+  score before the flop (7-2 gets none), then draws, then continuation bets
+  by the player with the initiative, and on the river only hands without
+  showdown value. Raises call first and then add a share of the pot
+  (`raiseTo`, also used by every quirk's `potFraction`): min-raises were 45%
+  of all raises and handed draws their price. Size comes from aggression,
+  board wetness and a wobble, never from hand strength, so a bluff is sized
+  like a value bet. Checked to, how OFTEN they bet now follows the hand
+  (air 9%, top pair 39%) where it used to be flat. Still true: equity when
+  checked to is against random hands; fold-rate reading waits for 20 faced
+  bets; check_raise / overbet / charge sizes are true pot raises now and
+  were not retuned; no position awareness.
 - **Deals are reproducible — FIXED, same patch file.** poker-ts shuffled with
   `crypto.randomInt` and `Table` hardcoded its own `Deck`, so nothing was
   seedable. `Deck` already accepted a shuffle; `Table` just never passed one
@@ -401,6 +424,10 @@ real device.
   has its own seeded stream (seed XOR a constant); ambient idles and
   "thinking long" use Math.random. Picking a line from the game RNG would
   change the next card. `check:replay` catches it.
+- `patient` only counts a raise costing more than `openBB` (2) big blinds to
+  call: an ordinary open against the big blind is not a test of patience.
+- A quirk's `potFraction` facing a bet is call + fraction x the pot after
+  the call (`raiseTo`), not a fraction of a pot that already holds the bet.
 - **The table keeps TWO copies of where the chips are.** The engine runs
   ahead of the screen within a hand, so `chipsAt` in `table.ts` follows the
   events (updated as each arrives) and `shown` follows the screen (updated

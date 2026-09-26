@@ -40,8 +40,10 @@ export const SAVE_VERSION = 1
  *    callouts, from the same branch, which numbered them 3.
  * 6: blinds climb every 8-9 hands (12 at the finale) instead of 22-30; the
  *    Green Knight returns after 20 hands, not 50.
+ * 7: bets have reasons -- a real value bar, chosen bluffs, raises that call
+ *    first and then add; `patient` spares ordinary opens; Death re-dialled.
  */
-export const ENGINE_VERSION = 6
+export const ENGINE_VERSION = 7
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 
