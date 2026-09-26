@@ -38,8 +38,10 @@ export const SAVE_VERSION = 1
  *    on top of 2 and 3 above, so every older save is released.
  * 5: the uninvited guest (the six-seven banishment and Loki) and the table's
  *    callouts, from the same branch, which numbered them 3.
+ * 6: blinds climb every 8-9 hands (12 at the finale) instead of 22-30; the
+ *    Green Knight returns after 20 hands, not 50.
  */
-export const ENGINE_VERSION = 5
+export const ENGINE_VERSION = 6
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 
