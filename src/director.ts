@@ -661,7 +661,9 @@ export class TableRun {
       lostShowdownRank,
       bluffWon,
       splitPot: !!sd?.pots.some((p) => p.winners.length > 1 && p.winners.includes(HUMAN)),
-      returned: h.returned,
+      // A return is seated at the end of the hand, after its busts: a player
+      // knocked out in that same hand was not there to see it.
+      returned: h.busted.some((b) => b.seat === HUMAN) ? [] : h.returned,
     }
     for (const id of marksForHand(facts, this.earned)) {
       this.earned.add(id)
