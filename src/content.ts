@@ -114,7 +114,18 @@ export type CharacterData = {
     prop: string
     public_domain: string
   }
+  /**
+   * What they say as they act -- "Raise.", "Too rich for my blood." -- keyed
+   * by the PUBLIC action. Chosen from public information only (src/chatter.ts)
+   * and never allowed to claim or deny strength. A line wholly in [brackets]
+   * is a stage direction: a gesture, for those who do not speak.
+   */
+  callouts?: Callouts
 }
+
+/** The public actions a callout can answer. all_in is any action that empties the stack. */
+export type CalloutAction = 'fold' | 'check' | 'call' | 'bet' | 'raise' | 'all_in'
+export type Callouts = Partial<Record<CalloutAction, string[]>>
 
 export type ArrivalData = {
   character: string
@@ -168,6 +179,8 @@ export type Line = {
   sequence?: string
   /** reads_you only: the observed behaviour this line describes. */
   when?: string
+  /** needles only, on an exchange's first line: the tablemate being needled. */
+  to?: string
 }
 
 export type DialogueData = {
@@ -175,7 +188,17 @@ export type DialogueData = {
   earned_names?: { tier_1?: string; tier_3?: string }
   table_intro?: Line[]
   dealer_plant?: Line[]
-  banter_pairs?: Record<string, { relationship?: string; exchanges: Line[][] }>
+  banter_pairs?: Record<string, {
+    relationship?: string
+    exchanges: Line[][]
+    /**
+     * Old friends, needling. An exchange fires after a hand in which its first
+     * speaker took the pot and its `to` folded to that speaker's bet or raise:
+     * public facts only, said between hands. Only pairs with a relationship
+     * have them, which is what keeps them from becoming "nice hand".
+     */
+    needles?: Line[][]
+  }>
   player_directed?: Record<string, Line[]>
   death_asides?: Line[]
   champion_arrival?: Line[]
