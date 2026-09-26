@@ -495,7 +495,8 @@ export class TableRun {
     const showdownWins: HandSummary['showdownWins'] = []
     if (sd) {
       sd.pots.forEach((p) => {
-        if (!p.winners.includes(HUMAN)) return
+        // A bet nobody could call coming back is the player's own money, not a pot won.
+        if (!p.winners.includes(HUMAN) || p.returned) return
         const contested = !!p.ranking && humanRevealed && sd.revealed.length > 1
         const rank = p.ranking ? RANKINGS.indexOf(p.ranking) : -1
         wonPots.push({

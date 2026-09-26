@@ -27,8 +27,12 @@ export const SAVE_VERSION = 1
  * cast of a table, or anything else that draws from the game's RNG. A seat
  * saved under a different number is not replayed -- it would deal different
  * cards and the "save" would be a lie -- and the player is told why.
+ *
+ * 2: poker-ts's hand ranking and side pots fixed (two sets of trips, the
+ *    quads kicker, all-in players dropped from pots). Some pots now go to a
+ *    different player, so the stacks after them differ.
  */
-export const ENGINE_VERSION = 1
+export const ENGINE_VERSION = 2
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

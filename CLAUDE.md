@@ -90,7 +90,9 @@ src/
   sim.ts          `npm run sim [hands] [table|all]` — balance test (cash)
   play.ts         `npm run play [hands]` — watchable CLI with tells
   tourney.ts      `npm run tourney [tables] [table]` — every table must end
-  pot-conservation.ts `npm run check:pots` — guards the poker-ts pot patch
+  pot-conservation.ts `npm run check:pots` — guards the poker-ts pot patch:
+                  chips conserved AND paid to the right player
+  hand-check.ts   `npm run check:hands` — poker-ts ranks hands as pokersolver does
   data-check.ts   `npm run check:data` — the type checker for content
   replay-check.ts `npm run check:replay` — save mid-hand, resume, identical
   roster.ts       `npm run roster` — regenerates ROSTER.md from data/
@@ -243,8 +245,36 @@ real device.
   uneven stacks. Fix lives in `patches/poker-ts+1.5.0.patch`, applied by
   `patch-package` on `npm install`; `npm run check:pots` is the regression
   guard. 1.5.0 is the latest release, so there is no upgrade to take instead.
-  **If you ever bump poker-ts, re-run `npm run check:pots`** — the patch is
-  pinned to 1.5.0 and will refuse to apply to a different version.
+  **If you ever bump poker-ts, re-run `npm run check:pots` and
+  `npm run check:hands`** — the patch is pinned to 1.5.0 and will refuse to
+  apply to a different version.
+- **poker-ts paid side pots to the wrong player — FIXED, same patch file.**
+  Every betting round it REPLACED the last pot's eligible list with whoever
+  bet that round (or, if nobody bet, whoever could still act), and both
+  leave out anyone all in. An all-in called for exactly their stack was
+  dropped from the only pot they could win as soon as a later street was
+  checked through; the chip-loss fix above then skipped anyone all in from an
+  earlier street at showdown. Chips were conserved -- just paid to someone
+  else -- so the conservation check never saw it: about 1 showdown in 240 at
+  the tour tables, 1 hand in 20 with random play. The dealer now rebuilds the
+  pots from what each player put in after every collection (the textbook
+  method), and pays winners through its own record of who was dealt in.
+  `check:pots` now settles every hand independently and compares.
+- **poker-ts misranked hands — FIXED, same patch file.** Two sets of trips
+  among seven cards (9-9-9 and 4-4-4) was scored three of a kind, not a full
+  house, so nines full lost to fours full; four of a kind took the wrong
+  kicker. `npm run check:hands` compares poker-ts with pokersolver.
+- **A bet nobody could call is RETURNED, not won.** poker-ts makes it a side
+  pot only the bettor reached and "wins" it with their hand, which read as
+  "Arthur wins side pot 1 with two pair". `game.ts` marks such a pot
+  `returned`; the table says "takes back", and the director does not count
+  it as a pot won.
+- **The `committed` quirk is effectively dead -- NOT fixed.** `contributed`
+  in `game.ts` adds the change in a seat's totalChips per action, and a bet
+  does not change totalChips (stack + betSize), so it only ever holds the
+  blinds. `decide()` passes it as `committed`, so the "will not back down
+  once pot-committed" quirk almost never fires. Fixing it changes how every
+  character with that quirk plays: bump ENGINE_VERSION and retune on sims.
 - **Deals are reproducible — FIXED, same patch file.** poker-ts shuffled with
   `crypto.randomInt` and `Table` hardcoded its own `Deck`, so nothing was
   seedable. `Deck` already accepted a shuffle; `Table` just never passed one
@@ -326,6 +356,9 @@ real device.
   runs the board out internally and no further street fires, so a display
   driven only by those events freezes on the flop. The showdown event carries
   the final board for exactly this reason.
+- **Conserved is not correct.** Chips can add up and still go to the wrong
+  player; that is how the side-pot bug hid behind a passing conservation
+  check. Chip-handling code needs a check of WHO is paid, not only how much.
 - Any new chip-handling code needs a conservation check. `tourney.ts` has one,
   and it is the only reason the poker-ts pot bug was found rather than shipped.
 - `patches/` is load-bearing. `npm install` runs `patch-package` via

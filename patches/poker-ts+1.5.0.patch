@@ -29,38 +29,170 @@ index 5a0570b..1dc0e75 100644
      Poker.prototype.playerToAct = function () {
          return this._table.playerToAct();
 diff --git a/node_modules/poker-ts/dist/lib/dealer.js b/node_modules/poker-ts/dist/lib/dealer.js
-index f51d9e3..4e914fa 100644
+index f51d9e3..ec23000 100644
 --- a/node_modules/poker-ts/dist/lib/dealer.js
 +++ b/node_modules/poker-ts/dist/lib/dealer.js
-@@ -256,7 +256,27 @@ var Dealer = /** @class */ (function () {
+@@ -31,6 +31,7 @@ exports.Action = exports.ActionRange = void 0;
+ var community_cards_1 = require("./community-cards");
+ var betting_round_1 = __importStar(require("./betting-round"));
+ var pot_manager_1 = __importDefault(require("./pot-manager"));
++var pot_1 = __importDefault(require("./pot"));
+ var assert_1 = __importDefault(require("assert"));
+ var hand_1 = __importDefault(require("./hand"));
+ var array_1 = require("../util/array");
+@@ -72,6 +73,13 @@ var Dealer = /** @class */ (function () {
+         this._deck = deck;
+         this._communityCards = communityCards;
+         this._potManager = new pot_manager_1.default();
++        // PATCHED: remember who was dealt in, what they sat down with, and
++        // who folded. _players cannot answer any of these once the hand is
++        // under way: every betting round rebuilds it with ALL-IN players
++        // nulled out, exactly as if they had folded. See _rebuildPots.
++        this._seated = players.slice();
++        this._startChips = players.map(function (player) { return player ? player.totalChips() : 0; });
++        this._folded = players.map(function () { return false; });
+         this._holeCards = new Array(numSeats).fill(null);
+         this._winners = [];
+         assert_1.default(deck.length === 52, 'Deck must be whole');
+@@ -201,6 +209,7 @@ var Dealer = /** @class */ (function () {
+             assert_1.default(foldingPlayer !== null);
+             this._potManager.betFolded(foldingPlayer.betSize());
+             foldingPlayer.takeFromBet(foldingPlayer.betSize());
++            this._folded[this.playerToAct()] = true;
+             this._players[this.playerToAct()] = null;
+             this._bettingRound.actionTaken(betting_round_1.Action.LEAVE);
+         }
+@@ -210,6 +219,7 @@ var Dealer = /** @class */ (function () {
+         assert_1.default(!this._bettingRoundsCompleted, 'Betting rounds must not be completed');
+         assert_1.default(!this.bettingRoundInProgress(), 'Betting round must not be in progress');
+         this._potManager.collectBetsForm(this._players);
++        this._rebuildPots();
+         if (((_b = (_a = this._bettingRound) === null || _a === void 0 ? void 0 : _a.numActivePlayers()) !== null && _b !== void 0 ? _b : 0) <= 1) {
+             this._roundOfBetting = community_cards_1.RoundOfBetting.RIVER;
+             // If there is only one pot, and there is only one player in it...
+@@ -249,14 +259,22 @@ var Dealer = /** @class */ (function () {
+         if (this._potManager.pots().length === 1 && this._potManager.pots()[0].eligiblePlayers().length === 1) {
+             // No need to evaluate the hand. There is only one player.
+             var index = this._potManager.pots()[0].eligiblePlayers()[0];
+-            var player = this._players[index];
++            var player = this._seated[index];
+             assert_1.default(player !== null);
+             player.addToStack(this._potManager.pots()[0].size());
+             return;
              // TODO: Also, no reveals in this case. Reveals are only necessary when there is >=2 players.
          }
          var _loop_1 = function (pot) {
 -            var playerResults = pot.eligiblePlayers().map(function (seatIndex) {
-+            // PATCHED: a pot's eligible list is fixed when its bets are
-+            // collected, and a player who folds in a LATER betting round is
-+            // never removed from it. Their hole cards survive too, so showdown
-+            // could pick a folded player as the winner and then pay them via
-+            // `this._players[seatIndex]?.addToStack(...)` -- which is null for
-+            // a folder, so the optional chaining silently destroyed the pot.
-+            // Folding is the only thing that nulls _players[seat], so the real
-+            // contenders are the eligible seats that still have a player.
++            // PATCHED: pots are rebuilt from what each player put in (see
++            // _rebuildPots), so a pot's eligible list is exactly the players
++            // still in the hand who covered it -- folded players are never on
++            // it, all-in players always are. Pay through _seated: _players
++            // has all-in players nulled, which used to lose their winnings.
 +            var contenders = pot.eligiblePlayers().filter(function (seatIndex) {
-+                return _this._players[seatIndex] != null;
++                return !_this._folded[seatIndex];
 +            });
-+            // If every eligible player folded, the chips still have to go
-+            // somewhere: the players left in the hand are the only candidates.
-+            if (contenders.length === 0) {
-+                contenders = _this._players.reduce(function (acc, player, index) {
-+                    if (player != null)
-+                        acc.push(index);
-+                    return acc;
-+                }, []);
-+            }
 +            var playerResults = contenders.map(function (seatIndex) {
                  return [seatIndex, hand_1.default.create(_this._holeCards[seatIndex], _this._communityCards)];
              });
              playerResults.sort(function (_a, _b) {
+@@ -276,7 +294,7 @@ var Dealer = /** @class */ (function () {
+             winningPlayerResults.forEach(function (playerResult) {
+                 var _a;
+                 var seatIndex = playerResult[0];
+-                (_a = _this._players[seatIndex]) === null || _a === void 0 ? void 0 : _a.addToStack(payout);
++                _this._seated[seatIndex].addToStack(payout);
+             });
+             this_1._winners.push(winningPlayerResults.map(function (playerResult) {
+                 var seatIndex = playerResult[0];
+@@ -288,7 +306,7 @@ var Dealer = /** @class */ (function () {
+                 var winners_1 = new Array(this_1._players.length).fill(null);
+                 winningPlayerResults.forEach(function (playerResult) {
+                     var seatIndex = playerResult[0];
+-                    winners_1[seatIndex] = _this._players[seatIndex];
++                    winners_1[seatIndex] = _this._seated[seatIndex];
+                 });
+                 var seat = this_1._button;
+                 while (oddChips !== 0) {
+@@ -306,6 +324,51 @@ var Dealer = /** @class */ (function () {
+             _loop_1(pot);
+         }
+     };
++    // PATCHED: rebuild the pots from what every player has put in so far.
++    //
++    // poker-ts builds pots incrementally, and gets side pots wrong: each round
++    // it REPLACES the last pot's eligible list with "whoever bet this round",
++    // or with the players still able to act if nobody bet. Both leave out a
++    // player who is all in, so an all-in player called for exactly their stack
++    // was dropped from the only pot they could win the moment a later street
++    // was checked through -- they paid in and could never be paid out.
++    //
++    // This is the textbook method instead: one pot per distinct amount the
++    // players still in the hand have put in, each contested by everyone still
++    // in who put in at least that much. Folded chips count toward the pots
++    // they reached. Called after every collection, so pots() is always right.
++    Dealer.prototype._rebuildPots = function () {
++        var _this = this;
++        var put = this._seated.map(function (player, seat) {
++            return player ? _this._startChips[seat] - player.totalChips() : 0;
++        });
++        var live = [];
++        this._seated.forEach(function (player, seat) {
++            if (player && !_this._folded[seat]) live.push(seat);
++        });
++        var levels = live.map(function (seat) { return put[seat]; })
++            .filter(function (amount, i, all) { return amount > 0 && all.indexOf(amount) === i; })
++            .sort(function (a, b) { return a - b; });
++        var total = put.reduce(function (a, b) { return a + b; }, 0);
++        if (levels.length === 0 || total === 0) return;
++        var pots = [];
++        var previous = 0;
++        levels.forEach(function (level) {
++            var pot = new pot_1.default();
++            pot.add(put.reduce(function (sum, amount) {
++                return sum + Math.min(amount, level) - Math.min(amount, previous);
++            }, 0));
++            pot._eligiblePlayers = live.filter(function (seat) { return put[seat] >= level; });
++            pots.push(pot);
++            previous = level;
++        });
++        // A folded player cannot have put in more than everyone still in, but
++        // if they somehow did, the chips stay in play rather than vanish.
++        pots[pots.length - 1].add(put.reduce(function (sum, amount) {
++            return sum + Math.max(0, amount - previous);
++        }, 0));
++        this._potManager._pots = pots;
++    };
+     Dealer.prototype.nextOrWrap = function (seat) {
+         return array_1.nextOrWrap(this._players, seat);
+     };
+diff --git a/node_modules/poker-ts/dist/lib/hand.js b/node_modules/poker-ts/dist/lib/hand.js
+index a692c7f..44daf54 100644
+--- a/node_modules/poker-ts/dist/lib/hand.js
++++ b/node_modules/poker-ts/dist/lib/hand.js
+@@ -167,12 +167,21 @@ var Hand = /** @class */ (function () {
+         var ranking;
+         var count = Hand.nextRank(cards).count;
+         if (count === 4) {
+-            cards = __spreadArray(__spreadArray([], cards.slice(0, 4)), cards.slice(5).sort(function (c1, c2) { return c2.rank - c1.rank; }));
++            // PATCHED: the kicker is the best of the OTHER THREE cards. This
++            // took slice(5), skipping cards[4] -- which, when the other three
++            // are all different ranks, is exactly the highest one, so AAAA-K
++            // was scored as AAAA-Q.
++            cards = __spreadArray(__spreadArray([], cards.slice(0, 4)), cards.slice(4).sort(function (c1, c2) { return c2.rank - c1.rank; }));
+             ranking = HandRanking.FOUR_OF_A_KIND;
+         }
+         else if (count === 3) {
+             var tmp = Hand.nextRank(cards.slice(-4));
+-            if (tmp.count === 2) {
++            // PATCHED: >= 2, not === 2. Two sets of trips among seven cards
++            // (9-9-9 and 4-4-4) is a full house -- nines full of fours -- but
++            // the next group has three cards, not two, so it was ranked three
++            // of a kind and lost to fours full of nines. The cards are already
++            // sorted higher trips first, so the best five need no change.
++            if (tmp.count >= 2) {
+                 ranking = HandRanking.FULL_HOUSE;
+             }
+             else {
 diff --git a/node_modules/poker-ts/dist/lib/table.js b/node_modules/poker-ts/dist/lib/table.js
 index fdf337e..d963da3 100644
 --- a/node_modules/poker-ts/dist/lib/table.js

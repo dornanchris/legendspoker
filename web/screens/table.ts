@@ -772,10 +772,32 @@ export function tableScreen(root: HTMLElement): () => void {
           step(() => dealBoard(cards), room(boardTime(cards.length) + MOVE.runout, BASE.street))
         }
         // Beat two, once per pot: light the five cards that won it, and push
-        // the chips to whoever won them.
-        e.pots.forEach((pot, i) => {
+        // the chips to whoever won them. A bet nobody could call goes back
+        // first, and quietly: it was never won, so it is not called a pot.
+        const real = e.pots.filter((p) => !p.returned)
+        const ordered = [...e.pots.filter((p) => p.returned), ...real]
+        ordered.forEach((pot) => {
           chipsAt.pot = Math.max(0, chipsAt.pot - pot.amount)
           const left = chipsAt.pot
+          const i = real.indexOf(pot)
+          if (pot.returned) {
+            step(() => {
+              const w = pot.winners[0]
+              log(`${nameOf(w)} ${w === HUMAN_SEAT ? 'take' : 'takes'} back ${formatChips(pot.amount)} — more than anyone could call`)
+              shown.pot = left
+              drawPot()
+              const ms = move(MOVE.collect)
+              const gen = stackGen
+              void pushChips(els.potPile, stackEl(w), pot.amount, ms).then(() => {
+                if (gen !== stackGen) return
+                shownStacks[w] = (shownStacks[w] ?? 0) + pot.amount
+                drawStack(w)
+              })
+              if (loud) sound.chips(chipCount(pot.amount, bigBlind), ms / 1000)
+              els.pot.textContent = formatChips(left)
+            }, t(MOVE.collect + 200))
+            return
+          }
           step(() => {
             clearWin()
             if (pot.cards) {
@@ -784,7 +806,7 @@ export function tableScreen(root: HTMLElement): () => void {
               }
             }
             for (const w of pot.winners) seatUI.get(w)?.root.classList.add('winner')
-            const label = e.pots.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
+            const label = real.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
             const withWhat = pot.ranking
               ? ` with ${pot.ranking}${pot.cards ? ` — ${handText(pot.cards)}` : ''}`
               : ' uncontested'

@@ -125,10 +125,20 @@ export type HandEvent =
         amount: number
         /** More than one seat here means the pot was SPLIT. */
         winners: number[]
-        /** e.g. "two pair". Absent when the pot was never contested. */
+        /**
+         * e.g. "two pair". Absent when the pot was never contested: everyone
+         * else folded, or only one player still in had put in enough to
+         * reach it.
+         */
         ranking?: string
         /** The five cards that actually won it, for highlighting. */
         cards?: Card[]
+        /**
+         * Not won at all: chips one player bet that nobody could match, going
+         * back to them. A side pot only they reached, made of only their own
+         * chips. Never a win, never a showdown.
+         */
+        returned?: boolean
       }[]
     }
   /**
@@ -612,6 +622,9 @@ export class Game {
             revealed.push({ seat: i, hole: hole[i]! })
           }
         }
+        // What each seat put in this hand: every bet has been collected by
+        // now, so it is simply what they had going in less what they hold.
+        const putIn = this.stacks().map((chips, i) => (before[i] ?? 0) - chips)
         // Pot sizes have to be read BEFORE the showdown pays them out.
         const potsBefore = this.table
           .pots()
@@ -621,18 +634,24 @@ export class Game {
           const perPot: any[] = this.table.winners() ?? []
           const pots = potsBefore.map((p: any, i: number) => {
             const won = perPot[i]
-            if (!won || won.length === 0) {
-              // No winners recorded means the pot was uncontested -- poker-ts
-              // pays the lone eligible player without evaluating a hand.
-              //
-              // eligiblePlayers is the stale list that caused the pot bug in
-              // the first place: it can still name someone who folded later.
-              // Only seats that reached showdown with cards are real
-              // candidates, or we would announce the wrong winner.
-              const live = p.eligible.filter((seat: number) =>
-                revealed.some((r) => r.seat === seat),
-              )
-              return { amount: p.size, winners: (live.length ? live : p.eligible).slice(0, 1) }
+            // Only seats that reached showdown with cards can win a pot.
+            const live = p.eligible.filter((seat: number) =>
+              revealed.some((r) => r.seat === seat),
+            )
+            if (!won || won.length === 0 || live.length < 2) {
+              // Nobody contested it. poker-ts either paid the one player
+              // without evaluating a hand (no winners recorded) or evaluated
+              // a hand against nobody -- which is how a bet nobody could call
+              // came back announced as "wins side pot 1 with two pair".
+              const winners: number[] = won?.length
+                ? won.map((w: any) => w[0] as number)
+                : (live.length ? live : p.eligible).slice(0, 1)
+              const w = winners[0]
+              const othersPut = Math.max(0, ...putIn.filter((_, seat) => seat !== w))
+              const returned = i > 0 && p.size <= putIn[w] - othersPut
+              return returned
+                ? { amount: p.size, winners, returned: true }
+                : { amount: p.size, winners }
             }
             return {
               amount: p.size,
