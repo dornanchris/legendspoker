@@ -11,7 +11,7 @@ import { marksForCareer } from '../../src/marks.js'
 import * as store from '../store.js'
 import { h, go, sleep, formatChips, ordinal } from '../dom.js'
 import * as sound from '../sound.js'
-import { fly, flipOver, centre, chipDisc, flightColours, drawPile, chipCount, type Pt } from '../fx.js'
+import { fly as launch, flipOver as turnOver, centre, chipDisc, flightColours, drawPile, chipCount, type Pt } from '../fx.js'
 import { setResult } from './results.js'
 import { markTitle } from './shared.js'
 
@@ -75,6 +75,17 @@ function betSpot(): HTMLElement {
 
 const nudge = (p: Pt, by: number): Pt => ({ x: p.x + (Math.random() * 2 - 1) * by, y: p.y + (Math.random() * 2 - 1) * by })
 
+/**
+ * A tell or idle as the seat shows it. Most read after the name ("Lincoln
+ * strokes his beard"); some are about something else and read on their own
+ * -- "Medusa the snakes in her hair go still" does not. The seat box already
+ * says whose it is. The ledger keeps the words as written.
+ */
+const STANDS_ALONE = /^(a|an|all|each|every|he|her|his|it|its|nothing|one|sea|she|something|somewhere|the|their|there|they|three|two)\b/i
+function tellLine(name: string, text: string): string {
+  return STANDS_ALONE.test(text) ? text[0].toUpperCase() + text.slice(1) : `${name} ${text}`
+}
+
 function readingTime(text: string): number {
   return Math.max(1500, Math.min(5200, 900 + text.length * 48))
 }
@@ -128,6 +139,20 @@ export function tableScreen(root: HTMLElement): () => void {
     timers.add(t)
     return t
   }
+
+  // Everything still moving on the felt. A step's delay can be shorter than
+  // the flights it launched (chips stagger in one after another), so the
+  // player's turn waits for these too: never "20 to call" over an empty felt.
+  const moving = new Set<Promise<void>>()
+  const track = (p: Promise<void>) => {
+    moving.add(p)
+    void p.finally(() => moving.delete(p))
+    return p
+  }
+  const fly = (...a: Parameters<typeof launch>) => track(launch(...a))
+  const flipOver = (...a: Parameters<typeof turnOver>) => track(turnOver(...a))
+  /** Resolves once everything in flight has landed -- or after 1.5s, whatever happens. */
+  const landed = () => Promise.race([Promise.all([...moving]), sleep(1500)])
 
   // ------------------------------------------------------------ DOM
 
@@ -439,7 +464,7 @@ export function tableScreen(root: HTMLElement): () => void {
   function showTell(seat: number, text: string, real: boolean) {
     const ui = seatUI.get(seat)
     if (!ui) return
-    ui.tell.textContent = `${nameOf(seat)} ${text}`
+    ui.tell.textContent = tellLine(nameOf(seat), text)
     ui.tell.classList.remove('fade')
     void ui.tell.offsetWidth
     ui.tell.classList.add('fade')
@@ -587,6 +612,9 @@ export function tableScreen(root: HTMLElement): () => void {
       out.add(e.seat)
       if (e.seat === HUMAN_SEAT) humanPlace = e.place
       seatUI.get(e.seat)?.root.classList.add('out')
+      // Their last fidget goes with them rather than lingering on an empty chair.
+      const gone = seatUI.get(e.seat)
+      if (gone) { gone.tell.textContent = ''; gone.tellUntil = 0 }
       // Whatever blind they posted on the way out is not theirs any more.
       const blind = blindEl(e.seat)
       if (blind) blind.hidden = true
@@ -1109,7 +1137,7 @@ export function tableScreen(root: HTMLElement): () => void {
     if (!resolveTurn) return
     if (thinkingTimer) clearTimeout(thinkingTimer)
     els.buttons.replaceChildren()
-    els.raiseRow.hidden = true
+    closeRaise()
     els.prompt.textContent = ''
     d.thinkMs = Math.round(performance.now() - turnStarted)
     // Write the decision down BEFORE the engine sees it: if the app dies in
@@ -1147,6 +1175,7 @@ export function tableScreen(root: HTMLElement): () => void {
     // The only place the two clocks meet, and a one-way wait.
     setFF(false)
     await settled()
+    await landed()
     if (!alive) return new Promise<Decision>(() => {})
     sound.yourTurn()
 
@@ -1178,7 +1207,7 @@ export function tableScreen(root: HTMLElement): () => void {
       if (!raise) return
       endTurn({ action: raise, betSize: Number(els.slider.value), reason: 'human' })
     }
-    els.raiseCancel.onclick = () => { els.raiseRow.hidden = true }
+    els.raiseCancel.onclick = closeRaise
 
     turnStarted = performance.now()
     thinkingTimer = later(() => {
@@ -1189,8 +1218,19 @@ export function tableScreen(root: HTMLElement): () => void {
     return new Promise<Decision>((resolve) => { resolveTurn = resolve })
   }
 
+  /**
+   * The sizing row takes the buttons' place while it is open, rather than
+   * sitting under them: on a phone held sideways there is not the height for
+   * both, and the extra row pushed the player's cards over the board.
+   */
+  function closeRaise() {
+    els.raiseRow.hidden = true
+    els.buttons.hidden = false
+  }
+
   function openRaise(view: TurnView, raise: Action) {
     els.raiseRow.hidden = false
+    els.buttons.hidden = true
     const s = els.slider
     s.min = String(view.minRaise)
     s.max = String(view.maxRaise)
@@ -1218,7 +1258,7 @@ export function tableScreen(root: HTMLElement): () => void {
     if ((ev.target as HTMLElement)?.tagName === 'INPUT' && ev.key !== 'Enter' && ev.key !== 'Escape') return
     const k = ev.key.toLowerCase()
     if (k === 'enter' && !els.raiseRow.hidden) { els.raiseConfirm.click(); ev.preventDefault(); return }
-    if (k === 'escape' && !els.raiseRow.hidden) { els.raiseRow.hidden = true; return }
+    if (k === 'escape' && !els.raiseRow.hidden) { closeRaise(); return }
     const btn = els.buttons.querySelector<HTMLButtonElement>(`button[data-key="${k}"]`)
     if (btn) { btn.click(); ev.preventDefault() }
   }
@@ -1309,8 +1349,11 @@ export function tableScreen(root: HTMLElement): () => void {
 
   function finishTable() {
     els.buttons.replaceChildren()
-    els.raiseRow.hidden = true
+    closeRaise()
     setFF(false)
+    // The table is over: nothing left to fast-forward, and nobody's blind.
+    els.ff.hidden = true
+    setBlinds(-1, -1)
     const won = game.survivors()[0] === HUMAN_SEAT && game.isComplete()
     const missed = game.missedArrivals()
     const { beats, facts } = run.finish(won, game.handCount(), missed)

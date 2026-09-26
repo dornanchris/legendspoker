@@ -282,6 +282,21 @@ real device.
   per-opponent adaptivity, or fold-rate reading that engages sooner than 20
   faced bets. The finale is against the PLAYER, not Lincoln, so this is
   about how hard Death feels, not whether the finale works.
+- **Late arrivals never take the player's chair.** Caesar (Rome,
+  `afterEliminations: 1`) took the first empty chair, so a player who went
+  out first found Caesar in their seat and played on as him, no loss
+  recorded; Dracula could do the same. Once the player is out, no arrival
+  happens at all (`processArrivals`): the sitting is over.
+- **Players out in the same hand are placed by the chips they started it
+  with**, not by chair. Places still repeat when a late champion joins
+  (Cerberus 4th, then Caesar 4th): the field grows mid-table. Left as is.
+- **Known small presentation gaps (final playtest):** the uninvited guest's
+  scene is cramped at 667x375; "Entered in the ledger" toasts sit over the
+  opponents' names for ~5s; at 667x375 the intro's "Take your seat" starts
+  just below the fold; reloading mid-way through the guest's scene restores
+  him but skips the scene without a log line. The open-table intro and two
+  of Death's open-table lines still say there is no champion, though open
+  tables can now seat one -- the owner's call.
 - **Blind pace (the owner: "blinds need to go up sooner").** Levels last 8-9
   hands (12 at the finale), under two orbits five-handed; the first three
   orbits are still 100bb/67bb deep. With a scripted player seated, tables

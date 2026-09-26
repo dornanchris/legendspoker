@@ -416,36 +416,38 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .seat .tell { color: #b9a68c; font-size: .78rem; font-style: italic; min-height: 1.2em; line-height: 1.3; }
 .seat .tell.fade { animation: tellfade 2.6s ease-out both; }
 @keyframes tellfade { 0% { opacity: 0; } 12% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: .55; } }
-.say {
+/* Scoped to the seat: the log's lines carry the same class names (li.say,
+   li.callout), and an unscoped rule hid every spoken line in the log. */
+.seat .say {
   position: absolute; left: 6px; right: 6px; top: calc(100% + 4px); z-index: 5;
   background: var(--parchment); color: var(--parchment-ink); font-family: var(--serif);
   font-size: .86rem; line-height: 1.35; padding: 6px 9px; border-radius: 8px;
   box-shadow: 0 6px 18px #000a; opacity: 0; pointer-events: none; transform: translateY(-4px);
 }
-.say::before {
+.seat .say::before {
   content: ''; position: absolute; top: -6px; left: 18px; border: 6px solid transparent;
   border-top: 0; border-bottom-color: var(--parchment);
 }
-.say.stage { font-style: italic; background: #2a2622; color: #d9ccb4; }
-.say.stage::before { border-bottom-color: #2a2622; }
-.say.show { animation: say 5.2s ease-out both; }
+.seat .say.stage { font-style: italic; background: #2a2622; color: #d9ccb4; }
+.seat .say.stage::before { border-bottom-color: #2a2622; }
+.seat .say.show { animation: say 5.2s ease-out both; }
 @keyframes say { 0% { opacity: 0; transform: translateY(-4px); } 6% { opacity: 1; transform: none; } 85% { opacity: 1; } 100% { opacity: 0; } }
 /* Callouts: the words that go in with the chips. Smaller and briefer than a
    line, tucked against the bottom of the seat, one on screen at a time. The
    duration is set per callout on the presentation clock (table.ts). */
-.callout {
+.seat .callout {
   position: absolute; left: 50%; top: calc(100% - 8px); z-index: 4;
   width: max-content; max-width: calc(100% + 20px);
   background: #efe5cf; color: var(--parchment-ink); font-family: var(--serif);
   font-size: .8rem; line-height: 1.3; padding: 3px 10px; border-radius: 10px;
   box-shadow: 0 4px 12px #0009; opacity: 0; pointer-events: none; transform: translate(-50%, 3px);
 }
-.callout.stage { font-style: italic; background: #2a2622; color: #d9ccb4; border: 1px solid #ffffff14; }
+.seat .callout.stage { font-style: italic; background: #2a2622; color: #d9ccb4; border: 1px solid #ffffff14; }
 /* Hidden by display, not opacity: the folded/out seat rules set opacity. */
-.callout:not(.show) { display: none; }
-.callout.show { animation: callout 1.8s ease-out both; }
+.seat .callout:not(.show) { display: none; }
+.seat .callout.show { animation: callout 1.8s ease-out both; }
 /* Reduce motion switches animations off: show it still, for as long as it is up. */
-:root.reduce-motion .callout.show { opacity: 1; transform: translate(-50%, 0); }
+:root.reduce-motion .seat .callout.show { opacity: 1; transform: translate(-50%, 0); }
 @keyframes callout {
   0% { opacity: 0; transform: translate(-50%, 3px); } 10% { opacity: 1; transform: translate(-50%, 0); }
   80% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; transform: translate(-50%, 0); }
@@ -487,12 +489,15 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .controls { display: grid; gap: 5px; justify-items: center; min-height: 74px; }
 .prompt { color: var(--dim); font-size: .85rem; min-height: 1.2em; }
 .buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.buttons[hidden] { display: none; }
 .buttons button { min-width: 96px; }
 .raise-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
 .raise-row[hidden] { display: none; }
 .quick-sizes { display: flex; gap: 4px; }
-.raise-slider { width: 220px; accent-color: var(--gold); }
-.raise-value { color: var(--gold); font-variant-numeric: tabular-nums; min-width: 70px; text-align: right; }
+/* One line at any landscape width: a second line pushes the player's cards
+   over the pot on a phone, so the slider gives up width before anything wraps. */
+.raise-slider { width: clamp(90px, 22vw, 220px); accent-color: var(--gold); }
+.raise-value { color: var(--gold); font-variant-numeric: tabular-nums; min-width: 4.5em; text-align: right; }
 
 .toasts { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); display: grid; gap: 6px; z-index: 20; pointer-events: none; width: min(420px, 90%); }
 .toast {
@@ -569,6 +574,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 
 /* ---------------------------------------------------------------- small landscape */
 @media (max-width: 900px) {
+  .raise-row { flex-wrap: nowrap; gap: 6px; }
+  .raise-row button { padding-left: .7em; padding-right: .7em; }
   .title-screen { grid-template-columns: 1fr 1fr; }
   .tour-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
   .tour-card { padding: 8px 9px 10px; min-height: 104px; }

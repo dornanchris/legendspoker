@@ -830,7 +830,10 @@ export class Game {
     }
     // Places fill from the bottom: busting with k players left finishes kth.
     // Counted from who is left rather than from the seat count, because a
-    // late arrival makes the field bigger than the table.
+    // late arrival makes the field bigger than the table. Two out in one hand
+    // are ranked by the chips they started it with, not by chair: the bigger
+    // stack lasted longer and finishes higher.
+    out.sort((a, b) => before[a] - before[b])
     const alive = this.survivors().length
     out.forEach((i, j) => {
       if (seated[i]) this.table.standUp(i)
@@ -850,6 +853,11 @@ export class Game {
    * sits down" and "the table is over".
    */
   private processArrivals(): void {
+    // Once the player is out, the sitting is over. An arrival now would play
+    // to an empty room -- and the first empty chair would be the player's
+    // own: Caesar sat down in it at Rome and the player went on as him.
+    const human = this.opts.humanSeat
+    if (human !== undefined && this.seatBusted[human]) return
     for (const p of this.pending) {
       if (p.done) continue
       const { rule } = p
@@ -869,11 +877,11 @@ export class Game {
       let replaces: string | null = null
       if (rule.afterEliminationOf) {
         const b = this.busts.find((x) => x.id === rule.afterEliminationOf)!
-        if (!seated[b.seat]) chair = b.seat
+        if (!seated[b.seat] && b.seat !== human) chair = b.seat
         replaces = rule.afterEliminationOf
       }
       if (chair < 0) {
-        const empty = this.busts.find((b) => !seated[b.seat])
+        const empty = this.busts.find((b) => !seated[b.seat] && b.seat !== human)
         if (empty) chair = empty.seat
       }
       if (chair < 0) continue // no empty chair yet; try again next hand
