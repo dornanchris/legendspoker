@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.0,
     "adaptivity": 0.5,
     "betRespect": 0.6,
-    "noise": 0.15
+    "skill": 0.15,
+    "noise": 0.1
   },
   "quirks": [
     {
@@ -29,19 +30,19 @@
       "signal": "scratches_nose",
       "text": "scratches his snub nose",
       "correlate": "bluffing",
-      "reliability": 0.82
+      "reliability": 0.88
     },
     {
       "signal": "private_joke",
       "text": "smiles as if at a private joke",
       "correlate": "strong",
-      "reliability": 0.8
+      "reliability": 0.86
     },
     {
       "signal": "asks_ceiling",
       "text": "frowns up at the ceiling, as if it had asked him something",
       "correlate": "weak",
-      "reliability": 0.8
+      "reliability": 0.86
     }
   ],
   "idles": [

@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.02,
     "adaptivity": 0.3,
     "betRespect": 0.8,
-    "noise": 0.1
+    "skill": 0.05,
+    "noise": 0.05
   },
   "quirks": [
     {
@@ -30,19 +31,19 @@
       "signal": "straightens_cuffs",
       "text": "straightens his cuffs",
       "correlate": "strong",
-      "reliability": 0.85
+      "reliability": 0.93
     },
     {
       "signal": "hand_flat",
       "text": "rests one hand flat on the table",
       "correlate": "weak",
-      "reliability": 0.83
+      "reliability": 0.91
     },
     {
       "signal": "sits_straighter",
       "text": "sits a fraction straighter",
       "correlate": "bluffing",
-      "reliability": 0.8
+      "reliability": 0.88
     }
   ],
   "idles": [

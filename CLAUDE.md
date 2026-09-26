@@ -100,6 +100,8 @@ src/
   loki-check.ts   `npm run check:loki` — the hidden six-seven event, forced (spoilers)
   roster.ts       `npm run roster` — regenerates ROSTER.md from data/
   reads.ts        `npm run reads` — how each character reads a bet (a report)
+  headsup.ts      `npm run headsup [matches] [ids]` — who beats whom one on one,
+                  ranked by a Bradley-Terry fit (a report, for difficulty)
 data/
   characters/     one file per character: dials, quirks, tells, idles, profile
   tables/         one file per table: seats, champion, arrival, room, hook
@@ -224,6 +226,43 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   table. Saved seats carry `ENGINE_VERSION`; see gotchas.
 - **Noise dial:** exists (`noise`, 0–1). Presentation-only: an ambient idle
   scheduler shows idles and tell texts at that rate. Death is 0 with no tells.
+- **The difficulty curve (ENGINE_VERSION 9): two axes, one idea -- reading.**
+  (The owner: "each table should be harder ... Death needs to be #1 overall
+  heads up ... without compromising the characters".) The style dials say
+  what kind of player someone is; the **`skill`** dial (0-1) says how well
+  they READ, and it rises table by table: 0 at the White House, 0.15 Athens,
+  0.3 Pirate Cove, 0.45 Camelot, 0.55 Rome, 0.62 Baker Street, 0.68
+  Transylvania, 0.74 the Station; a champion 0.05 above their table; Loki
+  0.7; Death 1. At 0 a character plays exactly as ENGINE_VERSION 8 did. A
+  skilled reader, in `game.ts` where equity is worked out:
+  1. reads a bet in context (`readBet`): a first bet on the turn or river is
+     a probe, far wider than its size says; barrels, flop raises, re-raises,
+     overbets and postflop all-ins are narrower. Measured against what
+     bettors really held; the plain read was off by 8-16 points of equity in
+     raise wars (overrated) and 12 on river bets (underrated);
+  2. reads the PLAYER (`Game.read`): how often you bet and fold, from a
+     prior worth 30 actions at skill 0 and 6 at 1, as far as the reader
+     adjusts to people at all (`adaptivity`). The player only: the legends
+     know one another by reputation (the plain read). Reading one another
+     this way moved the cast's own styles by up to ten points of VPIP (the
+     Wolf Man tighter, the Robot looser, Holmes tighter). How often the
+     players in a pot FOLD is read for everyone (it only sets bluffing,
+     through adaptivity, and moved no style);
+  3. reads tells (`readTell`): the same tell events the player sees, trusted
+     by skill x (2 x reliability - 1). Death has none; nobody reads him;
+  4. does not bluff again into someone who has raised them (`escalation` in
+     decide: raise wars were where heads-up stacks were lost).
+  Legibility runs the other way. The first three tables' tells were
+  sharpened (reliability about 0.93 / 0.88 / 0.82, noise 0.05 / 0.1 / 0.15;
+  later tables unchanged, down to about 0.55 and 0.5 at the Station), and
+  there Death points out a tell that told the truth, once the cards are
+  turned over (`lessons` in the table file: 0.9 / 0.5 / 0.25; the lines are
+  `lessons` in dealer.json, filled with `{tell}`). One a hand, each
+  character's tell once a sitting, never over the end of one. They teach a
+  way of watching, never a rule.
+  Nobody's style moved: in 3000-hand cash sims every character's VPIP is
+  within about 3 points of ENGINE 8 and AF within about 0.2 (seed-to-seed
+  noise is about 1).
 - **Fast-forward:** offered when folded / all in; presentation clock only;
   lines are cut, not sped; cancels at the showdown reveal and new deals.
 - **Table motion and sound (an early slice of Phase 6):** Death shuffles and
@@ -270,18 +309,18 @@ real device.
   all`) — enough for VPIP/AF, not for win rates. Retune on more hands. The
   early tables keep deliberate caricatures (Roosevelt, Lancelot, the Cyclops
   lose heavily to bots) because beginner tables should be exploitable.
-- **Tight play dominates heads-up in this engine, and Death has no clear
-  edge -- OPEN.** Every aggressive Death lost to Lincoln 2:1. Death is
-  tight, check-raises, presses heads-up and punishes folders (dials in
-  `data/characters/death.json`). At the finale's pace (5000 buy-in, 12
-  hands a level), ENGINE_VERSION 7, 300 matches each (+-3 pts): Death beats
-  Lincoln 48%, Washington 57%, Arthur 54%, Roosevelt 64%. Much of his older
-  edge came from opponents' bugs (`patient` never fired against min-raises,
-  his check-raise fed on air bets); a dozen dial and quirk mixes did not buy
-  it back. A real boss edge needs a new skill lever: position awareness,
-  per-opponent adaptivity, or fold-rate reading that engages sooner than 20
-  faced bets. The finale is against the PLAYER, not Lincoln, so this is
-  about how hard Death feels, not whether the finale works.
+- **Bot-against-bot heads-up is mostly the cards.** Matches last 10-35
+  hands and are settled by a few early all-ins. The ENGINE 8 ladder's spread
+  (44-58%) was mostly noise: pairs differed by 11.4 points against 10.2 from
+  luck alone. An experiment (never shipped) that let one side SEE the other's
+  cards won only 68-80% of mirror matches; reading bets better was worth
+  about nothing on its own; position awareness, thinner value against
+  stations and trusting big bets more were tried as parts of skill and
+  dropped (no gain in mirror or probe tests; position made Washington fold
+  more to a maniac). What separates players here is reading tells, which is
+  why the legibility curve and the skill curve had to move together. For
+  "is this character hard to exploit", test against probes (a bully, a nit,
+  a station, a regular) rather than against the cast.
 - **Late arrivals never take the player's chair.** Caesar (Rome,
   `afterEliminations: 1`) took the first empty chair, so a player who went
   out first found Caesar in their seat and played on as him, no loss
@@ -309,9 +348,17 @@ real device.
 - **An existing White House line genders the player** (`wh_p0_03`, "the look
   of a man who has read about poker"). Every newer line avoids it; this one is
   the owner's to change.
-- **No position awareness.** Adding a position term to effective tightness is
-  the single highest-value realism improvement available.
-- Adaptivity is table-wide, not per-opponent.
+- **No position awareness.** Tried with ENGINE 9 as part of skill and dropped
+  (see above): still the most realistic thing missing, but not a difficulty
+  lever in this engine.
+- Adaptivity scales bluffing by the fold rate a player bets into. Unskilled,
+  that is the table's, once it has faced 20 bets; with skill it moves toward
+  the players actually in the pot, read sooner.
+- **`readBet` and `readTell` were measured in ENGINE 8's room.** Skilled
+  players change what bets and tells mean (they re-bluff less, so a re-raise
+  is stronger still). Re-measure after big changes: log, for every bet faced,
+  equity against the plain range and against the bettor's real cards, and
+  bucket by street, raises and the bettor's bets this hand.
 - **poker-ts destroyed chips when side pots formed — FIXED via a patch.**
   A pot's eligible-player list is fixed when its bets are collected, so a
   player who folded on a later street stayed eligible, could be judged the
@@ -433,6 +480,12 @@ real device.
   dial, a table's cast, anything that draws from the game RNG. A seat saved
   under another version is released with an explanation rather than replayed
   into different cards; a replay that hits an illegal action does the same.
+- **Tells are drawn from the game RNG in every game** (ENGINE 9), watched
+  or not, because the table reads them. Before, only a game with an event
+  listener drew them, so a sim and the web game dealt differently from the
+  same seed. `tell` events carry `correlate` and `honest`: hidden
+  information. The screen must never show them; the director reads them only
+  for seats whose cards were turned over.
 - **Nothing on the presentation side may touch the game RNG.** The director
   has its own seeded stream (seed XOR a constant); ambient idles and
   "thinking long" use Math.random. Picking a line from the game RNG would

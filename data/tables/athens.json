@@ -20,6 +20,7 @@
   "dialogue": "table-02-athens.json",
   "buyIn": 2000,
   "respectStart": 0,
+  "lessons": 0.5,
   "place": "Athens",
   "region": "Greece",
   "era": "One long night, with myth and history on the same couches",

@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.05,
     "adaptivity": 0.6,
     "betRespect": 0.8,
-    "noise": 0.15
+    "skill": 0.2,
+    "noise": 0.1
   },
   "quirks": [
     {
@@ -34,19 +35,19 @@
       "signal": "twists_ring",
       "text": "twists the ring on his finger",
       "correlate": "bluffing",
-      "reliability": 0.8
+      "reliability": 0.86
     },
     {
       "signal": "looks_door",
       "text": "looks toward the door as if it led home",
       "correlate": "weak",
-      "reliability": 0.78
+      "reliability": 0.84
     },
     {
       "signal": "leans_satisfied",
       "text": "leans back, satisfied",
       "correlate": "strong",
-      "reliability": 0.8
+      "reliability": 0.86
     }
   ],
   "idles": [

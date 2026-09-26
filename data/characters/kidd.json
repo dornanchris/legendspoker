@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.3,
     "adaptivity": 0.2,
     "betRespect": 0.55,
-    "noise": 0.2
+    "skill": 0.3,
+    "noise": 0.15
   },
   "quirks": [
     {
@@ -31,19 +32,19 @@
       "signal": "pats_coat",
       "text": "pats his coat where a map might be",
       "correlate": "strong",
-      "reliability": 0.8
+      "reliability": 0.84
     },
     {
       "signal": "chews_lip",
       "text": "chews his lip",
       "correlate": "bluffing",
-      "reliability": 0.76
+      "reliability": 0.8
     },
     {
       "signal": "over_shoulder",
       "text": "glances over his shoulder",
       "correlate": "weak",
-      "reliability": 0.78
+      "reliability": 0.82
     }
   ],
   "idles": [

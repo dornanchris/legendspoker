@@ -25,7 +25,7 @@ const TODO = (v: unknown) => v === 'TODO' || (Array.isArray(v) && v.includes('TO
 
 // ---------------------------------------------------------------- characters
 
-const DIALS = ['aggression', 'tightness', 'bluffFrequency', 'tiltSensitivity', 'adaptivity', 'betRespect', 'noise'] as const
+const DIALS = ['aggression', 'tightness', 'bluffFrequency', 'tiltSensitivity', 'adaptivity', 'betRespect', 'skill', 'noise'] as const
 const CORRELATES = new Set(['strong', 'weak', 'bluffing', 'tilted'])
 const PROFILE = ['ledger', 'ledger_beaten', 'history', 'at_the_table', 'look', 'prop', 'public_domain'] as const
 
@@ -75,6 +75,8 @@ for (const t of TABLES) {
     if (CHARACTERS[id]?.role === 'guest') err(w, `"${id}" is a guest: seating him here puts him on the map`)
   }
   if (t.champion && !fullCast(t).includes(t.champion)) err(w, `champion "${t.champion}" never sits at this table`)
+  if (t.lessons !== undefined && !(t.lessons >= 0 && t.lessons <= 1)) err(w, `lessons must be a chance, 0..1 (got ${t.lessons})`)
+  if (t.lessons && t.kind !== 'tour') err(w, 'lessons belong to the story tables: by the champions the player reads alone')
   if (t.arrival) {
     const a = t.arrival
     if (!CHARACTERS[a.character]) err(w, `arrival "${a.character}" is not a character`)
@@ -99,7 +101,7 @@ const TRIGGERS = new Set([
 ])
 const READS = new Set(['loose', 'tight', 'aggressive', 'passive', 'bluffed', 'folds_fast', 'thinks_long'])
 const PLACEHOLDER = /\{(\w+)\}/g
-const KNOWN_PLACEHOLDERS = new Set(['name', 'nickname', 'title'])
+const KNOWN_PLACEHOLDERS = new Set(['name', 'nickname', 'title', 'tell'])
 /** Phrases that belong to someone else's copyright or to the wrong century. */
 const TRIPWIRES = [
   /i am spartacus/i, /this is sparta/i, /\bHAL\b/, /\bdave\b/i, /larry talbot/i,
@@ -128,6 +130,7 @@ function checkLine(l: Line, where: string, speakers: Set<string>, allow: RegExp[
   }
   for (const m of (l.text ?? '').matchAll(PLACEHOLDER)) {
     if (!KNOWN_PLACEHOLDERS.has(m[1])) err(where, `line ${l.id}: unknown placeholder {${m[1]}}`)
+    else if (m[1] === 'tell' && where !== 'dealer lessons') err(where, `line ${l.id}: {tell} is filled in only in lessons`)
   }
   for (const re of TRIPWIRES) if (!allow.includes(re) && re.test(l.text ?? '')) err(where, `line ${l.id}: tripwire ${re}`)
   if (l.type === 'stage_direction' && !/^\[.*\]$/.test(l.text.trim())) warn(where, `line ${l.id}: stage direction without [brackets]`)
@@ -290,6 +293,22 @@ for (const [key, lines] of Object.entries(DEALER)) {
 }
 for (const k of ['first_map', 'player_loses_table', 'rematch_table', 'replay_cleared', 'open_table', 'resume', 'table_won']) {
   if (!DEALER[k]?.length) err('dealer', `no "${k}" lines`)
+}
+// {tell} is filled in only for Death's lessons, and every lesson needs it:
+// it is the tell being pointed out. A lesson's correlate chooses it.
+for (const [key, lines] of Object.entries(DEALER)) {
+  for (const l of Array.isArray(lines) ? lines : []) {
+    const hasTell = (l.text ?? '').includes('{tell}')
+    if (key === 'lessons') {
+      if (!hasTell) err('dealer lessons', `line ${l.id} does not name the tell ({tell})`)
+      if (!l.correlate || !CORRELATES.has(l.correlate)) err('dealer lessons', `line ${l.id}: bad correlate "${l.correlate}"`)
+    } else if (hasTell) err(`dealer ${key}`, `line ${l.id}: {tell} is filled in only in lessons`)
+  }
+}
+if (TABLES.some((t) => (t.lessons ?? 0) > 0)) {
+  for (const c of CORRELATES) {
+    if (!(DEALER.lessons ?? []).some((l) => l.correlate === c)) err('dealer lessons', `no lesson for a ${c} tell`)
+  }
 }
 
 // ---------------------------------------------------------------- returns

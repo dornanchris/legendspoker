@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.05,
     "adaptivity": 0.45,
     "betRespect": 0.8,
-    "noise": 0.1
+    "skill": 0,
+    "noise": 0.05
   },
   "quirks": [
     {
@@ -29,19 +30,19 @@
       "signal": "strokes_beard",
       "text": "strokes his beard, slowly",
       "correlate": "strong",
-      "reliability": 0.86
+      "reliability": 0.94
     },
     {
       "signal": "leans_back",
       "text": "leans back and folds his long hands",
       "correlate": "weak",
-      "reliability": 0.84
+      "reliability": 0.92
     },
     {
       "signal": "small_smile",
       "text": "allows himself a small smile",
       "correlate": "bluffing",
-      "reliability": 0.82
+      "reliability": 0.9
     }
   ],
   "idles": [

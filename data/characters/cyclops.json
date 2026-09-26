@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.45,
     "adaptivity": 0.05,
     "betRespect": 0.35,
-    "noise": 0.12
+    "skill": 0.15,
+    "noise": 0.07
   },
   "quirks": [
     {
@@ -34,19 +35,19 @@
       "signal": "eye_narrows",
       "text": "his eye narrows",
       "correlate": "strong",
-      "reliability": 0.85
+      "reliability": 0.91
     },
     {
       "signal": "sniffs",
       "text": "sniffs at the air",
       "correlate": "weak",
-      "reliability": 0.82
+      "reliability": 0.88
     },
     {
       "signal": "thumps_table",
       "text": "thumps the table",
       "correlate": "tilted",
-      "reliability": 0.85
+      "reliability": 0.91
     }
   ],
   "idles": [

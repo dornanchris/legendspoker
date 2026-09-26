@@ -44,8 +44,11 @@ export const SAVE_VERSION = 1
  *    first and then add; `patient` spares ordinary opens; Death re-dialled.
  * 8: a tight player needs a hand worth playing before the flop, whatever
  *    the price (the entry floor in decide()).
+ * 9: the `skill` dial -- reading bets in context, the particular bettor and
+ *    tells -- set by table; tells drawn in every game, watched or not; the
+ *    first three tables' tells sharpened.
  */
-export const ENGINE_VERSION = 8
+export const ENGINE_VERSION = 9
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

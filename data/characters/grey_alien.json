@@ -16,6 +16,7 @@
     "tiltSensitivity": 0.0,
     "adaptivity": 0.7,
     "betRespect": 0.75,
+    "skill": 0.74,
     "noise": 0.5
   },
   "quirks": [

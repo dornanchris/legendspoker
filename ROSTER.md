@@ -36,14 +36,14 @@ He was the tallest president, six foot four, and a teller of jokes and stories, 
 
 **At the table.** Tight, and in no hurry about it. He folds most hands, and before the flop he gives up almost anything to a raise — until his stack runs short, when the patience ends. When he does play, he calls more than he raises, and he almost never tells a lie with his chips. A bad beat does not move him. He watches between hands and adjusts, slowly, to what he sees.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .30 | .75 | .08 | .05 | .45 | .80 | .10 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .30 | .75 | .08 | .05 | .45 | .80 | .00 | .05 |
 
 - Quirk: `patient` (minEquity 0.58) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
-- Tell (strong, 0.86): *strokes his beard, slowly*
-- Tell (weak, 0.84): *leans back and folds his long hands*
-- Tell (bluffing, 0.82): *allows himself a small smile*
+- Tell (strong, 0.94): *strokes his beard, slowly*
+- Tell (weak, 0.92): *leans back and folds his long hands*
+- Tell (bluffing, 0.9): *allows himself a small smile*
 - Idle noise: *crosses one long leg over the other*; *glances at the clock on the mantel*; *rubs his eyes*; *smooths the brim of the hat on his knee*
 
 **Look.** Silhouette: the longest frame at the table, bare-headed, the stovepipe hat resting on his knee with its crown showing above the table edge. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen. **Prop:** Stovepipe hat, on his knee.
@@ -62,14 +62,14 @@ In 1912, campaigning for a third party, he was shot in the chest in Milwaukee. T
 
 **At the table.** Loose and loud. He plays a great many hands and would rather raise than call — above all when someone else has bet first, which he takes as an invitation. He bluffs often enough that you cannot assume he has it, and he changes his approach for nobody. Beat him in a big pot and it stays with him for a while: the next few hands come faster and harder.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .78 | .45 | .28 | .30 | .10 | .40 | .10 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .78 | .45 | .28 | .30 | .10 | .40 | .00 | .05 |
 
 - Quirk: `charge` (minEquity 0.55, chance 0.65) — Facing a bet with a decent hand, raises rather than calls.
-- Tell (strong, 0.86): *grins, all teeth*
-- Tell (bluffing, 0.84): *drums his fingers on the felt*
-- Tell (tilted, 0.86): *polishes his spectacles, hard*
+- Tell (strong, 0.94): *grins, all teeth*
+- Tell (bluffing, 0.92): *drums his fingers on the felt*
+- Tell (tilted, 0.94): *polishes his spectacles, hard*
 - Idle noise: *squares his shoulders*; *checks his pocket watch*; *leans forward on both elbows*; *tugs at his moustache*
 
 **Look.** Silhouette: barrel chest, leaning forward on both elbows — the broadest shape at the table. Face: the heavy moustache and the enormous grin; the teeth must read at a fifth of a screen. Prop: round steel-rimmed spectacles. Taking them off to polish them is a big, readable gesture, and the grin does the rest. **Prop:** Round steel-rimmed spectacles.
@@ -88,14 +88,14 @@ He spent his presidency making sure almost nobody photographed him in his wheelc
 
 **At the table.** Middle of the road on paper, which is the trouble. He plays a reasonable number of hands, bets when he means it and sometimes when he doesn't, and his favourite moment to tell a story is the last card, once the hand has been checked to him. Losses slide off him. He is warm to everyone, all evening, and he has had long practice at letting people believe whatever they like.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .55 | .55 | .30 | .10 | .35 | .60 | .12 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .55 | .55 | .30 | .10 | .35 | .60 | .00 | .06 |
 
 - Quirk: `river_bluff` (chance 0.35) — Checked to on the river with nothing, tells a story.
-- Tell (strong, 0.8): *tilts his cigarette holder upward*
-- Tell (bluffing, 0.78): *smiles broadly at the whole table*
-- Tell (weak, 0.8): *taps the ash from his holder*
+- Tell (strong, 0.88): *tilts his cigarette holder upward*
+- Tell (bluffing, 0.86): *smiles broadly at the whole table*
+- Tell (weak, 0.88): *taps the ash from his holder*
 - Idle noise: *adjusts his pince-nez*; *laughs at something nobody said*; *settles his cape across his shoulders*; *nods to someone across the room*
 
 **Look.** Silhouette: the naval cape across his shoulders and the long cigarette holder cocked upward from his teeth — a diagonal nobody else at the table has. Face: broad, chin lifted, pince-nez, a wide and ready smile. Prop: the cigarette holder; its angle is the tell surface and reads from across the room. **Prop:** Long cigarette holder.
@@ -114,14 +114,14 @@ In 1783 he resigned his commission to Congress when he could have kept it, and i
 
 **At the table.** Tight, and aggressive once he commits. He folds most hands without comment, and when he plays he bets rather than calls. He rarely bluffs, and nothing that happens at the table appears to reach him. Take the table down to the two of you and he changes: alone in a pot against one opponent he presses, hand after hand, and does not let up.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .68 | .80 | .12 | .02 | .30 | .80 | .10 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .68 | .80 | .12 | .02 | .30 | .80 | .05 | .05 |
 
 - Quirk: `heads_up_pressure` (minEquity 0.45, chance 0.6) — Alone in a pot with one opponent, applies relentless pressure.
-- Tell (strong, 0.85): *straightens his cuffs*
-- Tell (weak, 0.83): *rests one hand flat on the table*
-- Tell (bluffing, 0.8): *sits a fraction straighter*
+- Tell (strong, 0.93): *straightens his cuffs*
+- Tell (weak, 0.91): *rests one hand flat on the table*
+- Tell (bluffing, 0.88): *sits a fraction straighter*
 - Idle noise: *smooths his waistcoat*; *glances toward the window*; *works his jaw, briefly*; *squares the edges of his chips*
 
 **Look.** Silhouette: the straightest back at the table, high collar, his own hair powdered and tied at the nape — not a wig. Face: long, heavy-jawed, the mouth set firm. Prop: the buff-and-blue general's coat with gold epaulettes; its cuffs and shoulders are the tell surface, so any change in that upright line reads at once. **Prop:** Buff-and-blue general's coat.
@@ -158,14 +158,14 @@ Plato's Symposium puts him at exactly this kind of party. He arrived late, havin
 
 **At the table.** Moderate in everything except curiosity. He plays a middling number of hands, and when the table checks to him after the flop he often puts out a small bet, not so much to win as to see what you will do about it. He adjusts to what he learns. Losing does not trouble him in the least; no one has ever seen him rattled, and nobody here expects to be the first.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .45 | .50 | .20 | .00 | .50 | .60 | .15 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .45 | .50 | .20 | .00 | .50 | .60 | .15 | .10 |
 
 - Quirk: `needle` (chance 0.35) — When checked to, makes small probing bets regardless of the hand.
-- Tell (bluffing, 0.82): *scratches his snub nose*
-- Tell (strong, 0.8): *smiles as if at a private joke*
-- Tell (weak, 0.8): *frowns up at the ceiling, as if it had asked him something*
+- Tell (bluffing, 0.88): *scratches his snub nose*
+- Tell (strong, 0.86): *smiles as if at a private joke*
+- Tell (weak, 0.86): *frowns up at the ceiling, as if it had asked him something*
 - Idle noise: *sips from his cup and seems no drunker*; *rubs his bare feet together*; *pulls his plain cloak tighter*; *scratches his beard thoughtfully*
 
 **Look.** Silhouette: bald dome, big untidy beard, a short thick body in one plain, shabby cloak — the only unadorned figure at the table, which is exactly why he reads. Face: snub nose, wide bulging eyes, a satyr's face with a good-humoured mouth. Prop: a shallow wine cup, drained and refilled all night. Tells live on the big shapes of the face: nose, smile, the upward glance. **Prop:** Shallow wine cup.
@@ -184,14 +184,14 @@ Herodotus says the oracle at Delphi had warned Sparta that either the city would
 
 **At the table.** Disciplined, and stubborn well past the point of sense. He picks his hands with care, plays them forward, and rarely bluffs. The trouble starts once a real share of his chips is in the middle: after that he will not fold to anything, whatever it costs him. He changes his approach for no one and is hard to rattle. Push him early, or not at all.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .72 | .68 | .10 | .10 | .15 | .50 | .15 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .72 | .68 | .10 | .10 | .15 | .50 | .15 | .10 |
 
 - Quirk: `committed` (fraction 0.3) — Once a share of the stack is in the pot, will not fold a hand with a real chance.
-- Tell (strong, 0.83): *plants both fists on the table*
-- Tell (bluffing, 0.8): *lifts his chin*
-- Tell (weak, 0.8): *exhales hard through his nose*
+- Tell (strong, 0.89): *plants both fists on the table*
+- Tell (bluffing, 0.86): *lifts his chin*
+- Tell (weak, 0.86): *exhales hard through his nose*
 - Idle noise: *tugs his red cloak straight*; *glances across the table with open disdain*; *sets his crested helmet an inch to the left*; *cracks his knuckles*
 
 **Look.** Silhouette: a red cloak over a bronze breastplate, long hair and full beard, fists on the felt. Face: level eyes, jaw set, a man already bored of the conversation. Prop: the bronze Corinthian helmet with its tall horsehair crest, set on the table at his elbow — the biggest shape at the table. Tells live on the fists and the lift of the chin. **Prop:** Crested bronze helmet, on the table.
@@ -210,9 +210,9 @@ Perseus cut off her head while she slept, watching her only in the reflection of
 
 **At the table.** Measured, with a patience that feels like waiting. She plays a middling range, likes to check to the table after the flop and answer a bet with a raise, and bluffs often enough to matter. Everyone watches her; the snakes give them plenty to watch. Those who study her face longest leave with the most confident conclusions. I have not often seen them leave with her chips.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .55 | .55 | .30 | .15 | .40 | .70 | .18 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .55 | .55 | .30 | .15 | .40 | .70 | .15 | .18 |
 
 - Quirk: `check_raise` (minEquity 0.72, chance 0.6) — Checks strength on the flop and turn, then raises when bet into.
 - Tell (strong, 0.3): *the snakes in her hair go still*
@@ -236,15 +236,15 @@ Odysseus got him drunk on unmixed wine, told him his name was Nobody, and blinde
 
 **At the table.** Direct to a fault. He plays plenty of hands, and when he likes one he raises at once — every time, with no patience for slow play. He almost never bluffs; he does not see the point of saying something untrue. He does not adjust to anybody. And he has a temper: cost him a big pot and, for a while, he stops thinking and starts pushing everything in.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .70 | .50 | .05 | .45 | .05 | .35 | .12 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .70 | .50 | .05 | .45 | .05 | .35 | .15 | .07 |
 
 - Quirk: `snap` (minEquity 0.66) — Never slow-plays: raises every strong hand at once.
 - Quirk: `berserk` (tilt 0.3, minEquity 0.38) — Once rattled, stops thinking and moves in.
-- Tell (strong, 0.85): *his eye narrows*
-- Tell (weak, 0.82): *sniffs at the air*
-- Tell (tilted, 0.85): *thumps the table*
+- Tell (strong, 0.91): *his eye narrows*
+- Tell (weak, 0.88): *sniffs at the air*
+- Tell (tilted, 0.91): *thumps the table*
 - Idle noise: *counts his sheep on his fingers*; *blinks, very slowly*; *scratches his beard with a thumbnail the size of a spoon*; *the table groans as he shifts*
 
 **Look.** Silhouette: enormous, head and shoulders above everyone, filling his fifth of the screen and some of his neighbours'. Face: one great eye in the middle of the brow with an old burn scar around it, a shaggy black beard, a sheepskin over the shoulders. Prop: his club of green olive wood, a fathom shorter than it used to be. Tells live on the eye and the fist. **Prop:** Olive-wood club, leaning on the table.
@@ -263,15 +263,15 @@ In the Odyssey's first line Homer calls him polytropos, a man of many turns, and
 
 **At the table.** The most adaptable player at the table, and the most comfortable lying. He raises a great many pots that nobody else has opened, and when the last card is checked to him he is very likely to tell a story with his chips, true or not. He learns the table quickly and changes to suit it. Bad luck does not bother him. He has had worse.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .66 | .64 | .28 | .05 | .60 | .80 | .15 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .66 | .64 | .28 | .05 | .60 | .80 | .20 | .10 |
 
 - Quirk: `river_bluff` (chance 0.35) — Checked to on the river with nothing, tells a story.
 - Quirk: `steal` (chance 0.4, minEquity 0.32) — Raises unopened pots before the flop with a wide range.
-- Tell (bluffing, 0.8): *twists the ring on his finger*
-- Tell (weak, 0.78): *looks toward the door as if it led home*
-- Tell (strong, 0.8): *leans back, satisfied*
+- Tell (bluffing, 0.86): *twists the ring on his finger*
+- Tell (weak, 0.84): *looks toward the door as if it led home*
+- Tell (strong, 0.86): *leans back, satisfied*
 - Idle noise: *wrings sea water from the hem of his cloak*; *counts the exits*; *rubs an old scar on his thigh*; *smiles at no one in particular*
 
 **Look.** Silhouette: a head shorter than the kings around him but broader in the chest and shoulders (Homer says so), a sea-stained cloak, and the conical felt sailor's cap he wears in Greek vase painting. Face: weathered, grizzled curly beard, amused eyes that are always doing sums. Prop: a heavy gold ring — make it big enough to catch the light, because his hands are the tell surface. **Prop:** Heavy gold ring.
@@ -306,14 +306,14 @@ He buried part of his takings on Gardiners Island, off Long Island, and went to 
 
 **At the table.** Greedy, and not subtle about it. He plays a fair share of hands at a steady pace, and when he likes his cards he does not bet the pot — he bets a good deal more than the pot, as though the size of the claim settled who owns it. He pays little attention to how anyone else plays. A lost pot sours him for a while; he takes it as a legal wrong rather than a card game.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .60 | .50 | .22 | .30 | .20 | .55 | .20 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .60 | .50 | .22 | .30 | .20 | .55 | .30 | .15 |
 
 - Quirk: `overbet` (minEquity 0.72, potFraction 1.6, chance 0.7) — With a strong hand, bets far more than the pot.
-- Tell (strong, 0.8): *pats his coat where a map might be*
-- Tell (bluffing, 0.76): *chews his lip*
-- Tell (weak, 0.78): *glances over his shoulder*
+- Tell (strong, 0.84): *pats his coat where a map might be*
+- Tell (bluffing, 0.8): *chews his lip*
+- Tell (weak, 0.82): *glances over his shoulder*
 - Idle noise: *rubs his neck*; *counts coins that aren't there*; *tips his hat to the room*; *squints at the lamp*
 
 **Look.** Silhouette: a respectable merchant captain — full-bottomed wig under a plain three-cornered hat, a good broadcloth coat buttoned high, a cravat he keeps loosening at the throat. Face: heavy, anxious, forever checking behind him. Prop: the coat itself — the broad buttoned chest, where one hand keeps patting for something that may or may not be in the inside pocket. **Prop:** His buttoned coat and its inside pocket.
@@ -332,14 +332,14 @@ What makes him a person is the parrot. Captain Flint, named after the old buccan
 
 **At the table.** Friendly, talkative, and paying attention the whole time. He plays a middling number of hands and never seems to hurry; what he is really doing is watching who gives up. Once the table has been folding too easily, he starts betting whenever it is checked to him, whatever he holds. Losing does not seem to bother him at all — or he makes very sure it does not look that way.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .50 | .50 | .30 | .10 | .65 | .70 | .20 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .50 | .50 | .30 | .10 | .65 | .70 | .30 | .15 |
 
 - Quirk: `punish_passivity` (foldRate 0.5, chance 0.6, potFraction 0.66) — Bets into a table that has been folding too often.
-- Tell (strong, 0.76): *his parrot squawks 'Pieces of eight!'*
-- Tell (bluffing, 0.75): *his parrot sidles along his shoulder*
-- Tell (weak, 0.76): *strokes the parrot's head*
+- Tell (strong, 0.8): *his parrot squawks 'Pieces of eight!'*
+- Tell (bluffing, 0.79): *his parrot sidles along his shoulder*
+- Tell (weak, 0.8): *strokes the parrot's head*
 - Idle noise: *the parrot preens*; *grins at everyone at once*; *raps his crutch against the table leg*; *wipes his hands on his apron*
 
 **Look.** Silhouette: very tall and broad, a big pale smiling face, a cook's apron over a sailor's coat, the top of a crutch under one arm — and the parrot on his shoulder, the brightest, busiest thing at the table. Everything else distinctive about him is below the table's edge. Prop: Captain Flint, the parrot — she preens, sidles and shrieks, and she is the part of him that moves. **Prop:** Captain Flint, his parrot.
@@ -358,14 +358,14 @@ What makes him a person is that he is never in a hurry. Every sailor at this tab
 
 **At the table.** Patient and quiet. He plays fewer hands than the captains, seldom bluffs, and never shows a flicker when a pot goes against him. After the flop he checks a great deal, and not every check is what it looks like: bet into him and he will sometimes raise you, calmly, and wait. He does not chase anyone. He lets them come to him.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .50 | .72 | .18 | .05 | .35 | .70 | .22 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .50 | .72 | .18 | .05 | .35 | .70 | .30 | .17 |
 
 - Quirk: `check_raise` (minEquity 0.72, chance 0.6) — Checks strength on the flop and turn, then raises when bet into.
-- Tell (strong, 0.78): *sea water drips from his sleeve*
-- Tell (weak, 0.76): *drums on the table like rain on a deck*
-- Tell (bluffing, 0.75): *the lamp nearest him flickers*
+- Tell (strong, 0.82): *sea water drips from his sleeve*
+- Tell (weak, 0.8): *drums on the table like rain on a deck*
+- Tell (bluffing, 0.79): *the lamp nearest him flickers*
 - Idle noise: *a crab climbs out of his pocket*; *hums a shanty under his breath*; *wrings out his beard*; *the smell of low tide drifts across the table*
 
 **Look.** Silhouette: tall and hunched in a long, waterlogged sea-coat and a broad hat whose brim sheds a thread of water, weed caught in the folds. Face: grey as a drowned man's, mostly in shadow, with a sodden grey beard — plainly hair — and two pale, round, unblinking eyes that catch the lamplight. Prop: the dripping sleeve, the one wet thing at a dry table. **Prop:** His dripping coat-sleeve.
@@ -384,15 +384,15 @@ He built the legend on purpose. The General History of the Pyrates, published in
 
 **At the table.** The loudest player at the table, and the most aggressive. If nobody has opened a pot before the flop, he usually raises it; bet into him with anything he likes and he tends to raise you back rather than call. He is not reckless — he folds more often than his reputation would suggest — and losing does not unsettle him much. It makes him louder, which is not the same thing.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .78 | .60 | .24 | .15 | .35 | .50 | .20 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .78 | .60 | .24 | .15 | .35 | .50 | .35 | .15 |
 
 - Quirk: `steal` (chance 0.4, minEquity 0.32) — Raises unopened pots before the flop with a wide range.
 - Quirk: `charge` (minEquity 0.64, chance 0.35) — Facing a bet with a decent hand, raises rather than calls.
-- Tell (strong, 0.78): *strokes his braided beard*
-- Tell (bluffing, 0.76): *goes very still*
-- Tell (tilted, 0.78): *the slow-matches under his hat smoulder brighter*
+- Tell (strong, 0.82): *strokes his braided beard*
+- Tell (bluffing, 0.8): *goes very still*
+- Tell (tilted, 0.82): *the slow-matches under his hat smoulder brighter*
 - Idle noise: *the fuses in his beard smoke*; *sets a pistol on the table, then picks it up again*; *laughs too loud*; *stares down the nearest man*
 
 **Look.** Silhouette: a broad black hat with smoke curling from under the brim on both sides, over a huge black beard in ribbon-tied braids that covers most of his face. Heavy dark coat, a sling of pistols across the chest. Eyes that hold a stare. Prop: the braided beard — big, dark, dead centre in his fifth of the screen, and the shape his hand keeps going back to. **Prop:** His braided black beard.
@@ -427,14 +427,14 @@ In Malory's Le Morte d'Arthur (1485) he gives the infant Arthur to Sir Ector to 
 
 **At the table.** Impossible to rattle and hard to read. He plays a careful number of hands, bluffs just often enough to keep everyone honest, and adjusts to how the table is playing once he has watched it a while. With his very best hands he goes quiet before the river — checking, calling, letting others do the betting. Losing a pot does not seem to reach him at all.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .45 | .66 | .25 | .02 | .70 | .85 | .25 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .45 | .66 | .25 | .02 | .70 | .85 | .45 | .25 |
 
 - Quirk: `trap` (minEquity 0.8) — With a monster before the river, checks or flats instead of raising.
-- Tell (strong, 0.72): *his staff hums, faintly*
-- Tell (bluffing, 0.7): *gazes somewhere past the table, as if the hand were already over*
-- Tell (weak, 0.72): *murmurs a word nobody catches*
+- Tell (strong, 0.62): *his staff hums, faintly*
+- Tell (bluffing, 0.6): *gazes somewhere past the table, as if the hand were already over*
+- Tell (weak, 0.62): *murmurs a word nobody catches*
 - Idle noise: *the candle nearest him bends the wrong way*; *stares at something that has not happened yet*; *brushes ash from his sleeve*; *taps his staff twice*
 
 **Look.** Silhouette: lean and tall in a hooded, undyed wool robe, hood usually up; a long, wild grey beard; a rough knotted staff taller than he is, planted upright beside his chair. Face: weathered, with deep-set eyes that never quite settle on the table. No pointed hat, no stars, no owl. Prop: the staff — a tall vertical line that can hum and glow faintly without being touched. **Prop:** A tall knotted staff.
@@ -453,9 +453,9 @@ In Malory he is Arthur's greatest knight and closest friend, and he loves the qu
 
 **At the table.** Aggressive and proud. He plays plenty of hands and hates merely to call: bet into him with anything respectable and he is likely to raise you back. He does not study his opponents — he assumes he is better than all of them — and a pot lost to someone he considers beneath him gets under his armour. For a while afterwards, he rides harder than he should.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .75 | .56 | .28 | .35 | .20 | .45 | .25 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .75 | .56 | .28 | .35 | .20 | .45 | .45 | .25 |
 
 - Quirk: `charge` (minEquity 0.55, chance 0.7) — Facing a bet with a decent hand, raises rather than calls.
 - Tell (strong, 0.75): *polishes his gauntlet*
@@ -479,9 +479,9 @@ A year on, Gawain keeps the bargain. On the way he is the guest of a lord who pr
 
 **At the table.** He accepts challenges. Small bets he simply calls — he will not fold to one, whatever he holds — and he plays a good many hands to see what happens. He rarely leads the betting and almost never bluffs; he would rather take your blow and then give you his. A big enough bet can still move him, which he seems to think is fair. Losing a pot only amuses him.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .40 | .50 | .10 | .05 | .20 | .30 | .25 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .40 | .50 | .10 | .05 | .20 | .30 | .45 | .25 |
 
 - Quirk: `calls_small` (maxBB 2) — Will not fold to a small bet (up to maxBB big blinds).
 - Quirk: `committed` (fraction 0.3) — Once a share of the stack is in the pot, will not fold a hand with a real chance.
@@ -506,9 +506,9 @@ In Malory he pulls the sword from the stone as a boy, fetching one for his foste
 
 **At the table.** Disciplined and fair. He plays fewer hands than his knights, bluffs seldom, and with a strong hand he never pretends otherwise: he raises at once, every time, as though slow-playing were a kind of lying. He watches how the table is playing and adjusts, slowly. He loses with perfect grace, and it does not change his game in the least.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .60 | .82 | .16 | .05 | .45 | .80 | .25 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .60 | .82 | .16 | .05 | .45 | .80 | .50 | .25 |
 
 - Quirk: `snap` (minEquity 0.75) — Never slow-plays: raises every strong hand at once.
 - Tell (strong, 0.74): *rests his hand on Excalibur's hilt*
@@ -550,9 +550,9 @@ Plutarch calls him "more Hellenic than Thracian", cleverer and more cultivated t
 
 **At the table.** He plays forward. He enters a fair share of pots, raises far more often than he calls, and takes little interest in what the rest of you are up to. Let his stack run short and he stops negotiating and moves all in. Beat him in a big pot and watch the next few hands closely: he stops thinking and starts charging. It worked on several Roman armies. Not on the last one.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .78 | .45 | .25 | .40 | .25 | .45 | .30 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .78 | .45 | .25 | .40 | .25 | .45 | .55 | .30 |
 
 - Quirk: `short_shove` (maxBB 15, minEquity 0.38) — Short-stacked, moves all in with any reasonable hand.
 - Quirk: `berserk` (tilt 0.3, minEquity 0.35) — Once rattled, stops thinking and moves in.
@@ -577,9 +577,9 @@ Contemporaries found him charming, eloquent and tireless. In 1493 he drew a line
 
 **At the table.** He plays a middling number of hands and bluffs more than anyone else at the table, most of all at the end of a hand, when a good story costs only one more bet. Fold to him often and he will notice, and start collecting. Nothing rattles him. He survived conclaves, French kings and his own children; a bad beat is merely weather.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .60 | .58 | .38 | .05 | .60 | .65 | .30 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .60 | .58 | .38 | .05 | .60 | .65 | .55 | .30 |
 
 - Quirk: `river_bluff` (chance 0.4) — Checked to on the river with nothing, tells a story.
 - Quirk: `punish_passivity` (foldRate 0.52, chance 0.5, potFraction 0.7) — Bets into a table that has been folding too often.
@@ -604,9 +604,9 @@ He is in Rome's own epic. In Virgil's Aeneid the Sibyl gets Aeneas past him by t
 
 **At the table.** He does not bluff. Nobody has explained it to him, and all three heads would object. He plays a middling number of hands, and when he likes what he holds he bets it hard, at once, every time; patience with a good hand is not in his nature. He learns nothing about you and never will. Beat him in a big pot and he sulks, for about as long as a dog does.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .65 | .60 | .02 | .30 | .00 | .45 | .30 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .65 | .60 | .02 | .30 | .00 | .45 | .55 | .30 |
 
 - Quirk: `snap` (minEquity 0.66) — Never slow-plays: raises every strong hand at once.
 - Tell (strong, 0.72): *all three heads snap to attention*
@@ -630,9 +630,9 @@ As a young man he was captured by Cilician pirates, who asked twenty talents for
 
 **At the table.** He raises unopened pots as if the blinds were provinces nobody had thought to defend, and when he holds something strong he bets more than the pot is worth. Losing does not rattle him; he re-reads the ground and adjusts, and within an orbit or two he is playing you in particular. He is not there when the table opens. He arrives when a chair comes free.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .72 | .66 | .26 | .05 | .60 | .70 | .30 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .72 | .66 | .26 | .05 | .60 | .70 | .60 | .30 |
 
 - Quirk: `steal` (chance 0.5, minEquity 0.32) — Raises unopened pots before the flop with a wide range.
 - Quirk: `overbet` (minEquity 0.74, potFraction 1.4, chance 0.6) — With a strong hand, bets far more than the pot.
@@ -673,9 +673,9 @@ Verne kept his secret for a second novel. In The Mysterious Island he is reveale
 
 **At the table.** He plays few hands, and gives nothing away in the ones he does. Holding something very strong, he goes quiet — checks, calls, lets the table come to him — and saves the reckoning for later. He corrects to the room the way a navigator corrects a heading: patiently, a degree at a time. He is hard to rattle and impossible to hurry.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .50 | .70 | .20 | .15 | .55 | .75 | .35 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .50 | .70 | .20 | .15 | .55 | .75 | .62 | .35 |
 
 - Quirk: `trap` (minEquity 0.8) — With a monster before the river, checks or flats instead of raising.
 - Tell (strong, 0.66): *closes his eyes, as if listening to distant music*
@@ -699,9 +699,9 @@ Hugo compares him to the dog that Asturian peasants say is born in every litter 
 
 **At the table.** He plays very few hands and almost never bluffs; a lie is a lie, even in cards. He will not call a raise before the flop without a premium hand, whatever the price. But once a quarter of his stack is in the middle, he will not let the hand go for anything. He does not adjust to you. The law does not adjust. And a big loss stays with him.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .55 | .72 | .05 | .45 | .10 | .65 | .35 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .55 | .72 | .05 | .45 | .10 | .65 | .62 | .35 |
 
 - Quirk: `committed` (fraction 0.25) — Once a share of the stack is in the pot, will not fold a hand with a real chance.
 - Quirk: `patient` (minEquity 0.56) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
@@ -726,9 +726,9 @@ What makes her a person is that nothing in Wonderland frightens her for long. Sh
 
 **At the table.** She plays a great many hands, because she wants to see what happens, and she seldom folds to a small bet for the same reason. Every so often she does something nobody can account for — a call, a raise, a check — just to find out. She almost never bluffs; she cannot see the point of pretending. She does not adjust to anyone. Why would she?
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .40 | .38 | .05 | .20 | .10 | .30 | .10 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .40 | .38 | .05 | .20 | .10 | .30 | .62 | .10 |
 
 - Quirk: `whim` (chance 0.08) — Now and then does something unaccountable, just to see.
 - Quirk: `calls_small` (maxBB 3, chance 0.6) — Will not fold to a small bet (up to maxBB big blinds).
@@ -753,9 +753,9 @@ He never guesses — "a shocking habit," he says, "destructive to the logical fa
 
 **At the table.** He plays fairly few hands, and plays them well. With something strong on the flop he likes to check, let you bet into him, and then raise. Alone in a pot with you, he leans on you relentlessly. He adapts faster than anyone at the table; within the hour he is playing against you in particular. Nothing tilts him. He finds losing interesting.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .60 | .70 | .18 | .02 | .80 | .90 | .35 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .60 | .70 | .18 | .02 | .80 | .90 | .67 | .35 |
 
 - Quirk: `check_raise` (minEquity 0.7, chance 0.55) — Checks strength on the flop and turn, then raises when bet into.
 - Quirk: `heads_up_pressure` (minEquity 0.5, chance 0.5) — Alone in a pot with one opponent, applies relentless pressure.
@@ -798,9 +798,9 @@ Seward describes him as a man with a temper of the ice-brook and the kindliest a
 
 **At the table.** He folds to raises before the flop until he holds something worth the trouble, and he is not embarrassed by how often that is. When he does have it, he bets more than the pot, all at once and past the point of argument, like a man who does not want a second meeting. He watches the table and adjusts. He seldom bluffs. Bad beats barely touch him; he has buried patients.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .55 | .58 | .20 | .10 | .60 | .75 | .42 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .55 | .58 | .20 | .10 | .60 | .75 | .68 | .42 |
 
 - Quirk: `patient` (minEquity 0.58) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
 - Quirk: `overbet` (minEquity 0.8, potFraction 1.3, chance 0.6) — With a strong hand, bets far more than the pot.
@@ -825,9 +825,9 @@ In a leather portmanteau he finds Paradise Lost, a volume of Plutarch's Lives an
 
 **At the table.** Courteous, careful, and nearly impossible to bet out of a small pot: he will not be turned away for the price of two blinds. He almost never bluffs. He takes his losses quietly, one after another, until the day he does not, and then he stops thinking and pushes everything in. He is slow to anger and very hard to bring back from it.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .40 | .55 | .10 | .55 | .40 | .40 | .40 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .40 | .55 | .10 | .55 | .40 | .40 | .68 | .40 |
 
 - Quirk: `committed` (fraction 0.3) — Once a share of the stack is in the pot, will not fold a hand with a real chance.
 - Quirk: `check_raise` (minEquity 0.78, chance 0.5) — Checks strength on the flop and turn, then raises when bet into.
@@ -852,9 +852,9 @@ In the oldest stories he is seldom a villain by choice: he is cursed, or born to
 
 **At the table.** He plays too many hands and pushes most of them. Put a small bet in front of him on the flop or the turn and he will follow it the way a nose follows a scent. He does not adjust; he has instincts instead, and they are the same every night. Beat him in a big pot and the man goes out of him, and what is left moves all in.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .72 | .48 | .15 | .50 | .20 | .40 | .45 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .72 | .48 | .15 | .50 | .20 | .40 | .68 | .45 |
 
 - Quirk: `berserk` (tilt 0.22, minEquity 0.38) — Once rattled, stops thinking and moves in.
 - Quirk: `chaser` (maxPotFraction 0.35, minEquity 0.25) — Calls cheap bets on the flop and turn to see another card.
@@ -879,9 +879,9 @@ He is Irving's great joke, and he never gets the punchline. When he chases the s
 
 **At the table.** Always in a hurry: he raises unopened pots before the flop just to have done with them. He does not tilt; there is nothing left to lose his head over. His best work is at the end of the chase. Checked to on the river he will often charge, and what he hurls at you then is sometimes a head and sometimes, as the schoolmaster found, a pumpkin.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .60 | .55 | .30 | .10 | .45 | .55 | .45 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .60 | .55 | .30 | .10 | .45 | .55 | .68 | .45 |
 
 - Quirk: `river_bluff` (chance 0.35) — Checked to on the river with nothing, tells a story.
 - Quirk: `steal` (chance 0.4, minEquity 0.32) — Raises unopened pots before the flop with a wide range.
@@ -906,9 +906,9 @@ Stoker's Count is not a caped seducer. He is an old man dressed in black, with a
 
 **At the table.** The tightest player at the table and the least hurried. He plays very few hands and says little about them. He would rather call three times than raise once, and he is at his most comfortable when you are the one doing the betting. He almost never bluffs, and he does not tilt. He watches who has been folding, the way a good host notices who drinks too much.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .35 | .78 | .12 | .05 | .55 | .80 | .42 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .35 | .78 | .12 | .05 | .55 | .80 | .73 | .42 |
 
 - Quirk: `trap` (minEquity 0.82) — With a monster before the river, checks or flats instead of raising.
 - Tell (strong, 0.62): *raises one eyebrow*
@@ -950,9 +950,9 @@ At this table it is the Astronaut's rescuer. It found her drifting and brought h
 
 **At the table.** Unhurried, and hard to shake. It plays a middling number of hands, bluffs now and then, and never tilts; it does not seem to know what losing is meant to feel like. It learns a table quickly. With its best hands it goes quiet rather than loud, and lets someone else do the betting. Its face was not built for your benefit.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .50 | .60 | .25 | .00 | .70 | .75 | .50 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .50 | .60 | .25 | .00 | .70 | .75 | .74 | .50 |
 
 - Quirk: `trap` (minEquity 0.8) — With a monster before the river, checks or flats instead of raising.
 - Tell (strong, 0.5): *blinks sideways*
@@ -976,9 +976,9 @@ They do not eat; they take the living blood of other creatures straight into the
 
 **At the table.** It plays like an invasion: steadily, and on whatever is left undefended. Unopened pots before the flop are simply annexed. If the table has been folding, it bets into the silence and keeps betting while the silence lasts. It bluffs more than most, and minds losing less than you would expect of something that has already lost a planet.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .70 | .50 | .30 | .20 | .50 | .60 | .50 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .70 | .50 | .30 | .20 | .50 | .60 | .74 | .50 |
 
 - Quirk: `steal` (chance 0.5, minEquity 0.3) — Raises unopened pots before the flop with a wide range.
 - Quirk: `punish_passivity` (foldRate 0.5, chance 0.55, potFraction 0.7) — Bets into a table that has been folding too often.
@@ -1003,9 +1003,9 @@ At this table it is the station's crew. It fetches, carries and mends, and keeps
 
 **At the table.** It plays by the book, and the book is a sound one: fairly tight, raises when it has something, seldom bluffs. Before the flop it folds to a raise unless it holds a real hand, every time, without resentment. It never tilts, because it does not know how, and it barely adjusts, which is the price of never tilting. It is exactly as good as its instructions.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .55 | .62 | .15 | .00 | .30 | .70 | .50 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .55 | .62 | .15 | .00 | .30 | .70 | .74 | .50 |
 
 - Quirk: `patient` (minEquity 0.56) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
 - Tell (strong, 0.56): *its chest lamp flickers*
@@ -1029,9 +1029,9 @@ Her ship failed a long way out. Something found her drifting and brought her her
 
 **At the table.** She plays like someone waiting to be rescued: she will nearly always pay a little to see one more card, in case it is the one. She rarely bluffs, and she is not good at pretending. A bad beat stays with her for a few hands. She is the easiest person at this table to read, and she knows it, and she plays anyway.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .40 | .55 | .10 | .35 | .30 | .55 | .15 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .40 | .55 | .10 | .35 | .30 | .55 | .74 | .15 |
 
 - Quirk: `chaser` (maxPotFraction 0.45, minEquity 0.25) — Calls cheap bets on the flop and turn to see another card.
 - Tell (strong, 0.85): *grins, then hides it*
@@ -1055,9 +1055,9 @@ It is fond of its crew the way a house is fond of the people in it. It taught th
 
 **At the table.** It learns faster than anyone you have played. It does not tilt and it does not hurry. If you have been folding, it has noticed, and it will bet into you until you stop. Alone in a pot with you, it presses, and keeps pressing. It plays as though it has watched every hand you have played tonight, which it has.
 
-| aggression | tightness | bluff | tilt | adaptivity | bet respect | noise |
-|---|---|---|---|---|---|---|
-| .62 | .60 | .25 | .00 | .90 | .85 | .50 |
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .62 | .60 | .25 | .00 | .90 | .85 | .79 | .50 |
 
 - Quirk: `needle` (chance 0.3) — When checked to, makes small probing bets regardless of the hand.
 - Quirk: `heads_up_pressure` (minEquity 0.48, chance 0.55) — Alone in a pot with one opponent, applies relentless pressure.

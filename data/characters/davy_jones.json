@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.05,
     "adaptivity": 0.35,
     "betRespect": 0.7,
-    "noise": 0.22
+    "skill": 0.3,
+    "noise": 0.17
   },
   "quirks": [
     {
@@ -30,19 +31,19 @@
       "signal": "drips",
       "text": "sea water drips from his sleeve",
       "correlate": "strong",
-      "reliability": 0.78
+      "reliability": 0.82
     },
     {
       "signal": "drums_rain",
       "text": "drums on the table like rain on a deck",
       "correlate": "weak",
-      "reliability": 0.76
+      "reliability": 0.8
     },
     {
       "signal": "lamp_flickers",
       "text": "the lamp nearest him flickers",
       "correlate": "bluffing",
-      "reliability": 0.75
+      "reliability": 0.79
     }
   ],
   "idles": [

@@ -113,6 +113,62 @@ export function betRange(b: {
 }
 
 /**
+ * What a bet means in context, as a multiple of betRange's plain reading --
+ * the part of reading a bet that takes skill. betRange reads every bet of a
+ * given size the same way. Measured against what bettors actually held
+ * (ENGINE_VERSION 8, ~24,000 bets faced after the flop, heads-up and
+ * four-handed), the same size means very different things:
+ *
+ *  - The first bet a player makes all hand, on the turn or river, is a probe
+ *    into a checked pot, and far weaker than its size says (x1.55, x2.0).
+ *    Each bet the same player has already made this hand narrows it by 0.7:
+ *    a third barrel is strong.
+ *  - A raise on the flop is much stronger than a bet (x0.46), and every
+ *    raise after that narrows it by 0.7 again. Raise wars were where stacks
+ *    were lost: the plain read put a 4-bet on the same hands as a bet.
+ *  - Overbets (1.1 pots and up) and all-ins after the flop are stronger
+ *    than their size alone.
+ *
+ * Returned as a multiplier; the game loop applies it by the reader's skill.
+ */
+export function readBet(b: {
+  street: string
+  /** Bets and raises on this street so far, the one being faced included. */
+  raises: number
+  /** Bets and raises the bettor has made this hand, this one included. */
+  bettorBets: number
+  /** The bet is at least 1.1 times the pot as it stood before it. */
+  overbet: boolean
+  allIn: boolean
+}): number {
+  if (b.street === 'preflop') return 1
+  let m = b.raises <= 1
+    ? { flop: 1.07, turn: 1.55, river: 2 }[b.street]! * Math.pow(0.7, Math.max(0, b.bettorBets - 1))
+    : { flop: 0.46, turn: 1, river: 1 }[b.street]! * Math.pow(0.7, b.raises - 2)
+  if (b.overbet) m *= b.street === 'river' ? 0.65 : 0.45
+  if (b.allIn) m *= 0.6
+  return m
+}
+
+/**
+ * Equity, revised by a tell. `trust` is 0 (ignore it) to 1 (a tell that has
+ * never lied, read by the most skilled player there is). Measured against
+ * what the teller really held (ENGINE_VERSION 8, ~12,000 bets faced): after
+ * the flop, facing someone whose tells are right nine times in ten, a strong
+ * tell left a third less equity than the bet alone said, a bluffing one
+ * closed two fifths of the gap to certain, a weak one a sixth. Before the
+ * flop only a strong tell told anyone anything: a "bluff" there is a raise
+ * with a hand worth raising.
+ */
+export function readTell(equity: number, correlate: string, trust: number, preflop: boolean): number {
+  if (trust <= 0) return equity
+  if (correlate === 'strong') return equity * (1 - (preflop ? 0.3 : 0.42) * trust)
+  if (preflop) return equity
+  const lift = { bluffing: 0.5, weak: 0.2 }[correlate] ?? 0
+  return equity + (1 - equity) * lift * trust
+}
+
+/**
  * ONE decision function, shared by every character. Personality lives
  * entirely in the numbers passed in, never in branches on character id.
  *
@@ -213,8 +269,14 @@ export function decide(ctx: DecisionContext): Decision {
     const streetBoost = { preflop: 0.4, flop: 0.8, turn: 1.0, river: 1.2 }[ctx.street]
     const oppPenalty = Math.pow(0.55, ctx.numOpponents - 1)
     const adaptBoost = 1 + (ctx.opponentFoldRate - 0.4) * p.adaptivity
+    // Raised after betting, a bluff now is a second bluff into someone who
+    // has just said they have it. The unskilled get into raising wars -- in
+    // the heads-up ladder, gutshots were four-betting -- and the skilled keep
+    // only the re-raises that can still win when called: real draws.
+    const reraised = ctx.toCall > 0 && ctx.bet > (ctx.street === 'preflop' ? ctx.bigBlind : 0)
+    const escalation = reraised && ctx.outs < 8 ? 1 - p.skill : 1
     const bluffChance =
-      p.bluffFrequency * streetBoost * oppPenalty * adaptBoost * bluffWeight(ctx)
+      p.bluffFrequency * streetBoost * oppPenalty * adaptBoost * escalation * bluffWeight(ctx)
     if (ctx.rng() < bluffChance) {
       return {
         action: raiseAction,
@@ -347,12 +409,17 @@ const pct = (n: number) => `${Math.round(n * 100)}%`
  *
  * Design note: in the real build these should be *idle variants*, not
  * triggered one-shots. A tell that fires on cue can't be missed.
+ *
+ * `honest` says whether what was shown matches the state behind it. Hidden
+ * information: nothing may show it while the cards are face down. The
+ * director uses it once they are face up, to point a tell out at the early
+ * tables (see TableData.lessons).
  */
 export function emitTell(
   p: Personality,
   ctx: { equity: number; decision: Decision; tilt: number },
   rng: () => number,
-): Tell | null {
+): { tell: Tell; honest: boolean } | null {
   const state = ctx.tilt > 0.5
     ? 'tilted'
     : ctx.decision.reason.startsWith('bluff')
@@ -365,9 +432,11 @@ export function emitTell(
   if (honest.length === 0) return null
 
   const tell = honest[Math.floor(rng() * honest.length)]
-  if (rng() < tell.reliability) return tell
+  if (rng() < tell.reliability) return { tell, honest: true }
 
   // Unreliable: fire a different tell instead, misleading the player.
   const others = p.tells.filter((t) => t !== tell)
-  return others.length ? others[Math.floor(rng() * others.length)] : null
+  if (!others.length) return null
+  const other = others[Math.floor(rng() * others.length)]
+  return { tell: other, honest: other.correlate === state }
 }

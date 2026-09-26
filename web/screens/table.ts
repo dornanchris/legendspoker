@@ -3,7 +3,7 @@ import { HUMAN } from '../../src/personality.js'
 import type { Action, Decision } from '../../src/decide.js'
 import type { Card } from '../../src/equity.js'
 import { mulberry32 } from '../../src/rng.js'
-import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, UNINVITED, personality, arrivalRules, banishmentFor, type Line } from '../../src/content.js'
+import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, UNINVITED, personality, arrivalRules, banishmentFor, tellLine, type Line } from '../../src/content.js'
 import { TableRun, type Beat } from '../../src/director.js'
 import { applyOutcome, fillLine, type TableOutcome } from '../../src/tour.js'
 import { tableRecord, ENGINE_VERSION } from '../../src/save.js'
@@ -74,17 +74,6 @@ function betSpot(): HTMLElement {
 }
 
 const nudge = (p: Pt, by: number): Pt => ({ x: p.x + (Math.random() * 2 - 1) * by, y: p.y + (Math.random() * 2 - 1) * by })
-
-/**
- * A tell or idle as the seat shows it. Most read after the name ("Lincoln
- * strokes his beard"); some are about something else and read on their own
- * -- "Medusa the snakes in her hair go still" does not. The seat box already
- * says whose it is. The ledger keeps the words as written.
- */
-const STANDS_ALONE = /^(a|an|all|each|every|he|her|his|it|its|nothing|one|sea|she|something|somewhere|the|their|there|they|three|two)\b/i
-function tellLine(name: string, text: string): string {
-  return STANDS_ALONE.test(text) ? text[0].toUpperCase() + text.slice(1) : `${name} ${text}`
-}
 
 function readingTime(text: string): number {
   return Math.max(1500, Math.min(5200, 900 + text.length * 48))

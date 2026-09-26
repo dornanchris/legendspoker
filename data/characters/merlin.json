@@ -16,6 +16,7 @@
     "tiltSensitivity": 0.02,
     "adaptivity": 0.7,
     "betRespect": 0.85,
+    "skill": 0.45,
     "noise": 0.25
   },
   "quirks": [
@@ -29,19 +30,19 @@
       "signal": "staff_hums",
       "text": "his staff hums, faintly",
       "correlate": "strong",
-      "reliability": 0.72
+      "reliability": 0.62
     },
     {
       "signal": "gazes_elsewhere",
       "text": "gazes somewhere past the table, as if the hand were already over",
       "correlate": "bluffing",
-      "reliability": 0.7
+      "reliability": 0.6
     },
     {
       "signal": "murmurs",
       "text": "murmurs a word nobody catches",
       "correlate": "weak",
-      "reliability": 0.72
+      "reliability": 0.62
     }
   ],
   "idles": [

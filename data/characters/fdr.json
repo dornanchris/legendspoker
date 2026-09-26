@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.1,
     "adaptivity": 0.35,
     "betRespect": 0.6,
-    "noise": 0.12
+    "skill": 0,
+    "noise": 0.06
   },
   "quirks": [
     {
@@ -29,19 +30,19 @@
       "signal": "holder_up",
       "text": "tilts his cigarette holder upward",
       "correlate": "strong",
-      "reliability": 0.8
+      "reliability": 0.88
     },
     {
       "signal": "broad_smile",
       "text": "smiles broadly at the whole table",
       "correlate": "bluffing",
-      "reliability": 0.78
+      "reliability": 0.86
     },
     {
       "signal": "taps_ash",
       "text": "taps the ash from his holder",
       "correlate": "weak",
-      "reliability": 0.8
+      "reliability": 0.88
     }
   ],
   "idles": [

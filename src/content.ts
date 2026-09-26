@@ -91,6 +91,8 @@ export type Dials = {
   adaptivity: number
   /** How far they believe a bet: low is a calling station. */
   betRespect: number
+  /** Execution, not style: see Personality.skill. */
+  skill: number
   noise: number
 }
 
@@ -192,6 +194,12 @@ export type TableData = {
   ambience: string[]
   /** Shown at the table before a late champion arrives. */
   presence: string | null
+  /**
+   * The legibility curve's first steps: the chance, after a showdown, that
+   * Death points out a tell that told the truth that hand (dealer.json
+   * `lessons`). The first tables only; absent means never.
+   */
+  lessons?: number
 }
 
 export type Line = {
@@ -207,6 +215,8 @@ export type Line = {
   when?: string
   /** needles only, on an exchange's first line: the tablemate being needled. */
   to?: string
+  /** dealer lessons only: what the tell being pointed out turned out to mean. */
+  correlate?: 'strong' | 'weak' | 'bluffing' | 'tilted'
 }
 
 export type DialogueData = {
@@ -238,6 +248,17 @@ export type DialogueData = {
 }
 
 export type DealerLines = Record<string, Line[]>
+
+/**
+ * A tell or idle in words, as the seat shows it. Most read after the name
+ * ("Lincoln strokes his beard"); some are about something else and read on
+ * their own -- "Medusa the snakes in her hair go still" does not. The ledger
+ * keeps the words as written.
+ */
+const STANDS_ALONE = /^(a|an|all|each|every|he|her|his|it|its|nothing|one|sea|she|something|somewhere|the|their|there|they|three|two)\b/i
+export function tellLine(name: string, text: string): string {
+  return STANDS_ALONE.test(text) ? text[0].toUpperCase() + text.slice(1) : `${name} ${text}`
+}
 
 /**
  * The uninvited guest's script: data/dialogue/uninvited.json. Win a pot

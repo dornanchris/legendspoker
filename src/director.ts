@@ -26,14 +26,16 @@
  *
  * 3. It knows only what the player could know: public actions, cards shown
  *    down, and the player's OWN hole cards. Opponents' observations are built
- *    from what they did, never from what they held.
+ *    from what they did, never from what they held. The one hidden thing it
+ *    holds -- whether a tell told the truth -- it uses only once that
+ *    player's cards are face up (lesson()).
  *
  * Nothing in here branches on a character's identity. Who speaks is data:
  * the dialogue file names the speakers and the table file names the champion.
  */
 import { mulberry32 } from './rng.js'
 import { RANKINGS, type HandEvent } from './game.js'
-import { CHARACTERS, type TableData, type DialogueData, type Line, type UninvitedData } from './content.js'
+import { CHARACTERS, DEALER, tellLine, type TableData, type DialogueData, type Line, type UninvitedData } from './content.js'
 import { preflopStrength, type Card } from './equity.js'
 import { fillLine, tierFor, RESPECT_POINTS, RESPECT_THRESHOLDS, earnedName } from './tour.js'
 import { handRank, marksForHand, marksForTable, type HandFacts, type TableFacts } from './marks.js'
@@ -142,6 +144,8 @@ export class TableRun {
   private guest: { id: string; since: number; last: number; said: number; gone: boolean } | null = null
   /** Callouts and needles: their own seeded stream (src/chatter.ts). */
   private chatter: Chatter
+  /** Tells Death has already pointed out this sitting, as "id|text". */
+  private taught = new Set<string>()
 
   // Per-hand state, reset on every 'hand' event.
   private h = this.freshHand(0, 0, [])
@@ -206,6 +210,12 @@ export class TableRun {
       busted: [] as { seat: number; id: string }[],
       /** Knocked-out characters who came back at the end of this hand. */
       returned: [] as string[],
+      /**
+       * The first tell each seat showed this hand that told the truth.
+       * Hidden information until their cards are turned over: read only by
+       * lesson(), and only for seats in `revealed`.
+       */
+      tells: new Map<number, { text: string; correlate: NonNullable<Line['correlate']> }>(),
     }
   }
 
@@ -256,6 +266,35 @@ export class TableRun {
     return [this.say(line)]
   }
 
+  /**
+   * The early tables' lessons: the legibility curve at its most legible.
+   * When a character's tell told the truth this hand and their cards have
+   * just been turned over, Death may point it out -- by the table's
+   * `lessons` chance, so often at the first table and never after the third.
+   * Only once the cards are face up, so it says nothing the table has not
+   * already shown; only one lesson a hand, and not over another of his own
+   * lines; each character's tell at most once a sitting. It teaches a way
+   * of watching, not a rule: the lines never promise a tell always means
+   * the same thing.
+   */
+  private lesson(beats: Beat[]): Beat[] {
+    const chance = this.mode === 'tour' ? this.table.lessons ?? 0 : 0
+    if (chance <= 0) return []
+    if (beats.some((b) => b.kind === 'line' && b.speaker === 'death')) return []
+    for (const [seat, t] of this.h.tells) {
+      const id = this.h.ids[seat]
+      if (seat === HUMAN || !id || !this.h.revealed.has(seat) || this.taught.has(`${id}|${t.text}`)) continue
+      const line = this.pick(DEALER.lessons, (l) => l.correlate === t.correlate)
+      if (!line) continue
+      // Draw only when there is something to say (see aside()).
+      if (this.rng() > chance) return []
+      this.taught.add(`${id}|${t.text}`)
+      const name = CHARACTERS[id]?.short ?? id
+      return [this.say({ ...line, text: line.text.replaceAll('{tell}', tellLine(name, t.text)) })]
+    }
+    return []
+  }
+
   private opponents(): string[] {
     return this.seats.filter((s, i): s is string => s !== null && i !== HUMAN)
   }
@@ -295,6 +334,9 @@ export class TableRun {
         return []
       }
       case 'action': return this.onAction(e)
+      case 'tell':
+        if (e.honest && !this.h.tells.has(e.seat)) this.h.tells.set(e.seat, { text: e.text, correlate: e.correlate })
+        return []
       case 'showdown': {
         this.h.showdown = e
         this.h.board = e.board
@@ -635,6 +677,10 @@ export class TableRun {
         beats.push(...this.aside('champion_loses_pot'))
       }
     }
+
+    // Not over the end of the sitting: the lesson is for the next hand.
+    const over = h.busted.some((b) => b.seat === HUMAN) || e.stacks.filter((c) => c > 0).length <= 1
+    if (!over) beats.push(...this.lesson(beats))
 
     // --- heads-up with a champion: they notice when you take one off them
     const opp = this.opponents()

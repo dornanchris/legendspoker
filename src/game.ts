@@ -1,7 +1,7 @@
 // poker-ts exports the facade as a named `Table`, not a default export.
 import pokerPkg from 'poker-ts'
 const { Table: Poker } = pokerPkg as any
-import { decide, emitTell, betRange, type Action, type Decision } from './decide.js'
+import { decide, emitTell, betRange, readBet, readTell, type Action, type Decision } from './decide.js'
 import { handStrength, preflopStrength, drawOuts, boardWetness, type Card } from './equity.js'
 import type { Personality } from './personality.js'
 import { seededShuffle } from './rng.js'
@@ -20,6 +20,7 @@ export type Stats = {
   pfr: number // preflop raise
   bets: number
   calls: number
+  checks: number
   folds: number
   foldsToAggression: number
   facedAggression: number
@@ -34,12 +35,24 @@ export const newStats = (): Stats => ({
   pfr: 0,
   bets: 0,
   calls: 0,
+  checks: 0,
   folds: 0,
   foldsToAggression: 0,
   facedAggression: 0,
   wins: 0,
   showdowns: 0,
 })
+
+/**
+ * The average player, where every read of a seat starts (Game.read): how
+ * often a player bets or raises when they act, and how often they fold to a
+ * bet. Measured over the eight story tables (96 four-handed tournaments,
+ * ENGINE_VERSION 9): 0.224 and 0.408. READ_PRIOR is how many actions of
+ * evidence the average is worth to an unskilled reader; skill shrinks it.
+ */
+const BET_FREQ = 0.22
+const FOLD_RATE = 0.4
+const READ_PRIOR = 30
 
 export type BlindLevel = { smallBlind: number; bigBlind: number; ante?: number }
 
@@ -89,7 +102,20 @@ export type HandEvent =
   /** The human seat's own hole cards. Never fired for anyone else. */
   | { type: 'deal'; seat: number; hole: Card[] }
   | { type: 'street'; street: string; board: Card[]; stacks: number[] }
-  | { type: 'tell'; seat: number; signal: string; text: string }
+  /**
+   * A tell, shown just before the action it leaks. `correlate` and `honest`
+   * are hidden information -- what the tell is supposed to mean, and whether
+   * it meant it this time -- for the director to use after a showdown, never
+   * for the screen to show while the hand is live.
+   */
+  | {
+      type: 'tell'
+      seat: number
+      signal: string
+      text: string
+      correlate: 'strong' | 'weak' | 'bluffing' | 'tilted'
+      honest: boolean
+    }
   /** Emitted AFTER the table applies the action, so pot and stacks are the result of it. */
   | {
       type: 'action'
@@ -276,7 +302,10 @@ export type GameOptions = {
   /**
    * Seat played by a human. That seat never calls decide() -- it awaits
    * onHumanTurn instead -- so it needs no dials, and no equity is computed
-   * for it.
+   * for it. It is also the stranger at the table: the one player skilled
+   * characters read by what they have seen them do (see the skill read).
+   * A test may set it without onHumanTurn, to seat a stand-in who is read
+   * the same way.
    */
   humanSeat?: number
   /** Resolves with the human's action. Awaited, so it can take as long as it likes. */
@@ -525,6 +554,12 @@ export class Game {
     // before it: that player holds the initiative, and a bet from them now
     // carries on the story their raise began (a continuation bet).
     let aggressor = -1
+    // Bets and raises: on this street by anyone, and this hand by each seat.
+    // How a skilled player reads a bet in context (see readBet).
+    let raisesThisStreet = 0
+    const handBets: number[] = this.seats.map(() => 0)
+    /** The tell each seat showed as they last acted this hand, if any. */
+    const shownTell: ({ correlate: string; reliability: number } | null)[] = this.seats.map(() => null)
     let initiative = -1
     const wentToShowdown = new Set<number>()
     /**
@@ -548,6 +583,7 @@ export class Game {
 
         if (street !== lastStreet) {
           lastStreet = street
+          raisesThisStreet = 0
           initiative = aggressor
           aggressor = -1
           onEvent?.({
@@ -588,7 +624,7 @@ export class Game {
         const facingAllIn = bettor >= 0 && seatState[bettor].stack === 0
         let oppRange = 1
         if (!isHuman && bettor >= 0) {
-          const base = betRange({
+          let base = betRange({
             street,
             toCall,
             pot,
@@ -596,6 +632,34 @@ export class Game {
             allIn: facingAllIn,
             bettorBB: contributed[bettor] / bigBlind,
           })
+          // Skill reads a bet in context: a river probe is not a 4-bet. At 0
+          // every bet of a size reads the same.
+          //
+          // The PLAYER is also read as a person. The legends know one another
+          // by reputation -- that is the plain read -- but the player is a
+          // stranger, learned by watching: the same bet from someone who bets
+          // half the time comes from twice the hands it does from someone who
+          // bets a quarter of the time. As far as the reader adjusts to people
+          // at all (`adaptivity`). Only the stranger: reading one another this
+          // way moved the cast's own styles by up to ten points of VPIP (the
+          // Wolf Man, the Robot, Holmes), and a character must still play
+          // like themselves.
+          const skill = s.personality.skill
+          if (skill > 0) {
+            const context = readBet({
+              street,
+              raises: raisesThisStreet,
+              bettorBets: handBets[bettor],
+              overbet: toCall >= 1.1 * Math.max(1, pot - toCall),
+              allIn: facingAllIn,
+            })
+            base *= Math.pow(context, skill)
+            if (bettor === humanSeat) {
+              const often = this.read(bettor, skill).betFreq / BET_FREQ
+              base *= Math.pow(often, skill * s.personality.adaptivity)
+            }
+            base = Math.max(0.05, Math.min(1, base))
+          }
           // In steps of 5%, so a street's equity is worked out a few times at most.
           oppRange = Math.round((1 - s.personality.betRespect * (1 - base)) * 20) / 20
         }
@@ -616,6 +680,24 @@ export class Game {
           } else {
             equity = cached
           }
+        }
+
+        // Who is still in against them.
+        const dealt = this.table.holeCards()
+        const inHand: number[] = []
+        this.seats.forEach((_, i) => {
+          if (i !== seat && seatState[i] && dealt[i] && !foldedSeats.has(i)) inHand.push(i)
+        })
+
+        // Skill reads people too: the tell the player we are up against showed
+        // as they last acted -- the bettor, or the one opponent left. Public:
+        // it is the same tell the human sees. Believed as far as that
+        // character's tells deserve (a coin-flip tell is worth nothing) and
+        // as far as the reader's skill goes. Death shows none.
+        const subject = bettor >= 0 ? bettor : inHand.length === 1 ? inHand[0] : -1
+        const shown = subject >= 0 ? shownTell[subject] : null
+        if (!isHuman && shown && s.personality.skill > 0) {
+          equity = readTell(equity, shown.correlate, s.personality.skill * Math.max(0, 2 * shown.reliability - 1), street === 'preflop')
         }
 
         const legalRaw = this.table.legalActions()
@@ -666,7 +748,7 @@ export class Game {
             legal,
             numOpponents: Math.max(1, this.table.numActivePlayers() - 1),
             tilt: s.tilt,
-            opponentFoldRate: this.tableFoldRate(seat),
+            opponentFoldRate: this.foldRateFacing(seat, inHand, s.personality.skill),
             committed: contributed[seat],
             facingAllIn,
             bet: myBet,
@@ -676,15 +758,26 @@ export class Game {
             rng,
           })
 
+          // The tell precedes the action: it is a leak about the decision
+          // already made, which is what makes it readable at all. Drawn
+          // whether or not a screen is watching, because the table is.
+          const tell = emitTell(
+            s.personality,
+            { equity, decision, tilt: s.tilt },
+            rng,
+          )
+          shownTell[seat] = tell ? { correlate: tell.tell.correlate, reliability: tell.tell.reliability } : null
           if (onEvent) {
-            // The tell precedes the action: it is a leak about the decision
-            // already made, which is what makes it readable at all.
-            const tell = emitTell(
-              s.personality,
-              { equity, decision, tilt: s.tilt },
-              rng,
-            )
-            if (tell) onEvent({ type: 'tell', seat, signal: tell.signal, text: tell.text })
+            if (tell) {
+              onEvent({
+                type: 'tell',
+                seat,
+                signal: tell.tell.signal,
+                text: tell.tell.text,
+                correlate: tell.tell.correlate,
+                honest: tell.honest,
+              })
+            }
           }
         }
 
@@ -694,12 +787,16 @@ export class Game {
           s.stats.folds++
           foldedSeats.add(seat)
           if (toCall > 0) s.stats.foldsToAggression++
+        } else if (decision.action === 'check') {
+          s.stats.checks++
         } else if (decision.action === 'call') {
           s.stats.calls++
           if (street === 'preflop') putMoneyIn.add(seat)
         } else if (decision.action === 'bet' || decision.action === 'raise') {
           s.stats.bets++
           aggressor = seat
+          raisesThisStreet++
+          handBets[seat]++
           if (street === 'preflop') {
             putMoneyIn.add(seat)
             raisedPreflop.add(seat)
@@ -971,6 +1068,37 @@ export class Game {
     const { smallBlind, bigBlind, ante } = this.opts.levels[this.level]
     this.table.setForcedBets({ smallBlind, bigBlind, ante })
     this.opts.onEvent?.({ type: 'level', level: this.level, smallBlind, bigBlind })
+  }
+
+  /**
+   * What the table has seen of one seat: how often they bet or raise when
+   * they act, and how often they fold to a bet. Each starts at the average
+   * player's and moves to what has actually been seen as it builds up, so a
+   * dozen quiet hands do not make someone a rock. A skilled reader makes up
+   * their mind sooner: the average is worth 30 actions at skill 0, 6 at 1.
+   * The human seat is read like anyone else.
+   */
+  private read(seat: number, skill: number): { betFreq: number; foldRate: number } {
+    const st = this.seats[seat].stats
+    const acts = st.bets + st.calls + st.checks + st.folds
+    const prior = READ_PRIOR * (1 - 0.8 * skill)
+    return {
+      betFreq: (st.bets + BET_FREQ * prior) / (acts + prior),
+      foldRate: (st.foldsToAggression + FOLD_RATE * prior) / (st.facedAggression + prior),
+    }
+  }
+
+  /**
+   * The fold rate a player bets into. Without skill it is the table's, and
+   * only once the table has faced 20 bets (adaptivity's original read). With
+   * skill it moves toward the players actually in this pot: a skilled
+   * player bluffs the one who folds, not the room.
+   */
+  private foldRateFacing(seat: number, inHand: number[], skill: number): number {
+    const table = this.tableFoldRate(seat)
+    if (skill <= 0 || inHand.length === 0) return table
+    const theirs = inHand.reduce((a, i) => a + this.read(i, skill).foldRate, 0) / inHand.length
+    return table + skill * (theirs - table)
   }
 
   /** Average fold-to-aggression across the other seats, for adaptivity. */

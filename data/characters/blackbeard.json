@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.15,
     "adaptivity": 0.35,
     "betRespect": 0.5,
-    "noise": 0.2
+    "skill": 0.35,
+    "noise": 0.15
   },
   "quirks": [
     {
@@ -35,19 +36,19 @@
       "signal": "strokes_beard",
       "text": "strokes his braided beard",
       "correlate": "strong",
-      "reliability": 0.78
+      "reliability": 0.82
     },
     {
       "signal": "goes_still",
       "text": "goes very still",
       "correlate": "bluffing",
-      "reliability": 0.76
+      "reliability": 0.8
     },
     {
       "signal": "fuses_flare",
       "text": "the slow-matches under his hat smoulder brighter",
       "correlate": "tilted",
-      "reliability": 0.78
+      "reliability": 0.82
     }
   ],
   "idles": [

@@ -16,7 +16,8 @@
     "tiltSensitivity": 0.3,
     "adaptivity": 0.1,
     "betRespect": 0.4,
-    "noise": 0.1
+    "skill": 0,
+    "noise": 0.05
   },
   "quirks": [
     {
@@ -30,19 +31,19 @@
       "signal": "grins_teeth",
       "text": "grins, all teeth",
       "correlate": "strong",
-      "reliability": 0.86
+      "reliability": 0.94
     },
     {
       "signal": "drums_fingers",
       "text": "drums his fingers on the felt",
       "correlate": "bluffing",
-      "reliability": 0.84
+      "reliability": 0.92
     },
     {
       "signal": "polishes_spectacles",
       "text": "polishes his spectacles, hard",
       "correlate": "tilted",
-      "reliability": 0.86
+      "reliability": 0.94
     }
   ],
   "idles": [
