@@ -263,6 +263,16 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   Nobody's style moved: in 3000-hand cash sims every character's VPIP is
   within about 3 points of ENGINE 8 and AF within about 0.2 (seed-to-seed
   noise is about 1).
+  Result, heads-up ladder (`npm run headsup 24`): Death first at 63% (was
+  8th at 53%), re-dialled for it (aggression 0.65, tightness 0.7, bluffs
+  0.06; the design doc asks only that he be "unreadable, no tells,
+  flawless"). Table averages: the White House 44%, tables 2-4 48-49%,
+  tables 5-8 51-54%. Style still moves individuals by more than a table's
+  step: Washington (51%) sits above Merlin, Lancelot and the Green Knight
+  (45-48%); a calling station is weak one on one by nature. With a stand-in
+  player in your chair who reads tells and bets like a skilled character,
+  100 tables each: wins 33% at the White House, 15% at the Station (one in
+  five is par).
 - **Fast-forward:** offered when folded / all in; presentation clock only;
   lines are cut, not sped; cancels at the showdown reveal and new deals.
 - **Table motion and sound (an early slice of Phase 6):** Death shuffles and
