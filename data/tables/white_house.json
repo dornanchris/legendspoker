@@ -12,7 +12,7 @@
   ],
   "champion": "washington",
   "arrival": null,
-  "handsPerLevel": 25,
+  "handsPerLevel": 9,
   "dialogue": "table-01-white-house.json",
   "buyIn": 2000,
   "respectStart": 0,

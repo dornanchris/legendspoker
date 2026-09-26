@@ -22,7 +22,7 @@ pass and never appears in the game.
 
 **Earned names.** nobody → “tenderfoot” → *your name* → “Challenger”
 
-Buy-in 2000, blinds up every 25 hands.
+Buy-in 2000, blinds up every 9 hands.
 
 ### Abraham Lincoln — *The Rail-Splitter*
 
@@ -144,7 +144,7 @@ In 1783 he resigned his commission to Congress when he could have kept it, and i
 
 **Earned names.** nobody → “Nobody” → *your name* → “Hero”
 
-Buy-in 2000, blinds up every 22 hands. Odysseus arrives after 1 elimination + 10 hands (missable), bringing the average stack.
+Buy-in 2000, blinds up every 8 hands. Odysseus arrives after 1 elimination + 10 hands (missable), bringing the average stack.
 
 ### Socrates — *The Gadfly of Athens*
 
@@ -292,7 +292,7 @@ In the Odyssey's first line Homer calls him polytropos, a man of many turns, and
 
 **Earned names.** nobody → “powder monkey” → *your name* → “Commodore”
 
-Buy-in 2000, blinds up every 25 hands.
+Buy-in 2000, blinds up every 9 hands.
 
 ### Captain William Kidd — *Privateer, by His Own Account*
 
@@ -413,7 +413,7 @@ He built the legend on purpose. The General History of the Pyrates, published in
 
 **Earned names.** nobody → “Beaumains” → *your name* → “Knight”
 
-Buy-in 2000, blinds up every 25 hands.
+Buy-in 2000, blinds up every 9 hands.
 
 ### Merlin — *The King's Prophet*
 
@@ -536,7 +536,7 @@ In Malory he pulls the sword from the stone as a boy, fetching one for his foste
 
 **Earned names.** nobody → “tiro” → *your name* → “Imperator”
 
-Buy-in 2000, blinds up every 25 hands. Julius Caesar arrives after 1 elimination, bringing the average stack.
+Buy-in 2000, blinds up every 9 hands. Julius Caesar arrives after 1 elimination, bringing the average stack.
 
 ### Spartacus — *Gladiator of Capua*
 
@@ -659,7 +659,7 @@ As a young man he was captured by Cilician pirates, who asked twenty talents for
 
 **Earned names.** nobody → “Irregular” → *your name* → “Detective”
 
-Buy-in 2000, blinds up every 25 hands.
+Buy-in 2000, blinds up every 9 hands.
 
 ### Captain Nemo — *Master of the Nautilus*
 
@@ -784,7 +784,7 @@ He never guesses — "a shocking habit," he says, "destructive to the logical fa
 
 **Earned names.** nobody → “lamb” → *your name* → “Hunter”
 
-Buy-in 2000, blinds up every 22 hands. Count Dracula arrives after 2 eliminations, bringing the average stack.
+Buy-in 2000, blinds up every 8 hands. Count Dracula arrives after 2 eliminations, bringing the average stack.
 
 ### Abraham Van Helsing — *Professor of Amsterdam*
 
@@ -936,7 +936,7 @@ Stoker's Count is not a caped seducer. He is an old man dressed in black, with a
 
 **Earned names.** nobody → “stowaway” → *your name* → “Commander”
 
-Buy-in 2000, blinds up every 22 hands. The AI arrives when The Robot is eliminated, bringing the average stack.
+Buy-in 2000, blinds up every 8 hands. The AI arrives when The Robot is eliminated, bringing the average stack.
 
 ### The Grey — *Stranger of the Lonely Roads*
 
@@ -1083,7 +1083,7 @@ It is fond of its crew the way a house is fond of the people in it. It taught th
 
 **Earned names.** nobody → “Lucky” → *your name* → “Champion”
 
-Buy-in 2000, blinds up every 22 hands.
+Buy-in 2000, blinds up every 8 hands.
 
 Seats: George Washington, Odysseus, Blackbeard, King Arthur.
 
@@ -1101,7 +1101,7 @@ Seats: George Washington, Odysseus, Blackbeard, King Arthur.
 
 **Earned names.** nobody → “pretender” → *your name* → “Conqueror”
 
-Buy-in 2000, blinds up every 22 hands.
+Buy-in 2000, blinds up every 8 hands.
 
 Seats: Julius Caesar, Sherlock Holmes, Count Dracula, The AI.
 
@@ -1119,7 +1119,7 @@ Seats: Julius Caesar, Sherlock Holmes, Count Dracula, The AI.
 
 **Earned names.** nobody → “tourist” → *your name* → “Colleague”
 
-Buy-in 5000, blinds up every 30 hands.
+Buy-in 5000, blinds up every 12 hands.
 
 Seats: Death.
 

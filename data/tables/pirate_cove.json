@@ -11,7 +11,7 @@
   ],
   "champion": "blackbeard",
   "arrival": null,
-  "handsPerLevel": 25,
+  "handsPerLevel": 9,
   "dialogue": "table-03-pirate-cove.json",
   "buyIn": 2000,
   "respectStart": 0,

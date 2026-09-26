@@ -8,7 +8,7 @@
   "role": "seat",
   "arrives": false,
   "returns": {
-    "afterHands": 50,
+    "afterHands": 20,
     "stack": "average",
     "lines": [
       { "id": "gk_return_n01", "speaker": "narration", "type": "stage_direction", "text": "[Hooves, somewhere outside. Then a laugh loud enough to rattle the cups.]" },
@@ -16,7 +16,7 @@
       { "id": "gk_return_01", "speaker": "green_knight", "text": "Ha! A year and a day, as I promised. I have come for my blow." },
       { "id": "gk_return_02", "speaker": "green_knight", "text": "Did you think that was the end of me? I said I would be back for my turn. I am always back for my turn." },
       { "id": "gk_return_03", "speaker": "green_knight", "text": "Ha! I took the long way round. Deal me in. I am owed a blow, and I mean to collect it in chips." },
-      { "id": "gk_return_d01", "speaker": "death", "text": "Fifty hands. At this table, that is a year and a day. I checked. He had already checked." },
+      { "id": "gk_return_d01", "speaker": "death", "text": "Twenty hands. At this table, that is a year and a day. I checked. He had already checked." },
       { "id": "gk_return_d02", "speaker": "death", "text": "I do not usually let anyone back in. He has a letter from Morgan le Fay, and I have learned not to argue with her paperwork." },
       { "id": "gk_return_d03", "speaker": "death", "text": "Most people I see once. He keeps appointments." }
     ]

@@ -8,7 +8,7 @@
   ],
   "champion": "death",
   "arrival": null,
-  "handsPerLevel": 30,
+  "handsPerLevel": 12,
   "dialogue": "table-11-finale.json",
   "buyIn": 5000,
   "respectStart": 3,

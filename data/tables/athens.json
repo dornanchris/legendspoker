@@ -16,7 +16,7 @@
     "delayHands": 10,
     "stack": "average"
   },
-  "handsPerLevel": 22,
+  "handsPerLevel": 8,
   "dialogue": "table-02-athens.json",
   "buyIn": 2000,
   "respectStart": 0,

@@ -15,7 +15,7 @@
     "delayHands": 0,
     "stack": "average"
   },
-  "handsPerLevel": 25,
+  "handsPerLevel": 9,
   "dialogue": "table-05-rome.json",
   "buyIn": 2000,
   "respectStart": 0,

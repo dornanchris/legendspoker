@@ -94,8 +94,8 @@
     "id": "brief_acquaintance",
     "title": "Brief Acquaintance",
     "text": "In and out before the blinds had a chance to matter. Rude, and effective.",
-    "hint": "Win a table in forty hands or fewer.",
-    "when": { "type": "table_won_fast", "maxHands": 40 }
+    "hint": "Win a table in twenty-five hands or fewer.",
+    "when": { "type": "table_won_fast", "maxHands": 25 }
   },
   {
     "id": "known_by_name",
@@ -315,7 +315,7 @@
   {
     "id": "the_return_blow",
     "title": "The Return Blow",
-    "text": "He came back. They do not, as a rule; I am the rule. At this table a year and a day is fifty hands, and he had counted every one of them.",
+    "text": "He came back. They do not, as a rule; I am the rule. At this table a year and a day is twenty hands, and he had counted every one of them.",
     "hint": "See the Green Knight off, and still be sitting there when he keeps his appointment.",
     "when": { "type": "returned", "character": "green_knight" }
   },

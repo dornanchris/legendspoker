@@ -16,7 +16,7 @@
     "delayHands": 0,
     "stack": "average"
   },
-  "handsPerLevel": 22,
+  "handsPerLevel": 8,
   "dialogue": "table-07-transylvania.json",
   "buyIn": 2000,
   "respectStart": 0,

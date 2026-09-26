@@ -289,8 +289,11 @@ export type GameOptions = {
    * speed must never change how a hand resolves, and a clock-driven schedule
    * would make a fast-forwarded table play differently from a watched one.
    *
-   * 25 puts the median 3-handed table near 68 hands. A fourth seat lengthens
-   * it, so revisit once the roster has four.
+   * The default, 25, is only the frozen Phase 2 instrument's pace (`npm run
+   * tourney` with no table), kept so its numbers stay comparable. Every tour
+   * table sets its own in data/tables: 8-9 hands a level, 12 at the finale.
+   * Five-handed that is under two orbits a level, while the first three
+   * orbits are still dealt at 100bb and 67bb deep.
    */
   handsPerLevel: number
 

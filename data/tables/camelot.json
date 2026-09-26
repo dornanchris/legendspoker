@@ -11,7 +11,7 @@
   ],
   "champion": "arthur",
   "arrival": null,
-  "handsPerLevel": 25,
+  "handsPerLevel": 9,
   "dialogue": "table-04-camelot.json",
   "buyIn": 2000,
   "respectStart": 0,
