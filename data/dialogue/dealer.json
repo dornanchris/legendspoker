@@ -33,8 +33,8 @@
   ],
 
   "open_table": [
-    { "id": "dl_open_01", "speaker": "death", "text": "No champion tonight. Just whoever was in the room. It is how most games have always been." },
-    { "id": "dl_open_02", "speaker": "death", "text": "The champion is not playing. The regulars are, and they have been waiting for this." },
+    { "id": "dl_open_01", "speaker": "death", "text": "No title is on the line tonight. Whoever came through the door plays, champions included. It is how most games have always been." },
+    { "id": "dl_open_02", "speaker": "death", "text": "A champion may sit down tonight, but nobody is defending anything. They are only players again, and some of them are enjoying it." },
     { "id": "dl_open_03", "speaker": "death", "text": "I deal to whoever sits down. Nobody gets better cards for being famous." },
     { "id": "dl_open_04", "speaker": "death", "text": "No stakes worth mentioning tonight. Only cards. Some people prefer it." }
   ],

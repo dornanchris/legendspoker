@@ -294,9 +294,7 @@ real device.
   scene is cramped at 667x375; "Entered in the ledger" toasts sit over the
   opponents' names for ~5s; at 667x375 the intro's "Take your seat" starts
   just below the fold; reloading mid-way through the guest's scene restores
-  him but skips the scene without a log line. The open-table intro and two
-  of Death's open-table lines still say there is no champion, though open
-  tables can now seat one -- the owner's call.
+  him but skips the scene without a log line.
 - **Blind pace (the owner: "blinds need to go up sooner").** Levels last 8-9
   hands (12 at the finale), under two orbits five-handed; the first three
   orbits are still 100bb/67bb deep. With a scripted player seated, tables
@@ -439,6 +437,16 @@ real device.
   has its own seeded stream (seed XOR a constant); ambient idles and
   "thinking long" use Math.random. Picking a line from the game RNG would
   change the next card. `check:replay` catches it.
+- **A tight player needs a hand worth playing before the flop, at any price**
+  (ENGINE_VERSION 8; the owner: "Javert needs to play good cards, not shit
+  like 8/3"). Pot odds alone let rags in -- a small blind's half-bet, a big
+  blind facing a small raise -- so `decide()` has an entry floor on the
+  strength score: (tightness - 0.5) x 1.3, capped at 0.33 so small pairs
+  (0.35) and A-9 stay playable. Not against an all-in, not under 12bb, and a
+  free big-blind check is not an entry. Javert's voluntary junk showdowns
+  fell from 41 to 16 per ~2,800 hands dealt; most junk he still shows is a
+  free big blind checked down, which is correct poker. Tight VPIPs (3000
+  cash hands): Lincoln 16, Dracula 15, Washington 20, Javert 23, Arthur 25.
 - `patient` only counts a raise costing more than `openBB` (2) big blinds to
   call: an ordinary open against the big blind is not a test of patience.
 - A quirk's `potFraction` facing a bet is call + fraction x the pot after

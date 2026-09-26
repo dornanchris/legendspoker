@@ -14,6 +14,7 @@
     "check:loki": "tsx src/loki-check.ts",
     "roster": "tsx src/roster.ts",
     "reads": "tsx src/reads.ts",
+    "headsup": "tsx src/headsup.ts",
     "typecheck": "tsc --noEmit -p .",
     "check": "npm run typecheck && npm run check:data && npm run check:pots && npm run check:hands && npm run check:replay && npm run check:loki",
     "build:web": "node web/build.mjs",

@@ -133,7 +133,7 @@ export function introScreen(root: HTMLElement, params: string[]): void {
           medallion(c, hidden ? 'hidden' : save.characters[id]?.beaten ? 'beaten' : 'met'),
           h('span', null, hidden ? 'An empty chair' : c?.short ?? id))
       }))
-    : h('p', { class: 'dim' }, 'The regulars, without their champion. Who sits down is up to the evening.')
+    : h('p', { class: 'dim' }, 'Anyone you have beaten may take a chair tonight, champions included. One is always kept for someone from this room; who fills the rest is up to the evening.')
 
   root.append(
     h('div', { class: `screen intro-screen t-${table.id}` },

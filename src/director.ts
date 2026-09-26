@@ -166,7 +166,8 @@ export class TableRun {
     // Offset so the director's stream never coincides with the game's.
     this.rng = mulberry32((o.seed ^ 0x5eed1e55) >>> 0)
     this.chatter = new Chatter(o.seed)
-    // Open tables have no champion and no plot: no plant, no arrival.
+    // Open tables have no plot: no plant, no arrival. A champion may sit
+    // down, but as one more player -- nothing at the table is theirs to defend.
     if (o.mode === 'open') this.plantDone = true
   }
 

@@ -42,8 +42,10 @@ export const SAVE_VERSION = 1
  *    Green Knight returns after 20 hands, not 50.
  * 7: bets have reasons -- a real value bar, chosen bluffs, raises that call
  *    first and then add; `patient` spares ordinary opens; Death re-dialled.
+ * 8: a tight player needs a hand worth playing before the flop, whatever
+ *    the price (the entry floor in decide()).
  */
-export const ENGINE_VERSION = 7
+export const ENGINE_VERSION = 8
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

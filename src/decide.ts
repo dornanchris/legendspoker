@@ -147,6 +147,24 @@ export function decide(ctx: DecisionContext): Decision {
     p.aggression + tiltEffect * 0.5 + shortness * 0.3,
   )
 
+  // Tightness decides which pots to enter, and a price does not change what a
+  // tight player will play: to them 8-3 is not a hand at any discount. Pot
+  // odds alone let it in -- a small blind's half-bet, a big blind facing a
+  // small raise -- and Javert, one of the tightest at the table, was showing
+  // down 8-3. So before the flop a tight player needs a hand worth playing,
+  // whatever it costs. Against an all-in, or short-stacked, the price alone
+  // decides (see below). A free check in the big blind is not an entry.
+  // Tilt loosens it -- that is character -- but a stack of 12-20bb does not:
+  // shortness is a reason to shove wider, not to call with rags. Capped so
+  // the tightest can still play a small pair (0.35) or A-9.
+  const entryFloor = Math.min(0.33, Math.max(0, (p.tightness - tiltEffect * 0.6 - 0.5) * 1.3))
+  if (
+    ctx.street === 'preflop' && ctx.toCall > 0 && !ctx.facingAllIn &&
+    ctx.effectiveStackBB >= 12 && ctx.strength < entryFloor
+  ) {
+    return { action: 'fold', reason: `not a hand to play (${pct(ctx.strength)})` }
+  }
+
   // Pot odds: the equity we need for calling to break even.
   const potOdds = ctx.toCall === 0 ? 0 : ctx.toCall / (ctx.pot + ctx.toCall)
 
