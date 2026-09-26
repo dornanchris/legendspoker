@@ -60,6 +60,14 @@ export function cardEl(c: Card | null, size: '' | 'small' | 'tiny' = ''): HTMLEl
   return d
 }
 
+/**
+ * SB or BB beside a name, for the seats that posted the blinds. There is no
+ * dealer button: Death deals every hand, so no seat is the dealer.
+ */
+function blindChip(): HTMLElement {
+  return h('span', { class: 'blind-chip', hidden: true })
+}
+
 /** A bet in front of a seat: a small pile and what it adds up to. Always takes its space. */
 function betSpot(): HTMLElement {
   return h('div', { class: 'bet empty' }, h('span', { class: 'pile' }), h('span', { class: 'amt' }))
@@ -79,6 +87,8 @@ type SeatUI = {
   cards: HTMLElement
   /** Chips pushed out this street, sitting in front of the seat. */
   bet: HTMLElement
+  /** SB or BB when this seat posted a blind this hand. */
+  blind: HTMLElement
   last: HTMLElement
   tell: HTMLElement
   say: HTMLElement
@@ -133,7 +143,7 @@ export function tableScreen(root: HTMLElement): () => void {
     youName: h('span', { class: 'you-name' }),
     youStack: h('span', { class: 'stack' }),
     youCards: h('div', { class: 'you-cards', 'aria-label': 'Your cards' }),
-    youButton: h('span', { class: 'button-chip', hidden: true, title: 'Dealer button' }, 'D'),
+    youBlind: blindChip(),
     prompt: h('div', { class: 'prompt' }, 'Death shuffles.'),
     buttons: h('div', { class: 'buttons' }),
     raiseRow: h('div', { class: 'raise-row', hidden: true }),
@@ -172,7 +182,7 @@ export function tableScreen(root: HTMLElement): () => void {
           els.presence, els.board,
           h('div', { class: 'pot' }, els.potPile, h('span', { class: 'label' }, 'POT'), ' ', els.pot)),
         h('section', { class: 'you' },
-          h('div', { class: 'you-info' }, els.youButton, els.youName, els.youStack),
+          h('div', { class: 'you-info' }, els.youBlind, els.youName, els.youStack),
           els.youCards, els.youBet),
         h('section', { class: 'controls', 'aria-label': 'Your actions' }, els.prompt, els.buttons, els.raiseRow),
         els.narration,
@@ -255,6 +265,7 @@ export function tableScreen(root: HTMLElement): () => void {
       stack: h('span', { class: 'stack' }, '0'),
       cards: h('div', { class: 'cards' }),
       bet: betSpot(),
+      blind: blindChip(),
       last: h('div', { class: 'last' }),
       tell: h('div', { class: 'tell' }),
       say: h('div', { class: 'say', role: 'status' }),
@@ -262,7 +273,7 @@ export function tableScreen(root: HTMLElement): () => void {
     }
     ui.root.append(
       h('div', { class: 'seat-head' },
-        h('span', { class: 'button-chip', hidden: true }, 'D'),
+        ui.blind,
         ui.name,
         isChamp && table.kind === 'tour' ? h('span', { class: 'crown', title: 'Champion' }, '♛') : null,
         ui.stack),
@@ -327,6 +338,8 @@ export function tableScreen(root: HTMLElement): () => void {
   const cardBox = (seat: number): HTMLElement | null =>
     seat === HUMAN_SEAT ? els.youCards : seatUI.get(seat)?.cards ?? null
   const cardSize = (seat: number) => (seat === HUMAN_SEAT ? '' : 'small')
+  const blindEl = (seat: number): HTMLElement | null =>
+    seat === HUMAN_SEAT ? els.youBlind : seatUI.get(seat)?.blind ?? null
 
   function drawBet(seat: number) {
     const el = betEl(seat)
@@ -370,9 +383,17 @@ export function tableScreen(root: HTMLElement): () => void {
     box.replaceChildren()
   }
 
-  function setButton(seat: number) {
-    for (const [i, ui] of seatUI) (ui.root.querySelector('.button-chip') as HTMLElement).hidden = i !== seat
-    els.youButton.hidden = seat !== HUMAN_SEAT
+  /** Mark the two seats that posted the blinds, and clear every other seat. */
+  function setBlinds(sb: number, bb: number) {
+    for (let seat = 0; seat < seatIds.length; seat++) {
+      const el = blindEl(seat)
+      if (!el) continue
+      const which = seat === sb ? 'sb' : seat === bb ? 'bb' : ''
+      el.hidden = !which
+      el.className = `blind-chip ${which}`
+      el.textContent = which.toUpperCase()
+      el.title = which === 'sb' ? 'Small blind' : which === 'bb' ? 'Big blind' : ''
+    }
   }
 
   function log(text: string, cls = '') {
@@ -516,6 +537,9 @@ export function tableScreen(root: HTMLElement): () => void {
       out.add(e.seat)
       if (e.seat === HUMAN_SEAT) humanPlace = e.place
       seatUI.get(e.seat)?.root.classList.add('out')
+      // Whatever blind they posted on the way out is not theirs any more.
+      const blind = blindEl(e.seat)
+      if (blind) blind.hidden = true
     } else if (e.type === 'level') {
       els.blinds.textContent = `blinds ${formatChips(e.smallBlind)}/${formatChips(e.bigBlind)}`
     }
@@ -577,6 +601,9 @@ export function tableScreen(root: HTMLElement): () => void {
         const first = Math.max(0, seated.findIndex((i) => i > e.button))
         const round = [...seated.slice(first), ...seated.slice(0, first)]
         const order = [...round, ...round]
+        // The blinds as poker-ts posts them: the two seats after the button,
+        // except heads-up, where the button is the small blind.
+        const [sb, bb] = round.length === 2 ? [round[1], round[0]] : [round[0], round[1]]
         const dealTime = MOVE.shuffle + (order.length - 1) * MOVE.dealGap + MOVE.dealFlight
         chipsAt.handStart = e.stacks.slice()
         chipsAt.swept = e.stacks.map(() => 0)
@@ -605,7 +632,7 @@ export function tableScreen(root: HTMLElement): () => void {
           els.board.replaceChildren()
           drawPot()
           els.pot.textContent = '0'
-          setButton(e.button)
+          setBlinds(sb, bb)
           setStacks(e.stacks)
           updateFF()
           log(`Hand ${e.hand}`, 'head')

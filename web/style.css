@@ -399,11 +399,15 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .seat-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .seat-head .stack { margin-left: auto; color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 600; }
 .crown { color: var(--gold); font-size: .85em; }
-.button-chip {
+/* Who posted the blinds. No dealer button: Death deals every hand. Quiet on
+   purpose, and told apart by shape as well as colour: SB a ring, BB a disc. */
+.blind-chip {
   display: inline-grid; place-items: center; width: 17px; height: 17px; border-radius: 50%;
-  background: var(--ink); color: var(--bg); font-size: .66rem; font-weight: 800; flex: none;
+  border: 1px solid var(--dim); color: var(--dim);
+  font-size: .55rem; font-weight: 800; letter-spacing: -.03em; line-height: 1; flex: none;
 }
-.button-chip[hidden] { display: none; }
+.blind-chip.bb { background: var(--dim); color: var(--bg); }
+.blind-chip[hidden] { display: none; }
 .seat .hand-row { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: 5px 0 3px; min-height: 38px; }
 .seat .cards { display: flex; gap: 3px; }
 .seat .last { color: var(--dim); font-size: .8rem; min-height: 1.2em; }
