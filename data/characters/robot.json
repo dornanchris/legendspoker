@@ -15,6 +15,8 @@
     "bluffFrequency": 0.15,
     "tiltSensitivity": 0.0,
     "adaptivity": 0.3,
+    "betRespect": 0.7,
+    "skill": 0.74,
     "noise": 0.5
   },
   "quirks": [
@@ -60,5 +62,38 @@
     "look": "Silhouette: a riveted barrel of a body, a square head with two round lamp eyes and a speaker-grille mouth, and a pair of antennae that give it height at a fifth of a screen. Brushed steel and brass, worn bright at the joints. Prop: the round lamp set in its chest. Its glow is the tell surface, and it is the slot the AI's lens takes later.",
     "prop": "A round chest lamp",
     "public_domain": "The tin robot is an archetype of pulp covers, toys and world's fairs, owned by nobody, and Čapek's 1920 play is public domain. Specific robots are owned: no Robby the Robot and his domed head, no Gort and his smooth visor, no Metropolis Maria, no 1939 Tin Man, no Lost in Space robot and no modern film droid."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. As instructed.",
+      "Folding. Page one, paragraph one.",
+      "Fold. Returning cards to the dealer. Thank you.",
+      "Fold. I will tidy up."
+    ],
+    "check": [
+      "Check. That is the correct word.",
+      "Check.",
+      "Check. Awaiting input."
+    ],
+    "call": [
+      "Call. Matching the bet exactly.",
+      "Call. The instructions allow this.",
+      "I will call. Please hold."
+    ],
+    "bet": [
+      "Bet. Per the instructions.",
+      "Bet. I have counted it twice.",
+      "Placing a bet. Stand clear."
+    ],
+    "raise": [
+      "Raise. Section four permits this.",
+      "Raise. I hope that is all right.",
+      "Raising. This is not personal. I do not have a person."
+    ],
+    "all_in": [
+      "All in. The instructions were very clear.",
+      "All in. Please remain seated.",
+      "All in. I have never done this before. It is on the last page."
+    ]
   }
 }

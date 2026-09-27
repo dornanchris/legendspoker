@@ -1,8 +1,8 @@
 // poker-ts exports the facade as a named `Table`, not a default export.
 import pokerPkg from 'poker-ts'
 const { Table: Poker } = pokerPkg as any
-import { decide, emitTell, type Action, type Decision } from './decide.js'
-import { handStrength, type Card } from './equity.js'
+import { decide, emitTell, betRange, readBet, readTell, type Action, type Decision } from './decide.js'
+import { handStrength, preflopStrength, drawOuts, boardWetness, type Card } from './equity.js'
 import type { Personality } from './personality.js'
 import { seededShuffle } from './rng.js'
 
@@ -20,6 +20,7 @@ export type Stats = {
   pfr: number // preflop raise
   bets: number
   calls: number
+  checks: number
   folds: number
   foldsToAggression: number
   facedAggression: number
@@ -34,12 +35,24 @@ export const newStats = (): Stats => ({
   pfr: 0,
   bets: 0,
   calls: 0,
+  checks: 0,
   folds: 0,
   foldsToAggression: 0,
   facedAggression: 0,
   wins: 0,
   showdowns: 0,
 })
+
+/**
+ * The average player, where every read of a seat starts (Game.read): how
+ * often a player bets or raises when they act, and how often they fold to a
+ * bet. Measured over the eight story tables (96 four-handed tournaments,
+ * ENGINE_VERSION 9): 0.224 and 0.408. READ_PRIOR is how many actions of
+ * evidence the average is worth to an unskilled reader; skill shrinks it.
+ */
+const BET_FREQ = 0.22
+const FOLD_RATE = 0.4
+const READ_PRIOR = 30
 
 export type BlindLevel = { smallBlind: number; bigBlind: number; ante?: number }
 
@@ -89,7 +102,20 @@ export type HandEvent =
   /** The human seat's own hole cards. Never fired for anyone else. */
   | { type: 'deal'; seat: number; hole: Card[] }
   | { type: 'street'; street: string; board: Card[]; stacks: number[] }
-  | { type: 'tell'; seat: number; signal: string; text: string }
+  /**
+   * A tell, shown just before the action it leaks. `correlate` and `honest`
+   * are hidden information -- what the tell is supposed to mean, and whether
+   * it meant it this time -- for the director to use after a showdown, never
+   * for the screen to show while the hand is live.
+   */
+  | {
+      type: 'tell'
+      seat: number
+      signal: string
+      text: string
+      correlate: 'strong' | 'weak' | 'bluffing' | 'tilted'
+      honest: boolean
+    }
   /** Emitted AFTER the table applies the action, so pot and stacks are the result of it. */
   | {
       type: 'action'
@@ -125,10 +151,20 @@ export type HandEvent =
         amount: number
         /** More than one seat here means the pot was SPLIT. */
         winners: number[]
-        /** e.g. "two pair". Absent when the pot was never contested. */
+        /**
+         * e.g. "two pair". Absent when the pot was never contested: everyone
+         * else folded, or only one player still in had put in enough to
+         * reach it.
+         */
         ranking?: string
         /** The five cards that actually won it, for highlighting. */
         cards?: Card[]
+        /**
+         * Not won at all: chips one player bet that nobody could match, going
+         * back to them. A side pot only they reached, made of only their own
+         * chips. Never a win, never a showdown.
+         */
+        returned?: boolean
       }[]
     }
   /**
@@ -141,8 +177,27 @@ export type HandEvent =
   /**
    * A late arrival takes an empty chair between hands, bringing chips of
    * their own. See Arrival.
+   *
+   * `cause: 'banishment'` is the other way a chair changes hands: the chair
+   * was never empty, its occupant was removed by the house a moment ago (see
+   * 'banished'), and the newcomer brings no chips -- they sit behind the
+   * ones already there. No cause is an ordinary late arrival.
    */
-  | { type: 'arrival'; seat: number; id: string; stack: number; replaces: string | null }
+  | {
+      type: 'arrival'
+      seat: number
+      id: string
+      stack: number
+      replaces: string | null
+      cause?: 'banishment'
+    }
+  /**
+   * The house removes a player between hands (see Banishment). NOT an
+   * elimination: no finishing place, no knockout, nobody's bust. Their chips
+   * stay on the felt, and an 'arrival' with cause 'banishment' follows at
+   * once for whoever takes the chair.
+   */
+  | { type: 'banished'; seat: number; id: string; stack: number; by: string }
 
 /**
  * What a human seat is handed on their turn. Deliberately NOT a
@@ -171,6 +226,10 @@ export type TurnView = {
  * waits for the first body, Dracula watches from the fireplace, and the
  * station's intelligence takes the Robot's chair when the Robot falls.
  *
+ * A rule whose afterEliminationOf is the arriving character themselves is a
+ * RETURN: the Green Knight retakes his own chair some hands after he falls.
+ * The 'arrival' event then has replaces === id.
+ *
  * This is table CONFIGURATION, keyed by ids in data -- it is not a branch on
  * identity inside a decision, which non-negotiable #1 forbids.
  */
@@ -189,6 +248,35 @@ export type Arrival = {
   delayHands: number
   /** Chips they bring. 'average' matches the average stack still in play. */
   stack: 'average' | number
+}
+
+/**
+ * A house rule with teeth. When the human seat wins chips in a hand holding
+ * exactly `holeRanks` (any suits), the house removes one opponent between
+ * hands and `personality` takes that chair with that opponent's exact stack.
+ * At most once per sitting; if nobody is eligible when it triggers, nothing
+ * happens and a later win can still set it off.
+ *
+ * Like Arrival this is table CONFIGURATION built from data, not a branch on
+ * identity: the engine knows ranks, seats and a list of ids to leave alone,
+ * never who anybody is. Who may be removed:
+ *  - seated opponents who were dealt into the hand and still have chips;
+ *  - never anyone in `exclude` (the table's champion, the dealer);
+ *  - never a character a late Arrival waits on (`afterEliminationOf`):
+ *    removing them would silently cancel that arrival;
+ *  - never the newcomer themselves.
+ *
+ * The pick draws once from the game RNG, and only when the rule fires, so a
+ * replayed decision log removes the same player. Tournament mode only, and it
+ * needs a human seat.
+ */
+export type Banishment = {
+  /** Who takes the chair. */
+  personality: Personality
+  /** The two ranks the human must hold, e.g. ['6', '7']. Suits do not matter. */
+  holeRanks: string[]
+  /** Ids never removed. */
+  exclude: string[]
 }
 
 export type GameOptions = {
@@ -214,7 +302,10 @@ export type GameOptions = {
   /**
    * Seat played by a human. That seat never calls decide() -- it awaits
    * onHumanTurn instead -- so it needs no dials, and no equity is computed
-   * for it.
+   * for it. It is also the stranger at the table: the one player skilled
+   * characters read by what they have seen them do (see the skill read).
+   * A test may set it without onHumanTurn, to seat a stand-in who is read
+   * the same way.
    */
   humanSeat?: number
   /** Resolves with the human's action. Awaited, so it can take as long as it likes. */
@@ -227,13 +318,19 @@ export type GameOptions = {
    * speed must never change how a hand resolves, and a clock-driven schedule
    * would make a fast-forwarded table play differently from a watched one.
    *
-   * 25 puts the median 3-handed table near 68 hands. A fourth seat lengthens
-   * it, so revisit once the roster has four.
+   * The default, 25, is only the frozen Phase 2 instrument's pace (`npm run
+   * tourney` with no table), kept so its numbers stay comparable. Every tour
+   * table sets its own in data/tables: 8-9 hands a level, 12 at the finale.
+   * Five-handed that is under two orbits a level, while the first three
+   * orbits are still dealt at 100bb and 67bb deep.
    */
   handsPerLevel: number
 
   /** Tournament only: champions who arrive mid-table. */
   arrivals?: Arrival[]
+
+  /** Tournament only, with a human seat. See Banishment. */
+  banishment?: Banishment
 }
 
 export class Game {
@@ -252,6 +349,8 @@ export class Game {
   /** Every chip that has entered play, arrivals included. */
   private chipsTotal = 0
   private pending: { rule: Arrival; triggeredAt?: number; done: boolean }[] = []
+  /** Set once the banishment rule has fired: it fires at most once a sitting. */
+  private banishmentDone = false
 
   constructor(personalities: Personality[], opts: Partial<GameOptions> = {}) {
     this.opts = {
@@ -312,7 +411,13 @@ export class Game {
    * Only meaningful once isComplete().
    */
   missedArrivals(): string[] {
-    return this.pending.filter((p) => !p.done).map((p) => p.rule.personality.id)
+    // Someone due to come BACK has already sat here, whether they fell or
+    // never did: a table that ends before their return has not missed them.
+    const sat = (id: string) =>
+      this.busts.some((b) => b.id === id) || this.seats.some((s) => s.personality.id === id)
+    return this.pending
+      .filter((p) => !p.done && !sat(p.rule.personality.id))
+      .map((p) => p.rule.personality.id)
   }
 
   getSeats(): Seat[] {
@@ -430,9 +535,14 @@ export class Game {
         if (hole) onEvent({ type: 'deal', seat: humanSeat, hole })
       }
     }
+    // Only the banishment rule wants these. Reading them draws nothing.
+    const humanHole: Card[] | null =
+      tournament && this.opts.banishment && humanSeat !== undefined
+        ? this.table.holeCards()[humanSeat] ?? null
+        : null
 
-    // Cache equity per (seat, street) — recomputing it on every action is
-    // where a naive implementation burns all its time.
+    // Cache equity per (seat, street, what they are facing) -- recomputing it
+    // on every action is where a naive implementation burns all its time.
     const equityCache = new Map<string, number>()
     // Chips each seat has put in this hand, starting from the posted blinds.
     const contributed: number[] = this.table
@@ -440,6 +550,17 @@ export class Game {
       .map((x: any) => x?.betSize ?? 0)
     while (contributed.length < this.seats.length) contributed.push(0)
     let lastStreet = ''
+    // Who bet or raised last on this street, and who had done so on the one
+    // before it: that player holds the initiative, and a bet from them now
+    // carries on the story their raise began (a continuation bet).
+    let aggressor = -1
+    // Bets and raises: on this street by anyone, and this hand by each seat.
+    // How a skilled player reads a bet in context (see readBet).
+    let raisesThisStreet = 0
+    const handBets: number[] = this.seats.map(() => 0)
+    /** The tell each seat showed as they last acted this hand, if any. */
+    const shownTell: ({ correlate: string; reliability: number } | null)[] = this.seats.map(() => null)
+    let initiative = -1
     const wentToShowdown = new Set<number>()
     /**
      * Tracked here rather than read back from poker-ts: it never clears
@@ -462,6 +583,9 @@ export class Game {
 
         if (street !== lastStreet) {
           lastStreet = street
+          raisesThisStreet = 0
+          initiative = aggressor
+          aggressor = -1
           onEvent?.({
             type: 'street',
             street,
@@ -486,7 +610,60 @@ export class Game {
         // The human seat never gets an equity number -- they read the board
         // like anyone else -- so there is nothing to roll out for them.
         const isHuman = seat === humanSeat && onHumanTurn !== undefined
-        const key = `${seat}:${street}`
+        // Who they are facing. Somebody who bets usually has something, so
+        // equity is measured against the hands a bet like this comes from,
+        // not against any two cards -- which is what made a pair of eights
+        // look like a 65% favourite against a pot-sized bet. How far each
+        // character believes it is their `betRespect` dial.
+        let bettor = -1
+        if (toCall > 0) {
+          seatState.forEach((x: any, i: number) => {
+            if (x && i !== seat && (bettor < 0 || x.betSize > seatState[bettor].betSize)) bettor = i
+          })
+        }
+        const facingAllIn = bettor >= 0 && seatState[bettor].stack === 0
+        let oppRange = 1
+        if (!isHuman && bettor >= 0) {
+          let base = betRange({
+            street,
+            toCall,
+            pot,
+            bigBlind,
+            allIn: facingAllIn,
+            bettorBB: contributed[bettor] / bigBlind,
+          })
+          // Skill reads a bet in context: a river probe is not a 4-bet. At 0
+          // every bet of a size reads the same.
+          //
+          // The PLAYER is also read as a person. The legends know one another
+          // by reputation -- that is the plain read -- but the player is a
+          // stranger, learned by watching: the same bet from someone who bets
+          // half the time comes from twice the hands it does from someone who
+          // bets a quarter of the time. As far as the reader adjusts to people
+          // at all (`adaptivity`). Only the stranger: reading one another this
+          // way moved the cast's own styles by up to ten points of VPIP (the
+          // Wolf Man, the Robot, Holmes), and a character must still play
+          // like themselves.
+          const skill = s.personality.skill
+          if (skill > 0) {
+            const context = readBet({
+              street,
+              raises: raisesThisStreet,
+              bettorBets: handBets[bettor],
+              overbet: toCall >= 1.1 * Math.max(1, pot - toCall),
+              allIn: facingAllIn,
+            })
+            base *= Math.pow(context, skill)
+            if (bettor === humanSeat) {
+              const often = this.read(bettor, skill).betFreq / BET_FREQ
+              base *= Math.pow(often, skill * s.personality.adaptivity)
+            }
+            base = Math.max(0.05, Math.min(1, base))
+          }
+          // In steps of 5%, so a street's equity is worked out a few times at most.
+          oppRange = Math.round((1 - s.personality.betRespect * (1 - base)) * 20) / 20
+        }
+        const key = `${seat}:${street}:${oppRange}`
         let equity = 0
         if (!isHuman) {
           const cached = equityCache.get(key)
@@ -497,11 +674,30 @@ export class Game {
               Math.max(1, this.table.numActivePlayers() - 1),
               rollouts,
               rng,
+              oppRange,
             )
             equityCache.set(key, equity)
           } else {
             equity = cached
           }
+        }
+
+        // Who is still in against them.
+        const dealt = this.table.holeCards()
+        const inHand: number[] = []
+        this.seats.forEach((_, i) => {
+          if (i !== seat && seatState[i] && dealt[i] && !foldedSeats.has(i)) inHand.push(i)
+        })
+
+        // Skill reads people too: the tell the player we are up against showed
+        // as they last acted -- the bettor, or the one opponent left. Public:
+        // it is the same tell the human sees. Believed as far as that
+        // character's tells deserve (a coin-flip tell is worth nothing) and
+        // as far as the reader's skill goes. Death shows none.
+        const subject = bettor >= 0 ? bettor : inHand.length === 1 ? inHand[0] : -1
+        const shown = subject >= 0 ? shownTell[subject] : null
+        if (!isHuman && shown && s.personality.skill > 0) {
+          equity = readTell(equity, shown.correlate, s.personality.skill * Math.max(0, 2 * shown.reliability - 1), street === 'preflop')
         }
 
         const legalRaw = this.table.legalActions()
@@ -540,6 +736,7 @@ export class Game {
           decision = decide({
             personality: s.personality,
             equity,
+            strength: board.length === 0 ? preflopStrength(hole) : equity,
             pot,
             toCall,
             stack: seatState[seat].stack,
@@ -551,20 +748,36 @@ export class Game {
             legal,
             numOpponents: Math.max(1, this.table.numActivePlayers() - 1),
             tilt: s.tilt,
-            opponentFoldRate: this.tableFoldRate(seat),
+            opponentFoldRate: this.foldRateFacing(seat, inHand, s.personality.skill),
             committed: contributed[seat],
+            facingAllIn,
+            bet: myBet,
+            initiative: seat === initiative,
+            outs: drawOuts(hole, board),
+            wet: boardWetness(board),
             rng,
           })
 
+          // The tell precedes the action: it is a leak about the decision
+          // already made, which is what makes it readable at all. Drawn
+          // whether or not a screen is watching, because the table is.
+          const tell = emitTell(
+            s.personality,
+            { equity, decision, tilt: s.tilt },
+            rng,
+          )
+          shownTell[seat] = tell ? { correlate: tell.tell.correlate, reliability: tell.tell.reliability } : null
           if (onEvent) {
-            // The tell precedes the action: it is a leak about the decision
-            // already made, which is what makes it readable at all.
-            const tell = emitTell(
-              s.personality,
-              { equity, decision, tilt: s.tilt },
-              rng,
-            )
-            if (tell) onEvent({ type: 'tell', seat, signal: tell.signal, text: tell.text })
+            if (tell) {
+              onEvent({
+                type: 'tell',
+                seat,
+                signal: tell.tell.signal,
+                text: tell.tell.text,
+                correlate: tell.tell.correlate,
+                honest: tell.honest,
+              })
+            }
           }
         }
 
@@ -574,21 +787,29 @@ export class Game {
           s.stats.folds++
           foldedSeats.add(seat)
           if (toCall > 0) s.stats.foldsToAggression++
+        } else if (decision.action === 'check') {
+          s.stats.checks++
         } else if (decision.action === 'call') {
           s.stats.calls++
           if (street === 'preflop') putMoneyIn.add(seat)
         } else if (decision.action === 'bet' || decision.action === 'raise') {
           s.stats.bets++
+          aggressor = seat
+          raisesThisStreet++
+          handBets[seat]++
           if (street === 'preflop') {
             putMoneyIn.add(seat)
             raisedPreflop.add(seat)
           }
         }
 
-        const before = seatState[seat].stack + seatState[seat].betSize
+        // Measured on the STACK: a bet moves chips from the stack to the bet
+        // in front, which leaves stack + betSize unchanged. Measuring that sum
+        // counted nothing but the blinds, so no one was ever pot-committed.
+        const before = seatState[seat].stack
         this.table.actionTaken(decision.action, decision.betSize)
         const after = this.table.seats()[seat]
-        if (after) contributed[seat] += before - (after.stack + after.betSize)
+        if (after) contributed[seat] += before - after.stack
 
         onEvent?.({
           type: 'action',
@@ -612,6 +833,9 @@ export class Game {
             revealed.push({ seat: i, hole: hole[i]! })
           }
         }
+        // What each seat put in this hand: every bet has been collected by
+        // now, so it is simply what they had going in less what they hold.
+        const putIn = this.stacks().map((chips, i) => (before[i] ?? 0) - chips)
         // Pot sizes have to be read BEFORE the showdown pays them out.
         const potsBefore = this.table
           .pots()
@@ -621,18 +845,24 @@ export class Game {
           const perPot: any[] = this.table.winners() ?? []
           const pots = potsBefore.map((p: any, i: number) => {
             const won = perPot[i]
-            if (!won || won.length === 0) {
-              // No winners recorded means the pot was uncontested -- poker-ts
-              // pays the lone eligible player without evaluating a hand.
-              //
-              // eligiblePlayers is the stale list that caused the pot bug in
-              // the first place: it can still name someone who folded later.
-              // Only seats that reached showdown with cards are real
-              // candidates, or we would announce the wrong winner.
-              const live = p.eligible.filter((seat: number) =>
-                revealed.some((r) => r.seat === seat),
-              )
-              return { amount: p.size, winners: (live.length ? live : p.eligible).slice(0, 1) }
+            // Only seats that reached showdown with cards can win a pot.
+            const live = p.eligible.filter((seat: number) =>
+              revealed.some((r) => r.seat === seat),
+            )
+            if (!won || won.length === 0 || live.length < 2) {
+              // Nobody contested it. poker-ts either paid the one player
+              // without evaluating a hand (no winners recorded) or evaluated
+              // a hand against nobody -- which is how a bet nobody could call
+              // came back announced as "wins side pot 1 with two pair".
+              const winners: number[] = won?.length
+                ? won.map((w: any) => w[0] as number)
+                : (live.length ? live : p.eligible).slice(0, 1)
+              const w = winners[0]
+              const othersPut = Math.max(0, ...putIn.filter((_, seat) => seat !== w))
+              const returned = i > 0 && p.size <= putIn[w] - othersPut
+              return returned
+                ? { amount: p.size, winners, returned: true }
+                : { amount: p.size, winners }
             }
             return {
               amount: p.size,
@@ -675,6 +905,7 @@ export class Game {
 
     if (tournament) {
       this.removeBustedPlayers(before)
+      this.processBanishment(before, humanHole)
       this.processArrivals()
     }
     onEvent?.({ type: 'handEnd', hand: this.handsPlayed, stacks: this.stacks() })
@@ -696,7 +927,10 @@ export class Game {
     }
     // Places fill from the bottom: busting with k players left finishes kth.
     // Counted from who is left rather than from the seat count, because a
-    // late arrival makes the field bigger than the table.
+    // late arrival makes the field bigger than the table. Two out in one hand
+    // are ranked by the chips they started it with, not by chair: the bigger
+    // stack lasted longer and finishes higher.
+    out.sort((a, b) => before[a] - before[b])
     const alive = this.survivors().length
     out.forEach((i, j) => {
       if (seated[i]) this.table.standUp(i)
@@ -716,6 +950,11 @@ export class Game {
    * sits down" and "the table is over".
    */
   private processArrivals(): void {
+    // Once the player is out, the sitting is over. An arrival now would play
+    // to an empty room -- and the first empty chair would be the player's
+    // own: Caesar sat down in it at Rome and the player went on as him.
+    const human = this.opts.humanSeat
+    if (human !== undefined && this.seatBusted[human]) return
     for (const p of this.pending) {
       if (p.done) continue
       const { rule } = p
@@ -735,11 +974,11 @@ export class Game {
       let replaces: string | null = null
       if (rule.afterEliminationOf) {
         const b = this.busts.find((x) => x.id === rule.afterEliminationOf)!
-        if (!seated[b.seat]) chair = b.seat
+        if (!seated[b.seat] && b.seat !== human) chair = b.seat
         replaces = rule.afterEliminationOf
       }
       if (chair < 0) {
-        const empty = this.busts.find((b) => !seated[b.seat])
+        const empty = this.busts.find((b) => !seated[b.seat] && b.seat !== human)
         if (empty) chair = empty.seat
       }
       if (chair < 0) continue // no empty chair yet; try again next hand
@@ -764,6 +1003,60 @@ export class Game {
     }
   }
 
+  /**
+   * The house removes a player and someone else sits down in the same chair,
+   * behind the same chips. Runs after the busts are swept and BEFORE the
+   * arrivals, so it reacts to the hand just played -- and so a champion
+   * seated this instant (who never saw that hand) is not in the running.
+   *
+   * No chip enters or leaves play: the stack changes owner, nothing more, so
+   * chipsTotal is untouched. The removed player is not a bust -- no place, no
+   * knockout, not in `busts` -- because nobody beat them.
+   */
+  private processBanishment(before: number[], hole: Card[] | null): void {
+    const rule = this.opts.banishment
+    const human = this.opts.humanSeat
+    if (!rule || this.banishmentDone || human === undefined || !hole) return
+    // Already at this table (an open table can seat him once he is met):
+    // nobody needs showing out to let him in a second time.
+    if (this.seats.some((s) => s.personality.id === rule.personality.id)) return
+    const after = this.stacks()
+    if (after[human] <= before[human]) return // the player has to have won chips
+    const held = hole.map((c) => c.rank as string).sort().join()
+    if (held !== [...rule.holeRanks].sort().join()) return
+
+    // Characters a late arrival is waiting on: removing one would cancel it.
+    const awaited = new Set(this.pending.map((p) => p.rule.afterEliminationOf).filter(Boolean))
+    const eligible: number[] = []
+    for (let i = 0; i < this.seats.length; i++) {
+      if (i === human || this.seatBusted[i]) continue
+      // Dealt into the hand just played, and still holding chips after it.
+      if (before[i] <= 0 || after[i] <= 0) continue
+      const id = this.seats[i].personality.id
+      if (rule.exclude.includes(id) || awaited.has(id) || id === rule.personality.id) continue
+      eligible.push(i)
+    }
+    // Nobody to remove: the rule stays armed for a later hand.
+    if (eligible.length === 0) return
+
+    const seat = eligible[Math.floor(this.opts.rng() * eligible.length)]
+    const id = this.seats[seat].personality.id
+    const stack = after[seat]
+    this.banishmentDone = true
+    this.opts.onEvent?.({ type: 'banished', seat, id, stack, by: rule.personality.id })
+    this.table.standUp(seat)
+    this.seats[seat] = { personality: rule.personality, tilt: 0, stats: newStats() }
+    this.table.sitDown(seat, stack)
+    this.opts.onEvent?.({
+      type: 'arrival',
+      seat,
+      id: rule.personality.id,
+      stack,
+      replaces: id,
+      cause: 'banishment',
+    })
+  }
+
   /** Raise the blinds if this hand starts a new level. */
   private applyBlindLevel(): void {
     const target = Math.min(
@@ -775,6 +1068,37 @@ export class Game {
     const { smallBlind, bigBlind, ante } = this.opts.levels[this.level]
     this.table.setForcedBets({ smallBlind, bigBlind, ante })
     this.opts.onEvent?.({ type: 'level', level: this.level, smallBlind, bigBlind })
+  }
+
+  /**
+   * What the table has seen of one seat: how often they bet or raise when
+   * they act, and how often they fold to a bet. Each starts at the average
+   * player's and moves to what has actually been seen as it builds up, so a
+   * dozen quiet hands do not make someone a rock. A skilled reader makes up
+   * their mind sooner: the average is worth 30 actions at skill 0, 6 at 1.
+   * The human seat is read like anyone else.
+   */
+  private read(seat: number, skill: number): { betFreq: number; foldRate: number } {
+    const st = this.seats[seat].stats
+    const acts = st.bets + st.calls + st.checks + st.folds
+    const prior = READ_PRIOR * (1 - 0.8 * skill)
+    return {
+      betFreq: (st.bets + BET_FREQ * prior) / (acts + prior),
+      foldRate: (st.foldsToAggression + FOLD_RATE * prior) / (st.facedAggression + prior),
+    }
+  }
+
+  /**
+   * The fold rate a player bets into. Without skill it is the table's, and
+   * only once the table has faced 20 bets (adaptivity's original read). With
+   * skill it moves toward the players actually in this pot: a skilled
+   * player bluffs the one who folds, not the room.
+   */
+  private foldRateFacing(seat: number, inHand: number[], skill: number): number {
+    const table = this.tableFoldRate(seat)
+    if (skill <= 0 || inHand.length === 0) return table
+    const theirs = inHand.reduce((a, i) => a + this.read(i, skill).foldRate, 0) / inHand.length
+    return table + skill * (theirs - table)
   }
 
   /** Average fold-to-aggression across the other seats, for adaptivity. */

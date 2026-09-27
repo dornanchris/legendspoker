@@ -15,6 +15,8 @@
     "bluffFrequency": 0.2,
     "tiltSensitivity": 0.15,
     "adaptivity": 0.55,
+    "betRespect": 0.75,
+    "skill": 0.62,
     "noise": 0.35
   },
   "quirks": [
@@ -60,5 +62,38 @@
     "look": "Silhouette: tall and broad-shouldered, full dark beard, a flat sea-captain's cap; take the costume from the Neuville and Riou engravings for Hetzel's edition, not from any film. Severe dark clothes, eyes set rather wide apart, as Verne describes them. Prop: a great pearl, large enough that its white glint reads against the dark coat whenever he turns it.",
     "prop": "A great pearl",
     "public_domain": "Verne's novels (1870, 1875) and their Hetzel engravings are public domain. Avoid the 1954 Disney film entirely — no riveted, spined Nautilus, no uniformed Nemo — and the Nemo of Alan Moore's League of Extraordinary Gentlemen comics and their 2003 film."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. I shall dive.",
+      "Fold. The sea keeps its own counsel. So do I.",
+      "I withdraw beneath the surface.",
+      "Fold. Thirty feet down, none of this matters."
+    ],
+    "check": [
+      "Check.",
+      "Check. The current will decide.",
+      "Check. I am in no hurry. I have twenty thousand leagues."
+    ],
+    "call": [
+      "Call. I shall follow you down.",
+      "I will see it. Courteously.",
+      "No one calls."
+    ],
+    "bet": [
+      "Bet. Consider it a sounding.",
+      "Bet. Let us see who floats.",
+      "Bet. In international waters."
+    ],
+    "raise": [
+      "Raise. Your laws do not reach this far.",
+      "Raise. I have rammed warships for less.",
+      "Raise. Full speed."
+    ],
+    "all_in": [
+      "All in. Full ahead, and down.",
+      "Everything. I have no flag to lose.",
+      "All in. The sea takes all or nothing."
+    ]
   }
 }

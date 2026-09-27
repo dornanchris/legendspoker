@@ -15,7 +15,9 @@
     "bluffFrequency": 0.22,
     "tiltSensitivity": 0.3,
     "adaptivity": 0.2,
-    "noise": 0.2
+    "betRespect": 0.55,
+    "skill": 0.3,
+    "noise": 0.15
   },
   "quirks": [
     {
@@ -30,19 +32,19 @@
       "signal": "pats_coat",
       "text": "pats his coat where a map might be",
       "correlate": "strong",
-      "reliability": 0.8
+      "reliability": 0.84
     },
     {
       "signal": "chews_lip",
       "text": "chews his lip",
       "correlate": "bluffing",
-      "reliability": 0.76
+      "reliability": 0.8
     },
     {
       "signal": "over_shoulder",
       "text": "glances over his shoulder",
       "correlate": "weak",
-      "reliability": 0.78
+      "reliability": 0.82
     }
   ],
   "idles": [
@@ -62,5 +64,39 @@
     "look": "Silhouette: a respectable merchant captain — full-bottomed wig under a plain three-cornered hat, a good broadcloth coat buttoned high, a cravat he keeps loosening at the throat. Face: heavy, anxious, forever checking behind him. Prop: the coat itself — the broad buttoned chest, where one hand keeps patting for something that may or may not be in the inside pocket.",
     "prop": "His buttoned coat and its inside pocket",
     "public_domain": "Historical figure, hanged 1701. Build from the trial record and period portraits of New York merchant captains. Avoid Charles Laughton's Hollywood Kidd (1945 and 1952) and the cartoon buried-treasure buccaneer. He should look like what he always claimed to be: an honest captain with papers."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Under protest.",
+      "Fold. Let the record show I protested.",
+      "I withdraw. Lawfully.",
+      "Fold. My counsel advises it."
+    ],
+    "check": [
+      "Check.",
+      "Check. Nothing irregular about that.",
+      "Check. I'll consult my commission."
+    ],
+    "call": [
+      "Call. I know my rights.",
+      "Call. Put it in writing.",
+      "Call. My commission says I may."
+    ],
+    "bet": [
+      "Bet. All above board, and lawful.",
+      "Bet. Every coin accounted for.",
+      "Bet. Mark it in the articles."
+    ],
+    "raise": [
+      "Raise. I'll want that in writing.",
+      "Raise. By commission of His Majesty.",
+      "Raise. A privateer's raise, mind, not a pirate's.",
+      "Raise. And a share for the Governor, since he'll take it anyway."
+    ],
+    "all_in": [
+      "All in. Bury it with me.",
+      "Everything. The first rope broke, you know.",
+      "All in. Every coin I ever buried."
+    ]
   }
 }

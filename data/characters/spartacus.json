@@ -15,6 +15,8 @@
     "bluffFrequency": 0.25,
     "tiltSensitivity": 0.4,
     "adaptivity": 0.25,
+    "betRespect": 0.45,
+    "skill": 0.55,
     "noise": 0.3
   },
   "quirks": [
@@ -66,5 +68,40 @@
     "look": "Silhouette: broad bare shoulders under a rough Thracian cloak, cropped hair, a nose broken more than once. A fighter, not a showman, so no gladiator helmet. Heavy hands that never quite rest. Prop: the old shackle scar on his wrist, drawn as a pale band wide enough to read at a fifth of the screen. Wrist and shoulders carry his tells.",
     "prop": "The shackle scar on his wrist",
     "public_domain": "Historical figure, died 71 BC. Write only from Plutarch (Life of Crassus) and Appian (Civil Wars). Nothing from Howard Fast's novel, the 1960 Kubrick film or the television series: never \"I am Spartacus\", no named wife (Plutarch's is an unnamed prophetess of his tribe), no screen-gladiator leather harness."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Live to fight.",
+      "Fold. I'll find another road north.",
+      "Not this fight.",
+      "Fold. I've broken camp faster than this."
+    ],
+    "check": [
+      "Check.",
+      "Check. I'm watching the doors.",
+      "Check. Your move."
+    ],
+    "call": [
+      "Call.",
+      "Call. I don't run.",
+      "I'll stand. Call.",
+      "Call. Every man the same share."
+    ],
+    "bet": [
+      "Bet.",
+      "Bet. Forward.",
+      "Bet. Take it or leave it."
+    ],
+    "raise": [
+      "Raise. Forward, always.",
+      "Raise. Rome taught me this.",
+      "Raise. I broke out once. Hold me if you can.",
+      "Raise. No more chains."
+    ],
+    "all_in": [
+      "All in. Win, and I'll have plenty. Lose, and I won't need any.",
+      "Everything. Freedom or nothing.",
+      "All in. No way back over the Alps."
+    ]
   }
 }

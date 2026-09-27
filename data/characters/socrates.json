@@ -15,7 +15,9 @@
     "bluffFrequency": 0.2,
     "tiltSensitivity": 0.0,
     "adaptivity": 0.5,
-    "noise": 0.15
+    "betRespect": 0.6,
+    "skill": 0.15,
+    "noise": 0.1
   },
   "quirks": [
     {
@@ -28,19 +30,19 @@
       "signal": "scratches_nose",
       "text": "scratches his snub nose",
       "correlate": "bluffing",
-      "reliability": 0.82
+      "reliability": 0.88
     },
     {
       "signal": "private_joke",
       "text": "smiles as if at a private joke",
       "correlate": "strong",
-      "reliability": 0.8
+      "reliability": 0.86
     },
     {
       "signal": "asks_ceiling",
       "text": "frowns up at the ceiling, as if it had asked him something",
       "correlate": "weak",
-      "reliability": 0.8
+      "reliability": 0.86
     }
   ],
   "idles": [
@@ -60,5 +62,38 @@
     "look": "Silhouette: bald dome, big untidy beard, a short thick body in one plain, shabby cloak — the only unadorned figure at the table, which is exactly why he reads. Face: snub nose, wide bulging eyes, a satyr's face with a good-humoured mouth. Prop: a shallow wine cup, drained and refilled all night. Tells live on the big shapes of the face: nose, smile, the upward glance.",
     "prop": "Shallow wine cup",
     "public_domain": "Historical figure, died 399 BC; Plato, Xenophon and Aristophanes are all public domain. Build from the Roman copies of Greek portrait busts. Avoid Bill & Ted's Excellent Adventure and any other modern screen likeness. He is barefoot, but that is below the table."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. My inner voice says no. It only ever says no.",
+      "Fold. I have learned something, which is cheap at the price.",
+      "I withdraw the question.",
+      "Fold. Let us examine the next one."
+    ],
+    "check": [
+      "Check. And what will you do, I wonder?",
+      "Check. I am listening.",
+      "I pass. Speak, someone."
+    ],
+    "call": [
+      "Call. Let us follow the argument wherever it leads.",
+      "I'll see it. For the sake of the inquiry.",
+      "Call. An unexamined pot is not worth playing."
+    ],
+    "bet": [
+      "A small bet. Merely a question.",
+      "Bet. Consider it a question.",
+      "Let me put a question to the table."
+    ],
+    "raise": [
+      "Raise. Now answer me that.",
+      "I raise. A better question.",
+      "Raise. Let us see who knows what they think they know."
+    ],
+    "all_in": [
+      "All in. I was always going to drink it.",
+      "Everything. Pour the cup.",
+      "All of it. Philosophy is practice for this."
+    ]
   }
 }

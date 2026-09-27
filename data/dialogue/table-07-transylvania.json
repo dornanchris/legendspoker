@@ -95,6 +95,21 @@
           { "id": "tv_vh_dr_03a", "speaker": "van_helsing", "text": "Your kind may not enter a house unless invited. So who invited you to this one?" },
           { "id": "tv_vh_dr_03b", "speaker": "dracula", "text": "It is my house, Professor." },
           { "id": "tv_vh_dr_03c", "speaker": "van_helsing", "text": "...Ah. Yes." }
+        ],
+        [
+          { "id": "tv_vh_dr_04a", "speaker": "dracula", "text": "You gave Miss Lucy four transfusions, Professor." },
+          { "id": "tv_vh_dr_04b", "speaker": "van_helsing", "text": "And each time, you took it back." },
+          { "id": "tv_vh_dr_04c", "speaker": "dracula", "text": "It would have been rude to refuse." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "tv_nd_01a", "speaker": "van_helsing", "to": "dracula", "text": "So. The Count retreats to his fire." },
+          { "id": "tv_nd_01b", "speaker": "dracula", "text": "Enjoy the daylight while you have it, Professor." }
+        ],
+        [
+          { "id": "tv_nd_02a", "speaker": "dracula", "to": "van_helsing", "text": "You yield, Professor. You watched from a distance last time, too." },
+          { "id": "tv_nd_02b", "speaker": "van_helsing", "text": "From a distance, with a rifle. You will remember." }
         ]
       ]
     },
@@ -118,6 +133,22 @@
           { "id": "tv_mo_vh_03a", "speaker": "van_helsing", "text": "A question, if you permit. Have you a soul?" },
           { "id": "tv_mo_vh_03b", "speaker": "monster", "text": "I had hoped you would tell me. You have the degrees." },
           { "id": "tv_mo_vh_03c", "speaker": "van_helsing", "text": "I have many degrees. None of them in that." }
+        ],
+        [
+          { "id": "tv_mo_vh_04a", "speaker": "monster", "text": "Professor. If I were ill, would you treat me?" },
+          { "id": "tv_mo_vh_04b", "speaker": "van_helsing", "text": "I would. A doctor does not choose his patients." },
+          { "id": "tv_mo_vh_04c", "speaker": "monster", "text": "My maker chose. He chose not to." },
+          { "id": "tv_mo_vh_04d", "speaker": "van_helsing", "text": "Then I shall treat you twice." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "tv_nd_03a", "speaker": "van_helsing", "to": "monster", "text": "You gave way, my friend. There is no shame in it." },
+          { "id": "tv_nd_03b", "speaker": "monster", "text": "There is always shame in it, Professor. I am simply used to it." }
+        ],
+        [
+          { "id": "tv_nd_04a", "speaker": "monster", "to": "van_helsing", "text": "You folded, Professor." },
+          { "id": "tv_nd_04b", "speaker": "van_helsing", "text": "I am a doctor. I have learned to leave the room when I am asked." }
         ]
       ]
     },
@@ -141,6 +172,22 @@
           { "id": "tv_wm_mo_03b", "speaker": "monster", "text": "Stones. A whole village, once." },
           { "id": "tv_wm_mo_03c", "speaker": "wolf_man", "text": "With me it's dogs." },
           { "id": "tv_wm_mo_03d", "speaker": "monster", "text": "I would take the dogs. Dogs are honest about it." }
+        ],
+        [
+          { "id": "tv_wm_mo_04a", "speaker": "monster", "text": "Do you read?" },
+          { "id": "tv_wm_mo_04b", "speaker": "wolf_man", "text": "Tried. I chew the corners." },
+          { "id": "tv_wm_mo_04c", "speaker": "monster", "text": "I found Paradise Lost in a portmanteau in the woods. It changed my life." },
+          { "id": "tv_wm_mo_04d", "speaker": "wolf_man", "text": "I found a bag in the woods once. I ate the lunch." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "tv_nd_05a", "speaker": "wolf_man", "to": "monster", "text": "Ha! The big fellow backs down!" },
+          { "id": "tv_nd_05b", "speaker": "monster", "text": "I have been driven out of better places than a pot." }
+        ],
+        [
+          { "id": "tv_nd_06a", "speaker": "monster", "to": "wolf_man", "text": "You let it go." },
+          { "id": "tv_nd_06b", "speaker": "wolf_man", "text": "I'm trying a new thing. Restraint. It's horrible." }
         ]
       ]
     },
@@ -163,6 +210,91 @@
           { "id": "tv_hh_03b", "speaker": "headless_horseman", "text": "[turns his whole body toward the Wolf Man]", "type": "stage_direction" },
           { "id": "tv_hh_03c", "speaker": "wolf_man", "text": "...And pumpkin. That's a pumpkin, isn't it." },
           { "id": "tv_hh_03d", "speaker": "headless_horseman", "text": "[settles it more firmly on his collar, and turns away]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "tv_hh_04a", "speaker": "dracula", "text": "A Hessian. A hired soldier. I have hired a few in my time." },
+          { "id": "tv_hh_04b", "speaker": "headless_horseman", "text": "[unbuckles his sword belt and hangs it on the back of his chair, very slowly]", "type": "stage_direction" },
+          { "id": "tv_hh_04c", "speaker": "dracula", "text": "...I always paid them promptly. Before dawn." }
+        ],
+        [
+          { "id": "tv_hh_05a", "speaker": "van_helsing", "text": "Forgive me. Professional curiosity. Where exactly did the cannonball strike?" },
+          { "id": "tv_hh_05b", "speaker": "headless_horseman", "text": "[indicates the top of his collar with one finger, precisely]", "type": "stage_direction" },
+          { "id": "tv_hh_05c", "speaker": "van_helsing", "text": "...Yes. I see. Thank you." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "tv_nd_07a", "speaker": "headless_horseman", "to": "wolf_man", "text": "[turns his whole body toward the Wolf Man, and holds it there]", "type": "stage_direction" },
+          { "id": "tv_nd_07b", "speaker": "wolf_man", "text": "All right, all right, I folded. No need to look at me. Or — whatever that is." }
+        ],
+        [
+          { "id": "tv_nd_08a", "speaker": "headless_horseman", "to": "van_helsing", "text": "[touches two fingers to the pumpkin, as a trooper salutes]", "type": "stage_direction" },
+          { "id": "tv_nd_08b", "speaker": "van_helsing", "text": "A courtesy, from a Hessian. I shall write it down." }
+        ],
+        [
+          { "id": "tv_nd_09a", "speaker": "headless_horseman", "to": "monster", "text": "[inclines the pumpkin toward the Monster: a bow, of sorts]", "type": "stage_direction" },
+          { "id": "tv_nd_09b", "speaker": "monster", "text": "You are gracious in victory. I would not know how that feels." }
+        ],
+        [
+          { "id": "tv_nd_10a", "speaker": "wolf_man", "to": "headless_horseman", "text": "Ha! Somebody lose their head?" },
+          { "id": "tv_nd_10b", "speaker": "headless_horseman", "text": "[very slowly sets the pumpkin on the table and turns it to face the Wolf Man]", "type": "stage_direction" },
+          { "id": "tv_nd_10c", "speaker": "wolf_man", "text": "...Sorry. Sorry. Bad joke." }
+        ],
+        [
+          { "id": "tv_nd_11a", "speaker": "van_helsing", "to": "headless_horseman", "text": "The rider yields. And before dawn, even." },
+          { "id": "tv_nd_11b", "speaker": "headless_horseman", "text": "[rises an inch, as if to go, then sits again]", "type": "stage_direction" }
+        ]
+      ]
+    },
+
+    "dracula_wolf_man": {
+      "relationship": "Stoker's Count commands the wolves around his castle; they fall silent when he lifts a hand. The werewolf of folklore is nobody's creature and would like that on the record. Only after the arrival.",
+      "exchanges": [
+        [
+          { "id": "tv_dr_wm_01a", "speaker": "dracula", "text": "Sit, boy." },
+          { "id": "tv_dr_wm_01b", "speaker": "wolf_man", "text": "I'm not one of your wolves." },
+          { "id": "tv_dr_wm_01c", "speaker": "dracula", "text": "No. They have better manners." }
+        ],
+        [
+          { "id": "tv_dr_wm_02a", "speaker": "wolf_man", "text": "Can you really talk to wolves?" },
+          { "id": "tv_dr_wm_02b", "speaker": "dracula", "text": "I do not talk to them. I tell them things." },
+          { "id": "tv_dr_wm_02c", "speaker": "wolf_man", "text": "...Don't tell me anything." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "tv_nd_12a", "speaker": "dracula", "to": "wolf_man", "text": "Good dog." },
+          { "id": "tv_nd_12b", "speaker": "wolf_man", "text": "[growls, then looks embarrassed about it]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "tv_nd_13a", "speaker": "wolf_man", "to": "dracula", "text": "Hey. Hey! The Count backed off!" },
+          { "id": "tv_nd_13b", "speaker": "dracula", "text": "Enjoy it. Then go outside and howl about it, where I cannot hear." }
+        ]
+      ]
+    },
+
+    "dracula_monster": {
+      "relationship": "Shelley's creature was made from the dead by a student who ran from his own work; Stoker's Count was a man who declined to stay dead. Two of the century's great returns from the grave: one never asked for it, and one will not stop. Only after the arrival.",
+      "exchanges": [
+        [
+          { "id": "tv_dr_mo_01a", "speaker": "dracula", "text": "You were assembled from the dead, I understand." },
+          { "id": "tv_dr_mo_01b", "speaker": "monster", "text": "From several of them." },
+          { "id": "tv_dr_mo_01c", "speaker": "dracula", "text": "I merely declined to stay dead. It is much less work." },
+          { "id": "tv_dr_mo_01d", "speaker": "monster", "text": "And much less company." }
+        ],
+        [
+          { "id": "tv_dr_mo_02a", "speaker": "monster", "text": "Do you ever wish someone had made you, Count? So there would be someone to blame?" },
+          { "id": "tv_dr_mo_02b", "speaker": "dracula", "text": "No. I prefer to be responsible for myself. It is so much less disappointing." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "tv_nd_14a", "speaker": "dracula", "to": "monster", "text": "You gave way. How very well brought up." },
+          { "id": "tv_nd_14b", "speaker": "monster", "text": "I brought myself up. Through a chink in a wall." }
+        ],
+        [
+          { "id": "tv_nd_15a", "speaker": "monster", "to": "dracula", "text": "You yielded, Count." },
+          { "id": "tv_nd_15b", "speaker": "dracula", "text": "Take it. You look as though you need feeding more than I do." }
         ]
       ]
     }

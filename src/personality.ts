@@ -20,6 +20,23 @@ export type Personality = {
   /** How much they adjust to observed opponent patterns. */
   adaptivity: number
   /**
+   * How far they believe a bet. High reads a bet as a strong hand and folds
+   * the junk; low treats every bet as any two cards and calls it down -- the
+   * calling station. Scales the range equity is measured against.
+   */
+  betRespect: number
+  /**
+   * How well they READ, as opposed to what kind of player they are. The
+   * dials above are STYLE: a calling station and a nit are different people.
+   * This one is the first difficulty axis: a skilled player reads a bet in
+   * context (a river probe is not a 4-bet), reads the tells the table shows,
+   * reads the particular player as far as they adjust to people at all
+   * (`adaptivity`), and stops bluffing into someone who has raised them.
+   * 0 plays exactly as the engine did before the dial existed. Set by table
+   * (see CLAUDE.md); Death has the most.
+   */
+  skill: number
+  /**
    * Noise-to-signal: how much ambient, meaningless movement buries the real
    * tells. The second difficulty axis -- skill goes UP through the dials
    * above, legibility goes DOWN through this one. Early tables fire clean
@@ -72,6 +89,8 @@ export const DRACULA: Personality = {
   bluffFrequency: 0.12,
   tiltSensitivity: 0.05,
   adaptivity: 0.55,
+  betRespect: 0.8,
+  skill: 0,
   noise: 0,
   // Traps: with a monster before the river, just call and let them hang
   // themselves rather than raising them off the hand.
@@ -90,6 +109,8 @@ export const YETI: Personality = {
   bluffFrequency: 0.02,
   tiltSensitivity: 0.3,
   adaptivity: 0.05,
+  betRespect: 0.2,
+  skill: 0,
   noise: 0,
   // The calling station. Will not fold to a single small bet, ever. You
   // cannot bluff him -- which is exactly what makes him a good teacher for
@@ -109,6 +130,8 @@ export const CLEOPATRA: Personality = {
   bluffFrequency: 0.34,
   tiltSensitivity: 0.15,
   adaptivity: 0.9,
+  betRespect: 0.75,
+  skill: 0,
   noise: 0,
   // Punishes passivity. If opponents have been folding to aggression, she
   // attacks regardless of her cards.
@@ -134,6 +157,8 @@ export const HUMAN: Personality = {
   bluffFrequency: 0,
   tiltSensitivity: 0,
   adaptivity: 0,
+  betRespect: 0,
+  skill: 0,
   noise: 0,
   quirks: [],
   tells: [],

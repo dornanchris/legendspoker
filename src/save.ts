@@ -27,8 +27,28 @@ export const SAVE_VERSION = 1
  * cast of a table, or anything else that draws from the game's RNG. A seat
  * saved under a different number is not replayed -- it would deal different
  * cards and the "save" would be a lie -- and the player is told why.
+ *
+ * 2: poker-ts's hand ranking and side pots fixed (two sets of trips, the
+ *    quads kicker, all-in players dropped from pots). Some pots now go to a
+ *    different player, so the stacks after them differ.
+ * 3: bets are read (equity against the bettor's range, the `betRespect`
+ *    dial), the `committed` quirk counts chips put in, cheap all-ins get called.
+ * 4: the Green Knight keeps his appointment -- knocked out, he retakes his
+ *    own chair 50 hands later. Built on a branch that numbered it 2; merged
+ *    on top of 2 and 3 above, so every older save is released.
+ * 5: the uninvited guest (the six-seven banishment and Loki) and the table's
+ *    callouts, from the same branch, which numbered them 3.
+ * 6: blinds climb every 8-9 hands (12 at the finale) instead of 22-30; the
+ *    Green Knight returns after 20 hands, not 50.
+ * 7: bets have reasons -- a real value bar, chosen bluffs, raises that call
+ *    first and then add; `patient` spares ordinary opens; Death re-dialled.
+ * 8: a tight player needs a hand worth playing before the flop, whatever
+ *    the price (the entry floor in decide()).
+ * 9: the `skill` dial -- reading bets in context, the particular bettor and
+ *    tells -- set by table; tells drawn in every game, watched or not; the
+ *    first three tables' tells sharpened.
  */
-export const ENGINE_VERSION = 1
+export const ENGINE_VERSION = 9
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 
@@ -41,6 +61,10 @@ export type Settings = {
   fastForward: boolean
   /** Larger text across the whole game. */
   largeText: boolean
+  /** Card and chip sounds. */
+  sound: boolean
+  /** 0..1. */
+  volume: number
 }
 
 export type TableRecord = {
@@ -131,6 +155,8 @@ export const defaultSettings = (): Settings => ({
   reduceMotion: false,
   fastForward: true,
   largeText: false,
+  sound: true,
+  volume: 0.8,
 })
 
 export const newTableRecord = (): TableRecord => ({

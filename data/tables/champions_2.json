@@ -11,7 +11,7 @@
   ],
   "champion": null,
   "arrival": null,
-  "handsPerLevel": 22,
+  "handsPerLevel": 8,
   "dialogue": "table-10-champions-2.json",
   "buyIn": 2000,
   "respectStart": 2,

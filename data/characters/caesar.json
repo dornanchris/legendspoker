@@ -15,6 +15,8 @@
     "bluffFrequency": 0.26,
     "tiltSensitivity": 0.05,
     "adaptivity": 0.6,
+    "betRespect": 0.7,
+    "skill": 0.6,
     "noise": 0.3
   },
   "quirks": [
@@ -67,5 +69,39 @@
     "look": "Silhouette: the laurel wreath, worn low over a high forehead — Suetonius says no honour pleased him more than the right to wear it at all times, because it hid his thinning hair. Tall, fair-skinned, keen dark eyes; a toga with a broad purple border. Prop: the wreath itself. Its angle on his head is the tell surface.",
     "prop": "Laurel wreath",
     "public_domain": "Historical figure, died 44 BC. Build from the coins of 44 BC, the first Roman coinage to carry a living man's portrait. Avoid every film and television likeness and the Asterix caricature. No \"Et tu, Brute?\" — that is Shakespeare's line, not the ancient sources'."
+  },
+  "callouts": {
+    "fold": [
+      "Caesar withdraws. Tactically.",
+      "Fold. Caesar will winter in Gaul and return.",
+      "Fold. Note it as a strategic withdrawal.",
+      "Fold. Even Caesar leaves a province alone. Briefly."
+    ],
+    "check": [
+      "Check. Caesar surveys the field.",
+      "Check.",
+      "Check. Let them come to the river."
+    ],
+    "call": [
+      "Caesar will see it.",
+      "Call. Caesar will hear the envoys out.",
+      "Call. Rome answers."
+    ],
+    "bet": [
+      "Bet. Rome expands.",
+      "Bet. A province nobody was defending.",
+      "Caesar bets."
+    ],
+    "raise": [
+      "I came. I saw. I raised.",
+      "Twenty? Caesar is worth fifty. Raise.",
+      "Raise. Write it in the Commentaries.",
+      "Raise. Caesar is not a patient man."
+    ],
+    "all_in": [
+      "The die is cast.",
+      "The Rubicon, then. All in.",
+      "Everything. Caesar does nothing by halves."
+    ]
   }
 }

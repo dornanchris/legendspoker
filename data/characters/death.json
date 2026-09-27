@@ -10,22 +10,31 @@
   "origin": "Archetype",
   "era": "Always",
   "dials": {
-    "aggression": 0.45,
-    "tightness": 0.8,
-    "bluffFrequency": 0.1,
+    "aggression": 0.65,
+    "tightness": 0.7,
+    "bluffFrequency": 0.06,
     "tiltSensitivity": 0,
     "adaptivity": 0.85,
+    "betRespect": 0.9,
+    "skill": 1,
     "noise": 0
   },
   "quirks": [
     {
-      "type": "patient",
-      "minEquity": 0.58
-    },
-    {
       "type": "check_raise",
       "minEquity": 0.75,
       "chance": 0.5
+    },
+    {
+      "type": "heads_up_pressure",
+      "minEquity": 0.6,
+      "chance": 0.35
+    },
+    {
+      "type": "punish_passivity",
+      "foldRate": 0.55,
+      "chance": 0.5,
+      "potFraction": 0.6
     }
   ],
   "tells": [],
@@ -41,5 +50,37 @@
     "look": "Silhouette: tall, narrow, hooded — a grey burial shroud worn as a cloak, the way the danse macabre painted him, never a monk's black robe. Face: a plain skull half in the hood's shadow, drawn like a woodcut; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal.",
     "prop": "The deck",
     "public_domain": "Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor)."
+  },
+  "callouts": {
+    "fold": [
+      "No. You have that one.",
+      "I will let it go. I am learning how.",
+      "Fold. Take it. It was only ever lent."
+    ],
+    "check": [
+      "Check.",
+      "Check. There is no hurry. There never is.",
+      "I will wait. I am good at it."
+    ],
+    "call": [
+      "I will see it.",
+      "Call. I have seen everything else.",
+      "Call. I would like to know how it ends, for once."
+    ],
+    "bet": [
+      "Bet.",
+      "A small bet. Humour me.",
+      "Bet. I have wanted to do that for some time."
+    ],
+    "raise": [
+      "Raise.",
+      "I raise. Forgive me; I am new at this.",
+      "Raise. It is a strange thing to do with one's own hands."
+    ],
+    "all_in": [
+      "All of it.",
+      "All in. Somebody always has to go first.",
+      "All in. I have never had anything to lose before."
+    ]
   }
 }

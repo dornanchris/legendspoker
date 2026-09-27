@@ -15,6 +15,8 @@
     "bluffFrequency": 0.25,
     "tiltSensitivity": 0.0,
     "adaptivity": 0.7,
+    "betRespect": 0.75,
+    "skill": 0.74,
     "noise": 0.5
   },
   "quirks": [
@@ -60,5 +62,38 @@
     "look": "Silhouette: a huge smooth head on a thin neck and narrow shoulders; at a fifth of a screen it reads as an upturned teardrop. Grey skin, enormous black almond eyes with no whites, a slit for a nose, a small lipless mouth that never moves. Long thin fingers resting on the felt. The head and the fingers are the tell surface; it carries nothing.",
     "prop": "Long grey fingers",
     "public_domain": "The grey is modern folklore, built by many retellings and owned by nobody. Particular depictions are owned: avoid the 1987 Communion book cover, the aliens of Close Encounters of the Third Kind, every television series, and any real person's abduction account. Keep the design generic and build it from the archetype."
+  },
+  "callouts": {
+    "fold": [
+      "We release this one.",
+      "We will give it back. Unharmed.",
+      "We decline. For now.",
+      "We fold. This one may go."
+    ],
+    "check": [
+      "We observe.",
+      "We wait.",
+      "We check. Continue as you were."
+    ],
+    "call": [
+      "We will see it.",
+      "We are curious. We call.",
+      "We follow."
+    ],
+    "bet": [
+      "We would like to examine the pot.",
+      "We bet. Please remain calm.",
+      "We place this here."
+    ],
+    "raise": [
+      "We raise. Please do not struggle.",
+      "We raise. You will not remember this.",
+      "We require more."
+    ],
+    "all_in": [
+      "We commit all of it.",
+      "All. We have done this before.",
+      "Everything. Come quietly."
+    ]
   }
 }

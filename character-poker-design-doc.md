@@ -108,6 +108,10 @@ avatar-unlock tracker.
      non-boss characters for that setting (this is classic Imagine Poker,
      un-confined to a single opponent lineup). Reuses the same table + dealer
      art; new opponents only.
+     *[DECISION, owner] Widened to **mix-and-match**: an open table seats
+     anyone the player has already beaten, from any table, champions
+     included, with one chair kept for someone from the room so its own
+     banter still has a voice.*
 - After all eight: **two champion tiers** — Champions' Table for the first
   four bosses, then Champions' Table for the last four — played at Death's
   transcendent table.
@@ -515,6 +519,14 @@ beta problem; it is a "how does this ship" problem. Phase 10 at the earliest.
 
 The title is a **franchise slot**: *Legends Poker: [Campaign]*. Nothing below is
 locked, but this material is deliberately kept OUT of the base game.
+
+*[DECISION, owner] One exception, as a teaser: **Loki appears once in game one
+as a hidden cameo.** Win a pot holding six-seven, an opponent says "six seven",
+Death shows them out for the anachronism (the tone rule below, enforced by the
+house), and Loki is sitting in the empty chair. He foreshadows Gods' Challenge
+(other halls have opinions about a mortal among legends; "You're not invited.
+Yet.") without explaining it. His reservation for the sequel stands; the cameo
+spends none of the sequel's premise.*
 
 - **Gods' Challenge** *(leading candidate)* — the pantheons dispute that a
   mortal belongs among legends, so they run their own tour: Olympus, Asgard,

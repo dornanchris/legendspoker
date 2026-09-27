@@ -15,6 +15,8 @@
     "bluffFrequency": 0.25,
     "tiltSensitivity": 0.02,
     "adaptivity": 0.7,
+    "betRespect": 0.85,
+    "skill": 0.45,
     "noise": 0.25
   },
   "quirks": [
@@ -28,19 +30,19 @@
       "signal": "staff_hums",
       "text": "his staff hums, faintly",
       "correlate": "strong",
-      "reliability": 0.72
+      "reliability": 0.62
     },
     {
       "signal": "gazes_elsewhere",
       "text": "gazes somewhere past the table, as if the hand were already over",
       "correlate": "bluffing",
-      "reliability": 0.7
+      "reliability": 0.6
     },
     {
       "signal": "murmurs",
       "text": "murmurs a word nobody catches",
       "correlate": "weak",
-      "reliability": 0.72
+      "reliability": 0.62
     }
   ],
   "idles": [
@@ -60,5 +62,38 @@
     "look": "Silhouette: lean and tall in a hooded, undyed wool robe, hood usually up; a long, wild grey beard; a rough knotted staff taller than he is, planted upright beside his chair. Face: weathered, with deep-set eyes that never quite settle on the table. No pointed hat, no stars, no owl. Prop: the staff — a tall vertical line that can hum and glow faintly without being touched.",
     "prop": "A tall knotted staff",
     "public_domain": "Geoffrey of Monmouth (c. 1136) and Malory (1485) are centuries out of copyright. T. H. White's Merlyn — living backwards, the owl Archimedes — is still in copyright and must not appear. Also avoid Disney's The Sword in the Stone (blue robe, starry pointed hat), the metal skullcap and chant from the film Excalibur (1981), and the BBC's Merlin."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. I have seen how this one ends.",
+      "I will leave this one to its fate.",
+      "Fold. Not this time.",
+      "Fold. It was decided long ago."
+    ],
+    "check": [
+      "Check.",
+      "Check. The stars are in no hurry.",
+      "Check. Let it unfold."
+    ],
+    "call": [
+      "Call. I have seen stranger things come to pass.",
+      "Call. One likes to watch it happen anyway.",
+      "I'll see it. Knowing is not the same as seeing."
+    ],
+    "bet": [
+      "A small bet, for the look of the thing.",
+      "Bet. Two dragons, fighting under a tower.",
+      "Bet. Somebody must."
+    ],
+    "raise": [
+      "Raise. I moved Stonehenge. I can move a few chips.",
+      "Raise. The prophecy says nothing about this. I checked.",
+      "I raise."
+    ],
+    "all_in": [
+      "All in. I went under the stone knowingly, too.",
+      "Everything. Some endings are worth walking into.",
+      "All in. I always knew it would come to this."
+    ]
   }
 }

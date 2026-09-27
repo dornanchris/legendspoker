@@ -7,6 +7,20 @@
   "table": "camelot",
   "role": "seat",
   "arrives": false,
+  "returns": {
+    "afterHands": 20,
+    "stack": "average",
+    "lines": [
+      { "id": "gk_return_n01", "speaker": "narration", "type": "stage_direction", "text": "[Hooves, somewhere outside. Then a laugh loud enough to rattle the cups.]" },
+      { "id": "gk_return_n02", "speaker": "narration", "type": "stage_direction", "text": "[The door bangs open on a gust of cold air and holly leaves. Somebody green ducks under the lintel.]" },
+      { "id": "gk_return_01", "speaker": "green_knight", "text": "Ha! A year and a day, as I promised. I have come for my blow." },
+      { "id": "gk_return_02", "speaker": "green_knight", "text": "Did you think that was the end of me? I said I would be back for my turn. I am always back for my turn." },
+      { "id": "gk_return_03", "speaker": "green_knight", "text": "Ha! I took the long way round. Deal me in. I am owed a blow, and I mean to collect it in chips." },
+      { "id": "gk_return_d01", "speaker": "death", "text": "Twenty hands. At this table, that is a year and a day. I checked. He had already checked." },
+      { "id": "gk_return_d02", "speaker": "death", "text": "I do not usually let anyone back in. He has a letter from Morgan le Fay, and I have learned not to argue with her paperwork." },
+      { "id": "gk_return_d03", "speaker": "death", "text": "Most people I see once. He keeps appointments." }
+    ]
+  },
   "origin": "Legend",
   "era": "Sir Gawain and the Green Knight (14th c.)",
   "dials": {
@@ -15,6 +29,8 @@
     "bluffFrequency": 0.1,
     "tiltSensitivity": 0.05,
     "adaptivity": 0.2,
+    "betRespect": 0.3,
+    "skill": 0.45,
     "noise": 0.25
   },
   "quirks": [
@@ -64,5 +80,39 @@
     "look": "Silhouette: enormous — a head taller than anyone seated, broad as a door, with a great bush of green beard and green hair to the shoulders. Green skin, green clothes worked with gold, and no armour: the poem says he came in peace. Face: green, grinning, bright-eyed. Prop: the holly branch at his side, a big dark spiky shape that rustles; the axe leans against the table.",
     "prop": "A holly branch",
     "public_domain": "The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Ha! Somebody else take a swing.",
+      "I'll take no blow this round.",
+      "Fold. I shall be back in a year and a day.",
+      "Fold. A game is a game."
+    ],
+    "check": [
+      "Check. Your blow first.",
+      "Check. Strike, if you will.",
+      "Check. I can wait a year and a day."
+    ],
+    "call": [
+      "I accept!",
+      "Call! I never refuse a challenge.",
+      "Call. Let the axe fall where it may.",
+      "Call! Now that is a game."
+    ],
+    "bet": [
+      "Bet. Your turn to take a blow.",
+      "Bet. A game, with rules. Excellent.",
+      "Bet! Here is my holly branch."
+    ],
+    "raise": [
+      "Raise! The return blow, as agreed.",
+      "Raise! A blow for a blow.",
+      "Raise! This is the best part."
+    ],
+    "all_in": [
+      "All in! Meet me at the Green Chapel.",
+      "Everything! One stroke, and no flinching.",
+      "All of it! A year and a day, all at once."
+    ]
   }
 }

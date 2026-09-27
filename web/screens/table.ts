@@ -1,15 +1,17 @@
-import { Game, type HandEvent, type TurnView, type Arrival } from '../../src/game.js'
+import { Game, type HandEvent, type TurnView } from '../../src/game.js'
 import { HUMAN } from '../../src/personality.js'
 import type { Action, Decision } from '../../src/decide.js'
 import type { Card } from '../../src/equity.js'
 import { mulberry32 } from '../../src/rng.js'
-import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, personality, type Line } from '../../src/content.js'
+import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, UNINVITED, personality, arrivalRules, banishmentFor, tellLine, type Line } from '../../src/content.js'
 import { TableRun, type Beat } from '../../src/director.js'
 import { applyOutcome, fillLine, type TableOutcome } from '../../src/tour.js'
 import { tableRecord, ENGINE_VERSION } from '../../src/save.js'
 import { marksForCareer } from '../../src/marks.js'
 import * as store from '../store.js'
 import { h, go, sleep, formatChips, ordinal } from '../dom.js'
+import * as sound from '../sound.js'
+import { fly as launch, flipOver as turnOver, centre, chipDisc, flightColours, drawPile, chipCount, type Pt } from '../fx.js'
 import { setResult } from './results.js'
 import { markTitle } from './shared.js'
 
@@ -27,6 +29,15 @@ import { markTitle } from './shared.js'
 const HUMAN_SEAT = 0
 const PACE_BY_SETTING = { unhurried: 1.35, normal: 1, brisk: 0.6 }
 const BASE = { action: 620, street: 700, reveal: 1300, showdown: 2600, result: 1000, level: 900, tell: 340 }
+/**
+ * How long things take to MOVE, on the same presentation clock. Every one is
+ * scaled by pace and fast-forward exactly as the queue's delays are, so a
+ * flight never outlasts the step that launched it.
+ */
+const MOVE = {
+  shuffle: 420, dealFlight: 260, dealGap: 70, flip: 240, chips: 300, sweep: 360,
+  boardFlight: 300, boardGap: 70, flopGap: 190, muck: 320, collect: 560, runout: 800, uncontested: 1300,
+}
 /** Fast-forward scales the presentation clock by this. Never the game loop. */
 const FF_SCALE = 0.12
 const THINKING_LONG_MS = 25000
@@ -49,8 +60,28 @@ export function cardEl(c: Card | null, size: '' | 'small' | 'tiny' = ''): HTMLEl
   return d
 }
 
+/**
+ * SB or BB beside a name, for the seats that posted the blinds. There is no
+ * dealer button: Death deals every hand, so no seat is the dealer.
+ */
+function blindChip(): HTMLElement {
+  return h('span', { class: 'blind-chip', hidden: true })
+}
+
+/** A bet in front of a seat: a small pile and what it adds up to. Always takes its space. */
+function betSpot(): HTMLElement {
+  return h('div', { class: 'bet empty' }, h('span', { class: 'pile' }), h('span', { class: 'amt' }))
+}
+
+const nudge = (p: Pt, by: number): Pt => ({ x: p.x + (Math.random() * 2 - 1) * by, y: p.y + (Math.random() * 2 - 1) * by })
+
 function readingTime(text: string): number {
   return Math.max(1500, Math.min(5200, 900 + text.length * 48))
+}
+
+/** A callout's time on screen, before pace: long enough to read, short enough to keep up. */
+function calloutTime(text: string): number {
+  return Math.max(1400, Math.min(3000, 700 + text.length * 40))
 }
 
 type SeatUI = {
@@ -59,6 +90,10 @@ type SeatUI = {
   name: HTMLElement
   stack: HTMLElement
   cards: HTMLElement
+  /** Chips pushed out this street, sitting in front of the seat. */
+  bet: HTMLElement
+  /** SB or BB when this seat posted a blind this hand. */
+  blind: HTMLElement
   last: HTMLElement
   tell: HTMLElement
   say: HTMLElement
@@ -94,6 +129,20 @@ export function tableScreen(root: HTMLElement): () => void {
     return t
   }
 
+  // Everything still moving on the felt. A step's delay can be shorter than
+  // the flights it launched (chips stagger in one after another), so the
+  // player's turn waits for these too: never "20 to call" over an empty felt.
+  const moving = new Set<Promise<void>>()
+  const track = (p: Promise<void>) => {
+    moving.add(p)
+    void p.finally(() => moving.delete(p))
+    return p
+  }
+  const fly = (...a: Parameters<typeof launch>) => track(launch(...a))
+  const flipOver = (...a: Parameters<typeof turnOver>) => track(turnOver(...a))
+  /** Resolves once everything in flight has landed -- or after 1.5s, whatever happens. */
+  const landed = () => Promise.race([Promise.all([...moving]), sleep(1500)])
+
   // ------------------------------------------------------------ DOM
 
   const els = {
@@ -106,10 +155,14 @@ export function tableScreen(root: HTMLElement): () => void {
     presence: h('div', { class: 'presence' }),
     board: h('div', { class: 'board', 'aria-label': 'Community cards' }),
     pot: h('span', { class: 'pot-value' }, '0'),
+    potPile: h('span', { class: 'pile', 'aria-hidden': 'true' }),
+    dealerName: h('span', { class: 'dealer-name' }, 'Death'),
+    fx: h('div', { class: 'fx', 'aria-hidden': 'true' }),
+    youBet: betSpot(),
     youName: h('span', { class: 'you-name' }),
     youStack: h('span', { class: 'stack' }),
     youCards: h('div', { class: 'you-cards', 'aria-label': 'Your cards' }),
-    youButton: h('span', { class: 'button-chip', hidden: true, title: 'Dealer button' }, 'D'),
+    youBlind: blindChip(),
     prompt: h('div', { class: 'prompt' }, 'Death shuffles.'),
     buttons: h('div', { class: 'buttons' }),
     raiseRow: h('div', { class: 'raise-row', hidden: true }),
@@ -143,16 +196,17 @@ export function tableScreen(root: HTMLElement): () => void {
         els.logToggle),
       h('main', { class: 'felt', dataset: { table: table.id } },
         els.opponents,
-        h('div', { class: 'dealer' }, h('span', { class: 'dealer-name' }, 'Death'), h('span', { class: 'dealer-role' }, 'deals'), els.dealerLine),
+        h('div', { class: 'dealer' }, els.dealerName, h('span', { class: 'dealer-role' }, 'deals'), els.dealerLine),
         h('section', { class: 'middle' },
           els.presence, els.board,
-          h('div', { class: 'pot' }, h('span', { class: 'label' }, 'POT'), ' ', els.pot)),
+          h('div', { class: 'pot' }, els.potPile, h('span', { class: 'label' }, 'POT'), ' ', els.pot)),
         h('section', { class: 'you' },
-          h('div', { class: 'you-info' }, els.youButton, els.youName, els.youStack),
-          els.youCards),
+          h('div', { class: 'you-info' }, els.youBlind, els.youName, els.youStack),
+          els.youCards, els.youBet),
         h('section', { class: 'controls', 'aria-label': 'Your actions' }, els.prompt, els.buttons, els.raiseRow),
         els.narration,
-        els.toasts),
+        els.toasts,
+        els.fx),
       els.logPanel),
   )
   els.logToggle.addEventListener('click', () => {
@@ -229,6 +283,8 @@ export function tableScreen(root: HTMLElement): () => void {
       name: h('span', { class: 'seat-name' }, c?.short ?? id),
       stack: h('span', { class: 'stack' }, '0'),
       cards: h('div', { class: 'cards' }),
+      bet: betSpot(),
+      blind: blindChip(),
       last: h('div', { class: 'last' }),
       tell: h('div', { class: 'tell' }),
       say: h('div', { class: 'say', role: 'status' }),
@@ -236,11 +292,12 @@ export function tableScreen(root: HTMLElement): () => void {
     }
     ui.root.append(
       h('div', { class: 'seat-head' },
-        h('span', { class: 'button-chip', hidden: true }, 'D'),
+        ui.blind,
         ui.name,
         isChamp && table.kind === 'tour' ? h('span', { class: 'crown', title: 'Champion' }, '♛') : null,
         ui.stack),
-      ui.cards, ui.last, ui.tell, ui.say)
+      h('div', { class: 'hand-row' }, ui.cards, ui.bet),
+      ui.last, ui.tell, ui.say)
     const old = seatUI.get(i)
     if (old) old.root.replaceWith(ui.root)
     else els.opponents.append(ui.root)
@@ -251,14 +308,111 @@ export function tableScreen(root: HTMLElement): () => void {
   for (let i = 1; i < seatIds.length; i++) buildSeat(i)
   if (table.presence && active.mode === 'tour' && table.arrival) els.presence.textContent = table.presence
 
+  /** The stacks as drawn. Chips landing from a pot add to these until the engine's figure arrives. */
+  let shownStacks: number[] = []
+  /** Bumped on every authoritative redraw, so a late-landing pot cannot count twice. */
+  let stackGen = 0
+
   function setStacks(stacks: number[]) {
+    shownStacks = stacks.slice()
+    stackGen++
     for (const [i, ui] of seatUI) ui.stack.textContent = formatChips(stacks[i] ?? 0)
     els.youStack.textContent = formatChips(stacks[HUMAN_SEAT] ?? 0)
   }
 
-  function setButton(seat: number) {
-    for (const [i, ui] of seatUI) (ui.root.querySelector('.button-chip') as HTMLElement).hidden = i !== seat
-    els.youButton.hidden = seat !== HUMAN_SEAT
+  function drawStack(seat: number) {
+    const el = stackEl(seat)
+    if (el) el.textContent = formatChips(shownStacks[seat] ?? 0)
+  }
+
+  // ------------------------------------------------------------ chips and cards on the felt
+  //
+  // Two copies of where the chips are, on purpose. The engine runs ahead of
+  // the screen within a hand, so `chipsAt` follows the EVENTS (updated as each
+  // one arrives) and works out what each step has to show; `shown` follows
+  // the SCREEN (updated as each step plays). Flights are drawn on top and only
+  // reveal `shown` when they land, so a flight cut short, or landing late,
+  // can never leave a wrong number on the felt.
+
+  const felt = () => els.fx.parentElement as HTMLElement
+  const chipsAt = {
+    /** Chips each seat had when the hand began, blinds included. */
+    handStart: [] as number[],
+    /** Chips each seat has already had raked into the middle this hand. */
+    swept: [] as number[],
+    /** Chips in front of each seat this street. */
+    bets: [] as number[],
+    /** Chips raked into the middle so far. */
+    pot: 0,
+    /** Board cards already dealt. */
+    board: 0,
+  }
+  const shown = { bets: [] as number[], pot: 0 }
+  let bigBlind = 20
+
+  const stackEl = (seat: number): HTMLElement | null =>
+    seat === HUMAN_SEAT ? els.youStack : seatUI.get(seat)?.stack ?? null
+  const betEl = (seat: number): HTMLElement | null =>
+    seat === HUMAN_SEAT ? els.youBet : seatUI.get(seat)?.bet ?? null
+  const cardBox = (seat: number): HTMLElement | null =>
+    seat === HUMAN_SEAT ? els.youCards : seatUI.get(seat)?.cards ?? null
+  const cardSize = (seat: number) => (seat === HUMAN_SEAT ? '' : 'small')
+  const blindEl = (seat: number): HTMLElement | null =>
+    seat === HUMAN_SEAT ? els.youBlind : seatUI.get(seat)?.blind ?? null
+
+  function drawBet(seat: number) {
+    const el = betEl(seat)
+    if (!el) return
+    const v = shown.bets[seat] ?? 0
+    el.classList.toggle('empty', v <= 0)
+    drawPile(el.firstElementChild as HTMLElement, v, 2, 5)
+    el.lastElementChild!.textContent = v > 0 ? formatChips(v) : ''
+  }
+
+  function drawPot() {
+    drawPile(els.potPile, shown.pot, 3, 7)
+  }
+
+  /**
+   * A stream of chips from one place to another. How many fly scales with the
+   * amount in big blinds, so a limp ticks and a shove pours.
+   */
+  function pushChips(from: Element | null, to: Element | null, amount: number, ms: number, delay = 0): Promise<void> {
+    if (!from || !to || amount <= 0 || ms <= 0) return Promise.resolve()
+    const a = centre(from, felt())
+    const b = centre(to, felt())
+    const n = chipCount(amount, bigBlind)
+    const gap = Math.min(34, ms * 0.1)
+    return Promise.all(flightColours(amount, n).map((colour, i) =>
+      fly(els.fx, chipDisc(colour), nudge(a, 5), nudge(b, 4), ms, { delay: delay + i * gap, arc: 14 + Math.random() * 12 }),
+    )).then(() => {})
+  }
+
+  /** Face-down cards back to Death. */
+  function muckCards(seat: number, ms: number) {
+    const box = cardBox(seat)
+    if (!box) return
+    const to = centre(els.dealerName, felt())
+    for (const card of [...box.children]) {
+      if (ms > 0) {
+        void fly(els.fx, cardEl(null, cardSize(seat)), centre(card, felt()), to, ms,
+          { to: 0.45, fade: true, spin: (Math.random() - 0.5) * 50 })
+      }
+    }
+    box.replaceChildren()
+  }
+
+  /** Mark the two seats that posted the blinds, and clear every other seat. */
+  function setBlinds(sb: number, bb: number) {
+    for (let seat = 0; seat < seatIds.length; seat++) {
+      const el = blindEl(seat)
+      if (!el) continue
+      const which = seat === sb ? 'sb' : seat === bb ? 'bb' : ''
+      el.hidden = !which
+      el.className = `blind-chip ${which}`
+      el.textContent = which.toUpperCase()
+      el.title = which === 'sb' ? 'Small blind' : which === 'bb' ? 'Big blind' : ''
+    }
   }
 
   function log(text: string, cls = '') {
@@ -299,7 +453,7 @@ export function tableScreen(root: HTMLElement): () => void {
   function showTell(seat: number, text: string, real: boolean) {
     const ui = seatUI.get(seat)
     if (!ui) return
-    ui.tell.textContent = `${nameOf(seat)} ${text}`
+    ui.tell.textContent = tellLine(nameOf(seat), text)
     ui.tell.classList.remove('fade')
     void ui.tell.offsetWidth
     ui.tell.classList.add('fade')
@@ -366,7 +520,50 @@ export function tableScreen(root: HTMLElement): () => void {
     }, 0, { line: true })
   }
 
+  // ------------------------------------------------------------ callouts
+
+  /**
+   * A callout rides on its action: its bubble goes up in the same instant as
+   * the chips (so it is queued just BEFORE the action's step), lives on its
+   * own short timer, and adds nothing to the queue -- the player's turn never
+   * waits for one. Cut, not sped up, while fast-forwarding. One on screen at
+   * a time. The words go in the log just AFTER the action, where they read.
+   */
+  let calloutToken = 0
+  function showCallout(b: Extract<Beat, { kind: 'callout' }>) {
+    step(() => {
+      if (ff) return
+      const ui = seatUI.get(seatIds.indexOf(b.speaker))
+      if (!ui) return
+      for (const el of els.opponents.querySelectorAll('.callout.show')) el.classList.remove('show')
+      const el = ui.root.querySelector<HTMLElement>('.callout') ?? h('div', { class: 'callout', 'aria-hidden': 'true' })
+      if (!el.parentElement) ui.root.append(el)
+      const text = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
+      const ms = Math.round(calloutTime(text) * paceScale)
+      el.textContent = text
+      el.classList.toggle('stage', b.stage)
+      el.style.animationDuration = `${ms}ms`
+      // Any line this seat said earlier has had its reading time: the queue
+      // waited for it. Do not stack two bubbles on one chair.
+      ui.say.classList.remove('show')
+      el.classList.remove('show')
+      void el.offsetWidth
+      el.classList.add('show')
+      // Taken down on the same clock, so it also goes away under reduce-motion,
+      // where there is no animation to fade it.
+      const token = String(++calloutToken)
+      el.dataset.token = token
+      later(() => { if (el.dataset.token === token) el.classList.remove('show') }, ms)
+    }, 0)
+  }
+
+  function logCallout(b: Extract<Beat, { kind: 'callout' }>) {
+    const who = CHARACTERS[b.speaker]?.short ?? b.speaker
+    step(() => log(b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`, 'say callout'), 0)
+  }
+
   function presentBeat(b: Beat) {
+    if (b.kind === 'callout') return logCallout(b)
     if (b.kind === 'line') return sayLine(b)
     if (b.kind === 'respect') {
       step(() => {
@@ -397,11 +594,19 @@ export function tableScreen(root: HTMLElement): () => void {
       seatIds[e.seat] = e.id
       out.delete(e.seat)
       buildSeat(e.seat)
-      els.presence.textContent = ''
+      // A chair that changed hands without emptying says nothing about a
+      // champion who is still to come.
+      if (e.cause !== 'banishment') els.presence.textContent = ''
     } else if (e.type === 'eliminated') {
       out.add(e.seat)
       if (e.seat === HUMAN_SEAT) humanPlace = e.place
       seatUI.get(e.seat)?.root.classList.add('out')
+      // Their last fidget goes with them rather than lingering on an empty chair.
+      const gone = seatUI.get(e.seat)
+      if (gone) { gone.tell.textContent = ''; gone.tellUntil = 0 }
+      // Whatever blind they posted on the way out is not theirs any more.
+      const blind = blindEl(e.seat)
+      if (blind) blind.hidden = true
     } else if (e.type === 'level') {
       els.blinds.textContent = `blinds ${formatChips(e.smallBlind)}/${formatChips(e.bigBlind)}`
     }
@@ -409,6 +614,12 @@ export function tableScreen(root: HTMLElement): () => void {
 
   function onEvent(e: HandEvent) {
     const beats = run.onEvent(e)
+    // The uninvited guest is met the moment he sits down, live OR in a resume
+    // replay, and off the presentation clock: his ledger page and his mark
+    // hang off `met`, and career marks are checked when this hand's record is
+    // written, before the queue gets round to showing him. Meeting someone
+    // twice changes nothing, so a replay cannot double-count it.
+    if (e.type === 'arrival' && e.cause === 'banishment') store.meet(e.id)
     if (e.type === 'arrival' || e.type === 'eliminated' || e.type === 'level') {
       if (replaying) applyStructural(e)
     }
@@ -420,6 +631,7 @@ export function tableScreen(root: HTMLElement): () => void {
       for (const b of beats) if (b.kind === 'mark') store.earnMark(b.id, table.id)
       return
     }
+    for (const b of beats) if (b.kind === 'callout') showCallout(b)
     present(e, false)
     for (const b of beats) presentBeat(b)
     if (e.type === 'handEnd') recordLive()
@@ -445,42 +657,129 @@ export function tableScreen(root: HTMLElement): () => void {
 
   function present(e: HandEvent, instant: boolean) {
     const t = (ms: number) => (instant ? 0 : ms)
+    /**
+     * A movement's length on the clock the queue is running NOW: pace and
+     * fast-forward scale it exactly as they scale the step's delay. Zero for a
+     * silent catch-up after a resume, and under reduced motion.
+     */
+    const move = (ms: number) => (instant || settings.reduceMotion ? 0 : ms * paceScale * (ff ? FF_SCALE : 1))
+    /** Sound only for what is happening live, never for a replayed catch-up. */
+    const loud = !instant
+    /** Room for motion in a step's delay; under reduced motion a short beat instead. */
+    const room = (ms: number, still = 0) => t(settings.reduceMotion ? still : ms)
+
     switch (e.type) {
       case 'hand': {
+        const seated = e.seats.map((s, i) => (s !== null ? i : -1)).filter((i) => i >= 0)
+        // Dealt clockwise from the seat after the button, two rounds.
+        const first = Math.max(0, seated.findIndex((i) => i > e.button))
+        const round = [...seated.slice(first), ...seated.slice(0, first)]
+        const order = [...round, ...round]
+        // The blinds as poker-ts posts them: the two seats after the button,
+        // except heads-up, where the button is the small blind.
+        const [sb, bb] = round.length === 2 ? [round[1], round[0]] : [round[0], round[1]]
+        const dealTime = MOVE.shuffle + (order.length - 1) * MOVE.dealGap + MOVE.dealFlight
+        chipsAt.handStart = e.stacks.slice()
+        chipsAt.swept = e.stacks.map(() => 0)
+        chipsAt.bets = e.stacks.map(() => 0)
+        chipsAt.pot = 0
+        chipsAt.board = 0
         step(() => {
           folded.clear()
           clearWin()
+          els.fx.replaceChildren()
           humanInHand = e.seats[HUMAN_SEAT] !== null
           humanAllIn = false
+          bigBlind = e.bigBlind
+          shown.bets = e.stacks.map(() => 0)
+          shown.pot = 0
           els.hand.textContent = `hand ${e.hand}`
           if (!els.blinds.textContent) els.blinds.textContent = `blinds ${formatChips(e.bigBlind / 2)}/${formatChips(e.bigBlind)}`
           for (const [i, ui] of seatUI) {
-            ui.cards.replaceChildren(...(out.has(i) ? [] : [cardEl(null, 'small'), cardEl(null, 'small')]))
+            ui.cards.replaceChildren()
             ui.last.textContent = ''
             ui.root.classList.remove('folded', 'acting')
             ui.root.classList.toggle('out', out.has(i))
           }
-          els.board.replaceChildren()
           els.youCards.replaceChildren()
+          for (let i = 0; i < e.stacks.length; i++) drawBet(i)
+          els.board.replaceChildren()
+          drawPot()
           els.pot.textContent = '0'
-          setButton(e.button)
+          setBlinds(sb, bb)
           setStacks(e.stacks)
           updateFF()
           log(`Hand ${e.hand}`, 'head')
-        }, 0, { cancelFF: true })
+
+          // Two face-down cards to every seat still in the tournament, each
+          // one waiting, unseen, for the card flying to it.
+          const slots = new Map<number, HTMLElement[]>()
+          for (const seat of seated) {
+            const box = cardBox(seat)
+            if (!box) continue
+            const backs = [cardEl(null, cardSize(seat)), cardEl(null, cardSize(seat))]
+            box.replaceChildren(...backs)
+            slots.set(seat, backs)
+          }
+          const flight = move(MOVE.dealFlight)
+          if (flight > 0) for (const backs of slots.values()) for (const b of backs) b.style.visibility = 'hidden'
+          const from = centre(els.dealerName, felt())
+          const lead = move(MOVE.shuffle)
+          if (loud && !ff) sound.shuffle()
+          order.forEach((seat, k) => {
+            const target = slots.get(seat)?.[k < round.length ? 0 : 1]
+            if (!target || flight <= 0) return
+            const delay = lead + k * move(MOVE.dealGap)
+            void fly(els.fx, cardEl(null, cardSize(seat)), from, centre(target, felt()), flight,
+              { delay, from: 0.55, arc: 10, spin: (Math.random() - 0.5) * 70 })
+              .then(() => { target.style.visibility = '' })
+            if (loud && (!ff || k % 4 === 0)) sound.deal((delay + flight * 0.6) / 1000)
+          })
+        }, room(dealTime), { cancelFF: true })
         break
       }
       case 'deal': {
-        step(() => { els.youCards.replaceChildren(...e.hole.map((c) => cardEl(c))) }, 0)
+        step(() => {
+          // Your two cards, turned up where they landed.
+          const backs = [...els.youCards.children] as HTMLElement[]
+          const ms = move(MOVE.flip)
+          e.hole.forEach((c, i) => {
+            const face = cardEl(c)
+            if (backs[i]) void flipOver(backs[i], face, ms, i * ms * 0.5)
+            else els.youCards.append(face)
+            if (loud && ms > 0) sound.flip((i * ms * 0.5 + ms / 2) / 1000)
+          })
+          if (ms <= 0) els.youCards.replaceChildren(...e.hole.map((c) => cardEl(c)))
+        }, room(MOVE.flip * 1.5))
         break
       }
       case 'street': {
+        if (e.street === 'preflop') {
+          // The blinds go in: whatever each seat has put out since the hand began.
+          const blinds = e.stacks.map((behind, i) => Math.max(0, (chipsAt.handStart[i] ?? 0) - behind))
+          chipsAt.bets = blinds.slice()
+          step(() => {
+            const ms = move(MOVE.chips)
+            blinds.forEach((put, i) => {
+              if (put <= 0) return
+              shown.bets[i] = put
+              void pushChips(stackEl(i), betEl(i), put, ms, i * ms * 0.25).then(() => drawBet(i))
+              if (loud) sound.chips(chipCount(put, bigBlind), (i * ms * 0.25 + ms) / 1000)
+            })
+            setStacks(e.stacks)
+            els.pot.textContent = formatChips(blinds.reduce((a, b) => a + b, 0))
+          }, room(MOVE.chips))
+          break
+        }
+        rake()
+        const fresh = e.board.slice(chipsAt.board)
+        chipsAt.board = e.board.length
         step(() => {
           setStacks(e.stacks)
-          els.board.replaceChildren(...e.board.map((c) => cardEl(c)))
-          if (e.street !== 'preflop') log(`— ${e.street} —`, 'street')
+          log(`— ${e.street} —`, 'street')
           for (const ui of seatUI.values()) if (Date.now() > ui.tellUntil) ui.tell.textContent = ''
-        }, t(e.street === 'preflop' ? 0 : BASE.street))
+          dealBoard(fresh)
+        }, room(boardTime(fresh.length), BASE.street))
         break
       }
       case 'tell': {
@@ -490,45 +789,116 @@ export function tableScreen(root: HTMLElement): () => void {
       case 'action': {
         const you = e.seat === HUMAN_SEAT
         const ui = seatUI.get(e.seat)
+        const act = e.decision.action
+        const inFront = (chipsAt.handStart[e.seat] ?? 0) - (e.stacks[e.seat] ?? 0) - (chipsAt.swept[e.seat] ?? 0)
+        const added = act === 'fold' || act === 'check' ? 0 : inFront - (chipsAt.bets[e.seat] ?? 0)
+        if (added > 0) chipsAt.bets[e.seat] = inFront
         step(() => {
           for (const u of seatUI.values()) u.root.classList.remove('acting')
           if (ui) {
             ui.root.classList.add('acting')
             ui.last.textContent = describe(e.decision)
           }
-          if (e.decision.action === 'fold') {
+          if (act === 'fold') {
             folded.add(e.seat)
             ui?.root.classList.add('folded')
             // Mucked cards are gone, not face-down: backs read as "still in".
-            ui?.cards.replaceChildren()
-            if (you) els.youCards.replaceChildren()
+            muckCards(e.seat, move(MOVE.muck))
+            if (loud) sound.muck()
+          } else if (act === 'check') {
+            if (loud) sound.knock()
+          } else if (added > 0) {
+            shown.bets[e.seat] = inFront
+            const ms = move(MOVE.chips)
+            void pushChips(stackEl(e.seat), betEl(e.seat), added, ms).then(() => drawBet(e.seat))
+            if (loud) {
+              const allIn = e.stacks[e.seat] === 0
+              sound.chips(chipCount(added, bigBlind) + (allIn ? 5 : 0), ms / 1000)
+            }
           }
           setStacks(e.stacks)
           els.pot.textContent = formatChips(e.pot)
           log(`${nameOf(e.seat)} ${describe(e.decision, you)}`, you ? 'you' : '')
-          if (you && e.decision.action !== 'fold' && e.stacks[HUMAN_SEAT] === 0) humanAllIn = true
+          if (you && act !== 'fold' && e.stacks[HUMAN_SEAT] === 0) humanAllIn = true
           updateFF()
         }, t(you ? 220 : BASE.action))
         break
       }
       case 'showdown': {
-        // Beat one: turn the cards over and let them sit there.
-        step(() => {
-          for (const u of seatUI.values()) u.root.classList.remove('acting')
-          els.board.replaceChildren(...e.board.map((c) => cardEl(c)))
-          for (const { seat, hole } of e.revealed) {
-            const ui = seatUI.get(seat)
-            if (ui) ui.cards.replaceChildren(...hole.map((c) => cardEl(c, 'small')))
-          }
-          if (e.revealed.length > 1) {
+        const contested = e.revealed.length > 1
+        rake(e.pots.reduce((a, p) => a + p.amount, 0))
+        // Beat one: turn the cards over and let them sit there. Only when
+        // there was a CONTEST -- a pot nobody called is won without showing,
+        // and the winner's cards go back to Death unseen.
+        if (contested) {
+          step(() => {
+            for (const u of seatUI.values()) u.root.classList.remove('acting')
+            const ms = move(MOVE.flip)
+            let k = 0
+            for (const { seat, hole } of e.revealed) {
+              if (seat === HUMAN_SEAT) {
+                if (!els.youCards.children.length) els.youCards.replaceChildren(...hole.map((c) => cardEl(c)))
+                continue
+              }
+              const box = cardBox(seat)
+              if (!box) continue
+              const backs = [...box.children] as HTMLElement[]
+              hole.forEach((c, i) => {
+                const face = cardEl(c, 'small')
+                const delay = k * ms * 0.7 + i * ms * 0.25
+                if (backs[i]) void flipOver(backs[i], face, ms, delay)
+                else box.append(face)
+                if (loud && ms > 0 && i === 0) sound.flip((delay + ms / 2) / 1000)
+              })
+              k++
+            }
             log('— showdown —', 'street')
             for (const { seat, hole } of e.revealed) {
               log(`${nameOf(seat)} ${seat === HUMAN_SEAT ? 'show' : 'shows'} ${handText(hole)}`, seat === HUMAN_SEAT ? 'you' : '')
             }
+          }, t(BASE.reveal), { cancelFF: true })
+        } else {
+          step(() => { for (const u of seatUI.values()) u.root.classList.remove('acting') }, 0)
+        }
+        // Everyone all in before the river: the rest of the board, a street
+        // at a time, with the hands already face up. The runout is the drama.
+        const rest = e.board.slice(chipsAt.board)
+        const groups = chipsAt.board === 0 ? [3, 1, 1] : [1, 1]
+        chipsAt.board = e.board.length
+        let at = 0
+        for (const n of groups) {
+          const cards = rest.slice(at, at + n)
+          at += n
+          if (!cards.length) break
+          step(() => dealBoard(cards), room(boardTime(cards.length) + MOVE.runout, BASE.street))
+        }
+        // Beat two, once per pot: light the five cards that won it, and push
+        // the chips to whoever won them. A bet nobody could call goes back
+        // first, and quietly: it was never won, so it is not called a pot.
+        const real = e.pots.filter((p) => !p.returned)
+        const ordered = [...e.pots.filter((p) => p.returned), ...real]
+        ordered.forEach((pot) => {
+          chipsAt.pot = Math.max(0, chipsAt.pot - pot.amount)
+          const left = chipsAt.pot
+          const i = real.indexOf(pot)
+          if (pot.returned) {
+            step(() => {
+              const w = pot.winners[0]
+              log(`${nameOf(w)} ${w === HUMAN_SEAT ? 'take' : 'takes'} back ${formatChips(pot.amount)} — more than anyone could call`)
+              shown.pot = left
+              drawPot()
+              const ms = move(MOVE.collect)
+              const gen = stackGen
+              void pushChips(els.potPile, stackEl(w), pot.amount, ms).then(() => {
+                if (gen !== stackGen) return
+                shownStacks[w] = (shownStacks[w] ?? 0) + pot.amount
+                drawStack(w)
+              })
+              if (loud) sound.chips(chipCount(pot.amount, bigBlind), ms / 1000)
+              els.pot.textContent = formatChips(left)
+            }, t(MOVE.collect + 200))
+            return
           }
-        }, t(BASE.reveal), { cancelFF: true })
-        // Beat two, once per pot: light the five cards that won it.
-        e.pots.forEach((pot, i) => {
           step(() => {
             clearWin()
             if (pot.cards) {
@@ -537,7 +907,7 @@ export function tableScreen(root: HTMLElement): () => void {
               }
             }
             for (const w of pot.winners) seatUI.get(w)?.root.classList.add('winner')
-            const label = e.pots.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
+            const label = real.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
             const withWhat = pot.ranking
               ? ` with ${pot.ranking}${pot.cards ? ` — ${handText(pot.cards)}` : ''}`
               : ' uncontested'
@@ -547,7 +917,23 @@ export function tableScreen(root: HTMLElement): () => void {
               const w = pot.winners[0]
               log(`${nameOf(w)} ${w === HUMAN_SEAT ? 'win' : 'wins'} ${label} (${formatChips(pot.amount)})${withWhat}`, 'big')
             }
-          }, t(BASE.showdown))
+            // Out of the middle and across the felt.
+            shown.pot = left
+            drawPot()
+            const ms = move(MOVE.collect)
+            const lead = move(pot.ranking ? 380 : 120)
+            const share = Math.floor(pot.amount / pot.winners.length)
+            const gen = stackGen
+            pot.winners.forEach((w, k) => {
+              void pushChips(els.potPile, stackEl(w), share, ms, lead + k * ms * 0.2).then(() => {
+                if (gen !== stackGen) return
+                shownStacks[w] = (shownStacks[w] ?? 0) + share
+                drawStack(w)
+              })
+              if (loud) sound.chips(chipCount(share, bigBlind) + 2, (lead + k * ms * 0.2 + ms) / 1000)
+            })
+            els.pot.textContent = formatChips(left)
+          }, t(contested || pot.ranking ? BASE.showdown : MOVE.uncontested))
         })
         break
       }
@@ -574,19 +960,124 @@ export function tableScreen(root: HTMLElement): () => void {
         break
       }
       case 'arrival': {
+        if (e.cause === 'banishment') { presentGuestArrival(e, instant); break }
         step(() => {
           applyStructural(e)
           const ui = seatUI.get(e.seat)
           ui?.root.classList.add('arriving')
           if (ui) ui.stack.textContent = formatChips(e.stack)
-          log(`${CHARACTERS[e.id]?.short ?? e.id} takes the empty chair with ${formatChips(e.stack)} chips.`, 'big')
+          const who = CHARACTERS[e.id]?.short ?? e.id
+          log(e.replaces === e.id
+            ? `${who} is back, and takes the old chair again with ${formatChips(e.stack)} chips.`
+            : `${who} takes the empty chair with ${formatChips(e.stack)} chips.`, 'big')
           if (!replaying) store.meet(e.id)
         }, t(BASE.level))
         break
       }
       case 'handEnd':
+        // The engine's own count, now that every chip has landed.
+        step(() => setStacks(e.stacks), 0)
         break
     }
+
+    /** Time to deal `n` board cards and turn them over. */
+    function boardTime(n: number): number {
+      if (!n) return 0
+      return MOVE.boardFlight + (n - 1) * MOVE.boardGap + (n - 1) * MOVE.flopGap + MOVE.flip
+    }
+
+    /**
+     * New board cards: face down out of Death's hands, then turned. The flop
+     * lands as three and turns one at a time -- its own beat, not a blink.
+     */
+    function dealBoard(cards: Card[]) {
+      if (!cards.length) return
+      const flight = move(MOVE.boardFlight)
+      const flipMs = move(MOVE.flip)
+      const from = centre(els.dealerName, felt())
+      const backs = cards.map(() => cardEl(null))
+      els.board.append(...backs)
+      if (flight <= 0) {
+        backs.forEach((b, i) => b.replaceWith(cardEl(cards[i])))
+        return
+      }
+      for (const b of backs) b.style.visibility = 'hidden'
+      const gap = move(MOVE.boardGap)
+      const turnGap = move(MOVE.flopGap)
+      const landed = backs.map((b, i) => {
+        const delay = i * gap
+        if (loud && (!ff || i === 0)) sound.deal((delay + flight * 0.6) / 1000)
+        return fly(els.fx, cardEl(null), from, centre(b, felt()), flight, { delay, from: 0.6, arc: 12, spin: (Math.random() - 0.5) * 40 })
+          .then(() => { b.style.visibility = '' })
+      })
+      void Promise.all(landed).then(() => {
+        backs.forEach((b, i) => {
+          void flipOver(b, cardEl(cards[i]), flipMs, i * turnGap)
+          if (loud) sound.flip((i * turnGap + flipMs / 2) / 1000)
+        })
+      })
+    }
+
+    /**
+     * End of a street: every bet in front of a seat slides into the middle.
+     * `final` is the engine's own total at showdown, so an all-in that never
+     * reached a street event still ends with the right pot in the middle.
+     */
+    function rake(final?: number) {
+      const moving = chipsAt.bets.map((b, i) => [i, b] as const).filter(([, b]) => b > 0)
+      for (const [i, b] of moving) {
+        chipsAt.swept[i] = (chipsAt.swept[i] ?? 0) + b
+        chipsAt.pot += b
+        chipsAt.bets[i] = 0
+      }
+      if (final !== undefined) chipsAt.pot = final
+      if (!moving.length && final === undefined) return
+      const pot = chipsAt.pot
+      step(() => {
+        const ms = move(MOVE.sweep)
+        for (const [i, b] of moving) {
+          shown.bets[i] = 0
+          drawBet(i)
+          void pushChips(betEl(i), els.potPile, b, ms).then(drawPot)
+        }
+        shown.pot = pot
+        if (ms <= 0 || !moving.length) drawPot()
+        if (final !== undefined) els.pot.textContent = formatChips(final)
+        if (loud && moving.length) sound.sweep(moving.length, (ms / 1000) * 0.6)
+      }, moving.length ? room(MOVE.sweep) : 0)
+    }
+  }
+
+  // ------------------------------------------------------------ the uninvited guest
+
+  /**
+   * The chair changes hands without ever standing empty for a hand. The
+   * offender's words and the dealer's ruling have already been queued by the
+   * director (the 'banished' beats); these are the two beats between them and
+   * the guest's first line: the chair empties, and he is in it, behind the
+   * very same chips. Both run on the presentation clock, so fast-forward
+   * speeds them like anything else, and the lines around them are cut.
+   */
+  function presentGuestArrival(e: Extract<HandEvent, { type: 'arrival' }>, instant: boolean) {
+    const t = (ms: number) => (instant ? 0 : ms)
+    const leaving = e.replaces ? CHARACTERS[e.replaces]?.short ?? e.replaces : null
+    step(() => {
+      const ui = seatUI.get(e.seat)
+      if (ui) {
+        ui.root.classList.add('out')
+        ui.cards.replaceChildren()
+        ui.last.textContent = ''
+        ui.tell.textContent = ''
+      }
+      if (leaving) log(`${leaving} is shown out of the Invitational. The chips stay where they are.`, 'big')
+    }, t(BASE.result))
+    step(() => {
+      applyStructural(e)
+      const ui = seatUI.get(e.seat)
+      ui?.root.classList.add('arriving')
+      if (ui) ui.stack.textContent = formatChips(e.stack)
+      log(`${CHARACTERS[e.id]?.short ?? e.id} is sitting in the chair, behind the same ${formatChips(e.stack)} chips.`, 'big')
+    }, t(BASE.level))
   }
 
   // ------------------------------------------------------------ fast-forward
@@ -635,7 +1126,7 @@ export function tableScreen(root: HTMLElement): () => void {
     if (!resolveTurn) return
     if (thinkingTimer) clearTimeout(thinkingTimer)
     els.buttons.replaceChildren()
-    els.raiseRow.hidden = true
+    closeRaise()
     els.prompt.textContent = ''
     d.thinkMs = Math.round(performance.now() - turnStarted)
     // Write the decision down BEFORE the engine sees it: if the app dies in
@@ -673,7 +1164,9 @@ export function tableScreen(root: HTMLElement): () => void {
     // The only place the two clocks meet, and a one-way wait.
     setFF(false)
     await settled()
+    await landed()
     if (!alive) return new Promise<Decision>(() => {})
+    sound.yourTurn()
 
     for (const u of seatUI.values()) u.root.classList.remove('acting')
     setStacks(view.stacks)
@@ -703,7 +1196,7 @@ export function tableScreen(root: HTMLElement): () => void {
       if (!raise) return
       endTurn({ action: raise, betSize: Number(els.slider.value), reason: 'human' })
     }
-    els.raiseCancel.onclick = () => { els.raiseRow.hidden = true }
+    els.raiseCancel.onclick = closeRaise
 
     turnStarted = performance.now()
     thinkingTimer = later(() => {
@@ -714,8 +1207,19 @@ export function tableScreen(root: HTMLElement): () => void {
     return new Promise<Decision>((resolve) => { resolveTurn = resolve })
   }
 
+  /**
+   * The sizing row takes the buttons' place while it is open, rather than
+   * sitting under them: on a phone held sideways there is not the height for
+   * both, and the extra row pushed the player's cards over the board.
+   */
+  function closeRaise() {
+    els.raiseRow.hidden = true
+    els.buttons.hidden = false
+  }
+
   function openRaise(view: TurnView, raise: Action) {
     els.raiseRow.hidden = false
+    els.buttons.hidden = true
     const s = els.slider
     s.min = String(view.minRaise)
     s.max = String(view.maxRaise)
@@ -743,7 +1247,7 @@ export function tableScreen(root: HTMLElement): () => void {
     if ((ev.target as HTMLElement)?.tagName === 'INPUT' && ev.key !== 'Enter' && ev.key !== 'Escape') return
     const k = ev.key.toLowerCase()
     if (k === 'enter' && !els.raiseRow.hidden) { els.raiseConfirm.click(); ev.preventDefault(); return }
-    if (k === 'escape' && !els.raiseRow.hidden) { els.raiseRow.hidden = true; return }
+    if (k === 'escape' && !els.raiseRow.hidden) { closeRaise(); return }
     const btn = els.buttons.querySelector<HTMLButtonElement>(`button[data-key="${k}"]`)
     if (btn) { btn.click(); ev.preventDefault() }
   }
@@ -774,16 +1278,10 @@ export function tableScreen(root: HTMLElement): () => void {
 
   // ------------------------------------------------------------ the game
 
-  const arrivals: Arrival[] = []
-  if (active.mode === 'tour' && table.arrival) {
-    arrivals.push({
-      personality: personality(table.arrival.character),
-      afterEliminations: table.arrival.afterEliminations,
-      afterEliminationOf: table.arrival.afterEliminationOf,
-      delayHands: table.arrival.delayHands,
-      stack: table.arrival.stack,
-    })
-  }
+  const arrivals = arrivalRules(table, active.mode, active.seats)
+
+  // The house rule that lets the uninvited guest in. Absent at the finale.
+  const banishment = banishmentFor(table)
 
   const run = new TableRun({
     table,
@@ -795,6 +1293,7 @@ export function tableScreen(root: HTMLElement): () => void {
     respectPoints: active.respectPoints,
     earnedMarks: Object.keys(save.marks),
     buyIn: table.buyIn,
+    uninvited: banishment ? UNINVITED : undefined,
   })
 
   const game = new Game([HUMAN, ...active.seats.map(personality)], {
@@ -807,6 +1306,7 @@ export function tableScreen(root: HTMLElement): () => void {
     onHumanTurn,
     onEvent,
     arrivals,
+    banishment,
   })
 
   refreshName()
@@ -838,8 +1338,11 @@ export function tableScreen(root: HTMLElement): () => void {
 
   function finishTable() {
     els.buttons.replaceChildren()
-    els.raiseRow.hidden = true
+    closeRaise()
     setFF(false)
+    // The table is over: nothing left to fast-forward, and nobody's blind.
+    els.ff.hidden = true
+    setBlinds(-1, -1)
     const won = game.survivors()[0] === HUMAN_SEAT && game.isComplete()
     const missed = game.missedArrivals()
     const { beats, facts } = run.finish(won, game.handCount(), missed)

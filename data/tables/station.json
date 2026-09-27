@@ -17,7 +17,7 @@
     "stack": "average",
     "watching": true
   },
-  "handsPerLevel": 22,
+  "handsPerLevel": 8,
   "dialogue": "table-08-station.json",
   "buyIn": 2000,
   "respectStart": 0,

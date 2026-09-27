@@ -39,7 +39,7 @@
     "title": "Four Horsemen",
     "text": "Four of a kind. I know the other three.",
     "hint": "Win a showdown with four of a kind.",
-    "when": { "type": "showdown_win", "minRank": "four of a kind" }
+    "when": { "type": "showdown_win", "rank": "four of a kind" }
   },
   {
     "id": "royalty",
@@ -94,8 +94,8 @@
     "id": "brief_acquaintance",
     "title": "Brief Acquaintance",
     "text": "In and out before the blinds had a chance to matter. Rude, and effective.",
-    "hint": "Win a table in forty hands or fewer.",
-    "when": { "type": "table_won_fast", "maxHands": 40 }
+    "hint": "Win a table in twenty-five hands or fewer.",
+    "when": { "type": "table_won_fast", "maxHands": 25 }
   },
   {
     "id": "known_by_name",
@@ -255,5 +255,77 @@
     "text": "Every name in this book has a line through it but one.",
     "hint": "Beat every legend of the Invitational.",
     "when": { "type": "beaten_roster" }
+  },
+  {
+    "id": "nice",
+    "title": "Nice",
+    "text": "Six and nine. The table went quiet, and then somebody said it. Somebody always says it. Nobody has ever told me why.",
+    "hint": "Win a pot holding six-nine.",
+    "when": { "type": "hole_win", "ranks": ["6", "9"] }
+  },
+  {
+    "id": "number_of_the_beast",
+    "title": "The Number of the Beast",
+    "text": "Three sixes. The whole table turned to look at me, as if I would have views on the matter. I do not. It is three of a kind, and not a high one.",
+    "hint": "Win a showdown with three sixes.",
+    "when": { "type": "showdown_win", "minRank": "three of a kind", "ranks": ["6", "6", "6"] }
+  },
+  {
+    "id": "fortunes_wheel",
+    "title": "Fortune's Wheel",
+    "text": "Ace to five, the smallest straight there is. Card players call it the wheel. Fortune keeps one too; I have watched hers lift emperors and drop them. Yours only had to come round once.",
+    "hint": "Win a showdown with a straight from ace to five.",
+    "when": { "type": "showdown_win", "minRank": "a straight", "ranks": ["A", "2", "3", "4", "5"] }
+  },
+  {
+    "id": "great_leveller",
+    "title": "The Great Leveller",
+    "text": "A pot split down the middle: two hands worth exactly the same. I am called the great leveller. It was restful to watch the cards take a turn.",
+    "hint": "Split a pot at showdown.",
+    "when": { "type": "split_pot" }
+  },
+  {
+    "id": "a_promising_start",
+    "title": "A Promising Start",
+    "text": "Two aces, and still you lost. The best start the deck can give. I have watched a great many good starts. I am there for every finish.",
+    "hint": "Lose a showdown holding two aces.",
+    "when": { "type": "hole_loss", "ranks": ["A", "A"] }
+  },
+  {
+    "id": "good_dog",
+    "title": "Good Dog",
+    "text": "King and nine. Card players call it the canine. Cerberus has asked me to explain the joke three times, once for each head.",
+    "hint": "Win a pot holding king-nine.",
+    "when": { "type": "hole_win", "ranks": ["K", "9"] }
+  },
+  {
+    "id": "sailboats",
+    "title": "Sailboats",
+    "text": "Two fours, which card players call sailboats. Odysseus says any boat will get you home. He does not say how long it takes.",
+    "hint": "Win a pot holding a pair of fours.",
+    "when": { "type": "hole_win", "ranks": ["4", "4"] }
+  },
+  {
+    "id": "a_year_and_a_day",
+    "title": "A Year and a Day",
+    "text": "You put the Green Knight out of the game. He asked when he might return the blow. I told him a year and a day. He wrote it down.",
+    "hint": "Knock out the Green Knight yourself.",
+    "when": { "type": "knockout", "character": "green_knight" }
+  },
+  {
+    "id": "the_return_blow",
+    "title": "The Return Blow",
+    "text": "He came back. They do not, as a rule; I am the rule. At this table a year and a day is twenty hands, and he had counted every one of them.",
+    "hint": "See the Green Knight off, and still be sitting there when he keeps his appointment.",
+    "when": { "type": "returned", "character": "green_knight" }
+  },
+  {
+    "id": "uninvited",
+    "title": "Uninvited",
+    "text": "Two words from the wrong century, and I showed the speaker out. The chair was not empty long. I did not invite the one who sat in it. I have written him down anyway.",
+    "hint": "An entry not yet written.",
+    "hidden": true,
+    "secret": true,
+    "when": { "type": "met", "character": "loki" }
   }
 ]

@@ -15,6 +15,8 @@
     "bluffFrequency": 0.02,
     "tiltSensitivity": 0.3,
     "adaptivity": 0.0,
+    "betRespect": 0.45,
+    "skill": 0.55,
     "noise": 0.3
   },
   "quirks": [
@@ -60,5 +62,37 @@
     "look": "Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a low ridge of small snakes along the neck and spine after Apollodorus, kept subtle so it never clutters the read. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.",
     "prop": "Three iron collars on one chain",
     "public_domain": "Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads."
+  },
+  "callouts": {
+    "fold": [
+      "[noses his cards away, and loses interest]",
+      "[pushes the cards back to the dealer with his muzzle]",
+      "[whines, briefly, from one of his throats]"
+    ],
+    "check": [
+      "[taps the felt with one heavy claw]",
+      "[thumps his serpent tail once against the chair]",
+      "[licks one paw, and waits]"
+    ],
+    "call": [
+      "[shoves chips forward with a paw, and a few more with his nose]",
+      "[nudges a stack into the pot with his nose]",
+      "[pushes in the chips; the right head checks the count]"
+    ],
+    "bet": [
+      "[drops a stack of chips into the pot from one mouth]",
+      "[pushes out a stack and barks at it, once]",
+      "[shoves a pile forward with both front paws]"
+    ],
+    "raise": [
+      "[barks three times, in three keys, and pushes more in]",
+      "[shoves a heap of chips forward and stands over it]",
+      "[pushes a bigger stack forward, one bark from each head in turn]"
+    ],
+    "all_in": [
+      "[sweeps every chip into the middle with his tail]",
+      "[bays from all three throats and shoves everything in]",
+      "[pushes the whole pile in with his chest]"
+    ]
   }
 }

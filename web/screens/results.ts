@@ -56,7 +56,7 @@ export function resultsScreen(root: HTMLElement): void {
   body.append(
     h('p', { class: 'kicker' }, table.name),
     h('h2', { class: `headline ${o.won ? 'won' : 'lost'}` }, headline),
-    h('p', { class: 'dim' }, `${o.hands} hands${o.won ? '' : ` · you finished ${ordinal(o.place)}`}`),
+    h('p', { class: 'dim' }, `${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}${o.won ? '' : ` · you finished ${ordinal(o.place)}`}`),
   )
   if (closing) body.append(h('blockquote', { class: 'death-says' }, `“${closing}”`, h('cite', null, 'Death')))
 
@@ -104,7 +104,7 @@ export function resultsScreen(root: HTMLElement): void {
   if (effects.unlocked) {
     const u = effects.unlocked
     body.append(h('p', { class: 'unlocked' },
-      u.kind === 'finale' ? 'One more table has appeared on the map.' : `Now open: ${u.name}${u.place && u.place !== 'TODO' ? ` — ${u.place}` : ''}.`))
+      u.kind === 'finale' ? 'One more table has appeared on the map.' : `Now open: ${u.name}${u.place && u.place !== 'TODO' && !u.name.includes(u.place) ? ` — ${u.place}` : ''}.`))
   }
   if (o.won && o.mode === 'tour' && table.kind === 'tour' && effects.firstClear) {
     body.append(h('p', { class: 'dim small' }, `Open tables at ${table.name} are now available from the map.`))

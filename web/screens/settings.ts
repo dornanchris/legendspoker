@@ -3,20 +3,26 @@ import type { Pace } from '../../src/save.js'
 import * as store from '../store.js'
 import { h, go } from '../dom.js'
 import { header } from './shared.js'
+import * as sound from '../sound.js'
 
 /**
  * Settings (BUILD-PLAN screen 10). Only controls that do something today:
- * there is no audio yet, so there are no volume sliders pretending otherwise.
+ * sound is cards and chips, so there is one volume, not a music slider
+ * pretending there is music.
  */
 export function settingsScreen(root: HTMLElement): void {
   const save = store.get()
   const s = save.settings
 
-  const toggle = (label: string, hint: string, key: 'showLog' | 'reduceMotion' | 'fastForward' | 'largeText') => {
+  const toggle = (label: string, hint: string, key: 'showLog' | 'reduceMotion' | 'fastForward' | 'largeText' | 'sound') => {
     const input = h('input', { type: 'checkbox', checked: s[key] }) as HTMLInputElement
     input.addEventListener('change', () => {
       store.update((x) => { x.settings[key] = input.checked })
       store.applySettings()
+      if (key === 'sound') {
+        volume.disabled = !input.checked
+        if (input.checked) sound.chips(3)
+      }
     })
     return h('label', { class: 'setting' }, input, h('span', null, h('b', null, label), h('small', null, hint)))
   }
@@ -33,6 +39,17 @@ export function settingsScreen(root: HTMLElement): void {
       })
       return b
     }))
+
+  // Hear it as you set it: a few chips land at the new level.
+  const volume = h('input', {
+    type: 'range', min: '0', max: '100', step: '5', value: String(Math.round(s.volume * 100)),
+    class: 'volume', 'aria-label': 'Volume', disabled: !s.sound,
+  }) as HTMLInputElement
+  volume.addEventListener('change', () => {
+    store.update((x) => { x.settings.volume = Number(volume.value) / 100 })
+    store.applySettings()
+    sound.chips(3)
+  })
 
   const nameInput = h('input', { type: 'text', maxlength: '24', value: save.player?.name ?? '', 'aria-label': 'Your name' }) as HTMLInputElement
   nameInput.addEventListener('change', () => {
@@ -57,6 +74,8 @@ export function settingsScreen(root: HTMLElement): void {
       save.player ? h('label', { class: 'setting stacked' }, h('b', null, 'Your name, as signed'), nameInput) : null,
       h('div', { class: 'setting stacked' }, h('b', null, 'Table pace'),
         h('small', null, 'How quickly the table is shown to you. It never changes how a hand plays.'), pace),
+      toggle('Sound', 'Cards dealt, chips pushed, the knock of a check.', 'sound'),
+      h('label', { class: 'setting stacked' }, h('b', null, 'Volume'), volume),
       toggle('Fast-forward', 'Offer a fast-forward once you are out of a hand. Stops by itself at the showdown.', 'fastForward'),
       toggle('Show the log', 'Every action and every word, written down beside the table.', 'showLog'),
       toggle('Larger text', 'Everything a size bigger.', 'largeText'),

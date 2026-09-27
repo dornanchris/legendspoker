@@ -15,7 +15,9 @@
     "bluffFrequency": 0.3,
     "tiltSensitivity": 0.1,
     "adaptivity": 0.65,
-    "noise": 0.2
+    "betRespect": 0.7,
+    "skill": 0.3,
+    "noise": 0.15
   },
   "quirks": [
     {
@@ -30,19 +32,19 @@
       "signal": "parrot_squawks",
       "text": "his parrot squawks 'Pieces of eight!'",
       "correlate": "strong",
-      "reliability": 0.76
+      "reliability": 0.8
     },
     {
       "signal": "parrot_sidles",
       "text": "his parrot sidles along his shoulder",
       "correlate": "bluffing",
-      "reliability": 0.75
+      "reliability": 0.79
     },
     {
       "signal": "strokes_parrot",
       "text": "strokes the parrot's head",
       "correlate": "weak",
-      "reliability": 0.76
+      "reliability": 0.8
     }
   ],
   "idles": [
@@ -62,5 +64,39 @@
     "look": "Silhouette: very tall and broad, a big pale smiling face, a cook's apron over a sailor's coat, the top of a crutch under one arm — and the parrot on his shoulder, the brightest, busiest thing at the table. Everything else distinctive about him is below the table's edge. Prop: Captain Flint, the parrot — she preens, sidles and shrieks, and she is the part of him that moves.",
     "prop": "Captain Flint, his parrot",
     "public_domain": "Stevenson's Treasure Island (1883) is public domain. Avoid Robert Newton's performance in Disney's 1950 film — his rolling West Country 'Arr!' now owns the pirate voice — and the Muppet, Treasure Planet and Black Sails Silvers. The book gives us enough: tall, pale, smiling, one leg, a crutch, and a parrot."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Silver knows when to change sides.",
+      "Fold. Tell 'em I was never in it, Cap'n Flint.",
+      "Fold. Live to cook another day.",
+      "I'll step back, shipmates. Dooty is dooty."
+    ],
+    "check": [
+      "Check, shipmates. Nice and friendly.",
+      "Check. Cap'n Flint says wait.",
+      "Check. By the powers, I'm a patient man."
+    ],
+    "call": [
+      "Call, shipmate. Just to be sociable.",
+      "I'll see that. A gentleman o' fortune always does.",
+      "Call. Shiver my timbers."
+    ],
+    "bet": [
+      "A little something for the pot, shipmates.",
+      "Bet. Barbecue's buying.",
+      "Bet. Cap'n Flint picked the number."
+    ],
+    "raise": [
+      "Raise, shipmate. Nothing personal.",
+      "Raise. By the powers!",
+      "I'll raise. Don't take it amiss, now.",
+      "Raise. Cap'n Flint's idea, not mine."
+    ],
+    "all_in": [
+      "All in, shipmates. Every doubloon.",
+      "Everything. A gentleman o' fortune stakes it all.",
+      "All in. Blame the bird."
+    ]
   }
 }

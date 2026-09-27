@@ -15,6 +15,8 @@
     "bluffFrequency": 0.15,
     "tiltSensitivity": 0.5,
     "adaptivity": 0.2,
+    "betRespect": 0.4,
+    "skill": 0.68,
     "noise": 0.45
   },
   "quirks": [
@@ -66,5 +68,40 @@
     "look": "Silhouette: a real wolf's head, long muzzle and tall pointed ears, on a big man's shoulders, in the remains of a good shirt and waistcoat split at the seams. Grey-brown fur, a man's tired eyes. The ears are the tell surface and the biggest moving shape he has: up, back, flat. Not a hairy man's face; that is the film's design, not folklore's.",
     "prop": "Tall wolf's ears",
     "public_domain": "The werewolf is European folklore, told from Petronius onward, and belongs to nobody. Universal owns its Wolf Man films and their lore: no Larry Talbot, no silver-headed cane, no pentagram, no fortune-teller's verse, and no hairy-faced human makeup. Build him from folklore, as a wolf's head on a man's frame."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Good boy. I mean — fold.",
+      "Fold. Somebody hold me back.",
+      "Fold. It's not a full moon. Yet.",
+      "Fold. I'm not hungry. I'm not."
+    ],
+    "check": [
+      "Check. Down, boy.",
+      "Check. Staying calm. Staying very calm.",
+      "Check. Don't mind the teeth."
+    ],
+    "call": [
+      "Call. I can't help following things.",
+      "Call. Don't make any sudden movements.",
+      "I'll follow that.",
+      "Call. Sorry. Instinct."
+    ],
+    "bet": [
+      "Bet. Sorry. Sorry.",
+      "Bet. Nothing personal. It's the moon.",
+      "Bet. I'll try to keep it small."
+    ],
+    "raise": [
+      "Raise. That's the moon talking.",
+      "Raise. I did say not to open the window.",
+      "Grr— I mean, raise.",
+      "Raise. The man's gone out of me for a moment."
+    ],
+    "all_in": [
+      "All in! Arooo— sorry. Sorry.",
+      "Everything. The moon's up.",
+      "All in. Somebody lock the doors."
+    ]
   }
 }

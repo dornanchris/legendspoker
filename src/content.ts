@@ -10,6 +10,8 @@
  * game still opens straight from disk with no server and no fetch.
  */
 import type { Personality, Tell } from './personality.js'
+import type { Arrival } from './game.js'
+import type { Banishment } from './game.js'
 import { buildQuirks, type QuirkSpec } from './quirks.js'
 
 import lincoln from '../data/characters/lincoln.json'
@@ -48,6 +50,7 @@ import robot from '../data/characters/robot.json'
 import astronaut from '../data/characters/astronaut.json'
 import theAi from '../data/characters/the_ai.json'
 import death from '../data/characters/death.json'
+import loki from '../data/characters/loki.json'
 
 import tWhiteHouse from '../data/tables/white_house.json'
 import tAthens from '../data/tables/athens.json'
@@ -73,6 +76,7 @@ import dChampions1 from '../data/dialogue/table-09-champions-1.json'
 import dChampions2 from '../data/dialogue/table-10-champions-2.json'
 import dFinale from '../data/dialogue/table-11-finale.json'
 import dDealer from '../data/dialogue/dealer.json'
+import dUninvited from '../data/dialogue/uninvited.json'
 
 import marksData from '../data/marks.json'
 import storyData from '../data/story.json'
@@ -85,6 +89,10 @@ export type Dials = {
   bluffFrequency: number
   tiltSensitivity: number
   adaptivity: number
+  /** How far they believe a bet: low is a calling station. */
+  betRespect: number
+  /** Execution, not style: see Personality.skill. */
+  skill: number
   noise: number
 }
 
@@ -95,10 +103,17 @@ export type CharacterData = {
   short: string
   epithet: string
   pronoun: 'he' | 'she' | 'it' | 'they'
-  table: string
-  role: 'seat' | 'champion' | 'dealer'
+  /** null only for a guest, who belongs to no table. */
+  table: string | null
+  /**
+   * 'guest' is someone the Invitational never invited: on no table, not in
+   * the ROSTER, and invisible everywhere until met. See UninvitedData.
+   */
+  role: 'seat' | 'champion' | 'dealer' | 'guest'
   /** A late arrival: kept out of the ledger until met, so it stays a surprise. */
   arrives: boolean
+  /** Comes back after being knocked out. See ReturnData. */
+  returns?: ReturnData
   origin: string
   era: string
   dials: Dials
@@ -114,7 +129,31 @@ export type CharacterData = {
     prop: string
     public_domain: string
   }
+  /**
+   * What they say as they act -- "Raise.", "Too rich for my blood." -- keyed
+   * by the PUBLIC action. Chosen from public information only (src/chatter.ts)
+   * and never allowed to claim or deny strength. A line wholly in [brackets]
+   * is a stage direction: a gesture, for those who do not speak.
+   */
+  callouts?: Callouts
 }
+
+/**
+ * A character who comes BACK after being knocked out: the Green Knight took
+ * the first blow at Camelot and rides in again for his own. They retake their
+ * old chair this many hands after they fell, if the table is still going.
+ * It travels with the character, so it happens at any table they sit at.
+ */
+export type ReturnData = {
+  afterHands: number
+  stack: 'average' | number
+  /** The scene: one line per speaker, in the order the speakers first appear. */
+  lines: Line[]
+}
+
+/** The public actions a callout can answer. all_in is any action that empties the stack. */
+export type CalloutAction = 'fold' | 'check' | 'call' | 'bet' | 'raise' | 'all_in'
+export type Callouts = Partial<Record<CalloutAction, string[]>>
 
 export type ArrivalData = {
   character: string
@@ -155,6 +194,12 @@ export type TableData = {
   ambience: string[]
   /** Shown at the table before a late champion arrives. */
   presence: string | null
+  /**
+   * The legibility curve's first steps: the chance, after a showdown, that
+   * Death points out a tell that told the truth that hand (dealer.json
+   * `lessons`). The first tables only; absent means never.
+   */
+  lessons?: number
 }
 
 export type Line = {
@@ -168,6 +213,10 @@ export type Line = {
   sequence?: string
   /** reads_you only: the observed behaviour this line describes. */
   when?: string
+  /** needles only, on an exchange's first line: the tablemate being needled. */
+  to?: string
+  /** dealer lessons only: what the tell being pointed out turned out to mean. */
+  correlate?: 'strong' | 'weak' | 'bluffing' | 'tilted'
 }
 
 export type DialogueData = {
@@ -175,7 +224,17 @@ export type DialogueData = {
   earned_names?: { tier_1?: string; tier_3?: string }
   table_intro?: Line[]
   dealer_plant?: Line[]
-  banter_pairs?: Record<string, { relationship?: string; exchanges: Line[][] }>
+  banter_pairs?: Record<string, {
+    relationship?: string
+    exchanges: Line[][]
+    /**
+     * Old friends, needling. An exchange fires after a hand in which its first
+     * speaker took the pot and its `to` folded to that speaker's bet or raise:
+     * public facts only, said between hands. Only pairs with a relationship
+     * have them, which is what keeps them from becoming "nice hand".
+     */
+    needles?: Line[][]
+  }>
   player_directed?: Record<string, Line[]>
   death_asides?: Line[]
   champion_arrival?: Line[]
@@ -190,6 +249,49 @@ export type DialogueData = {
 
 export type DealerLines = Record<string, Line[]>
 
+/**
+ * A tell or idle in words, as the seat shows it. Most read after the name
+ * ("Lincoln strokes his beard"); some are about something else and read on
+ * their own -- "Medusa the snakes in her hair go still" does not. The ledger
+ * keeps the words as written.
+ */
+const STANDS_ALONE = /^(a|an|all|each|every|he|her|his|it|its|nothing|one|sea|she|something|somewhere|the|their|there|they|three|two)\b/i
+export function tellLine(name: string, text: string): string {
+  return STANDS_ALONE.test(text) ? text[0].toUpperCase() + text.slice(1) : `${name} ${text}`
+}
+
+/**
+ * The uninvited guest's script: data/dialogue/uninvited.json. Win a pot
+ * holding the trigger ranks and one opponent says something the house does
+ * not allow, the dealer removes them, and the guest takes the chair. The
+ * engine half is Banishment (game.ts); this is what the room says about it.
+ *
+ * Speakers are 'death', 'narration', the guest's id, and -- in the two
+ * offence pools only -- 'banished', which stands for whoever is shown out.
+ */
+export type UninvitedData = {
+  /** Character id of the guest (role 'guest'). */
+  guest: string
+  trigger: { hole_ranks: string[] }
+  /** Said first when the pot was won uncontested: the table has to SEE the cards. */
+  reveal: Line[]
+  /** One of these, from the player about to be removed. */
+  offence: Line[]
+  /** ...or one of these, if the table only ever gives them stage directions. */
+  offence_mimed: Line[]
+  /** One of these, from Death. */
+  banishment: Line[]
+  /** Played in order once the guest is seated. */
+  entrance: Line[]
+  /** Exchanges spread over the rest of the sitting, in order. */
+  sitting: Line[][]
+  /** When the guest is knocked out. */
+  busted: Line[]
+  /** When the table ends with the guest having sat at it. */
+  farewell_won: Line[]
+  farewell_lost: Line[]
+}
+
 export type MarkCondition = { type: string } & Record<string, any>
 
 export type MarkData = {
@@ -200,6 +302,12 @@ export type MarkData = {
   /** Shown while unearned. Hidden marks show nothing but a blank line. */
   hint: string
   hidden?: boolean
+  /**
+   * Stronger than hidden: until it is earned the Ledger does not list it at
+   * all and does not count it in its total, so nothing gives away that it
+   * exists. Once earned it reads like any other entry.
+   */
+  secret?: boolean
   when: MarkCondition
 }
 
@@ -227,6 +335,7 @@ const characterList = [
   vanHelsing, monster, wolfMan, headlessHorseman, dracula,
   greyAlien, martian, robot, astronaut, theAi,
   death,
+  loki,
 ] as unknown as CharacterData[]
 
 const tableList = [
@@ -261,8 +370,16 @@ export const STORY = storyData as unknown as StoryData
 /** The eight story tables, in order. */
 export const TOUR = TABLES.filter((t) => t.kind === 'tour')
 
-/** The roster the player can beat: everyone except the dealer. */
-export const ROSTER = characterList.filter((c) => c.role !== 'dealer')
+/**
+ * The roster the player can beat: everyone invited, except the dealer. A
+ * guest is not on it, so counting it can never give one away.
+ */
+export const ROSTER = characterList.filter((c) => c.role !== 'dealer' && c.role !== 'guest')
+
+/** Characters nobody invited. Kept out of every list until met. */
+export const GUESTS = characterList.filter((c) => c.role === 'guest')
+
+export const UNINVITED = dUninvited as unknown as UninvitedData
 
 // ---------------------------------------------------------------- personalities
 
@@ -300,4 +417,46 @@ export function fullCast(table: TableData): string[] {
   const cast = [...table.seats]
   if (table.arrival && !cast.includes(table.arrival.character)) cast.push(table.arrival.character)
   return cast
+}
+
+/**
+ * The late-arrival rules for one sitting: a tour table's own champion
+ * arrival, plus a return for anyone seated whose data says they come back.
+ * Returns are configuration keyed by ids in data, like arrivals -- never a
+ * branch on identity in the engine.
+ */
+export function arrivalRules(table: TableData, mode: 'tour' | 'open', seats: string[]): Arrival[] {
+  const a = mode === 'tour' ? table.arrival : null
+  const rules: Arrival[] = []
+  if (a) {
+    rules.push({
+      personality: personality(a.character),
+      afterEliminations: a.afterEliminations,
+      afterEliminationOf: a.afterEliminationOf,
+      delayHands: a.delayHands,
+      stack: a.stack,
+    })
+  }
+  for (const id of a ? [...seats, a.character] : seats) {
+    const r = CHARACTERS[id]?.returns
+    if (r) rules.push({ personality: personality(id), afterEliminationOf: id, delayHands: r.afterHands, stack: r.stack })
+  }
+  return rules
+}
+
+/**
+ * The house rule that lets the uninvited guest in, configured for one table,
+ * tour or open. Never at the finale: that is the dealer's own table, and he
+ * is the only one at it. The champion and the dealer are never shown out;
+ * the engine itself protects anyone a late arrival is waiting on.
+ */
+export function banishmentFor(table: TableData): Banishment | undefined {
+  if (table.kind === 'finale') return undefined
+  const exclude = characterList.filter((c) => c.role === 'dealer').map((c) => c.id)
+  if (table.champion) exclude.push(table.champion)
+  return {
+    personality: personality(UNINVITED.guest),
+    holeRanks: [...UNINVITED.trigger.hole_ranks],
+    exclude,
+  }
 }

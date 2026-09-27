@@ -100,6 +100,24 @@
           { "id": "pc_kd_bb_03b", "speaker": "kidd", "text": "The King offered a pardon to every pirate in the Indies but two. I was one of the two.", "note": "True: the royal proclamation of 1698 offering pardon to pirates in the East Indies excluded Kidd and Henry Every by name." },
           { "id": "pc_kd_bb_03c", "speaker": "blackbeard", "text": "Ha! Who was the other?" },
           { "id": "pc_kd_bb_03d", "speaker": "kidd", "text": "Henry Every. He got away with it.", "note": "True: Every was never caught." }
+        ],
+        [
+          { "id": "pc_kd_bb_04a", "speaker": "blackbeard", "text": "What did you do to your gunner, Kidd? I heard it was a bucket." },
+          { "id": "pc_kd_bb_04b", "speaker": "kidd", "text": "He called me a rogue." },
+          { "id": "pc_kd_bb_04c", "speaker": "blackbeard", "text": "And?" },
+          { "id": "pc_kd_bb_04d", "speaker": "kidd", "text": "It was a very heavy bucket.", "note": "True: Kidd struck his gunner William Moore with an iron-bound bucket in 1697 after an argument, and was hanged partly for it." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "pc_nd_01a", "speaker": "blackbeard", "to": "kidd", "text": "Folded, Kidd? That's the privateer in you." },
+          { "id": "pc_nd_01b", "speaker": "kidd", "text": "Thank you." },
+          { "id": "pc_nd_01c", "speaker": "blackbeard", "text": "It wasn't a compliment." },
+          { "id": "pc_nd_01d", "speaker": "kidd", "text": "It was to me." }
+        ],
+        [
+          { "id": "pc_nd_02a", "speaker": "kidd", "to": "blackbeard", "text": "The great Blackbeard, folding. I'll have that entered in the log." },
+          { "id": "pc_nd_02b", "speaker": "blackbeard", "text": "Write it small. Nobody reads a hanged man's log." }
         ]
       ]
     },
@@ -123,6 +141,23 @@
           { "id": "pc_ls_bb_03b", "speaker": "silver", "text": "Yours, Cap'n. Right up until I'm not, and you'll be the first to know." },
           { "id": "pc_ls_bb_03c", "speaker": "blackbeard", "text": "Will I?" },
           { "id": "pc_ls_bb_03d", "speaker": "silver", "text": "...Second." }
+        ],
+        [
+          { "id": "pc_ls_bb_04a", "speaker": "blackbeard", "text": "Where did you leave your leg, cook?" },
+          { "id": "pc_ls_bb_04b", "speaker": "silver", "text": "In the King's service, Cap'n. Lost it under the immortal Hawke." },
+          { "id": "pc_ls_bb_04c", "speaker": "blackbeard", "text": "Did you?" },
+          { "id": "pc_ls_bb_04d", "speaker": "silver", "text": "It's a better story than the true one.", "note": "Treasure Island, ch. 7: the Squire reports that Silver lost the leg 'in his country's service, under the immortal Hawke'. It is Silver's own account." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "pc_nd_03a", "speaker": "blackbeard", "to": "silver", "text": "Changing sides again, cook?" },
+          { "id": "pc_nd_03b", "speaker": "silver", "text": "Never, Cap'n. Just stepping out of the line of fire. Different thing entirely." }
+        ],
+        [
+          { "id": "pc_nd_04a", "speaker": "silver", "to": "blackbeard", "text": "There, Cap'n Flint. Even Blackbeard strikes his colours to the cook." },
+          { "id": "pc_nd_04b", "speaker": "blackbeard", "text": "Say that again and the bird goes in the stew." },
+          { "id": "pc_nd_04c", "speaker": "silver", "text": "[tucks the parrot inside his coat]", "type": "stage_direction" }
         ]
       ]
     },
@@ -147,6 +182,47 @@
           { "id": "pc_dj_ls_01b", "speaker": "davy_jones", "text": "Everyone who comes down to me tries to bargain." },
           { "id": "pc_dj_ls_01c", "speaker": "silver", "text": "Aye, but I'm good at it." },
           { "id": "pc_dj_ls_01d", "speaker": "davy_jones", "text": "So you never came down." }
+        ],
+        [
+          { "id": "pc_dj_bb_02a", "speaker": "blackbeard", "text": "Why do you never raise your voice, Jones?" },
+          { "id": "pc_dj_bb_02b", "speaker": "davy_jones", "text": "I've never needed to. Everyone comes to me in the end." },
+          { "id": "pc_dj_bb_02c", "speaker": "blackbeard", "text": "Not me. Not yet." },
+          { "id": "pc_dj_bb_02d", "speaker": "davy_jones", "text": "No. Not yet." }
+        ],
+        [
+          { "id": "pc_dj_ls_02a", "speaker": "silver", "text": "Mr Jones. What's it like, down there?" },
+          { "id": "pc_dj_ls_02b", "speaker": "davy_jones", "text": "Quiet. Dark. Everyone's very honest." },
+          { "id": "pc_dj_ls_02c", "speaker": "silver", "text": "...Doesn't sound like my sort of place at all." }
+        ],
+        [
+          { "id": "pc_dj_kd_02a", "speaker": "kidd", "text": "Do you keep accounts down there, Jones?" },
+          { "id": "pc_dj_kd_02b", "speaker": "davy_jones", "text": "Every sailor. Every ship." },
+          { "id": "pc_dj_kd_02c", "speaker": "kidd", "text": "Then you'll have the Quedagh Merchant on your books. I want a copy." },
+          { "id": "pc_dj_kd_02d", "speaker": "davy_jones", "text": "Everyone wants a copy." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "pc_nd_05a", "speaker": "davy_jones", "to": "kidd", "text": "Let go, Captain. It gets easier." },
+          { "id": "pc_nd_05b", "speaker": "kidd", "text": "That's what they said at Wapping." }
+        ],
+        [
+          { "id": "pc_nd_06a", "speaker": "davy_jones", "to": "blackbeard", "text": "You let that one sink, Captain." },
+          { "id": "pc_nd_06b", "speaker": "blackbeard", "text": "I let it drift. There's a difference." },
+          { "id": "pc_nd_06c", "speaker": "davy_jones", "text": "Not to me." }
+        ],
+        [
+          { "id": "pc_nd_07a", "speaker": "davy_jones", "to": "silver", "text": "Folded, cook." },
+          { "id": "pc_nd_07b", "speaker": "silver", "text": "Aye. A man who knows when to leave a ship never goes down with one." },
+          { "id": "pc_nd_07c", "speaker": "davy_jones", "text": "I'll wait." }
+        ],
+        [
+          { "id": "pc_nd_08a", "speaker": "kidd", "to": "davy_jones", "text": "Ha! The devil of the deep, backing water!" },
+          { "id": "pc_nd_08b", "speaker": "davy_jones", "text": "The tide goes out. It always comes in again." }
+        ],
+        [
+          { "id": "pc_nd_09a", "speaker": "blackbeard", "to": "davy_jones", "text": "Back to your locker, Jones!" },
+          { "id": "pc_nd_09b", "speaker": "davy_jones", "text": "After you, Captain. I insist." }
         ]
       ]
     },
@@ -165,6 +241,22 @@
           { "id": "pc_ls_kd_02b", "speaker": "kidd", "text": "I offered to show them. If they'd let me live." },
           { "id": "pc_ls_kd_02c", "speaker": "silver", "text": "And?" },
           { "id": "pc_ls_kd_02d", "speaker": "kidd", "text": "[rubs his neck]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "pc_ls_kd_03a", "speaker": "kidd", "text": "What would you have done with Flint's gold, Silver?" },
+          { "id": "pc_ls_kd_03b", "speaker": "silver", "text": "Set up gentleman. Ride in a coach. Sit in Parliament, maybe." },
+          { "id": "pc_ls_kd_03c", "speaker": "kidd", "text": "Parliament hanged me." },
+          { "id": "pc_ls_kd_03d", "speaker": "silver", "text": "Well, I'd have been on the other side of it, see.", "note": "Kidd was examined before the House of Commons in 1701. Silver means to \"set up gentleman in earnest\" after the voyage (Treasure Island, ch. 11)." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "pc_nd_10a", "speaker": "silver", "to": "kidd", "text": "No shame in it, Captain. A man can't dig every hole on the island." },
+          { "id": "pc_nd_10b", "speaker": "kidd", "text": "Mine wasn't empty. They took it." }
+        ],
+        [
+          { "id": "pc_nd_11a", "speaker": "kidd", "to": "silver", "text": "Folded, Silver? For once you picked a side and stayed on it." },
+          { "id": "pc_nd_11b", "speaker": "silver", "text": "The side that folds, Captain. It's never once been hanged." }
         ]
       ]
     }

@@ -33,8 +33,8 @@
   ],
 
   "open_table": [
-    { "id": "dl_open_01", "speaker": "death", "text": "No champion tonight. Just whoever was in the room. It is how most games have always been." },
-    { "id": "dl_open_02", "speaker": "death", "text": "The champion is not playing. The regulars are, and they have been waiting for this." },
+    { "id": "dl_open_01", "speaker": "death", "text": "No title is on the line tonight. Whoever came through the door plays, champions included. It is how most games have always been." },
+    { "id": "dl_open_02", "speaker": "death", "text": "A champion may sit down tonight, but nobody is defending anything. They are only players again, and some of them are enjoying it." },
     { "id": "dl_open_03", "speaker": "death", "text": "I deal to whoever sits down. Nobody gets better cards for being famous." },
     { "id": "dl_open_04", "speaker": "death", "text": "No stakes worth mentioning tonight. Only cards. Some people prefer it." }
   ],
@@ -49,5 +49,25 @@
     { "id": "dl_won_01", "speaker": "death", "text": "Well played. I do not say it often. Keep that one." },
     { "id": "dl_won_02", "speaker": "death", "text": "All the chips. Enjoy them. They do not travel." },
     { "id": "dl_won_03", "speaker": "death", "text": "The table is yours for tonight. It will want you back. They always do." }
+  ],
+  "lessons": [
+    { "id": "dl_lesson_s1", "speaker": "death", "correlate": "strong", "text": "{tell}. Then the decision, and now the cards. Put the three together." },
+    { "id": "dl_lesson_s2", "speaker": "death", "correlate": "strong", "text": "Did you see it? {tell}, a moment before acting. There was the reason." },
+    { "id": "dl_lesson_s3", "speaker": "death", "correlate": "strong", "text": "{tell}. It came with a real hand tonight. Most things people do at a table come with something." },
+    { "id": "dl_lesson_s4", "speaker": "death", "correlate": "strong", "text": "Watch for that again: {tell}. A good hand was sitting behind it this time." },
+    { "id": "dl_lesson_s5", "speaker": "death", "correlate": "strong", "text": "{tell}. I noticed. You may want to start noticing too." },
+    { "id": "dl_lesson_s6", "speaker": "death", "correlate": "strong", "text": "{tell}, and then those cards. People repeat themselves. Not always. Often enough." },
+    { "id": "dl_lesson_b1", "speaker": "death", "correlate": "bluffing", "text": "{tell}. And behind it, nothing at all. Worth remembering." },
+    { "id": "dl_lesson_b2", "speaker": "death", "correlate": "bluffing", "text": "Did you see? {tell}, just before the bet. Now you know what the bet was made of." },
+    { "id": "dl_lesson_b3", "speaker": "death", "correlate": "bluffing", "text": "{tell}. The cards have told you the rest." },
+    { "id": "dl_lesson_b4", "speaker": "death", "correlate": "bluffing", "text": "There it was: {tell}. And a hand that could win nothing without the bet." },
+    { "id": "dl_lesson_b5", "speaker": "death", "correlate": "bluffing", "text": "{tell}. The bet said one thing and that said another. You have now seen which was true." },
+    { "id": "dl_lesson_w1", "speaker": "death", "correlate": "weak", "text": "{tell}. Not much of a hand came with it, as you see." },
+    { "id": "dl_lesson_w2", "speaker": "death", "correlate": "weak", "text": "Notice that: {tell}. Then very little in the cards." },
+    { "id": "dl_lesson_w3", "speaker": "death", "correlate": "weak", "text": "{tell}. A modest hand tonight, and a modest gesture to go with it." },
+    { "id": "dl_lesson_w4", "speaker": "death", "correlate": "weak", "text": "{tell}. When the cards are not much, the body often says so first." },
+    { "id": "dl_lesson_t1", "speaker": "death", "correlate": "tilted", "text": "{tell}. An earlier pot is still with them. It is playing this hand as much as they are." },
+    { "id": "dl_lesson_t2", "speaker": "death", "correlate": "tilted", "text": "{tell}. Something from a few hands ago has not left the table." },
+    { "id": "dl_lesson_t3", "speaker": "death", "correlate": "tilted", "text": "{tell}. Anger plays a great many hands. Very few of them well." }
   ]
 }

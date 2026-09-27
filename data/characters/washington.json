@@ -15,7 +15,9 @@
     "bluffFrequency": 0.12,
     "tiltSensitivity": 0.02,
     "adaptivity": 0.3,
-    "noise": 0.1
+    "betRespect": 0.8,
+    "skill": 0.05,
+    "noise": 0.05
   },
   "quirks": [
     {
@@ -29,19 +31,19 @@
       "signal": "straightens_cuffs",
       "text": "straightens his cuffs",
       "correlate": "strong",
-      "reliability": 0.85
+      "reliability": 0.93
     },
     {
       "signal": "hand_flat",
       "text": "rests one hand flat on the table",
       "correlate": "weak",
-      "reliability": 0.83
+      "reliability": 0.91
     },
     {
       "signal": "sits_straighter",
       "text": "sits a fraction straighter",
       "correlate": "bluffing",
-      "reliability": 0.8
+      "reliability": 0.88
     }
   ],
   "idles": [
@@ -61,5 +63,35 @@
     "look": "Silhouette: the straightest back at the table, high collar, his own hair powdered and tied at the nape — not a wig. Face: long, heavy-jawed, the mouth set firm. Prop: the buff-and-blue general's coat with gold epaulettes; its cuffs and shoulders are the tell surface, so any change in that upright line reads at once.",
     "prop": "Buff-and-blue general's coat",
     "public_domain": "Historical figure, died 1799. Build from the Gilbert Stuart and Charles Willson Peale portraits, which are public domain. Avoid the look and staging of the musical Hamilton and any modern screen likeness. No wooden teeth: that is a myth."
+  },
+  "callouts": {
+    "fold": [
+      "[folds without a word]",
+      "[returns his cards to the dealer, edges squared]",
+      "No."
+    ],
+    "check": [
+      "[a single tap on the table]",
+      "Check."
+    ],
+    "call": [
+      "Call.",
+      "[writes the sum in a small account book, then calls]",
+      "Very well."
+    ],
+    "bet": [
+      "Bet.",
+      "[sets out a measured stack and says nothing]"
+    ],
+    "raise": [
+      "Raise.",
+      "I raise.",
+      "[raises, and offers no remark]"
+    ],
+    "all_in": [
+      "All.",
+      "Across the river, then.",
+      "[pushes every chip forward in one even motion]"
+    ]
   }
 }

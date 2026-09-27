@@ -15,7 +15,9 @@
     "bluffFrequency": 0.3,
     "tiltSensitivity": 0.1,
     "adaptivity": 0.35,
-    "noise": 0.12
+    "betRespect": 0.6,
+    "skill": 0,
+    "noise": 0.06
   },
   "quirks": [
     {
@@ -28,19 +30,19 @@
       "signal": "holder_up",
       "text": "tilts his cigarette holder upward",
       "correlate": "strong",
-      "reliability": 0.8
+      "reliability": 0.88
     },
     {
       "signal": "broad_smile",
       "text": "smiles broadly at the whole table",
       "correlate": "bluffing",
-      "reliability": 0.78
+      "reliability": 0.86
     },
     {
       "signal": "taps_ash",
       "text": "taps the ash from his holder",
       "correlate": "weak",
-      "reliability": 0.8
+      "reliability": 0.88
     }
   ],
   "idles": [
@@ -60,5 +62,40 @@
     "look": "Silhouette: the naval cape across his shoulders and the long cigarette holder cocked upward from his teeth — a diagonal nobody else at the table has. Face: broad, chin lifted, pince-nez, a wide and ready smile. Prop: the cigarette holder; its angle is the tell surface and reads from across the room.",
     "prop": "Long cigarette holder",
     "public_domain": "Historical figure, died 1945; US government photographs of him are public domain. Build from 1930s–40s press photographs. Avoid any modern screen or stage likeness, including the FDR of the musical Annie. Do not stage or joke about the wheelchair: he kept it out of frame all his life, and so do we."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. I'll wait for a new deal.",
+      "I'll sit this one out, my friends.",
+      "Fold, with my compliments.",
+      "I yield the floor."
+    ],
+    "check": [
+      "Check, my friends.",
+      "Check. Let's keep this friendly.",
+      "Check. I'll save it for the fireside."
+    ],
+    "call": [
+      "I'll go along with that.",
+      "Call. Why not?",
+      "Call. Let the people decide.",
+      "I'll see it. Charmed, I'm sure."
+    ],
+    "bet": [
+      "A little something, to keep the conversation going.",
+      "Bet. Consider it a fireside chat.",
+      "Bet. Relief, recovery, reform."
+    ],
+    "raise": [
+      "Raise, my friends.",
+      "Raise. The only thing to fear is fear itself.",
+      "I'll raise. My left hand insists.",
+      "Raise. Put it to Congress."
+    ],
+    "all_in": [
+      "All in, my friends. Every last chip.",
+      "All in. Four terms' worth.",
+      "The whole stack. I did say I juggle."
+    ]
   }
 }

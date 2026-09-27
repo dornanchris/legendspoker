@@ -15,6 +15,8 @@
     "bluffFrequency": 0.16,
     "tiltSensitivity": 0.05,
     "adaptivity": 0.45,
+    "betRespect": 0.8,
+    "skill": 0.5,
     "noise": 0.25
   },
   "quirks": [
@@ -60,5 +62,38 @@
     "look": "Silhouette: a plain gold crown with a visible dent, a red mantle over broad mailed shoulders, a greying beard kept short. Face: open, lined, kind, and tired around the eyes. Prop: Excalibur, sheathed and standing upright beside his chair with the hilt at his hand — a big cross-shape his hand can rest on, and leave.",
     "prop": "Excalibur, hilt to hand",
     "public_domain": "Geoffrey, Wace, Chrétien and Malory are centuries out of copyright. Avoid Monty Python and the Holy Grail, the musical Camelot, Disney's The Sword in the Stone, Boorman's Excalibur (1981), T. H. White and the BBC's Merlin. No coconuts, and no 'once and future king': the Latin is Malory's, but the English phrase is White's title now."
+  },
+  "callouts": {
+    "fold": [
+      "I yield this one, with good grace.",
+      "Fold. There is no dishonour in it.",
+      "Fold. Another day, another quest.",
+      "Fold. Go on without me, friends."
+    ],
+    "check": [
+      "Check.",
+      "Check. Let every knight speak.",
+      "Check. At a round table, all are heard."
+    ],
+    "call": [
+      "I will see it. Fairly met.",
+      "Call. A king should answer a challenge.",
+      "Call. Let us see it through together."
+    ],
+    "bet": [
+      "Bet. Plainly offered.",
+      "Bet. For the Table.",
+      "A wager, fairly made."
+    ],
+    "raise": [
+      "I raise. For Camelot.",
+      "Raise. As a king must.",
+      "Raise. Let no one say the king held back."
+    ],
+    "all_in": [
+      "All in. Let the barge wait.",
+      "All in. For Camelot, and all it was.",
+      "Everything. The Table stands or falls together."
+    ]
   }
 }

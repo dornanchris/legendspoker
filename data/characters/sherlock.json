@@ -15,6 +15,8 @@
     "bluffFrequency": 0.18,
     "tiltSensitivity": 0.02,
     "adaptivity": 0.8,
+    "betRespect": 0.9,
+    "skill": 0.67,
     "noise": 0.35
   },
   "quirks": [
@@ -66,5 +68,39 @@
     "look": "Silhouette: tall and very thin, hawk-nosed, high-foreheaded — Sidney Paget's Holmes, in a dark frock coat or a mouse-coloured dressing gown. No deerstalker (Paget gave him one only for the country) and no curved calabash pipe (a stage invention). Prop: a straight black clay pipe, whose angle against the jaw is the tell surface.",
     "prop": "Black clay pipe",
     "public_domain": "Every Holmes story is now public domain in the US. Work from Doyle's text and Paget's Strand illustrations only. Nothing from any modern screen version, no \"Elementary, my dear Watson\" (Doyle never wrote it), and no Moriarty — he is not in this game."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. Insufficient data.",
+      "I withdraw. For now.",
+      "Fold. I shall reconsider the evidence.",
+      "Fold. It is a capital mistake to theorise too soon."
+    ],
+    "check": [
+      "Check. Pray continue.",
+      "Check. I am observing.",
+      "Check. Proceed."
+    ],
+    "call": [
+      "Call. I should like to see how this ends.",
+      "Call. Data, data, data.",
+      "Call. I cannot make bricks without clay.",
+      "I'll see it. Seeing is not observing, of course."
+    ],
+    "bet": [
+      "Bet. A small experiment.",
+      "Bet. Let us test the hypothesis.",
+      "Bet. Watson would call this reckless."
+    ],
+    "raise": [
+      "Raise. I find I am not bored after all.",
+      "Raise. Singular. Quite singular.",
+      "Raise. Let us raise the stakes, and the interest."
+    ],
+    "all_in": [
+      "All in. When you have eliminated the impossible...",
+      "Everything. I have faked my own death for less.",
+      "All in. A three-pipe problem, settled in one."
+    ]
   }
 }

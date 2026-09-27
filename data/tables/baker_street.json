@@ -11,7 +11,7 @@
   ],
   "champion": "sherlock",
   "arrival": null,
-  "handsPerLevel": 25,
+  "handsPerLevel": 9,
   "dialogue": "table-06-baker-street.json",
   "buyIn": 2000,
   "respectStart": 0,

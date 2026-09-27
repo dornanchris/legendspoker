@@ -15,7 +15,9 @@
     "bluffFrequency": 0.24,
     "tiltSensitivity": 0.15,
     "adaptivity": 0.35,
-    "noise": 0.2
+    "betRespect": 0.5,
+    "skill": 0.35,
+    "noise": 0.15
   },
   "quirks": [
     {
@@ -34,19 +36,19 @@
       "signal": "strokes_beard",
       "text": "strokes his braided beard",
       "correlate": "strong",
-      "reliability": 0.78
+      "reliability": 0.82
     },
     {
       "signal": "goes_still",
       "text": "goes very still",
       "correlate": "bluffing",
-      "reliability": 0.76
+      "reliability": 0.8
     },
     {
       "signal": "fuses_flare",
       "text": "the slow-matches under his hat smoulder brighter",
       "correlate": "tilted",
-      "reliability": 0.78
+      "reliability": 0.82
     }
   ],
   "idles": [
@@ -66,5 +68,39 @@
     "look": "Silhouette: a broad black hat with smoke curling from under the brim on both sides, over a huge black beard in ribbon-tied braids that covers most of his face. Heavy dark coat, a sling of pistols across the chest. Eyes that hold a stare. Prop: the braided beard — big, dark, dead centre in his fifth of the screen, and the shape his hand keeps going back to.",
     "prop": "His braided black beard",
     "public_domain": "Historical figure, died 1718. Build from the 1724 General History and its early engravings of him with lit matches under his hat. Avoid Disney's Blackbeard in Pirates of the Caribbean: On Stranger Tides (2011) — no magic sword, no zombie crew — and the television versions in Black Sails and Our Flag Means Death."
+  },
+  "callouts": {
+    "fold": [
+      "Bah! Take it, and choke on it.",
+      "Fold. Even I strike my colours once in a while.",
+      "Fold! Don't get used to it!",
+      "Fold. I'll have it back later, with interest."
+    ],
+    "check": [
+      "Check. For now.",
+      "Check. Enjoy the quiet while it lasts.",
+      "Check! Your move, and make it quick."
+    ],
+    "call": [
+      "Call! Let's see what the prize is.",
+      "I'll see it, and I'll see you.",
+      "Call, damn your eyes."
+    ],
+    "bet": [
+      "Bet! Strike your colours or pay up!",
+      "Bet! A chest of medicine's worth!",
+      "Bet! Now, who's got the stomach?"
+    ],
+    "raise": [
+      "Raise! Ha!",
+      "Raise! Heave to and pay up!",
+      "Raise, and be damned to you!",
+      "Raise! I shot a man for less."
+    ],
+    "all_in": [
+      "Damnation seize my soul! All in!",
+      "Everything! Board 'em!",
+      "All of it! Let the whole cove hear it!"
+    ]
   }
 }

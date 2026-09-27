@@ -11,7 +11,7 @@
  */
 import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
-import { CHARACTERS, TABLES, DIALOGUE, fullCast, type CharacterData } from './content.js'
+import { CHARACTERS, TABLES, DIALOGUE, UNINVITED, fullCast, type CharacterData } from './content.js'
 import { QUIRKS } from './quirks.js'
 
 const out: string[] = []
@@ -77,9 +77,9 @@ for (const t of TABLES) {
     w(`**At the table.** ${p.at_the_table}`)
     w()
     const dl = c.dials
-    w(`| aggression | tightness | bluff | tilt | adaptivity | noise |`)
-    w(`|---|---|---|---|---|---|`)
-    w(`| ${dial(dl.aggression)} | ${dial(dl.tightness)} | ${dial(dl.bluffFrequency)} | ${dial(dl.tiltSensitivity)} | ${dial(dl.adaptivity)} | ${dial(dl.noise)} |`)
+    w(`| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |`)
+    w(`|---|---|---|---|---|---|---|---|`)
+    w(`| ${dial(dl.aggression)} | ${dial(dl.tightness)} | ${dial(dl.bluffFrequency)} | ${dial(dl.tiltSensitivity)} | ${dial(dl.adaptivity)} | ${dial(dl.betRespect)} | ${dial(dl.skill)} | ${dial(dl.noise)} |`)
     w()
     for (const q of c.quirks) w(`- Quirk: ${quirkLine(q)}`)
     for (const tl of c.tells) w(`- Tell (${tl.correlate}, ${tl.reliability}): *${tl.text}*`)
@@ -109,6 +109,45 @@ if (death) {
   w()
   w(`**Public domain.** ${death.profile.public_domain}`)
   w()
+}
+
+// The uninvited: on no table and in no list the player sees, so this book is
+// the only place the art pass will find their look and their copyright traps.
+const guests = Object.values(CHARACTERS).filter((c) => c.role === 'guest')
+if (guests.length) {
+  w('## The Uninvited — SPOILER')
+  w()
+  w('> Hidden. Never on the map, in an intro, in a cast list or in the Ledger until met.')
+  w(`> Win a pot holding ${UNINVITED.trigger.hole_ranks.join('-')} (any suits) and one seated opponent — never the`)
+  w('> champion, the dealer, or anyone a late arrival waits on — says it out loud. Death shows')
+  w('> them out, and the guest sits down in the same chair behind the same chips. Once per')
+  w('> sitting, never at the finale. Script: `data/dialogue/uninvited.json`.')
+  w()
+  for (const c of guests) {
+    const p = c.profile
+    const dl = c.dials
+    w(`### ${c.name}${c.epithet ? ` — *${c.epithet}*` : ''}`)
+    w()
+    w(`**Guest.** ${c.origin} · ${c.era}`)
+    w()
+    w(`> ${p.ledger}`)
+    w()
+    for (const para of p.history) { w(para); w() }
+    w(`**At the table.** ${p.at_the_table}`)
+    w()
+    w(`| aggression | tightness | bluff | tilt | adaptivity | noise |`)
+    w(`|---|---|---|---|---|---|`)
+    w(`| ${dial(dl.aggression)} | ${dial(dl.tightness)} | ${dial(dl.bluffFrequency)} | ${dial(dl.tiltSensitivity)} | ${dial(dl.adaptivity)} | ${dial(dl.noise)} |`)
+    w()
+    for (const q of c.quirks) w(`- Quirk: ${quirkLine(q)}`)
+    for (const tl of c.tells) w(`- Tell (${tl.correlate}, ${tl.reliability}): *${tl.text}*`)
+    if (c.idles.length) w(`- Idle noise: ${c.idles.map((x) => `*${x}*`).join('; ')}`)
+    w()
+    w(`**Look.** ${p.look} **Prop:** ${p.prop}.`)
+    w()
+    w(`**Public domain.** ${p.public_domain}`)
+    w()
+  }
 }
 
 const target = fileURLToPath(new URL('../ROSTER.md', import.meta.url))

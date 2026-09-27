@@ -8,10 +8,15 @@
  *
  * Three rules keep it honest:
  *
- * 1. It never talks while cards are live, except to react to something the
- *    player just did in public (going all in). Banter, needling and respect
- *    all happen at hand boundaries, so nothing said can leak a hand -- the
- *    design doc's hardest dialogue rule.
+ * 1. It never talks while cards are live, with two exceptions, both chosen
+ *    from public information only: reacting to something the player just did
+ *    in public (going all in), and callouts -- a character's word or gesture
+ *    as their own action lands ("Raise.", "Too rich for my blood."), picked
+ *    from the action itself, whether it emptied the stack, and the street,
+ *    never from cards or equity, and never worded to claim or deny a hand
+ *    (src/chatter.ts). Banter, needling and respect all happen at hand
+ *    boundaries, so nothing said can leak a hand -- the design doc's hardest
+ *    dialogue rule.
  *
  * 2. It has its OWN seeded RNG. Choosing a line must never consume a draw
  *    from the game's RNG, or saying something would change the next card.
@@ -21,23 +26,28 @@
  *
  * 3. It knows only what the player could know: public actions, cards shown
  *    down, and the player's OWN hole cards. Opponents' observations are built
- *    from what they did, never from what they held.
+ *    from what they did, never from what they held. The one hidden thing it
+ *    holds -- whether a tell told the truth -- it uses only once that
+ *    player's cards are face up (lesson()).
  *
  * Nothing in here branches on a character's identity. Who speaks is data:
  * the dialogue file names the speakers and the table file names the champion.
  */
 import { mulberry32 } from './rng.js'
 import { RANKINGS, type HandEvent } from './game.js'
-import type { TableData, DialogueData, Line } from './content.js'
+import { CHARACTERS, DEALER, tellLine, type TableData, type DialogueData, type Line, type UninvitedData } from './content.js'
 import { preflopStrength, type Card } from './equity.js'
 import { fillLine, tierFor, RESPECT_POINTS, RESPECT_THRESHOLDS, earnedName } from './tour.js'
 import { handRank, marksForHand, marksForTable, type HandFacts, type TableFacts } from './marks.js'
+import { Chatter, type CalloutBeat } from './chatter.js'
 
 export type Beat =
   | { kind: 'line'; id: string; speaker: string; text: string; stage: boolean }
   /** The table's name for you just changed. Always announced. */
   | { kind: 'respect'; tier: number; name: string | null }
   | { kind: 'mark'; id: string }
+  /** Words that go in with the chips. Quick, rationed, public information only. */
+  | CalloutBeat
 
 export type ObservationDelta = {
   hands: number
@@ -72,6 +82,12 @@ export type RunOptions = {
   respectPoints: number
   earnedMarks: Iterable<string>
   buyIn: number
+  /**
+   * The uninvited guest's script, for a table whose engine carries the
+   * Banishment rule. Without it a banishment still changes the seating, but
+   * nobody remarks on it.
+   */
+  uninvited?: UninvitedData
 }
 
 const HUMAN = 0
@@ -123,6 +139,13 @@ export class TableRun {
   private neverBelowStart = true
   private eliminationOrder: string[] = []
   private arrived = new Set<string>()
+  private uninvited: UninvitedData | undefined
+  /** The uninvited guest, once seated: who, since when, and what is left to say. */
+  private guest: { id: string; since: number; last: number; said: number; gone: boolean } | null = null
+  /** Callouts and needles: their own seeded stream (src/chatter.ts). */
+  private chatter: Chatter
+  /** Tells Death has already pointed out this sitting, as "id|text". */
+  private taught = new Set<string>()
 
   // Per-hand state, reset on every 'hand' event.
   private h = this.freshHand(0, 0, [])
@@ -141,11 +164,14 @@ export class TableRun {
     this.playerName = o.playerName
     this.buyIn = o.buyIn
     this.earned = new Set(o.earnedMarks)
+    this.uninvited = o.uninvited
     this.tier = Math.max(o.respectTier, o.table.respectStart)
     this.points = Math.max(o.respectPoints, RESPECT_THRESHOLDS[this.tier])
     // Offset so the director's stream never coincides with the game's.
     this.rng = mulberry32((o.seed ^ 0x5eed1e55) >>> 0)
-    // Open tables have no champion and no plot: no plant, no arrival.
+    this.chatter = new Chatter(o.seed)
+    // Open tables have no plot: no plant, no arrival. A champion may sit
+    // down, but as one more player -- nothing at the table is theirs to defend.
     if (o.mode === 'open') this.plantDone = true
   }
 
@@ -182,6 +208,14 @@ export class TableRun {
       showdown: null as Extract<HandEvent, { type: 'showdown' }> | null,
       deltas: new Map<number, number>(),
       busted: [] as { seat: number; id: string }[],
+      /** Knocked-out characters who came back at the end of this hand. */
+      returned: [] as string[],
+      /**
+       * The first tell each seat showed this hand that told the truth.
+       * Hidden information until their cards are turned over: read only by
+       * lesson(), and only for seats in `revealed`.
+       */
+      tells: new Map<number, { text: string; correlate: NonNullable<Line['correlate']> }>(),
     }
   }
 
@@ -232,6 +266,35 @@ export class TableRun {
     return [this.say(line)]
   }
 
+  /**
+   * The early tables' lessons: the legibility curve at its most legible.
+   * When a character's tell told the truth this hand and their cards have
+   * just been turned over, Death may point it out -- by the table's
+   * `lessons` chance, so often at the first table and never after the third.
+   * Only once the cards are face up, so it says nothing the table has not
+   * already shown; only one lesson a hand, and not over another of his own
+   * lines; each character's tell at most once a sitting. It teaches a way
+   * of watching, not a rule: the lines never promise a tell always means
+   * the same thing.
+   */
+  private lesson(beats: Beat[]): Beat[] {
+    const chance = this.mode === 'tour' ? this.table.lessons ?? 0 : 0
+    if (chance <= 0) return []
+    if (beats.some((b) => b.kind === 'line' && b.speaker === 'death')) return []
+    for (const [seat, t] of this.h.tells) {
+      const id = this.h.ids[seat]
+      if (seat === HUMAN || !id || !this.h.revealed.has(seat) || this.taught.has(`${id}|${t.text}`)) continue
+      const line = this.pick(DEALER.lessons, (l) => l.correlate === t.correlate)
+      if (!line) continue
+      // Draw only when there is something to say (see aside()).
+      if (this.rng() > chance) return []
+      this.taught.add(`${id}|${t.text}`)
+      const name = CHARACTERS[id]?.short ?? id
+      return [this.say({ ...line, text: line.text.replaceAll('{tell}', tellLine(name, t.text)) })]
+    }
+    return []
+  }
+
   private opponents(): string[] {
     return this.seats.filter((s, i): s is string => s !== null && i !== HUMAN)
   }
@@ -271,6 +334,9 @@ export class TableRun {
         return []
       }
       case 'action': return this.onAction(e)
+      case 'tell':
+        if (e.honest && !this.h.tells.has(e.seat)) this.h.tells.set(e.seat, { text: e.text, correlate: e.correlate })
+        return []
       case 'showdown': {
         this.h.showdown = e
         this.h.board = e.board
@@ -282,8 +348,9 @@ export class TableRun {
         return []
       case 'level':
         return this.handNo > 1 ? this.aside('blinds_up') : []
-      case 'eliminated': return this.onEliminated(e)
-      case 'arrival': return this.onArrival(e)
+      case 'eliminated': return [...this.onGuestEliminated(e), ...this.onEliminated(e)]
+      case 'arrival': return e.cause === 'banishment' ? this.onGuestArrival(e) : this.onArrival(e)
+      case 'banished': return this.onBanished(e)
       case 'handEnd': return this.onHandEnd(e)
       default:
         return []
@@ -332,6 +399,14 @@ export class TableRun {
 
     // At most one unprompted line per hand boundary, and not every hand.
     if (e.hand < 2 || e.hand - this.lastOptionalHand < 2) return beats
+    // A met guest can be dealt in at an open table from hand one: no entrance
+    // (nobody was shown out), but the same asides through the sitting.
+    const g = this.uninvited?.guest
+    if (!this.guest && g && this.seats.includes(g)) {
+      this.guest = { id: g, since: e.hand, last: e.hand, said: 0, gone: false }
+    }
+    const guest = this.guestAside(e.hand)
+    if (guest.length) return [...beats, ...guest]
     const roll = this.rng()
 
     if (this.dialogue.reads_you && e.hand >= 10) {
@@ -433,6 +508,7 @@ export class TableRun {
         if (aggressive) o.bets++
       }
     }
+    beats.push(...this.callout(e, faced))
     return beats
   }
 
@@ -463,6 +539,9 @@ export class TableRun {
     this.arrived.add(e.id)
     this.seats[e.seat] = e.id
     this.sat.add(e.id)
+    // Retaking your own chair is a RETURN, not the table's champion arriving:
+    // it plays the returner's own scene, at any table, open ones included.
+    if (e.replaces === e.id) return this.onReturn(e.id)
     if (this.mode === 'open') return []
     const beats: Beat[] = []
     // The entrance is a scene: play it in order, and stop at the first line
@@ -476,6 +555,20 @@ export class TableRun {
     if (!this.plantDone && plant[0]?.trigger === 'champion_arrival') {
       this.plantDone = true
       for (const l of plant) beats.push(this.say(l))
+    }
+    this.lastOptionalHand = this.handNo
+    return beats
+  }
+
+  /** One line per speaker of the returner's scene, in order. */
+  private onReturn(id: string): Beat[] {
+    this.h.returned.push(id)
+    const lines = CHARACTERS[id]?.returns?.lines ?? []
+    const beats: Beat[] = []
+    for (const speaker of new Set(lines.map((l) => l.speaker))) {
+      if (!this.canSpeak(speaker)) continue
+      const own = lines.filter((l) => l.speaker === speaker)
+      beats.push(this.say(own[Math.floor(this.rng() * own.length)]))
     }
     this.lastOptionalHand = this.handNo
     return beats
@@ -495,7 +588,8 @@ export class TableRun {
     const showdownWins: HandSummary['showdownWins'] = []
     if (sd) {
       sd.pots.forEach((p) => {
-        if (!p.winners.includes(HUMAN)) return
+        // A bet nobody could call coming back is the player's own money, not a pot won.
+        if (!p.winners.includes(HUMAN) || p.returned) return
         const contested = !!p.ranking && humanRevealed && sd.revealed.length > 1
         const rank = p.ranking ? RANKINGS.indexOf(p.ranking) : -1
         wonPots.push({
@@ -584,6 +678,10 @@ export class TableRun {
       }
     }
 
+    // Not over the end of the sitting: the lesson is for the next hand.
+    const over = h.busted.some((b) => b.seat === HUMAN) || e.stacks.filter((c) => c > 0).length <= 1
+    if (!over) beats.push(...this.lesson(beats))
+
     // --- heads-up with a champion: they notice when you take one off them
     const opp = this.opponents()
     if (net > 0 && this.headsUpAnnounced && opp.length === 1 && this.isChampionSeat(opp[0])) {
@@ -594,6 +692,7 @@ export class TableRun {
 
     // --- banter, between hands, from the two who just fought over a pot
     beats.push(...this.banter(e.hand))
+    beats.push(...this.needle(e.hand, beats))
 
     // --- marks
     const facts: HandFacts = {
@@ -608,6 +707,10 @@ export class TableRun {
       knockouts,
       lostShowdownRank,
       bluffWon,
+      splitPot: !!sd?.pots.some((p) => p.winners.length > 1 && p.winners.includes(HUMAN)),
+      // A return is seated at the end of the hand, after its busts: a player
+      // knocked out in that same hand was not there to see it.
+      returned: h.busted.some((b) => b.seat === HUMAN) ? [] : h.returned,
     }
     for (const id of marksForHand(facts, this.earned)) {
       this.earned.add(id)
@@ -618,6 +721,104 @@ export class TableRun {
     for (const [id, o] of h.obs) observations[id] = o
     this.lastSummary = { hand: h.no, facts, observations, showdownWins, knockouts, bustedBy }
     return beats
+  }
+
+  // ------------------------------------------------------------ the uninvited guest
+  //
+  // A scene rather than table talk, so its lines are played in the order the
+  // data gives them and are not held back by canSpeak: the offender is still
+  // in the chair when they speak, and the guest is in it before they do.
+  // Every draw from the director's stream here happens only once the house
+  // has actually removed someone, so a sitting without the event says exactly
+  // what it said before this existed.
+
+  /** A random unused line from a scene's pool, whoever is in the room. */
+  private pickAny(lines: Line[] | undefined): Line | null {
+    const pool = (lines ?? []).filter((l) => !this.used.has(l.id))
+    return pool.length ? pool[Math.floor(this.rng() * pool.length)] : null
+  }
+
+  /**
+   * The house removed a player (game.ts, Banishment). The table sees the
+   * player's cards -- turned face up by the dealer if no showdown showed
+   * them -- the offender says the words, and the dealer rules. The guest's
+   * entrance follows with the 'arrival' the engine sends next.
+   */
+  private onBanished(e: Extract<HandEvent, { type: 'banished' }>): Beat[] {
+    const u = this.uninvited
+    if (!u) return []
+    const beats: Beat[] = []
+    const sd = this.h.showdown
+    const seen = !!sd && sd.revealed.length > 1 && this.h.revealed.has(HUMAN)
+    if (!seen) for (const l of u.reveal) beats.push(this.say(l))
+    // Someone who only ever acts in stage directions (the Horseman has no
+    // mouth; Cerberus does not talk) makes the point without words.
+    const offence = this.pickAny(this.wordless(e.id) ? u.offence_mimed : u.offence)
+    if (offence) beats.push(this.say({ ...offence, speaker: e.id }))
+    const ruling = this.pickAny(u.banishment)
+    if (ruling) beats.push(this.say(ruling))
+    return beats
+  }
+
+  /** True if every line this table's dialogue gives them is a stage direction. */
+  private wordless(id: string): boolean {
+    const mine: Line[] = []
+    const walk = (x: unknown): void => {
+      if (Array.isArray(x)) x.forEach(walk)
+      else if (x && typeof x === 'object') {
+        const l = x as Line
+        if (typeof l.speaker === 'string' && typeof l.text === 'string') {
+          if (l.speaker === id) mine.push(l)
+        } else Object.values(x).forEach(walk)
+      }
+    }
+    walk(this.dialogue)
+    return mine.length > 0 && mine.every((l) => l.type === 'stage_direction')
+  }
+
+  private onGuestArrival(e: Extract<HandEvent, { type: 'arrival' }>): Beat[] {
+    this.arrived.add(e.id)
+    this.seats[e.seat] = e.id
+    this.sat.add(e.id)
+    this.guest = { id: e.id, since: this.handNo, last: this.handNo, said: 0, gone: false }
+    this.lastOptionalHand = this.handNo
+    return (this.uninvited?.entrance ?? []).map((l) => this.say(l))
+  }
+
+  /**
+   * The guest's asides, one exchange at a time and in order, spaced out over
+   * the rest of the sitting. They foreshadow; they never explain.
+   */
+  private guestAside(hand: number): Beat[] {
+    const g = this.guest
+    const next = g && !g.gone ? this.uninvited?.sitting[g.said] : undefined
+    if (!g || !next || hand - g.last < 4) return []
+    if (!next.every((l) => this.canSpeak(l.speaker))) return []
+    if (this.rng() > 0.4) return []
+    g.said++
+    g.last = hand
+    this.lastOptionalHand = hand
+    return next.map((l) => this.say(l))
+  }
+
+  private onGuestEliminated(e: Extract<HandEvent, { type: 'eliminated' }>): Beat[] {
+    const g = this.guest
+    if (!g || e.id !== g.id) return []
+    g.gone = true
+    const l = this.pickAny(this.uninvited?.busted)
+    return l ? [this.say(l)] : []
+  }
+
+  /** The table is over and the guest sat at it. */
+  private guestFarewell(won: boolean): Beat[] {
+    const g = this.guest
+    const u = this.uninvited
+    if (!g || !u) return []
+    if (won) return u.farewell_won.map((l) => this.say(l))
+    // You are out and he is still sitting there.
+    if (g.gone || !this.present(g.id)) return []
+    const l = this.pickAny(u.farewell_lost)
+    return l ? [this.say(l)] : []
   }
 
   private flipRespect(): Beat[] {
@@ -657,6 +858,47 @@ export class TableRun {
     if (!pool.length) return []
     const x = pool[Math.floor(this.rng() * pool.length)]
     this.lastBanterHand = hand
+    this.lastOptionalHand = hand
+    return x.map((l) => this.say(l))
+  }
+
+  // ------------------------------------------------------------ chatter
+
+  /**
+   * A callout as an opponent's action lands. Built from public facts only:
+   * who acted, what they did, whether it emptied their stack, the street.
+   * `e.equity` and `e.decision.reason` are deliberately never read here.
+   */
+  private callout(e: Extract<HandEvent, { type: 'action' }>, faced: boolean): Beat[] {
+    const a = e.decision.action
+    this.chatter.observe(e.seat, a, faced, this.h.no, this.h.street)
+    const id = this.h.ids[e.seat]
+    if (e.seat === HUMAN || !id || !this.canSpeak(id)) return []
+    const allIn = (a === 'call' || a === 'bet' || a === 'raise') && e.stacks[e.seat] === 0
+    const seated = this.seats.filter((s) => s !== null).length
+    const c = this.chatter.callout({ id, hand: this.h.no, street: this.h.street, action: a, allIn, seated })
+    return c ? [c] : []
+  }
+
+  /**
+   * Old friends needling, between hands: the one who bet and took the pot, at
+   * a tablemate who folded to that bet. Only pairs with a relationship have
+   * needles (they live under banter_pairs), and only when nothing else has
+   * been said at this boundary.
+   */
+  private needle(hand: number, said: Beat[]): Beat[] {
+    const pairs = this.dialogue.banter_pairs
+    if (!pairs || hand - this.lastOptionalHand < 1 || said.some((b) => b.kind === 'line')) return []
+    const earned = new Set<string>()
+    for (const [x, y] of this.chatter.foldsTo(hand)) {
+      if (y !== HUMAN && x !== HUMAN && (this.h.deltas.get(y) ?? 0) > 0) earned.add(`${this.h.ids[y]}>${this.h.ids[x]}`)
+    }
+    if (!earned.size) return []
+    const offered = Object.values(pairs).flatMap((p) => p.needles ?? []).filter((x) =>
+      x.length > 0 && earned.has(`${x[0].speaker}>${x[0].to}`) &&
+      !x.some((l) => this.used.has(l.id)) && x.every((l) => this.canSpeak(l.speaker)))
+    const x = this.chatter.needle(hand, offered)
+    if (!x) return []
     this.lastOptionalHand = hand
     return x.map((l) => this.say(l))
   }
@@ -722,6 +964,7 @@ export class TableRun {
         for (const l of defeat.filter((x) => x.speaker === 'death')) beats.push(this.say(l))
       }
     }
+    beats.push(...this.guestFarewell(won))
     const facts: TableFacts = { ...this.partialFacts(), won, hands, missed }
     for (const id of marksForTable(facts, this.earned)) {
       this.earned.add(id)

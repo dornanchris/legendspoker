@@ -89,7 +89,7 @@ export function startTable(tableId: string, mode: 'tour' | 'open'): boolean {
   if (mode === 'open') {
     let x = seed
     const rng = () => ((x = (x * 1664525 + 1013904223) >>> 0) / 2 ** 32)
-    seats = openTableCast(table, rng)
+    seats = openTableCast(table, s, rng)
   }
   const rec = tableRecord(s, tableId)
   store.update((st) => {
