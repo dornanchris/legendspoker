@@ -15,6 +15,32 @@ position on its source sheet and a `label` saying what it is.
 | `fdr_hands_holder` | 5 | Hands holding the cigarette holder |
 | `fdr_props` | 8 | The cigarette holder at several lengths and angles, one lit with smoke |
 
+| `fdr_rig` | 11 | Pieces cleaned up for the puppet (below) |
+
+## The puppet
+
+`art-tools/fdr_layout.json` is his rest pose: holder cocked up from his
+teeth, forearms on the felt, hands folded. `preview.png` is that pose;
+`preview_expressions.png` is the same layout with swaps switched on
+(laughing, broad smile, frown, grimace).
+
+    python3 art-tools/build_puppet.py render art-tools/fdr_layout.json -o preview.png
+
+Every piece has a `slot`. Pieces that share one are swaps for the same place,
+already positioned and scaled: the eyes, brows, mouths and hands. Only one per
+slot is visible at a time. The right eye and the right hand are the left ones
+with `"flip": true`. The hand swaps are parked at the cuff and need placing per
+pose; the table is a preview stand-in, not a part.
+
+`fdr_rig/` holds pieces cleaned up so they fit together:
+
+- `head.png`: the blank head with its painted collar and shoulders removed, so
+  the neck sits in the torso's collar.
+- `pince_nez.png`: the lenses made see-through; as drawn they hid his eyes.
+- `hand_01.png` to `hand_08.png`: the card-action hands with their sleeves and
+  cuffs removed, so each tucks into a forearm's cuff.
+- `table_preview.png`: the felt for the preview.
+
 `sources/` holds the exact sheets that were cut, so any folder can be cut again:
 `python3 art-tools/split_parts.py art-tools/fdr_parts/sources/fdr_face.png -o art-tools/fdr_parts`
 (that rewrites `parts.json` and clears the labels, so copy them back).

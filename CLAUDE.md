@@ -125,8 +125,9 @@ art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   build_puppet.py init/render a layout to preview puppet assembly
   dracula_parts/  41 split Dracula layers (incomplete — see gaps)
-  fdr_parts/      FDR's complete kit (122 labelled pieces + source sheets);
-                  see its README
+  fdr_parts/      FDR's complete kit (122 labelled pieces + source sheets),
+                  cleaned rig pieces and previews; see its README
+  fdr_layout.json FDR assembled: rest pose + swap slots (build_puppet.py)
 MOTION-SPEC.md    the animation parts list, tagged MECH/IDLE/BEAT/TELL
 ASSETS.md         every free/CC0 source + licensing traps
 CHARACTER-ART-PROMPTS.md  image prompts per character: a reference portrait,

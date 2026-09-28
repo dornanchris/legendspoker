@@ -15,6 +15,8 @@ re-render in a second, instead of dragging layers in an art tool.
   python3 build_puppet.py render dracula_layout.json -o preview.png
 
 Coordinates are top-left of the part, in canvas pixels. z sorts back->front.
+"flip": true mirrors a part left-right (hands are drawn for one side only).
+File paths are relative to the layout file, so it renders from anywhere.
 Once the numbers look right they are your rig's rest pose: import the same
 parts into Rive/Live2D and type these offsets in.
 """
@@ -24,7 +26,7 @@ import glob
 import json
 import os
 
-from PIL import Image
+from PIL import Image, ImageOps
 
 
 def cmd_init(args):
@@ -60,10 +62,15 @@ def cmd_render(args):
     for p in sorted(layout["parts"], key=lambda p: p.get("z", 0)):
         if not p.get("visible", True):
             continue
-        if not os.path.exists(p["file"]):
+        path = p["file"]
+        if not os.path.isabs(path) and not os.path.exists(path):
+            path = os.path.join(os.path.dirname(os.path.abspath(args.layout)), path)
+        if not os.path.exists(path):
             print(f"  missing: {p['file']}")
             continue
-        im = Image.open(p["file"]).convert("RGBA")
+        im = Image.open(path).convert("RGBA")
+        if p.get("flip"):
+            im = ImageOps.mirror(im)
 
         s = float(p.get("scale", 1.0))
         if s != 1.0:
