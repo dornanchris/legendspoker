@@ -298,6 +298,18 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 **Not started:** Rive integration, recorded audio and music, Capacitor + a
 real device.
 
+**Art direction (the owner's calls, from the FDR and Lincoln tests):** 2D
+cut-out puppets in the bright cartoon style of those tests, not the dark
+look of the table mock-ups. Characters sit waist-up around a ROUND table;
+nothing below the table edge is ever seen (props go on the felt, in the
+hands or on the body). Every opponent is drawn once at three-quarter view,
+facing the table's centre, and mirrored for the other side; Death, dealing
+from the far side, is front-on. The table layer's curved edge hides each
+torso's lower half; forearms and hands resting on it sit above it.
+`CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
+redrawn under it: the FDR and Lincoln kits are front-on pipeline examples.
+Lincoln wears his hat at all times.
+
 ## KNOWN GAPS AND SIMPLIFICATIONS
 
 - **The tell model is still one-signal-per-decision** (`emitTell`) plus

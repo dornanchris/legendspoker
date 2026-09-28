@@ -44,9 +44,9 @@ He was the tallest president, six foot four, and a teller of jokes and stories, 
 - Tell (strong, 0.94): *strokes his beard, slowly*
 - Tell (weak, 0.92): *leans back and folds his long hands*
 - Tell (bluffing, 0.9): *allows himself a small smile*
-- Idle noise: *crosses one long leg over the other*; *glances at the clock on the mantel*; *rubs his eyes*; *smooths the brim of the hat beside his chips*
+- Idle noise: *stretches his long back until the chair creaks*; *glances at the clock on the mantel*; *rubs his eyes*; *tips his hat to someone across the table*
 
-**Look.** Silhouette: the longest frame at the table, bare-headed, the stovepipe hat standing on the table beside his chips: the tallest shape at the table. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen. **Prop:** Stovepipe hat, on the table.
+**Look.** Silhouette: the longest frame at the table, and taller still in the stovepipe hat he never takes off; he tips it, pushes it back, straightens it. Face, after the Brady and Gardner photographs: long and narrow, hollow cheeks under high cheekbones, deep-set tired eyes, a long straight nose, thin lips, the chin beard along the jaw with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen. **Prop:** Stovepipe hat, always worn.
 
 **Public domain.** Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 
@@ -166,7 +166,7 @@ Plato's Symposium puts him at exactly this kind of party. He arrived late, havin
 - Tell (bluffing, 0.88): *scratches his snub nose*
 - Tell (strong, 0.86): *smiles as if at a private joke*
 - Tell (weak, 0.86): *frowns up at the ceiling, as if it had asked him something*
-- Idle noise: *sips from his cup and seems no drunker*; *rubs his bare feet together*; *pulls his plain cloak tighter*; *scratches his beard thoughtfully*
+- Idle noise: *sips from his cup and seems no drunker*; *stretches, and his cloak slips off one shoulder*; *pulls his plain cloak tighter*; *scratches his beard thoughtfully*
 
 **Look.** Silhouette: bald dome, big untidy beard, a short thick body in one plain, shabby cloak — the only unadorned figure at the table, which is exactly why he reads. Face: snub nose, wide bulging eyes, a satyr's face with a good-humoured mouth. Prop: a shallow wine cup, drained and refilled all night. Tells live on the big shapes of the face: nose, smile, the upward glance. **Prop:** Shallow wine cup.
 
@@ -735,7 +735,7 @@ What makes her a person is that nothing in Wonderland frightens her for long. Sh
 - Tell (strong, 0.9): *her eyes go very wide*
 - Tell (weak, 0.9): *frowns at her cards as if they had said something rude*
 - Tell (bluffing, 0.88): *bites her lip*
-- Idle noise: *smooths her pinafore*; *counts the pips on a card*; *tries to see what the dealer is holding*; *swings her feet under the chair*
+- Idle noise: *smooths her pinafore*; *counts the pips on a card*; *tries to see what the dealer is holding*; *fidgets in a chair far too big for her*
 
 **Look.** Silhouette: a small figure in a full-skirted dress and white pinafore, long hair held back by a band — Tenniel's Alice. Keep the blue the design doc wants, but a deep Victorian blue, never Disney's powder blue with a black bow. Large, expressive eyes: by design her face, not a prop, is the tell surface. Prop: a little bottle labelled DRINK ME, beside her chips. **Prop:** A little bottle labelled DRINK ME.
 
@@ -809,7 +809,7 @@ Seward describes him as a man with a temper of the ice-brook and the kindliest a
 - Tell (bluffing, 0.62): *mutters something in Dutch*
 - Idle noise: *checks a pocket that smells of garlic*; *sniffs the air, frowning*; *glances at the fireplace*; *writes a line in a leather diary*
 
-**Look.** Silhouette: square and solid, shoulders set back over a deep chest, in a plain black professor's frock coat, a doctor's bag at his feet. Clean-shaven, square-jawed, bushy brows, reddish hair swept back off a broad forehead, wide-set blue eyes. Prop: his spectacles. They are small, so the tell is the whole gesture: off, polished on a big white handkerchief, back on. **Prop:** His spectacles.
+**Look.** Silhouette: square and solid, shoulders set back over a deep chest, in a plain black professor's frock coat, his doctor's bag on the table beside him. Clean-shaven, square-jawed, bushy brows, reddish hair swept back off a broad forehead, wide-set blue eyes. Prop: his spectacles. They are small, so the tell is the whole gesture: off, polished on a big white handkerchief, back on. **Prop:** His spectacles.
 
 **Public domain.** Stoker's Dracula (1897) is public domain. Build him from the novel: clean-shaven, reddish hair, bushy brows, a professor's black coat. Nothing from the 2004 Van Helsing film: no broad-brimmed hat, long leather coat, crossbow or gadgets, and no likeness of any actor who has played him. His Dutch English is used lightly, never as a comic accent.
 
