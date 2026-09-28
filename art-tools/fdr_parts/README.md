@@ -15,12 +15,12 @@ position on its source sheet and a `label` saying what it is.
 | `fdr_hands_holder` | 5 | Hands holding the cigarette holder |
 | `fdr_props` | 8 | The cigarette holder at several lengths and angles, one lit with smoke |
 
-| `fdr_rig` | 11 | Pieces cleaned up for the puppet (below) |
+| `fdr_rig` | 3 | Pieces cleaned up for the puppet (below) |
 
 ## The puppet
 
 `art-tools/fdr_layout.json` is his rest pose: holder cocked up from his
-teeth, forearms on the felt, hands folded. `preview.png` is that pose;
+teeth, forearms angled down from the elbows, hands flat on the felt. `preview.png` is that pose;
 `preview_expressions.png` is the same layout with swaps switched on
 (laughing, broad smile, frown, grimace).
 
@@ -29,16 +29,20 @@ teeth, forearms on the felt, hands folded. `preview.png` is that pose;
 Every piece has a `slot`. Pieces that share one are swaps for the same place,
 already positioned and scaled: the eyes, brows, mouths and hands. Only one per
 slot is visible at a time. The right eye and the right hand are the left ones
-with `"flip": true`. The hand swaps are parked at the cuff and need placing per
-pose; the table is a preview stand-in, not a part.
+with `"flip": true`. The table is a preview stand-in, not a part.
+
+The hands are the card-action pieces as drawn, WITH their cuff and a stub of
+sleeve, laid over the end of the forearm (which is angled to match). An
+earlier version cut the cuffs off and set bare hands at the forearm's sleeve
+opening; they looked stuck on. The artist's cuff-to-wrist join is what makes a
+hand look attached, so keep it. The other hands in the slot are parked at the
+same spot and need angling per pose: each was drawn at its own sleeve angle.
 
 `fdr_rig/` holds pieces cleaned up so they fit together:
 
 - `head.png`: the blank head with its painted collar and shoulders removed, so
   the neck sits in the torso's collar.
 - `pince_nez.png`: the lenses made see-through; as drawn they hid his eyes.
-- `hand_01.png` to `hand_08.png`: the card-action hands with their sleeves and
-  cuffs removed, so each tucks into a forearm's cuff.
 - `table_preview.png`: the felt for the preview.
 
 `sources/` holds the exact sheets that were cut, so any folder can be cut again:

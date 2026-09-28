@@ -25,10 +25,10 @@ Every character in the game, grouped by table. The descriptions come from `data/
 - **Whole eyes, one side, mirrored.** Asked for separate whites, irises and lids, the generator drew whole eyes anyway, and whole-eye swaps work well: looking left, right, down, wide, half-closed, narrowed, closed.
 - **Brows in three clearly different shapes.** "Four poses" came back as nine near-identical brows. Raised is a move, not a drawing.
 - **Mouths only, same colour.** Asked alone, mouths came back as lower-face patches with a nose and chin, which leave a seam over the head.
-- **Hands with no sleeve or cuff, one side, and card actions on a sheet of their own.** Hands drawn with their own cuffs doubled up with the forearm's cuff. Eight poses came back complete; a longer list lost some.
+- **Hands keep their cuff and a stub of sleeve.** FDR's first puppet had the cuffs cut off and bare hands set at the forearm's sleeve opening: they looked stuck on. The artist's own cuff-to-wrist join, laid over the end of the forearm, looks right. Hands are drawn once and mirrored, and the eight card actions get a sheet of their own: eight poses came back complete, a longer list lost some.
 - **Clear lenses.** The pince-nez came back with solid grey lenses that hid his eyes.
 
-If a sheet comes back with one of these anyway, send it over: a colour match, a collar or sleeve removal or a see-through lens is quicker to fix than to regenerate.
+If a sheet comes back with one of these anyway, send it over: a colour match, a collar removal or a see-through lens is quicker to fix than to regenerate.
 
 Shared style line for Step 1 (keep it identical for every character):
 
@@ -83,7 +83,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a dark three-piece suit with a white shirt and dark tie. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Naval cape: the back layer, and the left and right front drapes, as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, died 1945; US government photographs of him are public domain. Build from 1930s–40s press photographs. Avoid any modern screen or stage likeness, including the FDR of the musical Annie. Do not stage or joke about the wheelchair: he kept it out of frame all his life, and so do we.
 ```
@@ -94,7 +94,7 @@ Must NOT resemble: Historical figure, died 1945; US government photographs of hi
 Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -113,7 +113,7 @@ Must NOT resemble: Historical figure, died 1945; US government photographs of hi
 Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -181,7 +181,7 @@ Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character 
 This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a long, lean frame in a black frock coat and a black bow tie. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 ```
@@ -192,7 +192,7 @@ Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photograp
 Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Long, bony hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Long, bony hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -211,7 +211,7 @@ Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photograp
 Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Long, bony hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Long, bony hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -280,7 +280,7 @@ Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the charact
 This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a barrel chest, leaning forward on both elbows, in a dark suit. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, died 1919; period photographs are public domain. Build from photographs and the 1898 Rough Rider uniform. Avoid the Night at the Museum portrayal (horseback, waxwork) and any modern screen likeness. No teddy bears.
 ```
@@ -291,7 +291,7 @@ Must NOT resemble: Historical figure, died 1919; period photographs are public d
 Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -310,7 +310,7 @@ Must NOT resemble: Historical figure, died 1919; period photographs are public d
 Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -380,7 +380,7 @@ This sheet: body and arms. Parts:
 - Buff waistcoat as a separate front layer
 - Coat cuffs, left and right, as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart and Charles Willson Peale portraits, which are public domain. Avoid the look and staging of the musical Hamilton and any modern screen likeness. No wooden teeth: that is a myth.
 ```
@@ -391,7 +391,7 @@ Must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart a
 Puppet parts sheet for 2D animation rigging, for George Washington, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -410,7 +410,7 @@ Must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart a
 Puppet parts sheet for 2D animation rigging, for George Washington, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -471,7 +471,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: enormous shoulders and chest, filling the frame. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Sheepskin over the shoulders as a separate layer
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Homer's Odyssey is public domain, as are Euripides' Cyclops and Theocritus. Avoid Harryhausen's cyclops from The 7th Voyage of Sinbad (1958): no horn, no goat legs. Nothing like the Marvel X-Men Cyclops either. Homer's giant is a shepherd with a beard, not a monster costume.
 ```
@@ -482,7 +482,7 @@ Must NOT resemble: Homer's Odyssey is public domain, as are Euripides' Cyclops a
 Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Huge hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Huge hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -501,7 +501,7 @@ Must NOT resemble: Homer's Odyssey is public domain, as are Euripides' Cyclops a
 Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Huge hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Huge hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -569,7 +569,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a bronze breastplate. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Red cloak: back layer and front edges as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, died 480 BC; Herodotus and Plutarch are public domain. Nothing from the film 300 or its graphic novel: no bare chest, no leather trunks, none of its lines or slogans. Avoid The 300 Spartans (1962) as well. Build from Greek vase painting and the marble warrior bust from Sparta known as 'Leonidas'.
 ```
@@ -580,7 +580,7 @@ Must NOT resemble: Historical figure, died 480 BC; Herodotus and Plutarch are pu
 Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands, heavy and scarred: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands, heavy and scarred: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -599,7 +599,7 @@ Must NOT resemble: Historical figure, died 480 BC; Herodotus and Plutarch are pu
 Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands, heavy and scarred: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands, heavy and scarred: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -664,7 +664,7 @@ Puppet parts sheet for 2D animation rigging, for Medusa, the character in the at
 This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a simple ancient Greek dress (a chiton), pinned at the shoulders. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Greek myth (Hesiod, Pindar, Ovid), all public domain; classical art such as the Rondanini Medusa is fair reference. Avoid Harryhausen's Medusa from Clash of the Titans (1981: serpent body, rattle tail, bow) and its 2010 remake, and the Percy Jackson Medusa (sunglasses, garden statues). She has legs and sits in a chair.
 ```
@@ -675,7 +675,7 @@ Must NOT resemble: Greek myth (Hesiod, Pindar, Ovid), all public domain; classic
 Puppet parts sheet for 2D animation rigging, for Medusa, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -694,7 +694,7 @@ Must NOT resemble: Greek myth (Hesiod, Pindar, Ovid), all public domain; classic
 Puppet parts sheet for 2D animation rigging, for Medusa, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -746,7 +746,7 @@ Puppet parts sheet for 2D animation rigging, for Socrates, the character in the 
 This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a short, thick body in one plain, shabby cloak. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon and Aristophanes are all public domain. Build from the Roman copies of Greek portrait busts. Avoid Bill & Ted's Excellent Adventure and any other modern screen likeness. He is barefoot, but that is below the table.
 ```
@@ -757,7 +757,7 @@ Must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon and Aristopha
 Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -776,7 +776,7 @@ Must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon and Aristopha
 Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -845,7 +845,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: broad in the chest and shoulders, a sea-stained cloak. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Cloak: back layer and front edges as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Homer is public domain. Build from Greek vase painting (the pilos cap, the Sirens vase in the British Museum). Avoid every screen Odysseus, including Kirk Douglas's Ulysses (1954) and Christopher Nolan's The Odyssey (2026), the Coen brothers' O Brother, Where Art Thou?, and EPIC: The Musical.
 ```
@@ -856,7 +856,7 @@ Must NOT resemble: Homer is public domain. Build from Greek vase painting (the p
 Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Weathered hands, a heavy gold ring on one finger: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Weathered hands, a heavy gold ring on one finger: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -875,7 +875,7 @@ Must NOT resemble: Homer is public domain. Build from Greek vase painting (the p
 Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Weathered hands, a heavy gold ring on one finger: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Weathered hands, a heavy gold ring on one finger: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -949,7 +949,7 @@ This sheet: body and arms. Parts:
 - Strands of seaweed caught in the folds, 4 separate pieces
 - One extra forearm with the sleeve visibly dripping
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Sailors' folklore, in print by 1751 and owned by nobody. The famous screen version is Disney's (Pirates of the Caribbean, 2006–07) and is strictly off limits: no tentacle beard, no crab claw, no pipe organ, no heart in a chest, no sea-creature crew, no Flying Dutchman, no dice for souls. Ours has a human face and never raises his voice.
 ```
@@ -960,7 +960,7 @@ Must NOT resemble: Sailors' folklore, in print by 1751 and owned by nobody. The 
 Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Grey, wet hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Grey, wet hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -979,7 +979,7 @@ Must NOT resemble: Sailors' folklore, in print by 1751 and owned by nobody. The 
 Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Grey, wet hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Grey, wet hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -1050,7 +1050,7 @@ This sheet: body and arms. Parts:
 - Cravat in 2 states: neat, and loosened at the throat
 - The corner of a folded paper peeking from the inside pocket, as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, hanged 1701. Build from the trial record and period portraits of New York merchant captains. Avoid Charles Laughton's Hollywood Kidd (1945 and 1952) and the cartoon buried-treasure buccaneer. He should look like what he always claimed to be: an honest captain with papers.
 ```
@@ -1061,7 +1061,7 @@ Must NOT resemble: Historical figure, hanged 1701. Build from the trial record a
 Puppet parts sheet for 2D animation rigging, for Captain William Kidd, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -1080,7 +1080,7 @@ Must NOT resemble: Historical figure, hanged 1701. Build from the trial record a
 Puppet parts sheet for 2D animation rigging, for Captain William Kidd, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -1136,7 +1136,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: very tall and broad, a cook's apron over a sailor's coat. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - The top of a crutch tucked under one arm, as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Stevenson's Treasure Island (1883) is public domain. Avoid Robert Newton's performance in Disney's 1950 film — his rolling West Country 'Arr!' now owns the pirate voice — and the Muppet, Treasure Planet and Black Sails Silvers. The book gives us enough: tall, pale, smiling, one leg, a crutch, and a parrot.
 ```
@@ -1147,7 +1147,7 @@ Must NOT resemble: Stevenson's Treasure Island (1883) is public domain. Avoid Ro
 Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Big, easy hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Big, easy hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -1166,7 +1166,7 @@ Must NOT resemble: Stevenson's Treasure Island (1883) is public domain. Avoid Ro
 Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Big, easy hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Big, easy hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -1239,7 +1239,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a heavy dark coat. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Sling of pistols across the chest as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, died 1718. Build from the 1724 General History and its early engravings of him with lit matches under his hat. Avoid Disney's Blackbeard in Pirates of the Caribbean: On Stranger Tides (2011) — no magic sword, no zombie crew — and the television versions in Black Sails and Our Flag Means Death.
 ```
@@ -1250,7 +1250,7 @@ Must NOT resemble: Historical figure, died 1718. Build from the 1724 General His
 Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands, big and scarred: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands, big and scarred: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -1269,7 +1269,7 @@ Must NOT resemble: Historical figure, died 1718. Build from the 1724 General His
 Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands, big and scarred: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands, big and scarred: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -1341,7 +1341,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: enormous, broad as a door, in green clothes worked with gold, NO armour. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Patches of moss creeping on the sleeve: 3 separate pieces, small to large
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman.
 ```
@@ -1352,7 +1352,7 @@ Must NOT resemble: The poem (late 14th c.) is public domain, and so are old tran
 Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Huge green hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Huge green hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -1371,7 +1371,7 @@ Must NOT resemble: The poem (late 14th c.) is public domain, and so are old tran
 Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Huge green hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Huge green hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -1439,7 +1439,7 @@ This sheet: body and arms. Parts:
 - Left and right shoulder plates as separate pieces
 - Sword belt as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public domain. Avoid T. H. White's ugly, self-loathing Lancelot, the musical Camelot (1960) and its film, the film First Knight (1995), and the BBC's Merlin. The love affair with Guinevere is canon: allude to it with care, and never play it for smut.
 ```
@@ -1450,7 +1450,7 @@ Must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public domain. Avoi
 Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve. The RIGHT hand is in a polished steel gauntlet, the LEFT is bare: draw every pose for BOTH hands, since they differ
+- Hands, each with a short stub of sleeve, cut straight across the stub; the forearm piece goes under it. The RIGHT hand is in a polished steel gauntlet, the LEFT is bare: draw every pose for BOTH hands, since they differ
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -1469,7 +1469,7 @@ Must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public domain. Avoi
 Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve. The RIGHT hand is in a polished steel gauntlet, the LEFT is bare: draw every pose for BOTH hands, since they differ
+- Hands, each with a short stub of sleeve, cut straight across the stub; the forearm piece goes under it. The RIGHT hand is in a polished steel gauntlet, the LEFT is bare: draw every pose for BOTH hands, since they differ
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -1540,7 +1540,7 @@ Puppet parts sheet for 2D animation rigging, for Merlin, the character in the at
 This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: lean and tall in a hooded, undyed wool robe. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Note: No pointed hat, no stars, no owl.
 
@@ -1553,7 +1553,7 @@ Must NOT resemble: Geoffrey of Monmouth (c. 1136) and Malory (1485) are centurie
 Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Old, weathered hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Old, weathered hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -1574,7 +1574,7 @@ Must NOT resemble: Geoffrey of Monmouth (c. 1136) and Malory (1485) are centurie
 Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Old, weathered hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Old, weathered hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -1647,7 +1647,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: broad shoulders in chain mail. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Red mantle: back layer (behind the shoulders) and front drape as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of copyright. Avoid Monty Python and the Holy Grail, the musical Camelot, Disney's The Sword in the Stone, Boorman's Excalibur (1981), T. H. White and the BBC's Merlin. No coconuts, and no 'once and future king': the Latin is Malory's, but the English phrase is White's title now.
 ```
@@ -1658,7 +1658,7 @@ Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of cop
 Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands, a king's, weathered: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands, a king's, weathered: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -1677,7 +1677,7 @@ Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of cop
 Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands, a king's, weathered: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands, a king's, weathered: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -1757,7 +1757,7 @@ Must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Gree
 Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Big front paws with blunt claws (no fingers), each cut off at the wrist. Draw each pose ONCE, as the right paw: the game mirrors it for the left
+- Big front paws with blunt claws (no fingers), each with a short stub of the leg, cut straight across. Draw each pose ONCE, as the right paw: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: tapping the table (checking)
 - Pose: pushing forward (as if pushing chips; chips NOT drawn)
@@ -1775,7 +1775,7 @@ Must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Gree
 Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Big front paws with blunt claws (no fingers), each cut off at the wrist. Draw each pose ONCE, as the right paw: the game mirrors it for the left
+- Big front paws with blunt claws (no fingers), each with a short stub of the leg, cut straight across. Draw each pose ONCE, as the right paw: the game mirrors it for the left
 - A hind paw raised, scratching (as if behind an ear)
 
 Must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads.
@@ -1837,7 +1837,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: gold-embroidered vestments that swallow the chair, after Pinturicchio's fresco. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Outer vestment as a separate front layer
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is public domain. Avoid the 2011 television series ("The Borgias", "Borgia") and any poison-ring cliché. The jokes stay on his politics and his family, never on the faith. The display name is still an open design question; "the Pope" may yet be renamed.
 ```
@@ -1848,7 +1848,7 @@ Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is publ
 Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Soft, ringed hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Soft, ringed hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -1867,7 +1867,7 @@ Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is publ
 Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Soft, ringed hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Soft, ringed hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -1951,7 +1951,7 @@ Must NOT resemble: Historical figure, died 71 BC. Write only from Plutarch (Life
 Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Heavy, scarred hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Heavy, scarred hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -1972,7 +1972,7 @@ Must NOT resemble: Historical figure, died 71 BC. Write only from Plutarch (Life
 Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Heavy, scarred hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Heavy, scarred hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2043,7 +2043,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a toga with a broad purple border. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - The toga drape over the left shoulder as a separate front layer
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Historical figure, died 44 BC. Build from the coins of 44 BC, the first Roman coinage to carry a living man's portrait. Avoid every film and television likeness and the Asterix caricature. No "Et tu, Brute?" — that is Shakespeare's line, not the ancient sources'.
 ```
@@ -2054,7 +2054,7 @@ Must NOT resemble: Historical figure, died 44 BC. Build from the coins of 44 BC,
 Puppet parts sheet for 2D animation rigging, for Julius Caesar, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2073,7 +2073,7 @@ Must NOT resemble: Historical figure, died 44 BC. Build from the coins of 44 BC,
 Puppet parts sheet for 2D animation rigging, for Julius Caesar, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2134,7 +2134,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a full-skirted dress in deep Victorian blue (NOT powder blue) under a white pinafore. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Pinafore bib as a separate front layer
 - Upper arms in short puffed sleeves, left and right
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Carroll's books and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely — its dress, bow, character designs and songs — and the 2010 Burton film. Keep the Cheshire Cat out of this table; he is saved for later.
 ```
@@ -2145,7 +2145,7 @@ Must NOT resemble: Carroll's books and Tenniel's illustrations are public domain
 Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Small girl's hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Small girl's hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2164,7 +2164,7 @@ Must NOT resemble: Carroll's books and Tenniel's illustrations are public domain
 Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Small girl's hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Small girl's hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2232,7 +2232,7 @@ This sheet: body and arms. Parts:
 - The greatcoat's high collar in 2 states: buttoned to the chin, and top buttons undone
 - The stock (neckcloth) as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Hugo's novel (1862) and its nineteenth-century illustrations are public domain. Nothing from the stage musical or its films: no lyrics, no "Stars", no prisoner-number chant, no costume from any production. Hugo's text only.
 ```
@@ -2243,7 +2243,7 @@ Must NOT resemble: Hugo's novel (1862) and its nineteenth-century illustrations 
 Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2262,7 +2262,7 @@ Must NOT resemble: Hugo's novel (1862) and its nineteenth-century illustrations 
 Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2333,7 +2333,7 @@ Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in 
 This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: tall and broad-shouldered in severe dark clothes, after the Neuville and Riou engravings. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Note: Nothing from Disney's 1954 film.
 
@@ -2346,7 +2346,7 @@ Must NOT resemble: Verne's novels (1870, 1875) and their Hetzel engravings are p
 Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2367,7 +2367,7 @@ Must NOT resemble: Verne's novels (1870, 1875) and their Hetzel engravings are p
 Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2443,7 +2443,7 @@ Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character 
 This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: very thin, in a dark frock coat, after Sidney Paget. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Note: No deerstalker, no calabash pipe, nothing from modern screen versions.
 
@@ -2456,7 +2456,7 @@ Must NOT resemble: Every Holmes story is now public domain in the US. Work from 
 Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Long, thin hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Long, thin hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2477,7 +2477,7 @@ Must NOT resemble: Every Holmes story is now public domain in the US. Work from 
 Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Long, thin hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Long, thin hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2565,7 +2565,7 @@ Must NOT resemble: Irving's story (1820) is public domain. Disney's 1949 cartoon
 Puppet parts sheet for 2D animation rigging, for The Headless Horseman, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Leather riding gauntlets: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Leather riding gauntlets: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2584,7 +2584,7 @@ Must NOT resemble: Irving's story (1820) is public domain. Disney's 1949 cartoon
 Puppet parts sheet for 2D animation rigging, for The Headless Horseman, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Leather riding gauntlets: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Leather riding gauntlets: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2641,7 +2641,7 @@ Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the cha
 This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: enormous, eight feet tall, in a good coat that was never cut for him (sleeves too short). Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Note: Nothing from Universal's 1931 design: no neck bolts, flat head, green skin, stitches or forehead scar.
 
@@ -2654,7 +2654,7 @@ Must NOT resemble: Shelley's novel (1818) is public domain. Universal's 1931 mak
 Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Very large hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Very large hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2675,7 +2675,7 @@ Must NOT resemble: Shelley's novel (1818) is public domain. Universal's 1931 mak
 Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Very large hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Very large hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2748,7 +2748,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: square and solid, a deep chest in a plain black professor's frock coat. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - A small crucifix at the collar as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Must NOT resemble: Stoker's Dracula (1897) is public domain. Build him from the novel: clean-shaven, reddish hair, bushy brows, a professor's black coat. Nothing from the 2004 Van Helsing film: no broad-brimmed hat, long leather coat, crossbow or gadgets, and no likeness of any actor who has played him. His Dutch English is used lightly, never as a comic accent.
 ```
@@ -2759,7 +2759,7 @@ Must NOT resemble: Stoker's Dracula (1897) is public domain. Build him from the 
 Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2778,7 +2778,7 @@ Must NOT resemble: Stoker's Dracula (1897) is public domain. Build him from the 
 Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2848,7 +2848,7 @@ Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in 
 This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: a big man's frame in the remains of a good shirt and waistcoat split at the seams, fur showing through. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Note: Not a hairy man's face: that is the Universal film's design. "The Wolf Man" as a name is still an open decision.
 
@@ -2861,7 +2861,7 @@ Must NOT resemble: The werewolf is European folklore, told from Petronius onward
 Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Furred hands with claws: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Furred hands with claws: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2882,7 +2882,7 @@ Must NOT resemble: The werewolf is European folklore, told from Petronius onward
 Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Furred hands with claws: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Furred hands with claws: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -2955,7 +2955,7 @@ This sheet: body and arms. Parts:
 - Torso with NO head and NO arms: tall and thin, in black without a speck of colour. Front view, seated, cut off straight at the table line. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Cape: back layer and front edges as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Note: Parts already exist in art-tools/dracula_parts, in an older, glossier style than FDR. Gaps there: the chalice, a talking mouth set, a losing face, and whole-eye swaps (his eyes have fixed pupils). If FDR's style is the house style, redo all of his sheets.
 
@@ -2968,7 +2968,7 @@ Must NOT resemble: Stoker's novel (1897) is public domain. Bela Lugosi's likenes
 Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Pale, long-fingered hands with long nails: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Pale, long-fingered hands with long nails: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -2989,7 +2989,7 @@ Must NOT resemble: Stoker's novel (1897) is public domain. Bela Lugosi's likenes
 Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Pale, long-fingered hands with long nails: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Pale, long-fingered hands with long nails: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -3081,7 +3081,7 @@ Must NOT resemble: An archetype, not a person: the lost explorer. She must not r
 Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Bare hands (suit gloves off): each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Bare hands (suit gloves off): each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -3102,7 +3102,7 @@ Must NOT resemble: An archetype, not a person: the lost explorer. She must not r
 Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Bare hands (suit gloves off): each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Bare hands (suit gloves off): each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -3186,7 +3186,7 @@ Must NOT resemble: The grey is modern folklore, built by many retellings and own
 Puppet parts sheet for 2D animation rigging, for The Grey, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Long thin grey fingers: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Long thin grey fingers: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -3207,7 +3207,7 @@ Must NOT resemble: The grey is modern folklore, built by many retellings and own
 Puppet parts sheet for 2D animation rigging, for The Grey, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Long thin grey fingers: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Long thin grey fingers: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -3349,7 +3349,7 @@ Must NOT resemble: The tin robot is an archetype of pulp covers, toys and world'
 Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Jointed metal hands with four fingers: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Jointed metal hands with four fingers: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -3370,7 +3370,7 @@ Must NOT resemble: The tin robot is an archetype of pulp covers, toys and world'
 Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Jointed metal hands with four fingers: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Jointed metal hands with four fingers: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -3477,7 +3477,7 @@ This sheet: body and arms. Parts:
 - A short cloak pinned at one shoulder, as a separate layer
 - The cloak pin (brooch) as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist, NO hand), left and right, each ending in an open cuff or sleeve end for the hand to tuck into, in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, in two angles: lying along the table, and raised. The hand pieces cover their ends
 
 Note: Hidden guest: a spoiler. Keep his art out of anything public. No crown, no helmet, no horns, no green-and-gold, no slicked black hair.
 
@@ -3490,7 +3490,7 @@ Must NOT resemble: Norse myth as the Poetic Edda and Snorri's Prose Edda record 
 Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Restless hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Restless hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
 - Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
@@ -3511,7 +3511,7 @@ Must NOT resemble: Norse myth as the Poetic Edda and Snorri's Prose Edda record 
 Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: character hands. Parts:
-- Restless hands: each is the HAND ONLY, cut off at the wrist, with NO sleeve and NO cuff (the forearm carries those). Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Restless hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: open palm up (a shrug, or a gesture while talking)
 - Pose: relaxed, fingers loosely curled (idle)
@@ -3600,7 +3600,7 @@ Must NOT resemble: Folklore: the personified Death of late-medieval Europe — d
 Puppet parts sheet for 2D animation rigging, for Death, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Long bone hands (skeleton), elegant and unhurried, each cut off at the wrist with NO sleeve. Draw each pose once, as the right hand (the game mirrors it), except the riffle-shuffle, which needs both hands
+- Long bone hands (skeleton), elegant and unhurried, each with a short stub of the shroud sleeve, cut straight across. Draw each pose once, as the right hand (the game mirrors it), except the riffle-shuffle, which needs both hands
 - Pose: holding a squared deck of cards
 - Pose: riffle-shuffling: the left and right hands each holding half the deck, bent
 - Pose: cutting the deck
