@@ -5,7 +5,7 @@ Every character in the game, grouped by table. The descriptions come from `data/
 ## How to use this
 
 1. **Step 1 — the reference portrait.** Paste the character's Step 1 prompt into ChatGPT and regenerate until it's right. This image is the character's model sheet; every part is matched to it.
-2. **Step 2 — the parts sheets.** In the same chat (or with the approved portrait attached), paste the sheets one per message. Most characters have four: face kit, body and arms, hands, props and tell pieces.
+2. **Step 2 — the parts sheets.** In the same chat (or with the approved portrait attached), paste the sheets one per message, and save each sheet as its own image. A collage of several sheets with frames round them is cut as one piece per frame. Most characters have four: face kit, body and arms, hands, props and tell pieces.
 3. **Check each sheet before moving on.** Every piece must be on pure white with a gap all round it. Pieces that touch are cut as one piece, and a white piece without a dark outline (a cuff, a pinafore, a skull) is cut away with the background.
    Soft glows, halos, glints and shadow overlays can't be cut cleanly from a white sheet. They are listed so you know they're needed; they're easiest to make in the rig as a blurred, tinted shape, so treat ChatGPT's versions as reference.
 4. **Missing parts:** image generators drop items from long lists. Ask again with the same rules and ONLY the missing parts: *"Same rules as before. A new sheet with only these parts: …"*
@@ -43,16 +43,16 @@ IMPORTANT, must NOT resemble: Historical figure, died 1945; US government photog
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Grey swept-back hair as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); a mouth gripping a cigarette holder in the teeth, smiling around it (holder NOT drawn)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a mouth gripping a cigarette holder in the teeth, smiling around it (holder NOT drawn). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Pince-nez with its cord, as a separate piece
 
 Must NOT resemble: Historical figure, died 1945; US government photographs of him are public domain. Build from 1930s–40s press photographs. Avoid any modern screen or stage likeness, including the FDR of the musical Annie. Do not stage or joke about the wheelchair: he kept it out of frame all his life, and so do we.
@@ -61,13 +61,13 @@ Must NOT resemble: Historical figure, died 1945; US government photographs of hi
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a dark three-piece suit with a white shirt and dark tie. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a dark three-piece suit with a white shirt and dark tie. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Naval cape: the back layer, and the left and right front drapes, as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, died 1945; US government photographs of him are public domain. Build from 1930s–40s press photographs. Avoid any modern screen or stage likeness, including the FDR of the musical Annie. Do not stage or joke about the wheelchair: he kept it out of frame all his life, and so do we.
 ```
@@ -75,10 +75,10 @@ Must NOT resemble: Historical figure, died 1945; US government photographs of hi
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands with white shirt cuffs, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands with white shirt cuffs, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -100,7 +100,7 @@ Must NOT resemble: Historical figure, died 1945; US government photographs of hi
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Franklin D. Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - The long cigarette holder alone, cigarette lit at the tip
@@ -132,17 +132,17 @@ IMPORTANT, must NOT resemble: Historical figure, died 1865; the Brady and Gardne
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: hollow cheeks, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: hollow cheeks, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Dark, untidy hair as a separate piece
 - Chin beard with NO moustache as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: deep-set, tired — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); a small, restrained smile
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a small, restrained smile. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 ```
@@ -150,12 +150,12 @@ Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photograp
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a long, lean frame in a black frock coat and a black bow tie. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a long, lean frame in a black frock coat and a black bow tie. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 ```
@@ -163,10 +163,10 @@ Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photograp
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Long, bony hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Long, bony hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -189,7 +189,7 @@ Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photograp
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - The stovepipe hat resting on his knee, only its crown and brim showing above the table edge
@@ -220,17 +220,17 @@ IMPORTANT, must NOT resemble: Historical figure, died 1919; period photographs a
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Hair as a separate piece
 - Heavy moustache as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); the enormous grin, all teeth (these must read small, so 3 versions: grin, bigger grin, biggest grin)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); the enormous grin, all teeth (these must read small, so 3 versions: grin, bigger grin, biggest grin). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Round steel-rimmed spectacles as a separate piece
 
 Must NOT resemble: Historical figure, died 1919; period photographs are public domain. Build from photographs and the 1898 Rough Rider uniform. Avoid the Night at the Museum portrayal (horseback, waxwork) and any modern screen likeness. No teddy bears.
@@ -239,12 +239,12 @@ Must NOT resemble: Historical figure, died 1919; period photographs are public d
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a barrel chest, leaning forward on both elbows, in a dark suit. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a barrel chest, leaning forward on both elbows, in a dark suit. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, died 1919; period photographs are public domain. Build from photographs and the 1898 Rough Rider uniform. Avoid the Night at the Museum portrayal (horseback, waxwork) and any modern screen likeness. No teddy bears.
 ```
@@ -252,10 +252,10 @@ Must NOT resemble: Historical figure, died 1919; period photographs are public d
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -278,7 +278,7 @@ Must NOT resemble: Historical figure, died 1919; period photographs are public d
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Theodore Roosevelt, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A handkerchief
@@ -309,16 +309,16 @@ IMPORTANT, must NOT resemble: Historical figure, died 1799. Build from the Gilbe
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for George Washington, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for George Washington, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: long and heavy-jawed, with ears and neck, NO eyes, eyebrows, nose or mouth drawn
+- Blank head: long and heavy-jawed, with ears and neck, NO eyes, eyebrows, nose or mouth drawn. Draw it bald: the hair is a separate piece
 - His own hair, powdered and tied at the nape with a ribbon (not a wig), as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral, set firm (his usual); a slight smile; talking "ah"; talking "oh"; talking "ee"; lips pressed; frown; tight-lipped; jaw working (lips pressed, cheek tensed)
+- Mouths, each a separate piece: neutral, set firm (his usual); a slight smile; talking "ah"; talking "oh"; talking "ee"; lips pressed; frown; tight-lipped; jaw working (lips pressed, cheek tensed). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart and Charles Willson Peale portraits, which are public domain. Avoid the look and staging of the musical Hamilton and any modern screen likeness. No wooden teeth: that is a myth.
 ```
@@ -326,15 +326,15 @@ Must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart a
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for George Washington, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for George Washington, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: the straightest back at the table, in a buff-and-blue general's coat with a high collar. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: the straightest back at the table, in a buff-and-blue general's coat with a high collar. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Gold epaulettes, left and right, as separate pieces
 - Buff waistcoat as a separate front layer
 - Coat cuffs, left and right, as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart and Charles Willson Peale portraits, which are public domain. Avoid the look and staging of the musical Hamilton and any modern screen likeness. No wooden teeth: that is a myth.
 ```
@@ -342,10 +342,10 @@ Must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart a
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for George Washington, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for George Washington, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -390,17 +390,17 @@ IMPORTANT, must NOT resemble: Homer's Odyssey is public domain, as are Euripides
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Shaggy black hair as a separate piece
 - Shaggy black beard as a separate piece
 - One heavy single brow across the forehead, as a separate piece in 4 poses: neutral, raised, furrowed (angry), worried
 - ONE great eye in the middle of the brow: its empty eye white, and its large iris with pupil, as separate pieces
 - Upper eyelid for the one eye in 4 states: half-closed, narrowed, closed (a very slow blink), wide open
 - Nose in 2 versions: normal, and nostrils flared (sniffing the air)
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - The old burn scar around the eye as a separate overlay piece
 
 Must NOT resemble: Homer's Odyssey is public domain, as are Euripides' Cyclops and Theocritus. Avoid Harryhausen's cyclops from The 7th Voyage of Sinbad (1958): no horn, no goat legs. Nothing like the Marvel X-Men Cyclops either. Homer's giant is a shepherd with a beard, not a monster costume.
@@ -409,13 +409,13 @@ Must NOT resemble: Homer's Odyssey is public domain, as are Euripides' Cyclops a
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: enormous shoulders and chest, filling the frame. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: enormous shoulders and chest, filling the frame. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Sheepskin over the shoulders as a separate layer
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Homer's Odyssey is public domain, as are Euripides' Cyclops and Theocritus. Avoid Harryhausen's cyclops from The 7th Voyage of Sinbad (1958): no horn, no goat legs. Nothing like the Marvel X-Men Cyclops either. Homer's giant is a shepherd with a beard, not a monster costume.
 ```
@@ -423,10 +423,10 @@ Must NOT resemble: Homer's Odyssey is public domain, as are Euripides' Cyclops a
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Huge hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Huge hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -449,7 +449,7 @@ Must NOT resemble: Homer's Odyssey is public domain, as are Euripides' Cyclops a
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Polyphemus the Cyclops, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - His club of green olive wood, leaning upright
@@ -479,17 +479,17 @@ IMPORTANT, must NOT resemble: Historical figure, died 480 BC; Herodotus and Plut
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Long hair as a separate piece
 - Full beard as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose in 2 versions: normal, and nostrils flared (exhaling hard)
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); open disdain (one corner of the mouth pulled down)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); open disdain (one corner of the mouth pulled down). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Historical figure, died 480 BC; Herodotus and Plutarch are public domain. Nothing from the film 300 or its graphic novel: no bare chest, no leather trunks, none of its lines or slogans. Avoid The 300 Spartans (1962) as well. Build from Greek vase painting and the marble warrior bust from Sparta known as 'Leonidas'.
 ```
@@ -497,13 +497,13 @@ Must NOT resemble: Historical figure, died 480 BC; Herodotus and Plutarch are pu
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a bronze breastplate. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a bronze breastplate. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Red cloak: back layer and front edges as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, died 480 BC; Herodotus and Plutarch are public domain. Nothing from the film 300 or its graphic novel: no bare chest, no leather trunks, none of its lines or slogans. Avoid The 300 Spartans (1962) as well. Build from Greek vase painting and the marble warrior bust from Sparta known as 'Leonidas'.
 ```
@@ -511,10 +511,10 @@ Must NOT resemble: Historical figure, died 480 BC; Herodotus and Plutarch are pu
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, heavy and scarred, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, heavy and scarred, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -536,7 +536,7 @@ Must NOT resemble: Historical figure, died 480 BC; Herodotus and Plutarch are pu
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Leonidas, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - The bronze Corinthian helmet with its tall horsehair crest, sitting on the table in side view
@@ -566,7 +566,7 @@ IMPORTANT, must NOT resemble: Greek myth (Hesiod, Pindar, Ovid), all public doma
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Medusa, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Medusa, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - Blank head: a young woman's, pale, with ears and neck, NO eyes, eyebrows, nose or mouth drawn, and a scalp from which the snakes grow
@@ -574,7 +574,7 @@ This sheet: face kit. Parts:
 - Eyes: ordinary, calm and heavy-lidded (NOT glowing) — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Her hair of snakes as 8 separate snakes, each attached at the scalp end: still and upright; in an S-curve; coiled; hissing with jaws open and fangs showing; tongue out tasting the air; two snakes knotted together; one snake nipping another; one snake curled behind the ear
 
 Must NOT resemble: Greek myth (Hesiod, Pindar, Ovid), all public domain; classical art such as the Rondanini Medusa is fair reference. Avoid Harryhausen's Medusa from Clash of the Titans (1981: serpent body, rattle tail, bow) and its 2010 remake, and the Percy Jackson Medusa (sunglasses, garden statues). She has legs and sits in a chair.
@@ -583,12 +583,12 @@ Must NOT resemble: Greek myth (Hesiod, Pindar, Ovid), all public domain; classic
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Medusa, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Medusa, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a simple ancient Greek dress (a chiton), pinned at the shoulders. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a simple ancient Greek dress (a chiton), pinned at the shoulders. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Greek myth (Hesiod, Pindar, Ovid), all public domain; classical art such as the Rondanini Medusa is fair reference. Avoid Harryhausen's Medusa from Clash of the Titans (1981: serpent body, rattle tail, bow) and its 2010 remake, and the Percy Jackson Medusa (sunglasses, garden statues). She has legs and sits in a chair.
 ```
@@ -596,10 +596,10 @@ Must NOT resemble: Greek myth (Hesiod, Pindar, Ovid), all public domain; classic
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Medusa, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Medusa, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -638,7 +638,7 @@ IMPORTANT, must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon an
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - Blank head: a bald dome, with ears and neck, NO eyes, eyebrows, nose or mouth drawn
@@ -647,7 +647,7 @@ This sheet: face kit. Parts:
 - Eyes: wide and bulging — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - A snub nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); smiling as if at a private joke
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); smiling as if at a private joke. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon and Aristophanes are all public domain. Build from the Roman copies of Greek portrait busts. Avoid Bill & Ted's Excellent Adventure and any other modern screen likeness. He is barefoot, but that is below the table.
 ```
@@ -655,12 +655,12 @@ Must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon and Aristopha
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a short, thick body in one plain, shabby cloak. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a short, thick body in one plain, shabby cloak. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon and Aristophanes are all public domain. Build from the Roman copies of Greek portrait busts. Avoid Bill & Ted's Excellent Adventure and any other modern screen likeness. He is barefoot, but that is below the table.
 ```
@@ -668,10 +668,10 @@ Must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon and Aristopha
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -694,7 +694,7 @@ Must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon and Aristopha
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Socrates, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A shallow wine cup, full and empty
@@ -724,17 +724,17 @@ IMPORTANT, must NOT resemble: Homer is public domain. Build from Greek vase pain
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Grizzled curly hair as a separate piece
 - Grizzled curly beard as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - The conical felt sailor's cap of Greek vase painting, as a separate piece
 
 Must NOT resemble: Homer is public domain. Build from Greek vase painting (the pilos cap, the Sirens vase in the British Museum). Avoid every screen Odysseus, including Kirk Douglas's Ulysses (1954) and Christopher Nolan's The Odyssey (2026), the Coen brothers' O Brother, Where Art Thou?, and EPIC: The Musical.
@@ -743,13 +743,13 @@ Must NOT resemble: Homer is public domain. Build from Greek vase painting (the p
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: broad in the chest and shoulders, a sea-stained cloak. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: broad in the chest and shoulders, a sea-stained cloak. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Cloak: back layer and front edges as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Homer is public domain. Build from Greek vase painting (the pilos cap, the Sirens vase in the British Museum). Avoid every screen Odysseus, including Kirk Douglas's Ulysses (1954) and Christopher Nolan's The Odyssey (2026), the Coen brothers' O Brother, Where Art Thou?, and EPIC: The Musical.
 ```
@@ -757,10 +757,10 @@ Must NOT resemble: Homer is public domain. Build from Greek vase painting (the p
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Weathered hands, a heavy gold ring on one finger, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Weathered hands, a heavy gold ring on one finger, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -781,7 +781,7 @@ Must NOT resemble: Homer is public domain. Build from Greek vase painting (the p
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Odysseus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - The heavy gold ring alone
@@ -816,17 +816,17 @@ IMPORTANT, must NOT resemble: Sailors' folklore, in print by 1751 and owned by n
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: grey, drowned skin, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: grey, drowned skin, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Sodden grey beard (plainly hair, never tentacles) as a separate piece
 - Wet hair under the hat as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two PALE, round, unblinking eyes that catch the light, as separate pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); humming under his breath (lips barely parted)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); humming under his breath (lips barely parted). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Broad hat as a separate piece, brim shedding a thin thread of water
 - A dark shadow overlay that covers the upper half of the face under the brim
 
@@ -836,13 +836,13 @@ Must NOT resemble: Sailors' folklore, in print by 1751 and owned by nobody. The 
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: hunched, in a long, waterlogged sea-coat. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: hunched, in a long, waterlogged sea-coat. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Strands of seaweed caught in the folds, 4 separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Sailors' folklore, in print by 1751 and owned by nobody. The famous screen version is Disney's (Pirates of the Caribbean, 2006–07) and is strictly off limits: no tentacle beard, no crab claw, no pipe organ, no heart in a chest, no sea-creature crew, no Flying Dutchman, no dice for souls. Ours has a human face and never raises his voice.
 ```
@@ -850,10 +850,10 @@ Must NOT resemble: Sailors' folklore, in print by 1751 and owned by nobody. The 
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Grey, wet hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Grey, wet hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -875,7 +875,7 @@ Must NOT resemble: Sailors' folklore, in print by 1751 and owned by nobody. The 
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Davy Jones, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - Water droplets, 5 sizes
@@ -908,16 +908,16 @@ IMPORTANT, must NOT resemble: Historical figure, hanged 1701. Build from the tri
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Captain William Kidd, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Captain William Kidd, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Full-bottomed wig: back layer and front curls as separate pieces
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); chewing his lip
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); chewing his lip. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Plain three-cornered hat as a separate piece
 - The whole head turned in three-quarter view, glancing over his shoulder, as one extra piece
 
@@ -927,14 +927,14 @@ Must NOT resemble: Historical figure, hanged 1701. Build from the trial record a
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Captain William Kidd, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Captain William Kidd, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a good broadcloth coat buttoned high. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a good broadcloth coat buttoned high. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Cravat in 2 states: neat, and loosened at the throat
 - The corner of a folded paper peeking from the inside pocket, as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, hanged 1701. Build from the trial record and period portraits of New York merchant captains. Avoid Charles Laughton's Hollywood Kidd (1945 and 1952) and the cartoon buried-treasure buccaneer. He should look like what he always claimed to be: an honest captain with papers.
 ```
@@ -942,10 +942,10 @@ Must NOT resemble: Historical figure, hanged 1701. Build from the trial record a
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Captain William Kidd, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Captain William Kidd, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -987,16 +987,16 @@ IMPORTANT, must NOT resemble: Stevenson's Treasure Island (1883) is public domai
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: big, pale, with ears and neck, NO eyes, eyebrows, nose or mouth drawn
+- Blank head: big, pale, with ears and neck, NO eyes, eyebrows, nose or mouth drawn. Draw it bald: the hair is a separate piece
 - Hair tied back as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Stevenson's Treasure Island (1883) is public domain. Avoid Robert Newton's performance in Disney's 1950 film — his rolling West Country 'Arr!' now owns the pirate voice — and the Muppet, Treasure Planet and Black Sails Silvers. The book gives us enough: tall, pale, smiling, one leg, a crutch, and a parrot.
 ```
@@ -1004,13 +1004,13 @@ Must NOT resemble: Stevenson's Treasure Island (1883) is public domain. Avoid Ro
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: very tall and broad, a cook's apron over a sailor's coat. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: very tall and broad, a cook's apron over a sailor's coat. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - The top of a crutch tucked under one arm, as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Stevenson's Treasure Island (1883) is public domain. Avoid Robert Newton's performance in Disney's 1950 film — his rolling West Country 'Arr!' now owns the pirate voice — and the Muppet, Treasure Planet and Black Sails Silvers. The book gives us enough: tall, pale, smiling, one leg, a crutch, and a parrot.
 ```
@@ -1018,10 +1018,10 @@ Must NOT resemble: Stevenson's Treasure Island (1883) is public domain. Avoid Ro
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Big, easy hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Big, easy hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1043,7 +1043,7 @@ Must NOT resemble: Stevenson's Treasure Island (1883) is public domain. Avoid Ro
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Long John Silver, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - Captain Flint, the parrot, WITHOUT her head: perched upright; leaning sideways (sidling); hunched (preening)
@@ -1075,10 +1075,10 @@ IMPORTANT, must NOT resemble: Historical figure, died 1718. Build from the 1724 
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Hair under the hat as a separate piece
 - The huge black beard as a separate piece, covering most of the lower face
 - Four loose ribbon-tied beard braids as separate pieces, so they can sway
@@ -1086,7 +1086,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: mostly hidden by the beard, so only what shows through it: closed; talking; laughing too loud (wide open); snarling with teeth
+- Mouths, each a separate piece: mostly hidden by the beard, so only what shows through it: closed; talking; laughing too loud (wide open); snarling with teeth. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Broad black hat as a separate piece
 - Slow-match fuses poking from under the hat brim (left and right), each in 3 states: dull, smouldering, glowing bright
 - Curls of smoke as separate pieces, 3 sizes
@@ -1097,13 +1097,13 @@ Must NOT resemble: Historical figure, died 1718. Build from the 1724 General His
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a heavy dark coat. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a heavy dark coat. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Sling of pistols across the chest as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, died 1718. Build from the 1724 General History and its early engravings of him with lit matches under his hat. Avoid Disney's Blackbeard in Pirates of the Caribbean: On Stranger Tides (2011) — no magic sword, no zombie crew — and the television versions in Black Sails and Our Flag Means Death.
 ```
@@ -1111,10 +1111,10 @@ Must NOT resemble: Historical figure, died 1718. Build from the 1724 General His
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, big and scarred, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, big and scarred, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1136,7 +1136,7 @@ Must NOT resemble: Historical figure, died 1718. Build from the 1724 General His
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Blackbeard, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A flintlock pistol, lying flat
@@ -1171,17 +1171,17 @@ IMPORTANT, must NOT resemble: The poem (late 14th c.) is public domain, and so a
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: GREEN skin, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: GREEN skin, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Green hair to the shoulders: back layer and front strands as separate pieces
 - Great bush of green beard as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); a huge booming laugh (head thrown back, mouth wide open)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a huge booming laugh (head thrown back, mouth wide open). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman.
 ```
@@ -1189,13 +1189,13 @@ Must NOT resemble: The poem (late 14th c.) is public domain, and so are old tran
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: enormous, broad as a door, in green clothes worked with gold, NO armour. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: enormous, broad as a door, in green clothes worked with gold, NO armour. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Patches of moss creeping on the sleeve: 3 separate pieces, small to large
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman.
 ```
@@ -1203,10 +1203,10 @@ Must NOT resemble: The poem (late 14th c.) is public domain, and so are old tran
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Huge green hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Huge green hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1227,7 +1227,7 @@ Must NOT resemble: The poem (late 14th c.) is public domain, and so are old tran
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Green Knight, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A holly branch, still
@@ -1259,16 +1259,16 @@ IMPORTANT, must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public d
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - A fall of dark hair in 3 separate positions: falling forward, tossed back, mid-toss
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); a sigh (lips parted, bored)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a sigh (lips parted, bored). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public domain. Avoid T. H. White's ugly, self-loathing Lancelot, the musical Camelot (1960) and its film, the film First Knight (1995), and the BBC's Merlin. The love affair with Guinevere is canon: allude to it with care, and never play it for smut.
 ```
@@ -1276,14 +1276,14 @@ Must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public domain. Avoi
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: polished plate at the shoulders over a bright surcoat. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: polished plate at the shoulders over a bright surcoat. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Left and right shoulder plates as separate pieces
 - Sword belt as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public domain. Avoid T. H. White's ugly, self-loathing Lancelot, the musical Camelot (1960) and its film, the film First Knight (1995), and the BBC's Merlin. The love affair with Guinevere is canon: allude to it with care, and never play it for smut.
 ```
@@ -1291,10 +1291,10 @@ Must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public domain. Avoi
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands: the RIGHT hand in a polished steel gauntlet, the LEFT bare, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist: the RIGHT hand in a polished steel gauntlet, the LEFT bare. Draw every pose below for BOTH hands, since they differ
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1315,7 +1315,7 @@ Must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public domain. Avoi
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Sir Lancelot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A polishing cloth
@@ -1347,17 +1347,17 @@ IMPORTANT, must NOT resemble: Geoffrey of Monmouth (c. 1136) and Malory (1485) a
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Long, wild grey beard as a separate piece
 - Grey hair as a separate piece (for when the hood is down)
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); murmuring a word (lips barely parted)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); murmuring a word (lips barely parted). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Hood of an undyed wool robe, UP: the back of the hood and its front rim as separate pieces
 - The same hood fallen DOWN around the shoulders
 
@@ -1369,12 +1369,12 @@ Must NOT resemble: Geoffrey of Monmouth (c. 1136) and Malory (1485) are centurie
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: lean and tall in a hooded, undyed wool robe. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: lean and tall in a hooded, undyed wool robe. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Note: No pointed hat, no stars, no owl.
 
@@ -1384,10 +1384,10 @@ Must NOT resemble: Geoffrey of Monmouth (c. 1136) and Malory (1485) are centurie
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Old, weathered hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Old, weathered hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1410,7 +1410,7 @@ Must NOT resemble: Geoffrey of Monmouth (c. 1136) and Malory (1485) are centurie
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Merlin, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A rough, knotted staff taller than he is, standing upright
@@ -1444,17 +1444,17 @@ IMPORTANT, must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Greying hair as a separate piece
 - Short greying beard as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Plain gold crown with a visible dent, in 2 angles: sitting straight, and slipped a fraction to one side
 
 Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of copyright. Avoid Monty Python and the Holy Grail, the musical Camelot, Disney's The Sword in the Stone, Boorman's Excalibur (1981), T. H. White and the BBC's Merlin. No coconuts, and no 'once and future king': the Latin is Malory's, but the English phrase is White's title now.
@@ -1463,13 +1463,13 @@ Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of cop
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: broad shoulders in chain mail. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: broad shoulders in chain mail. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Red mantle: back layer (behind the shoulders) and front drape as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of copyright. Avoid Monty Python and the Holy Grail, the musical Camelot, Disney's The Sword in the Stone, Boorman's Excalibur (1981), T. H. White and the BBC's Merlin. No coconuts, and no 'once and future king': the Latin is Malory's, but the English phrase is White's title now.
 ```
@@ -1477,10 +1477,10 @@ Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of cop
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, a king's, weathered, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, a king's, weathered, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1502,7 +1502,7 @@ Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of cop
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for King Arthur, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - Excalibur, sheathed, standing upright, hilt at the top (the whole sword and scabbard)
@@ -1537,7 +1537,7 @@ IMPORTANT, must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Buil
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - Three separate heads — left, middle and right — each on its own thick neck, black and short-coated, heavy in the jaw: the left head angled a little left, the middle facing forward, the right angled a little right. Each head drawn WITHOUT its lower jaw and WITHOUT ears
@@ -1553,7 +1553,7 @@ Must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Gree
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
 - Massive black body and chest with NO heads and NO front legs, sitting upright at the table like a person, cut off at the table line, three neck stumps showing
@@ -1566,10 +1566,10 @@ Must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Gree
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Big front paws with blunt claws (no fingers), each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Big front paws with blunt claws (no fingers), each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: tapping the table (checking)
 - Pose: pushing forward (as if pushing chips; chips NOT drawn)
@@ -1585,7 +1585,7 @@ Must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Gree
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - Three iron collars, each a separate piece sized to one neck
@@ -1616,7 +1616,7 @@ IMPORTANT, must NOT resemble: Historical figure, died 1503; Pinturicchio's portr
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - Blank head: heavy and genial, with ears and neck, NO eyes, eyebrows, nose or mouth drawn
@@ -1624,7 +1624,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - A strong nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); a benevolent smile; murmuring in Latin (lips barely parted)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a benevolent smile; murmuring in Latin (lips barely parted). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - The tall mitre as a separate piece, in 2 angles: straight, and slightly askew
 
 Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is public domain. Avoid the 2011 television series ("The Borgias", "Borgia") and any poison-ring cliché. The jokes stay on his politics and his family, never on the faith. The display name is still an open design question; "the Pope" may yet be renamed.
@@ -1633,13 +1633,13 @@ Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is publ
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: gold-embroidered vestments that swallow the chair, after Pinturicchio's fresco. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: gold-embroidered vestments that swallow the chair, after Pinturicchio's fresco. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Outer vestment as a separate front layer
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is public domain. Avoid the 2011 television series ("The Borgias", "Borgia") and any poison-ring cliché. The jokes stay on his politics and his family, never on the faith. The display name is still an open design question; "the Pope" may yet be renamed.
 ```
@@ -1647,10 +1647,10 @@ Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is publ
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Soft, ringed hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Soft, ringed hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1673,7 +1673,7 @@ Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is publ
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Pope Alexander VI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - The papal ring alone, oversized
@@ -1705,16 +1705,16 @@ IMPORTANT, must NOT resemble: Historical figure, died 71 BC. Write only from Plu
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Cropped hair as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - A nose broken more than once, as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: No gladiator helmet, nothing from the 1960 film or the TV series.
 
@@ -1724,10 +1724,10 @@ Must NOT resemble: Historical figure, died 71 BC. Write only from Plutarch (Life
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: broad, bare shoulders under a rough Thracian cloak. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: broad, bare shoulders under a rough Thracian cloak. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Cloak: back layer and front edges as separate pieces
 - Bare, muscled upper arms, left and right
 - Bare forearms, left and right, each in two angles: lying along the table, and raised; the LEFT wrist carries a pale band of shackle scar
@@ -1740,10 +1740,10 @@ Must NOT resemble: Historical figure, died 71 BC. Write only from Plutarch (Life
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Heavy, scarred hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Heavy, scarred hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1767,7 +1767,7 @@ Must NOT resemble: Historical figure, died 71 BC. Write only from Plutarch (Life
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Spartacus, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - The pale shackle-scar band alone, as an overlay
@@ -1799,16 +1799,16 @@ IMPORTANT, must NOT resemble: Historical figure, died 44 BC. Build from the coin
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Julius Caesar, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Julius Caesar, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Thinning hair over a high forehead as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); a knowing closed smile, like a man counting votes
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a knowing closed smile, like a man counting votes. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Laurel wreath as a separate piece, in 3 angles: straight, worn low at the front, tilted to one side
 
 Must NOT resemble: Historical figure, died 44 BC. Build from the coins of 44 BC, the first Roman coinage to carry a living man's portrait. Avoid every film and television likeness and the Asterix caricature. No "Et tu, Brute?" — that is Shakespeare's line, not the ancient sources'.
@@ -1817,13 +1817,13 @@ Must NOT resemble: Historical figure, died 44 BC. Build from the coins of 44 BC,
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Julius Caesar, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Julius Caesar, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a toga with a broad purple border. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a toga with a broad purple border. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - The toga drape over the left shoulder as a separate front layer
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Historical figure, died 44 BC. Build from the coins of 44 BC, the first Roman coinage to carry a living man's portrait. Avoid every film and television likeness and the Asterix caricature. No "Et tu, Brute?" — that is Shakespeare's line, not the ancient sources'.
 ```
@@ -1831,10 +1831,10 @@ Must NOT resemble: Historical figure, died 44 BC. Build from the coins of 44 BC,
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Julius Caesar, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Julius Caesar, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1880,17 +1880,17 @@ IMPORTANT, must NOT resemble: Carroll's books and Tenniel's illustrations are pu
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Long hair as two separate pieces: the back layer (behind the head) and the front strands
 - Hairband as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes, drawn LARGE and expressive (her face is her tell): two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces, plus a smaller-pupil pair for when her eyes go very wide
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); biting her lower lip; a disapproving little frown, as if the cards had been rude
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); biting her lower lip; a disapproving little frown, as if the cards had been rude. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Carroll's books and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely — its dress, bow, character designs and songs — and the 2010 Burton film. Keep the Cheshire Cat out of this table; he is saved for later.
 ```
@@ -1898,13 +1898,13 @@ Must NOT resemble: Carroll's books and Tenniel's illustrations are public domain
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a full-skirted dress in deep Victorian blue (NOT powder blue) under a white pinafore. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a full-skirted dress in deep Victorian blue (NOT powder blue) under a white pinafore. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Pinafore bib as a separate front layer
 - Upper arms in short puffed sleeves, left and right
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Carroll's books and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely — its dress, bow, character designs and songs — and the 2010 Burton film. Keep the Cheshire Cat out of this table; he is saved for later.
 ```
@@ -1912,10 +1912,10 @@ Must NOT resemble: Carroll's books and Tenniel's illustrations are public domain
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Small girl's hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Small girl's hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -1936,7 +1936,7 @@ Must NOT resemble: Carroll's books and Tenniel's illustrations are public domain
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Alice, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - The little glass bottle with a paper label reading DRINK ME, standing upright
@@ -1967,16 +1967,16 @@ IMPORTANT, must NOT resemble: Hugo's novel (1862) and its nineteenth-century ill
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Enormous side-whiskers climbing toward the nose: left and right as separate pieces
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 3 states: narrowed, closed (blinking), wide open (the unblinking stare)
 - A flat nose with deep nostrils as a separate piece
-- Mouths, each a separate piece: neutral closed (his usual); a thin, tight line; talking "ah"; talking "oh"; lips pressed; a slight frown; teeth clenched
+- Mouths, each a separate piece: neutral closed (his usual); a thin, tight line; talking "ah"; talking "oh"; lips pressed; a slight frown; teeth clenched. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Hat with the brim worn low, as a separate piece
 
 Must NOT resemble: Hugo's novel (1862) and its nineteenth-century illustrations are public domain. Nothing from the stage musical or its films: no lyrics, no "Stars", no prisoner-number chant, no costume from any production. Hugo's text only.
@@ -1985,14 +1985,14 @@ Must NOT resemble: Hugo's novel (1862) and its nineteenth-century illustrations 
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a long greatcoat. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a long greatcoat. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - The greatcoat's high collar in 2 states: buttoned to the chin, and top buttons undone
 - The stock (neckcloth) as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Hugo's novel (1862) and its nineteenth-century illustrations are public domain. Nothing from the stage musical or its films: no lyrics, no "Stars", no prisoner-number chant, no costume from any production. Hugo's text only.
 ```
@@ -2000,10 +2000,10 @@ Must NOT resemble: Hugo's novel (1862) and its nineteenth-century illustrations 
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2026,7 +2026,7 @@ Must NOT resemble: Hugo's novel (1862) and its nineteenth-century illustrations 
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Inspector Javert, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A small black notebook, closed and open
@@ -2058,16 +2058,16 @@ IMPORTANT, must NOT resemble: Verne's novels (1870, 1875) and their Hetzel engra
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Full dark beard as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: set rather wide apart — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); humming a fugue (lips closed, relaxed)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); humming a fugue (lips closed, relaxed). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Flat sea-captain's cap as a separate piece
 
 Note: Nothing from Disney's 1954 film.
@@ -2078,12 +2078,12 @@ Must NOT resemble: Verne's novels (1870, 1875) and their Hetzel engravings are p
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: tall and broad-shouldered in severe dark clothes, after the Neuville and Riou engravings. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: tall and broad-shouldered in severe dark clothes, after the Neuville and Riou engravings. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Note: Nothing from Disney's 1954 film.
 
@@ -2093,10 +2093,10 @@ Must NOT resemble: Verne's novels (1870, 1875) and their Hetzel engravings are p
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2121,7 +2121,7 @@ Must NOT resemble: Verne's novels (1870, 1875) and their Hetzel engravings are p
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Captain Nemo, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A great white pearl
@@ -2157,16 +2157,16 @@ IMPORTANT, must NOT resemble: Every Holmes story is now public domain in the US.
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: long, thin, high-foreheaded, with ears and neck, NO eyes, eyebrows, nose or mouth drawn
+- Blank head: long, thin, high-foreheaded, with ears and neck, NO eyes, eyebrows, nose or mouth drawn. Draw it bald: the hair is a separate piece
 - Dark hair, swept back, as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - A hawk nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); gripping a pipe stem in the teeth (pipe NOT drawn)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); gripping a pipe stem in the teeth (pipe NOT drawn). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: No deerstalker, no calabash pipe, nothing from modern screen versions.
 
@@ -2176,12 +2176,12 @@ Must NOT resemble: Every Holmes story is now public domain in the US. Work from 
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: very thin, in a dark frock coat, after Sidney Paget. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: very thin, in a dark frock coat, after Sidney Paget. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Note: No deerstalker, no calabash pipe, nothing from modern screen versions.
 
@@ -2191,10 +2191,10 @@ Must NOT resemble: Every Holmes story is now public domain in the US. Work from 
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Long, thin hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Long, thin hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2219,7 +2219,7 @@ Must NOT resemble: Every Holmes story is now public domain in the US. Work from 
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Sherlock Holmes, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A straight black clay pipe (NOT a curved calabash)
@@ -2257,7 +2257,7 @@ IMPORTANT, must NOT resemble: Irving's story (1820) is public domain. Disney's 1
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Headless Horseman, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Headless Horseman, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - NO head. The top of a high coat collar, open, dark inside, with no neck visible
@@ -2272,10 +2272,10 @@ Must NOT resemble: Irving's story (1820) is public domain. Disney's 1949 cartoon
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Headless Horseman, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Headless Horseman, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: huge and square-shouldered, a Hessian trooper's coat under a heavy riding cloak. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: huge and square-shouldered, a Hessian trooper's coat under a heavy riding cloak. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Riding cloak: back layer and front edges as separate pieces
 - Cavalry sword in its scabbard as a separate piece
 - Upper arms in the coat sleeve, left and right
@@ -2287,10 +2287,10 @@ Must NOT resemble: Irving's story (1820) is public domain. Disney's 1949 cartoon
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Headless Horseman, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Headless Horseman, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Leather riding gauntlets, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Leather riding gauntlets, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2331,16 +2331,16 @@ IMPORTANT, must NOT resemble: Shelley's novel (1818) is public domain. Universal
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: yellow skin stretched thin over muscle, with ears and neck, NO eyes, eyebrows, nose or mouth drawn
+- Blank head: yellow skin stretched thin over muscle, with ears and neck, NO eyes, eyebrows, nose or mouth drawn. Draw it bald: the hair is a separate piece
 - Long, lustrous black hair: back layer and front strands as separate pieces
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: watery, nearly the colour of their sockets — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); lips moving while reading; all with straight black lips
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); lips moving while reading; all with straight black lips. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - The whole head turned slightly away, flinching (from firelight), as one extra piece
 
 Note: Nothing from Universal's 1931 design: no neck bolts, flat head, green skin, stitches or forehead scar.
@@ -2351,12 +2351,12 @@ Must NOT resemble: Shelley's novel (1818) is public domain. Universal's 1931 mak
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: enormous, eight feet tall, in a good coat that was never cut for him (sleeves too short). Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: enormous, eight feet tall, in a good coat that was never cut for him (sleeves too short). Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Note: Nothing from Universal's 1931 design: no neck bolts, flat head, green skin, stitches or forehead scar.
 
@@ -2366,10 +2366,10 @@ Must NOT resemble: Shelley's novel (1818) is public domain. Universal's 1931 mak
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Very large hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Very large hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2395,7 +2395,7 @@ Must NOT resemble: Shelley's novel (1818) is public domain. Universal's 1931 mak
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Frankenstein's Monster, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A small battered book: closed, open, and lying face down
@@ -2427,16 +2427,16 @@ IMPORTANT, must NOT resemble: Stoker's Dracula (1897) is public domain. Build hi
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: clean-shaven, square-jawed, broad forehead, with ears and neck, NO eyes, eyebrows, nose or mouth drawn
+- Blank head: clean-shaven, square-jawed, broad forehead, with ears and neck, NO eyes, eyebrows, nose or mouth drawn. Draw it bald: the hair is a separate piece
 - Reddish hair swept back as a separate piece
 - Bushy eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (frowning), worried
 - Eyes: wide-set and blue — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); muttering (lips barely parted)
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); muttering (lips barely parted). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Spectacles as a separate piece
 
 Must NOT resemble: Stoker's Dracula (1897) is public domain. Build him from the novel: clean-shaven, reddish hair, bushy brows, a professor's black coat. Nothing from the 2004 Van Helsing film: no broad-brimmed hat, long leather coat, crossbow or gadgets, and no likeness of any actor who has played him. His Dutch English is used lightly, never as a comic accent.
@@ -2445,13 +2445,13 @@ Must NOT resemble: Stoker's Dracula (1897) is public domain. Build him from the 
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: square and solid, a deep chest in a plain black professor's frock coat. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: square and solid, a deep chest in a plain black professor's frock coat. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - A small crucifix at the collar as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Stoker's Dracula (1897) is public domain. Build him from the novel: clean-shaven, reddish hair, bushy brows, a professor's black coat. Nothing from the 2004 Van Helsing film: no broad-brimmed hat, long leather coat, crossbow or gadgets, and no likeness of any actor who has played him. His Dutch English is used lightly, never as a comic accent.
 ```
@@ -2459,10 +2459,10 @@ Must NOT resemble: Stoker's Dracula (1897) is public domain. Build him from the 
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2484,7 +2484,7 @@ Must NOT resemble: Stoker's Dracula (1897) is public domain. Build him from the 
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Abraham Van Helsing, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A big white handkerchief
@@ -2517,7 +2517,7 @@ IMPORTANT, must NOT resemble: The werewolf is European folklore, told from Petro
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - A real wolf's head (long muzzle) on a man's neck, grey-brown fur, drawn WITHOUT its ears, its lower jaw or its eyes
@@ -2536,12 +2536,12 @@ Must NOT resemble: The werewolf is European folklore, told from Petronius onward
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a big man's frame in the remains of a good shirt and waistcoat split at the seams, fur showing through. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a big man's frame in the remains of a good shirt and waistcoat split at the seams, fur showing through. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Note: Not a hairy man's face: that is the Universal film's design. "The Wolf Man" as a name is still an open decision.
 
@@ -2551,10 +2551,10 @@ Must NOT resemble: The werewolf is European folklore, told from Petronius onward
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Furred hands with claws, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Furred hands with claws, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2577,7 +2577,7 @@ Must NOT resemble: The werewolf is European folklore, told from Petronius onward
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Wolf Man, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - Tufts of shed fur, 3 pieces
@@ -2610,17 +2610,17 @@ IMPORTANT, must NOT resemble: Stoker's novel (1897) is public domain. Bela Lugos
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: extreme pallor, pointed ears and neck, NO eyes, eyebrows, nose or mouth drawn on it (skip if you are keeping the existing parts)
+- Blank head: extreme pallor, pointed ears and neck, NO eyes, eyebrows, nose or mouth drawn on it (skip if you are keeping the existing parts). Draw it bald: the hair is a separate piece
 - Hair as a separate piece
 - The long white moustache drooping past the chin as a separate piece
 - Massive eyebrows that almost meet over the nose: left and right as separate pieces, each in 4 poses — neutral, ONE raised high, furrowed, worried
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Thin, high-bridged nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); smiling without showing his teeth; a losing face (lips drawn thin, jaw set); all with very red lips, the talking mouths showing sharp white teeth
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); smiling without showing his teeth; a losing face (lips drawn thin, jaw set); all with very red lips, the talking mouths showing sharp white teeth. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: Parts already exist in art-tools/dracula_parts. Gaps: the chalice, a talking mouth set, a losing face, the one-brow-raised pose and separate pupils. If you are keeping the existing style, ask only for those; if the house style changes, redo all four sheets.
 
@@ -2630,13 +2630,13 @@ Must NOT resemble: Stoker's novel (1897) is public domain. Bela Lugosi's likenes
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: tall and thin, in black without a speck of colour. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: tall and thin, in black without a speck of colour. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Cape: back layer and front edges as separate pieces
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Note: Parts already exist in art-tools/dracula_parts. Gaps: the chalice, a talking mouth set, a losing face, the one-brow-raised pose and separate pupils. If you are keeping the existing style, ask only for those; if the house style changes, redo all four sheets.
 
@@ -2646,10 +2646,10 @@ Must NOT resemble: Stoker's novel (1897) is public domain. Bela Lugosi's likenes
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Pale, long-fingered hands with long nails, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Pale, long-fingered hands with long nails, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2674,7 +2674,7 @@ Must NOT resemble: Stoker's novel (1897) is public domain. Bela Lugosi's likenes
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Count Dracula, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A dark, heavy chalice, upright
@@ -2712,16 +2712,16 @@ IMPORTANT, must NOT resemble: An archetype, not a person: the lost explorer. She
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Short practical hair as a separate piece
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); a grin she is trying to hide (lips pressed over a smile); yawning
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a grin she is trying to hide (lips pressed over a smile); yawning. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: No flags, no agency patches, no real insignia anywhere.
 
@@ -2731,10 +2731,10 @@ Must NOT resemble: An archetype, not a person: the lost explorer. She must not r
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a bulky, scuffed pressure suit with its metal neck ring showing (helmet OFF). Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a bulky, scuffed pressure suit with its metal neck ring showing (helmet OFF). Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - A small photograph tucked into the sleeve, as a separate piece
 - Bulky suit upper arms, left and right
 - Bulky suit forearms with metal wrist rings, left and right, each in two angles: lying along the table, and raised
@@ -2747,10 +2747,10 @@ Must NOT resemble: An archetype, not a person: the lost explorer. She must not r
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Bare hands (suit gloves off), each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Bare hands (suit gloves off), each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2773,7 +2773,7 @@ Must NOT resemble: An archetype, not a person: the lost explorer. She must not r
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Astronaut, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - The round suit helmet sitting on the table, visor reflecting light
@@ -2808,7 +2808,7 @@ IMPORTANT, must NOT resemble: The grey is modern folklore, built by many retelli
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Grey, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Grey, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - A huge smooth grey head on a thin neck, shaped like an upturned teardrop, WITHOUT eyes or mouth drawn
@@ -2825,10 +2825,10 @@ Must NOT resemble: The grey is modern folklore, built by many retellings and own
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Grey, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Grey, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: narrow grey shoulders and a thin torso, no clothes. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: narrow grey shoulders and a thin torso, no clothes. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - Thin grey upper arms, left and right
 - Thin grey forearms, left and right, each in two angles: lying along the table, and raised
 
@@ -2840,10 +2840,10 @@ Must NOT resemble: The grey is modern folklore, built by many retellings and own
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Grey, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Grey, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Long thin grey fingers, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Long thin grey fingers, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -2886,7 +2886,7 @@ IMPORTANT, must NOT resemble: Wells's novel (1898) is public domain in the U.S. 
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Martian, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Martian, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - One great rounded head that is its whole body, oily grey-brown skin, WITHOUT eyes or mouth drawn
@@ -2903,7 +2903,7 @@ Must NOT resemble: Wells's novel (1898) is public domain in the U.S. and the U.K
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Martian, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Martian, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
 - A small three-legged brass seat, a cousin of the fighting-machines: the seat's back (behind the head) and front rim as separate pieces
@@ -2916,7 +2916,7 @@ Must NOT resemble: Wells's novel (1898) is public domain in the U.S. and the U.K
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Martian, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Martian, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
 - Two bunches of eight whip-thin tentacles instead of arms and hands: draw single tentacles as separate pieces, one in each pose below
@@ -2957,7 +2957,7 @@ IMPORTANT, must NOT resemble: The tin robot is an archetype of pulp covers, toys
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - A square steel-and-brass head WITHOUT eyes or mouth, front view
@@ -2974,10 +2974,10 @@ Must NOT resemble: The tin robot is an archetype of pulp covers, toys and world'
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a riveted barrel of a body in brushed steel and brass, worn bright at the joints, with an empty round socket in the chest. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a riveted barrel of a body in brushed steel and brass, worn bright at the joints, with an empty round socket in the chest. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - The round chest lamp in 3 states: lit, flickering (half-lit), dark
 - For the AI (it takes this body later): a chest-sized iris lens that fits the same socket — brass rim, overlapping iris blades, a pale COOL WHITE light behind — in 4 apertures: wide, half, narrow, closed. Never red
 - Jointed metal upper arms, left and right
@@ -2991,10 +2991,10 @@ Must NOT resemble: The tin robot is an archetype of pulp covers, toys and world'
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Jointed metal hands with four fingers, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Jointed metal hands with four fingers, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -3015,7 +3015,7 @@ Must NOT resemble: The tin robot is an archetype of pulp covers, toys and world'
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The Robot, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - Puffs of steam, 3 sizes
@@ -3044,7 +3044,7 @@ Stylised 2D illustration for a poker video game, painterly but clean with flat r
 **Step 2, Sheet 1 — The lens:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for The AI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for The AI, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: the lens. Parts:
 - A single lens set in a ceiling: its brass rim as a separate piece
@@ -3084,16 +3084,16 @@ IMPORTANT, must NOT resemble: Norse myth as the Poetic Edda and Snorri's Prose E
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece
 - Fair hair worn loose: back layer and front strands as separate pieces
 - Eyebrows: left and right as separate pieces, each in 4 poses — neutral, raised, furrowed (angry), worried (inner ends raised)
 - Eyes: two empty eye whites; irises with pupils as separate pieces in TWO colours — his normal colour, and a strange, different colour for a moment
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); frown; tight-lipped; nervous (pursed, pulled to one side); angry grimace (teeth clenched); a smile using only half his mouth. EVERY mouth has a row of pale, old stitch-scars across both lips
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a smile using only half his mouth. EVERY mouth has a row of pale, old stitch-scars across both lips. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: Hidden guest: a spoiler. Keep his art out of anything public. No crown, no helmet, no horns, no green-and-gold, no slicked black hair.
 
@@ -3103,14 +3103,14 @@ Must NOT resemble: Norse myth as the Poetic Edda and Snorri's Prose Edda record 
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: a plain wool tunic in ash-grey and rust, lean. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: a plain wool tunic in ash-grey and rust, lean. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - A short cloak pinned at one shoulder, as a separate layer
 - The cloak pin (brooch) as a separate piece
 - Upper arms (shoulder to elbow), left and right, as separate pieces, in the sleeve
-- Forearms (elbow to wrist), left and right, each in two angles: lying along the table, and raised
+- Forearms (elbow to wrist, NO hand), left and right, each in two angles: lying along the table, and raised
 
 Note: Hidden guest: a spoiler. Keep his art out of anything public. No crown, no helmet, no horns, no green-and-gold, no slicked black hair.
 
@@ -3120,10 +3120,10 @@ Must NOT resemble: Norse myth as the Poetic Edda and Snorri's Prose Edda record 
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Restless hands, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Restless hands, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: flat on the table, relaxed
 - Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
 - Pose: knuckles rapping the table (checking)
@@ -3147,7 +3147,7 @@ Must NOT resemble: Norse myth as the Poetic Edda and Snorri's Prose Edda record 
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Loki, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - A small golden game piece from an old Norse board game
@@ -3185,7 +3185,7 @@ IMPORTANT, must NOT resemble: Folklore: the personified Death of late-medieval E
 **Step 2, Sheet 1 — Face kit:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Death, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Death, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
 - A plain skull, calm and tired, drawn like a woodcut: NO glowing eyes, NO grin or leer. The cranium WITHOUT the lower jaw, as one piece
@@ -3201,10 +3201,10 @@ Must NOT resemble: Folklore: the personified Death of late-medieval Europe — d
 **Step 2, Sheet 2 — Body and arms:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Death, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Death, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: tall and narrow, in a grey burial shroud worn as a cloak (NOT a black monk's robe), tired posture, leaning forward on the forearms. Front view, seated, cut off straight at the table line, neck stump showing
+- Torso with NO head and NO arms: tall and narrow, in a grey burial shroud worn as a cloak (NOT a black monk's robe), tired posture, leaning forward on the forearms. Front view, seated, cut off straight at the table line, neck stump showing. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
 - The shroud's front drape as a separate layer
 - Upper arms in shroud sleeves, left and right
 - Forearms in shroud sleeves, left and right, each in two angles: resting on the table, and raised
@@ -3217,10 +3217,10 @@ Must NOT resemble: Folklore: the personified Death of late-medieval Europe — d
 **Step 2, Sheet 3 — Hands:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Death, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Death, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: hands. Parts:
-- Long bone hands (skeleton), elegant and unhurried, each cut off cleanly at the wrist or cuff. Draw every pose below for BOTH the left and the right hand
+- Long bone hands (skeleton), elegant and unhurried, each cut off cleanly at the wrist or cuff. Draw each pose ONCE, as the right hand: the game mirrors it for the left
 - Pose: holding a squared deck of cards
 - Pose: riffle-shuffling: the left and right hands each holding half the deck, bent
 - Pose: cutting the deck
@@ -3239,7 +3239,7 @@ Must NOT resemble: Folklore: the personified Death of late-medieval Europe — d
 **Step 2, Sheet 4 — Props and tell pieces:**
 
 ```
-Puppet parts sheet for 2D animation rigging, for Death, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference.
+Puppet parts sheet for 2D animation rigging, for Death, the character in the attached image. Match the attached image exactly: same face, proportions, colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
 - The deck, squared, face down
