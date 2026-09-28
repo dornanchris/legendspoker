@@ -52,7 +52,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a mouth gripping a cigarette holder in the teeth, smiling around it (holder NOT drawn). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a mouth gripping a cigarette holder in the teeth, smiling around it (holder NOT drawn). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Pince-nez with its cord, as a separate piece
 
 Must NOT resemble: Historical figure, died 1945; US government photographs of him are public domain. Build from 1930s–40s press photographs. Avoid any modern screen or stage likeness, including the FDR of the musical Annie. Do not stage or joke about the wheelchair: he kept it out of frame all his life, and so do we.
@@ -142,7 +142,7 @@ This sheet: face kit. Parts:
 - Eyes: deep-set, tired — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a small, restrained smile. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a small, restrained smile. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 ```
@@ -230,7 +230,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); the enormous grin, all teeth (these must read small, so 3 versions: grin, bigger grin, biggest grin). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); the enormous grin, all teeth (these must read small, so 3 versions: grin, bigger grin, biggest grin). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Round steel-rimmed spectacles as a separate piece
 
 Must NOT resemble: Historical figure, died 1919; period photographs are public domain. Build from photographs and the 1898 Rough Rider uniform. Avoid the Night at the Museum portrayal (horseback, waxwork) and any modern screen likeness. No teddy bears.
@@ -318,7 +318,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: neutral, set firm (his usual); a slight smile; talking "ah"; talking "oh"; talking "ee"; lips pressed; frown; tight-lipped; jaw working (lips pressed, cheek tensed). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: neutral, set firm (his usual); a slight smile; talking "ah"; talking "oh"; talking "ee"; lips pressed; frown; tight-lipped; jaw working (lips pressed, cheek tensed). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart and Charles Willson Peale portraits, which are public domain. Avoid the look and staging of the musical Hamilton and any modern screen likeness. No wooden teeth: that is a myth.
 ```
@@ -400,7 +400,7 @@ This sheet: face kit. Parts:
 - ONE great eye in the middle of the brow: its empty eye white, and its large iris with pupil, as separate pieces
 - Upper eyelid for the one eye in 4 states: half-closed, narrowed, closed (a very slow blink), wide open
 - Nose in 2 versions: normal, and nostrils flared (sniffing the air)
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - The old burn scar around the eye as a separate overlay piece
 
 Must NOT resemble: Homer's Odyssey is public domain, as are Euripides' Cyclops and Theocritus. Avoid Harryhausen's cyclops from The 7th Voyage of Sinbad (1958): no horn, no goat legs. Nothing like the Marvel X-Men Cyclops either. Homer's giant is a shepherd with a beard, not a monster costume.
@@ -489,7 +489,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose in 2 versions: normal, and nostrils flared (exhaling hard)
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); open disdain (one corner of the mouth pulled down). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); open disdain (one corner of the mouth pulled down). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Historical figure, died 480 BC; Herodotus and Plutarch are public domain. Nothing from the film 300 or its graphic novel: no bare chest, no leather trunks, none of its lines or slogans. Avoid The 300 Spartans (1962) as well. Build from Greek vase painting and the marble warrior bust from Sparta known as 'Leonidas'.
 ```
@@ -574,7 +574,7 @@ This sheet: face kit. Parts:
 - Eyes: ordinary, calm and heavy-lidded (NOT glowing) — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Her hair of snakes as 8 separate snakes, each attached at the scalp end: still and upright; in an S-curve; coiled; hissing with jaws open and fangs showing; tongue out tasting the air; two snakes knotted together; one snake nipping another; one snake curled behind the ear
 
 Must NOT resemble: Greek myth (Hesiod, Pindar, Ovid), all public domain; classical art such as the Rondanini Medusa is fair reference. Avoid Harryhausen's Medusa from Clash of the Titans (1981: serpent body, rattle tail, bow) and its 2010 remake, and the Percy Jackson Medusa (sunglasses, garden statues). She has legs and sits in a chair.
@@ -647,7 +647,7 @@ This sheet: face kit. Parts:
 - Eyes: wide and bulging — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - A snub nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); smiling as if at a private joke. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); smiling as if at a private joke. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Historical figure, died 399 BC; Plato, Xenophon and Aristophanes are all public domain. Build from the Roman copies of Greek portrait busts. Avoid Bill & Ted's Excellent Adventure and any other modern screen likeness. He is barefoot, but that is below the table.
 ```
@@ -734,7 +734,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - The conical felt sailor's cap of Greek vase painting, as a separate piece
 
 Must NOT resemble: Homer is public domain. Build from Greek vase painting (the pilos cap, the Sirens vase in the British Museum). Avoid every screen Odysseus, including Kirk Douglas's Ulysses (1954) and Christopher Nolan's The Odyssey (2026), the Coen brothers' O Brother, Where Art Thou?, and EPIC: The Musical.
@@ -826,7 +826,7 @@ This sheet: face kit. Parts:
 - Eyes: two PALE, round, unblinking eyes that catch the light, as separate pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); humming under his breath (lips barely parted). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); humming under his breath (lips barely parted). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Broad hat as a separate piece, brim shedding a thin thread of water
 - A dark shadow overlay that covers the upper half of the face under the brim
 
@@ -917,7 +917,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); chewing his lip. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); chewing his lip. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Plain three-cornered hat as a separate piece
 - The whole head turned in three-quarter view, glancing over his shoulder, as one extra piece
 
@@ -996,7 +996,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Stevenson's Treasure Island (1883) is public domain. Avoid Robert Newton's performance in Disney's 1950 film — his rolling West Country 'Arr!' now owns the pirate voice — and the Muppet, Treasure Planet and Black Sails Silvers. The book gives us enough: tall, pale, smiling, one leg, a crutch, and a parrot.
 ```
@@ -1086,7 +1086,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: mostly hidden by the beard, so only what shows through it: closed; talking; laughing too loud (wide open); snarling with teeth. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: mostly hidden by the beard, so only what shows through it: closed; talking; laughing too loud (wide open); snarling with teeth. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Broad black hat as a separate piece
 - Slow-match fuses poking from under the hat brim (left and right), each in 3 states: dull, smouldering, glowing bright
 - Curls of smoke as separate pieces, 3 sizes
@@ -1181,7 +1181,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a huge booming laugh (head thrown back, mouth wide open). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a huge booming laugh (head thrown back, mouth wide open). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman.
 ```
@@ -1268,7 +1268,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a sigh (lips parted, bored). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a sigh (lips parted, bored). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Chrétien (c. 1180) and Malory (1485) are public domain. Avoid T. H. White's ugly, self-loathing Lancelot, the musical Camelot (1960) and its film, the film First Knight (1995), and the BBC's Merlin. The love affair with Guinevere is canon: allude to it with care, and never play it for smut.
 ```
@@ -1357,7 +1357,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); murmuring a word (lips barely parted). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); murmuring a word (lips barely parted). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Hood of an undyed wool robe, UP: the back of the hood and its front rim as separate pieces
 - The same hood fallen DOWN around the shoulders
 
@@ -1454,7 +1454,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Plain gold crown with a visible dent, in 2 angles: sitting straight, and slipped a fraction to one side
 
 Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of copyright. Avoid Monty Python and the Holy Grail, the musical Camelot, Disney's The Sword in the Stone, Boorman's Excalibur (1981), T. H. White and the BBC's Merlin. No coconuts, and no 'once and future king': the Latin is Malory's, but the English phrase is White's title now.
@@ -1624,7 +1624,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - A strong nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a benevolent smile; murmuring in Latin (lips barely parted). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a benevolent smile; murmuring in Latin (lips barely parted). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - The tall mitre as a separate piece, in 2 angles: straight, and slightly askew
 
 Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is public domain. Avoid the 2011 television series ("The Borgias", "Borgia") and any poison-ring cliché. The jokes stay on his politics and his family, never on the faith. The display name is still an open design question; "the Pope" may yet be renamed.
@@ -1714,7 +1714,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - A nose broken more than once, as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: No gladiator helmet, nothing from the 1960 film or the TV series.
 
@@ -1808,7 +1808,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a knowing closed smile, like a man counting votes. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a knowing closed smile, like a man counting votes. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Laurel wreath as a separate piece, in 3 angles: straight, worn low at the front, tilted to one side
 
 Must NOT resemble: Historical figure, died 44 BC. Build from the coins of 44 BC, the first Roman coinage to carry a living man's portrait. Avoid every film and television likeness and the Asterix caricature. No "Et tu, Brute?" — that is Shakespeare's line, not the ancient sources'.
@@ -1890,7 +1890,7 @@ This sheet: face kit. Parts:
 - Eyes, drawn LARGE and expressive (her face is her tell): two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces, plus a smaller-pupil pair for when her eyes go very wide
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); biting her lower lip; a disapproving little frown, as if the cards had been rude. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); biting her lower lip; a disapproving little frown, as if the cards had been rude. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Carroll's books and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely — its dress, bow, character designs and songs — and the 2010 Burton film. Keep the Cheshire Cat out of this table; he is saved for later.
 ```
@@ -1976,7 +1976,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 3 states: narrowed, closed (blinking), wide open (the unblinking stare)
 - A flat nose with deep nostrils as a separate piece
-- Mouths, each a separate piece: neutral closed (his usual); a thin, tight line; talking "ah"; talking "oh"; lips pressed; a slight frown; teeth clenched. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: neutral closed (his usual); a thin, tight line; talking "ah"; talking "oh"; lips pressed; a slight frown; teeth clenched. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Hat with the brim worn low, as a separate piece
 
 Must NOT resemble: Hugo's novel (1862) and its nineteenth-century illustrations are public domain. Nothing from the stage musical or its films: no lyrics, no "Stars", no prisoner-number chant, no costume from any production. Hugo's text only.
@@ -2067,7 +2067,7 @@ This sheet: face kit. Parts:
 - Eyes: set rather wide apart — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); humming a fugue (lips closed, relaxed). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); humming a fugue (lips closed, relaxed). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Flat sea-captain's cap as a separate piece
 
 Note: Nothing from Disney's 1954 film.
@@ -2166,7 +2166,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - A hawk nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); gripping a pipe stem in the teeth (pipe NOT drawn). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); gripping a pipe stem in the teeth (pipe NOT drawn). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: No deerstalker, no calabash pipe, nothing from modern screen versions.
 
@@ -2340,7 +2340,7 @@ This sheet: face kit. Parts:
 - Eyes: watery, nearly the colour of their sockets — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); lips moving while reading; all with straight black lips. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); lips moving while reading; all with straight black lips. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - The whole head turned slightly away, flinching (from firelight), as one extra piece
 
 Note: Nothing from Universal's 1931 design: no neck bolts, flat head, green skin, stitches or forehead scar.
@@ -2436,7 +2436,7 @@ This sheet: face kit. Parts:
 - Eyes: wide-set and blue — two empty eye whites and two separate irises with pupils
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); muttering (lips barely parted). Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); muttering (lips barely parted). Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - Spectacles as a separate piece
 
 Must NOT resemble: Stoker's Dracula (1897) is public domain. Build him from the novel: clean-shaven, reddish hair, bushy brows, a professor's black coat. Nothing from the 2004 Van Helsing film: no broad-brimmed hat, long leather coat, crossbow or gadgets, and no likeness of any actor who has played him. His Dutch English is used lightly, never as a comic accent.
@@ -2620,7 +2620,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Thin, high-bridged nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); smiling without showing his teeth; a losing face (lips drawn thin, jaw set); all with very red lips, the talking mouths showing sharp white teeth. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); smiling without showing his teeth; a losing face (lips drawn thin, jaw set); all with very red lips, the talking mouths showing sharp white teeth. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: Parts already exist in art-tools/dracula_parts. Gaps: the chalice, a talking mouth set, a losing face, the one-brow-raised pose and separate pupils. If you are keeping the existing style, ask only for those; if the house style changes, redo all four sheets.
 
@@ -2721,7 +2721,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites (left and right) with no iris; two irises with pupils as separate round pieces
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a grin she is trying to hide (lips pressed over a smile); yawning. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a grin she is trying to hide (lips pressed over a smile); yawning. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: No flags, no agency patches, no real insignia anywhere.
 
@@ -3093,7 +3093,7 @@ This sheet: face kit. Parts:
 - Eyes: two empty eye whites; irises with pupils as separate pieces in TWO colours — his normal colour, and a strange, different colour for a moment
 - Upper eyelids for each eye in 4 states: half-closed, narrowed (squinting), closed (blinking), wide open
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a smile using only half his mouth. EVERY mouth has a row of pale, old stitch-scars across both lips. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a smile using only half his mouth. EVERY mouth has a row of pale, old stitch-scars across both lips. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Note: Hidden guest: a spoiler. Keep his art out of anything public. No crown, no helmet, no horns, no green-and-gold, no slicked black hair.
 
