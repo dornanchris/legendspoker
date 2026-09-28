@@ -1,0 +1,122 @@
+{
+  "source": "fdr_props.png",
+  "canvas": {
+    "w": 690,
+    "h": 478
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "fdr_props_01.png",
+      "label": "cigarette holder",
+      "x": 3,
+      "y": 21,
+      "w": 222,
+      "h": 46,
+      "pivot": [
+        111.0,
+        23.0
+      ],
+      "area": 2554
+    },
+    {
+      "index": 2,
+      "file": "fdr_props_02.png",
+      "label": "cigarette holder",
+      "x": 233,
+      "y": 10,
+      "w": 168,
+      "h": 28,
+      "pivot": [
+        84.0,
+        14.0
+      ],
+      "area": 1738
+    },
+    {
+      "index": 3,
+      "file": "fdr_props_03.png",
+      "label": "cigarette holder, lit, with smoke",
+      "x": 434,
+      "y": 12,
+      "w": 219,
+      "h": 162,
+      "pivot": [
+        109.5,
+        81.0
+      ],
+      "area": 4951
+    },
+    {
+      "index": 4,
+      "file": "fdr_props_04.png",
+      "label": "cigarette holder",
+      "x": 7,
+      "y": 61,
+      "w": 383,
+      "h": 68,
+      "pivot": [
+        191.5,
+        34.0
+      ],
+      "area": 5043
+    },
+    {
+      "index": 5,
+      "file": "fdr_props_05.png",
+      "label": "cigarette holder",
+      "x": 507,
+      "y": 67,
+      "w": 159,
+      "h": 117,
+      "pivot": [
+        79.5,
+        58.5
+      ],
+      "area": 2093
+    },
+    {
+      "index": 6,
+      "file": "fdr_props_06.png",
+      "label": "cigarette holder",
+      "x": 6,
+      "y": 118,
+      "w": 413,
+      "h": 64,
+      "pivot": [
+        206.5,
+        32.0
+      ],
+      "area": 5637
+    },
+    {
+      "index": 7,
+      "file": "fdr_props_07.png",
+      "label": "cigarette holder",
+      "x": 7,
+      "y": 193,
+      "w": 322,
+      "h": 37,
+      "pivot": [
+        161.0,
+        18.5
+      ],
+      "area": 4292
+    },
+    {
+      "index": 8,
+      "file": "fdr_props_08.png",
+      "label": "cigarette holder",
+      "x": 480,
+      "y": 170,
+      "w": 191,
+      "h": 82,
+      "pivot": [
+        95.5,
+        41.0
+      ],
+      "area": 2198
+    }
+  ]
+}

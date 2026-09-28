@@ -1,0 +1,38 @@
+{
+  "source": "fdr_cape.png",
+  "canvas": {
+    "w": 690,
+    "h": 490
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "fdr_cape_01.png",
+      "label": "cape back layer (red lining)",
+      "x": 336,
+      "y": 5,
+      "w": 250,
+      "h": 262,
+      "pivot": [
+        125.0,
+        131.0
+      ],
+      "area": 44237
+    },
+    {
+      "index": 2,
+      "file": "fdr_cape_02.png",
+      "label": "cape side drape",
+      "x": 559,
+      "y": 4,
+      "w": 129,
+      "h": 274,
+      "pivot": [
+        64.5,
+        137.0
+      ],
+      "area": 23047
+    }
+  ]
+}

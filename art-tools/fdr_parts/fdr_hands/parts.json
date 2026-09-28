@@ -1,0 +1,122 @@
+{
+  "source": "fdr_hands.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "fdr_hands_01.png",
+      "label": "hand: peeking at a card corner",
+      "x": 14,
+      "y": 45,
+      "w": 360,
+      "h": 415,
+      "pivot": [
+        180.0,
+        207.5
+      ],
+      "area": 87983
+    },
+    {
+      "index": 2,
+      "file": "fdr_hands_02.png",
+      "label": "hand: knuckle rap (check)",
+      "x": 409,
+      "y": 67,
+      "w": 348,
+      "h": 379,
+      "pivot": [
+        174.0,
+        189.5
+      ],
+      "area": 83663
+    },
+    {
+      "index": 3,
+      "file": "fdr_hands_03.png",
+      "label": "hand: pushing chips",
+      "x": 790,
+      "y": 55,
+      "w": 362,
+      "h": 393,
+      "pivot": [
+        181.0,
+        196.5
+      ],
+      "area": 85563
+    },
+    {
+      "index": 4,
+      "file": "fdr_hands_04.png",
+      "label": "hand: open palm up",
+      "x": 1171,
+      "y": 56,
+      "w": 340,
+      "h": 423,
+      "pivot": [
+        170.0,
+        211.5
+      ],
+      "area": 89423
+    },
+    {
+      "index": 5,
+      "file": "fdr_hands_05.png",
+      "label": "hand: flat, sliding (fold)",
+      "x": 12,
+      "y": 517,
+      "w": 434,
+      "h": 394,
+      "pivot": [
+        217.0,
+        197.0
+      ],
+      "area": 80374
+    },
+    {
+      "index": 6,
+      "file": "fdr_hands_06.png",
+      "label": "hand: cupped, raking in a pot",
+      "x": 512,
+      "y": 544,
+      "w": 319,
+      "h": 378,
+      "pivot": [
+        159.5,
+        189.0
+      ],
+      "area": 77175
+    },
+    {
+      "index": 7,
+      "file": "fdr_hands_07.png",
+      "label": "hand: fist",
+      "x": 846,
+      "y": 570,
+      "w": 282,
+      "h": 331,
+      "pivot": [
+        141.0,
+        165.5
+      ],
+      "area": 64425
+    },
+    {
+      "index": 8,
+      "file": "fdr_hands_08.png",
+      "label": "hand: turning cards over",
+      "x": 1164,
+      "y": 527,
+      "w": 361,
+      "h": 387,
+      "pivot": [
+        180.5,
+        193.5
+      ],
+      "area": 76748
+    }
+  ]
+}

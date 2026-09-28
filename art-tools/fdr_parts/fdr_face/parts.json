@@ -1,0 +1,1214 @@
+{
+  "source": "fdr_face.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "fdr_face_01.png",
+      "label": "blank head (hair painted on)",
+      "x": 15,
+      "y": 8,
+      "w": 319,
+      "h": 433,
+      "pivot": [
+        159.5,
+        216.5
+      ],
+      "area": 109664
+    },
+    {
+      "index": 2,
+      "file": "fdr_face_02.png",
+      "label": "hair",
+      "x": 342,
+      "y": 11,
+      "w": 365,
+      "h": 234,
+      "pivot": [
+        182.5,
+        117.0
+      ],
+      "area": 29769
+    },
+    {
+      "index": 3,
+      "file": "fdr_face_03.png",
+      "label": "back of head (not needed: he faces forward)",
+      "x": 775,
+      "y": 14,
+      "w": 231,
+      "h": 242,
+      "pivot": [
+        115.5,
+        121.0
+      ],
+      "area": 43353
+    },
+    {
+      "index": 4,
+      "file": "fdr_face_04.png",
+      "label": "eyebrow, screen-left",
+      "x": 1056,
+      "y": 14,
+      "w": 131,
+      "h": 52,
+      "pivot": [
+        65.5,
+        26.0
+      ],
+      "area": 2703
+    },
+    {
+      "index": 5,
+      "file": "fdr_face_05.png",
+      "label": "eyebrow, middle shape",
+      "x": 1213,
+      "y": 15,
+      "w": 117,
+      "h": 44,
+      "pivot": [
+        58.5,
+        22.0
+      ],
+      "area": 2216
+    },
+    {
+      "index": 6,
+      "file": "fdr_face_06.png",
+      "label": "eyebrow, screen-right",
+      "x": 1355,
+      "y": 14,
+      "w": 121,
+      "h": 51,
+      "pivot": [
+        60.5,
+        25.5
+      ],
+      "area": 2527
+    },
+    {
+      "index": 7,
+      "file": "fdr_face_07.png",
+      "label": "hair wisp",
+      "x": 719,
+      "y": 79,
+      "w": 51,
+      "h": 146,
+      "pivot": [
+        25.5,
+        73.0
+      ],
+      "area": 4173
+    },
+    {
+      "index": 8,
+      "file": "fdr_face_08.png",
+      "label": "eyebrow, screen-left",
+      "x": 1061,
+      "y": 60,
+      "w": 123,
+      "h": 50,
+      "pivot": [
+        61.5,
+        25.0
+      ],
+      "area": 2688
+    },
+    {
+      "index": 9,
+      "file": "fdr_face_09.png",
+      "label": "eyebrow, middle shape",
+      "x": 1209,
+      "y": 59,
+      "w": 121,
+      "h": 49,
+      "pivot": [
+        60.5,
+        24.5
+      ],
+      "area": 2603
+    },
+    {
+      "index": 10,
+      "file": "fdr_face_10.png",
+      "label": "eyebrow, screen-right",
+      "x": 1355,
+      "y": 58,
+      "w": 120,
+      "h": 52,
+      "pivot": [
+        60.0,
+        26.0
+      ],
+      "area": 2638
+    },
+    {
+      "index": 11,
+      "file": "fdr_face_11.png",
+      "label": "eyebrow, screen-left",
+      "x": 1061,
+      "y": 127,
+      "w": 121,
+      "h": 46,
+      "pivot": [
+        60.5,
+        23.0
+      ],
+      "area": 2420
+    },
+    {
+      "index": 12,
+      "file": "fdr_face_12.png",
+      "label": "eyebrow, middle shape",
+      "x": 1207,
+      "y": 129,
+      "w": 120,
+      "h": 44,
+      "pivot": [
+        60.0,
+        22.0
+      ],
+      "area": 2309
+    },
+    {
+      "index": 13,
+      "file": "fdr_face_13.png",
+      "label": "eyebrow, screen-right",
+      "x": 1352,
+      "y": 126,
+      "w": 121,
+      "h": 42,
+      "pivot": [
+        60.5,
+        21.0
+      ],
+      "area": 2389
+    },
+    {
+      "index": 14,
+      "file": "fdr_face_14.png",
+      "label": "side hair, screen-left",
+      "x": 351,
+      "y": 231,
+      "w": 87,
+      "h": 195,
+      "pivot": [
+        43.5,
+        97.5
+      ],
+      "area": 8340
+    },
+    {
+      "index": 15,
+      "file": "fdr_face_15.png",
+      "label": "side hair, screen-right",
+      "x": 634,
+      "y": 232,
+      "w": 76,
+      "h": 194,
+      "pivot": [
+        38.0,
+        97.0
+      ],
+      "area": 7672
+    },
+    {
+      "index": 16,
+      "file": "fdr_face_16.png",
+      "label": "ear, screen-left",
+      "x": 732,
+      "y": 248,
+      "w": 80,
+      "h": 171,
+      "pivot": [
+        40.0,
+        85.5
+      ],
+      "area": 9479
+    },
+    {
+      "index": 17,
+      "file": "fdr_face_17.png",
+      "label": "ear, screen-right",
+      "x": 837,
+      "y": 263,
+      "w": 81,
+      "h": 164,
+      "pivot": [
+        40.5,
+        82.0
+      ],
+      "area": 8833
+    },
+    {
+      "index": 18,
+      "file": "fdr_face_18.png",
+      "label": "eye open, looking screen-right",
+      "x": 992,
+      "y": 268,
+      "w": 83,
+      "h": 59,
+      "pivot": [
+        41.5,
+        29.5
+      ],
+      "area": 3251
+    },
+    {
+      "index": 19,
+      "file": "fdr_face_19.png",
+      "label": "eye open, looking screen-right",
+      "x": 996,
+      "y": 198,
+      "w": 81,
+      "h": 60,
+      "pivot": [
+        40.5,
+        30.0
+      ],
+      "area": 3263
+    },
+    {
+      "index": 20,
+      "file": "fdr_face_20.png",
+      "label": "eye open, glancing screen-right",
+      "x": 1098,
+      "y": 266,
+      "w": 81,
+      "h": 61,
+      "pivot": [
+        40.5,
+        30.5
+      ],
+      "area": 3334
+    },
+    {
+      "index": 21,
+      "file": "fdr_face_21.png",
+      "label": "eye open, looking screen-right",
+      "x": 1100,
+      "y": 194,
+      "w": 79,
+      "h": 64,
+      "pivot": [
+        39.5,
+        32.0
+      ],
+      "area": 3460
+    },
+    {
+      "index": 22,
+      "file": "fdr_face_22.png",
+      "label": "eye wide open",
+      "x": 1197,
+      "y": 198,
+      "w": 82,
+      "h": 60,
+      "pivot": [
+        41.0,
+        30.0
+      ],
+      "area": 3303
+    },
+    {
+      "index": 23,
+      "file": "fdr_face_23.png",
+      "label": "eye wide open",
+      "x": 1197,
+      "y": 267,
+      "w": 82,
+      "h": 59,
+      "pivot": [
+        41.0,
+        29.5
+      ],
+      "area": 3247
+    },
+    {
+      "index": 24,
+      "file": "fdr_face_24.png",
+      "label": "eye half-closed",
+      "x": 1299,
+      "y": 194,
+      "w": 87,
+      "h": 62,
+      "pivot": [
+        43.5,
+        31.0
+      ],
+      "area": 3588
+    },
+    {
+      "index": 25,
+      "file": "fdr_face_25.png",
+      "label": "eye half-closed",
+      "x": 1302,
+      "y": 268,
+      "w": 86,
+      "h": 60,
+      "pivot": [
+        43.0,
+        30.0
+      ],
+      "area": 3460
+    },
+    {
+      "index": 26,
+      "file": "fdr_face_26.png",
+      "label": "eye heavy-lidded",
+      "x": 1409,
+      "y": 193,
+      "w": 86,
+      "h": 62,
+      "pivot": [
+        43.0,
+        31.0
+      ],
+      "area": 3534
+    },
+    {
+      "index": 27,
+      "file": "fdr_face_27.png",
+      "label": "eye half-closed",
+      "x": 1413,
+      "y": 267,
+      "w": 87,
+      "h": 61,
+      "pivot": [
+        43.5,
+        30.5
+      ],
+      "area": 3499
+    },
+    {
+      "index": 28,
+      "file": "fdr_face_28.png",
+      "label": "eye, lid over the white, no iris",
+      "x": 988,
+      "y": 336,
+      "w": 84,
+      "h": 62,
+      "pivot": [
+        42.0,
+        31.0
+      ],
+      "area": 3549
+    },
+    {
+      "index": 29,
+      "file": "fdr_face_29.png",
+      "label": "eye, lid over the white, no iris",
+      "x": 1095,
+      "y": 334,
+      "w": 83,
+      "h": 65,
+      "pivot": [
+        41.5,
+        32.5
+      ],
+      "area": 3667
+    },
+    {
+      "index": 30,
+      "file": "fdr_face_30.png",
+      "label": "eye, lid over the white, no iris",
+      "x": 1194,
+      "y": 336,
+      "w": 84,
+      "h": 62,
+      "pivot": [
+        42.0,
+        31.0
+      ],
+      "area": 3554
+    },
+    {
+      "index": 31,
+      "file": "fdr_face_31.png",
+      "label": "eye nearly closed",
+      "x": 1302,
+      "y": 336,
+      "w": 86,
+      "h": 59,
+      "pivot": [
+        43.0,
+        29.5
+      ],
+      "area": 3442
+    },
+    {
+      "index": 32,
+      "file": "fdr_face_32.png",
+      "label": "eye nearly closed",
+      "x": 1412,
+      "y": 335,
+      "w": 86,
+      "h": 60,
+      "pivot": [
+        43.0,
+        30.0
+      ],
+      "area": 3458
+    },
+    {
+      "index": 33,
+      "file": "fdr_face_33.png",
+      "label": "eye narrowed, glancing screen-left",
+      "x": 988,
+      "y": 409,
+      "w": 83,
+      "h": 57,
+      "pivot": [
+        41.5,
+        28.5
+      ],
+      "area": 3161
+    },
+    {
+      "index": 34,
+      "file": "fdr_face_34.png",
+      "label": "eye narrowed, glancing screen-left",
+      "x": 1092,
+      "y": 408,
+      "w": 82,
+      "h": 58,
+      "pivot": [
+        41.0,
+        29.0
+      ],
+      "area": 3175
+    },
+    {
+      "index": 35,
+      "file": "fdr_face_35.png",
+      "label": "eye narrowed, looking down",
+      "x": 1191,
+      "y": 409,
+      "w": 85,
+      "h": 61,
+      "pivot": [
+        42.5,
+        30.5
+      ],
+      "area": 3497
+    },
+    {
+      "index": 36,
+      "file": "fdr_face_36.png",
+      "label": "eye closed",
+      "x": 1302,
+      "y": 409,
+      "w": 87,
+      "h": 61,
+      "pivot": [
+        43.5,
+        30.5
+      ],
+      "area": 3565
+    },
+    {
+      "index": 37,
+      "file": "fdr_face_37.png",
+      "label": "eye closed",
+      "x": 1410,
+      "y": 409,
+      "w": 88,
+      "h": 61,
+      "pivot": [
+        44.0,
+        30.5
+      ],
+      "area": 3661
+    },
+    {
+      "index": 38,
+      "file": "fdr_face_38.png",
+      "label": "nose, front",
+      "x": 22,
+      "y": 462,
+      "w": 92,
+      "h": 103,
+      "pivot": [
+        46.0,
+        51.5
+      ],
+      "area": 6136
+    },
+    {
+      "index": 39,
+      "file": "fdr_face_39.png",
+      "label": "nose, front",
+      "x": 123,
+      "y": 462,
+      "w": 97,
+      "h": 108,
+      "pivot": [
+        48.5,
+        54.0
+      ],
+      "area": 7455
+    },
+    {
+      "index": 40,
+      "file": "fdr_face_40.png",
+      "label": "nose, front",
+      "x": 230,
+      "y": 461,
+      "w": 96,
+      "h": 106,
+      "pivot": [
+        48.0,
+        53.0
+      ],
+      "area": 6440
+    },
+    {
+      "index": 41,
+      "file": "fdr_face_41.png",
+      "label": "nose, front",
+      "x": 353,
+      "y": 462,
+      "w": 97,
+      "h": 103,
+      "pivot": [
+        48.5,
+        51.5
+      ],
+      "area": 6045
+    },
+    {
+      "index": 42,
+      "file": "fdr_face_42.png",
+      "label": "nose, front",
+      "x": 473,
+      "y": 466,
+      "w": 104,
+      "h": 100,
+      "pivot": [
+        52.0,
+        50.0
+      ],
+      "area": 6605
+    },
+    {
+      "index": 43,
+      "file": "fdr_face_43.png",
+      "label": "nose, front",
+      "x": 588,
+      "y": 463,
+      "w": 97,
+      "h": 104,
+      "pivot": [
+        48.5,
+        52.0
+      ],
+      "area": 6912
+    },
+    {
+      "index": 44,
+      "file": "fdr_face_44.png",
+      "label": "nose, three-quarter",
+      "x": 718,
+      "y": 465,
+      "w": 101,
+      "h": 100,
+      "pivot": [
+        50.5,
+        50.0
+      ],
+      "area": 6689
+    },
+    {
+      "index": 45,
+      "file": "fdr_face_45.png",
+      "label": "nose, profile",
+      "x": 829,
+      "y": 470,
+      "w": 85,
+      "h": 97,
+      "pivot": [
+        42.5,
+        48.5
+      ],
+      "area": 5521
+    },
+    {
+      "index": 46,
+      "file": "fdr_face_46.png",
+      "label": "eye closed",
+      "x": 990,
+      "y": 480,
+      "w": 80,
+      "h": 60,
+      "pivot": [
+        40.0,
+        30.0
+      ],
+      "area": 3255
+    },
+    {
+      "index": 47,
+      "file": "fdr_face_47.png",
+      "label": "eye closed",
+      "x": 1090,
+      "y": 480,
+      "w": 79,
+      "h": 60,
+      "pivot": [
+        39.5,
+        30.0
+      ],
+      "area": 3246
+    },
+    {
+      "index": 48,
+      "file": "fdr_face_48.png",
+      "label": "eye closed",
+      "x": 1188,
+      "y": 482,
+      "w": 86,
+      "h": 60,
+      "pivot": [
+        43.0,
+        30.0
+      ],
+      "area": 3520
+    },
+    {
+      "index": 49,
+      "file": "fdr_face_49.png",
+      "label": "eye closed",
+      "x": 1300,
+      "y": 480,
+      "w": 90,
+      "h": 59,
+      "pivot": [
+        45.0,
+        29.5
+      ],
+      "area": 3572
+    },
+    {
+      "index": 50,
+      "file": "fdr_face_50.png",
+      "label": "eye closed",
+      "x": 1409,
+      "y": 479,
+      "w": 90,
+      "h": 60,
+      "pivot": [
+        45.0,
+        30.0
+      ],
+      "area": 3585
+    },
+    {
+      "index": 51,
+      "file": "fdr_face_51.png",
+      "label": "mouth: open grin",
+      "x": 22,
+      "y": 590,
+      "w": 143,
+      "h": 81,
+      "pivot": [
+        71.5,
+        40.5
+      ],
+      "area": 5518
+    },
+    {
+      "index": 52,
+      "file": "fdr_face_52.png",
+      "label": "mouth: big laugh",
+      "x": 175,
+      "y": 586,
+      "w": 140,
+      "h": 92,
+      "pivot": [
+        70.0,
+        46.0
+      ],
+      "area": 7544
+    },
+    {
+      "index": 53,
+      "file": "fdr_face_53.png",
+      "label": "mouth: open grin",
+      "x": 326,
+      "y": 598,
+      "w": 129,
+      "h": 73,
+      "pivot": [
+        64.5,
+        36.5
+      ],
+      "area": 4582
+    },
+    {
+      "index": 54,
+      "file": "fdr_face_54.png",
+      "label": "mouth: talking \"oh\"",
+      "x": 468,
+      "y": 593,
+      "w": 106,
+      "h": 76,
+      "pivot": [
+        53.0,
+        38.0
+      ],
+      "area": 4681
+    },
+    {
+      "index": 55,
+      "file": "fdr_face_55.png",
+      "label": "mouth: neutral closed",
+      "x": 583,
+      "y": 598,
+      "w": 129,
+      "h": 53,
+      "pivot": [
+        64.5,
+        26.5
+      ],
+      "area": 3553
+    },
+    {
+      "index": 56,
+      "file": "fdr_face_56.png",
+      "label": "mouth: talking \"ah\"",
+      "x": 733,
+      "y": 583,
+      "w": 87,
+      "h": 83,
+      "pivot": [
+        43.5,
+        41.5
+      ],
+      "area": 4409
+    },
+    {
+      "index": 57,
+      "file": "fdr_face_57.png",
+      "label": "mouth: slight smile, teeth",
+      "x": 837,
+      "y": 595,
+      "w": 116,
+      "h": 54,
+      "pivot": [
+        58.0,
+        27.0
+      ],
+      "area": 3196
+    },
+    {
+      "index": 58,
+      "file": "fdr_face_58.png",
+      "label": "pince-nez with cord",
+      "x": 979,
+      "y": 567,
+      "w": 238,
+      "h": 414,
+      "pivot": [
+        119.0,
+        207.0
+      ],
+      "area": 17171
+    },
+    {
+      "index": 59,
+      "file": "fdr_face_59.png",
+      "label": "pince-nez",
+      "x": 1237,
+      "y": 572,
+      "w": 215,
+      "h": 83,
+      "pivot": [
+        107.5,
+        41.5
+      ],
+      "area": 10146
+    },
+    {
+      "index": 60,
+      "file": "fdr_face_60.png",
+      "label": "pince-nez cord, straight",
+      "x": 1456,
+      "y": 570,
+      "w": 59,
+      "h": 291,
+      "pivot": [
+        29.5,
+        145.5
+      ],
+      "area": 5081
+    },
+    {
+      "index": 61,
+      "file": "fdr_face_61.png",
+      "label": "mouth: big laugh",
+      "x": 19,
+      "y": 686,
+      "w": 140,
+      "h": 90,
+      "pivot": [
+        70.0,
+        45.0
+      ],
+      "area": 7060
+    },
+    {
+      "index": 62,
+      "file": "fdr_face_62.png",
+      "label": "mouth: small open smile",
+      "x": 180,
+      "y": 702,
+      "w": 110,
+      "h": 61,
+      "pivot": [
+        55.0,
+        30.5
+      ],
+      "area": 2872
+    },
+    {
+      "index": 63,
+      "file": "fdr_face_63.png",
+      "label": "mouth: slight smile, teeth",
+      "x": 313,
+      "y": 705,
+      "w": 125,
+      "h": 53,
+      "pivot": [
+        62.5,
+        26.5
+      ],
+      "area": 3128
+    },
+    {
+      "index": 64,
+      "file": "fdr_face_64.png",
+      "label": "mouth: talking \"ah\"",
+      "x": 457,
+      "y": 705,
+      "w": 97,
+      "h": 69,
+      "pivot": [
+        48.5,
+        34.5
+      ],
+      "area": 3812
+    },
+    {
+      "index": 65,
+      "file": "fdr_face_65.png",
+      "label": "mouth: talking, wide",
+      "x": 572,
+      "y": 707,
+      "w": 116,
+      "h": 68,
+      "pivot": [
+        58.0,
+        34.0
+      ],
+      "area": 4125
+    },
+    {
+      "index": 66,
+      "file": "fdr_face_66.png",
+      "label": "mouth: closed smile",
+      "x": 699,
+      "y": 703,
+      "w": 120,
+      "h": 52,
+      "pivot": [
+        60.0,
+        26.0
+      ],
+      "area": 3313
+    },
+    {
+      "index": 67,
+      "file": "fdr_face_67.png",
+      "label": "mouth: pout (with chin)",
+      "x": 834,
+      "y": 699,
+      "w": 103,
+      "h": 90,
+      "pivot": [
+        51.5,
+        45.0
+      ],
+      "area": 5676
+    },
+    {
+      "index": 68,
+      "file": "fdr_face_68.png",
+      "label": "pince-nez lens",
+      "x": 1015,
+      "y": 677,
+      "w": 75,
+      "h": 81,
+      "pivot": [
+        37.5,
+        40.5
+      ],
+      "area": 4263
+    },
+    {
+      "index": 69,
+      "file": "fdr_face_69.png",
+      "label": "pince-nez lens",
+      "x": 1116,
+      "y": 678,
+      "w": 73,
+      "h": 80,
+      "pivot": [
+        36.5,
+        40.0
+      ],
+      "area": 4069
+    },
+    {
+      "index": 70,
+      "file": "fdr_face_70.png",
+      "label": "pince-nez",
+      "x": 1230,
+      "y": 670,
+      "w": 213,
+      "h": 87,
+      "pivot": [
+        106.5,
+        43.5
+      ],
+      "area": 10397
+    },
+    {
+      "index": 71,
+      "file": "fdr_face_71.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 25,
+      "y": 789,
+      "w": 147,
+      "h": 91,
+      "pivot": [
+        73.5,
+        45.5
+      ],
+      "area": 10022
+    },
+    {
+      "index": 72,
+      "file": "fdr_face_72.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 186,
+      "y": 791,
+      "w": 142,
+      "h": 86,
+      "pivot": [
+        71.0,
+        43.0
+      ],
+      "area": 9275
+    },
+    {
+      "index": 73,
+      "file": "fdr_face_73.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 343,
+      "y": 793,
+      "w": 144,
+      "h": 83,
+      "pivot": [
+        72.0,
+        41.5
+      ],
+      "area": 8772
+    },
+    {
+      "index": 74,
+      "file": "fdr_face_74.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 498,
+      "y": 788,
+      "w": 146,
+      "h": 101,
+      "pivot": [
+        73.0,
+        50.5
+      ],
+      "area": 11356
+    },
+    {
+      "index": 75,
+      "file": "fdr_face_75.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 656,
+      "y": 789,
+      "w": 139,
+      "h": 96,
+      "pivot": [
+        69.5,
+        48.0
+      ],
+      "area": 9863
+    },
+    {
+      "index": 76,
+      "file": "fdr_face_76.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 812,
+      "y": 796,
+      "w": 144,
+      "h": 80,
+      "pivot": [
+        72.0,
+        40.0
+      ],
+      "area": 8450
+    },
+    {
+      "index": 77,
+      "file": "fdr_face_77.png",
+      "label": "pince-nez cord",
+      "x": 1013,
+      "y": 772,
+      "w": 128,
+      "h": 225,
+      "pivot": [
+        64.0,
+        112.5
+      ],
+      "area": 2385
+    },
+    {
+      "index": 78,
+      "file": "fdr_face_78.png",
+      "label": "pince-nez cord, loop",
+      "x": 1234,
+      "y": 771,
+      "w": 156,
+      "h": 233,
+      "pivot": [
+        78.0,
+        116.5
+      ],
+      "area": 3973
+    },
+    {
+      "index": 79,
+      "file": "fdr_face_79.png",
+      "label": "pince-nez cord, straight",
+      "x": 1433,
+      "y": 760,
+      "w": 21,
+      "h": 222,
+      "pivot": [
+        10.5,
+        111.0
+      ],
+      "area": 1968
+    },
+    {
+      "index": 80,
+      "file": "fdr_face_80.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 26,
+      "y": 894,
+      "w": 164,
+      "h": 99,
+      "pivot": [
+        82.0,
+        49.5
+      ],
+      "area": 11429
+    },
+    {
+      "index": 81,
+      "file": "fdr_face_81.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 213,
+      "y": 892,
+      "w": 122,
+      "h": 96,
+      "pivot": [
+        61.0,
+        48.0
+      ],
+      "area": 9143
+    },
+    {
+      "index": 82,
+      "file": "fdr_face_82.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 366,
+      "y": 895,
+      "w": 139,
+      "h": 107,
+      "pivot": [
+        69.5,
+        53.5
+      ],
+      "area": 11483
+    },
+    {
+      "index": 83,
+      "file": "fdr_face_83.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 530,
+      "y": 895,
+      "w": 117,
+      "h": 101,
+      "pivot": [
+        58.5,
+        50.5
+      ],
+      "area": 8723
+    },
+    {
+      "index": 84,
+      "file": "fdr_face_84.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 668,
+      "y": 905,
+      "w": 131,
+      "h": 89,
+      "pivot": [
+        65.5,
+        44.5
+      ],
+      "area": 9138
+    },
+    {
+      "index": 85,
+      "file": "fdr_face_85.png",
+      "label": "chin (not in the brief; unused)",
+      "x": 815,
+      "y": 889,
+      "w": 150,
+      "h": 103,
+      "pivot": [
+        75.0,
+        51.5
+      ],
+      "area": 10972
+    },
+    {
+      "index": 86,
+      "file": "fdr_face_86.png",
+      "label": "pince-nez cord end",
+      "x": 1481,
+      "y": 886,
+      "w": 26,
+      "h": 95,
+      "pivot": [
+        13.0,
+        47.5
+      ],
+      "area": 1236
+    }
+  ]
+}
