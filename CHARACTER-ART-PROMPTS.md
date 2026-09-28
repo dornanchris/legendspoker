@@ -5,8 +5,11 @@ Every character in the game, grouped by table. The descriptions come from `data/
 ## Status
 
 - **FDR: done.** 122 labelled pieces in `art-tools/fdr_parts/`, laid out as a puppet in `art-tools/fdr_layout.json` (preview: `art-tools/fdr_parts/preview.png`). He is the model for everyone else.
+- **Lincoln: done.** `art-tools/lincoln_parts/` and `art-tools/lincoln_layout.json`. His mouths are beard patches, not mouth only (see his face kit).
 - **Dracula: partial**, in an older style. See his art note.
 - **Everyone else: not started.**
+
+**We see everyone from the table up.** Nothing below the table edge is ever on screen, so props live on the felt or in the hands, never on a knee or the floor.
 
 ## How to use this
 
@@ -140,10 +143,10 @@ Must NOT resemble: Historical figure, died 1945; US government photographs of hi
 ### Abraham Lincoln — *The Rail-Splitter*
 
 - **Who:** Saw Lee surrender at Appomattox. Five days later he went to the theatre.
-- **Look:** Silhouette: the longest frame at the table, bare-headed, the stovepipe hat resting on his knee with its crown showing above the table edge. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen.
-- **Prop:** Stovepipe hat, on his knee
+- **Look:** Silhouette: the longest frame at the table, bare-headed, the stovepipe hat standing on the table beside his chips: the tallest shape at the table. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen.
+- **Prop:** Stovepipe hat, on the table
 - **Tells:** strokes his beard, slowly; leans back and folds his long hands; allows himself a small smile
-- **Idles:** crosses one long leg over the other; glances at the clock on the mantel; rubs his eyes; smooths the brim of the hat on his knee
+- **Idles:** crosses one long leg over the other; glances at the clock on the mantel; rubs his eyes; smooths the brim of the hat beside his chips
 - **Copyright note:** Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 
 **Step 1 — reference portrait:**
@@ -151,8 +154,8 @@ Must NOT resemble: Historical figure, died 1945; US government photographs of hi
 ```
 Stylised 2D character portrait for a poker video game, painterly but clean with flat readable shapes, dramatic warm table-lamp lighting, dark muted background. Waist-up, facing the viewer as if seated at a card table, forearms resting on green felt. Plain background, no text, no logos, no watermark, no cards or chips other than any prop named.
 
-Character: Abraham Lincoln, The Rail-Splitter. Silhouette: the longest frame at the table, bare-headed, the stovepipe hat resting on his knee with its crown showing above the table edge. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen.
-Prop: Stovepipe hat, on his knee.
+Character: Abraham Lincoln, The Rail-Splitter. Silhouette: the longest frame at the table, bare-headed, the stovepipe hat standing on the table beside his chips: the tallest shape at the table. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen.
+Prop: Stovepipe hat, on the table.
 IMPORTANT, must NOT resemble: Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 ```
 
@@ -162,13 +165,12 @@ IMPORTANT, must NOT resemble: Historical figure, died 1865; the Brady and Gardne
 Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached image. Match it exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: face kit. Parts:
-- Blank head: hollow cheeks, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece. No collar, shirt or clothing on it: the bare neck ends in a clean V where a collar would sit
+- Blank head: hollow cheeks, with ears, neck and his chin beard (NO moustache) painted on, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece. No collar, shirt or clothing on it: the bare neck ends in a clean V where a collar would sit
 - Dark, untidy hair as a separate piece
-- Chin beard with NO moustache as a separate piece
 - Eyebrows for ONE side only (the game mirrors them), in 3 clearly different shapes: neutral; angry (inner end pulled down); worried (inner end pushed up). Raised is done by moving them, so no raised pose
 - Eyes (deep-set and tired): each a WHOLE eye, the white, iris and lid drawn together, for ONE eye only (the game mirrors it for the other): looking ahead; looking left; looking right; looking down; wide open; half-closed; narrowed (squinting); closed (blinking)
 - Nose as a separate piece
-- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a small, restrained smile. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Same lip and skin colour as the reference. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+- Mouths, each a separate piece: lower-face patches this time, NOT mouth only: each is the mouth with the chin beard around it, cut straight across just under the nose, so it lays over the painted beard. Neutral; slight smile; open smile; broad smile; laughing; talking "ah"; talking "oh"; talking "ee"; lips pressed ("m/b/p"); "f/v"; tight-lipped; nervous; frown; angry grimace; a small, restrained smile. The beard in every patch matches the painted beard exactly, so they swap without a join. Same lip and skin colour as the reference. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 
 Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 ```
@@ -229,8 +231,8 @@ Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photograp
 Puppet parts sheet for 2D animation rigging, for Abraham Lincoln, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything front-facing, at the same scale as the character in the reference. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: props and tell pieces. Parts:
-- The stovepipe hat resting on his knee, only its crown and brim showing above the table edge
-- The whole stovepipe hat
+- The stovepipe hat standing upright, front view, as it sits on the table
+- The same hat in three-quarter view
 
 Must NOT resemble: Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 ```

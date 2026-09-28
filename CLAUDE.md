@@ -128,6 +128,7 @@ art-tools/
   fdr_parts/      FDR's complete kit (122 labelled pieces + source sheets),
                   cleaned rig pieces and previews; see its README
   fdr_layout.json FDR assembled: rest pose + swap slots (build_puppet.py)
+  lincoln_parts/  Lincoln's kit, same scheme; lincoln_layout.json assembles him
 MOTION-SPEC.md    the animation parts list, tagged MECH/IDLE/BEAT/TELL
 ASSETS.md         every free/CC0 source + licensing traps
 CHARACTER-ART-PROMPTS.md  image prompts per character: a reference portrait,

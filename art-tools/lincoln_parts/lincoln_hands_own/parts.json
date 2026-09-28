@@ -1,0 +1,178 @@
+{
+  "source": "lincoln_hands_own.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "lincoln_hands_own_01.png",
+      "label": "hand: relaxed, hanging",
+      "x": 71,
+      "y": 21,
+      "w": 247,
+      "h": 333,
+      "pivot": [
+        123.5,
+        166.5
+      ],
+      "area": 46107
+    },
+    {
+      "index": 2,
+      "file": "lincoln_hands_own_02.png",
+      "label": "hand: pointing",
+      "x": 394,
+      "y": 10,
+      "w": 310,
+      "h": 257,
+      "pivot": [
+        155.0,
+        128.5
+      ],
+      "area": 46443
+    },
+    {
+      "index": 3,
+      "file": "lincoln_hands_own_03.png",
+      "label": "hand: palm up, gesturing",
+      "x": 757,
+      "y": 9,
+      "w": 464,
+      "h": 295,
+      "pivot": [
+        232.0,
+        147.5
+      ],
+      "area": 59479
+    },
+    {
+      "index": 4,
+      "file": "lincoln_hands_own_04.png",
+      "label": "hand: fingertips pinched",
+      "x": 1208,
+      "y": 11,
+      "w": 277,
+      "h": 329,
+      "pivot": [
+        138.5,
+        164.5
+      ],
+      "area": 40936
+    },
+    {
+      "index": 5,
+      "file": "lincoln_hands_own_05.png",
+      "label": "hands folded together (his tell)",
+      "x": 13,
+      "y": 378,
+      "w": 477,
+      "h": 229,
+      "pivot": [
+        238.5,
+        114.5
+      ],
+      "area": 69422
+    },
+    {
+      "index": 6,
+      "file": "lincoln_hands_own_06.png",
+      "label": "hand stroking his beard (his tell; beard painted on)",
+      "x": 519,
+      "y": 321,
+      "w": 257,
+      "h": 344,
+      "pivot": [
+        128.5,
+        172.0
+      ],
+      "area": 49589
+    },
+    {
+      "index": 7,
+      "file": "lincoln_hands_own_07.png",
+      "label": "hand: index finger down",
+      "x": 799,
+      "y": 344,
+      "w": 244,
+      "h": 316,
+      "pivot": [
+        122.0,
+        158.0
+      ],
+      "area": 43493
+    },
+    {
+      "index": 8,
+      "file": "lincoln_hands_own_08.png",
+      "label": "hands steepled (not asked for)",
+      "x": 1054,
+      "y": 351,
+      "w": 468,
+      "h": 309,
+      "pivot": [
+        234.0,
+        154.5
+      ],
+      "area": 59709
+    },
+    {
+      "index": 9,
+      "file": "lincoln_hands_own_09.png",
+      "label": "hand smoothing the hat brim (hat painted on)",
+      "x": 17,
+      "y": 576,
+      "w": 419,
+      "h": 436,
+      "pivot": [
+        209.5,
+        218.0
+      ],
+      "area": 80193
+    },
+    {
+      "index": 10,
+      "file": "lincoln_hands_own_10.png",
+      "label": "hand raised, open",
+      "x": 425,
+      "y": 663,
+      "w": 276,
+      "h": 352,
+      "pivot": [
+        138.0,
+        176.0
+      ],
+      "area": 46832
+    },
+    {
+      "index": 11,
+      "file": "lincoln_hands_own_11.png",
+      "label": "hand rubbing his eyes (part of the face painted on)",
+      "x": 768,
+      "y": 675,
+      "w": 320,
+      "h": 335,
+      "pivot": [
+        160.0,
+        167.5
+      ],
+      "area": 57972
+    },
+    {
+      "index": 12,
+      "file": "lincoln_hands_own_12.png",
+      "label": "hand: relaxed, drooping",
+      "x": 1197,
+      "y": 671,
+      "w": 310,
+      "h": 309,
+      "pivot": [
+        155.0,
+        154.5
+      ],
+      "area": 53882
+    }
+  ]
+}

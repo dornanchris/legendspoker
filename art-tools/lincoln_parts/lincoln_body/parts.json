@@ -1,0 +1,108 @@
+{
+  "source": "lincoln_body.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "lincoln_body_01.png",
+      "label": "torso, no arms (frock coat, bow tie)",
+      "x": 16,
+      "y": 45,
+      "w": 875,
+      "h": 509,
+      "pivot": [
+        437.5,
+        254.5
+      ],
+      "area": 344475
+    },
+    {
+      "index": 2,
+      "file": "lincoln_body_02.png",
+      "label": "upper arm",
+      "x": 875,
+      "y": 86,
+      "w": 270,
+      "h": 466,
+      "pivot": [
+        135.0,
+        233.0
+      ],
+      "area": 92780
+    },
+    {
+      "index": 3,
+      "file": "lincoln_body_03.png",
+      "label": "upper arm, mirrored",
+      "x": 1245,
+      "y": 85,
+      "w": 274,
+      "h": 467,
+      "pivot": [
+        137.0,
+        233.5
+      ],
+      "area": 94347
+    },
+    {
+      "index": 4,
+      "file": "lincoln_body_04.png",
+      "label": "arm lying on the table, bent at the elbow, cuff screen-right",
+      "x": 24,
+      "y": 638,
+      "w": 390,
+      "h": 302,
+      "pivot": [
+        195.0,
+        151.0
+      ],
+      "area": 69274
+    },
+    {
+      "index": 5,
+      "file": "lincoln_body_05.png",
+      "label": "arm lying on the table, cuff screen-left",
+      "x": 468,
+      "y": 639,
+      "w": 381,
+      "h": 300,
+      "pivot": [
+        190.5,
+        150.0
+      ],
+      "area": 67945
+    },
+    {
+      "index": 6,
+      "file": "lincoln_body_06.png",
+      "label": "forearm raised, cuff up",
+      "x": 860,
+      "y": 578,
+      "w": 276,
+      "h": 363,
+      "pivot": [
+        138.0,
+        181.5
+      ],
+      "area": 56204
+    },
+    {
+      "index": 7,
+      "file": "lincoln_body_07.png",
+      "label": "forearm raised, cuff up, mirrored",
+      "x": 1202,
+      "y": 576,
+      "w": 311,
+      "h": 364,
+      "pivot": [
+        155.5,
+        182.0
+      ],
+      "area": 59080
+    }
+  ]
+}

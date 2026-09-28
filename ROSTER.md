@@ -44,9 +44,9 @@ He was the tallest president, six foot four, and a teller of jokes and stories, 
 - Tell (strong, 0.94): *strokes his beard, slowly*
 - Tell (weak, 0.92): *leans back and folds his long hands*
 - Tell (bluffing, 0.9): *allows himself a small smile*
-- Idle noise: *crosses one long leg over the other*; *glances at the clock on the mantel*; *rubs his eyes*; *smooths the brim of the hat on his knee*
+- Idle noise: *crosses one long leg over the other*; *glances at the clock on the mantel*; *rubs his eyes*; *smooths the brim of the hat beside his chips*
 
-**Look.** Silhouette: the longest frame at the table, bare-headed, the stovepipe hat resting on his knee with its crown showing above the table edge. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen. **Prop:** Stovepipe hat, on his knee.
+**Look.** Silhouette: the longest frame at the table, bare-headed, the stovepipe hat standing on the table beside his chips: the tallest shape at the table. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen. **Prop:** Stovepipe hat, on the table.
 
 **Public domain.** Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 
