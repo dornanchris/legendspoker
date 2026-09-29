@@ -129,10 +129,14 @@ art-tools/
                   cleaned rig pieces and previews; see its README
   fdr_layout.json FDR assembled: rest pose + swap slots (build_puppet.py)
   lincoln_parts/  Lincoln's kit, same scheme; lincoln_layout.json assembles him
+  prompts/        generators for the two art-prompt files below
+                  (characters.mjs + parts.mjs, rooms.mjs)
 MOTION-SPEC.md    the animation parts list, tagged MECH/IDLE/BEAT/TELL
 ASSETS.md         every free/CC0 source + licensing traps
 CHARACTER-ART-PROMPTS.md  image prompts per character: a reference portrait,
                   then face / body / hands / props parts sheets
+ROOM-ART-PROMPTS.md       per venue: backdrop plate, table and chair, moving
+                  and story pieces, and the layer order for a room
 ```
 
 Stack: Node 22, TypeScript, ESM, run via `tsx`. `poker-ts` v1.5.0 for rules
@@ -306,6 +310,8 @@ hands or on the body). Every opponent is drawn once at three-quarter view,
 facing the table's centre, and mirrored for the other side; Death, dealing
 from the far side, is front-on. The table layer's curved edge hides each
 torso's lower half; forearms and hands resting on it sit above it.
+Every table is round and keeps a plain playing surface; each room differs in
+its table's rim and cloth, its backdrop and its light (`ROOM-ART-PROMPTS.md`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it: the FDR and Lincoln kits are front-on pipeline examples.
 Lincoln wears his hat at all times.

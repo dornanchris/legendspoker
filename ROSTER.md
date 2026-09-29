@@ -284,7 +284,7 @@ In the Odyssey's first line Homer calls him polytropos, a man of many turns, and
 
 **Hook.** You were taken off a prize ship and brought ashore in irons. The captains will let you play: win a share and sign on as crew, or win enough to buy your freedom.
 
-**Room.** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. The card table is a hatch-cover on two barrels, scarred by knife-points and pistol-butts. Through the open side wall, ships ride at anchor in the moonlight.
+**Room.** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. The card table is the round lid of a great rum tun, scarred by knife-points and pistol-butts. Through the open side wall, ships ride at anchor in the moonlight.
 
 **Entrance.** Seated from hand one, in the only chair with its back to the rock wall, smoke curling from under his hat. He does not look up when you are brought in; he lets the room tell you who he is.
 
@@ -1111,7 +1111,7 @@ Seats: Julius Caesar, Sherlock Holmes, Count Dracula, The AI.
 
 **Hook.** Every champion on the tour has lost a table to you. There is one table left, down by the water, and one chair across from yours.
 
-**Room.** A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on one small square table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.
+**Room.** A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on one small round table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.
 
 **Entrance.** He is already seated when you come in through the ninth door — in a player's chair for the first time, forearms on the table in the lamplight, waiting.
 

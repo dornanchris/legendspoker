@@ -1,6 +1,8 @@
 # Character art prompts
 
-Every character in the game, grouped by table. The descriptions come from `data/characters/*.json`; the parts lists are written from each character's look, prop, tells and idles, so every tell and idle the game shows has a piece to animate it.
+Every character in the game, grouped by table. The descriptions come from `data/characters/*.json`; the parts lists are written from each character's look, prop, tells and idles, so every tell and idle the game shows has a piece to animate it. Regenerate with `node art-tools/prompts/characters.mjs` (the parts lists live in `art-tools/prompts/parts.mjs`).
+
+**The rooms, tables, chairs and backdrops are in `ROOM-ART-PROMPTS.md`.**
 
 ## Status
 
