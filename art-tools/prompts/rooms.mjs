@@ -16,6 +16,7 @@ const PIECES = 'Loose pieces for animating the room, each a separate piece with 
 
 const ROOMS = {
   white_house: {
+    done: 'Done: backdrop and table in \`art-tools/rooms/white_house/\`, with a screen mock-up. The Washington Monument sits dead centre in the window, which Death covers; fine.',
     short: 'Classic poker table: leather rim, brass studs, mahogany',
     cloth: 'green baize',
     unique: 'The only room that looks like a real place you could visit. Green baize, brass and a fire: the classic poker table, the baseline every other room departs from.',
@@ -159,6 +160,22 @@ Every room is the same stack of layers, back to front:
 
 **Leave out of every room:** no text, no UI, no buttons, no chips or cards, no chat or reward panels. The table mock-ups had all of these; the game draws its own few controls.
 
+## The screen: game first
+
+The table screen has to hold four opponents, Death dealing between them, and the whole game, on a phone. The game comes first; the backdrop is what's left over.
+
+- **Laid out for 16:9**, the narrowest phone we support. Wider phones show more backdrop at the sides and nothing else changes, so every room plate is drawn wide (21:9) with nothing important at the far edges.
+- **Top half: five figures.** Death is dead centre, front-on and furthest away. The two back seats flank him, and the two side seats sit nearer and lower, where the rim curves toward you. Each figure gets about a fifth of the screen's width, so a face is about a tenth of its height: roughly 40 points on a small phone. **Tells have to read at that size:** props, hands, the head and the hat, the big shapes the character notes already ask for. Fine facial detail is a bonus, never the tell.
+- **Bottom half: the felt, which carries the game.** The far rim runs at about half height. Below it:
+  - each seat's name plate, on the rim just below them, with their bet in front of it;
+  - the pot and the board in the middle;
+  - your cards at the bottom centre, with your name and stack beside them;
+  - the buttons at the bottom right (the raise slider opens above them), fast-forward at the bottom left;
+  - the table bar at the top left, the log at the top right.
+- **What shows of the backdrop** is the band above the players' heads and the strips at the sides; the rest is behind five players and the table. Put the room's character there: portraits, windows, the fire.
+
+\`art-tools/mock_screen.py\` draws this screen with the current art (\`python3 art-tools/mock_screen.py white_house\`), so any new backdrop, table or character can be checked against the game before it's accepted. The first room is in \`art-tools/rooms/white_house/\`: backdrop, table, and \`screen_mock.png\`.
+
 ## At a glance
 
 | Room | Table | Cloth | Light |
@@ -172,6 +189,7 @@ for (const id of order) {
   const name = id === 'champions' ? "The Champions' Tables — the Hall of Doors" : t.name;
   out += `---\n\n## ${name}\n\n`;
   out += `**What makes it unique:** ${r.unique}\n\n`;
+  if (r.done) out += `**Status:** ${r.done}\n\n`;
   if (id === 'champions') out += `- **The room (table I):** ${T.champions_1.room}\n- **The room (table II):** ${T.champions_2.room}\n`;
   else out += `- **The room:** ${t.room}\n`;
   if (t.presence) out += `- **Presence:** ${t.presence}\n`;

@@ -131,6 +131,8 @@ art-tools/
   lincoln_parts/  Lincoln's kit, same scheme; lincoln_layout.json assembles him
   prompts/        generators for the two art-prompt files below
                   (characters.mjs + parts.mjs, rooms.mjs)
+  rooms/          finished room art, one folder per venue (white_house/)
+  mock_screen.py  draws the table screen with the current art: game first
 MOTION-SPEC.md    the animation parts list, tagged MECH/IDLE/BEAT/TELL
 ASSETS.md         every free/CC0 source + licensing traps
 CHARACTER-ART-PROMPTS.md  image prompts per character: a reference portrait,
@@ -315,6 +317,12 @@ its table's rim and cloth, its backdrop and its light (`ROOM-ART-PROMPTS.md`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it: the FDR and Lincoln kits are front-on pipeline examples.
 Lincoln wears his hat at all times.
+**The screen is game first** (the owner): laid out for 16:9, wider phones
+show more backdrop. Five figures across the top half (Death dead centre,
+furthest back), each about a fifth of the width, so a face is ~40 points on a
+small phone and tells must be big shapes (props, hands, head). The felt fills
+the bottom half and carries the whole game. `art-tools/mock_screen.py` checks
+new art against that layout.
 
 ## KNOWN GAPS AND SIMPLIFICATIONS
 
