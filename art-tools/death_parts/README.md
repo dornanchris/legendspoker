@@ -17,11 +17,17 @@ with a `label` on every piece.
 
 ## The puppet
 
-`art-tools/death_layout.json` is his rest pose: forearms on the felt, bone
-hands meeting in the middle. `preview.png` is that pose. Every arm piece sits
-in the `arm_l` / `arm_r` slots as a swap; the right arm is the left with
-`"flip": true`. The arm swaps are parked at the rest position and need placing
-per deal (toward each seat, the board, and you).
+`art-tools/death_layout.json` is his rest pose: sleeves out from under the
+cape, cuffs resting on the table's edge, bone hands lying apart on the felt
+with room for the deck between them. `preview.png` is that pose.
+
+The layer order is what makes him work. The arms sit UNDER the torso, so the
+cape's ragged hem falls over the tops of the sleeves; they are marked
+`"on_table": true`, so below the layout's `table_line` they are drawn again
+over the table and the forearms and hands lie on the felt. (His first layout
+put the arms on top of the cape at waist height, and the sleeves bulged out
+of his hips.) Every other arm piece sits in the `arm_l` / `arm_r` slots as a
+swap for dealing; the right arm is the left with `"flip": true`.
 
     python3 art-tools/build_puppet.py render art-tools/death_layout.json -o preview.png
 

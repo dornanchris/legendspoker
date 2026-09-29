@@ -16,6 +16,11 @@ re-render in a second, instead of dragging layers in an art tool.
 
 Coordinates are top-left of the part, in canvas pixels. z sorts back->front.
 "flip": true mirrors a part left-right (hands are drawn for one side only).
+"on_table": true marks a part that rests on the table (a forearm, a hand):
+it is drawn at its own z, so its upper end can tuck under a cape or sleeve,
+and drawn again over everything below the layout's "table_line", so the part
+lying on the felt sits above the table. Anything not on the table is covered
+by the table below that line.
 File paths are relative to the layout file, so it renders from anywhere.
 Once the numbers look right they are your rig's rest pose: import the same
 parts into Rive/Live2D and type these offsets in.
@@ -59,31 +64,48 @@ def cmd_render(args):
     bg = tuple(layout.get("background", [0, 0, 0, 0]))
     canvas = Image.new("RGBA", (W, H), bg)
 
+    on_table = []
     for p in sorted(layout["parts"], key=lambda p: p.get("z", 0)):
         if not p.get("visible", True):
             continue
-        path = p["file"]
-        if not os.path.isabs(path) and not os.path.exists(path):
-            path = os.path.join(os.path.dirname(os.path.abspath(args.layout)), path)
-        if not os.path.exists(path):
-            print(f"  missing: {p['file']}")
+        im = load(p, args.layout)
+        if im is None:
             continue
-        im = Image.open(path).convert("RGBA")
-        if p.get("flip"):
-            im = ImageOps.mirror(im)
-
-        s = float(p.get("scale", 1.0))
-        if s != 1.0:
-            im = im.resize((max(1, int(im.width * s)), max(1, int(im.height * s))),
-                           Image.LANCZOS)
-        r = float(p.get("rot", 0.0))
-        if r:
-            im = im.rotate(r, resample=Image.BICUBIC, expand=True)
-
         canvas.alpha_composite(im, (int(p["x"]), int(p["y"])))
+        if p.get("on_table"):
+            on_table.append((p, im))
+
+    line = layout.get("table_line")
+    if line is not None and on_table:
+        over = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+        for p, im in on_table:
+            over.alpha_composite(im, (int(p["x"]), int(p["y"])))
+        over.paste((0, 0, 0, 0), (0, 0, W, int(line)))
+        canvas.alpha_composite(over)
 
     canvas.save(args.out)
     print(f"rendered -> {args.out}")
+
+
+def load(p, layout_path):
+    """A part's image, flipped, scaled and rotated as the layout says."""
+    path = p["file"]
+    if not os.path.isabs(path) and not os.path.exists(path):
+        path = os.path.join(os.path.dirname(os.path.abspath(layout_path)), path)
+    if not os.path.exists(path):
+        print(f"  missing: {p['file']}")
+        return None
+    im = Image.open(path).convert("RGBA")
+    if p.get("flip"):
+        im = ImageOps.mirror(im)
+    s = float(p.get("scale", 1.0))
+    if s != 1.0:
+        im = im.resize((max(1, int(im.width * s)), max(1, int(im.height * s))),
+                       Image.LANCZOS)
+    r = float(p.get("rot", 0.0))
+    if r:
+        im = im.rotate(r, resample=Image.BICUBIC, expand=True)
+    return im
 
 
 def main():

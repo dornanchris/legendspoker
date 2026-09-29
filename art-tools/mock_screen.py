@@ -44,15 +44,20 @@ ta = np.array(tl)[..., 3]
 def rim(x):
     ys = np.nonzero(ta[:, max(0, min(W - 1, int(x)))] > 0)[0]; return int(ys.min()) if len(ys) else H
 
+# Each puppet is rendered twice: whole, in its own layer order (so a sleeve can
+# tuck under a cape), and just the parts that rest on the table. The screen
+# stacks: whole puppets, the table over them, then the resting parts again,
+# only where the table is, so forearms and hands lie on the felt.
 def passes(layout):
     L = json.load(open(os.path.join(HERE, layout))); L['background'] = [0, 0, 0, 0]
+    L.pop('table_line', None)
     u, o = copy.deepcopy(L), copy.deepcopy(L)
     for a, b in zip(u['parts'], o['parts']):
-        sl = a.get('slot') or ''; arm = sl.startswith(('forearm', 'arm_', 'hand'))
+        sl = a.get('slot') or ''
+        rests = a.get('on_table') or sl.startswith(('forearm', 'arm_', 'hand'))
         a['file'] = b['file'] = os.path.join(HERE, a['file'])
         if sl in ('table', 'hat'): a['visible'] = b['visible'] = False
-        elif arm: a['visible'] = False
-        else: b['visible'] = False
+        elif not rests: b['visible'] = False
     out = []
     for k, v in (('u', u), ('o', o)):
         json.dump(v, open(f'{S}/sm_{k}.json', 'w'))
@@ -80,6 +85,10 @@ SEATS = g('seats', [['fdr_layout.json', 150, 0.36, False], ['lincoln_layout.json
 ys = [seat(*s_) for s_ in SEATS]
 dy = death(W // 2, g('death', 0.34))
 
+# only on the table: everything from the rim's top edge down (solid, so the
+# rim's soft edge does not show as a seam through a sleeve)
+below = (np.arange(H)[:, None] >= np.array([rim(x) for x in range(W)])[None, :]) * 255
+over.putalpha(Image.fromarray(np.minimum(np.array(over)[..., 3], below).astype('uint8')))
 c = bg.copy(); c.alpha_composite(under); c.alpha_composite(tl); c.alpha_composite(over)
 d = ImageDraw.Draw(c)
 def plate(x, y, t1, t2, w=150, hot=False):
@@ -101,7 +110,7 @@ for (lay, cx, sc, fl), y, (n, st, bet) in zip(SEATS, ys, names):
     plate(cx, y + 18, n, st, hot=(n == 'Lincoln'))
     if bet: chips(cx + (60 if cx < W / 2 else -60), y + 96, bet)
 # dealer plate, pot and board
-plate(W // 2, dy + 44, 'Death', 'the dealer', w=130)   # below his hands
+plate(W // 2, dy + 78, 'Death', 'the dealer', w=130)   # below his hands
 d.text((W // 2, 600), 'POT  60', font=F(20, True), fill=(250, 240, 220), anchor='mm')
 x0 = W // 2 - (5 * 78 - 8) // 2
 for i, (r, su, red) in enumerate([('A', '♠', False), ('J', '♥', True), ('7', '♣', False), ('Q', '♦', True)]):

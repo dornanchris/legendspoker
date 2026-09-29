@@ -312,7 +312,10 @@ nothing below the table edge is ever seen (props go on the felt, in the
 hands or on the body). Every opponent is drawn once at three-quarter view,
 facing the table's centre, and mirrored for the other side; Death, dealing
 from the far side, is front-on. The table layer's curved edge hides each
-torso's lower half; forearms and hands resting on it sit above it.
+torso's lower half; forearms and hands resting on it sit above it. A puppet keeps
+its own layer order (a sleeve can tuck under a cape); parts marked
+`on_table` are drawn again over the table where they lie on it
+(`build_puppet.py`, `mock_screen.py`).
 Every table is round and keeps a plain playing surface; each room differs in
 its table's rim and cloth, its backdrop and its light (`ROOM-ART-PROMPTS.md`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
