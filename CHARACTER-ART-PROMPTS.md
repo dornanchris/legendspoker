@@ -3606,23 +3606,41 @@ Must NOT resemble: Folklore: the personified Death of late-medieval Europe — d
 Puppet parts sheet for 2D animation rigging, for Death, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same front-on view as the reference, at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Long bone hands (skeleton), elegant and unhurried, each with a short stub of the robe sleeve, cut straight across. Draw each pose once, as the right hand (the game mirrors it), except the riffle-shuffle, which needs both hands
-- Pose: holding a squared deck of cards
-- Pose: riffle-shuffling: the left and right hands each holding half the deck, bent
-- Pose: cutting the deck
-- Pose: pitching a single card across the table (card drawn face down)
-- Pose: holding one card face down between two fingers
-- Pose: squaring the deck edges
-- Pose: spreading cards in a line
-- Pose: flat on the table, resting
-- Pose: relaxed, fingers loosely curled
+- Long bone hands (skeleton), seen front-on from across the table, slightly from above, each WITH a short stub of the robe sleeve, cut straight across. Every card is face DOWN, showing his black-and-gold skull card back, at the same size as the cards on his props sheet; a card face that shows is BLANK cream, since the game draws the faces
+- Pose: left hand holding the squared deck in a dealer's grip: deck in the palm, thumb along the top edge
+- Pose: the same hand, its thumb pushing the top card halfway off the deck
+- Pose: right hand pinching one card between thumb and fingers, ready to deal
+- Pose: right hand flicking a card forward, toward the viewer, the card just leaving the fingers
+- Pose: right hand sliding a card away to the viewer's left, arm reaching
+- Pose: right hand sliding a card away to the viewer's right, arm reaching
+- Pose: right hand turning a card over, the card on its edge mid-flip, its face blank cream
+- Pose: left hand holding the deck, resting on the table, idle
 
 Note: Death has NO tells: nothing on him should suggest mood, so no angry, surprised or laughing faces, and never glowing eyes. No scythe, hourglass or book at the table. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
 
 Must NOT resemble: Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
 ```
 
-**Step 2, Sheet 4 — Props and tell pieces:**
+**Step 2, Sheet 4 — Character hands:**
+
+```
+Puppet parts sheet for 2D animation rigging, for Death, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same front-on view as the reference, at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: character hands. Parts:
+- Long bone hands (skeleton), seen front-on from across the table, slightly from above, each WITH a short stub of the robe sleeve, cut straight across. Every card is face DOWN, showing his black-and-gold skull card back, at the same size as the cards on his props sheet; a card face that shows is BLANK cream, since the game draws the faces
+- Both hands riffle-shuffling: the deck split in two halves, thumbs lifting the corners, cards interleaving in the middle (one piece)
+- Both hands bridging the shuffle: the cards arched and springing back together (one piece)
+- Both hands squaring the deck on the table, fingers tapping its edges (one piece)
+- Right hand cutting the deck: lifting the top half off the bottom half
+- Right hand spreading the deck in a ribbon of overlapping face-down cards
+- Right hand sweeping a small untidy pile of face-down cards toward himself
+
+Note: Death has NO tells: nothing on him should suggest mood, so no angry, surprised or laughing faces, and never glowing eyes. No scythe, hourglass or book at the table. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
+
+Must NOT resemble: Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
+```
+
+**Step 2, Sheet 5 — Props and tell pieces:**
 
 ```
 Puppet parts sheet for 2D animation rigging, for Death, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same front-on view as the reference, at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
