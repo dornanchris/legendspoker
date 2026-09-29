@@ -33,6 +33,14 @@ over the table and the forearms and hands lie on the felt. (His first layout
 put the arms on top of the cape at waist height, and the sleeves bulged out
 of his hips.)
 
+The head works the same way. On top of the cape, the hood left a tall collar
+showing, so the head sat above the shoulders on a stalk; behind the cape, the
+hollow collar covered the face. So the hood is drawn over the cape, low enough
+to swallow the collar, and the torso is listed a second time (slot
+`torso_over`) with `"clip_top"` just under the chin and a short
+`"clip_feather"`, so the cape's collar, clasp chain and shoulders wrap over
+the bottom of the hood with no hard edge.
+
 Slots: `arm_l` and `arm_r` hold every single-arm piece as a swap (the left
 side is the right mirrored); `hands_both` holds the two-handed pieces, and
 showing one means hiding both arms. The swaps are parked at the rest

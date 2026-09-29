@@ -21,6 +21,10 @@ it is drawn at its own z, so its upper end can tuck under a cape or sleeve,
 and drawn again over everything below the layout's "table_line", so the part
 lying on the felt sits above the table. Anything not on the table is covered
 by the table below that line.
+"clip_top": y draws a part only from canvas line y down. Listing a piece twice,
+once whole and once clipped above the head, lets a cape's collar and shoulders
+wrap over the bottom of a hood without the collar covering the face.
+"clip_feather": n fades it in over n pixels below that line, so no hard edge.
 File paths are relative to the layout file, so it renders from anywhere.
 Once the numbers look right they are your rig's rest pose: import the same
 parts into Rive/Live2D and type these offsets in.
@@ -31,7 +35,7 @@ import glob
 import json
 import os
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageChops, ImageOps
 
 
 def cmd_init(args):
@@ -71,6 +75,8 @@ def cmd_render(args):
         im = load(p, args.layout)
         if im is None:
             continue
+        if "clip_top" in p:
+            im = clip_above(im, int(p["clip_top"]) - int(p["y"]), int(p.get("clip_feather", 0)))
         canvas.alpha_composite(im, (int(p["x"]), int(p["y"])))
         if p.get("on_table"):
             on_table.append((p, im))
@@ -85,6 +91,18 @@ def cmd_render(args):
 
     canvas.save(args.out)
     print(f"rendered -> {args.out}")
+
+
+def clip_above(im, cut, feather):
+    """Clear a part above local row `cut`, fading it in over `feather` rows."""
+    a = im.getchannel("A")
+    ramp = Image.new("L", im.size, 255)
+    for y in range(min(max(cut + feather, 0), im.height)):
+        v = 0 if y < cut else int(255 * (y - cut + 1) / (feather + 1))
+        ramp.paste(v, (0, y, im.width, y + 1))
+    im = im.copy()
+    im.putalpha(ImageChops.multiply(a, ramp))
+    return im
 
 
 def load(p, layout_path):
