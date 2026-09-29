@@ -10,7 +10,7 @@ process.chdir(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '
 const T = Object.fromEntries(fs.readdirSync('data/tables').map(f => [f.replace('.json', ''), JSON.parse(fs.readFileSync('data/tables/' + f))]));
 
 const LOOK = 'Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal.';
-const PLATE = 'A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama, eye level of someone seated at a card table. Draw the ROOM ONLY: no people, no table, no chairs in the middle of the floor, no cards, no chips, no text, no UI, no logos. Keep the centre band, where the players\' heads will sit, calmer and a little darker than the edges, with the room\'s big features up high and at the sides, so faces read against it. Slightly softer and less saturated than the characters will be, so they stand out.';
+const PLATE = 'A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama, eye level of someone seated at a card table. Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. The MIDDLE of the room is EMPTY floor: no desk, no table, no chairs, no furniture of any kind, because the round card table and the players go there. Keep the centre band, where the players\' heads will sit, calmer and a little darker than the edges: the brightest light (windows, fire, lamps) goes to the sides and up high, never directly behind the centre, so faces read against it. Slightly softer and less saturated than the characters will be, so they stand out.';
 const TABLE = 'The card table alone, seen from a player\'s seat on its near side, looking across it, so the round top is a wide ellipse: the far rim runs across the picture, the sides curve down toward the viewer, and the near rim is cut off by the bottom of the frame. The playing surface is plain and even enough for cards and chips to read on it: no pattern under the middle. Pure white background (#FFFFFF), closed dark outline. No people, no cards, no chips, no text.';
 const PIECES = 'Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.';
 
@@ -20,12 +20,12 @@ const ROOMS = {
     cloth: 'green baize',
     unique: 'The only room that looks like a real place you could visit. Green baize, brass and a fire: the classic poker table, the baseline every other room departs from.',
     table: 'A classic round poker table: deep green baize, a padded rim in dark red-brown leather edged with brass studs, a polished mahogany apron',
-    backdrop: 'The oval drawing room upstairs in the President\'s house: curved walls in cream and gold, tall sash windows with heavy curtains drawn and rain on the glass, a fire under a white marble mantel with a clock on it, brass lamps, cigar smoke gathering under a high white ceiling. Four gilt-framed portraits on the walls, one of each player (Washington, Lincoln, Theodore Roosevelt, FDR), painted in the game\'s own cartoon style',
+    backdrop: 'The oval drawing room upstairs in the President\'s house: curved walls in cream and gold, tall sash windows with heavy curtains drawn and rain on the glass, a fire under a white marble mantel with a clock on it, brass lamps, cigar smoke gathering under a high white ceiling. Four gilt-framed portraits on the walls, one of each player (Washington, Lincoln, Theodore Roosevelt, FDR), painted in the game\'s own cartoon style. The windows at the back look toward the Washington Monument at night, with rain on the glass and the curtains half drawn',
     light: 'Warm lamplight and firelight, gold and amber',
     chair: 'A dark mahogany armchair upholstered in deep green, brass nails',
     moving: ['Fire in the grate: 3 flame frames', 'Rain running down a window pane: 2 frames', 'The mantel clock\'s pendulum', 'A curl of cigar smoke, 3 sizes'],
     presence: [],
-    avoid: 'No presidential seal, eagle crest or any government insignia (their use is legally restricted). No real White House photographs copied.',
+    avoid: 'No presidential seal, eagle crest, presidential flag or any government insignia: US law restricts the use of the seal, and the presidential flag carries it. An American flag is fine. It is NOT the Oval Office: no Resolute desk, no desk at all. No real White House photographs copied.',
   },
   athens: {
     short: 'Low marble table, Greek-key border, lion legs',
