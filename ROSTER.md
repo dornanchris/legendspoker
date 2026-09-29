@@ -1137,7 +1137,7 @@ What makes him a person is that he is tired. He has done one job for longer than
 
 No tells, no noise: the endpoint of the legibility curve. Quirks: `check_raise` (minEquity 0.75, chance 0.5) — Checks strength on the flop and turn, then raises when bet into.; `heads_up_pressure` (minEquity 0.6, chance 0.35) — Alone in a pot with one opponent, applies relentless pressure.; `punish_passivity` (foldRate 0.55, chance 0.5, potFraction 0.6) — Bets into a table that has been folding too often..
 
-**Look.** Silhouette: tall, narrow, hooded — a grey burial shroud worn as a cloak, the way the danse macabre painted him, never a monk's black robe. Face: a plain skull half in the hood's shadow, drawn like a woodcut; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal. **Prop:** The deck.
+**Look.** Silhouette: tall, narrow, hooded — a black hooded robe with a deep purple lining, ragged at the hems, crossed with worn leather straps, and a gold skull brooch on a short chain at the collarbone. Face: a plain skull in the hood's shadow; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal. **Prop:** The deck.
 
 **Public domain.** Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
 

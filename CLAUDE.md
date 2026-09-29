@@ -129,6 +129,7 @@ art-tools/
                   cleaned rig pieces and previews; see its README
   fdr_layout.json FDR assembled: rest pose + swap slots (build_puppet.py)
   lincoln_parts/  Lincoln's kit, same scheme; lincoln_layout.json assembles him
+  death_parts/    Death's kit (front-on dealer); death_layout.json assembles him
   prompts/        generators for the two art-prompt files below
                   (characters.mjs + parts.mjs, rooms.mjs)
   rooms/          finished room art, one folder per venue (white_house/)
@@ -316,7 +317,9 @@ Every table is round and keeps a plain playing surface; each room differs in
 its table's rim and cloth, its backdrop and its light (`ROOM-ART-PROMPTS.md`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it: the FDR and Lincoln kits are front-on pipeline examples.
-Lincoln wears his hat at all times.
+Lincoln wears his hat at all times. Death wears a black hooded robe with a
+purple lining and a gold skull brooch (the owner's call, over the drafted grey
+shroud); rooms keep enough light behind him that the black reads.
 **The screen is game first** (the owner): laid out for 16:9, wider phones
 show more backdrop. Five figures across the top half (Death dead centre,
 furthest back), each about a fifth of the width, so a face is ~40 points on a
@@ -510,6 +513,8 @@ new art against that layout.
   rather than fetch them, or file:// stops working.
 - `MOTION-SPEC.md` layer 3 (per-character vocabulary) is an empty template.
   No character has an authored tell cluster yet.
+- Death's parts (`art-tools/death_parts/`) have no deck: no hand holding
+  cards, no shuffle, no card to deal. The game flies cards out of his hands.
 - Dracula's parts are incomplete: **no chalice** (his signature prop and half
   his tell cluster), only three mouth shapes (needs a talking set and a
   losing face), one brow pair, and fixed pupils (need separate pupil layers

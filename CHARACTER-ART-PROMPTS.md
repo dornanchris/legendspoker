@@ -3552,19 +3552,19 @@ Must NOT resemble: Norse myth as the Poetic Edda and Snorri's Prose Edda record 
 ### Death — *The Dealer*
 
 - **Who:** The dealer. He has dealt every table in this ledger, and every other table there has ever been. He has never once been late.
-- **Look:** Silhouette: tall, narrow, hooded — a grey burial shroud worn as a cloak, the way the danse macabre painted him, never a monk's black robe. Face: a plain skull half in the hood's shadow, drawn like a woodcut; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal.
+- **Look:** Silhouette: tall, narrow, hooded — a black hooded robe with a deep purple lining, ragged at the hems, crossed with worn leather straps, and a gold skull brooch on a short chain at the collarbone. Face: a plain skull in the hood's shadow; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal.
 - **Prop:** The deck
 - **Tells:** none, by design
 - **Idles:** none
 - **Copyright note:** Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
-- **Art note:** Death has NO tells: nothing on him should suggest mood. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
+- **Art note:** Death has NO tells: nothing on him should suggest mood, so no angry, surprised or laughing faces, and never glowing eyes. No scythe, hourglass or book at the table. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
 
 **Step 1 — reference portrait:**
 
 ```
 Bright, warm cartoon style like a modern animated adventure game: bold dark outlines, clean painted shading, slightly exaggerated but dignified features, warm table-lamp light. NOT dark, gritty or photoreal. Human characters keep human, dignified faces: caricature what the history records, never anything animal-like. Waist-up, seated at the far side of a round poker table, facing the viewer; forearms resting on the felt; the table's rounded edge crosses the body at the waist. Plain dark background, no text, no logos, no watermark, no cards or chips other than any prop named.
 
-Character: Death, The Dealer. Silhouette: tall, narrow, hooded — a grey burial shroud worn as a cloak, the way the danse macabre painted him, never a monk's black robe. Face: a plain skull half in the hood's shadow, drawn like a woodcut; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal.
+Character: Death, The Dealer. Silhouette: tall, narrow, hooded — a black hooded robe with a deep purple lining, ragged at the hems, crossed with worn leather straps, and a gold skull brooch on a short chain at the collarbone. Face: a plain skull in the hood's shadow; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal.
 Prop: The deck.
 IMPORTANT, must NOT resemble: Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
 ```
@@ -3577,10 +3577,10 @@ Puppet parts sheet for 2D animation rigging, for Death, the character in the att
 This sheet: face kit. Parts:
 - A plain skull, calm and tired, drawn like a woodcut: NO glowing eyes, NO grin or leer. The cranium WITHOUT the lower jaw, as one piece
 - The lower jaw alone, in 3 positions: closed, slightly open, open (speaking)
-- The hood of a grey burial shroud: the back of the hood (the dark inside) and the front rim of the hood as separate pieces
+- The hood of his black robe, purple-lined: the back of the hood (the dark inside) and the front rim of the hood as separate pieces
 - A soft shadow overlay that covers half of the skull from the hood
 
-Note: Death has NO tells: nothing on him should suggest mood. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
+Note: Death has NO tells: nothing on him should suggest mood, so no angry, surprised or laughing faces, and never glowing eyes. No scythe, hourglass or book at the table. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
 
 Must NOT resemble: Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
 ```
@@ -3591,12 +3591,11 @@ Must NOT resemble: Folklore: the personified Death of late-medieval Europe — d
 Puppet parts sheet for 2D animation rigging, for Death, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same front-on view as the reference, at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: body and arms. Parts:
-- Torso with NO head and NO arms: tall and narrow, in a grey burial shroud worn as a cloak (NOT a black monk's robe), tired posture, leaning forward on the forearms. Seated, from the shoulders down to the lap, cut off straight well BELOW the waist: the round table's edge covers the bottom, so draw more than will show. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
-- The shroud's front drape as a separate layer
-- Upper arms in shroud sleeves, left and right
-- Forearms in shroud sleeves, left and right, each in two angles: resting on the table, and raised
+- Torso with NO head and NO arms: tall and narrow, in a black hooded robe with a deep purple lining, ragged at the hems, crossed with leather straps, a gold skull brooch at the collarbone; tired posture, leaning forward on the forearms. Seated, from the shoulders down to the lap, cut off straight well BELOW the waist: the round table's edge covers the bottom, so draw more than will show. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
+- Upper arms in wide robe sleeves, left and right
+- Forearms in wide robe sleeves, left and right, each in two angles: resting on the table, and raised
 
-Note: Death has NO tells: nothing on him should suggest mood. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
+Note: Death has NO tells: nothing on him should suggest mood, so no angry, surprised or laughing faces, and never glowing eyes. No scythe, hourglass or book at the table. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
 
 Must NOT resemble: Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
 ```
@@ -3607,7 +3606,7 @@ Must NOT resemble: Folklore: the personified Death of late-medieval Europe — d
 Puppet parts sheet for 2D animation rigging, for Death, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same front-on view as the reference, at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
 
 This sheet: card-action hands. Parts:
-- Long bone hands (skeleton), elegant and unhurried, each with a short stub of the shroud sleeve, cut straight across. Draw each pose once, as the right hand (the game mirrors it), except the riffle-shuffle, which needs both hands
+- Long bone hands (skeleton), elegant and unhurried, each with a short stub of the robe sleeve, cut straight across. Draw each pose once, as the right hand (the game mirrors it), except the riffle-shuffle, which needs both hands
 - Pose: holding a squared deck of cards
 - Pose: riffle-shuffling: the left and right hands each holding half the deck, bent
 - Pose: cutting the deck
@@ -3618,7 +3617,7 @@ This sheet: card-action hands. Parts:
 - Pose: flat on the table, resting
 - Pose: relaxed, fingers loosely curled
 
-Note: Death has NO tells: nothing on him should suggest mood. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
+Note: Death has NO tells: nothing on him should suggest mood, so no angry, surprised or laughing faces, and never glowing eyes. No scythe, hourglass or book at the table. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
 
 Must NOT resemble: Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
 ```
@@ -3633,7 +3632,7 @@ This sheet: props and tell pieces. Parts:
 - The deck split into two halves
 - A single card back (plain, dark design)
 
-Note: Death has NO tells: nothing on him should suggest mood. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
+Note: Death has NO tells: nothing on him should suggest mood, so no angry, surprised or laughing faces, and never glowing eyes. No scythe, hourglass or book at the table. Must not resemble Pratchett's Death, Bergman's Seventh Seal or Gaiman's Death.
 
 Must NOT resemble: Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
 ```

@@ -7,7 +7,7 @@ The screen is laid out for 16:9, the narrowest phone we support; wider phones
 see more backdrop at the sides and nothing else changes. Back to front:
 backdrop, the players' bodies, the table (its far rim across their waists),
 their forearms and hands on the felt, then the game: name plates, bets, pot,
-board, your cards, the buttons. Death is a placeholder until his art exists.
+board, your cards, the buttons. Death is front-on, dead centre.
 
   python3 art-tools/mock_screen.py [room] [-o out.png]     (room: white_house)
 
@@ -59,7 +59,7 @@ def passes(layout):
         subprocess.run(['python3', os.path.join(HERE, 'build_puppet.py'), 'render', f'{S}/sm_{k}.json', '-o', f'{S}/sm_{k}.png'], check=True, capture_output=True)
         out.append(Image.open(f'{S}/sm_{k}.png').convert('RGBA'))
     return out
-LINE = {'fdr_layout.json': 810, 'lincoln_layout.json': 880}
+LINE = {'fdr_layout.json': 810, 'lincoln_layout.json': 880, 'death_layout.json': 810}   # each layout's table line
 cache = {l: passes(l) for l in LINE}
 
 under = Image.new('RGBA', (W, H), (0, 0, 0, 0)); over = Image.new('RGBA', (W, H), (0, 0, 0, 0))
@@ -71,20 +71,14 @@ def seat(lay, cx, sc, flip, sink=10):
         layer.alpha_composite(im, (int(cx - im.width / 2), int(y - LINE[lay] * sc)))
     return y
 
-# Death: a placeholder until his art exists (front-on, dealing, dead centre)
+# Death deals from the far side, front-on and dead centre
 def death(cx, sc):
-    y = rim(cx) + 6
-    d = ImageDraw.Draw(under)
-    w = int(300 * sc); hh = int(430 * sc)
-    d.polygon([(cx - w // 2, y), (cx + w // 2, y), (cx + w // 3, y - hh * 0.62), (cx, y - hh), (cx - w // 3, y - hh * 0.62)], fill=(92, 92, 98, 255), outline=(20, 20, 24, 255))
-    d.ellipse((cx - w * 0.2, y - hh * 0.86, cx + w * 0.2, y - hh * 0.5), fill=(226, 220, 204, 255), outline=(20, 20, 24, 255), width=2)
-    for ex in (-1, 1): d.ellipse((cx + ex * w * 0.09 - 9 * sc * 2, y - hh * 0.72, cx + ex * w * 0.09 + 9 * sc * 2, y - hh * 0.66), fill=(30, 30, 34, 255))
-    return y
+    return seat('death_layout.json', cx, sc, False, 4)
 
 SEATS = g('seats', [['fdr_layout.json', 150, 0.36, False], ['lincoln_layout.json', 470, 0.30, False],
                     ['fdr_layout.json', 1130, 0.30, True], ['lincoln_layout.json', 1450, 0.36, True]])
 ys = [seat(*s_) for s_ in SEATS]
-dy = death(W // 2, g('death', 0.62))
+dy = death(W // 2, g('death', 0.34))
 
 c = bg.copy(); c.alpha_composite(under); c.alpha_composite(tl); c.alpha_composite(over)
 d = ImageDraw.Draw(c)
@@ -107,7 +101,7 @@ for (lay, cx, sc, fl), y, (n, st, bet) in zip(SEATS, ys, names):
     plate(cx, y + 18, n, st, hot=(n == 'Lincoln'))
     if bet: chips(cx + (60 if cx < W / 2 else -60), y + 96, bet)
 # dealer plate, pot and board
-plate(W // 2, dy + 14, 'Death', 'the dealer', w=130)
+plate(W // 2, dy + 44, 'Death', 'the dealer', w=130)   # below his hands
 d.text((W // 2, 600), 'POT  60', font=F(20, True), fill=(250, 240, 220), anchor='mm')
 x0 = W // 2 - (5 * 78 - 8) // 2
 for i, (r, su, red) in enumerate([('A', '♠', False), ('J', '♥', True), ('7', '♣', False), ('Q', '♦', True)]):

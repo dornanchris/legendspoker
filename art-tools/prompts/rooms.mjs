@@ -129,7 +129,7 @@ const ROOMS = {
     cloth: 'none: bare wood',
     unique: 'The smallest room: no gold, no crowd, one lamp, one small round table and two chairs. Death sits across from you, front-on, for the first time as a player.',
     table: 'A small round table of bare, worn, unpainted wood, no cloth, no felt, a single oil lamp standing on it',
-    backdrop: 'A plank-walled dock house on the bank of a wide black river, at night, in a storm: rain running down the windows, a coil of rope, a boat hook on the wall, a door that never quite shuts. Through the window, far out on the water, a ferryman\'s lantern moving away from the shore with a figure aboard',
+    backdrop: 'A plank-walled dock house on the bank of a wide black river, at night, in a storm. Keep it lighter than his black robe so Death reads against it: warm lantern light from the dock outside the windows, and the planks lit amber, not black: rain running down the windows, a coil of rope, a boat hook on the wall, a door that never quite shuts. Through the window, far out on the water, a ferryman\'s lantern moving away from the shore with a figure aboard',
     light: 'One oil lamp, warm and small, against storm-dark blue',
     chair: 'A plain wooden chair',
     moving: ['The oil lamp flame: 3 frames, one guttering', 'Rain on the window: 2 frames', 'The ferryman\'s lantern and boat, small, drifting across the window', 'The door, shut and open a crack'],

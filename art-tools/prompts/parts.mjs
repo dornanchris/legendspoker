@@ -132,11 +132,11 @@ export const PARTS = {
     face: [
       'A plain skull, calm and tired, drawn like a woodcut: NO glowing eyes, NO grin or leer. The cranium WITHOUT the lower jaw, as one piece',
       'The lower jaw alone, in 3 positions: closed, slightly open, open (speaking)',
-      'The hood of a grey burial shroud: the back of the hood (the dark inside) and the front rim of the hood as separate pieces',
+      'The hood of his black robe, purple-lined: the back of the hood (the dark inside) and the front rim of the hood as separate pieces',
       'A soft shadow overlay that covers half of the skull from the hood',
     ],
-    body: body('tall and narrow, in a grey burial shroud worn as a cloak (NOT a black monk\'s robe), tired posture, leaning forward on the forearms', ['The shroud\'s front drape as a separate layer'], { upper: 'Upper arms in shroud sleeves, left and right', fore: 'Forearms in shroud sleeves, left and right, each in two angles: resting on the table, and raised' }),
-    hands: hands('Long bone hands (skeleton), elegant and unhurried, each with a short stub of the shroud sleeve, cut straight across. Draw each pose once, as the right hand (the game mirrors it), except the riffle-shuffle, which needs both hands.', [], [
+    body: body('tall and narrow, in a black hooded robe with a deep purple lining, ragged at the hems, crossed with leather straps, a gold skull brooch at the collarbone; tired posture, leaning forward on the forearms', [], { upper: 'Upper arms in wide robe sleeves, left and right', fore: 'Forearms in wide robe sleeves, left and right, each in two angles: resting on the table, and raised' }),
+    hands: hands('Long bone hands (skeleton), elegant and unhurried, each with a short stub of the robe sleeve, cut straight across. Draw each pose once, as the right hand (the game mirrors it), except the riffle-shuffle, which needs both hands.', [], [
       'holding a squared deck of cards',
       'riffle-shuffling: the left and right hands each holding half the deck, bent',
       'cutting the deck',
@@ -149,7 +149,7 @@ export const PARTS = {
     ]),
     props: ['The deck, squared, face down', 'The deck split into two halves', 'A single card back (plain, dark design)'],
     angle: 'front',
-    note: 'Death has NO tells: nothing on him should suggest mood. Must not resemble Pratchett\'s Death, Bergman\'s Seventh Seal or Gaiman\'s Death.',
+    note: 'Death has NO tells: nothing on him should suggest mood, so no angry, surprised or laughing faces, and never glowing eyes. No scythe, hourglass or book at the table. Must not resemble Pratchett\'s Death, Bergman\'s Seventh Seal or Gaiman\'s Death.',
   },
   dracula: {
     face: face({ head: 'Blank head: extreme pallor, pointed ears and neck, NO eyes, eyebrows, nose or mouth drawn on it (skip if you are keeping the existing parts)',
