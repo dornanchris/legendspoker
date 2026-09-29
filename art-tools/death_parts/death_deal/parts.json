@@ -1,0 +1,122 @@
+{
+  "source": "death_deal.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "death_deal_01.png",
+      "label": "hand holding the deck, dealer's grip",
+      "x": 28,
+      "y": 101,
+      "w": 324,
+      "h": 341,
+      "pivot": [
+        162.0,
+        170.5
+      ],
+      "area": 76326
+    },
+    {
+      "index": 2,
+      "file": "death_deal_02.png",
+      "label": "hand holding the deck, thumb pushing the top card off",
+      "x": 425,
+      "y": 111,
+      "w": 326,
+      "h": 330,
+      "pivot": [
+        163.0,
+        165.0
+      ],
+      "area": 74236
+    },
+    {
+      "index": 3,
+      "file": "death_deal_03.png",
+      "label": "hand pinching one card, ready to deal",
+      "x": 805,
+      "y": 60,
+      "w": 271,
+      "h": 423,
+      "pivot": [
+        135.5,
+        211.5
+      ],
+      "area": 71510
+    },
+    {
+      "index": 4,
+      "file": "death_deal_04.png",
+      "label": "hand flicking a card toward the viewer (you)",
+      "x": 1180,
+      "y": 89,
+      "w": 320,
+      "h": 385,
+      "pivot": [
+        160.0,
+        192.5
+      ],
+      "area": 73576
+    },
+    {
+      "index": 5,
+      "file": "death_deal_05.png",
+      "label": "hand sliding a card away to one side",
+      "x": 19,
+      "y": 575,
+      "w": 373,
+      "h": 371,
+      "pivot": [
+        186.5,
+        185.5
+      ],
+      "area": 63325
+    },
+    {
+      "index": 6,
+      "file": "death_deal_06.png",
+      "label": "hand sliding a card away, the other way",
+      "x": 504,
+      "y": 564,
+      "w": 326,
+      "h": 382,
+      "pivot": [
+        163.0,
+        191.0
+      ],
+      "area": 61484
+    },
+    {
+      "index": 7,
+      "file": "death_deal_07.png",
+      "label": "hand turning a card over, blank face (the game draws faces)",
+      "x": 832,
+      "y": 564,
+      "w": 261,
+      "h": 361,
+      "pivot": [
+        130.5,
+        180.5
+      ],
+      "area": 57439
+    },
+    {
+      "index": 8,
+      "file": "death_deal_08.png",
+      "label": "hand resting on the deck",
+      "x": 1139,
+      "y": 583,
+      "w": 376,
+      "h": 343,
+      "pivot": [
+        188.0,
+        171.5
+      ],
+      "area": 82649
+    }
+  ]
+}

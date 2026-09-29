@@ -1,0 +1,696 @@
+{
+  "source": "death_props.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "death_props_01.png",
+      "label": "full figure (reference only)",
+      "x": 7,
+      "y": 16,
+      "w": 424,
+      "h": 456,
+      "pivot": [
+        212.0,
+        228.0
+      ],
+      "area": 118512
+    },
+    {
+      "index": 2,
+      "file": "death_props_02.png",
+      "label": "skull alone, no jaw (for a moving jaw)",
+      "x": 461,
+      "y": 27,
+      "w": 97,
+      "h": 127,
+      "pivot": [
+        48.5,
+        63.5
+      ],
+      "area": 8381
+    },
+    {
+      "index": 3,
+      "file": "death_props_03.png",
+      "label": "empty hood, front",
+      "x": 565,
+      "y": 17,
+      "w": 154,
+      "h": 172,
+      "pivot": [
+        77.0,
+        86.0
+      ],
+      "area": 17078
+    },
+    {
+      "index": 4,
+      "file": "death_props_04.png",
+      "label": "skull, three-quarter (not used)",
+      "x": 721,
+      "y": 27,
+      "w": 105,
+      "h": 117,
+      "pivot": [
+        52.5,
+        58.5
+      ],
+      "area": 8695
+    },
+    {
+      "index": 5,
+      "file": "death_props_05.png",
+      "label": "hood, side (not used)",
+      "x": 838,
+      "y": 20,
+      "w": 167,
+      "h": 194,
+      "pivot": [
+        83.5,
+        97.0
+      ],
+      "area": 21120
+    },
+    {
+      "index": 6,
+      "file": "death_props_06.png",
+      "label": "head, three-quarter (not used)",
+      "x": 1003,
+      "y": 22,
+      "w": 170,
+      "h": 202,
+      "pivot": [
+        85.0,
+        101.0
+      ],
+      "area": 21808
+    },
+    {
+      "index": 7,
+      "file": "death_props_07.png",
+      "label": "head, three-quarter (not used)",
+      "x": 1174,
+      "y": 20,
+      "w": 150,
+      "h": 190,
+      "pivot": [
+        75.0,
+        95.0
+      ],
+      "area": 19833
+    },
+    {
+      "index": 8,
+      "file": "death_props_08.png",
+      "label": "hood from behind (not used)",
+      "x": 1334,
+      "y": 17,
+      "w": 188,
+      "h": 200,
+      "pivot": [
+        94.0,
+        100.0
+      ],
+      "area": 22586
+    },
+    {
+      "index": 9,
+      "file": "death_props_09.png",
+      "label": "torso, front, no arms",
+      "x": 441,
+      "y": 199,
+      "w": 321,
+      "h": 272,
+      "pivot": [
+        160.5,
+        136.0
+      ],
+      "area": 63428
+    },
+    {
+      "index": 10,
+      "file": "death_props_10.png",
+      "label": "lower jaw alone",
+      "x": 473,
+      "y": 149,
+      "w": 72,
+      "h": 57,
+      "pivot": [
+        36.0,
+        28.5
+      ],
+      "area": 1867
+    },
+    {
+      "index": 11,
+      "file": "death_props_11.png",
+      "label": "cowl collar",
+      "x": 702,
+      "y": 148,
+      "w": 121,
+      "h": 96,
+      "pivot": [
+        60.5,
+        48.0
+      ],
+      "area": 7462
+    },
+    {
+      "index": 12,
+      "file": "death_props_12.png",
+      "label": "torso, front, cape over the shoulders",
+      "x": 764,
+      "y": 219,
+      "w": 305,
+      "h": 247,
+      "pivot": [
+        152.5,
+        123.5
+      ],
+      "area": 47461
+    },
+    {
+      "index": 13,
+      "file": "death_props_13.png",
+      "label": "robe from behind (not used)",
+      "x": 1078,
+      "y": 216,
+      "w": 211,
+      "h": 252,
+      "pivot": [
+        105.5,
+        126.0
+      ],
+      "area": 37647
+    },
+    {
+      "index": 14,
+      "file": "death_props_14.png",
+      "label": "robe from behind (not used)",
+      "x": 1306,
+      "y": 220,
+      "w": 224,
+      "h": 242,
+      "pivot": [
+        112.0,
+        121.0
+      ],
+      "area": 39848
+    },
+    {
+      "index": 15,
+      "file": "death_props_15.png",
+      "label": "arm swap (reaching)",
+      "x": 33,
+      "y": 475,
+      "w": 128,
+      "h": 181,
+      "pivot": [
+        64.0,
+        90.5
+      ],
+      "area": 13903
+    },
+    {
+      "index": 16,
+      "file": "death_props_16.png",
+      "label": "arm swap (reaching)",
+      "x": 169,
+      "y": 479,
+      "w": 129,
+      "h": 179,
+      "pivot": [
+        64.5,
+        89.5
+      ],
+      "area": 11987
+    },
+    {
+      "index": 17,
+      "file": "death_props_17.png",
+      "label": "arm swap (reaching)",
+      "x": 314,
+      "y": 478,
+      "w": 110,
+      "h": 180,
+      "pivot": [
+        55.0,
+        90.0
+      ],
+      "area": 11934
+    },
+    {
+      "index": 18,
+      "file": "death_props_18.png",
+      "label": "arm swap (reaching)",
+      "x": 417,
+      "y": 479,
+      "w": 123,
+      "h": 165,
+      "pivot": [
+        61.5,
+        82.5
+      ],
+      "area": 11362
+    },
+    {
+      "index": 19,
+      "file": "death_props_19.png",
+      "label": "arm swap (reaching)",
+      "x": 545,
+      "y": 478,
+      "w": 137,
+      "h": 155,
+      "pivot": [
+        68.5,
+        77.5
+      ],
+      "area": 9939
+    },
+    {
+      "index": 20,
+      "file": "death_props_20.png",
+      "label": "arm swap (reaching)",
+      "x": 646,
+      "y": 482,
+      "w": 146,
+      "h": 160,
+      "pivot": [
+        73.0,
+        80.0
+      ],
+      "area": 11095
+    },
+    {
+      "index": 21,
+      "file": "death_props_21.png",
+      "label": "arm swap (reaching)",
+      "x": 770,
+      "y": 479,
+      "w": 123,
+      "h": 154,
+      "pivot": [
+        61.5,
+        77.0
+      ],
+      "area": 10333
+    },
+    {
+      "index": 22,
+      "file": "death_props_22.png",
+      "label": "belts",
+      "x": 845,
+      "y": 413,
+      "w": 154,
+      "h": 70,
+      "pivot": [
+        77.0,
+        35.0
+      ],
+      "area": 6875
+    },
+    {
+      "index": 23,
+      "file": "death_props_23.png",
+      "label": "arm swap (reaching)",
+      "x": 913,
+      "y": 478,
+      "w": 131,
+      "h": 159,
+      "pivot": [
+        65.5,
+        79.5
+      ],
+      "area": 10886
+    },
+    {
+      "index": 24,
+      "file": "death_props_24.png",
+      "label": "arm swap (reaching)",
+      "x": 1035,
+      "y": 466,
+      "w": 141,
+      "h": 167,
+      "pivot": [
+        70.5,
+        83.5
+      ],
+      "area": 11928
+    },
+    {
+      "index": 25,
+      "file": "death_props_25.png",
+      "label": "arm swap (reaching)",
+      "x": 1108,
+      "y": 466,
+      "w": 214,
+      "h": 178,
+      "pivot": [
+        107.0,
+        89.0
+      ],
+      "area": 15394
+    },
+    {
+      "index": 26,
+      "file": "death_props_26.png",
+      "label": "arm swap (reaching)",
+      "x": 1291,
+      "y": 478,
+      "w": 209,
+      "h": 160,
+      "pivot": [
+        104.5,
+        80.0
+      ],
+      "area": 15697
+    },
+    {
+      "index": 27,
+      "file": "death_props_27.png",
+      "label": "arm swap (reaching)",
+      "x": 18,
+      "y": 652,
+      "w": 137,
+      "h": 148,
+      "pivot": [
+        68.5,
+        74.0
+      ],
+      "area": 10669
+    },
+    {
+      "index": 28,
+      "file": "death_props_28.png",
+      "label": "arm swap (reaching)",
+      "x": 143,
+      "y": 650,
+      "w": 140,
+      "h": 143,
+      "pivot": [
+        70.0,
+        71.5
+      ],
+      "area": 10421
+    },
+    {
+      "index": 29,
+      "file": "death_props_29.png",
+      "label": "arm swap (reaching)",
+      "x": 288,
+      "y": 656,
+      "w": 167,
+      "h": 150,
+      "pivot": [
+        83.5,
+        75.0
+      ],
+      "area": 13544
+    },
+    {
+      "index": 30,
+      "file": "death_props_30.png",
+      "label": "arm swap (reaching)",
+      "x": 430,
+      "y": 652,
+      "w": 186,
+      "h": 106,
+      "pivot": [
+        93.0,
+        53.0
+      ],
+      "area": 9408
+    },
+    {
+      "index": 31,
+      "file": "death_props_31.png",
+      "label": "arm swap (reaching)",
+      "x": 614,
+      "y": 651,
+      "w": 166,
+      "h": 155,
+      "pivot": [
+        83.0,
+        77.5
+      ],
+      "area": 13218
+    },
+    {
+      "index": 32,
+      "file": "death_props_32.png",
+      "label": "arm swap (reaching)",
+      "x": 772,
+      "y": 658,
+      "w": 143,
+      "h": 145,
+      "pivot": [
+        71.5,
+        72.5
+      ],
+      "area": 10954
+    },
+    {
+      "index": 33,
+      "file": "death_props_33.png",
+      "label": "arm swap (reaching)",
+      "x": 916,
+      "y": 649,
+      "w": 94,
+      "h": 152,
+      "pivot": [
+        47.0,
+        76.0
+      ],
+      "area": 9625
+    },
+    {
+      "index": 34,
+      "file": "death_props_34.png",
+      "label": "arm swap (reaching)",
+      "x": 1018,
+      "y": 655,
+      "w": 128,
+      "h": 146,
+      "pivot": [
+        64.0,
+        73.0
+      ],
+      "area": 11339
+    },
+    {
+      "index": 35,
+      "file": "death_props_35.png",
+      "label": "arm swap (reaching)",
+      "x": 1149,
+      "y": 648,
+      "w": 130,
+      "h": 161,
+      "pivot": [
+        65.0,
+        80.5
+      ],
+      "area": 11409
+    },
+    {
+      "index": 36,
+      "file": "death_props_36.png",
+      "label": "arm swap (reaching)",
+      "x": 1268,
+      "y": 639,
+      "w": 133,
+      "h": 167,
+      "pivot": [
+        66.5,
+        83.5
+      ],
+      "area": 9056
+    },
+    {
+      "index": 37,
+      "file": "death_props_37.png",
+      "label": "arm swap (reaching)",
+      "x": 1384,
+      "y": 657,
+      "w": 123,
+      "h": 141,
+      "pivot": [
+        61.5,
+        70.5
+      ],
+      "area": 10601
+    },
+    {
+      "index": 38,
+      "file": "death_props_38.png",
+      "label": "card back, flat (the game's card back)",
+      "x": 22,
+      "y": 820,
+      "w": 103,
+      "h": 156,
+      "pivot": [
+        51.5,
+        78.0
+      ],
+      "area": 15000
+    },
+    {
+      "index": 39,
+      "file": "death_props_39.png",
+      "label": "card, tilted",
+      "x": 135,
+      "y": 837,
+      "w": 135,
+      "h": 138,
+      "pivot": [
+        67.5,
+        69.0
+      ],
+      "area": 11545
+    },
+    {
+      "index": 40,
+      "file": "death_props_40.png",
+      "label": "deck, tall",
+      "x": 281,
+      "y": 840,
+      "w": 141,
+      "h": 139,
+      "pivot": [
+        70.5,
+        69.5
+      ],
+      "area": 12597
+    },
+    {
+      "index": 41,
+      "file": "death_props_41.png",
+      "label": "deck",
+      "x": 419,
+      "y": 864,
+      "w": 119,
+      "h": 110,
+      "pivot": [
+        59.5,
+        55.0
+      ],
+      "area": 8447
+    },
+    {
+      "index": 42,
+      "file": "death_props_42.png",
+      "label": "deck, small",
+      "x": 547,
+      "y": 878,
+      "w": 110,
+      "h": 81,
+      "pivot": [
+        55.0,
+        40.5
+      ],
+      "area": 5491
+    },
+    {
+      "index": 43,
+      "file": "death_props_43.png",
+      "label": "card on its edge",
+      "x": 682,
+      "y": 866,
+      "w": 24,
+      "h": 103,
+      "pivot": [
+        12.0,
+        51.5
+      ],
+      "area": 1688
+    },
+    {
+      "index": 44,
+      "file": "death_props_44.png",
+      "label": "card, tilted",
+      "x": 718,
+      "y": 856,
+      "w": 110,
+      "h": 113,
+      "pivot": [
+        55.0,
+        56.5
+      ],
+      "area": 5960
+    },
+    {
+      "index": 45,
+      "file": "death_props_45.png",
+      "label": "fanned cards",
+      "x": 836,
+      "y": 850,
+      "w": 173,
+      "h": 123,
+      "pivot": [
+        86.5,
+        61.5
+      ],
+      "area": 13197
+    },
+    {
+      "index": 46,
+      "file": "death_props_46.png",
+      "label": "blank card face",
+      "x": 1025,
+      "y": 844,
+      "w": 84,
+      "h": 125,
+      "pivot": [
+        42.0,
+        62.5
+      ],
+      "area": 9636
+    },
+    {
+      "index": 47,
+      "file": "death_props_47.png",
+      "label": "black card blank",
+      "x": 1119,
+      "y": 844,
+      "w": 85,
+      "h": 125,
+      "pivot": [
+        42.5,
+        62.5
+      ],
+      "area": 9658
+    },
+    {
+      "index": 48,
+      "file": "death_props_48.png",
+      "label": "deck, low",
+      "x": 1224,
+      "y": 858,
+      "w": 139,
+      "h": 99,
+      "pivot": [
+        69.5,
+        49.5
+      ],
+      "area": 10197
+    },
+    {
+      "index": 49,
+      "file": "death_props_49.png",
+      "label": "deck, tall, angled",
+      "x": 1382,
+      "y": 839,
+      "w": 137,
+      "h": 131,
+      "pivot": [
+        68.5,
+        65.5
+      ],
+      "area": 13436
+    }
+  ]
+}

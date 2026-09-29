@@ -129,7 +129,8 @@ art-tools/
                   cleaned rig pieces and previews; see its README
   fdr_layout.json FDR assembled: rest pose + swap slots (build_puppet.py)
   lincoln_parts/  Lincoln's kit, same scheme; lincoln_layout.json assembles him
-  death_parts/    Death's kit (front-on dealer); death_layout.json assembles him
+  death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
+                  back); death_layout.json assembles him
   prompts/        generators for the two art-prompt files below
                   (characters.mjs + parts.mjs, rooms.mjs)
   rooms/          finished room art, one folder per venue (white_house/)
@@ -516,8 +517,6 @@ new art against that layout.
   rather than fetch them, or file:// stops working.
 - `MOTION-SPEC.md` layer 3 (per-character vocabulary) is an empty template.
   No character has an authored tell cluster yet.
-- Death's parts (`art-tools/death_parts/`) have no deck: no hand holding
-  cards, no shuffle, no card to deal. The game flies cards out of his hands.
 - Dracula's parts are incomplete: **no chalice** (his signature prop and half
   his tell cluster), only three mouth shapes (needs a talking set and a
   losing face), one brow pair, and fixed pupils (need separate pupil layers
