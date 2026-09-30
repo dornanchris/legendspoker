@@ -66,6 +66,23 @@ Prop: Long cigarette holder.
 IMPORTANT, must NOT resemble: Historical figure, died 1945; US government photographs of him are public domain. Build from 1930s–40s press photographs. Avoid any modern screen or stage likeness, including the FDR of the musical Annie. Do not stage or joke about the wheelchair: he kept it out of frame all his life, and so do we.
 ```
 
+**Three-quarter expression sheet** (attach his parts sheet and `art-tools/lincoln_parts/sources/lincoln_sheet.png`):
+
+```
+Character sheet for 2D animation rigging: Franklin D. Roosevelt. Attach two images: his own parts sheet (match it exactly: face, hair, clothes, colours, line weight and the flat cartoon style) and Lincoln's sheet (copy only its layout and its head angle).
+
+Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.
+
+The angle: a gentle three-quarter view, turned about 25 degrees from front-on, the same as the heads on the Lincoln sheet. Both eyes, the whole nose, the mouth and both shoulders clearly visible. NOT profile, NOT near-profile.
+
+Draw two matching sets, one facing the viewer's right and its mirror image facing the viewer's left, as the Lincoln sheet does. For each set:
+- Finished heads, each with its neck and the top of its collar, all at the same size and angle: neutral, the long cigarette holder clenched in his teeth and cocked upward; the same, holder level; a broad smile at the whole table, around the holder; talking, with no holder in his mouth; a frown; laughing. He wears pince-nez: clip-on round lenses on a cord, NO arms over the ears, clear lenses
+- One torso at the same angle: no head, cut off straight below the waist, the upper arms hanging at the sides down to the elbows; NO forearms, NO hands
+- Two forearms lying on a table, pointing toward its centre (down, and away to the side the heads face), open at the elbow end, each with its cuff
+
+Must NOT resemble: Historical figure, died 1945; US government photographs of him are public domain. Build from 1930s–40s press photographs. Avoid any modern screen or stage likeness, including the FDR of the musical Annie. Do not stage or joke about the wheelchair: he kept it out of frame all his life, and so do we.
+```
+
 **Step 2, Sheet 1 — Face kit:**
 
 ```
@@ -262,6 +279,23 @@ Prop: Round steel-rimmed spectacles.
 IMPORTANT, must NOT resemble: Historical figure, died 1919; period photographs are public domain. Build from photographs and the 1898 Rough Rider uniform. Avoid the Night at the Museum portrayal (horseback, waxwork) and any modern screen likeness. No teddy bears.
 ```
 
+**Three-quarter expression sheet** (attach his parts sheet and `art-tools/lincoln_parts/sources/lincoln_sheet.png`):
+
+```
+Character sheet for 2D animation rigging: Theodore Roosevelt. Attach two images: his own parts sheet (match it exactly: face, hair, clothes, colours, line weight and the flat cartoon style) and Lincoln's sheet (copy only its layout and its head angle).
+
+Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.
+
+The angle: a gentle three-quarter view, turned about 25 degrees from front-on, the same as the heads on the Lincoln sheet. Both eyes, the whole nose, the mouth and both shoulders clearly visible. NOT profile, NOT near-profile.
+
+Draw two matching sets, one facing the viewer's right and its mirror image facing the viewer's left, as the Lincoln sheet does. For each set:
+- Finished heads, each with its neck and the top of its collar, all at the same size and angle: neutral; a huge grin with every tooth showing; talking, mouth open mid-word; a frown; eyes narrowed, suspicious; the neutral head again WITHOUT his spectacles (he takes them off to polish them). Round steel-rimmed spectacles with clear lenses
+- One torso at the same angle: no head, cut off straight below the waist, the upper arms hanging at the sides down to the elbows; NO forearms, NO hands
+- Two forearms lying on a table, pointing toward its centre (down, and away to the side the heads face), open at the elbow end, each with its cuff
+
+Must NOT resemble: Historical figure, died 1919; period photographs are public domain. Build from photographs and the 1898 Rough Rider uniform. Avoid the Night at the Museum portrayal (horseback, waxwork) and any modern screen likeness. No teddy bears.
+```
+
 **Step 2, Sheet 1 — Face kit:**
 
 ```
@@ -359,6 +393,23 @@ Bright, warm cartoon style like a modern animated adventure game: bold dark outl
 Character: George Washington, Father of His Country. Silhouette: the straightest back at the table, high collar, his own hair powdered and tied at the nape — not a wig. Face: long, heavy-jawed, the mouth set firm. Prop: the buff-and-blue general's coat with gold epaulettes; its cuffs and shoulders are the tell surface, so any change in that upright line reads at once.
 Prop: Buff-and-blue general's coat.
 IMPORTANT, must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart and Charles Willson Peale portraits, which are public domain. Avoid the look and staging of the musical Hamilton and any modern screen likeness. No wooden teeth: that is a myth.
+```
+
+**Three-quarter expression sheet** (attach his parts sheet and `art-tools/lincoln_parts/sources/lincoln_sheet.png`):
+
+```
+Character sheet for 2D animation rigging: George Washington. Attach two images: his own parts sheet (match it exactly: face, hair, clothes, colours, line weight and the flat cartoon style) and Lincoln's sheet (copy only its layout and its head angle).
+
+Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.
+
+The angle: a gentle three-quarter view, turned about 25 degrees from front-on, the same as the heads on the Lincoln sheet. Both eyes, the whole nose, the mouth and both shoulders clearly visible. NOT profile, NOT near-profile.
+
+Draw two matching sets, one facing the viewer's right and its mirror image facing the viewer's left, as the Lincoln sheet does. For each set:
+- Finished heads, each with its neck and the top of its collar, all at the same size and angle: neutral, mouth set firm; talking; a slight, rare smile; a frown; jaw clenched, working. His own hair, powdered and tied at the back with a black ribbon
+- One torso at the same angle: no head, cut off straight below the waist, the upper arms hanging at the sides down to the elbows; NO forearms, NO hands
+- Two forearms lying on a table, pointing toward its centre (down, and away to the side the heads face), open at the elbow end, each with its cuff
+
+Must NOT resemble: Historical figure, died 1799. Build from the Gilbert Stuart and Charles Willson Peale portraits, which are public domain. Avoid the look and staging of the musical Hamilton and any modern screen likeness. No wooden teeth: that is a myth.
 ```
 
 **Step 2, Sheet 1 — Face kit:**

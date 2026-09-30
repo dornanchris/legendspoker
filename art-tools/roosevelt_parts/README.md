@@ -5,8 +5,8 @@ Lincoln's flat cartoon style: Rough Rider khaki, campaign hat and spectacles. `r
 `_contact_sheet.png` and `parts.json` with a label on each.
 
 The puppet is built by `art-tools/seat_puppet.py` from `seat.json`:
-head 7 (turned right, near profile), torso 13, the near arm bent across and the far forearm behind, hands on the
-felt toward the table's centre, facing right (flipped for the table's right).
+head 7 (turned right, near profile), torso 13, both forearms starting at the elbows (the torso's sides, at the table's
+edge) and lying on the felt, hands toward the table's centre, facing right (flipped for the table's right).
 The head is drawn in front and the torso again over it from the collar down
 (`"collar"`), so the collar wraps round the neck painted on the head.
 `roosevelt_rig/` holds the sleeves with their cuffs trimmed; each hand's own cuff

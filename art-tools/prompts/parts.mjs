@@ -169,6 +169,7 @@ export const PARTS = {
     note: 'Parts already exist in art-tools/dracula_parts, in an older, glossier style than FDR. Gaps there: the chalice, a talking mouth set, a losing face, and whole-eye swaps (his eyes have fixed pupils). If FDR\'s style is the house style, redo all of his sheets.',
   },
   fdr: {
+    expressions: 'neutral, the long cigarette holder clenched in his teeth and cocked upward; the same, holder level; a broad smile at the whole table, around the holder; talking, with no holder in his mouth; a frown; laughing. He wears pince-nez: clip-on round lenses on a cord, NO arms over the ears, clear lenses',
     face: face({ hair: ['Grey swept-back hair as a separate piece'],
       mouthsExtra: 'a mouth gripping a cigarette holder in the teeth, smiling around it (holder NOT drawn)',
       extra: [`Pince-nez with its cord, as a separate piece, ${CLEAR}`] }),
@@ -349,6 +350,7 @@ export const PARTS = {
     note: 'Nothing like Robby the Robot, Gort or the Lost in Space robot.',
   },
   roosevelt: {
+    expressions: 'neutral; a huge grin with every tooth showing; talking, mouth open mid-word; a frown; eyes narrowed, suspicious; the neutral head again WITHOUT his spectacles (he takes them off to polish them). Round steel-rimmed spectacles with clear lenses',
     face: face({ hair: ['Hair as a separate piece', 'Heavy moustache as a separate piece'],
       mouthsExtra: 'the enormous grin, all teeth (these must read small, so 3 versions: grin, bigger grin, biggest grin)',
       extra: [`Round steel-rimmed spectacles as a separate piece, ${CLEAR}`] }),
@@ -416,6 +418,7 @@ export const PARTS = {
     props: ['A big white handkerchief', 'A leather diary, closed and open, and a pen', 'A doctor\'s bag'],
   },
   washington: {
+    expressions: 'neutral, mouth set firm; talking; a slight, rare smile; a frown; jaw clenched, working. His own hair, powdered and tied at the back with a black ribbon',
     face: face({ head: 'Blank head: long and heavy-jawed, with ears and neck, NO eyes, eyebrows, nose or mouth drawn',
       hair: ['His own hair, powdered and tied at the nape with a ribbon (not a wig), as a separate piece'],
       mouths: 'neutral, set firm (his usual); a slight smile; talking "ah"; talking "oh"; talking "ee"; lips pressed; frown; tight-lipped; jaw working (lips pressed, cheek tensed)' }),

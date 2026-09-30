@@ -1,8 +1,38 @@
 {
- "id": "lincoln", "name": "Abraham Lincoln",
+ "id": "lincoln",
+ "name": "Abraham Lincoln",
  "pieces": "lincoln_parts/lincoln/lincoln_%02d.png",
- "torso": 71, "head": 2, "heads": [3, 4, 5],
- "far": [80, 92], "near": [83, 87],
- "hands": [87, 88, 89, 90, 91, 92, 93],
- "cuff": "white"
+ "torso": 71,
+ "head": 2,
+ "heads": [
+  3,
+  4,
+  5
+ ],
+ "far": [
+  80,
+  92
+ ],
+ "near": [
+  84,
+  87
+ ],
+ "hands": [
+  87,
+  88,
+  89,
+  90,
+  91,
+  92,
+  93
+ ],
+ "cuff": "white",
+ "tune": {
+  "ka": 1.6,
+  "kha": 1.05,
+  "nr": 30,
+  "fr": 35,
+  "nhr": 35,
+  "fhr": 38
+ }
 }

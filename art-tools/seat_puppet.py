@@ -3,8 +3,9 @@
 seat_puppet.py -- lay out a three-quarter character seated at the table.
 
 Every opponent is built the same way (Lincoln was the first): a three-quarter
-torso, a head, a near arm bent across in front and a far forearm coming from
-behind, both lying on the felt with the hands toward the table's centre. This
+torso whose sleeves already hang down to the table, a head, and two forearms
+that start at the elbows (the torso's sides, at the table's edge) and lie on
+the felt, hands toward the table's centre. This
 turns a small spec into the layout, so a new character is a few numbers, not
 a new script.
 
@@ -30,7 +31,7 @@ The spec (all piece numbers are from the character's parts.json):
                     down, so the collar wraps round a painted-on neck (the
                     way Death's cape wraps round his hood)
   heads             other head pieces, as swaps
-  near, far         [arm, hand] pairs
+  near, far         [forearm, hand] pairs: straight forearms, open end up
   hands             other hand pieces, as swaps
   cuff              "white" (a shirt cuff or lace marks the sleeve's end) or
                     "band" (no white: the whole band and opening are trimmed)
@@ -47,9 +48,9 @@ W, H, TABLE = 1100, 1040, 880
 DEFAULTS = dict(
     kt=2.6, tx=520, tyb=TABLE + 60,          # torso scale, centre x, bottom edge
     kh=1.95, hdx=35, neck=70,                # head scale, offset right, sink into collar
-    ka=2.4, kha=1.3,                         # arm and hand scales
-    fx=140, fy=900, fr=35, fhr=35,           # far forearm: offset, y, rotation; far hand rotation
-    nx=-40, ny=870, nr=0, nhr=35,            # near arm, the same
+    ka=2.1, kha=1.2,                         # forearm and hand scales
+    ne=40, fe=40, ey=-6,                     # elbows: inset from the torso's left / right edge, height vs table
+    nr=20, nhr=25, fr=28, fhr=32,            # near / far forearm and hand rotations (degrees)
     hsx=0, hsy=0,                            # nudge both hands along their cuffs
 )
 
@@ -152,21 +153,33 @@ def main(spec_path):
         parts[-1]['clip_top'] = round(ty - th * t['kt'] / 2 + spec['collar'] * th * t['kt'])
         parts[-1]['clip_feather'] = t.get('feather', 14)
 
-    # arms: sleeves trimmed, under the torso, lying on the felt; hands on their cuffs
+    # forearms: start at the elbows, at the torso's sides where the table's
+    # edge crosses them, and lie on the felt; hands sit on their cuffs
+    tm = np.array(Image.open(path(F(spec['torso']))).convert('RGBA'))[..., 3] > 128
+    row = int(np.clip((TABLE - (ty - th * t['kt'] / 2)) / t['kt'], 0, th - 1))
+    xs = np.nonzero(tm[row])[0]
+    left, right = t['tx'] + (xs.min() - tw / 2) * t['kt'], t['tx'] + (xs.max() - tw / 2) * t['kt']
     cuffs = {}
-    def arm(pair, ax, ay, ar, hr, z, side):
+    def arm(pair, ex, ar, hr, z, side):
         ai, hi = pair
         sl = f"{spec['id']}_parts/{spec['id']}_rig/sleeve_{ai}.png"
         at = trim_sleeve(path(F(ai)), path(sl), spec.get('cuff', 'white'))
         cuffs[ai] = [round(v, 1) for v in at]
+        m = np.array(Image.open(path(sl)))[..., 3] > 128
+        ys, xs2 = np.nonzero(m)
+        d = np.hypot(xs2 - at[0], ys - at[1])
+        far_end = d > d.max() * 0.85                       # the open end: the elbow
+        elbow = (float(xs2[far_end].mean()), float(ys[far_end].mean()))
+        ox, oy = placed(sl, t['ka'], ar, 0, 0, elbow)
+        ax, ay = ex - ox, TABLE + t['ey'] - oy
         put(sl, ax, ay, t['ka'], rot=ar, z=z, label=f'{side} forearm (cuff trimmed off)',
             slot=f'arm_{side}', on_table=True)
         ux, uy = placed(sl, t['ka'], ar, ax, ay, at)
         vx, vy = placed(hi, t['kha'], hr, 0, 0, hand_anchor(path(F(hi)), spec.get('cuff', 'white')))
         put(hi, ux - vx + t['hsx'], uy - vy + t['hsy'], t['kha'], rot=hr, z=z + 1,
             label=f'{side} hand (its cuff finishes the sleeve)', slot=f'hand_{side}', on_table=True)
-    arm(spec['far'], t['tx'] + t['fx'], t['fy'], t['fr'], t['fhr'], 4, 'far')
-    arm(spec['near'], t['tx'] + t['nx'], t['ny'], t['nr'], t['nhr'], 6, 'near')
+    arm(spec['far'], right - t['fe'], t['fr'], t['fhr'], 4, 'far')
+    arm(spec['near'], left + t['ne'], t['nr'], t['nhr'], 6, 'near')
     for side in ('near', 'far'):
         base = next(q for q in parts if q['slot'] == f'hand_{side}')
         for i in spec.get('hands', []):

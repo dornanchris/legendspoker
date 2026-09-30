@@ -14,6 +14,18 @@ const SEAT={three:'Waist-up, seated at a round poker table, body and head turned
   front:'Waist-up, seated at the far side of a round poker table, facing the viewer; forearms resting on the felt; the table\'s rounded edge crosses the body at the waist.'};
 const STYLE=(a='three')=>`${LOOK} ${SEAT[a]} Plain dark background, no text, no logos, no watermark, no cards or chips other than any prop named.`;
 const RULES=(n,i,a='three')=>`Puppet parts sheet for 2D animation rigging, for ${n}, the character in the attached image${i?'s':''}. Match ${i?'them':'it'} exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same ${a==='front'?'front-on':'three-quarter'} view as the reference${a==='front'?'':' (turned toward the viewer\'s right)'}, at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.`;
+const EXPR=(n,heads,avoid)=>`Character sheet for 2D animation rigging: ${n}. Attach two images: his own parts sheet (match it exactly: face, hair, clothes, colours, line weight and the flat cartoon style) and Lincoln's sheet (copy only its layout and its head angle).
+
+Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.
+
+The angle: a gentle three-quarter view, turned about 25 degrees from front-on, the same as the heads on the Lincoln sheet. Both eyes, the whole nose, the mouth and both shoulders clearly visible. NOT profile, NOT near-profile.
+
+Draw two matching sets, one facing the viewer's right and its mirror image facing the viewer's left, as the Lincoln sheet does. For each set:
+- Finished heads, each with its neck and the top of its collar, all at the same size and angle: ${heads}
+- One torso at the same angle: no head, cut off straight below the waist, the upper arms hanging at the sides down to the elbows; NO forearms, NO hands
+- Two forearms lying on a table, pointing toward its centre (down, and away to the side the heads face), open at the elbow end, each with its cuff
+
+Must NOT resemble: ${avoid}`;
 const SHEETS=[['face','Sheet 1 — Face kit'],['body','Sheet 2 — Body and arms'],['card','Sheet 3 — Card-action hands'],['own','Sheet 4 — Character hands'],['props','Sheet 5 — Props and tell pieces']];
 let out=`# Character art prompts
 
@@ -74,6 +86,7 @@ for(const [name,list] of groups){ if(!list.length) continue;
   out+=`- **Who:** ${p.ledger}\n- **Look:** ${p.look}\n- **Prop:** ${p.prop}\n- **Tells:** ${c.tells.length?c.tells.map(t=>t.text).join('; '):'none, by design'}\n- **Idles:** ${c.idles.length?c.idles.join('; '):'none'}\n- **Copyright note:** ${avoid}\n`;
   if(k.note) out+=`- **Art note:** ${k.note}\n`;
   out+='\n**Step 1 — reference portrait:**\n\n'+block(k.portrait??`${STYLE(k.angle)}\n\nCharacter: ${c.name}, ${c.epithet}. ${p.look}\nProp: ${p.prop}.\nIMPORTANT, must NOT resemble: ${avoid}`);
+  if(k.expressions) out+='**Three-quarter expression sheet** (attach his parts sheet and \`art-tools/lincoln_parts/sources/lincoln_sheet.png\`):\n\n'+block(EXPR(c.name,k.expressions,avoid));
   let sheetNo=0;
   for(let [key,title] of SHEETS){ if(key==='face'&&k.faceTitle) title=k.faceTitle; const items=(key==='card'||key==='own')?(k.hands?k.hands[key]:null):k[key]; if(!items||!items.length) continue;
    sheetNo++; title=title.replace(/Sheet \d+/,'Sheet '+sheetNo);

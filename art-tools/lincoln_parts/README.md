@@ -27,9 +27,10 @@ belongs to.
 `art-tools/lincoln_layout.json` is his rest pose, built by
 `art-tools/seat_puppet.py` from `seat.json` (the tool was made from his layout,
 and reproduces it exactly), facing right: torso 71,
-head 2, the near arm (83) bent across in front of him and the far forearm (80)
-coming from behind, both lying on the felt with the hands toward the table's
-centre. `preview.png` is that pose; `preview_expressions.png` shows the head
+head 2, and two straight forearms (84 near, 80 far) starting at the elbows,
+where the torso's sleeves meet the table's edge, and lying on the felt with the
+hands toward the table's centre. (His first layout used a bent whole arm under
+the torso: its elbow jutted out of his waist.) `preview.png` is that pose; `preview_expressions.png` shows the head
 swaps and a pinching hand.
 
     python3 art-tools/build_puppet.py render art-tools/lincoln_layout.json -o preview.png
