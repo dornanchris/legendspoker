@@ -1,0 +1,1018 @@
+{
+  "source": "jfk_sheet.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "jfk_01.png",
+      "label": "reference portrait (sunglasses, cigarette)",
+      "x": 9,
+      "y": 11,
+      "w": 266,
+      "h": 411,
+      "pivot": [
+        133.0,
+        205.5
+      ],
+      "area": 73840
+    },
+    {
+      "index": 2,
+      "file": "jfk_02.png",
+      "label": "head, front-on (not used: three-quarter)",
+      "x": 241,
+      "y": 17,
+      "w": 138,
+      "h": 201,
+      "pivot": [
+        69.0,
+        100.5
+      ],
+      "area": 19741
+    },
+    {
+      "index": 3,
+      "file": "jfk_03.png",
+      "label": "head, front-on (not used: three-quarter)",
+      "x": 388,
+      "y": 15,
+      "w": 135,
+      "h": 200,
+      "pivot": [
+        67.5,
+        100.0
+      ],
+      "area": 19097
+    },
+    {
+      "index": 4,
+      "file": "jfk_04.png",
+      "label": "head, front-on (not used: three-quarter)",
+      "x": 533,
+      "y": 14,
+      "w": 136,
+      "h": 201,
+      "pivot": [
+        68.0,
+        100.5
+      ],
+      "area": 19380
+    },
+    {
+      "index": 5,
+      "file": "jfk_05.png",
+      "label": "head, front-on (not used: three-quarter)",
+      "x": 677,
+      "y": 14,
+      "w": 133,
+      "h": 200,
+      "pivot": [
+        66.5,
+        100.0
+      ],
+      "area": 19144
+    },
+    {
+      "index": 6,
+      "file": "jfk_06.png",
+      "label": "head, front-on, sunglasses and cigarette",
+      "x": 818,
+      "y": 15,
+      "w": 139,
+      "h": 198,
+      "pivot": [
+        69.5,
+        99.0
+      ],
+      "area": 19284
+    },
+    {
+      "index": 7,
+      "file": "jfk_07.png",
+      "label": "head, turned right, sunglasses",
+      "x": 953,
+      "y": 19,
+      "w": 151,
+      "h": 194,
+      "pivot": [
+        75.5,
+        97.0
+      ],
+      "area": 21124
+    },
+    {
+      "index": 8,
+      "file": "jfk_08.png",
+      "label": "head, turned right, sunglasses",
+      "x": 1099,
+      "y": 21,
+      "w": 140,
+      "h": 192,
+      "pivot": [
+        70.0,
+        96.0
+      ],
+      "area": 19121
+    },
+    {
+      "index": 9,
+      "file": "jfk_09.png",
+      "label": "head, turned right, near profile",
+      "x": 1234,
+      "y": 21,
+      "w": 141,
+      "h": 189,
+      "pivot": [
+        70.5,
+        94.5
+      ],
+      "area": 19089
+    },
+    {
+      "index": 10,
+      "file": "jfk_10.png",
+      "label": "head, turned left, profile",
+      "x": 1384,
+      "y": 21,
+      "w": 142,
+      "h": 191,
+      "pivot": [
+        71.0,
+        95.5
+      ],
+      "area": 19244
+    },
+    {
+      "index": 11,
+      "file": "jfk_11.png",
+      "label": "torso, front-on",
+      "x": 8,
+      "y": 429,
+      "w": 278,
+      "h": 204,
+      "pivot": [
+        139.0,
+        102.0
+      ],
+      "area": 43862
+    },
+    {
+      "index": 12,
+      "file": "jfk_12.png",
+      "label": "blank head, front-on",
+      "x": 263,
+      "y": 233,
+      "w": 118,
+      "h": 138,
+      "pivot": [
+        59.0,
+        69.0
+      ],
+      "area": 11044
+    },
+    {
+      "index": 13,
+      "file": "jfk_13.png",
+      "label": "torso, three-quarter facing right",
+      "x": 282,
+      "y": 447,
+      "w": 185,
+      "h": 186,
+      "pivot": [
+        92.5,
+        93.0
+      ],
+      "area": 25944
+    },
+    {
+      "index": 14,
+      "file": "jfk_14.png",
+      "label": "ear",
+      "x": 288,
+      "y": 381,
+      "w": 37,
+      "h": 65,
+      "pivot": [
+        18.5,
+        32.5
+      ],
+      "area": 1487
+    },
+    {
+      "index": 15,
+      "file": "jfk_15.png",
+      "label": "ear",
+      "x": 344,
+      "y": 381,
+      "w": 36,
+      "h": 64,
+      "pivot": [
+        18.0,
+        32.0
+      ],
+      "area": 1444
+    },
+    {
+      "index": 16,
+      "file": "jfk_16.png",
+      "label": "hair",
+      "x": 387,
+      "y": 226,
+      "w": 155,
+      "h": 128,
+      "pivot": [
+        77.5,
+        64.0
+      ],
+      "area": 9504
+    },
+    {
+      "index": 17,
+      "file": "jfk_17.png",
+      "label": "neck",
+      "x": 413,
+      "y": 360,
+      "w": 98,
+      "h": 94,
+      "pivot": [
+        49.0,
+        47.0
+      ],
+      "area": 6936
+    },
+    {
+      "index": 18,
+      "file": "jfk_18.png",
+      "label": "torso, turned further",
+      "x": 478,
+      "y": 450,
+      "w": 158,
+      "h": 182,
+      "pivot": [
+        79.0,
+        91.0
+      ],
+      "area": 21415
+    },
+    {
+      "index": 19,
+      "file": "jfk_19.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 536,
+      "y": 376,
+      "w": 84,
+      "h": 65,
+      "pivot": [
+        42.0,
+        32.5
+      ],
+      "area": 4002
+    },
+    {
+      "index": 20,
+      "file": "jfk_20.png",
+      "label": "eyebrow, front-on",
+      "x": 557,
+      "y": 226,
+      "w": 62,
+      "h": 29,
+      "pivot": [
+        31.0,
+        14.5
+      ],
+      "area": 914
+    },
+    {
+      "index": 21,
+      "file": "jfk_21.png",
+      "label": "eyebrow, front-on",
+      "x": 557,
+      "y": 266,
+      "w": 61,
+      "h": 28,
+      "pivot": [
+        30.5,
+        14.0
+      ],
+      "area": 876
+    },
+    {
+      "index": 22,
+      "file": "jfk_22.png",
+      "label": "nose, front-on",
+      "x": 564,
+      "y": 304,
+      "w": 46,
+      "h": 65,
+      "pivot": [
+        23.0,
+        32.5
+      ],
+      "area": 1583
+    },
+    {
+      "index": 23,
+      "file": "jfk_23.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 624,
+      "y": 375,
+      "w": 86,
+      "h": 68,
+      "pivot": [
+        43.0,
+        34.0
+      ],
+      "area": 4247
+    },
+    {
+      "index": 24,
+      "file": "jfk_24.png",
+      "label": "eyebrow, front-on",
+      "x": 633,
+      "y": 225,
+      "w": 62,
+      "h": 31,
+      "pivot": [
+        31.0,
+        15.5
+      ],
+      "area": 913
+    },
+    {
+      "index": 25,
+      "file": "jfk_25.png",
+      "label": "eyebrow, front-on",
+      "x": 633,
+      "y": 264,
+      "w": 62,
+      "h": 30,
+      "pivot": [
+        31.0,
+        15.0
+      ],
+      "area": 922
+    },
+    {
+      "index": 26,
+      "file": "jfk_26.png",
+      "label": "torso, side",
+      "x": 635,
+      "y": 448,
+      "w": 159,
+      "h": 183,
+      "pivot": [
+        79.5,
+        91.5
+      ],
+      "area": 22043
+    },
+    {
+      "index": 27,
+      "file": "jfk_27.png",
+      "label": "nose, front-on",
+      "x": 641,
+      "y": 303,
+      "w": 48,
+      "h": 66,
+      "pivot": [
+        24.0,
+        33.0
+      ],
+      "area": 1742
+    },
+    {
+      "index": 28,
+      "file": "jfk_28.png",
+      "label": "eyebrow, front-on",
+      "x": 708,
+      "y": 226,
+      "w": 62,
+      "h": 30,
+      "pivot": [
+        31.0,
+        15.0
+      ],
+      "area": 876
+    },
+    {
+      "index": 29,
+      "file": "jfk_29.png",
+      "label": "eyebrow, front-on",
+      "x": 709,
+      "y": 266,
+      "w": 61,
+      "h": 30,
+      "pivot": [
+        30.5,
+        15.0
+      ],
+      "area": 888
+    },
+    {
+      "index": 30,
+      "file": "jfk_30.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 714,
+      "y": 375,
+      "w": 87,
+      "h": 68,
+      "pivot": [
+        43.5,
+        34.0
+      ],
+      "area": 4257
+    },
+    {
+      "index": 31,
+      "file": "jfk_31.png",
+      "label": "nose, front-on",
+      "x": 718,
+      "y": 307,
+      "w": 45,
+      "h": 63,
+      "pivot": [
+        22.5,
+        31.5
+      ],
+      "area": 1507
+    },
+    {
+      "index": 32,
+      "file": "jfk_32.png",
+      "label": "torso from behind",
+      "x": 788,
+      "y": 376,
+      "w": 292,
+      "h": 255,
+      "pivot": [
+        146.0,
+        127.5
+      ],
+      "area": 45907
+    },
+    {
+      "index": 33,
+      "file": "jfk_33.png",
+      "label": "eye, front-on",
+      "x": 792,
+      "y": 229,
+      "w": 58,
+      "h": 44,
+      "pivot": [
+        29.0,
+        22.0
+      ],
+      "area": 1714
+    },
+    {
+      "index": 34,
+      "file": "jfk_34.png",
+      "label": "eye, front-on",
+      "x": 792,
+      "y": 278,
+      "w": 57,
+      "h": 40,
+      "pivot": [
+        28.5,
+        20.0
+      ],
+      "area": 1487
+    },
+    {
+      "index": 35,
+      "file": "jfk_35.png",
+      "label": "mouth, front-on",
+      "x": 792,
+      "y": 333,
+      "w": 61,
+      "h": 30,
+      "pivot": [
+        30.5,
+        15.0
+      ],
+      "area": 1074
+    },
+    {
+      "index": 36,
+      "file": "jfk_36.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 806,
+      "y": 375,
+      "w": 89,
+      "h": 70,
+      "pivot": [
+        44.5,
+        35.0
+      ],
+      "area": 4498
+    },
+    {
+      "index": 37,
+      "file": "jfk_37.png",
+      "label": "mouth, front-on",
+      "x": 862,
+      "y": 326,
+      "w": 63,
+      "h": 45,
+      "pivot": [
+        31.5,
+        22.5
+      ],
+      "area": 1941
+    },
+    {
+      "index": 38,
+      "file": "jfk_38.png",
+      "label": "eye, front-on",
+      "x": 863,
+      "y": 227,
+      "w": 59,
+      "h": 45,
+      "pivot": [
+        29.5,
+        22.5
+      ],
+      "area": 1777
+    },
+    {
+      "index": 39,
+      "file": "jfk_39.png",
+      "label": "eye, front-on",
+      "x": 864,
+      "y": 278,
+      "w": 58,
+      "h": 40,
+      "pivot": [
+        29.0,
+        20.0
+      ],
+      "area": 1561
+    },
+    {
+      "index": 40,
+      "file": "jfk_40.png",
+      "label": "mouth, front-on",
+      "x": 934,
+      "y": 328,
+      "w": 64,
+      "h": 39,
+      "pivot": [
+        32.0,
+        19.5
+      ],
+      "area": 1681
+    },
+    {
+      "index": 41,
+      "file": "jfk_41.png",
+      "label": "eye, front-on",
+      "x": 935,
+      "y": 228,
+      "w": 59,
+      "h": 44,
+      "pivot": [
+        29.5,
+        22.0
+      ],
+      "area": 1759
+    },
+    {
+      "index": 42,
+      "file": "jfk_42.png",
+      "label": "eye, front-on",
+      "x": 937,
+      "y": 278,
+      "w": 57,
+      "h": 40,
+      "pivot": [
+        28.5,
+        20.0
+      ],
+      "area": 1516
+    },
+    {
+      "index": 43,
+      "file": "jfk_43.png",
+      "label": "cigarette",
+      "x": 1024,
+      "y": 234,
+      "w": 166,
+      "h": 72,
+      "pivot": [
+        83.0,
+        36.0
+      ],
+      "area": 2502
+    },
+    {
+      "index": 44,
+      "file": "jfk_44.png",
+      "label": "sunglasses",
+      "x": 1044,
+      "y": 332,
+      "w": 168,
+      "h": 83,
+      "pivot": [
+        84.0,
+        41.5
+      ],
+      "area": 6265
+    },
+    {
+      "index": 45,
+      "file": "jfk_45.png",
+      "label": "shoulder and upper sleeve",
+      "x": 1078,
+      "y": 433,
+      "w": 102,
+      "h": 219,
+      "pivot": [
+        51.0,
+        109.5
+      ],
+      "area": 13525
+    },
+    {
+      "index": 46,
+      "file": "jfk_46.png",
+      "label": "sunglasses",
+      "x": 1163,
+      "y": 239,
+      "w": 210,
+      "h": 86,
+      "pivot": [
+        105.0,
+        43.0
+      ],
+      "area": 5951
+    },
+    {
+      "index": 47,
+      "file": "jfk_47.png",
+      "label": "torso from behind",
+      "x": 1167,
+      "y": 453,
+      "w": 233,
+      "h": 178,
+      "pivot": [
+        116.5,
+        89.0
+      ],
+      "area": 31091
+    },
+    {
+      "index": 48,
+      "file": "jfk_48.png",
+      "label": "glasses",
+      "x": 1221,
+      "y": 340,
+      "w": 157,
+      "h": 73,
+      "pivot": [
+        78.5,
+        36.5
+      ],
+      "area": 3252
+    },
+    {
+      "index": 49,
+      "file": "jfk_49.png",
+      "label": "glasses",
+      "x": 1376,
+      "y": 296,
+      "w": 133,
+      "h": 95,
+      "pivot": [
+        66.5,
+        47.5
+      ],
+      "area": 2265
+    },
+    {
+      "index": 50,
+      "file": "jfk_50.png",
+      "label": "sunglasses",
+      "x": 1384,
+      "y": 229,
+      "w": 136,
+      "h": 80,
+      "pivot": [
+        68.0,
+        40.0
+      ],
+      "area": 3475
+    },
+    {
+      "index": 51,
+      "file": "jfk_51.png",
+      "label": "shoulder and upper sleeve",
+      "x": 1400,
+      "y": 434,
+      "w": 114,
+      "h": 225,
+      "pivot": [
+        57.0,
+        112.5
+      ],
+      "area": 15653
+    },
+    {
+      "index": 52,
+      "file": "jfk_52.png",
+      "label": "arm, bent: elbow right, cuff left",
+      "x": 18,
+      "y": 642,
+      "w": 192,
+      "h": 152,
+      "pivot": [
+        96.0,
+        76.0
+      ],
+      "area": 17790
+    },
+    {
+      "index": 53,
+      "file": "jfk_53.png",
+      "label": "arm, bent: elbow right, cuff left",
+      "x": 228,
+      "y": 643,
+      "w": 187,
+      "h": 150,
+      "pivot": [
+        93.5,
+        75.0
+      ],
+      "area": 17111
+    },
+    {
+      "index": 54,
+      "file": "jfk_54.png",
+      "label": "forearm, straight, cuff down-right",
+      "x": 408,
+      "y": 645,
+      "w": 145,
+      "h": 147,
+      "pivot": [
+        72.5,
+        73.5
+      ],
+      "area": 9506
+    },
+    {
+      "index": 55,
+      "file": "jfk_55.png",
+      "label": "arm, bent, cuff at the bottom",
+      "x": 541,
+      "y": 643,
+      "w": 139,
+      "h": 150,
+      "pivot": [
+        69.5,
+        75.0
+      ],
+      "area": 12476
+    },
+    {
+      "index": 56,
+      "file": "jfk_56.png",
+      "label": "forearm, straight, cuff down-left",
+      "x": 688,
+      "y": 644,
+      "w": 127,
+      "h": 155,
+      "pivot": [
+        63.5,
+        77.5
+      ],
+      "area": 9324
+    },
+    {
+      "index": 57,
+      "file": "jfk_57.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 805,
+      "y": 643,
+      "w": 181,
+      "h": 152,
+      "pivot": [
+        90.5,
+        76.0
+      ],
+      "area": 16788
+    },
+    {
+      "index": 58,
+      "file": "jfk_58.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 992,
+      "y": 648,
+      "w": 160,
+      "h": 152,
+      "pivot": [
+        80.0,
+        76.0
+      ],
+      "area": 13547
+    },
+    {
+      "index": 59,
+      "file": "jfk_59.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 1152,
+      "y": 644,
+      "w": 178,
+      "h": 152,
+      "pivot": [
+        89.0,
+        76.0
+      ],
+      "area": 16030
+    },
+    {
+      "index": 60,
+      "file": "jfk_60.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 1344,
+      "y": 644,
+      "w": 178,
+      "h": 156,
+      "pivot": [
+        89.0,
+        78.0
+      ],
+      "area": 15540
+    },
+    {
+      "index": 61,
+      "file": "jfk_61.png",
+      "label": "hand with cuff",
+      "x": 17,
+      "y": 805,
+      "w": 168,
+      "h": 171,
+      "pivot": [
+        84.0,
+        85.5
+      ],
+      "area": 12505
+    },
+    {
+      "index": 62,
+      "file": "jfk_62.png",
+      "label": "hand with cuff",
+      "x": 139,
+      "y": 803,
+      "w": 159,
+      "h": 180,
+      "pivot": [
+        79.5,
+        90.0
+      ],
+      "area": 11264
+    },
+    {
+      "index": 63,
+      "file": "jfk_63.png",
+      "label": "hand with cuff",
+      "x": 250,
+      "y": 804,
+      "w": 148,
+      "h": 164,
+      "pivot": [
+        74.0,
+        82.0
+      ],
+      "area": 10462
+    },
+    {
+      "index": 64,
+      "file": "jfk_64.png",
+      "label": "hand with cuff",
+      "x": 369,
+      "y": 804,
+      "w": 142,
+      "h": 172,
+      "pivot": [
+        71.0,
+        86.0
+      ],
+      "area": 10873
+    },
+    {
+      "index": 65,
+      "file": "jfk_65.png",
+      "label": "hand with cuff",
+      "x": 495,
+      "y": 805,
+      "w": 138,
+      "h": 173,
+      "pivot": [
+        69.0,
+        86.5
+      ],
+      "area": 11271
+    },
+    {
+      "index": 66,
+      "file": "jfk_66.png",
+      "label": "hand with cuff",
+      "x": 620,
+      "y": 804,
+      "w": 121,
+      "h": 193,
+      "pivot": [
+        60.5,
+        96.5
+      ],
+      "area": 10107
+    },
+    {
+      "index": 67,
+      "file": "jfk_67.png",
+      "label": "hand with cuff",
+      "x": 723,
+      "y": 808,
+      "w": 145,
+      "h": 169,
+      "pivot": [
+        72.5,
+        84.5
+      ],
+      "area": 10321
+    },
+    {
+      "index": 68,
+      "file": "jfk_68.png",
+      "label": "hand with cuff",
+      "x": 845,
+      "y": 807,
+      "w": 151,
+      "h": 163,
+      "pivot": [
+        75.5,
+        81.5
+      ],
+      "area": 11122
+    },
+    {
+      "index": 69,
+      "file": "jfk_69.png",
+      "label": "hand with cuff",
+      "x": 972,
+      "y": 804,
+      "w": 184,
+      "h": 185,
+      "pivot": [
+        92.0,
+        92.5
+      ],
+      "area": 17679
+    },
+    {
+      "index": 70,
+      "file": "jfk_70.png",
+      "label": "hand with cuff",
+      "x": 1137,
+      "y": 806,
+      "w": 133,
+      "h": 173,
+      "pivot": [
+        66.5,
+        86.5
+      ],
+      "area": 11270
+    },
+    {
+      "index": 71,
+      "file": "jfk_71.png",
+      "label": "hand with cuff",
+      "x": 1233,
+      "y": 812,
+      "w": 137,
+      "h": 186,
+      "pivot": [
+        68.5,
+        93.0
+      ],
+      "area": 11579
+    },
+    {
+      "index": 72,
+      "file": "jfk_72.png",
+      "label": "hand with cuff",
+      "x": 1353,
+      "y": 802,
+      "w": 160,
+      "h": 179,
+      "pivot": [
+        80.0,
+        89.5
+      ],
+      "area": 11881
+    }
+  ]
+}

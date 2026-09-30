@@ -876,7 +876,7 @@
    "on_table": true
   },
   {
-   "file": "fdr_parts/fdr_rig/table_preview.png",
+   "file": "rooms/table_preview.png",
    "label": "table (preview only, not a part)",
    "x": 0,
    "y": 810,

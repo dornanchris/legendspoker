@@ -1,0 +1,1060 @@
+{
+  "source": "roosevelt_sheet.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "roosevelt_01.png",
+      "label": "reference portrait (front-on)",
+      "x": 0,
+      "y": 15,
+      "w": 281,
+      "h": 418,
+      "pivot": [
+        140.5,
+        209.0
+      ],
+      "area": 79907
+    },
+    {
+      "index": 2,
+      "file": "roosevelt_02.png",
+      "label": "head, front-on (not used: he sits three-quarter)",
+      "x": 248,
+      "y": 20,
+      "w": 131,
+      "h": 192,
+      "pivot": [
+        65.5,
+        96.0
+      ],
+      "area": 18861
+    },
+    {
+      "index": 3,
+      "file": "roosevelt_03.png",
+      "label": "head, front-on (not used: he sits three-quarter)",
+      "x": 396,
+      "y": 18,
+      "w": 123,
+      "h": 193,
+      "pivot": [
+        61.5,
+        96.5
+      ],
+      "area": 18383
+    },
+    {
+      "index": 4,
+      "file": "roosevelt_04.png",
+      "label": "head, front-on (not used: he sits three-quarter)",
+      "x": 534,
+      "y": 19,
+      "w": 123,
+      "h": 191,
+      "pivot": [
+        61.5,
+        95.5
+      ],
+      "area": 17890
+    },
+    {
+      "index": 5,
+      "file": "roosevelt_05.png",
+      "label": "head, front-on (not used: he sits three-quarter)",
+      "x": 678,
+      "y": 17,
+      "w": 126,
+      "h": 193,
+      "pivot": [
+        63.0,
+        96.5
+      ],
+      "area": 18513
+    },
+    {
+      "index": 6,
+      "file": "roosevelt_06.png",
+      "label": "head, front-on (not used: he sits three-quarter)",
+      "x": 819,
+      "y": 19,
+      "w": 126,
+      "h": 191,
+      "pivot": [
+        63.0,
+        95.5
+      ],
+      "area": 17771
+    },
+    {
+      "index": 7,
+      "file": "roosevelt_07.png",
+      "label": "head, turned right, near profile",
+      "x": 938,
+      "y": 20,
+      "w": 140,
+      "h": 187,
+      "pivot": [
+        70.0,
+        93.5
+      ],
+      "area": 18551
+    },
+    {
+      "index": 8,
+      "file": "roosevelt_08.png",
+      "label": "head, turned right, near profile",
+      "x": 1073,
+      "y": 19,
+      "w": 143,
+      "h": 188,
+      "pivot": [
+        71.5,
+        94.0
+      ],
+      "area": 18863
+    },
+    {
+      "index": 9,
+      "file": "roosevelt_09.png",
+      "label": "head, turned right, near profile",
+      "x": 1214,
+      "y": 19,
+      "w": 146,
+      "h": 188,
+      "pivot": [
+        73.0,
+        94.0
+      ],
+      "area": 19056
+    },
+    {
+      "index": 10,
+      "file": "roosevelt_10.png",
+      "label": "head, turned left, profile",
+      "x": 1371,
+      "y": 25,
+      "w": 151,
+      "h": 182,
+      "pivot": [
+        75.5,
+        91.0
+      ],
+      "area": 19196
+    },
+    {
+      "index": 11,
+      "file": "roosevelt_11.png",
+      "label": "torso, front-on",
+      "x": 2,
+      "y": 435,
+      "w": 284,
+      "h": 220,
+      "pivot": [
+        142.0,
+        110.0
+      ],
+      "area": 48549
+    },
+    {
+      "index": 12,
+      "file": "roosevelt_12.png",
+      "label": "blank head, front-on",
+      "x": 265,
+      "y": 233,
+      "w": 116,
+      "h": 138,
+      "pivot": [
+        58.0,
+        69.0
+      ],
+      "area": 10967
+    },
+    {
+      "index": 13,
+      "file": "roosevelt_13.png",
+      "label": "torso, three-quarter facing right",
+      "x": 273,
+      "y": 455,
+      "w": 186,
+      "h": 200,
+      "pivot": [
+        93.0,
+        100.0
+      ],
+      "area": 29761
+    },
+    {
+      "index": 14,
+      "file": "roosevelt_14.png",
+      "label": "ear",
+      "x": 290,
+      "y": 383,
+      "w": 36,
+      "h": 65,
+      "pivot": [
+        18.0,
+        32.5
+      ],
+      "area": 1462
+    },
+    {
+      "index": 15,
+      "file": "roosevelt_15.png",
+      "label": "ear",
+      "x": 343,
+      "y": 383,
+      "w": 36,
+      "h": 65,
+      "pivot": [
+        18.0,
+        32.5
+      ],
+      "area": 1447
+    },
+    {
+      "index": 16,
+      "file": "roosevelt_16.png",
+      "label": "hair",
+      "x": 380,
+      "y": 222,
+      "w": 156,
+      "h": 141,
+      "pivot": [
+        78.0,
+        70.5
+      ],
+      "area": 8590
+    },
+    {
+      "index": 17,
+      "file": "roosevelt_17.png",
+      "label": "neck",
+      "x": 415,
+      "y": 373,
+      "w": 98,
+      "h": 83,
+      "pivot": [
+        49.0,
+        41.5
+      ],
+      "area": 5819
+    },
+    {
+      "index": 18,
+      "file": "roosevelt_18.png",
+      "label": "torso, turned further",
+      "x": 460,
+      "y": 466,
+      "w": 170,
+      "h": 189,
+      "pivot": [
+        85.0,
+        94.5
+      ],
+      "area": 23830
+    },
+    {
+      "index": 19,
+      "file": "roosevelt_19.png",
+      "label": "mouth and moustache patch, front-on",
+      "x": 541,
+      "y": 377,
+      "w": 79,
+      "h": 65,
+      "pivot": [
+        39.5,
+        32.5
+      ],
+      "area": 3585
+    },
+    {
+      "index": 20,
+      "file": "roosevelt_20.png",
+      "label": "eyebrow, front-on",
+      "x": 547,
+      "y": 221,
+      "w": 62,
+      "h": 33,
+      "pivot": [
+        31.0,
+        16.5
+      ],
+      "area": 984
+    },
+    {
+      "index": 21,
+      "file": "roosevelt_21.png",
+      "label": "eyebrow, front-on",
+      "x": 548,
+      "y": 266,
+      "w": 61,
+      "h": 31,
+      "pivot": [
+        30.5,
+        15.5
+      ],
+      "area": 901
+    },
+    {
+      "index": 22,
+      "file": "roosevelt_22.png",
+      "label": "nose, front-on",
+      "x": 553,
+      "y": 308,
+      "w": 47,
+      "h": 63,
+      "pivot": [
+        23.5,
+        31.5
+      ],
+      "area": 1623
+    },
+    {
+      "index": 23,
+      "file": "roosevelt_23.png",
+      "label": "mouth and moustache patch, front-on",
+      "x": 619,
+      "y": 378,
+      "w": 81,
+      "h": 64,
+      "pivot": [
+        40.5,
+        32.0
+      ],
+      "area": 3637
+    },
+    {
+      "index": 24,
+      "file": "roosevelt_24.png",
+      "label": "eyebrow, front-on",
+      "x": 623,
+      "y": 222,
+      "w": 61,
+      "h": 31,
+      "pivot": [
+        30.5,
+        15.5
+      ],
+      "area": 925
+    },
+    {
+      "index": 25,
+      "file": "roosevelt_25.png",
+      "label": "eyebrow, front-on",
+      "x": 624,
+      "y": 265,
+      "w": 60,
+      "h": 31,
+      "pivot": [
+        30.0,
+        15.5
+      ],
+      "area": 910
+    },
+    {
+      "index": 26,
+      "file": "roosevelt_26.png",
+      "label": "torso, side",
+      "x": 625,
+      "y": 453,
+      "w": 156,
+      "h": 203,
+      "pivot": [
+        78.0,
+        101.5
+      ],
+      "area": 23583
+    },
+    {
+      "index": 27,
+      "file": "roosevelt_27.png",
+      "label": "nose, front-on",
+      "x": 629,
+      "y": 307,
+      "w": 47,
+      "h": 64,
+      "pivot": [
+        23.5,
+        32.0
+      ],
+      "area": 1619
+    },
+    {
+      "index": 28,
+      "file": "roosevelt_28.png",
+      "label": "eyebrow, front-on",
+      "x": 696,
+      "y": 223,
+      "w": 61,
+      "h": 31,
+      "pivot": [
+        30.5,
+        15.5
+      ],
+      "area": 915
+    },
+    {
+      "index": 29,
+      "file": "roosevelt_29.png",
+      "label": "eyebrow, front-on",
+      "x": 697,
+      "y": 266,
+      "w": 60,
+      "h": 31,
+      "pivot": [
+        30.0,
+        15.5
+      ],
+      "area": 895
+    },
+    {
+      "index": 30,
+      "file": "roosevelt_30.png",
+      "label": "mouth and moustache patch, front-on",
+      "x": 702,
+      "y": 378,
+      "w": 84,
+      "h": 65,
+      "pivot": [
+        42.0,
+        32.5
+      ],
+      "area": 3770
+    },
+    {
+      "index": 31,
+      "file": "roosevelt_31.png",
+      "label": "nose, front-on",
+      "x": 706,
+      "y": 307,
+      "w": 48,
+      "h": 64,
+      "pivot": [
+        24.0,
+        32.0
+      ],
+      "area": 1647
+    },
+    {
+      "index": 32,
+      "file": "roosevelt_32.png",
+      "label": "torso from behind",
+      "x": 772,
+      "y": 453,
+      "w": 282,
+      "h": 204,
+      "pivot": [
+        141.0,
+        102.0
+      ],
+      "area": 42571
+    },
+    {
+      "index": 33,
+      "file": "roosevelt_33.png",
+      "label": "eye, front-on",
+      "x": 777,
+      "y": 223,
+      "w": 61,
+      "h": 44,
+      "pivot": [
+        30.5,
+        22.0
+      ],
+      "area": 1797
+    },
+    {
+      "index": 34,
+      "file": "roosevelt_34.png",
+      "label": "mouth, front-on",
+      "x": 777,
+      "y": 331,
+      "w": 61,
+      "h": 30,
+      "pivot": [
+        30.5,
+        15.0
+      ],
+      "area": 1123
+    },
+    {
+      "index": 35,
+      "file": "roosevelt_35.png",
+      "label": "eye, front-on",
+      "x": 778,
+      "y": 277,
+      "w": 56,
+      "h": 39,
+      "pivot": [
+        28.0,
+        19.5
+      ],
+      "area": 1443
+    },
+    {
+      "index": 36,
+      "file": "roosevelt_36.png",
+      "label": "mouth and moustache patch, front-on",
+      "x": 793,
+      "y": 378,
+      "w": 84,
+      "h": 66,
+      "pivot": [
+        42.0,
+        33.0
+      ],
+      "area": 3930
+    },
+    {
+      "index": 37,
+      "file": "roosevelt_37.png",
+      "label": "eye, front-on",
+      "x": 847,
+      "y": 224,
+      "w": 59,
+      "h": 43,
+      "pivot": [
+        29.5,
+        21.5
+      ],
+      "area": 1799
+    },
+    {
+      "index": 38,
+      "file": "roosevelt_38.png",
+      "label": "eye, front-on",
+      "x": 847,
+      "y": 276,
+      "w": 56,
+      "h": 40,
+      "pivot": [
+        28.0,
+        20.0
+      ],
+      "area": 1473
+    },
+    {
+      "index": 39,
+      "file": "roosevelt_39.png",
+      "label": "mouth, front-on",
+      "x": 847,
+      "y": 324,
+      "w": 56,
+      "h": 46,
+      "pivot": [
+        28.0,
+        23.0
+      ],
+      "area": 1803
+    },
+    {
+      "index": 40,
+      "file": "roosevelt_40.png",
+      "label": "mouth and moustache patch, front-on",
+      "x": 883,
+      "y": 378,
+      "w": 84,
+      "h": 65,
+      "pivot": [
+        42.0,
+        32.5
+      ],
+      "area": 3852
+    },
+    {
+      "index": 41,
+      "file": "roosevelt_41.png",
+      "label": "mouth, front-on",
+      "x": 913,
+      "y": 328,
+      "w": 63,
+      "h": 40,
+      "pivot": [
+        31.5,
+        20.0
+      ],
+      "area": 1683
+    },
+    {
+      "index": 42,
+      "file": "roosevelt_42.png",
+      "label": "eye, front-on",
+      "x": 914,
+      "y": 223,
+      "w": 62,
+      "h": 44,
+      "pivot": [
+        31.0,
+        22.0
+      ],
+      "area": 1853
+    },
+    {
+      "index": 43,
+      "file": "roosevelt_43.png",
+      "label": "eye, front-on",
+      "x": 916,
+      "y": 277,
+      "w": 57,
+      "h": 39,
+      "pivot": [
+        28.5,
+        19.5
+      ],
+      "area": 1450
+    },
+    {
+      "index": 44,
+      "file": "roosevelt_44.png",
+      "label": "campaign hat",
+      "x": 981,
+      "y": 212,
+      "w": 252,
+      "h": 122,
+      "pivot": [
+        126.0,
+        61.0
+      ],
+      "area": 17367
+    },
+    {
+      "index": 45,
+      "file": "roosevelt_45.png",
+      "label": "campaign hat",
+      "x": 987,
+      "y": 338,
+      "w": 253,
+      "h": 127,
+      "pivot": [
+        126.5,
+        63.5
+      ],
+      "area": 17174
+    },
+    {
+      "index": 46,
+      "file": "roosevelt_46.png",
+      "label": "shoulder and upper sleeve",
+      "x": 1048,
+      "y": 460,
+      "w": 123,
+      "h": 203,
+      "pivot": [
+        61.5,
+        101.5
+      ],
+      "area": 16501
+    },
+    {
+      "index": 47,
+      "file": "roosevelt_47.png",
+      "label": "torso from behind",
+      "x": 1161,
+      "y": 464,
+      "w": 238,
+      "h": 192,
+      "pivot": [
+        119.0,
+        96.0
+      ],
+      "area": 33245
+    },
+    {
+      "index": 48,
+      "file": "roosevelt_48.png",
+      "label": "spectacles",
+      "x": 1201,
+      "y": 224,
+      "w": 162,
+      "h": 110,
+      "pivot": [
+        81.0,
+        55.0
+      ],
+      "area": 3296
+    },
+    {
+      "index": 49,
+      "file": "roosevelt_49.png",
+      "label": "spectacles",
+      "x": 1227,
+      "y": 323,
+      "w": 154,
+      "h": 59,
+      "pivot": [
+        77.0,
+        29.5
+      ],
+      "area": 2853
+    },
+    {
+      "index": 50,
+      "file": "roosevelt_50.png",
+      "label": "campaign hat",
+      "x": 1309,
+      "y": 346,
+      "w": 210,
+      "h": 126,
+      "pivot": [
+        105.0,
+        63.0
+      ],
+      "area": 13909
+    },
+    {
+      "index": 51,
+      "file": "roosevelt_51.png",
+      "label": "spectacles",
+      "x": 1372,
+      "y": 226,
+      "w": 145,
+      "h": 55,
+      "pivot": [
+        72.5,
+        27.5
+      ],
+      "area": 2622
+    },
+    {
+      "index": 52,
+      "file": "roosevelt_52.png",
+      "label": "spectacles",
+      "x": 1386,
+      "y": 294,
+      "w": 137,
+      "h": 72,
+      "pivot": [
+        68.5,
+        36.0
+      ],
+      "area": 1747
+    },
+    {
+      "index": 53,
+      "file": "roosevelt_53.png",
+      "label": "shoulder and upper sleeve",
+      "x": 1407,
+      "y": 463,
+      "w": 119,
+      "h": 216,
+      "pivot": [
+        59.5,
+        108.0
+      ],
+      "area": 16300
+    },
+    {
+      "index": 54,
+      "file": "roosevelt_54.png",
+      "label": "arm, bent: elbow right, cuff left",
+      "x": 16,
+      "y": 661,
+      "w": 222,
+      "h": 161,
+      "pivot": [
+        111.0,
+        80.5
+      ],
+      "area": 21702
+    },
+    {
+      "index": 55,
+      "file": "roosevelt_55.png",
+      "label": "arm, bent: elbow right, cuff left",
+      "x": 247,
+      "y": 661,
+      "w": 198,
+      "h": 164,
+      "pivot": [
+        99.0,
+        82.0
+      ],
+      "area": 19278
+    },
+    {
+      "index": 56,
+      "file": "roosevelt_56.png",
+      "label": "forearm, straight, cuff down-right",
+      "x": 435,
+      "y": 669,
+      "w": 132,
+      "h": 158,
+      "pivot": [
+        66.0,
+        79.0
+      ],
+      "area": 9535
+    },
+    {
+      "index": 57,
+      "file": "roosevelt_57.png",
+      "label": "arm, bent, cuff at the bottom",
+      "x": 547,
+      "y": 670,
+      "w": 140,
+      "h": 156,
+      "pivot": [
+        70.0,
+        78.0
+      ],
+      "area": 12622
+    },
+    {
+      "index": 58,
+      "file": "roosevelt_58.png",
+      "label": "forearm, straight, cuff down-left",
+      "x": 700,
+      "y": 670,
+      "w": 107,
+      "h": 168,
+      "pivot": [
+        53.5,
+        84.0
+      ],
+      "area": 9651
+    },
+    {
+      "index": 59,
+      "file": "roosevelt_59.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 808,
+      "y": 666,
+      "w": 181,
+      "h": 164,
+      "pivot": [
+        90.5,
+        82.0
+      ],
+      "area": 17161
+    },
+    {
+      "index": 60,
+      "file": "roosevelt_60.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 990,
+      "y": 664,
+      "w": 157,
+      "h": 172,
+      "pivot": [
+        78.5,
+        86.0
+      ],
+      "area": 13345
+    },
+    {
+      "index": 61,
+      "file": "roosevelt_61.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 1137,
+      "y": 667,
+      "w": 178,
+      "h": 163,
+      "pivot": [
+        89.0,
+        81.5
+      ],
+      "area": 16751
+    },
+    {
+      "index": 62,
+      "file": "roosevelt_62.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 1334,
+      "y": 667,
+      "w": 189,
+      "h": 175,
+      "pivot": [
+        94.5,
+        87.5
+      ],
+      "area": 17386
+    },
+    {
+      "index": 63,
+      "file": "roosevelt_63.png",
+      "label": "hand with cuff",
+      "x": 18,
+      "y": 828,
+      "w": 171,
+      "h": 167,
+      "pivot": [
+        85.5,
+        83.5
+      ],
+      "area": 13478
+    },
+    {
+      "index": 64,
+      "file": "roosevelt_64.png",
+      "label": "hand with cuff",
+      "x": 163,
+      "y": 836,
+      "w": 143,
+      "h": 166,
+      "pivot": [
+        71.5,
+        83.0
+      ],
+      "area": 10267
+    },
+    {
+      "index": 65,
+      "file": "roosevelt_65.png",
+      "label": "hand with cuff",
+      "x": 278,
+      "y": 838,
+      "w": 128,
+      "h": 156,
+      "pivot": [
+        64.0,
+        78.0
+      ],
+      "area": 9805
+    },
+    {
+      "index": 66,
+      "file": "roosevelt_66.png",
+      "label": "hand with cuff",
+      "x": 382,
+      "y": 833,
+      "w": 131,
+      "h": 158,
+      "pivot": [
+        65.5,
+        79.0
+      ],
+      "area": 9892
+    },
+    {
+      "index": 67,
+      "file": "roosevelt_67.png",
+      "label": "hand with cuff",
+      "x": 507,
+      "y": 835,
+      "w": 131,
+      "h": 164,
+      "pivot": [
+        65.5,
+        82.0
+      ],
+      "area": 11123
+    },
+    {
+      "index": 68,
+      "file": "roosevelt_68.png",
+      "label": "hand with cuff",
+      "x": 628,
+      "y": 837,
+      "w": 96,
+      "h": 141,
+      "pivot": [
+        48.0,
+        70.5
+      ],
+      "area": 7227
+    },
+    {
+      "index": 69,
+      "file": "roosevelt_69.png",
+      "label": "hand with cuff",
+      "x": 727,
+      "y": 855,
+      "w": 98,
+      "h": 134,
+      "pivot": [
+        49.0,
+        67.0
+      ],
+      "area": 7283
+    },
+    {
+      "index": 70,
+      "file": "roosevelt_70.png",
+      "label": "hand with cuff",
+      "x": 835,
+      "y": 837,
+      "w": 108,
+      "h": 160,
+      "pivot": [
+        54.0,
+        80.0
+      ],
+      "area": 9588
+    },
+    {
+      "index": 71,
+      "file": "roosevelt_71.png",
+      "label": "hand with cuff",
+      "x": 947,
+      "y": 836,
+      "w": 93,
+      "h": 163,
+      "pivot": [
+        46.5,
+        81.5
+      ],
+      "area": 9089
+    },
+    {
+      "index": 72,
+      "file": "roosevelt_72.png",
+      "label": "hand with cuff",
+      "x": 1052,
+      "y": 829,
+      "w": 142,
+      "h": 171,
+      "pivot": [
+        71.0,
+        85.5
+      ],
+      "area": 13091
+    },
+    {
+      "index": 73,
+      "file": "roosevelt_73.png",
+      "label": "hand with cuff",
+      "x": 1179,
+      "y": 842,
+      "w": 147,
+      "h": 159,
+      "pivot": [
+        73.5,
+        79.5
+      ],
+      "area": 10739
+    },
+    {
+      "index": 74,
+      "file": "roosevelt_74.png",
+      "label": "hand with cuff",
+      "x": 1282,
+      "y": 850,
+      "w": 125,
+      "h": 159,
+      "pivot": [
+        62.5,
+        79.5
+      ],
+      "area": 8805
+    },
+    {
+      "index": 75,
+      "file": "roosevelt_75.png",
+      "label": "hand with cuff",
+      "x": 1362,
+      "y": 846,
+      "w": 167,
+      "h": 139,
+      "pivot": [
+        83.5,
+        69.5
+      ],
+      "area": 11112
+    }
+  ]
+}

@@ -125,9 +125,11 @@ art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   build_puppet.py init/render a layout to preview puppet assembly
   dracula_parts/  41 split Dracula layers (incomplete — see gaps)
-  fdr_parts/      FDR's complete kit (122 labelled pieces + source sheets),
-                  cleaned rig pieces and previews; see its README
-  fdr_layout.json FDR assembled: rest pose + swap slots (build_puppet.py)
+  seat_puppet.py  builds a seated three-quarter puppet from a small spec
+                  (<id>_parts/seat.json): trims the cuffs, writes the layout
+  fdr_parts/, roosevelt_parts/, washington_parts/  the White House cast, each
+                  with seat.json and <id>_layout.json; see each README
+  jfk_parts/      JFK's kit: built, at no table (see CURRENT STATE)
   lincoln_parts/  Lincoln's kit, three-quarter: the first drawn to the art
                   direction; lincoln_layout.json assembles him
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -321,8 +323,17 @@ its own layer order (a sleeve can tuck under a cape); parts marked
 Every table is round and keeps a plain playing surface; each room differs in
 its table's rim and cloth, its backdrop and its light (`ROOM-ART-PROMPTS.md`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
-redrawn under it. Lincoln is the first kit drawn that way (flat cartoon
-style, the owner's pick); FDR's front-on kit is a pipeline example.
+redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
+style, the owner's pick); the whole White House table (Lincoln, FDR,
+Roosevelt, Washington) is now built, all by `seat_puppet.py`. Only Lincoln
+has three-quarter expression heads; the others' sheets drew their
+expressions front-on, so they have one face each until regenerated.
+**JFK is built but at no table** (the owner): an idea for a hidden event
+like Loki's, winning a pot with a three and a five (the 35th president) and
+JFK taking a seat. Open before it goes in: he died in 1963, inside ASSETS.md's
+"dead >~70 yrs" line for public-domain figures (the rule 5 question is the
+owner's); and call it "thirty-five", never "3/5", which at a table with
+Washington and Lincoln reads as the Three-Fifths Clause.
 Lincoln wears his hat at all times. Death wears a black hooded robe with a
 purple lining and a gold skull brooch (the owner's call, over the drafted grey
 shroud); rooms keep enough light behind him that the black reads.

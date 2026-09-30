@@ -1,0 +1,13 @@
+{
+ "note": "Where each sleeve's cuff was, in the sleeve image's own pixels: a hand's cuff goes here.",
+ "cuffs": {
+  "54": [
+   117.3,
+   112.3
+  ],
+  "57": [
+   154.5,
+   114.1
+  ]
+ }
+}

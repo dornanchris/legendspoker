@@ -1,0 +1,990 @@
+{
+  "source": "washington_sheet.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "washington_01.png",
+      "label": "reference portrait (front-on)",
+      "x": 6,
+      "y": 15,
+      "w": 240,
+      "h": 379,
+      "pivot": [
+        120.0,
+        189.5
+      ],
+      "area": 64152
+    },
+    {
+      "index": 2,
+      "file": "washington_02.png",
+      "label": "head, front-on (not used: three-quarter)",
+      "x": 235,
+      "y": 21,
+      "w": 155,
+      "h": 199,
+      "pivot": [
+        77.5,
+        99.5
+      ],
+      "area": 20901
+    },
+    {
+      "index": 3,
+      "file": "washington_03.png",
+      "label": "head, front-on (not used: three-quarter)",
+      "x": 392,
+      "y": 21,
+      "w": 159,
+      "h": 197,
+      "pivot": [
+        79.5,
+        98.5
+      ],
+      "area": 20945
+    },
+    {
+      "index": 4,
+      "file": "washington_04.png",
+      "label": "head, front-on (not used: three-quarter)",
+      "x": 556,
+      "y": 21,
+      "w": 162,
+      "h": 195,
+      "pivot": [
+        81.0,
+        97.5
+      ],
+      "area": 20976
+    },
+    {
+      "index": 5,
+      "file": "washington_05.png",
+      "label": "head, front-on (not used: three-quarter)",
+      "x": 722,
+      "y": 21,
+      "w": 164,
+      "h": 195,
+      "pivot": [
+        82.0,
+        97.5
+      ],
+      "area": 21314
+    },
+    {
+      "index": 6,
+      "file": "washington_06.png",
+      "label": "head, three-quarter facing left",
+      "x": 891,
+      "y": 23,
+      "w": 147,
+      "h": 193,
+      "pivot": [
+        73.5,
+        96.5
+      ],
+      "area": 20033
+    },
+    {
+      "index": 7,
+      "file": "washington_07.png",
+      "label": "head, turned right, near profile",
+      "x": 1045,
+      "y": 22,
+      "w": 149,
+      "h": 193,
+      "pivot": [
+        74.5,
+        96.5
+      ],
+      "area": 20949
+    },
+    {
+      "index": 8,
+      "file": "washington_08.png",
+      "label": "head, turned right, near profile",
+      "x": 1206,
+      "y": 22,
+      "w": 149,
+      "h": 193,
+      "pivot": [
+        74.5,
+        96.5
+      ],
+      "area": 20818
+    },
+    {
+      "index": 9,
+      "file": "washington_09.png",
+      "label": "head, right profile",
+      "x": 1371,
+      "y": 24,
+      "w": 153,
+      "h": 190,
+      "pivot": [
+        76.5,
+        95.0
+      ],
+      "area": 21167
+    },
+    {
+      "index": 10,
+      "file": "washington_10.png",
+      "label": "torso, front-on",
+      "x": 11,
+      "y": 435,
+      "w": 276,
+      "h": 231,
+      "pivot": [
+        138.0,
+        115.5
+      ],
+      "area": 47226
+    },
+    {
+      "index": 11,
+      "file": "washington_11.png",
+      "label": "blank head, front-on",
+      "x": 251,
+      "y": 238,
+      "w": 112,
+      "h": 146,
+      "pivot": [
+        56.0,
+        73.0
+      ],
+      "area": 10891
+    },
+    {
+      "index": 12,
+      "file": "washington_12.png",
+      "label": "ear",
+      "x": 267,
+      "y": 403,
+      "w": 36,
+      "h": 70,
+      "pivot": [
+        18.0,
+        35.0
+      ],
+      "area": 1557
+    },
+    {
+      "index": 13,
+      "file": "washington_13.png",
+      "label": "torso, three-quarter facing right",
+      "x": 293,
+      "y": 468,
+      "w": 191,
+      "h": 198,
+      "pivot": [
+        95.5,
+        99.0
+      ],
+      "area": 28678
+    },
+    {
+      "index": 14,
+      "file": "washington_14.png",
+      "label": "ear",
+      "x": 320,
+      "y": 403,
+      "w": 35,
+      "h": 70,
+      "pivot": [
+        17.5,
+        35.0
+      ],
+      "area": 1555
+    },
+    {
+      "index": 15,
+      "file": "washington_15.png",
+      "label": "hair, powdered and tied",
+      "x": 367,
+      "y": 235,
+      "w": 159,
+      "h": 184,
+      "pivot": [
+        79.5,
+        92.0
+      ],
+      "area": 13748
+    },
+    {
+      "index": 16,
+      "file": "washington_16.png",
+      "label": "neck",
+      "x": 415,
+      "y": 387,
+      "w": 94,
+      "h": 92,
+      "pivot": [
+        47.0,
+        46.0
+      ],
+      "area": 6222
+    },
+    {
+      "index": 17,
+      "file": "washington_17.png",
+      "label": "torso, turned further",
+      "x": 499,
+      "y": 466,
+      "w": 169,
+      "h": 199,
+      "pivot": [
+        84.5,
+        99.5
+      ],
+      "area": 24333
+    },
+    {
+      "index": 18,
+      "file": "washington_18.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 539,
+      "y": 392,
+      "w": 76,
+      "h": 63,
+      "pivot": [
+        38.0,
+        31.5
+      ],
+      "area": 3436
+    },
+    {
+      "index": 19,
+      "file": "washington_19.png",
+      "label": "eyebrow, front-on",
+      "x": 543,
+      "y": 232,
+      "w": 58,
+      "h": 28,
+      "pivot": [
+        29.0,
+        14.0
+      ],
+      "area": 798
+    },
+    {
+      "index": 20,
+      "file": "washington_20.png",
+      "label": "eyebrow, front-on",
+      "x": 544,
+      "y": 274,
+      "w": 56,
+      "h": 29,
+      "pivot": [
+        28.0,
+        14.5
+      ],
+      "area": 824
+    },
+    {
+      "index": 21,
+      "file": "washington_21.png",
+      "label": "nose, front-on",
+      "x": 550,
+      "y": 320,
+      "w": 43,
+      "h": 62,
+      "pivot": [
+        21.5,
+        31.0
+      ],
+      "area": 1372
+    },
+    {
+      "index": 22,
+      "file": "washington_22.png",
+      "label": "eyebrow, front-on",
+      "x": 617,
+      "y": 232,
+      "w": 57,
+      "h": 28,
+      "pivot": [
+        28.5,
+        14.0
+      ],
+      "area": 817
+    },
+    {
+      "index": 23,
+      "file": "washington_23.png",
+      "label": "eyebrow, front-on",
+      "x": 618,
+      "y": 275,
+      "w": 57,
+      "h": 29,
+      "pivot": [
+        28.5,
+        14.5
+      ],
+      "area": 839
+    },
+    {
+      "index": 24,
+      "file": "washington_24.png",
+      "label": "nose, front-on",
+      "x": 626,
+      "y": 319,
+      "w": 42,
+      "h": 63,
+      "pivot": [
+        21.0,
+        31.5
+      ],
+      "area": 1361
+    },
+    {
+      "index": 25,
+      "file": "washington_25.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 626,
+      "y": 392,
+      "w": 76,
+      "h": 63,
+      "pivot": [
+        38.0,
+        31.5
+      ],
+      "area": 3461
+    },
+    {
+      "index": 26,
+      "file": "washington_26.png",
+      "label": "torso, side",
+      "x": 673,
+      "y": 466,
+      "w": 146,
+      "h": 199,
+      "pivot": [
+        73.0,
+        99.5
+      ],
+      "area": 21332
+    },
+    {
+      "index": 27,
+      "file": "washington_27.png",
+      "label": "eyebrow, front-on",
+      "x": 693,
+      "y": 275,
+      "w": 59,
+      "h": 29,
+      "pivot": [
+        29.5,
+        14.5
+      ],
+      "area": 837
+    },
+    {
+      "index": 28,
+      "file": "washington_28.png",
+      "label": "eyebrow, front-on",
+      "x": 694,
+      "y": 238,
+      "w": 57,
+      "h": 25,
+      "pivot": [
+        28.5,
+        12.5
+      ],
+      "area": 633
+    },
+    {
+      "index": 29,
+      "file": "washington_29.png",
+      "label": "nose, front-on",
+      "x": 698,
+      "y": 320,
+      "w": 44,
+      "h": 61,
+      "pivot": [
+        22.0,
+        30.5
+      ],
+      "area": 1396
+    },
+    {
+      "index": 30,
+      "file": "washington_30.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 716,
+      "y": 391,
+      "w": 76,
+      "h": 64,
+      "pivot": [
+        38.0,
+        32.0
+      ],
+      "area": 3417
+    },
+    {
+      "index": 31,
+      "file": "washington_31.png",
+      "label": "mouth, front-on",
+      "x": 791,
+      "y": 350,
+      "w": 58,
+      "h": 26,
+      "pivot": [
+        29.0,
+        13.0
+      ],
+      "area": 903
+    },
+    {
+      "index": 32,
+      "file": "washington_32.png",
+      "label": "eye, front-on",
+      "x": 792,
+      "y": 287,
+      "w": 54,
+      "h": 41,
+      "pivot": [
+        27.0,
+        20.5
+      ],
+      "area": 1406
+    },
+    {
+      "index": 33,
+      "file": "washington_33.png",
+      "label": "eye, front-on",
+      "x": 793,
+      "y": 233,
+      "w": 54,
+      "h": 40,
+      "pivot": [
+        27.0,
+        20.0
+      ],
+      "area": 1398
+    },
+    {
+      "index": 34,
+      "file": "washington_34.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 803,
+      "y": 392,
+      "w": 74,
+      "h": 62,
+      "pivot": [
+        37.0,
+        31.0
+      ],
+      "area": 3290
+    },
+    {
+      "index": 35,
+      "file": "washington_35.png",
+      "label": "torso from behind",
+      "x": 827,
+      "y": 466,
+      "w": 240,
+      "h": 199,
+      "pivot": [
+        120.0,
+        99.5
+      ],
+      "area": 35612
+    },
+    {
+      "index": 36,
+      "file": "washington_36.png",
+      "label": "mouth, front-on",
+      "x": 864,
+      "y": 344,
+      "w": 57,
+      "h": 37,
+      "pivot": [
+        28.5,
+        18.5
+      ],
+      "area": 1387
+    },
+    {
+      "index": 37,
+      "file": "washington_37.png",
+      "label": "eye, front-on",
+      "x": 865,
+      "y": 234,
+      "w": 56,
+      "h": 40,
+      "pivot": [
+        28.0,
+        20.0
+      ],
+      "area": 1426
+    },
+    {
+      "index": 38,
+      "file": "washington_38.png",
+      "label": "eye, front-on",
+      "x": 865,
+      "y": 288,
+      "w": 55,
+      "h": 40,
+      "pivot": [
+        27.5,
+        20.0
+      ],
+      "area": 1457
+    },
+    {
+      "index": 39,
+      "file": "washington_39.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 889,
+      "y": 392,
+      "w": 76,
+      "h": 62,
+      "pivot": [
+        38.0,
+        31.0
+      ],
+      "area": 3344
+    },
+    {
+      "index": 40,
+      "file": "washington_40.png",
+      "label": "mouth, front-on",
+      "x": 940,
+      "y": 346,
+      "w": 56,
+      "h": 32,
+      "pivot": [
+        28.0,
+        16.0
+      ],
+      "area": 1239
+    },
+    {
+      "index": 41,
+      "file": "washington_41.png",
+      "label": "eye, front-on",
+      "x": 942,
+      "y": 233,
+      "w": 54,
+      "h": 40,
+      "pivot": [
+        27.0,
+        20.0
+      ],
+      "area": 1388
+    },
+    {
+      "index": 42,
+      "file": "washington_42.png",
+      "label": "eye, front-on",
+      "x": 942,
+      "y": 288,
+      "w": 54,
+      "h": 40,
+      "pivot": [
+        27.0,
+        20.0
+      ],
+      "area": 1417
+    },
+    {
+      "index": 43,
+      "file": "washington_43.png",
+      "label": "tricorn hat",
+      "x": 1006,
+      "y": 348,
+      "w": 269,
+      "h": 109,
+      "pivot": [
+        134.5,
+        54.5
+      ],
+      "area": 17721
+    },
+    {
+      "index": 44,
+      "file": "washington_44.png",
+      "label": "tricorn hat",
+      "x": 1017,
+      "y": 227,
+      "w": 252,
+      "h": 124,
+      "pivot": [
+        126.0,
+        62.0
+      ],
+      "area": 19447
+    },
+    {
+      "index": 45,
+      "file": "washington_45.png",
+      "label": "shoulder and upper sleeve",
+      "x": 1083,
+      "y": 468,
+      "w": 93,
+      "h": 215,
+      "pivot": [
+        46.5,
+        107.5
+      ],
+      "area": 13071
+    },
+    {
+      "index": 46,
+      "file": "washington_46.png",
+      "label": "torso from behind",
+      "x": 1179,
+      "y": 473,
+      "w": 216,
+      "h": 193,
+      "pivot": [
+        108.0,
+        96.5
+      ],
+      "area": 31372
+    },
+    {
+      "index": 47,
+      "file": "washington_47.png",
+      "label": "tricorn hat",
+      "x": 1273,
+      "y": 230,
+      "w": 251,
+      "h": 132,
+      "pivot": [
+        125.5,
+        66.0
+      ],
+      "area": 19636
+    },
+    {
+      "index": 48,
+      "file": "washington_48.png",
+      "label": "tricorn hat",
+      "x": 1285,
+      "y": 358,
+      "w": 225,
+      "h": 100,
+      "pivot": [
+        112.5,
+        50.0
+      ],
+      "area": 14396
+    },
+    {
+      "index": 49,
+      "file": "washington_49.png",
+      "label": "shoulder and upper sleeve",
+      "x": 1406,
+      "y": 469,
+      "w": 97,
+      "h": 215,
+      "pivot": [
+        48.5,
+        107.5
+      ],
+      "area": 14603
+    },
+    {
+      "index": 50,
+      "file": "washington_50.png",
+      "label": "arm, bent: elbow right, cuff left",
+      "x": 22,
+      "y": 675,
+      "w": 203,
+      "h": 159,
+      "pivot": [
+        101.5,
+        79.5
+      ],
+      "area": 18110
+    },
+    {
+      "index": 51,
+      "file": "washington_51.png",
+      "label": "arm, bent: elbow right, cuff left",
+      "x": 232,
+      "y": 681,
+      "w": 188,
+      "h": 160,
+      "pivot": [
+        94.0,
+        80.0
+      ],
+      "area": 16406
+    },
+    {
+      "index": 52,
+      "file": "washington_52.png",
+      "label": "forearm, straight, cuff down-right",
+      "x": 421,
+      "y": 684,
+      "w": 149,
+      "h": 162,
+      "pivot": [
+        74.5,
+        81.0
+      ],
+      "area": 10857
+    },
+    {
+      "index": 53,
+      "file": "washington_53.png",
+      "label": "arm, bent, cuff at the bottom",
+      "x": 553,
+      "y": 680,
+      "w": 139,
+      "h": 165,
+      "pivot": [
+        69.5,
+        82.5
+      ],
+      "area": 13141
+    },
+    {
+      "index": 54,
+      "file": "washington_54.png",
+      "label": "forearm, straight, cuff down-left",
+      "x": 705,
+      "y": 679,
+      "w": 119,
+      "h": 169,
+      "pivot": [
+        59.5,
+        84.5
+      ],
+      "area": 9920
+    },
+    {
+      "index": 55,
+      "file": "washington_55.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 815,
+      "y": 677,
+      "w": 170,
+      "h": 165,
+      "pivot": [
+        85.0,
+        82.5
+      ],
+      "area": 14963
+    },
+    {
+      "index": 56,
+      "file": "washington_56.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 998,
+      "y": 680,
+      "w": 170,
+      "h": 163,
+      "pivot": [
+        85.0,
+        81.5
+      ],
+      "area": 14109
+    },
+    {
+      "index": 57,
+      "file": "washington_57.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 1154,
+      "y": 677,
+      "w": 178,
+      "h": 166,
+      "pivot": [
+        89.0,
+        83.0
+      ],
+      "area": 15854
+    },
+    {
+      "index": 58,
+      "file": "washington_58.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 1350,
+      "y": 684,
+      "w": 171,
+      "h": 163,
+      "pivot": [
+        85.5,
+        81.5
+      ],
+      "area": 15137
+    },
+    {
+      "index": 59,
+      "file": "washington_59.png",
+      "label": "hand with cuff",
+      "x": 17,
+      "y": 850,
+      "w": 152,
+      "h": 155,
+      "pivot": [
+        76.0,
+        77.5
+      ],
+      "area": 11040
+    },
+    {
+      "index": 60,
+      "file": "washington_60.png",
+      "label": "hand with cuff",
+      "x": 143,
+      "y": 847,
+      "w": 135,
+      "h": 142,
+      "pivot": [
+        67.5,
+        71.0
+      ],
+      "area": 8899
+    },
+    {
+      "index": 61,
+      "file": "washington_61.png",
+      "label": "hand with cuff",
+      "x": 269,
+      "y": 853,
+      "w": 125,
+      "h": 141,
+      "pivot": [
+        62.5,
+        70.5
+      ],
+      "area": 8819
+    },
+    {
+      "index": 62,
+      "file": "washington_62.png",
+      "label": "hand with cuff",
+      "x": 387,
+      "y": 853,
+      "w": 126,
+      "h": 152,
+      "pivot": [
+        63.0,
+        76.0
+      ],
+      "area": 8781
+    },
+    {
+      "index": 63,
+      "file": "washington_63.png",
+      "label": "hand with cuff",
+      "x": 510,
+      "y": 854,
+      "w": 134,
+      "h": 151,
+      "pivot": [
+        67.0,
+        75.5
+      ],
+      "area": 9823
+    },
+    {
+      "index": 64,
+      "file": "washington_64.png",
+      "label": "hand with cuff",
+      "x": 642,
+      "y": 856,
+      "w": 101,
+      "h": 140,
+      "pivot": [
+        50.5,
+        70.0
+      ],
+      "area": 7303
+    },
+    {
+      "index": 65,
+      "file": "washington_65.png",
+      "label": "hand with cuff",
+      "x": 752,
+      "y": 853,
+      "w": 100,
+      "h": 152,
+      "pivot": [
+        50.0,
+        76.0
+      ],
+      "area": 7993
+    },
+    {
+      "index": 66,
+      "file": "washington_66.png",
+      "label": "hand with cuff",
+      "x": 855,
+      "y": 849,
+      "w": 120,
+      "h": 158,
+      "pivot": [
+        60.0,
+        79.0
+      ],
+      "area": 9040
+    },
+    {
+      "index": 67,
+      "file": "washington_67.png",
+      "label": "hand with cuff",
+      "x": 989,
+      "y": 848,
+      "w": 91,
+      "h": 147,
+      "pivot": [
+        45.5,
+        73.5
+      ],
+      "area": 8188
+    },
+    {
+      "index": 68,
+      "file": "washington_68.png",
+      "label": "hand with cuff",
+      "x": 1093,
+      "y": 843,
+      "w": 125,
+      "h": 162,
+      "pivot": [
+        62.5,
+        81.0
+      ],
+      "area": 10245
+    },
+    {
+      "index": 69,
+      "file": "washington_69.png",
+      "label": "hand with cuff",
+      "x": 1217,
+      "y": 847,
+      "w": 139,
+      "h": 158,
+      "pivot": [
+        69.5,
+        79.0
+      ],
+      "area": 9619
+    },
+    {
+      "index": 70,
+      "file": "washington_70.png",
+      "label": "hand with cuff",
+      "x": 1324,
+      "y": 845,
+      "w": 193,
+      "h": 133,
+      "pivot": [
+        96.5,
+        66.5
+      ],
+      "area": 10909
+    }
+  ]
+}

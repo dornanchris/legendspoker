@@ -11,8 +11,8 @@ board, your cards, the buttons. Death is front-on, dead centre.
 
   python3 art-tools/mock_screen.py [room] [-o out.png]     (room: white_house)
 
-The seats use the FDR and Lincoln puppets, which are front-on examples; the
-real cast is drawn at three-quarter, which is narrower.
+The White House cast, three-quarter and facing the table's centre: FDR and
+Lincoln on the left, Roosevelt and Washington flipped on the right.
 """
 import argparse, copy, json, os, subprocess, tempfile
 import numpy as np
@@ -64,7 +64,8 @@ def passes(layout):
         subprocess.run(['python3', os.path.join(HERE, 'build_puppet.py'), 'render', f'{S}/sm_{k}.json', '-o', f'{S}/sm_{k}.png'], check=True, capture_output=True)
         out.append(Image.open(f'{S}/sm_{k}.png').convert('RGBA'))
     return out
-LINE = {'fdr_layout.json': 810, 'lincoln_layout.json': 880, 'death_layout.json': 810}   # each layout's table line
+SEATED = ['fdr_layout.json', 'lincoln_layout.json', 'roosevelt_layout.json', 'washington_layout.json', 'death_layout.json']
+LINE = {l: json.load(open(os.path.join(HERE, l)))['table_line'] for l in SEATED}   # each layout's table line
 cache = {l: passes(l) for l in LINE}
 
 under = Image.new('RGBA', (W, H), (0, 0, 0, 0)); over = Image.new('RGBA', (W, H), (0, 0, 0, 0))
@@ -80,8 +81,8 @@ def seat(lay, cx, sc, flip, sink=10):
 def death(cx, sc):
     return seat('death_layout.json', cx, sc, False, 4)
 
-SEATS = g('seats', [['fdr_layout.json', 150, 0.36, False], ['lincoln_layout.json', 470, 0.44, False],
-                    ['fdr_layout.json', 1130, 0.30, True], ['lincoln_layout.json', 1440, 0.52, True]])
+SEATS = g('seats', [['fdr_layout.json', 150, 0.52, False], ['lincoln_layout.json', 470, 0.44, False],
+                    ['roosevelt_layout.json', 1130, 0.44, True], ['washington_layout.json', 1440, 0.52, True]])
 ys = [seat(*s_) for s_ in SEATS]
 dy = death(W // 2, g('death', 0.34))
 

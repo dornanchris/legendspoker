@@ -1,0 +1,44 @@
+{
+ "id": "fdr",
+ "pieces": "fdr_parts/fdr/fdr_%02d.png",
+ "name": "Franklin D. Roosevelt",
+ "torso": 11,
+ "head": 8,
+ "heads": [],
+ "far": [
+  55,
+  66
+ ],
+ "near": [
+  58,
+  62
+ ],
+ "hands": [
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73
+ ],
+ "cuff": "white",
+ "collar": 0.14,
+ "tune": {
+  "kt": 2.2,
+  "kh": 1.6,
+  "neck": 90,
+  "hdx": 30,
+  "ka": 2.05,
+  "kha": 1.12,
+  "nx": -20,
+  "fx": 125,
+  "ny": 880,
+  "fy": 905
+ }
+}

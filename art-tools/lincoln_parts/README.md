@@ -24,7 +24,9 @@ belongs to.
 
 ## The puppet
 
-`art-tools/lincoln_layout.json` is his rest pose, facing right: torso 71,
+`art-tools/lincoln_layout.json` is his rest pose, built by
+`art-tools/seat_puppet.py` from `seat.json` (the tool was made from his layout,
+and reproduces it exactly), facing right: torso 71,
 head 2, the near arm (83) bent across in front of him and the far forearm (80)
 coming from behind, both lying on the felt with the hands toward the table's
 centre. `preview.png` is that pose; `preview_expressions.png` shows the head

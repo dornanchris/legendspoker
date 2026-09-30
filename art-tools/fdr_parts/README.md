@@ -1,69 +1,23 @@
-# FDR's parts
+# Franklin D. Roosevelt's parts
 
-Franklin D. Roosevelt's puppet kit, cut with `split_parts.py` from AI-generated
-sheets made with the prompts in `CHARACTER-ART-PROMPTS.md`. Every folder has
-the pieces, a numbered `_contact_sheet.png`, and `parts.json` with each piece's
-position on its source sheet and a `label` saying what it is.
+Cut with `split_parts.py` from one sheet (`sources/fdr_sheet.png`), in
+Lincoln's flat cartoon style: naval cape, round glasses, cigarette holder. `fdr/` holds every piece, a numbered
+`_contact_sheet.png` and `parts.json` with a label on each.
 
-| Folder | Pieces | What |
-|---|---|---|
-| `fdr_face` | 86 | Blank head, hair, ears, brows, 25 eyes, noses, 14 mouths, pince-nez |
-| `fdr_mouths` | 6 | Frown, grimace, tight-lipped, nervous, "f/v", half-smile around the holder |
-| `fdr_body` | 7 | Torso with the cape and no arms, upper arms, forearms flat and raised |
-| `fdr_cape` | 2 | Cape back layer and side drape |
-| `fdr_hands` | 8 | Card actions: peek, check, push chips, palm up, fold, rake, fist, turn over |
-| `fdr_hands_holder` | 5 | Hands holding the cigarette holder |
-| `fdr_props` | 8 | The cigarette holder at several lengths and angles, one lit with smoke |
+The puppet is built by `art-tools/seat_puppet.py` from `seat.json`:
+head 8 (three-quarter, holder in the teeth), torso 11, the near arm bent across and the far forearm behind, hands on the
+felt toward the table's centre, facing right (flipped for the table's right).
+The head is drawn in front and the torso again over it from the collar down
+(`"collar"`), so the collar wraps round the neck painted on the head.
+`fdr_rig/` holds the sleeves with their cuffs trimmed; each hand's own cuff
+finishes its sleeve. `preview.png` is the rest pose.
 
-| `fdr_rig` | 3 | Pieces cleaned up for the puppet (below) |
+    python3 art-tools/seat_puppet.py art-tools/fdr_parts/seat.json
 
-## The puppet
+His glasses came back round with arms; his character file says pince-nez. Close enough at table size, or ask for pince-nez next time.
 
-`art-tools/fdr_layout.json` is his rest pose: holder cocked up from his
-teeth, forearms angled down from the elbows, hands flat on the felt. `preview.png` is that pose;
-`preview_expressions.png` is the same layout with swaps switched on
-(laughing, broad smile, frown, grimace).
-
-    python3 art-tools/build_puppet.py render art-tools/fdr_layout.json -o preview.png
-
-Every piece has a `slot`. Pieces that share one are swaps for the same place,
-already positioned and scaled: the eyes, brows, mouths and hands. Only one per
-slot is visible at a time. The right eye and the right hand are the left ones
-with `"flip": true`. The table is a preview stand-in, not a part.
-
-The hands are the card-action pieces as drawn, WITH their cuff and a stub of
-sleeve, laid over the end of the forearm (which is angled to match). An
-earlier version cut the cuffs off and set bare hands at the forearm's sleeve
-opening; they looked stuck on. The artist's cuff-to-wrist join is what makes a
-hand look attached, so keep it. The other hands in the slot are parked at the
-same spot and need angling per pose: each was drawn at its own sleeve angle.
-
-`fdr_rig/` holds pieces cleaned up so they fit together:
-
-- `head.png`: the blank head with its painted collar and shoulders removed, so
-  the neck sits in the torso's collar.
-- `pince_nez.png`: the lenses made see-through; as drawn they hid his eyes.
-- `table_preview.png`: the felt for the preview.
-
-`sources/` holds the exact sheets that were cut, so any folder can be cut again:
-`python3 art-tools/split_parts.py art-tools/fdr_parts/sources/fdr_face.png -o art-tools/fdr_parts`
-(that rewrites `parts.json` and clears the labels, so copy them back).
-
-Two sources were edited before cutting:
-
-- `fdr_mouths.png`: the lip colour was matched to the face kit's closed mouth.
-  As generated, the six came out redder and glossier than the other fourteen.
-- `fdr_cape.png`, `fdr_hands_holder.png` and `fdr_props.png` are the usable
-  pieces of an earlier collage, put back on a clean white sheet. Its torsos had
-  the arms painted on, and some pieces touched.
-
-Known gaps, none blocking:
-
-- The blank head has the hair painted on, so the hair can't move on its own.
-- Eyes are whole pieces (white, iris and lid together): swap them, don't
-  move pupils.
-- No two-handed all-in shove: use two copies of the push-chips hand.
-- Smoke is only on the one lit holder, and ash flakes were too small to cut:
-  make both in the rig.
-- The chins and the back of the head were not asked for; they are unused.
-- Hands are drawn for one side; mirror them for the other.
+**Gap: expressions at three-quarter.** The sheet's expression heads (and its
+eyes, brows, noses and mouths) are front-on, and its turned heads are near
+profile with one expression. So the puppet has one face. A Lincoln-style
+sheet (the same four finished heads, three-quarter, facing both ways) would
+give it a set.

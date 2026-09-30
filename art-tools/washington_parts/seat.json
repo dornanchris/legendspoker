@@ -1,0 +1,45 @@
+{
+ "id": "washington",
+ "pieces": "washington_parts/washington/washington_%02d.png",
+ "name": "George Washington",
+ "torso": 13,
+ "head": 6,
+ "head_flip": true,
+ "heads": [],
+ "far": [
+  52,
+  64
+ ],
+ "near": [
+  55,
+  59
+ ],
+ "hands": [
+  59,
+  60,
+  61,
+  62,
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70
+ ],
+ "cuff": "white",
+ "collar": 0.14,
+ "tune": {
+  "kt": 2.15,
+  "kh": 1.6,
+  "neck": 90,
+  "hdx": 20,
+  "ka": 2.05,
+  "kha": 1.12,
+  "nx": -20,
+  "fx": 125,
+  "ny": 880,
+  "fy": 905
+ }
+}

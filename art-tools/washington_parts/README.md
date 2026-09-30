@@ -1,0 +1,23 @@
+# George Washington's parts
+
+Cut with `split_parts.py` from one sheet (`sources/washington_sheet.png`), in
+Lincoln's flat cartoon style: buff-and-blue coat, epaulettes, powdered hair, tricorn. `washington/` holds every piece, a numbered
+`_contact_sheet.png` and `parts.json` with a label on each.
+
+The puppet is built by `art-tools/seat_puppet.py` from `seat.json`:
+head 6 (three-quarter facing left, flipped), torso 13, the near arm bent across and the far forearm behind, hands on the
+felt toward the table's centre, facing right (flipped for the table's right).
+The head is drawn in front and the torso again over it from the collar down
+(`"collar"`), so the collar wraps round the neck painted on the head.
+`washington_rig/` holds the sleeves with their cuffs trimmed; each hand's own cuff
+finishes its sleeve. `preview.png` is the rest pose.
+
+    python3 art-tools/seat_puppet.py art-tools/washington_parts/seat.json
+
+His cuffs are lace, which the white-cuff trim handles.
+
+**Gap: expressions at three-quarter.** The sheet's expression heads (and its
+eyes, brows, noses and mouths) are front-on, and its turned heads are near
+profile with one expression. So the puppet has one face. A Lincoln-style
+sheet (the same four finished heads, three-quarter, facing both ways) would
+give it a set.

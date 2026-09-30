@@ -1,0 +1,48 @@
+{
+ "id": "roosevelt",
+ "pieces": "roosevelt_parts/roosevelt/roosevelt_%02d.png",
+ "name": "Theodore Roosevelt",
+ "torso": 13,
+ "head": 7,
+ "heads": [
+  8,
+  9
+ ],
+ "far": [
+  56,
+  67
+ ],
+ "near": [
+  59,
+  63
+ ],
+ "hands": [
+  63,
+  64,
+  65,
+  66,
+  67,
+  68,
+  69,
+  70,
+  71,
+  72,
+  73,
+  74,
+  75
+ ],
+ "cuff": "band",
+ "collar": 0.14,
+ "tune": {
+  "kt": 2.15,
+  "kh": 1.55,
+  "neck": 95,
+  "hdx": 30,
+  "ka": 2.05,
+  "kha": 1.12,
+  "nx": -20,
+  "fx": 125,
+  "ny": 880,
+  "fy": 905
+ }
+}

@@ -1,0 +1,1032 @@
+{
+  "source": "fdr_sheet.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "fdr_01.png",
+      "label": "reference portrait (front-on)",
+      "x": 8,
+      "y": 22,
+      "w": 305,
+      "h": 402,
+      "pivot": [
+        152.5,
+        201.0
+      ],
+      "area": 80216
+    },
+    {
+      "index": 2,
+      "file": "fdr_02.png",
+      "label": "head, front-on, holder in the teeth (not used: three-quarter)",
+      "x": 275,
+      "y": 24,
+      "w": 142,
+      "h": 179,
+      "pivot": [
+        71.0,
+        89.5
+      ],
+      "area": 15323
+    },
+    {
+      "index": 3,
+      "file": "fdr_03.png",
+      "label": "head, front-on, holder in the teeth (not used: three-quarter)",
+      "x": 416,
+      "y": 24,
+      "w": 140,
+      "h": 178,
+      "pivot": [
+        70.0,
+        89.0
+      ],
+      "area": 15299
+    },
+    {
+      "index": 4,
+      "file": "fdr_04.png",
+      "label": "head, front-on, holder in the teeth (not used: three-quarter)",
+      "x": 554,
+      "y": 24,
+      "w": 144,
+      "h": 178,
+      "pivot": [
+        72.0,
+        89.0
+      ],
+      "area": 15298
+    },
+    {
+      "index": 5,
+      "file": "fdr_05.png",
+      "label": "head, front-on, holder in the teeth (not used: three-quarter)",
+      "x": 694,
+      "y": 24,
+      "w": 145,
+      "h": 178,
+      "pivot": [
+        72.5,
+        89.0
+      ],
+      "area": 15293
+    },
+    {
+      "index": 6,
+      "file": "fdr_06.png",
+      "label": "head, front-on, laughing",
+      "x": 836,
+      "y": 25,
+      "w": 125,
+      "h": 178,
+      "pivot": [
+        62.5,
+        89.0
+      ],
+      "area": 15403
+    },
+    {
+      "index": 7,
+      "file": "fdr_07.png",
+      "label": "two heads, touching (not used)",
+      "x": 964,
+      "y": 26,
+      "w": 293,
+      "h": 185,
+      "pivot": [
+        146.5,
+        92.5
+      ],
+      "area": 35252
+    },
+    {
+      "index": 8,
+      "file": "fdr_08.png",
+      "label": "head, three-quarter facing right, holder in the teeth",
+      "x": 1242,
+      "y": 27,
+      "w": 134,
+      "h": 185,
+      "pivot": [
+        67.0,
+        92.5
+      ],
+      "area": 16254
+    },
+    {
+      "index": 9,
+      "file": "fdr_09.png",
+      "label": "head, turned left, profile",
+      "x": 1376,
+      "y": 29,
+      "w": 151,
+      "h": 183,
+      "pivot": [
+        75.5,
+        91.5
+      ],
+      "area": 17885
+    },
+    {
+      "index": 10,
+      "file": "fdr_10.png",
+      "label": "torso, front-on",
+      "x": 8,
+      "y": 440,
+      "w": 284,
+      "h": 207,
+      "pivot": [
+        142.0,
+        103.5
+      ],
+      "area": 45348
+    },
+    {
+      "index": 11,
+      "file": "fdr_11.png",
+      "label": "torso, three-quarter facing right",
+      "x": 283,
+      "y": 445,
+      "w": 201,
+      "h": 201,
+      "pivot": [
+        100.5,
+        100.5
+      ],
+      "area": 30245
+    },
+    {
+      "index": 12,
+      "file": "fdr_12.png",
+      "label": "blank head, front-on",
+      "x": 290,
+      "y": 213,
+      "w": 110,
+      "h": 139,
+      "pivot": [
+        55.0,
+        69.5
+      ],
+      "area": 10397
+    },
+    {
+      "index": 13,
+      "file": "fdr_13.png",
+      "label": "ear",
+      "x": 324,
+      "y": 359,
+      "w": 35,
+      "h": 64,
+      "pivot": [
+        17.5,
+        32.0
+      ],
+      "area": 1418
+    },
+    {
+      "index": 14,
+      "file": "fdr_14.png",
+      "label": "ear",
+      "x": 377,
+      "y": 359,
+      "w": 35,
+      "h": 63,
+      "pivot": [
+        17.5,
+        31.5
+      ],
+      "area": 1374
+    },
+    {
+      "index": 15,
+      "file": "fdr_15.png",
+      "label": "hair",
+      "x": 410,
+      "y": 211,
+      "w": 151,
+      "h": 127,
+      "pivot": [
+        75.5,
+        63.5
+      ],
+      "area": 9267
+    },
+    {
+      "index": 16,
+      "file": "fdr_16.png",
+      "label": "neck",
+      "x": 443,
+      "y": 346,
+      "w": 96,
+      "h": 87,
+      "pivot": [
+        48.0,
+        43.5
+      ],
+      "area": 5795
+    },
+    {
+      "index": 17,
+      "file": "fdr_17.png",
+      "label": "torso, turned further",
+      "x": 486,
+      "y": 446,
+      "w": 158,
+      "h": 201,
+      "pivot": [
+        79.0,
+        100.5
+      ],
+      "area": 25143
+    },
+    {
+      "index": 18,
+      "file": "fdr_18.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 559,
+      "y": 361,
+      "w": 81,
+      "h": 68,
+      "pivot": [
+        40.5,
+        34.0
+      ],
+      "area": 3926
+    },
+    {
+      "index": 19,
+      "file": "fdr_19.png",
+      "label": "eyebrow, front-on",
+      "x": 579,
+      "y": 255,
+      "w": 57,
+      "h": 28,
+      "pivot": [
+        28.5,
+        14.0
+      ],
+      "area": 770
+    },
+    {
+      "index": 20,
+      "file": "fdr_20.png",
+      "label": "eyebrow, front-on",
+      "x": 580,
+      "y": 213,
+      "w": 55,
+      "h": 28,
+      "pivot": [
+        27.5,
+        14.0
+      ],
+      "area": 748
+    },
+    {
+      "index": 21,
+      "file": "fdr_21.png",
+      "label": "nose, front-on",
+      "x": 583,
+      "y": 294,
+      "w": 45,
+      "h": 63,
+      "pivot": [
+        22.5,
+        31.5
+      ],
+      "area": 1511
+    },
+    {
+      "index": 22,
+      "file": "fdr_22.png",
+      "label": "torso, side",
+      "x": 642,
+      "y": 445,
+      "w": 147,
+      "h": 202,
+      "pivot": [
+        73.5,
+        101.0
+      ],
+      "area": 22057
+    },
+    {
+      "index": 23,
+      "file": "fdr_23.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 643,
+      "y": 361,
+      "w": 82,
+      "h": 68,
+      "pivot": [
+        41.0,
+        34.0
+      ],
+      "area": 3939
+    },
+    {
+      "index": 24,
+      "file": "fdr_24.png",
+      "label": "eyebrow, front-on",
+      "x": 648,
+      "y": 214,
+      "w": 54,
+      "h": 27,
+      "pivot": [
+        27.0,
+        13.5
+      ],
+      "area": 707
+    },
+    {
+      "index": 25,
+      "file": "fdr_25.png",
+      "label": "eyebrow, front-on",
+      "x": 649,
+      "y": 254,
+      "w": 55,
+      "h": 28,
+      "pivot": [
+        27.5,
+        14.0
+      ],
+      "area": 790
+    },
+    {
+      "index": 26,
+      "file": "fdr_26.png",
+      "label": "nose, front-on",
+      "x": 656,
+      "y": 294,
+      "w": 44,
+      "h": 63,
+      "pivot": [
+        22.0,
+        31.5
+      ],
+      "area": 1496
+    },
+    {
+      "index": 27,
+      "file": "fdr_27.png",
+      "label": "eyebrow, front-on",
+      "x": 718,
+      "y": 215,
+      "w": 54,
+      "h": 28,
+      "pivot": [
+        27.0,
+        14.0
+      ],
+      "area": 717
+    },
+    {
+      "index": 28,
+      "file": "fdr_28.png",
+      "label": "eyebrow, front-on",
+      "x": 720,
+      "y": 259,
+      "w": 58,
+      "h": 25,
+      "pivot": [
+        29.0,
+        12.5
+      ],
+      "area": 735
+    },
+    {
+      "index": 29,
+      "file": "fdr_29.png",
+      "label": "nose, front-on",
+      "x": 729,
+      "y": 294,
+      "w": 47,
+      "h": 62,
+      "pivot": [
+        23.5,
+        31.0
+      ],
+      "area": 1530
+    },
+    {
+      "index": 30,
+      "file": "fdr_30.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 730,
+      "y": 361,
+      "w": 82,
+      "h": 68,
+      "pivot": [
+        41.0,
+        34.0
+      ],
+      "area": 3882
+    },
+    {
+      "index": 31,
+      "file": "fdr_31.png",
+      "label": "cape from behind",
+      "x": 779,
+      "y": 444,
+      "w": 295,
+      "h": 203,
+      "pivot": [
+        147.5,
+        101.5
+      ],
+      "area": 43332
+    },
+    {
+      "index": 32,
+      "file": "fdr_32.png",
+      "label": "eye, front-on",
+      "x": 795,
+      "y": 214,
+      "w": 56,
+      "h": 43,
+      "pivot": [
+        28.0,
+        21.5
+      ],
+      "area": 1625
+    },
+    {
+      "index": 33,
+      "file": "fdr_33.png",
+      "label": "eye, front-on",
+      "x": 795,
+      "y": 268,
+      "w": 55,
+      "h": 41,
+      "pivot": [
+        27.5,
+        20.5
+      ],
+      "area": 1476
+    },
+    {
+      "index": 34,
+      "file": "fdr_34.png",
+      "label": "mouth, front-on",
+      "x": 797,
+      "y": 325,
+      "w": 63,
+      "h": 27,
+      "pivot": [
+        31.5,
+        13.5
+      ],
+      "area": 1028
+    },
+    {
+      "index": 35,
+      "file": "fdr_35.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 815,
+      "y": 361,
+      "w": 82,
+      "h": 68,
+      "pivot": [
+        41.0,
+        34.0
+      ],
+      "area": 3959
+    },
+    {
+      "index": 36,
+      "file": "fdr_36.png",
+      "label": "eye, front-on",
+      "x": 867,
+      "y": 268,
+      "w": 57,
+      "h": 41,
+      "pivot": [
+        28.5,
+        20.5
+      ],
+      "area": 1512
+    },
+    {
+      "index": 37,
+      "file": "fdr_37.png",
+      "label": "eye, front-on",
+      "x": 868,
+      "y": 214,
+      "w": 57,
+      "h": 43,
+      "pivot": [
+        28.5,
+        21.5
+      ],
+      "area": 1647
+    },
+    {
+      "index": 38,
+      "file": "fdr_38.png",
+      "label": "mouth, front-on",
+      "x": 874,
+      "y": 320,
+      "w": 56,
+      "h": 36,
+      "pivot": [
+        28.0,
+        18.0
+      ],
+      "area": 1297
+    },
+    {
+      "index": 39,
+      "file": "fdr_39.png",
+      "label": "mouth and chin patch, front-on",
+      "x": 901,
+      "y": 361,
+      "w": 82,
+      "h": 68,
+      "pivot": [
+        41.0,
+        34.0
+      ],
+      "area": 3955
+    },
+    {
+      "index": 40,
+      "file": "fdr_40.png",
+      "label": "eye, front-on",
+      "x": 941,
+      "y": 214,
+      "w": 57,
+      "h": 43,
+      "pivot": [
+        28.5,
+        21.5
+      ],
+      "area": 1637
+    },
+    {
+      "index": 41,
+      "file": "fdr_41.png",
+      "label": "eye, front-on",
+      "x": 942,
+      "y": 267,
+      "w": 56,
+      "h": 42,
+      "pivot": [
+        28.0,
+        21.0
+      ],
+      "area": 1497
+    },
+    {
+      "index": 42,
+      "file": "fdr_42.png",
+      "label": "mouth, front-on",
+      "x": 942,
+      "y": 319,
+      "w": 58,
+      "h": 31,
+      "pivot": [
+        29.0,
+        15.5
+      ],
+      "area": 1236
+    },
+    {
+      "index": 43,
+      "file": "fdr_43.png",
+      "label": "cigarette holder",
+      "x": 1023,
+      "y": 299,
+      "w": 190,
+      "h": 58,
+      "pivot": [
+        95.0,
+        29.0
+      ],
+      "area": 2153
+    },
+    {
+      "index": 44,
+      "file": "fdr_44.png",
+      "label": "cigarette holder",
+      "x": 1026,
+      "y": 228,
+      "w": 174,
+      "h": 80,
+      "pivot": [
+        87.0,
+        40.0
+      ],
+      "area": 2133
+    },
+    {
+      "index": 45,
+      "file": "fdr_45.png",
+      "label": "cape side piece",
+      "x": 1057,
+      "y": 421,
+      "w": 126,
+      "h": 228,
+      "pivot": [
+        63.0,
+        114.0
+      ],
+      "area": 19346
+    },
+    {
+      "index": 46,
+      "file": "fdr_46.png",
+      "label": "glasses (round, with arms)",
+      "x": 1220,
+      "y": 237,
+      "w": 155,
+      "h": 57,
+      "pivot": [
+        77.5,
+        28.5
+      ],
+      "area": 3492
+    },
+    {
+      "index": 47,
+      "file": "fdr_47.png",
+      "label": "glasses (round, with arms)",
+      "x": 1223,
+      "y": 328,
+      "w": 151,
+      "h": 65,
+      "pivot": [
+        75.5,
+        32.5
+      ],
+      "area": 3207
+    },
+    {
+      "index": 48,
+      "file": "fdr_48.png",
+      "label": "cape side piece",
+      "x": 1243,
+      "y": 441,
+      "w": 131,
+      "h": 117,
+      "pivot": [
+        65.5,
+        58.5
+      ],
+      "area": 9089
+    },
+    {
+      "index": 49,
+      "file": "fdr_49.png",
+      "label": "glasses (round, with arms)",
+      "x": 1380,
+      "y": 311,
+      "w": 145,
+      "h": 76,
+      "pivot": [
+        72.5,
+        38.0
+      ],
+      "area": 1929
+    },
+    {
+      "index": 50,
+      "file": "fdr_50.png",
+      "label": "glasses (round, with arms)",
+      "x": 1385,
+      "y": 230,
+      "w": 143,
+      "h": 63,
+      "pivot": [
+        71.5,
+        31.5
+      ],
+      "area": 2997
+    },
+    {
+      "index": 51,
+      "file": "fdr_51.png",
+      "label": "cape side piece",
+      "x": 1390,
+      "y": 423,
+      "w": 138,
+      "h": 232,
+      "pivot": [
+        69.0,
+        116.0
+      ],
+      "area": 19690
+    },
+    {
+      "index": 52,
+      "file": "fdr_52.png",
+      "label": "cape from behind",
+      "x": 1166,
+      "y": 534,
+      "w": 217,
+      "h": 118,
+      "pivot": [
+        108.5,
+        59.0
+      ],
+      "area": 18476
+    },
+    {
+      "index": 53,
+      "file": "fdr_53.png",
+      "label": "arm, bent: elbow right, cuff left",
+      "x": 27,
+      "y": 654,
+      "w": 213,
+      "h": 164,
+      "pivot": [
+        106.5,
+        82.0
+      ],
+      "area": 21936
+    },
+    {
+      "index": 54,
+      "file": "fdr_54.png",
+      "label": "arm, bent: elbow right, cuff left",
+      "x": 261,
+      "y": 656,
+      "w": 209,
+      "h": 160,
+      "pivot": [
+        104.5,
+        80.0
+      ],
+      "area": 21073
+    },
+    {
+      "index": 55,
+      "file": "fdr_55.png",
+      "label": "forearm, straight, cuff down-right",
+      "x": 498,
+      "y": 654,
+      "w": 129,
+      "h": 163,
+      "pivot": [
+        64.5,
+        81.5
+      ],
+      "area": 10652
+    },
+    {
+      "index": 56,
+      "file": "fdr_56.png",
+      "label": "arm, bent, cuff at the bottom",
+      "x": 614,
+      "y": 652,
+      "w": 126,
+      "h": 169,
+      "pivot": [
+        63.0,
+        84.5
+      ],
+      "area": 13197
+    },
+    {
+      "index": 57,
+      "file": "fdr_57.png",
+      "label": "forearm, straight, cuff down-left",
+      "x": 754,
+      "y": 655,
+      "w": 126,
+      "h": 162,
+      "pivot": [
+        63.0,
+        81.0
+      ],
+      "area": 10691
+    },
+    {
+      "index": 58,
+      "file": "fdr_58.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 876,
+      "y": 651,
+      "w": 168,
+      "h": 171,
+      "pivot": [
+        84.0,
+        85.5
+      ],
+      "area": 16406
+    },
+    {
+      "index": 59,
+      "file": "fdr_59.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 1039,
+      "y": 656,
+      "w": 175,
+      "h": 161,
+      "pivot": [
+        87.5,
+        80.5
+      ],
+      "area": 14848
+    },
+    {
+      "index": 60,
+      "file": "fdr_60.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 1181,
+      "y": 655,
+      "w": 163,
+      "h": 158,
+      "pivot": [
+        81.5,
+        79.0
+      ],
+      "area": 15331
+    },
+    {
+      "index": 61,
+      "file": "fdr_61.png",
+      "label": "arm, bent: elbow left, cuff right",
+      "x": 1370,
+      "y": 657,
+      "w": 158,
+      "h": 164,
+      "pivot": [
+        79.0,
+        82.0
+      ],
+      "area": 15070
+    },
+    {
+      "index": 62,
+      "file": "fdr_62.png",
+      "label": "hand with cuff",
+      "x": 22,
+      "y": 827,
+      "w": 168,
+      "h": 162,
+      "pivot": [
+        84.0,
+        81.0
+      ],
+      "area": 12499
+    },
+    {
+      "index": 63,
+      "file": "fdr_63.png",
+      "label": "hand with cuff",
+      "x": 154,
+      "y": 823,
+      "w": 148,
+      "h": 166,
+      "pivot": [
+        74.0,
+        83.0
+      ],
+      "area": 10343
+    },
+    {
+      "index": 64,
+      "file": "fdr_64.png",
+      "label": "hand with cuff",
+      "x": 277,
+      "y": 832,
+      "w": 126,
+      "h": 161,
+      "pivot": [
+        63.0,
+        80.5
+      ],
+      "area": 9532
+    },
+    {
+      "index": 65,
+      "file": "fdr_65.png",
+      "label": "hand with cuff",
+      "x": 381,
+      "y": 826,
+      "w": 130,
+      "h": 170,
+      "pivot": [
+        65.0,
+        85.0
+      ],
+      "area": 10025
+    },
+    {
+      "index": 66,
+      "file": "fdr_66.png",
+      "label": "hand with cuff",
+      "x": 495,
+      "y": 821,
+      "w": 127,
+      "h": 175,
+      "pivot": [
+        63.5,
+        87.5
+      ],
+      "area": 10523
+    },
+    {
+      "index": 67,
+      "file": "fdr_67.png",
+      "label": "hand with cuff",
+      "x": 608,
+      "y": 824,
+      "w": 222,
+      "h": 168,
+      "pivot": [
+        111.0,
+        84.0
+      ],
+      "area": 17943
+    },
+    {
+      "index": 68,
+      "file": "fdr_68.png",
+      "label": "hand with cuff",
+      "x": 845,
+      "y": 827,
+      "w": 93,
+      "h": 176,
+      "pivot": [
+        46.5,
+        88.0
+      ],
+      "area": 9652
+    },
+    {
+      "index": 69,
+      "file": "fdr_69.png",
+      "label": "hand with cuff",
+      "x": 931,
+      "y": 832,
+      "w": 110,
+      "h": 154,
+      "pivot": [
+        55.0,
+        77.0
+      ],
+      "area": 8961
+    },
+    {
+      "index": 70,
+      "file": "fdr_70.png",
+      "label": "hand with cuff",
+      "x": 1040,
+      "y": 830,
+      "w": 121,
+      "h": 164,
+      "pivot": [
+        60.5,
+        82.0
+      ],
+      "area": 10300
+    },
+    {
+      "index": 71,
+      "file": "fdr_71.png",
+      "label": "hand with cuff",
+      "x": 1153,
+      "y": 833,
+      "w": 125,
+      "h": 168,
+      "pivot": [
+        62.5,
+        84.0
+      ],
+      "area": 9691
+    },
+    {
+      "index": 72,
+      "file": "fdr_72.png",
+      "label": "hand with cuff",
+      "x": 1261,
+      "y": 829,
+      "w": 138,
+      "h": 166,
+      "pivot": [
+        69.0,
+        83.0
+      ],
+      "area": 9533
+    },
+    {
+      "index": 73,
+      "file": "fdr_73.png",
+      "label": "hand with cuff",
+      "x": 1332,
+      "y": 833,
+      "w": 194,
+      "h": 138,
+      "pivot": [
+        97.0,
+        69.0
+      ],
+      "area": 10891
+    }
+  ]
+}

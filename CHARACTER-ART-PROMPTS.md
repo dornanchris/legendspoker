@@ -6,7 +6,7 @@ Every character in the game, grouped by table. The descriptions come from `data/
 
 ## Status
 
-The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: `art-tools/lincoln_parts/`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (`art-tools/death_parts/`) is done, front-on as the dealer. FDR's kit was drawn front-on and stays only as a working example of the pipeline. Dracula's parts are in an older style.
+The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: `art-tools/lincoln_parts/`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (`art-tools/death_parts/`) is done, front-on as the dealer. **The White House table is done**: Lincoln, FDR, Roosevelt and Washington, each built by `art-tools/seat_puppet.py` from a `seat.json`. Only Lincoln has three-quarter expression heads: attach his sheet (`art-tools/lincoln_parts/sources/lincoln_sheet.png`) as the layout to copy, so the next sheets draw their four finished heads three-quarter, facing both ways, as his does. Dracula's parts are in an older style.
 
 ## The table, the seats and the layers
 
@@ -24,7 +24,7 @@ The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the mode
 4. **Check each sheet before moving on.** Every piece on pure white with a gap all round it; pieces that touch are cut as one piece, and a white piece without a dark outline (a cuff, a pinafore, a skull) is cut away with the background. Soft glows, halos, glints, smoke and shadow overlays can't be cut cleanly from white: they're listed so you know they're needed, and are easiest made in the rig as a blurred, tinted shape.
 5. **Missing parts:** image generators drop items from long lists. Ask again with the same rules and ONLY the missing parts: *"Same rules as before. A new sheet with only these parts: …"*
 6. **Cut it:** `python3 art-tools/split_parts.py sheet.png -o art-tools/<id>_parts --name <id>_face` (needs `pip install pillow numpy scipy`). It writes each piece as a PNG, a numbered contact sheet and `parts.json`; fill in each piece's `label`.
-7. **Lay out the puppet:** copy `art-tools/fdr_layout.json`, swap in the new character's pieces, and render with `python3 art-tools/build_puppet.py render art-tools/<id>_layout.json -o preview.png`. Pieces that share a `slot` are swaps for the same place (eyes, mouths, hands); only one is visible at a time. `"flip": true` mirrors a piece: it is how one hand of each pose serves both sides, and how a whole character moves to a seat on the other side of the table.
+7. **Lay out the puppet:** copy another character's `seat.json` (e.g. `art-tools/lincoln_parts/seat.json`) into `art-tools/<id>_parts/`, put in the new piece numbers (torso, head, near and far arm and hand), and run `python3 art-tools/seat_puppet.py art-tools/<id>_parts/seat.json`. It trims the sleeves' cuffs, writes `art-tools/<id>_layout.json` and a `preview.png`; nudge the numbers in `tune` until it looks right. Pieces that share a `slot` are swaps for the same place; `"flip": true` mirrors a piece, which is how a whole character moves to a seat on the other side of the table.
 
 ## Why the prompts ask for what they do (learned on FDR and Lincoln)
 
