@@ -1,0 +1,1410 @@
+{
+  "source": "lincoln_sheet.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "lincoln_01.png",
+      "label": "reference portrait, facing right (to a seat on the table's left)",
+      "x": 6,
+      "y": 2,
+      "w": 287,
+      "h": 406,
+      "pivot": [
+        143.5,
+        203.0
+      ],
+      "area": 68379
+    },
+    {
+      "index": 2,
+      "file": "lincoln_02.png",
+      "label": "head with hat, facing right",
+      "x": 295,
+      "y": 8,
+      "w": 128,
+      "h": 197,
+      "pivot": [
+        64.0,
+        98.5
+      ],
+      "area": 15369
+    },
+    {
+      "index": 3,
+      "file": "lincoln_03.png",
+      "label": "head with hat, facing right",
+      "x": 415,
+      "y": 9,
+      "w": 126,
+      "h": 195,
+      "pivot": [
+        63.0,
+        97.5
+      ],
+      "area": 14799
+    },
+    {
+      "index": 4,
+      "file": "lincoln_04.png",
+      "label": "head with hat, facing right",
+      "x": 528,
+      "y": 12,
+      "w": 123,
+      "h": 192,
+      "pivot": [
+        61.5,
+        96.0
+      ],
+      "area": 14388
+    },
+    {
+      "index": 5,
+      "file": "lincoln_05.png",
+      "label": "head with hat, facing right",
+      "x": 637,
+      "y": 14,
+      "w": 120,
+      "h": 190,
+      "pivot": [
+        60.0,
+        95.0
+      ],
+      "area": 13901
+    },
+    {
+      "index": 6,
+      "file": "lincoln_06.png",
+      "label": "head with hat, facing left",
+      "x": 782,
+      "y": 14,
+      "w": 120,
+      "h": 190,
+      "pivot": [
+        60.0,
+        95.0
+      ],
+      "area": 13849
+    },
+    {
+      "index": 7,
+      "file": "lincoln_07.png",
+      "label": "head with hat, facing left",
+      "x": 887,
+      "y": 13,
+      "w": 123,
+      "h": 191,
+      "pivot": [
+        61.5,
+        95.5
+      ],
+      "area": 14276
+    },
+    {
+      "index": 8,
+      "file": "lincoln_08.png",
+      "label": "head with hat, facing left",
+      "x": 997,
+      "y": 9,
+      "w": 125,
+      "h": 196,
+      "pivot": [
+        62.5,
+        98.0
+      ],
+      "area": 14836
+    },
+    {
+      "index": 9,
+      "file": "lincoln_09.png",
+      "label": "head with hat, facing left",
+      "x": 1112,
+      "y": 8,
+      "w": 129,
+      "h": 204,
+      "pivot": [
+        64.5,
+        102.0
+      ],
+      "area": 15705
+    },
+    {
+      "index": 10,
+      "file": "lincoln_10.png",
+      "label": "reference portrait, facing left",
+      "x": 1242,
+      "y": 3,
+      "w": 288,
+      "h": 405,
+      "pivot": [
+        144.0,
+        202.5
+      ],
+      "area": 68224
+    },
+    {
+      "index": 11,
+      "file": "lincoln_11.png",
+      "label": "hair, facing right",
+      "x": 277,
+      "y": 215,
+      "w": 117,
+      "h": 100,
+      "pivot": [
+        58.5,
+        50.0
+      ],
+      "area": 4993
+    },
+    {
+      "index": 12,
+      "file": "lincoln_12.png",
+      "label": "blank head, near profile, facing right (not used: turned further than the heads)",
+      "x": 310,
+      "y": 322,
+      "w": 97,
+      "h": 144,
+      "pivot": [
+        48.5,
+        72.0
+      ],
+      "area": 9453
+    },
+    {
+      "index": 13,
+      "file": "lincoln_13.png",
+      "label": "eyebrow, facing-right set",
+      "x": 412,
+      "y": 215,
+      "w": 51,
+      "h": 24,
+      "pivot": [
+        25.5,
+        12.0
+      ],
+      "area": 623
+    },
+    {
+      "index": 14,
+      "file": "lincoln_14.png",
+      "label": "eyebrow and eye together, facing-right set",
+      "x": 413,
+      "y": 256,
+      "w": 50,
+      "h": 30,
+      "pivot": [
+        25.0,
+        15.0
+      ],
+      "area": 743
+    },
+    {
+      "index": 15,
+      "file": "lincoln_15.png",
+      "label": "nose, facing-right set",
+      "x": 429,
+      "y": 310,
+      "w": 41,
+      "h": 58,
+      "pivot": [
+        20.5,
+        29.0
+      ],
+      "area": 1235
+    },
+    {
+      "index": 16,
+      "file": "lincoln_16.png",
+      "label": "eyebrow, facing-right set",
+      "x": 473,
+      "y": 215,
+      "w": 43,
+      "h": 23,
+      "pivot": [
+        21.5,
+        11.5
+      ],
+      "area": 529
+    },
+    {
+      "index": 17,
+      "file": "lincoln_17.png",
+      "label": "eyebrow and eye together, facing-right set",
+      "x": 476,
+      "y": 257,
+      "w": 42,
+      "h": 29,
+      "pivot": [
+        21.0,
+        14.5
+      ],
+      "area": 674
+    },
+    {
+      "index": 18,
+      "file": "lincoln_18.png",
+      "label": "nose, facing-right set",
+      "x": 477,
+      "y": 311,
+      "w": 38,
+      "h": 57,
+      "pivot": [
+        19.0,
+        28.5
+      ],
+      "area": 1106
+    },
+    {
+      "index": 19,
+      "file": "lincoln_19.png",
+      "label": "eyebrow, facing-right set",
+      "x": 526,
+      "y": 215,
+      "w": 36,
+      "h": 23,
+      "pivot": [
+        18.0,
+        11.5
+      ],
+      "area": 418
+    },
+    {
+      "index": 20,
+      "file": "lincoln_20.png",
+      "label": "nose, facing-right set",
+      "x": 527,
+      "y": 310,
+      "w": 38,
+      "h": 56,
+      "pivot": [
+        19.0,
+        28.0
+      ],
+      "area": 1058
+    },
+    {
+      "index": 21,
+      "file": "lincoln_21.png",
+      "label": "eyebrow and eye together, facing-right set",
+      "x": 528,
+      "y": 256,
+      "w": 37,
+      "h": 31,
+      "pivot": [
+        18.5,
+        15.5
+      ],
+      "area": 616
+    },
+    {
+      "index": 22,
+      "file": "lincoln_22.png",
+      "label": "eye, facing-right set",
+      "x": 591,
+      "y": 216,
+      "w": 48,
+      "h": 30,
+      "pivot": [
+        24.0,
+        15.0
+      ],
+      "area": 853
+    },
+    {
+      "index": 23,
+      "file": "lincoln_23.png",
+      "label": "eye, facing-right set",
+      "x": 592,
+      "y": 260,
+      "w": 46,
+      "h": 32,
+      "pivot": [
+        23.0,
+        16.0
+      ],
+      "area": 845
+    },
+    {
+      "index": 24,
+      "file": "lincoln_24.png",
+      "label": "mouth, facing-right set",
+      "x": 592,
+      "y": 320,
+      "w": 45,
+      "h": 24,
+      "pivot": [
+        22.5,
+        12.0
+      ],
+      "area": 631
+    },
+    {
+      "index": 25,
+      "file": "lincoln_25.png",
+      "label": "mouth, facing-right set",
+      "x": 647,
+      "y": 312,
+      "w": 44,
+      "h": 38,
+      "pivot": [
+        22.0,
+        19.0
+      ],
+      "area": 1005
+    },
+    {
+      "index": 26,
+      "file": "lincoln_26.png",
+      "label": "eye, facing-right set",
+      "x": 648,
+      "y": 218,
+      "w": 42,
+      "h": 28,
+      "pivot": [
+        21.0,
+        14.0
+      ],
+      "area": 708
+    },
+    {
+      "index": 27,
+      "file": "lincoln_27.png",
+      "label": "eye, facing-right set",
+      "x": 648,
+      "y": 260,
+      "w": 41,
+      "h": 32,
+      "pivot": [
+        20.5,
+        16.0
+      ],
+      "area": 773
+    },
+    {
+      "index": 28,
+      "file": "lincoln_28.png",
+      "label": "mouth, facing-right set",
+      "x": 696,
+      "y": 313,
+      "w": 41,
+      "h": 32,
+      "pivot": [
+        20.5,
+        16.0
+      ],
+      "area": 786
+    },
+    {
+      "index": 29,
+      "file": "lincoln_29.png",
+      "label": "eye, facing-right set",
+      "x": 698,
+      "y": 261,
+      "w": 39,
+      "h": 31,
+      "pivot": [
+        19.5,
+        15.5
+      ],
+      "area": 721
+    },
+    {
+      "index": 30,
+      "file": "lincoln_30.png",
+      "label": "eye, facing-right set",
+      "x": 699,
+      "y": 217,
+      "w": 38,
+      "h": 29,
+      "pivot": [
+        19.0,
+        14.5
+      ],
+      "area": 669
+    },
+    {
+      "index": 31,
+      "file": "lincoln_31.png",
+      "label": "eye, facing-left set",
+      "x": 800,
+      "y": 217,
+      "w": 39,
+      "h": 29,
+      "pivot": [
+        19.5,
+        14.5
+      ],
+      "area": 665
+    },
+    {
+      "index": 32,
+      "file": "lincoln_32.png",
+      "label": "eye, facing-left set",
+      "x": 800,
+      "y": 260,
+      "w": 39,
+      "h": 32,
+      "pivot": [
+        19.5,
+        16.0
+      ],
+      "area": 710
+    },
+    {
+      "index": 33,
+      "file": "lincoln_33.png",
+      "label": "mouth, facing-left set",
+      "x": 800,
+      "y": 318,
+      "w": 40,
+      "h": 26,
+      "pivot": [
+        20.0,
+        13.0
+      ],
+      "area": 633
+    },
+    {
+      "index": 34,
+      "file": "lincoln_34.png",
+      "label": "mouth, facing-left set",
+      "x": 846,
+      "y": 312,
+      "w": 43,
+      "h": 38,
+      "pivot": [
+        21.5,
+        19.0
+      ],
+      "area": 1007
+    },
+    {
+      "index": 35,
+      "file": "lincoln_35.png",
+      "label": "eye, facing-left set",
+      "x": 848,
+      "y": 217,
+      "w": 41,
+      "h": 29,
+      "pivot": [
+        20.5,
+        14.5
+      ],
+      "area": 705
+    },
+    {
+      "index": 36,
+      "file": "lincoln_36.png",
+      "label": "eye, facing-left set",
+      "x": 848,
+      "y": 260,
+      "w": 41,
+      "h": 33,
+      "pivot": [
+        20.5,
+        16.5
+      ],
+      "area": 766
+    },
+    {
+      "index": 37,
+      "file": "lincoln_37.png",
+      "label": "eye, facing-left set",
+      "x": 898,
+      "y": 216,
+      "w": 47,
+      "h": 30,
+      "pivot": [
+        23.5,
+        15.0
+      ],
+      "area": 822
+    },
+    {
+      "index": 38,
+      "file": "lincoln_38.png",
+      "label": "mouth, facing-left set",
+      "x": 898,
+      "y": 313,
+      "w": 45,
+      "h": 32,
+      "pivot": [
+        22.5,
+        16.0
+      ],
+      "area": 900
+    },
+    {
+      "index": 39,
+      "file": "lincoln_39.png",
+      "label": "eye, facing-left set",
+      "x": 899,
+      "y": 261,
+      "w": 44,
+      "h": 31,
+      "pivot": [
+        22.0,
+        15.5
+      ],
+      "area": 826
+    },
+    {
+      "index": 40,
+      "file": "lincoln_40.png",
+      "label": "nose, facing-left set",
+      "x": 974,
+      "y": 311,
+      "w": 39,
+      "h": 55,
+      "pivot": [
+        19.5,
+        27.5
+      ],
+      "area": 1083
+    },
+    {
+      "index": 41,
+      "file": "lincoln_41.png",
+      "label": "eyebrow and eye together, facing-left set",
+      "x": 979,
+      "y": 256,
+      "w": 36,
+      "h": 31,
+      "pivot": [
+        18.0,
+        15.5
+      ],
+      "area": 572
+    },
+    {
+      "index": 42,
+      "file": "lincoln_42.png",
+      "label": "eyebrow, facing-left set",
+      "x": 984,
+      "y": 215,
+      "w": 36,
+      "h": 24,
+      "pivot": [
+        18.0,
+        12.0
+      ],
+      "area": 418
+    },
+    {
+      "index": 43,
+      "file": "lincoln_43.png",
+      "label": "nose, facing-left set",
+      "x": 1023,
+      "y": 310,
+      "w": 39,
+      "h": 58,
+      "pivot": [
+        19.5,
+        29.0
+      ],
+      "area": 1133
+    },
+    {
+      "index": 44,
+      "file": "lincoln_44.png",
+      "label": "eyebrow and eye together, facing-left set",
+      "x": 1025,
+      "y": 257,
+      "w": 41,
+      "h": 29,
+      "pivot": [
+        20.5,
+        14.5
+      ],
+      "area": 629
+    },
+    {
+      "index": 45,
+      "file": "lincoln_45.png",
+      "label": "eyebrow, facing-left set",
+      "x": 1030,
+      "y": 215,
+      "w": 40,
+      "h": 23,
+      "pivot": [
+        20.0,
+        11.5
+      ],
+      "area": 489
+    },
+    {
+      "index": 46,
+      "file": "lincoln_46.png",
+      "label": "nose, facing-left set",
+      "x": 1067,
+      "y": 310,
+      "w": 42,
+      "h": 58,
+      "pivot": [
+        21.0,
+        29.0
+      ],
+      "area": 1242
+    },
+    {
+      "index": 47,
+      "file": "lincoln_47.png",
+      "label": "eyebrow and eye together, facing-left set",
+      "x": 1076,
+      "y": 256,
+      "w": 48,
+      "h": 30,
+      "pivot": [
+        24.0,
+        15.0
+      ],
+      "area": 805
+    },
+    {
+      "index": 48,
+      "file": "lincoln_48.png",
+      "label": "eyebrow, facing-left set",
+      "x": 1078,
+      "y": 215,
+      "w": 49,
+      "h": 24,
+      "pivot": [
+        24.5,
+        12.0
+      ],
+      "area": 613
+    },
+    {
+      "index": 49,
+      "file": "lincoln_49.png",
+      "label": "blank head, near profile, facing left (not used)",
+      "x": 1130,
+      "y": 322,
+      "w": 103,
+      "h": 144,
+      "pivot": [
+        51.5,
+        72.0
+      ],
+      "area": 9786
+    },
+    {
+      "index": 50,
+      "file": "lincoln_50.png",
+      "label": "hair, facing left",
+      "x": 1143,
+      "y": 215,
+      "w": 118,
+      "h": 100,
+      "pivot": [
+        59.0,
+        50.0
+      ],
+      "area": 5093
+    },
+    {
+      "index": 51,
+      "file": "lincoln_51.png",
+      "label": "stovepipe hat, loose",
+      "x": 15,
+      "y": 429,
+      "w": 144,
+      "h": 141,
+      "pivot": [
+        72.0,
+        70.5
+      ],
+      "area": 11759
+    },
+    {
+      "index": 52,
+      "file": "lincoln_52.png",
+      "label": "stovepipe hat, loose",
+      "x": 186,
+      "y": 436,
+      "w": 144,
+      "h": 133,
+      "pivot": [
+        72.0,
+        66.5
+      ],
+      "area": 11784
+    },
+    {
+      "index": 53,
+      "file": "lincoln_53.png",
+      "label": "stovepipe hat, loose",
+      "x": 370,
+      "y": 457,
+      "w": 136,
+      "h": 126,
+      "pivot": [
+        68.0,
+        63.0
+      ],
+      "area": 9463
+    },
+    {
+      "index": 54,
+      "file": "lincoln_54.png",
+      "label": "ear, facing-right set",
+      "x": 431,
+      "y": 377,
+      "w": 33,
+      "h": 65,
+      "pivot": [
+        16.5,
+        32.5
+      ],
+      "area": 1346
+    },
+    {
+      "index": 55,
+      "file": "lincoln_55.png",
+      "label": "ear, facing-right set",
+      "x": 483,
+      "y": 377,
+      "w": 32,
+      "h": 64,
+      "pivot": [
+        16.0,
+        32.0
+      ],
+      "area": 1297
+    },
+    {
+      "index": 56,
+      "file": "lincoln_56.png",
+      "label": "mouth with beard (patch), facing-right set",
+      "x": 538,
+      "y": 378,
+      "w": 65,
+      "h": 60,
+      "pivot": [
+        32.5,
+        30.0
+      ],
+      "area": 2716
+    },
+    {
+      "index": 57,
+      "file": "lincoln_57.png",
+      "label": "stovepipe hat, loose",
+      "x": 540,
+      "y": 452,
+      "w": 132,
+      "h": 124,
+      "pivot": [
+        66.0,
+        62.0
+      ],
+      "area": 10988
+    },
+    {
+      "index": 58,
+      "file": "lincoln_58.png",
+      "label": "mouth with beard (patch), facing-right set",
+      "x": 607,
+      "y": 378,
+      "w": 64,
+      "h": 55,
+      "pivot": [
+        32.0,
+        27.5
+      ],
+      "area": 2364
+    },
+    {
+      "index": 59,
+      "file": "lincoln_59.png",
+      "label": "mouth with beard (patch), facing-right set",
+      "x": 681,
+      "y": 378,
+      "w": 61,
+      "h": 53,
+      "pivot": [
+        30.5,
+        26.5
+      ],
+      "area": 2137
+    },
+    {
+      "index": 60,
+      "file": "lincoln_60.png",
+      "label": "stovepipe hat, loose",
+      "x": 703,
+      "y": 452,
+      "w": 134,
+      "h": 125,
+      "pivot": [
+        67.0,
+        62.5
+      ],
+      "area": 11182
+    },
+    {
+      "index": 61,
+      "file": "lincoln_61.png",
+      "label": "mouth with beard (patch), facing-left set",
+      "x": 796,
+      "y": 378,
+      "w": 60,
+      "h": 53,
+      "pivot": [
+        30.0,
+        26.5
+      ],
+      "area": 2085
+    },
+    {
+      "index": 62,
+      "file": "lincoln_62.png",
+      "label": "stovepipe hat, loose",
+      "x": 866,
+      "y": 452,
+      "w": 132,
+      "h": 124,
+      "pivot": [
+        66.0,
+        62.0
+      ],
+      "area": 11041
+    },
+    {
+      "index": 63,
+      "file": "lincoln_63.png",
+      "label": "mouth with beard (patch), facing-left set",
+      "x": 867,
+      "y": 378,
+      "w": 62,
+      "h": 55,
+      "pivot": [
+        31.0,
+        27.5
+      ],
+      "area": 2301
+    },
+    {
+      "index": 64,
+      "file": "lincoln_64.png",
+      "label": "mouth with beard (patch), facing-left set",
+      "x": 933,
+      "y": 378,
+      "w": 65,
+      "h": 59,
+      "pivot": [
+        32.5,
+        29.5
+      ],
+      "area": 2712
+    },
+    {
+      "index": 65,
+      "file": "lincoln_65.png",
+      "label": "ear, facing-left set",
+      "x": 1024,
+      "y": 377,
+      "w": 31,
+      "h": 64,
+      "pivot": [
+        15.5,
+        32.0
+      ],
+      "area": 1246
+    },
+    {
+      "index": 66,
+      "file": "lincoln_66.png",
+      "label": "stovepipe hat, loose",
+      "x": 1034,
+      "y": 457,
+      "w": 136,
+      "h": 126,
+      "pivot": [
+        68.0,
+        63.0
+      ],
+      "area": 9355
+    },
+    {
+      "index": 67,
+      "file": "lincoln_67.png",
+      "label": "ear, facing-left set",
+      "x": 1071,
+      "y": 377,
+      "w": 33,
+      "h": 65,
+      "pivot": [
+        16.5,
+        32.5
+      ],
+      "area": 1304
+    },
+    {
+      "index": 68,
+      "file": "lincoln_68.png",
+      "label": "stovepipe hat, loose",
+      "x": 1211,
+      "y": 437,
+      "w": 145,
+      "h": 128,
+      "pivot": [
+        72.5,
+        64.0
+      ],
+      "area": 11003
+    },
+    {
+      "index": 69,
+      "file": "lincoln_69.png",
+      "label": "stovepipe hat, loose",
+      "x": 1379,
+      "y": 431,
+      "w": 143,
+      "h": 139,
+      "pivot": [
+        71.5,
+        69.5
+      ],
+      "area": 11736
+    },
+    {
+      "index": 70,
+      "file": "lincoln_70.png",
+      "label": "torso, nearly front-on",
+      "x": 15,
+      "y": 558,
+      "w": 224,
+      "h": 165,
+      "pivot": [
+        112.0,
+        82.5
+      ],
+      "area": 27733
+    },
+    {
+      "index": 71,
+      "file": "lincoln_71.png",
+      "label": "torso, three-quarter facing right (used)",
+      "x": 250,
+      "y": 565,
+      "w": 171,
+      "h": 163,
+      "pivot": [
+        85.5,
+        81.5
+      ],
+      "area": 21109
+    },
+    {
+      "index": 72,
+      "file": "lincoln_72.png",
+      "label": "torso, turned further (tie to the left)",
+      "x": 436,
+      "y": 569,
+      "w": 135,
+      "h": 159,
+      "pivot": [
+        67.5,
+        79.5
+      ],
+      "area": 16008
+    },
+    {
+      "index": 73,
+      "file": "lincoln_73.png",
+      "label": "torso from behind, three-quarter",
+      "x": 577,
+      "y": 572,
+      "w": 168,
+      "h": 156,
+      "pivot": [
+        84.0,
+        78.0
+      ],
+      "area": 19961
+    },
+    {
+      "index": 74,
+      "file": "lincoln_74.png",
+      "label": "torso from behind",
+      "x": 795,
+      "y": 574,
+      "w": 178,
+      "h": 162,
+      "pivot": [
+        89.0,
+        81.0
+      ],
+      "area": 21728
+    },
+    {
+      "index": 75,
+      "file": "lincoln_75.png",
+      "label": "torso, turned further (tie to the right)",
+      "x": 992,
+      "y": 571,
+      "w": 99,
+      "h": 165,
+      "pivot": [
+        49.5,
+        82.5
+      ],
+      "area": 12502
+    },
+    {
+      "index": 76,
+      "file": "lincoln_76.png",
+      "label": "torso, three-quarter facing left",
+      "x": 1106,
+      "y": 566,
+      "w": 167,
+      "h": 164,
+      "pivot": [
+        83.5,
+        82.0
+      ],
+      "area": 19967
+    },
+    {
+      "index": 77,
+      "file": "lincoln_77.png",
+      "label": "torso from behind, three-quarter",
+      "x": 1295,
+      "y": 559,
+      "w": 203,
+      "h": 160,
+      "pivot": [
+        101.5,
+        80.0
+      ],
+      "area": 24514
+    },
+    {
+      "index": 78,
+      "file": "lincoln_78.png",
+      "label": "arm, bent: elbow out right, cuff at left",
+      "x": 17,
+      "y": 732,
+      "w": 186,
+      "h": 138,
+      "pivot": [
+        93.0,
+        69.0
+      ],
+      "area": 15450
+    },
+    {
+      "index": 79,
+      "file": "lincoln_79.png",
+      "label": "arm, bent: elbow out right, cuff at left",
+      "x": 197,
+      "y": 733,
+      "w": 185,
+      "h": 144,
+      "pivot": [
+        92.5,
+        72.0
+      ],
+      "area": 15640
+    },
+    {
+      "index": 80,
+      "file": "lincoln_80.png",
+      "label": "forearm, straight, cuff down-right (far arm)",
+      "x": 406,
+      "y": 736,
+      "w": 125,
+      "h": 138,
+      "pivot": [
+        62.5,
+        69.0
+      ],
+      "area": 7502
+    },
+    {
+      "index": 81,
+      "file": "lincoln_81.png",
+      "label": "arm, bent, cuff at the bottom",
+      "x": 546,
+      "y": 736,
+      "w": 160,
+      "h": 140,
+      "pivot": [
+        80.0,
+        70.0
+      ],
+      "area": 10910
+    },
+    {
+      "index": 82,
+      "file": "lincoln_82.png",
+      "label": "forearm, straight, cuff down-left",
+      "x": 736,
+      "y": 737,
+      "w": 111,
+      "h": 142,
+      "pivot": [
+        55.5,
+        71.0
+      ],
+      "area": 7093
+    },
+    {
+      "index": 83,
+      "file": "lincoln_83.png",
+      "label": "arm, bent: elbow out left, cuff at right (near arm)",
+      "x": 847,
+      "y": 744,
+      "w": 163,
+      "h": 138,
+      "pivot": [
+        81.5,
+        69.0
+      ],
+      "area": 12742
+    },
+    {
+      "index": 84,
+      "file": "lincoln_84.png",
+      "label": "forearm, straight, cuff down-right",
+      "x": 1036,
+      "y": 741,
+      "w": 129,
+      "h": 134,
+      "pivot": [
+        64.5,
+        67.0
+      ],
+      "area": 7838
+    },
+    {
+      "index": 85,
+      "file": "lincoln_85.png",
+      "label": "forearm, straight, cuff down-left",
+      "x": 1173,
+      "y": 726,
+      "w": 139,
+      "h": 148,
+      "pivot": [
+        69.5,
+        74.0
+      ],
+      "area": 8852
+    },
+    {
+      "index": 86,
+      "file": "lincoln_86.png",
+      "label": "arm, bent: elbow out left, cuff at right",
+      "x": 1310,
+      "y": 724,
+      "w": 196,
+      "h": 150,
+      "pivot": [
+        98.0,
+        75.0
+      ],
+      "area": 16373
+    },
+    {
+      "index": 87,
+      "file": "lincoln_87.png",
+      "label": "hand with cuff: resting, fingers on the felt (near hand)",
+      "x": 16,
+      "y": 878,
+      "w": 126,
+      "h": 125,
+      "pivot": [
+        63.0,
+        62.5
+      ],
+      "area": 7608
+    },
+    {
+      "index": 88,
+      "file": "lincoln_88.png",
+      "label": "hand with cuff: pinching, cuff at left",
+      "x": 132,
+      "y": 871,
+      "w": 103,
+      "h": 131,
+      "pivot": [
+        51.5,
+        65.5
+      ],
+      "area": 6185
+    },
+    {
+      "index": 89,
+      "file": "lincoln_89.png",
+      "label": "hand with cuff, cuff at left (for arms pointing right)",
+      "x": 240,
+      "y": 879,
+      "w": 115,
+      "h": 103,
+      "pivot": [
+        57.5,
+        51.5
+      ],
+      "area": 6256
+    },
+    {
+      "index": 90,
+      "file": "lincoln_90.png",
+      "label": "hand with cuff, cuff at left (for arms pointing right)",
+      "x": 362,
+      "y": 878,
+      "w": 125,
+      "h": 128,
+      "pivot": [
+        62.5,
+        64.0
+      ],
+      "area": 7568
+    },
+    {
+      "index": 91,
+      "file": "lincoln_91.png",
+      "label": "hand with cuff, cuff at left (for arms pointing right)",
+      "x": 475,
+      "y": 878,
+      "w": 107,
+      "h": 112,
+      "pivot": [
+        53.5,
+        56.0
+      ],
+      "area": 5852
+    },
+    {
+      "index": 92,
+      "file": "lincoln_92.png",
+      "label": "hand with cuff: resting (far hand)",
+      "x": 583,
+      "y": 878,
+      "w": 119,
+      "h": 126,
+      "pivot": [
+        59.5,
+        63.0
+      ],
+      "area": 6362
+    },
+    {
+      "index": 93,
+      "file": "lincoln_93.png",
+      "label": "hand with cuff, cuff at left (for arms pointing right)",
+      "x": 689,
+      "y": 882,
+      "w": 98,
+      "h": 121,
+      "pivot": [
+        49.0,
+        60.5
+      ],
+      "area": 5663
+    },
+    {
+      "index": 94,
+      "file": "lincoln_94.png",
+      "label": "hand with cuff, cuff at right (for arms pointing left)",
+      "x": 803,
+      "y": 883,
+      "w": 87,
+      "h": 126,
+      "pivot": [
+        43.5,
+        63.0
+      ],
+      "area": 5914
+    },
+    {
+      "index": 95,
+      "file": "lincoln_95.png",
+      "label": "hand with cuff, cuff at right (for arms pointing left)",
+      "x": 898,
+      "y": 882,
+      "w": 92,
+      "h": 126,
+      "pivot": [
+        46.0,
+        63.0
+      ],
+      "area": 5752
+    },
+    {
+      "index": 96,
+      "file": "lincoln_96.png",
+      "label": "hand with cuff, cuff at right (for arms pointing left)",
+      "x": 1011,
+      "y": 879,
+      "w": 98,
+      "h": 106,
+      "pivot": [
+        49.0,
+        53.0
+      ],
+      "area": 6075
+    },
+    {
+      "index": 97,
+      "file": "lincoln_97.png",
+      "label": "hand with cuff, cuff at right (for arms pointing left)",
+      "x": 1129,
+      "y": 885,
+      "w": 81,
+      "h": 119,
+      "pivot": [
+        40.5,
+        59.5
+      ],
+      "area": 5633
+    },
+    {
+      "index": 98,
+      "file": "lincoln_98.png",
+      "label": "hand with cuff, cuff at right (for arms pointing left)",
+      "x": 1221,
+      "y": 881,
+      "w": 100,
+      "h": 133,
+      "pivot": [
+        50.0,
+        66.5
+      ],
+      "area": 6005
+    },
+    {
+      "index": 99,
+      "file": "lincoln_99.png",
+      "label": "hand with cuff, cuff at right (for arms pointing left)",
+      "x": 1312,
+      "y": 882,
+      "w": 104,
+      "h": 130,
+      "pivot": [
+        52.0,
+        65.0
+      ],
+      "area": 6117
+    },
+    {
+      "index": 100,
+      "file": "lincoln_100.png",
+      "label": "hand with cuff: pointing, cuff at right",
+      "x": 1382,
+      "y": 887,
+      "w": 142,
+      "h": 99,
+      "pivot": [
+        71.0,
+        49.5
+      ],
+      "area": 6267
+    }
+  ]
+}

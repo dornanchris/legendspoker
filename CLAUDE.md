@@ -128,7 +128,8 @@ art-tools/
   fdr_parts/      FDR's complete kit (122 labelled pieces + source sheets),
                   cleaned rig pieces and previews; see its README
   fdr_layout.json FDR assembled: rest pose + swap slots (build_puppet.py)
-  lincoln_parts/  Lincoln's kit, same scheme; lincoln_layout.json assembles him
+  lincoln_parts/  Lincoln's kit, three-quarter: the first drawn to the art
+                  direction; lincoln_layout.json assembles him
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
                   back); death_layout.json assembles him
   prompts/        generators for the two art-prompt files below
@@ -320,7 +321,8 @@ its own layer order (a sleeve can tuck under a cape); parts marked
 Every table is round and keeps a plain playing surface; each room differs in
 its table's rim and cloth, its backdrop and its light (`ROOM-ART-PROMPTS.md`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
-redrawn under it: the FDR and Lincoln kits are front-on pipeline examples.
+redrawn under it. Lincoln is the first kit drawn that way (flat cartoon
+style, the owner's pick); FDR's front-on kit is a pipeline example.
 Lincoln wears his hat at all times. Death wears a black hooded robe with a
 purple lining and a gold skull brooch (the owner's call, over the drafted grey
 shroud); rooms keep enough light behind him that the black reads.

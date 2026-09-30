@@ -6,7 +6,7 @@ Every character in the game, grouped by table. The descriptions come from `data/
 
 ## Status
 
-The pipeline is proven (cut, label, lay out a puppet), but **every character is to be drawn fresh** under the decisions below. FDR's and Lincoln's kits in `art-tools/` were drawn front-on and stay only as working examples of the pipeline; Lincoln's face read as apelike and he now wears his hat. Dracula's parts are in an older style.
+The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: `art-tools/lincoln_parts/`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (`art-tools/death_parts/`) is done, front-on as the dealer. FDR's kit was drawn front-on and stays only as a working example of the pipeline. Dracula's parts are in an older style.
 
 ## The table, the seats and the layers
 
@@ -179,6 +179,7 @@ This sheet: face kit. Parts:
 - A long, straight, fairly narrow nose as a separate piece
 - Mouths, each a separate piece: lower-face patches this time, NOT mouth only: each is the mouth with the chin beard around it, cut straight across just under the nose, so it lays over the painted beard. Thin lips, a clean upper lip. Neutral; slight smile; open smile; broad smile; laughing; talking "ah"; talking "oh"; talking "ee"; lips pressed ("m/b/p"); "f/v"; tight-lipped; nervous; frown; angry grimace; a small, restrained smile. The beard in every patch matches the painted beard exactly, so they swap without a join. Same lip and skin colour as the reference. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
 - His stovepipe hat, as worn, in 4 positions: sitting straight; pushed back on his head; tipped forward, brim low (a nod); lifted an inch off his head (tipping it)
+- His finished heads again WITHOUT the hat, hair on top, at exactly the same angle and scale, so a loose hat can lift off them
 
 Note: Build his face from the Brady and Gardner photographs, and keep it dignified: a long, narrow, gaunt face and a kind, tired look. An earlier attempt read as apelike: no heavy jutting brow ridge, no flat or wide nose, no wide lipless mouth, no protruding jaw, no oversized ears. He wears the hat at all times.
 

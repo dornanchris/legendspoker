@@ -246,7 +246,7 @@ export const PARTS = {
       eyes: 'deep-set and tired, under a straight brow, NOT a jutting one',
       nose: 'A long, straight, fairly narrow nose as a separate piece',
       mouthsExtra: 'a small, restrained smile',
-      extra: ['His stovepipe hat, as worn, in 4 positions: sitting straight; pushed back on his head; tipped forward, brim low (a nod); lifted an inch off his head (tipping it)'] }),
+      extra: ['His stovepipe hat, as worn, in 4 positions: sitting straight; pushed back on his head; tipped forward, brim low (a nod); lifted an inch off his head (tipping it)', 'His finished heads again WITHOUT the hat, hair on top, at exactly the same angle and scale, so a loose hat can lift off them'] }),
     body: body('a long, lean frame in a black frock coat and a black bow tie'),
     hands: hands('Long, bony hands', ['Hand stroking the chin beard', 'Both long hands folded together (one piece)', 'Fingers rubbing tired eyes', 'Fingers pinching the hat brim (hat NOT drawn)', 'Hand holding the hat by its brim, lifted (hat drawn)']),
     props: [],

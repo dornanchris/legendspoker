@@ -80,8 +80,8 @@ def seat(lay, cx, sc, flip, sink=10):
 def death(cx, sc):
     return seat('death_layout.json', cx, sc, False, 4)
 
-SEATS = g('seats', [['fdr_layout.json', 150, 0.36, False], ['lincoln_layout.json', 470, 0.30, False],
-                    ['fdr_layout.json', 1130, 0.30, True], ['lincoln_layout.json', 1450, 0.36, True]])
+SEATS = g('seats', [['fdr_layout.json', 150, 0.36, False], ['lincoln_layout.json', 470, 0.44, False],
+                    ['fdr_layout.json', 1130, 0.30, True], ['lincoln_layout.json', 1440, 0.52, True]])
 ys = [seat(*s_) for s_ in SEATS]
 dy = death(W // 2, g('death', 0.34))
 

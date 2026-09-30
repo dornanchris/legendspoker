@@ -23,7 +23,7 @@ Every character in the game, grouped by table. The descriptions come from \`data
 
 ## Status
 
-The pipeline is proven (cut, label, lay out a puppet), but **every character is to be drawn fresh** under the decisions below. FDR's and Lincoln's kits in \`art-tools/\` were drawn front-on and stay only as working examples of the pipeline; Lincoln's face read as apelike and he now wears his hat. Dracula's parts are in an older style.
+The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: \`art-tools/lincoln_parts/\`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (\`art-tools/death_parts/\`) is done, front-on as the dealer. FDR's kit was drawn front-on and stays only as a working example of the pipeline. Dracula's parts are in an older style.
 
 ## The table, the seats and the layers
 

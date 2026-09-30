@@ -1,52 +1,50 @@
 # Lincoln's parts
 
-Abraham Lincoln's puppet kit, cut with `split_parts.py` from the sheets made
-with `CHARACTER-ART-PROMPTS.md`, the same way as FDR's (see
-`art-tools/fdr_parts/README.md`). Every folder has the pieces, a numbered
-`_contact_sheet.png`, and `parts.json` with each piece's position on its
-source sheet and a `label` saying what it is.
+Abraham Lincoln's puppet kit, cut with `split_parts.py` from one AI-generated
+sheet (`sources/lincoln_sheet.png`). He is the first character drawn to the
+art direction: three-quarter view, turned to face the table's centre, in the
+flat cartoon style, hat on at all times. The sheet draws him facing both ways;
+the puppet uses the facing-right set and is flipped for seats on the right.
 
-| Folder | Pieces | What |
-|---|---|---|
-| `lincoln_face` | 52 | Blank head (hair and beard painted on), hair, ears, 8 brows, 16 eyes, noses, 14 mouth patches |
-| `lincoln_body` | 7 | Torso with no arms, upper arms, arms lying on the table, forearms raised |
-| `lincoln_hands` | 12 | Card actions, each with its cuff: peek, check, push chips, all in, fold, rake, fist, turn over, and four more |
-| `lincoln_hands_own` | 12 | His tells and idles: hands folded, stroking his beard, rubbing his eyes, smoothing the hat brim, and gestures |
-| `lincoln_hats` | 8 | The stovepipe hat from eight angles |
-| `lincoln_rig` | 16 | Pieces cleaned up for the puppet (below) |
+`lincoln/` holds the 100 pieces, a numbered `_contact_sheet.png`, and
+`parts.json` with a `label` on every piece, saying which facing set it
+belongs to.
+
+| Pieces | What |
+|---|---|
+| 1, 10 | Reference portraits, facing right and facing left |
+| 2-5, 6-9 | Finished heads with the hat on: neutral, glancing, tired, small smile (each way) |
+| 11-48, 50 | Hair, brows, eyes, noses, mouths, for each facing set |
+| 12, 49 | Blank heads: turned nearly to profile, further than the finished heads, so not used |
+| 54-67 | Ears and beard mouth patches |
+| 51-69 (hats) | Nine loose stovepipe hats |
+| 70-77 | Torsos: nearly front-on, three-quarter each way, turned further, and from behind |
+| 78-86 | Arms and forearms, bent and straight |
+| 87-100 | Hands, each with its cuff: 87-93 for arms pointing right, 94-100 for arms pointing left |
 
 ## The puppet
 
-`art-tools/lincoln_layout.json` is his rest pose: arms on the felt, hands
-flat, the stovepipe hat standing on the table beside him. We only ever see
-him from the table up, so the hat is on the felt, not on his knee.
-`preview.png` is that pose; `preview_expressions.png` is the same layout with
-swaps switched on.
+`art-tools/lincoln_layout.json` is his rest pose, facing right: torso 71,
+head 2, the near arm (83) bent across in front of him and the far forearm (80)
+coming from behind, both lying on the felt with the hands toward the table's
+centre. `preview.png` is that pose; `preview_expressions.png` shows the head
+swaps and a pinching hand.
 
     python3 art-tools/build_puppet.py render art-tools/lincoln_layout.json -o preview.png
 
-Slots work as for FDR: pieces sharing a `slot` are swaps for the same place,
-one visible at a time, and the right eye, brow, arm and hand are the left ones
-with `"flip": true`. The hands keep their drawn cuffs and cover the end of the
-arm piece.
+The sleeves' own shirt cuffs end in an opening drawn facing the camera, while
+the hands point at the table's centre, so the two could never line up.
+`lincoln_rig/` holds every sleeve with its cuff trimmed off
+(`sleeve_78.png` ... `sleeve_86.png`), and `cuffs.json` records where each
+cuff was: each hand's own cuff is placed exactly there, so it finishes the
+sleeve. The arms sit under the torso and are `on_table`, like Death's.
 
-**His mouths are lower-face patches, not mouth only.** Each is the mouth with
-the chin beard around it, and it lays over the beard painted on the head. For
-a bearded face that is the better piece: the beard moves with the jaw. The
-patches are placed bottom-centre on the beard's point, so they swap in place.
+## Gaps
 
-`lincoln_rig/` holds pieces cleaned up so they fit together:
-
-- `head.png`: the blank head with its painted shirt collar and suit removed.
-- `mouth_39.png` to `mouth_52.png`: the mouth patches with the light fringe
-  along their straight top edge trimmed and faded, so no line shows where a
-  patch meets the face.
-- `table_preview.png`: the felt for the preview.
-
-`sources/` holds the exact sheets that were cut. `lincoln_hats.png` leaves out
-two hats that were drawn behind a strip of table (made for the old
-hat-on-his-knee idea).
-
-Not used: the back of his head, six of the seven noses, the steepled hands
-(not asked for). His idle "crosses one long leg over the other" happens below
-the table, so it can only ever be a shift of the shoulders.
+- **No hat tip yet.** Every finished head has the hat drawn on. Tipping it
+  needs the same heads without the hat (hair on top), with a loose hat over
+  them; the blank heads are turned too far to use.
+- The pieces were drawn at different scales (the eyes and noses about twice
+  the heads' scale), so the face is used whole rather than rebuilt from parts.
+- Expressions are subtle; the beard mouth patches (56, 58, 59) are the way to
+  add more if they are needed.
