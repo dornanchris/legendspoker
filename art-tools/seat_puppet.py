@@ -31,10 +31,20 @@ The spec (all piece numbers are from the character's parts.json):
                     down, so the collar wraps round a painted-on neck (the
                     way Death's cape wraps round his hood)
   heads             other head pieces, as swaps
+  head_align        "back" lines the swaps up by the back of the head rather
+                    than centring their boxes (for heads with a prop sticking
+                    out in front, like FDR's holder)
+  head_clothes      true if the heads were drawn with shoulders of the suit
+                    under them: the dark cloth reaching a head piece's edge
+                    below its chin is cut off (into <id>_rig/head_N.png), and
+                    the torso's own collar and lapels take its place
   near, far         [forearm, hand] pairs: straight forearms, open end up
   hands             other hand pieces, as swaps
   cuff              "white" (a shirt cuff or lace marks the sleeve's end) or
                     "band" (no white: the whole band and opening are trimmed)
+  elbow_cap         true if the forearms were drawn with the inside of the
+                    sleeve showing at the elbow end (a coloured oval): it is
+                    cut off, so it never shows on the felt
   tune              scales and offsets; see DEFAULTS
 """
 import json, math, os, subprocess, sys
@@ -88,6 +98,46 @@ def trim_sleeve(src, dst, mode):
     Image.fromarray(out, 'RGBA').save(dst)
     sy, sx = np.nonzero(seed if mode == 'white' else region)
     return float(sx.mean()), float(sy.mean())
+
+
+def trim_elbow(path_, cuff):
+    """Cut the coloured inside of the sleeve off its elbow end."""
+    a = np.array(Image.open(path_).convert('RGBA'))
+    rgb, A = a[..., :3].astype(int), a[..., 3] > 128
+    ys, xs = np.nonzero(A)
+    d = np.hypot(np.arange(A.shape[1])[None, :] - cuff[0], np.arange(A.shape[0])[:, None] - cuff[1])
+    cap = biggest(A & (d > d[A].max() * 0.5) & (rgb[..., 0] - rgb[..., 2] > 35) & (rgb[..., 0] > 90))
+    from scipy.spatial import ConvexHull
+    pts = np.c_[np.nonzero(cap)[1], np.nonzero(cap)[0]]
+    m = Image.new('L', (A.shape[1], A.shape[0]), 0)
+    ImageDraw.Draw(m).polygon([tuple(q) for q in pts[ConvexHull(pts).vertices]], fill=255)
+    out = a.copy()
+    out[..., 3] = np.where(ndimage.binary_dilation(np.array(m) > 0, iterations=2), 0, a[..., 3])
+    out[..., 3] = np.where(biggest(out[..., 3] > 0), out[..., 3], 0)
+    Image.fromarray(out, 'RGBA').save(path_)
+
+
+def trim_clothes(src, dst, below=0.6):
+    """Cut the suit off the bottom of a head piece: dark cloth (bluish or
+    grey, so not a gold chain or a red tie) that reaches the piece's edge
+    below `below` of its height. The neck, shirt collar and tie stay."""
+    a = np.array(Image.open(src).convert('RGBA'))
+    rgb, A = a[..., :3].astype(int), a[..., 3] > 0
+    h = A.shape[0]
+    cloth = rgb[..., 2] - rgb[..., 0] > -15
+    low = np.zeros_like(A)
+    low[int(h * below):] = True
+    edge = ndimage.binary_dilation(~A, iterations=2)
+    edge[-3:] = edge[:, :3] = edge[:, -3:] = True
+    lab, n = ndimage.label(A & low & cloth & (rgb.mean(-1) < 105))
+    suit = np.isin(lab, [v for v in np.unique(lab[edge]) if v])
+    suit = ndimage.binary_dilation(suit, iterations=1) & low & A & cloth & (rgb.mean(-1) < 160)
+    out = a.copy()
+    out[..., 3] = np.where(suit, 0, a[..., 3])
+    lab, n = ndimage.label(out[..., 3] > 0)                 # and the crumbs it leaves
+    sizes = ndimage.sum(np.ones_like(lab), lab, range(1, n + 1))
+    out[..., 3] = np.where(np.isin(lab, [k + 1 for k in range(n) if sizes[k] >= 40]), out[..., 3], 0)
+    Image.fromarray(out, 'RGBA').save(dst)
 
 
 def hand_anchor(path, mode):
@@ -145,7 +195,15 @@ def main(spec_path):
     hx, hy = t['tx'] + t['hdx'], ty - th * t['kt'] / 2 - hh * t['kh'] / 2 + t['neck']
     hz = 8 if spec.get('head_behind') else 20
     for i in [spec['head']] + spec.get('heads', []):
-        put(i, hx, hy, t['kh'], z=hz, label=name(i, '' if i == spec['head'] else ' (swap)'),
+        f = i
+        if spec.get('head_clothes'):
+            f = f"{spec['id']}_parts/{spec['id']}_rig/head_{i}.png"
+            trim_clothes(path(F(i)), path(f))
+        cx = hx
+        if spec.get('head_align') == 'back':    # line swaps up by the back of the head, not
+            sx = (size(i)[0] - hw) * t['kh'] / 2  # their box (a long holder widens the box)
+            cx = hx - sx if spec.get('head_flip') else hx + sx
+        put(f, cx, hy, t['kh'], z=hz, label=name(i, '' if i == spec['head'] else ' (swap)'),
             visible=i == spec['head'], slot='head', flip=spec.get('head_flip', False))
     if 'collar' in spec:
         put(spec['torso'], t['tx'], ty, t['kt'], z=21, label='torso again: its collar over the neck',
@@ -165,6 +223,8 @@ def main(spec_path):
         sl = f"{spec['id']}_parts/{spec['id']}_rig/sleeve_{ai}.png"
         at = trim_sleeve(path(F(ai)), path(sl), spec.get('cuff', 'white'))
         cuffs[ai] = [round(v, 1) for v in at]
+        if spec.get('elbow_cap'):
+            trim_elbow(path(sl), at)
         m = np.array(Image.open(path(sl)))[..., 3] > 128
         ys, xs2 = np.nonzero(m)
         d = np.hypot(xs2 - at[0], ys - at[1])

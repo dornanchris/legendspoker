@@ -1,23 +1,58 @@
 # Franklin D. Roosevelt's parts
 
-Cut with `split_parts.py` from one sheet (`sources/fdr_sheet.png`), in
-Lincoln's flat cartoon style: naval cape, round glasses, cigarette holder. `fdr/` holds every piece, a numbered
-`_contact_sheet.png` and `parts.json` with a label on each.
+Cut from his three-quarter expression sheet (`sources/fdr_sheet.png`), drawn
+to Lincoln's layout: five finished heads facing the viewer's right and the
+same five mirrored, pince-nez on a cord, the cigarette holder, torsos, arms
+and hands. `fdr/` holds every piece, a numbered `_contact_sheet.png` and
+`parts.json` with a label on each (and which way it faces).
 
-The puppet is built by `art-tools/seat_puppet.py` from `seat.json`:
-head 8 (three-quarter, holder in the teeth), torso 11, both forearms starting at the elbows (the torso's sides, at the table's
-edge) and lying on the felt, hands toward the table's centre, facing right (flipped for the table's right).
-The head is drawn in front and the torso again over it from the collar down
-(`"collar"`), so the collar wraps round the neck painted on the head.
-`fdr_rig/` holds the sleeves with their cuffs trimmed; each hand's own cuff
-finishes its sleeve. `preview.png` is the rest pose.
+    python3 art-tools/fdr_parts/cut.py art-tools/fdr_parts/sources/fdr_sheet.png art-tools/fdr_parts
+
+`cut.py` is `split_parts.py` plus three fixes this sheet needed: two pairs of
+torsos and a pair of heads touched, so they are separated where they met;
+and in both head rows the smiling head's holder reaches across into the
+laughing head beside it, so the holder goes to the smiling head and the
+laughing head is filled in under it (a faint smudge by the ear, invisible at
+table size).
+
+## The puppet
+
+Built by `art-tools/seat_puppet.py` from `seat.json`:
 
     python3 art-tools/seat_puppet.py art-tools/fdr_parts/seat.json
 
-His glasses came back round with arms; his character file says pince-nez. Close enough at table size, or ask for pince-nez next time.
+- **Heads** (slot `head`): 2, holder in his teeth, about level (rest); swaps
+  1 neutral without it, 3 a broad smile with the holder cocked upward,
+  4 laughing, 5 frown. Mirrors are 6-10. `"head_align": "back"` lines them
+  up by the back of the head, since the holder makes some boxes wider.
+- **The collar.** The heads were drawn with the shoulders of the suit under
+  them, which stuck out past the torso's collar. `"head_clothes"` cuts that
+  cloth off (into `fdr_rig/head_N.png`) and keeps the neck, shirt collar,
+  tie knot and the pince-nez cord; the torso is then drawn again over it
+  from the collar down, as before.
+- **Torso** 63 (three-quarter, waistcoat), pushed low so the cuffs drawn at
+  its bottom stay under the table.
+- **Forearms** 73 for both, turned to lie on the felt toward the table's
+  centre (the sheet drew them pointing away). They were drawn with the
+  inside of the sleeve showing at the elbow, an orange oval that sat on the
+  felt; `"elbow_cap"` cuts it off. Hands 82 (far, flat) and 91 (near,
+  relaxed); swaps: the holder held up, tapping ash, gripped, a card, a few
+  cards fanned, a whisky glass.
 
-**Gap: expressions at three-quarter.** The sheet's expression heads (and its
-eyes, brows, noses and mouths) are front-on, and its turned heads are near
-profile with one expression. So the puppet has one face. A Lincoln-style
-sheet (the same four finished heads, three-quarter, facing both ways) would
-give it a set.
+`preview.png` is the rest pose; `preview_faces.png` shows the five heads on
+it in turn.
+
+## Gaps
+
+- **No naval cape.** His character file makes the cape his silhouette; this
+  sheet put him in a pinstripe suit without it. The prompt to get it back is
+  in `CHARACTER-ART-PROMPTS.md` (FDR, "Three-quarter expression sheet").
+- **The holder is thin.** It is his tell surface ("tilts his cigarette holder
+  upward"), and at table size it is a line about 25 pixels long. Drawing the
+  separate holder (97) over head 1, longer and thicker, would let its angle
+  move freely and read from across the table.
+- Holder up and the broad smile come in one head (3), so the two tells
+  share a face until the holder is its own layer.
+- The cards in his hands have a red back, not Death's; the game draws the
+  cards, so hide them.
+- The whisky glass was not asked for; a prop if wanted.

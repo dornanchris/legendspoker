@@ -169,6 +169,8 @@ export const PARTS = {
     note: 'Parts already exist in art-tools/dracula_parts, in an older, glossier style than FDR. Gaps there: the chalice, a talking mouth set, a losing face, and whole-eye swaps (his eyes have fixed pupils). If FDR\'s style is the house style, redo all of his sheets.',
   },
   fdr: {
+    keep: 'the naval cape over his shoulders: a dark navy boat cloak, fastened at the throat with a short chain, hanging open over the suit',
+    exprNote: 'Done: `art-tools/fdr_parts/` is built from it. It came back in a pinstripe suit with NO naval cape, his silhouette. To get the cape back, attach that sheet (`art-tools/fdr_parts/sources/fdr_sheet.png`) and ask for one thing: "Redraw the first torso on this sheet (the leftmost, three-quarter, in the waistcoat) and its mirror image, exactly as drawn, now with his naval cape over the shoulders: a dark navy boat cloak, fastened at the throat with a short chain, hanging open over the suit. No head. Pure white background, nothing touching."',
     expressions: 'neutral, the long cigarette holder clenched in his teeth and cocked upward; the same, holder level; a broad smile at the whole table, around the holder; talking, with no holder in his mouth; a frown; laughing. He wears pince-nez: clip-on round lenses on a cord, NO arms over the ears, clear lenses',
     face: face({ hair: ['Grey swept-back hair as a separate piece'],
       mouthsExtra: 'a mouth gripping a cigarette holder in the teeth, smiling around it (holder NOT drawn)',
@@ -418,6 +420,7 @@ export const PARTS = {
     props: ['A big white handkerchief', 'A leather diary, closed and open, and a pen', 'A doctor\'s bag'],
   },
   washington: {
+    keep: 'the buff-and-blue general\'s coat with its high collar and gold epaulettes',
     expressions: 'neutral, mouth set firm; talking; a slight, rare smile; a frown; jaw clenched, working. His own hair, powdered and tied at the back with a black ribbon',
     face: face({ head: 'Blank head: long and heavy-jawed, with ears and neck, NO eyes, eyebrows, nose or mouth drawn',
       hair: ['His own hair, powdered and tied at the nape with a ribbon (not a wig), as a separate piece'],

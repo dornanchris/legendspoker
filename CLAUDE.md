@@ -325,9 +325,11 @@ its table's rim and cloth, its backdrop and its light (`ROOM-ART-PROMPTS.md`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,
-Roosevelt, Washington) is now built, all by `seat_puppet.py`. Only Lincoln
-has three-quarter expression heads; the others' sheets drew their
-expressions front-on, so they have one face each until regenerated.
+Roosevelt, Washington) is now built, all by `seat_puppet.py`. Lincoln and
+FDR have three-quarter expression heads (FDR's sheet lost his naval cape;
+the prompt to get it back is in the prompts doc); Roosevelt's and
+Washington's sheets drew their expressions front-on, so they have one face
+each until regenerated.
 **JFK is built but at no table** (the owner): an idea for a hidden event
 like Loki's, winning a pot with a three and a five (the 35th president) and
 JFK taking a seat. Open before it goes in: he died in 1963, inside ASSETS.md's
