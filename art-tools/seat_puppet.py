@@ -49,9 +49,20 @@ The spec (all piece numbers are from the character's parts.json):
   hands             other hand pieces, as swaps
   cuff              "white" (a shirt cuff or lace marks the sleeve's end) or
                     "band" (no white: the whole band and opening are trimmed)
+                    or "tube" (a forearm drawn as a tube, open at the elbow,
+                    white cuff at the wrist: cut straight across at both)
   elbow_cap         true if the forearms were drawn with the inside of the
                     sleeve showing at the elbow end (a coloured oval): it is
                     cut off, so it never shows on the felt
+  pose              "rim": the forearms lie along the table's edge in front of
+                    the body, pointing in at each other (the far one mirrored),
+                    the way the sheets' seated reference figures rest; then
+                    nr / fr / nhr / fhr are DIRECTIONS (degrees, 0 = right,
+                    90 = up) the forearms and hands are turned to, whatever
+                    angle they were drawn at. Default: both lie on the felt
+                    toward the table's centre, nr... are plain rotations
+  heads             ... [piece, "fit"] places a swap head by matching its face
+                    to the rest head's (cached in <id>_rig/fits.json)
   tune              scales and offsets; see DEFAULTS
 """
 import json, math, os, subprocess, sys
@@ -69,6 +80,7 @@ DEFAULTS = dict(
     ne=40, fe=40, ey=-6,                     # elbows: inset from the torso's left / right edge, height vs table
     nr=20, nhr=25, fr=28, fhr=32,            # near / far forearm and hand rotations (degrees)
     hsx=0, hsy=0,                            # nudge both hands along their cuffs
+    sleeve=30,                               # "pose": "rim": how far in from each elbow the sleeves reach
 )
 
 
@@ -107,6 +119,34 @@ def trim_sleeve(src, dst, mode):
     return float(sx.mean()), float(sy.mean())
 
 
+def trim_tube(src, dst):
+    """For a forearm drawn as a plain tube, open at the elbow and with a white
+    cuff at the wrist: cut it straight across, square to its length, at the
+    start of the cuff and at the end of the opening, so the hand's own cuff
+    and the torso's sleeve can cover the cut ends. Returns (cuff, elbow):
+    the middle of each cut, in the image's pixels."""
+    a = np.array(Image.open(src).convert('RGBA'))
+    rgb, A = a[..., :3].astype(int), a[..., 3] > 128
+    ys, xs = np.nonzero(A)
+    c = np.array([xs.mean(), ys.mean()])
+    w, v = np.linalg.eigh(np.cov(np.c_[xs, ys].T))
+    u = v[:, np.argmax(w)]                                   # the tube's length
+    gy, gx = np.mgrid[:A.shape[0], :A.shape[1]]
+    t = (gx - c[0]) * u[0] + (gy - c[1]) * u[1]
+    white = biggest(A & (rgb.min(-1) > 190) & (np.ptp(rgb, axis=-1) < 40))   # the cuff band
+    if t[white].mean() < 0:                                  # point u at the cuff
+        u, t = -u, -t
+    inside = A & (rgb[..., 0] - rgb[..., 2] > 35) & (rgb[..., 0] > 70) & (t < 0)
+    hi = np.percentile(t[white], 2) - 1
+    lo = np.percentile(t[inside], 98) + 1 if inside.any() else t[A].min()
+    keep = A & (t > lo) & (t < hi)
+    out = a.copy()
+    out[..., 3] = np.where(biggest(keep), a[..., 3], 0)
+    Image.fromarray(out, 'RGBA').save(dst)
+    end = lambda e: (float(gx[keep & (abs(t - e) < 4)].mean()), float(gy[keep & (abs(t - e) < 4)].mean()))
+    return end(hi), end(lo)
+
+
 def trim_elbow(path_, cuff):
     """Cut the coloured inside of the sleeve off its elbow end."""
     a = np.array(Image.open(path_).convert('RGBA'))
@@ -122,6 +162,60 @@ def trim_elbow(path_, cuff):
     out[..., 3] = np.where(ndimage.binary_dilation(np.array(m) > 0, iterations=2), 0, a[..., 3])
     out[..., 3] = np.where(biggest(out[..., 3] > 0), out[..., 3], 0)
     Image.fromarray(out, 'RGBA').save(path_)
+
+
+def fit_head(ref, mov):
+    """Where head `mov` goes over head `ref`, matched by the face (the band
+    from below the eyes to the chin): [dx, dy, scale], its top-left in ref's
+    pixels. For heads from another sheet, or the same head without a hat."""
+    R = np.array(Image.open(ref).convert('RGBA')).astype(float)
+    Rl, Ra = R[..., :3].mean(-1), R[..., 3] > 200
+    H_, W_ = Ra.shape
+    y0, y1 = int(H_ * 0.45), int(H_ * 0.8)
+    src = Image.open(mov).convert('RGBA')
+
+    def score(M, dx, dy):
+        Ml, Ma = M[..., :3].mean(-1), M[..., 3] > 200
+        ry0, ry1 = max(y0, dy), min(y1, dy + Ma.shape[0])
+        rx0, rx1 = max(0, dx), min(W_, dx + Ma.shape[1])
+        if ry1 - ry0 < (y1 - y0) * 0.8 or rx1 - rx0 < W_ * 0.5:
+            return 1e9
+        a, b = Ra[ry0:ry1, rx0:rx1], Ma[ry0 - dy:ry1 - dy, rx0 - dx:rx1 - dx]
+        both = a & b
+        if both.sum() < 1500:
+            return 1e9
+        d = np.abs(Rl[ry0:ry1, rx0:rx1] - Ml[ry0 - dy:ry1 - dy, rx0 - dx:rx1 - dx])[both].mean()
+        return d + 100 * (b & ~a).sum() / max(1, b.sum())
+
+    best = (1e9, 0, 0, 1.0)
+    for k in np.arange(0.86, 1.15, 0.02):
+        M = np.array(src.resize((round(src.width * k), round(src.height * k)), Image.LANCZOS)).astype(float)
+        for dy in range(-12, 52, 2):
+            for dx in range(-24, 26, 2):
+                v = score(M, dx, dy)
+                if v < best[0]:
+                    best = (v, dx, dy, k)
+    _, bx, by, bk = best
+    for k in (bk - 0.01, bk, bk + 0.01):              # and to the pixel
+        M = np.array(src.resize((round(src.width * k), round(src.height * k)), Image.LANCZOS)).astype(float)
+        for dy in range(by - 2, by + 3):
+            for dx in range(bx - 2, bx + 3):
+                v = score(M, dx, dy)
+                if v < best[0]:
+                    best = (v, dx, dy, k)
+    return [int(best[1]), int(best[2]), round(float(best[3]), 3)]
+
+
+def native_angle(path_, start, flip=False):
+    """Direction, in degrees (0 = right, 90 = up), from image point `start` to
+    the far end of a piece: a forearm's elbow to its cuff, a hand's cuff to its
+    fingers. Mirrored if the piece is drawn flipped."""
+    A = np.array(Image.open(path_).convert('RGBA'))[..., 3] > 128
+    ys, xs = np.nonzero(A)
+    d = np.hypot(xs - start[0], ys - start[1])
+    far = d > d.max() * 0.75
+    a = math.degrees(math.atan2(-(ys[far].mean() - start[1]), xs[far].mean() - start[0]))
+    return 180 - a if flip else a
 
 
 def lift_hat(src, dst):
@@ -253,8 +347,15 @@ def main(spec_path):
     hx, hy = t['tx'] + t['hdx'], ty - th * t['kt'] / 2 - hh * t['kh'] / 2 + t['neck']
     hz = 8 if spec.get('head_behind') else 20
     fl = -1 if spec.get('head_flip') else 1
+    fits_path = os.path.join(rig, 'fits.json')
+    fits = json.load(open(fits_path)) if os.path.exists(fits_path) else {}
     for h in [spec['head']] + spec.get('heads', []):
         i, at = (h[0], h[1:]) if isinstance(h, list) else (h, None)
+        if at == ['fit']:                       # matched to the rest head by its face (cached)
+            key = f"{F(spec['head'])} <- {F(i)}"
+            if key not in fits:
+                fits[key] = fit_head(path(F(spec['head'])), path(F(i)))
+            at = fits[key]
         f = i
         if spec.get('head_clothes'):
             f = f"{spec['id']}_parts/{spec['id']}_rig/head_{os.path.basename(F(i))}"
@@ -270,6 +371,8 @@ def main(spec_path):
             cx = hx + fl * (size(i)[0] - hw) * t['kh'] / 2  # their box (a holder widens it)
         put(f, cx, cy, k, z=hz, label=name(i, '' if i == spec['head'] else ' (swap)'),
             visible=i == spec['head'], slot='head', flip=spec.get('head_flip', False))
+    if fits:
+        json.dump(fits, open(fits_path, 'w'), indent=1)
     if spec.get('hat') == 'from_head':        # the hat on the rest head, as its own piece,
         f = f"{spec['id']}_parts/{spec['id']}_rig/hat.png"   # hidden: with a bare head, a tip
         lift_hat(path(F(spec['head'])), path(f))
@@ -288,28 +391,49 @@ def main(spec_path):
     xs = np.nonzero(tm[row])[0]
     left, right = t['tx'] + (xs.min() - tw / 2) * t['kt'], t['tx'] + (xs.max() - tw / 2) * t['kt']
     cuffs = {}
-    def arm(pair, ex, ar, hr, z, side):
+    aim = spec.get('pose') == 'rim'
+    def arm(pair, ex, ar, hr, z, side, flip=False, dz=1):
         ai, hi = pair
         sl = f"{spec['id']}_parts/{spec['id']}_rig/sleeve_{ai}.png"
-        at = trim_sleeve(path(F(ai)), path(sl), spec.get('cuff', 'white'))
+        mode = spec.get('cuff', 'white')
+        if mode == 'tube':
+            at, elbow = trim_tube(path(F(ai)), path(sl))
+        else:
+            at = trim_sleeve(path(F(ai)), path(sl), mode)
+            if spec.get('elbow_cap'):
+                trim_elbow(path(sl), at)
+            m = np.array(Image.open(path(sl)))[..., 3] > 128
+            ys, xs2 = np.nonzero(m)
+            d = np.hypot(xs2 - at[0], ys - at[1])
+            far_end = d > d.max() * 0.85                   # the open end: the elbow
+            elbow = (float(xs2[far_end].mean()), float(ys[far_end].mean()))
         cuffs[ai] = [round(v, 1) for v in at]
-        if spec.get('elbow_cap'):
-            trim_elbow(path(sl), at)
-        m = np.array(Image.open(path(sl)))[..., 3] > 128
-        ys, xs2 = np.nonzero(m)
-        d = np.hypot(xs2 - at[0], ys - at[1])
-        far_end = d > d.max() * 0.85                       # the open end: the elbow
-        elbow = (float(xs2[far_end].mean()), float(ys[far_end].mean()))
-        ox, oy = placed(sl, t['ka'], ar, 0, 0, elbow)
+        anchor = hand_anchor(path(F(hi)), 'white' if mode == 'tube' else mode)
+        if aim:                                # ar, hr are directions: turn the pieces to them
+            ar = round(ar - native_angle(path(sl), elbow, flip), 1)
+            hr = round(hr - native_angle(path(F(hi)), anchor, flip), 1)
+        ox, oy = placed(sl, t['ka'], ar, 0, 0, elbow, flip)
         ax, ay = ex - ox, TABLE + t['ey'] - oy
         put(sl, ax, ay, t['ka'], rot=ar, z=z, label=f'{side} forearm (cuff trimmed off)',
-            slot=f'arm_{side}', on_table=True)
-        ux, uy = placed(sl, t['ka'], ar, ax, ay, at)
-        vx, vy = placed(hi, t['kha'], hr, 0, 0, hand_anchor(path(F(hi)), spec.get('cuff', 'white')))
-        put(hi, ux - vx + t['hsx'], uy - vy + t['hsy'], t['kha'], rot=hr, z=z + 1,
-            label=f'{side} hand (its cuff finishes the sleeve)', slot=f'hand_{side}', on_table=True)
-    arm(spec['far'], right - t['fe'], t['fr'], t['fhr'], 4, 'far')
-    arm(spec['near'], left + t['ne'], t['nr'], t['nhr'], 6, 'near')
+            slot=f'arm_{side}', on_table=True, flip=flip)
+        ux, uy = placed(sl, t['ka'], ar, ax, ay, at, flip)
+        vx, vy = placed(hi, t['kha'], hr, 0, 0, anchor, flip)
+        put(hi, ux - vx + (-1 if flip else 1) * t['hsx'], uy - vy + t['hsy'], t['kha'], rot=hr, z=z + dz,
+            label=f'{side} hand (its cuff finishes the sleeve)', slot=f'hand_{side}', on_table=True, flip=flip)
+    if spec.get('pose') == 'rim':
+        # both forearms lie along the table's edge in front of the body, the far
+        # one mirrored to point back in; the torso is drawn again over them only
+        # at its sides, so its sleeves cover the elbows
+        arm(spec['far'], right - t['fe'], t['fr'], t['fhr'], 22, 'far', flip=True, dz=0.5)
+        arm(spec['near'], left + t['ne'], t['nr'], t['nhr'], 23, 'near', dz=0.5)
+        put(spec['torso'], t['tx'], ty, t['kt'], z=24, label='torso again: its sleeves over the elbows',
+            slot='sleeves_over', flip=spec.get('torso_flip', False))
+        parts[-1]['clip_cols'] = [[0, round(left + t['ne'] + t['sleeve'])],
+                                  [round(right - t['fe'] - t['sleeve']), W]]
+        parts[-1]['clip_top'] = round(ty - th * t['kt'] / 2 + 0.3 * th * t['kt'])
+    else:
+        arm(spec['far'], right - t['fe'], t['fr'], t['fhr'], 4, 'far')
+        arm(spec['near'], left + t['ne'], t['nr'], t['nhr'], 6, 'near')
     for side in ('near', 'far'):
         base = next(q for q in parts if q['slot'] == f'hand_{side}')
         for i in spec.get('hands', []):

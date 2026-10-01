@@ -1,0 +1,47 @@
+{
+ "lincoln_parts/lincoln/lincoln_07.png <- lincoln_parts/lincoln/lincoln_08.png": [
+  -7,
+  4,
+  0.97
+ ],
+ "lincoln_parts/lincoln/lincoln_07.png <- lincoln_parts/lincoln/lincoln_09.png": [
+  -5,
+  11,
+  0.91
+ ],
+ "lincoln_parts/lincoln/lincoln_07.png <- lincoln_parts/lincoln/lincoln_10.png": [
+  -5,
+  13,
+  0.91
+ ],
+ "lincoln_parts/lincoln/lincoln_07.png <- lincoln_parts/lincoln/lincoln_01.png": [
+  -3,
+  32,
+  0.89
+ ],
+ "lincoln_parts/lincoln/lincoln_07.png <- lincoln_parts/lincoln/lincoln_02.png": [
+  -5,
+  32,
+  0.91
+ ],
+ "lincoln_parts/lincoln/lincoln_07.png <- lincoln_parts/lincoln/lincoln_03.png": [
+  -3,
+  36,
+  0.87
+ ],
+ "lincoln_parts/lincoln/lincoln_07.png <- lincoln_parts/lincoln/lincoln_04.png": [
+  2,
+  31,
+  0.95
+ ],
+ "lincoln_parts/lincoln/lincoln_07.png <- lincoln_parts/lincoln/lincoln_05.png": [
+  0,
+  33,
+  0.9
+ ],
+ "lincoln_parts/lincoln/lincoln_07.png <- lincoln_parts/lincoln/lincoln_06.png": [
+  -1,
+  33,
+  0.91
+ ]
+}

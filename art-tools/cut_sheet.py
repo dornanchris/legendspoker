@@ -17,7 +17,9 @@ sheets keep needing, written down as data in the kit's cut.json:
   python3 art-tools/cut_sheet.py art-tools/fdr_parts/cut.json
 
 Coordinates are the sheet's own pixels. Labels already in the kit's
-parts.json are kept, by piece number, when it is cut again.
+parts.json are kept, by piece number, when it is cut again. Light pixels on
+a piece's very edge (the white background in the anti-aliasing) are dropped,
+and the edge is darkened to its outline.
 """
 import json, os, sys
 
@@ -130,6 +132,12 @@ def main(spec_path):
         x1, y1 = min(W, p['x'] + p['w'] + 2), min(H, p['y'] + p['h'] + 2)
         sub = (orig if p.get('orig') else arr)[y0:y1, x0:x1].copy()
         sub[..., 3] = (np.clip(alpha[y0:y1, x0:x1] * p['mask'][y0:y1, x0:x1], 0, 1) * 255).astype(np.uint8)
+        # the white fringe: light pixels on the very edge are the sheet's background
+        # showing through the anti-aliasing (every piece has a dark outline)
+        edge = ndimage.binary_dilation(sub[..., 3] < 128, iterations=2) & (sub[..., 3] > 0)
+        sub[..., 3] = np.where(edge & (sub[..., :3].min(-1) > 150), 0, sub[..., 3])
+        dark = np.stack([ndimage.minimum_filter(sub[..., c], size=3) for c in range(3)], -1)
+        sub[..., :3] = np.where(edge[..., None], dark, sub[..., :3])   # and greyed outline to outline
         name = f'{stem}_{i:02d}.png'
         Image.fromarray(sub, 'RGBA').save(os.path.join(dest, name))
         man['parts'].append({'index': i, 'file': name, 'label': labels.get(i, ''), 'x': x0, 'y': y0,

@@ -14,7 +14,7 @@ const SEAT={three:'Waist-up, seated at a round poker table, body and head turned
   front:'Waist-up, seated at the far side of a round poker table, facing the viewer; forearms resting on the felt; the table\'s rounded edge crosses the body at the waist.'};
 const STYLE=(a='three')=>`${LOOK} ${SEAT[a]} Plain dark background, no text, no logos, no watermark, no cards or chips other than any prop named.`;
 const RULES=(n,i,a='three')=>`Puppet parts sheet for 2D animation rigging, for ${n}, the character in the attached image${i?'s':''}. Match ${i?'them':'it'} exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same ${a==='front'?'front-on':'three-quarter'} view as the reference${a==='front'?'':' (turned toward the viewer\'s right)'}, at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.`;
-const EXPR=(n,heads,avoid,keep)=>`Character sheet for 2D animation rigging: ${n}. Attach two images: his own parts sheet (match it exactly: face, hair, clothes, colours, line weight and the flat cartoon style) and Lincoln's sheet (copy only its layout and its head angle).
+const EXPR=(n,heads,avoid,keep,handsExtra='and one that suits him')=>`Character sheet for 2D animation rigging: ${n}. Attach two images: his own parts sheet (match it exactly: face, hair, clothes, colours, line weight and the flat cartoon style) and Lincoln's sheet (copy only its layout and its head angle).
 
 Keep every piece of his clothing exactly as on his own sheet: the same garments, colours, collar and buttons${keep?`, and above all ${keep}`:''}. Do not simplify or swap them.
 
@@ -25,7 +25,9 @@ The angle: a gentle three-quarter view, turned about 25 degrees from front-on, t
 Draw two matching sets, one facing the viewer's right and its mirror image facing the viewer's left, as the Lincoln sheet does. For each set:
 - Finished heads, each with its neck and the top of its collar, all at the same size and angle: ${heads}
 - One torso at the same angle, in all his clothes: no head, cut off straight below the waist, the upper arms hanging at the sides down to the elbows; NO forearms, NO hands
-- Two forearms lying on a table, pointing toward its centre (down, and away to the side the heads face), open at the elbow end, each with its cuff
+- Straight forearms, each a plain tube of sleeve at the same scale as the torso: open at the elbow end, the shirt cuff at the wrist end; NO hand in them
+- Hands at the same scale, each with its cuff and a short stub of sleeve: resting on the table, fingers curled; resting flat; holding two cards (plain backs); ${handsExtra}
+- A row of reference poses, NOT parts: the whole character seated at a round poker table, waist up, forearms resting along the table's edge in front of the body, hands meeting in front (hands folded; holding cards; one hand resting and one gesturing). The puppet is assembled to match these
 
 Must NOT resemble: ${avoid}`;
 const SHEETS=[['face','Sheet 1 — Face kit'],['body','Sheet 2 — Body and arms'],['card','Sheet 3 — Card-action hands'],['own','Sheet 4 — Character hands'],['props','Sheet 5 — Props and tell pieces']];
@@ -37,7 +39,7 @@ Every character in the game, grouped by table. The descriptions come from \`data
 
 ## Status
 
-The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: \`art-tools/lincoln_parts/\`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (\`art-tools/death_parts/\`) is done, front-on as the dealer. **The White House table is done**: Lincoln, FDR, Roosevelt and Washington, each built by \`art-tools/seat_puppet.py\` from a \`seat.json\`. All four have three-quarter expression heads, drawn to one layout, and Lincoln can tip his hat (FDR's sheet lost his naval cape and Roosevelt's gave him a cigar; see their entries). Attach Lincoln's sheet (\`art-tools/lincoln_parts/sources/lincoln_sheet.png\`) as the layout to copy, so the next sheets draw their finished heads three-quarter, facing both ways, as his does. Dracula's parts are in an older style.
+The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: \`art-tools/lincoln_parts/\`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (\`art-tools/death_parts/\`) is done, front-on as the dealer. **The White House table is done**: Lincoln, FDR, Roosevelt and Washington, each built by \`art-tools/seat_puppet.py\` from a \`seat.json\`. All four have three-quarter expression heads, drawn to one layout, and Lincoln can tip his hat (FDR's sheet lost his naval cape and Roosevelt's gave him a cigar; see their entries). Lincoln's second sheet added a row of seated reference poses and drew the forearms as plain tubes: his arms now rest along the table's edge with his hands together in front, as people sit at a table, and the prompt below asks for that layout. The other three need the same sheet for it (their first sheets' arms do not fit the pose). Attach Lincoln's sheet (\`art-tools/lincoln_parts/sources/lincoln_sheet.png\`) as the layout to copy, so the next sheets draw their finished heads three-quarter, facing both ways, as his does. Dracula's parts are in an older style.
 
 ## The table, the seats and the layers
 
@@ -88,7 +90,7 @@ for(const [name,list] of groups){ if(!list.length) continue;
   out+=`- **Who:** ${p.ledger}\n- **Look:** ${p.look}\n- **Prop:** ${p.prop}\n- **Tells:** ${c.tells.length?c.tells.map(t=>t.text).join('; '):'none, by design'}\n- **Idles:** ${c.idles.length?c.idles.join('; '):'none'}\n- **Copyright note:** ${avoid}\n`;
   if(k.note) out+=`- **Art note:** ${k.note}\n`;
   out+='\n**Step 1 — reference portrait:**\n\n'+block(k.portrait??`${STYLE(k.angle)}\n\nCharacter: ${c.name}, ${c.epithet}. ${p.look}\nProp: ${p.prop}.\nIMPORTANT, must NOT resemble: ${avoid}`);
-  if(k.expressions) out+='**Three-quarter expression sheet** (attach his parts sheet and \`art-tools/lincoln_parts/sources/lincoln_sheet.png\`):\n\n'+(k.exprNote?k.exprNote+'\n\n':'')+block(EXPR(c.name,k.expressions,avoid,k.keep));
+  if(k.expressions) out+='**Three-quarter expression sheet** (attach his parts sheet and \`art-tools/lincoln_parts/sources/lincoln_sheet.png\`):\n\n'+(k.exprNote?k.exprNote+'\n\n':'')+block(EXPR(c.name,k.expressions,avoid,k.keep,k.handsExtra));
   let sheetNo=0;
   for(let [key,title] of SHEETS){ if(key==='face'&&k.faceTitle) title=k.faceTitle; const items=(key==='card'||key==='own')?(k.hands?k.hands[key]:null):k[key]; if(!items||!items.length) continue;
    sheetNo++; title=title.replace(/Sheet \d+/,'Sheet '+sheetNo);

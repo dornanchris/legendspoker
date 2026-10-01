@@ -9,1388 +9,1360 @@
     {
       "index": 1,
       "file": "lincoln_01.png",
-      "label": "head, hat on: neutral (facing right)",
-      "x": 16,
-      "y": 2,
-      "w": 159,
-      "h": 247,
+      "label": "head, no hat: neutral (facing right)",
+      "x": 9,
+      "y": 19,
+      "w": 133,
+      "h": 200,
       "pivot": [
-        79.5,
-        123.5
+        66.5,
+        100.0
       ],
-      "area": 26708
+      "area": 18910
     },
     {
       "index": 2,
       "file": "lincoln_02.png",
-      "label": "head, hat on: a slight smile (facing right)",
-      "x": 177,
-      "y": 3,
-      "w": 158,
-      "h": 246,
+      "label": "head, no hat: a slight smile (facing right)",
+      "x": 141,
+      "y": 24,
+      "w": 130,
+      "h": 196,
       "pivot": [
-        79.0,
-        123.0
+        65.0,
+        98.0
       ],
-      "area": 26195
+      "area": 18090
     },
     {
       "index": 3,
       "file": "lincoln_03.png",
-      "label": "head, hat on: smiling, talking (facing right)",
-      "x": 333,
-      "y": 3,
-      "w": 151,
-      "h": 248,
+      "label": "head, no hat: smiling, talking (facing right)",
+      "x": 271,
+      "y": 24,
+      "w": 129,
+      "h": 196,
       "pivot": [
-        75.5,
-        124.0
+        64.5,
+        98.0
       ],
-      "area": 26214
+      "area": 17594
     },
     {
       "index": 4,
       "file": "lincoln_04.png",
-      "label": "head, hat on: laughing (facing right)",
-      "x": 484,
-      "y": 3,
-      "w": 156,
-      "h": 247,
+      "label": "head, no hat: laughing (facing right)",
+      "x": 395,
+      "y": 31,
+      "w": 115,
+      "h": 189,
       "pivot": [
-        78.0,
-        123.5
+        57.5,
+        94.5
       ],
-      "area": 26580
+      "area": 15382
     },
     {
       "index": 5,
       "file": "lincoln_05.png",
-      "label": "head, hat on, front-on (not used)",
-      "x": 679,
-      "y": 3,
-      "w": 168,
-      "h": 246,
+      "label": "head, no hat: a frown (facing right)",
+      "x": 501,
+      "y": 23,
+      "w": 125,
+      "h": 196,
       "pivot": [
-        84.0,
-        123.0
+        62.5,
+        98.0
       ],
-      "area": 25883
+      "area": 17489
     },
     {
       "index": 6,
       "file": "lincoln_06.png",
-      "label": "head, hat on: neutral (facing left)",
-      "x": 892,
-      "y": 4,
-      "w": 152,
-      "h": 246,
+      "label": "head, no hat: stern (facing right)",
+      "x": 626,
+      "y": 24,
+      "w": 128,
+      "h": 195,
       "pivot": [
-        76.0,
-        123.0
+        64.0,
+        97.5
       ],
-      "area": 26039
+      "area": 17493
     },
     {
       "index": 7,
       "file": "lincoln_07.png",
-      "label": "head, hat on: smiling, talking (facing left)",
-      "x": 1047,
-      "y": 5,
-      "w": 153,
-      "h": 245,
+      "label": "head, hat on: neutral (facing left)",
+      "x": 768,
+      "y": 7,
+      "w": 131,
+      "h": 213,
       "pivot": [
-        76.5,
-        122.5
+        65.5,
+        106.5
       ],
-      "area": 26082
+      "area": 19229
     },
     {
       "index": 8,
       "file": "lincoln_08.png",
       "label": "head, hat on: a slight smile (facing left)",
-      "x": 1198,
-      "y": 5,
-      "w": 160,
-      "h": 243,
+      "x": 891,
+      "y": 7,
+      "w": 140,
+      "h": 213,
       "pivot": [
-        80.0,
-        121.5
+        70.0,
+        106.5
       ],
-      "area": 26340
+      "area": 19686
     },
     {
       "index": 9,
       "file": "lincoln_09.png",
-      "label": "head, hat on: neutral (facing left)",
-      "x": 1361,
-      "y": 0,
-      "w": 158,
-      "h": 248,
+      "label": "head, hat on: laughing (facing left)",
+      "x": 1023,
+      "y": 7,
+      "w": 139,
+      "h": 213,
       "pivot": [
-        79.0,
-        124.0
+        69.5,
+        106.5
       ],
-      "area": 27098
+      "area": 19477
     },
     {
       "index": 10,
       "file": "lincoln_10.png",
-      "label": "blank head: no face drawn, with neck and collar (facing right)",
-      "x": 10,
-      "y": 250,
-      "w": 117,
-      "h": 183,
+      "label": "head, hat on: talking, brows down (facing left)",
+      "x": 1152,
+      "y": 9,
+      "w": 136,
+      "h": 211,
       "pivot": [
-        58.5,
-        91.5
+        68.0,
+        105.5
       ],
-      "area": 15100
+      "area": 18910
     },
     {
       "index": 11,
       "file": "lincoln_11.png",
-      "label": "ear (facing right)",
-      "x": 119,
-      "y": 400,
-      "w": 37,
-      "h": 56,
+      "label": "head, hat on: nearly front-on (not used)",
+      "x": 1283,
+      "y": 7,
+      "w": 128,
+      "h": 213,
       "pivot": [
-        18.5,
-        28.0
+        64.0,
+        106.5
       ],
-      "area": 1299
+      "area": 18956
     },
     {
       "index": 12,
       "file": "lincoln_12.png",
-      "label": "ear (facing right)",
-      "x": 127,
-      "y": 336,
-      "w": 43,
-      "h": 61,
+      "label": "head, hat on: facing left (not used)",
+      "x": 1409,
+      "y": 8,
+      "w": 125,
+      "h": 211,
       "pivot": [
-        21.5,
-        30.5
+        62.5,
+        105.5
       ],
-      "area": 1687
+      "area": 18590
     },
     {
       "index": 13,
       "file": "lincoln_13.png",
-      "label": "hair (facing right)",
-      "x": 132,
-      "y": 252,
-      "w": 102,
-      "h": 84,
+      "label": "blank head: no face drawn, with neck and collar (facing right)",
+      "x": 9,
+      "y": 225,
+      "w": 120,
+      "h": 187,
       "pivot": [
-        51.0,
-        42.0
+        60.0,
+        93.5
       ],
-      "area": 4028
+      "area": 15613
     },
     {
       "index": 14,
       "file": "lincoln_14.png",
-      "label": "chin beard (facing right)",
-      "x": 183,
-      "y": 340,
-      "w": 76,
-      "h": 94,
+      "label": "torso, three-quarter (the gentle angle)",
+      "x": 13,
+      "y": 413,
+      "w": 191,
+      "h": 148,
       "pivot": [
-        38.0,
-        47.0
+        95.5,
+        74.0
       ],
-      "area": 2432
+      "area": 21179
     },
     {
       "index": 15,
       "file": "lincoln_15.png",
-      "label": "hair (facing right)",
-      "x": 231,
-      "y": 256,
-      "w": 101,
-      "h": 96,
+      "label": "ear (facing right)",
+      "x": 127,
+      "y": 362,
+      "w": 31,
+      "h": 50,
       "pivot": [
-        50.5,
-        48.0
+        15.5,
+        25.0
       ],
-      "area": 4454
+      "area": 958
     },
     {
       "index": 16,
       "file": "lincoln_16.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 279,
-      "y": 387,
-      "w": 88,
-      "h": 63,
+      "label": "ear (facing right)",
+      "x": 136,
+      "y": 303,
+      "w": 33,
+      "h": 52,
       "pivot": [
-        44.0,
-        31.5
+        16.5,
+        26.0
       ],
-      "area": 4031
+      "area": 1064
     },
     {
       "index": 17,
       "file": "lincoln_17.png",
-      "label": "his stovepipe hat alone (facing right)",
-      "x": 310,
-      "y": 259,
-      "w": 129,
-      "h": 114,
+      "label": "hair (facing right)",
+      "x": 147,
+      "y": 224,
+      "w": 179,
+      "h": 108,
       "pivot": [
-        64.5,
-        57.0
+        89.5,
+        54.0
       ],
-      "area": 9116
+      "area": 8085
     },
     {
       "index": 18,
       "file": "lincoln_18.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 370,
-      "y": 387,
-      "w": 83,
-      "h": 61,
+      "label": "chin beard (facing right)",
+      "x": 183,
+      "y": 322,
+      "w": 79,
+      "h": 81,
       "pivot": [
-        41.5,
-        30.5
+        39.5,
+        40.5
       ],
-      "area": 3542
+      "area": 2143
     },
     {
       "index": 19,
       "file": "lincoln_19.png",
-      "label": "eyebrow (facing right)",
-      "x": 433,
-      "y": 297,
-      "w": 51,
-      "h": 29,
+      "label": "torso, another angle (facing right)",
+      "x": 207,
+      "y": 411,
+      "w": 176,
+      "h": 150,
       "pivot": [
-        25.5,
-        14.5
+        88.0,
+        75.0
       ],
-      "area": 746
+      "area": 20239
     },
     {
       "index": 20,
       "file": "lincoln_20.png",
-      "label": "eyebrow (facing right)",
-      "x": 434,
-      "y": 262,
-      "w": 50,
-      "h": 29,
+      "label": "his stovepipe hat alone (facing right)",
+      "x": 327,
+      "y": 225,
+      "w": 133,
+      "h": 104,
       "pivot": [
-        25.0,
-        14.5
+        66.5,
+        52.0
       ],
-      "area": 742
+      "area": 8715
     },
     {
       "index": 21,
       "file": "lincoln_21.png",
-      "label": "nose (facing right)",
-      "x": 436,
-      "y": 331,
-      "w": 43,
-      "h": 57,
+      "label": "jaw patch: chin and mouth area (facing right)",
+      "x": 347,
+      "y": 364,
+      "w": 86,
+      "h": 51,
       "pivot": [
-        21.5,
-        28.5
+        43.0,
+        25.5
       ],
-      "area": 1281
+      "area": 3105
     },
     {
       "index": 22,
       "file": "lincoln_22.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 456,
-      "y": 390,
-      "w": 82,
-      "h": 58,
+      "label": "torso from behind",
+      "x": 377,
+      "y": 412,
+      "w": 189,
+      "h": 149,
       "pivot": [
-        41.0,
-        29.0
+        94.5,
+        74.5
       ],
-      "area": 3405
+      "area": 21731
     },
     {
       "index": 23,
       "file": "lincoln_23.png",
       "label": "eyebrow (facing right)",
-      "x": 487,
-      "y": 296,
-      "w": 50,
-      "h": 28,
+      "x": 463,
+      "y": 271,
+      "w": 43,
+      "h": 26,
       "pivot": [
-        25.0,
-        14.0
+        21.5,
+        13.0
       ],
-      "area": 708
+      "area": 561
     },
     {
       "index": 24,
       "file": "lincoln_24.png",
-      "label": "eyebrow (facing right)",
-      "x": 488,
-      "y": 261,
-      "w": 48,
-      "h": 28,
+      "label": "jaw patch: chin and mouth area (facing right)",
+      "x": 463,
+      "y": 364,
+      "w": 87,
+      "h": 50,
       "pivot": [
-        24.0,
-        14.0
+        43.5,
+        25.0
       ],
-      "area": 688
+      "area": 2811
     },
     {
       "index": 25,
       "file": "lincoln_25.png",
-      "label": "nose (facing right)",
-      "x": 491,
-      "y": 330,
-      "w": 42,
-      "h": 58,
+      "label": "eyebrow (facing right)",
+      "x": 464,
+      "y": 235,
+      "w": 43,
+      "h": 25,
       "pivot": [
-        21.0,
-        29.0
+        21.5,
+        12.5
       ],
-      "area": 1302
+      "area": 541
     },
     {
       "index": 26,
       "file": "lincoln_26.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 542,
-      "y": 390,
-      "w": 88,
-      "h": 59,
+      "label": "nose (facing right)",
+      "x": 464,
+      "y": 305,
+      "w": 40,
+      "h": 57,
       "pivot": [
-        44.0,
-        29.5
+        20.0,
+        28.5
       ],
-      "area": 3716
+      "area": 1153
     },
     {
       "index": 27,
       "file": "lincoln_27.png",
-      "label": "eye with its lid (facing right)",
-      "x": 546,
-      "y": 263,
-      "w": 60,
-      "h": 46,
+      "label": "nose (facing right)",
+      "x": 512,
+      "y": 305,
+      "w": 40,
+      "h": 57,
       "pivot": [
-        30.0,
-        23.0
+        20.0,
+        28.5
       ],
-      "area": 1912
+      "area": 1139
     },
     {
       "index": 28,
       "file": "lincoln_28.png",
-      "label": "eye with its lid (facing right)",
-      "x": 547,
-      "y": 311,
-      "w": 58,
-      "h": 40,
+      "label": "eyebrow (facing right)",
+      "x": 514,
+      "y": 236,
+      "w": 40,
+      "h": 25,
       "pivot": [
-        29.0,
-        20.0
+        20.0,
+        12.5
       ],
-      "area": 1606
+      "area": 502
     },
     {
       "index": 29,
       "file": "lincoln_29.png",
-      "label": "mouth (facing right)",
-      "x": 547,
-      "y": 359,
-      "w": 61,
-      "h": 27,
+      "label": "eyebrow (facing right)",
+      "x": 514,
+      "y": 272,
+      "w": 41,
+      "h": 26,
       "pivot": [
-        30.5,
-        13.5
+        20.5,
+        13.0
       ],
-      "area": 973
+      "area": 519
     },
     {
       "index": 30,
       "file": "lincoln_30.png",
-      "label": "eye with its lid (facing right)",
-      "x": 614,
-      "y": 262,
-      "w": 59,
-      "h": 47,
+      "label": "mouth (facing right)",
+      "x": 560,
+      "y": 331,
+      "w": 58,
+      "h": 25,
       "pivot": [
-        29.5,
-        23.5
+        29.0,
+        12.5
       ],
-      "area": 1935
+      "area": 830
     },
     {
       "index": 31,
       "file": "lincoln_31.png",
-      "label": "eye with its lid (facing right)",
-      "x": 614,
-      "y": 311,
-      "w": 59,
-      "h": 39,
+      "label": "jaw patch: chin and mouth area (facing right)",
+      "x": 562,
+      "y": 364,
+      "w": 81,
+      "h": 50,
       "pivot": [
-        29.5,
-        19.5
+        40.5,
+        25.0
       ],
-      "area": 1606
+      "area": 2782
     },
     {
       "index": 32,
       "file": "lincoln_32.png",
-      "label": "mouth (facing right)",
-      "x": 614,
-      "y": 353,
-      "w": 58,
-      "h": 41,
+      "label": "eye with its lid (facing right)",
+      "x": 563,
+      "y": 284,
+      "w": 56,
+      "h": 38,
       "pivot": [
-        29.0,
-        20.5
+        28.0,
+        19.0
       ],
-      "area": 1527
+      "area": 1420
     },
     {
       "index": 33,
       "file": "lincoln_33.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 633,
-      "y": 390,
-      "w": 88,
-      "h": 58,
+      "label": "eye with its lid (facing right)",
+      "x": 566,
+      "y": 232,
+      "w": 54,
+      "h": 49,
       "pivot": [
-        44.0,
-        29.0
+        27.0,
+        24.5
       ],
-      "area": 3615
+      "area": 1805
     },
     {
       "index": 34,
       "file": "lincoln_34.png",
-      "label": "mouth (facing right)",
-      "x": 677,
-      "y": 354,
-      "w": 60,
-      "h": 36,
+      "label": "torso, another angle (facing right)",
+      "x": 566,
+      "y": 413,
+      "w": 187,
+      "h": 148,
       "pivot": [
-        30.0,
-        18.0
+        93.5,
+        74.0
       ],
-      "area": 1466
+      "area": 21293
     },
     {
       "index": 35,
       "file": "lincoln_35.png",
-      "label": "eye with its lid (facing right)",
-      "x": 679,
-      "y": 262,
-      "w": 61,
-      "h": 47,
+      "label": "mouth (facing right)",
+      "x": 626,
+      "y": 323,
+      "w": 58,
+      "h": 42,
       "pivot": [
-        30.5,
-        23.5
+        29.0,
+        21.0
       ],
-      "area": 1963
+      "area": 1495
     },
     {
       "index": 36,
       "file": "lincoln_36.png",
       "label": "eye with its lid (facing right)",
-      "x": 681,
-      "y": 311,
-      "w": 58,
-      "h": 39,
+      "x": 627,
+      "y": 234,
+      "w": 57,
+      "h": 47,
       "pivot": [
-        29.0,
-        19.5
+        28.5,
+        23.5
       ],
-      "area": 1605
+      "area": 1850
     },
     {
       "index": 37,
       "file": "lincoln_37.png",
-      "label": "eye with its lid (facing left)",
-      "x": 796,
-      "y": 262,
-      "w": 60,
-      "h": 47,
+      "label": "eye with its lid, half closed (facing right)",
+      "x": 628,
+      "y": 284,
+      "w": 56,
+      "h": 38,
       "pivot": [
-        30.0,
-        23.5
+        28.0,
+        19.0
       ],
-      "area": 1951
+      "area": 1453
     },
     {
       "index": 38,
       "file": "lincoln_38.png",
-      "label": "eye with its lid (facing left)",
-      "x": 796,
-      "y": 311,
-      "w": 58,
-      "h": 39,
+      "label": "jaw patch: chin and mouth area (facing right)",
+      "x": 656,
+      "y": 364,
+      "w": 85,
+      "h": 50,
       "pivot": [
-        29.0,
-        19.5
+        42.5,
+        25.0
       ],
-      "area": 1602
+      "area": 2979
     },
     {
       "index": 39,
       "file": "lincoln_39.png",
-      "label": "mouth (facing left)",
-      "x": 799,
-      "y": 354,
-      "w": 59,
-      "h": 35,
+      "label": "mouth (facing right)",
+      "x": 687,
+      "y": 324,
+      "w": 60,
+      "h": 38,
       "pivot": [
-        29.5,
-        17.5
+        30.0,
+        19.0
       ],
-      "area": 1450
+      "area": 1542
     },
     {
       "index": 40,
       "file": "lincoln_40.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 814,
-      "y": 391,
-      "w": 91,
-      "h": 59,
+      "label": "eye with its lid (facing right)",
+      "x": 692,
+      "y": 231,
+      "w": 58,
+      "h": 50,
       "pivot": [
-        45.5,
-        29.5
+        29.0,
+        25.0
       ],
-      "area": 3849
+      "area": 1951
     },
     {
       "index": 41,
       "file": "lincoln_41.png",
-      "label": "eye with its lid (facing left)",
-      "x": 863,
-      "y": 263,
-      "w": 59,
-      "h": 46,
+      "label": "eye with its lid (facing right)",
+      "x": 693,
+      "y": 284,
+      "w": 57,
+      "h": 38,
       "pivot": [
-        29.5,
-        23.0
+        28.5,
+        19.0
       ],
-      "area": 1902
+      "area": 1513
     },
     {
       "index": 42,
       "file": "lincoln_42.png",
-      "label": "eye with its lid (facing left)",
-      "x": 863,
-      "y": 311,
-      "w": 59,
-      "h": 40,
+      "label": "torso, another angle (facing left)",
+      "x": 782,
+      "y": 413,
+      "w": 187,
+      "h": 148,
       "pivot": [
-        29.5,
-        20.0
+        93.5,
+        74.0
       ],
-      "area": 1603
+      "area": 21299
     },
     {
       "index": 43,
       "file": "lincoln_43.png",
-      "label": "mouth (facing left)",
-      "x": 864,
-      "y": 353,
-      "w": 58,
-      "h": 40,
+      "label": "eye with its lid (facing left)",
+      "x": 788,
+      "y": 284,
+      "w": 59,
+      "h": 38,
       "pivot": [
-        29.0,
-        20.0
+        29.5,
+        19.0
       ],
-      "area": 1522
+      "area": 1538
     },
     {
       "index": 44,
       "file": "lincoln_44.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 908,
-      "y": 390,
-      "w": 86,
-      "h": 59,
+      "label": "eye with its lid (facing left)",
+      "x": 790,
+      "y": 234,
+      "w": 59,
+      "h": 47,
       "pivot": [
-        43.0,
-        29.5
+        29.5,
+        23.5
       ],
-      "area": 3600
+      "area": 1931
     },
     {
       "index": 45,
       "file": "lincoln_45.png",
       "label": "mouth (facing left)",
-      "x": 927,
-      "y": 359,
+      "x": 790,
+      "y": 324,
       "w": 61,
-      "h": 28,
+      "h": 38,
       "pivot": [
         30.5,
-        14.0
+        19.0
       ],
-      "area": 994
+      "area": 1568
     },
     {
       "index": 46,
       "file": "lincoln_46.png",
-      "label": "eye with its lid (facing left)",
-      "x": 929,
-      "y": 263,
-      "w": 60,
-      "h": 46,
+      "label": "jaw patch: chin and mouth area (facing left)",
+      "x": 796,
+      "y": 364,
+      "w": 86,
+      "h": 51,
       "pivot": [
-        30.0,
-        23.0
+        43.0,
+        25.5
       ],
-      "area": 1905
+      "area": 2984
     },
     {
       "index": 47,
       "file": "lincoln_47.png",
-      "label": "eye with its lid (facing left)",
-      "x": 929,
-      "y": 311,
-      "w": 59,
-      "h": 39,
+      "label": "eye with its lid, half closed (facing left)",
+      "x": 855,
+      "y": 284,
+      "w": 56,
+      "h": 38,
       "pivot": [
-        29.5,
-        19.5
+        28.0,
+        19.0
       ],
-      "area": 1587
+      "area": 1422
     },
     {
       "index": 48,
       "file": "lincoln_48.png",
-      "label": "eyebrow (facing left)",
-      "x": 998,
-      "y": 262,
-      "w": 50,
-      "h": 30,
+      "label": "mouth (facing left)",
+      "x": 855,
+      "y": 323,
+      "w": 58,
+      "h": 42,
       "pivot": [
-        25.0,
-        15.0
+        29.0,
+        21.0
       ],
-      "area": 740
+      "area": 1490
     },
     {
       "index": 49,
       "file": "lincoln_49.png",
-      "label": "eyebrow (facing left)",
-      "x": 998,
-      "y": 297,
-      "w": 50,
-      "h": 29,
+      "label": "eye with its lid (facing left)",
+      "x": 858,
+      "y": 232,
+      "w": 55,
+      "h": 49,
       "pivot": [
-        25.0,
-        14.5
+        27.5,
+        24.5
       ],
-      "area": 744
+      "area": 1810
     },
     {
       "index": 50,
       "file": "lincoln_50.png",
       "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 998,
-      "y": 389,
+      "x": 894,
+      "y": 364,
       "w": 81,
-      "h": 59,
+      "h": 50,
       "pivot": [
         40.5,
-        29.5
+        25.0
       ],
-      "area": 3346
+      "area": 2782
     },
     {
       "index": 51,
       "file": "lincoln_51.png",
-      "label": "nose (facing left)",
-      "x": 1000,
-      "y": 331,
-      "w": 43,
-      "h": 57,
+      "label": "eye with its lid (facing left)",
+      "x": 920,
+      "y": 286,
+      "w": 56,
+      "h": 36,
       "pivot": [
-        21.5,
-        28.5
+        28.0,
+        18.0
       ],
-      "area": 1315
+      "area": 1365
     },
     {
       "index": 52,
       "file": "lincoln_52.png",
-      "label": "eyebrow (facing left)",
-      "x": 1051,
-      "y": 296,
-      "w": 52,
-      "h": 28,
+      "label": "eye with its lid (facing left)",
+      "x": 921,
+      "y": 233,
+      "w": 53,
+      "h": 48,
       "pivot": [
-        26.0,
-        14.0
+        26.5,
+        24.0
       ],
-      "area": 741
+      "area": 1708
     },
     {
       "index": 53,
       "file": "lincoln_53.png",
-      "label": "eyebrow (facing left)",
-      "x": 1052,
-      "y": 261,
-      "w": 50,
-      "h": 27,
+      "label": "mouth (facing left)",
+      "x": 921,
+      "y": 331,
+      "w": 58,
+      "h": 25,
       "pivot": [
-        25.0,
-        13.5
+        29.0,
+        12.5
       ],
-      "area": 712
+      "area": 821
     },
     {
       "index": 54,
       "file": "lincoln_54.png",
-      "label": "nose (facing left)",
-      "x": 1055,
-      "y": 330,
-      "w": 42,
-      "h": 58,
+      "label": "torso from behind",
+      "x": 969,
+      "y": 412,
+      "w": 190,
+      "h": 149,
       "pivot": [
-        21.0,
-        29.0
+        95.0,
+        74.5
       ],
-      "area": 1287
+      "area": 21693
     },
     {
       "index": 55,
       "file": "lincoln_55.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 1082,
-      "y": 387,
-      "w": 85,
-      "h": 61,
+      "label": "eyebrow (facing left)",
+      "x": 984,
+      "y": 273,
+      "w": 41,
+      "h": 25,
       "pivot": [
-        42.5,
-        30.5
+        20.5,
+        12.5
       ],
-      "area": 3577
+      "area": 519
     },
     {
       "index": 56,
       "file": "lincoln_56.png",
-      "label": "his stovepipe hat alone (facing left)",
-      "x": 1097,
-      "y": 259,
-      "w": 128,
-      "h": 114,
+      "label": "eyebrow (facing left)",
+      "x": 985,
+      "y": 236,
+      "w": 40,
+      "h": 25,
       "pivot": [
-        64.0,
-        57.0
+        20.0,
+        12.5
       ],
-      "area": 9132
+      "area": 498
     },
     {
       "index": 57,
       "file": "lincoln_57.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 1171,
-      "y": 387,
-      "w": 85,
-      "h": 63,
+      "label": "nose (facing left)",
+      "x": 987,
+      "y": 306,
+      "w": 39,
+      "h": 56,
       "pivot": [
-        42.5,
-        31.5
+        19.5,
+        28.0
       ],
-      "area": 3930
+      "area": 1125
     },
     {
       "index": 58,
       "file": "lincoln_58.png",
-      "label": "hair (facing left)",
-      "x": 1204,
-      "y": 256,
-      "w": 101,
-      "h": 97,
+      "label": "jaw patch: chin and mouth area (facing left)",
+      "x": 987,
+      "y": 364,
+      "w": 88,
+      "h": 50,
       "pivot": [
-        50.5,
-        48.5
+        44.0,
+        25.0
       ],
-      "area": 4484
+      "area": 2819
     },
     {
       "index": 59,
       "file": "lincoln_59.png",
-      "label": "chin beard (facing left)",
-      "x": 1277,
-      "y": 339,
-      "w": 76,
-      "h": 95,
+      "label": "eyebrow (facing left)",
+      "x": 1032,
+      "y": 234,
+      "w": 43,
+      "h": 26,
       "pivot": [
-        38.0,
-        47.5
+        21.5,
+        13.0
       ],
-      "area": 2432
+      "area": 550
     },
     {
       "index": 60,
       "file": "lincoln_60.png",
-      "label": "hair (facing left)",
-      "x": 1302,
-      "y": 252,
-      "w": 102,
-      "h": 84,
+      "label": "eyebrow (facing left)",
+      "x": 1032,
+      "y": 271,
+      "w": 44,
+      "h": 26,
       "pivot": [
-        51.0,
-        42.0
+        22.0,
+        13.0
       ],
-      "area": 4019
+      "area": 560
     },
     {
       "index": 61,
       "file": "lincoln_61.png",
-      "label": "ear (facing left)",
-      "x": 1366,
-      "y": 336,
-      "w": 43,
-      "h": 61,
+      "label": "nose (facing left)",
+      "x": 1035,
+      "y": 305,
+      "w": 40,
+      "h": 57,
       "pivot": [
-        21.5,
-        30.5
+        20.0,
+        28.5
       ],
-      "area": 1688
+      "area": 1136
     },
     {
       "index": 62,
       "file": "lincoln_62.png",
-      "label": "ear (facing left)",
-      "x": 1380,
-      "y": 400,
-      "w": 37,
-      "h": 56,
+      "label": "his stovepipe hat alone (facing left)",
+      "x": 1077,
+      "y": 224,
+      "w": 133,
+      "h": 105,
       "pivot": [
-        18.5,
-        28.0
+        66.5,
+        52.5
       ],
-      "area": 1304
+      "area": 8853
     },
     {
       "index": 63,
       "file": "lincoln_63.png",
-      "label": "blank head: no face drawn, with neck and collar (facing left)",
-      "x": 1410,
-      "y": 249,
-      "w": 117,
-      "h": 184,
+      "label": "jaw patch: chin and mouth area (facing left)",
+      "x": 1104,
+      "y": 364,
+      "w": 86,
+      "h": 51,
       "pivot": [
-        58.5,
-        92.0
+        43.0,
+        25.5
       ],
-      "area": 15059
+      "area": 3075
     },
     {
       "index": 64,
       "file": "lincoln_64.png",
       "label": "torso, three-quarter (the gentle angle)",
-      "x": 11,
-      "y": 449,
-      "w": 205,
-      "h": 168,
+      "x": 1154,
+      "y": 411,
+      "w": 175,
+      "h": 150,
       "pivot": [
-        102.5,
-        84.0
+        87.5,
+        75.0
       ],
-      "area": 26568
+      "area": 20270
     },
     {
       "index": 65,
       "file": "lincoln_65.png",
-      "label": "torso, another angle (facing right)",
-      "x": 213,
-      "y": 454,
-      "w": 189,
-      "h": 165,
+      "label": "hair (facing left)",
+      "x": 1211,
+      "y": 224,
+      "w": 179,
+      "h": 109,
       "pivot": [
-        94.5,
-        82.5
+        89.5,
+        54.5
       ],
-      "area": 24618
+      "area": 8036
     },
     {
       "index": 66,
       "file": "lincoln_66.png",
-      "label": "torso from behind",
-      "x": 402,
-      "y": 456,
-      "w": 191,
-      "h": 164,
+      "label": "chin beard (facing left)",
+      "x": 1273,
+      "y": 322,
+      "w": 80,
+      "h": 81,
       "pivot": [
-        95.5,
-        82.0
+        40.0,
+        40.5
       ],
-      "area": 24694
+      "area": 2148
     },
     {
       "index": 67,
       "file": "lincoln_67.png",
-      "label": "torso, another angle (facing right)",
-      "x": 590,
-      "y": 455,
-      "w": 177,
-      "h": 165,
+      "label": "torso, another angle (facing left)",
+      "x": 1331,
+      "y": 414,
+      "w": 191,
+      "h": 147,
       "pivot": [
-        88.5,
-        82.5
+        95.5,
+        73.5
       ],
-      "area": 23292
+      "area": 21104
     },
     {
       "index": 68,
       "file": "lincoln_68.png",
-      "label": "torso, another angle (facing left)",
-      "x": 767,
-      "y": 454,
-      "w": 178,
-      "h": 166,
+      "label": "ear (facing left)",
+      "x": 1366,
+      "y": 303,
+      "w": 33,
+      "h": 52,
       "pivot": [
-        89.0,
-        83.0
+        16.5,
+        26.0
       ],
-      "area": 23453
+      "area": 1065
     },
     {
       "index": 69,
       "file": "lincoln_69.png",
-      "label": "torso from behind",
-      "x": 942,
-      "y": 456,
-      "w": 192,
-      "h": 163,
+      "label": "ear (facing left)",
+      "x": 1378,
+      "y": 362,
+      "w": 31,
+      "h": 50,
       "pivot": [
-        96.0,
-        81.5
+        15.5,
+        25.0
       ],
-      "area": 24866
+      "area": 952
     },
     {
       "index": 70,
       "file": "lincoln_70.png",
-      "label": "torso, another angle (facing left)",
-      "x": 1134,
-      "y": 454,
-      "w": 187,
-      "h": 165,
+      "label": "blank head: no face drawn, with neck and collar (facing left)",
+      "x": 1406,
+      "y": 225,
+      "w": 122,
+      "h": 187,
       "pivot": [
-        93.5,
-        82.5
+        61.0,
+        93.5
       ],
-      "area": 24393
+      "area": 15625
     },
     {
       "index": 71,
       "file": "lincoln_71.png",
-      "label": "torso, three-quarter (the gentle angle)",
-      "x": 1319,
-      "y": 451,
-      "w": 206,
-      "h": 167,
+      "label": "reference: five seated poses at the table (facing right)",
+      "x": 3,
+      "y": 567,
+      "w": 757,
+      "h": 225,
       "pivot": [
-        103.0,
-        83.5
+        378.5,
+        112.5
       ],
-      "area": 26392
+      "area": 100988
     },
     {
       "index": 72,
       "file": "lincoln_72.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 27,
-      "y": 623,
-      "w": 178,
-      "h": 156,
+      "label": "the line between the two halves of the sheet (facing left)",
+      "x": 765,
+      "y": 573,
+      "w": 6,
+      "h": 194,
       "pivot": [
-        89.0,
-        78.0
+        3.0,
+        97.0
       ],
-      "area": 18614
+      "area": 380
     },
     {
       "index": 73,
       "file": "lincoln_73.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 213,
-      "y": 622,
-      "w": 169,
-      "h": 159,
+      "label": "reference: five seated poses at the table (facing left)",
+      "x": 778,
+      "y": 567,
+      "w": 753,
+      "h": 217,
       "pivot": [
-        84.5,
-        79.5
+        376.5,
+        108.5
       ],
-      "area": 17177
+      "area": 99690
     },
     {
       "index": 74,
       "file": "lincoln_74.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing right)",
-      "x": 382,
-      "y": 623,
-      "w": 133,
-      "h": 149,
+      "label": "two forearms drawn touching (not used)",
+      "x": 14,
+      "y": 784,
+      "w": 140,
+      "h": 119,
       "pivot": [
-        66.5,
-        74.5
+        70.0,
+        59.5
       ],
-      "area": 10010
+      "area": 10258
     },
     {
       "index": 75,
       "file": "lincoln_75.png",
       "label": "arm bent at the elbow (facing right)",
-      "x": 488,
-      "y": 622,
-      "w": 147,
-      "h": 148,
+      "x": 128,
+      "y": 782,
+      "w": 104,
+      "h": 125,
       "pivot": [
-        73.5,
-        74.0
+        52.0,
+        62.5
       ],
-      "area": 12883
+      "area": 7575
     },
     {
       "index": 76,
       "file": "lincoln_76.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing right)",
-      "x": 637,
-      "y": 622,
-      "w": 109,
-      "h": 150,
+      "label": "arm bent at the elbow (facing right)",
+      "x": 235,
+      "y": 780,
+      "w": 113,
+      "h": 126,
       "pivot": [
-        54.5,
-        75.0
+        56.5,
+        63.0
       ],
-      "area": 10171
+      "area": 8602
     },
     {
       "index": 77,
       "file": "lincoln_77.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing left)",
-      "x": 786,
-      "y": 623,
-      "w": 107,
-      "h": 149,
+      "label": "forearm, straight: elbow lower right, cuff upper left (facing right)",
+      "x": 360,
+      "y": 788,
+      "w": 110,
+      "h": 101,
       "pivot": [
-        53.5,
-        74.5
+        55.0,
+        50.5
       ],
-      "area": 9968
+      "area": 5796
     },
     {
       "index": 78,
       "file": "lincoln_78.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 895,
-      "y": 621,
-      "w": 150,
-      "h": 149,
+      "label": "arm bent at the elbow (facing right)",
+      "x": 464,
+      "y": 779,
+      "w": 133,
+      "h": 120,
       "pivot": [
-        75.0,
-        74.5
+        66.5,
+        60.0
       ],
-      "area": 13184
+      "area": 9697
     },
     {
       "index": 79,
       "file": "lincoln_79.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing left)",
-      "x": 1018,
-      "y": 622,
-      "w": 136,
-      "h": 150,
+      "label": "arm bent at the elbow (facing right)",
+      "x": 598,
+      "y": 776,
+      "w": 139,
+      "h": 126,
       "pivot": [
-        68.0,
-        75.0
+        69.5,
+        63.0
       ],
-      "area": 10215
+      "area": 10600
     },
     {
       "index": 80,
       "file": "lincoln_80.png",
       "label": "arm bent at the elbow (facing left)",
-      "x": 1154,
-      "y": 623,
-      "w": 169,
-      "h": 158,
+      "x": 796,
+      "y": 776,
+      "w": 139,
+      "h": 126,
       "pivot": [
-        84.5,
-        79.0
+        69.5,
+        63.0
       ],
-      "area": 17090
+      "area": 10564
     },
     {
       "index": 81,
       "file": "lincoln_81.png",
       "label": "arm bent at the elbow (facing left)",
-      "x": 1331,
-      "y": 624,
-      "w": 178,
-      "h": 155,
+      "x": 936,
+      "y": 777,
+      "w": 136,
+      "h": 122,
       "pivot": [
-        89.0,
-        77.5
+        68.0,
+        61.0
       ],
-      "area": 18318
+      "area": 9966
     },
     {
       "index": 82,
       "file": "lincoln_82.png",
-      "label": "hand holding a cigarette holder, tip down (FDR\u2019s prop carried over, not his)",
-      "x": 18,
-      "y": 783,
-      "w": 252,
-      "h": 157,
+      "label": "forearm, straight: elbow lower left, cuff upper right (facing left)",
+      "x": 1065,
+      "y": 789,
+      "w": 110,
+      "h": 100,
       "pivot": [
-        126.0,
-        78.5
+        55.0,
+        50.0
       ],
-      "area": 12097
+      "area": 5788
     },
     {
       "index": 83,
       "file": "lincoln_83.png",
-      "label": "hand resting flat on the table (facing right)",
-      "x": 129,
-      "y": 752,
-      "w": 133,
-      "h": 117,
+      "label": "arm bent at the elbow (facing left)",
+      "x": 1186,
+      "y": 780,
+      "w": 113,
+      "h": 127,
       "pivot": [
-        66.5,
-        58.5
+        56.5,
+        63.5
       ],
-      "area": 8099
+      "area": 8672
     },
     {
       "index": 84,
       "file": "lincoln_84.png",
-      "label": "hand holding a cigarette holder up (FDR\u2019s prop carried over)",
-      "x": 309,
-      "y": 761,
-      "w": 190,
-      "h": 106,
+      "label": "arm bent at the elbow (facing left)",
+      "x": 1302,
+      "y": 781,
+      "w": 105,
+      "h": 126,
       "pivot": [
-        95.0,
-        53.0
+        52.5,
+        63.0
       ],
-      "area": 8297
+      "area": 7676
     },
     {
       "index": 85,
       "file": "lincoln_85.png",
-      "label": "hand holding a card, back up (red back)",
-      "x": 486,
-      "y": 770,
-      "w": 143,
-      "h": 150,
+      "label": "two forearms drawn touching (not used)",
+      "x": 1381,
+      "y": 783,
+      "w": 141,
+      "h": 121,
       "pivot": [
-        71.5,
-        75.0
+        70.5,
+        60.5
       ],
-      "area": 10636
+      "area": 10522
     },
     {
       "index": 86,
       "file": "lincoln_86.png",
-      "label": "hand gripping a cigarette holder (FDR\u2019s prop carried over)",
-      "x": 605,
-      "y": 771,
-      "w": 126,
-      "h": 87,
+      "label": "hand pointing, no cuff (facing right)",
+      "x": 15,
+      "y": 896,
+      "w": 102,
+      "h": 101,
       "pivot": [
-        63.0,
-        43.5
+        51.0,
+        50.5
       ],
-      "area": 5765
+      "area": 5426
     },
     {
       "index": 87,
       "file": "lincoln_87.png",
-      "label": "hand gripping a cigarette holder (FDR\u2019s prop carried over)",
-      "x": 803,
-      "y": 770,
-      "w": 129,
-      "h": 88,
+      "label": "hand holding a cigar (not his: leave out)",
+      "x": 118,
+      "y": 901,
+      "w": 131,
+      "h": 96,
       "pivot": [
-        64.5,
-        44.0
+        65.5,
+        48.0
       ],
-      "area": 5873
+      "area": 6044
     },
     {
       "index": 88,
       "file": "lincoln_88.png",
-      "label": "hand holding a card, back up (red back)",
-      "x": 905,
-      "y": 771,
-      "w": 142,
-      "h": 149,
+      "label": "hand resting, fingers down (facing right)",
+      "x": 245,
+      "y": 904,
+      "w": 124,
+      "h": 102,
       "pivot": [
-        71.0,
-        74.5
+        62.0,
+        51.0
       ],
-      "area": 10532
+      "area": 6451
     },
     {
       "index": 89,
       "file": "lincoln_89.png",
-      "label": "hand holding a cigarette holder up (FDR\u2019s prop carried over)",
-      "x": 1037,
-      "y": 761,
-      "w": 185,
-      "h": 106,
+      "label": "hand holding cards, backs up (red backs)",
+      "x": 358,
+      "y": 888,
+      "w": 143,
+      "h": 109,
       "pivot": [
-        92.5,
-        53.0
+        71.5,
+        54.5
       ],
-      "area": 8080
+      "area": 8271
     },
     {
       "index": 90,
       "file": "lincoln_90.png",
-      "label": "hand holding a cigarette holder, tip down (FDR\u2019s prop carried over, not his)",
-      "x": 1263,
-      "y": 784,
-      "w": 253,
-      "h": 156,
+      "label": "hand holding a whisky glass (facing right)",
+      "x": 507,
+      "y": 892,
+      "w": 108,
+      "h": 93,
       "pivot": [
-        126.5,
-        78.0
+        54.0,
+        46.5
       ],
-      "area": 12039
+      "area": 6708
     },
     {
       "index": 91,
       "file": "lincoln_91.png",
-      "label": "hand resting flat on the table (facing left)",
-      "x": 1271,
-      "y": 753,
-      "w": 135,
-      "h": 116,
+      "label": "hand holding a cigar (not his: leave out)",
+      "x": 630,
+      "y": 884,
+      "w": 117,
+      "h": 118,
       "pivot": [
-        67.5,
-        58.0
+        58.5,
+        59.0
       ],
-      "area": 8151
+      "area": 7204
     },
     {
       "index": 92,
       "file": "lincoln_92.png",
-      "label": "hand resting, fingers curled (facing right)",
-      "x": 247,
-      "y": 832,
-      "w": 159,
-      "h": 149,
+      "label": "hand resting, fingers curled (facing left)",
+      "x": 784,
+      "y": 884,
+      "w": 128,
+      "h": 112,
       "pivot": [
-        79.5,
-        74.5
+        64.0,
+        56.0
       ],
-      "area": 11125
+      "area": 7170
     },
     {
       "index": 93,
       "file": "lincoln_93.png",
-      "label": "hand holding a few cards fanned, face down (facing right)",
-      "x": 415,
-      "y": 840,
-      "w": 143,
-      "h": 135,
+      "label": "hand holding cards, backs up (red backs)",
+      "x": 914,
+      "y": 892,
+      "w": 151,
+      "h": 95,
       "pivot": [
-        71.5,
-        67.5
+        75.5,
+        47.5
       ],
-      "area": 10269
+      "area": 8613
     },
     {
       "index": 94,
       "file": "lincoln_94.png",
-      "label": "hand holding a whisky glass (facing right)",
-      "x": 627,
-      "y": 863,
-      "w": 113,
-      "h": 124,
+      "label": "hand holding a cigar (not his: leave out)",
+      "x": 1056,
+      "y": 891,
+      "w": 137,
+      "h": 120,
       "pivot": [
-        56.5,
-        62.0
+        68.5,
+        60.0
       ],
-      "area": 9745
+      "area": 8252
     },
     {
       "index": 95,
       "file": "lincoln_95.png",
-      "label": "hand holding a whisky glass (facing left)",
-      "x": 794,
-      "y": 863,
-      "w": 113,
-      "h": 123,
+      "label": "hand resting, fingers down (facing left)",
+      "x": 1180,
+      "y": 903,
+      "w": 125,
+      "h": 103,
       "pivot": [
-        56.5,
-        61.5
+        62.5,
+        51.5
       ],
-      "area": 9742
+      "area": 6472
     },
     {
       "index": 96,
       "file": "lincoln_96.png",
-      "label": "hand holding a few cards fanned, face down (facing left)",
-      "x": 977,
-      "y": 840,
-      "w": 143,
-      "h": 134,
+      "label": "hand resting, fingers down (facing left)",
+      "x": 1303,
+      "y": 902,
+      "w": 113,
+      "h": 104,
       "pivot": [
-        71.5,
-        67.0
+        56.5,
+        52.0
       ],
-      "area": 10198
+      "area": 5822
     },
     {
       "index": 97,
       "file": "lincoln_97.png",
-      "label": "hand resting, fingers curled (facing left)",
-      "x": 1129,
-      "y": 834,
-      "w": 157,
-      "h": 147,
+      "label": "hand holding a cigar, no cuff (not his: leave out)",
+      "x": 1393,
+      "y": 896,
+      "w": 131,
+      "h": 91,
       "pivot": [
-        78.5,
-        73.5
+        65.5,
+        45.5
       ],
-      "area": 10904
-    },
-    {
-      "index": 98,
-      "file": "lincoln_98.png",
-      "label": "a cigarette holder (FDR\u2019s prop carried over)",
-      "x": 29,
-      "y": 930,
-      "w": 254,
-      "h": 58,
-      "pivot": [
-        127.0,
-        29.0
-      ],
-      "area": 2615
-    },
-    {
-      "index": 99,
-      "file": "lincoln_99.png",
-      "label": "a cigarette holder (FDR\u2019s prop carried over)",
-      "x": 1250,
-      "y": 929,
-      "w": 255,
-      "h": 60,
-      "pivot": [
-        127.5,
-        30.0
-      ],
-      "area": 2628
+      "area": 5650
     }
   ]
 }

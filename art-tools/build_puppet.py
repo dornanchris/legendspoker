@@ -25,6 +25,9 @@ by the table below that line.
 once whole and once clipped above the head, lets a cape's collar and shoulders
 wrap over the bottom of a hood without the collar covering the face.
 "clip_feather": n fades it in over n pixels below that line, so no hard edge.
+"clip_cols": [[x0, x1], ...] draws a part only between those canvas columns:
+a torso listed again over the forearms, kept only at its sides, puts its
+sleeves over the elbows of arms that lie in front of the body.
 File paths are relative to the layout file, so it renders from anywhere.
 Once the numbers look right they are your rig's rest pose: import the same
 parts into Rive/Live2D and type these offsets in.
@@ -77,6 +80,12 @@ def cmd_render(args):
             continue
         if "clip_top" in p:
             im = clip_above(im, int(p["clip_top"]) - int(p["y"]), int(p.get("clip_feather", 0)))
+        if "clip_cols" in p:
+            keep = Image.new("L", im.size, 0)
+            for x0, x1 in p["clip_cols"]:
+                keep.paste(255, (max(0, int(x0) - int(p["x"])), 0, max(0, int(x1) - int(p["x"])), im.height))
+            im = im.copy()
+            im.putalpha(ImageChops.multiply(im.getchannel("A"), keep))
         canvas.alpha_composite(im, (int(p["x"]), int(p["y"])))
         if p.get("on_table"):
             on_table.append((p, im))

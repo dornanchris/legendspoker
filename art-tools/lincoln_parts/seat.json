@@ -2,84 +2,77 @@
  "id": "lincoln",
  "name": "Abraham Lincoln",
  "pieces": "lincoln_parts/lincoln/lincoln_%02d.png",
- "torso": 64,
- "head": 1,
+ "torso": 14,
+ "head": 7,
  "heads": [
   [
+   8,
+   "fit"
+  ],
+  [
+   9,
+   "fit"
+  ],
+  [
+   10,
+   "fit"
+  ],
+  [
+   1,
+   "fit"
+  ],
+  [
    2,
-   -2,
-   -1
+   "fit"
   ],
   [
    3,
-   7,
-   2
+   "fit"
   ],
   [
    4,
+   "fit"
+  ],
+  [
    5,
-   2
+   "fit"
   ],
   [
-   "lincoln_parts/lincoln_bare/lincoln_bare_01.png",
    6,
-   40,
-   0.92
-  ],
-  [
-   "lincoln_parts/lincoln_bare/lincoln_bare_02.png",
-   1,
-   37,
-   0.93
-  ],
-  [
-   "lincoln_parts/lincoln_bare/lincoln_bare_03.png",
-   10,
-   41,
-   0.93
-  ],
-  [
-   "lincoln_parts/lincoln_bare/lincoln_bare_04.png",
-   12,
-   38,
-   0.94
+   "fit"
   ]
  ],
  "hat": "from_head",
+ "pose": "rim",
  "far": [
-  74,
-  83
+  82,
+  88
  ],
  "near": [
-  74,
-  92
+  82,
+  88
  ],
  "hands": [
-  83,
-  85,
-  92,
-  93,
-  94,
-  "lincoln_parts/lincoln_bare/lincoln_bare_80.png",
-  "lincoln_parts/lincoln_bare/lincoln_bare_83.png"
+  89,
+  90,
+  92
  ],
- "cuff": "white",
- "elbow_cap": true,
+ "cuff": "tube",
  "collar": 0.2,
  "tune": {
-  "kt": 2.2,
-  "kh": 1.6,
-  "neck": 105,
+  "kt": 2.46,
+  "kh": 1.79,
+  "neck": 118,
   "hdx": 15,
   "tyb": 980,
-  "ka": 1.4,
-  "kha": 0.95,
-  "nr": 205,
-  "fr": 215,
-  "nhr": 15,
-  "fhr": 25,
-  "ne": 70,
-  "fe": 90,
-  "ey": -60
+  "ka": 1.68,
+  "kha": 1.68,
+  "nr": -10,
+  "fr": 190,
+  "nhr": -25,
+  "fhr": 205,
+  "ne": 30,
+  "fe": 30,
+  "ey": -30
  }
 }

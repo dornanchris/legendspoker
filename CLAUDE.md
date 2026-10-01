@@ -133,8 +133,8 @@ art-tools/
   fdr_parts/, roosevelt_parts/, washington_parts/  the White House cast, each
                   with seat.json and <id>_layout.json; see each README
   jfk_parts/      JFK's kit: built, at no table (see CURRENT STATE)
-  lincoln_parts/  Lincoln's kit, three-quarter, hat on (lincoln/) and the same
-                  heads bare (lincoln_bare/) for the hat tip
+  lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
+                  arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
                   back); death_layout.json assembles him
   prompts/        generators for the two art-prompt files below
@@ -331,9 +331,14 @@ style, the owner's pick); the whole White House table (Lincoln, FDR,
 Roosevelt, Washington) is now built, all by `seat_puppet.py`, from
 three-quarter expression sheets drawn to one layout (four heads each way,
 cut by `cut_sheet.py`). Lincoln has his hatted heads and the same heads bare,
-so he can tip his hat. Open: FDR's sheet lost his naval cape and Roosevelt's
-gave him a cigar (he did not smoke; FDR's holder is the table's one thing in
-a mouth); the prompts doc carries the follow-up asks.
+so he can tip his hat. **Arms rest along the table's edge, hands together
+in front** (`"pose": "rim"`; the owner's sheet added seated reference poses
+and drew forearms as plain tubes): Lincoln is built that way; the other
+three still lie out on the felt to the sides until their sheets are redrawn
+in that layout (their first sheets' arms do not fit the pose). Open: FDR's
+sheet lost his naval cape and Roosevelt's gave him a cigar (he did not
+smoke; FDR's holder is the table's one thing in a mouth); the prompts doc
+carries the follow-up asks.
 **JFK is built but at no table** (the owner): an idea for a hidden event
 like Loki's, winning a pot with a three and a five (the 35th president) and
 JFK taking a seat. Open before it goes in: he died in 1963, inside ASSETS.md's
