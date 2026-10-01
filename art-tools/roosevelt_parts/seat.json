@@ -2,47 +2,44 @@
  "id": "roosevelt",
  "pieces": "roosevelt_parts/roosevelt/roosevelt_%02d.png",
  "name": "Theodore Roosevelt",
- "torso": 13,
- "head": 7,
+ "torso": 58,
+ "head": 1,
  "heads": [
-  8,
-  9
+  4
  ],
+ "head_clothes": "dark",
  "far": [
-  56,
-  67
+  68,
+  77
  ],
  "near": [
-  56,
-  63
+  68,
+  87
  ],
  "hands": [
-  63,
-  64,
-  65,
-  66,
-  67,
-  68,
-  69,
-  70,
-  71,
-  72,
-  73,
-  74,
-  75
+  77,
+  79,
+  80,
+  87,
+  88
  ],
- "cuff": "band",
- "collar": 0.14,
+ "cuff": "white",
+ "elbow_cap": true,
+ "collar": 0.2,
  "tune": {
-  "kt": 2.15,
-  "kh": 1.55,
-  "neck": 95,
-  "hdx": 30,
+  "kt": 2.2,
+  "kh": 1.6,
+  "neck": 105,
+  "hdx": 15,
+  "tyb": 980,
   "ka": 1.4,
   "kha": 0.95,
-  "nr": 30,
-  "fr": 35,
-  "nhr": 35,
-  "fhr": 38
+  "nr": 205,
+  "fr": 215,
+  "nhr": 15,
+  "fhr": 25,
+  "ne": 70,
+  "fe": 90,
+  "ey": -60
  }
 }

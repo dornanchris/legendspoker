@@ -18,7 +18,7 @@ const EXPR=(n,heads,avoid,keep)=>`Character sheet for 2D animation rigging: ${n}
 
 Keep every piece of his clothing exactly as on his own sheet: the same garments, colours, collar and buttons${keep?`, and above all ${keep}`:''}. Do not simplify or swap them.
 
-Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. A prop in the mouth or hand stays inside its own piece's space: it must not reach into the next head. No text, no labels, no frames, no cast shadows.
+Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. A prop in the mouth or hand stays inside its own piece's space: it must not reach into the next head. Draw only the props this prompt names: nothing carried over from other characters' sheets (no cigarette holders, cigars, canes or glasses unless named). No text, no labels, no frames, no cast shadows.
 
 The angle: a gentle three-quarter view, turned about 25 degrees from front-on, the same as the heads on the Lincoln sheet. Both eyes, the whole nose, the mouth and both shoulders clearly visible. NOT profile, NOT near-profile.
 
@@ -37,7 +37,7 @@ Every character in the game, grouped by table. The descriptions come from \`data
 
 ## Status
 
-The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: \`art-tools/lincoln_parts/\`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (\`art-tools/death_parts/\`) is done, front-on as the dealer. **The White House table is done**: Lincoln, FDR, Roosevelt and Washington, each built by \`art-tools/seat_puppet.py\` from a \`seat.json\`. Lincoln and FDR have three-quarter expression heads (FDR's sheet lost his naval cape; see his entry); Roosevelt and Washington still have one face each. Attach Lincoln's sheet (\`art-tools/lincoln_parts/sources/lincoln_sheet.png\`) as the layout to copy, so the next sheets draw their finished heads three-quarter, facing both ways, as his does. Dracula's parts are in an older style.
+The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: \`art-tools/lincoln_parts/\`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (\`art-tools/death_parts/\`) is done, front-on as the dealer. **The White House table is done**: Lincoln, FDR, Roosevelt and Washington, each built by \`art-tools/seat_puppet.py\` from a \`seat.json\`. All four have three-quarter expression heads, drawn to one layout, and Lincoln can tip his hat (FDR's sheet lost his naval cape and Roosevelt's gave him a cigar; see their entries). Attach Lincoln's sheet (\`art-tools/lincoln_parts/sources/lincoln_sheet.png\`) as the layout to copy, so the next sheets draw their finished heads three-quarter, facing both ways, as his does. Dracula's parts are in an older style.
 
 ## The table, the seats and the layers
 

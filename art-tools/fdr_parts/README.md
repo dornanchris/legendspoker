@@ -6,14 +6,16 @@ same five mirrored, pince-nez on a cord, the cigarette holder, torsos, arms
 and hands. `fdr/` holds every piece, a numbered `_contact_sheet.png` and
 `parts.json` with a label on each (and which way it faces).
 
-    python3 art-tools/fdr_parts/cut.py art-tools/fdr_parts/sources/fdr_sheet.png art-tools/fdr_parts
+    python3 art-tools/cut_sheet.py art-tools/fdr_parts/cut.json
 
-`cut.py` is `split_parts.py` plus three fixes this sheet needed: two pairs of
-torsos and a pair of heads touched, so they are separated where they met;
-and in both head rows the smiling head's holder reaches across into the
-laughing head beside it, so the holder goes to the smiling head and the
-laughing head is filled in under it (a faint smudge by the ear, invisible at
-table size).
+`cut.json` holds the fixes this sheet needed: two pairs of torsos and a pair
+of heads touched, so they are separated where they met; and in both head
+rows the smiling head's holder reaches across into the laughing head beside
+it, so the holder goes to the smiling head and the laughing head is filled
+in under it (a faint smudge by the ear, invisible at table size).
+
+A second FDR sheet came later in the same layout as the others; this one is
+kept, as it has the frown and that one does not (neither has the cape).
 
 ## The puppet
 

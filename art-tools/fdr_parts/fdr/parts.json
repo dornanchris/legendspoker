@@ -4,7 +4,7 @@
     "w": 1536,
     "h": 1024
   },
-  "note": "x/y are the piece's position on the SOURCE canvas. Cut by split_parts.py; touching pieces separated where they met, and the two holders that cross the laughing heads given to the smiling heads (the laughing heads filled in under them).",
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
   "parts": [
     {
       "index": 1,

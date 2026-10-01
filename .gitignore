@@ -29,3 +29,6 @@ art/parts/
 # Bundled web output (regenerate with npm run build:web)
 web/bundle.js
 web/bundle.js.map
+
+# Python bytecode from the art tools
+__pycache__/

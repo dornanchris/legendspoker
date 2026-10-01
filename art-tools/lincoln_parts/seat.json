@@ -2,37 +2,84 @@
  "id": "lincoln",
  "name": "Abraham Lincoln",
  "pieces": "lincoln_parts/lincoln/lincoln_%02d.png",
- "torso": 71,
- "head": 2,
+ "torso": 64,
+ "head": 1,
  "heads": [
-  3,
-  4,
-  5
+  [
+   2,
+   -2,
+   -1
+  ],
+  [
+   3,
+   7,
+   2
+  ],
+  [
+   4,
+   5,
+   2
+  ],
+  [
+   "lincoln_parts/lincoln_bare/lincoln_bare_01.png",
+   6,
+   40,
+   0.92
+  ],
+  [
+   "lincoln_parts/lincoln_bare/lincoln_bare_02.png",
+   1,
+   37,
+   0.93
+  ],
+  [
+   "lincoln_parts/lincoln_bare/lincoln_bare_03.png",
+   10,
+   41,
+   0.93
+  ],
+  [
+   "lincoln_parts/lincoln_bare/lincoln_bare_04.png",
+   12,
+   38,
+   0.94
+  ]
  ],
+ "hat": "from_head",
  "far": [
-  80,
-  92
+  74,
+  83
  ],
  "near": [
-  84,
-  87
+  74,
+  92
  ],
  "hands": [
-  87,
-  88,
-  89,
-  90,
-  91,
+  83,
+  85,
   92,
-  93
+  93,
+  94,
+  "lincoln_parts/lincoln_bare/lincoln_bare_80.png",
+  "lincoln_parts/lincoln_bare/lincoln_bare_83.png"
  ],
  "cuff": "white",
+ "elbow_cap": true,
+ "collar": 0.2,
  "tune": {
-  "ka": 1.6,
-  "kha": 1.05,
-  "nr": 30,
-  "fr": 35,
-  "nhr": 35,
-  "fhr": 38
+  "kt": 2.2,
+  "kh": 1.6,
+  "neck": 105,
+  "hdx": 15,
+  "tyb": 980,
+  "ka": 1.4,
+  "kha": 0.95,
+  "nr": 205,
+  "fr": 215,
+  "nhr": 15,
+  "fhr": 25,
+  "ne": 70,
+  "fe": 90,
+  "ey": -60
  }
 }

@@ -30,14 +30,21 @@ The spec (all piece numbers are from the character's parts.json):
                     torso again over it from that fraction of its height
                     down, so the collar wraps round a painted-on neck (the
                     way Death's cape wraps round his hood)
-  heads             other head pieces, as swaps
+  heads             other head pieces, as swaps; [piece, dx, dy, scale] places
+                    one by the rest head's own pixels (its top-left at dx, dy,
+                    drawn at that scale), for a head from another sheet
   head_align        "back" lines the swaps up by the back of the head rather
                     than centring their boxes (for heads with a prop sticking
                     out in front, like FDR's holder)
+  hat               "from_head": a black hat drawn on the rest head is lifted
+                    off it into <id>_rig/hat.png, a hidden part in slot "hat"
+                    exactly where it sits, so a bare head plus the hat can tip it
   head_clothes      true if the heads were drawn with shoulders of the suit
                     under them: the dark cloth reaching a head piece's edge
                     below its chin is cut off (into <id>_rig/head_N.png), and
-                    the torso's own collar and lapels take its place
+                    the torso's own collar and lapels take its place. true
+                    takes bluish or grey cloth; "dark" any dull dark colour;
+                    "piped" bluish cloth and the gold braid along it
   near, far         [forearm, hand] pairs: straight forearms, open end up
   hands             other hand pieces, as swaps
   cuff              "white" (a shirt cuff or lace marks the sleeve's end) or
@@ -117,21 +124,70 @@ def trim_elbow(path_, cuff):
     Image.fromarray(out, 'RGBA').save(path_)
 
 
-def trim_clothes(src, dst, below=0.6):
-    """Cut the suit off the bottom of a head piece: dark cloth (bluish or
-    grey, so not a gold chain or a red tie) that reaches the piece's edge
-    below `below` of its height. The neck, shirt collar and tie stay."""
+def lift_hat(src, dst):
+    """Lift a black hat drawn on a head into its own piece: in each column,
+    from the top down through the near-black, colourless crown and brim (and
+    a band between them) to where the hair or face begins."""
+    a = np.array(Image.open(src).convert('RGBA'))
+    rgb, A = a[..., :3].astype(int), a[..., 3] > 160
+    neutral = A & (np.ptp(rgb, axis=-1) <= 10) & (rgb.mean(-1) < 120)
+    hat = np.zeros_like(A)
+    for x in range(A.shape[1]):
+        rows = np.nonzero(A[:, x])[0]
+        if not len(rows) or not neutral[rows[0]:rows[0] + 4, x].any():
+            continue
+        col = neutral[:, x]
+        end, band = rows[0], True
+        while end + 1 < len(col):
+            nxt = np.nonzero(col[end + 1:])[0]
+            if not len(nxt):
+                break
+            gap, r = nxt[0], end + 1 + nxt[0]
+            run = np.argmin(col[r:]) if not col[r:].all() else len(col) - r
+            if gap <= 3 or (band and gap <= 24 and run >= 4):
+                band = band and gap <= 3  # one wide break only: the band, then the brim
+                end = r + run - 1
+            else:
+                break
+        hat[rows[0]:end + 1, x] = True
+    hat = biggest(ndimage.binary_opening(hat, iterations=1))
+    # the brim: near-black pixels joined to the crown, no further down than a brim is thick
+    bottom = np.nonzero(hat.any(1))[0].max()
+    window = np.zeros_like(A)
+    window[:bottom + A.shape[0] // 20] = True
+    black = A & (np.ptp(rgb, axis=-1) <= 12) & (rgb.mean(-1) < 60) & window
+    lab, n = ndimage.label(black | hat)
+    hat = lab == lab[hat][0]
+    out = a.copy()
+    out[..., 3] = np.where(ndimage.binary_dilation(hat, iterations=1), a[..., 3], 0)
+    Image.fromarray(out, 'RGBA').save(dst)
+
+
+def trim_clothes(src, dst, mode=True, below=0.6):
+    """Cut the suit off the bottom of a head piece: dark cloth that reaches
+    the piece's edge low down -- bluish or grey cloth; with mode "dark" any
+    dull dark colour (a brown suit); with "piped" bluish cloth and the gold
+    braid along its edges. Never a red tie, and the neck, shirt collar and
+    tie stay."""
     a = np.array(Image.open(src).convert('RGBA'))
     rgb, A = a[..., :3].astype(int), a[..., 3] > 0
     h = A.shape[0]
-    cloth = rgb[..., 2] - rgb[..., 0] > -15
+    cloth = (np.ptp(rgb, axis=-1) < 50) if mode == 'dark' else (rgb[..., 2] - rgb[..., 0] > -15)
     low = np.zeros_like(A)
     low[int(h * below):] = True
     edge = ndimage.binary_dilation(~A, iterations=2)
     edge[-3:] = edge[:, :3] = edge[:, -3:] = True
+    if mode == 'dark':          # only the piece's bottom: a mouth by a cigar touches its edge too
+        edge[:int(h * 0.8)] = False
     lab, n = ndimage.label(A & low & cloth & (rgb.mean(-1) < 105))
     suit = np.isin(lab, [v for v in np.unique(lab[edge]) if v])
     suit = ndimage.binary_dilation(suit, iterations=1) & low & A & cloth & (rgb.mean(-1) < 160)
+    if mode == 'piped':         # the braid: gold lines touching the cloth
+        r, b = rgb[..., 0], rgb[..., 2]
+        lab, n = ndimage.label(A & low & (b < 75) & (r - b > 60) & (r > 100))
+        near = ndimage.binary_dilation(suit, iterations=3)
+        suit |= np.isin(lab, [v for v in np.unique(lab[near]) if v])
+        suit |= ndimage.binary_dilation(suit, iterations=1) & low & A & (rgb.mean(-1) < 70)
     out = a.copy()
     out[..., 3] = np.where(suit, 0, a[..., 3])
     lab, n = ndimage.label(out[..., 3] > 0)                 # and the crumbs it leaves
@@ -163,8 +219,10 @@ def main(spec_path):
     path = lambda f: os.path.join(HERE, f)
     size = lambda f: Image.open(path(F(f))).size
     parts = []
-    names = {q['file']: q['label'] for q in json.load(open(path(os.path.join(os.path.dirname(P), 'parts.json'))))['parts']}
-    name = lambda f, extra='': (names.get(os.path.basename(F(f))) or '') + extra
+    def name(f, extra=''):
+        pj = os.path.join(os.path.dirname(path(F(f))), 'parts.json')
+        labels = {q['file']: q['label'] for q in json.load(open(pj))['parts']} if os.path.exists(pj) else {}
+        return (labels.get(os.path.basename(F(f))) or '') + extra
 
     def put(f, cx, cy, s, rot=0, z=0, label='', visible=True, flip=False, slot=None, on_table=False):
         w, h = size(f)
@@ -194,17 +252,29 @@ def main(spec_path):
     hw, hh = size(spec['head'])
     hx, hy = t['tx'] + t['hdx'], ty - th * t['kt'] / 2 - hh * t['kh'] / 2 + t['neck']
     hz = 8 if spec.get('head_behind') else 20
-    for i in [spec['head']] + spec.get('heads', []):
+    fl = -1 if spec.get('head_flip') else 1
+    for h in [spec['head']] + spec.get('heads', []):
+        i, at = (h[0], h[1:]) if isinstance(h, list) else (h, None)
         f = i
         if spec.get('head_clothes'):
-            f = f"{spec['id']}_parts/{spec['id']}_rig/head_{i}.png"
-            trim_clothes(path(F(i)), path(f))
-        cx = hx
-        if spec.get('head_align') == 'back':    # line swaps up by the back of the head, not
-            sx = (size(i)[0] - hw) * t['kh'] / 2  # their box (a long holder widens the box)
-            cx = hx - sx if spec.get('head_flip') else hx + sx
-        put(f, cx, hy, t['kh'], z=hz, label=name(i, '' if i == spec['head'] else ' (swap)'),
+            f = f"{spec['id']}_parts/{spec['id']}_rig/head_{os.path.basename(F(i))}"
+            trim_clothes(path(F(i)), path(f), spec['head_clothes'])
+        cx, cy, k = hx, hy, t['kh']
+        if at:                                  # [piece, dx, dy, scale]: its top-left at (dx, dy)
+            w, h_ = size(i)                     # of the rest head's own pixels, at that scale
+            s_ = at[2] if len(at) > 2 else 1
+            cx = hx + fl * (at[0] + w * s_ / 2 - hw / 2) * t['kh']
+            cy = hy + (at[1] + h_ * s_ / 2 - hh / 2) * t['kh']
+            k = t['kh'] * s_
+        elif spec.get('head_align') == 'back':  # line swaps up by the back of the head, not
+            cx = hx + fl * (size(i)[0] - hw) * t['kh'] / 2  # their box (a holder widens it)
+        put(f, cx, cy, k, z=hz, label=name(i, '' if i == spec['head'] else ' (swap)'),
             visible=i == spec['head'], slot='head', flip=spec.get('head_flip', False))
+    if spec.get('hat') == 'from_head':        # the hat on the rest head, as its own piece,
+        f = f"{spec['id']}_parts/{spec['id']}_rig/hat.png"   # hidden: with a bare head, a tip
+        lift_hat(path(F(spec['head'])), path(f))
+        put(f, hx, hy, t['kh'], z=hz + 3, label='hat, lifted off the rest head (for a tip: show a bare head)',
+            visible=False, slot='hat', flip=spec.get('head_flip', False))
     if 'collar' in spec:
         put(spec['torso'], t['tx'], ty, t['kt'], z=21, label='torso again: its collar over the neck',
             slot='torso_over', flip=spec.get('torso_flip', False))

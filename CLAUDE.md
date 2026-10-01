@@ -123,15 +123,18 @@ web/
 ROSTER.md         GENERATED casting book: never edit by hand
 art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
+  cut_sheet.py    split_parts plus each kit's fixes as data (<id>_parts/cut.json):
+                  pieces that touched, a prop drawn across the next head
   build_puppet.py init/render a layout to preview puppet assembly
   dracula_parts/  41 split Dracula layers (incomplete — see gaps)
   seat_puppet.py  builds a seated three-quarter puppet from a small spec
                   (<id>_parts/seat.json): trims the cuffs, writes the layout
+  faces_preview.py  a strip of every head swap on the seated puppet
   fdr_parts/, roosevelt_parts/, washington_parts/  the White House cast, each
                   with seat.json and <id>_layout.json; see each README
   jfk_parts/      JFK's kit: built, at no table (see CURRENT STATE)
-  lincoln_parts/  Lincoln's kit, three-quarter: the first drawn to the art
-                  direction; lincoln_layout.json assembles him
+  lincoln_parts/  Lincoln's kit, three-quarter, hat on (lincoln/) and the same
+                  heads bare (lincoln_bare/) for the hat tip
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
                   back); death_layout.json assembles him
   prompts/        generators for the two art-prompt files below
@@ -325,11 +328,12 @@ its table's rim and cloth, its backdrop and its light (`ROOM-ART-PROMPTS.md`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,
-Roosevelt, Washington) is now built, all by `seat_puppet.py`. Lincoln and
-FDR have three-quarter expression heads (FDR's sheet lost his naval cape;
-the prompt to get it back is in the prompts doc); Roosevelt's and
-Washington's sheets drew their expressions front-on, so they have one face
-each until regenerated.
+Roosevelt, Washington) is now built, all by `seat_puppet.py`, from
+three-quarter expression sheets drawn to one layout (four heads each way,
+cut by `cut_sheet.py`). Lincoln has his hatted heads and the same heads bare,
+so he can tip his hat. Open: FDR's sheet lost his naval cape and Roosevelt's
+gave him a cigar (he did not smoke; FDR's holder is the table's one thing in
+a mouth); the prompts doc carries the follow-up asks.
 **JFK is built but at no table** (the owner): an idea for a hidden event
 like Loki's, winning a pot with a three and a five (the 35th president) and
 JFK taking a seat. Open before it goes in: he died in 1963, inside ASSETS.md's
