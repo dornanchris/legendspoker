@@ -355,7 +355,7 @@ export const PARTS = {
   roosevelt: {
     handsExtra: 'holding his pince-nez and polishing it with a handkerchief',
     exprNote: 'Built from the first version of this sheet (ask for this version, with the reference row and tube forearms, so his arms can rest along the rim as Lincoln\'s do), in a brown suit. It put a cigar in half the heads (he did not smoke, and a thing jutting from the mouth is FDR\'s silhouette at this table) and missed three faces. To add them, attach that sheet (`art-tools/roosevelt_parts/sources/roosevelt_sheet.png`) and ask for: "Three more finished heads facing the viewer\'s right, exactly as drawn on this sheet: a frown; eyes narrowed, suspicious; and the neutral head without his pince-nez. No cigar. Pure white background, nothing touching."',
-    expressions: 'neutral; a huge grin with every tooth showing; talking, mouth open mid-word; a frown; eyes narrowed, suspicious; the neutral head again WITHOUT his spectacles (he takes them off to polish them). Round spectacles with clear lenses. He never smokes: no cigar, no pipe',
+    expressions: 'neutral; a huge grin with every tooth showing; talking, mouth open mid-word; a frown; eyes narrowed, suspicious; the neutral head again WITHOUT his pince-nez (he takes them off to polish them). Pince-nez on a cord, clear lenses, as on his own sheet. He never smokes: no cigar, no pipe',
     face: face({ hair: ['Hair as a separate piece', 'Heavy moustache as a separate piece'],
       mouthsExtra: 'the enormous grin, all teeth (these must read small, so 3 versions: grin, bigger grin, biggest grin)',
       extra: [`Round steel-rimmed spectacles as a separate piece, ${CLEAR}`] }),

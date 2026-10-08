@@ -299,7 +299,7 @@ Pure white background (#FFFFFF). Every piece separate, with a closed dark outlin
 The angle: a gentle three-quarter view, turned about 25 degrees from front-on, the same as the heads on the Lincoln sheet. Both eyes, the whole nose, the mouth and both shoulders clearly visible. NOT profile, NOT near-profile.
 
 Draw two matching sets, one facing the viewer's right and its mirror image facing the viewer's left, as the Lincoln sheet does. For each set:
-- Finished heads, each with its neck and the top of its collar, all at the same size and angle: neutral; a huge grin with every tooth showing; talking, mouth open mid-word; a frown; eyes narrowed, suspicious; the neutral head again WITHOUT his spectacles (he takes them off to polish them). Round spectacles with clear lenses. He never smokes: no cigar, no pipe
+- Finished heads, each with its neck and the top of its collar, all at the same size and angle: neutral; a huge grin with every tooth showing; talking, mouth open mid-word; a frown; eyes narrowed, suspicious; the neutral head again WITHOUT his pince-nez (he takes them off to polish them). Pince-nez on a cord, clear lenses, as on his own sheet. He never smokes: no cigar, no pipe
 - One torso at the same angle, in all his clothes: no head, cut off straight below the waist, the upper arms hanging at the sides down to the elbows; NO forearms, NO hands
 - Straight forearms, each a plain tube of sleeve at the same scale as the torso: open at the elbow end, the shirt cuff at the wrist end; NO hand in them
 - Hands at the same scale, each with its cuff and a short stub of sleeve: resting on the table, fingers curled; resting flat; holding two cards (plain backs); holding his pince-nez and polishing it with a handkerchief
