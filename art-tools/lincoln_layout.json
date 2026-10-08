@@ -227,7 +227,8 @@
      1100
     ]
    ],
-   "clip_top": 725
+   "clip_top": 725,
+   "clip_feather": 14
   },
   {
    "file": "lincoln_parts/lincoln/lincoln_89.png",

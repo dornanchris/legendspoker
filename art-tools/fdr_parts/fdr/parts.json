@@ -9,1374 +9,478 @@
     {
       "index": 1,
       "file": "fdr_01.png",
-      "label": "head: neutral, no holder (facing right)",
-      "x": 16,
-      "y": 14,
-      "w": 151,
-      "h": 206,
+      "label": "head: the holder in his teeth, cocked up (facing right)",
+      "x": 143,
+      "y": 39,
+      "w": 141,
+      "h": 186,
       "pivot": [
-        75.5,
-        103.0
+        70.5,
+        93.0
       ],
-      "area": 23345
+      "area": 17265
     },
     {
       "index": 2,
       "file": "fdr_02.png",
-      "label": "head: the holder clenched in his teeth, about level (facing right)",
-      "x": 162,
-      "y": 20,
-      "w": 167,
-      "h": 198,
+      "label": "head: a grin around the holder (facing right)",
+      "x": 269,
+      "y": 36,
+      "w": 144,
+      "h": 190,
       "pivot": [
-        83.5,
-        99.0
+        72.0,
+        95.0
       ],
-      "area": 21433
+      "area": 18007
     },
     {
       "index": 3,
       "file": "fdr_03.png",
-      "label": "head: a broad smile around the holder, cocked upward (facing right)",
-      "x": 309,
-      "y": 16,
-      "w": 233,
-      "h": 204,
+      "label": "head: talking, no holder (facing right)",
+      "x": 398,
+      "y": 40,
+      "w": 121,
+      "h": 185,
       "pivot": [
-        116.5,
-        102.0
+        60.5,
+        92.5
       ],
-      "area": 22168
+      "area": 16616
     },
     {
       "index": 4,
       "file": "fdr_04.png",
-      "label": "head: laughing (facing right)",
-      "x": 464,
-      "y": 23,
-      "w": 141,
-      "h": 196,
+      "label": "head: neutral, glancing (facing right)",
+      "x": 522,
+      "y": 39,
+      "w": 124,
+      "h": 188,
       "pivot": [
-        70.5,
-        98.0
+        62.0,
+        94.0
       ],
-      "area": 20506
+      "area": 17446
     },
     {
       "index": 5,
       "file": "fdr_05.png",
-      "label": "head: frown (facing right)",
-      "x": 604,
-      "y": 19,
-      "w": 147,
-      "h": 200,
+      "label": "head: laughing (facing right)",
+      "x": 522,
+      "y": 39,
+      "w": 124,
+      "h": 188,
       "pivot": [
-        73.5,
-        100.0
+        62.0,
+        94.0
       ],
-      "area": 21588
+      "area": 17446
     },
     {
       "index": 6,
       "file": "fdr_06.png",
-      "label": "head: frown (facing left)",
-      "x": 784,
-      "y": 18,
-      "w": 147,
-      "h": 201,
+      "label": "head: laughing, head back (facing right)",
+      "x": 647,
+      "y": 41,
+      "w": 122,
+      "h": 185,
       "pivot": [
-        73.5,
-        100.5
+        61.0,
+        92.5
       ],
-      "area": 21698
+      "area": 16939
     },
     {
       "index": 7,
       "file": "fdr_07.png",
-      "label": "head: laughing (facing left)",
-      "x": 932,
-      "y": 24,
-      "w": 141,
-      "h": 195,
+      "label": "head: laughing, head back (facing left)",
+      "x": 795,
+      "y": 42,
+      "w": 120,
+      "h": 184,
       "pivot": [
-        70.5,
-        97.5
+        60.0,
+        92.0
       ],
-      "area": 20379
+      "area": 16344
     },
     {
       "index": 8,
       "file": "fdr_08.png",
-      "label": "head: a broad smile around the holder, cocked upward (facing left)",
-      "x": 993,
-      "y": 16,
-      "w": 234,
-      "h": 204,
+      "label": "head: laughing (facing left)",
+      "x": 916,
+      "y": 41,
+      "w": 117,
+      "h": 185,
       "pivot": [
-        117.0,
-        102.0
+        58.5,
+        92.5
       ],
-      "area": 22241
+      "area": 16568
     },
     {
       "index": 9,
       "file": "fdr_09.png",
-      "label": "head: the holder clenched in his teeth, about level (facing left)",
-      "x": 1208,
-      "y": 19,
-      "w": 170,
-      "h": 199,
+      "label": "head: the holder in his teeth (facing left)",
+      "x": 1015,
+      "y": 38,
+      "w": 138,
+      "h": 188,
       "pivot": [
-        85.0,
-        99.5
+        69.0,
+        94.0
       ],
-      "area": 21634
+      "area": 17181
     },
     {
       "index": 10,
       "file": "fdr_10.png",
-      "label": "head: neutral, no holder (facing left)",
-      "x": 1369,
-      "y": 14,
-      "w": 150,
-      "h": 205,
+      "label": "head: a grin around the holder (facing left)",
+      "x": 1135,
+      "y": 38,
+      "w": 144,
+      "h": 188,
       "pivot": [
-        75.0,
-        102.5
+        72.0,
+        94.0
       ],
-      "area": 23009
+      "area": 17598
     },
     {
       "index": 11,
       "file": "fdr_11.png",
-      "label": "blank head: no face drawn, with neck and collar (facing right)",
-      "x": 12,
-      "y": 223,
-      "w": 115,
-      "h": 195,
+      "label": "head: laughing (facing left)",
+      "x": 1280,
+      "y": 39,
+      "w": 123,
+      "h": 187,
       "pivot": [
-        57.5,
-        97.5
+        61.5,
+        93.5
       ],
-      "area": 15347
+      "area": 17184
     },
     {
       "index": 12,
       "file": "fdr_12.png",
-      "label": "ear (facing right)",
-      "x": 118,
-      "y": 385,
-      "w": 35,
-      "h": 62,
+      "label": "head: the holder in his teeth (facing left)",
+      "x": 1397,
+      "y": 36,
+      "w": 137,
+      "h": 191,
       "pivot": [
-        17.5,
-        31.0
+        68.5,
+        95.5
       ],
-      "area": 1380
+      "area": 18427
     },
     {
       "index": 13,
       "file": "fdr_13.png",
-      "label": "ear (facing right)",
-      "x": 128,
-      "y": 312,
-      "w": 47,
-      "h": 67,
+      "label": "torso, three-quarter, in his naval cape (facing right)",
+      "x": 6,
+      "y": 232,
+      "w": 281,
+      "h": 242,
       "pivot": [
-        23.5,
-        33.5
+        140.5,
+        121.0
       ],
-      "area": 2032
+      "area": 52483
     },
     {
       "index": 14,
       "file": "fdr_14.png",
-      "label": "hair (facing right)",
-      "x": 143,
-      "y": 225,
-      "w": 112,
-      "h": 88,
+      "label": "torso from behind, in the cape",
+      "x": 281,
+      "y": 244,
+      "w": 226,
+      "h": 232,
       "pivot": [
-        56.0,
-        44.0
+        113.0,
+        116.0
       ],
-      "area": 3856
+      "area": 39724
     },
     {
       "index": 15,
       "file": "fdr_15.png",
-      "label": "pince-nez on its cord (lenses filled white by the cut) (facing right)",
-      "x": 180,
-      "y": 317,
-      "w": 71,
-      "h": 136,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing right)",
+      "x": 488,
+      "y": 250,
+      "w": 123,
+      "h": 173,
       "pivot": [
-        35.5,
-        68.0
+        61.5,
+        86.5
       ],
-      "area": 6859
+      "area": 12664
     },
     {
       "index": 16,
       "file": "fdr_16.png",
-      "label": "hair (facing right)",
-      "x": 260,
-      "y": 225,
-      "w": 114,
-      "h": 115,
+      "label": "arm bent at the elbow (facing right)",
+      "x": 604,
+      "y": 246,
+      "w": 151,
+      "h": 199,
       "pivot": [
-        57.0,
-        57.5
+        75.5,
+        99.5
       ],
-      "area": 6353
+      "area": 17150
     },
     {
       "index": 17,
       "file": "fdr_17.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 291,
-      "y": 378,
-      "w": 89,
-      "h": 62,
+      "label": "arm bent at the elbow (facing left)",
+      "x": 802,
+      "y": 245,
+      "w": 144,
+      "h": 200,
       "pivot": [
-        44.5,
-        31.0
+        72.0,
+        100.0
       ],
-      "area": 3939
+      "area": 16711
     },
     {
       "index": 18,
       "file": "fdr_18.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 377,
-      "y": 378,
-      "w": 79,
-      "h": 58,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing left)",
+      "x": 929,
+      "y": 250,
+      "w": 117,
+      "h": 173,
       "pivot": [
-        39.5,
-        29.0
+        58.5,
+        86.5
       ],
-      "area": 3369
+      "area": 11960
     },
     {
       "index": 19,
       "file": "fdr_19.png",
-      "label": "eyebrow (facing right)",
-      "x": 381,
-      "y": 235,
-      "w": 58,
-      "h": 31,
+      "label": "torso from behind, in the cape",
+      "x": 1024,
+      "y": 244,
+      "w": 228,
+      "h": 232,
       "pivot": [
-        29.0,
-        15.5
+        114.0,
+        116.0
       ],
-      "area": 898
+      "area": 40106
     },
     {
       "index": 20,
       "file": "fdr_20.png",
-      "label": "eyebrow (facing right)",
-      "x": 381,
-      "y": 273,
-      "w": 57,
-      "h": 31,
+      "label": "torso, three-quarter, in his naval cape (facing left)",
+      "x": 1249,
+      "y": 232,
+      "w": 283,
+      "h": 242,
       "pivot": [
-        28.5,
-        15.5
+        141.5,
+        121.0
       ],
-      "area": 825
+      "area": 52785
     },
     {
       "index": 21,
       "file": "fdr_21.png",
-      "label": "nose (facing right)",
-      "x": 382,
-      "y": 312,
-      "w": 43,
-      "h": 59,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing right)",
+      "x": 527,
+      "y": 394,
+      "w": 138,
+      "h": 109,
       "pivot": [
-        21.5,
-        29.5
+        69.0,
+        54.5
       ],
-      "area": 1394
+      "area": 7973
     },
     {
       "index": 22,
       "file": "fdr_22.png",
-      "label": "eyebrow (facing right)",
-      "x": 450,
-      "y": 233,
-      "w": 59,
-      "h": 33,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing left)",
+      "x": 886,
+      "y": 394,
+      "w": 135,
+      "h": 109,
       "pivot": [
-        29.5,
-        16.5
+        67.5,
+        54.5
       ],
-      "area": 931
+      "area": 7840
     },
     {
       "index": 23,
       "file": "fdr_23.png",
-      "label": "eyebrow (facing right)",
-      "x": 451,
-      "y": 273,
-      "w": 58,
-      "h": 31,
-      "pivot": [
-        29.0,
-        15.5
-      ],
-      "area": 852
-    },
-    {
-      "index": 24,
-      "file": "fdr_24.png",
-      "label": "nose (facing right)",
-      "x": 452,
-      "y": 312,
-      "w": 47,
-      "h": 60,
-      "pivot": [
-        23.5,
-        30.0
-      ],
-      "area": 1590
-    },
-    {
-      "index": 25,
-      "file": "fdr_25.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 455,
-      "y": 378,
-      "w": 79,
-      "h": 59,
-      "pivot": [
-        39.5,
-        29.5
-      ],
-      "area": 3252
-    },
-    {
-      "index": 26,
-      "file": "fdr_26.png",
-      "label": "mouth: closed smile (facing right)",
-      "x": 522,
-      "y": 338,
-      "w": 66,
-      "h": 31,
-      "pivot": [
-        33.0,
-        15.5
-      ],
-      "area": 1216
-    },
-    {
-      "index": 27,
-      "file": "fdr_27.png",
-      "label": "eye with its lid (facing right)",
-      "x": 524,
-      "y": 234,
-      "w": 62,
-      "h": 49,
-      "pivot": [
-        31.0,
-        24.5
-      ],
-      "area": 2080
-    },
-    {
-      "index": 28,
-      "file": "fdr_28.png",
-      "label": "eye with its lid (facing right)",
-      "x": 524,
-      "y": 285,
-      "w": 60,
-      "h": 42,
-      "pivot": [
-        30.0,
-        21.0
-      ],
-      "area": 1754
-    },
-    {
-      "index": 29,
-      "file": "fdr_29.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 540,
-      "y": 378,
-      "w": 87,
-      "h": 56,
-      "pivot": [
-        43.5,
-        28.0
-      ],
-      "area": 3477
-    },
-    {
-      "index": 30,
-      "file": "fdr_30.png",
-      "label": "eye with its lid (facing right)",
-      "x": 596,
-      "y": 232,
-      "w": 63,
-      "h": 51,
-      "pivot": [
-        31.5,
-        25.5
-      ],
-      "area": 2193
-    },
-    {
-      "index": 31,
-      "file": "fdr_31.png",
-      "label": "mouth: laughing (facing right)",
-      "x": 596,
-      "y": 333,
-      "w": 62,
-      "h": 45,
-      "pivot": [
-        31.0,
-        22.5
-      ],
-      "area": 1897
-    },
-    {
-      "index": 32,
-      "file": "fdr_32.png",
-      "label": "eye with its lid (facing right)",
-      "x": 597,
-      "y": 286,
-      "w": 61,
-      "h": 41,
-      "pivot": [
-        30.5,
-        20.5
-      ],
-      "area": 1839
-    },
-    {
-      "index": 33,
-      "file": "fdr_33.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 630,
-      "y": 377,
-      "w": 95,
-      "h": 63,
-      "pivot": [
-        47.5,
-        31.5
-      ],
-      "area": 4194
-    },
-    {
-      "index": 34,
-      "file": "fdr_34.png",
-      "label": "mouth: grimace, teeth clenched (facing right)",
-      "x": 665,
-      "y": 331,
-      "w": 67,
-      "h": 41,
-      "pivot": [
-        33.5,
-        20.5
-      ],
-      "area": 1894
-    },
-    {
-      "index": 35,
-      "file": "fdr_35.png",
-      "label": "eye with its lid (facing right)",
-      "x": 670,
-      "y": 235,
-      "w": 63,
-      "h": 48,
-      "pivot": [
-        31.5,
-        24.0
-      ],
-      "area": 2136
-    },
-    {
-      "index": 36,
-      "file": "fdr_36.png",
-      "label": "eye with its lid (facing right)",
-      "x": 671,
-      "y": 285,
-      "w": 61,
-      "h": 42,
-      "pivot": [
-        30.5,
-        21.0
-      ],
-      "area": 1802
-    },
-    {
-      "index": 37,
-      "file": "fdr_37.png",
-      "label": "eye with its lid (facing left)",
-      "x": 802,
-      "y": 234,
-      "w": 64,
-      "h": 49,
-      "pivot": [
-        32.0,
-        24.5
-      ],
-      "area": 2163
-    },
-    {
-      "index": 38,
-      "file": "fdr_38.png",
-      "label": "eye with its lid (facing left)",
-      "x": 803,
-      "y": 285,
-      "w": 62,
-      "h": 42,
-      "pivot": [
-        31.0,
-        21.0
-      ],
-      "area": 1809
-    },
-    {
-      "index": 39,
-      "file": "fdr_39.png",
-      "label": "mouth: grimace, teeth clenched (facing left)",
-      "x": 803,
-      "y": 331,
-      "w": 67,
-      "h": 41,
-      "pivot": [
-        33.5,
-        20.5
-      ],
-      "area": 1910
-    },
-    {
-      "index": 40,
-      "file": "fdr_40.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 811,
-      "y": 377,
-      "w": 94,
-      "h": 63,
-      "pivot": [
-        47.0,
-        31.5
-      ],
-      "area": 4194
-    },
-    {
-      "index": 41,
-      "file": "fdr_41.png",
-      "label": "eye with its lid (facing left)",
-      "x": 877,
-      "y": 232,
-      "w": 62,
-      "h": 51,
-      "pivot": [
-        31.0,
-        25.5
-      ],
-      "area": 2202
-    },
-    {
-      "index": 42,
-      "file": "fdr_42.png",
-      "label": "eye with its lid (facing left)",
-      "x": 878,
-      "y": 286,
-      "w": 61,
-      "h": 41,
-      "pivot": [
-        30.5,
-        20.5
-      ],
-      "area": 1847
-    },
-    {
-      "index": 43,
-      "file": "fdr_43.png",
-      "label": "mouth: laughing (facing left)",
-      "x": 878,
-      "y": 333,
-      "w": 62,
-      "h": 45,
-      "pivot": [
-        31.0,
-        22.5
-      ],
-      "area": 1902
-    },
-    {
-      "index": 44,
-      "file": "fdr_44.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 909,
-      "y": 377,
-      "w": 87,
-      "h": 57,
-      "pivot": [
-        43.5,
-        28.5
-      ],
-      "area": 3477
-    },
-    {
-      "index": 45,
-      "file": "fdr_45.png",
-      "label": "mouth: closed smile (facing left)",
-      "x": 948,
-      "y": 338,
-      "w": 65,
-      "h": 31,
-      "pivot": [
-        32.5,
-        15.5
-      ],
-      "area": 1241
-    },
-    {
-      "index": 46,
-      "file": "fdr_46.png",
-      "label": "eye with its lid (facing left)",
-      "x": 950,
-      "y": 234,
-      "w": 63,
-      "h": 49,
-      "pivot": [
-        31.5,
-        24.5
-      ],
-      "area": 2064
-    },
-    {
-      "index": 47,
-      "file": "fdr_47.png",
-      "label": "eye with its lid (facing left)",
-      "x": 951,
-      "y": 285,
-      "w": 60,
-      "h": 42,
-      "pivot": [
-        30.0,
-        21.0
-      ],
-      "area": 1746
-    },
-    {
-      "index": 48,
-      "file": "fdr_48.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 1002,
-      "y": 378,
-      "w": 79,
-      "h": 59,
-      "pivot": [
-        39.5,
-        29.5
-      ],
-      "area": 3256
-    },
-    {
-      "index": 49,
-      "file": "fdr_49.png",
-      "label": "eyebrow (facing left)",
-      "x": 1027,
-      "y": 234,
-      "w": 59,
-      "h": 32,
-      "pivot": [
-        29.5,
-        16.0
-      ],
-      "area": 941
-    },
-    {
-      "index": 50,
-      "file": "fdr_50.png",
-      "label": "eyebrow (facing left)",
-      "x": 1027,
-      "y": 273,
-      "w": 57,
-      "h": 32,
-      "pivot": [
-        28.5,
-        16.0
-      ],
-      "area": 859
-    },
-    {
-      "index": 51,
-      "file": "fdr_51.png",
-      "label": "nose (facing left)",
-      "x": 1036,
-      "y": 312,
-      "w": 47,
-      "h": 60,
-      "pivot": [
-        23.5,
-        30.0
-      ],
-      "area": 1591
-    },
-    {
-      "index": 52,
-      "file": "fdr_52.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 1080,
-      "y": 378,
-      "w": 78,
-      "h": 58,
-      "pivot": [
-        39.0,
-        29.0
-      ],
-      "area": 3381
-    },
-    {
-      "index": 53,
-      "file": "fdr_53.png",
-      "label": "eyebrow (facing left)",
-      "x": 1096,
-      "y": 235,
-      "w": 58,
-      "h": 31,
-      "pivot": [
-        29.0,
-        15.5
-      ],
-      "area": 897
-    },
-    {
-      "index": 54,
-      "file": "fdr_54.png",
-      "label": "eyebrow (facing left)",
-      "x": 1097,
-      "y": 273,
-      "w": 58,
-      "h": 31,
-      "pivot": [
-        29.0,
-        15.5
-      ],
-      "area": 835
-    },
-    {
-      "index": 55,
-      "file": "fdr_55.png",
-      "label": "nose (facing left)",
-      "x": 1110,
-      "y": 312,
-      "w": 44,
-      "h": 59,
-      "pivot": [
-        22.0,
-        29.5
-      ],
-      "area": 1417
-    },
-    {
-      "index": 56,
-      "file": "fdr_56.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 1159,
-      "y": 377,
-      "w": 86,
-      "h": 63,
-      "pivot": [
-        43.0,
-        31.5
-      ],
-      "area": 3913
-    },
-    {
-      "index": 57,
-      "file": "fdr_57.png",
-      "label": "hair (facing left)",
-      "x": 1161,
-      "y": 225,
-      "w": 114,
-      "h": 115,
-      "pivot": [
-        57.0,
-        57.5
-      ],
-      "area": 6309
-    },
-    {
-      "index": 58,
-      "file": "fdr_58.png",
-      "label": "hair (facing left)",
-      "x": 1281,
-      "y": 225,
-      "w": 112,
-      "h": 88,
-      "pivot": [
-        56.0,
-        44.0
-      ],
-      "area": 3860
-    },
-    {
-      "index": 59,
-      "file": "fdr_59.png",
-      "label": "pince-nez on its cord (lenses filled white by the cut) (facing left)",
-      "x": 1286,
-      "y": 317,
-      "w": 70,
-      "h": 136,
-      "pivot": [
-        35.0,
-        68.0
-      ],
-      "area": 6871
-    },
-    {
-      "index": 60,
-      "file": "fdr_60.png",
-      "label": "ear (facing left)",
-      "x": 1361,
-      "y": 312,
-      "w": 47,
-      "h": 67,
-      "pivot": [
-        23.5,
-        33.5
-      ],
-      "area": 2052
-    },
-    {
-      "index": 61,
-      "file": "fdr_61.png",
-      "label": "ear (facing left)",
-      "x": 1383,
-      "y": 384,
-      "w": 35,
-      "h": 63,
-      "pivot": [
-        17.5,
-        31.5
-      ],
-      "area": 1384
-    },
-    {
-      "index": 62,
-      "file": "fdr_62.png",
-      "label": "blank head: no face drawn, with neck and collar (facing left)",
-      "x": 1409,
-      "y": 223,
-      "w": 115,
-      "h": 195,
-      "pivot": [
-        57.5,
-        97.5
-      ],
-      "area": 15259
-    },
-    {
-      "index": 63,
-      "file": "fdr_63.png",
-      "label": "torso, three-quarter (the gentle angle), three-piece suit (facing right)",
-      "x": 14,
-      "y": 445,
-      "w": 214,
-      "h": 182,
-      "pivot": [
-        107.0,
-        91.0
-      ],
-      "area": 30100
-    },
-    {
-      "index": 64,
-      "file": "fdr_64.png",
-      "label": "torso, turned further (facing left)",
-      "x": 221,
-      "y": 450,
-      "w": 160,
-      "h": 176,
-      "pivot": [
-        80.0,
-        88.0
-      ],
-      "area": 21619
-    },
-    {
-      "index": 65,
-      "file": "fdr_65.png",
-      "label": "torso from behind",
-      "x": 374,
-      "y": 454,
-      "w": 210,
-      "h": 171,
-      "pivot": [
-        105.0,
-        85.5
-      ],
-      "area": 26845
-    },
-    {
-      "index": 66,
-      "file": "fdr_66.png",
-      "label": "torso, turned further, no waistcoat showing (facing right)",
-      "x": 574,
-      "y": 449,
-      "w": 191,
-      "h": 176,
-      "pivot": [
-        95.5,
-        88.0
-      ],
-      "area": 25205
-    },
-    {
-      "index": 67,
-      "file": "fdr_67.png",
-      "label": "torso, turned further, no waistcoat showing (facing left)",
-      "x": 769,
-      "y": 449,
-      "w": 192,
-      "h": 176,
-      "pivot": [
-        96.0,
-        88.0
-      ],
-      "area": 25409
-    },
-    {
-      "index": 68,
-      "file": "fdr_68.png",
-      "label": "torso from behind",
-      "x": 950,
-      "y": 454,
-      "w": 213,
-      "h": 169,
-      "pivot": [
-        106.5,
-        84.5
-      ],
-      "area": 26694
-    },
-    {
-      "index": 69,
-      "file": "fdr_69.png",
-      "label": "torso, turned further (facing right)",
-      "x": 1155,
-      "y": 450,
-      "w": 160,
-      "h": 175,
-      "pivot": [
-        80.0,
-        87.5
-      ],
-      "area": 21092
-    },
-    {
-      "index": 70,
-      "file": "fdr_70.png",
-      "label": "torso, three-quarter (the gentle angle), three-piece suit (facing left)",
-      "x": 1305,
-      "y": 445,
-      "w": 215,
-      "h": 182,
-      "pivot": [
-        107.5,
-        91.0
-      ],
-      "area": 29899
-    },
-    {
-      "index": 71,
-      "file": "fdr_71.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 27,
-      "y": 632,
-      "w": 179,
-      "h": 157,
-      "pivot": [
-        89.5,
-        78.5
-      ],
-      "area": 18103
-    },
-    {
-      "index": 72,
-      "file": "fdr_72.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 202,
-      "y": 629,
-      "w": 174,
-      "h": 159,
-      "pivot": [
-        87.0,
-        79.5
-      ],
-      "area": 16883
-    },
-    {
-      "index": 73,
-      "file": "fdr_73.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing right)",
-      "x": 375,
-      "y": 629,
-      "w": 134,
-      "h": 155,
-      "pivot": [
-        67.0,
-        77.5
-      ],
-      "area": 11041
-    },
-    {
-      "index": 74,
-      "file": "fdr_74.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 488,
-      "y": 629,
-      "w": 145,
-      "h": 146,
-      "pivot": [
-        72.5,
-        73.0
-      ],
-      "area": 12525
-    },
-    {
-      "index": 75,
-      "file": "fdr_75.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing right)",
-      "x": 638,
-      "y": 626,
-      "w": 108,
-      "h": 155,
-      "pivot": [
-        54.0,
-        77.5
-      ],
-      "area": 10151
-    },
-    {
-      "index": 76,
-      "file": "fdr_76.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing left)",
-      "x": 792,
-      "y": 627,
-      "w": 107,
-      "h": 154,
-      "pivot": [
-        53.5,
-        77.0
-      ],
-      "area": 10042
-    },
-    {
-      "index": 77,
-      "file": "fdr_77.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 904,
-      "y": 628,
-      "w": 144,
-      "h": 147,
-      "pivot": [
-        72.0,
-        73.5
-      ],
-      "area": 12476
-    },
-    {
-      "index": 78,
-      "file": "fdr_78.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing left)",
-      "x": 1028,
-      "y": 629,
-      "w": 133,
-      "h": 155,
-      "pivot": [
-        66.5,
-        77.5
-      ],
-      "area": 11067
-    },
-    {
-      "index": 79,
-      "file": "fdr_79.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 1160,
-      "y": 629,
-      "w": 174,
-      "h": 159,
-      "pivot": [
-        87.0,
-        79.5
-      ],
-      "area": 16891
-    },
-    {
-      "index": 80,
-      "file": "fdr_80.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 1331,
-      "y": 631,
-      "w": 178,
-      "h": 158,
-      "pivot": [
-        89.0,
-        79.0
-      ],
-      "area": 18046
-    },
-    {
-      "index": 81,
-      "file": "fdr_81.png",
-      "label": "hand: the holder between two fingers, tip down (tapping ash) (facing right)",
-      "x": 12,
-      "y": 792,
-      "w": 255,
-      "h": 165,
-      "pivot": [
-        127.5,
-        82.5
-      ],
-      "area": 12191
-    },
-    {
-      "index": 82,
-      "file": "fdr_82.png",
-      "label": "hand resting flat on the table (facing right)",
-      "x": 121,
-      "y": 773,
-      "w": 155,
-      "h": 110,
-      "pivot": [
-        77.5,
-        55.0
-      ],
-      "area": 8789
-    },
-    {
-      "index": 83,
-      "file": "fdr_83.png",
-      "label": "hand holding the holder up, away from the mouth (facing right)",
-      "x": 312,
-      "y": 781,
-      "w": 188,
-      "h": 102,
-      "pivot": [
-        94.0,
-        51.0
-      ],
-      "area": 7810
-    },
-    {
-      "index": 84,
-      "file": "fdr_84.png",
-      "label": "hand holding a card, back up (red back) (facing right)",
-      "x": 490,
-      "y": 798,
-      "w": 139,
-      "h": 153,
-      "pivot": [
-        69.5,
-        76.5
-      ],
-      "area": 10926
-    },
-    {
-      "index": 85,
-      "file": "fdr_85.png",
-      "label": "hand gripping the holder, raised (facing right)",
-      "x": 591,
-      "y": 771,
-      "w": 145,
-      "h": 110,
-      "pivot": [
-        72.5,
-        55.0
-      ],
-      "area": 6764
-    },
-    {
-      "index": 86,
-      "file": "fdr_86.png",
-      "label": "hand gripping the holder, raised (facing left)",
-      "x": 801,
-      "y": 771,
-      "w": 144,
-      "h": 109,
-      "pivot": [
-        72.0,
-        54.5
-      ],
-      "area": 6704
-    },
-    {
-      "index": 87,
-      "file": "fdr_87.png",
-      "label": "hand holding a card, back up (red back) (facing left)",
-      "x": 908,
-      "y": 798,
-      "w": 138,
-      "h": 152,
-      "pivot": [
-        69.0,
-        76.0
-      ],
-      "area": 10837
-    },
-    {
-      "index": 88,
-      "file": "fdr_88.png",
-      "label": "hand holding the holder up, away from the mouth (facing left)",
-      "x": 1036,
-      "y": 780,
-      "w": 188,
-      "h": 103,
-      "pivot": [
-        94.0,
-        51.5
-      ],
-      "area": 7812
-    },
-    {
-      "index": 89,
-      "file": "fdr_89.png",
-      "label": "hand resting flat on the table (facing left)",
-      "x": 1260,
-      "y": 773,
-      "w": 155,
-      "h": 110,
-      "pivot": [
-        77.5,
-        55.0
-      ],
-      "area": 8775
-    },
-    {
-      "index": 90,
-      "file": "fdr_90.png",
-      "label": "hand: the holder between two fingers, tip down (tapping ash) (facing left)",
-      "x": 1268,
-      "y": 793,
-      "w": 256,
-      "h": 164,
-      "pivot": [
-        128.0,
-        82.0
-      ],
-      "area": 12142
-    },
-    {
-      "index": 91,
-      "file": "fdr_91.png",
-      "label": "hand resting, fingers curled (facing right)",
-      "x": 248,
-      "y": 852,
-      "w": 147,
-      "h": 145,
-      "pivot": [
-        73.5,
-        72.5
-      ],
-      "area": 10531
-    },
-    {
-      "index": 92,
-      "file": "fdr_92.png",
-      "label": "hand holding a few cards fanned, face down (facing right)",
-      "x": 409,
-      "y": 858,
+      "label": "hand resting, fingers down (facing right)",
+      "x": 15,
+      "y": 504,
       "w": 149,
       "h": 139,
       "pivot": [
         74.5,
         69.5
       ],
-      "area": 10919
+      "area": 10614
     },
     {
-      "index": 93,
-      "file": "fdr_93.png",
-      "label": "hand holding a whisky glass (facing right)",
-      "x": 626,
-      "y": 883,
-      "w": 111,
-      "h": 119,
+      "index": 24,
+      "file": "fdr_24.png",
+      "label": "hand resting flat (facing right)",
+      "x": 146,
+      "y": 511,
+      "w": 145,
+      "h": 132,
       "pivot": [
-        55.5,
-        59.5
+        72.5,
+        66.0
       ],
-      "area": 9231
+      "area": 9614
     },
     {
-      "index": 94,
-      "file": "fdr_94.png",
-      "label": "hand holding a whisky glass (facing left)",
-      "x": 801,
-      "y": 883,
-      "w": 109,
-      "h": 119,
+      "index": 25,
+      "file": "fdr_25.png",
+      "label": "hand holding two cards (red backs) (facing right)",
+      "x": 270,
+      "y": 501,
+      "w": 140,
+      "h": 120,
       "pivot": [
-        54.5,
-        59.5
+        70.0,
+        60.0
       ],
-      "area": 9187
+      "area": 10662
     },
     {
-      "index": 95,
-      "file": "fdr_95.png",
-      "label": "hand holding a few cards fanned, face down (facing left)",
-      "x": 979,
-      "y": 858,
-      "w": 148,
-      "h": 139,
+      "index": 26,
+      "file": "fdr_26.png",
+      "label": "hand holding the cigarette holder (facing right)",
+      "x": 428,
+      "y": 498,
+      "w": 174,
+      "h": 101,
       "pivot": [
-        74.0,
-        69.5
+        87.0,
+        50.5
       ],
-      "area": 10873
+      "area": 8068
     },
     {
-      "index": 96,
-      "file": "fdr_96.png",
-      "label": "hand resting, fingers curled (facing left)",
-      "x": 1141,
-      "y": 852,
-      "w": 147,
-      "h": 145,
+      "index": 27,
+      "file": "fdr_27.png",
+      "label": "hand tapping ash from the holder (facing right)",
+      "x": 602,
+      "y": 514,
+      "w": 166,
+      "h": 98,
       "pivot": [
-        73.5,
-        72.5
+        83.0,
+        49.0
       ],
-      "area": 10519
+      "area": 8238
     },
     {
-      "index": 97,
-      "file": "fdr_97.png",
-      "label": "the cigarette holder alone (facing right)",
-      "x": 47,
-      "y": 961,
-      "w": 234,
-      "h": 43,
+      "index": 28,
+      "file": "fdr_28.png",
+      "label": "hand tapping ash from the holder (facing left)",
+      "x": 797,
+      "y": 507,
+      "w": 157,
+      "h": 104,
       "pivot": [
-        117.0,
-        21.5
+        78.5,
+        52.0
       ],
-      "area": 2317
+      "area": 7854
     },
     {
-      "index": 98,
-      "file": "fdr_98.png",
-      "label": "the cigarette holder alone (facing left)",
-      "x": 1255,
-      "y": 958,
-      "w": 234,
-      "h": 44,
+      "index": 29,
+      "file": "fdr_29.png",
+      "label": "hand holding the cigarette holder (facing left)",
+      "x": 961,
+      "y": 498,
+      "w": 165,
+      "h": 100,
       "pivot": [
-        117.0,
-        22.0
+        82.5,
+        50.0
       ],
-      "area": 2287
+      "area": 7672
+    },
+    {
+      "index": 30,
+      "file": "fdr_30.png",
+      "label": "hand holding two cards (red backs) (facing left)",
+      "x": 1146,
+      "y": 499,
+      "w": 136,
+      "h": 122,
+      "pivot": [
+        68.0,
+        61.0
+      ],
+      "area": 10460
+    },
+    {
+      "index": 31,
+      "file": "fdr_31.png",
+      "label": "hand resting flat (facing left)",
+      "x": 1257,
+      "y": 510,
+      "w": 138,
+      "h": 133,
+      "pivot": [
+        69.0,
+        66.5
+      ],
+      "area": 9225
+    },
+    {
+      "index": 32,
+      "file": "fdr_32.png",
+      "label": "hand resting, fingers down (facing left)",
+      "x": 1374,
+      "y": 501,
+      "w": 146,
+      "h": 142,
+      "pivot": [
+        73.0,
+        71.0
+      ],
+      "area": 10377
+    },
+    {
+      "index": 33,
+      "file": "fdr_33.png",
+      "label": "reference: seated at the table (facing right)",
+      "x": 3,
+      "y": 659,
+      "w": 769,
+      "h": 337,
+      "pivot": [
+        384.5,
+        168.5
+      ],
+      "area": 184198
+    },
+    {
+      "index": 34,
+      "file": "fdr_34.png",
+      "label": "reference: seated at the table (facing left)",
+      "x": 783,
+      "y": 662,
+      "w": 752,
+      "h": 335,
+      "pivot": [
+        376.0,
+        167.5
+      ],
+      "area": 179310
     }
   ]
 }

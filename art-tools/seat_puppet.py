@@ -431,6 +431,7 @@ def main(spec_path):
         parts[-1]['clip_cols'] = [[0, round(left + t['ne'] + t['sleeve'])],
                                   [round(right - t['fe'] - t['sleeve']), W]]
         parts[-1]['clip_top'] = round(ty - th * t['kt'] / 2 + 0.3 * th * t['kt'])
+        parts[-1]['clip_feather'] = t.get('feather', 14)
     else:
         arm(spec['far'], right - t['fe'], t['fr'], t['fhr'], 4, 'far')
         arm(spec['near'], left + t['ne'], t['nr'], t['nhr'], 6, 'near')

@@ -1,0 +1,22 @@
+{
+ "washington_parts/washington/washington_01.png <- washington_parts/washington/washington_02.png": [
+  2,
+  -1,
+  1.01
+ ],
+ "washington_parts/washington/washington_01.png <- washington_parts/washington/washington_03.png": [
+  4,
+  0,
+  1.0
+ ],
+ "washington_parts/washington/washington_01.png <- washington_parts/washington/washington_04.png": [
+  5,
+  1,
+  0.99
+ ],
+ "washington_parts/washington/washington_01.png <- washington_parts/washington/washington_05.png": [
+  4,
+  1,
+  0.99
+ ]
+}

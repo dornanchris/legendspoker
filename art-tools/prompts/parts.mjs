@@ -171,7 +171,7 @@ export const PARTS = {
   fdr: {
     handsExtra: 'holding the long cigarette holder; tapping ash from it',
     keep: 'the naval cape over his shoulders: a dark navy boat cloak, fastened at the throat with a short chain, hanging open over the suit',
-    exprNote: 'Built from the first version of this sheet (ask for this version, with the reference row and tube forearms, so his arms can rest along the rim as Lincoln\'s do). It came back in a pinstripe suit with NO naval cape, his silhouette. To get the cape back, attach that sheet (`art-tools/fdr_parts/sources/fdr_sheet.png`) and ask for one thing: "Redraw the first torso on this sheet (the leftmost, three-quarter, in the waistcoat) and its mirror image, exactly as drawn, now with his naval cape over the shoulders: a dark navy boat cloak, fastened at the throat with a short chain, hanging open over the suit. No head. Pure white background, nothing touching."',
+    exprNote: 'Done: built from this prompt, in the rim pose.',
     expressions: 'neutral, the long cigarette holder clenched in his teeth and cocked upward; the same, holder level; a broad smile at the whole table, around the holder; talking, with no holder in his mouth; a frown; laughing. He wears pince-nez: clip-on round lenses on a cord, NO arms over the ears, clear lenses',
     face: face({ hair: ['Grey swept-back hair as a separate piece'],
       mouthsExtra: 'a mouth gripping a cigarette holder in the teeth, smiling around it (holder NOT drawn)',
@@ -354,7 +354,7 @@ export const PARTS = {
   },
   roosevelt: {
     handsExtra: 'holding his pince-nez and polishing it with a handkerchief',
-    exprNote: 'Built from the first version of this sheet (ask for this version, with the reference row and tube forearms, so his arms can rest along the rim as Lincoln\'s do), in a brown suit. It put a cigar in half the heads (he did not smoke, and a thing jutting from the mouth is FDR\'s silhouette at this table) and missed three faces. To add them, attach that sheet (`art-tools/roosevelt_parts/sources/roosevelt_sheet.png`) and ask for: "Three more finished heads facing the viewer\'s right, exactly as drawn on this sheet: a frown; eyes narrowed, suspicious; and the neutral head without his pince-nez. No cigar. Pure white background, nothing touching."',
+    exprNote: 'Done: built from this prompt, in the rim pose.',
     expressions: 'neutral; a huge grin with every tooth showing; talking, mouth open mid-word; a frown; eyes narrowed, suspicious; the neutral head again WITHOUT his pince-nez (he takes them off to polish them). Pince-nez on a cord, clear lenses, as on his own sheet. He never smokes: no cigar, no pipe',
     face: face({ hair: ['Hair as a separate piece', 'Heavy moustache as a separate piece'],
       mouthsExtra: 'the enormous grin, all teeth (these must read small, so 3 versions: grin, bigger grin, biggest grin)',
@@ -424,7 +424,7 @@ export const PARTS = {
   },
   washington: {
     handsExtra: 'smoothing his coat\'s cuff',
-    exprNote: 'Built from the first version of this sheet. The reference row and the tube forearms were added for Lincoln\'s second sheet, and they are what let his arms rest along the rim (see `art-tools/lincoln_parts/README.md`); ask for this version to give him the same.',
+    exprNote: 'Done: built from this prompt, in the rim pose.',
     keep: 'the buff-and-blue general\'s coat with its high collar and gold epaulettes',
     expressions: 'neutral, mouth set firm; talking; a slight, rare smile; a frown; jaw clenched, working. His own hair, powdered and tied at the back with a black ribbon',
     face: face({ head: 'Blank head: long and heavy-jawed, with ears and neck, NO eyes, eyebrows, nose or mouth drawn',

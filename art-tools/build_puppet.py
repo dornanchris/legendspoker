@@ -25,7 +25,8 @@ by the table below that line.
 once whole and once clipped above the head, lets a cape's collar and shoulders
 wrap over the bottom of a hood without the collar covering the face.
 "clip_feather": n fades it in over n pixels below that line, so no hard edge.
-"clip_cols": [[x0, x1], ...] draws a part only between those canvas columns:
+"clip_cols": [[x0, x1], ...] draws a part only between those canvas columns
+(softened by "clip_feather" too):
 a torso listed again over the forearms, kept only at its sides, puts its
 sleeves over the elbows of arms that lie in front of the body.
 File paths are relative to the layout file, so it renders from anywhere.
@@ -38,7 +39,7 @@ import glob
 import json
 import os
 
-from PIL import Image, ImageChops, ImageOps
+from PIL import Image, ImageChops, ImageFilter, ImageOps
 
 
 def cmd_init(args):
@@ -84,6 +85,8 @@ def cmd_render(args):
             keep = Image.new("L", im.size, 0)
             for x0, x1 in p["clip_cols"]:
                 keep.paste(255, (max(0, int(x0) - int(p["x"])), 0, max(0, int(x1) - int(p["x"])), im.height))
+            if p.get("clip_feather"):                  # soft sides as well as a soft top
+                keep = keep.filter(ImageFilter.BoxBlur(int(p["clip_feather"]) // 2))
             im = im.copy()
             im.putalpha(ImageChops.multiply(im.getchannel("A"), keep))
         canvas.alpha_composite(im, (int(p["x"]), int(p["y"])))

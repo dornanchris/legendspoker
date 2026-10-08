@@ -1,5 +1,1 @@
-{
- "sheet": "sources/washington_sheet.png",
- "stem": "washington",
- "split": [[300, 540], [1050, 540]]
-}
+{"sheet": "sources/washington_sheet.png", "stem": "washington", "split": [[440, 120], [1160, 120, 3]]}

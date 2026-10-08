@@ -10,1303 +10,505 @@
       "index": 1,
       "file": "roosevelt_01.png",
       "label": "head: neutral, a scowl (facing right)",
-      "x": 11,
-      "y": 10,
-      "w": 161,
-      "h": 207,
+      "x": 7,
+      "y": 32,
+      "w": 133,
+      "h": 194,
       "pivot": [
-        80.5,
-        103.5
+        66.5,
+        97.0
       ],
-      "area": 24243
+      "area": 19653
     },
     {
       "index": 2,
       "file": "roosevelt_02.png",
-      "label": "head: a cigar in his teeth (facing right)",
-      "x": 180,
-      "y": 14,
-      "w": 168,
-      "h": 203,
+      "label": "head: the big grin, every tooth (facing right)",
+      "x": 127,
+      "y": 31,
+      "w": 141,
+      "h": 194,
       "pivot": [
-        84.0,
-        101.5
+        70.5,
+        97.0
       ],
-      "area": 22900
+      "area": 19321
     },
     {
       "index": 3,
       "file": "roosevelt_03.png",
-      "label": "head: a grin around a cigar (facing right)",
-      "x": 340,
-      "y": 15,
-      "w": 176,
-      "h": 203,
+      "label": "head: talking, mouth open (facing right)",
+      "x": 258,
+      "y": 32,
+      "w": 133,
+      "h": 194,
       "pivot": [
-        88.0,
-        101.5
+        66.5,
+        97.0
       ],
-      "area": 23009
+      "area": 19069
     },
     {
       "index": 4,
       "file": "roosevelt_04.png",
-      "label": "head: the big grin, laughing (facing right)",
-      "x": 504,
-      "y": 16,
-      "w": 167,
-      "h": 202,
+      "label": "head: a frown (facing right)",
+      "x": 382,
+      "y": 34,
+      "w": 131,
+      "h": 194,
       "pivot": [
-        83.5,
-        101.0
+        65.5,
+        97.0
       ],
-      "area": 22891
+      "area": 18771
     },
     {
       "index": 5,
       "file": "roosevelt_05.png",
-      "label": "head, front-on (not used)",
-      "x": 683,
-      "y": 14,
-      "w": 172,
-      "h": 204,
+      "label": "head: eyes narrowed, suspicious (facing right)",
+      "x": 506,
+      "y": 36,
+      "w": 125,
+      "h": 190,
       "pivot": [
-        86.0,
-        102.0
+        62.5,
+        95.0
       ],
-      "area": 23972
+      "area": 18365
     },
     {
       "index": 6,
       "file": "roosevelt_06.png",
-      "label": "head: a cigar in his teeth (facing left)",
-      "x": 867,
-      "y": 16,
-      "w": 165,
-      "h": 201,
+      "label": "head: without his pince-nez (facing right)",
+      "x": 626,
+      "y": 34,
+      "w": 127,
+      "h": 194,
       "pivot": [
-        82.5,
-        100.5
+        63.5,
+        97.0
       ],
-      "area": 22705
+      "area": 18398
     },
     {
       "index": 7,
       "file": "roosevelt_07.png",
-      "label": "head: a cigar in his teeth (facing left)",
-      "x": 1022,
-      "y": 15,
-      "w": 171,
-      "h": 203,
+      "label": "head: without his pince-nez (facing left)",
+      "x": 782,
+      "y": 34,
+      "w": 128,
+      "h": 194,
       "pivot": [
-        85.5,
-        101.5
+        64.0,
+        97.0
       ],
-      "area": 22744
+      "area": 18363
     },
     {
       "index": 8,
       "file": "roosevelt_08.png",
-      "label": "head: a grin around a cigar (facing left)",
-      "x": 1187,
-      "y": 14,
-      "w": 167,
-      "h": 204,
+      "label": "head: eyes narrowed, suspicious (facing left)",
+      "x": 903,
+      "y": 36,
+      "w": 126,
+      "h": 192,
       "pivot": [
-        83.5,
-        102.0
+        63.0,
+        96.0
       ],
-      "area": 23103
+      "area": 18486
     },
     {
       "index": 9,
       "file": "roosevelt_09.png",
-      "label": "head: neutral, a scowl (facing left)",
-      "x": 1362,
-      "y": 11,
-      "w": 161,
-      "h": 206,
+      "label": "head: a frown (facing left)",
+      "x": 1022,
+      "y": 33,
+      "w": 131,
+      "h": 194,
       "pivot": [
-        80.5,
-        103.0
+        65.5,
+        97.0
       ],
-      "area": 23468
+      "area": 18843
     },
     {
       "index": 10,
       "file": "roosevelt_10.png",
-      "label": "blank head: no face drawn, with neck and collar (facing right)",
-      "x": 11,
-      "y": 222,
-      "w": 118,
-      "h": 192,
+      "label": "head: talking, mouth open (facing left)",
+      "x": 1145,
+      "y": 33,
+      "w": 133,
+      "h": 195,
       "pivot": [
-        59.0,
-        96.0
+        66.5,
+        97.5
       ],
-      "area": 15943
+      "area": 19169
     },
     {
       "index": 11,
       "file": "roosevelt_11.png",
-      "label": "ear (facing right)",
-      "x": 121,
-      "y": 381,
-      "w": 38,
-      "h": 58,
+      "label": "head: the big grin, every tooth (facing left)",
+      "x": 1268,
+      "y": 31,
+      "w": 143,
+      "h": 195,
       "pivot": [
-        19.0,
-        29.0
+        71.5,
+        97.5
       ],
-      "area": 1385
+      "area": 19449
     },
     {
       "index": 12,
       "file": "roosevelt_12.png",
-      "label": "ear (facing right)",
-      "x": 128,
-      "y": 311,
-      "w": 45,
-      "h": 62,
+      "label": "head: neutral, a scowl (facing left)",
+      "x": 1399,
+      "y": 31,
+      "w": 129,
+      "h": 195,
       "pivot": [
-        22.5,
-        31.0
+        64.5,
+        97.5
       ],
-      "area": 1784
+      "area": 19263
     },
     {
       "index": 13,
       "file": "roosevelt_13.png",
-      "label": "hair (facing right)",
-      "x": 144,
-      "y": 223,
-      "w": 204,
-      "h": 86,
+      "label": "torso, three-quarter (facing right)",
+      "x": 7,
+      "y": 232,
+      "w": 277,
+      "h": 211,
       "pivot": [
-        102.0,
-        43.0
+        138.5,
+        105.5
       ],
-      "area": 8576
+      "area": 44594
     },
     {
       "index": 14,
       "file": "roosevelt_14.png",
-      "label": "pince-nez on its cord (lenses filled white by the cut) (facing right)",
-      "x": 179,
-      "y": 315,
-      "w": 71,
-      "h": 133,
+      "label": "torso from behind",
+      "x": 276,
+      "y": 242,
+      "w": 231,
+      "h": 195,
       "pivot": [
-        35.5,
-        66.5
+        115.5,
+        97.5
       ],
-      "area": 6551
+      "area": 34554
     },
     {
       "index": 15,
       "file": "roosevelt_15.png",
-      "label": "campaign hat, over a lower face (facing right)",
-      "x": 240,
-      "y": 313,
-      "w": 183,
-      "h": 127,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing right)",
+      "x": 497,
+      "y": 241,
+      "w": 112,
+      "h": 162,
       "pivot": [
-        91.5,
-        63.5
+        56.0,
+        81.0
       ],
-      "area": 13248
+      "area": 11156
     },
     {
       "index": 16,
       "file": "roosevelt_16.png",
-      "label": "eyebrow (facing right)",
-      "x": 383,
-      "y": 231,
-      "w": 58,
-      "h": 31,
+      "label": "arm bent at the elbow (facing right)",
+      "x": 599,
+      "y": 243,
+      "w": 150,
+      "h": 189,
       "pivot": [
-        29.0,
-        15.5
+        75.0,
+        94.5
       ],
-      "area": 872
+      "area": 16147
     },
     {
       "index": 17,
       "file": "roosevelt_17.png",
-      "label": "eyebrow (facing right)",
-      "x": 383,
-      "y": 271,
-      "w": 56,
-      "h": 30,
+      "label": "arm bent at the elbow (facing left)",
+      "x": 786,
+      "y": 243,
+      "w": 150,
+      "h": 189,
       "pivot": [
-        28.0,
-        15.0
+        75.0,
+        94.5
       ],
-      "area": 770
+      "area": 16170
     },
     {
       "index": 18,
       "file": "roosevelt_18.png",
-      "label": "nose (facing right)",
-      "x": 388,
-      "y": 312,
-      "w": 47,
-      "h": 61,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing left)",
+      "x": 926,
+      "y": 241,
+      "w": 112,
+      "h": 162,
       "pivot": [
-        23.5,
-        30.5
+        56.0,
+        81.0
       ],
-      "area": 1545
+      "area": 11111
     },
     {
       "index": 19,
       "file": "roosevelt_19.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 428,
-      "y": 381,
-      "w": 89,
-      "h": 55,
+      "label": "torso from behind",
+      "x": 1027,
+      "y": 242,
+      "w": 233,
+      "h": 194,
       "pivot": [
-        44.5,
-        27.5
+        116.5,
+        97.0
       ],
-      "area": 3535
+      "area": 34597
     },
     {
       "index": 20,
       "file": "roosevelt_20.png",
-      "label": "eyebrow (facing right)",
-      "x": 451,
+      "label": "torso, three-quarter (facing left)",
+      "x": 1255,
       "y": 232,
-      "w": 57,
-      "h": 30,
+      "w": 275,
+      "h": 210,
       "pivot": [
-        28.5,
-        15.0
+        137.5,
+        105.0
       ],
-      "area": 841
+      "area": 44369
     },
     {
       "index": 21,
       "file": "roosevelt_21.png",
-      "label": "eyebrow (facing right)",
-      "x": 452,
-      "y": 272,
-      "w": 57,
-      "h": 29,
+      "label": "hand resting, fingers down (facing right)",
+      "x": 7,
+      "y": 460,
+      "w": 146,
+      "h": 163,
       "pivot": [
-        28.5,
-        14.5
+        73.0,
+        81.5
       ],
-      "area": 785
+      "area": 11226
     },
     {
       "index": 22,
       "file": "roosevelt_22.png",
-      "label": "nose (facing right)",
-      "x": 456,
-      "y": 312,
-      "w": 48,
-      "h": 61,
+      "label": "hand resting flat (facing right)",
+      "x": 144,
+      "y": 470,
+      "w": 139,
+      "h": 162,
       "pivot": [
-        24.0,
-        30.5
+        69.5,
+        81.0
       ],
-      "area": 1567
+      "area": 10899
     },
     {
       "index": 23,
       "file": "roosevelt_23.png",
-      "label": "mouth (facing right)",
-      "x": 521,
-      "y": 338,
-      "w": 68,
-      "h": 30,
+      "label": "hand holding two cards (red backs) (facing right)",
+      "x": 256,
+      "y": 467,
+      "w": 148,
+      "h": 123,
       "pivot": [
-        34.0,
-        15.0
+        74.0,
+        61.5
       ],
-      "area": 1205
+      "area": 11069
     },
     {
       "index": 24,
       "file": "roosevelt_24.png",
-      "label": "eye with its lid (facing right)",
-      "x": 524,
-      "y": 229,
-      "w": 63,
-      "h": 52,
+      "label": "hand resting, palm in (facing right)",
+      "x": 412,
+      "y": 461,
+      "w": 139,
+      "h": 123,
       "pivot": [
-        31.5,
-        26.0
+        69.5,
+        61.5
       ],
-      "area": 2246
+      "area": 9457
     },
     {
       "index": 25,
       "file": "roosevelt_25.png",
-      "label": "eye with its lid (facing right)",
-      "x": 524,
-      "y": 283,
-      "w": 61,
-      "h": 44,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing right)",
+      "x": 516,
+      "y": 380,
+      "w": 143,
+      "h": 110,
       "pivot": [
-        30.5,
-        22.0
+        71.5,
+        55.0
       ],
-      "area": 1906
+      "area": 8361
     },
     {
       "index": 26,
       "file": "roosevelt_26.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 528,
-      "y": 381,
-      "w": 94,
-      "h": 55,
+      "label": "hand polishing his pince-nez with a handkerchief (facing right)",
+      "x": 552,
+      "y": 522,
+      "w": 184,
+      "h": 135,
       "pivot": [
-        47.0,
-        27.5
+        92.0,
+        67.5
       ],
-      "area": 3648
+      "area": 12091
     },
     {
       "index": 27,
       "file": "roosevelt_27.png",
-      "label": "mouth (facing right)",
-      "x": 596,
-      "y": 330,
-      "w": 65,
-      "h": 48,
+      "label": "hand holding his pince-nez (facing right)",
+      "x": 620,
+      "y": 462,
+      "w": 136,
+      "h": 127,
       "pivot": [
-        32.5,
-        24.0
+        68.0,
+        63.5
       ],
-      "area": 2051
+      "area": 7973
     },
     {
       "index": 28,
       "file": "roosevelt_28.png",
-      "label": "eye with its lid (facing right)",
-      "x": 598,
-      "y": 229,
-      "w": 63,
-      "h": 52,
+      "label": "hand holding his pince-nez by the cord (facing left)",
+      "x": 783,
+      "y": 462,
+      "w": 131,
+      "h": 166,
       "pivot": [
-        31.5,
-        26.0
+        65.5,
+        83.0
       ],
-      "area": 2293
+      "area": 8616
     },
     {
       "index": 29,
       "file": "roosevelt_29.png",
-      "label": "eye with its lid (facing right)",
-      "x": 599,
-      "y": 283,
-      "w": 63,
-      "h": 44,
+      "label": "hand holding the pince-nez cord (facing left)",
+      "x": 805,
+      "y": 522,
+      "w": 177,
+      "h": 124,
       "pivot": [
-        31.5,
-        22.0
+        88.5,
+        62.0
       ],
-      "area": 1973
+      "area": 9475
     },
     {
       "index": 30,
       "file": "roosevelt_30.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 634,
-      "y": 381,
-      "w": 96,
-      "h": 55,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing left)",
+      "x": 876,
+      "y": 380,
+      "w": 143,
+      "h": 110,
       "pivot": [
-        48.0,
-        27.5
+        71.5,
+        55.0
       ],
-      "area": 3755
+      "area": 8355
     },
     {
       "index": 31,
       "file": "roosevelt_31.png",
-      "label": "mouth (facing right)",
-      "x": 664,
-      "y": 330,
-      "w": 71,
-      "h": 45,
+      "label": "hand resting, palm in (facing left)",
+      "x": 983,
+      "y": 461,
+      "w": 139,
+      "h": 122,
       "pivot": [
-        35.5,
-        22.5
+        69.5,
+        61.0
       ],
-      "area": 2213
+      "area": 9352
     },
     {
       "index": 32,
       "file": "roosevelt_32.png",
-      "label": "eye with its lid (facing right)",
-      "x": 671,
-      "y": 230,
-      "w": 66,
-      "h": 51,
+      "label": "hand holding two cards (red backs) (facing left)",
+      "x": 1131,
+      "y": 467,
+      "w": 148,
+      "h": 123,
       "pivot": [
-        33.0,
-        25.5
+        74.0,
+        61.5
       ],
-      "area": 2350
+      "area": 11039
     },
     {
       "index": 33,
       "file": "roosevelt_33.png",
-      "label": "eye with its lid (facing right)",
-      "x": 672,
-      "y": 283,
-      "w": 63,
-      "h": 44,
+      "label": "hand resting flat (facing left)",
+      "x": 1252,
+      "y": 470,
+      "w": 139,
+      "h": 162,
       "pivot": [
-        31.5,
-        22.0
+        69.5,
+        81.0
       ],
-      "area": 1958
+      "area": 10851
     },
     {
       "index": 34,
       "file": "roosevelt_34.png",
-      "label": "eye with its lid (facing left)",
-      "x": 800,
-      "y": 283,
-      "w": 65,
-      "h": 44,
+      "label": "hand resting, fingers down (facing left)",
+      "x": 1382,
+      "y": 460,
+      "w": 146,
+      "h": 163,
       "pivot": [
-        32.5,
-        22.0
+        73.0,
+        81.5
       ],
-      "area": 1982
+      "area": 11205
     },
     {
       "index": 35,
       "file": "roosevelt_35.png",
-      "label": "mouth (facing left)",
-      "x": 800,
-      "y": 330,
-      "w": 71,
-      "h": 45,
+      "label": "reference: seated at the table (facing right)",
+      "x": 7,
+      "y": 667,
+      "w": 753,
+      "h": 319,
       "pivot": [
-        35.5,
-        22.5
+        376.5,
+        159.5
       ],
-      "area": 2212
+      "area": 185898
     },
     {
       "index": 36,
       "file": "roosevelt_36.png",
-      "label": "eye with its lid (facing left)",
-      "x": 801,
-      "y": 229,
-      "w": 65,
-      "h": 52,
+      "label": "reference: seated at the table (facing left)",
+      "x": 775,
+      "y": 669,
+      "w": 753,
+      "h": 317,
       "pivot": [
-        32.5,
-        26.0
+        376.5,
+        158.5
       ],
-      "area": 2343
-    },
-    {
-      "index": 37,
-      "file": "roosevelt_37.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 806,
-      "y": 381,
-      "w": 96,
-      "h": 55,
-      "pivot": [
-        48.0,
-        27.5
-      ],
-      "area": 3779
-    },
-    {
-      "index": 38,
-      "file": "roosevelt_38.png",
-      "label": "eye with its lid (facing left)",
-      "x": 874,
-      "y": 283,
-      "w": 63,
-      "h": 44,
-      "pivot": [
-        31.5,
-        22.0
-      ],
-      "area": 1993
-    },
-    {
-      "index": 39,
-      "file": "roosevelt_39.png",
-      "label": "mouth (facing left)",
-      "x": 874,
-      "y": 330,
-      "w": 65,
-      "h": 48,
-      "pivot": [
-        32.5,
-        24.0
-      ],
-      "area": 2054
-    },
-    {
-      "index": 40,
-      "file": "roosevelt_40.png",
-      "label": "eye with its lid (facing left)",
-      "x": 876,
-      "y": 229,
-      "w": 63,
-      "h": 52,
-      "pivot": [
-        31.5,
-        26.0
-      ],
-      "area": 2287
-    },
-    {
-      "index": 41,
-      "file": "roosevelt_41.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 914,
-      "y": 381,
-      "w": 94,
-      "h": 55,
-      "pivot": [
-        47.0,
-        27.5
-      ],
-      "area": 3672
-    },
-    {
-      "index": 42,
-      "file": "roosevelt_42.png",
-      "label": "mouth (facing left)",
-      "x": 947,
-      "y": 338,
-      "w": 68,
-      "h": 30,
-      "pivot": [
-        34.0,
-        15.0
-      ],
-      "area": 1197
-    },
-    {
-      "index": 43,
-      "file": "roosevelt_43.png",
-      "label": "eye with its lid (facing left)",
-      "x": 949,
-      "y": 230,
-      "w": 63,
-      "h": 51,
-      "pivot": [
-        31.5,
-        25.5
-      ],
-      "area": 2218
-    },
-    {
-      "index": 44,
-      "file": "roosevelt_44.png",
-      "label": "eye with its lid (facing left)",
-      "x": 950,
-      "y": 283,
-      "w": 62,
-      "h": 44,
-      "pivot": [
-        31.0,
-        22.0
-      ],
-      "area": 1920
-    },
-    {
-      "index": 45,
-      "file": "roosevelt_45.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 1016,
-      "y": 381,
-      "w": 91,
-      "h": 55,
-      "pivot": [
-        45.5,
-        27.5
-      ],
-      "area": 3550
-    },
-    {
-      "index": 46,
-      "file": "roosevelt_46.png",
-      "label": "eyebrow (facing left)",
-      "x": 1029,
-      "y": 232,
-      "w": 58,
-      "h": 30,
-      "pivot": [
-        29.0,
-        15.0
-      ],
-      "area": 836
-    },
-    {
-      "index": 47,
-      "file": "roosevelt_47.png",
-      "label": "eyebrow (facing left)",
-      "x": 1029,
-      "y": 271,
-      "w": 57,
-      "h": 29,
-      "pivot": [
-        28.5,
-        14.5
-      ],
-      "area": 810
-    },
-    {
-      "index": 48,
-      "file": "roosevelt_48.png",
-      "label": "nose (facing left)",
-      "x": 1032,
-      "y": 312,
-      "w": 48,
-      "h": 61,
-      "pivot": [
-        24.0,
-        30.5
-      ],
-      "area": 1569
-    },
-    {
-      "index": 49,
-      "file": "roosevelt_49.png",
-      "label": "eyebrow (facing left)",
-      "x": 1095,
-      "y": 231,
-      "w": 58,
-      "h": 30,
-      "pivot": [
-        29.0,
-        15.0
-      ],
-      "area": 875
-    },
-    {
-      "index": 50,
-      "file": "roosevelt_50.png",
-      "label": "eyebrow (facing left)",
-      "x": 1097,
-      "y": 271,
-      "w": 56,
-      "h": 29,
-      "pivot": [
-        28.0,
-        14.5
-      ],
-      "area": 787
-    },
-    {
-      "index": 51,
-      "file": "roosevelt_51.png",
-      "label": "nose (facing left)",
-      "x": 1101,
-      "y": 312,
-      "w": 47,
-      "h": 61,
-      "pivot": [
-        23.5,
-        30.5
-      ],
-      "area": 1545
-    },
-    {
-      "index": 52,
-      "file": "roosevelt_52.png",
-      "label": "campaign hat, over a lower face (facing left)",
-      "x": 1113,
-      "y": 313,
-      "w": 181,
-      "h": 127,
-      "pivot": [
-        90.5,
-        63.5
-      ],
-      "area": 13222
-    },
-    {
-      "index": 53,
-      "file": "roosevelt_53.png",
-      "label": "hair (facing left)",
-      "x": 1189,
-      "y": 223,
-      "w": 202,
-      "h": 86,
-      "pivot": [
-        101.0,
-        43.0
-      ],
-      "area": 8472
-    },
-    {
-      "index": 54,
-      "file": "roosevelt_54.png",
-      "label": "pince-nez on its cord (lenses filled white by the cut) (facing left)",
-      "x": 1285,
-      "y": 315,
-      "w": 72,
-      "h": 133,
-      "pivot": [
-        36.0,
-        66.5
-      ],
-      "area": 6646
-    },
-    {
-      "index": 55,
-      "file": "roosevelt_55.png",
-      "label": "ear (facing left)",
-      "x": 1363,
-      "y": 311,
-      "w": 44,
-      "h": 62,
-      "pivot": [
-        22.0,
-        31.0
-      ],
-      "area": 1785
-    },
-    {
-      "index": 56,
-      "file": "roosevelt_56.png",
-      "label": "ear (facing left)",
-      "x": 1377,
-      "y": 381,
-      "w": 38,
-      "h": 59,
-      "pivot": [
-        19.0,
-        29.5
-      ],
-      "area": 1381
-    },
-    {
-      "index": 57,
-      "file": "roosevelt_57.png",
-      "label": "blank head: no face drawn, with neck and collar (facing left)",
-      "x": 1407,
-      "y": 222,
-      "w": 117,
-      "h": 192,
-      "pivot": [
-        58.5,
-        96.0
-      ],
-      "area": 15855
-    },
-    {
-      "index": 58,
-      "file": "roosevelt_58.png",
-      "label": "torso, three-quarter (the gentle angle) (facing right)",
-      "x": 10,
-      "y": 438,
-      "w": 206,
-      "h": 171,
-      "pivot": [
-        103.0,
-        85.5
-      ],
-      "area": 27722
-    },
-    {
-      "index": 59,
-      "file": "roosevelt_59.png",
-      "label": "torso, another angle (facing right)",
-      "x": 214,
-      "y": 441,
-      "w": 194,
-      "h": 167,
-      "pivot": [
-        97.0,
-        83.5
-      ],
-      "area": 25595
-    },
-    {
-      "index": 60,
-      "file": "roosevelt_60.png",
-      "label": "torso from behind",
-      "x": 402,
-      "y": 444,
-      "w": 196,
-      "h": 164,
-      "pivot": [
-        98.0,
-        82.0
-      ],
-      "area": 25946
-    },
-    {
-      "index": 61,
-      "file": "roosevelt_61.png",
-      "label": "torso, another angle (facing right)",
-      "x": 593,
-      "y": 442,
-      "w": 175,
-      "h": 166,
-      "pivot": [
-        87.5,
-        83.0
-      ],
-      "area": 23300
-    },
-    {
-      "index": 62,
-      "file": "roosevelt_62.png",
-      "label": "torso, another angle (facing left)",
-      "x": 765,
-      "y": 442,
-      "w": 179,
-      "h": 166,
-      "pivot": [
-        89.5,
-        83.0
-      ],
-      "area": 23729
-    },
-    {
-      "index": 63,
-      "file": "roosevelt_63.png",
-      "label": "torso from behind",
-      "x": 938,
-      "y": 444,
-      "w": 195,
-      "h": 164,
-      "pivot": [
-        97.5,
-        82.0
-      ],
-      "area": 25823
-    },
-    {
-      "index": 64,
-      "file": "roosevelt_64.png",
-      "label": "torso, another angle (facing left)",
-      "x": 1128,
-      "y": 441,
-      "w": 193,
-      "h": 167,
-      "pivot": [
-        96.5,
-        83.5
-      ],
-      "area": 25527
-    },
-    {
-      "index": 65,
-      "file": "roosevelt_65.png",
-      "label": "torso, three-quarter (the gentle angle) (facing left)",
-      "x": 1319,
-      "y": 438,
-      "w": 206,
-      "h": 170,
-      "pivot": [
-        103.0,
-        85.0
-      ],
-      "area": 27779
-    },
-    {
-      "index": 66,
-      "file": "roosevelt_66.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 27,
-      "y": 614,
-      "w": 181,
-      "h": 155,
-      "pivot": [
-        90.5,
-        77.5
-      ],
-      "area": 18540
-    },
-    {
-      "index": 67,
-      "file": "roosevelt_67.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 214,
-      "y": 614,
-      "w": 173,
-      "h": 155,
-      "pivot": [
-        86.5,
-        77.5
-      ],
-      "area": 17317
-    },
-    {
-      "index": 68,
-      "file": "roosevelt_68.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing right)",
-      "x": 387,
-      "y": 616,
-      "w": 127,
-      "h": 153,
-      "pivot": [
-        63.5,
-        76.5
-      ],
-      "area": 9990
-    },
-    {
-      "index": 69,
-      "file": "roosevelt_69.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 488,
-      "y": 618,
-      "w": 151,
-      "h": 146,
-      "pivot": [
-        75.5,
-        73.0
-      ],
-      "area": 13778
-    },
-    {
-      "index": 70,
-      "file": "roosevelt_70.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing right)",
-      "x": 640,
-      "y": 615,
-      "w": 105,
-      "h": 151,
-      "pivot": [
-        52.5,
-        75.5
-      ],
-      "area": 10083
-    },
-    {
-      "index": 71,
-      "file": "roosevelt_71.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing left)",
-      "x": 789,
-      "y": 615,
-      "w": 105,
-      "h": 151,
-      "pivot": [
-        52.5,
-        75.5
-      ],
-      "area": 10028
-    },
-    {
-      "index": 72,
-      "file": "roosevelt_72.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 895,
-      "y": 618,
-      "w": 151,
-      "h": 146,
-      "pivot": [
-        75.5,
-        73.0
-      ],
-      "area": 13816
-    },
-    {
-      "index": 73,
-      "file": "roosevelt_73.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing left)",
-      "x": 1020,
-      "y": 616,
-      "w": 127,
-      "h": 153,
-      "pivot": [
-        63.5,
-        76.5
-      ],
-      "area": 10065
-    },
-    {
-      "index": 74,
-      "file": "roosevelt_74.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 1147,
-      "y": 613,
-      "w": 174,
-      "h": 156,
-      "pivot": [
-        87.0,
-        78.0
-      ],
-      "area": 17327
-    },
-    {
-      "index": 75,
-      "file": "roosevelt_75.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 1327,
-      "y": 613,
-      "w": 182,
-      "h": 156,
-      "pivot": [
-        91.0,
-        78.0
-      ],
-      "area": 18572
-    },
-    {
-      "index": 76,
-      "file": "roosevelt_76.png",
-      "label": "hand holding a thin stick by its end, tip down (FDR's holder carried over, not his prop) (facing right)",
-      "x": 11,
-      "y": 772,
-      "w": 259,
-      "h": 154,
-      "pivot": [
-        129.5,
-        77.0
-      ],
-      "area": 11995
-    },
-    {
-      "index": 77,
-      "file": "roosevelt_77.png",
-      "label": "hand resting flat on the table (facing right)",
-      "x": 125,
-      "y": 745,
-      "w": 147,
-      "h": 120,
-      "pivot": [
-        73.5,
-        60.0
-      ],
-      "area": 9000
-    },
-    {
-      "index": 78,
-      "file": "roosevelt_78.png",
-      "label": "hand holding a thin stick up (FDR's holder carried over) (facing right)",
-      "x": 305,
-      "y": 750,
-      "w": 178,
-      "h": 107,
-      "pivot": [
-        89.0,
-        53.5
-      ],
-      "area": 9006
-    },
-    {
-      "index": 79,
-      "file": "roosevelt_79.png",
-      "label": "hand holding a card, back up (red back) (facing right)",
-      "x": 492,
-      "y": 765,
-      "w": 143,
-      "h": 151,
-      "pivot": [
-        71.5,
-        75.5
-      ],
-      "area": 11107
-    },
-    {
-      "index": 80,
-      "file": "roosevelt_80.png",
-      "label": "hand holding a whisky glass (facing right)",
-      "x": 606,
-      "y": 766,
-      "w": 131,
-      "h": 97,
-      "pivot": [
-        65.5,
-        48.5
-      ],
-      "area": 8995
-    },
-    {
-      "index": 81,
-      "file": "roosevelt_81.png",
-      "label": "hand holding a whisky glass (facing left)",
-      "x": 797,
-      "y": 766,
-      "w": 131,
-      "h": 97,
-      "pivot": [
-        65.5,
-        48.5
-      ],
-      "area": 8997
-    },
-    {
-      "index": 82,
-      "file": "roosevelt_82.png",
-      "label": "hand holding a card, back up (red back) (facing left)",
-      "x": 900,
-      "y": 765,
-      "w": 143,
-      "h": 151,
-      "pivot": [
-        71.5,
-        75.5
-      ],
-      "area": 11115
-    },
-    {
-      "index": 83,
-      "file": "roosevelt_83.png",
-      "label": "hand holding a thin stick up (FDR's holder carried over) (facing left)",
-      "x": 1051,
-      "y": 750,
-      "w": 178,
-      "h": 107,
-      "pivot": [
-        89.0,
-        53.5
-      ],
-      "area": 8974
-    },
-    {
-      "index": 84,
-      "file": "roosevelt_84.png",
-      "label": "hand resting flat on the table (facing left)",
-      "x": 1265,
-      "y": 745,
-      "w": 147,
-      "h": 120,
-      "pivot": [
-        73.5,
-        60.0
-      ],
-      "area": 8984
-    },
-    {
-      "index": 85,
-      "file": "roosevelt_85.png",
-      "label": "hand holding a thin stick by its end, tip down (FDR's holder carried over, not his prop) (facing left)",
-      "x": 1266,
-      "y": 772,
-      "w": 258,
-      "h": 155,
-      "pivot": [
-        129.0,
-        77.5
-      ],
-      "area": 11832
-    },
-    {
-      "index": 86,
-      "file": "roosevelt_86.png",
-      "label": "a walking cane",
-      "x": 12,
-      "y": 884,
-      "w": 272,
-      "h": 104,
-      "pivot": [
-        136.0,
-        52.0
-      ],
-      "area": 5024
-    },
-    {
-      "index": 87,
-      "file": "roosevelt_87.png",
-      "label": "hand resting, fingers curled (facing right)",
-      "x": 252,
-      "y": 824,
-      "w": 158,
-      "h": 152,
-      "pivot": [
-        79.0,
-        76.0
-      ],
-      "area": 11428
-    },
-    {
-      "index": 88,
-      "file": "roosevelt_88.png",
-      "label": "hand holding a few cards fanned, face down (facing right)",
-      "x": 421,
-      "y": 832,
-      "w": 149,
-      "h": 141,
-      "pivot": [
-        74.5,
-        70.5
-      ],
-      "area": 11227
-    },
-    {
-      "index": 89,
-      "file": "roosevelt_89.png",
-      "label": "fist gripping a short stick, raised (facing right)",
-      "x": 613,
-      "y": 858,
-      "w": 108,
-      "h": 119,
-      "pivot": [
-        54.0,
-        59.5
-      ],
-      "area": 8232
-    },
-    {
-      "index": 90,
-      "file": "roosevelt_90.png",
-      "label": "fist gripping a short stick, raised (facing left)",
-      "x": 814,
-      "y": 858,
-      "w": 107,
-      "h": 119,
-      "pivot": [
-        53.5,
-        59.5
-      ],
-      "area": 8214
-    },
-    {
-      "index": 91,
-      "file": "roosevelt_91.png",
-      "label": "hand holding a few cards fanned, face down (facing left)",
-      "x": 964,
-      "y": 832,
-      "w": 149,
-      "h": 141,
-      "pivot": [
-        74.5,
-        70.5
-      ],
-      "area": 11185
-    },
-    {
-      "index": 92,
-      "file": "roosevelt_92.png",
-      "label": "hand resting, fingers curled (facing left)",
-      "x": 1127,
-      "y": 824,
-      "w": 157,
-      "h": 152,
-      "pivot": [
-        78.5,
-        76.0
-      ],
-      "area": 11380
-    },
-    {
-      "index": 93,
-      "file": "roosevelt_93.png",
-      "label": "a walking cane",
-      "x": 1251,
-      "y": 884,
-      "w": 272,
-      "h": 104,
-      "pivot": [
-        136.0,
-        52.0
-      ],
-      "area": 4898
+      "area": 185438
     }
   ]
 }

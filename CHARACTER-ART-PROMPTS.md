@@ -6,7 +6,7 @@ Every character in the game, grouped by table. The descriptions come from `data/
 
 ## Status
 
-The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: `art-tools/lincoln_parts/`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (`art-tools/death_parts/`) is done, front-on as the dealer. **The White House table is done**: Lincoln, FDR, Roosevelt and Washington, each built by `art-tools/seat_puppet.py` from a `seat.json`. All four have three-quarter expression heads, drawn to one layout, and Lincoln can tip his hat (FDR's sheet lost his naval cape and Roosevelt's gave him a cigar; see their entries). Lincoln's second sheet added a row of seated reference poses and drew the forearms as plain tubes: his arms now rest along the table's edge with his hands together in front, as people sit at a table, and the prompt below asks for that layout. The other three need the same sheet for it (their first sheets' arms do not fit the pose). Attach Lincoln's sheet (`art-tools/lincoln_parts/sources/lincoln_sheet.png`) as the layout to copy, so the next sheets draw their finished heads three-quarter, facing both ways, as his does. Dracula's parts are in an older style.
+The pipeline is proven (cut, label, lay out a puppet), and **Lincoln is the model**: `art-tools/lincoln_parts/`, three-quarter, facing the table's centre, in the flat cartoon style with bold outlines the owner picked. Every other character is to be drawn to match him. Death (`art-tools/death_parts/`) is done, front-on as the dealer. **The White House table is done**: Lincoln, FDR, Roosevelt and Washington, each built by `art-tools/seat_puppet.py` from a `seat.json`. All four are built from rigging sheets in one layout (the prompt under each, below): three-quarter heads facing both ways, a row of seated reference poses, forearms drawn as plain tubes, hands with cuffs. Their arms rest along the table's edge with the hands together in front, and Lincoln can tip his hat. Use the same prompt, and Lincoln's sheet as the layout model, for every character from here on. Attach Lincoln's sheet (`art-tools/lincoln_parts/sources/lincoln_sheet.png`) as the layout to copy, so the next sheets draw their finished heads three-quarter, facing both ways, as his does. Dracula's parts are in an older style.
 
 ## The table, the seats and the layers
 
@@ -68,7 +68,7 @@ IMPORTANT, must NOT resemble: Historical figure, died 1945; US government photog
 
 **Three-quarter expression sheet** (attach his parts sheet and `art-tools/lincoln_parts/sources/lincoln_sheet.png`):
 
-Built from the first version of this sheet (ask for this version, with the reference row and tube forearms, so his arms can rest along the rim as Lincoln's do). It came back in a pinstripe suit with NO naval cape, his silhouette. To get the cape back, attach that sheet (`art-tools/fdr_parts/sources/fdr_sheet.png`) and ask for one thing: "Redraw the first torso on this sheet (the leftmost, three-quarter, in the waistcoat) and its mirror image, exactly as drawn, now with his naval cape over the shoulders: a dark navy boat cloak, fastened at the throat with a short chain, hanging open over the suit. No head. Pure white background, nothing touching."
+Done: built from this prompt, in the rim pose.
 
 ```
 Character sheet for 2D animation rigging: Franklin D. Roosevelt. Attach two images: his own parts sheet (match it exactly: face, hair, clothes, colours, line weight and the flat cartoon style) and Lincoln's sheet (copy only its layout and its head angle).
@@ -287,7 +287,7 @@ IMPORTANT, must NOT resemble: Historical figure, died 1919; period photographs a
 
 **Three-quarter expression sheet** (attach his parts sheet and `art-tools/lincoln_parts/sources/lincoln_sheet.png`):
 
-Built from the first version of this sheet (ask for this version, with the reference row and tube forearms, so his arms can rest along the rim as Lincoln's do), in a brown suit. It put a cigar in half the heads (he did not smoke, and a thing jutting from the mouth is FDR's silhouette at this table) and missed three faces. To add them, attach that sheet (`art-tools/roosevelt_parts/sources/roosevelt_sheet.png`) and ask for: "Three more finished heads facing the viewer's right, exactly as drawn on this sheet: a frown; eyes narrowed, suspicious; and the neutral head without his pince-nez. No cigar. Pure white background, nothing touching."
+Done: built from this prompt, in the rim pose.
 
 ```
 Character sheet for 2D animation rigging: Theodore Roosevelt. Attach two images: his own parts sheet (match it exactly: face, hair, clothes, colours, line weight and the flat cartoon style) and Lincoln's sheet (copy only its layout and its head angle).
@@ -409,7 +409,7 @@ IMPORTANT, must NOT resemble: Historical figure, died 1799. Build from the Gilbe
 
 **Three-quarter expression sheet** (attach his parts sheet and `art-tools/lincoln_parts/sources/lincoln_sheet.png`):
 
-Built from the first version of this sheet. The reference row and the tube forearms were added for Lincoln's second sheet, and they are what let his arms rest along the rim (see `art-tools/lincoln_parts/README.md`); ask for this version to give him the same.
+Done: built from this prompt, in the rim pose.
 
 ```
 Character sheet for 2D animation rigging: George Washington. Attach two images: his own parts sheet (match it exactly: face, hair, clothes, colours, line weight and the flat cartoon style) and Lincoln's sheet (copy only its layout and its head angle).

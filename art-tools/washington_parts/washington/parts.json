@@ -10,1303 +10,477 @@
       "index": 1,
       "file": "washington_01.png",
       "label": "head: neutral, mouth set firm (facing right)",
-      "x": 15,
-      "y": 11,
-      "w": 163,
-      "h": 205,
+      "x": 8,
+      "y": 20,
+      "w": 150,
+      "h": 198,
       "pivot": [
-        81.5,
-        102.5
+        75.0,
+        99.0
       ],
-      "area": 24475
+      "area": 22155
     },
     {
       "index": 2,
       "file": "washington_02.png",
-      "label": "head: a slight smile (facing right)",
-      "x": 181,
-      "y": 12,
-      "w": 159,
-      "h": 204,
+      "label": "head: talking (facing right)",
+      "x": 155,
+      "y": 20,
+      "w": 147,
+      "h": 198,
       "pivot": [
-        79.5,
-        102.0
+        73.5,
+        99.0
       ],
-      "area": 23532
+      "area": 21999
     },
     {
       "index": 3,
       "file": "washington_03.png",
-      "label": "head: smiling, talking (facing right)",
-      "x": 342,
-      "y": 13,
-      "w": 157,
-      "h": 203,
+      "label": "head: a slight, rare smile (facing right)",
+      "x": 299,
+      "y": 20,
+      "w": 145,
+      "h": 198,
       "pivot": [
-        78.5,
-        101.5
+        72.5,
+        99.0
       ],
-      "area": 23231
+      "area": 21734
     },
     {
       "index": 4,
       "file": "washington_04.png",
-      "label": "head: talking, brows down (facing right)",
-      "x": 502,
-      "y": 13,
-      "w": 163,
-      "h": 204,
+      "label": "head: a frown (facing right)",
+      "x": 441,
+      "y": 20,
+      "w": 144,
+      "h": 198,
       "pivot": [
-        81.5,
-        102.0
+        72.0,
+        99.0
       ],
-      "area": 23878
+      "area": 21684
     },
     {
       "index": 5,
       "file": "washington_05.png",
-      "label": "head, front-on (not used)",
-      "x": 680,
-      "y": 12,
-      "w": 175,
-      "h": 204,
+      "label": "head: jaw clenched, teeth showing (facing right)",
+      "x": 585,
+      "y": 20,
+      "w": 151,
+      "h": 198,
       "pivot": [
-        87.5,
-        102.0
+        75.5,
+        99.0
       ],
-      "area": 24762
+      "area": 22170
     },
     {
       "index": 6,
       "file": "washington_06.png",
-      "label": "head: neutral (facing left)",
-      "x": 871,
-      "y": 12,
-      "w": 162,
-      "h": 205,
+      "label": "head: jaw clenched, teeth showing (facing left)",
+      "x": 797,
+      "y": 20,
+      "w": 152,
+      "h": 198,
       "pivot": [
-        81.0,
-        102.5
+        76.0,
+        99.0
       ],
-      "area": 24338
+      "area": 22205
     },
     {
       "index": 7,
       "file": "washington_07.png",
-      "label": "head: neutral, glancing (facing left)",
-      "x": 1037,
-      "y": 12,
-      "w": 157,
-      "h": 205,
+      "label": "head: a frown (facing left)",
+      "x": 948,
+      "y": 20,
+      "w": 145,
+      "h": 198,
       "pivot": [
-        78.5,
-        102.5
+        72.5,
+        99.0
       ],
-      "area": 23703
+      "area": 21664
     },
     {
       "index": 8,
       "file": "washington_08.png",
-      "label": "head: neutral (facing left)",
-      "x": 1197,
-      "y": 12,
-      "w": 158,
-      "h": 204,
+      "label": "head: a slight, rare smile (facing left)",
+      "x": 1088,
+      "y": 20,
+      "w": 146,
+      "h": 198,
       "pivot": [
-        79.0,
-        102.0
+        73.0,
+        99.0
       ],
-      "area": 23797
+      "area": 21591
     },
     {
       "index": 9,
       "file": "washington_09.png",
-      "label": "head: neutral (facing left)",
-      "x": 1358,
-      "y": 12,
-      "w": 163,
-      "h": 204,
+      "label": "head: talking (facing left)",
+      "x": 1229,
+      "y": 20,
+      "w": 150,
+      "h": 198,
       "pivot": [
-        81.5,
-        102.0
+        75.0,
+        99.0
       ],
-      "area": 24358
+      "area": 21932
     },
     {
       "index": 10,
       "file": "washington_10.png",
-      "label": "blank head: no face drawn, with neck and collar (facing right)",
-      "x": 11,
-      "y": 220,
-      "w": 120,
-      "h": 203,
+      "label": "head: neutral, mouth set firm (facing left)",
+      "x": 1375,
+      "y": 20,
+      "w": 150,
+      "h": 198,
       "pivot": [
-        60.0,
-        101.5
+        75.0,
+        99.0
       ],
-      "area": 17908
+      "area": 22130
     },
     {
       "index": 11,
       "file": "washington_11.png",
-      "label": "ear (facing right)",
-      "x": 124,
-      "y": 382,
-      "w": 36,
-      "h": 57,
+      "label": "torso, three-quarter (facing right)",
+      "x": 21,
+      "y": 227,
+      "w": 260,
+      "h": 228,
       "pivot": [
-        18.0,
-        28.5
+        130.0,
+        114.0
       ],
-      "area": 1297
+      "area": 45646
     },
     {
       "index": 12,
       "file": "washington_12.png",
-      "label": "ear (facing right)",
-      "x": 133,
-      "y": 319,
-      "w": 42,
-      "h": 60,
+      "label": "torso from behind, hair tied with a ribbon",
+      "x": 280,
+      "y": 230,
+      "w": 215,
+      "h": 230,
       "pivot": [
-        21.0,
-        30.0
+        107.5,
+        115.0
       ],
-      "area": 1617
+      "area": 35128
     },
     {
       "index": 13,
       "file": "washington_13.png",
-      "label": "hair (facing right)",
-      "x": 138,
-      "y": 222,
-      "w": 121,
-      "h": 103,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing right)",
+      "x": 495,
+      "y": 238,
+      "w": 109,
+      "h": 167,
       "pivot": [
-        60.5,
-        51.5
+        54.5,
+        83.5
       ],
-      "area": 5782
+      "area": 11158
     },
     {
       "index": 14,
       "file": "washington_14.png",
-      "label": "tricorn hat with its cockade, over a lower face (facing right)",
-      "x": 170,
-      "y": 311,
-      "w": 236,
-      "h": 128,
+      "label": "arm bent at the elbow (facing right)",
+      "x": 601,
+      "y": 244,
+      "w": 143,
+      "h": 192,
       "pivot": [
-        118.0,
-        64.0
+        71.5,
+        96.0
       ],
-      "area": 17621
+      "area": 16230
     },
     {
       "index": 15,
       "file": "washington_15.png",
-      "label": "hair (facing right)",
-      "x": 262,
-      "y": 222,
-      "w": 114,
-      "h": 100,
+      "label": "arm bent at the elbow (facing left)",
+      "x": 790,
+      "y": 244,
+      "w": 142,
+      "h": 192,
       "pivot": [
-        57.0,
-        50.0
+        71.0,
+        96.0
       ],
-      "area": 5399
+      "area": 16153
     },
     {
       "index": 16,
       "file": "washington_16.png",
-      "label": "eyebrow (facing right)",
-      "x": 382,
-      "y": 230,
-      "w": 60,
-      "h": 32,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing left)",
+      "x": 930,
+      "y": 238,
+      "w": 108,
+      "h": 167,
       "pivot": [
-        30.0,
-        16.0
+        54.0,
+        83.5
       ],
-      "area": 869
+      "area": 11133
     },
     {
       "index": 17,
       "file": "washington_17.png",
-      "label": "eyebrow (facing right)",
-      "x": 382,
-      "y": 269,
-      "w": 59,
-      "h": 33,
+      "label": "torso from behind, hair tied with a ribbon",
+      "x": 1038,
+      "y": 229,
+      "w": 215,
+      "h": 231,
       "pivot": [
-        29.5,
-        16.5
+        107.5,
+        115.5
       ],
-      "area": 904
+      "area": 35177
     },
     {
       "index": 18,
       "file": "washington_18.png",
-      "label": "nose (facing right)",
-      "x": 388,
-      "y": 311,
-      "w": 46,
-      "h": 60,
+      "label": "torso, three-quarter (facing left)",
+      "x": 1253,
+      "y": 227,
+      "w": 259,
+      "h": 228,
       "pivot": [
-        23.0,
-        30.0
+        129.5,
+        114.0
       ],
-      "area": 1486
+      "area": 45582
     },
     {
       "index": 19,
       "file": "washington_19.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 408,
-      "y": 379,
-      "w": 104,
-      "h": 58,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing right)",
+      "x": 508,
+      "y": 389,
+      "w": 145,
+      "h": 119,
       "pivot": [
-        52.0,
-        29.0
+        72.5,
+        59.5
       ],
-      "area": 4138
+      "area": 8721
     },
     {
       "index": 20,
       "file": "washington_20.png",
-      "label": "eyebrow (facing right)",
-      "x": 452,
-      "y": 230,
-      "w": 59,
-      "h": 31,
+      "label": "forearm, straight: a tube of sleeve, open at the elbow, cuff at the wrist (facing left)",
+      "x": 881,
+      "y": 389,
+      "w": 144,
+      "h": 119,
       "pivot": [
-        29.5,
-        15.5
+        72.0,
+        59.5
       ],
-      "area": 850
+      "area": 8657
     },
     {
       "index": 21,
       "file": "washington_21.png",
-      "label": "eyebrow (facing right)",
-      "x": 453,
-      "y": 269,
-      "w": 59,
-      "h": 33,
+      "label": "hand resting, fingers down (facing right)",
+      "x": 23,
+      "y": 490,
+      "w": 142,
+      "h": 148,
       "pivot": [
-        29.5,
-        16.5
+        71.0,
+        74.0
       ],
-      "area": 914
+      "area": 10448
     },
     {
       "index": 22,
       "file": "washington_22.png",
-      "label": "nose (facing right)",
-      "x": 459,
-      "y": 311,
-      "w": 47,
-      "h": 60,
+      "label": "hand resting flat (facing right)",
+      "x": 150,
+      "y": 490,
+      "w": 151,
+      "h": 160,
       "pivot": [
-        23.5,
-        30.0
+        75.5,
+        80.0
       ],
-      "area": 1541
+      "area": 11596
     },
     {
       "index": 23,
       "file": "washington_23.png",
-      "label": "mouth (facing right)",
-      "x": 523,
-      "y": 337,
-      "w": 67,
-      "h": 30,
+      "label": "hand holding two cards (red backs) (facing right)",
+      "x": 274,
+      "y": 487,
+      "w": 136,
+      "h": 117,
       "pivot": [
-        33.5,
-        15.0
+        68.0,
+        58.5
       ],
-      "area": 1179
+      "area": 10292
     },
     {
       "index": 24,
       "file": "washington_24.png",
-      "label": "eye with its lid (facing right)",
-      "x": 524,
-      "y": 228,
-      "w": 65,
-      "h": 53,
+      "label": "hand pointing (facing right)",
+      "x": 414,
+      "y": 486,
+      "w": 153,
+      "h": 100,
       "pivot": [
-        32.5,
-        26.5
+        76.5,
+        50.0
       ],
-      "area": 2351
+      "area": 8564
     },
     {
       "index": 25,
       "file": "washington_25.png",
-      "label": "eye with its lid (facing right)",
-      "x": 525,
-      "y": 283,
-      "w": 63,
-      "h": 44,
+      "label": "fist (facing right)",
+      "x": 552,
+      "y": 540,
+      "w": 132,
+      "h": 112,
       "pivot": [
-        31.5,
-        22.0
+        66.0,
+        56.0
       ],
-      "area": 1951
+      "area": 8796
     },
     {
       "index": 26,
       "file": "washington_26.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 527,
-      "y": 379,
-      "w": 102,
-      "h": 58,
+      "label": "fist (facing right)",
+      "x": 633,
+      "y": 487,
+      "w": 118,
+      "h": 112,
       "pivot": [
-        51.0,
-        29.0
+        59.0,
+        56.0
       ],
-      "area": 4103
+      "area": 7764
     },
     {
       "index": 27,
       "file": "washington_27.png",
-      "label": "mouth (facing right)",
-      "x": 597,
-      "y": 330,
-      "w": 65,
-      "h": 48,
+      "label": "fist (facing left)",
+      "x": 784,
+      "y": 486,
+      "w": 115,
+      "h": 113,
       "pivot": [
-        32.5,
-        24.0
+        57.5,
+        56.5
       ],
-      "area": 2073
+      "area": 7648
     },
     {
       "index": 28,
       "file": "washington_28.png",
-      "label": "eye with its lid (facing right)",
-      "x": 598,
-      "y": 228,
-      "w": 65,
-      "h": 53,
+      "label": "fist (facing left)",
+      "x": 850,
+      "y": 540,
+      "w": 128,
+      "h": 113,
       "pivot": [
-        32.5,
-        26.5
+        64.0,
+        56.5
       ],
-      "area": 2384
+      "area": 8512
     },
     {
       "index": 29,
       "file": "washington_29.png",
-      "label": "eye with its lid (facing right)",
-      "x": 599,
-      "y": 283,
-      "w": 63,
-      "h": 44,
+      "label": "hand pointing (facing left)",
+      "x": 966,
+      "y": 486,
+      "w": 152,
+      "h": 100,
       "pivot": [
-        31.5,
-        22.0
+        76.0,
+        50.0
       ],
-      "area": 1979
+      "area": 8517
     },
     {
       "index": 30,
       "file": "washington_30.png",
-      "label": "jaw patch: chin and mouth area (facing right)",
-      "x": 643,
-      "y": 379,
-      "w": 105,
-      "h": 58,
+      "label": "hand holding two cards (red backs) (facing left)",
+      "x": 1123,
+      "y": 487,
+      "w": 135,
+      "h": 117,
       "pivot": [
-        52.5,
-        29.0
+        67.5,
+        58.5
       ],
-      "area": 4290
+      "area": 10227
     },
     {
       "index": 31,
       "file": "washington_31.png",
-      "label": "mouth (facing right)",
-      "x": 666,
-      "y": 330,
-      "w": 71,
-      "h": 43,
+      "label": "hand resting flat (facing left)",
+      "x": 1231,
+      "y": 490,
+      "w": 147,
+      "h": 159,
       "pivot": [
-        35.5,
-        21.5
+        73.5,
+        79.5
       ],
-      "area": 2113
+      "area": 11344
     },
     {
       "index": 32,
       "file": "washington_32.png",
-      "label": "eye with its lid (facing right)",
-      "x": 672,
-      "y": 228,
-      "w": 66,
-      "h": 53,
+      "label": "hand resting, fingers down (facing left)",
+      "x": 1324,
+      "y": 490,
+      "w": 189,
+      "h": 168,
       "pivot": [
-        33.0,
-        26.5
+        94.5,
+        84.0
       ],
-      "area": 2454
+      "area": 13674
     },
     {
       "index": 33,
       "file": "washington_33.png",
-      "label": "eye with its lid (facing right)",
-      "x": 673,
-      "y": 283,
-      "w": 63,
-      "h": 44,
+      "label": "reference: seated at the table (facing right)",
+      "x": 11,
+      "y": 665,
+      "w": 749,
+      "h": 338,
       "pivot": [
-        31.5,
-        22.0
+        374.5,
+        169.0
       ],
-      "area": 1955
+      "area": 181618
     },
     {
       "index": 34,
       "file": "washington_34.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 787,
-      "y": 379,
-      "w": 104,
-      "h": 58,
+      "label": "reference: seated at the table (facing left)",
+      "x": 775,
+      "y": 665,
+      "w": 750,
+      "h": 338,
       "pivot": [
-        52.0,
-        29.0
+        375.0,
+        169.0
       ],
-      "area": 4265
-    },
-    {
-      "index": 35,
-      "file": "washington_35.png",
-      "label": "eye with its lid (facing left)",
-      "x": 798,
-      "y": 228,
-      "w": 66,
-      "h": 53,
-      "pivot": [
-        33.0,
-        26.5
-      ],
-      "area": 2457
-    },
-    {
-      "index": 36,
-      "file": "washington_36.png",
-      "label": "mouth (facing left)",
-      "x": 799,
-      "y": 329,
-      "w": 69,
-      "h": 44,
-      "pivot": [
-        34.5,
-        22.0
-      ],
-      "area": 2079
-    },
-    {
-      "index": 37,
-      "file": "washington_37.png",
-      "label": "eye with its lid (facing left)",
-      "x": 800,
-      "y": 283,
-      "w": 63,
-      "h": 43,
-      "pivot": [
-        31.5,
-        21.5
-      ],
-      "area": 1965
-    },
-    {
-      "index": 38,
-      "file": "washington_38.png",
-      "label": "eye with its lid (facing left)",
-      "x": 873,
-      "y": 228,
-      "w": 65,
-      "h": 52,
-      "pivot": [
-        32.5,
-        26.0
-      ],
-      "area": 2398
-    },
-    {
-      "index": 39,
-      "file": "washington_39.png",
-      "label": "eye with its lid (facing left)",
-      "x": 873,
-      "y": 283,
-      "w": 64,
-      "h": 43,
-      "pivot": [
-        32.0,
-        21.5
-      ],
-      "area": 2000
-    },
-    {
-      "index": 40,
-      "file": "washington_40.png",
-      "label": "mouth (facing left)",
-      "x": 873,
-      "y": 330,
-      "w": 65,
-      "h": 47,
-      "pivot": [
-        32.5,
-        23.5
-      ],
-      "area": 2053
-    },
-    {
-      "index": 41,
-      "file": "washington_41.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 906,
-      "y": 379,
-      "w": 102,
-      "h": 59,
-      "pivot": [
-        51.0,
-        29.5
-      ],
-      "area": 4102
-    },
-    {
-      "index": 42,
-      "file": "washington_42.png",
-      "label": "eye with its lid (facing left)",
-      "x": 947,
-      "y": 228,
-      "w": 64,
-      "h": 53,
-      "pivot": [
-        32.0,
-        26.5
-      ],
-      "area": 2360
-    },
-    {
-      "index": 43,
-      "file": "washington_43.png",
-      "label": "mouth (facing left)",
-      "x": 947,
-      "y": 337,
-      "w": 65,
-      "h": 30,
-      "pivot": [
-        32.5,
-        15.0
-      ],
-      "area": 1150
-    },
-    {
-      "index": 44,
-      "file": "washington_44.png",
-      "label": "eye with its lid (facing left)",
-      "x": 948,
-      "y": 283,
-      "w": 62,
-      "h": 44,
-      "pivot": [
-        31.0,
-        22.0
-      ],
-      "area": 1945
-    },
-    {
-      "index": 45,
-      "file": "washington_45.png",
-      "label": "jaw patch: chin and mouth area (facing left)",
-      "x": 1023,
-      "y": 379,
-      "w": 103,
-      "h": 58,
-      "pivot": [
-        51.5,
-        29.0
-      ],
-      "area": 4118
-    },
-    {
-      "index": 46,
-      "file": "washington_46.png",
-      "label": "eyebrow (facing left)",
-      "x": 1024,
-      "y": 269,
-      "w": 59,
-      "h": 34,
-      "pivot": [
-        29.5,
-        17.0
-      ],
-      "area": 937
-    },
-    {
-      "index": 47,
-      "file": "washington_47.png",
-      "label": "eyebrow (facing left)",
-      "x": 1025,
-      "y": 230,
-      "w": 59,
-      "h": 31,
-      "pivot": [
-        29.5,
-        15.5
-      ],
-      "area": 857
-    },
-    {
-      "index": 48,
-      "file": "washington_48.png",
-      "label": "nose (facing left)",
-      "x": 1029,
-      "y": 311,
-      "w": 47,
-      "h": 60,
-      "pivot": [
-        23.5,
-        30.0
-      ],
-      "area": 1527
-    },
-    {
-      "index": 49,
-      "file": "washington_49.png",
-      "label": "eyebrow (facing left)",
-      "x": 1094,
-      "y": 230,
-      "w": 60,
-      "h": 31,
-      "pivot": [
-        30.0,
-        15.5
-      ],
-      "area": 861
-    },
-    {
-      "index": 50,
-      "file": "washington_50.png",
-      "label": "eyebrow (facing left)",
-      "x": 1094,
-      "y": 269,
-      "w": 59,
-      "h": 33,
-      "pivot": [
-        29.5,
-        16.5
-      ],
-      "area": 901
-    },
-    {
-      "index": 51,
-      "file": "washington_51.png",
-      "label": "nose (facing left)",
-      "x": 1102,
-      "y": 311,
-      "w": 46,
-      "h": 59,
-      "pivot": [
-        23.0,
-        29.5
-      ],
-      "area": 1483
-    },
-    {
-      "index": 52,
-      "file": "washington_52.png",
-      "label": "tricorn hat with its cockade, over a lower face (facing left)",
-      "x": 1127,
-      "y": 311,
-      "w": 238,
-      "h": 129,
-      "pivot": [
-        119.0,
-        64.5
-      ],
-      "area": 17914
-    },
-    {
-      "index": 53,
-      "file": "washington_53.png",
-      "label": "hair (facing left)",
-      "x": 1160,
-      "y": 222,
-      "w": 114,
-      "h": 100,
-      "pivot": [
-        57.0,
-        50.0
-      ],
-      "area": 5358
-    },
-    {
-      "index": 54,
-      "file": "washington_54.png",
-      "label": "hair (facing left)",
-      "x": 1277,
-      "y": 222,
-      "w": 121,
-      "h": 103,
-      "pivot": [
-        60.5,
-        51.5
-      ],
-      "area": 5770
-    },
-    {
-      "index": 55,
-      "file": "washington_55.png",
-      "label": "ear (facing left)",
-      "x": 1362,
-      "y": 319,
-      "w": 42,
-      "h": 60,
-      "pivot": [
-        21.0,
-        30.0
-      ],
-      "area": 1615
-    },
-    {
-      "index": 56,
-      "file": "washington_56.png",
-      "label": "ear (facing left)",
-      "x": 1376,
-      "y": 382,
-      "w": 36,
-      "h": 57,
-      "pivot": [
-        18.0,
-        28.5
-      ],
-      "area": 1287
-    },
-    {
-      "index": 57,
-      "file": "washington_57.png",
-      "label": "blank head: no face drawn, with neck and collar (facing left)",
-      "x": 1405,
-      "y": 221,
-      "w": 120,
-      "h": 202,
-      "pivot": [
-        60.0,
-        101.0
-      ],
-      "area": 17902
-    },
-    {
-      "index": 58,
-      "file": "washington_58.png",
-      "label": "torso, three-quarter (the gentle angle) (facing right)",
-      "x": 13,
-      "y": 435,
-      "w": 189,
-      "h": 176,
-      "pivot": [
-        94.5,
-        88.0
-      ],
-      "area": 26318
-    },
-    {
-      "index": 59,
-      "file": "washington_59.png",
-      "label": "torso, another angle (facing right)",
-      "x": 202,
-      "y": 441,
-      "w": 176,
-      "h": 170,
-      "pivot": [
-        88.0,
-        85.0
-      ],
-      "area": 24366
-    },
-    {
-      "index": 60,
-      "file": "washington_60.png",
-      "label": "torso from behind",
-      "x": 377,
-      "y": 439,
-      "w": 199,
-      "h": 172,
-      "pivot": [
-        99.5,
-        86.0
-      ],
-      "area": 27729
-    },
-    {
-      "index": 61,
-      "file": "washington_61.png",
-      "label": "torso, another angle (facing right)",
-      "x": 576,
-      "y": 439,
-      "w": 190,
-      "h": 172,
-      "pivot": [
-        95.0,
-        86.0
-      ],
-      "area": 26462
-    },
-    {
-      "index": 62,
-      "file": "washington_62.png",
-      "label": "torso, another angle (facing left)",
-      "x": 769,
-      "y": 439,
-      "w": 191,
-      "h": 172,
-      "pivot": [
-        95.5,
-        86.0
-      ],
-      "area": 26530
-    },
-    {
-      "index": 63,
-      "file": "washington_63.png",
-      "label": "torso from behind",
-      "x": 960,
-      "y": 439,
-      "w": 198,
-      "h": 172,
-      "pivot": [
-        99.0,
-        86.0
-      ],
-      "area": 27663
-    },
-    {
-      "index": 64,
-      "file": "washington_64.png",
-      "label": "torso, another angle (facing left)",
-      "x": 1158,
-      "y": 441,
-      "w": 175,
-      "h": 170,
-      "pivot": [
-        87.5,
-        85.0
-      ],
-      "area": 24320
-    },
-    {
-      "index": 65,
-      "file": "washington_65.png",
-      "label": "torso, three-quarter (the gentle angle) (facing left)",
-      "x": 1333,
-      "y": 435,
-      "w": 189,
-      "h": 176,
-      "pivot": [
-        94.5,
-        88.0
-      ],
-      "area": 26448
-    },
-    {
-      "index": 66,
-      "file": "washington_66.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 26,
-      "y": 614,
-      "w": 183,
-      "h": 164,
-      "pivot": [
-        91.5,
-        82.0
-      ],
-      "area": 18954
-    },
-    {
-      "index": 67,
-      "file": "washington_67.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 212,
-      "y": 615,
-      "w": 175,
-      "h": 163,
-      "pivot": [
-        87.5,
-        81.5
-      ],
-      "area": 17762
-    },
-    {
-      "index": 68,
-      "file": "washington_68.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing right)",
-      "x": 383,
-      "y": 615,
-      "w": 133,
-      "h": 157,
-      "pivot": [
-        66.5,
-        78.5
-      ],
-      "area": 10246
-    },
-    {
-      "index": 69,
-      "file": "washington_69.png",
-      "label": "arm bent at the elbow (facing right)",
-      "x": 486,
-      "y": 618,
-      "w": 150,
-      "h": 144,
-      "pivot": [
-        75.0,
-        72.0
-      ],
-      "area": 13300
-    },
-    {
-      "index": 70,
-      "file": "washington_70.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing right)",
-      "x": 636,
-      "y": 617,
-      "w": 112,
-      "h": 147,
-      "pivot": [
-        56.0,
-        73.5
-      ],
-      "area": 9839
-    },
-    {
-      "index": 71,
-      "file": "washington_71.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing left)",
-      "x": 788,
-      "y": 617,
-      "w": 112,
-      "h": 147,
-      "pivot": [
-        56.0,
-        73.5
-      ],
-      "area": 9860
-    },
-    {
-      "index": 72,
-      "file": "washington_72.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 900,
-      "y": 618,
-      "w": 150,
-      "h": 144,
-      "pivot": [
-        75.0,
-        72.0
-      ],
-      "area": 13288
-    },
-    {
-      "index": 73,
-      "file": "washington_73.png",
-      "label": "forearm, straight: open at the elbow, cuff at the wrist (facing left)",
-      "x": 1019,
-      "y": 615,
-      "w": 133,
-      "h": 157,
-      "pivot": [
-        66.5,
-        78.5
-      ],
-      "area": 10277
-    },
-    {
-      "index": 74,
-      "file": "washington_74.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 1148,
-      "y": 615,
-      "w": 176,
-      "h": 163,
-      "pivot": [
-        88.0,
-        81.5
-      ],
-      "area": 17752
-    },
-    {
-      "index": 75,
-      "file": "washington_75.png",
-      "label": "arm bent at the elbow (facing left)",
-      "x": 1326,
-      "y": 614,
-      "w": 183,
-      "h": 164,
-      "pivot": [
-        91.5,
-        82.0
-      ],
-      "area": 18916
-    },
-    {
-      "index": 76,
-      "file": "washington_76.png",
-      "label": "hand holding a thin stick by its end, tip down (FDR's holder carried over, not his prop) (facing right)",
-      "x": 14,
-      "y": 778,
-      "w": 262,
-      "h": 160,
-      "pivot": [
-        131.0,
-        80.0
-      ],
-      "area": 12678
-    },
-    {
-      "index": 77,
-      "file": "washington_77.png",
-      "label": "hand resting flat on the table (facing right)",
-      "x": 136,
-      "y": 746,
-      "w": 143,
-      "h": 112,
-      "pivot": [
-        71.5,
-        56.0
-      ],
-      "area": 8082
-    },
-    {
-      "index": 78,
-      "file": "washington_78.png",
-      "label": "hand holding a thin stick up (FDR's holder carried over) (facing right)",
-      "x": 313,
-      "y": 752,
-      "w": 190,
-      "h": 101,
-      "pivot": [
-        95.0,
-        50.5
-      ],
-      "area": 8374
-    },
-    {
-      "index": 79,
-      "file": "washington_79.png",
-      "label": "hand holding a card, back up (red back) (facing right)",
-      "x": 494,
-      "y": 766,
-      "w": 133,
-      "h": 153,
-      "pivot": [
-        66.5,
-        76.5
-      ],
-      "area": 10256
-    },
-    {
-      "index": 80,
-      "file": "washington_80.png",
-      "label": "hand holding a whisky glass (facing right)",
-      "x": 601,
-      "y": 765,
-      "w": 131,
-      "h": 99,
-      "pivot": [
-        65.5,
-        49.5
-      ],
-      "area": 8447
-    },
-    {
-      "index": 81,
-      "file": "washington_81.png",
-      "label": "hand holding a whisky glass (facing left)",
-      "x": 803,
-      "y": 765,
-      "w": 131,
-      "h": 99,
-      "pivot": [
-        65.5,
-        49.5
-      ],
-      "area": 8407
-    },
-    {
-      "index": 82,
-      "file": "washington_82.png",
-      "label": "hand holding a card, back up (red back) (facing left)",
-      "x": 906,
-      "y": 766,
-      "w": 134,
-      "h": 153,
-      "pivot": [
-        67.0,
-        76.5
-      ],
-      "area": 10317
-    },
-    {
-      "index": 83,
-      "file": "washington_83.png",
-      "label": "hand holding a thin stick up (FDR's holder carried over) (facing left)",
-      "x": 1032,
-      "y": 752,
-      "w": 190,
-      "h": 101,
-      "pivot": [
-        95.0,
-        50.5
-      ],
-      "area": 8376
-    },
-    {
-      "index": 84,
-      "file": "washington_84.png",
-      "label": "hand resting flat on the table (facing left)",
-      "x": 1256,
-      "y": 746,
-      "w": 143,
-      "h": 112,
-      "pivot": [
-        71.5,
-        56.0
-      ],
-      "area": 8078
-    },
-    {
-      "index": 85,
-      "file": "washington_85.png",
-      "label": "hand holding a thin stick by its end, tip down (FDR's holder carried over, not his prop) (facing left)",
-      "x": 1259,
-      "y": 778,
-      "w": 261,
-      "h": 160,
-      "pivot": [
-        130.5,
-        80.0
-      ],
-      "area": 12648
-    },
-    {
-      "index": 86,
-      "file": "washington_86.png",
-      "label": "a walking cane",
-      "x": 15,
-      "y": 912,
-      "w": 265,
-      "h": 81,
-      "pivot": [
-        132.5,
-        40.5
-      ],
-      "area": 5278
-    },
-    {
-      "index": 87,
-      "file": "washington_87.png",
-      "label": "hand resting, fingers curled (facing right)",
-      "x": 252,
-      "y": 828,
-      "w": 155,
-      "h": 152,
-      "pivot": [
-        77.5,
-        76.0
-      ],
-      "area": 11432
-    },
-    {
-      "index": 88,
-      "file": "washington_88.png",
-      "label": "hand holding a few cards fanned, face down (facing right)",
-      "x": 418,
-      "y": 837,
-      "w": 141,
-      "h": 135,
-      "pivot": [
-        70.5,
-        67.5
-      ],
-      "area": 10201
-    },
-    {
-      "index": 89,
-      "file": "washington_89.png",
-      "label": "fist gripping a short stick, raised (facing right)",
-      "x": 609,
-      "y": 865,
-      "w": 100,
-      "h": 125,
-      "pivot": [
-        50.0,
-        62.5
-      ],
-      "area": 7883
-    },
-    {
-      "index": 90,
-      "file": "washington_90.png",
-      "label": "fist gripping a short stick, raised (facing left)",
-      "x": 826,
-      "y": 865,
-      "w": 100,
-      "h": 125,
-      "pivot": [
-        50.0,
-        62.5
-      ],
-      "area": 7854
-    },
-    {
-      "index": 91,
-      "file": "washington_91.png",
-      "label": "hand holding a few cards fanned, face down (facing left)",
-      "x": 975,
-      "y": 837,
-      "w": 141,
-      "h": 135,
-      "pivot": [
-        70.5,
-        67.5
-      ],
-      "area": 10136
-    },
-    {
-      "index": 92,
-      "file": "washington_92.png",
-      "label": "hand resting, fingers curled (facing left)",
-      "x": 1127,
-      "y": 828,
-      "w": 155,
-      "h": 152,
-      "pivot": [
-        77.5,
-        76.0
-      ],
-      "area": 11414
-    },
-    {
-      "index": 93,
-      "file": "washington_93.png",
-      "label": "a walking cane",
-      "x": 1255,
-      "y": 912,
-      "w": 265,
-      "h": 81,
-      "pivot": [
-        132.5,
-        40.5
-      ],
-      "area": 5293
+      "area": 182346
     }
   ]
 }

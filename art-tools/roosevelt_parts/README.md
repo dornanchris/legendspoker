@@ -1,44 +1,31 @@
 # Theodore Roosevelt's parts
 
-Cut from his three-quarter expression sheet (`sources/roosevelt_sheet.png`),
-drawn to Lincoln's layout: four finished heads facing the viewer's right and
-four mirrored (plus one front-on, unused), pince-nez on a cord, the heavy
-moustache, a brown three-piece suit with a watch chain, torsos, arms and
-hands. `roosevelt/` holds every piece, a numbered `_contact_sheet.png` and
-`parts.json` with a label on each.
+Cut from his rigging sheet (`sources/roosevelt_sheet.png`), drawn to Lincoln's
+layout: finished heads facing each way, torsos, straight forearms drawn as
+tubes of sleeve, hands with their cuffs, and a row of seated reference poses.
+`roosevelt/` holds every piece, a numbered `_contact_sheet.png` and `parts.json`
+with a label on each.
 
     python3 art-tools/cut_sheet.py art-tools/roosevelt_parts/cut.json
 
-(`cut.json` separates the torso row, which came out as one piece of eight,
-and the pince-nez from the hat they touched.)
-
-This sheet changed his clothes: the first one had him in Rough Rider khaki,
-this one in a brown suit, which is what his parts list asks for.
+(`cut.json` separates the pieces that touched.) Earlier sheets are in git
+history.
 
 ## The puppet
 
-Built by `art-tools/seat_puppet.py` from `seat.json`:
+Built by `art-tools/seat_puppet.py` from `seat.json`, in the rim pose
+Lincoln's sheet introduced (see `art-tools/lincoln_parts/README.md`):
+forearms along the table's edge, hands folded in front.
 
     python3 art-tools/seat_puppet.py art-tools/roosevelt_parts/seat.json
 
-- **Heads** (slot `head`): 1 neutral, a scowl (rest); swap 4, the big grin,
-  laughing. `preview_faces.png` shows them on the puppet.
-- **The collar.** `"head_clothes": "dark"` cuts the brown suit painted under
-  the heads; the torso's collar is drawn again over the neck.
-- **Torso** 58, **forearms** 68, hands 77 (far) and 87 (near), as for
-  Washington and FDR (the same layout).
+- **Heads** (slot `head`): {'fdr': '1 the holder in his teeth, cocked up (rest); swaps 2 a grin around the holder, 3 talking (no holder), 4 neutral, glancing, 5 laughing, 6 laughing, head back', 'washington': '1 neutral, mouth set firm (rest); swaps 2 talking, 3 a slight, rare smile, 4 a frown, 5 jaw clenched', 'roosevelt': '1 neutral, a scowl (rest); swaps 2 the big grin, 3 talking, 4 a frown, 5 eyes narrowed, suspicious, 6 without his pince-nez (for polishing them)'}. Swaps are placed by matching their faces
+  to the rest head (`"fit"`, cached in `roosevelt_rig/fits.json`); mirrors face the
+  other way and are not used (the puppet is flipped instead).
+- {'fdr': 'His naval cape is back: the torso wears it, chained at the throat over the pinstripe suit. Hands: resting (rest), flat, two cards, the holder, tapping ash.', 'washington': '`"head_clothes": "piped"` trims the coat and braid painted under the heads, and the head sits low on the torso\'s stock (`neck` 150, `"collar": 0.06`). Hands: resting (rest), flat, two cards, pointing, a fist.', 'roosevelt': 'Brown three-piece suit, pince-nez on a cord, no cigar anywhere. Hands: resting (rest), flat, two cards, palm in, polishing the pince-nez with a handkerchief, holding the pince-nez.'}
 
-`preview.png` is the rest pose.
+`preview.png` is the rest pose; `preview_faces.png` shows every head on it.
 
 ## Gaps
 
-- **The cigar.** Heads 2 and 3 (and 6-8) have a cigar in his teeth. Roosevelt
-  did not smoke, and a thing jutting from the mouth is FDR's silhouette at
-  this table, so the puppet leaves them out. That leaves him two faces; the
-  grin is the one that matters (it must read small).
-- Not drawn: a frown, the suspicious squint, the head with the spectacles
-  off (for polishing them). Ask for those three, three-quarter, no cigar.
-- FDR's props came along here too: hands with a thin stick, a fist round a
-  short one, a cane. Leave them out.
-- The campaign hat (15, 52) is drawn over a lower face; not asked for.
 - The cards have a red back, not Death's; hide them.
