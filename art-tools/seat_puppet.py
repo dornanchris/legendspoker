@@ -570,6 +570,12 @@ def main(spec_path):
             if F(i) != base['file']:
                 parts.append(dict(base, file=F(i), visible=False, label=name(i, ' (swap; place per pose)'),
                                   _rt=dict(base['_rt'], name=f"hand_{side}." + os.path.splitext(os.path.basename(F(i)))[0])))
+    if spec.get('pose') == 'rim':
+        # hands over the sleeves drawn again at the elbows: a hand lifted toward
+        # the body must keep its own cuff in front of the coat, or it floats
+        for q in parts:
+            if q['slot'] in ('hand_far', 'hand_near'):
+                q['z'] = 24.3 if q['slot'] == 'hand_far' else 24.6
     json.dump({'note': "Where each sleeve's cuff was, in the sleeve image's own pixels: a hand's cuff goes here.",
                'cuffs': cuffs}, open(os.path.join(rig, 'cuffs.json'), 'w'), indent=1)
 

@@ -556,7 +556,7 @@
    "rot": -12.8,
    "scale": 1.68,
    "flip": true,
-   "z": 22.5,
+   "z": 24.3,
    "slot": "hand_far",
    "visible": true,
    "onTable": true
@@ -584,7 +584,7 @@
    "rot": 12.8,
    "scale": 1.68,
    "flip": false,
-   "z": 23.5,
+   "z": 24.6,
    "slot": "hand_near",
    "visible": true,
    "onTable": true
@@ -598,7 +598,7 @@
    "rot": 10.2,
    "scale": 1.008,
    "flip": false,
-   "z": 23.5,
+   "z": 24.6,
    "slot": "hand_near",
    "visible": false,
    "onTable": true
@@ -612,7 +612,7 @@
    "rot": 2.6,
    "scale": 1.008,
    "flip": false,
-   "z": 23.5,
+   "z": 24.6,
    "slot": "hand_near",
    "visible": false,
    "onTable": true
@@ -640,7 +640,7 @@
    "rot": 12.8,
    "scale": 1.68,
    "flip": false,
-   "z": 23.5,
+   "z": 24.6,
    "slot": "hand_near",
    "visible": false,
    "onTable": true
@@ -654,7 +654,7 @@
    "rot": 12.8,
    "scale": 1.68,
    "flip": false,
-   "z": 23.5,
+   "z": 24.6,
    "slot": "hand_near",
    "visible": false,
    "onTable": true
@@ -668,7 +668,7 @@
    "rot": 12.8,
    "scale": 1.68,
    "flip": false,
-   "z": 23.5,
+   "z": 24.6,
    "slot": "hand_near",
    "visible": false,
    "onTable": true
@@ -682,7 +682,7 @@
    "rot": -12.8,
    "scale": 1.68,
    "flip": true,
-   "z": 22.5,
+   "z": 24.3,
    "slot": "hand_far",
    "visible": false,
    "onTable": true
@@ -696,7 +696,7 @@
    "rot": -12.8,
    "scale": 1.68,
    "flip": true,
-   "z": 22.5,
+   "z": 24.3,
    "slot": "hand_far",
    "visible": false,
    "onTable": true
@@ -710,7 +710,7 @@
    "rot": -12.8,
    "scale": 1.68,
    "flip": true,
-   "z": 22.5,
+   "z": 24.3,
    "slot": "hand_far",
    "visible": false,
    "onTable": true

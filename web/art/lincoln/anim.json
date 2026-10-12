@@ -129,7 +129,7 @@
  "clips": {
   "check": {
    "duration": 1.3,
-   "note": "His right hand (the near one) leaves the folded pair, rises off the rail as a fist, reaches forward and raps the felt twice in front of him, and settles back. The elbow comes a little forward under his sleeve (as a shoulder does in a reach); the forearm turns about it and foreshortens as it reaches toward the viewer (len), never longer than at rest; the wrist turns about the cuff.",
+   "note": "His right hand (the near one) leaves the folded pair, rises off the rail as a fist, reaches forward and raps the felt twice in front of him, and settles back. The elbow comes a little forward under his sleeve (as a shoulder does in a reach); the forearm turns about it and foreshortens as it reaches toward the viewer (len), never longer than at rest; the wrist turns about the cuff. One fist drawing throughout; the wrist lifts it between raps (the 'lifted' fist drawing shows the inside of its cuff when tilted, and read as detached).",
    "tracks": {
     "arm_near": {
      "rot": [
@@ -277,7 +277,7 @@
       ],
       [
        0.2,
-       -8,
+       -14,
        "inOut"
       ],
       [
@@ -287,7 +287,7 @@
       ],
       [
        0.46,
-       -12,
+       -24,
        "out"
       ],
       [
@@ -297,12 +297,12 @@
       ],
       [
        0.62,
-       -12,
+       -24,
        "out"
       ],
       [
        0.92,
-       -4,
+       -8,
        "inOut"
       ],
       [
@@ -322,23 +322,7 @@
     "hand_near": [
      [
       0.08,
-      "fist_up"
-     ],
-     [
-      0.36,
       "fist_down"
-     ],
-     [
-      0.44,
-      "fist_up"
-     ],
-     [
-      0.52,
-      "fist_down"
-     ],
-     [
-      0.6,
-      "fist_up"
      ],
      [
       0.98,
