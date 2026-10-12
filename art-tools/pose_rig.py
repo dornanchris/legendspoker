@@ -63,7 +63,7 @@ def table_colour(a, ty):
     (row ty - 8 down) or the panel's edge: brass buttons and the shading round
     a face are the same brown, inside him."""
     r, g, b = a[..., 0].astype(int), a[..., 1].astype(int), a[..., 2].astype(int)
-    felt = (g > r + 15) & (g > b + 5) & (g > 50)       # not navy: Washington's coat has g > r too
+    felt = (g > r + 15) & (g > b + 5) & (g > 30)       # not navy (Washington's coat has g > r too); shadowed felt too
     wood = (r - g > 40) & (g < 75) & (r < 200) & (a[..., 3] > 0)
     lab, n = ndimage.label(wood)
     edge = np.zeros_like(wood)

@@ -364,6 +364,9 @@ Washington is built the same way from his four pose sheets and face sheet
 right forearm, in the air, and knocks a fist twice on the rail. His master
 head is a separate drawing a little narrower than the poses' head, so it
 replaces that head outright (`replace_head`). Sheets B-D are not used yet.
+**Layering rule for the table screen:** the room's table covers a puppet only
+below the puppet's own table line as well as below the rim (see
+`web/puppet/README.md`); the end seats' rim curves up above the drawn rail.
 **JFK is built but at no table** (the owner): an idea for a hidden event
 like Loki's, winning a pot with a three and a five (the 35th president) and
 JFK taking a seat. Open before it goes in: he died in 1963, inside ASSETS.md's

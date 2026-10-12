@@ -69,20 +69,31 @@ LINE = {l: json.load(open(os.path.join(HERE, l)))['table_line'] for l in SEATED}
 cache = {l: passes(l) for l in LINE}
 
 under = Image.new('RGBA', (W, H), (0, 0, 0, 0)); over = Image.new('RGBA', (W, H), (0, 0, 0, 0))
+# The table covers a puppet only below its OWN table line as well as below the
+# rim: where the rim curves up above that line (a seat near the table's ends),
+# the strip between them stays the puppet's. Otherwise the rail's top edge cuts
+# in between a hand and its cuff, where the drawing had its own, lower rail.
+above = Image.new('RGBA', (W, H), (0, 0, 0, 0))
 def seat(lay, cx, sc, flip, sink=10):
     y = rim(cx) + sink
     for layer, im in zip((under, over), cache[lay]):
         im = ImageOps.mirror(im) if flip else im
         im = im.resize((int(im.width * sc), int(im.height * sc)), Image.LANCZOS)
-        layer.alpha_composite(im, (int(cx - im.width / 2), int(y - LINE[lay] * sc)))
+        at = (int(cx - im.width / 2), int(y - LINE[lay] * sc))
+        layer.alpha_composite(im, at)
+        if layer is under:
+            top = im.crop((0, 0, im.width, max(0, y - at[1])))
+            above.alpha_composite(top, at)
     return y
 
 # Death deals from the far side, front-on and dead centre
 def death(cx, sc):
     return seat('death_layout.json', cx, sc, False, 4)
 
-SEATS = g('seats', [['fdr_layout.json', 150, 0.52, False], ['lincoln_layout.json', 470, 0.52, False],
-                    ['roosevelt_layout.json', 1130, 0.44, True], ['washington_layout.json', 1440, 0.52, True]])
+# [layout, centre x, scale, mirrored, sink]: sink puts the layout's table line that far
+# below the rim at its centre (pose_rig.py's line is the drawn rail's top: 2)
+SEATS = g('seats', [['fdr_layout.json', 150, 0.52, False], ['lincoln_layout.json', 470, 0.52, False, 2],
+                    ['roosevelt_layout.json', 1130, 0.44, True], ['washington_layout.json', 1440, 0.52, True, 2]])
 ys = [seat(*s_) for s_ in SEATS]
 dy = death(W // 2, g('death', 0.34))
 
@@ -90,7 +101,7 @@ dy = death(W // 2, g('death', 0.34))
 # rim's soft edge does not show as a seam through a sleeve)
 below = (np.arange(H)[:, None] >= np.array([rim(x) for x in range(W)])[None, :]) * 255
 over.putalpha(Image.fromarray(np.minimum(np.array(over)[..., 3], below).astype('uint8')))
-c = bg.copy(); c.alpha_composite(under); c.alpha_composite(tl); c.alpha_composite(over)
+c = bg.copy(); c.alpha_composite(under); c.alpha_composite(tl); c.alpha_composite(above); c.alpha_composite(over)
 d = ImageDraw.Draw(c)
 def plate(x, y, t1, t2, w=150, hot=False):
     d.rounded_rectangle((x - w // 2, y, x + w // 2, y + 44), 10, fill=(18, 16, 20, 215), outline=(214, 170, 90, 255) if hot else (90, 80, 70, 255), width=2)
@@ -107,7 +118,7 @@ def chips(x, y, amt):
     d.text((x + 22, y - 12), amt, font=F(14, True), fill=(250, 240, 220))
 
 names = [('F. D. Roosevelt', '2,140', '10'), ('Lincoln', '1,860', ''), ('Roosevelt', '2,300', '20'), ('Washington', '1,700', '')]
-for (lay, cx, sc, fl), y, (n, st, bet) in zip(SEATS, ys, names):
+for (lay, cx, sc, fl, *_), y, (n, st, bet) in zip(SEATS, ys, names):
     plate(cx, y + 18, n, st, hot=(n == 'Lincoln'))
     if bet: chips(cx + (60 if cx < W / 2 else -60), y + 96, bet)
 # dealer plate, pot and board

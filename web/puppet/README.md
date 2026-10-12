@@ -3,10 +3,10 @@
 Draws a character's cut-out puppet and animates it. Generic: nothing here
 knows who Lincoln is. A character is two files in `web/art/<id>/`:
 
-- `rig.json` and its images: **generated** by `art-tools/seat_puppet.py`
-  (the spec's `"runtime"` field). Bones with pivots (torso, head, each
-  forearm at its elbow, each hand at its wrist) and every part in its rest
-  pose, with its bone, its slot (swap group) and whether it rests on the table.
+- `rig.json` and its images: **generated** by `art-tools/pose_rig.py` from
+  the pose drawings (Lincoln, Washington). Bones with pivots (torso, head,
+  each forearm at its elbow) and every part in its rest pose, with its bone,
+  its slot (swap group) and whether it rests on the table.
 - `anim.json`: **authored**. The face's timing (blinks, glances, sway, breath,
   lip shapes per letter) and the clips (keyframed bone channels and part swaps).
 
@@ -37,6 +37,14 @@ reaching toward the viewer looks shorter).
 line, then the parts that rest on the table again over it there. A forearm
 runs under the rail's far edge onto the felt; a hand lifted above the line
 is simply in front of the body.
+
+**In a room, the table covers a puppet only below the puppet's OWN table
+line** (and below the rim, wherever the rim is lower). A round table's rim
+curves up toward its ends, above the straight rail a seat was drawn on; if
+the room's table covered everything below its rim, its top edge would cut in
+between a hand and its cuff on the end seats and the arm would look to pass
+through the table. `art-tools/mock_screen.py` draws it this way: the strip of
+each puppet above its own line goes back over the table.
 
 **The bench**: `#/puppet/<id>` (e.g. `web/index.html#/puppet/lincoln`)
 triggers, loops, slows and scrubs every clip beside its reference drawing,
