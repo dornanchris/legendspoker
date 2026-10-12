@@ -49,6 +49,28 @@ Built by `art-tools/seat_puppet.py` from `seat.json`:
 
 `preview.png` is the rest pose.
 
+## Animation (phase 1: face, and the check)
+
+The face sheet's head (`lincoln_face/lincoln_face_01.png`) is the master
+head: `seat.json` places it by matching its face to head 7, so his pose and
+proportions stay, and trims its own collar and tie (the torso's show).
+`face_rig.py` bakes the face sheet's patches into layers the size of that
+head (`lincoln_rig/face/`), from `face.json`:
+
+- each patch is found on the master by matching (`fits.json`), its drawn
+  outline stripped, its skin matched to the head's, and its edge faded;
+- each kind draws only on its own region: eyes below the brow line, brows
+  above it (so they change independently), mouths below the nose; open
+  mouths are moved down until the upper lip clears the nose (the drawings
+  open the mouth upward, into it), over a patch of plain skin;
+- eyes: half, closed, viewer, down, up. Brows: raised, together. Mouths:
+  rest, ah, ee, oh, oo, m, f, l, smile, tight, sigh.
+
+The fists for the check (`lincoln_hands/` 5 and 6) are placed on his near
+wrist (`hand_extras`). `seat.json`'s `"runtime"` writes the rig to
+`web/art/lincoln/`; his face timing and clips are in
+`web/art/lincoln/anim.json`. Preview: `web/index.html#/puppet/lincoln`.
+
 ## Next: every pose
 
 `POSES.md` lists every pose he is ever in (28), which in-betweens need

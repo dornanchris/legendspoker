@@ -605,3 +605,24 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .title-block h1 { font-size: clamp(2rem, 5.4vw, 3.4rem); }
   .menu-item { padding: .5em 1em; }
 }
+
+/* ---------------------------------------------------------------- puppet bench */
+/* #/puppet/<id>: an animation preview, not part of the game. */
+.bench { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 14px; height: 100vh; padding: 12px; box-sizing: border-box; }
+.bench-stage { position: relative; min-height: 0; }
+.bench-canvas { width: 100%; height: 100%; display: block; border-radius: 10px; background: #16141a; }
+.bench-ref-wrap { position: absolute; right: 10px; top: 10px; margin: 0; width: 22%; max-width: 220px; background: #fffc; border-radius: 8px; padding: 4px; }
+.bench-ref { width: 100%; display: block; border-radius: 6px; }
+.bench-ref-wrap figcaption { font-size: .7rem; color: #333; text-align: center; }
+.bench-side { overflow-y: auto; min-height: 0; }
+.bench-side h2 { margin: 0 0 6px; font-size: 1.1rem; }
+.bench-group { border-top: 1px solid #fff2; padding: 8px 0; }
+.bench-group h3 { margin: 0 0 6px; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; opacity: .7; }
+.bench-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 6px 0; }
+.bench-group .segmented { display: flex; flex-wrap: wrap; gap: 4px; }
+.bench-group button { min-height: 30px; padding: .25em .7em; }
+.bench-play { margin: 0 6px 6px 0; }
+.bench-check { display: inline-flex; gap: 4px; align-items: center; font-size: .85rem; }
+.bench-line, .bench-text { flex: 1 1 100%; min-width: 0; }
+.bench-row input[type=range] { flex: 1; }
+.bench-help, .bench-status { font-size: .8rem; opacity: .75; }

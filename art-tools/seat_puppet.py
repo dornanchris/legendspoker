@@ -63,12 +63,27 @@ The spec (all piece numbers are from the character's parts.json):
                     toward the table's centre, nr... are plain rotations
   heads             ... [piece, "fit"] places a swap head by matching its face
                     to the rest head's (cached in <id>_rig/fits.json)
+  master            {"file": path, "fit": [lo, hi], "cut_below": row}: the head
+                    the face layers are drawn on, shown at rest in place of
+                    "head", placed by matching its face to "head" (scale
+                    searched in lo..hi); faded out below that row of its own
+                    pixels, with its layers, so the torso's collar and tie show
+  face              path to a face.json (face_rig.py): eye, brow and mouth
+                    layers on the master head, hidden, in slots eyes / brows /
+                    mouth
+  hand_extras       {"near": [{"name", "file", "scale", "turn"}], "far": [...]}:
+                    hands from other sheets, each placed with its own cuff on
+                    the wrist, pointing the resting hand's way (plus turn, deg)
+  runtime           where to write the runtime rig for web/puppet/ (rig.json
+                    and its images), relative to art-tools/
   tune              scales and offsets; see DEFAULTS
 """
 import json, math, os, subprocess, sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageOps
 from scipy import ndimage
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -164,7 +179,7 @@ def trim_elbow(path_, cuff):
     Image.fromarray(out, 'RGBA').save(path_)
 
 
-def fit_head(ref, mov):
+def fit_head(ref, mov, lo=0.86, hi=1.15):
     """Where head `mov` goes over head `ref`, matched by the face (the band
     from below the eyes to the chin): [dx, dy, scale], its top-left in ref's
     pixels. For heads from another sheet, or the same head without a hat."""
@@ -188,7 +203,7 @@ def fit_head(ref, mov):
         return d + 100 * (b & ~a).sum() / max(1, b.sum())
 
     best = (1e9, 0, 0, 1.0)
-    for k in np.arange(0.86, 1.15, 0.02):
+    for k in np.arange(lo, hi, 0.02):
         M = np.array(src.resize((round(src.width * k), round(src.height * k)), Image.LANCZOS)).astype(float)
         for dy in range(-12, 52, 2):
             for dx in range(-24, 26, 2):
@@ -296,10 +311,73 @@ def hand_anchor(path, mode):
     rgb, A = a[..., :3].astype(int), a[..., 3] > 200
     if mode == 'white':
         m = A & (rgb.min(-1) > 205)
+    elif mode == 'cream':   # an off-white cuff: its biggest pale patch
+        m = biggest(A & (rgb.min(-1) > 180) & (np.ptp(rgb, axis=-1) < 55))
     else:   # the sleeve stub: the darker cloth, not the skin
         m = biggest(ndimage.binary_opening(A & (rgb.mean(-1) < 150), iterations=2))
     ys, xs = np.nonzero(m)
     return float(xs.mean()), float(ys.mean())
+
+
+def clip_baked(src, p):
+    """A part's image with its clip_top / clip_cols / clip_feather applied in its
+    own pixels, so the runtime draws it plainly (the clips are drawn in canvas
+    pixels; such parts are unrotated)."""
+    im = Image.open(src).convert('RGBA')
+    if p.get('flip'):
+        im = ImageOps.mirror(im)
+    s, fe = p['scale'], p.get('clip_feather', 0) / p['scale']
+    keep = np.ones((im.height, im.width))
+    if 'clip_top' in p:
+        cut = (p['clip_top'] - p['y']) / s
+        rows = np.arange(im.height)[:, None]
+        keep = keep * np.clip((rows - cut + 1) / (fe + 1), 0, 1)
+    if 'clip_cols' in p:
+        cols = np.zeros(im.width)
+        for x0, x1 in p['clip_cols']:
+            cols[max(0, int((x0 - p['x']) / s)):max(0, int((x1 - p['x']) / s))] = 1
+        if fe:
+            cols = ndimage.uniform_filter1d(cols, max(1, int(fe)))
+        keep = keep * cols[None, :]
+    a = np.array(im).astype(float)
+    a[..., 3] *= keep
+    out = Image.fromarray(a.astype(np.uint8), 'RGBA')
+    return ImageOps.mirror(out) if p.get('flip') else out
+
+
+def export_runtime(spec, parts, rt, bones, face, out_dir, F, path):
+    """The rig the game's puppet player draws (web/puppet/): bones with their
+    pivots, and every part with its rest transform, its bone, its slot and its
+    image, copied (or clip-baked) next to rig.json."""
+    import shutil
+    os.makedirs(out_dir, exist_ok=True)
+    out_parts, used = [], set()
+    for p, r in zip(parts, rt):
+        if r is None or r.get('bone') is None:
+            continue
+        stem = r['name'].replace('.', '_') if r['name'] else os.path.splitext(os.path.basename(p['file']))[0]
+        img = f"{stem}.png"
+        n = 2
+        while img in used:
+            img, n = f"{stem}_{n}.png", n + 1
+        used.add(img)
+        if 'clip_top' in p or 'clip_cols' in p:
+            clip_baked(path(p['file']), p).save(os.path.join(out_dir, img))
+        else:
+            shutil.copyfile(path(p['file']), os.path.join(out_dir, img))
+        out_parts.append({'name': r['name'] or p['slot'], 'bone': r['bone'], 'img': img,
+                          'cx': round(r['cx'], 2), 'cy': round(r['cy'], 2), 'rot': p['rot'], 'scale': p['scale'],
+                          'flip': bool(p.get('flip')), 'z': p['z'], 'slot': p['slot'],
+                          'visible': p['visible'], 'onTable': bool(p.get('on_table'))})
+    shutil.copyfile(os.path.join(HERE, 'rooms', 'table_preview.png'), os.path.join(out_dir, 'table_preview.png'))
+    rig = {'id': spec['id'], 'name': spec.get('name', spec['id']),
+           'note': 'Generated by art-tools/seat_puppet.py: do not edit. Canvas pixels, y down; part rot is '
+                   'degrees counter-clockwise (PIL), about the part centre, after flip and scale.',
+           'canvas': {'w': W, 'h': H}, 'tableLine': TABLE, 'table': 'table_preview.png',
+           'bones': [dict(b, pivot=[round(v, 2) for v in b['pivot']]) for b in bones],
+           'face': face, 'parts': out_parts}
+    json.dump(rig, open(os.path.join(out_dir, 'rig.json'), 'w'), indent=1)
+    print(f"  runtime rig -> {os.path.relpath(out_dir, os.path.dirname(HERE))} ({len(out_parts)} parts)")
 
 
 def main(spec_path):
@@ -318,7 +396,8 @@ def main(spec_path):
         labels = {q['file']: q['label'] for q in json.load(open(pj))['parts']} if os.path.exists(pj) else {}
         return (labels.get(os.path.basename(F(f))) or '') + extra
 
-    def put(f, cx, cy, s, rot=0, z=0, label='', visible=True, flip=False, slot=None, on_table=False):
+    def put(f, cx, cy, s, rot=0, z=0, label='', visible=True, flip=False, slot=None, on_table=False,
+            name_=None, bone=None):
         w, h = size(f)
         w, h = w * s, h * s
         if rot:
@@ -328,6 +407,7 @@ def main(spec_path):
              'scale': round(s, 3), 'rot': rot, 'z': z, 'visible': visible, 'slot': slot}
         if flip: d['flip'] = True
         if on_table: d['on_table'] = True
+        d['_rt'] = {'name': name_ or slot, 'bone': bone, 'cx': cx, 'cy': cy}   # for the runtime rig
         parts.append(d)
 
     def placed(f, s, rot, cx, cy, at, flip=False):
@@ -342,7 +422,7 @@ def main(spec_path):
     tw, th = size(spec['torso'])
     ty = t['tyb'] - th * t['kt'] / 2
     put(spec['torso'], t['tx'], ty, t['kt'], z=10, label='torso, three-quarter', slot='torso',
-        flip=spec.get('torso_flip', False))
+        flip=spec.get('torso_flip', False), name_='torso', bone='torso')
     hw, hh = size(spec['head'])
     hx, hy = t['tx'] + t['hdx'], ty - th * t['kt'] / 2 - hh * t['kh'] / 2 + t['neck']
     hz = 8 if spec.get('head_behind') else 20
@@ -369,18 +449,53 @@ def main(spec_path):
             k = t['kh'] * s_
         elif spec.get('head_align') == 'back':  # line swaps up by the back of the head, not
             cx = hx + fl * (size(i)[0] - hw) * t['kh'] / 2  # their box (a holder widens it)
+        rest = i == spec['head'] and 'master' not in spec
         put(f, cx, cy, k, z=hz, label=name(i, '' if i == spec['head'] else ' (swap)'),
-            visible=i == spec['head'], slot='head', flip=spec.get('head_flip', False))
+            visible=rest, slot='head', flip=spec.get('head_flip', False),
+            name_='head.rest' if rest else 'head.' + os.path.splitext(os.path.basename(F(i)))[0], bone='head')
+    master = None
+    if 'master' in spec:
+        # the master head: the one the face layers are drawn on. It is placed by
+        # matching its face to the spec's head, so the character keeps the
+        # proportions and pose that head had; that head stays the frame swaps fit to
+        m = spec['master']
+        key = f"{F(spec['head'])} <- {m['file']}"
+        if key not in fits:
+            fits[key] = fit_head(path(F(spec['head'])), path(m['file']), *m.get('fit', [0.86, 1.15]))
+        mx, my, mk = fits[key]
+        w, h_ = size(m['file'])
+        if 'cut_below' in m:                   # its own collar and tie go: the torso's are drawn
+            import face_rig
+            f = f"{spec['id']}_parts/{spec['id']}_rig/master.png"
+            face_rig.cut_below(Image.open(path(m['file'])), m['cut_below']).save(path(f))
+            m = dict(m, file=f)
+        master = dict(file=m['file'], cx=hx + fl * (mx + w * mk / 2 - hw / 2) * t['kh'],
+                      cy=hy + (my + h_ * mk / 2 - hh / 2) * t['kh'], k=t['kh'] * mk)
+        put(m['file'], master['cx'], master['cy'], master['k'], z=hz, label=name(m['file'], ' (master)'),
+            slot='head', flip=spec.get('head_flip', False), name_='head.rest', bone='head')
     if fits:
         json.dump(fits, open(fits_path, 'w'), indent=1)
+    rest_head = master['file'] if master else F(spec['head'])
+    rcx, rcy, rk = (master['cx'], master['cy'], master['k']) if master else (hx, hy, t['kh'])
     if spec.get('hat') == 'from_head':        # the hat on the rest head, as its own piece,
         f = f"{spec['id']}_parts/{spec['id']}_rig/hat.png"   # hidden: with a bare head, a tip
-        lift_hat(path(F(spec['head'])), path(f))
-        put(f, hx, hy, t['kh'], z=hz + 3, label='hat, lifted off the rest head (for a tip: show a bare head)',
-            visible=False, slot='hat', flip=spec.get('head_flip', False))
+        lift_hat(path(rest_head), path(f))
+        put(f, rcx, rcy, rk, z=hz + 3, label='hat, lifted off the rest head (for a tip: show a bare head)',
+            visible=False, slot='hat', flip=spec.get('head_flip', False), name_='hat', bone='head')
+    face = {}
+    if 'face' in spec:
+        # eye, brow and mouth layers, each the size of the master head (face_rig.py)
+        import face_rig
+        layers = face_rig.main(path(spec['face']), os.path.join(rig, 'face'), spec.get('master', {}).get('cut_below'))
+        for z_, kind in ((0.1, 'eyes'), (0.2, 'brows'), (0.3, 'mouth')):
+            for state, f in layers.get(kind, {}).items():
+                fp = f"{spec['id']}_parts/{spec['id']}_rig/face/{f}"
+                put(fp, rcx, rcy, rk, z=hz + z_, label=f'{kind}: {state} (face layer)', visible=False,
+                    slot=kind, flip=spec.get('head_flip', False), name_=f'{kind}.{state}', bone='head')
+                face.setdefault(kind, []).append(state)
     if 'collar' in spec:
         put(spec['torso'], t['tx'], ty, t['kt'], z=21, label='torso again: its collar over the neck',
-            slot='torso_over', flip=spec.get('torso_flip', False))
+            slot='torso_over', flip=spec.get('torso_flip', False), bone='torso')
         parts[-1]['clip_top'] = round(ty - th * t['kt'] / 2 + spec['collar'] * th * t['kt'])
         parts[-1]['clip_feather'] = t.get('feather', 14)
 
@@ -391,8 +506,10 @@ def main(spec_path):
     xs = np.nonzero(tm[row])[0]
     left, right = t['tx'] + (xs.min() - tw / 2) * t['kt'], t['tx'] + (xs.max() - tw / 2) * t['kt']
     cuffs = {}
+    joints = {}
     aim = spec.get('pose') == 'rim'
     def arm(pair, ex, ar, hr, z, side, flip=False, dz=1):
+        hand_dir = hr
         ai, hi = pair
         sl = f"{spec['id']}_parts/{spec['id']}_rig/sleeve_{ai}.png"
         mode = spec.get('cuff', 'white')
@@ -415,11 +532,23 @@ def main(spec_path):
         ox, oy = placed(sl, t['ka'], ar, 0, 0, elbow, flip)
         ax, ay = ex - ox, TABLE + t['ey'] - oy
         put(sl, ax, ay, t['ka'], rot=ar, z=z, label=f'{side} forearm (cuff trimmed off)',
-            slot=f'arm_{side}', on_table=True, flip=flip)
+            slot=f'arm_{side}', on_table=True, flip=flip, bone=f'arm_{side}')
         ux, uy = placed(sl, t['ka'], ar, ax, ay, at, flip)
         vx, vy = placed(hi, t['kha'], hr, 0, 0, anchor, flip)
         put(hi, ux - vx + (-1 if flip else 1) * t['hsx'], uy - vy + t['hsy'], t['kha'], rot=hr, z=z + dz,
-            label=f'{side} hand (its cuff finishes the sleeve)', slot=f'hand_{side}', on_table=True, flip=flip)
+            label=f'{side} hand (its cuff finishes the sleeve)', slot=f'hand_{side}', on_table=True, flip=flip,
+            name_=f'hand_{side}.rest', bone=f'hand_{side}')
+        joints[side] = {'elbow': (ex, TABLE + t['ey']), 'wrist': (ux, uy)}
+        # other hands for this arm (other sheets): each has its own cuff placed on
+        # the wrist, pointing the way the resting hand points (plus its own turn)
+        for e in spec.get('hand_extras', {}).get(side, []):
+            ea = hand_anchor(path(e['file']), 'cream')
+            er = (hand_dir + e.get('turn', 0)) - native_angle(path(e['file']), ea, flip) if aim else hr
+            ek = t['kha'] * e.get('scale', 1)
+            px, py = placed(e['file'], ek, er, 0, 0, ea, flip)
+            put(e['file'], ux - px, uy - py, ek, rot=round(er, 1), z=z + dz, label=f"{side} hand: {e['name']}",
+                visible=False, slot=f'hand_{side}', on_table=True, flip=flip,
+                name_=f"hand_{side}.{e['name']}", bone=f'hand_{side}')
     if spec.get('pose') == 'rim':
         # both forearms lie along the table's edge in front of the body, the far
         # one mirrored to point back in; the torso is drawn again over them only
@@ -427,7 +556,7 @@ def main(spec_path):
         arm(spec['far'], right - t['fe'], t['fr'], t['fhr'], 22, 'far', flip=True, dz=0.5)
         arm(spec['near'], left + t['ne'], t['nr'], t['nhr'], 23, 'near', dz=0.5)
         put(spec['torso'], t['tx'], ty, t['kt'], z=24, label='torso again: its sleeves over the elbows',
-            slot='sleeves_over', flip=spec.get('torso_flip', False))
+            slot='sleeves_over', flip=spec.get('torso_flip', False), bone='torso')
         parts[-1]['clip_cols'] = [[0, round(left + t['ne'] + t['sleeve'])],
                                   [round(right - t['fe'] - t['sleeve']), W]]
         parts[-1]['clip_top'] = round(ty - th * t['kt'] / 2 + 0.3 * th * t['kt'])
@@ -439,7 +568,8 @@ def main(spec_path):
         base = next(q for q in parts if q['slot'] == f'hand_{side}')
         for i in spec.get('hands', []):
             if F(i) != base['file']:
-                parts.append(dict(base, file=F(i), visible=False, label=name(i, ' (swap; place per pose)')))
+                parts.append(dict(base, file=F(i), visible=False, label=name(i, ' (swap; place per pose)'),
+                                  _rt=dict(base['_rt'], name=f"hand_{side}." + os.path.splitext(os.path.basename(F(i)))[0])))
     json.dump({'note': "Where each sleeve's cuff was, in the sleeve image's own pixels: a hand's cuff goes here.",
                'cuffs': cuffs}, open(os.path.join(rig, 'cuffs.json'), 'w'), indent=1)
 
@@ -451,7 +581,16 @@ def main(spec_path):
                       "Parts sharing a slot are swaps (one visible).",
               'parts': parts}
     out = os.path.join(HERE, f"{spec['id']}_layout.json")
+    rt = [q.pop('_rt', None) for q in parts]
     json.dump(layout, open(out, 'w'), indent=1)
+    if spec.get('runtime'):
+        bones = [{'name': 'torso', 'parent': None, 'pivot': [t['tx'], TABLE]},
+                 {'name': 'head', 'parent': 'torso',
+                  'pivot': [hx, ty - th * t['kt'] / 2 + spec.get('collar', 0.15) * th * t['kt']]}]
+        for side, j in joints.items():
+            bones.append({'name': f'arm_{side}', 'parent': 'torso', 'pivot': list(j['elbow'])})
+            bones.append({'name': f'hand_{side}', 'parent': f'arm_{side}', 'pivot': list(j['wrist'])})
+        export_runtime(spec, parts, rt, bones, face, os.path.join(HERE, spec['runtime']), F, path)
     subprocess.run([sys.executable, os.path.join(HERE, 'build_puppet.py'), 'render', out,
                     '-o', os.path.join(pdir, 'preview.png')], check=True, capture_output=True)
     print(f"{spec['id']}: layout -> {out}")

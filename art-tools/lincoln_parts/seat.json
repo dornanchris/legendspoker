@@ -74,5 +74,29 @@
   "ne": 30,
   "fe": 30,
   "ey": -30
- }
+ },
+ "master": {
+  "file": "lincoln_parts/lincoln_face/lincoln_face_01.png",
+  "fit": [
+   0.4,
+   0.62
+  ],
+  "cut_below": 350
+ },
+ "face": "lincoln_parts/face.json",
+ "hand_extras": {
+  "near": [
+   {
+    "name": "fist_down",
+    "file": "lincoln_parts/lincoln_hands/lincoln_hands_05.png",
+    "scale": 0.6
+   },
+   {
+    "name": "fist_up",
+    "file": "lincoln_parts/lincoln_hands/lincoln_hands_06.png",
+    "scale": 0.6
+   }
+  ]
+ },
+ "runtime": "../web/art/lincoln"
 }

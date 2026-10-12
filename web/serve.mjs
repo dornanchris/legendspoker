@@ -13,7 +13,7 @@ const ROOT = resolve(fileURLToPath(new URL('.', import.meta.url)))
 const PORT = Number(process.env.PORT ?? 5173)
 const TYPES = {
   '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript',
-  '.map': 'application/json', '.json': 'application/json',
+  '.map': 'application/json', '.json': 'application/json', '.png': 'image/png',
 }
 
 createServer(async (req, res) => {

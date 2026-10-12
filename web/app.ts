@@ -6,6 +6,7 @@ import { resultsScreen } from './screens/results.js'
 import { ledgerScreen } from './screens/ledger.js'
 import { settingsScreen, aboutScreen } from './screens/settings.js'
 import { endingScreen } from './screens/ending.js'
+import { puppetScreen } from './screens/puppet.js'
 import * as sound from './sound.js'
 
 /**
@@ -25,6 +26,7 @@ import * as sound from './sound.js'
  *   #/results          after a table
  *   #/ledger/:tab/:id  the ledger
  *   #/settings  #/about  #/ending
+ *   #/puppet/:id       the puppet bench (animation preview; not part of the game)
  */
 
 type Screen = (root: HTMLElement, params: string[]) => void | (() => void)
@@ -40,6 +42,7 @@ const ROUTES: Record<string, Screen> = {
   settings: settingsScreen,
   about: aboutScreen,
   ending: endingScreen,
+  puppet: puppetScreen,
 }
 
 let cleanup: (() => void) | void = undefined
