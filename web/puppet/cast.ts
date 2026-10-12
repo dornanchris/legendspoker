@@ -3,6 +3,8 @@ import type { ClipData } from './clip.js'
 import type { FaceConfig } from './face.js'
 import lincolnRig from '../art/lincoln/rig.json'
 import lincolnAnim from '../art/lincoln/anim.json'
+import washingtonRig from '../art/washington/rig.json'
+import washingtonAnim from '../art/washington/anim.json'
 
 /**
  * The puppets the web build knows: each one's rig (generated) and its anim
@@ -21,4 +23,5 @@ export type CastEntry = { rig: RigData; anim: AnimData; base: string }
 
 export const PUPPETS: Record<string, CastEntry> = {
   lincoln: { rig: lincolnRig as unknown as RigData, anim: lincolnAnim as unknown as AnimData, base: 'art/lincoln/' },
+  washington: { rig: washingtonRig as unknown as RigData, anim: washingtonAnim as unknown as AnimData, base: 'art/washington/' },
 }

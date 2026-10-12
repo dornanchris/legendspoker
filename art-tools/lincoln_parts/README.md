@@ -73,8 +73,11 @@ cuffs and perspective.
   forearm to the knuckles), `arm_far.alone` (A2).
 - The table and chair are dropped (felt and dark wood by colour, the rail's
   skin-coloured highlight by the polygons, wood peeled off the outlines).
+  Brown counts as wood only where it joins the rail or the panel's edge, so a
+  button's rim or the shading round his face is kept.
 - **Validation**: `lincoln_pose/validate.png` is A1, the rebuilt rest pose,
-  and their difference: 0.04% of the pixels above the rail differ.
+  and their difference: 0.20% of the pixels above the rail differ (against
+  his whole silhouette, colours the filters drop included).
 - The master head (`lincoln_rig/master.png`, from the face sheet) and its
   face layers are fitted onto A1's head; `seat.json` still makes them.
 

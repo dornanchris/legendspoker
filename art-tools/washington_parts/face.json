@@ -1,0 +1,14 @@
+{
+ "master": "washington_parts/washington_face/washington_face_01.png",
+ "pieces": "washington_parts/washington_face/washington_face_%02d.png",
+ "layers": {
+  "eyes": {"half": 2, "closed": 3, "viewer": 4, "down": 5, "up": 6},
+  "brows": {"raised": 7, "together": 8},
+  "mouth": {"rest": 9, "ah": 10, "ee": 11, "oh": 12, "oo": 13, "m": 14, "l": 15, "f": 16, "smile": 18, "tight": 19, "sigh": 20}
+ },
+ "regions": {
+  "eyes": {"keep": [[170, 143], [272, 143], [285, 143], [330, 140], [330, 185], [170, 185]]},
+  "brows": {"keep": [[170, 95], [330, 95], [330, 140], [285, 143], [170, 143]]},
+  "mouth": {"keep": [[170, 222], [330, 222], [330, 320], [170, 320]]}
+ }
+}

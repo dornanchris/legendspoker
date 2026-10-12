@@ -55,5 +55,7 @@
   "ne": 30,
   "fe": 30,
   "ey": -30
- }
+ },
+ "layout": "washington_parts/washington_rig/parts_sheet_layout.json",
+ "note": "Superseded for the game by pose_rig.json (built from the pose illustrations). Kept for the parts-sheet build and its head swaps."
 }

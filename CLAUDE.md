@@ -148,7 +148,8 @@ art-tools/
   face_rig.py     bakes a face-overlay sheet into seam-free eye/brow/mouth
                   layers on a master head
   pose_rig.py     builds a puppet from complete pose drawings: one-piece
-                  forearm+hand assets on elbow pivots (Lincoln's game rig)
+                  forearm+hand assets on elbow pivots (Lincoln's and
+                  Washington's game rigs)
 MOTION-SPEC.md    the animation parts list, tagged MECH/IDLE/BEAT/TELL
 ASSETS.md         every free/CC0 source + licensing traps
 CHARACTER-ART-PROMPTS.md  image prompts per character: a reference portrait,
@@ -344,8 +345,7 @@ in front** (`"pose": "rim"`; the owner's sheets add seated reference poses
 and draw forearms as plain tubes): all four are built that way, from rigging
 sheets in Lincoln's layout. FDR has his naval cape back; Roosevelt has no
 cigar (he did not smoke; FDR's holder is the table's one thing in a mouth).
-**Animation has started, with Lincoln (awaiting the owner's review; no other
-character until it is approved).** `web/puppet/` is a generic canvas puppet
+**Animation has started: Lincoln (approved by the owner), then Washington.** `web/puppet/` is a generic canvas puppet
 player: the pose is rebuilt from rest every frame and the face and each clip
 add to it, so face and arms are independent and a clip that ends at zero
 returns exactly to rest. Shapes swap, never cross-fade (no mouth ghosts);
@@ -359,6 +359,11 @@ elbow, the upper arms drawn over the joints, the rest pose validated against
 its drawing. The laced hands of his rest pose cannot be parted, so the check
 changes arm pieces at the start and end of the lift. Preview it at `#/puppet/lincoln` (the bench: trigger,
 loop, slow, scrub, beside the reference pose). Not yet on the table screen.
+Washington is built the same way from his four pose sheets and face sheet
+(`#/puppet/washington`): his hands rest apart, so his check changes only the
+right forearm, in the air, and knocks a fist twice on the rail. His master
+head is a separate drawing a little narrower than the poses' head, so it
+replaces that head outright (`replace_head`). Sheets B-D are not used yet.
 **JFK is built but at no table** (the owner): an idea for a hidden event
 like Loki's, winning a pot with a three and a five (the 35th president) and
 JFK taking a seat. Open before it goes in: he died in 1963, inside ASSETS.md's

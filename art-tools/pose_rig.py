@@ -24,6 +24,14 @@ Nothing of the table is kept: felt and rail colours are dropped, and the
 polygons follow the sleeve outlines where the rail's highlight matches skin.
 The table is drawn by the game (the rig's tableLine is the rest pose's rail).
 
+The master head (spec "master") carries the face layers. Given "face" (a
+face_rig.py spec), "piece" and "cut_below", it is made here from the face
+sheet; otherwise "file" and "layers" are read as another tool left them
+(Lincoln's come from seat_puppet.py). "replace_head" drops the rest pose's
+own head (head_box, above collar_y) from the body, for a master drawn a
+different shape. "fill" lists polygons of background showing through a gap
+in the drawing, painted over like the coat behind an arm.
+
 Writes the runtime rig (web/art/<id>/), a build_puppet layout
 (art-tools/<id>_layout.json) and, in <id>_parts/<id>_pose/, every image plus
 validate.png: the rebuilt rest pose against the illustration.
@@ -49,12 +57,20 @@ def poly_mask(shape, pts):
     return np.array(m) > 0
 
 
-def table_colour(a):
-    """Felt and the rail's dark wood (its highlights are handled by polygons)."""
+def table_colour(a, ty):
+    """Felt and the dark wood of the rail and chair (the rail's highlights are
+    handled by polygons). Brown counts as wood only where it reaches the rail
+    (row ty - 8 down) or the panel's edge: brass buttons and the shading round
+    a face are the same brown, inside him."""
     r, g, b = a[..., 0].astype(int), a[..., 1].astype(int), a[..., 2].astype(int)
-    felt = (g > r + 15) & (g > 50)
-    wood = (r - g > 40) & (g < 75) & (r < 200)
-    return felt | wood
+    felt = (g > r + 15) & (g > b + 5) & (g > 50)       # not navy: Washington's coat has g > r too
+    wood = (r - g > 40) & (g < 75) & (r < 200) & (a[..., 3] > 0)
+    lab, n = ndimage.label(wood)
+    edge = np.zeros_like(wood)
+    edge[max(0, ty - 8):] = True
+    edge[:, :2] = edge[:, -2:] = True
+    outer = np.unique(lab[edge & wood])
+    return felt | np.isin(lab, outer[outer > 0])
 
 
 def load_pose(sheet, box):
@@ -189,7 +205,7 @@ def main(spec_path):
             print(f'  {n} -> {rest}: scale {s:.2f}, shift {dx}, {dy} (error {err:.1f})')
     # the poses in the rest pose's space
 
-    char = lambda a: (a[..., 3] > 128) & ~table_colour(a)
+    char = lambda a: (a[..., 3] > 128) & ~table_colour(a, ty)
     chair = poly_mask(shape, spec['exclude'][rest]) if rest in spec.get('exclude', {}) else np.zeros(shape, bool)
 
     # ---------------------------------------------------------------- arms
@@ -216,6 +232,8 @@ def main(spec_path):
             assets[(side, state)] = rgba
     # the upper arms: the rest pose's visible body round each elbow
     body_vis = char(R) & ~rest_arm & ~chair
+    for poly in spec.get('fill', []):                      # background showing through a gap in the drawing
+        body_vis &= ~poly_mask(shape, poly)
     upper = {}
     for side, arm in spec['arms'].items():
         upper[side] = um = body_vis & poly_mask(shape, arm['upper'])
@@ -228,13 +246,23 @@ def main(spec_path):
     hole = sil & ~body_vis & (np.arange(shape[0])[:, None] < ty + 30)
     body = R.copy()
     # filled from the coat above the rail only (the rail's highlight is skin-coloured)
-    body[..., :3] = diffuse_fill(R[..., :3], hole, body_vis & (np.arange(shape[0])[:, None] < ty - 3)).astype(np.uint8)
+    # and never from rail-hued pixels (red far above green: wood, its highlight)
+    railish = R[..., 0].astype(int) > 1.8 * R[..., 1].astype(int) + 10
+    body[..., :3] = diffuse_fill(R[..., :3], hole, body_vis & ~railish & (np.arange(shape[0])[:, None] < ty - 3)).astype(np.uint8)
     body[..., 3] = np.where(body_vis | hole, 255, 0)
     body[..., 3] = np.where(np.arange(shape[0])[:, None] < ty + 30, body[..., 3], 0)
     body[..., 3] = np.minimum(body[..., 3], np.where(body_vis, R[..., 3], 255))
     # the chair's wood mixed into his outline: brown on the body's outer edge goes
     # (no skin there: the head and hands are their own pieces)
     peel_wood(body, rows_below=240)
+    if spec['master'].get('replace_head'):
+        # the master head is a separate drawing, not quite this head's shape:
+        # the pose's own head goes (head_box, above the collar), or its outline
+        # shows round the master's as a second one
+        hb = spec['master']['head_box']
+        cut = np.zeros(shape, bool)
+        cut[hb[1]:min(hb[3], spec['collar_y']), hb[0]:hb[2]] = True
+        body[..., 3] = np.where(cut, 0, body[..., 3])
 
     for side, um in list(upper.items()):                   # the upper arms, cut from the clean body
         u = body.copy()
@@ -258,6 +286,11 @@ def main(spec_path):
 
     # the master head (face layers drawn on it), fitted on the rest pose's head
     m = spec['master']
+    if 'face' in m:
+        # made here from the face sheet: the master head (its collar faded off
+        # below cut_below) and the eye, brow and mouth layers baked onto it
+        face_rig.cut_below(Image.open(os.path.join(HERE, m['piece'])), m['cut_below']).save(os.path.join(HERE, m['file']))
+        face_rig.main(os.path.join(HERE, m['face']), os.path.join(HERE, m['layers']), m['cut_below'])
     ref = os.path.join(out_dir, '_rest_head.png')
     hb = m['head_box']
     Image.fromarray(upscale(R[hb[1]:hb[3], hb[0]:hb[2]], k)).save(ref)
@@ -345,9 +378,12 @@ def main(spec_path):
     for layer in [body] + [assets[(s, a['rest'])] for s, a in spec['arms'].items()] + list(upper.values()):
         rebuilt.alpha_composite(Image.fromarray(layer))
     orig = R.copy()
-    orig[..., 3] = np.where(char(R) & ~chair, R[..., 3], 0)
+    orig[..., 3] = np.where(sil, R[..., 3], 0)            # all of him: what the colour filters dropped too
     diff = np.abs(np.array(rebuilt).astype(int) - orig.astype(int))[..., :3].sum(-1)
     seen = (orig[..., 3] > 128) & (np.arange(shape[0])[:, None] < ty)
+    if m.get('replace_head'):                              # the master head stands in there
+        hb = m['head_box']
+        seen[hb[1]:min(hb[3], spec['collar_y']), hb[0]:hb[2]] = False
     print(f'  rest pose vs illustration, above the rail: {100 * (diff[seen] > 40).mean():.2f}% of pixels differ, '
           f'mean difference {diff[seen].mean():.1f}')
     bg = lambda im: Image.alpha_composite(Image.new('RGBA', im.size, (90, 180, 90, 255)), im).convert('RGB')
