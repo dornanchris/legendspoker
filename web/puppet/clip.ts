@@ -14,7 +14,8 @@
  * looks when it points toward the viewer. len only ever shortens: a limb
  * never stretches. Its own parts shorten; the bones it carries (a hand) move
  * with its end and keep their shape. A swap shows the named
- * part of a slot from that time on; null puts the slot back to rest. A clip
+ * part of a slot from that time on; null puts the slot back to rest, and "-"
+ * shows nothing there (a whole-figure frame hides the body and arms). A clip
  * that ends where it began (every channel 0, every slot null) leaves the
  * puppet exactly in its rest pose.
  */

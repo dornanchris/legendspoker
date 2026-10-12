@@ -58,7 +58,9 @@ export function puppetScreen(root: HTMLElement, params: string[]): () => void {
     ctx.fillStyle = '#16141a'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
     // what of the rig's canvas to show: the whole seat, or the face close up
-    const head = p.puppet.rig.bones.find((b) => b.name === 'head')!.pivot
+    // the head where it is this frame (a clip can carry it: a lean over the table)
+    const hp = p.puppet.pivots().find((b) => b.name === 'head')!
+    const head = [hp.x, hp.y]
     const box = opts.zoom === 'face'
       ? [head[0] - 150, head[1] - 300, 300, 330]
       : [150, 300, 800, 700]

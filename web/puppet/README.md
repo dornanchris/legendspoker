@@ -26,6 +26,17 @@ add to it. So a clip ending at zero leaves the puppet exactly at rest, and the
 face (head bone, eyes / brows / mouth slots) and an arm clip (arm and hand
 bones and slots) never fight.
 
+**Swaps.** A clip's swap names a part of a slot, null puts the slot back to
+rest, and "-" shows nothing there. A part with `with` shows only while that
+other part shows: face layers carry `"with": "head.rest"`, so swapping in a
+head drawn turned away hides the eyes and mouth drawn for the master. A
+**frame** is a whole-figure drawing (a lean over the table) in slot `frame`
+(and `frame_over`, its collar over the head's neck): a clip hides `torso`,
+`torso_over`, both arms and both upper arms with "-", shows the frame, and
+moves the head by the rig's `frames.<name>` offset, so the master head and
+its face ride on the frame's neck. The change happens inside a motion, as
+the arm pieces' changes do.
+
 **Shapes swap, never cross-fade.** Two mouths faded together are a ghost.
 Blinks are open, half, closed, half, open; speech is one mouth at a time.
 

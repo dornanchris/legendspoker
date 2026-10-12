@@ -109,7 +109,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "eyes.closed",
@@ -123,7 +124,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "eyes.viewer",
@@ -137,7 +139,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "eyes.down",
@@ -151,7 +154,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "eyes.up",
@@ -165,7 +169,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "brows.raised",
@@ -179,7 +184,8 @@
    "slot": "brows",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "brows.together",
@@ -193,7 +199,8 @@
    "slot": "brows",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.rest",
@@ -207,7 +214,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.ah",
@@ -221,7 +229,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.ee",
@@ -235,7 +244,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.oh",
@@ -249,7 +259,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.oo",
@@ -263,7 +274,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.m",
@@ -277,7 +289,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.l",
@@ -291,7 +304,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.f",
@@ -305,7 +319,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.smile",
@@ -319,7 +334,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.tight",
@@ -333,7 +349,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.sigh",
@@ -345,6 +362,49 @@
    "flip": false,
    "z": 20.3,
    "slot": "mouth",
+   "visible": false,
+   "onTable": false,
+   "bone": "head",
+   "with": "head.rest"
+  },
+  {
+   "name": "head.window",
+   "img": "head_window.png",
+   "cx": 556.59,
+   "cy": 633.0,
+   "rot": 0,
+   "scale": 0.57,
+   "flip": false,
+   "z": 20,
+   "slot": "head",
+   "visible": false,
+   "onTable": false,
+   "bone": "head"
+  },
+  {
+   "name": "head.viewer",
+   "img": "head_viewer.png",
+   "cx": 542.05,
+   "cy": 625.01,
+   "rot": 0,
+   "scale": 0.57,
+   "flip": false,
+   "z": 20,
+   "slot": "head",
+   "visible": false,
+   "onTable": false,
+   "bone": "head"
+  },
+  {
+   "name": "head.chin_up",
+   "img": "head_chin_up.png",
+   "cx": 540.91,
+   "cy": 639.26,
+   "rot": 0,
+   "scale": 0.57,
+   "flip": false,
+   "z": 20,
+   "slot": "head",
    "visible": false,
    "onTable": false,
    "bone": "head"
@@ -360,6 +420,118 @@
    "z": 21,
    "slot": "torso_over",
    "visible": true,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.bet",
+   "img": "frame_bet.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.bet",
+   "img": "frame_over_bet.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.all_in",
+   "img": "frame_all_in.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.all_in",
+   "img": "frame_over_all_in.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.collect",
+   "img": "frame_collect.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.collect",
+   "img": "frame_over_collect.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.heads_up",
+   "img": "frame_heads_up.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.heads_up",
+   "img": "frame_over_heads_up.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
    "onTable": false,
    "bone": "torso"
   },
@@ -392,6 +564,146 @@
    "bone": "arm_near"
   },
   {
+   "name": "arm_near.peek",
+   "img": "arm_near_peek.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
+   "name": "arm_near.call",
+   "img": "arm_near_call.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
+   "name": "arm_near.fold",
+   "img": "arm_near_fold.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
+   "name": "arm_near.show",
+   "img": "arm_near_show.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
+   "name": "arm_near.square",
+   "img": "arm_near_square.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
+   "name": "arm_near.cuff",
+   "img": "arm_near_cuff.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
+   "name": "arm_near.waistcoat",
+   "img": "arm_near_waistcoat.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
+   "name": "arm_near.flat",
+   "img": "arm_near_flat.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
+   "name": "arm_near.tap",
+   "img": "arm_near_tap.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
+   "name": "arm_near.talk",
+   "img": "arm_near_talk.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
    "name": "arm_far.rest",
    "img": "arm_far_rest.png",
    "cx": 546.0,
@@ -402,6 +714,20 @@
    "z": 22,
    "slot": "arm_far",
    "visible": true,
+   "onTable": true,
+   "bone": "arm_far"
+  },
+  {
+   "name": "arm_far.cuff",
+   "img": "arm_far_cuff.png",
+   "cx": 546.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 22,
+   "slot": "arm_far",
+   "visible": false,
    "onTable": true,
    "bone": "arm_far"
   },
@@ -446,7 +772,95 @@
     0.97,
     20,
     6
+   ],
+   "A2": [
+    0.96,
+    24,
+    10
+   ],
+   "A4": [
+    1.05,
+    -24,
+    -10
+   ],
+   "A6": [
+    1.03,
+    -16,
+    -5
+   ],
+   "B2": [
+    1.0,
+    14,
+    -2
+   ],
+   "B4": [
+    1.03,
+    -9,
+    -2
+   ],
+   "B5": [
+    1.01,
+    16,
+    -5
+   ],
+   "B6": [
+    1.0,
+    -6,
+    7
+   ],
+   "C1": [
+    1.0,
+    6,
+    -2
+   ],
+   "C2": [
+    1.0,
+    4,
+    -2
+   ],
+   "D1": [
+    1.0,
+    0,
+    6
+   ],
+   "A5": [
+    1.06,
+    -18,
+    7
+   ],
+   "B1": [
+    1.06,
+    -16,
+    4
+   ],
+   "B3": [
+    1.0,
+    14,
+    10
+   ],
+   "D6": [
+    0.95,
+    3,
+    28
    ]
   }
+ },
+ "frames": {
+  "bet": [
+   0.0,
+   -4.0
+  ],
+  "all_in": [
+   14.0,
+   12.0
+  ],
+  "collect": [
+   -14.0,
+   0.0
+  ],
+  "heads_up": [
+   8.0,
+   36.0
+  ]
  }
 }

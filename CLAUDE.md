@@ -360,10 +360,13 @@ its drawing. The laced hands of his rest pose cannot be parted, so the check
 changes arm pieces at the start and end of the lift. Preview it at `#/puppet/lincoln` (the bench: trigger,
 loop, slow, scrub, beside the reference pose). Not yet on the table screen.
 Washington is built the same way from his four pose sheets and face sheet
-(`#/puppet/washington`): his hands rest apart, so his check changes only the
-right forearm, in the air, and knocks a fist twice on the rail. His master
-head is a separate drawing a little narrower than the poses' head, so it
-replaces that head outright (`replace_head`). Sheets B-D are not used yet.
+(`#/puppet/washington`), with all 23 clips: every poker action, his three
+tells beside their decoys, and his beats. His hands rest apart, so a one-arm
+gesture changes only that forearm, in the air. Poses that move his whole body
+(bet, all in, collect, the heads-up lean) are whole-figure frames placed by
+the table, with the master head moved onto their neck. His master head
+replaces the poses' head outright (`replace_head`). FDR's prompts are next
+(`art-tools/fdr_parts/POSES.md`).
 **Layering rule for the table screen:** the room's table covers a puppet only
 below the puppet's own table line as well as below the rim (see
 `web/puppet/README.md`); the end seats' rim curves up above the drawn rail.

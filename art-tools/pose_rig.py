@@ -32,6 +32,20 @@ own head (head_box, above collar_y) from the body, for a master drawn a
 different shape. "fill" lists polygons of background showing through a gap
 in the drawing, painted over like the coat behind an arm.
 
+An arm asset with "space": "rest" is cut AFTER its pose is moved onto the
+rest pose, so its polygon is drawn in the rest pose's pixels and every
+piece's elbow edge can share one line; "props" are polygons round chips in a
+hand (their red is the rail's, so no wood filter inside them). Master "heads"
+are other heads from the face sheet (turned away, toward the viewer), placed
+on the master by the collar; face layers carry "with": "head.rest", so they
+show only on the head they were drawn for.
+
+"frames" are whole-figure drawings for poses that move all of him (a lean
+over the table), placed by the table ("reg": scale, dx, dy from the felt's
+edge), cut by a polygon, his own head cut away round where the master head
+lands (found on his stock: "stock_box"). A clip shows one in slot "frame" with
+body and arms hidden ("-"), and moves the head by the rig's "frames" offset.
+
 Writes the runtime rig (web/art/<id>/), a build_puppet layout
 (art-tools/<id>_layout.json) and, in <id>_parts/<id>_pose/, every image plus
 validate.png: the rebuilt rest pose against the illustration.
@@ -57,7 +71,7 @@ def poly_mask(shape, pts):
     return np.array(m) > 0
 
 
-def table_colour(a, ty):
+def table_colour(a, ty, with_wood=True):
     """Felt and the dark wood of the rail and chair (the rail's highlights are
     handled by polygons). Brown counts as wood only where it reaches the rail
     (row ty - 8 down) or the panel's edge: brass buttons and the shading round
@@ -70,7 +84,7 @@ def table_colour(a, ty):
     edge[max(0, ty - 8):] = True
     edge[:, :2] = edge[:, -2:] = True
     outer = np.unique(lab[edge & wood])
-    return felt | np.isin(lab, outer[outer > 0])
+    return (felt | np.isin(lab, outer[outer > 0])) if with_wood else felt
 
 
 def load_pose(sheet, box):
@@ -169,6 +183,34 @@ def peel_wood(rgba, rows_below=0):
     return rgba
 
 
+def fit_by_collar(master, piece, span=90):
+    """(dx, dy) placing a head drawn at another angle on the master head, both
+    from the face sheet (same scale): matched on the stock and collar under
+    the chin, the part of a turned head that does not turn."""
+    M = np.array(Image.open(master).convert('RGBA')).astype(float)
+    P = np.array(Image.open(piece).convert('RGBA')).astype(float)
+    ph = P.shape[0]
+    band = P[int(ph * 0.68):]
+    by = int(ph * 0.68)
+    best = (1e9, 0, 0)
+    for dy in range(-span, span + 1, 2):
+        for dx in range(-span, span + 1, 2):
+            y0, x0 = by + dy, dx
+            ys, xs = max(0, y0), max(0, x0)
+            ye, xe = min(M.shape[0], y0 + band.shape[0]), min(M.shape[1], x0 + band.shape[1])
+            if ye - ys < 20 or xe - xs < 40:
+                continue
+            a = band[ys - y0:ye - y0, xs - x0:xe - x0]
+            b = M[ys:ye, xs:xe]
+            m = (a[..., 3] > 200) & (b[..., 3] > 200)
+            if m.sum() < 0.4 * (band[..., 3] > 200).sum():
+                continue
+            d = np.abs(a[..., :3] - b[..., :3])[m].mean()
+            if d < best[0]:
+                best = (d, dx, dy)
+    return best[1], best[2]
+
+
 def upscale(rgba, k):
     """Premultiplied resize, so no dark or light fringe appears at the edges."""
     a = rgba.astype(float)
@@ -214,19 +256,32 @@ def main(spec_path):
     for side, arm in spec['arms'].items():
         for state, a in arm['assets'].items():
             # cut in the source pose's own pixels (the polygons are drawn there),
-            # then moved into the rest pose's space
-            src = poses[a['pose']]
-            m = char(src) & poly_mask(src.shape[:2], a['poly'])
+            # then moved into the rest pose's space; or, with "space": "rest",
+            # cut after the move, so every piece's elbow edge is the same line
+            in_rest = a.get('space') == 'rest'
+            src = to_rest_space(poses[a['pose']], regs[a['pose']], shape) if in_rest else poses[a['pose']]
+            # "props": polygons round chips in the hand; their red is the rail's, so
+            # inside them no wood filter (the outline keeps the rail out)
+            props = np.zeros(src.shape[:2], bool)
+            for pp in a.get('props', []):
+                props |= poly_mask(src.shape[:2], pp)
+            m = np.where(props, (src[..., 3] > 128) & ~table_colour(src, ty, with_wood=False), char(src))
+            m &= poly_mask(src.shape[:2], a['poly'])
             for ex in a.get('except', []):
                 m &= ~poly_mask(src.shape[:2], ex)
-            if a.get('drop_blue'):                         # card backs in another hand
+            if a.get('drop_blue'):                         # cards: their backs, and the light border round them
                 c = src[..., :3].astype(int)
-                m &= ~ndimage.binary_dilation((c[..., 2] - c[..., 0] > 18) & (c[..., 2] > 45), iterations=1)
+                blue = (c[..., 2] - c[..., 0] > 18) & (c[..., 2] > 45)
+                near = ndimage.binary_dilation(blue, iterations=4)
+                m &= ~ndimage.binary_dilation(blue, iterations=1) & ~(near & (c.min(-1) > 170) & (np.ptp(c, axis=-1) < 45))
             m = biggest(m)
             m = ndimage.binary_fill_holes(m) & (src[..., 3] > 128)
             rgba = src.copy()
             rgba[..., 3] = np.where(m, src[..., 3], 0)
-            rgba = to_rest_space(peel_wood(rgba), regs[a['pose']], shape)
+            if not a.get('props'):                         # (peeling would eat the chips' red)
+                rgba = peel_wood(rgba)
+            if not in_rest:
+                rgba = to_rest_space(rgba, regs[a['pose']], shape)
             if a['pose'] == rest and state == arm['rest']:
                 rest_arm |= rgba[..., 3] > 128
             assets[(side, state)] = rgba
@@ -269,21 +324,6 @@ def main(spec_path):
         u[..., 3] = np.where(um, body[..., 3], 0)
         upper[side] = u
 
-    # ---------------------------------------------------------------- write
-    X = lambda x: spec['origin_x'] + k * x                 # rest-pose pixels -> canvas
-    Y = lambda y: TABLE + k * (y - ty)
-    files = {}
-    def save(name, rgba):
-        f = os.path.join(out_dir, f'{name}.png')
-        Image.fromarray(upscale(rgba, k)).save(f)
-        files[name] = f
-    save('body', body)
-    for side in upper:
-        save(f'upper_{side}', upper[side])
-    for (side, state), rgba in assets.items():
-        save(f'arm_{side}_{state}', rgba)
-    Image.fromarray(R).save(os.path.join(out_dir, 'source_rest.png'))
-
     # the master head (face layers drawn on it), fitted on the rest pose's head
     m = spec['master']
     if 'face' in m:
@@ -296,16 +336,106 @@ def main(spec_path):
     Image.fromarray(upscale(R[hb[1]:hb[3], hb[0]:hb[2]], k)).save(ref)
     mx, my, mk = fit_head(ref, os.path.join(HERE, m['file']), *m.get('fit', [0.5, 1.2]))
     mw, mh = Image.open(os.path.join(HERE, m['file'])).size
-    head_cx, head_cy = X(hb[0]) + mx + mw * mk / 2, Y(hb[1]) + my + mh * mk / 2
     print(f'  master head on the rest head: {mx}, {my}, scale {mk}')
+    # the master head's silhouette in the rest pose's pixels (for cutting a frame's own head)
+    mhead = np.zeros(shape, bool)
+    ma = np.array(Image.open(os.path.join(HERE, m['file'])).convert('RGBA'))[..., 3] > 60
+    ma = np.array(Image.fromarray(ma.astype(np.uint8) * 255).resize(
+        (max(1, round(ma.shape[1] * mk / k)), max(1, round(ma.shape[0] * mk / k))), Image.NEAREST)) > 0
+    ox, oy = round(hb[0] + mx / k), round(hb[1] + my / k)
+    ys, xs = slice(max(0, oy), min(shape[0], oy + ma.shape[0])), slice(max(0, ox), min(shape[1], ox + ma.shape[1]))
+    mhead[ys, xs] = ma[ys.start - oy:ys.stop - oy, xs.start - ox:xs.stop - ox]
+
+    # ---------------------------------------------------------------- frames
+    # whole-figure drawings for the poses that move all of him (a lean over the
+    # table): placed by the table (the felt's edge), not the torso, so his body
+    # drops into the lean as drawn. A clip shows one in place of the body and
+    # both arms, and moves the master head onto its neck ("head": where the
+    # frame's head is, from the rest pose's).
+    frames = {}
+    X = lambda x: spec['origin_x'] + k * x                 # rest-pose pixels -> canvas
+    Y = lambda y: TABLE + k * (y - ty)
+    for name, fr in spec.get('frames', {}).items():
+        src = load_pose(sheet(spec['poses'][fr['pose']]['sheet']), spec['poses'][fr['pose']]['box'])
+        F = to_rest_space(src, tuple(fr['reg']), shape)
+        props = np.zeros(shape, bool)
+        for pp in fr.get('props', []):
+            props |= poly_mask(shape, pp)
+        fm = np.where(props, (F[..., 3] > 128) & ~table_colour(F, ty, with_wood=False), char(F))
+        fm &= poly_mask(shape, fr['poly'])
+        for ex in fr.get('except', []):
+            fm &= ~poly_mask(shape, ex)
+        lab, n = ndimage.label(fm)                          # crumbs of rail and felt go
+        if n:
+            sz = ndimage.sum(fm, lab, range(1, n + 1))
+            fm = np.isin(lab, 1 + np.nonzero(sz >= 150)[0])
+        fm = ndimage.binary_fill_holes(fm) & (F[..., 3] > 128)
+        if 'head' in fr:
+            hx, hy = fr['head']
+        else:                                              # where its stock and collar are: the head sits on them
+            # the rest pose moved onto the frame: its stock lands on the frame's
+            _, hx, hy, err = register(F, R, spec.get('stock_box', [200, 140, 310, 230]), scales=[1.0], span=40)
+        if spec['master'].get('replace_head'):             # its own head goes, as the rest pose's did
+            # under the master head (moved onto this neck) and a margin round it,
+            # above the collar: the frame's own head, a little wider than the
+            # master, and never the coat or epaulettes beside it
+            cut = ndimage.shift(mhead, (hy, hx), order=0, cval=False)
+            cut = ndimage.binary_dilation(cut, iterations=fr.get('head_margin', 16))
+            # and, round the head, its colours: the wig's white, skin, and the
+            # dark outline along them (the wig is bigger in a lean, and curls on
+            # past the master's outline); the coat's colours stay
+            hb = spec['master']['head_box']
+            box = np.zeros(shape, bool)
+            box[max(0, hb[1] + hy):, max(0, hb[0] + hx - 30):min(shape[1], hb[2] + hx + 40)] = True
+            c = F[..., :3].astype(int)
+            wig = (c.min(-1) > 85) & (np.ptp(c, axis=-1) < 50)               # its shading too
+            skin = (c[..., 0] > 170) & (c[..., 0] - c[..., 2] > 60) & (c[..., 1] > 100) & (c[..., 1] < 175) & (c[..., 2] > 80) & (c[..., 2] < 140)
+            dark = (c.max(-1) < 60) & ~(c[..., 2] > c[..., 0] + 15)          # outline and ribbon, not navy
+            head = ndimage.binary_dilation(wig | skin, iterations=2)
+            head |= dark & ndimage.binary_dilation(wig, iterations=6)
+            head &= ~((c[..., 2] > c[..., 0] + 15) & (c.max(-1) > 50))      # never the coat
+            cut |= box & head
+            cut[max(0, spec['collar_y'] + hy):] = False
+            fm &= ~cut
+            # the head's crumbs left past the cut: above the collar line, keep only
+            # what is solidly joined to the body below it (thin bridges broken)
+            line = max(0, spec['collar_y'] + hy)
+            above = fm.copy()
+            above[line:] = False
+            solid = ndimage.binary_opening(above, iterations=2)
+            solid[line:] = fm[line:]
+            lab, n = ndimage.label(solid)
+            keep = np.isin(lab, np.unique(lab[line:][fm[line:]]))
+            fm = fm & ((np.arange(shape[0])[:, None] >= line) | ndimage.binary_dilation(keep & (lab > 0), iterations=2))
+        rgba = F.copy()
+        rgba[..., 3] = np.where(fm, F[..., 3], 0)
+        rgba = np.where(props[..., None], rgba, peel_wood(rgba.copy()))
+        frames[name] = (rgba, hx, hy)
+
+    # ---------------------------------------------------------------- write
+    files = {}
+    def save(name, rgba):
+        f = os.path.join(out_dir, f'{name}.png')
+        Image.fromarray(upscale(rgba, k)).save(f)
+        files[name] = f
+    save('body', body)
+    for side in upper:
+        save(f'upper_{side}', upper[side])
+    for (side, state), rgba in assets.items():
+        save(f'arm_{side}_{state}', rgba)
+    Image.fromarray(R).save(os.path.join(out_dir, 'source_rest.png'))
+
+    head_cx, head_cy = X(hb[0]) + mx + mw * mk / 2, Y(hb[1]) + my + mh * mk / 2
     face = json.load(open(os.path.join(HERE, m['layers'], 'layers.json')))
 
     parts = []
-    def part(name, img, cx, cy, z, bone, slot, scale=1.0, visible=True, on_table=False, clip=None):
+    def part(name, img, cx, cy, z, bone, slot, scale=1.0, visible=True, on_table=False, clip=None, with_=None):
         p = {'name': name, 'img': img, 'cx': round(cx, 2), 'cy': round(cy, 2), 'rot': 0, 'scale': scale,
              'flip': False, 'z': z, 'slot': slot, 'visible': visible, 'onTable': on_table, 'bone': bone}
         if clip:
             p['clip'] = clip
+        if with_:
+            p['with'] = with_                              # shown only while that part is
         parts.append(p)
     bw, bh = round(shape[1] * k), round(shape[0] * k)
     cx0, cy0 = X(0) + bw / 2, Y(0) + bh / 2
@@ -313,8 +443,31 @@ def main(spec_path):
     part('head.rest', 'master.png', head_cx, head_cy, 20, 'head', 'head', scale=mk)
     for z_, kind in ((0.1, 'eyes'), (0.2, 'brows'), (0.3, 'mouth')):
         for state, f in face.get(kind, {}).items():
-            part(f'{kind}.{state}', f, head_cx, head_cy, 20 + z_, 'head', kind, scale=mk, visible=False)
+            part(f'{kind}.{state}', f, head_cx, head_cy, 20 + z_, 'head', kind, scale=mk, visible=False, with_='head.rest')
+    # other heads (turned away, toward the viewer...): drawn on the face sheet at
+    # the master's scale, placed by the collar; the face layers fit only the master
+    head_files = {}
+    for state, piece in m.get('heads', {}).items():
+        piece = os.path.join(HERE, piece)
+        dx, dy = fit_by_collar(os.path.join(HERE, m['piece']), piece)
+        dx, dy = dx + m.get('head_nudge', {}).get(state, [0, 0])[0], dy + m.get('head_nudge', {}).get(state, [0, 0])[1]
+        f = f'head_{state}.png'
+        face_rig.cut_below(Image.open(piece), m['cut_below'] - dy).save(os.path.join(HERE, m['layers'], f))
+        head_files[f] = os.path.join(HERE, m['layers'], f)
+        pw, ph = Image.open(piece).size
+        x0, y0 = X(hb[0]) + mx, Y(hb[1]) + my
+        print(f'  head {state}: at {dx}, {dy} on the master')
+        part(f'head.{state}', f, x0 + (dx + pw / 2) * mk, y0 + (dy + ph / 2) * mk, 20, 'head', 'head', scale=mk, visible=False)
     part('torso_over', 'torso_over.png', cx0, cy0, 21, 'torso', 'torso_over')
+    for name, (rgba, hx, hy) in frames.items():
+        save(f'frame_{name}', rgba)
+        fo = upscale(rgba, k).astype(float)
+        rows_ = np.arange(fo.shape[0])[:, None] / k
+        fo[..., 3] *= np.clip((rows_ - spec['collar_y'] - hy) / 3, 0, 1)
+        Image.fromarray(fo.astype(np.uint8)).save(os.path.join(out_dir, f'frame_over_{name}.png'))
+        part(f'frame.{name}', f'frame_{name}.png', cx0, cy0, 10, 'torso', 'frame', visible=False, on_table=True)
+        part(f'frame_over.{name}', f'frame_over_{name}.png', cx0, cy0, 21, 'torso', 'frame_over', visible=False)
+        print(f'  frame {name}: head at {hx}, {hy} from rest')
     zs = {'far': 22, 'near': 23}
     for (side, state), _ in assets.items():
         arm = spec['arms'][side]
@@ -350,12 +503,16 @@ def main(spec_path):
     for kind, states in face.items():
         for f in states.values():
             shutil.copyfile(os.path.join(HERE, m['layers'], f), os.path.join(rt, f))
+    for f, src_ in head_files.items():
+        shutil.copyfile(src_, os.path.join(rt, f))
     shutil.copyfile(os.path.join(HERE, 'rooms', 'table_preview.png'), os.path.join(rt, 'table_preview.png'))
     rig = {'id': spec['id'], 'name': spec['name'],
            'note': 'Generated by art-tools/pose_rig.py from the pose illustrations: do not edit.',
            'canvas': {'w': W, 'h': H}, 'tableLine': TABLE, 'table': 'table_preview.png',
            'bones': bones, 'face': {k_: list(v) for k_, v in face.items()}, 'parts': parts,
            'source': {'rest': spec['rest'], 'registered': {n: list(r) for n, r in regs.items()}}}
+    if frames:                                             # where each frame moves the head (canvas pixels)
+        rig['frames'] = {n: [round(hx * k, 2), round(hy * k, 2)] for n, (_, hx, hy) in frames.items()}
     json.dump(rig, open(os.path.join(rt, 'rig.json'), 'w'), indent=1)
 
     # a build_puppet layout, for mock_screen and previews

@@ -43,13 +43,37 @@ the complete pose drawings (`sources/poses_a.png` .. `poses_d.png`, the sheets
 - **Validation**: `washington_pose/validate.png`: 0.67% of the pixels above
   the rail differ from A1 (the head, replaced, not counted).
 
-The **check** (`web/art/washington/anim.json`): the right hand lifts flat,
-turns to a fist in the air, knocks twice on the rail and lifts again to lay
-the hand flat. Preview: `web/index.html#/puppet/washington`.
+**Clips** (`web/art/washington/anim.json`, 23, every one ending exactly at
+rest; preview `web/index.html#/puppet/washington`, each beside its drawing):
 
-Not used yet: sheets B-D (all in, show, collect, the tells, talking, the big
-bet, the lean). Pose B2 draws real card faces (A spade, K heart); the game
-draws its own cards, so that pose needs its cards cut out.
+- Poker actions: `check` (a fist knocks twice), `peek`, `call`, `bet`,
+  `fold`, `all_in`, `show`, `collect`.
+- Tells and the idles that hide them: `cuff` (TELL, strong) beside
+  `waistcoat`; `flat` (TELL, weak) beside `tap`; `sits_straighter` (TELL,
+  bluffing) beside `jaw`; and `square`, `window`.
+- Beats: `look_at_you`, `talk`, `smile`, `big_bet`, `lost_pot`, `won_pot`,
+  `heads_up`.
+
+How each is made:
+- **One arm moves** (check, peek, call, fold, show, square, waistcoat, flat,
+  tap, talk): the right forearm lifts, changes to that pose's piece in the
+  air, lands, and returns the same way. The pieces are cut in the rest
+  pose's pixels (`"space": "rest"`) so they share one elbow edge; chips in
+  the hand are kept (`props`), cards are cut away (the game draws them).
+- **Both arms** (cuff): both change piece in the air.
+- **The whole figure leans** (bet, all_in, collect, heads_up): these
+  drawings move his shoulders and body, so they are frames: the whole figure
+  from that drawing, placed by the table's edge, his own head cut away round
+  where the master head lands (found on his stock). The body leans toward it,
+  the drawing changes, and it settles back.
+- **Head only** (window, look_at_you): the turned heads from the face sheet
+  (22, 23; 24 chin up is spare), placed on the master by the collar.
+- **Face and body only** (sits_straighter, jaw, smile, big_bet, lost_pot,
+  won_pot): face layers and small head and torso moves.
+
+Not used: C3-C6, D2-D5 as drawings (their faces are the face sheet's), and
+the breath puff. Pose B2 draws real card faces; future prompts ask for
+blank cards (`art-tools/fdr_parts/POSES.md`).
 
 ## The parts-sheet puppet (superseded for the game)
 

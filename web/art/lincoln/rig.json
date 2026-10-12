@@ -109,7 +109,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "eyes.closed",
@@ -123,7 +124,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "eyes.viewer",
@@ -137,7 +139,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "eyes.down",
@@ -151,7 +154,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "eyes.up",
@@ -165,7 +169,8 @@
    "slot": "eyes",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "brows.raised",
@@ -179,7 +184,8 @@
    "slot": "brows",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "brows.together",
@@ -193,7 +199,8 @@
    "slot": "brows",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.rest",
@@ -207,7 +214,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.ah",
@@ -221,7 +229,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.ee",
@@ -235,7 +244,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.oh",
@@ -249,7 +259,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.oo",
@@ -263,7 +274,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.m",
@@ -277,7 +289,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.f",
@@ -291,7 +304,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.l",
@@ -305,7 +319,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.smile",
@@ -319,7 +334,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.tight",
@@ -333,7 +349,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "mouth.sigh",
@@ -347,7 +364,8 @@
    "slot": "mouth",
    "visible": false,
    "onTable": false,
-   "bone": "head"
+   "bone": "head",
+   "with": "head.rest"
   },
   {
    "name": "torso_over",

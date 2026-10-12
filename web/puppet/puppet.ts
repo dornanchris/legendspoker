@@ -61,7 +61,7 @@ export class Puppet {
     }
     for (const [slot, swaps] of Object.entries(clip.swaps ?? {})) {
       const s = swapAt(swaps, t)
-      if (s !== null) this.show(slot, s)
+      if (s !== null) this.show(slot, s === '-' ? null : s)
     }
   }
 
@@ -107,7 +107,8 @@ export class Puppet {
       const s = this.slots.get(p.slot)
       return s !== null && p.name === `${p.slot}.${s}`
     })
-    return shown.sort((a, b) => a.z - b.z)
+    const names = new Set(shown.map((p) => p.name))
+    return shown.filter((p) => !p.with || names.has(p.with)).sort((a, b) => a.z - b.z)
   }
 
   /**

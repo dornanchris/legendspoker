@@ -24,6 +24,8 @@ export type RigPart = {
   slot: string
   visible: boolean
   onTable: boolean
+  /** Shown only while this other part is (a face layer: only on the head it was drawn for). */
+  with?: string
 }
 
 export type RigBone = { name: string; parent: string | null; pivot: [number, number] }
