@@ -147,6 +147,8 @@ art-tools/
   mock_screen.py  draws the table screen with the current art: game first
   face_rig.py     bakes a face-overlay sheet into seam-free eye/brow/mouth
                   layers on a master head
+  pose_rig.py     builds a puppet from complete pose drawings: one-piece
+                  forearm+hand assets on elbow pivots (Lincoln's game rig)
 MOTION-SPEC.md    the animation parts list, tagged MECH/IDLE/BEAT/TELL
 ASSETS.md         every free/CC0 source + licensing traps
 CHARACTER-ART-PROMPTS.md  image prompts per character: a reference portrait,
@@ -349,8 +351,13 @@ add to it, so face and arms are independent and a clip that ends at zero
 returns exactly to rest. Shapes swap, never cross-fade (no mouth ghosts);
 limbs rotate about elbow and wrist and may only foreshorten, never stretch.
 Lincoln has blinks, gaze, brows, letter-driven speech, idle sway and breath,
-and one clip, `check` (his right fist leaves the folded hands, raps the felt
-twice, settles back). Preview it at `#/puppet/lincoln` (the bench: trigger,
+and one clip, `check`. His puppet is built by `art-tools/pose_rig.py` from
+the complete pose drawings (the owner's call: they are the source of truth):
+each forearm, cuff and hand is ONE piece turning about the elbow (no wrist
+joint), alternate pieces from other poses registered to hang on the same
+elbow, the upper arms drawn over the joints, the rest pose validated against
+its drawing. The laced hands of his rest pose cannot be parted, so the check
+changes arm pieces at the start and end of the lift. Preview it at `#/puppet/lincoln` (the bench: trigger,
 loop, slow, scrub, beside the reference pose). Not yet on the table screen.
 **JFK is built but at no table** (the owner): an idea for a hidden event
 like Loki's, winning a pot with a three and a five (the 35th president) and

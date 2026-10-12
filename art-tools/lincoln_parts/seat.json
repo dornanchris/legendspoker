@@ -102,5 +102,6 @@
    }
   ]
  },
- "runtime": "../web/art/lincoln"
+ "layout": "lincoln_parts/lincoln_rig/parts_sheet_layout.json",
+ "note": "Superseded for the game by pose_rig.json (the puppet is built from the pose illustrations). Kept because it makes the master head and its face layers (lincoln_rig/master.png, lincoln_rig/face/) that pose_rig uses."
 }

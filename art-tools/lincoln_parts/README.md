@@ -49,27 +49,43 @@ Built by `art-tools/seat_puppet.py` from `seat.json`:
 
 `preview.png` is the rest pose.
 
-## Animation (phase 1: face, and the check)
+## Animation: built from the pose drawings
 
-The face sheet's head (`lincoln_face/lincoln_face_01.png`) is the master
-head: `seat.json` places it by matching its face to head 7, so his pose and
-proportions stay, and trims its own collar and tie (the torso's show).
-`face_rig.py` bakes the face sheet's patches into layers the size of that
-head (`lincoln_rig/face/`), from `face.json`:
+**The game's puppet is built by `art-tools/pose_rig.py` from `pose_rig.json`**,
+from the complete pose drawings (`sources/poses_a.png`), not from the parts
+sheets: the drawings are the source of truth for his proportions, sleeves,
+cuffs and perspective.
 
-- each patch is found on the master by matching (`fits.json`), its drawn
-  outline stripped, its skin matched to the head's, and its edge faded;
-- each kind draws only on its own region: eyes below the brow line, brows
-  above it (so they change independently), mouths below the nose; open
-  mouths are moved down until the upper lip clears the nose (the drawings
-  open the mouth upward, into it), over a patch of plain skin;
-- eyes: half, closed, viewer, down, up. Brows: raised, together. Mouths:
-  rest, ah, ee, oh, oo, m, f, l, smile, tight, sigh.
+    python3 art-tools/pose_rig.py art-tools/lincoln_parts/pose_rig.json
 
-The fists for the check (`lincoln_hands/` 5 and 6) are placed on his near
-wrist (`hand_extras`). `seat.json`'s `"runtime"` writes the rig to
-`web/art/lincoln/`; his face timing and clips are in
-`web/art/lincoln/anim.json`. Preview: `web/index.html#/puppet/lincoln`.
+- **Rest = pose A1** (hands laced). The body is A1 with the forearms lifted
+  out; the coat hidden behind them is rebuilt from the coat round it.
+- **Arms: forearm, cuff and hand are ONE piece**, cut from a drawing along
+  its outline, turning about the elbow. There is no wrist joint, so a hand
+  can never drift off its cuff. Each piece's elbow end is grown a little
+  under the upper arm, and a copy of each upper arm (the body's own pixels
+  round the elbow) is drawn over it, so turning never opens a gap.
+- **Alternate pieces share the elbow.** Pose A3 (the check) and pose A2 (his
+  left arm resting alone) are registered to A1 on the torso (A2 on his left
+  side, where it leans) before their arms are cut, so every piece hangs on
+  the same elbow point. Pieces: `arm_near.rest` (A1: his right forearm with
+  the laced hands), `arm_near.check` (A3), `arm_far.rest` (A1: his left
+  forearm to the knuckles), `arm_far.alone` (A2).
+- The table and chair are dropped (felt and dark wood by colour, the rail's
+  skin-coloured highlight by the polygons, wood peeled off the outlines).
+- **Validation**: `lincoln_pose/validate.png` is A1, the rebuilt rest pose,
+  and their difference: 0.04% of the pixels above the rail differ.
+- The master head (`lincoln_rig/master.png`, from the face sheet) and its
+  face layers are fitted onto A1's head; `seat.json` still makes them.
+
+The **check** (`web/art/lincoln/anim.json`) turns each arm about its elbow
+from rest to the A3 pose, taps twice, and comes back. The laced hands of A1
+are one tangle that no drawing parts, so both arms change piece as the lift
+begins and again just before the hands meet: the one moment no drawing
+covers. A drawing of A1 with his right hand lifted away (his left resting
+alone, as in A1) would let that change happen without the jump.
+
+Preview: `web/index.html#/puppet/lincoln`.
 
 ## Next: every pose
 

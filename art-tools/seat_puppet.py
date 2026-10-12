@@ -75,6 +75,7 @@ The spec (all piece numbers are from the character's parts.json):
                     hands from other sheets, each placed with its own cuff on
                     the wrist, pointing the resting hand's way (plus turn, deg);
                     "trim_stub": true cuts its stub of sleeve off behind the cuff
+  layout            where to write the layout (default art-tools/<id>_layout.json)
   runtime           where to write the runtime rig for web/puppet/ (rig.json
                     and its images), relative to art-tools/
   tune              scales and offsets; see DEFAULTS
@@ -622,7 +623,7 @@ def main(spec_path):
                       f"left; flip for the right). Built by seat_puppet.py from {os.path.relpath(spec_path, HERE)}. "
                       "Parts sharing a slot are swaps (one visible).",
               'parts': parts}
-    out = os.path.join(HERE, f"{spec['id']}_layout.json")
+    out = os.path.join(HERE, spec.get('layout', f"{spec['id']}_layout.json"))
     rt = [q.pop('_rt', None) for q in parts]
     json.dump(layout, open(out, 'w'), indent=1)
     if spec.get('runtime'):
