@@ -25,6 +25,7 @@ by the table below that line.
 once whole and once clipped above the head, lets a cape's collar and shoulders
 wrap over the bottom of a hood without the collar covering the face.
 "clip_feather": n fades it in over n pixels below that line, so no hard edge.
+"clip_bottom": y draws a part only above canvas line y (faded by "clip_feather").
 "clip_cols": [[x0, x1], ...] draws a part only between those canvas columns
 (softened by "clip_feather" too):
 a torso listed again over the forearms, kept only at its sides, puts its
@@ -81,6 +82,14 @@ def cmd_render(args):
             continue
         if "clip_top" in p:
             im = clip_above(im, int(p["clip_top"]) - int(p["y"]), int(p.get("clip_feather", 0)))
+        if "clip_bottom" in p:
+            cut = int(p["clip_bottom"]) - int(p["y"])
+            fe = int(p.get("clip_feather", 0))
+            ramp = Image.new("L", im.size, 0)
+            for y in range(im.height):
+                ramp.paste(255 if y < cut - fe else max(0, int(255 * (cut - y) / (fe + 1))), (0, y, im.width, y + 1))
+            im = im.copy()
+            im.putalpha(ImageChops.multiply(im.getchannel("A"), ramp))
         if "clip_cols" in p:
             keep = Image.new("L", im.size, 0)
             for x0, x1 in p["clip_cols"]:

@@ -73,7 +73,9 @@
   "fhr": 205,
   "ne": 30,
   "fe": 30,
-  "ey": -30
+  "ey": -42,
+  "elbow_fade": 20,
+  "wrist_back": 10
  },
  "master": {
   "file": "lincoln_parts/lincoln_face/lincoln_face_01.png",
@@ -89,12 +91,14 @@
    {
     "name": "fist_down",
     "file": "lincoln_parts/lincoln_hands/lincoln_hands_05.png",
-    "scale": 0.6
+    "scale": 0.6,
+    "trim_stub": true
    },
    {
     "name": "fist_up",
     "file": "lincoln_parts/lincoln_hands/lincoln_hands_06.png",
-    "scale": 0.6
+    "scale": 0.6,
+    "trim_stub": true
    }
   ]
  },

@@ -30,7 +30,7 @@
    "parent": "torso",
    "pivot": [
     707.71,
-    850
+    838
    ]
   },
   {
@@ -38,7 +38,7 @@
    "parent": "arm_far",
    "pivot": [
     611.77,
-    867.01
+    855.01
    ]
   },
   {
@@ -46,7 +46,7 @@
    "parent": "torso",
    "pivot": [
     329.83,
-    850
+    838
    ]
   },
   {
@@ -54,7 +54,7 @@
    "parent": "arm_near",
    "pivot": [
     425.77,
-    867.01
+    855.01
    ]
   }
  ],
@@ -538,7 +538,7 @@
    "bone": "arm_far",
    "img": "arm_far.png",
    "cx": 646.31,
-   "cy": 862.34,
+   "cy": 850.34,
    "rot": 45.2,
    "scale": 1.68,
    "flip": true,
@@ -552,7 +552,7 @@
    "bone": "hand_far",
    "img": "hand_far_rest.png",
    "cx": 560.32,
-   "cy": 897.87,
+   "cy": 885.87,
    "rot": -12.8,
    "scale": 1.68,
    "flip": true,
@@ -566,7 +566,7 @@
    "bone": "arm_near",
    "img": "arm_near.png",
    "cx": 391.23,
-   "cy": 862.34,
+   "cy": 850.34,
    "rot": -45.2,
    "scale": 1.68,
    "flip": false,
@@ -580,7 +580,7 @@
    "bone": "hand_near",
    "img": "hand_near_rest.png",
    "cx": 477.22,
-   "cy": 897.87,
+   "cy": 885.87,
    "rot": 12.8,
    "scale": 1.68,
    "flip": false,
@@ -593,9 +593,9 @@
    "name": "hand_near.fist_down",
    "bone": "hand_near",
    "img": "hand_near_fist_down.png",
-   "cx": 450.34,
-   "cy": 888.54,
-   "rot": 10.2,
+   "cx": 448.98,
+   "cy": 876.27,
+   "rot": 10.5,
    "scale": 1.008,
    "flip": false,
    "z": 24.6,
@@ -607,9 +607,9 @@
    "name": "hand_near.fist_up",
    "bone": "hand_near",
    "img": "hand_near_fist_up.png",
-   "cx": 449.44,
-   "cy": 885.11,
-   "rot": 2.6,
+   "cx": 448.2,
+   "cy": 873.32,
+   "rot": 3.4,
    "scale": 1.008,
    "flip": false,
    "z": 24.6,
@@ -636,7 +636,7 @@
    "bone": "hand_near",
    "img": "hand_near_lincoln_89.png",
    "cx": 477.22,
-   "cy": 897.87,
+   "cy": 885.87,
    "rot": 12.8,
    "scale": 1.68,
    "flip": false,
@@ -650,7 +650,7 @@
    "bone": "hand_near",
    "img": "hand_near_lincoln_90.png",
    "cx": 477.22,
-   "cy": 897.87,
+   "cy": 885.87,
    "rot": 12.8,
    "scale": 1.68,
    "flip": false,
@@ -664,7 +664,7 @@
    "bone": "hand_near",
    "img": "hand_near_lincoln_92.png",
    "cx": 477.22,
-   "cy": 897.87,
+   "cy": 885.87,
    "rot": 12.8,
    "scale": 1.68,
    "flip": false,
@@ -678,7 +678,7 @@
    "bone": "hand_far",
    "img": "hand_far_lincoln_89.png",
    "cx": 560.32,
-   "cy": 897.87,
+   "cy": 885.87,
    "rot": -12.8,
    "scale": 1.68,
    "flip": true,
@@ -692,7 +692,7 @@
    "bone": "hand_far",
    "img": "hand_far_lincoln_90.png",
    "cx": 560.32,
-   "cy": 897.87,
+   "cy": 885.87,
    "rot": -12.8,
    "scale": 1.68,
    "flip": true,
@@ -706,7 +706,7 @@
    "bone": "hand_far",
    "img": "hand_far_lincoln_92.png",
    "cx": 560.32,
-   "cy": 897.87,
+   "cy": 885.87,
    "rot": -12.8,
    "scale": 1.68,
    "flip": true,

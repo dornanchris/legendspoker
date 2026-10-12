@@ -73,7 +73,8 @@ The spec (all piece numbers are from the character's parts.json):
                     mouth
   hand_extras       {"near": [{"name", "file", "scale", "turn"}], "far": [...]}:
                     hands from other sheets, each placed with its own cuff on
-                    the wrist, pointing the resting hand's way (plus turn, deg)
+                    the wrist, pointing the resting hand's way (plus turn, deg);
+                    "trim_stub": true cuts its stub of sleeve off behind the cuff
   runtime           where to write the runtime rig for web/puppet/ (rig.json
                     and its images), relative to art-tools/
   tune              scales and offsets; see DEFAULTS
@@ -96,6 +97,8 @@ DEFAULTS = dict(
     nr=20, nhr=25, fr=28, fhr=32,            # near / far forearm and hand rotations (degrees)
     hsx=0, hsy=0,                            # nudge both hands along their cuffs
     sleeve=30,                               # "pose": "rim": how far in from each elbow the sleeves reach
+    wrist_back=0,                            # "cuff": "tube": end the forearm this many px short, under the hand's cuff
+    elbow_fade=0,                            # "cuff": "tube": fade the forearm in over this many px from its elbow cut
 )
 
 
@@ -134,7 +137,7 @@ def trim_sleeve(src, dst, mode):
     return float(sx.mean()), float(sy.mean())
 
 
-def trim_tube(src, dst):
+def trim_tube(src, dst, fade=0, back=0):
     """For a forearm drawn as a plain tube, open at the elbow and with a white
     cuff at the wrist: cut it straight across, square to its length, at the
     start of the cuff and at the end of the opening, so the hand's own cuff
@@ -156,7 +159,11 @@ def trim_tube(src, dst):
     lo = np.percentile(t[inside], 98) + 1 if inside.any() else t[A].min()
     keep = A & (t > lo) & (t < hi)
     out = a.copy()
-    out[..., 3] = np.where(biggest(keep), a[..., 3], 0)
+    # end the tube `back` short of the cuff (the wrist point stays where the
+    # cuff began): a hand's cuff then covers it even with the wrist turned
+    out[..., 3] = np.where(biggest(keep) & (t < hi - back), a[..., 3], 0)
+    if fade:                                                 # a soft elbow end, under the coat's sleeve
+        out[..., 3] = (out[..., 3] * np.clip((t - lo) / fade, 0, 1)).astype(np.uint8)
     Image.fromarray(out, 'RGBA').save(dst)
     end = lambda e: (float(gx[keep & (abs(t - e) < 4)].mean()), float(gy[keep & (abs(t - e) < 4)].mean()))
     return end(hi), end(lo)
@@ -305,6 +312,27 @@ def trim_clothes(src, dst, mode=True, below=0.6):
     Image.fromarray(out, 'RGBA').save(dst)
 
 
+def trim_stub(src, dst, keep=0):
+    """Cut a hand's stub of sleeve off behind its cuff, straight across: on a
+    forearm, the stub's rounded end and buttons read as a second sleeve."""
+    a = np.array(Image.open(src).convert('RGBA'))
+    rgb, A = a[..., :3].astype(int), a[..., 3] > 128
+    cuff = biggest(A & (rgb.min(-1) > 180) & (np.ptp(rgb, axis=-1) < 55))
+    skin = A & (rgb[..., 0] > 150) & (rgb[..., 0] - rgb[..., 2] > 60)
+    ys, xs = np.nonzero(cuff)
+    c = np.array([xs.mean(), ys.mean()])
+    sy, sx = np.nonzero(skin)
+    u = c - np.array([sx.mean(), sy.mean()])
+    u /= np.linalg.norm(u)                                  # from the hand toward the sleeve
+    gy, gx = np.mgrid[:A.shape[0], :A.shape[1]]
+    t = (gx - c[0]) * u[0] + (gy - c[1]) * u[1]
+    end = np.percentile(t[cuff], 90) + keep
+    out = a.copy()
+    out[..., 3] = np.where(t > end, 0, a[..., 3])
+    out[..., 3] = np.where(biggest(out[..., 3] > 0), out[..., 3], 0)
+    Image.fromarray(out, 'RGBA').save(dst)
+
+
 def hand_anchor(path, mode):
     """Where a hand's own cuff is, in its image."""
     a = np.array(Image.open(path).convert('RGBA'))
@@ -332,6 +360,10 @@ def clip_baked(src, p):
         cut = (p['clip_top'] - p['y']) / s
         rows = np.arange(im.height)[:, None]
         keep = keep * np.clip((rows - cut + 1) / (fe + 1), 0, 1)
+    if 'clip_bottom' in p:
+        cut = (p['clip_bottom'] - p['y']) / s
+        rows = np.arange(im.height)[:, None]
+        keep = keep * np.clip((cut - rows + 1) / (fe + 1), 0, 1)
     if 'clip_cols' in p:
         cols = np.zeros(im.width)
         for x0, x1 in p['clip_cols']:
@@ -361,7 +393,7 @@ def export_runtime(spec, parts, rt, bones, face, out_dir, F, path):
         while img in used:
             img, n = f"{stem}_{n}.png", n + 1
         used.add(img)
-        if 'clip_top' in p or 'clip_cols' in p:
+        if 'clip_top' in p or 'clip_cols' in p or 'clip_bottom' in p:
             clip_baked(path(p['file']), p).save(os.path.join(out_dir, img))
         else:
             shutil.copyfile(path(p['file']), os.path.join(out_dir, img))
@@ -514,7 +546,7 @@ def main(spec_path):
         sl = f"{spec['id']}_parts/{spec['id']}_rig/sleeve_{ai}.png"
         mode = spec.get('cuff', 'white')
         if mode == 'tube':
-            at, elbow = trim_tube(path(F(ai)), path(sl))
+            at, elbow = trim_tube(path(F(ai)), path(sl), t['elbow_fade'] / t['ka'], t['wrist_back'] / t['ka'])
         else:
             at = trim_sleeve(path(F(ai)), path(sl), mode)
             if spec.get('elbow_cap'):
@@ -542,6 +574,10 @@ def main(spec_path):
         # other hands for this arm (other sheets): each has its own cuff placed on
         # the wrist, pointing the way the resting hand points (plus its own turn)
         for e in spec.get('hand_extras', {}).get(side, []):
+            if e.get('trim_stub'):
+                f = f"{spec['id']}_parts/{spec['id']}_rig/hand_{e['name']}.png"
+                trim_stub(path(e['file']), path(f))
+                e = dict(e, file=f)
             ea = hand_anchor(path(e['file']), 'cream')
             er = (hand_dir + e.get('turn', 0)) - native_angle(path(e['file']), ea, flip) if aim else hr
             ek = t['kha'] * e.get('scale', 1)
