@@ -45,6 +45,14 @@ over the table), placed by the table ("reg": scale, dx, dy from the felt's
 edge), cut by a polygon, his own head cut away round where the master head
 lands (found on his stock: "stock_box"). A clip shows one in slot "frame" with
 body and arms hidden ("-"), and moves the head by the rig's "frames" offset.
+A frame with "head": "own" keeps its drawn head (a hand at the face, a hat in
+the hand): the clip hides the master head instead, and its offset is null.
+"cut_head" cuts the drawn head for the master even without "replace_head".
+A frame takes its pose's placement unless it gives "reg"; a pose drawn on
+another sheet at another size is placed by hand with its own "reg". Room
+round a frame is "frame_margin" (a hat raised high); "drop_wood" cuts the
+chair's red-brown wherever it is, and "back_strip" clears anything thin in
+the columns at his back (the chair's outline).
 
 Writes the runtime rig (web/art/<id>/), a build_puppet layout
 (art-tools/<id>_layout.json) and, in <id>_parts/<id>_pose/, every image plus
@@ -147,7 +155,7 @@ def to_rest_space(rgba, reg, shape):
     im = Image.fromarray(rgba)
     im = im.resize((round(im.width * s), round(im.height * s)), Image.LANCZOS)
     out = Image.new('RGBA', (shape[1], shape[0]), (0, 0, 0, 0))
-    out.paste(im, (dx, dy))
+    out.paste(im, (round(dx), round(dy)))
     return np.array(out)
 
 
@@ -240,7 +248,9 @@ def main(spec_path):
     # register every other pose to the rest pose on the torso
     regs = {rest: (1.0, 0, 0)}
     for n in poses:
-        if n != rest:
+        if n != rest and 'reg' in spec['poses'][n]:        # placed by hand (another sheet, another size)
+            regs[n] = tuple(spec['poses'][n]['reg'])
+        elif n != rest:
             box = spec['poses'][n].get('register_box', spec['register_box'])  # a pose drawn leaning
             s, dx, dy, err = register(R, poses[n], box, span=spec.get('register_span', 24))    # registers where its arm hangs
             regs[n] = (s, dx, dy)
@@ -355,38 +365,73 @@ def main(spec_path):
     frames = {}
     X = lambda x: spec['origin_x'] + k * x                 # rest-pose pixels -> canvas
     Y = lambda y: TABLE + k * (y - ty)
+    FM = spec.get('frame_margin', 0)                       # room round a frame: a hat raised high, standing up
+    fshape = (shape[0] + 2 * FM, shape[1] + 2 * FM)
+    pm = lambda pts: poly_mask(fshape, [[x + FM, y + FM] for x, y in pts])
+    pad = lambda a: np.pad(a, ((FM, FM), (FM, FM)) + ((0, 0),) * (a.ndim - 2))
     for name, fr in spec.get('frames', {}).items():
         src = load_pose(sheet(spec['poses'][fr['pose']]['sheet']), spec['poses'][fr['pose']]['box'])
-        F = to_rest_space(src, tuple(fr['reg']), shape)
-        props = np.zeros(shape, bool)
+        s_, dx_, dy_ = fr.get('reg') or regs[fr['pose']]     # by default where its pose was placed
+        F = to_rest_space(src, (s_, dx_ + FM, dy_ + FM), fshape)
+        props = np.zeros(fshape, bool)
         for pp in fr.get('props', []):
-            props |= poly_mask(shape, pp)
-        fm = np.where(props, (F[..., 3] > 128) & ~table_colour(F, ty, with_wood=False), char(F))
-        fm &= poly_mask(shape, fr['poly'])
+            props |= pm(pp)
+        fm = np.where(props, (F[..., 3] > 128) & ~table_colour(F, ty + FM, with_wood=False),
+                      (F[..., 3] > 128) & ~table_colour(F, ty + FM))
+        fm &= pm(fr['poly']) if 'poly' in fr else (np.arange(fshape[0])[:, None] < ty + FM + fr.get('below', 60))
         for ex in fr.get('except', []):
-            fm &= ~poly_mask(shape, ex)
+            fm &= ~pm(ex)
+        if spec.get('drop_wood'):                          # the chair behind him, wherever it is
+            c = F[..., :3].astype(int)
+            wood = (c[..., 0] - c[..., 1] > 35) & (c[..., 1] < 45) & (c[..., 2] < 35) & (c[..., 0] > 55) & ~props
+            wood |= (c[..., 0] - c[..., 1] > 18) & (c[..., 1] < 20) & (c[..., 2] < 22) & (c[..., 0] > 28) & ~props  # in shadow
+            lab, n = ndimage.label(wood)
+            if n:
+                sz = ndimage.sum(wood, lab, range(1, n + 1))
+                fm &= ~ndimage.binary_dilation(np.isin(lab, 1 + np.nonzero(sz >= 40)[0]), iterations=1)
+        c = F[..., :3].astype(int)                         # the sheet's white caught between an arm and him
+        white = (c.min(-1) > 236) & (np.ptp(c, axis=-1) < 12) & (F[..., 3] > 128)
+        lab, n = ndimage.label(white)
+        trapped = np.zeros(fshape, bool)
+        if n:
+            sz = ndimage.sum(white, lab, range(1, n + 1))
+            trapped = ndimage.binary_dilation(np.isin(lab, 1 + np.nonzero(sz >= 30)[0]), iterations=1)
+        fm &= ~trapped
+        # thin lines (the rail's highlight, the chair's outline) go: a figure's own
+        # outline is part of a shape, and comes back with the dilation
+        fm &= ndimage.binary_dilation(ndimage.binary_opening(fm, iterations=2), iterations=2) | props
+        if 'back_strip' in spec:                           # the chair's outline at his back: nothing thin there
+            strip = np.zeros(fshape, bool)
+            strip[:, :spec['back_strip'] + FM] = True
+            fm &= ~strip | ndimage.binary_dilation(ndimage.binary_opening(fm, iterations=5), iterations=5)
         lab, n = ndimage.label(fm)                          # crumbs of rail and felt go
         if n:
             sz = ndimage.sum(fm, lab, range(1, n + 1))
             fm = np.isin(lab, 1 + np.nonzero(sz >= 150)[0])
-        fm = ndimage.binary_fill_holes(fm) & (F[..., 3] > 128)
-        if 'head' in fr:
+        fm = ndimage.binary_fill_holes(fm) & (F[..., 3] > 128) & ~trapped
+        for ex in fr.get('except', []):                    # again: filling holes refills one he encloses
+            fm &= ~pm(ex)
+        own = fr.get('head') == 'own'                      # its own head kept: a hand at the face, the hat moving
+        if own:
+            hx = hy = None
+        elif isinstance(fr.get('head'), list):
             hx, hy = fr['head']
         else:                                              # where its stock and collar are: the head sits on them
             # the rest pose moved onto the frame: its stock lands on the frame's
-            _, hx, hy, err = register(F, R, spec.get('stock_box', [200, 140, 310, 230]), scales=[1.0], span=40)
-        if spec['master'].get('replace_head'):             # its own head goes, as the rest pose's did
-            # under the master head (moved onto this neck) and a margin round it,
-            # above the collar: the frame's own head, a little wider than the
-            # master, and never the coat or epaulettes beside it
-            cut = ndimage.shift(mhead, (hy, hx), order=0, cval=False)
+            sb = spec.get('stock_box', [200, 140, 310, 230])
+            _, hx, hy, err = register(F, pad(R), [v + FM for v in sb], scales=[1.0], span=40)
+        if not own and (spec['master'].get('replace_head') or fr.get('cut_head')):
+            # its own head goes, as the rest pose's did: under the master head
+            # (moved onto this neck) and a margin round it, above the collar, so
+            # never the coat or epaulettes beside it
+            cut = ndimage.shift(pad(mhead), (hy, hx), order=0, cval=False)
             cut = ndimage.binary_dilation(cut, iterations=fr.get('head_margin', 16))
             # and, round the head, its colours: the wig's white, skin, and the
             # dark outline along them (the wig is bigger in a lean, and curls on
             # past the master's outline); the coat's colours stay
             hb = spec['master']['head_box']
-            box = np.zeros(shape, bool)
-            box[max(0, hb[1] + hy):, max(0, hb[0] + hx - 30):min(shape[1], hb[2] + hx + 40)] = True
+            box = np.zeros(fshape, bool)
+            box[max(0, hb[1] + hy + FM):, max(0, hb[0] + hx - 30 + FM):min(fshape[1], hb[2] + hx + 40 + FM)] = True
             c = F[..., :3].astype(int)
             wig = (c.min(-1) > 85) & (np.ptp(c, axis=-1) < 50)               # its shading too
             skin = (c[..., 0] > 170) & (c[..., 0] - c[..., 2] > 60) & (c[..., 1] > 100) & (c[..., 1] < 175) & (c[..., 2] > 80) & (c[..., 2] < 140)
@@ -395,21 +440,58 @@ def main(spec_path):
             head |= dark & ndimage.binary_dilation(wig, iterations=6)
             head &= ~((c[..., 2] > c[..., 0] + 15) & (c.max(-1) > 50))      # never the coat
             cut |= box & head
-            cut[max(0, spec['collar_y'] + hy):] = False
+            line = max(0, spec['collar_y'] + hy + FM)
+            cut[line:] = False
             fm &= ~cut
             # the head's crumbs left past the cut: above the collar line, keep only
             # what is solidly joined to the body below it (thin bridges broken)
-            line = max(0, spec['collar_y'] + hy)
             above = fm.copy()
             above[line:] = False
             solid = ndimage.binary_opening(above, iterations=2)
             solid[line:] = fm[line:]
             lab, n = ndimage.label(solid)
             keep = np.isin(lab, np.unique(lab[line:][fm[line:]]))
-            fm = fm & ((np.arange(shape[0])[:, None] >= line) | ndimage.binary_dilation(keep & (lab > 0), iterations=2))
+            fm = fm & ((np.arange(fshape[0])[:, None] >= line) | ndimage.binary_dilation(keep & (lab > 0), iterations=2))
         rgba = F.copy()
         rgba[..., 3] = np.where(fm, F[..., 3], 0)
         rgba = np.where(props[..., None], rgba, peel_wood(rgba.copy()))
+        # pale flecks on the outline (the sheet's white, kept by the resize):
+        # off, a pixel at a time from outside in; cuffs and collars are cream,
+        # warmer than the paper
+        for _ in range(3):
+            c = rgba[..., :3].astype(int)
+            rim = ndimage.binary_dilation(rgba[..., 3] < 128, iterations=2) & (rgba[..., 3] > 0)
+            pale = rim & (((c.min(-1) > 185) & (np.ptp(c, axis=-1) < 28)) |      # the paper
+                          ((c.min(-1) > 100) & (np.ptp(c, axis=-1) < 16))) & ~props  # and grey, half paper
+            if not pale.any():
+                break
+            rgba[..., 3] = np.where(pale, 0, rgba[..., 3])
+        lab, n = ndimage.label(rgba[..., 3] > 0)           # the outline's dots the flecks stood between
+        if n:
+            sz = ndimage.sum(rgba[..., 3] > 0, lab, range(1, n + 1))
+            rgba[..., 3] = np.where(np.isin(lab, 1 + np.nonzero(sz < 80)[0]) & ~props, 0, rgba[..., 3])
+        # "body_under": where a prop the game draws itself was cut out (cards
+        # held up), his body from the rest pose shows instead of a hole
+        for poly in fr.get('body_under', []):
+            under = pm(poly) & (pad(body)[..., 3] > 0)
+            pb = pad(body)
+            rgba[..., :3] = np.where(under[..., None], pb[..., :3], rgba[..., :3])
+            rgba[..., 3] = np.where(under, pb[..., 3], rgba[..., 3])
+        for poly in fr.get('fill', []):                    # coat filled in from round it
+            hole = pm(poly)
+            cc = rgba[..., :3].astype(int)                 # the coat's own tone: not outline, not skin
+            known = (rgba[..., 3] > 200) & (cc.max(-1) > 14) & (cc.max(-1) < 42) & (np.ptp(cc, axis=-1) < 12) & ~hole
+            # smoothed over the nearest coat everywhere, so a hand beside the
+            # hole never bleeds into it
+            _, (iy, ix) = ndimage.distance_transform_edt(~known, return_indices=True)
+            field = ndimage.uniform_filter(rgba[iy, ix, :3].astype(float), size=(9, 9, 1))
+            rgba[..., :3] = np.where(hole[..., None], field, rgba[..., :3]).astype(np.uint8)
+            rgba[..., 3] = np.where(hole, 255, rgba[..., 3])
+        # every cut edge darkened to its outline, as load_pose does: an edge cut
+        # through the paper's anti-aliasing is grey, a dotted line on a dark room
+        edge = ndimage.binary_dilation(rgba[..., 3] < 128, iterations=2) & (rgba[..., 3] > 0) & ~props
+        dark = np.stack([ndimage.minimum_filter(rgba[..., ch], size=3) for ch in range(3)], -1)
+        rgba[..., :3] = np.where(edge[..., None], dark, rgba[..., :3])
         frames[name] = (rgba, hx, hy)
 
     # ---------------------------------------------------------------- write
@@ -459,14 +541,18 @@ def main(spec_path):
         print(f'  head {state}: at {dx}, {dy} on the master')
         part(f'head.{state}', f, x0 + (dx + pw / 2) * mk, y0 + (dy + ph / 2) * mk, 20, 'head', 'head', scale=mk, visible=False)
     part('torso_over', 'torso_over.png', cx0, cy0, 21, 'torso', 'torso_over')
+    fcx, fcy = X(-FM) + fshape[1] * k / 2, Y(-FM) + fshape[0] * k / 2
     for name, (rgba, hx, hy) in frames.items():
         save(f'frame_{name}', rgba)
+        part(f'frame.{name}', f'frame_{name}.png', fcx, fcy, 10, 'torso', 'frame', visible=False, on_table=True)
+        if hx is None:
+            print(f'  frame {name}: its own head')
+            continue
         fo = upscale(rgba, k).astype(float)
-        rows_ = np.arange(fo.shape[0])[:, None] / k
+        rows_ = np.arange(fo.shape[0])[:, None] / k - FM
         fo[..., 3] *= np.clip((rows_ - spec['collar_y'] - hy) / 3, 0, 1)
         Image.fromarray(fo.astype(np.uint8)).save(os.path.join(out_dir, f'frame_over_{name}.png'))
-        part(f'frame.{name}', f'frame_{name}.png', cx0, cy0, 10, 'torso', 'frame', visible=False, on_table=True)
-        part(f'frame_over.{name}', f'frame_over_{name}.png', cx0, cy0, 21, 'torso', 'frame_over', visible=False)
+        part(f'frame_over.{name}', f'frame_over_{name}.png', fcx, fcy, 21, 'torso', 'frame_over', visible=False)
         print(f'  frame {name}: head at {hx}, {hy} from rest')
     zs = {'far': 22, 'near': 23}
     for (side, state), _ in assets.items():
@@ -512,7 +598,7 @@ def main(spec_path):
            'bones': bones, 'face': {k_: list(v) for k_, v in face.items()}, 'parts': parts,
            'source': {'rest': spec['rest'], 'registered': {n: list(r) for n, r in regs.items()}}}
     if frames:                                             # where each frame moves the head (canvas pixels)
-        rig['frames'] = {n: [round(hx * k, 2), round(hy * k, 2)] for n, (_, hx, hy) in frames.items()}
+        rig['frames'] = {n: None if hx is None else [round(hx * k, 2), round(hy * k, 2)] for n, (_, hx, hy) in frames.items()}
     json.dump(rig, open(os.path.join(rt, 'rig.json'), 'w'), indent=1)
 
     # a build_puppet layout, for mock_screen and previews

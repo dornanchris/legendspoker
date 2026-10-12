@@ -79,7 +79,9 @@ cuffs and perspective.
   and their difference: 0.20% of the pixels above the rail differ (against
   his whole silhouette, colours the filters drop included).
 - The master head (`lincoln_rig/master.png`, from the face sheet) and its
-  face layers are fitted onto A1's head; `seat.json` still makes them.
+  face layers are fitted onto A1's head; `seat.json` still makes them. It
+  replaces A1's own head in the body (`replace_head`), so a swapped head
+  (front-on, piece 22) or a tilt never shows a second head behind it.
 
 The **check** (`web/art/lincoln/anim.json`) turns each arm about its elbow
 from rest to the A3 pose, taps twice, and comes back. The laced hands of A1
@@ -88,13 +90,38 @@ begins and again just before the hands meet: the one moment no drawing
 covers. A drawing of A1 with his right hand lifted away (his left resting
 alone, as in A1) would let that change happen without the jump.
 
-Preview: `web/index.html#/puppet/lincoln`.
+**Every other clip** (26 in all, every one ending exactly at rest; preview
+`web/index.html#/puppet/lincoln`, each beside its drawing):
 
-## Next: every pose
+- Poker actions: `check`, `peek`, `call`, `bet`, `fold`, `all_in`, `show`,
+  `collect`, and the idle `fidget` (lifting the top chip).
+- Tells and the idles that hide them: `beard` beside `chin`; `lean_back`
+  beside `stretch`; `small_smile` beside `amused`.
+- Idles and beats: `hat_tip`, `greet`, `rub_eyes`, `look_at_you`, `talk`,
+  `laugh`, `big_bet`, `lost_pot`, `won_pot`, `drum`, `knocked_out`.
 
-`POSES.md` lists every pose he is ever in (28), which in-betweens need
-drawing (shape changes only: blinks, looks, mouths, hand grips), the pieces
-that adds up to, and the ChatGPT prompts for the pose and parts sheets.
+His laced hands mean every gesture moves both arms, so apart from the check
+every pose is a **whole-figure frame** (`frames` in `pose_rig.json`), as
+Washington's leans are: the whole drawing, placed on the rest pose. Sheets B
+and C are drawn at other sizes (about 0.86 and 1.15 of sheet A), so each pose
+carries its own placement (`reg`): matched on the torso where he sits as at
+rest, by the table's edge and his centre where he leans. Two kinds:
+
+- **With the master head** (the poker actions, `lean_back`, `talk`): his
+  drawn head is cut away and the master head, with its blinks, looks and
+  talking, rides on the frame's neck.
+- **With its own head** (a hand at his face or his hat, a laugh, standing):
+  the frame keeps its drawn head, and the master head and its face layers
+  are hidden while it shows.
+
+`look_at_you` swaps in the face sheet's front-on head (piece 22); `small_smile`
+and `won_pot` are face layers and small head moves. The clock glance (C4,
+piece 20) is left out: there may be no clock in the room. The chair is cut
+from every frame (`drop_wood`, `back_strip`: nothing thin at his back).
+In `show` the drawing's cards had faces; they are cut out (the game draws the
+cards), his chest from the rest pose shows behind them (`body_under`) and the
+coat is filled below it (`fill`). A faint seam where that chest meets the
+drawing shows only close up.
 
 ## Gaps
 

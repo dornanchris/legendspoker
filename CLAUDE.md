@@ -351,13 +351,19 @@ add to it, so face and arms are independent and a clip that ends at zero
 returns exactly to rest. Shapes swap, never cross-fade (no mouth ghosts);
 limbs rotate about elbow and wrist and may only foreshorten, never stretch.
 Lincoln has blinks, gaze, brows, letter-driven speech, idle sway and breath,
-and one clip, `check`. His puppet is built by `art-tools/pose_rig.py` from
+and 26 clips: every poker action, his three tells beside their decoys
+(beard / chin, leaning back / stretching, the small smile / amused), the hat
+tip and greeting, and his beats; the clock glance is out (the owner: there may
+be no clock in the room). His laced hands mean any gesture moves both arms, so
+apart from the check every pose is a whole-figure frame, with the master head
+riding on it or, where a hand is at his face or hat, its own drawn head. His puppet is built by `art-tools/pose_rig.py` from
 the complete pose drawings (the owner's call: they are the source of truth):
 each forearm, cuff and hand is ONE piece turning about the elbow (no wrist
 joint), alternate pieces from other poses registered to hang on the same
 elbow, the upper arms drawn over the joints, the rest pose validated against
 its drawing. The laced hands of his rest pose cannot be parted, so the check
-changes arm pieces at the start and end of the lift. Preview it at `#/puppet/lincoln` (the bench: trigger,
+changes arm pieces at the start and end of the lift. Sheets B and C were
+drawn at other sizes, so their poses carry a hand-set placement (`reg`). Preview it at `#/puppet/lincoln` (the bench: trigger,
 loop, slow, scrub, beside the reference pose). Not yet on the table screen.
 Washington is built the same way from his four pose sheets and face sheet
 (`#/puppet/washington`), with all 23 clips: every poker action, his three

@@ -368,6 +368,20 @@
    "with": "head.rest"
   },
   {
+   "name": "head.viewer",
+   "img": "head_viewer.png",
+   "cx": 536.64,
+   "cy": 548.52,
+   "rot": 0,
+   "scale": 0.84,
+   "flip": false,
+   "z": 20,
+   "slot": "head",
+   "visible": false,
+   "onTable": false,
+   "bone": "head"
+  },
+  {
    "name": "torso_over",
    "img": "torso_over.png",
    "cx": 520.0,
@@ -378,6 +392,454 @@
    "z": 21,
    "slot": "torso_over",
    "visible": true,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.bet",
+   "img": "frame_bet.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.bet",
+   "img": "frame_over_bet.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.all_in",
+   "img": "frame_all_in.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.all_in",
+   "img": "frame_over_all_in.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.collect",
+   "img": "frame_collect.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.collect",
+   "img": "frame_over_collect.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.beard",
+   "img": "frame_beard.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.chin",
+   "img": "frame_chin.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.lean_back",
+   "img": "frame_lean_back.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.lean_back",
+   "img": "frame_over_lean_back.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.stretch",
+   "img": "frame_stretch.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.amused",
+   "img": "frame_amused.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.hat_tip",
+   "img": "frame_hat_tip.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.greet",
+   "img": "frame_greet.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.rub_eyes",
+   "img": "frame_rub_eyes.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.talk",
+   "img": "frame_talk.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.talk",
+   "img": "frame_over_talk.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.laugh",
+   "img": "frame_laugh.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.big_bet",
+   "img": "frame_big_bet.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.lost_pot",
+   "img": "frame_lost_pot.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.knocked_out",
+   "img": "frame_knocked_out.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.drum",
+   "img": "frame_drum.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.peek",
+   "img": "frame_peek.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.peek",
+   "img": "frame_over_peek.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.call",
+   "img": "frame_call.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.call",
+   "img": "frame_over_call.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.fold",
+   "img": "frame_fold.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.fold",
+   "img": "frame_over_fold.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.show",
+   "img": "frame_show.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.show",
+   "img": "frame_over_show.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.fidget",
+   "img": "frame_fidget.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.fidget",
+   "img": "frame_over_fidget.png",
+   "cx": 520.0,
+   "cy": 659.68,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
    "onTable": false,
    "bone": "torso"
   },
@@ -483,7 +945,166 @@
     1.0,
     1,
     -1
+   ],
+   "A4": [
+    1.0296,
+    0.2,
+    -6.0
+   ],
+   "A5": [
+    1.0197,
+    -4.7,
+    -11.0
+   ],
+   "A6": [
+    1.0197,
+    8.1,
+    -21.2
+   ],
+   "A7": [
+    1.0605,
+    1.1,
+    -1.0
+   ],
+   "A8": [
+    1.0296,
+    -0.8,
+    2.2
+   ],
+   "A9": [
+    1.0197,
+    -14.4,
+    -34.4
+   ],
+   "A10": [
+    1.0098,
+    10.2,
+    -0.9
+   ],
+   "B1": [
+    0.8262,
+    -47.8,
+    7.2
+   ],
+   "B2": [
+    0.8568,
+    -30.5,
+    0.1
+   ],
+   "B3": [
+    0.8568,
+    -51.6,
+    -2.5
+   ],
+   "B4": [
+    0.8568,
+    -58.0,
+    8.7
+   ],
+   "B6": [
+    0.8568,
+    -41.7,
+    10.4
+   ],
+   "C1": [
+    1.1124,
+    -22.5,
+    27.1
+   ],
+   "C2": [
+    1.1058,
+    -58.4,
+    11.8
+   ],
+   "C3": [
+    1.1742,
+    -15.4,
+    8.5
+   ],
+   "C6": [
+    1.176,
+    -4.9,
+    5.9
+   ],
+   "C7": [
+    1.1532,
+    -36.5,
+    1.8
+   ],
+   "C8": [
+    1.188,
+    -41.6,
+    7.9
+   ],
+   "C9": [
+    1.1532,
+    -19.8,
+    23.7
+   ],
+   "C11": [
+    1.1532,
+    35.6,
+    31.8
+   ],
+   "C12": [
+    1.1532,
+    -29.0,
+    31.8
    ]
   }
+ },
+ "frames": {
+  "bet": [
+   19.46,
+   -13.9
+  ],
+  "all_in": [
+   -13.9,
+   -54.21
+  ],
+  "collect": [
+   -18.07,
+   -52.82
+  ],
+  "beard": null,
+  "chin": null,
+  "lean_back": [
+   -19.46,
+   -47.26
+  ],
+  "stretch": null,
+  "amused": null,
+  "hat_tip": null,
+  "greet": null,
+  "rub_eyes": null,
+  "talk": [
+   -2.78,
+   -4.17
+  ],
+  "laugh": null,
+  "big_bet": null,
+  "lost_pot": null,
+  "knocked_out": null,
+  "drum": null,
+  "peek": [
+   -6.95,
+   6.95
+  ],
+  "call": [
+   -1.39,
+   -1.39
+  ],
+  "fold": [
+   -4.17,
+   -4.17
+  ],
+  "show": [
+   0.0,
+   1.39
+  ],
+  "fidget": [
+   -6.95,
+   -4.17
+  ]
  }
 }
