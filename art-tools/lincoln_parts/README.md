@@ -49,6 +49,12 @@ Built by `art-tools/seat_puppet.py` from `seat.json`:
 
 `preview.png` is the rest pose.
 
+## Next: every pose
+
+`POSES.md` lists every pose he is ever in (28), which in-betweens need
+drawing (shape changes only: blinks, looks, mouths, hand grips), the pieces
+that adds up to, and the ChatGPT prompts for the pose and parts sheets.
+
 ## Gaps
 
 - The hands that hold a cigar (87, 91, 94, 97) are not his; leave them out.
