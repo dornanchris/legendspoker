@@ -30,3 +30,8 @@ forearms along the table's edge, hands folded in front.
 
 - The cards have a red back, not Death's; hide them.
 - A few dark specks of the trimmed collar can show at the jaw on some heads.
+
+## Next: the pose drawings
+
+`POSES.md` lists his 24 poses and the prompts for four pose sheets and a
+face-overlay sheet, to build him with `pose_rig.py` as Lincoln is.
