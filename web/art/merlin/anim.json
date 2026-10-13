@@ -2339,27 +2339,37 @@
     ]
    }
   },
-  "murmur": {
-   "duration": 2.0,
-   "note": "TELL: murmurs a word nobody catches (face only until the redraw's sheet C).",
+  "stare": {
+   "duration": 2.4,
+   "note": "IDLE (decoy for the gaze): stares at something that has not happened yet.",
    "tracks": {
-    "head": {
-     "rot": [
+    "torso": {
+     "y": [
       [
        0,
        0
       ],
       [
-       0.2,
-       2,
-       "inOut"
+       0.25,
+       -0.5,
+       "in"
       ],
       [
-       1.6,
-       2
+       0.37,
+       0,
+       "out"
       ],
       [
-       1.9,
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       -0.5,
+       "hold"
+      ],
+      [
+       2.3,
        0,
        "inOut"
       ]
@@ -2367,62 +2377,126 @@
     }
    },
    "swaps": {
-    "eyes": [
+    "torso": [
      [
-      0.2,
-      "half"
+      0.25,
+      "-"
      ],
      [
-      1.7,
+      2.0,
       null
      ]
     ],
-    "mouth": [
+    "torso_over": [
      [
-      0.3,
-      "murmur"
+      0.25,
+      "-"
      ],
      [
-      0.6,
-      "m"
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.25,
+      "-"
      ],
      [
-      0.8,
-      "murmur"
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.25,
+      "-"
      ],
      [
-      1.1,
-      "m"
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.25,
+      "-"
      ],
      [
-      1.3,
-      "murmur"
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.25,
+      "-"
      ],
      [
-      1.6,
+      2.0,
+      null
+     ]
+    ],
+    "staff": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.25,
+      "stare"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      2.0,
       null
      ]
     ]
    }
   },
-  "stare": {
+  "murmur": {
    "duration": 2.2,
-   "note": "IDLE (decoy for the gaze): stares at something that has not happened yet (face only for now).",
+   "note": "TELL: murmurs a word nobody catches.",
    "tracks": {
-    "head": {
-     "rot": [
+    "torso": {
+     "y": [
       [
        0,
        0
       ],
       [
-       0.25,
-       -2,
-       "inOut"
+       0.22,
+       0.5,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
       ],
       [
        1.8,
-       -2
+       0
+      ],
+      [
+       1.82,
+       0.5,
+       "hold"
       ],
       [
        2.1,
@@ -2433,49 +2507,389 @@
     }
    },
    "swaps": {
-    "eyes": [
+    "torso": [
      [
-      0.25,
-      "far"
+      0.22,
+      "-"
      ],
      [
-      1.9,
+      1.8,
       null
      ]
     ],
-    "brows": [
+    "torso_over": [
      [
-      0.2,
-      "raised"
+      0.22,
+      "-"
      ],
      [
-      1.9,
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "staff": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "murmur"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   }
+  },
+  "beard": {
+   "duration": 2.4,
+   "note": "IDLE (decoy for the murmur): strokes his beard.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0.5,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       0.5,
+       "hold"
+      ],
+      [
+       2.3,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "staff": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "beard"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   }
+  },
+  "ash": {
+   "duration": 2.2,
+   "note": "IDLE: brushes ash from his sleeve.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0.5,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       0.5,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "staff": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "ash"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
       null
      ]
     ]
    }
   },
   "candle": {
-   "duration": 2.2,
-   "note": "IDLE: the candle nearest him bends the wrong way: he glances up at it (face only for now; the room gutters it).",
+   "duration": 2.4,
+   "note": "IDLE: the candle nearest him bends the wrong way: he glances up at it, one finger lifted (the room gutters it).",
    "tracks": {
-    "head": {
-     "rot": [
+    "torso": {
+     "y": [
       [
        0,
        0
       ],
       [
        0.25,
-       -3,
-       "inOut"
+       -0.5,
+       "in"
       ],
       [
-       1.8,
-       -3
+       0.37,
+       0,
+       "out"
       ],
       [
-       2.1,
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       -0.5,
+       "hold"
+      ],
+      [
+       2.3,
        0,
        "inOut"
       ]
@@ -2483,23 +2897,223 @@
     }
    },
    "swaps": {
-    "eyes": [
+    "torso": [
      [
-      0.2,
-      "far"
+      0.25,
+      "-"
      ],
      [
-      1.9,
+      2.0,
       null
      ]
     ],
-    "mouth": [
+    "torso_over": [
      [
-      0.4,
-      "smile"
+      0.25,
+      "-"
      ],
      [
-      1.8,
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "staff": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.25,
+      "candle"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   }
+  },
+  "still": {
+   "duration": 3.0,
+   "note": "IDLE: hands folded, eyes closed, perfectly still.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.3,
+       0.5,
+       "in"
+      ],
+      [
+       0.42,
+       0,
+       "out"
+      ],
+      [
+       2.6,
+       0
+      ],
+      [
+       2.62,
+       0.5,
+       "hold"
+      ],
+      [
+       2.9,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.6,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.6,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.6,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.6,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.6,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.6,
+      null
+     ]
+    ],
+    "staff": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.6,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.3,
+      "still"
+     ],
+     [
+      2.6,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.6,
       null
      ]
     ]
@@ -2580,9 +3194,12 @@
   "murmurs a word nobody catches": "murmur",
   "the candle nearest him bends the wrong way": "candle",
   "stares at something that has not happened yet": "stare",
+  "brushes ash from his sleeve": "ash",
   "taps his staff twice": "tap"
  },
  "fidgets": [
+  "beard",
+  "still",
   "look_at_you"
  ],
  "gutter": [
@@ -2601,6 +3218,12 @@
   "glow": "ref_glow.png",
   "tap": "ref_tap.png",
   "gaze": "ref_gaze.png",
+  "stare": "ref_stare.png",
+  "murmur": "ref_murmur.png",
+  "beard": "ref_beard.png",
+  "ash": "ref_ash.png",
+  "candle": "ref_candle.png",
+  "still": "ref_still.png",
   "talk": "ref_talk.png",
   "big_bet": "ref_big_bet.png",
   "lost_pot": "ref_lost_pot.png",

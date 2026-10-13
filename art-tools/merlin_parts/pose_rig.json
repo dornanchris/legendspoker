@@ -1,281 +1,372 @@
 {
  "id": "merlin",
  "name": "Merlin",
- "note": "Polygons in the rest pose (A1) pixels. Built from the style-locked redraw. Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. His staff is a prop of the rest pose cut by colour (redder than his robe), on the torso and drawn over his head. Pose sheet C of the redraw is still to come.",
+ "note": "Polygons in the rest pose (A1) pixels. The navy redraw (the owner's pick). Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. His head is swapped inside an outline, above a line through his beard; the staff is a prop of the rest pose cut by colour, drawn over the hood.",
  "sheets": {
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
   "D": "sources/poses_d.png"
  },
  "poses": {
   "A1": {
    "sheet": "A",
    "box": [
-    9,
-    7,
-    494,
+    14,
+    5,
+    493,
     488
    ],
-   "what": "at rest, hands apart, the staff on his right shoulder"
+   "what": "at rest, the staff on his right shoulder"
   },
   "A2": {
    "sheet": "A",
    "box": [
-    513,
-    10,
-    501,
+    520,
+    8,
+    497,
     485
    ],
    "what": "peeking",
    "reg": [
     1.0,
-    3,
+    0,
     3
    ]
   },
   "A3": {
    "sheet": "A",
    "box": [
-    1023,
-    7,
-    500,
-    488
+    1031,
+    6,
+    494,
+    487
    ],
    "what": "checking",
    "reg": [
     1.0,
-    2,
+    0,
     0
    ]
   },
   "A4": {
    "sheet": "A",
    "box": [
-    9,
-    508,
-    494,
-    489
+    14,
+    499,
+    490,
+    479
    ],
    "what": "calling",
+   "reg": [
+    1.0,
+    0,
+    8
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    520,
+    499,
+    497,
+    479
+   ],
+   "what": "betting, slow",
+   "reg": [
+    1.0,
+    0,
+    8
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1033,
+    499,
+    492,
+    479
+   ],
+   "what": "folding without looking",
+   "reg": [
+    1.0,
+    0,
+    9
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    14,
+    4,
+    493,
+    484
+   ],
+   "what": "all in",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    518,
+    4,
+    499,
+    488
+   ],
+   "what": "showing",
    "reg": [
     1.0,
     0,
     -1
    ]
   },
-  "A5": {
-   "sheet": "A",
-   "box": [
-    513,
-    511,
-    501,
-    486
-   ],
-   "what": "betting, slow",
-   "reg": [
-    1.0,
-    3,
-    2
-   ]
-  },
-  "A6": {
-   "sheet": "A",
-   "box": [
-    1023,
-    507,
-    500,
-    490
-   ],
-   "what": "folding without looking",
-   "reg": [
-    1.0,
-    2,
-    -2
-   ]
-  },
-  "B1": {
-   "sheet": "B",
-   "box": [
-    10,
-    5,
-    497,
-    487
-   ],
-   "what": "all in",
-   "reg": [
-    1.0,
-    3,
-    -1
-   ]
-  },
-  "B2": {
-   "sheet": "B",
-   "box": [
-    508,
-    5,
-    509,
-    487
-   ],
-   "what": "showing",
-   "reg": [
-    1.0,
-    -5,
-    -1
-   ]
-  },
   "B3": {
    "sheet": "B",
    "box": [
-    1023,
-    5,
-    502,
-    489
+    1030,
+    4,
+    494,
+    488
    ],
    "what": "collecting",
    "reg": [
     1.0,
-    3,
+    0,
     -1
    ]
   },
   "B4": {
    "sheet": "B",
    "box": [
-    10,
-    494,
-    497,
-    486
+    14,
+    490,
+    493,
+    488
    ],
    "what": "the staff glows (TELL)",
    "reg": [
     1.0,
-    3,
-    2
+    0,
+    0
    ]
   },
   "B5": {
    "sheet": "B",
    "box": [
-    508,
-    494,
-    509,
-    486
+    518,
+    495,
+    499,
+    482
    ],
-   "what": "taps his staff twice (decoy)",
+   "what": "taps his staff (decoy)",
    "reg": [
     1.0,
-    -5,
-    2
+    0,
+    5
    ]
   },
   "B6": {
    "sheet": "B",
    "box": [
-    1024,
+    1029,
     497,
-    501,
-    483
+    495,
+    480
    ],
    "what": "gazes past the table (TELL)",
    "reg": [
     1.0,
-    3,
-    5
+    0,
+    7
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    14,
+    7,
+    494,
+    486
+   ],
+   "what": "stares at what has not happened yet (decoy)",
+   "reg": [
+    1.0,
+    -1,
+    1
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    518,
+    7,
+    499,
+    486
+   ],
+   "what": "murmurs a word (TELL)",
+   "reg": [
+    1.0,
+    0,
+    1
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1030,
+    6,
+    496,
+    487
+   ],
+   "what": "strokes his beard (decoy)",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    15,
+    504,
+    492,
+    476
+   ],
+   "what": "brushes ash from his sleeve",
+   "reg": [
+    1.0,
+    0,
+    12
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    518,
+    502,
+    501,
+    477
+   ],
+   "what": "glances up at a candle",
+   "reg": [
+    1.0,
+    0,
+    10
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1030,
+    503,
+    495,
+    476
+   ],
+   "what": "hands folded, eyes closed",
+   "reg": [
+    1.0,
+    0,
+    11
    ]
   },
   "D1": {
    "sheet": "D",
    "box": [
-    11,
-    10,
-    500,
-    484
+    15,
+    4,
+    492,
+    488
    ],
    "what": "talking, palm out",
    "reg": [
     1.0,
-    3,
-    5
+    0,
+    -1
    ]
   },
   "D2": {
    "sheet": "D",
    "box": [
-    517,
-    10,
-    503,
-    484
+    519,
+    5,
+    497,
+    487
    ],
    "what": "facing a big bet",
    "reg": [
     1.0,
-    3,
-    5
+    0,
+    0
    ]
   },
   "D3": {
    "sheet": "D",
    "box": [
-    1027,
-    10,
-    498,
-    482
+    1031,
+    5,
+    493,
+    483
    ],
    "what": "lost a pot: a small nod",
    "reg": [
     1.0,
-    3,
-    5
+    -2,
+    1
    ]
   },
   "D4": {
    "sheet": "D",
    "box": [
-    11,
-    495,
-    498,
-    482
+    15,
+    500,
+    492,
+    477
    ],
    "what": "won a pot: a knowing smile",
    "reg": [
     1.0,
-    3,
-    6
+    0,
+    10
    ]
   },
   "D5": {
    "sheet": "D",
    "box": [
-    517,
-    495,
+    519,
+    500,
     501,
-    482
+    477
    ],
-   "what": "heads up: forearms on the table, eyes fixed",
+   "what": "heads up: eyes fixed",
    "reg": [
     1.0,
-    3,
-    6
+    0,
+    10
    ]
   },
   "D6": {
    "sheet": "D",
    "box": [
-    1027,
-    494,
-    498,
-    483
+    1031,
+    490,
+    493,
+    487
    ],
    "what": "knocked out: takes his staff, turns to go",
    "reg": [
     1.0,
-    2,
-    5
+    0,
+    0
    ]
   }
  },
  "rest": "A1",
- "table_y": 370,
+ "table_y": 368,
  "scale": 1.0,
  "origin_x": 305,
  "register_box": [
@@ -285,144 +376,135 @@
   340
  ],
  "register_span": 40,
- "collar_y": 225,
+ "collar_y": 234,
  "neck": [
-  255,
+  300,
   215
  ],
  "frame_margin": 60,
  "stock_box": [
-  200,
+  220,
   215,
-  330,
+  360,
   280
  ],
  "master": {
   "piece": "merlin_parts/merlin_face/merlin_face_01.png",
-  "cut_below": 330,
+  "cut_below": 352,
   "face": "merlin_parts/face.json",
   "file": "merlin_parts/merlin_rig/master.png",
   "layers": "merlin_parts/merlin_rig/face",
   "head_box": [
-   112,
-   20,
-   350,
-   225
+   140,
+   10,
+   402,
+   232
   ],
   "place": [
-   -21,
-   7,
-   0.66
+   -11,
+   12,
+   0.63
   ],
   "replace_head": true,
   "heads": {
    "viewer": "merlin_parts/merlin_face/merlin_face_20.png"
   },
   "cloth": [
-   15,
-   140
+   10,
+   120
   ],
-  "fill_poly": [
+  "shoulder_y": 200,
+  "head_poly": [
    [
-    [
-     112,
-     165
-    ],
-    [
-     200,
-     165
-    ],
-    [
-     200,
-     225
-    ],
-    [
-     112,
-     225
-    ]
+    140,
+    10
    ],
    [
-    [
-     300,
-     175
-    ],
-    [
-     350,
-     175
-    ],
-    [
-     350,
-     225
-    ],
-    [
-     300,
-     225
-    ]
+    380,
+    10
+   ],
+   [
+    402,
+    190
+   ],
+   [
+    400,
+    234
+   ],
+   [
+    200,
+    234
+   ],
+   [
+    140,
+    234
    ]
   ],
-  "shoulder_y": 190,
+  "keep_poly": [
+   [
+    17,
+    -19
+   ],
+   [
+    398,
+    -19
+   ],
+   [
+    433,
+    267
+   ],
+   [
+    430,
+    400
+   ],
+   [
+    0,
+    400
+   ]
+  ],
+  "biggest": true,
   "props": {
    "staff": {
     "poly": [
      [
-      0,
+      25,
       0
      ],
      [
-      110,
+      145,
       0
      ],
      [
-      110,
-      55
-     ],
-     [
-      92,
-      100
-     ],
-     [
-      106,
-      200
-     ],
-     [
-      124,
+      145,
       300
      ],
      [
-      124,
-      352
+      100,
+      312
      ],
      [
-      80,
-      356
+      70,
+      200
      ],
      [
-      52,
-      250
-     ],
-     [
-      30,
-      130
-     ],
-     [
-      0,
-      95
+      25,
+      110
      ]
     ],
-    "redder": 1.75,
+    "redder": 1.5,
+    "keep_skin": true,
+    "close": 3,
+    "drop_white": true,
     "outline": 3,
     "pivot": [
-     100,
-     350
+     110,
+     300
     ],
     "parent": "torso",
-    "z": 21.5,
-    "drop_white": true,
-    "close": 3,
-    "keep_skin": true
+    "z": 21.5
    }
   },
-  "biggest": true
+  "fade": 26
  },
  "arms": {
   "near": {
@@ -600,19 +682,19 @@
    "props": [
     [
      [
-      160,
-      385
+      180,
+      390
      ],
      [
-      320,
-      385
+      330,
+      390
      ],
      [
-      320,
+      330,
       492
      ],
      [
-      160,
+      180,
       492
      ]
     ]
@@ -625,19 +707,19 @@
    "props": [
     [
      [
-      170,
-      370
+      180,
+      380
      ],
      [
-      300,
-      370
+      330,
+      380
      ],
      [
-      300,
+      330,
       492
      ],
      [
-      170,
+      180,
       492
      ]
     ]
@@ -652,23 +734,22 @@
    "pose": "B1",
    "head": "own",
    "below": 110,
-   "biggest": true,
    "props": [
     [
      [
-      230,
-      380
+      200,
+      360
      ],
      [
-      450,
-      380
+      470,
+      360
      ],
      [
-      450,
+      470,
       492
      ],
      [
-      230,
+      200,
       492
      ]
     ]
@@ -686,19 +767,19 @@
    "props": [
     [
      [
-      230,
-      375
+      180,
+      360
      ],
      [
-      450,
-      375
+      470,
+      360
      ],
      [
-      450,
+      470,
       492
      ],
      [
-      230,
+      180,
       492
      ]
     ]
@@ -707,8 +788,7 @@
   "glow": {
    "pose": "B4",
    "head": "own",
-   "below": 110,
-   "biggest": true
+   "below": 110
   },
   "tap": {
    "pose": "B5",
@@ -717,6 +797,36 @@
   },
   "gaze": {
    "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "stare": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "murmur": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "beard": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "ash": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "candle": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "still": {
+   "pose": "C6",
    "head": "own",
    "below": 110
   },
@@ -733,8 +843,7 @@
   "lost_pot": {
    "pose": "D3",
    "head": "own",
-   "below": 110,
-   "biggest": true
+   "below": 110
   },
   "won_pot": {
    "pose": "D4",
@@ -743,19 +852,19 @@
    "props": [
     [
      [
-      150,
-      385
+      180,
+      390
      ],
      [
       330,
-      385
+      390
      ],
      [
       330,
       492
      ],
      [
-      150,
+      180,
       492
      ]
     ]
@@ -769,8 +878,7 @@
   "knocked_out": {
    "pose": "D6",
    "head": "own",
-   "below": 110,
-   "biggest": true
+   "below": 110
   }
  },
  "runtime": "../web/art/merlin",

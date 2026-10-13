@@ -379,9 +379,9 @@ and **Blackbeard** (`#/puppet/blackbeard`, 25 clips, seat 4). Their prompts
 came from `<id>_parts/poses_spec.json` by `art-tools/prompts/poses.py`.
 **Camelot's room is built** (candle wheels and sconces flicker; the hearth
 fire and its sparks at the far left, on screens wider than 16:9);
-`?room=camelot` previews it. **Merlin is built** (`#/puppet/merlin`, 21
+`?room=camelot` previews it. **Merlin is built** (`#/puppet/merlin`, 24
 clips, seat 1; his staff a prop cut by colour, over his head), rebuilt from
-the style-locked redraw (its pose sheet C still owed); **Lancelot is
+the navy redraw (the owner's pick); **Lancelot is
 built** (`#/puppet/lancelot`, 24 clips, seat 2), the first drawn under the
 style lock; **the Green Knight is built** (`#/puppet/green_knight` and
 `#/puppet/green_knight_bare`, 24 clips each, seat 3, a quarter bigger), in TWO
@@ -393,8 +393,7 @@ green skin: the owner; a bandaged neck, battered armour; his return lines
 rewritten colder), a separate puppet the table seats when he comes back
 (`RETURNED` in `web/puppet/cast.ts`). The helm has no mouth: a face with
 `speech.nod` nods as it speaks. **Arthur is built** (`#/puppet/arthur`, 24
-clips, seat 4): **Camelot is complete on the real table screen** (Merlin's
-redrawn pose sheet C is still owed, for three of his idles). **The style lock** (the owner: Davy Jones and Merlin
+clips, seat 4): **Camelot is complete on the real table screen.** **The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
 style drifted a step each time. Now `poses.py` (`"style_lock": true`) names

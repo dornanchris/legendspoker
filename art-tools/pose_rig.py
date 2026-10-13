@@ -564,7 +564,7 @@ def main(spec_path):
     if 'face' in m:
         # made here from the face sheet: the master head (its collar faded off
         # below cut_below) and the eye, brow and mouth layers baked onto it
-        mimg = face_rig.cut_below(Image.open(os.path.join(HERE, m['piece'])), m['cut_below'])
+        mimg = face_rig.cut_below(Image.open(os.path.join(HERE, m['piece'])), m['cut_below'], m.get('fade', 6))
         if 'drop_white' in m:                              # sheet white caught inside the piece (between weed strands)
             x0, y0, x1, y1 = m['drop_white']
             ma_ = np.array(mimg.convert('RGBA'))
