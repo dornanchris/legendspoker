@@ -39,7 +39,7 @@ The table screen has to hold four opponents, Death dealing between them, and the
 |---|---|---|
 | The White House | Warm lamplight and firelight, gold and amber | — |
 | Athens — The Symposium | Oil-lamp gold, warm and low, with blue night in the doorway | 2 |
-| Pirate Cove | Lantern orange inside, cool moonlight blue through the open wall | — |
+| Pirate Cove | Lantern orange inside, cool moonlight blue through the opening in the rock | — |
 | Camelot | Firelight gold, with cool stone shadow | — |
 | Imperial Rome | Brazier orange and fresco colour above, dusky violet through the window | 1 |
 | Baker Street | Gaslight yellow and firelight, fog-grey at the window | — |
@@ -131,17 +131,17 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 - **The room:** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. The card table is the round lid of a great rum tun, scarred by knife-points and pistol-butts. Through the open side wall, ships ride at anchor in the moonlight.
 - **Sounds (for reference):** surf in the cove; creaking timbers and rigging; rowdy laughter through the wall; a bottle rolling across floorboards; a ship's bell out on the water
-- **Light:** Lantern orange inside, cool moonlight blue through the open wall.
-- **Avoid:** Nothing from Disney's Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger from the films.
+- **Light:** Lantern orange inside, cool moonlight blue through the opening in the rock.
+- **Avoid:** Nothing from Disney's Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger or any skull-and-crossbones flag.
 
 **Backdrop plate:**
 
 ```
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
 
-The room: A tavern built into the rock of a hidden cove at night: rough rock walls on one side, the timbered stern of a wrecked ship with its gallery windows on the other, lanterns swinging from old rigging overhead, barrels and nets. One wall is open to the moonlit cove, where two ships ride at anchor.
-Light: Lantern orange inside, cool moonlight blue through the open wall.
-Must NOT resemble: Nothing from Disney's Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger from the films.
+The room: A smugglers' tavern built into the rock of a hidden cove at night. Dead centre at the back, a wide, rough-edged opening in the rock onto the cove: moonlit water, a pale blue night sky with a few clouds lit silver, and two old sailing ships riding at anchor, small and far off, so a dark figure in front of it still reads; the moon itself high up and to the right of the opening, never dead centre. The LEFT side of the room is the timbered stern of a wrecked ship built into the tavern: dark planks, a row of small gallery windows glowing warm, a carved rail. The RIGHT side is rough grey-brown rock wall, damp, with a heavy wooden door in it. Old rigging and nets hang overhead across the top of the picture, with three ship's lanterns hanging from it: one high on the left, one high on the right, one in the top middle above the opening, each a clear glass-and-iron lantern with a bright flame. Barrels, a coil of rope and a ship's wheel stand against the side walls, their tops at about half height. No flags, no skulls.
+Light: Lantern orange inside, cool moonlight blue through the opening in the rock.
+Must NOT resemble: Nothing from Disney's Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger or any skull-and-crossbones flag.
 ```
 
 **Moving and story pieces:**
@@ -150,10 +150,9 @@ Must NOT resemble: Nothing from Disney's Pirates of the Caribbean: no Black Pear
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
 
 For the room: Pirate Cove. Parts:
-- Lanterns swinging: 3 frames
-- Moonlight glinting on the water: 2 frames
-- A ship at anchor rocking
-- A gull on the rigging, 2 poses
+- The flame inside one ship's lantern, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- A seagull perched on a rope, 2 poses (head up; head turned), drawn at the size it would be on the rigging
+- Moonlight glinting on the water: 3 small clusters of silver sparkles, each alone
 
 Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
 ```

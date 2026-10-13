@@ -34,11 +34,11 @@ const ROOMS = {
   },
   pirate_cove: {
     unique: 'The rowdiest room: a tavern half cut into the rock and half the stern of a wrecked ship, with the sea right outside.',
-    backdrop: 'A tavern built into the rock of a hidden cove at night: rough rock walls on one side, the timbered stern of a wrecked ship with its gallery windows on the other, lanterns swinging from old rigging overhead, barrels and nets. One wall is open to the moonlit cove, where two ships ride at anchor',
-    light: 'Lantern orange inside, cool moonlight blue through the open wall',
-    moving: ['Lanterns swinging: 3 frames', 'Moonlight glinting on the water: 2 frames', 'A ship at anchor rocking', 'A gull on the rigging, 2 poses'],
+    backdrop: 'A smugglers\' tavern built into the rock of a hidden cove at night. Dead centre at the back, a wide, rough-edged opening in the rock onto the cove: moonlit water, a pale blue night sky with a few clouds lit silver, and two old sailing ships riding at anchor, small and far off, so a dark figure in front of it still reads; the moon itself high up and to the right of the opening, never dead centre. The LEFT side of the room is the timbered stern of a wrecked ship built into the tavern: dark planks, a row of small gallery windows glowing warm, a carved rail. The RIGHT side is rough grey-brown rock wall, damp, with a heavy wooden door in it. Old rigging and nets hang overhead across the top of the picture, with three ship\'s lanterns hanging from it: one high on the left, one high on the right, one in the top middle above the opening, each a clear glass-and-iron lantern with a bright flame. Barrels, a coil of rope and a ship\'s wheel stand against the side walls, their tops at about half height. No flags, no skulls',
+    light: 'Lantern orange inside, cool moonlight blue through the opening in the rock',
+    moving: ['The flame inside one ship\'s lantern, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker', 'A seagull perched on a rope, 2 poses (head up; head turned), drawn at the size it would be on the rigging', 'Moonlight glinting on the water: 3 small clusters of silver sparkles, each alone'],
     presence: [],
-    avoid: 'Nothing from Disney\'s Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger from the films.',
+    avoid: 'Nothing from Disney\'s Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger or any skull-and-crossbones flag.',
   },
   camelot: {
     unique: 'The hall of the Round Table: the great table itself stands beyond the players, its circle running off into the dark past a hundred empty chairs.',
