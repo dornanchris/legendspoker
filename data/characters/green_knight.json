@@ -15,43 +15,43 @@
         "id": "gk_return_n01",
         "speaker": "narration",
         "type": "stage_direction",
-        "text": "[Hooves, somewhere outside. Then a laugh loud enough to rattle the cups.]"
+        "text": "[Hooves outside, slow. The laughter in the hall stops before anyone knows why.]"
       },
       {
         "id": "gk_return_n02",
         "speaker": "narration",
         "type": "stage_direction",
-        "text": "[The door bangs open on a gust of cold air and holly leaves. Somebody green ducks under the lintel.]"
+        "text": "[The door swings open on cold air and a few dead holly leaves. He ducks under the lintel, bareheaded, a bandage at his throat, and does not smile.]"
       },
       {
         "id": "gk_return_01",
         "speaker": "green_knight",
-        "text": "Ha! A year and a day, as I promised. I have come for my blow."
+        "text": "A year and a day. I kept my word. Now someone at this table keeps theirs."
       },
       {
         "id": "gk_return_02",
         "speaker": "green_knight",
-        "text": "Did you think that was the end of me? I said I would be back for my turn. I am always back for my turn."
+        "text": "You took your blow. I felt it. I have come back for mine."
       },
       {
         "id": "gk_return_03",
         "speaker": "green_knight",
-        "text": "Ha! I took the long way round. Deal me in. I am owed a blow, and I mean to collect it in chips."
+        "text": "No more games for the hall. Deal me in."
       },
       {
         "id": "gk_return_d01",
         "speaker": "death",
-        "text": "Twenty hands. At this table, that is a year and a day. I checked. He had already checked."
+        "text": "Twenty hands. At this table, that is a year and a day. He counted every one."
       },
       {
         "id": "gk_return_d02",
         "speaker": "death",
-        "text": "I do not usually let anyone back in. He has a letter from Morgan le Fay, and I have learned not to argue with her paperwork."
+        "text": "I do not usually let anyone back in. He has a letter from Morgan le Fay, and he has stopped laughing. I would not argue with either."
       },
       {
         "id": "gk_return_d03",
         "speaker": "death",
-        "text": "Most people I see once. He keeps appointments."
+        "text": "Most people I see once. He keeps appointments. He is keeping one now."
       }
     ]
   },

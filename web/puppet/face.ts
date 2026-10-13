@@ -22,6 +22,8 @@ export type FaceConfig = {
   speech: {
     vowel: number; consonant: number; space: number; pause: number
     map: Record<string, string>
+    /** No mouth to move (a closed helm): the head nods this far (degrees) on each open sound. */
+    nod?: number
   }
 }
 
@@ -47,6 +49,7 @@ export class Face {
   private glanceUntil = 0
   private idleGaze = 'ahead'
   private tilt = [0, 0, 0]
+  private nod = 0
   private speech: Beat[] = []
   private speechAt = 0
   onSpeechEnd: (() => void) | null = null
@@ -107,10 +110,24 @@ export class Face {
     const goal = c.gaze.tilt[this.currentGaze()] ?? [0, 0, 0]
     const k = 1 - Math.exp(-c.sway.follow * dt)
     for (let i = 0; i < 3; i++) this.tilt[i] += (goal[i] - this.tilt[i]) * k
+    if (c.speech.nod) {                                   // a helm talks with its head
+      const open = this.speaking && ['ah', 'oh', 'ee', 'oo'].includes(this.shapeNow() ?? '')
+      this.nod += ((open ? c.speech.nod : 0) - this.nod) * (1 - Math.exp(-14 * dt))
+    }
     if (this.speech.length && this.time - this.speechAt > this.speech[this.speech.length - 1].t) {
       this.speech = []
       this.onSpeechEnd?.()
     }
+  }
+
+  /** The mouth shape now: the line being spoken, else the one set by hand. */
+  private shapeNow(): string | null {
+    let mouth = this.mouth
+    if (this.speech.length) {
+      const t = this.time - this.speechAt
+      for (const b of this.speech) if (t >= b.t) mouth = b.shape
+    }
+    return mouth
   }
 
   /** The look in force: one set by hand wins over an idle glance. */
@@ -135,14 +152,9 @@ export class Face {
     p.show('eyes', eyes === 'ahead' ? null : eyes)
     p.show('brows', this.brows === 'neutral' ? null : this.brows)
 
-    let mouth = this.mouth
-    if (this.speech.length) {
-      const t = this.time - this.speechAt
-      for (const b of this.speech) if (t >= b.t) mouth = b.shape
-    }
-    p.show('mouth', mouth)
+    p.show('mouth', this.shapeNow())
 
-    p.add('head', 'rot', this.tilt[0])
+    p.add('head', 'rot', this.tilt[0] + this.nod)
     p.add('head', 'x', this.tilt[1])
     p.add('head', 'y', this.tilt[2])
     if (this.idle && !this.still) {
