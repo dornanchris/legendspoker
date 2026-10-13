@@ -54,3 +54,9 @@ position and need placing per deal: toward each seat, the board, and you.
   scale them up when placing.
 - Keep out of the game: glowing eyes, angry or surprised faces (he has no
   tells), the scythe, hourglass and book from the earlier sheets.
+
+## Next: the pose drawings
+
+`POSES.md` lists his 24 poses (the deal, the board, the pot, his moments,
+and the finale when he plays) and the prompts for four pose sheets and a
+face sheet, to build him with `pose_rig.py` as the White House cast is.
