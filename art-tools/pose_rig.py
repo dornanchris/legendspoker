@@ -71,6 +71,8 @@ skin shading as orange as it reaches up the arm. "head_match": "face" places a
 frame's master head on its own drawn head instead of on the stock.
 Master "place" ([x, y, scale] from head_box's corner) sets the master head
 by hand where the fit cannot find it (Silver: the parrot in the box).
+Master "biggest" keeps only the master head's largest piece (a sliver of the
+next piece on the face sheet caught at its edge).
 Master "drop_white" ([x0, y0, x1, y1], master pixels) clears the sheet's white
 caught inside the master head there (Davy Jones's hat weed).
 "felt_dark_teal": the felt counts in dark teal shades whatever their green and
@@ -96,7 +98,9 @@ mouth), so a clip can tilt it; it is cut from the body and from frames' heads.
 shoulder); "saturated": n cuts it by colour inside its poly (her feathers,
 brighter than his coat, filled and grown by "outline" for her outline; or
 "redder": k, red above k times green: Merlin's staff against his robe;
-"drop_white" clears the sheet's white caught inside it), plus
+"drop_white" clears the sheet's white caught inside it; "close": n closes gaps
+of up to 2n pixels, the dark grooves of a twisted staff; "keep_skin" keeps
+colours the skin test would drop: its orange highlights), plus
 "also" polygons taken whatever their colour (her beak and feet).
 
 Writes the runtime rig (web/art/<id>/), a build_puppet layout
@@ -517,14 +521,15 @@ def main(spec_path):
         pm_ = poly_mask(shape, pr['poly']) & (src[..., 3] > 128)
         c = src[..., :3].astype(int)
         skin = (c[..., 0] > 160) & (c[..., 0] - c[..., 2] > 60) & (c[..., 1] > 90) & (c[..., 1] < 175)
-        pm_ &= ~skin
+        if not pr.get('keep_skin'):                        # (a staff's orange highlights read as skin)
+            pm_ &= ~skin
         if 'saturated' in pr or 'redder' in pr:            # a bird: her bright feathers, then her outline,
             inside = pm_.copy()                            # and the beak and feet ("also") whatever their colour
             if 'saturated' in pr:
                 pm_ &= np.ptp(c, axis=-1) > pr['saturated']
             if 'redder' in pr:                             # a staff: redder than the robe behind it
                 pm_ &= (c[..., 0] > pr['redder'] * c[..., 1]) & (c[..., 0] > 40)
-            pm_ = ndimage.binary_fill_holes(ndimage.binary_closing(pm_, iterations=3))
+            pm_ = ndimage.binary_fill_holes(ndimage.binary_closing(pm_, iterations=pr.get('close', 3)))
             for q in pr.get('also', []):
                 pm_ |= poly_mask(shape, q) & (src[..., 3] > 128)
             pm_ = ndimage.binary_dilation(pm_, iterations=pr.get('outline', 3)) & inside
@@ -554,6 +559,10 @@ def main(spec_path):
             ma_ = np.array(mimg.convert('RGBA'))
             box_ = ma_[y0:y1, x0:x1]
             box_[..., 3] = np.where(box_[..., :3].min(-1) > 215, 0, box_[..., 3])
+            mimg = Image.fromarray(ma_)
+        if m.get('biggest'):                               # a sliver of the next piece on the sheet: not him
+            ma_ = np.array(mimg.convert('RGBA'))
+            ma_[..., 3] = np.where(biggest(ma_[..., 3] > 0), ma_[..., 3], 0)
             mimg = Image.fromarray(ma_)
         mimg.save(os.path.join(HERE, m['file']))
         face_rig.main(os.path.join(HERE, m['face']), os.path.join(HERE, m['layers']), m['cut_below'])

@@ -1,372 +1,281 @@
 {
  "id": "merlin",
  "name": "Merlin",
- "note": "Polygons in the rest pose (A1) pixels. As the Cove's cast: every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. His staff is a prop of the rest pose cut by colour (redder than his robe), on the torso and drawn over his head, whose hood is wider than the drawn one.",
+ "note": "Polygons in the rest pose (A1) pixels. Built from the style-locked redraw. Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. His staff is a prop of the rest pose cut by colour (redder than his robe), on the torso and drawn over his head. Pose sheet C of the redraw is still to come.",
  "sheets": {
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
-  "C": "sources/poses_c.png",
   "D": "sources/poses_d.png"
  },
  "poses": {
   "A1": {
    "sheet": "A",
    "box": [
-    13,
-    10,
-    497,
-    482
+    9,
+    7,
+    494,
+    488
    ],
    "what": "at rest, hands apart, the staff on his right shoulder"
   },
   "A2": {
    "sheet": "A",
    "box": [
-    516,
+    513,
     10,
-    499,
-    482
+    501,
+    485
    ],
    "what": "peeking",
    "reg": [
     1.0,
-    -5,
-    0
+    3,
+    3
    ]
   },
   "A3": {
    "sheet": "A",
    "box": [
-    1026,
-    10,
-    497,
-    482
+    1023,
+    7,
+    500,
+    488
    ],
    "what": "checking",
    "reg": [
     1.0,
-    0,
+    2,
     0
    ]
   },
   "A4": {
    "sheet": "A",
    "box": [
-    13,
-    497,
-    497,
-    483
+    9,
+    508,
+    494,
+    489
    ],
    "what": "calling",
    "reg": [
     1.0,
-    -1,
+    0,
     -1
    ]
   },
   "A5": {
    "sheet": "A",
    "box": [
-    521,
-    497,
-    493,
-    485
+    513,
+    511,
+    501,
+    486
    ],
    "what": "betting, slow",
    "reg": [
     1.0,
-    0,
-    -2
+    3,
+    2
    ]
   },
   "A6": {
    "sheet": "A",
    "box": [
-    1026,
-    497,
-    497,
-    485
+    1023,
+    507,
+    500,
+    490
    ],
    "what": "folding without looking",
    "reg": [
     1.0,
-    0,
-    -3
+    2,
+    -2
    ]
   },
   "B1": {
    "sheet": "B",
    "box": [
-    14,
-    8,
-    496,
-    480
+    10,
+    5,
+    497,
+    487
    ],
    "what": "all in",
    "reg": [
     1.0,
-    0,
-    1
+    3,
+    -1
    ]
   },
   "B2": {
    "sheet": "B",
    "box": [
-    512,
-    8,
-    501,
-    482
+    508,
+    5,
+    509,
+    487
    ],
    "what": "showing",
    "reg": [
     1.0,
     -5,
-    0
+    -1
    ]
   },
   "B3": {
    "sheet": "B",
    "box": [
-    1022,
-    9,
-    500,
-    482
+    1023,
+    5,
+    502,
+    489
    ],
    "what": "collecting",
    "reg": [
     1.0,
-    0,
-    1
+    3,
+    -1
    ]
   },
   "B4": {
    "sheet": "B",
    "box": [
-    14,
-    492,
-    496,
-    488
+    10,
+    494,
+    497,
+    486
    ],
    "what": "the staff glows (TELL)",
    "reg": [
     1.0,
-    0,
-    -6
+    3,
+    2
    ]
   },
   "B5": {
    "sheet": "B",
    "box": [
-    512,
-    492,
-    501,
-    488
+    508,
+    494,
+    509,
+    486
    ],
    "what": "taps his staff twice (decoy)",
    "reg": [
     1.0,
-    -3,
-    -6
+    -5,
+    2
    ]
   },
   "B6": {
    "sheet": "B",
    "box": [
-    1022,
-    492,
-    500,
-    488
+    1024,
+    497,
+    501,
+    483
    ],
    "what": "gazes past the table (TELL)",
    "reg": [
     1.0,
-    0,
-    -6
-   ]
-  },
-  "C1": {
-   "sheet": "C",
-   "box": [
-    13,
-    8,
-    495,
-    484
-   ],
-   "what": "stares at what has not happened yet (decoy)",
-   "reg": [
-    1.0,
-    -1,
-    -2
-   ]
-  },
-  "C2": {
-   "sheet": "C",
-   "box": [
-    515,
-    9,
-    498,
-    483
-   ],
-   "what": "murmurs a word (TELL)",
-   "reg": [
-    1.0,
-    -3,
-    -1
-   ]
-  },
-  "C3": {
-   "sheet": "C",
-   "box": [
-    1022,
-    9,
-    504,
-    483
-   ],
-   "what": "strokes his beard (decoy)",
-   "reg": [
-    1.0,
-    -1,
-    -1
-   ]
-  },
-  "C4": {
-   "sheet": "C",
-   "box": [
-    13,
-    493,
-    495,
-    487
-   ],
-   "what": "brushes ash from his sleeve",
-   "reg": [
-    1.0,
-    -1,
-    -5
-   ]
-  },
-  "C5": {
-   "sheet": "C",
-   "box": [
-    515,
-    493,
-    497,
-    487
-   ],
-   "what": "glances up at a candle",
-   "reg": [
-    1.0,
-    -1,
-    -5
-   ]
-  },
-  "C6": {
-   "sheet": "C",
-   "box": [
-    1021,
-    494,
-    503,
-    486
-   ],
-   "what": "hands folded, eyes closed",
-   "reg": [
-    1.0,
-    -1,
-    -4
+    3,
+    5
    ]
   },
   "D1": {
    "sheet": "D",
    "box": [
-    14,
-    9,
-    494,
-    482
+    11,
+    10,
+    500,
+    484
    ],
    "what": "talking, palm out",
    "reg": [
     1.0,
-    0,
-    0
+    3,
+    5
    ]
   },
   "D2": {
    "sheet": "D",
    "box": [
-    518,
-    9,
-    497,
-    483
+    517,
+    10,
+    503,
+    484
    ],
    "what": "facing a big bet",
    "reg": [
     1.0,
-    0,
-    0
+    3,
+    5
    ]
   },
   "D3": {
    "sheet": "D",
    "box": [
-    1024,
+    1027,
     10,
-    499,
-    476
+    498,
+    482
    ],
    "what": "lost a pot: a small nod",
    "reg": [
     1.0,
-    -1,
-    3
+    3,
+    5
    ]
   },
   "D4": {
    "sheet": "D",
    "box": [
-    14,
-    493,
+    11,
     495,
-    485
+    498,
+    482
    ],
    "what": "won a pot: a knowing smile",
    "reg": [
     1.0,
-    -1,
-    -3
+    3,
+    6
    ]
   },
   "D5": {
    "sheet": "D",
    "box": [
-    516,
-    494,
-    502,
-    484
+    517,
+    495,
+    501,
+    482
    ],
-   "what": "heads up: hands clasped, eyes fixed",
+   "what": "heads up: forearms on the table, eyes fixed",
    "reg": [
     1.0,
-    -1,
-    -2
+    3,
+    6
    ]
   },
   "D6": {
    "sheet": "D",
    "box": [
-    1024,
-    492,
-    499,
-    486
+    1027,
+    494,
+    498,
+    483
    ],
    "what": "knocked out: takes his staff, turns to go",
    "reg": [
     1.0,
-    -3,
-    -4
+    2,
+    5
    ]
   }
  },
  "rest": "A1",
- "table_y": 358,
+ "table_y": 370,
  "scale": 1.0,
  "origin_x": 305,
  "register_box": [
@@ -376,17 +285,17 @@
   340
  ],
  "register_span": 40,
- "collar_y": 250,
+ "collar_y": 225,
  "neck": [
-  270,
-  240
+  255,
+  215
  ],
  "frame_margin": 60,
  "stock_box": [
   200,
-  240,
-  340,
-  300
+  215,
+  330,
+  280
  ],
  "master": {
   "piece": "merlin_parts/merlin_face/merlin_face_01.png",
@@ -395,15 +304,15 @@
   "file": "merlin_parts/merlin_rig/master.png",
   "layers": "merlin_parts/merlin_rig/face",
   "head_box": [
-   140,
-   40,
-   370,
-   250
+   112,
+   20,
+   350,
+   225
   ],
   "place": [
-   -54,
-   -2,
-   0.77
+   -21,
+   7,
+   0.66
   ],
   "replace_head": true,
   "heads": {
@@ -416,102 +325,109 @@
   "fill_poly": [
    [
     [
-     140,
-     200
+     112,
+     165
     ],
     [
-     175,
-     200
+     200,
+     165
     ],
     [
-     175,
-     250
+     200,
+     225
     ],
     [
-     140,
-     250
+     112,
+     225
     ]
    ],
    [
     [
-     330,
-     200
+     300,
+     175
     ],
     [
-     370,
-     200
+     350,
+     175
     ],
     [
-     370,
-     250
+     350,
+     225
     ],
     [
-     330,
-     250
+     300,
+     225
     ]
    ]
   ],
-  "shoulder_y": 200,
+  "shoulder_y": 190,
   "props": {
    "staff": {
     "poly": [
      [
-      30,
+      0,
       0
      ],
      [
-      150,
+      110,
       0
      ],
      [
-      150,
-      70
+      110,
+      55
      ],
      [
-      136,
-      110
+      92,
+      100
      ],
      [
-      132,
+      106,
       200
      ],
      [
-      142,
-      345
+      124,
+      300
      ],
      [
-      88,
+      124,
       352
      ],
      [
-      84,
-      200
+      80,
+      356
      ],
      [
-      70,
-      110
+      52,
+      250
      ],
      [
       30,
-      80
+      130
+     ],
+     [
+      0,
+      95
      ]
     ],
-    "redder": 1.5,
+    "redder": 1.75,
     "outline": 3,
     "pivot": [
-     112,
-     345
+     100,
+     350
     ],
     "parent": "torso",
     "z": 21.5,
-    "drop_white": true
+    "drop_white": true,
+    "close": 3,
+    "keep_skin": true
    }
-  }
+  },
+  "biggest": true
  },
  "arms": {
   "near": {
    "elbow": [
-    40,
+    30,
     330
    ],
    "extend": 0,
@@ -548,32 +464,32 @@
        290
       ],
       [
-       130,
-       330
+       120,
+       340
       ],
       [
        170,
-       360
+       375
+      ],
+      [
+       225,
+       395
+      ],
+      [
+       240,
+       430
       ],
       [
        235,
-       380
-      ],
-      [
-       255,
-       420
-      ],
-      [
-       250,
-       470
+       475
       ],
       [
        110,
-       470
+       475
       ],
       [
        60,
-       450
+       455
       ],
       [
        20,
@@ -590,7 +506,7 @@
   "far": {
    "elbow": [
     465,
-    320
+    330
    ],
    "extend": 0,
    "rest": "rest",
@@ -618,48 +534,48 @@
      "what": "his left forearm, sleeve and hand",
      "poly": [
       [
-       318,
-       430
+       270,
+       440
       ],
       [
-       330,
+       285,
        400
       ],
       [
-       370,
-       375
+       330,
+       380
       ],
       [
-       380,
-       350
+       370,
+       365
       ],
       [
        420,
-       330
+       340
       ],
       [
        470,
-       300
+       310
       ],
       [
-       497,
-       320
+       494,
+       330
       ],
       [
-       497,
-       420
+       494,
+       430
       ],
       [
        460,
-       425
+       435
       ],
       [
-       450,
-       470
+       440,
+       475
       ],
       [
-       318,
-       470
+       270,
+       475
       ]
      ]
     }
@@ -684,19 +600,19 @@
    "props": [
     [
      [
-      200,
-      370
+      160,
+      385
      ],
      [
-      300,
-      370
+      320,
+      385
      ],
      [
-      300,
+      320,
       492
      ],
      [
-      200,
+      160,
       492
      ]
     ]
@@ -709,19 +625,19 @@
    "props": [
     [
      [
-      190,
-      350
+      170,
+      370
      ],
      [
-      310,
-      350
+      300,
+      370
      ],
      [
-      310,
+      300,
       492
      ],
      [
-      190,
+      170,
       492
      ]
     ]
@@ -741,14 +657,14 @@
     [
      [
       230,
-      350
+      380
      ],
      [
-      440,
-      350
+      450,
+      380
      ],
      [
-      440,
+      450,
       492
      ],
      [
@@ -771,14 +687,14 @@
     [
      [
       230,
-      350
+      375
      ],
      [
-      440,
-      350
+      450,
+      375
      ],
      [
-      440,
+      450,
       492
      ],
      [
@@ -801,36 +717,6 @@
   },
   "gaze": {
    "pose": "B6",
-   "head": "own",
-   "below": 110
-  },
-  "stare": {
-   "pose": "C1",
-   "head": "own",
-   "below": 110
-  },
-  "murmur": {
-   "pose": "C2",
-   "head": "own",
-   "below": 110
-  },
-  "beard": {
-   "pose": "C3",
-   "head": "own",
-   "below": 110
-  },
-  "ash": {
-   "pose": "C4",
-   "head": "own",
-   "below": 110
-  },
-  "candle": {
-   "pose": "C5",
-   "head": "own",
-   "below": 110
-  },
-  "still": {
-   "pose": "C6",
    "head": "own",
    "below": 110
   },
@@ -857,19 +743,19 @@
    "props": [
     [
      [
-      160,
-      370
+      150,
+      385
      ],
      [
-      320,
-      370
+      330,
+      385
      ],
      [
-      320,
+      330,
       492
      ],
      [
-      160,
+      150,
       492
      ]
     ]

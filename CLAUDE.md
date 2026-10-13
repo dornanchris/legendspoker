@@ -378,15 +378,16 @@ and **Blackbeard** (`#/puppet/blackbeard`, 25 clips, seat 4). Their prompts
 came from `<id>_parts/poses_spec.json` by `art-tools/prompts/poses.py`.
 **Camelot's room is built** (candle wheels and sconces flicker; the hearth
 fire and its sparks at the far left, on screens wider than 16:9);
-`?room=camelot` previews it. **Merlin is built** (`#/puppet/merlin`, 24
-clips, seat 1; his staff a prop cut by colour, over his head); Lancelot's
-prompts are written. **The style lock** (the owner: Davy Jones and Merlin
+`?room=camelot` previews it. **Merlin is built** (`#/puppet/merlin`, 21
+clips, seat 1; his staff a prop cut by colour, over his head), rebuilt from
+the style-locked redraw (its pose sheet C still owed); Lancelot's prompts
+are written. **The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
 style drifted a step each time. Now `poses.py` (`"style_lock": true`) names
 one fixed style reference, Washington's pose sheet A, attached to every
 prompt, and says the style in words (few lines, big smooth shapes, flat
-colour, no texture). Merlin's `POSES.md` is style-locked for a redraw.
+colour, no texture). The redrawn Merlin is back in the presidents' style.
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,
