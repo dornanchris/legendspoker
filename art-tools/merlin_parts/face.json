@@ -1,0 +1,92 @@
+{
+ "master": "merlin_parts/merlin_face/merlin_face_01.png",
+ "pieces": "merlin_parts/merlin_face/merlin_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "far": 6,
+   "narrow": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 17,
+   "murmur": 18,
+   "smile": 19
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     195,
+     98
+    ],
+    [
+     330,
+     98
+    ],
+    [
+     330,
+     128
+    ],
+    [
+     195,
+     128
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     195,
+     128
+    ],
+    [
+     330,
+     128
+    ],
+    [
+     330,
+     152
+    ],
+    [
+     195,
+     152
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     205,
+     182
+    ],
+    [
+     330,
+     182
+    ],
+    [
+     330,
+     225
+    ],
+    [
+     205,
+     225
+    ]
+   ]
+  }
+ }
+}

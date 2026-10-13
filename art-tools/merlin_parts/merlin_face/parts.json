@@ -1,0 +1,290 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "merlin_face_01.png",
+      "label": "",
+      "x": 16,
+      "y": 11,
+      "w": 414,
+      "h": 415,
+      "pivot": [
+        207.0,
+        207.5
+      ],
+      "area": 127604
+    },
+    {
+      "index": 2,
+      "file": "merlin_face_02.png",
+      "label": "",
+      "x": 397,
+      "y": 60,
+      "w": 171,
+      "h": 130,
+      "pivot": [
+        85.5,
+        65.0
+      ],
+      "area": 17286
+    },
+    {
+      "index": 3,
+      "file": "merlin_face_03.png",
+      "label": "",
+      "x": 581,
+      "y": 59,
+      "w": 151,
+      "h": 127,
+      "pivot": [
+        75.5,
+        63.5
+      ],
+      "area": 15386
+    },
+    {
+      "index": 4,
+      "file": "merlin_face_04.png",
+      "label": "",
+      "x": 742,
+      "y": 58,
+      "w": 162,
+      "h": 132,
+      "pivot": [
+        81.0,
+        66.0
+      ],
+      "area": 16685
+    },
+    {
+      "index": 5,
+      "file": "merlin_face_05.png",
+      "label": "",
+      "x": 921,
+      "y": 58,
+      "w": 165,
+      "h": 133,
+      "pivot": [
+        82.5,
+        66.5
+      ],
+      "area": 17103
+    },
+    {
+      "index": 6,
+      "file": "merlin_face_06.png",
+      "label": "",
+      "x": 1109,
+      "y": 55,
+      "w": 191,
+      "h": 131,
+      "pivot": [
+        95.5,
+        65.5
+      ],
+      "area": 19792
+    },
+    {
+      "index": 7,
+      "file": "merlin_face_07.png",
+      "label": "",
+      "x": 1321,
+      "y": 55,
+      "w": 178,
+      "h": 132,
+      "pivot": [
+        89.0,
+        66.0
+      ],
+      "area": 18177
+    },
+    {
+      "index": 8,
+      "file": "merlin_face_08.png",
+      "label": "",
+      "x": 691,
+      "y": 205,
+      "w": 189,
+      "h": 93,
+      "pivot": [
+        94.5,
+        46.5
+      ],
+      "area": 12538
+    },
+    {
+      "index": 9,
+      "file": "merlin_face_09.png",
+      "label": "",
+      "x": 935,
+      "y": 208,
+      "w": 193,
+      "h": 101,
+      "pivot": [
+        96.5,
+        50.5
+      ],
+      "area": 14192
+    },
+    {
+      "index": 10,
+      "file": "merlin_face_10.png",
+      "label": "",
+      "x": 400,
+      "y": 339,
+      "w": 207,
+      "h": 147,
+      "pivot": [
+        103.5,
+        73.5
+      ],
+      "area": 24836
+    },
+    {
+      "index": 11,
+      "file": "merlin_face_11.png",
+      "label": "",
+      "x": 626,
+      "y": 338,
+      "w": 199,
+      "h": 145,
+      "pivot": [
+        99.5,
+        72.5
+      ],
+      "area": 23579
+    },
+    {
+      "index": 12,
+      "file": "merlin_face_12.png",
+      "label": "",
+      "x": 845,
+      "y": 338,
+      "w": 206,
+      "h": 144,
+      "pivot": [
+        103.0,
+        72.0
+      ],
+      "area": 24280
+    },
+    {
+      "index": 13,
+      "file": "merlin_face_13.png",
+      "label": "",
+      "x": 1073,
+      "y": 337,
+      "w": 206,
+      "h": 145,
+      "pivot": [
+        103.0,
+        72.5
+      ],
+      "area": 24149
+    },
+    {
+      "index": 14,
+      "file": "merlin_face_14.png",
+      "label": "",
+      "x": 1303,
+      "y": 337,
+      "w": 207,
+      "h": 145,
+      "pivot": [
+        103.5,
+        72.5
+      ],
+      "area": 24183
+    },
+    {
+      "index": 15,
+      "file": "merlin_face_15.png",
+      "label": "",
+      "x": 393,
+      "y": 510,
+      "w": 208,
+      "h": 140,
+      "pivot": [
+        104.0,
+        70.0
+      ],
+      "area": 23650
+    },
+    {
+      "index": 16,
+      "file": "merlin_face_16.png",
+      "label": "",
+      "x": 623,
+      "y": 506,
+      "w": 202,
+      "h": 140,
+      "pivot": [
+        101.0,
+        70.0
+      ],
+      "area": 22846
+    },
+    {
+      "index": 17,
+      "file": "merlin_face_17.png",
+      "label": "",
+      "x": 846,
+      "y": 506,
+      "w": 206,
+      "h": 140,
+      "pivot": [
+        103.0,
+        70.0
+      ],
+      "area": 23293
+    },
+    {
+      "index": 18,
+      "file": "merlin_face_18.png",
+      "label": "",
+      "x": 1076,
+      "y": 509,
+      "w": 204,
+      "h": 140,
+      "pivot": [
+        102.0,
+        70.0
+      ],
+      "area": 22975
+    },
+    {
+      "index": 19,
+      "file": "merlin_face_19.png",
+      "label": "",
+      "x": 1303,
+      "y": 510,
+      "w": 208,
+      "h": 140,
+      "pivot": [
+        104.0,
+        70.0
+      ],
+      "area": 23353
+    },
+    {
+      "index": 20,
+      "file": "merlin_face_20.png",
+      "label": "",
+      "x": 523,
+      "y": 641,
+      "w": 491,
+      "h": 367,
+      "pivot": [
+        245.5,
+        183.5
+      ],
+      "area": 111549
+    }
+  ]
+}
