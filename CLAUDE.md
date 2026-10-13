@@ -146,7 +146,8 @@ art-tools/
                   back); death_layout.json assembles him
   prompts/        generators for the two art-prompt files below
                   (characters.mjs + parts.mjs, rooms.mjs)
-  rooms/          finished room art, one folder per venue (white_house/)
+  rooms/          finished room art: table.webp (the one table every room
+                  shares) and a folder per venue (white_house/: its backdrop)
   mock_screen.py  draws the table screen with the current art: game first
   room_web.py     publishes a room to web/art/rooms/: its rim curve and chairs
   web_half.py     the half-size puppet images the table screen loads
@@ -337,8 +338,10 @@ torso's lower half; forearms and hands resting on it sit above it. A puppet keep
 its own layer order (a sleeve can tuck under a cape); parts marked
 `on_table` are drawn again over the table where they lie on it
 (`build_puppet.py`, `mock_screen.py`).
-Every table is round and keeps a plain playing surface; each room differs in
-its table's rim and cloth, its backdrop and its light (`ROOM-ART-PROMPTS.md`).
+**One table in every room** (the owner's call): `art-tools/rooms/table.webp`,
+published once as `web/art/rooms/table.webp`. Rooms differ in their backdrop,
+their story pieces and their light (`ROOM-ART-PROMPTS.md`); each backdrop is
+drawn to the White House plate's camera, so the table, rim and chairs line up.
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,

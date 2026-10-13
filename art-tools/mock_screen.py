@@ -36,7 +36,7 @@ bg = Image.open(os.path.join(ROOM, 'backdrop.webp')).convert('RGBA')
 s = H / bg.height; bg = bg.resize((int(bg.width * s), H), Image.LANCZOS)
 bg = bg.crop(((bg.width - W) // 2, 0, (bg.width - W) // 2 + W, H))
 
-table = Image.open(os.path.join(ROOM, 'table.webp')).convert('RGBA')
+table = Image.open(os.path.join(HERE, 'rooms', 'table.webp')).convert('RGBA')   # one table in every room
 TS = g('ts', 1.05); FAR = g('far', 0.50)   # table scale; far rim (y 190 on the table art) at half height
 tw, th = int(table.width * TS), int(table.height * TS); table = table.resize((tw, th), Image.LANCZOS)
 tl = Image.new('RGBA', (W, H), (0, 0, 0, 0)); tl.alpha_composite(table, ((W - tw) // 2, int(H * FAR) - int(190 * TS)))
