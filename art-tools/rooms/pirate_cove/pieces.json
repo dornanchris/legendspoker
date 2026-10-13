@@ -1,5 +1,5 @@
 {
-  "note": "Pirate Cove's room pieces, cut from sources/pieces.png by room_web.py. Spots are in the screen's design space (1600x900): [centre x, foot, height]. The backdrop is 1916x821, so design x = image x * 1.096 - 250, y = image y * 1.096. Flames sit on the painted lantern flames; the glints on the water either side of Death; the gull on the rock above the opening's right edge.",
+  "note": "Pirate Cove's room pieces, cut from sources/pieces.png by room_web.py. Spots are in the screen's design space (1600x900): [centre x, foot, height]. The backdrop is 1916x821, so design x = image x * 1.096 - 250, y = image y * 1.096. Flames sit on the painted lantern flames; the glints on the water either side of Death; the gull on the rock at the opening's right edge, low enough to show on a phone (a short screen loses 140 px of ceiling).",
   "sheet": "sources/pieces.png",
   "pieces": {
     "flame_1": { "box": [55, 45, 265, 525] },
@@ -18,6 +18,6 @@
     { "frames": ["glint_1", "glint_2", "glint_3"], "every": [0.5, 1.3],
       "spots": [[600, 436, 20], [965, 440, 18]] },
     { "frames": ["gull_1", "gull_2"], "every": [1.5, 5.0],
-      "spots": [[1190, 152, 92]] }
+      "spots": [[1175, 262, 80]] }
   ]
 }
