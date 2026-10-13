@@ -1,0 +1,92 @@
+{
+ "master": "arthur_parts/arthur_face/arthur_face_01.png",
+ "pieces": "arthur_parts/arthur_face/arthur_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 16,
+   "f": 17,
+   "l": 18,
+   "smile": 19,
+   "sad": 20
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     170,
+     98
+    ],
+    [
+     345,
+     98
+    ],
+    [
+     345,
+     130
+    ],
+    [
+     170,
+     130
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     170,
+     130
+    ],
+    [
+     345,
+     130
+    ],
+    [
+     345,
+     165
+    ],
+    [
+     170,
+     165
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     150,
+     172
+    ],
+    [
+     350,
+     172
+    ],
+    [
+     350,
+     300
+    ],
+    [
+     150,
+     300
+    ]
+   ]
+  }
+ }
+}

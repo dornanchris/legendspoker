@@ -392,8 +392,9 @@ red nick at his neck as he is knocked out; and after his return
 green skin: the owner; a bandaged neck, battered armour; his return lines
 rewritten colder), a separate puppet the table seats when he comes back
 (`RETURNED` in `web/puppet/cast.ts`). The helm has no mouth: a face with
-`speech.nod` nods as it speaks. Arthur's prompts are written; he is the last
-of Camelot. **The style lock** (the owner: Davy Jones and Merlin
+`speech.nod` nods as it speaks. **Arthur is built** (`#/puppet/arthur`, 24
+clips, seat 4): **Camelot is complete on the real table screen** (Merlin's
+redrawn pose sheet C is still owed, for three of his idles). **The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
 style drifted a step each time. Now `poses.py` (`"style_lock": true`) names

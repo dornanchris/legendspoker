@@ -74,6 +74,7 @@ by hand where the fit cannot find it (Silver: the parrot in the box).
 Master "head_poly" (rest-pose pixels) cuts the pose's own head by an outline
 instead of head_box, and "keep_poly" (master pixels) keeps only that much of
 the master head: the returned Green Knight's shoulder plates stay the body's.
+"spare_red" leaves red cloth out of both (Arthur's mantle stays the body's).
 Master "biggest" keeps only the master head's largest piece (a sliver of the
 next piece on the face sheet caught at its edge).
 Master "drop_white" ([x0, y0, x1, y1], master pixels) clears the sheet's white
@@ -500,6 +501,11 @@ def main(spec_path):
         cut[hb[1]:min(hb[3], spec['collar_y']), hb[0]:hb[2]] = True
         if 'head_poly' in spec['master']:                  # the head's own outline, not a box (a shoulder plate beside it stays)
             cut = poly_mask(shape, spec['master']['head_poly'])
+            near = ndimage.binary_dilation(cut, iterations=14)   # the sheet's white caught round it (by a sword's hilt)
+            body[..., 3] = np.where(near & (body[..., :3].min(-1) > 225), 0, body[..., 3])
+        if spec['master'].get('spare_red'):                # the mantle round the head stays the body's own
+            c_ = R[..., :3].astype(int)
+            cut &= ~((c_[..., 0] > 110) & (c_[..., 1] * 3 < c_[..., 0]) & (c_[..., 2] * 3 < c_[..., 0]))   # deep red only: never skin or gold
         fb = spec['master'].get('fill_below')
         fp = spec['master'].get('fill_poly')
         if fb is not None or fp:
@@ -568,6 +574,11 @@ def main(spec_path):
         if 'keep_poly' in m:                               # only the head and neck: its own shoulders are not the body's
             ma_ = np.array(mimg.convert('RGBA'))
             ma_[..., 3] = np.where(poly_mask(ma_.shape[:2], m['keep_poly']), ma_[..., 3], 0)
+            ma_[..., 3] = np.where(ma_[..., :3].min(-1) > 225, 0, ma_[..., 3])    # sheet white caught between curls
+            if m.get('spare_red'):
+                c_ = ma_[..., :3].astype(int)
+                red = (c_[..., 0] > 110) & (c_[..., 1] * 3 < c_[..., 0]) & (c_[..., 2] * 3 < c_[..., 0])
+                ma_[..., 3] = np.where(ndimage.binary_dilation(red, iterations=2), 0, ma_[..., 3])
             mimg = Image.fromarray(ma_)
         if m.get('biggest'):                               # a sliver of the next piece on the sheet: not him
             ma_ = np.array(mimg.convert('RGBA'))
