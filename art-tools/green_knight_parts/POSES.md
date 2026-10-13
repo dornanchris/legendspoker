@@ -2,7 +2,7 @@
 
 Camelot's seat 3 (on the player's right, beside Death): drawn facing the viewer's right and MIRRORED by the game to face the table's centre. Built a quarter bigger, as the Cyclops is: the giant at the table.
 
-**Two looks** (the owner's design, which is the design doc's: 'green armour, enormous'). For his first sitting he is HELMED: green plate, a closed great helm, his eyes visible through the visor slit and nothing else of his face. When he is knocked out he takes the blow: D6 shows a red nick at his neck below the helm's rim as he rises and goes. When he comes back twenty hands later (`returns` in his file) the helm is gone: the bareheaded set is `art-tools/green_knight_bare_parts/POSES.md`, his face the green, bearded, grinning one the owner's first sheet drew (`sources/bare_head_ref.png`), with a healed scar on his neck. The game swaps one puppet for the other when he returns.
+**Two looks** (the owner's design, which is the design doc's: 'green armour, enormous'). For his first sitting he is HELMED: green plate, a closed great helm, his eyes visible through the visor slit and nothing else of his face. When he is knocked out he takes the blow: D6 shows a red nick at his neck below the helm's rim as he rises and goes. When he comes back twenty hands later (`returns` in his file) the helm is gone and he is beaten and colder: the return set is `art-tools/green_knight_bare_parts/POSES.md` (a human face, no green skin, a bandaged neck, battered armour). The game swaps one puppet for the other when he returns.
 
 The helm hides his mouth, so this set has no mouth pieces: he talks with his helm and hands (a small nod per phrase, the D1 gesture), and his face sheet is his eyes through the slit.
 
