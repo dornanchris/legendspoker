@@ -383,8 +383,12 @@ fire and its sparks at the far left, on screens wider than 16:9);
 clips, seat 1; his staff a prop cut by colour, over his head), rebuilt from
 the style-locked redraw (its pose sheet C still owed); **Lancelot is
 built** (`#/puppet/lancelot`, 24 clips, seat 2), the first drawn under the
-style lock; the Green Knight's prompts are written (seat 3, a quarter bigger,
-with his return as C6). **The style lock** (the owner: Davy Jones and Merlin
+style lock; the Green Knight's prompts are written (seat 3, a quarter bigger), in TWO
+looks (the owner's, and the design doc's "green armour"): helmed in green
+plate, eyes in the visor slit, no mouth (he talks with helm and hands), a
+red nick at his neck as he is knocked out; and bareheaded after his return
+(`green_knight_bare_parts/`), a separate puppet the stage is to swap in
+when he comes back. **The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
 style drifted a step each time. Now `poses.py` (`"style_lock": true`) names
