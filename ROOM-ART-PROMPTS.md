@@ -9,7 +9,7 @@ Every room is the same stack of layers, back to front:
 1. **Backdrop plate:** the room itself, wide (21:9) so it fills any phone in landscape. Big features go high and at the sides. The band behind the players' heads stays calmer, so faces read. Death deals from the far side, dead centre, so the backdrop directly behind him is the calmest part of all.
 2. **Room pieces that come and go** (the "presence"): the empty couch at Athens, the laurel wreath at Rome, Dracula watching from beside the fire. They are separate so they can leave when the story says.
 3. **The characters** (see `CHARACTER-ART-PROMPTS.md`), drawn with nothing behind them: no chairs are ever shown.
-4. **The table:** the SAME table in every room (the owner's call): `art-tools/rooms/table.webp`, a round green-baize table with a padded leather rim. A round top seen from the player's seat, so it's a wide ellipse. You are sitting at it: the game scales the table up so its near half falls below the bottom of the screen, the felt fills the lower part of the picture, and the far rim crosses the screen at about the middle. The far rim runs in front of the dealer and the far seats, and the sides curve down toward you, which is why a character in a side seat is cut lower than one at the back. The table hides every torso below its edge, and every floor.
+4. **The table:** Death's table, the SAME in every room (the owner's call): it goes wherever he deals: `art-tools/rooms/table.webp`, a round green-baize table with a padded leather rim. A round top seen from the player's seat, so it's a wide ellipse. You are sitting at it: the game scales the table up so its near half falls below the bottom of the screen, the felt fills the lower part of the picture, and the far rim crosses the screen at about the middle. The far rim runs in front of the dealer and the far seats, and the sides curve down toward you, which is why a character in a side seat is cut lower than one at the back. The table hides every torso below its edge, and every floor.
 5. **Forearms, hands and props on the felt**, then the cards and chips (the game draws those).
 6. **Moving pieces:** fire, lamp flames, rain, the Earth. A few frames each, looped: the room breathes, as the characters do.
 
@@ -129,7 +129,7 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 **What makes it unique:** The rowdiest room: a tavern half cut into the rock and half the stern of a wrecked ship, with the sea right outside.
 
-- **The room:** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. The card table is the round lid of a great rum tun, scarred by knife-points and pistol-butts. Through the open side wall, ships ride at anchor in the moonlight.
+- **The room:** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. Death's table stands on the boards among the rum barrels as if it had come ashore with them, the only thing in the room nobody has dared scar with a knife. Through the open side wall, ships ride at anchor in the moonlight.
 - **Sounds (for reference):** surf in the cove; creaking timbers and rigging; rowdy laughter through the wall; a bottle rolling across floorboards; a ship's bell out on the water
 - **Light:** Lantern orange inside, cool moonlight blue through the opening in the rock.
 - **Avoid:** Nothing from Disney's Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger or any skull-and-crossbones flag.
@@ -161,9 +161,9 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 ## Camelot
 
-**What makes it unique:** The hall of the Round Table: the great table itself stands beyond the players, its circle running off into the dark past a hundred empty chairs.
+**What makes it unique:** The hall of the Round Table: the great table itself stands beyond the players, its circle running off into the dark past a hundred empty chairs, while the game is played at Death's table set before it.
 
-- **The room:** The great hall at Camelot, where the game is played around one curve of the Round Table and the rest of its circle runs off into the dark, past a hundred empty chairs, each with a knight's name in gold. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.
+- **The room:** The great hall at Camelot. The Round Table runs off into the dark, past a hundred empty chairs, each with a knight's name in gold; tonight Death's table has been set before it, and the knights have carried their own chairs over. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.
 - **Sounds (for reference):** a great hearth fire; wind at a high window; a horse stamping in the yard; cups set down on oak; a far-off chapel bell
 - **Light:** Firelight gold, with cool stone shadow.
 - **Avoid:** Nothing from Disney's The Sword in the Stone, Monty Python, or the A24 Green Knight film.
@@ -305,7 +305,7 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 **What makes it unique:** The only room with no fire: cool steel, soft lamps and the whole Earth in the window. The room itself is a player, as a pale lens in the ceiling.
 
-- **The room:** A round lounge on a slowly turning station: brushed steel, soft lamps, a felt table bolted to the floor, and one enormous window full of the Earth. The gravity is made, not given, and it is not quite right; now and then a chip lifts off the felt and settles again. A single lens sits in the ceiling, pale and unblinking.
+- **The room:** A round lounge on a slowly turning station: brushed steel, soft lamps, Death's table standing on the deck though nobody bolted it down, and one enormous window full of the Earth. The gravity is made, not given, and it is not quite right; now and then a chip lifts off the felt and settles again. A single lens sits in the ceiling, pale and unblinking.
 - **Presence:** The room is listening.
 - **Sounds (for reference):** air handlers breathing, slightly out of step; the hull ticking as it turns into sunlight; a soft chime from nowhere in particular; a chip lifting off the felt and clicking back down; a deep, slow hum under everything
 - **Light:** Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red).
@@ -373,7 +373,7 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 **What makes it unique:** The smallest room: no gold, no crowd, one lamp and the two of you. Death sits across from you, front-on, for the first time as a player.
 
-- **The room:** A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on one small round table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.
+- **The room:** A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on Death's table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.
 - **Sounds (for reference):** rain on the windows; wind worrying at a door that will not quite shut; the river pulling at the pilings; an oar, far out on the water; the lamp flame guttering
 - **Light:** One oil lamp, warm and small, against storm-dark blue.
 - **Avoid:** Nothing from Pratchett's Discworld, Bergman's The Seventh Seal or Gaiman's Sandman.

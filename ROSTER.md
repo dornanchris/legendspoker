@@ -284,7 +284,7 @@ In the Odyssey's first line Homer calls him polytropos, a man of many turns, and
 
 **Hook.** You were taken off a prize ship and brought ashore in irons. The captains will let you play: win a share and sign on as crew, or win enough to buy your freedom.
 
-**Room.** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. The card table is the round lid of a great rum tun, scarred by knife-points and pistol-butts. Through the open side wall, ships ride at anchor in the moonlight.
+**Room.** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. Death's table stands on the boards among the rum barrels as if it had come ashore with them, the only thing in the room nobody has dared scar with a knife. Through the open side wall, ships ride at anchor in the moonlight.
 
 **Entrance.** Seated from hand one, in the only chair with its back to the rock wall, smoke curling from under his hat. He does not look up when you are brought in; he lets the room tell you who he is.
 
@@ -405,7 +405,7 @@ He built the legend on purpose. The General History of the Pyrates, published in
 
 **Hook.** It is a feast day, and Arthur will not eat until he has seen a marvel. Tonight you are it: a stranger in the empty chair, playing to prove you belong at the Round Table.
 
-**Room.** The great hall at Camelot, where the game is played around one curve of the Round Table and the rest of its circle runs off into the dark, past a hundred empty chairs, each with a knight's name in gold. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.
+**Room.** The great hall at Camelot. The Round Table runs off into the dark, past a hundred empty chairs, each with a knight's name in gold; tonight Death's table has been set before it, and the knights have carried their own chairs over. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.
 
 **Entrance.** Seated from hand one. Arthur rises to greet you when you are shown in — the only one who does — and does not sit again until you have.
 
@@ -926,7 +926,7 @@ Stoker's Count is not a caped seducer. He is an old man dressed in black, with a
 
 **Hook.** Everyone aboard ended up here by accident: drifting, lost, or passing through. You are the newest arrival, and the station would very much like to know what you are for.
 
-**Room.** A round lounge on a slowly turning station: brushed steel, soft lamps, a felt table bolted to the floor, and one enormous window full of the Earth. The gravity is made, not given, and it is not quite right; now and then a chip lifts off the felt and settles again. A single lens sits in the ceiling, pale and unblinking.
+**Room.** A round lounge on a slowly turning station: brushed steel, soft lamps, Death's table standing on the deck though nobody bolted it down, and one enormous window full of the Earth. The gravity is made, not given, and it is not quite right; now and then a chip lifts off the felt and settles again. A single lens sits in the ceiling, pale and unblinking.
 
 **Entrance.** The station is in the room from the first hand: a voice, and a pale lens in the ceiling. When the Robot is knocked out, the lights fail, the gravity lets go, and the Robot sits back down with a lens where its chest lamp used to be.
 
@@ -1111,7 +1111,7 @@ Seats: Julius Caesar, Sherlock Holmes, Count Dracula, The AI.
 
 **Hook.** Every champion on the tour has lost a table to you. There is one table left, down by the water, and one chair across from yours.
 
-**Room.** A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on one small round table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.
+**Room.** A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on Death's table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.
 
 **Entrance.** He is already seated when you come in through the ninth door — in a player's chair for the first time, forearms on the table in the lamplight, waiting.
 

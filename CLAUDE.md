@@ -344,7 +344,10 @@ torso's lower half; forearms and hands resting on it sit above it. A puppet keep
 its own layer order (a sleeve can tuck under a cape); parts marked
 `on_table` are drawn again over the table where they lie on it
 (`build_puppet.py`, `mock_screen.py`).
-**One table in every room** (the owner's call): `art-tools/rooms/table.webp`,
+**One table in every room: it is Death's table** (the owner's call), and the
+room texts say so (the Cove's rum-tun lid, Camelot's curve of the Round Table,
+the Station's bolted table and the finale's small table were reworded; at
+Camelot the Round Table stands beyond it). `art-tools/rooms/table.webp`,
 published once as `web/art/rooms/table.webp`. Rooms differ in their backdrop,
 their story pieces and their light (`ROOM-ART-PROMPTS.md`); each backdrop is
 drawn to the White House plate's camera, so the table, rim and chairs line up.
