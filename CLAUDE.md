@@ -372,11 +372,9 @@ gesture changes only that forearm, in the air. Poses that move his whole body
 (bet, all in, collect, the heads-up lean) are whole-figure frames placed by
 the table, with the master head moved onto their neck. His master head
 replaces the poses' head outright (`replace_head`). FDR is built the same
-way (`#/puppet/fdr`, 17 clips), his cigarette holder its own piece on its own
-bone so his strong tell (holder up) is a tilt; his sheet B and pose C6 drew
-Washington's lace cuffs and await a redraw (prompt in
-`art-tools/fdr_parts/POSES.md`), so he has no all-in, show, collect or ash-tap
-clip yet. Roosevelt is the last of the White House table.
+way (`#/puppet/fdr`, 23 clips), his cigarette holder its own piece on its own
+bone so his strong tell (holder up) is a tilt; his sheet B was redrawn after
+the first drew Washington's lace cuffs. Roosevelt is the last of the White House table.
 **Layering rule for the table screen:** the room's table covers a puppet only
 below the puppet's own table line as well as below the rim (see
 `web/puppet/README.md`); the end seats' rim curves up above the drawn rail.

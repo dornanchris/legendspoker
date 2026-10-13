@@ -534,6 +534,104 @@
    "bone": "torso"
   },
   {
+   "name": "frame.all_in",
+   "img": "frame_all_in.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.all_in",
+   "img": "frame_over_all_in.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.collect",
+   "img": "frame_collect.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.collect",
+   "img": "frame_over_collect.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.ash",
+   "img": "frame_ash.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.cape",
+   "img": "frame_cape.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame_over.cape",
+   "img": "frame_over_cape.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
    "name": "arm_near.rest",
    "img": "arm_near_rest.png",
    "cx": 545.0,
@@ -632,6 +730,20 @@
    "bone": "arm_near"
   },
   {
+   "name": "arm_near.show",
+   "img": "arm_near_show.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 23,
+   "slot": "arm_near",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_near"
+  },
+  {
    "name": "arm_far.rest",
    "img": "arm_far_rest.png",
    "cx": 545.0,
@@ -676,6 +788,20 @@
   {
    "name": "arm_far.open",
    "img": "arm_far_open.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 22,
+   "slot": "arm_far",
+   "visible": false,
+   "onTable": true,
+   "bone": "arm_far"
+  },
+  {
+   "name": "arm_far.holder",
+   "img": "arm_far_holder.png",
    "cx": 545.0,
    "cy": 750.5,
    "rot": 0,
@@ -773,6 +899,36 @@
     1.0,
     -14,
     28
+   ],
+   "B1": [
+    1.05,
+    -36,
+    5
+   ],
+   "B2": [
+    1.03,
+    -14,
+    8
+   ],
+   "B3": [
+    1.06,
+    -26,
+    2
+   ],
+   "B4": [
+    1.01,
+    -6,
+    6
+   ],
+   "B5": [
+    0.95,
+    -14,
+    24
+   ],
+   "B6": [
+    1.06,
+    -18,
+    -21
    ]
   }
  },
@@ -784,6 +940,19 @@
   "heads_up": [
    29.0,
    34.0
+  ],
+  "all_in": [
+   14.0,
+   17.0
+  ],
+  "collect": [
+   8.0,
+   19.0
+  ],
+  "ash": null,
+  "cape": [
+   0.0,
+   -17.0
   ]
  }
 }

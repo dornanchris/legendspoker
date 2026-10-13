@@ -356,6 +356,87 @@
    "slot": "frame_over"
   },
   {
+   "file": "../web/art/fdr/frame_all_in.png",
+   "label": "frame.all_in",
+   "x": 240,
+   "y": 454,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/fdr/frame_over_all_in.png",
+   "label": "frame_over.all_in",
+   "x": 240,
+   "y": 454,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 21,
+   "visible": false,
+   "slot": "frame_over"
+  },
+  {
+   "file": "../web/art/fdr/frame_collect.png",
+   "label": "frame.collect",
+   "x": 240,
+   "y": 454,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/fdr/frame_over_collect.png",
+   "label": "frame_over.collect",
+   "x": 240,
+   "y": 454,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 21,
+   "visible": false,
+   "slot": "frame_over"
+  },
+  {
+   "file": "../web/art/fdr/frame_ash.png",
+   "label": "frame.ash",
+   "x": 240,
+   "y": 454,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/fdr/frame_cape.png",
+   "label": "frame.cape",
+   "x": 240,
+   "y": 454,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/fdr/frame_over_cape.png",
+   "label": "frame_over.cape",
+   "x": 240,
+   "y": 454,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 21,
+   "visible": false,
+   "slot": "frame_over"
+  },
+  {
    "file": "../web/art/fdr/arm_near_rest.png",
    "label": "arm_near.rest",
    "x": 300,
@@ -440,6 +521,18 @@
    "on_table": true
   },
   {
+   "file": "../web/art/fdr/arm_near_show.png",
+   "label": "arm_near.show",
+   "x": 300,
+   "y": 514,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 23,
+   "visible": false,
+   "slot": "arm_near",
+   "on_table": true
+  },
+  {
    "file": "../web/art/fdr/arm_far_rest.png",
    "label": "arm_far.rest",
    "x": 300,
@@ -478,6 +571,18 @@
   {
    "file": "../web/art/fdr/arm_far_open.png",
    "label": "arm_far.open",
+   "x": 300,
+   "y": 514,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 22,
+   "visible": false,
+   "slot": "arm_far",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/fdr/arm_far_holder.png",
+   "label": "arm_far.holder",
    "x": 300,
    "y": 514,
    "scale": 1.0,

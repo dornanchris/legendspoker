@@ -62,19 +62,17 @@ and the face-overlay sheet (`sources/face_overlays.png`, cut by
 - **Validation**: `fdr_pose/validate.png`: 0.82% of the pixels above the rail
   differ from A1 (the head, replaced, not counted).
 
-**Clips** (`web/art/fdr/anim.json`, 17, every one ending exactly at rest;
-preview `web/index.html#/puppet/fdr`): `check`, `peek`, `call`, `bet`,
-`fold`; tells `holder_up` (strong) beside `holder_low`, `broad_smile`
-(bluffing) beside `half_smile`; idles `pince_nez`, `nod`, `laugh`; beats
+**Clips** (`web/art/fdr/anim.json`, 23, every one ending exactly at rest;
+preview `web/index.html#/puppet/fdr`): poker actions `check`, `peek`, `call`,
+`bet`, `fold`, `all_in`, `show`, `collect`; tells `holder_up` (strong) and
+`ash_tap` (weak) beside `holder_low`, `broad_smile` (bluffing) beside
+`half_smile`; idles `holder_out`, `pince_nez`, `cape`, `nod`, `laugh`; beats
 `talk`, `look_at_you`, `lost_pot`, `won_pot`, `heads_up`.
 
-## Not used: sheet B and pose C6 (off-model cuffs)
-
-Sheet B (all in, show, collect, taking the holder out, **tapping the ash**:
-his weak tell, turning the holder) and pose C6 (settling the cape) draw
-Washington's buff turned-back cuffs with lace, not FDR's white shirt cuffs:
-the Washington sheet attached as the layout model leaked into them. They
-need a redraw; `POSES.md` has the prompt. Until then FDR has no all-in,
-show, collect or ash-tap clip.
+Sheet B was redrawn (the first drew Washington's lace cuffs; it is in git
+history): `show` (B2, cards cut away: the game draws them) and `holder_out`
+(B4) are arm pieces; `all_in`, `collect`, `cape` (B6) are frames with the
+master head, `ash_tap` (B5, head bowed over the holder) a frame with its own
+head. Pose C6 (the old cape, lace cuffs) stays unused.
 
 `POSES.md` lists his 24 poses and the prompts.

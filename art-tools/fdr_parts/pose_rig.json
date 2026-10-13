@@ -1,11 +1,12 @@
 {
  "id": "fdr",
  "name": "Franklin D. Roosevelt",
- "note": "Polygons of arm assets with space 'rest' are in the rest pose's pixels. Sheet B and C6 are not used: they draw Washington's buff, lace-trimmed cuffs (see README).",
+ "note": "Polygons of arm assets with space 'rest' are in the rest pose's pixels. Pose C6 is not used: it draws Washington's buff, lace-trimmed cuffs; the redrawn sheet B has the cape instead (B6).",
  "sheets": {
   "A": "sources/poses_a.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "B": "sources/poses_b.png"
  },
  "poses": {
   "A1": {
@@ -126,6 +127,86 @@
     1.0,
     -14,
     28
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    17,
+    19,
+    491,
+    467
+   ],
+   "what": "all in: both hands push the stack",
+   "reg": [
+    1.05,
+    -36,
+    5
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    520,
+    22,
+    492,
+    464
+   ],
+   "what": "showing his cards (blank)"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1026,
+    18,
+    493,
+    467
+   ],
+   "what": "collecting the pot",
+   "reg": [
+    1.06,
+    -26,
+    2
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    17,
+    505,
+    494,
+    482
+   ],
+   "what": "taking the holder from his mouth"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    520,
+    509,
+    491,
+    477
+   ],
+   "what": "tapping the ash (TELL)",
+   "reg": [
+    0.95,
+    -14,
+    24
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1026,
+    501,
+    493,
+    485
+   ],
+   "what": "settling his cape",
+   "reg": [
+    1.06,
+    -18,
+    -21
    ]
   }
  },
@@ -956,6 +1037,129 @@
        421
       ]
      ]
+    },
+    "show": {
+     "pose": "B2",
+     "space": "rest",
+     "what": "right hand turning his cards (cards cut away: the game draws them)",
+     "poly": [
+      [
+       30,
+       325
+      ],
+      [
+       60,
+       318
+      ],
+      [
+       100,
+       315
+      ],
+      [
+       140,
+       318
+      ],
+      [
+       180,
+       320
+      ],
+      [
+       210,
+       325
+      ],
+      [
+       225,
+       335
+      ],
+      [
+       235,
+       355
+      ],
+      [
+       245,
+       380
+      ],
+      [
+       247,
+       397
+      ],
+      [
+       230,
+       400
+      ],
+      [
+       215,
+       394
+      ],
+      [
+       200,
+       384
+      ],
+      [
+       175,
+       377
+      ],
+      [
+       150,
+       382
+      ],
+      [
+       130,
+       397
+      ],
+      [
+       110,
+       412
+      ],
+      [
+       90,
+       417
+      ],
+      [
+       60,
+       414
+      ],
+      [
+       30,
+       392
+      ]
+     ],
+     "except": [
+      [
+       [
+        186,
+        394
+       ],
+       [
+        205,
+        380
+       ],
+       [
+        222,
+        380
+       ],
+       [
+        236,
+        396
+       ],
+       [
+        252,
+        383
+       ],
+       [
+        305,
+        386
+       ],
+       [
+        305,
+        473
+       ],
+       [
+        180,
+        473
+       ]
+      ]
+     ]
     }
    }
   },
@@ -1431,6 +1635,145 @@
        335
       ]
      ]
+    },
+    "holder": {
+     "pose": "B4",
+     "space": "rest",
+     "what": "left hand up, the holder between two fingers",
+     "poly": [
+      [
+       455,
+       402
+      ],
+      [
+       470,
+       395
+      ],
+      [
+       470,
+       330
+      ],
+      [
+       455,
+       300
+      ],
+      [
+       450,
+       262
+      ],
+      [
+       440,
+       242
+      ],
+      [
+       420,
+       236
+      ],
+      [
+       400,
+       215
+      ],
+      [
+       392,
+       205
+      ],
+      [
+       395,
+       185
+      ],
+      [
+       420,
+       170
+      ],
+      [
+       440,
+       160
+      ],
+      [
+       455,
+       145
+      ],
+      [
+       482,
+       138
+      ],
+      [
+       482,
+       112
+      ],
+      [
+       420,
+       112
+      ],
+      [
+       400,
+       108
+      ],
+      [
+       370,
+       105
+      ],
+      [
+       350,
+       115
+      ],
+      [
+       330,
+       120
+      ],
+      [
+       296,
+       133
+      ],
+      [
+       296,
+       150
+      ],
+      [
+       335,
+       142
+      ],
+      [
+       345,
+       150
+      ],
+      [
+       358,
+       162
+      ],
+      [
+       368,
+       185
+      ],
+      [
+       370,
+       210
+      ],
+      [
+       375,
+       240
+      ],
+      [
+       380,
+       270
+      ],
+      [
+       388,
+       300
+      ],
+      [
+       400,
+       330
+      ],
+      [
+       420,
+       360
+      ],
+      [
+       440,
+       385
+      ]
+     ]
     }
    }
   }
@@ -1537,8 +1880,100 @@
   "heads_up": {
    "pose": "D6",
    "cut_head": true
+  },
+  "all_in": {
+   "pose": "B1",
+   "cut_head": true,
+   "props": [
+    [
+     [
+      262,
+      393
+     ],
+     [
+      335,
+      393
+     ],
+     [
+      335,
+      473
+     ],
+     [
+      198,
+      473
+     ],
+     [
+      198,
+      406
+     ],
+     [
+      262,
+      406
+     ]
+    ]
+   ],
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "cut_head": true,
+   "props": [
+    [
+     [
+      135,
+      352
+     ],
+     [
+      335,
+      352
+     ],
+     [
+      335,
+      473
+     ],
+     [
+      135,
+      473
+     ]
+    ]
+   ],
+   "except": [
+    [
+     [
+      316,
+      160
+     ],
+     [
+      374,
+      160
+     ],
+     [
+      374,
+      203
+     ],
+     [
+      356,
+      214
+     ],
+     [
+      316,
+      206
+     ]
+    ]
+   ],
+   "below": 110
+  },
+  "ash": {
+   "pose": "B5",
+   "head": "own"
+  },
+  "cape": {
+   "pose": "B6",
+   "cut_head": true,
+   "below": 12
   }
  },
  "runtime": "../web/art/fdr",
- "strip_thin": 2
+ "strip_thin": 2,
+ "back_strip": 40
 }
