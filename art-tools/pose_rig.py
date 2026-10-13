@@ -71,6 +71,9 @@ skin shading as orange as it reaches up the arm. "head_match": "face" places a
 frame's master head on its own drawn head instead of on the stock.
 Master "place" ([x, y, scale] from head_box's corner) sets the master head
 by hand where the fit cannot find it (Silver: the parrot in the box).
+Master "head_poly" (rest-pose pixels) cuts the pose's own head by an outline
+instead of head_box, and "keep_poly" (master pixels) keeps only that much of
+the master head: the returned Green Knight's shoulder plates stay the body's.
 Master "biggest" keeps only the master head's largest piece (a sliver of the
 next piece on the face sheet caught at its edge).
 Master "drop_white" ([x0, y0, x1, y1], master pixels) clears the sheet's white
@@ -495,6 +498,8 @@ def main(spec_path):
         hb = spec['master']['head_box']
         cut = np.zeros(shape, bool)
         cut[hb[1]:min(hb[3], spec['collar_y']), hb[0]:hb[2]] = True
+        if 'head_poly' in spec['master']:                  # the head's own outline, not a box (a shoulder plate beside it stays)
+            cut = poly_mask(shape, spec['master']['head_poly'])
         fb = spec['master'].get('fill_below')
         fp = spec['master'].get('fill_poly')
         if fb is not None or fp:
@@ -559,6 +564,10 @@ def main(spec_path):
             ma_ = np.array(mimg.convert('RGBA'))
             box_ = ma_[y0:y1, x0:x1]
             box_[..., 3] = np.where(box_[..., :3].min(-1) > 215, 0, box_[..., 3])
+            mimg = Image.fromarray(ma_)
+        if 'keep_poly' in m:                               # only the head and neck: its own shoulders are not the body's
+            ma_ = np.array(mimg.convert('RGBA'))
+            ma_[..., 3] = np.where(poly_mask(ma_.shape[:2], m['keep_poly']), ma_[..., 3], 0)
             mimg = Image.fromarray(ma_)
         if m.get('biggest'):                               # a sliver of the next piece on the sheet: not him
             ma_ = np.array(mimg.convert('RGBA'))

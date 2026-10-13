@@ -1,0 +1,12 @@
+{
+ "eyes": {
+  "half": "eyes_half.png",
+  "closed": "eyes_closed.png",
+  "viewer": "eyes_viewer.png",
+  "down": "eyes_down.png",
+  "side": "eyes_side.png",
+  "narrow": "eyes_narrow.png",
+  "wide": "eyes_wide.png",
+  "laugh": "eyes_laugh.png"
+ }
+}

@@ -403,12 +403,13 @@ for (const id of existsSync(art) ? readdirSync(art) : []) {
   if (!existsSync(file)) continue
   const anim = JSON.parse(readFileSync(file, 'utf8'))
   const w = `web/art/${id}/anim.json`
-  const c = CHARACTERS[id]
+  // a changed figure of a character (the Green Knight after his return) says whose it is
+  const c = CHARACTERS[anim.of ?? id]
   if (!c && (anim.cues || anim.fidgets)) { err(w, 'cues for someone who is not a character'); continue }
   if (!c) continue
   const words = new Set([...c.tells.map((t) => t.text), ...c.idles])
   for (const [text, clip] of Object.entries(anim.cues ?? {}) as [string, string][]) {
-    if (!words.has(text)) err(w, `cue "${text}" is none of ${id}'s tells or idles`)
+    if (!words.has(text)) err(w, `cue "${text}" is none of ${anim.of ?? id}'s tells or idles`)
     if (!anim.clips?.[clip]) err(w, `cue "${text}" plays "${clip}", which is not a clip`)
   }
   for (const clip of anim.fidgets ?? []) if (!anim.clips?.[clip]) err(w, `fidget "${clip}" is not a clip`)

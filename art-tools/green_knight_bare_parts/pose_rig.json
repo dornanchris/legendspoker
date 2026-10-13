@@ -1,0 +1,920 @@
+{
+ "id": "green_knight_bare",
+ "name": "The Green Knight (returned)",
+ "note": "Polygons in the rest pose (A1) pixels. The Green Knight after his return: helm gone, beaten and colder. The stage seats this puppet in place of green_knight when he comes back. A quarter bigger, as the helmed one. The holly branch is a prop of the rest pose, drawn over the master head.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    8,
+    11,
+    501,
+    482
+   ],
+   "what": "at rest, bareheaded, grim"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    511,
+    14,
+    508,
+    479
+   ],
+   "what": "peeking",
+   "reg": [
+    1.0,
+    -4,
+    3
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1026,
+    14,
+    504,
+    479
+   ],
+   "what": "checking",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    10,
+    506,
+    498,
+    477
+   ],
+   "what": "calling",
+   "reg": [
+    1.0,
+    0,
+    6
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    515,
+    509,
+    509,
+    474
+   ],
+   "what": "betting",
+   "reg": [
+    1.0,
+    0,
+    9
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1027,
+    506,
+    501,
+    477
+   ],
+   "what": "folding, unmoved",
+   "reg": [
+    1.0,
+    -1,
+    6
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    12,
+    16,
+    496,
+    477
+   ],
+   "what": "all in",
+   "reg": [
+    1.0,
+    0,
+    5
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    514,
+    14,
+    501,
+    480
+   ],
+   "what": "showing",
+   "reg": [
+    1.0,
+    -1,
+    3
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1022,
+    14,
+    503,
+    480
+   ],
+   "what": "collecting",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    12,
+    503,
+    496,
+    483
+   ],
+   "what": "the holly rustles (TELL)",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    514,
+    515,
+    501,
+    471
+   ],
+   "what": "moss on his sleeve (decoy)",
+   "reg": [
+    1.0,
+    -1,
+    11
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1022,
+    503,
+    508,
+    484
+   ],
+   "what": "a low laugh (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -1
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    7,
+    13,
+    498,
+    479
+   ],
+   "what": "a thin cold smile (decoy)",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    505,
+    13,
+    510,
+    479
+   ],
+   "what": "thumb along the axe (TELL)",
+   "reg": [
+    1.0,
+    -8,
+    3
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1018,
+    14,
+    512,
+    478
+   ],
+   "what": "measures the table (decoy)",
+   "reg": [
+    1.0,
+    -4,
+    4
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    11,
+    506,
+    498,
+    480
+   ],
+   "what": "glances at the door",
+   "reg": [
+    1.0,
+    0,
+    2
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    513,
+    510,
+    502,
+    476
+   ],
+   "what": "shifts his weight",
+   "reg": [
+    1.0,
+    0,
+    6
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1018,
+    499,
+    513,
+    487
+   ],
+   "what": "arrives: looming over the table",
+   "reg": [
+    1.0,
+    -4,
+    -5
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    5,
+    9,
+    502,
+    483
+   ],
+   "what": "talking, low and hard",
+   "reg": [
+    1.0,
+    -5,
+    -1
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    514,
+    9,
+    501,
+    483
+   ],
+   "what": "facing a big bet",
+   "reg": [
+    1.0,
+    0,
+    -1
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1021,
+    8,
+    509,
+    484
+   ],
+   "what": "lost a pot: a fist on the table",
+   "reg": [
+    1.0,
+    -2,
+    -2
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    9,
+    510,
+    498,
+    475
+   ],
+   "what": "won a pot, unsmiling",
+   "reg": [
+    1.0,
+    -1,
+    7
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    510,
+    517,
+    518,
+    468
+   ],
+   "what": "heads up",
+   "reg": [
+    1.0,
+    -3,
+    14
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1037,
+    494,
+    495,
+    491
+   ],
+   "what": "knocked out for good: a curt nod, turning away",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 362,
+ "scale": 1.25,
+ "origin_x": 225,
+ "register_box": [
+  150,
+  240,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 200,
+ "neck": [
+  262,
+  190
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  200,
+  190,
+  330,
+  250
+ ],
+ "master": {
+  "piece": "green_knight_bare_parts/green_knight_bare_face/green_knight_bare_face_01.png",
+  "cut_below": 330,
+  "face": "green_knight_bare_parts/face.json",
+  "file": "green_knight_bare_parts/green_knight_bare_rig/master.png",
+  "layers": "green_knight_bare_parts/green_knight_bare_rig/face",
+  "head_box": [
+   135,
+   10,
+   345,
+   200
+  ],
+  "place": [
+   -16,
+   13,
+   0.61
+  ],
+  "replace_head": true,
+  "biggest": true,
+  "heads": {
+   "viewer": "green_knight_bare_parts/green_knight_bare_face/green_knight_bare_face_20.png"
+  },
+  "cloth": [
+   15,
+   140
+  ],
+  "shoulder_y": 170,
+  "props": {
+   "holly": {
+    "poly": [
+     [
+      35,
+      0
+     ],
+     [
+      192,
+      0
+     ],
+     [
+      192,
+      45
+     ],
+     [
+      148,
+      60
+     ],
+     [
+      140,
+      148
+     ],
+     [
+      35,
+      148
+     ]
+    ],
+    "pivot": [
+     135,
+     145
+    ],
+    "parent": "torso",
+    "z": 21.5
+   }
+  },
+  "head_poly": [
+   [
+    120,
+    5
+   ],
+   [
+    348,
+    5
+   ],
+   [
+    348,
+    135
+   ],
+   [
+    318,
+    152
+   ],
+   [
+    316,
+    204
+   ],
+   [
+    230,
+    208
+   ],
+   [
+    205,
+    178
+   ],
+   [
+    200,
+    135
+   ],
+   [
+    120,
+    135
+   ]
+  ],
+  "keep_poly": [
+   [
+    2,
+    -30
+   ],
+   [
+    375,
+    -30
+   ],
+   [
+    375,
+    184
+   ],
+   [
+    326,
+    211
+   ],
+   [
+    323,
+    297
+   ],
+   [
+    182,
+    303
+   ],
+   [
+    141,
+    254
+   ],
+   [
+    133,
+    184
+   ],
+   [
+    2,
+    184
+   ]
+  ]
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    30,
+    340
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     5,
+     290
+    ],
+    [
+     70,
+     290
+    ],
+    [
+     70,
+     320
+    ],
+    [
+     5,
+     325
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and gauntlet, the axe head on it",
+     "poly": [
+      [
+       0,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       120,
+       320
+      ],
+      [
+       240,
+       300
+      ],
+      [
+       250,
+       360
+      ],
+      [
+       230,
+       430
+      ],
+      [
+       240,
+       478
+      ],
+      [
+       110,
+       478
+      ],
+      [
+       60,
+       450
+      ],
+      [
+       20,
+       440
+      ],
+      [
+       0,
+       420
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    470,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     430,
+     280
+    ],
+    [
+     501,
+     280
+    ],
+    [
+     501,
+     310
+    ],
+    [
+     430,
+     310
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and gauntlet",
+     "poly": [
+      [
+       310,
+       445
+      ],
+      [
+       330,
+       395
+      ],
+      [
+       370,
+       370
+      ],
+      [
+       390,
+       345
+      ],
+      [
+       440,
+       320
+      ],
+      [
+       490,
+       305
+      ],
+      [
+       501,
+       330
+      ],
+      [
+       501,
+       420
+      ],
+      [
+       470,
+       430
+      ],
+      [
+       445,
+       478
+      ],
+      [
+       310,
+       478
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      230,
+      380
+     ],
+     [
+      360,
+      380
+     ],
+     [
+      360,
+      492
+     ],
+     [
+      230,
+      492
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      200,
+      360
+     ],
+     [
+      330,
+      360
+     ],
+     [
+      330,
+      492
+     ],
+     [
+      200,
+      492
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      340
+     ],
+     [
+      470,
+      340
+     ],
+     [
+      470,
+      492
+     ],
+     [
+      160,
+      492
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      330
+     ],
+     [
+      470,
+      330
+     ],
+     [
+      470,
+      492
+     ],
+     [
+      160,
+      492
+     ]
+    ]
+   ]
+  },
+  "holly": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "moss": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "laugh": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "cold_smile": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "axe": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "measure": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "door": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "creak": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "arrive": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      200,
+      370
+     ],
+     [
+      360,
+      370
+     ],
+     [
+      360,
+      492
+     ],
+     [
+      200,
+      492
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "runtime": "../web/art/green_knight_bare",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  10,
+  75
+ ],
+ "wood_rows_only": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true
+}

@@ -13,7 +13,7 @@ import { h, go, sleep, formatChips, ordinal } from '../dom.js'
 import * as sound from '../sound.js'
 import { fly as launch, flipOver as turnOver, centre, chipDisc, flightColours, drawPile, chipCount, type Pt } from '../fx.js'
 import { setResult } from './results.js'
-import { ROOMS, PUPPETS } from '../puppet/cast.js'
+import { ROOMS, PUPPETS, RETURNED } from '../puppet/cast.js'
 import { Stage, PRIO, DEALER as DEATH, type Prio, type SeatSpot } from '../puppet/stage.js'
 import { markTitle } from './shared.js'
 
@@ -337,10 +337,16 @@ export function tableScreen(root: HTMLElement): () => void {
   }
 
   /** Everyone in the chair the engine says they are in; the chairs of those who are out empty. */
+  /** Who sits in a chair as the stage draws them: the changed figure of someone who came back. */
+  const changed = new Map<number, string>()
+  function figureAt(seat: number): string {
+    return changed.get(seat) ?? seatIds[seat] ?? ''
+  }
+
   function syncStage() {
     if (!stage || !stageReady) return
     for (let i = 1; i < seatIds.length; i++) {
-      const id = out.has(i) ? null : seatIds[i]
+      const id = out.has(i) ? null : figureAt(i)
       if (stage.idAt(i) !== id && !(id && !PUPPETS[id] && stage.idAt(i) === null)) void stage.seat(i, id)
     }
   }
@@ -375,7 +381,7 @@ export function tableScreen(root: HTMLElement): () => void {
 
   /** The clip a character's tell or idle is acted with, by its words (anim.json "cues"). */
   const cueFor = (seat: number, text: string): string | undefined =>
-    PUPPETS[seatIds[seat] ?? '']?.anim.cues?.[text]
+    PUPPETS[figureAt(seat)]?.anim.cues?.[text]
 
   function buildSeat(i: number) {
     const id = seatIds[i]!
@@ -422,6 +428,7 @@ export function tableScreen(root: HTMLElement): () => void {
       syncStage()
       layoutStage()
       if (active.mode === 'tour' && table.arrival) stage?.preload(table.arrival.character)
+      for (const id of seatIds) if (id && RETURNED[id]) stage?.preload(RETURNED[id])
     }
     layoutStage()
     stage.load(seatIds).catch(unstage)
@@ -724,6 +731,8 @@ export function tableScreen(root: HTMLElement): () => void {
     // Chair changes must reach the screen even for hands replayed silently.
     if (e.type === 'arrival') {
       seatIds[e.seat] = e.id
+      if (e.replaces === e.id && RETURNED[e.id] && PUPPETS[RETURNED[e.id]]) changed.set(e.seat, RETURNED[e.id])
+      else changed.delete(e.seat)
       out.delete(e.seat)
       buildSeat(e.seat)
       syncStage()
@@ -1293,7 +1302,7 @@ export function tableScreen(root: HTMLElement): () => void {
     // a gesture alone means nothing. Death only ever looks weary.
     if (!stage) return
     for (const [i] of seatUI) {
-      const fidgets = PUPPETS[seatIds[i] ?? '']?.anim.fidgets ?? []
+      const fidgets = PUPPETS[figureAt(i)]?.anim.fidgets ?? []
       if (out.has(i) || !fidgets.length || Math.random() > 0.022) continue
       cue(i, fidgets[Math.floor(Math.random() * fidgets.length)], PRIO.idle)
     }

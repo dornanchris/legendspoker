@@ -1,0 +1,290 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "green_knight_bare_face_01.png",
+      "label": "",
+      "x": 12,
+      "y": 12,
+      "w": 485,
+      "h": 370,
+      "pivot": [
+        242.5,
+        185.0
+      ],
+      "area": 121340
+    },
+    {
+      "index": 2,
+      "file": "green_knight_bare_face_02.png",
+      "label": "",
+      "x": 418,
+      "y": 109,
+      "w": 165,
+      "h": 95,
+      "pivot": [
+        82.5,
+        47.5
+      ],
+      "area": 11504
+    },
+    {
+      "index": 3,
+      "file": "green_knight_bare_face_03.png",
+      "label": "",
+      "x": 607,
+      "y": 111,
+      "w": 163,
+      "h": 97,
+      "pivot": [
+        81.5,
+        48.5
+      ],
+      "area": 11671
+    },
+    {
+      "index": 4,
+      "file": "green_knight_bare_face_04.png",
+      "label": "",
+      "x": 790,
+      "y": 104,
+      "w": 169,
+      "h": 103,
+      "pivot": [
+        84.5,
+        51.5
+      ],
+      "area": 12696
+    },
+    {
+      "index": 5,
+      "file": "green_knight_bare_face_05.png",
+      "label": "",
+      "x": 975,
+      "y": 114,
+      "w": 172,
+      "h": 93,
+      "pivot": [
+        86.0,
+        46.5
+      ],
+      "area": 11569
+    },
+    {
+      "index": 6,
+      "file": "green_knight_bare_face_06.png",
+      "label": "",
+      "x": 1161,
+      "y": 110,
+      "w": 162,
+      "h": 96,
+      "pivot": [
+        81.0,
+        48.0
+      ],
+      "area": 11330
+    },
+    {
+      "index": 7,
+      "file": "green_knight_bare_face_07.png",
+      "label": "",
+      "x": 1335,
+      "y": 109,
+      "w": 175,
+      "h": 101,
+      "pivot": [
+        87.5,
+        50.5
+      ],
+      "area": 13035
+    },
+    {
+      "index": 8,
+      "file": "green_knight_bare_face_08.png",
+      "label": "",
+      "x": 640,
+      "y": 230,
+      "w": 212,
+      "h": 116,
+      "pivot": [
+        106.0,
+        58.0
+      ],
+      "area": 18033
+    },
+    {
+      "index": 9,
+      "file": "green_knight_bare_face_09.png",
+      "label": "",
+      "x": 900,
+      "y": 232,
+      "w": 218,
+      "h": 116,
+      "pivot": [
+        109.0,
+        58.0
+      ],
+      "area": 18907
+    },
+    {
+      "index": 10,
+      "file": "green_knight_bare_face_10.png",
+      "label": "",
+      "x": 72,
+      "y": 403,
+      "w": 240,
+      "h": 119,
+      "pivot": [
+        120.0,
+        59.5
+      ],
+      "area": 22164
+    },
+    {
+      "index": 11,
+      "file": "green_knight_bare_face_11.png",
+      "label": "",
+      "x": 364,
+      "y": 405,
+      "w": 236,
+      "h": 116,
+      "pivot": [
+        118.0,
+        58.0
+      ],
+      "area": 21443
+    },
+    {
+      "index": 12,
+      "file": "green_knight_bare_face_12.png",
+      "label": "",
+      "x": 650,
+      "y": 405,
+      "w": 237,
+      "h": 117,
+      "pivot": [
+        118.5,
+        58.5
+      ],
+      "area": 21842
+    },
+    {
+      "index": 13,
+      "file": "green_knight_bare_face_13.png",
+      "label": "",
+      "x": 931,
+      "y": 404,
+      "w": 225,
+      "h": 117,
+      "pivot": [
+        112.5,
+        58.5
+      ],
+      "area": 20654
+    },
+    {
+      "index": 14,
+      "file": "green_knight_bare_face_14.png",
+      "label": "",
+      "x": 1207,
+      "y": 400,
+      "w": 259,
+      "h": 126,
+      "pivot": [
+        129.5,
+        63.0
+      ],
+      "area": 24841
+    },
+    {
+      "index": 15,
+      "file": "green_knight_bare_face_15.png",
+      "label": "",
+      "x": 81,
+      "y": 544,
+      "w": 233,
+      "h": 115,
+      "pivot": [
+        116.5,
+        57.5
+      ],
+      "area": 21077
+    },
+    {
+      "index": 16,
+      "file": "green_knight_bare_face_16.png",
+      "label": "",
+      "x": 367,
+      "y": 536,
+      "w": 231,
+      "h": 121,
+      "pivot": [
+        115.5,
+        60.5
+      ],
+      "area": 22077
+    },
+    {
+      "index": 17,
+      "file": "green_knight_bare_face_17.png",
+      "label": "",
+      "x": 645,
+      "y": 532,
+      "w": 243,
+      "h": 124,
+      "pivot": [
+        121.5,
+        62.0
+      ],
+      "area": 23595
+    },
+    {
+      "index": 18,
+      "file": "green_knight_bare_face_18.png",
+      "label": "",
+      "x": 928,
+      "y": 536,
+      "w": 246,
+      "h": 124,
+      "pivot": [
+        123.0,
+        62.0
+      ],
+      "area": 23426
+    },
+    {
+      "index": 19,
+      "file": "green_knight_bare_face_19.png",
+      "label": "",
+      "x": 1214,
+      "y": 544,
+      "w": 252,
+      "h": 120,
+      "pivot": [
+        126.0,
+        60.0
+      ],
+      "area": 23345
+    },
+    {
+      "index": 20,
+      "file": "green_knight_bare_face_20.png",
+      "label": "",
+      "x": 410,
+      "y": 663,
+      "w": 661,
+      "h": 344,
+      "pivot": [
+        330.5,
+        172.0
+      ],
+      "area": 125850
+    }
+  ]
+}

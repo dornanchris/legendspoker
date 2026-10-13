@@ -1,0 +1,92 @@
+{
+ "master": "green_knight_bare_parts/green_knight_bare_face/green_knight_bare_face_01.png",
+ "pieces": "green_knight_bare_parts/green_knight_bare_face/green_knight_bare_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 17,
+   "laugh": 18,
+   "cold": 19
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     205,
+     100
+    ],
+    [
+     330,
+     100
+    ],
+    [
+     330,
+     132
+    ],
+    [
+     205,
+     132
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     205,
+     132
+    ],
+    [
+     330,
+     132
+    ],
+    [
+     330,
+     165
+    ],
+    [
+     205,
+     165
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     160,
+     185
+    ],
+    [
+     330,
+     185
+    ],
+    [
+     330,
+     260
+    ],
+    [
+     160,
+     260
+    ]
+   ]
+  }
+ }
+}

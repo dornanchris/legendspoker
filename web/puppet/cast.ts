@@ -33,6 +33,10 @@ import merlinRig from '../art/merlin/rig.json'
 import merlinAnim from '../art/merlin/anim.json'
 import lancelotRig from '../art/lancelot/rig.json'
 import lancelotAnim from '../art/lancelot/anim.json'
+import greenKnightRig from '../art/green_knight/rig.json'
+import greenKnightAnim from '../art/green_knight/anim.json'
+import greenKnightBareRig from '../art/green_knight_bare/rig.json'
+import greenKnightBareAnim from '../art/green_knight_bare/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -65,6 +69,12 @@ export type AnimData = {
 
 export type CastEntry = { rig: RigData; anim: AnimData; base: string }
 
+/**
+ * Someone who comes back changed (the Green Knight, beaten and bareheaded):
+ * the figure the stage seats when they retake their own chair.
+ */
+export const RETURNED: Record<string, string> = { green_knight: 'green_knight_bare' }
+
 export const PUPPETS: Record<string, CastEntry> = {
   lincoln: { rig: lincolnRig as unknown as RigData, anim: lincolnAnim as unknown as AnimData, base: 'art/lincoln/' },
   washington: { rig: washingtonRig as unknown as RigData, anim: washingtonAnim as unknown as AnimData, base: 'art/washington/' },
@@ -81,6 +91,8 @@ export const PUPPETS: Record<string, CastEntry> = {
   davy_jones: { rig: davyJonesRig as unknown as RigData, anim: davyJonesAnim as unknown as AnimData, base: 'art/davy_jones/' },
   merlin: { rig: merlinRig as unknown as RigData, anim: merlinAnim as unknown as AnimData, base: 'art/merlin/' },
   lancelot: { rig: lancelotRig as unknown as RigData, anim: lancelotAnim as unknown as AnimData, base: 'art/lancelot/' },
+  green_knight: { rig: greenKnightRig as unknown as RigData, anim: greenKnightAnim as unknown as AnimData, base: 'art/green_knight/' },
+  green_knight_bare: { rig: greenKnightBareRig as unknown as RigData, anim: greenKnightBareAnim as unknown as AnimData, base: 'art/green_knight_bare/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 

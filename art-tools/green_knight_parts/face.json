@@ -1,0 +1,38 @@
+{
+ "master": "green_knight_parts/green_knight_face/green_knight_face_01.png",
+ "pieces": "green_knight_parts/green_knight_face/green_knight_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7,
+   "wide": 8,
+   "laugh": 9
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     250,
+     118
+    ],
+    [
+     428,
+     118
+    ],
+    [
+     428,
+     195
+    ],
+    [
+     250,
+     195
+    ]
+   ]
+  }
+ }
+}
