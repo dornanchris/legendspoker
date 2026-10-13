@@ -147,9 +147,12 @@ art-tools/
   prompts/        generators for the two art-prompt files below
                   (characters.mjs + parts.mjs, rooms.mjs)
   rooms/          finished room art: table.webp (the one table every room
-                  shares) and a folder per venue (white_house/: its backdrop)
+                  shares) and a folder per venue: its backdrop, and its
+                  pieces (pieces.json: the cut, where they stand, story
+                  pieces and loops). white_house/, athens/
   mock_screen.py  draws the table screen with the current art: game first
-  room_web.py     publishes a room to web/art/rooms/: its rim curve and chairs
+  room_web.py     publishes a room to web/art/rooms/: its rim curve, chairs
+                  and pieces (preview one: web/index.html?room=athens)
   web_half.py     the half-size puppet images the table screen loads
   face_rig.py     bakes a face-overlay sheet into seam-free eye/brow/mouth
                   layers on a master head
@@ -342,6 +345,9 @@ its own layer order (a sleeve can tuck under a cape); parts marked
 published once as `web/art/rooms/table.webp`. Rooms differ in their backdrop,
 their story pieces and their light (`ROOM-ART-PROMPTS.md`); each backdrop is
 drawn to the White House plate's camera, so the table, rim and chairs line up.
+**Athens's room is built** (backdrop, the cup poured for Odysseus that is
+drained once he arrives, flickering lamps); its five characters are next.
+`?room=athens` stages any table in it, to look at a room before its cast.
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,

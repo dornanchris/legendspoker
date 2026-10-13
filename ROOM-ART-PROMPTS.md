@@ -90,6 +90,8 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 **What makes it unique:** Couches, oil lamps and wine instead of a card room: a dining room after the meal, and one couch kept for a guest who has not come, his cup poured.
 
+**Status:** Done: backdrop and pieces in `art-tools/rooms/athens/` (`pieces.json` places them). The empty couch and its stand came out behind seat 2, so the cup piece stands by the doorway's left pillar instead; the lamp flames flicker. The star and ladle frames are not used yet.
+
 - **The room:** The men's dining room of a rich Athenian house: painted plaster, oil lamps, couches drawn up around a card table. A great mixing bowl of wine and water stands in the middle of the floor, and nobody has fetched water in hours. One couch is empty, with a full cup set before it.
 - **Presence:** A cup has been poured for a guest who has not come.
 - **Sounds (for reference):** oil lamps guttering; wine ladled from the mixing bowl; crickets in the courtyard; pipes from a party down the street

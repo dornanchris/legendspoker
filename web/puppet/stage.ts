@@ -85,6 +85,12 @@ export class Stage {
   private alive = true
   private backdrop: Img | null = null
   private table: Img | null = null
+  private pieces = new Map<string, Img>()
+  /** Which presence piece stands in the room: before the late champion, after, or none. */
+  private presence: 'before' | 'after' | null = null
+  /** Each loop spot's frame and when it next changes (s). */
+  private flicker: { frame: number; next: number }[][] = []
+  private clock = 0
   private rimPath: Path2D
   /** Clips play at this rate (the presentation clock's pace); the face and idles never change speed. */
   speed = 1
@@ -115,6 +121,10 @@ export class Stage {
     const [bd, tb] = await Promise.all([image(base + this.room.data.backdrop.img), image(base + this.room.data.table.img)])
     this.backdrop = bd
     this.table = tb
+    await Promise.all(Object.entries(this.room.data.pieces ?? {}).map(async ([name, p]) => {
+      this.pieces.set(name, await image(base + p.img))
+    }))
+    this.flicker = (this.room.data.loops ?? []).map((l) => l.spots.map(() => ({ frame: 0, next: 0 })))
     await Promise.all([this.seat(DEALER, 'death'), ...seatIds.map((id, i) => (i > 0 && id ? this.seat(i, id) : null))])
     if (!this.alive) return
     this.last = performance.now()
@@ -136,6 +146,11 @@ export class Stage {
       id, player, x, scale: sc, flip: x > w / 2 + 1, line: this.rimAt(x) + sink,
       current: null, pending: null, leaving: false,
     })
+  }
+
+  /** The room's story piece: 'before' the late champion comes, 'after', or none (an open table). */
+  setPresence(state: 'before' | 'after' | null): void {
+    this.presence = state
   }
 
   /** Who is drawn in a chair (null: nobody, or someone with no puppet). */
@@ -250,6 +265,13 @@ export class Stage {
     if (!this.alive) return
     const dt = Math.min(0.05, (now - this.last) / 1000)
     this.last = now
+    this.clock += dt
+    // lamp flames flicker on their own clock, still under Reduce motion
+    ;(this.room.data.loops ?? []).forEach((l, i) => this.flicker[i]?.forEach((f) => {
+      if (this.still || this.clock < f.next) return
+      f.frame = (f.frame + 1 + Math.floor(Math.random() * (l.frames.length - 1))) % l.frames.length
+      f.next = this.clock + l.every[0] + Math.random() * (l.every[1] - l.every[0])
+    }))
     for (const [seat, a] of this.actors) {
       if (a.current && a.player.timeOf(a.current.name) < 0) a.current = null
       if (!a.current && a.leaving) { this.actors.delete(seat); continue }
@@ -289,6 +311,19 @@ export class Stage {
       const bw = d.backdrop.w * s, bh = d.backdrop.h * s
       set(D)
       ctx.drawImage(this.backdrop, d.design[0] / 2 - bw / 2, d.design[1] - bh, bw, bh)
+      // the room's pieces, scaled with the backdrop about its foot
+      set(mul(mul(mul(D, translate(d.design[0] / 2, d.design[1])), scale(s, s)), translate(-d.design[0] / 2, -d.design[1])))
+      const piece = (name: string, x: number, bottom: number, h: number) => {
+        const im = this.pieces.get(name), p = d.pieces?.[name]
+        if (!im || !p) return
+        const w = h * p.aspect
+        ctx.drawImage(im, x - w / 2, bottom - h, w, h)
+      }
+      const story = this.presence && d.presence?.[this.presence]
+      const sp = story ? d.pieces?.[story] : undefined
+      if (story && sp?.x !== undefined) piece(story, sp.x, sp.bottom!, sp.h!)
+      ;(d.loops ?? []).forEach((l, i) => l.spots.forEach(([x, bottom, h], j) =>
+        piece(l.frames[this.flicker[i]?.[j]?.frame ?? 0], x, bottom, h)))
     }
 
     // Death first: he sits furthest back

@@ -14,10 +14,17 @@ table's alpha, sampled every few pixels: the browser cannot read pixels back
 from art opened from disk, so the curve is worked out here), and the chairs:
 each seat's centre, scale and mirror, and how far below the rim its table
 line sits. The numbers are mock_screen.py's, so the mock and the game agree.
+
+A room may have pieces (art-tools/rooms/<room>/pieces.json): cut from a
+sheet on white, each the components wholly inside its box, written as PNGs
+beside the backdrop, with where they stand in design space. `presence` names
+the piece shown until the table's late champion arrives and the one after;
+`loops` cycle frames (lamp flames) at each of their spots.
 """
 import json, os, shutil, sys
 import numpy as np
 from PIL import Image
+from scipy import ndimage as nd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -49,6 +56,33 @@ while x <= tx + tw:
 # By seat number: the player is seat 0 at the bottom; play goes clockwise, so
 # seat 1 is on the player's left and the last seat on their right.
 SEATS = {'4': [[150, 0.52, 2], [470, 0.52, 2], [1130, 0.52, 2], [1440, 0.52, 2]]}
+def cut_pieces():
+    spec_file = os.path.join(SRC, 'pieces.json')
+    if not os.path.exists(spec_file):
+        return {}
+    spec = json.load(open(spec_file))
+    sheet = np.array(Image.open(os.path.join(SRC, spec['sheet'])).convert('RGB'))
+    fg = sheet.astype(int).min(axis=2) < 235
+    lab, _ = nd.label(fg, structure=np.ones((3, 3)))
+    boxes = nd.find_objects(lab)
+    out = {}
+    for name, p in spec['pieces'].items():
+        x0, y0, x1, y1 = p['box']
+        keep = [i + 1 for i, b in enumerate(boxes) if b and b[1].start >= x0 and b[1].stop <= x1 and b[0].start >= y0 and b[0].stop <= y1]
+        # the components and what they enclose, but never the sheet's own white
+        # showing through a loop (a cup's handle)
+        own = np.isin(lab, keep)
+        mask = nd.binary_fill_holes(own) & (own | (sheet.min(axis=2) < 240))
+        ys, xs = np.nonzero(mask)
+        t, b_, l, r = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
+        rgba = np.dstack([sheet[t:b_, l:r], (mask[t:b_, l:r] * 255).astype('uint8')])
+        Image.fromarray(rgba, 'RGBA').save(os.path.join(OUT, name + '.png'), optimize=True)
+        piece = {'img': name + '.png', 'aspect': round((r - l) / (b_ - t), 4)}
+        if 'x' in p:
+            piece.update(x=p['x'], bottom=p['bottom'], h=p['h'])
+        out[name] = piece
+    return {'pieces': out, 'presence': spec.get('presence'), 'loops': spec.get('loops', [])}
+
 json.dump({
     'id': room,
     'design': [W, H],
@@ -61,5 +95,6 @@ json.dump({
     'dealer': [W / 2, 0.5, 2],
     # the deck under Death's right hand at rest, from his table line, in design px
     'deck': [45, 32],
+    **cut_pieces(),
 }, open(os.path.join(OUT, 'room.json'), 'w'), separators=(',', ':'))
 print('wrote', OUT)

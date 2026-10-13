@@ -12,6 +12,7 @@ import deathRig from '../art/death/rig.json'
 import deathAnim from '../art/death/anim.json'
 import washingtonAnim from '../art/washington/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
+import athens from '../art/rooms/athens/room.json'
 
 /**
  * The puppets the web build knows: each one's rig (generated) and its anim
@@ -62,10 +63,17 @@ export type RoomData = {
   seats: Record<string, [number, number, number][]>
   dealer: [number, number, number]
   deck: [number, number]
+  /** Loose pieces of the room: placed ones have a centre x, a foot and a height (design px). */
+  pieces?: Record<string, { img: string; aspect: number; x?: number; bottom?: number; h?: number }>
+  /** The piece standing in the room until the late champion arrives, and the one after. */
+  presence?: { before?: string; after?: string } | null
+  /** Frames cycled at each spot ([centre x, foot, height]): lamp flames. */
+  loops?: { frames: string[]; every: [number, number]; spots: [number, number, number][] }[]
 }
 
 export type RoomEntry = { data: RoomData; base: string }
 
 export const ROOMS: Record<string, RoomEntry> = {
   white_house: { data: whiteHouse as unknown as RoomData, base: 'art/rooms/white_house/' },
+  athens: { data: athens as unknown as RoomData, base: 'art/rooms/athens/' },
 }

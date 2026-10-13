@@ -74,6 +74,13 @@ for what is playing to end, so a tell is never cut off by the action after
 it. The stage loads `half/`, the half-size images (`art-tools/web_half.py`;
 rerun it after rebuilding a puppet), and scales them back up.
 
+A room's **pieces** (`pieces` in room.json, cut by room_web.py from a sheet
+per `art-tools/rooms/<room>/pieces.json`) are drawn over the backdrop and
+scaled with it: the **presence** (a story piece, `before` the table's late
+champion arrives and `after`; `setPresence`, from table.ts) and **loops**
+(frames cycled at random intervals at each spot: lamp flames; still under
+Reduce motion). `?room=<id>` on the page stages any table in that room.
+
 `anim.json` may carry `cues` (a tell's or idle's words -> the clip that acts
 it; check:data holds the words to the character file) and `fidgets` (clips
 played as wordless noise: decoys and small business).

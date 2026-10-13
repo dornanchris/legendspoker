@@ -154,7 +154,9 @@ export function tableScreen(root: HTMLElement): () => void {
   // table. Everything here is presentation; the figures only ever act out what
   // the screen already says.
 
-  const room = ROOMS[table.id]
+  // ?room=<id> stages this table in another drawn room: a preview of a room
+  // before its own cast has puppets (like ?pace, a knob for looking, not a setting)
+  const room = ROOMS[new URLSearchParams(location.search).get('room') ?? table.id]
   const staged = !!room && Stage.fits(room, active.seats.length) && active.seats.every((id) => !!PUPPETS[id])
 
   // ------------------------------------------------------------ DOM
@@ -413,9 +415,12 @@ export function tableScreen(root: HTMLElement): () => void {
   if (stage) {
     stage.setStill(settings.reduceMotion)
     stage.speed = paceScale > 0 ? Math.min(2, Math.max(0.5, 1 / paceScale)) : 2
+    // the room's story piece (Athens: the cup poured for Odysseus) stands until the late champion comes
+    stage.setPresence(active.mode === 'tour' && table.arrival ? 'before' : null)
     stage.onReady = () => { stageReady = true; syncStage(); layoutStage() }
     layoutStage()
     stage.load(seatIds).catch(unstage)
+    ;(window as any).__stage = stage
   }
   const resized = new ResizeObserver(() => layoutStage())
   resized.observe(els.stageCanvas)
@@ -720,6 +725,7 @@ export function tableScreen(root: HTMLElement): () => void {
       // A chair that changed hands without emptying says nothing about a
       // champion who is still to come.
       if (e.cause !== 'banishment') els.presence.textContent = ''
+      if (table.arrival && e.id === table.arrival.character && active!.mode === 'tour') stage?.setPresence('after')
     } else if (e.type === 'eliminated') {
       out.add(e.seat)
       stage?.leave(e.seat)
