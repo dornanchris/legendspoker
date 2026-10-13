@@ -57,7 +57,7 @@ Draw, all facing the viewer's right, at the same size:
 - The staff on its own, upright, twice: plain; and glowing faintly along its length with a soft blue-white light
 - Four seated reference poses, waist up behind the curved edge of a round green poker table, forearms resting on its edge, hands apart, the staff upright and leaning against his right shoulder (the left of the picture), its top above his head: neutral; the staff glowing faintly; gazing past the table; murmuring
 
-STYLE, the most important rule: match the SECOND attached image (Washington, from the first table) exactly: simple, chunky cartoon shapes; bold, even dark outlines; smooth flat colour with ONE soft shadow tone; bright, clean, saturated colour; a face with only a few lines (no fine wrinkles, no pores, no cross-hatching); hair and beard drawn as a few big smooth locks, never strand by strand; cloth and metal with a few big folds or highlights, no texture, no stitching, no grime, no scratches. Readable at thumbnail size. NOT a detailed illustration, NOT painterly, NOT gritty, NOT realistic.
+STYLE, the most important rule: match the THIRD attached image (Washington, from the first table) exactly: simple, chunky cartoon shapes; bold, even dark outlines; smooth flat colour with ONE soft shadow tone; bright, clean, saturated colour; a face with only a few lines (no fine wrinkles, no pores, no cross-hatching); hair and beard drawn as a few big smooth locks, never strand by strand; cloth and metal with a few big folds or highlights, no texture, no stitching, no grime, no scratches. Readable at thumbnail size. NOT a detailed illustration, NOT painterly, NOT gritty, NOT realistic.
 ```
 
 ### Pose sheet A

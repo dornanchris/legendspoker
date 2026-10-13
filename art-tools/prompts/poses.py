@@ -7,7 +7,7 @@ NO = s['no']
 # so the style drifted a little each time. Now every prompt names one fixed
 # reference, Washington's pose sheet A, and says what the style is in words.
 LOCK = bool(s.get('style_lock'))
-STYLE = ("STYLE, the most important rule: match the SECOND attached image (Washington, from the first table) exactly: simple, chunky cartoon shapes; "
+STYLE = (f"STYLE, the most important rule: match the {s.get('style_ord', 'SECOND')} attached image (Washington, from the first table) exactly: simple, chunky cartoon shapes; "
          "bold, even dark outlines; smooth flat colour with ONE soft shadow tone; bright, clean, saturated colour; a face with only a few lines "
          "(no fine wrinkles, no pores, no cross-hatching); hair and beard drawn as a few big smooth locks, never strand by strand; cloth and metal "
          "with a few big folds or highlights, no texture, no stitching, no grime, no scratches. Readable at thumbnail size. NOT a detailed "
