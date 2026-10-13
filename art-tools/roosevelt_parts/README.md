@@ -29,3 +29,8 @@ forearms along the table's edge, hands folded in front.
 ## Gaps
 
 - The cards have a red back, not Death's; hide them.
+
+## Next: the pose drawings
+
+`POSES.md` lists his 24 poses and the prompts for four pose sheets and a
+face sheet, to build him with `pose_rig.py` as the rest of the table is.
