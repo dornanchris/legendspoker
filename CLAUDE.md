@@ -369,7 +369,7 @@ Athens stays the plain table until all five have puppets.
 `?room=athens` stages any table in it, to look at a room before its cast.
 **Pirate Cove's room is built** too (flickering lanterns, glints on the
 water, a gull), **Blackbeard** (`#/puppet/blackbeard`, 25 clips, seat 4) and
-**Kidd** (`#/puppet/kidd`, 20 clips, seat 1; his pose sheet D is still owed).
+**Kidd** (`#/puppet/kidd`, 24 clips, seat 1).
 Silver's and Davy Jones's prompts are written (`<id>_parts/POSES.md`, from
 `poses_spec.json` by `art-tools/prompts/poses.py`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be

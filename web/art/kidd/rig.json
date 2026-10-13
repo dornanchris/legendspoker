@@ -664,6 +664,90 @@
    "bone": "torso"
   },
   {
+   "name": "frame.talk",
+   "img": "frame_talk.png",
+   "cx": 549.5,
+   "cy": 757.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.big_bet",
+   "img": "frame_big_bet.png",
+   "cx": 549.5,
+   "cy": 757.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.lost_pot",
+   "img": "frame_lost_pot.png",
+   "cx": 549.5,
+   "cy": 757.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.won_pot",
+   "img": "frame_won_pot.png",
+   "cx": 549.5,
+   "cy": 757.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.heads_up",
+   "img": "frame_heads_up.png",
+   "cx": 549.5,
+   "cy": 757.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.knocked_out",
+   "img": "frame_knocked_out.png",
+   "cx": 549.5,
+   "cy": 757.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
    "name": "arm_near.rest",
    "img": "arm_near_rest.png",
    "cx": 549.5,
@@ -812,6 +896,36 @@
     1.0,
     -1,
     -10
+   ],
+   "D1": [
+    1.0,
+    -9,
+    -6
+   ],
+   "D2": [
+    1.0,
+    -6,
+    3
+   ],
+   "D3": [
+    1.0,
+    -6,
+    -4
+   ],
+   "D4": [
+    1.0,
+    -8,
+    -9
+   ],
+   "D5": [
+    1.0,
+    -5,
+    17
+   ],
+   "D6": [
+    1.0,
+    -4,
+    -12
    ]
   }
  },
@@ -832,6 +946,12 @@
   "squint": null,
   "neck": null,
   "count": null,
-  "hat_tip": null
+  "hat_tip": null,
+  "talk": null,
+  "big_bet": null,
+  "lost_pot": null,
+  "won_pot": null,
+  "heads_up": null,
+  "knocked_out": null
  }
 }

@@ -481,6 +481,78 @@
    "on_table": true
   },
   {
+   "file": "../web/art/kidd/frame_talk.png",
+   "label": "frame.talk",
+   "x": 245,
+   "y": 458,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/kidd/frame_big_bet.png",
+   "label": "frame.big_bet",
+   "x": 245,
+   "y": 458,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/kidd/frame_lost_pot.png",
+   "label": "frame.lost_pot",
+   "x": 245,
+   "y": 458,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/kidd/frame_won_pot.png",
+   "label": "frame.won_pot",
+   "x": 245,
+   "y": 458,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/kidd/frame_heads_up.png",
+   "label": "frame.heads_up",
+   "x": 245,
+   "y": 458,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/kidd/frame_knocked_out.png",
+   "label": "frame.knocked_out",
+   "x": 245,
+   "y": 458,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
    "file": "../web/art/kidd/arm_near_rest.png",
    "label": "arm_near.rest",
    "x": 305,

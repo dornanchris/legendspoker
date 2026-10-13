@@ -2169,6 +2169,726 @@
     ]
    }
   },
+  "talk": {
+   "duration": 2.2,
+   "note": "BEAT: a finger raised, protesting his case. Play beside a spoken line.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       1.5,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       1.5,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "talk"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   }
+  },
+  "big_bet": {
+   "duration": 2.2,
+   "note": "BEAT: facing a big bet: a greedy, calculating look.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.25,
+       1.5,
+       "in"
+      ],
+      [
+       0.37,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       1.5,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.25,
+      "big_bet"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   }
+  },
+  "lost_pot": {
+   "duration": 2.0,
+   "note": "BEAT: lost a pot: both palms up, this is robbery.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.18,
+       -1,
+       "in"
+      ],
+      [
+       0.3,
+       0,
+       "out"
+      ],
+      [
+       1.6,
+       0
+      ],
+      [
+       1.62,
+       -1,
+       "hold"
+      ],
+      [
+       1.9000000000000001,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.18,
+      "lost_pot"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ]
+   }
+  },
+  "won_pot": {
+   "duration": 2.2,
+   "note": "BEAT: won a pot: a relieved, greedy grin, hands on his chips.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       2,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       2,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "won_pot"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   }
+  },
+  "heads_up": {
+   "duration": 2.6,
+   "note": "BEAT: down to two: leaning in on both forearms, anxious and fixed.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.3,
+       3,
+       "in"
+      ],
+      [
+       0.42,
+       0,
+       "out"
+      ],
+      [
+       2.2,
+       0
+      ],
+      [
+       2.22,
+       3,
+       "hold"
+      ],
+      [
+       2.5,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.3,
+      "heads_up"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ]
+   }
+  },
+  "knocked_out": {
+   "duration": 2.6,
+   "note": "BEAT: knocked out: rises, holding out his papers, protesting.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.3,
+       -2,
+       "in"
+      ],
+      [
+       0.42,
+       0,
+       "out"
+      ],
+      [
+       2.3,
+       0
+      ],
+      [
+       2.32,
+       -2,
+       "hold"
+      ],
+      [
+       2.5999999999999996,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.3,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.3,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.3,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.3,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.3,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.3,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.3,
+      "knocked_out"
+     ],
+     [
+      2.3,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.3,
+      null
+     ]
+    ]
+   }
+  },
   "look_at_you": {
    "duration": 2.4,
    "note": "BEAT: turns to look straight at the player.",
@@ -2236,96 +2956,6 @@
      ]
     ]
    }
-  },
-  "won_pot": {
-   "duration": 1.8,
-   "note": "BEAT (until sheet D): a greedy grin.",
-   "tracks": {
-    "head": {
-     "rot": [
-      [
-       0,
-       0
-      ],
-      [
-       0.25,
-       2,
-       "inOut"
-      ],
-      [
-       1.4,
-       2
-      ],
-      [
-       1.7,
-       0,
-       "inOut"
-      ]
-     ]
-    }
-   },
-   "swaps": {
-    "mouth": [
-     [
-      0.2,
-      "grin"
-     ],
-     [
-      1.5,
-      null
-     ]
-    ]
-   }
-  },
-  "lost_pot": {
-   "duration": 2.0,
-   "note": "BEAT (until sheet D): aggrieved.",
-   "tracks": {
-    "head": {
-     "rot": [
-      [
-       0,
-       0
-      ],
-      [
-       0.3,
-       -2,
-       "inOut"
-      ],
-      [
-       1.6,
-       -2
-      ],
-      [
-       1.9,
-       0,
-       "inOut"
-      ]
-     ]
-    }
-   },
-   "swaps": {
-    "mouth": [
-     [
-      0.25,
-      "aggrieved"
-     ],
-     [
-      1.7,
-      null
-     ]
-    ],
-    "brows": [
-     [
-      0.25,
-      "together"
-     ],
-     [
-      1.7,
-      null
-     ]
-    ]
-   }
   }
  },
  "cues": {
@@ -2360,6 +2990,12 @@
   "squint": "ref_squint.png",
   "neck": "ref_neck.png",
   "count": "ref_count.png",
-  "hat_tip": "ref_hat_tip.png"
+  "hat_tip": "ref_hat_tip.png",
+  "talk": "ref_talk.png",
+  "big_bet": "ref_big_bet.png",
+  "lost_pot": "ref_lost_pot.png",
+  "won_pot": "ref_won_pot.png",
+  "heads_up": "ref_heads_up.png",
+  "knocked_out": "ref_knocked_out.png"
  }
 }
