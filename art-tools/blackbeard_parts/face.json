@@ -1,0 +1,93 @@
+{
+ "master": "blackbeard_parts/blackbeard_face/blackbeard_face_01.png",
+ "pieces": "blackbeard_parts/blackbeard_face/blackbeard_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 17,
+   "grin": 18,
+   "roar": 19,
+   "sly": 20
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     215,
+     105
+    ],
+    [
+     355,
+     105
+    ],
+    [
+     355,
+     142
+    ],
+    [
+     215,
+     142
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     215,
+     142
+    ],
+    [
+     355,
+     142
+    ],
+    [
+     355,
+     170
+    ],
+    [
+     215,
+     170
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     235,
+     172
+    ],
+    [
+     380,
+     172
+    ],
+    [
+     380,
+     232
+    ],
+    [
+     235,
+     232
+    ]
+   ]
+  }
+ }
+}
