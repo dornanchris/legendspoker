@@ -144,7 +144,7 @@ art-tools/
                   odysseus_parts/  the Athens table (seats 1-4 and its late
                   champion): pose sheets, face sheet, pose_rig.json;
                   blackbeard_parts/, kidd_parts/, silver_parts/, davy_jones_parts/: the
-                  Pirate Cove, the same way
+                  Pirate Cove, the same way; merlin_parts/, lancelot_parts/: Camelot
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -378,8 +378,15 @@ and **Blackbeard** (`#/puppet/blackbeard`, 25 clips, seat 4). Their prompts
 came from `<id>_parts/poses_spec.json` by `art-tools/prompts/poses.py`.
 **Camelot's room is built** (candle wheels and sconces flicker; the hearth
 fire and its sparks at the far left, on screens wider than 16:9);
-`?room=camelot` previews it. Its cast (Merlin, Lancelot, the Green Knight,
-Arthur) is next.
+`?room=camelot` previews it. **Merlin is built** (`#/puppet/merlin`, 24
+clips, seat 1; his staff a prop cut by colour, over his head); Lancelot's
+prompts are written. **The style lock** (the owner: Davy Jones and Merlin
+drifted from the presidents' cartoon toward detailed illustration): each
+character's first prompt used to borrow the LAST character's sheet, so the
+style drifted a step each time. Now `poses.py` (`"style_lock": true`) names
+one fixed style reference, Washington's pose sheet A, attached to every
+prompt, and says the style in words (few lines, big smooth shapes, flat
+colour, no texture). Merlin's `POSES.md` is style-locked for a redraw.
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,

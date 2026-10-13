@@ -1,0 +1,902 @@
+{
+ "id": "merlin",
+ "name": "Merlin",
+ "note": "Polygons in the rest pose (A1) pixels. As the Cove's cast: every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. His staff is a prop of the rest pose cut by colour (redder than his robe), on the torso and drawn over his head, whose hood is wider than the drawn one.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    13,
+    10,
+    497,
+    482
+   ],
+   "what": "at rest, hands apart, the staff on his right shoulder"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    516,
+    10,
+    499,
+    482
+   ],
+   "what": "peeking",
+   "reg": [
+    1.0,
+    -5,
+    0
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1026,
+    10,
+    497,
+    482
+   ],
+   "what": "checking",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    13,
+    497,
+    497,
+    483
+   ],
+   "what": "calling",
+   "reg": [
+    1.0,
+    -1,
+    -1
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    521,
+    497,
+    493,
+    485
+   ],
+   "what": "betting, slow",
+   "reg": [
+    1.0,
+    0,
+    -2
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1026,
+    497,
+    497,
+    485
+   ],
+   "what": "folding without looking",
+   "reg": [
+    1.0,
+    0,
+    -3
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    14,
+    8,
+    496,
+    480
+   ],
+   "what": "all in",
+   "reg": [
+    1.0,
+    0,
+    1
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    512,
+    8,
+    501,
+    482
+   ],
+   "what": "showing",
+   "reg": [
+    1.0,
+    -5,
+    0
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1022,
+    9,
+    500,
+    482
+   ],
+   "what": "collecting",
+   "reg": [
+    1.0,
+    0,
+    1
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    14,
+    492,
+    496,
+    488
+   ],
+   "what": "the staff glows (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -6
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    512,
+    492,
+    501,
+    488
+   ],
+   "what": "taps his staff twice (decoy)",
+   "reg": [
+    1.0,
+    -3,
+    -6
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1022,
+    492,
+    500,
+    488
+   ],
+   "what": "gazes past the table (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -6
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    13,
+    8,
+    495,
+    484
+   ],
+   "what": "stares at what has not happened yet (decoy)",
+   "reg": [
+    1.0,
+    -1,
+    -2
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    515,
+    9,
+    498,
+    483
+   ],
+   "what": "murmurs a word (TELL)",
+   "reg": [
+    1.0,
+    -3,
+    -1
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1022,
+    9,
+    504,
+    483
+   ],
+   "what": "strokes his beard (decoy)",
+   "reg": [
+    1.0,
+    -1,
+    -1
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    13,
+    493,
+    495,
+    487
+   ],
+   "what": "brushes ash from his sleeve",
+   "reg": [
+    1.0,
+    -1,
+    -5
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    515,
+    493,
+    497,
+    487
+   ],
+   "what": "glances up at a candle",
+   "reg": [
+    1.0,
+    -1,
+    -5
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1021,
+    494,
+    503,
+    486
+   ],
+   "what": "hands folded, eyes closed",
+   "reg": [
+    1.0,
+    -1,
+    -4
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    14,
+    9,
+    494,
+    482
+   ],
+   "what": "talking, palm out",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    518,
+    9,
+    497,
+    483
+   ],
+   "what": "facing a big bet",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1024,
+    10,
+    499,
+    476
+   ],
+   "what": "lost a pot: a small nod",
+   "reg": [
+    1.0,
+    -1,
+    3
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    14,
+    493,
+    495,
+    485
+   ],
+   "what": "won a pot: a knowing smile",
+   "reg": [
+    1.0,
+    -1,
+    -3
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    516,
+    494,
+    502,
+    484
+   ],
+   "what": "heads up: hands clasped, eyes fixed",
+   "reg": [
+    1.0,
+    -1,
+    -2
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1024,
+    492,
+    499,
+    486
+   ],
+   "what": "knocked out: takes his staff, turns to go",
+   "reg": [
+    1.0,
+    -3,
+    -4
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 358,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  250,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 250,
+ "neck": [
+  270,
+  240
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  200,
+  240,
+  340,
+  300
+ ],
+ "master": {
+  "piece": "merlin_parts/merlin_face/merlin_face_01.png",
+  "cut_below": 330,
+  "face": "merlin_parts/face.json",
+  "file": "merlin_parts/merlin_rig/master.png",
+  "layers": "merlin_parts/merlin_rig/face",
+  "head_box": [
+   140,
+   40,
+   370,
+   250
+  ],
+  "place": [
+   -54,
+   -2,
+   0.77
+  ],
+  "replace_head": true,
+  "heads": {
+   "viewer": "merlin_parts/merlin_face/merlin_face_20.png"
+  },
+  "cloth": [
+   15,
+   140
+  ],
+  "fill_poly": [
+   [
+    [
+     140,
+     200
+    ],
+    [
+     175,
+     200
+    ],
+    [
+     175,
+     250
+    ],
+    [
+     140,
+     250
+    ]
+   ],
+   [
+    [
+     330,
+     200
+    ],
+    [
+     370,
+     200
+    ],
+    [
+     370,
+     250
+    ],
+    [
+     330,
+     250
+    ]
+   ]
+  ],
+  "shoulder_y": 200,
+  "props": {
+   "staff": {
+    "poly": [
+     [
+      30,
+      0
+     ],
+     [
+      150,
+      0
+     ],
+     [
+      150,
+      70
+     ],
+     [
+      136,
+      110
+     ],
+     [
+      132,
+      200
+     ],
+     [
+      142,
+      345
+     ],
+     [
+      88,
+      352
+     ],
+     [
+      84,
+      200
+     ],
+     [
+      70,
+      110
+     ],
+     [
+      30,
+      80
+     ]
+    ],
+    "redder": 1.5,
+    "outline": 3,
+    "pivot": [
+     112,
+     345
+    ],
+    "parent": "torso",
+    "z": 21.5,
+    "drop_white": true
+   }
+  }
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     280
+    ],
+    [
+     80,
+     280
+    ],
+    [
+     80,
+     310
+    ],
+    [
+     10,
+     315
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, sleeve and hand",
+     "poly": [
+      [
+       0,
+       300
+      ],
+      [
+       60,
+       290
+      ],
+      [
+       130,
+       330
+      ],
+      [
+       170,
+       360
+      ],
+      [
+       235,
+       380
+      ],
+      [
+       255,
+       420
+      ],
+      [
+       250,
+       470
+      ],
+      [
+       110,
+       470
+      ],
+      [
+       60,
+       450
+      ],
+      [
+       20,
+       440
+      ],
+      [
+       0,
+       420
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    465,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     420,
+     280
+    ],
+    [
+     497,
+     280
+    ],
+    [
+     497,
+     310
+    ],
+    [
+     420,
+     310
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, sleeve and hand",
+     "poly": [
+      [
+       318,
+       430
+      ],
+      [
+       330,
+       400
+      ],
+      [
+       370,
+       375
+      ],
+      [
+       380,
+       350
+      ],
+      [
+       420,
+       330
+      ],
+      [
+       470,
+       300
+      ],
+      [
+       497,
+       320
+      ],
+      [
+       497,
+       420
+      ],
+      [
+       460,
+       425
+      ],
+      [
+       450,
+       470
+      ],
+      [
+       318,
+       470
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      200,
+      370
+     ],
+     [
+      300,
+      370
+     ],
+     [
+      300,
+      492
+     ],
+     [
+      200,
+      492
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      190,
+      350
+     ],
+     [
+      310,
+      350
+     ],
+     [
+      310,
+      492
+     ],
+     [
+      190,
+      492
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "biggest": true,
+   "props": [
+    [
+     [
+      230,
+      350
+     ],
+     [
+      440,
+      350
+     ],
+     [
+      440,
+      492
+     ],
+     [
+      230,
+      492
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      230,
+      350
+     ],
+     [
+      440,
+      350
+     ],
+     [
+      440,
+      492
+     ],
+     [
+      230,
+      492
+     ]
+    ]
+   ]
+  },
+  "glow": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "tap": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "gaze": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "stare": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "murmur": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "beard": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "ash": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "candle": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "still": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      370
+     ],
+     [
+      320,
+      370
+     ],
+     [
+      320,
+      492
+     ],
+     [
+      160,
+      492
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  }
+ },
+ "runtime": "../web/art/merlin",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  10,
+  75
+ ],
+ "wood_rows_only": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_dark_teal": true
+}
