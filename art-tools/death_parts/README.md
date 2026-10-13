@@ -69,13 +69,14 @@ git history).
 - **Rest = A1**: the hand on the left of the picture flat on the felt
   (`near`), the other on the deck (`far`; the deck is part of that piece).
   Front-on, never mirrored. Validation: 0.65% of pixels above the rail differ.
-- **Arm pieces cut automatically** (`"auto"`): his hands move while the robe
-  stays, so each piece is what differs from rest on that side of the
-  picture, the robe hem that drapes onto the felt in a drawing dropped.
-  Chips (`drop_red`) and card backs (`drop_blue`) are cut out: the game draws
-  its own. Three pieces whose arm swings out past the robe are traced by hand
-  (`pitch_left`, `gesture`, `way_out`); `pitch_left` is drawn over the robe's
-  edge (`"over"`).
+- **Every pose is a whole-figure frame** (the owner: the cut-out hands did
+  not line up with his sleeves). His hands move under a robe whose folds
+  change with them, so a hand cut alone never met the rest pose's sleeve.
+  Each pose is now its whole drawing, placed on the rest pose by the torso
+  (`way_out`, C5, by the rail), with his talking master head on it (matched
+  on the brooch) and the robe filled beside its neck (`fill_shoulders`).
+  The drawings' own rail is dropped (`drop_rail`, `felt_lines`); their
+  cards and chips stay (the game's flights start under them).
 - **Face**: the master head (piece 1) and five jaw patches (closed, parted,
   open, wide, side) as the mouth slot; a skull does not blink, so the face
   config never does. The five heads (left, right, bowed, weary, up) are
@@ -83,11 +84,12 @@ git history).
   gold brooch they all wear (`head_fit: "brooch"`), and the shoulders behind
   the master's hood are filled with robe (`fill_poly`) so a narrower head
   never shows a hole.
-- **Frame**: `steeple` (C6), placed by the rail, with its own drawn head.
+- `steeple` (C6) is placed by the rail and keeps its own drawn head (his
+  hands hide the brooch).
 
 **Clips** (`web/art/death/anim.json`, 26, every one ending exactly at rest;
 preview `web/index.html#/puppet/death`): the deal `deal_left`, `deal_you`,
-`deal_right` (the far hand thumbs a card off, the near hand pitches it),
+`deal_right` (the thumb drawing, then the pitch, then rest),
 `burn`, `flop`, `turn`, `shuffle` (riffle twice, square), `cut`, `rake`, the
 pot `push_left`, `push_you`, `push_right`; his moments `watch_that` (the
 lessons), `way_out` (the uninvited guest's scene), `steeple` (heads-up, the

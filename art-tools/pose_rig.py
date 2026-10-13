@@ -54,7 +54,8 @@ round a frame is "frame_margin" (a hat raised high); "drop_wood" cuts the
 chair's red-brown wherever it is, and "back_strip" clears anything thin in
 the columns at his back (the chair's outline). "felt_lines": n drops anything
 under about 2n pixels thick below the table line in frames (the drawn
-rail's outline curving across the felt). "head_match": "face" places a
+rail's outline curving across the felt). "drop_rail": n drops every
+rail-orange shape reaching within n rows of the table line in frames. "head_match": "face" places a
 frame's master head on its own drawn head instead of on the stock.
 "fill_shoulders" (with master "shoulder_y", "shoulder_close") fills the coat
 between a narrower master neck and a frame's shoulders; "no_peel" keeps the
@@ -543,6 +544,13 @@ def main(spec_path):
         # thin lines (the rail's highlight, the chair's outline) go: a figure's own
         # outline is part of a shape, and comes back with the dilation
         fm &= ndimage.binary_dilation(ndimage.binary_opening(fm, iterations=2), iterations=2) | props
+        if spec.get('drop_rail'):                          # the drawn rail's orange and its highlight, wherever it sits
+            c = F[..., :3].astype(int)
+            rail = (c[..., 0] > 1.6 * c[..., 1] + 10) & (c[..., 0] > 60) & ~props
+            lab, n = ndimage.label(rail)
+            if n:
+                low = np.unique(lab[ty + FM - spec['drop_rail']:][rail[ty + FM - spec['drop_rail']:]])
+                fm &= ~ndimage.binary_dilation(np.isin(lab, low[low > 0]), iterations=1)
         if spec.get('felt_lines'):                         # the drawn rail's outline lying on the felt
             t = spec['felt_lines']
             below = np.zeros(fshape, bool)

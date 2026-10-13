@@ -378,8 +378,9 @@ the first drew Washington's lace cuffs. Death, the dealer, is built the same
 way (`#/puppet/death`, 26 clips: the deal to either side and to you, burn,
 flop, turn, shuffle, cut, rake, the pot to each side, the lesson gesture, the
 guest's way out, heads-up steepled fingers, head turns, and the finale's own
-actions); front-on, his hand pieces are cut automatically as what differs
-from rest (`auto` in `pose_rig.py`), and his jaw talks. Roosevelt is built the same way (`#/puppet/roosevelt`, 24
+actions); front-on, under a robe, so every pose is a whole-figure frame with
+his talking head riding on it (cut-out hands did not meet his sleeves), and
+his jaw talks. Roosevelt is built the same way (`#/puppet/roosevelt`, 24
 clips): the whole White House table and its dealer are now animated puppets,
 not yet on the table screen.
 **Layering rule for the table screen:** the room's table covers a puppet only

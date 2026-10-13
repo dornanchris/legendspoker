@@ -177,7 +177,12 @@
     556,
     478
    ],
-   "what": "showing someone out"
+   "what": "showing someone out",
+   "reg": [
+    0.98,
+    -30,
+    11
+   ]
   },
   "C6": {
    "sheet": "C",
@@ -336,7 +341,8 @@
     140,
     200
    ]
-  ]
+  ],
+  "shoulder_y": 120
  },
  "arms": {
   "near": {
@@ -426,403 +432,6 @@
        370
       ]
      ]
-    },
-    "pitch_left": {
-     "pose": "A3",
-     "space": "rest",
-     "drop_blue": true,
-     "what": "pitching a card to the left of the picture",
-     "poly": [
-      [
-       15,
-       350
-      ],
-      [
-       40,
-       300
-      ],
-      [
-       60,
-       285
-      ],
-      [
-       90,
-       275
-      ],
-      [
-       130,
-       270
-      ],
-      [
-       170,
-       280
-      ],
-      [
-       200,
-       300
-      ],
-      [
-       205,
-       330
-      ],
-      [
-       180,
-       345
-      ],
-      [
-       140,
-       350
-      ],
-      [
-       110,
-       352
-      ],
-      [
-       100,
-       380
-      ],
-      [
-       95,
-       420
-      ],
-      [
-       85,
-       440
-      ],
-      [
-       60,
-       470
-      ],
-      [
-       40,
-       492
-      ],
-      [
-       15,
-       482
-      ]
-     ],
-     "over": true
-    },
-    "slide": {
-     "pose": "A4",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true
-    },
-    "pitch_right": {
-     "pose": "A5",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true
-    },
-    "burn": {
-     "pose": "A6",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true
-    },
-    "flop": {
-     "pose": "B1",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true
-    },
-    "turn": {
-     "pose": "B2",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "except": [
-      [
-       [
-        198,
-        424
-       ],
-       [
-        284,
-        416
-       ],
-       [
-        284,
-        478
-       ],
-       [
-        176,
-        478
-       ],
-       [
-        176,
-        440
-       ],
-       [
-        196,
-        440
-       ]
-      ]
-     ]
-    },
-    "riffle": {
-     "pose": "B3",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     }
-    },
-    "square": {
-     "pose": "B4",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     }
-    },
-    "cut": {
-     "pose": "B5",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     }
-    },
-    "rake": {
-     "pose": "B6",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "drop_red": true
-    },
-    "push_left": {
-     "pose": "C1",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "drop_red": true
-    },
-    "push_you": {
-     "pose": "C2",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "drop_red": true
-    },
-    "gesture": {
-     "pose": "C4",
-     "space": "rest",
-     "what": "open hand, palm up: watch that",
-     "poly": [
-      [
-       20,
-       235
-      ],
-      [
-       40,
-       183
-      ],
-      [
-       70,
-       188
-      ],
-      [
-       100,
-       203
-      ],
-      [
-       120,
-       222
-      ],
-      [
-       160,
-       213
-      ],
-      [
-       205,
-       218
-      ],
-      [
-       208,
-       280
-      ],
-      [
-       205,
-       330
-      ],
-      [
-       150,
-       342
-      ],
-      [
-       110,
-       322
-      ],
-      [
-       90,
-       292
-      ],
-      [
-       45,
-       277
-      ],
-      [
-       22,
-       262
-      ]
-     ]
-    },
-    "way_out": {
-     "pose": "C5",
-     "space": "rest",
-     "what": "arm out to the side: showing someone the way",
-     "poly": [
-      [
-       28,
-       265
-      ],
-      [
-       45,
-       230
-      ],
-      [
-       75,
-       203
-      ],
-      [
-       110,
-       213
-      ],
-      [
-       145,
-       233
-      ],
-      [
-       200,
-       238
-      ],
-      [
-       235,
-       246
-      ],
-      [
-       240,
-       300
-      ],
-      [
-       200,
-       312
-      ],
-      [
-       150,
-       317
-      ],
-      [
-       110,
-       314
-      ],
-      [
-       80,
-       302
-      ],
-      [
-       45,
-       292
-      ]
-     ]
-    },
-    "bet": {
-     "pose": "D4",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "drop_red": true
-    },
-    "all_in": {
-     "pose": "D5",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "drop_red": true
-    },
-    "fold": {
-     "pose": "D6",
-     "space": "rest",
-     "auto": {
-      "x": [
-       0,
-       248
-      ],
-      "top": 240
-     },
-     "drop_blue": true
     }
    }
   },
@@ -909,135 +518,111 @@
        350
       ]
      ]
-    },
-    "thumb": {
-     "pose": "A2",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     }
-    },
-    "riffle": {
-     "pose": "B3",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     }
-    },
-    "square": {
-     "pose": "B4",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     }
-    },
-    "rake": {
-     "pose": "B6",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "drop_red": true
-    },
-    "push_you": {
-     "pose": "C2",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "drop_red": true
-    },
-    "push_right": {
-     "pose": "C3",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "drop_red": true
-    },
-    "set_aside": {
-     "pose": "D1",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     }
-    },
-    "peek": {
-     "pose": "D2",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     },
-     "drop_blue": true
-    },
-    "check": {
-     "pose": "D3",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     }
-    },
-    "all_in": {
-     "pose": "D5",
-     "space": "rest",
-     "auto": {
-      "x": [
-       246,
-       493
-      ],
-      "top": 240
-     },
-     "drop_blue": true,
-     "drop_red": true
     }
    }
   }
  },
  "frames": {
+  "thumb": {
+   "pose": "A2",
+   "cut_head": true
+  },
+  "pitch_left": {
+   "pose": "A3",
+   "cut_head": true
+  },
+  "slide": {
+   "pose": "A4",
+   "cut_head": true
+  },
+  "pitch_right": {
+   "pose": "A5",
+   "cut_head": true
+  },
+  "burn": {
+   "pose": "A6",
+   "cut_head": true
+  },
+  "flop": {
+   "pose": "B1",
+   "cut_head": true
+  },
+  "turn": {
+   "pose": "B2",
+   "cut_head": true
+  },
+  "riffle": {
+   "pose": "B3",
+   "cut_head": true
+  },
+  "square": {
+   "pose": "B4",
+   "cut_head": true
+  },
+  "cut": {
+   "pose": "B5",
+   "cut_head": true
+  },
+  "rake": {
+   "pose": "B6",
+   "cut_head": true
+  },
+  "push_left": {
+   "pose": "C1",
+   "cut_head": true
+  },
+  "push_you": {
+   "pose": "C2",
+   "cut_head": true
+  },
+  "push_right": {
+   "pose": "C3",
+   "cut_head": true
+  },
+  "gesture": {
+   "pose": "C4",
+   "cut_head": true
+  },
+  "way_out": {
+   "pose": "C5",
+   "cut_head": true,
+   "head": [
+    0,
+    0
+   ]
+  },
+  "set_aside": {
+   "pose": "D1",
+   "cut_head": true
+  },
+  "peek": {
+   "pose": "D2",
+   "cut_head": true
+  },
+  "check": {
+   "pose": "D3",
+   "cut_head": true
+  },
+  "bet": {
+   "pose": "D4",
+   "cut_head": true
+  },
+  "all_in": {
+   "pose": "D5",
+   "cut_head": true
+  },
+  "fold": {
+   "pose": "D6",
+   "cut_head": true
+  },
   "steeple": {
    "pose": "C6",
    "head": "own",
    "below": -2
   }
  },
- "runtime": "../web/art/death"
+ "runtime": "../web/art/death",
+ "fill_shoulders": true,
+ "drop_rail": 60,
+ "felt_lines": 3
 }
