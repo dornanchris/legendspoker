@@ -366,6 +366,8 @@ A master head now runs below the collar (`cut_below`), or the join shows as
 a dark seam.
 Athens stays the plain table until all five have puppets.
 `?room=athens` stages any table in it, to look at a room before its cast.
+**Pirate Cove's room is built** too (flickering lanterns, glints on the
+water, a gull); its cast is next.
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,

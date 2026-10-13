@@ -129,6 +129,8 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 **What makes it unique:** The rowdiest room: a tavern half cut into the rock and half the stern of a wrecked ship, with the sea right outside.
 
+**Status:** Done: backdrop and pieces in `art-tools/rooms/pirate_cove/` (`pieces.json` places them): the lantern flames flicker, the moonlight glints on the water either side of Death, and a gull shifts on the rigging.
+
 - **The room:** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. Death's table stands on the boards among the rum barrels as if it had come ashore with them, the only thing in the room nobody has dared scar with a knife. Through the open side wall, ships ride at anchor in the moonlight.
 - **Sounds (for reference):** surf in the cove; creaking timbers and rigging; rowdy laughter through the wall; a bottle rolling across floorboards; a ship's bell out on the water
 - **Light:** Lantern orange inside, cool moonlight blue through the opening in the rock.
