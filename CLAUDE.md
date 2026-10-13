@@ -140,8 +140,9 @@ art-tools/
   fdr_parts/, roosevelt_parts/, washington_parts/  the White House cast, each
                   with seat.json and <id>_layout.json; see each README
   jfk_parts/      JFK's kit: built, at no table (see CURRENT STATE)
-  socrates_parts/, leonidas_parts/  the Athens cast built so far (seats 1, 2):
-                  pose sheets, face sheet, pose_rig.json; cyclops_parts/: prompts
+  socrates_parts/, leonidas_parts/, cyclops_parts/  the Athens cast built so
+                  far (seats 1, 2, 4): pose sheets, face sheet, pose_rig.json;
+                  medusa_parts/: her prompts
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -351,8 +352,10 @@ drawn to the White House plate's camera, so the table, rim and chairs line up.
 drained once he arrives, flickering lamps). **Socrates is built**
 (`#/puppet/socrates`, 25 clips): rest plus whole-figure frames with their own
 drawn heads, placed by each drawing's rail. **Leonidas is built** the same
-way (`#/puppet/leonidas`, 24 clips). The Cyclops's prompts are in
-`art-tools/cyclops_parts/POSES.md`; Medusa and Odysseus follow.
+way (`#/puppet/leonidas`, 24 clips), and **the Cyclops** (`#/puppet/cyclops`,
+24 clips, built a quarter bigger: the giant). Medusa's prompts are in
+`art-tools/medusa_parts/POSES.md`; Odysseus follows. A master head now runs
+below the collar (`cut_below`), or the join shows as a dark seam.
 Athens stays the plain table until all five have puppets.
 `?room=athens` stages any table in it, to look at a room before its cast.
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be

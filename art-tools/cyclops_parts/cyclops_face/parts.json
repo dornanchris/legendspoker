@@ -1,0 +1,332 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "cyclops_face_01.png",
+      "label": "",
+      "x": 12,
+      "y": 2,
+      "w": 413,
+      "h": 335,
+      "pivot": [
+        206.5,
+        167.5
+      ],
+      "area": 91234
+    },
+    {
+      "index": 2,
+      "file": "cyclops_face_02.png",
+      "label": "",
+      "x": 346,
+      "y": 85,
+      "w": 156,
+      "h": 120,
+      "pivot": [
+        78.0,
+        60.0
+      ],
+      "area": 14075
+    },
+    {
+      "index": 3,
+      "file": "cyclops_face_03.png",
+      "label": "",
+      "x": 510,
+      "y": 77,
+      "w": 159,
+      "h": 125,
+      "pivot": [
+        79.5,
+        62.5
+      ],
+      "area": 15047
+    },
+    {
+      "index": 4,
+      "file": "cyclops_face_04.png",
+      "label": "",
+      "x": 681,
+      "y": 81,
+      "w": 161,
+      "h": 125,
+      "pivot": [
+        80.5,
+        62.5
+      ],
+      "area": 14758
+    },
+    {
+      "index": 5,
+      "file": "cyclops_face_05.png",
+      "label": "",
+      "x": 848,
+      "y": 83,
+      "w": 166,
+      "h": 125,
+      "pivot": [
+        83.0,
+        62.5
+      ],
+      "area": 15076
+    },
+    {
+      "index": 6,
+      "file": "cyclops_face_06.png",
+      "label": "",
+      "x": 1016,
+      "y": 69,
+      "w": 160,
+      "h": 139,
+      "pivot": [
+        80.0,
+        69.5
+      ],
+      "area": 16436
+    },
+    {
+      "index": 7,
+      "file": "cyclops_face_07.png",
+      "label": "",
+      "x": 1182,
+      "y": 75,
+      "w": 169,
+      "h": 128,
+      "pivot": [
+        84.5,
+        64.0
+      ],
+      "area": 16229
+    },
+    {
+      "index": 8,
+      "file": "cyclops_face_08.png",
+      "label": "",
+      "x": 1356,
+      "y": 66,
+      "w": 168,
+      "h": 139,
+      "pivot": [
+        84.0,
+        69.5
+      ],
+      "area": 17307
+    },
+    {
+      "index": 9,
+      "file": "cyclops_face_09.png",
+      "label": "",
+      "x": 455,
+      "y": 217,
+      "w": 182,
+      "h": 92,
+      "pivot": [
+        91.0,
+        46.0
+      ],
+      "area": 10437
+    },
+    {
+      "index": 10,
+      "file": "cyclops_face_10.png",
+      "label": "",
+      "x": 660,
+      "y": 229,
+      "w": 187,
+      "h": 81,
+      "pivot": [
+        93.5,
+        40.5
+      ],
+      "area": 10803
+    },
+    {
+      "index": 11,
+      "file": "cyclops_face_11.png",
+      "label": "",
+      "x": 15,
+      "y": 342,
+      "w": 244,
+      "h": 178,
+      "pivot": [
+        122.0,
+        89.0
+      ],
+      "area": 32008
+    },
+    {
+      "index": 12,
+      "file": "cyclops_face_12.png",
+      "label": "",
+      "x": 286,
+      "y": 342,
+      "w": 235,
+      "h": 182,
+      "pivot": [
+        117.5,
+        91.0
+      ],
+      "area": 30801
+    },
+    {
+      "index": 13,
+      "file": "cyclops_face_13.png",
+      "label": "",
+      "x": 538,
+      "y": 342,
+      "w": 235,
+      "h": 178,
+      "pivot": [
+        117.5,
+        89.0
+      ],
+      "area": 30124
+    },
+    {
+      "index": 14,
+      "file": "cyclops_face_14.png",
+      "label": "",
+      "x": 791,
+      "y": 341,
+      "w": 231,
+      "h": 180,
+      "pivot": [
+        115.5,
+        90.0
+      ],
+      "area": 30647
+    },
+    {
+      "index": 15,
+      "file": "cyclops_face_15.png",
+      "label": "",
+      "x": 1037,
+      "y": 341,
+      "w": 229,
+      "h": 177,
+      "pivot": [
+        114.5,
+        88.5
+      ],
+      "area": 29209
+    },
+    {
+      "index": 16,
+      "file": "cyclops_face_16.png",
+      "label": "",
+      "x": 1283,
+      "y": 341,
+      "w": 237,
+      "h": 183,
+      "pivot": [
+        118.5,
+        91.5
+      ],
+      "area": 31117
+    },
+    {
+      "index": 17,
+      "file": "cyclops_face_17.png",
+      "label": "",
+      "x": 126,
+      "y": 529,
+      "w": 243,
+      "h": 176,
+      "pivot": [
+        121.5,
+        88.0
+      ],
+      "area": 31353
+    },
+    {
+      "index": 18,
+      "file": "cyclops_face_18.png",
+      "label": "",
+      "x": 384,
+      "y": 529,
+      "w": 242,
+      "h": 176,
+      "pivot": [
+        121.0,
+        88.0
+      ],
+      "area": 31476
+    },
+    {
+      "index": 19,
+      "file": "cyclops_face_19.png",
+      "label": "",
+      "x": 640,
+      "y": 524,
+      "w": 242,
+      "h": 182,
+      "pivot": [
+        121.0,
+        91.0
+      ],
+      "area": 32779
+    },
+    {
+      "index": 20,
+      "file": "cyclops_face_20.png",
+      "label": "",
+      "x": 894,
+      "y": 525,
+      "w": 246,
+      "h": 181,
+      "pivot": [
+        123.0,
+        90.5
+      ],
+      "area": 32324
+    },
+    {
+      "index": 21,
+      "file": "cyclops_face_21.png",
+      "label": "",
+      "x": 1152,
+      "y": 525,
+      "w": 254,
+      "h": 184,
+      "pivot": [
+        127.0,
+        92.0
+      ],
+      "area": 33531
+    },
+    {
+      "index": 22,
+      "file": "cyclops_face_22.png",
+      "label": "",
+      "x": 66,
+      "y": 680,
+      "w": 573,
+      "h": 330,
+      "pivot": [
+        286.5,
+        165.0
+      ],
+      "area": 106072
+    },
+    {
+      "index": 23,
+      "file": "cyclops_face_23.png",
+      "label": "",
+      "x": 661,
+      "y": 686,
+      "w": 550,
+      "h": 324,
+      "pivot": [
+        275.0,
+        162.0
+      ],
+      "area": 101228
+    }
+  ]
+}

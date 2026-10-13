@@ -390,7 +390,7 @@
  ],
  "master": {
   "piece": "leonidas_parts/leonidas_face/leonidas_face_01.png",
-  "cut_below": 295,
+  "cut_below": 338,
   "face": "leonidas_parts/face.json",
   "file": "leonidas_parts/leonidas_rig/master.png",
   "layers": "leonidas_parts/leonidas_rig/face",

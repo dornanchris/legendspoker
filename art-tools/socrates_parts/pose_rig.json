@@ -390,7 +390,7 @@
  ],
  "master": {
   "piece": "socrates_parts/socrates_face/socrates_face_01.png",
-  "cut_below": 300,
+  "cut_below": 325,
   "face": "socrates_parts/face.json",
   "file": "socrates_parts/socrates_rig/master.png",
   "layers": "socrates_parts/socrates_rig/face",

@@ -61,7 +61,9 @@ character whose skin is the rail's orange; "rail_green": only colours with
 more green than that share of their red, for a red cloak). "wood_rows_only":
 the wood colour counts only at and below the rail, pixel by pixel (not whole
 shapes reaching it), for a red cloak or crest that hangs down to the rail.
-"rail_band": [above, below] drops only rail-coloured shapes lying wholly
+"felt_holes": felt below the rail that hole-filling enclosed (between two
+hands) is dropped again. "felt_teal": the felt counts in its bluer shades too (the teal a sheet drew
+in shadow between two hands). "rail_band": [above, below] drops only rail-coloured shapes lying wholly
 within those rows round the table line: the drawn rail is a thin band, and
 skin shading as orange as it reaches up the arm. "head_match": "face" places a
 frame's master head on its own drawn head instead of on the stock.
@@ -104,6 +106,8 @@ W, H, TABLE = 1100, 1040, 880
 # pixel by pixel, never as whole shapes reaching it (a red cloak or crest is
 # the rail's colour, and hangs down to it)
 WOOD_ROWS_ONLY = False
+# "felt_teal" (spec): bluer felt counts too, a shade the plain test misses in shadow
+FELT_TEAL = False
 
 
 def poly_mask(shape, pts):
@@ -119,6 +123,8 @@ def table_colour(a, ty, with_wood=True):
     a face are the same brown, inside him."""
     r, g, b = a[..., 0].astype(int), a[..., 1].astype(int), a[..., 2].astype(int)
     felt = (g > r + 15) & (g > b + 5) & (g > 30)       # not navy (Washington's coat has g > r too); shadowed felt too
+    if FELT_TEAL:
+        felt |= (g > r + 40) & (b > r + 30)
     wood = (r - g > 40) & (g < 75) & (r < 200) & (a[..., 3] > 0)
     if WOOD_ROWS_ONLY:
         rows = np.zeros_like(wood)
@@ -314,6 +320,8 @@ def main(spec_path):
     spec = json.load(open(spec_path))
     global WOOD_ROWS_ONLY
     WOOD_ROWS_ONLY = bool(spec.get('wood_rows_only'))
+    global FELT_TEAL
+    FELT_TEAL = bool(spec.get('felt_teal'))
     kit = os.path.dirname(os.path.abspath(spec_path))
     out_dir = os.path.join(kit, f"{spec['id']}_pose")
     os.makedirs(out_dir, exist_ok=True)
@@ -595,6 +603,10 @@ def main(spec_path):
             sz = ndimage.sum(fm, lab, range(1, n + 1))
             fm = np.isin(lab, 1 + np.nonzero(sz >= 150)[0])
         fm = ndimage.binary_fill_holes(fm) & (F[..., 3] > 128) & ~trapped
+        if spec.get('felt_holes'):                         # felt enclosed between hands and rail: not him
+            low = np.zeros(fshape, bool)
+            low[ty + FM - 10:] = True
+            fm &= ~(low & table_colour(F, ty + FM, with_wood=False))
         for ex in fr.get('except', []):                    # again: filling holes refills one he encloses
             fm &= ~pm(ex)
         own = fr.get('head') == 'own'
