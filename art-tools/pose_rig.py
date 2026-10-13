@@ -62,7 +62,8 @@ more green than that share of their red, for a red cloak). "wood_rows_only":
 the wood colour counts only at and below the rail, pixel by pixel (not whole
 shapes reaching it), for a red cloak or crest that hangs down to the rail.
 "felt_holes": felt below the rail that hole-filling enclosed (between two
-hands) is dropped again. "felt_teal": the felt counts in its bluer shades too (the teal a sheet drew
+hands) is dropped again. "felt_blue": the felt is only its bluer shades (a character in the felt's
+green, Medusa's snakes). "felt_teal": the felt counts in its bluer shades too (the teal a sheet drew
 in shadow between two hands). "rail_band": [above, below] drops only rail-coloured shapes lying wholly
 within those rows round the table line: the drawn rail is a thin band, and
 skin shading as orange as it reaches up the arm. "head_match": "face" places a
@@ -108,6 +109,8 @@ W, H, TABLE = 1100, 1040, 880
 WOOD_ROWS_ONLY = False
 # "felt_teal" (spec): bluer felt counts too, a shade the plain test misses in shadow
 FELT_TEAL = False
+# "felt_blue" (spec): the felt is only the bluer green (her snakes are the felt's green otherwise)
+FELT_BLUE = False
 
 
 def poly_mask(shape, pts):
@@ -124,7 +127,9 @@ def table_colour(a, ty, with_wood=True):
     r, g, b = a[..., 0].astype(int), a[..., 1].astype(int), a[..., 2].astype(int)
     felt = (g > r + 15) & (g > b + 5) & (g > 30)       # not navy (Washington's coat has g > r too); shadowed felt too
     if FELT_TEAL:
-        felt |= (g > r + 40) & (b > r + 30)
+        felt |= (g > r + 40) & (b > r + 30) & (g > b - 12) & (g > 85)   # not a dark teal cloth
+    if FELT_BLUE:
+        felt &= b > r + 25
     wood = (r - g > 40) & (g < 75) & (r < 200) & (a[..., 3] > 0)
     if WOOD_ROWS_ONLY:
         rows = np.zeros_like(wood)
@@ -322,6 +327,8 @@ def main(spec_path):
     WOOD_ROWS_ONLY = bool(spec.get('wood_rows_only'))
     global FELT_TEAL
     FELT_TEAL = bool(spec.get('felt_teal'))
+    global FELT_BLUE
+    FELT_BLUE = bool(spec.get('felt_blue'))
     kit = os.path.dirname(os.path.abspath(spec_path))
     out_dir = os.path.join(kit, f"{spec['id']}_pose")
     os.makedirs(out_dir, exist_ok=True)

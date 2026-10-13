@@ -1,0 +1,94 @@
+{
+ "master": "medusa_parts/medusa_face/medusa_face_01.png",
+ "pieces": "medusa_parts/medusa_face/medusa_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "up": 6,
+   "level": 7
+  },
+  "brows": {
+   "raised": 8,
+   "together": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 17,
+   "teeth": 18,
+   "pressed": 19,
+   "smile": 20,
+   "sigh": 21
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     228,
+     112
+    ],
+    [
+     322,
+     112
+    ],
+    [
+     322,
+     148
+    ],
+    [
+     228,
+     148
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     228,
+     148
+    ],
+    [
+     322,
+     148
+    ],
+    [
+     322,
+     182
+    ],
+    [
+     228,
+     182
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     240,
+     195
+    ],
+    [
+     320,
+     195
+    ],
+    [
+     320,
+     248
+    ],
+    [
+     240,
+     248
+    ]
+   ]
+  }
+ }
+}

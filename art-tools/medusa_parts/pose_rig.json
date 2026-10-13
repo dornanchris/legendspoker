@@ -1,0 +1,703 @@
+{
+ "id": "medusa",
+ "name": "Medusa",
+ "note": "Polygons in the rest pose (A1) pixels. As the rest of Athens: every pose but rest is a whole-figure frame with its own drawn head; each placed ('reg') by matching its whole drawn felt to the rest pose's (her sheets' rail is a tighter curve than the others'). Her snakes are the felt's green, so the felt is only its bluer shade (felt_blue).",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    8,
+    14,
+    495,
+    485
+   ],
+   "what": "at rest, hands apart"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    515,
+    10,
+    501,
+    489
+   ],
+   "reg": [
+    1.0,
+    -2,
+    -5
+   ],
+   "what": "peeking at her cards"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1032,
+    14,
+    496,
+    484
+   ],
+   "reg": [
+    1.0,
+    -14,
+    -2
+   ],
+   "what": "checking"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    12,
+    516,
+    487,
+    469
+   ],
+   "reg": [
+    1.0,
+    -26,
+    21
+   ],
+   "what": "calling"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    514,
+    515,
+    508,
+    470
+   ],
+   "reg": [
+    1.0,
+    -50,
+    31
+   ],
+   "what": "betting"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1036,
+    515,
+    488,
+    470
+   ],
+   "reg": [
+    1.0,
+    -16,
+    16
+   ],
+   "what": "folding"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    13,
+    13,
+    501,
+    476
+   ],
+   "reg": [
+    1.0,
+    -50,
+    50
+   ],
+   "what": "all in"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    524,
+    13,
+    488,
+    476
+   ],
+   "reg": [
+    1.0,
+    -10,
+    17
+   ],
+   "what": "showing her cards"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1024,
+    13,
+    501,
+    476
+   ],
+   "reg": [
+    1.0,
+    -8,
+    26
+   ],
+   "what": "collecting the pot"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    13,
+    496,
+    493,
+    505
+   ],
+   "reg": [
+    1.0,
+    6,
+    -8
+   ],
+   "what": "the snakes still (TELL)"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    518,
+    518,
+    494,
+    483
+   ],
+   "reg": [
+    1.0,
+    -8,
+    13
+   ],
+   "what": "the snakes drowsing (decoy)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1025,
+    496,
+    501,
+    505
+   ],
+   "reg": [
+    1.0,
+    -22,
+    -12
+   ],
+   "what": "the snakes hissing (TELL)"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    8,
+    14,
+    502,
+    486
+   ],
+   "reg": [
+    1.0,
+    -6,
+    -5
+   ],
+   "what": "two snakes knotting (decoy)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    520,
+    16,
+    496,
+    484
+   ],
+   "reg": [
+    1.0,
+    -4,
+    -3
+   ],
+   "what": "gaze lowered (TELL)"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1027,
+    14,
+    501,
+    486
+   ],
+   "reg": [
+    1.0,
+    -14,
+    -4
+   ],
+   "what": "tucks a snake behind her ear (decoy)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    10,
+    514,
+    500,
+    474
+   ],
+   "reg": [
+    1.0,
+    -4,
+    9
+   ],
+   "what": "a snake tastes the air"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    520,
+    515,
+    495,
+    473
+   ],
+   "reg": [
+    1.0,
+    2,
+    11
+   ],
+   "what": "one snake nips another"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1027,
+    523,
+    499,
+    465
+   ],
+   "reg": [
+    1.0,
+    -18,
+    19
+   ],
+   "what": "chin on her hand"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    8,
+    13,
+    499,
+    482
+   ],
+   "reg": [
+    1.0,
+    -4,
+    -2
+   ],
+   "what": "talking"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    516,
+    7,
+    500,
+    489
+   ],
+   "reg": [
+    1.0,
+    0,
+    -10
+   ],
+   "what": "facing a big bet"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1026,
+    7,
+    501,
+    489
+   ],
+   "reg": [
+    1.0,
+    -14,
+    -10
+   ],
+   "what": "lost a pot"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    8,
+    510,
+    499,
+    474
+   ],
+   "reg": [
+    1.0,
+    -10,
+    8
+   ],
+   "what": "won a pot: a faint smile"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    516,
+    524,
+    500,
+    459
+   ],
+   "reg": [
+    1.0,
+    -14,
+    29
+   ],
+   "what": "heads up: leaning in"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1026,
+    496,
+    501,
+    487
+   ],
+   "reg": [
+    1.0,
+    40,
+    8
+   ],
+   "what": "knocked out: the himation drawn round her"
+  }
+ },
+ "rest": "A1",
+ "table_y": 373,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  250,
+  350,
+  360
+ ],
+ "register_span": 40,
+ "collar_y": 250,
+ "neck": [
+  285,
+  245
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  220,
+  245,
+  340,
+  300
+ ],
+ "master": {
+  "piece": "medusa_parts/medusa_face/medusa_face_01.png",
+  "cut_below": 370,
+  "face": "medusa_parts/face.json",
+  "file": "medusa_parts/medusa_rig/master.png",
+  "layers": "medusa_parts/medusa_rig/face",
+  "head_box": [
+   25,
+   0,
+   410,
+   250
+  ],
+  "fit": [
+   0.6,
+   1.0
+  ],
+  "replace_head": true,
+  "heads": {
+   "still": "medusa_parts/medusa_face/medusa_face_22.png",
+   "hiss": "medusa_parts/medusa_face/medusa_face_23.png",
+   "drowse": "medusa_parts/medusa_face/medusa_face_24.png",
+   "viewer": "medusa_parts/medusa_face/medusa_face_25.png"
+  },
+  "shoulder_y": 200
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    30,
+    385
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     12,
+     360
+    ],
+    [
+     60,
+     360
+    ],
+    [
+     60,
+     385
+    ],
+    [
+     12,
+     385
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "her right forearm and hand",
+     "poly": [
+      [
+       8,
+       360
+      ],
+      [
+       70,
+       362
+      ],
+      [
+       110,
+       375
+      ],
+      [
+       160,
+       380
+      ],
+      [
+       205,
+       400
+      ],
+      [
+       240,
+       428
+      ],
+      [
+       245,
+       475
+      ],
+      [
+       150,
+       475
+      ],
+      [
+       90,
+       445
+      ],
+      [
+       40,
+       422
+      ],
+      [
+       8,
+       400
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    452,
+    385
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     438,
+     362
+    ],
+    [
+     485,
+     362
+    ],
+    [
+     485,
+     388
+    ],
+    [
+     438,
+     388
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "her left forearm and hand",
+     "poly": [
+      [
+       296,
+       395
+      ],
+      [
+       350,
+       375
+      ],
+      [
+       400,
+       378
+      ],
+      [
+       438,
+       362
+      ],
+      [
+       485,
+       365
+      ],
+      [
+       490,
+       410
+      ],
+      [
+       445,
+       422
+      ],
+      [
+       405,
+       428
+      ],
+      [
+       398,
+       475
+      ],
+      [
+       296,
+       475
+      ],
+      [
+       290,
+       430
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110
+  },
+  "still": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "drowse": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "hiss": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "knot": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "gaze_down": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "tuck": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "taste": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "nip": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "chin": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "runtime": "../web/art/medusa",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  10,
+  75
+ ],
+ "wood_rows_only": true,
+ "felt_blue": true,
+ "felt_holes": true,
+ "felt_teal": true
+}
