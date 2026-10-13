@@ -41,7 +41,7 @@ const ROOMS = {
     avoid: 'Nothing from Disney\'s Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger or any skull-and-crossbones flag.',
   },
   camelot: {
-    unique: 'The hall of the Round Table: the great table itself stands beyond the players, its circle running off into the dark past a hundred empty chairs.',
+    unique: 'The hall of the Round Table: the great table itself stands beyond the players, its circle running off into the dark past a hundred empty chairs, while the game is played at Death's table set before it.',
     backdrop: 'The great hall at Camelot: stone walls, heavy timber roof beams hung with long heraldic banners, rushes on the floor, a hearth big enough to stable a horse, tall narrow windows with night outside. Beyond the middle of the hall, the great Round Table, far bigger than a card table, curves away into the darkness, lined with high-backed chairs, empty, each with a name in gold',
     light: 'Firelight gold, with cool stone shadow',
     moving: ['The great hearth fire: 3 frames', 'A banner stirring in the draught: 2 frames', 'Candle flames: 3 frames'],
@@ -111,7 +111,7 @@ Every room is the same stack of layers, back to front:
 1. **Backdrop plate:** the room itself, wide (21:9) so it fills any phone in landscape. Big features go high and at the sides. The band behind the players' heads stays calmer, so faces read. Death deals from the far side, dead centre, so the backdrop directly behind him is the calmest part of all.
 2. **Room pieces that come and go** (the "presence"): the empty couch at Athens, the laurel wreath at Rome, Dracula watching from beside the fire. They are separate so they can leave when the story says.
 3. **The characters** (see \`CHARACTER-ART-PROMPTS.md\`), drawn with nothing behind them: no chairs are ever shown.
-4. **The table:** the SAME table in every room (the owner's call): \`art-tools/rooms/table.webp\`, a round green-baize table with a padded leather rim. A round top seen from the player's seat, so it's a wide ellipse. You are sitting at it: the game scales the table up so its near half falls below the bottom of the screen, the felt fills the lower part of the picture, and the far rim crosses the screen at about the middle. The far rim runs in front of the dealer and the far seats, and the sides curve down toward you, which is why a character in a side seat is cut lower than one at the back. The table hides every torso below its edge, and every floor.
+4. **The table:** Death's table, the SAME in every room (the owner's call): it goes wherever he deals: \`art-tools/rooms/table.webp\`, a round green-baize table with a padded leather rim. A round top seen from the player's seat, so it's a wide ellipse. You are sitting at it: the game scales the table up so its near half falls below the bottom of the screen, the felt fills the lower part of the picture, and the far rim crosses the screen at about the middle. The far rim runs in front of the dealer and the far seats, and the sides curve down toward you, which is why a character in a side seat is cut lower than one at the back. The table hides every torso below its edge, and every floor.
 5. **Forearms, hands and props on the felt**, then the cards and chips (the game draws those).
 6. **Moving pieces:** fire, lamp flames, rain, the Earth. A few frames each, looped: the room breathes, as the characters do.
 
