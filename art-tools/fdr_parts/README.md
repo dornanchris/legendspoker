@@ -30,7 +30,51 @@ forearms along the table's edge, hands folded in front.
 
 - The cards have a red back, not Death's; hide them.
 
-## Next: the pose drawings
+## The game's puppet: from the pose drawings
 
-`POSES.md` lists his 24 poses and the prompts for four pose sheets and a
-face-overlay sheet, to build him with `pose_rig.py` as Lincoln and Washington are.
+**Built by `art-tools/pose_rig.py` from `pose_rig.json`**, as Lincoln and
+Washington are, from the pose sheets (`sources/poses_a.png` .. `poses_d.png`)
+and the face-overlay sheet (`sources/face_overlays.png`, cut by
+`cut_face.json` into `fdr_face/`).
+
+    python3 art-tools/cut_sheet.py art-tools/fdr_parts/cut_face.json
+    python3 art-tools/pose_rig.py art-tools/fdr_parts/pose_rig.json
+
+- **Rest = pose A1** (hands resting apart). The master head (face sheet piece
+  1, drawn without the holder) replaces A1's head (`replace_head`).
+- **The holder is its own piece** (`master.props.holder`), cut from A1 as
+  drawn, on its own bone turning where it meets his mouth: his strong tell
+  (`holder_up`) and its decoy (`holder_low`) are rotations of it. The face
+  sheet's own holder (piece 2) is drawn about half as long again relative
+  to his head as in every pose, so it is not used.
+- **Face**: `face.json` maps eyes (half, closed, viewer, down, up, laugh),
+  brows (raised, together, narrow) and eleven mouths (rest, ah, ee, oh, oo,
+  m, l, smile, grin, half_smile, wry); no "f" mouth was drawn, so f and v
+  speak as "m". Heads 23 (laughing, head back), 24 (front-on) and 25 (turned
+  across the room) are head swaps; each has the holder drawn in, so a clip
+  showing one hides the holder piece.
+- **Arms** (hands apart, so a one-arm gesture changes only that forearm, in
+  the air): near `peek`, `check`, `call` (chips kept), `fold`, `greet` (D1),
+  `open` (D5); far `talk` (D2, the holder in his fingers), `pince` (C5),
+  `open` (D5). `strip_thin` drops rail strands clinging to his hands.
+- **Frames** (the whole figure leans): `bet` (A5) and `heads_up` (D6), placed
+  by the rail, the master head and holder riding on their necks.
+- **Validation**: `fdr_pose/validate.png`: 0.82% of the pixels above the rail
+  differ from A1 (the head, replaced, not counted).
+
+**Clips** (`web/art/fdr/anim.json`, 17, every one ending exactly at rest;
+preview `web/index.html#/puppet/fdr`): `check`, `peek`, `call`, `bet`,
+`fold`; tells `holder_up` (strong) beside `holder_low`, `broad_smile`
+(bluffing) beside `half_smile`; idles `pince_nez`, `nod`, `laugh`; beats
+`talk`, `look_at_you`, `lost_pot`, `won_pot`, `heads_up`.
+
+## Not used: sheet B and pose C6 (off-model cuffs)
+
+Sheet B (all in, show, collect, taking the holder out, **tapping the ash**:
+his weak tell, turning the holder) and pose C6 (settling the cape) draw
+Washington's buff turned-back cuffs with lace, not FDR's white shirt cuffs:
+the Washington sheet attached as the layout model leaked into them. They
+need a redraw; `POSES.md` has the prompt. Until then FDR has no all-in,
+show, collect or ash-tap clip.
+
+`POSES.md` lists his 24 poses and the prompts.

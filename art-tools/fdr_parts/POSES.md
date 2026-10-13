@@ -143,3 +143,30 @@ Every piece is drawn at EXACTLY the angle and size of his head in the at-rest po
 - His head turned toward the viewer, nearly front-on (with the holder)
 - His head turned away across the room, nodding (with the holder)
 ```
+
+## Redraw: sheet B and the cape (the cuffs came out as Washington's)
+
+The first sheet B and pose C6 drew buff turned-back cuffs with lace frills:
+Washington's, from the Washington sheet attached as the layout model. Redraw
+them with **FDR's own sheets attached instead** (his rigging sheet and his
+pose sheet A), and nothing of Washington's:
+
+```
+Character pose sheet for 2D animation reference: Franklin D. Roosevelt, exactly as on the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same clothes.
+
+His cuffs are plain WHITE SHIRT CUFFS with small gold cufflinks, showing just below the dark pinstripe sleeves, exactly as in the attached pose sheet. NO turned-back coloured cuffs, NO lace, NO frills.
+
+Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, the cape over his shoulders and upper arms, no chair, nothing behind him. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the first pose of the attached sheet (hands resting apart). The holder stays in his teeth at its usual angle unless the pose says otherwise.
+
+1. All in: both hands pushing his whole stack of chips forward, leaning over the table, beaming
+2. Showing: his right hand turning two cards face up; the card faces are BLANK white, no ranks, no suits
+3. Collecting the pot: both forearms out on the felt, hands cupped, drawing a pile of chips in
+4. Taking the cigarette holder from his mouth between the first two fingers of his right hand
+5. Tapping the ash from the holder: his right hand holding it out over the table edge, index finger tapping it, a little ash falling
+6. Settling his cape across his shoulders: both hands drawing its edges forward
+
+Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No hat, no drinks, no ashtray, no chair.
+```
+
+(Turning the holder in his fingers, the old B6, is dropped: the cape takes
+its cell, and the ash tap's decoy can be `holder_low`.)

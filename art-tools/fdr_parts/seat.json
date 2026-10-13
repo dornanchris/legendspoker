@@ -59,5 +59,7 @@
   "ne": 30,
   "fe": 30,
   "ey": -30
- }
+ },
+ "layout": "fdr_parts/fdr_rig/parts_sheet_layout.json",
+ "note": "Superseded for the game by pose_rig.json (built from the pose illustrations). Kept for the parts-sheet build and its head swaps."
 }

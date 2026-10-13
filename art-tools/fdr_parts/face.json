@@ -1,0 +1,15 @@
+{
+ "master": "fdr_parts/fdr_face/fdr_face_01.png",
+ "pieces": "fdr_parts/fdr_face/fdr_face_%02d.png",
+ "layers": {
+  "eyes": {"half": 3, "closed": 4, "viewer": 5, "down": 6, "up": 7, "laugh": 8},
+  "brows": {"raised": 9, "together": 10, "narrow": 11},
+  "mouth": {"rest": 12, "ah": 13, "ee": 14, "oh": 15, "oo": 16, "m": 17, "l": 18, "smile": 19, "grin": 20, "half_smile": 21, "wry": 22}
+ },
+ "regions": {
+  "eyes": {"keep": [[175, 138], [345, 132], [345, 200], [175, 200]]},
+  "brows": {"keep": [[175, 85], [345, 85], [345, 132], [175, 138]]},
+  "mouth": {"keep": [[190, 214], [340, 214], [340, 305], [190, 305]],
+            "except": [[[255, 150], [335, 150], [335, 216], [300, 220], [262, 214]]]}
+ }
+}

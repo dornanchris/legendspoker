@@ -52,7 +52,14 @@ A frame takes its pose's placement unless it gives "reg"; a pose drawn on
 another sheet at another size is placed by hand with its own "reg". Room
 round a frame is "frame_margin" (a hat raised high); "drop_wood" cuts the
 chair's red-brown wherever it is, and "back_strip" clears anything thin in
-the columns at his back (the chair's outline).
+the columns at his back (the chair's outline). "strip_thin": n drops strands
+under about 2n pixels wide from arm pieces (rail lines clinging to a hand);
+leave it off where fingers are that thin.
+
+Master "props" are things on the head cut from the rest pose as drawn (FDR's
+holder in his teeth): {"holder": {"poly": [...], "pivot": [x, y], "z": 20.4}}.
+Each is its own part on its own bone (parent: head, pivot where it meets the
+mouth), so a clip can tilt it; it is cut from the body and from frames' heads.
 
 Writes the runtime rig (web/art/<id>/), a build_puppet layout
 (art-tools/<id>_layout.json) and, in <id>_parts/<id>_pose/, every image plus
@@ -159,7 +166,7 @@ def to_rest_space(rgba, reg, shape):
     return np.array(out)
 
 
-def extend_elbow(rgba, elbow, radius, cover):
+def extend_elbow(rgba, elbow, radius, cover, below=None):
     """Grow an arm asset round its elbow point (inside `cover`, the region the
     upper arm hides), with the sleeve's own colours, so the forearm can turn
     about the elbow without its cut end ever showing."""
@@ -167,10 +174,14 @@ def extend_elbow(rgba, elbow, radius, cover):
     yy, xx = np.mgrid[:A.shape[0], :A.shape[1]]
     disk = (xx - elbow[0]) ** 2 + (yy - elbow[1]) ** 2 <= radius ** 2
     zone = disk & cover & ~A
+    if below is not None:                                  # never over the table: it would show there
+        zone &= yy < below
     if not zone.any():
         return rgba
-    # the sleeve colours: dark cloth only (never the outline's black or the cuff)
-    cloth = A & (rgba[..., :3].astype(int).max(-1) < 90) & (rgba[..., :3].astype(int).max(-1) > 20)
+    # the sleeve colours: dark, neutral cloth only (never the outline's black,
+    # the cuff, or the rail's dark red shadow)
+    cc = rgba[..., :3].astype(int)
+    cloth = A & (cc.max(-1) < 90) & (cc.max(-1) > 20) & (np.ptp(cc, axis=-1) < 25)
     out = rgba.copy()
     filled = diffuse_fill(rgba[..., :3], zone, cloth, iters=60)
     out[..., :3] = np.where(zone[..., None], filled, rgba[..., :3]).astype(np.uint8)
@@ -284,8 +295,20 @@ def main(spec_path):
                 blue = (c[..., 2] - c[..., 0] > 18) & (c[..., 2] > 45)
                 near = ndimage.binary_dilation(blue, iterations=4)
                 m &= ~ndimage.binary_dilation(blue, iterations=1) & ~(near & (c.min(-1) > 170) & (np.ptp(c, axis=-1) < 45))
+            c = src[..., :3].astype(int)                   # the sheet's white caught between a hand and him
+            white = (c.min(-1) > 236) & (np.ptp(c, axis=-1) < 12) & (src[..., 3] > 128)
+            lab, n = ndimage.label(white)
+            if n:
+                sz = ndimage.sum(white, lab, range(1, n + 1))
+                m &= ~ndimage.binary_dilation(np.isin(lab, 1 + np.nonzero(sz >= 20)[0]), iterations=1)
+            if spec.get('strip_thin'):                     # rail strands clinging to a hand: nothing that thin
+                t = spec['strip_thin']
+                pr_ = np.zeros(m.shape, bool)
+                for pp in a.get('props', []):
+                    pr_ |= poly_mask(src.shape[:2], pp)
+                m &= ndimage.binary_dilation(ndimage.binary_opening(m, iterations=t), iterations=t) | pr_
             m = biggest(m)
-            m = ndimage.binary_fill_holes(m) & (src[..., 3] > 128)
+            m = ndimage.binary_fill_holes(m) & (src[..., 3] > 128) & ~(white & ~m)
             rgba = src.copy()
             rgba[..., 3] = np.where(m, src[..., 3], 0)
             if not a.get('props'):                         # (peeling would eat the chips' red)
@@ -303,7 +326,7 @@ def main(spec_path):
     for side, arm in spec['arms'].items():
         upper[side] = um = body_vis & poly_mask(shape, arm['upper'])
         for state in arm['assets']:                        # grown only where the upper arm hides it
-            assets[(side, state)] = extend_elbow(assets[(side, state)], arm['elbow'], arm.get('extend', 16), um)
+            assets[(side, state)] = extend_elbow(assets[(side, state)], arm['elbow'], arm.get('extend', 16), um, ty)
 
     # ---------------------------------------------------------------- body
     # his own silhouette (never the chair or the table round him), arms included
@@ -320,6 +343,15 @@ def main(spec_path):
     # the chair's wood mixed into his outline: brown on the body's outer edge goes
     # (no skin there: the head and hands are their own pieces)
     peel_wood(body, rows_below=240)
+    for _ in range(3):                                     # paper white and grey left on his outline
+        c = body[..., :3].astype(int)
+        out_ = np.pad(body[..., 3] < 128, 1, constant_values=True)          # past the panel's edge is outside
+        rim = ndimage.binary_dilation(out_, iterations=2)[1:-1, 1:-1] & (body[..., 3] > 0)
+        pale = rim & (((c.min(-1) > 185) & (np.ptp(c, axis=-1) < 28)) | ((c.min(-1) > 100) & (np.ptp(c, axis=-1) < 16)))
+        pale[:spec['collar_y']] = False                    # (hair is grey)
+        if not pale.any():
+            break
+        body[..., 3] = np.where(pale, 0, body[..., 3])
     if spec['master'].get('replace_head'):
         # the master head is a separate drawing, not quite this head's shape:
         # the pose's own head goes (head_box, above the collar), or its outline
@@ -328,6 +360,20 @@ def main(spec_path):
         cut = np.zeros(shape, bool)
         cut[hb[1]:min(hb[3], spec['collar_y']), hb[0]:hb[2]] = True
         body[..., 3] = np.where(cut, 0, body[..., 3])
+    # props on the head, cut from the rest pose as drawn (a holder in the teeth):
+    # each its own piece on its own bone, so it can tilt; gone from the body
+    head_props = {}
+    for pname, pr in spec['master'].get('props', {}).items():
+        src = poses[pr.get('pose', rest)]
+        pm_ = poly_mask(shape, pr['poly']) & (src[..., 3] > 128)
+        c = src[..., :3].astype(int)
+        skin = (c[..., 0] > 160) & (c[..., 0] - c[..., 2] > 60) & (c[..., 1] > 90) & (c[..., 1] < 175)
+        pm_ &= ~skin
+        pm_ = biggest(pm_)
+        prgba = src.copy()
+        prgba[..., 3] = np.where(pm_, src[..., 3], 0)
+        head_props[pname] = (prgba, ndimage.binary_dilation(pm_, iterations=2))
+        body[..., 3] = np.where(head_props[pname][1], 0, body[..., 3])
 
     for side, um in list(upper.items()):                   # the upper arms, cut from the clean body
         u = body.copy()
@@ -355,6 +401,8 @@ def main(spec_path):
     ox, oy = round(hb[0] + mx / k), round(hb[1] + my / k)
     ys, xs = slice(max(0, oy), min(shape[0], oy + ma.shape[0])), slice(max(0, ox), min(shape[1], ox + ma.shape[1]))
     mhead[ys, xs] = ma[ys.start - oy:ys.stop - oy, xs.start - ox:xs.stop - ox]
+    for _, pmask in head_props.values():                   # a frame's own holder goes with its head
+        mhead |= ndimage.binary_dilation(pmask, iterations=3)
 
     # ---------------------------------------------------------------- frames
     # whole-figure drawings for the poses that move all of him (a lean over the
@@ -541,6 +589,9 @@ def main(spec_path):
         print(f'  head {state}: at {dx}, {dy} on the master')
         part(f'head.{state}', f, x0 + (dx + pw / 2) * mk, y0 + (dy + ph / 2) * mk, 20, 'head', 'head', scale=mk, visible=False)
     part('torso_over', 'torso_over.png', cx0, cy0, 21, 'torso', 'torso_over')
+    for pname, (prgba, _) in head_props.items():
+        save(f'prop_{pname}', prgba)
+        part(f'{pname}.rest', f'prop_{pname}.png', cx0, cy0, spec['master']['props'][pname].get('z', 20.4), pname, pname)
     fcx, fcy = X(-FM) + fshape[1] * k / 2, Y(-FM) + fshape[0] * k / 2
     for name, (rgba, hx, hy) in frames.items():
         save(f'frame_{name}', rgba)
@@ -571,6 +622,8 @@ def main(spec_path):
     neck = (X(spec['neck'][0]), Y(spec['neck'][1]))
     bones = [{'name': 'torso', 'parent': None, 'pivot': [X(150), TABLE]},
              {'name': 'head', 'parent': 'torso', 'pivot': [round(neck[0], 2), round(neck[1], 2)]}]
+    for pname, pr in spec['master'].get('props', {}).items():
+        bones.append({'name': pname, 'parent': 'head', 'pivot': [round(X(pr['pivot'][0]), 2), round(Y(pr['pivot'][1]), 2)]})
     for side, arm in spec['arms'].items():
         bones.append({'name': f'arm_{side}', 'parent': 'torso',
                       'pivot': [round(X(arm['elbow'][0]), 2), round(Y(arm['elbow'][1]), 2)]})
