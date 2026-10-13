@@ -145,7 +145,7 @@ art-tools/
                   champion): pose sheets, face sheet, pose_rig.json;
                   blackbeard_parts/, kidd_parts/, silver_parts/, davy_jones_parts/: the
                   Pirate Cove, the same way; merlin_parts/, lancelot_parts/,
-                  green_knight_parts/: Camelot
+                  green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -383,13 +383,17 @@ fire and its sparks at the far left, on screens wider than 16:9);
 clips, seat 1; his staff a prop cut by colour, over his head), rebuilt from
 the style-locked redraw (its pose sheet C still owed); **Lancelot is
 built** (`#/puppet/lancelot`, 24 clips, seat 2), the first drawn under the
-style lock; the Green Knight's prompts are written (seat 3, a quarter bigger), in TWO
+style lock; **the Green Knight is built** (`#/puppet/green_knight` and
+`#/puppet/green_knight_bare`, 24 clips each, seat 3, a quarter bigger), in TWO
 looks (the owner's, and the design doc's "green armour"): helmed in green
 plate, eyes in the visor slit, no mouth (he talks with helm and hands), a
 red nick at his neck as he is knocked out; and after his return
 (`green_knight_bare_parts/`), helm gone, beaten and colder (a human face, no
-green skin: the owner; a bandaged neck, battered armour), a separate puppet
-the stage is to swap in when he comes back. **The style lock** (the owner: Davy Jones and Merlin
+green skin: the owner; a bandaged neck, battered armour; his return lines
+rewritten colder), a separate puppet the table seats when he comes back
+(`RETURNED` in `web/puppet/cast.ts`). The helm has no mouth: a face with
+`speech.nod` nods as it speaks. Arthur's prompts are written; he is the last
+of Camelot. **The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
 style drifted a step each time. Now `poses.py` (`"style_lock": true`) names
