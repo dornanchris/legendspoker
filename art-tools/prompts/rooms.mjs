@@ -43,11 +43,11 @@ const ROOMS = {
   },
   camelot: {
     unique: 'The hall of the Round Table: the great table itself stands beyond the players, its circle running off into the dark past a hundred empty chairs, while the game is played at Death\'s table set before it.',
-    backdrop: 'The great hall at Camelot: stone walls, heavy timber roof beams hung with long heraldic banners, rushes on the floor, a hearth big enough to stable a horse, tall narrow windows with night outside. Beyond the middle of the hall, the great Round Table, far bigger than a card table, curves away into the darkness, lined with high-backed chairs, empty, each with a name in gold',
-    light: 'Firelight gold, with cool stone shadow',
-    moving: ['The great hearth fire: 3 frames', 'A banner stirring in the draught: 2 frames', 'Candle flames: 3 frames'],
+    backdrop: 'The great hall at Camelot at night, on a feast day. Grey dressed-stone walls, heavy dark timber roof beams high overhead, and long heraldic banners hanging from them across the top of the picture: plain bold devices (a red dragon, a gold lion, a white hart, a green bough) on blue, red and gold cloth, no lettering. Across the back of the hall, far behind the players, the great Round Table, far bigger than a card table: its far edge curves across the room at about 45% of the height and runs off into darkness at both sides, lined with tall, high-backed oak chairs, all empty, each back carved with a name in gold (the names too small to read). The chair backs show in the gaps between the players (about 27%, 42%, 58% and 73% across) and fade into shadow toward the sides. Dead centre behind the dealer: plain grey stone and the empty backs of two chairs, softly lit, calm and mid-toned. On the LEFT side, a huge stone hearth, big enough to stable a horse, with a roaring fire, its mantel at about half height. On the RIGHT side, two tall, narrow arched windows with deep blue night and a few stars outside, and below them a heavy oak door. High up, two iron candle wheels hang from the beams on chains, one over the left third and one over the right third, each ringed with eight lit candles with clear bright flames. Rushes strewn on the floor',
+    light: 'Firelight and candle gold, with cool grey stone and blue night in the windows',
+    moving: ['The hearth fire, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker', 'One candle flame, drawn alone at the size the candles on the candle wheels are in the backdrop: 3 frames', 'A few sparks rising from the fire: 3 small clusters of orange sparks, each alone'],
     presence: [],
-    avoid: 'Nothing from Disney\'s The Sword in the Stone, Monty Python, or the A24 Green Knight film.',
+    avoid: 'Nothing from Disney\'s The Sword in the Stone, Monty Python, the A24 Green Knight film, the film Excalibur or the BBC\'s Merlin. No real coats of arms copied, no lettering on the banners.',
   },
   rome: {
     unique: 'Three eras stacked in one room: ancient brick below, Renaissance frescoes above, and a chain to the dog\'s chair. The richest room: imperial purple and gold.',

@@ -40,7 +40,7 @@ The table screen has to hold four opponents, Death dealing between them, and the
 | The White House | Warm lamplight and firelight, gold and amber | — |
 | Athens — The Symposium | Oil-lamp gold, warm and low, with blue night in the doorway | 2 |
 | Pirate Cove | Lantern orange inside, cool moonlight blue through the opening in the rock | — |
-| Camelot | Firelight gold, with cool stone shadow | — |
+| Camelot | Firelight and candle gold, with cool grey stone and blue night in the windows | — |
 | Imperial Rome | Brazier orange and fresco colour above, dusky violet through the window | 1 |
 | Baker Street | Gaslight yellow and firelight, fog-grey at the window | — |
 | Transylvania | Firelight red-orange against cold blue moonlight | 2 |
@@ -167,17 +167,17 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 - **The room:** The great hall at Camelot. The Round Table runs off into the dark, past a hundred empty chairs, each with a knight's name in gold; tonight Death's table has been set before it, and the knights have carried their own chairs over. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.
 - **Sounds (for reference):** a great hearth fire; wind at a high window; a horse stamping in the yard; cups set down on oak; a far-off chapel bell
-- **Light:** Firelight gold, with cool stone shadow.
-- **Avoid:** Nothing from Disney's The Sword in the Stone, Monty Python, or the A24 Green Knight film.
+- **Light:** Firelight and candle gold, with cool grey stone and blue night in the windows.
+- **Avoid:** Nothing from Disney's The Sword in the Stone, Monty Python, the A24 Green Knight film, the film Excalibur or the BBC's Merlin. No real coats of arms copied, no lettering on the banners.
 
 **Backdrop plate:**
 
 ```
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
 
-The room: The great hall at Camelot: stone walls, heavy timber roof beams hung with long heraldic banners, rushes on the floor, a hearth big enough to stable a horse, tall narrow windows with night outside. Beyond the middle of the hall, the great Round Table, far bigger than a card table, curves away into the darkness, lined with high-backed chairs, empty, each with a name in gold.
-Light: Firelight gold, with cool stone shadow.
-Must NOT resemble: Nothing from Disney's The Sword in the Stone, Monty Python, or the A24 Green Knight film.
+The room: The great hall at Camelot at night, on a feast day. Grey dressed-stone walls, heavy dark timber roof beams high overhead, and long heraldic banners hanging from them across the top of the picture: plain bold devices (a red dragon, a gold lion, a white hart, a green bough) on blue, red and gold cloth, no lettering. Across the back of the hall, far behind the players, the great Round Table, far bigger than a card table: its far edge curves across the room at about 45% of the height and runs off into darkness at both sides, lined with tall, high-backed oak chairs, all empty, each back carved with a name in gold (the names too small to read). The chair backs show in the gaps between the players (about 27%, 42%, 58% and 73% across) and fade into shadow toward the sides. Dead centre behind the dealer: plain grey stone and the empty backs of two chairs, softly lit, calm and mid-toned. On the LEFT side, a huge stone hearth, big enough to stable a horse, with a roaring fire, its mantel at about half height. On the RIGHT side, two tall, narrow arched windows with deep blue night and a few stars outside, and below them a heavy oak door. High up, two iron candle wheels hang from the beams on chains, one over the left third and one over the right third, each ringed with eight lit candles with clear bright flames. Rushes strewn on the floor.
+Light: Firelight and candle gold, with cool grey stone and blue night in the windows.
+Must NOT resemble: Nothing from Disney's The Sword in the Stone, Monty Python, the A24 Green Knight film, the film Excalibur or the BBC's Merlin. No real coats of arms copied, no lettering on the banners.
 ```
 
 **Moving and story pieces:**
@@ -186,9 +186,9 @@ Must NOT resemble: Nothing from Disney's The Sword in the Stone, Monty Python, o
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
 
 For the room: Camelot. Parts:
-- The great hearth fire: 3 frames
-- A banner stirring in the draught: 2 frames
-- Candle flames: 3 frames
+- The hearth fire, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- One candle flame, drawn alone at the size the candles on the candle wheels are in the backdrop: 3 frames
+- A few sparks rising from the fire: 3 small clusters of orange sparks, each alone
 
 Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
 ```
