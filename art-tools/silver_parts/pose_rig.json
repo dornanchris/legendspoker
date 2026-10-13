@@ -390,7 +390,7 @@
  ],
  "master": {
   "piece": "silver_parts/silver_face/silver_face_01.png",
-  "cut_below": 290,
+  "cut_below": 340,
   "face": "silver_parts/face.json",
   "file": "silver_parts/silver_rig/master.png",
   "layers": "silver_parts/silver_rig/face",
@@ -399,10 +399,6 @@
    0,
    352,
    208
-  ],
-  "fit": [
-   0.5,
-   1.0
   ],
   "replace_head": true,
   "heads": {
@@ -551,7 +547,12 @@
     "parent": "torso",
     "z": 21.5
    }
-  }
+  },
+  "place": [
+   -83,
+   7,
+   0.68
+  ]
  },
  "arms": {
   "near": {
@@ -947,6 +948,6 @@
   75
  ],
  "wood_rows_only": true,
- "felt_teal": true,
- "felt_holes": true
+ "felt_holes": true,
+ "felt_blue": true
 }

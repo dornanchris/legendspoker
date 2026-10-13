@@ -69,6 +69,8 @@ in shadow between two hands). "rail_band": [above, below] drops only rail-colour
 within those rows round the table line: the drawn rail is a thin band, and
 skin shading as orange as it reaches up the arm. "head_match": "face" places a
 frame's master head on its own drawn head instead of on the stock.
+Master "place" ([x, y, scale] from head_box's corner) sets the master head
+by hand where the fit cannot find it (Silver: the parrot in the box).
 Master "cloth" ([lo, hi], default [0, 90]) is the brightness of the cloth
 that fills a replaced head's shoulders (a light cloak, not a dark coat).
 "fill_shoulders" (with master "shoulder_y", "shoulder_close") fills the coat
@@ -534,7 +536,10 @@ def main(spec_path):
     ref = os.path.join(out_dir, '_rest_head.png')
     hb = m['head_box']
     Image.fromarray(upscale(R[hb[1]:hb[3], hb[0]:hb[2]], k)).save(ref)
-    mx, my, mk = fit_head(ref, os.path.join(HERE, m['file']), *m.get('fit', [0.5, 1.2]))
+    if 'place' in m:                                       # set by hand: [x, y, scale] in head_box pixels
+        mx, my, mk = m['place'][0] * k, m['place'][1] * k, m['place'][2] * k
+    else:
+        mx, my, mk = fit_head(ref, os.path.join(HERE, m['file']), *m.get('fit', [0.5, 1.2]))
     mw, mh = Image.open(os.path.join(HERE, m['file'])).size
     print(f'  master head on the rest head: {mx}, {my}, scale {mk}')
     # the master head's silhouette in the rest pose's pixels (for cutting a frame's own head)
