@@ -23,6 +23,8 @@ import odysseusRig from '../art/odysseus/rig.json'
 import odysseusAnim from '../art/odysseus/anim.json'
 import blackbeardRig from '../art/blackbeard/rig.json'
 import blackbeardAnim from '../art/blackbeard/anim.json'
+import kiddRig from '../art/kidd/rig.json'
+import kiddAnim from '../art/kidd/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -63,6 +65,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   medusa: { rig: medusaRig as unknown as RigData, anim: medusaAnim as unknown as AnimData, base: 'art/medusa/' },
   odysseus: { rig: odysseusRig as unknown as RigData, anim: odysseusAnim as unknown as AnimData, base: 'art/odysseus/' },
   blackbeard: { rig: blackbeardRig as unknown as RigData, anim: blackbeardAnim as unknown as AnimData, base: 'art/blackbeard/' },
+  kidd: { rig: kiddRig as unknown as RigData, anim: kiddAnim as unknown as AnimData, base: 'art/kidd/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 

@@ -1,0 +1,93 @@
+{
+ "master": "kidd_parts/kidd_face/kidd_face_01.png",
+ "pieces": "kidd_parts/kidd_face/kidd_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7
+  },
+  "brows": {
+   "raised": 8,
+   "together": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 17,
+   "chew": 18,
+   "grin": 19,
+   "aggrieved": 20
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     240,
+     125
+    ],
+    [
+     405,
+     125
+    ],
+    [
+     405,
+     163
+    ],
+    [
+     240,
+     163
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     240,
+     163
+    ],
+    [
+     405,
+     163
+    ],
+    [
+     405,
+     200
+    ],
+    [
+     240,
+     200
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     255,
+     238
+    ],
+    [
+     425,
+     238
+    ],
+    [
+     425,
+     300
+    ],
+    [
+     255,
+     300
+    ]
+   ]
+  }
+ }
+}

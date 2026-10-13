@@ -143,7 +143,7 @@ art-tools/
   socrates_parts/, leonidas_parts/, medusa_parts/, cyclops_parts/,
                   odysseus_parts/  the Athens table (seats 1-4 and its late
                   champion): pose sheets, face sheet, pose_rig.json;
-                  blackbeard_parts/: the Pirate Cove's champion, the same way
+                  blackbeard_parts/, kidd_parts/: the Pirate Cove, the same way
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -368,8 +368,10 @@ a dark seam.
 Athens stays the plain table until all five have puppets.
 `?room=athens` stages any table in it, to look at a room before its cast.
 **Pirate Cove's room is built** too (flickering lanterns, glints on the
-water, a gull), and **Blackbeard** (`#/puppet/blackbeard`, 25 clips, seat 4);
-Kidd, Silver and Davy Jones are next.
+water, a gull), **Blackbeard** (`#/puppet/blackbeard`, 25 clips, seat 4) and
+**Kidd** (`#/puppet/kidd`, 20 clips, seat 1; his pose sheet D is still owed).
+Silver's and Davy Jones's prompts are written (`<id>_parts/POSES.md`, from
+`poses_spec.json` by `art-tools/prompts/poses.py`).
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,

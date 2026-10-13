@@ -1,0 +1,318 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "kidd_face_01.png",
+      "label": "",
+      "x": 14,
+      "y": 4,
+      "w": 453,
+      "h": 370,
+      "pivot": [
+        226.5,
+        185.0
+      ],
+      "area": 122136
+    },
+    {
+      "index": 2,
+      "file": "kidd_face_02.png",
+      "label": "",
+      "x": 437,
+      "y": 149,
+      "w": 161,
+      "h": 89,
+      "pivot": [
+        80.5,
+        44.5
+      ],
+      "area": 11227
+    },
+    {
+      "index": 3,
+      "file": "kidd_face_03.png",
+      "label": "",
+      "x": 617,
+      "y": 148,
+      "w": 159,
+      "h": 87,
+      "pivot": [
+        79.5,
+        43.5
+      ],
+      "area": 10962
+    },
+    {
+      "index": 4,
+      "file": "kidd_face_04.png",
+      "label": "",
+      "x": 796,
+      "y": 146,
+      "w": 164,
+      "h": 90,
+      "pivot": [
+        82.0,
+        45.0
+      ],
+      "area": 11680
+    },
+    {
+      "index": 5,
+      "file": "kidd_face_05.png",
+      "label": "",
+      "x": 980,
+      "y": 147,
+      "w": 164,
+      "h": 89,
+      "pivot": [
+        82.0,
+        44.5
+      ],
+      "area": 11416
+    },
+    {
+      "index": 6,
+      "file": "kidd_face_06.png",
+      "label": "",
+      "x": 1164,
+      "y": 147,
+      "w": 163,
+      "h": 89,
+      "pivot": [
+        81.5,
+        44.5
+      ],
+      "area": 11342
+    },
+    {
+      "index": 7,
+      "file": "kidd_face_07.png",
+      "label": "",
+      "x": 1347,
+      "y": 146,
+      "w": 167,
+      "h": 90,
+      "pivot": [
+        83.5,
+        45.0
+      ],
+      "area": 11554
+    },
+    {
+      "index": 8,
+      "file": "kidd_face_08.png",
+      "label": "",
+      "x": 782,
+      "y": 261,
+      "w": 167,
+      "h": 90,
+      "pivot": [
+        83.5,
+        45.0
+      ],
+      "area": 11685
+    },
+    {
+      "index": 9,
+      "file": "kidd_face_09.png",
+      "label": "",
+      "x": 979,
+      "y": 261,
+      "w": 164,
+      "h": 89,
+      "pivot": [
+        82.0,
+        44.5
+      ],
+      "area": 11334
+    },
+    {
+      "index": 10,
+      "file": "kidd_face_10.png",
+      "label": "",
+      "x": 26,
+      "y": 388,
+      "w": 212,
+      "h": 122,
+      "pivot": [
+        106.0,
+        61.0
+      ],
+      "area": 19429
+    },
+    {
+      "index": 11,
+      "file": "kidd_face_11.png",
+      "label": "",
+      "x": 263,
+      "y": 388,
+      "w": 204,
+      "h": 126,
+      "pivot": [
+        102.0,
+        63.0
+      ],
+      "area": 19276
+    },
+    {
+      "index": 12,
+      "file": "kidd_face_12.png",
+      "label": "",
+      "x": 505,
+      "y": 389,
+      "w": 218,
+      "h": 125,
+      "pivot": [
+        109.0,
+        62.5
+      ],
+      "area": 21373
+    },
+    {
+      "index": 13,
+      "file": "kidd_face_13.png",
+      "label": "",
+      "x": 764,
+      "y": 388,
+      "w": 212,
+      "h": 128,
+      "pivot": [
+        106.0,
+        64.0
+      ],
+      "area": 20864
+    },
+    {
+      "index": 14,
+      "file": "kidd_face_14.png",
+      "label": "",
+      "x": 1024,
+      "y": 389,
+      "w": 228,
+      "h": 125,
+      "pivot": [
+        114.0,
+        62.5
+      ],
+      "area": 21454
+    },
+    {
+      "index": 15,
+      "file": "kidd_face_15.png",
+      "label": "",
+      "x": 1290,
+      "y": 386,
+      "w": 223,
+      "h": 129,
+      "pivot": [
+        111.5,
+        64.5
+      ],
+      "area": 21621
+    },
+    {
+      "index": 16,
+      "file": "kidd_face_16.png",
+      "label": "",
+      "x": 33,
+      "y": 525,
+      "w": 222,
+      "h": 126,
+      "pivot": [
+        111.0,
+        63.0
+      ],
+      "area": 21273
+    },
+    {
+      "index": 17,
+      "file": "kidd_face_17.png",
+      "label": "",
+      "x": 286,
+      "y": 526,
+      "w": 194,
+      "h": 123,
+      "pivot": [
+        97.0,
+        61.5
+      ],
+      "area": 18504
+    },
+    {
+      "index": 18,
+      "file": "kidd_face_18.png",
+      "label": "",
+      "x": 517,
+      "y": 525,
+      "w": 214,
+      "h": 125,
+      "pivot": [
+        107.0,
+        62.5
+      ],
+      "area": 20621
+    },
+    {
+      "index": 19,
+      "file": "kidd_face_19.png",
+      "label": "",
+      "x": 773,
+      "y": 525,
+      "w": 220,
+      "h": 126,
+      "pivot": [
+        110.0,
+        63.0
+      ],
+      "area": 20759
+    },
+    {
+      "index": 20,
+      "file": "kidd_face_20.png",
+      "label": "",
+      "x": 1033,
+      "y": 525,
+      "w": 222,
+      "h": 126,
+      "pivot": [
+        111.0,
+        63.0
+      ],
+      "area": 21678
+    },
+    {
+      "index": 21,
+      "file": "kidd_face_21.png",
+      "label": "",
+      "x": 287,
+      "y": 647,
+      "w": 471,
+      "h": 359,
+      "pivot": [
+        235.5,
+        179.5
+      ],
+      "area": 121708
+    },
+    {
+      "index": 22,
+      "file": "kidd_face_22.png",
+      "label": "",
+      "x": 779,
+      "y": 647,
+      "w": 467,
+      "h": 359,
+      "pivot": [
+        233.5,
+        179.5
+      ],
+      "area": 116915
+    }
+  ]
+}
