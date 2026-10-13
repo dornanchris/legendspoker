@@ -16,7 +16,9 @@ each seat's centre, scale and mirror, and how far below the rim its table
 line sits. The numbers are mock_screen.py's, so the mock and the game agree.
 
 A room may have pieces (art-tools/rooms/<room>/pieces.json): cut from a
-sheet on white, each the components wholly inside its box, written as PNGs
+sheet on white, each the components wholly inside its box (or, with "crop",
+everything inside it, cut where the box cuts; with "bright": [r, g], only
+the bright fire inside it: Camelot's hearth frames drew the whole fireplace), written as PNGs
 beside the backdrop, with where they stand in design space. `presence` names
 the piece shown until the table's late champion arrives and the one after;
 `loops` cycle frames (lamp flames) at each of their spots.
@@ -73,6 +75,18 @@ def cut_pieces():
         # showing through a loop (a cup's handle)
         own = np.isin(lab, keep)
         mask = nd.binary_fill_holes(own) & (own | (sheet.min(axis=2) < 240))
+        inbox = np.zeros(fg.shape, bool)
+        inbox[y0:y1, x0:x1] = True
+        if p.get('crop'):                                  # all of it inside the box, cut where the box cuts (a
+            mask = nd.binary_fill_holes(fg & inbox)        # candle's flame, without the candle under it)
+        if 'bright' in p:                                  # only the fire in a drawn hearth: red and green above
+            rr, gg = p['bright']                           # these, in pieces of 200 px or more
+            s_ = sheet.astype(int)
+            hot = (s_[..., 0] > rr) & (s_[..., 1] > gg) & (s_[..., 2] < 200) & inbox   # (never the sheet's white)
+            hl, hn = nd.label(hot)
+            sizes = nd.sum(hot, hl, range(1, hn + 1))
+            hot = np.isin(hl, 1 + np.nonzero(sizes >= 200)[0])
+            mask = nd.binary_dilation(nd.binary_fill_holes(hot)) & inbox
         ys, xs = np.nonzero(mask)
         t, b_, l, r = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
         rgba = np.dstack([sheet[t:b_, l:r], (mask[t:b_, l:r] * 255).astype('uint8')])

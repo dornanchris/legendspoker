@@ -154,7 +154,7 @@ art-tools/
   rooms/          finished room art: table.webp (the one table every room
                   shares) and a folder per venue: its backdrop, and its
                   pieces (pieces.json: the cut, where they stand, story
-                  pieces and loops). white_house/, athens/
+                  pieces and loops). white_house/, athens/, pirate_cove/, camelot/
   mock_screen.py  draws the table screen with the current art: game first
   room_web.py     publishes a room to web/art/rooms/: its rim curve, chairs
                   and pieces (preview one: web/index.html?room=athens)
@@ -376,6 +376,10 @@ Jones** (`#/puppet/davy_jones`, 24 clips, seat 3, mirrored; when his face
 sinks into shadow the lantern nearest him gutters: `gutter` in anim.json)
 and **Blackbeard** (`#/puppet/blackbeard`, 25 clips, seat 4). Their prompts
 came from `<id>_parts/poses_spec.json` by `art-tools/prompts/poses.py`.
+**Camelot's room is built** (candle wheels and sconces flicker; the hearth
+fire and its sparks at the far left, on screens wider than 16:9);
+`?room=camelot` previews it. Its cast (Merlin, Lancelot, the Green Knight,
+Arthur) is next.
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,

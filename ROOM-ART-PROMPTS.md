@@ -165,6 +165,8 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 **What makes it unique:** The hall of the Round Table: the great table itself stands beyond the players, its circle running off into the dark past a hundred empty chairs, while the game is played at Death's table set before it.
 
+**Status:** Done: backdrop and pieces in `art-tools/rooms/camelot/` (`pieces.json` places them): the candle flames on both candle wheels and the wall sconces flicker, and the hearth fire and its sparks at the far left (shown only on screens wider than 16:9). The sheet drew each hearth frame as a whole fireplace and each flame on its candle, so the fire is cut out by brightness and the flames above the wax. The Round Table came out lower than asked, behind Death's table, so it barely shows; the banners carry the room.
+
 - **The room:** The great hall at Camelot. The Round Table runs off into the dark, past a hundred empty chairs, each with a knight's name in gold; tonight Death's table has been set before it, and the knights have carried their own chairs over. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.
 - **Sounds (for reference):** a great hearth fire; wind at a high window; a horse stamping in the yard; cups set down on oak; a far-off chapel bell
 - **Light:** Firelight and candle gold, with cool grey stone and blue night in the windows.
