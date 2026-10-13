@@ -57,8 +57,8 @@ The table screen has to hold four opponents, Death dealing between them, and the
 
 **Status:** Done: backdrop and table in `art-tools/rooms/white_house/`, with a screen mock-up. The Washington Monument sits dead centre in the window, which Death covers; fine.
 
-- **The room:** An oval drawing room upstairs, curtains drawn, a fire under a marble mantel with a clock on it. Portraits of all four players hang on the walls and watch their subjects play. Green felt, brass lamps, and cigar smoke gathering under a high white ceiling.
-- **Sounds (for reference):** fire crackle; mantel clock ticking; rain on tall sash windows; footsteps in a far corridor
+- **The room:** An oval drawing room upstairs, curtains drawn, a fire under a marble mantel. Portraits of all four players hang on the walls and watch their subjects play. Green felt, brass lamps, and cigar smoke gathering under a high white ceiling.
+- **Sounds (for reference):** fire crackle; rain on tall sash windows; footsteps in a far corridor
 - **The table:** A classic round poker table: deep green baize, a padded rim in dark red-brown leather edged with brass studs, a polished mahogany apron.
 - **Light:** Warm lamplight and firelight, gold and amber.
 - **Chairs:** A dark mahogany armchair upholstered in deep green, brass nails.
@@ -69,7 +69,7 @@ The table screen has to hold four opponents, Death dealing between them, and the
 ```
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama, eye level of someone seated at a card table. Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. The MIDDLE of the room is EMPTY floor: no desk, no table, no chairs, no furniture of any kind, because the round card table and the players go there. Keep the centre band, where the players' heads will sit, calmer and a little darker than the edges: the brightest light (windows, fire, lamps) goes to the sides and up high, never directly behind the centre, so faces read against it. Slightly softer and less saturated than the characters will be, so they stand out.
 
-The room: The oval drawing room upstairs in the President's house: curved walls in cream and gold, tall sash windows with heavy curtains drawn and rain on the glass, a fire under a white marble mantel with a clock on it, brass lamps, cigar smoke gathering under a high white ceiling. Four gilt-framed portraits on the walls, one of each player (Washington, Lincoln, Theodore Roosevelt, FDR), painted in the game's own cartoon style. The windows at the back look toward the Washington Monument at night, with rain on the glass and the curtains half drawn.
+The room: The oval drawing room upstairs in the President's house: curved walls in cream and gold, tall sash windows with heavy curtains drawn and rain on the glass, a fire under a white marble mantel, brass lamps, cigar smoke gathering under a high white ceiling. Four gilt-framed portraits on the walls, one of each player (Washington, Lincoln, Theodore Roosevelt, FDR), painted in the game's own cartoon style. The windows at the back look toward the Washington Monument at night, with rain on the glass and the curtains half drawn.
 Light: Warm lamplight and firelight, gold and amber.
 Must NOT resemble: No presidential seal, eagle crest, presidential flag or any government insignia: US law restricts the use of the seal, and the presidential flag carries it. An American flag is fine. It is NOT the Oval Office: no Resolute desk, no desk at all. No real White House photographs copied.
 ```
@@ -92,7 +92,6 @@ Bright, warm cartoon style like a modern animated adventure game, matching the c
 For the room: The White House. Parts:
 - Fire in the grate: 3 flame frames
 - Rain running down a window pane: 2 frames
-- The mantel clock's pendulum
 - A curl of cigar smoke, 3 sizes
 
 Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.

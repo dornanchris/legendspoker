@@ -14,11 +14,11 @@ pass and never appears in the game.
 
 **Hook.** You have been seated at a private game in the President's house, among men who have each run the country. They have agreed to deal you in, and to make sure you feel it.
 
-**Room.** An oval drawing room upstairs, curtains drawn, a fire under a marble mantel with a clock on it. Portraits of all four players hang on the walls and watch their subjects play. Green felt, brass lamps, and cigar smoke gathering under a high white ceiling.
+**Room.** An oval drawing room upstairs, curtains drawn, a fire under a marble mantel. Portraits of all four players hang on the walls and watch their subjects play. Green felt, brass lamps, and cigar smoke gathering under a high white ceiling.
 
 **Entrance.** Washington is seated at the head of the table from the first hand. He does not speak, and does not need to.
 
-**Music.** Chamber strings and a parlour piano, stately and restrained, with a quiet march underneath at a walking tempo. **Ambience:** fire crackle, mantel clock ticking, rain on tall sash windows, footsteps in a far corridor.
+**Music.** Chamber strings and a parlour piano, stately and restrained, with a quiet march underneath at a walking tempo. **Ambience:** fire crackle, rain on tall sash windows, footsteps in a far corridor.
 
 **Earned names.** nobody → “tenderfoot” → *your name* → “Challenger”
 
@@ -44,7 +44,7 @@ He was the tallest president, six foot four, and a teller of jokes and stories, 
 - Tell (strong, 0.94): *strokes his beard, slowly*
 - Tell (weak, 0.92): *leans back and folds his long hands*
 - Tell (bluffing, 0.9): *allows himself a small smile*
-- Idle noise: *stretches his long back until the chair creaks*; *glances at the clock on the mantel*; *rubs his eyes*; *tips his hat to someone across the table*
+- Idle noise: *stretches his long back until the chair creaks*; *rubs his eyes*; *tips his hat to someone across the table*
 
 **Look.** Silhouette: the longest frame at the table, and taller still in the stovepipe hat he never takes off; he tips it, pushes it back, straightens it. Face, after the Brady and Gardner photographs: long and narrow, hollow cheeks under high cheekbones, deep-set tired eyes, a long straight nose, thin lips, the chin beard along the jaw with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen. **Prop:** Stovepipe hat, always worn.
 

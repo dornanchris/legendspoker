@@ -358,8 +358,9 @@ limbs rotate about elbow and wrist and may only foreshorten, never stretch.
 Lincoln has blinks, gaze, brows, letter-driven speech, idle sway and breath,
 and 26 clips: every poker action, his three tells beside their decoys
 (beard / chin, leaning back / stretching, the small smile / amused), the hat
-tip and greeting, and his beats; the clock glance is out (the owner: there may
-be no clock in the room). His laced hands mean any gesture moves both arms, so
+tip and greeting, and his beats. There is no clock in the White House room
+(the owner): his clock-glance idle, the room's mantel clock and its ticking
+were cut. His laced hands mean any gesture moves both arms, so
 apart from the check every pose is a whole-figure frame, with the master head
 riding on it or, where a hand is at his face or hat, its own drawn head. His puppet is built by `art-tools/pose_rig.py` from
 the complete pose drawings (the owner's call: they are the source of truth):
@@ -441,8 +442,6 @@ new art against that layout.
   only. Two speech bubbles can overlap (a seat's line under Death's). Death's
   clips draw their own cards and chips, which double the game's flights for a
   moment. A window narrower than 16:9 shows the room low with dark above.
-  Lincoln's idle "glances at the clock on the mantel" has no clip (the owner
-  ruled the clock turn out; the White House room text still has a clock).
   Plates are fixed-size type, so on a large monitor the game reads small
   against the art.
 - **"Reduce motion" hides the older speech bubbles.** With it on, `.say`

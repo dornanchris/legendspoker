@@ -175,7 +175,7 @@ Must NOT resemble: Historical figure, died 1945; US government photographs of hi
 - **Look:** Silhouette: the longest frame at the table, and taller still in the stovepipe hat he never takes off; he tips it, pushes it back, straightens it. Face, after the Brady and Gardner photographs: long and narrow, hollow cheeks under high cheekbones, deep-set tired eyes, a long straight nose, thin lips, the chin beard along the jaw with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen.
 - **Prop:** Stovepipe hat, always worn
 - **Tells:** strokes his beard, slowly; leans back and folds his long hands; allows himself a small smile
-- **Idles:** stretches his long back until the chair creaks; glances at the clock on the mantel; rubs his eyes; tips his hat to someone across the table
+- **Idles:** stretches his long back until the chair creaks; rubs his eyes; tips his hat to someone across the table
 - **Copyright note:** Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 - **Art note:** Build his face from the Brady and Gardner photographs, and keep it dignified: a long, narrow, gaunt face and a kind, tired look. An earlier attempt read as apelike: no heavy jutting brow ridge, no flat or wide nose, no wide lipless mouth, no protruding jaw, no oversized ears. He wears the hat at all times.
 
