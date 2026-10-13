@@ -11,6 +11,8 @@ import roosAnim from '../art/roosevelt/anim.json'
 import deathRig from '../art/death/rig.json'
 import deathAnim from '../art/death/anim.json'
 import washingtonAnim from '../art/washington/anim.json'
+import socratesRig from '../art/socrates/rig.json'
+import socratesAnim from '../art/socrates/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 
@@ -44,6 +46,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   washington: { rig: washingtonRig as unknown as RigData, anim: washingtonAnim as unknown as AnimData, base: 'art/washington/' },
   fdr: { rig: fdrRig as unknown as RigData, anim: fdrAnim as unknown as AnimData, base: 'art/fdr/' },
   roosevelt: { rig: roosRig as unknown as RigData, anim: roosAnim as unknown as AnimData, base: 'art/roosevelt/' },
+  socrates: { rig: socratesRig as unknown as RigData, anim: socratesAnim as unknown as AnimData, base: 'art/socrates/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 

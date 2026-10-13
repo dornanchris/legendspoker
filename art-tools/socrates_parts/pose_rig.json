@@ -1,0 +1,869 @@
+{
+ "id": "socrates",
+ "name": "Socrates",
+ "note": "Polygons in the rest pose (A1) pixels. Every pose but rest is a whole-figure frame with its own drawn head, the expression as drawn; the master head and face layers live at rest. The drawings are one size and one table, so each pose is placed ('reg') by the apex of its drawn rail, fitted with the rail's shared curvature.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    18,
+    24,
+    486,
+    458
+   ],
+   "what": "at rest, hands apart, the cup by his left hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    525,
+    38,
+    486,
+    444
+   ],
+   "what": "peeking at his cards",
+   "reg": [
+    1.0,
+    0,
+    14
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1031,
+    24,
+    486,
+    458
+   ],
+   "what": "checking: two fingers tap",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    18,
+    506,
+    486,
+    459
+   ],
+   "what": "calling",
+   "reg": [
+    1.0,
+    10,
+    9
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    525,
+    516,
+    486,
+    449
+   ],
+   "what": "betting",
+   "reg": [
+    1.0,
+    9,
+    18
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1031,
+    510,
+    486,
+    455
+   ],
+   "what": "folding",
+   "reg": [
+    1.0,
+    9,
+    14
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    18,
+    26,
+    503,
+    454
+   ],
+   "what": "all in",
+   "reg": [
+    1.0,
+    -3,
+    17
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    526,
+    37,
+    474,
+    443
+   ],
+   "what": "showing his cards",
+   "reg": [
+    1.0,
+    22,
+    20
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1010,
+    36,
+    509,
+    444
+   ],
+   "what": "collecting the pot",
+   "reg": [
+    1.0,
+    -1,
+    26
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    18,
+    524,
+    502,
+    457
+   ],
+   "what": "scratches his snub nose (TELL)",
+   "reg": [
+    1.0,
+    -19,
+    13
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    525,
+    526,
+    475,
+    455
+   ],
+   "what": "scratches his beard (decoy)",
+   "reg": [
+    1.0,
+    13,
+    14
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1013,
+    524,
+    505,
+    457
+   ],
+   "what": "a private smile (TELL)",
+   "reg": [
+    1.0,
+    -11,
+    12
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    18,
+    24,
+    490,
+    463
+   ],
+   "what": "a friendly smile (decoy)",
+   "reg": [
+    1.0,
+    -3,
+    -4
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    520,
+    26,
+    491,
+    461
+   ],
+   "what": "frowns up at the ceiling (TELL)",
+   "reg": [
+    1.0,
+    -4,
+    -2
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1020,
+    27,
+    496,
+    460
+   ],
+   "what": "looks up, thinking (decoy)",
+   "reg": [
+    1.0,
+    -9,
+    -1
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    19,
+    517,
+    487,
+    463
+   ],
+   "what": "sips from his cup",
+   "reg": [
+    1.0,
+    -12,
+    9
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    504,
+    507,
+    527,
+    473
+   ],
+   "what": "stretches",
+   "reg": [
+    1.0,
+    -14,
+    -1
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1025,
+    517,
+    494,
+    463
+   ],
+   "what": "pulls his cloak tighter",
+   "reg": [
+    1.0,
+    -6,
+    6
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    18,
+    26,
+    491,
+    459
+   ],
+   "what": "talking, palm up",
+   "reg": [
+    1.0,
+    -5,
+    0
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    522,
+    23,
+    487,
+    463
+   ],
+   "what": "facing a big bet",
+   "reg": [
+    1.0,
+    -2,
+    -3
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1015,
+    24,
+    506,
+    462
+   ],
+   "what": "lost a pot: a shrug",
+   "reg": [
+    1.0,
+    -13,
+    -2
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    18,
+    506,
+    495,
+    473
+   ],
+   "what": "won a pot: a toast",
+   "reg": [
+    1.0,
+    -10,
+    0
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    522,
+    545,
+    487,
+    434
+   ],
+   "what": "heads up: leaning in",
+   "reg": [
+    1.0,
+    -3,
+    38
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1024,
+    523,
+    497,
+    456
+   ],
+   "what": "knocked out: the cup upside down",
+   "reg": [
+    1.0,
+    -2,
+    14
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 343,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  170,
+  230,
+  340,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 222,
+ "neck": [
+  255,
+  215
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  200,
+  230,
+  320,
+  300
+ ],
+ "master": {
+  "piece": "socrates_parts/socrates_face/socrates_face_01.png",
+  "cut_below": 300,
+  "face": "socrates_parts/face.json",
+  "file": "socrates_parts/socrates_rig/master.png",
+  "layers": "socrates_parts/socrates_rig/face",
+  "head_box": [
+   140,
+   0,
+   378,
+   222
+  ],
+  "fit": [
+   0.4,
+   1.1
+  ],
+  "replace_head": true,
+  "heads": {
+   "ceiling": "socrates_parts/socrates_face/socrates_face_23.png",
+   "viewer": "socrates_parts/socrates_face/socrates_face_24.png"
+  },
+  "cloth": [
+   120,
+   250
+  ],
+  "fill_poly": [
+   [
+    [
+     140,
+     150
+    ],
+    [
+     175,
+     150
+    ],
+    [
+     175,
+     222
+    ],
+    [
+     140,
+     222
+    ]
+   ],
+   [
+    [
+     330,
+     160
+    ],
+    [
+     378,
+     160
+    ],
+    [
+     378,
+     222
+    ],
+    [
+     330,
+     222
+    ]
+   ]
+  ],
+  "shoulder_y": 170
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    335
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     18,
+     250
+    ],
+    [
+     95,
+     250
+    ],
+    [
+     95,
+     300
+    ],
+    [
+     18,
+     300
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and hand on the felt",
+     "poly": [
+      [
+       18,
+       300
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       110,
+       308
+      ],
+      [
+       150,
+       318
+      ],
+      [
+       200,
+       338
+      ],
+      [
+       232,
+       352
+      ],
+      [
+       250,
+       385
+      ],
+      [
+       246,
+       428
+      ],
+      [
+       200,
+       430
+      ],
+      [
+       160,
+       422
+      ],
+      [
+       130,
+       402
+      ],
+      [
+       90,
+       386
+      ],
+      [
+       50,
+       380
+      ],
+      [
+       18,
+       378
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    440,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     405,
+     270
+    ],
+    [
+     482,
+     270
+    ],
+    [
+     482,
+     312
+    ],
+    [
+     440,
+     312
+    ],
+    [
+     405,
+     300
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and hand, and the cup beside it",
+     "poly": [
+      [
+       292,
+       352
+      ],
+      [
+       330,
+       336
+      ],
+      [
+       380,
+       330
+      ],
+      [
+       420,
+       314
+      ],
+      [
+       460,
+       304
+      ],
+      [
+       482,
+       315
+      ],
+      [
+       482,
+       425
+      ],
+      [
+       380,
+       428
+      ],
+      [
+       340,
+       414
+      ],
+      [
+       294,
+       408
+      ],
+      [
+       290,
+       380
+      ]
+     ],
+     "props": [
+      [
+       [
+        345,
+        336
+       ],
+       [
+        472,
+        336
+       ],
+       [
+        472,
+        368
+       ],
+       [
+        440,
+        378
+       ],
+       [
+        432,
+        422
+       ],
+       [
+        372,
+        422
+       ],
+       [
+        366,
+        378
+       ],
+       [
+        345,
+        366
+       ]
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own"
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own"
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "props": [
+    [
+     [
+      233,
+      382
+     ],
+     [
+      284,
+      382
+     ],
+     [
+      284,
+      438
+     ],
+     [
+      233,
+      438
+     ]
+    ]
+   ],
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "props": [
+    [
+     [
+      227,
+      334
+     ],
+     [
+      279,
+      334
+     ],
+     [
+      279,
+      426
+     ],
+     [
+      227,
+      426
+     ]
+    ]
+   ],
+   "below": 110
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own"
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "props": [
+    [
+     [
+      105,
+      375
+     ],
+     [
+      421,
+      375
+     ],
+     [
+      421,
+      463
+     ],
+     [
+      105,
+      463
+     ]
+    ]
+   ],
+   "below": 130
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own"
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "props": [
+    [
+     [
+      217,
+      329
+     ],
+     [
+      349,
+      329
+     ],
+     [
+      349,
+      453
+     ],
+     [
+      217,
+      453
+     ]
+    ]
+   ],
+   "below": 130
+  },
+  "nose": {
+   "pose": "B4",
+   "head": "own"
+  },
+  "beard": {
+   "pose": "B5",
+   "head": "own"
+  },
+  "private_smile": {
+   "pose": "B6",
+   "head": "own"
+  },
+  "smile": {
+   "pose": "C1",
+   "head": "own"
+  },
+  "ceiling": {
+   "pose": "C2",
+   "head": "own"
+  },
+  "thinking": {
+   "pose": "C3",
+   "head": "own"
+  },
+  "sip": {
+   "pose": "C4",
+   "head": "own"
+  },
+  "stretch": {
+   "pose": "C5",
+   "head": "own"
+  },
+  "cloak": {
+   "pose": "C6",
+   "head": "own",
+   "except": [
+    [
+     [
+      -60,
+      -60
+     ],
+     [
+      6,
+      -60
+     ],
+     [
+      6,
+      500
+     ],
+     [
+      -60,
+      500
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own"
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own"
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own"
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own"
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own"
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own"
+  }
+ },
+ "runtime": "../web/art/socrates",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_blue": 56
+}

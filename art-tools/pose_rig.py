@@ -55,8 +55,12 @@ chair's red-brown wherever it is, and "back_strip" clears anything thin in
 the columns at his back (the chair's outline). "felt_lines": n drops anything
 under about 2n pixels thick below the table line in frames (the drawn
 rail's outline curving across the felt). "drop_rail": n drops every
-rail-orange shape reaching within n rows of the table line in frames. "head_match": "face" places a
+rail-orange shape reaching within n rows of the table line in frames
+("rail_blue": only colours with less blue than that, for a bare-armed
+character whose skin is the rail's orange). "head_match": "face" places a
 frame's master head on its own drawn head instead of on the stock.
+Master "cloth" ([lo, hi], default [0, 90]) is the brightness of the cloth
+that fills a replaced head's shoulders (a light cloak, not a dark coat).
 "fill_shoulders" (with master "shoulder_y", "shoulder_close") fills the coat
 between a narrower master neck and a frame's shoulders; "no_peel" keeps the
 wood-peeling off frames for a character dressed in the wood's brown. An arm asset may give "auto":
@@ -450,7 +454,9 @@ def main(spec_path):
             for q in fp or []:
                 fpm |= poly_mask(shape, q)
             hole = cut & sil & (fpm if fp else (np.arange(shape[0])[:, None] >= fb))
-            cloth = (body[..., 3] > 200) & ~cut & (body[..., :3].astype(int).max(-1) < 90)
+            lo, hi = spec['master'].get('cloth', [0, 90])  # the cloth's brightness (a dark coat; a light cloak)
+            mx_ = body[..., :3].astype(int).max(-1)
+            cloth = (body[..., 3] > 200) & ~cut & (mx_ >= lo) & (mx_ < hi)
             body[..., :3] = np.where(hole[..., None], diffuse_fill(body[..., :3], hole, cloth, iters=120), body[..., :3]).astype(np.uint8)
             body[..., 3] = np.where(hole, 255, body[..., 3])
             cut &= ~hole
@@ -547,6 +553,7 @@ def main(spec_path):
         if spec.get('drop_rail'):                          # the drawn rail's orange and its highlight, wherever it sits
             c = F[..., :3].astype(int)
             rail = (c[..., 0] > 1.6 * c[..., 1] + 10) & (c[..., 0] > 60) & ~props
+            rail &= c[..., 2] < spec.get('rail_blue', 256)   # bare skin is that orange too, but bluer
             lab, n = ndimage.label(rail)
             if n:
                 low = np.unique(lab[ty + FM - spec['drop_rail']:][rail[ty + FM - spec['drop_rail']:]])

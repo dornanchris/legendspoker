@@ -140,6 +140,8 @@ art-tools/
   fdr_parts/, roosevelt_parts/, washington_parts/  the White House cast, each
                   with seat.json and <id>_layout.json; see each README
   jfk_parts/      JFK's kit: built, at no table (see CURRENT STATE)
+  socrates_parts/ Socrates's kit (Athens, seat 1): pose sheets, face sheet,
+                  pose_rig.json; leonidas_parts/: his prompts
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -346,7 +348,11 @@ published once as `web/art/rooms/table.webp`. Rooms differ in their backdrop,
 their story pieces and their light (`ROOM-ART-PROMPTS.md`); each backdrop is
 drawn to the White House plate's camera, so the table, rim and chairs line up.
 **Athens's room is built** (backdrop, the cup poured for Odysseus that is
-drained once he arrives, flickering lamps); its five characters are next.
+drained once he arrives, flickering lamps). **Socrates is built**
+(`#/puppet/socrates`, 25 clips): rest plus whole-figure frames with their own
+drawn heads, placed by each drawing's rail. Leonidas's prompts are in
+`art-tools/leonidas_parts/POSES.md`; Medusa, the Cyclops and Odysseus follow.
+Athens stays the plain table until all five have puppets.
 `?room=athens` stages any table in it, to look at a room before its cast.
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
