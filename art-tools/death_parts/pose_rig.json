@@ -1,0 +1,1043 @@
+{
+ "id": "death",
+ "name": "Death",
+ "note": "Front-on, never mirrored. 'near' is the hand on the LEFT of the picture, 'far' the one on the right (on the deck). Arm assets with 'auto' are what differs from rest on that side.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    14,
+    12,
+    493,
+    478
+   ],
+   "what": "at rest: one hand flat, one on the deck"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    523,
+    12,
+    489,
+    478
+   ],
+   "what": "thumbing the top card"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1030,
+    14,
+    492,
+    476
+   ],
+   "what": "pitching a card to the left"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    14,
+    501,
+    493,
+    493
+   ],
+   "what": "sliding a card to you"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    524,
+    500,
+    488,
+    494
+   ],
+   "what": "pitching a card to the right"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1030,
+    501,
+    492,
+    493
+   ],
+   "what": "burning a card"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    16,
+    8,
+    495,
+    483
+   ],
+   "what": "laying the flop"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    525,
+    8,
+    485,
+    483
+   ],
+   "what": "turning a card"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1025,
+    8,
+    495,
+    483
+   ],
+   "what": "riffle shuffle"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    16,
+    503,
+    495,
+    491
+   ],
+   "what": "squaring the deck"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    525,
+    502,
+    485,
+    492
+   ],
+   "what": "cutting the deck"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1025,
+    502,
+    495,
+    492
+   ],
+   "what": "raking the bets in"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    17,
+    10,
+    501,
+    481
+   ],
+   "what": "pushing the pot left"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    529,
+    12,
+    479,
+    479
+   ],
+   "what": "pushing the pot to you"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1021,
+    12,
+    500,
+    479
+   ],
+   "what": "pushing the pot right"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    15,
+    503,
+    491,
+    476
+   ],
+   "what": "open hand: watch that"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    464,
+    501,
+    556,
+    478
+   ],
+   "what": "showing someone out"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1032,
+    505,
+    489,
+    474
+   ],
+   "what": "steepled fingers, watching",
+   "reg": [
+    1.04,
+    16,
+    -13
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    15,
+    10,
+    504,
+    473
+   ],
+   "what": "deck set aside"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    528,
+    10,
+    484,
+    473
+   ],
+   "what": "peeking at his cards"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1027,
+    10,
+    495,
+    473
+   ],
+   "what": "checking"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    16,
+    495,
+    496,
+    486
+   ],
+   "what": "betting"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    528,
+    492,
+    484,
+    489
+   ],
+   "what": "all in"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1027,
+    498,
+    496,
+    483
+   ],
+   "what": "folding"
+  }
+ },
+ "rest": "A1",
+ "table_y": 352,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  170,
+  160,
+  330,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 192,
+ "neck": [
+  246,
+  200
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  195,
+  200,
+  300,
+  265
+ ],
+ "master": {
+  "piece": "death_parts/death_face/death_face_01.png",
+  "cut_below": 345,
+  "face": "death_parts/face.json",
+  "file": "death_parts/death_rig/master.png",
+  "layers": "death_parts/death_rig/face",
+  "head_box": [
+   140,
+   0,
+   352,
+   210
+  ],
+  "fit": [
+   0.4,
+   1.1
+  ],
+  "replace_head": true,
+  "heads": {
+   "left": "death_parts/death_face/death_face_07.png",
+   "right": "death_parts/death_face/death_face_08.png",
+   "bowed": "death_parts/death_face/death_face_09.png",
+   "weary": "death_parts/death_face/death_face_10.png",
+   "up": "death_parts/death_face/death_face_11.png"
+  },
+  "head_fit": "brooch",
+  "fill_poly": [
+   [
+    140,
+    185
+   ],
+   [
+    175,
+    158
+   ],
+   [
+    205,
+    140
+   ],
+   [
+    287,
+    140
+   ],
+   [
+    317,
+    158
+   ],
+   [
+    352,
+    185
+   ],
+   [
+    352,
+    200
+   ],
+   [
+    140,
+    200
+   ]
+  ]
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    95,
+    330
+   ],
+   "extend": 14,
+   "rest": "rest",
+   "upper": [
+    [
+     20,
+     280
+    ],
+    [
+     150,
+     280
+    ],
+    [
+     140,
+     328
+    ],
+    [
+     80,
+     330
+    ],
+    [
+     20,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "the hand on the left of the picture, flat on the felt",
+     "poly": [
+      [
+       80,
+       330
+      ],
+      [
+       130,
+       330
+      ],
+      [
+       160,
+       345
+      ],
+      [
+       175,
+       365
+      ],
+      [
+       200,
+       395
+      ],
+      [
+       205,
+       420
+      ],
+      [
+       190,
+       445
+      ],
+      [
+       160,
+       457
+      ],
+      [
+       130,
+       452
+      ],
+      [
+       110,
+       442
+      ],
+      [
+       95,
+       422
+      ],
+      [
+       85,
+       400
+      ],
+      [
+       80,
+       370
+      ]
+     ]
+    },
+    "pitch_left": {
+     "pose": "A3",
+     "space": "rest",
+     "drop_blue": true,
+     "what": "pitching a card to the left of the picture",
+     "poly": [
+      [
+       15,
+       350
+      ],
+      [
+       40,
+       300
+      ],
+      [
+       60,
+       285
+      ],
+      [
+       90,
+       275
+      ],
+      [
+       130,
+       270
+      ],
+      [
+       170,
+       280
+      ],
+      [
+       200,
+       300
+      ],
+      [
+       205,
+       330
+      ],
+      [
+       180,
+       345
+      ],
+      [
+       140,
+       350
+      ],
+      [
+       110,
+       352
+      ],
+      [
+       100,
+       380
+      ],
+      [
+       95,
+       420
+      ],
+      [
+       85,
+       440
+      ],
+      [
+       60,
+       470
+      ],
+      [
+       40,
+       492
+      ],
+      [
+       15,
+       482
+      ]
+     ],
+     "over": true
+    },
+    "slide": {
+     "pose": "A4",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true
+    },
+    "pitch_right": {
+     "pose": "A5",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true
+    },
+    "burn": {
+     "pose": "A6",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true
+    },
+    "flop": {
+     "pose": "B1",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true
+    },
+    "turn": {
+     "pose": "B2",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "except": [
+      [
+       [
+        198,
+        424
+       ],
+       [
+        284,
+        416
+       ],
+       [
+        284,
+        478
+       ],
+       [
+        176,
+        478
+       ],
+       [
+        176,
+        440
+       ],
+       [
+        196,
+        440
+       ]
+      ]
+     ]
+    },
+    "riffle": {
+     "pose": "B3",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     }
+    },
+    "square": {
+     "pose": "B4",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     }
+    },
+    "cut": {
+     "pose": "B5",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     }
+    },
+    "rake": {
+     "pose": "B6",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "drop_red": true
+    },
+    "push_left": {
+     "pose": "C1",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "drop_red": true
+    },
+    "push_you": {
+     "pose": "C2",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "drop_red": true
+    },
+    "gesture": {
+     "pose": "C4",
+     "space": "rest",
+     "what": "open hand, palm up: watch that",
+     "poly": [
+      [
+       20,
+       235
+      ],
+      [
+       40,
+       183
+      ],
+      [
+       70,
+       188
+      ],
+      [
+       100,
+       203
+      ],
+      [
+       120,
+       222
+      ],
+      [
+       160,
+       213
+      ],
+      [
+       205,
+       218
+      ],
+      [
+       208,
+       280
+      ],
+      [
+       205,
+       330
+      ],
+      [
+       150,
+       342
+      ],
+      [
+       110,
+       322
+      ],
+      [
+       90,
+       292
+      ],
+      [
+       45,
+       277
+      ],
+      [
+       22,
+       262
+      ]
+     ]
+    },
+    "way_out": {
+     "pose": "C5",
+     "space": "rest",
+     "what": "arm out to the side: showing someone the way",
+     "poly": [
+      [
+       28,
+       265
+      ],
+      [
+       45,
+       230
+      ],
+      [
+       75,
+       203
+      ],
+      [
+       110,
+       213
+      ],
+      [
+       145,
+       233
+      ],
+      [
+       200,
+       238
+      ],
+      [
+       235,
+       246
+      ],
+      [
+       240,
+       300
+      ],
+      [
+       200,
+       312
+      ],
+      [
+       150,
+       317
+      ],
+      [
+       110,
+       314
+      ],
+      [
+       80,
+       302
+      ],
+      [
+       45,
+       292
+      ]
+     ]
+    },
+    "bet": {
+     "pose": "D4",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "drop_red": true
+    },
+    "all_in": {
+     "pose": "D5",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "drop_red": true
+    },
+    "fold": {
+     "pose": "D6",
+     "space": "rest",
+     "auto": {
+      "x": [
+       0,
+       248
+      ],
+      "top": 240
+     },
+     "drop_blue": true
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    400,
+    330
+   ],
+   "extend": 14,
+   "rest": "rest",
+   "upper": [
+    [
+     345,
+     280
+    ],
+    [
+     480,
+     280
+    ],
+    [
+     480,
+     340
+    ],
+    [
+     400,
+     333
+    ],
+    [
+     350,
+     333
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "the hand on the right of the picture, on the deck (the deck with it)",
+     "poly": [
+      [
+       350,
+       333
+      ],
+      [
+       400,
+       333
+      ],
+      [
+       415,
+       350
+      ],
+      [
+       410,
+       380
+      ],
+      [
+       400,
+       400
+      ],
+      [
+       395,
+       440
+      ],
+      [
+       380,
+       449
+      ],
+      [
+       318,
+       449
+      ],
+      [
+       310,
+       420
+      ],
+      [
+       318,
+       395
+      ],
+      [
+       330,
+       375
+      ],
+      [
+       340,
+       350
+      ]
+     ]
+    },
+    "thumb": {
+     "pose": "A2",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     }
+    },
+    "riffle": {
+     "pose": "B3",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     }
+    },
+    "square": {
+     "pose": "B4",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     }
+    },
+    "rake": {
+     "pose": "B6",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "drop_red": true
+    },
+    "push_you": {
+     "pose": "C2",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "drop_red": true
+    },
+    "push_right": {
+     "pose": "C3",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "drop_red": true
+    },
+    "set_aside": {
+     "pose": "D1",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     }
+    },
+    "peek": {
+     "pose": "D2",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     },
+     "drop_blue": true
+    },
+    "check": {
+     "pose": "D3",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     }
+    },
+    "all_in": {
+     "pose": "D5",
+     "space": "rest",
+     "auto": {
+      "x": [
+       246,
+       493
+      ],
+      "top": 240
+     },
+     "drop_blue": true,
+     "drop_red": true
+    }
+   }
+  }
+ },
+ "frames": {
+  "steeple": {
+   "pose": "C6",
+   "head": "own",
+   "below": -2
+  }
+ },
+ "runtime": "../web/art/death"
+}

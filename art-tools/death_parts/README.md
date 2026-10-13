@@ -18,7 +18,7 @@ Four folders, each with its pieces, a numbered `_contact_sheet.png` and a
 
 Card faces are always blank: the game draws them.
 
-## The puppet
+## The parts-sheet puppet (superseded for the game; in git history)
 
 `art-tools/death_layout.json` is his rest pose: his right hand flat on the
 felt, his left resting on the deck, both sleeves coming out from under the
@@ -55,8 +55,46 @@ position and need placing per deal: toward each seat, the board, and you.
 - Keep out of the game: glowing eyes, angry or surprised faces (he has no
   tells), the scythe, hourglass and book from the earlier sheets.
 
-## Next: the pose drawings
+## The game's puppet: from the pose drawings
 
-`POSES.md` lists his 24 poses (the deal, the board, the pot, his moments,
-and the finale when he plays) and the prompts for four pose sheets and a
-face sheet, to build him with `pose_rig.py` as the White House cast is.
+**Built by `art-tools/pose_rig.py` from `pose_rig.json`** from his four pose
+sheets (`sources/poses_a.png` .. `poses_d.png`) and his face sheet
+(`sources/face_overlays.png`, cut by `cut_face.json` into `death_face/`).
+It now writes `art-tools/death_layout.json` (the old parts-sheet layout is in
+git history).
+
+    python3 art-tools/cut_sheet.py art-tools/death_parts/cut_face.json
+    python3 art-tools/pose_rig.py art-tools/death_parts/pose_rig.json
+
+- **Rest = A1**: the hand on the left of the picture flat on the felt
+  (`near`), the other on the deck (`far`; the deck is part of that piece).
+  Front-on, never mirrored. Validation: 0.65% of pixels above the rail differ.
+- **Arm pieces cut automatically** (`"auto"`): his hands move while the robe
+  stays, so each piece is what differs from rest on that side of the
+  picture, the robe hem that drapes onto the felt in a drawing dropped.
+  Chips (`drop_red`) and card backs (`drop_blue`) are cut out: the game draws
+  its own. Three pieces whose arm swings out past the robe are traced by hand
+  (`pitch_left`, `gesture`, `way_out`); `pitch_left` is drawn over the robe's
+  edge (`"over"`).
+- **Face**: the master head (piece 1) and five jaw patches (closed, parted,
+  open, wide, side) as the mouth slot; a skull does not blink, so the face
+  config never does. The five heads (left, right, bowed, weary, up) are
+  drawn a little smaller than the master: they are scaled and placed by the
+  gold brooch they all wear (`head_fit: "brooch"`), and the shoulders behind
+  the master's hood are filled with robe (`fill_poly`) so a narrower head
+  never shows a hole.
+- **Frame**: `steeple` (C6), placed by the rail, with its own drawn head.
+
+**Clips** (`web/art/death/anim.json`, 26, every one ending exactly at rest;
+preview `web/index.html#/puppet/death`): the deal `deal_left`, `deal_you`,
+`deal_right` (the far hand thumbs a card off, the near hand pitches it),
+`burn`, `flop`, `turn`, `shuffle` (riffle twice, square), `cut`, `rake`, the
+pot `push_left`, `push_you`, `push_right`; his moments `watch_that` (the
+lessons), `way_out` (the uninvited guest's scene), `steeple` (heads-up, the
+last card); heads `watch_left`, `watch_right`, `watch_deal`, `weary`,
+`look_up`; the finale `set_aside`, `peek`, `check`, `bet`, `all_in`, `fold`.
+He has no tells: nothing here is tied to cards.
+
+Gaps: a sliver of the old hood shows at the shoulder corners behind a
+swapped head (close up only); the deal clips need the game's card flight
+timed to the pitch (the cards are not in the drawings).

@@ -52,7 +52,10 @@ A frame takes its pose's placement unless it gives "reg"; a pose drawn on
 another sheet at another size is placed by hand with its own "reg". Room
 round a frame is "frame_margin" (a hat raised high); "drop_wood" cuts the
 chair's red-brown wherever it is, and "back_strip" clears anything thin in
-the columns at his back (the chair's outline). "strip_thin": n drops strands
+the columns at his back (the chair's outline). An arm asset may give "auto":
+{"x": [x0, x1], "top": y} in place of "poly" (with "space": "rest"): the
+piece is what differs from the rest pose there (auto_piece), for poses where
+only a hand moves; "drop_red" drops red chips as "drop_blue" drops card backs. "strip_thin": n drops strands
 under about 2n pixels wide from arm pieces (rail lines clinging to a hand);
 leave it off where fingers are that thin.
 
@@ -202,6 +205,23 @@ def peel_wood(rgba, rows_below=0):
     return rgba
 
 
+def fit_by_brooch(master, piece):
+    """(scale, dx, dy) placing a head on the master by the gold brooch both
+    wear at the collar: its size gives the scale, its centre the place."""
+    def gold(f):
+        a = np.array(Image.open(f).convert('RGBA')).astype(int)
+        g = (a[..., 3] > 128) & (a[..., 0] > 170) & (a[..., 1] > 110) & (a[..., 2] < 100) & (a[..., 0] - a[..., 2] > 100)
+        g[: a.shape[0] // 2] = False                       # the brooch is low on the piece
+        lab, n = ndimage.label(g)
+        g = lab == (1 + np.argmax(ndimage.sum(g, lab, range(1, n + 1))))   # the skull, not the chain
+        ys, xs = np.nonzero(g)
+        return xs.mean(), ys.mean(), np.sqrt(g.sum())
+    mx_, my_, ms = gold(master)
+    px, py, ps = gold(piece)
+    s = ms / ps
+    return s, round(mx_ - px * s), round(my_ - py * s)
+
+
 def fit_by_collar(master, piece, span=90):
     """(dx, dy) placing a head drawn at another angle on the master head, both
     from the face sheet (same scale): matched on the stock and collar under
@@ -228,6 +248,26 @@ def fit_by_collar(master, piece, span=90):
             if d < best[0]:
                 best = (d, dx, dy)
     return best[1], best[2]
+
+
+def auto_piece(R, P, au):
+    """Where pose P (already in the rest pose's pixels) differs from the rest
+    pose R, within columns au["x"] and below row au["top"]: the arm that moved,
+    with whatever of the body it uncovered (which is P's body, so it matches).
+    Thin slivers from a slightly-off registration are opened away."""
+    x0, x1 = au['x']
+    d = np.abs(P[..., :3].astype(int) - R[..., :3].astype(int)).sum(-1) > au.get('thresh', 90)
+    d |= (P[..., 3] > 128) != (R[..., 3] > 128)
+    zone = np.zeros(d.shape, bool)
+    zone[au.get('top', 250):au.get('bottom', d.shape[0]), x0:x1] = True
+    d &= zone
+    d = ndimage.binary_opening(d, iterations=au.get('open', 3))
+    lab, n = ndimage.label(d)
+    if n:
+        sz = ndimage.sum(d, lab, range(1, n + 1))
+        d = np.isin(lab, 1 + np.nonzero(sz >= au.get('min', 400))[0])
+    d = ndimage.binary_fill_holes(ndimage.binary_dilation(d, iterations=au.get('grow', 5)))
+    return d & zone
 
 
 def upscale(rgba, k):
@@ -287,9 +327,29 @@ def main(spec_path):
             for pp in a.get('props', []):
                 props |= poly_mask(src.shape[:2], pp)
             m = np.where(props, (src[..., 3] > 128) & ~table_colour(src, ty, with_wood=False), char(src))
-            m &= poly_mask(src.shape[:2], a['poly'])
+            if 'auto' in a:                                # the piece is what differs from rest, on its side
+                m &= auto_piece(R, src, a['auto'])
+                # robe hem hanging lower in that drawing lands on the felt: dark cloth
+                # below the rail goes (a hand's outline is too thin to be opened away)
+                c = src[..., :3].astype(int)
+                cloth = (c.max(-1) < 95) & (src[..., 3] > 128)
+                cloth = ndimage.binary_opening(cloth, iterations=2)
+                cloth[:ty + a['auto'].get('hem', 6)] = False
+                m &= ~ndimage.binary_dilation(cloth, iterations=1)
+            else:
+                m &= poly_mask(src.shape[:2], a['poly'])
             for ex in a.get('except', []):
                 m &= ~poly_mask(src.shape[:2], ex)
+            if a.get('drop_red'):                          # chips: the game draws its own
+                c = src[..., :3].astype(int)
+                coloured = ((c[..., 0] > 110) & (c[..., 1] < 70) & (c[..., 2] < 80)) | \
+                           ((c[..., 2] - c[..., 0] > 18) & (c[..., 2] > 45))
+                chips = ndimage.binary_fill_holes(ndimage.binary_closing(
+                    ndimage.binary_dilation(coloured, iterations=2), iterations=4))
+                chips = ndimage.binary_dilation(chips, iterations=3)
+                bone = (c[..., 0] > 170) & (c[..., 0] - c[..., 2] > 35)          # never a finger
+                m &= ~(chips & ~bone)
+                m &= ndimage.binary_dilation(ndimage.binary_opening(m, iterations=2), iterations=2)  # no confetti
             if a.get('drop_blue'):                         # cards: their backs, and the light border round them
                 c = src[..., :3].astype(int)
                 blue = (c[..., 2] - c[..., 0] > 18) & (c[..., 2] > 45)
@@ -359,6 +419,16 @@ def main(spec_path):
         hb = spec['master']['head_box']
         cut = np.zeros(shape, bool)
         cut[hb[1]:min(hb[3], spec['collar_y']), hb[0]:hb[2]] = True
+        fb = spec['master'].get('fill_below')
+        fp = spec['master'].get('fill_poly')
+        if fb is not None or fp:
+            # below this row the hole is shoulders, not air: filled with the robe
+            # round it, so a narrower swapped head never shows a hole behind it
+            hole = cut & sil & (poly_mask(shape, fp) if fp else (np.arange(shape[0])[:, None] >= fb))
+            cloth = (body[..., 3] > 200) & ~cut & (body[..., :3].astype(int).max(-1) < 90)
+            body[..., :3] = np.where(hole[..., None], diffuse_fill(body[..., :3], hole, cloth, iters=120), body[..., :3]).astype(np.uint8)
+            body[..., 3] = np.where(hole, 255, body[..., 3])
+            cut &= ~hole
         body[..., 3] = np.where(cut, 0, body[..., 3])
     # props on the head, cut from the rest pose as drawn (a holder in the teeth):
     # each its own piece on its own bone, so it can tilt; gone from the body
@@ -579,15 +649,18 @@ def main(spec_path):
     head_files = {}
     for state, piece in m.get('heads', {}).items():
         piece = os.path.join(HERE, piece)
-        dx, dy = fit_by_collar(os.path.join(HERE, m['piece']), piece)
+        if m.get('head_fit') == 'brooch':                  # drawn at another size: scale and place by the brooch
+            hs, dx, dy = fit_by_brooch(os.path.join(HERE, m['piece']), piece)
+        else:
+            hs, (dx, dy) = 1.0, fit_by_collar(os.path.join(HERE, m['piece']), piece)
         dx, dy = dx + m.get('head_nudge', {}).get(state, [0, 0])[0], dy + m.get('head_nudge', {}).get(state, [0, 0])[1]
         f = f'head_{state}.png'
-        face_rig.cut_below(Image.open(piece), m['cut_below'] - dy).save(os.path.join(HERE, m['layers'], f))
+        face_rig.cut_below(Image.open(piece), (m['cut_below'] - dy) / hs).save(os.path.join(HERE, m['layers'], f))
         head_files[f] = os.path.join(HERE, m['layers'], f)
         pw, ph = Image.open(piece).size
         x0, y0 = X(hb[0]) + mx, Y(hb[1]) + my
-        print(f'  head {state}: at {dx}, {dy} on the master')
-        part(f'head.{state}', f, x0 + (dx + pw / 2) * mk, y0 + (dy + ph / 2) * mk, 20, 'head', 'head', scale=mk, visible=False)
+        print(f'  head {state}: at {dx}, {dy}, scale {hs:.3f} on the master')
+        part(f'head.{state}', f, x0 + (dx + pw * hs / 2) * mk, y0 + (dy + ph * hs / 2) * mk, 20, 'head', 'head', scale=round(mk * hs, 4), visible=False)
     part('torso_over', 'torso_over.png', cx0, cy0, 21, 'torso', 'torso_over')
     for pname, (prgba, _) in head_props.items():
         save(f'prop_{pname}', prgba)
@@ -608,7 +681,8 @@ def main(spec_path):
     zs = {'far': 22, 'near': 23}
     for (side, state), _ in assets.items():
         arm = spec['arms'][side]
-        part(f'arm_{side}.{state}', f'arm_{side}_{state}.png', cx0, cy0, zs[side], f'arm_{side}', f'arm_{side}',
+        over = arm['assets'][state].get('over')            # an arm drawn out over the robe's edge
+        part(f'arm_{side}.{state}', f'arm_{side}_{state}.png', cx0, cy0, 24.5 if over else zs[side], f'arm_{side}', f'arm_{side}',
              visible=state == arm['rest'], on_table=True)
     for side in upper:
         part(f'upper_{side}', f'upper_{side}.png', cx0, cy0, 24, 'torso', f'upper_{side}')

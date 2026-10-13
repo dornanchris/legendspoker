@@ -1,0 +1,9 @@
+{
+ "mouth": {
+  "closed": "mouth_closed.png",
+  "parted": "mouth_parted.png",
+  "open": "mouth_open.png",
+  "wide": "mouth_wide.png",
+  "side": "mouth_side.png"
+ }
+}

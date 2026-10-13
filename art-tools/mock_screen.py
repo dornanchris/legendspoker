@@ -88,14 +88,14 @@ def seat(lay, cx, sc, flip, sink=10):
 
 # Death deals from the far side, front-on and dead centre
 def death(cx, sc):
-    return seat('death_layout.json', cx, sc, False, 4)
+    return seat('death_layout.json', cx, sc, False, 2)
 
 # [layout, centre x, scale, mirrored, sink]: sink puts the layout's table line that far
 # below the rim at its centre (pose_rig.py's line is the drawn rail's top: 2)
 SEATS = g('seats', [['fdr_layout.json', 150, 0.52, False, 2], ['lincoln_layout.json', 470, 0.52, False, 2],
                     ['roosevelt_layout.json', 1130, 0.44, True], ['washington_layout.json', 1440, 0.52, True, 2]])
 ys = [seat(*s_) for s_ in SEATS]
-dy = death(W // 2, g('death', 0.34))
+dy = death(W // 2, g('death', 0.5))
 
 # only on the table: everything from the rim's top edge down (solid, so the
 # rim's soft edge does not show as a seam through a sleeve)
