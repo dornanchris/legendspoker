@@ -140,9 +140,9 @@ art-tools/
   fdr_parts/, roosevelt_parts/, washington_parts/  the White House cast, each
                   with seat.json and <id>_layout.json; see each README
   jfk_parts/      JFK's kit: built, at no table (see CURRENT STATE)
-  socrates_parts/, leonidas_parts/, medusa_parts/, cyclops_parts/  the
-                  Athens table (seats 1-4): pose sheets, face sheet,
-                  pose_rig.json; odysseus_parts/: his prompts
+  socrates_parts/, leonidas_parts/, medusa_parts/, cyclops_parts/,
+                  odysseus_parts/  the Athens table (seats 1-4 and its late
+                  champion): pose sheets, face sheet, pose_rig.json
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -354,9 +354,11 @@ drained once he arrives, flickering lamps). **Socrates is built**
 drawn heads, placed by each drawing's rail. **Leonidas is built** the same
 way (`#/puppet/leonidas`, 24 clips), and **the Cyclops** (`#/puppet/cyclops`,
 24 clips, built a quarter bigger: the giant), and **Medusa**
-(`#/puppet/medusa`, 24 clips, her snakes the tell surface). **Athens is now
-staged on the real table screen**; Odysseus, its late champion, still sits
-down as an empty chair (his prompts: `art-tools/odysseus_parts/POSES.md`).
+(`#/puppet/medusa`, 24 clips, her snakes the tell surface), and **Odysseus**
+(`#/puppet/odysseus`, 24 clips): **Athens is complete on the real table
+screen.** A late champion's images preload with the room (`Stage.preload`),
+and an `arrive` clip, if he has one, plays as he sits down (a clip asked for
+before a figure has loaded waits for it).
 A master head now runs below the collar (`cut_below`), or the join shows as
 a dark seam.
 Athens stays the plain table until all five have puppets.

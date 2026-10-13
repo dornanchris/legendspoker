@@ -86,6 +86,8 @@ export class Stage {
   private backdrop: Img | null = null
   private table: Img | null = null
   private pieces = new Map<string, Img>()
+  private loading = new Map<string, Promise<PuppetPlayer>>()
+  private early = new Map<number, { name: string; prio: Prio; at: number }>()
   /** Which presence piece stands in the room: before the late champion, after, or none. */
   private presence: 'before' | 'after' | null = null
   /** Each loop spot's frame and when it next changes (s). */
@@ -132,12 +134,20 @@ export class Stage {
     this.onReady?.()
   }
 
+  /** Someone who will sit down later (a late champion): their images load now, so they appear the moment they do. */
+  preload(id: string): void {
+    const entry = PUPPETS[id]
+    if (entry && !this.loading.has(id)) this.loading.set(id, PuppetPlayer.load(entry, true))
+  }
+
   /** Put someone in a chair (null empties it). Someone with no puppet leaves it empty. */
   async seat(seat: number, id: string | null): Promise<void> {
     this.actors.delete(seat)
     const entry = id ? PUPPETS[id] : undefined
     if (!id || !entry) return
-    const player = await PuppetPlayer.load(entry, true)
+    const ready = this.loading.get(id)
+    this.loading.delete(id)
+    const player = await (ready ?? PuppetPlayer.load(entry, true))
     if (!this.alive) return
     player.face.still = this.still
     const [x, sc, sink] = seat === DEALER ? this.room.data.dealer : this.room.data.seats[String(this.seatCount)][seat - 1]
@@ -146,6 +156,10 @@ export class Stage {
       id, player, x, scale: sc, flip: x > w / 2 + 1, line: this.rimAt(x) + sink,
       current: null, pending: null, leaving: false,
     })
+    // a clip asked for before the figure was loaded (an arrival's entrance)
+    const early = this.early.get(seat)
+    this.early.delete(seat)
+    if (early && performance.now() - early.at < STALE * 2) this.cue(seat, early.name, early.prio)
   }
 
   /** The room's story piece: 'before' the late champion comes, 'after', or none (an open table). */
@@ -174,6 +188,10 @@ export class Stage {
    */
   cue(seat: number, clip: string, prio: Prio): boolean {
     const a = this.actors.get(seat)
+    if (!a && prio !== PRIO.idle) {                        // still loading: played when they sit down
+      this.early.set(seat, { name: clip, prio, at: performance.now() })
+      return false
+    }
     if (!a || a.leaving || !a.player.has(clip)) return false
     const busy = a.current !== null && a.player.timeOf(a.current.name) >= 0
     if (busy && prio === PRIO.idle) return false

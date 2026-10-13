@@ -19,6 +19,8 @@ import cyclopsRig from '../art/cyclops/rig.json'
 import cyclopsAnim from '../art/cyclops/anim.json'
 import medusaRig from '../art/medusa/rig.json'
 import medusaAnim from '../art/medusa/anim.json'
+import odysseusRig from '../art/odysseus/rig.json'
+import odysseusAnim from '../art/odysseus/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 
@@ -56,6 +58,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   leonidas: { rig: leonidasRig as unknown as RigData, anim: leonidasAnim as unknown as AnimData, base: 'art/leonidas/' },
   cyclops: { rig: cyclopsRig as unknown as RigData, anim: cyclopsAnim as unknown as AnimData, base: 'art/cyclops/' },
   medusa: { rig: medusaRig as unknown as RigData, anim: medusaAnim as unknown as AnimData, base: 'art/medusa/' },
+  odysseus: { rig: odysseusRig as unknown as RigData, anim: odysseusAnim as unknown as AnimData, base: 'art/odysseus/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 

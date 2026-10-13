@@ -48,7 +48,8 @@ body and arms hidden ("-"), and moves the head by the rig's "frames" offset.
 A frame with "head": "own" keeps its drawn head (a hand at the face, a hat in
 the hand): the clip hides the master head instead, and its offset is null.
 "cut_head" cuts the drawn head for the master even without "replace_head".
-A frame takes its pose's placement unless it gives "reg"; a pose drawn on
+A frame with "biggest" keeps only its largest piece (a neighbouring
+cell's drawing reaching into its box). A frame takes its pose's placement unless it gives "reg"; a pose drawn on
 another sheet at another size is placed by hand with its own "reg". Room
 round a frame is "frame_margin" (a hat raised high); "drop_wood" cuts the
 chair's red-brown wherever it is, and "back_strip" clears anything thin in
@@ -610,6 +611,8 @@ def main(spec_path):
             sz = ndimage.sum(fm, lab, range(1, n + 1))
             fm = np.isin(lab, 1 + np.nonzero(sz >= 150)[0])
         fm = ndimage.binary_fill_holes(fm) & (F[..., 3] > 128) & ~trapped
+        if fr.get('biggest'):                              # a neighbouring cell's drawing reaching into this one
+            fm = biggest(fm) | (fm & props)
         if spec.get('felt_holes'):                         # felt enclosed between hands and rail: not him
             low = np.zeros(fshape, bool)
             low[ty + FM - 10:] = True

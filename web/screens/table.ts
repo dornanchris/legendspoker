@@ -417,7 +417,12 @@ export function tableScreen(root: HTMLElement): () => void {
     stage.speed = paceScale > 0 ? Math.min(2, Math.max(0.5, 1 / paceScale)) : 2
     // the room's story piece (Athens: the cup poured for Odysseus) stands until the late champion comes
     stage.setPresence(active.mode === 'tour' && table.arrival ? 'before' : null)
-    stage.onReady = () => { stageReady = true; syncStage(); layoutStage() }
+    stage.onReady = () => {
+      stageReady = true
+      syncStage()
+      layoutStage()
+      if (active.mode === 'tour' && table.arrival) stage?.preload(table.arrival.character)
+    }
     layoutStage()
     stage.load(seatIds).catch(unstage)
     ;(window as any).__stage = stage
@@ -1134,6 +1139,7 @@ export function tableScreen(root: HTMLElement): () => void {
           ui?.root.classList.add('arriving')
           if (ui) ui.stack.textContent = formatChips(e.stack)
           const who = CHARACTERS[e.id]?.short ?? e.id
+          act(e.seat, 'arrive', PRIO.tell)
           log(e.replaces === e.id
             ? `${who} is back, and takes the old chair again with ${formatChips(e.stack)} chips.`
             : `${who} takes the empty chair with ${formatChips(e.stack)} chips.`, 'big')
