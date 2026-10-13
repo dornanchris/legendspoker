@@ -142,5 +142,7 @@ Every piece is drawn at EXACTLY the angle and size of his head in the at-rest po
 - His eyes with the lids half closed; closed; looking toward the viewer; looking down at the table; gazing far away, unfocused; narrowed (one piece each, both eyes with the skin around them)
 - His brows raised; his brows drawn down (one piece each, both brows)
 - Lower-face patches, each the mouth with the moustache and only the TOP of the beard around it, cut straight across just under the nose and again a little below the lower lip: closed at rest; open "ah"; wide "ee"; round "oh"; pursed "oo"; lips pressed "m"; lower lip under the teeth "f"; tongue tip behind the teeth "l"; murmuring, lips barely parted; a faint knowing smile
-- His head turned toward the viewer, nearly front-on, with the hood Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
+- His head turned toward the viewer, nearly front-on, with the hood
+
+Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 ```

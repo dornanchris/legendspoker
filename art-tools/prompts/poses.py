@@ -42,5 +42,5 @@ for i, k in enumerate('ABCD'):
     out.append(f"### Pose sheet {k}\n")
     out.append(block(intro + "\n\n" + body + "\n\n" + tail))
 out.append("### Face overlay sheet\n")
-out.append(block(s['face'] + (SHORT if LOCK else '')))
+out.append(block(s['face'] + ('\n\n' + SHORT.strip() if LOCK else '')))
 open(sys.argv[2], 'w').write("\n".join(out))

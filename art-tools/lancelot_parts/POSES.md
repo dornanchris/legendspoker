@@ -142,5 +142,7 @@ Every piece is drawn at EXACTLY the angle and size of his head in the at-rest po
 - His eyes with the lids half closed; closed; looking toward the viewer; looking down at the table; looking to the side, toward a door; narrowed (one piece each, both eyes with the skin around them)
 - His brows raised; his brows drawn down (one piece each, both brows)
 - Lower-face patches, each the mouth with the chin and jaw around it, clean-shaven, cut straight across just under the nose: closed at rest; open "ah"; wide "ee"; round "oh"; pursed "oo"; lips pressed "m"; lower lip under the teeth "f"; tongue tip behind the teeth "l"; a sigh, lips parted; a dazzling smile; a thin proud smile; jaw set, wounded
-- His head turned toward the viewer, nearly front-on Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
+- His head turned toward the viewer, nearly front-on
+
+Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 ```
