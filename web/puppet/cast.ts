@@ -31,6 +31,8 @@ import davyJonesRig from '../art/davy_jones/rig.json'
 import davyJonesAnim from '../art/davy_jones/anim.json'
 import merlinRig from '../art/merlin/rig.json'
 import merlinAnim from '../art/merlin/anim.json'
+import lancelotRig from '../art/lancelot/rig.json'
+import lancelotAnim from '../art/lancelot/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -78,6 +80,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   silver: { rig: silverRig as unknown as RigData, anim: silverAnim as unknown as AnimData, base: 'art/silver/' },
   davy_jones: { rig: davyJonesRig as unknown as RigData, anim: davyJonesAnim as unknown as AnimData, base: 'art/davy_jones/' },
   merlin: { rig: merlinRig as unknown as RigData, anim: merlinAnim as unknown as AnimData, base: 'art/merlin/' },
+  lancelot: { rig: lancelotRig as unknown as RigData, anim: lancelotAnim as unknown as AnimData, base: 'art/lancelot/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 

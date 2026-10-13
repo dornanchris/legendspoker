@@ -144,7 +144,8 @@ art-tools/
                   odysseus_parts/  the Athens table (seats 1-4 and its late
                   champion): pose sheets, face sheet, pose_rig.json;
                   blackbeard_parts/, kidd_parts/, silver_parts/, davy_jones_parts/: the
-                  Pirate Cove, the same way; merlin_parts/, lancelot_parts/: Camelot
+                  Pirate Cove, the same way; merlin_parts/, lancelot_parts/,
+                  green_knight_parts/: Camelot
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -380,8 +381,10 @@ came from `<id>_parts/poses_spec.json` by `art-tools/prompts/poses.py`.
 fire and its sparks at the far left, on screens wider than 16:9);
 `?room=camelot` previews it. **Merlin is built** (`#/puppet/merlin`, 21
 clips, seat 1; his staff a prop cut by colour, over his head), rebuilt from
-the style-locked redraw (its pose sheet C still owed); Lancelot's prompts
-are written. **The style lock** (the owner: Davy Jones and Merlin
+the style-locked redraw (its pose sheet C still owed); **Lancelot is
+built** (`#/puppet/lancelot`, 24 clips, seat 2), the first drawn under the
+style lock; the Green Knight's prompts are written (seat 3, a quarter bigger,
+with his return as C6). **The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
 style drifted a step each time. Now `poses.py` (`"style_lock": true`) names

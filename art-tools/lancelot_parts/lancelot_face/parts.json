@@ -1,0 +1,332 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "lancelot_face_01.png",
+      "label": "",
+      "x": 13,
+      "y": 10,
+      "w": 466,
+      "h": 411,
+      "pivot": [
+        233.0,
+        205.5
+      ],
+      "area": 124594
+    },
+    {
+      "index": 2,
+      "file": "lancelot_face_02.png",
+      "label": "",
+      "x": 387,
+      "y": 188,
+      "w": 182,
+      "h": 122,
+      "pivot": [
+        91.0,
+        61.0
+      ],
+      "area": 16111
+    },
+    {
+      "index": 3,
+      "file": "lancelot_face_03.png",
+      "label": "",
+      "x": 579,
+      "y": 190,
+      "w": 181,
+      "h": 118,
+      "pivot": [
+        90.5,
+        59.0
+      ],
+      "area": 15851
+    },
+    {
+      "index": 4,
+      "file": "lancelot_face_04.png",
+      "label": "",
+      "x": 770,
+      "y": 189,
+      "w": 182,
+      "h": 120,
+      "pivot": [
+        91.0,
+        60.0
+      ],
+      "area": 15956
+    },
+    {
+      "index": 5,
+      "file": "lancelot_face_05.png",
+      "label": "",
+      "x": 962,
+      "y": 190,
+      "w": 181,
+      "h": 119,
+      "pivot": [
+        90.5,
+        59.5
+      ],
+      "area": 15842
+    },
+    {
+      "index": 6,
+      "file": "lancelot_face_06.png",
+      "label": "",
+      "x": 1154,
+      "y": 190,
+      "w": 180,
+      "h": 119,
+      "pivot": [
+        90.0,
+        59.5
+      ],
+      "area": 15861
+    },
+    {
+      "index": 7,
+      "file": "lancelot_face_07.png",
+      "label": "",
+      "x": 1348,
+      "y": 191,
+      "w": 179,
+      "h": 118,
+      "pivot": [
+        89.5,
+        59.0
+      ],
+      "area": 15685
+    },
+    {
+      "index": 8,
+      "file": "lancelot_face_08.png",
+      "label": "",
+      "x": 602,
+      "y": 358,
+      "w": 182,
+      "h": 91,
+      "pivot": [
+        91.0,
+        45.5
+      ],
+      "area": 11465
+    },
+    {
+      "index": 9,
+      "file": "lancelot_face_09.png",
+      "label": "",
+      "x": 802,
+      "y": 360,
+      "w": 178,
+      "h": 89,
+      "pivot": [
+        89.0,
+        44.5
+      ],
+      "area": 10948
+    },
+    {
+      "index": 10,
+      "file": "lancelot_face_10.png",
+      "label": "",
+      "x": 16,
+      "y": 467,
+      "w": 178,
+      "h": 127,
+      "pivot": [
+        89.0,
+        63.5
+      ],
+      "area": 16463
+    },
+    {
+      "index": 11,
+      "file": "lancelot_face_11.png",
+      "label": "",
+      "x": 209,
+      "y": 468,
+      "w": 169,
+      "h": 129,
+      "pivot": [
+        84.5,
+        64.5
+      ],
+      "area": 16209
+    },
+    {
+      "index": 12,
+      "file": "lancelot_face_12.png",
+      "label": "",
+      "x": 386,
+      "y": 467,
+      "w": 168,
+      "h": 128,
+      "pivot": [
+        84.0,
+        64.0
+      ],
+      "area": 15973
+    },
+    {
+      "index": 13,
+      "file": "lancelot_face_13.png",
+      "label": "",
+      "x": 563,
+      "y": 465,
+      "w": 171,
+      "h": 130,
+      "pivot": [
+        85.5,
+        65.0
+      ],
+      "area": 16498
+    },
+    {
+      "index": 14,
+      "file": "lancelot_face_14.png",
+      "label": "",
+      "x": 754,
+      "y": 464,
+      "w": 175,
+      "h": 132,
+      "pivot": [
+        87.5,
+        66.0
+      ],
+      "area": 16963
+    },
+    {
+      "index": 15,
+      "file": "lancelot_face_15.png",
+      "label": "",
+      "x": 941,
+      "y": 467,
+      "w": 180,
+      "h": 128,
+      "pivot": [
+        90.0,
+        64.0
+      ],
+      "area": 16888
+    },
+    {
+      "index": 16,
+      "file": "lancelot_face_16.png",
+      "label": "",
+      "x": 1133,
+      "y": 468,
+      "w": 189,
+      "h": 127,
+      "pivot": [
+        94.5,
+        63.5
+      ],
+      "area": 17374
+    },
+    {
+      "index": 17,
+      "file": "lancelot_face_17.png",
+      "label": "",
+      "x": 1332,
+      "y": 469,
+      "w": 185,
+      "h": 125,
+      "pivot": [
+        92.5,
+        62.5
+      ],
+      "area": 16596
+    },
+    {
+      "index": 18,
+      "file": "lancelot_face_18.png",
+      "label": "",
+      "x": 13,
+      "y": 592,
+      "w": 452,
+      "h": 415,
+      "pivot": [
+        226.0,
+        207.5
+      ],
+      "area": 126247
+    },
+    {
+      "index": 19,
+      "file": "lancelot_face_19.png",
+      "label": "",
+      "x": 449,
+      "y": 615,
+      "w": 168,
+      "h": 130,
+      "pivot": [
+        84.0,
+        65.0
+      ],
+      "area": 16061
+    },
+    {
+      "index": 20,
+      "file": "lancelot_face_20.png",
+      "label": "",
+      "x": 638,
+      "y": 615,
+      "w": 182,
+      "h": 131,
+      "pivot": [
+        91.0,
+        65.5
+      ],
+      "area": 17444
+    },
+    {
+      "index": 21,
+      "file": "lancelot_face_21.png",
+      "label": "",
+      "x": 834,
+      "y": 616,
+      "w": 188,
+      "h": 130,
+      "pivot": [
+        94.0,
+        65.0
+      ],
+      "area": 17926
+    },
+    {
+      "index": 22,
+      "file": "lancelot_face_22.png",
+      "label": "",
+      "x": 1048,
+      "y": 615,
+      "w": 193,
+      "h": 130,
+      "pivot": [
+        96.5,
+        65.0
+      ],
+      "area": 18498
+    },
+    {
+      "index": 23,
+      "file": "lancelot_face_23.png",
+      "label": "",
+      "x": 1265,
+      "y": 611,
+      "w": 191,
+      "h": 131,
+      "pivot": [
+        95.5,
+        65.5
+      ],
+      "area": 19066
+    }
+  ]
+}
