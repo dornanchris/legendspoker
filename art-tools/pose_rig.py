@@ -57,7 +57,13 @@ under about 2n pixels thick below the table line in frames (the drawn
 rail's outline curving across the felt). "drop_rail": n drops every
 rail-orange shape reaching within n rows of the table line in frames
 ("rail_blue": only colours with less blue than that, for a bare-armed
-character whose skin is the rail's orange). "head_match": "face" places a
+character whose skin is the rail's orange; "rail_green": only colours with
+more green than that share of their red, for a red cloak). "wood_rows_only":
+the wood colour counts only at and below the rail, pixel by pixel (not whole
+shapes reaching it), for a red cloak or crest that hangs down to the rail.
+"rail_band": [above, below] drops only rail-coloured shapes lying wholly
+within those rows round the table line: the drawn rail is a thin band, and
+skin shading as orange as it reaches up the arm. "head_match": "face" places a
 frame's master head on its own drawn head instead of on the stock.
 Master "cloth" ([lo, hi], default [0, 90]) is the brightness of the cloth
 that fills a replaced head's shoulders (a light cloak, not a dark coat).
@@ -94,6 +100,10 @@ import face_rig
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H, TABLE = 1100, 1040, 880
+# "wood_rows_only" (spec): the wood colour counts only at and below the rail,
+# pixel by pixel, never as whole shapes reaching it (a red cloak or crest is
+# the rail's colour, and hangs down to it)
+WOOD_ROWS_ONLY = False
 
 
 def poly_mask(shape, pts):
@@ -110,6 +120,10 @@ def table_colour(a, ty, with_wood=True):
     r, g, b = a[..., 0].astype(int), a[..., 1].astype(int), a[..., 2].astype(int)
     felt = (g > r + 15) & (g > b + 5) & (g > 30)       # not navy (Washington's coat has g > r too); shadowed felt too
     wood = (r - g > 40) & (g < 75) & (r < 200) & (a[..., 3] > 0)
+    if WOOD_ROWS_ONLY:
+        rows = np.zeros_like(wood)
+        rows[max(0, ty - 8):] = True
+        return (felt | (wood & rows)) if with_wood else felt
     lab, n = ndimage.label(wood)
     edge = np.zeros_like(wood)
     edge[max(0, ty - 8):] = True
@@ -298,6 +312,8 @@ def upscale(rgba, k):
 
 def main(spec_path):
     spec = json.load(open(spec_path))
+    global WOOD_ROWS_ONLY
+    WOOD_ROWS_ONLY = bool(spec.get('wood_rows_only'))
     kit = os.path.dirname(os.path.abspath(spec_path))
     out_dir = os.path.join(kit, f"{spec['id']}_pose")
     os.makedirs(out_dir, exist_ok=True)
@@ -554,10 +570,16 @@ def main(spec_path):
             c = F[..., :3].astype(int)
             rail = (c[..., 0] > 1.6 * c[..., 1] + 10) & (c[..., 0] > 60) & ~props
             rail &= c[..., 2] < spec.get('rail_blue', 256)   # bare skin is that orange too, but bluer
+            rail &= c[..., 1] > spec.get('rail_green', 0) * c[..., 0]   # and a red cloak is that, but far less green
             lab, n = ndimage.label(rail)
             if n:
                 low = np.unique(lab[ty + FM - spec['drop_rail']:][rail[ty + FM - spec['drop_rail']:]])
-                fm &= ~ndimage.binary_dilation(np.isin(lab, low[low > 0]), iterations=1)
+                low = low[low > 0]
+                if 'rail_band' in spec:                    # only shapes lying wholly in the rail's band
+                    above, below_ = spec['rail_band']
+                    sl = ndimage.find_objects(lab)
+                    low = [l for l in low if sl[l - 1][0].start >= ty + FM - above and sl[l - 1][0].stop <= ty + FM + below_]
+                fm &= ~ndimage.binary_dilation(np.isin(lab, low), iterations=1)
         if spec.get('felt_lines'):                         # the drawn rail's outline lying on the felt
             t = spec['felt_lines']
             below = np.zeros(fshape, bool)

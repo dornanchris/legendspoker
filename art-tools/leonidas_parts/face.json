@@ -1,0 +1,94 @@
+{
+ "master": "leonidas_parts/leonidas_face/leonidas_face_01.png",
+ "pieces": "leonidas_parts/leonidas_face/leonidas_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 17,
+   "pressed": 18,
+   "disdain": 19,
+   "clenched": 20,
+   "grim": 21
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     180,
+     85
+    ],
+    [
+     318,
+     82
+    ],
+    [
+     318,
+     128
+    ],
+    [
+     180,
+     132
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     180,
+     128
+    ],
+    [
+     318,
+     126
+    ],
+    [
+     318,
+     160
+    ],
+    [
+     180,
+     162
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     205,
+     180
+    ],
+    [
+     318,
+     176
+    ],
+    [
+     318,
+     242
+    ],
+    [
+     205,
+     244
+    ]
+   ]
+  }
+ }
+}
