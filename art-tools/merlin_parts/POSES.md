@@ -2,7 +2,7 @@
 
 Camelot's seat 1 (the player's left), so he is drawn facing the viewer's right and is never mirrored. Built the way the Athens and Pirate Cove casts were (`art-tools/pose_rig.py`): a rest pose with a talking face, every other pose one of these drawings shown whole.
 
-His look, from his character file: lean and tall in a hooded robe of undyed wool, the hood up (pushed back enough that his face is lit and his eyes read at 40 points), a long wild grey beard, deep-set eyes that never quite settle on the table, and a rough knotted staff taller than he is, standing upright beside him. The staff is his tell surface: a tall vertical line that can hum and glow faintly without being touched. It leans against his RIGHT shoulder (the left of the picture), on the outside of the table, so it never crosses Lancelot or Death.
+His look, from his character file: lean and tall in a deep navy hooded robe trimmed with gold knotwork (the owner's pick, from his redrawn sheet C), the hood up (pushed back enough that his face is lit and his eyes read at 40 points), a long wild grey beard, deep-set eyes that never quite settle on the table, and a rough knotted staff taller than he is, standing upright beside him. The staff is his tell surface: a tall vertical line that can hum and glow faintly without being touched. It leans against his RIGHT shoulder (the left of the picture), on the outside of the table, so it never crosses Lancelot or Death.
 
 Ruled out (his character file): T. H. White's Merlyn (living backwards, Archimedes the owl: still in copyright), Disney's The Sword in the Stone (blue robe, starry pointed hat), the metal skullcap of the film Excalibur (1981) and the BBC's Merlin. Build from Geoffrey of Monmouth and Malory: a wild prophet of the woods, not a wizard in a costume. The first prompt borrows Silver's character sheet for LAYOUT AND STYLE ONLY and bans his look by name.
 
@@ -37,16 +37,14 @@ Tags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: the
 
 ## Prompts
 
-One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in this order: Silver's character sheet (`art-tools/silver_parts/sources/silver_sheet.png`) for the layout, then Washington's pose sheet A (`art-tools/washington_parts/sources/poses_a.png`) for the style. From the second prompt on, attach Merlin's own character sheet, his pose sheet A once it exists, AND Washington's pose sheet A again (the style reference), and nothing else.
-
-**These are the style-locked prompts (the redraw).** The sheets in `sources/` came from the first version (without the lock: see git history); they drifted toward detailed illustration, and the game's Merlin is built from them until a redraw replaces them.
+One fresh ChatGPT chat. Merlin's look is now the NAVY robe of his redrawn pose sheet C (`art-tools/merlin_parts/sources/navy_poses_c.png`), the owner's pick; that sheet is done, so this set is the other five. The first prompt (character sheet) attaches THREE images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, the navy sheet C for Merlin's look, and Washington's pose sheet A (`art-tools/washington_parts/sources/poses_a.png`) for the style. From the second prompt on, attach Merlin's new character sheet, the navy sheet C, his new pose sheet A once it exists, and Washington's pose sheet A.
 
 ### Character sheet
 
 ```
-Character sheet for 2D animation rigging: Merlin, the prophet of Arthurian legend, as Geoffrey of Monmouth (c. 1136) and Malory (1485) tell him: a wild prophet of the woods. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. Take the STYLE from the SECOND attached image. No apron, no parrot, no crutch, no striped shirt, no sailor's coat, no clean-shaven face.
+Character sheet for 2D animation rigging: Merlin, the prophet of Arthurian legend, as Geoffrey of Monmouth (c. 1136) and Malory (1485) tell him. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. Draw Merlin EXACTLY as on the SECOND attached sheet: the same face, beard, robe, colours and staff. Take the STYLE from the THIRD attached image.
 
-Merlin: an old man, lean and tall; a long face with deep-set, far-seeing eyes under big bushy grey brows; a long grey beard reaching to his chest, drawn as a few big wavy locks; a hooded robe of plain undyed grey-brown wool, the hood UP but pushed back so his whole face is lit and clearly visible; long sleeves; thin, knotted hands. A rough knotted wooden staff, taller than he is, its top a gnarled knot. Calm, ancient, faintly amused. NOT a costume wizard: no pointed hat, no stars or moons, no blue robe, no owl, no wand, no crystal ball, no metal skullcap. Nothing from Disney's The Sword in the Stone, the film Excalibur, the BBC's Merlin or T. H. White.
+Merlin: an old man, lean and tall; a long face with deep-set, far-seeing eyes under big bushy grey brows; a long, flowing grey beard reaching to his waist, drawn as a few big wavy locks; a deep NAVY hooded robe with the hood UP, framing his face, its edges and wide sleeves trimmed with a gold knotwork braid; brown under-sleeves at the wrists. A twisted brown wooden staff, taller than he is, its top a big spiral knot. Calm, ancient, faintly amused. NOT a costume wizard: no pointed hat, no stars or moons, no owl, no wand, no crystal ball, no metal skullcap. Nothing from Disney's The Sword in the Stone, the film Excalibur, the BBC's Merlin or T. H. White.
 
 Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.
 
@@ -55,7 +53,7 @@ The angle: a gentle three-quarter view, turned about 25 degrees from front-on, f
 Draw, all facing the viewer's right, at the same size:
 - Finished heads, each with the hood, the beard and the top of the robe: neutral, faintly amused; talking, mouth open mid-word; murmuring, eyes half closed; gazing far away past the viewer
 - The torso in the hooded robe: no head, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands
-- Two forearms in the long wool sleeves, lying on a table, pointing toward its centre, open at the elbow end
+- Two forearms in the wide trimmed sleeves with the brown under-sleeves, lying on a table, pointing toward its centre, open at the elbow end
 - The staff on its own, upright, twice: plain; and glowing faintly along its length with a soft blue-white light
 - Four seated reference poses, waist up behind the curved edge of a round green poker table, forearms resting on its edge, hands apart, the staff upright and leaning against his right shoulder (the left of the picture), its top above his head: neutral; the staff glowing faintly; gazing past the table; murmuring
 
@@ -65,7 +63,7 @@ STYLE, the most important rule: match the SECOND attached image (Washington, fro
 ### Pose sheet A
 
 ```
-Character pose sheet for 2D animation reference: Merlin, exactly as on the attached character sheet (lean and tall, a hooded robe of undyed grey-brown wool with the hood up but pushed back so his whole face is lit, a long grey beard in a few big wavy locks, deep-set eyes under bushy brows, a rough knotted wooden staff taller than he is leaning upright against his right shoulder, colours, line weight, flat cartoon style).
+Character pose sheet for 2D animation reference: Merlin, exactly as on the attached character sheet (an old man, a long face with deep-set eyes under big bushy grey brows, a long flowing grey beard to his waist in big wavy locks, a deep NAVY hooded robe with the hood up, its edges and wide sleeves trimmed with a gold knotwork braid, brown under-sleeves, a twisted brown wooden staff with a spiral knot at the top leaning upright against his right shoulder, colours, line weight, flat cartoon style).
 
 Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: waist up, seated behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, the same size, in the same place in its cell, with the table edge at the same height in every cell. Leave a little white between him and the cell's edges, the top of his staff included: nothing of him is cut off. Nothing below the table edge. No chair: nothing at all behind him, just white.
 
@@ -84,7 +82,7 @@ Cards have plain dark backs. Pure white background around each pose; poses do no
 ### Pose sheet B
 
 ```
-Character pose sheet for 2D animation reference: Merlin, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same hooded robe, beard and staff.
+Character pose sheet for 2D animation reference: Merlin, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same navy hooded robe with gold trim, beard and staff.
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). The staff stays upright, leaning against his right shoulder (the left of the picture), its knotted top above his head, unless the pose says otherwise. Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 
@@ -100,25 +98,12 @@ Cards have plain dark backs. Pure white background around each pose; poses do no
 
 ### Pose sheet C
 
-```
-Character pose sheet for 2D animation reference: Merlin, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same hooded robe, beard and staff.
-
-Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). The staff stays upright, leaning against his right shoulder (the left of the picture), its knotted top above his head, unless the pose says otherwise. Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
-
-1. Staring wide-eyed at something that has not happened yet, brows raised, head tilted a little; arms as at rest
-2. Murmuring a word nobody catches: head bowed a little, eyes half closed, lips moving; arms as at rest
-3. Stroking his long beard with his right hand, thoughtful
-4. Brushing ash from his left sleeve with the fingers of his right hand
-5. Glancing up at a candle above him, a faint smile, one finger of his right hand lifted lazily from the felt
-6. His hands folded together on the table, eyes closed, perfectly still
-
-Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No pointed hat, no stars or moons, no owl, no wand, no crystal ball, no chair.
-```
+Done: `sources/navy_poses_c.png` (the navy redraw that set his look).
 
 ### Pose sheet D
 
 ```
-Character pose sheet for 2D animation reference: Merlin, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same hooded robe, beard and staff.
+Character pose sheet for 2D animation reference: Merlin, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same navy hooded robe with gold trim, beard and staff.
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). The staff stays upright, leaning against his right shoulder (the left of the picture), its knotted top above his head, unless the pose says otherwise. Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 
@@ -137,7 +122,7 @@ Cards have plain dark backs. Pure white background around each pose; poses do no
 ```
 Character sheet for 2D animation rigging: Merlin's face overlays, exactly matching the attached sheets' style, colours and line weight.
 
-Every piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head. Draw that head once, top left, with the hood, the beard and the top of the robe, as the reference, mouth closed, WITHOUT the staff. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.
+Every piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head. Draw that head once, top left, with the navy hood, the beard and the top of the robe, as the reference, mouth closed, WITHOUT the staff. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.
 
 - His eyes with the lids half closed; closed; looking toward the viewer; looking down at the table; gazing far away, unfocused; narrowed (one piece each, both eyes with the skin around them)
 - His brows raised; his brows drawn down (one piece each, both brows)
