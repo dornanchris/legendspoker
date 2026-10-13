@@ -86,6 +86,10 @@ Master "props" are things on the head cut from the rest pose as drawn (FDR's
 holder in his teeth): {"holder": {"poly": [...], "pivot": [x, y], "z": 20.4}}.
 Each is its own part on its own bone (parent: head, pivot where it meets the
 mouth), so a clip can tilt it; it is cut from the body and from frames' heads.
+"parent": "torso" puts it on the body instead (Silver's parrot on his
+shoulder); "saturated": n cuts it by colour inside its poly (her feathers,
+brighter than his coat, filled and grown by "outline" for her outline), plus
+"also" polygons taken whatever their colour (her beak and feet).
 
 Writes the runtime rig (web/art/<id>/), a build_puppet layout
 (art-tools/<id>_layout.json) and, in <id>_parts/<id>_pose/, every image plus
@@ -502,6 +506,13 @@ def main(spec_path):
         c = src[..., :3].astype(int)
         skin = (c[..., 0] > 160) & (c[..., 0] - c[..., 2] > 60) & (c[..., 1] > 90) & (c[..., 1] < 175)
         pm_ &= ~skin
+        if 'saturated' in pr:                              # a bird: her bright feathers, then her outline,
+            inside = pm_.copy()                            # and the beak and feet ("also") whatever their colour
+            pm_ &= np.ptp(c, axis=-1) > pr['saturated']
+            pm_ = ndimage.binary_fill_holes(ndimage.binary_closing(pm_, iterations=3))
+            for q in pr.get('also', []):
+                pm_ |= poly_mask(shape, q) & (src[..., 3] > 128)
+            pm_ = ndimage.binary_dilation(pm_, iterations=pr.get('outline', 3)) & inside
         pm_ = biggest(pm_)
         prgba = src.copy()
         prgba[..., 3] = np.where(pm_, src[..., 3], 0)
@@ -814,7 +825,7 @@ def main(spec_path):
     bones = [{'name': 'torso', 'parent': None, 'pivot': [X(150), TABLE]},
              {'name': 'head', 'parent': 'torso', 'pivot': [round(neck[0], 2), round(neck[1], 2)]}]
     for pname, pr in spec['master'].get('props', {}).items():
-        bones.append({'name': pname, 'parent': 'head', 'pivot': [round(X(pr['pivot'][0]), 2), round(Y(pr['pivot'][1]), 2)]})
+        bones.append({'name': pname, 'parent': pr.get('parent', 'head'), 'pivot': [round(X(pr['pivot'][0]), 2), round(Y(pr['pivot'][1]), 2)]})
     for side, arm in spec['arms'].items():
         bones.append({'name': f'arm_{side}', 'parent': 'torso',
                       'pivot': [round(X(arm['elbow'][0]), 2), round(Y(arm['elbow'][1]), 2)]})
