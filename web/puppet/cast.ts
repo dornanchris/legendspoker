@@ -11,6 +11,7 @@ import roosAnim from '../art/roosevelt/anim.json'
 import deathRig from '../art/death/rig.json'
 import deathAnim from '../art/death/anim.json'
 import washingtonAnim from '../art/washington/anim.json'
+import whiteHouse from '../art/rooms/white_house/room.json'
 
 /**
  * The puppets the web build knows: each one's rig (generated) and its anim
@@ -23,6 +24,16 @@ export type AnimData = {
   face: FaceConfig
   clips: Record<string, ClipData>
   reference?: Record<string, string>
+  /**
+   * The clip that acts out a line of the character's tells and idles
+   * (data/characters/<id>.json), keyed by its words: the table screen plays it
+   * whenever those words are shown, real tell or ambient noise alike, so the
+   * figure never says more than the text does. check:data holds the keys to
+   * the character's words.
+   */
+  cues?: Record<string, string>
+  /** Clips with no words: fidgets and the decoys drawn beside each tell, played as ambient noise. */
+  fidgets?: string[]
 }
 
 export type CastEntry = { rig: RigData; anim: AnimData; base: string }
@@ -33,4 +44,28 @@ export const PUPPETS: Record<string, CastEntry> = {
   fdr: { rig: fdrRig as unknown as RigData, anim: fdrAnim as unknown as AnimData, base: 'art/fdr/' },
   roosevelt: { rig: roosRig as unknown as RigData, anim: roosAnim as unknown as AnimData, base: 'art/roosevelt/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
+}
+
+/**
+ * A room the table screen can stage: its backdrop and table, and where the
+ * chairs are (art-tools/room_web.py writes room.json). Keyed by table id.
+ */
+export type RoomData = {
+  id: string
+  design: [number, number]
+  /** Design px of ceiling a short screen may lose off the top. */
+  crop: number
+  backdrop: { img: string; w: number; h: number }
+  table: { img: string; x: number; y: number; w: number; h: number }
+  rim: { x0: number; step: number; y: (number | null)[] }
+  /** By the number of opponents: [centre x, scale, sink] for seat 1, 2, ... */
+  seats: Record<string, [number, number, number][]>
+  dealer: [number, number, number]
+  deck: [number, number]
+}
+
+export type RoomEntry = { data: RoomData; base: string }
+
+export const ROOMS: Record<string, RoomEntry> = {
+  white_house: { data: whiteHouse as unknown as RoomData, base: 'art/rooms/white_house/' },
 }

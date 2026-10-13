@@ -72,8 +72,14 @@ export type LoadedRig = RigData & {
   order: RigBone[]
 }
 
-/** Load a rig's images from `base` (a URL ending in "/"). */
-export async function loadRig(data: RigData, base: string): Promise<LoadedRig> {
+/**
+ * Load a rig's images from `base` (a URL ending in "/"). With `up`, the
+ * images there are that many times smaller than the rig was drawn with
+ * (the table's half-size copies, art-tools/web_half.py) and are scaled back
+ * up; `table: false` skips the bench's preview table.
+ */
+export async function loadRig(data: RigData, base: string, opts: { up?: number; table?: boolean } = {}): Promise<LoadedRig> {
+  const up = opts.up ?? 1
   const images = new Map<string, HTMLImageElement>()
   const load = (src: string) => new Promise<void>((ok, fail) => {
     if (images.has(src)) return ok()
@@ -83,14 +89,14 @@ export async function loadRig(data: RigData, base: string): Promise<LoadedRig> {
     im.src = base + src
     images.set(src, im)
   })
-  await Promise.all([...data.parts.map((p) => load(p.img)), load(data.table)])
+  await Promise.all([...data.parts.map((p) => load(p.img)), opts.table === false ? null : load(data.table)])
 
   const rest = new Map<string, Mat>()
   for (const p of data.parts) {
     const im = images.get(p.img)!
     let m = translate(p.cx, p.cy)
     m = mul(m, rotate(-p.rot))                     // PIL's counter-clockwise is canvas's negative
-    m = mul(m, scale(p.scale * (p.flip ? -1 : 1), p.scale))
+    m = mul(m, scale(p.scale * up * (p.flip ? -1 : 1), p.scale * up))
     m = mul(m, translate(-im.naturalWidth / 2, -im.naturalHeight / 2))
     rest.set(p.name, m)
   }

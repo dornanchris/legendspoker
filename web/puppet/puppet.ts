@@ -119,17 +119,8 @@ export class Puppet {
    * the rail's far edge onto the felt, and a hand lifted above it is in front.
    */
   draw(ctx: CanvasRenderingContext2D, view: Mat, opts: { table?: boolean } = {}): void {
-    const bones = this.boneMatrices()
-    const parts = this.visibleParts()
-    const paint = (list: typeof parts) => {
-      for (const p of list) {
-        const m = mul(mul(view, bones.get(p.bone)!), this.rig.rest.get(p.name)!)
-        ctx.setTransform(m[0], m[1], m[2], m[3], m[4], m[5])
-        ctx.drawImage(this.rig.images.get(p.img)!, 0, 0)
-      }
-    }
     ctx.save()
-    paint(parts)
+    this.paint(ctx, view)
     if (opts.table) {
       ctx.setTransform(view[0], view[1], view[2], view[3], view[4], view[5])
       ctx.drawImage(this.rig.images.get(this.rig.table)!, 0, this.rig.tableLine)
@@ -137,9 +128,38 @@ export class Puppet {
       // from a pixel above the line, so the clip's soft edge never shows the table through a hand
       ctx.rect(0, this.rig.tableLine - 4, this.rig.canvas.w, this.rig.canvas.h - this.rig.tableLine + 4)
       ctx.clip()
-      paint(parts.filter((p) => p.onTable))
+      this.paint(ctx, view, true)
     }
     ctx.restore()
+  }
+
+  /**
+   * Paint this frame's parts with `view`, and nothing else: the room's own
+   * table is drawn by whoever owns the room (web/puppet/stage.ts). With
+   * `onTable`, only the parts that rest on the table, to be drawn again over it.
+   */
+  paint(ctx: CanvasRenderingContext2D, view: Mat, onTable = false): void {
+    const bones = this.boneMatrices()
+    for (const p of this.visibleParts()) {
+      if (onTable && !p.onTable) continue
+      const m = mul(mul(view, bones.get(p.bone)!), this.rig.rest.get(p.name)!)
+      ctx.setTransform(m[0], m[1], m[2], m[3], m[4], m[5])
+      ctx.drawImage(this.rig.images.get(p.img)!, 0, 0)
+    }
+  }
+
+  /** The top of the head at rest, in rig pixels (a hat included): where speech goes. */
+  headTop(): number {
+    let top = Infinity
+    for (const p of this.rig.parts) {
+      if (p.bone !== 'head' || !p.visible) continue
+      const m = this.rig.rest.get(p.name)!
+      const im = this.rig.images.get(p.img)!
+      for (const [x, y] of [[0, 0], [im.naturalWidth, 0], [0, im.naturalHeight], [im.naturalWidth, im.naturalHeight]]) {
+        top = Math.min(top, m[1] * x + m[3] * y + m[5])
+      }
+    }
+    return Number.isFinite(top) ? top : this.rig.tableLine - 400
   }
 
   /** Bone pivots as they are posed, for a debug overlay. */

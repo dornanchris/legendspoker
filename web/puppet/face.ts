@@ -36,6 +36,8 @@ export class Face {
   /** Idle life: random blinks, glances, sway, breath. */
   idle = true
   autoBlink = true
+  /** No sway and no breath (Reduce motion); blinks, looks and speech go on. */
+  still = false
 
   private time = 0
   private nextBlink = 1.5
@@ -143,7 +145,7 @@ export class Face {
     p.add('head', 'rot', this.tilt[0])
     p.add('head', 'x', this.tilt[1])
     p.add('head', 'y', this.tilt[2])
-    if (this.idle) {
+    if (this.idle && !this.still) {
       const [pr, px, py] = c.sway.periods
       const t = this.time
       p.add('head', 'rot', c.sway.rot * Math.sin((2 * Math.PI * t) / pr))

@@ -28,8 +28,16 @@ export class PuppetPlayer {
     this.face = new Face(entry.anim.face)
   }
 
-  static async load(entry: CastEntry): Promise<PuppetPlayer> {
-    return new PuppetPlayer(entry, new Puppet(await loadRig(entry.rig, entry.base)))
+  /** `small`: the half-size images, for the table (the bench keeps the full ones for its close-ups). */
+  static async load(entry: CastEntry, small = false): Promise<PuppetPlayer> {
+    const rig = small
+      ? await loadRig(entry.rig, entry.base + 'half/', { up: 2, table: false })
+      : await loadRig(entry.rig, entry.base)
+    return new PuppetPlayer(entry, new Puppet(rig))
+  }
+
+  has(name: string): boolean {
+    return name in this.entry.anim.clips
   }
 
   get clipNames(): string[] {

@@ -19,7 +19,8 @@ and a line in `cast.ts`.
 | `puppet.ts` | one puppet's pose this frame, and drawing it (table rail layering) |
 | `face.ts` | blinks, gaze, brows, speech, idle sway and breath |
 | `player.ts` | a puppet + its face + its clips on a clock: what a screen owns |
-| `cast.ts` | which puppets the build knows (explicit imports, so file:// works) |
+| `cast.ts` | which puppets and rooms the build knows (explicit imports, so file:// works) |
+| `stage.ts` | a room and its figures under the table screen: layout, layering, cues |
 
 **The pose is rebuilt from rest every frame**; the face and each playing clip
 add to it. So a clip ending at zero leaves the puppet exactly at rest, and the
@@ -56,6 +57,26 @@ the room's table covered everything below its rim, its top edge would cut in
 between a hand and its cuff on the end seats and the arm would look to pass
 through the table. `art-tools/mock_screen.py` draws it this way: the strip of
 each puppet above its own line goes back over the table.
+
+**The stage** (`stage.ts`): the table screen's canvas. A room
+(`web/art/rooms/<id>/room.json`, written by `art-tools/room_web.py`) is laid
+out in mock_screen.py's 1600x900 design space with its bottom on the
+screen's bottom: a wide screen shows more room at the sides, a short one
+loses up to `crop` px of ceiling, a tall one gets more table and then dark.
+The rim is sampled from the table's alpha there, because a page opened from
+disk cannot read pixels back. Back to front: backdrop, Death, the seats,
+the table, each figure again above its own line, the resting parts again
+below the rim. `geometry()` says where each chair, head and Death's deck are
+on screen, for the DOM laid over them. `cue(seat, clip, prio)`: an idle
+gives way to anything and is dropped when they are busy; anything else cuts
+an idle short or waits (one at a time, the newest, dropped if 2.5 s stale)
+for what is playing to end, so a tell is never cut off by the action after
+it. The stage loads `half/`, the half-size images (`art-tools/web_half.py`;
+rerun it after rebuilding a puppet), and scales them back up.
+
+`anim.json` may carry `cues` (a tell's or idle's words -> the clip that acts
+it; check:data holds the words to the character file) and `fidgets` (clips
+played as wordless noise: decoys and small business).
 
 **The bench**: `#/puppet/<id>` (e.g. `web/index.html#/puppet/lincoln`)
 triggers, loops, slows and scrubs every clip beside its reference drawing,

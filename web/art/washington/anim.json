@@ -2343,5 +2343,19 @@
     ]
    }
   }
- }
+ },
+ "cues": {
+  "straightens his cuffs": "cuff",
+  "rests one hand flat on the table": "flat",
+  "sits a fraction straighter": "sits_straighter",
+  "smooths his waistcoat": "waistcoat",
+  "glances toward the window": "window",
+  "works his jaw, briefly": "jaw",
+  "squares the edges of his chips": "square"
+ },
+ "fidgets": [
+  "tap",
+  "smile",
+  "look_at_you"
+ ]
 }

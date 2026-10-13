@@ -2488,5 +2488,20 @@
   "holder_out": "ref_holder_out.png",
   "ash_tap": "ref_ash_tap.png",
   "cape": "ref_cape.png"
- }
+ },
+ "cues": {
+  "tilts his cigarette holder upward": "holder_up",
+  "smiles broadly at the whole table": "broad_smile",
+  "taps the ash from his holder": "ash_tap",
+  "adjusts his pince-nez": "pince_nez",
+  "laughs at something nobody said": "laugh",
+  "settles his cape across his shoulders": "cape",
+  "nods to someone across the room": "nod"
+ },
+ "fidgets": [
+  "holder_low",
+  "half_smile",
+  "holder_out",
+  "look_at_you"
+ ]
 }

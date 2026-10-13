@@ -3624,5 +3624,19 @@
     ]
    }
   }
- }
+ },
+ "cues": {
+  "strokes his beard, slowly": "beard",
+  "leans back and folds his long hands": "lean_back",
+  "allows himself a small smile": "small_smile",
+  "stretches his long back until the chair creaks": "stretch",
+  "rubs his eyes": "rub_eyes",
+  "tips his hat to someone across the table": "hat_tip"
+ },
+ "fidgets": [
+  "chin",
+  "amused",
+  "fidget",
+  "look_at_you"
+ ]
 }

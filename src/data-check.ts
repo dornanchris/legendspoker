@@ -15,6 +15,8 @@ import { CHARACTERS, TABLES, DIALOGUE, DEALER, MARKS, STORY, UNINVITED, fullCast
 import { QUIRKS } from './quirks.js'
 import { CONDITION_TYPES, conditionErrors } from './marks.js'
 import { CALLOUT_ACTIONS, isStage } from './chatter.js'
+import { readdirSync, readFileSync, existsSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
 
 const errors: string[] = []
 const warnings: string[] = []
@@ -389,6 +391,27 @@ if (!STORY?.ending?.paragraphs?.length) err('story', 'ending is not written')
 if (!STORY?.epigraph) err('story', 'no epigraph')
 for (const p of [...(STORY?.invitation?.body ?? []), ...(STORY?.ending?.paragraphs ?? [])]) {
   for (const re of TRIPWIRES) if (re.test(p)) err('story', `tripwire ${re}`)
+}
+
+// ---------------------------------------------------------------- puppets
+// A puppet acts a tell or an idle out by its words (web/art/<id>/anim.json,
+// "cues"). Reword a tell and the figure would silently stop acting it out.
+
+const art = fileURLToPath(new URL('../web/art/', import.meta.url))
+for (const id of existsSync(art) ? readdirSync(art) : []) {
+  const file = `${art}${id}/anim.json`
+  if (!existsSync(file)) continue
+  const anim = JSON.parse(readFileSync(file, 'utf8'))
+  const w = `web/art/${id}/anim.json`
+  const c = CHARACTERS[id]
+  if (!c && (anim.cues || anim.fidgets)) { err(w, 'cues for someone who is not a character'); continue }
+  if (!c) continue
+  const words = new Set([...c.tells.map((t) => t.text), ...c.idles])
+  for (const [text, clip] of Object.entries(anim.cues ?? {}) as [string, string][]) {
+    if (!words.has(text)) err(w, `cue "${text}" is none of ${id}'s tells or idles`)
+    if (!anim.clips?.[clip]) err(w, `cue "${text}" plays "${clip}", which is not a clip`)
+  }
+  for (const clip of anim.fidgets ?? []) if (!anim.clips?.[clip]) err(w, `fidget "${clip}" is not a clip`)
 }
 
 // ---------------------------------------------------------------- report

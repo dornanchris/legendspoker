@@ -2701,5 +2701,20 @@
     ]
    }
   }
- }
+ },
+ "cues": {
+  "grins, all teeth": "grin",
+  "drums his fingers on the felt": "drum",
+  "polishes his spectacles, hard": "polish",
+  "squares his shoulders": "square",
+  "checks his pocket watch": "watch",
+  "leans forward on both elbows": "lean",
+  "tugs at his moustache": "moustache"
+ },
+ "fidgets": [
+  "tap",
+  "push_specs",
+  "laugh",
+  "look_at_you"
+ ]
 }
