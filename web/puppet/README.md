@@ -83,7 +83,9 @@ Reduce motion). `?room=<id>` on the page stages any table in that room.
 
 `anim.json` may carry `cues` (a tell's or idle's words -> the clip that acts
 it; check:data holds the words to the character file) and `fidgets` (clips
-played as wordless noise: decoys and small business).
+played as wordless noise: decoys and small business), and `gutter` (clips
+during which the room's lamp nearest the chair, a spot of its first loop,
+sinks and stutters: Davy Jones's "the lamp nearest him flickers").
 
 **The bench**: `#/puppet/<id>` (e.g. `web/index.html#/puppet/lincoln`)
 triggers, loops, slows and scrubs every clip beside its reference drawing,

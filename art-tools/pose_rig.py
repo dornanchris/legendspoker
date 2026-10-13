@@ -71,6 +71,10 @@ skin shading as orange as it reaches up the arm. "head_match": "face" places a
 frame's master head on its own drawn head instead of on the stock.
 Master "place" ([x, y, scale] from head_box's corner) sets the master head
 by hand where the fit cannot find it (Silver: the parrot in the box).
+Master "drop_white" ([x0, y0, x1, y1], master pixels) clears the sheet's white
+caught inside the master head there (Davy Jones's hat weed).
+"felt_dark_teal": the felt counts in dark teal shades whatever their green and
+blue (the shadows inside drawn ripples), never in a light highlight.
 Master "cloth" ([lo, hi], default [0, 90]) is the brightness of the cloth
 that fills a replaced head's shoulders (a light cloak, not a dark coat).
 "fill_shoulders" (with master "shoulder_y", "shoulder_close") fills the coat
@@ -118,6 +122,7 @@ WOOD_ROWS_ONLY = False
 FELT_TEAL = False
 # "felt_blue" (spec): the felt is only the bluer green (her snakes are the felt's green otherwise)
 FELT_BLUE = False
+FELT_DARK_TEAL = False
 
 
 def poly_mask(shape, pts):
@@ -137,6 +142,8 @@ def table_colour(a, ty, with_wood=True):
         felt |= (g > r + 40) & (b > r + 30) & (g > b - 12) & (g > 85)   # not a dark teal cloth
     if FELT_BLUE:
         felt &= b > r + 25
+    if FELT_DARK_TEAL:                                  # the felt's shadows inside drawn ripples (blue as green)
+        felt |= (r < 60) & (g > r + 15) & (b > r + 15)
     wood = (r - g > 40) & (g < 75) & (r < 200) & (a[..., 3] > 0)
     if WOOD_ROWS_ONLY:
         rows = np.zeros_like(wood)
@@ -334,8 +341,9 @@ def main(spec_path):
     WOOD_ROWS_ONLY = bool(spec.get('wood_rows_only'))
     global FELT_TEAL
     FELT_TEAL = bool(spec.get('felt_teal'))
-    global FELT_BLUE
+    global FELT_BLUE, FELT_DARK_TEAL
     FELT_BLUE = bool(spec.get('felt_blue'))
+    FELT_DARK_TEAL = bool(spec.get('felt_dark_teal'))
     kit = os.path.dirname(os.path.abspath(spec_path))
     out_dir = os.path.join(kit, f"{spec['id']}_pose")
     os.makedirs(out_dir, exist_ok=True)
@@ -531,7 +539,14 @@ def main(spec_path):
     if 'face' in m:
         # made here from the face sheet: the master head (its collar faded off
         # below cut_below) and the eye, brow and mouth layers baked onto it
-        face_rig.cut_below(Image.open(os.path.join(HERE, m['piece'])), m['cut_below']).save(os.path.join(HERE, m['file']))
+        mimg = face_rig.cut_below(Image.open(os.path.join(HERE, m['piece'])), m['cut_below'])
+        if 'drop_white' in m:                              # sheet white caught inside the piece (between weed strands)
+            x0, y0, x1, y1 = m['drop_white']
+            ma_ = np.array(mimg.convert('RGBA'))
+            box_ = ma_[y0:y1, x0:x1]
+            box_[..., 3] = np.where(box_[..., :3].min(-1) > 215, 0, box_[..., 3])
+            mimg = Image.fromarray(ma_)
+        mimg.save(os.path.join(HERE, m['file']))
         face_rig.main(os.path.join(HERE, m['face']), os.path.join(HERE, m['layers']), m['cut_below'])
     ref = os.path.join(out_dir, '_rest_head.png')
     hb = m['head_box']

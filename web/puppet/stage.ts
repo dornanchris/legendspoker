@@ -92,6 +92,8 @@ export class Stage {
   private presence: 'before' | 'after' | null = null
   /** Each loop spot's frame and when it next changes (s). */
   private flicker: { frame: number; next: number }[][] = []
+  /** Each loop spot guttering until this time (s): a lamp dimming beside a tell. */
+  private gutters: number[][] = []
   private clock = 0
   private rimPath: Path2D
   /** Clips play at this rate (the presentation clock's pace); the face and idles never change speed. */
@@ -127,6 +129,7 @@ export class Stage {
       this.pieces.set(name, await image(base + p.img))
     }))
     this.flicker = (this.room.data.loops ?? []).map((l) => l.spots.map(() => ({ frame: 0, next: 0 })))
+    this.gutters = (this.room.data.loops ?? []).map((l) => l.spots.map(() => 0))
     await Promise.all([this.seat(DEALER, 'death'), ...seatIds.map((id, i) => (i > 0 && id ? this.seat(i, id) : null))])
     if (!this.alive) return
     this.last = performance.now()
@@ -220,6 +223,21 @@ export class Stage {
     a.player.play(clip)
     a.current = { name: clip, prio }
     a.pending = null
+    const anim = PUPPETS[a.id]?.anim
+    if (anim?.gutter?.includes(clip)) this.gutter(a.x, (anim.clips[clip]?.duration ?? 0) / (this.speed || 1))
+  }
+
+  /** The lamp nearest a chair (the room's first loop: its flames) gutters for a while. */
+  private gutter(x: number, secs: number) {
+    const spots = this.room.data.loops?.[0]?.spots
+    if (!spots?.length || secs <= 0) return
+    const line = this.rimAt(x)
+    let best = 0
+    spots.forEach(([sx, bottom], j) => {
+      const [bx, bb] = spots[best]
+      if (Math.abs(sx - x) + Math.abs(bottom - line) / 2 < Math.abs(bx - x) + Math.abs(bb - line) / 2) best = j
+    })
+    this.gutters[0][best] = this.clock + secs
   }
 
   setStill(still: boolean) {
@@ -331,17 +349,31 @@ export class Stage {
       ctx.drawImage(this.backdrop, d.design[0] / 2 - bw / 2, d.design[1] - bh, bw, bh)
       // the room's pieces, scaled with the backdrop about its foot
       set(mul(mul(mul(D, translate(d.design[0] / 2, d.design[1])), scale(s, s)), translate(-d.design[0] / 2, -d.design[1])))
-      const piece = (name: string, x: number, bottom: number, h: number) => {
+      const piece = (name: string, x: number, bottom: number, h: number, alpha = 1) => {
         const im = this.pieces.get(name), p = d.pieces?.[name]
         if (!im || !p) return
         const w = h * p.aspect
+        ctx.globalAlpha = alpha
         ctx.drawImage(im, x - w / 2, bottom - h, w, h)
+        ctx.globalAlpha = 1
       }
       const story = this.presence && d.presence?.[this.presence]
       const sp = story ? d.pieces?.[story] : undefined
       if (story && sp?.x !== undefined) piece(story, sp.x, sp.bottom!, sp.h!)
-      ;(d.loops ?? []).forEach((l, i) => l.spots.forEach(([x, bottom, h], j) =>
-        piece(l.frames[this.flicker[i]?.[j]?.frame ?? 0], x, bottom, h)))
+      // a guttering lamp sinks low and stutters (only dims under Reduce motion)
+      const dim = (until: number) => until <= this.clock ? 1
+        : this.still ? 0.4 : 0.15 + 0.5 * Math.abs(Math.sin(this.clock * 31) * Math.sin(this.clock * 17))
+      ;(d.loops ?? []).forEach((l, i) => l.spots.forEach(([x, bottom, h], j) => {
+        const a = dim(this.gutters[i]?.[j] ?? 0)
+        piece(l.frames[this.flicker[i]?.[j]?.frame ?? 0], x, bottom, h, a)
+        if (a < 1) {                                     // the flame painted on the backdrop goes dark with it
+          const g = ctx.createRadialGradient(x, bottom - h / 2, 0, x, bottom - h / 2, h * 1.1)
+          g.addColorStop(0, `rgba(8, 6, 5, ${0.85 * (1 - a)})`)
+          g.addColorStop(1, 'rgba(8, 6, 5, 0)')
+          ctx.fillStyle = g
+          ctx.fillRect(x - h * 1.1, bottom - h / 2 - h * 1.1, h * 2.2, h * 2.2)
+        }
+      }))
     }
 
     // Death first: he sits furthest back

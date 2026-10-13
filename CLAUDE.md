@@ -143,7 +143,8 @@ art-tools/
   socrates_parts/, leonidas_parts/, medusa_parts/, cyclops_parts/,
                   odysseus_parts/  the Athens table (seats 1-4 and its late
                   champion): pose sheets, face sheet, pose_rig.json;
-                  blackbeard_parts/, kidd_parts/, silver_parts/: the Pirate Cove, the same way
+                  blackbeard_parts/, kidd_parts/, silver_parts/, davy_jones_parts/: the
+                  Pirate Cove, the same way
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -367,12 +368,14 @@ A master head now runs below the collar (`cut_below`), or the join shows as
 a dark seam.
 Athens stays the plain table until all five have puppets.
 `?room=athens` stages any table in it, to look at a room before its cast.
-**Pirate Cove's room is built** too (flickering lanterns, glints on the
-water, a gull), **Blackbeard** (`#/puppet/blackbeard`, 25 clips, seat 4) and
-**Kidd** (`#/puppet/kidd`, 24 clips, seat 1) and **Silver** (`#/puppet/silver`,
-24 clips, seat 2; Captain Flint is a prop on his shoulder, cut by colour).
-Davy Jones is the last; his prompts are written (`<id>_parts/POSES.md`, from
-`poses_spec.json` by `art-tools/prompts/poses.py`).
+**The Pirate Cove is complete on the real table screen** too: its room
+(flickering lanterns, glints on the water, a gull), **Kidd**
+(`#/puppet/kidd`, 24 clips, seat 1), **Silver** (`#/puppet/silver`, 24 clips,
+seat 2; Captain Flint is a prop on his shoulder, cut by colour), **Davy
+Jones** (`#/puppet/davy_jones`, 24 clips, seat 3, mirrored; when his face
+sinks into shadow the lantern nearest him gutters: `gutter` in anim.json)
+and **Blackbeard** (`#/puppet/blackbeard`, 25 clips, seat 4). Their prompts
+came from `<id>_parts/poses_spec.json` by `art-tools/prompts/poses.py`.
 `CHARACTER-ART-PROMPTS.md` carries all of this, and every character is to be
 redrawn under it. Lincoln was the first kit drawn that way (flat cartoon
 style, the owner's pick); the whole White House table (Lincoln, FDR,

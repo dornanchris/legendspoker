@@ -27,6 +27,8 @@ import kiddRig from '../art/kidd/rig.json'
 import kiddAnim from '../art/kidd/anim.json'
 import silverRig from '../art/silver/rig.json'
 import silverAnim from '../art/silver/anim.json'
+import davyJonesRig from '../art/davy_jones/rig.json'
+import davyJonesAnim from '../art/davy_jones/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -52,6 +54,8 @@ export type AnimData = {
   cues?: Record<string, string>
   /** Clips with no words: fidgets and the decoys drawn beside each tell, played as ambient noise. */
   fidgets?: string[]
+  /** Clips during which the room's lamp nearest the seat gutters (Davy Jones's flickering lamp). */
+  gutter?: string[]
 }
 
 export type CastEntry = { rig: RigData; anim: AnimData; base: string }
@@ -69,6 +73,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   blackbeard: { rig: blackbeardRig as unknown as RigData, anim: blackbeardAnim as unknown as AnimData, base: 'art/blackbeard/' },
   kidd: { rig: kiddRig as unknown as RigData, anim: kiddAnim as unknown as AnimData, base: 'art/kidd/' },
   silver: { rig: silverRig as unknown as RigData, anim: silverAnim as unknown as AnimData, base: 'art/silver/' },
+  davy_jones: { rig: davyJonesRig as unknown as RigData, anim: davyJonesAnim as unknown as AnimData, base: 'art/davy_jones/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 
