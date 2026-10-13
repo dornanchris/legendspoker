@@ -52,12 +52,20 @@ A frame takes its pose's placement unless it gives "reg"; a pose drawn on
 another sheet at another size is placed by hand with its own "reg". Room
 round a frame is "frame_margin" (a hat raised high); "drop_wood" cuts the
 chair's red-brown wherever it is, and "back_strip" clears anything thin in
-the columns at his back (the chair's outline). An arm asset may give "auto":
+the columns at his back (the chair's outline). "felt_lines": n drops anything
+under about 2n pixels thick below the table line in frames (the drawn
+rail's outline curving across the felt). "head_match": "face" places a
+frame's master head on its own drawn head instead of on the stock.
+"fill_shoulders" (with master "shoulder_y", "shoulder_close") fills the coat
+between a narrower master neck and a frame's shoulders; "no_peel" keeps the
+wood-peeling off frames for a character dressed in the wood's brown. An arm asset may give "auto":
 {"x": [x0, x1], "top": y} in place of "poly" (with "space": "rest"): the
 piece is what differs from the rest pose there (auto_piece), for poses where
 only a hand moves; "drop_red" drops red chips as "drop_blue" drops card backs. "strip_thin": n drops strands
 under about 2n pixels wide from arm pieces (rail lines clinging to a hand);
-leave it off where fingers are that thin.
+leave it off where fingers are that thin. An arm (or one of its assets) may
+give "register_box": that asset's pose is then placed by matching that box
+(its shoulder and sleeve) rather than the torso, so the seam lines up.
 
 Master "props" are things on the head cut from the rest pose as drawn (FDR's
 holder in his teeth): {"holder": {"poly": [...], "pivot": [x, y], "z": 20.4}}.
@@ -320,7 +328,18 @@ def main(spec_path):
             # then moved into the rest pose's space; or, with "space": "rest",
             # cut after the move, so every piece's elbow edge is the same line
             in_rest = a.get('space') == 'rest'
-            src = to_rest_space(poses[a['pose']], regs[a['pose']], shape) if in_rest else poses[a['pose']]
+            reg_a = regs[a['pose']]
+            if 'reg' in a:                                 # placed by hand
+                reg_a = tuple(a['reg'])
+            elif 'register_box' in a or 'register_box' in arm:
+                # matched where the piece meets the body (this side's shoulder and
+                # sleeve), not on the torso: the drawings differ a little in size and
+                # place, and the seam is where a few pixels show
+                rb = a.get('register_box', arm.get('register_box'))
+                s_, dx_, dy_, err_ = register(R, poses[a['pose']], rb, scales=np.arange(0.88, 1.2, 0.01), span=60)
+                reg_a = (s_, dx_, dy_)
+                print(f'  arm_{side}.{state} ({a["pose"]}) on its shoulder: scale {s_:.2f}, shift {dx_}, {dy_} (error {err_:.1f})')
+            src = to_rest_space(poses[a['pose']], reg_a, shape) if in_rest else poses[a['pose']]
             # "props": polygons round chips in the hand; their red is the rail's, so
             # inside them no wood filter (the outline keeps the rail out)
             props = np.zeros(src.shape[:2], bool)
@@ -374,7 +393,7 @@ def main(spec_path):
             if not a.get('props'):                         # (peeling would eat the chips' red)
                 rgba = peel_wood(rgba)
             if not in_rest:
-                rgba = to_rest_space(rgba, regs[a['pose']], shape)
+                rgba = to_rest_space(rgba, reg_a, shape)
             if a['pose'] == rest and state == arm['rest']:
                 rest_arm |= rgba[..., 3] > 128
             assets[(side, state)] = rgba
@@ -424,7 +443,12 @@ def main(spec_path):
         if fb is not None or fp:
             # below this row the hole is shoulders, not air: filled with the robe
             # round it, so a narrower swapped head never shows a hole behind it
-            hole = cut & sil & (poly_mask(shape, fp) if fp else (np.arange(shape[0])[:, None] >= fb))
+            if fp and isinstance(fp[0][0], (int, float)):  # one polygon, or a list of them
+                fp = [fp]
+            fpm = np.zeros(shape, bool)
+            for q in fp or []:
+                fpm |= poly_mask(shape, q)
+            hole = cut & sil & (fpm if fp else (np.arange(shape[0])[:, None] >= fb))
             cloth = (body[..., 3] > 200) & ~cut & (body[..., :3].astype(int).max(-1) < 90)
             body[..., :3] = np.where(hole[..., None], diffuse_fill(body[..., :3], hole, cloth, iters=120), body[..., :3]).astype(np.uint8)
             body[..., 3] = np.where(hole, 255, body[..., 3])
@@ -471,6 +495,7 @@ def main(spec_path):
     ox, oy = round(hb[0] + mx / k), round(hb[1] + my / k)
     ys, xs = slice(max(0, oy), min(shape[0], oy + ma.shape[0])), slice(max(0, ox), min(shape[1], ox + ma.shape[1]))
     mhead[ys, xs] = ma[ys.start - oy:ys.stop - oy, xs.start - ox:xs.stop - ox]
+    mhead_core = ndimage.binary_erosion(mhead, iterations=2)
     for _, pmask in head_props.values():                   # a frame's own holder goes with its head
         mhead |= ndimage.binary_dilation(pmask, iterations=3)
 
@@ -518,6 +543,12 @@ def main(spec_path):
         # thin lines (the rail's highlight, the chair's outline) go: a figure's own
         # outline is part of a shape, and comes back with the dilation
         fm &= ndimage.binary_dilation(ndimage.binary_opening(fm, iterations=2), iterations=2) | props
+        if spec.get('felt_lines'):                         # the drawn rail's outline lying on the felt
+            t = spec['felt_lines']
+            below = np.zeros(fshape, bool)
+            below[ty + FM - 2:] = True
+            thick = ndimage.binary_dilation(ndimage.binary_opening(fm, iterations=t), iterations=t + 1)
+            fm &= ~below | thick | props
         if 'back_strip' in spec:                           # the chair's outline at his back: nothing thin there
             strip = np.zeros(fshape, bool)
             strip[:, :spec['back_strip'] + FM] = True
@@ -529,11 +560,17 @@ def main(spec_path):
         fm = ndimage.binary_fill_holes(fm) & (F[..., 3] > 128) & ~trapped
         for ex in fr.get('except', []):                    # again: filling holes refills one he encloses
             fm &= ~pm(ex)
-        own = fr.get('head') == 'own'                      # its own head kept: a hand at the face, the hat moving
+        own = fr.get('head') == 'own'
+        fm_before = fm.copy()                      # its own head kept: a hand at the face, the hat moving
         if own:
             hx = hy = None
         elif isinstance(fr.get('head'), list):
             hx, hy = fr['head']
+        elif fr.get('head_match') == 'face' or spec.get('head_match') == 'face':
+            # the rest pose's head moved onto the frame's own drawn head
+            hb_ = spec['master']['head_box']
+            _, hx, hy, err = register(F, pad(R), [hb_[0] + FM, hb_[1] + FM, hb_[2] + FM, min(hb_[3], spec['collar_y']) + FM],
+                                      scales=[1.0], span=60)
         else:                                              # where its stock and collar are: the head sits on them
             # the rest pose moved onto the frame: its stock lands on the frame's
             sb = spec.get('stock_box', [200, 140, 310, 230])
@@ -560,6 +597,7 @@ def main(spec_path):
             cut |= box & head
             line = max(0, spec['collar_y'] + hy + FM)
             cut[line:] = False
+            fm_before = fm.copy()
             fm &= ~cut
             # the head's crumbs left past the cut: above the collar line, keep only
             # what is solidly joined to the body below it (thin bridges broken)
@@ -572,7 +610,27 @@ def main(spec_path):
             fm = fm & ((np.arange(fshape[0])[:, None] >= line) | ndimage.binary_dilation(keep & (lab > 0), iterations=2))
         rgba = F.copy()
         rgba[..., 3] = np.where(fm, F[..., 3], 0)
-        rgba = np.where(props[..., None], rgba, peel_wood(rgba.copy()))
+        if not spec.get('no_peel'):                        # (a brown coat is the wood's colour: it would be eaten)
+            rgba = np.where(props[..., None], rgba, peel_wood(rgba.copy()))
+        if not own and (spec.get('fill_shoulders') or fr.get('fill_shoulders')) and (spec['master'].get('replace_head') or fr.get('cut_head')):
+            # the master head's neck is narrower than the frame's head: what the cut
+            # took beside it, below the master's chin line, is shoulder, filled with
+            # the coat round it so no hole shows between head and coat
+            core = ndimage.shift(pad(mhead_core), (hy, hx), order=0, cval=False)
+            # the gap between the master's neck and the frame's coat: inside their
+            # joined outline (closed over a few pixels), or where the frame had its head
+            joined = ndimage.binary_fill_holes(ndimage.binary_closing(fm | core, iterations=spec.get('shoulder_close', 14)))
+            hole = (joined | ndimage.binary_fill_holes(fm_before)) & ~fm & ~core
+            hole &= np.arange(fshape[0])[:, None] < spec['collar_y'] + hy + FM + 20
+            print(f'  frame {name}: {int(hole.sum())} pixels of shoulder filled beside the master neck')
+            hole &= np.arange(fshape[0])[:, None] > spec['master']['shoulder_y'] + hy + FM
+            c = rgba[..., :3].astype(int)
+            coat = fm & (c.max(-1) < 110) & (c.max(-1) > 25) & (np.ptp(c, axis=-1) < 60)
+            if hole.any() and coat.any():
+                _, (iy, ix) = ndimage.distance_transform_edt(~coat, return_indices=True)
+                field = ndimage.uniform_filter(rgba[iy, ix, :3].astype(float), size=(7, 7, 1))
+                rgba[..., :3] = np.where(hole[..., None], field, rgba[..., :3]).astype(np.uint8)
+                rgba[..., 3] = np.where(hole, 255, rgba[..., 3])
         # pale flecks on the outline (the sheet's white, kept by the resize):
         # off, a pixel at a time from outside in; cuffs and collars are cream,
         # warmer than the paper

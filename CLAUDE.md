@@ -148,8 +148,8 @@ art-tools/
   face_rig.py     bakes a face-overlay sheet into seam-free eye/brow/mouth
                   layers on a master head
   pose_rig.py     builds a puppet from complete pose drawings: one-piece
-                  forearm+hand assets on elbow pivots (Lincoln's,
-                  Washington's, FDR's and Death's game rigs)
+                  forearm+hand assets on elbow pivots (the White House
+                  table's and Death's game rigs)
 MOTION-SPEC.md    the animation parts list, tagged MECH/IDLE/BEAT/TELL
 ASSETS.md         every free/CC0 source + licensing traps
 CHARACTER-ART-PROMPTS.md  image prompts per character: a reference portrait,
@@ -379,8 +379,9 @@ way (`#/puppet/death`, 26 clips: the deal to either side and to you, burn,
 flop, turn, shuffle, cut, rake, the pot to each side, the lesson gesture, the
 guest's way out, heads-up steepled fingers, head turns, and the finale's own
 actions); front-on, his hand pieces are cut automatically as what differs
-from rest (`auto` in `pose_rig.py`), and his jaw talks. Roosevelt is the last
-of the White House table.
+from rest (`auto` in `pose_rig.py`), and his jaw talks. Roosevelt is built the same way (`#/puppet/roosevelt`, 24
+clips): the whole White House table and its dealer are now animated puppets,
+not yet on the table screen.
 **Layering rule for the table screen:** the room's table covers a puppet only
 below the puppet's own table line as well as below the rim (see
 `web/puppet/README.md`); the end seats' rim curves up above the drawn rail.

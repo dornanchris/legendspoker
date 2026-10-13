@@ -93,7 +93,7 @@ def death(cx, sc):
 # [layout, centre x, scale, mirrored, sink]: sink puts the layout's table line that far
 # below the rim at its centre (pose_rig.py's line is the drawn rail's top: 2)
 SEATS = g('seats', [['fdr_layout.json', 150, 0.52, False, 2], ['lincoln_layout.json', 470, 0.52, False, 2],
-                    ['roosevelt_layout.json', 1130, 0.44, True], ['washington_layout.json', 1440, 0.52, True, 2]])
+                    ['roosevelt_layout.json', 1130, 0.52, True, 2], ['washington_layout.json', 1440, 0.52, True, 2]])
 ys = [seat(*s_) for s_ in SEATS]
 dy = death(W // 2, g('death', 0.5))
 

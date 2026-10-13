@@ -30,7 +30,35 @@ forearms along the table's edge, hands folded in front.
 
 - The cards have a red back, not Death's; hide them.
 
-## Next: the pose drawings
+## The game's puppet: from the pose drawings
 
-`POSES.md` lists his 24 poses and the prompts for four pose sheets and a
-face sheet, to build him with `pose_rig.py` as the rest of the table is.
+**Built by `art-tools/pose_rig.py` from `pose_rig.json`** from his four pose
+sheets and his face sheet (`cut_face.json` into `roosevelt_face/`), as the
+rest of the table is. `seat.json` now writes its layout to
+`roosevelt_rig/parts_sheet_layout.json`.
+
+- Rest = A1 (hands apart). The master head replaces A1's head.
+- **Face**: eyes (half, closed, viewer, down, up, narrow), brows (raised,
+  down), mouths (rest, ah, ee, oh, oo, m, f, l, grin, laugh, scowl); heads
+  23 (laughing, thrown back) and 24 (front-on). Piece 2 (the head without
+  spectacles) and 6 (the spectacles alone) are cut but unused: the polish
+  tell is a whole-figure drawing.
+- **Arm pieces** (right hand) traced in the rest pose's pixels: peek, check,
+  call (chips kept), fold, show (cards cut out), drum, tap, talk and fist
+  (raised); left: the pocket watch.
+- **Frames**: bet, all in, collect, the lean, arms folded (lost pot), the
+  heads-up lean, with the master head on the frame's own drawn head
+  (`head_match: "face"`) and the coat filled beside its narrower neck
+  (`fill_shoulders`); polish, push the spectacles up and the moustache tug
+  keep their own heads. His coat is the chair's brown, so the wood peeling is
+  off (`no_peel`). Sheets differ a little in size; frames are placed by the
+  rail's height and his shoulders.
+
+**Clips** (`web/art/roosevelt/anim.json`, 24, each ending at rest; preview
+`web/index.html#/puppet/roosevelt`): check, peek, call, bet, fold, all in,
+show, collect; tells `grin` (strong) beside `laugh`, `drum` (bluffing) beside
+`tap`, `polish` (tilted) beside `push_specs`; idles `square`, `watch`,
+`moustache`, `lean`; beats `talk`, `look_at_you`, `big_bet`, `lost_pot`,
+`won_pot`, `heads_up`.
+
+`POSES.md` lists his 24 poses and the prompts.

@@ -59,5 +59,7 @@
   "ne": 30,
   "fe": 30,
   "ey": -30
- }
+ },
+ "layout": "roosevelt_parts/roosevelt_rig/parts_sheet_layout.json",
+ "note": "Superseded for the game by pose_rig.json. Kept for the parts-sheet build and its head swaps."
 }
