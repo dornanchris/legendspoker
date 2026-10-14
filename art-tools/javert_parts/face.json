@@ -1,0 +1,70 @@
+{
+ "note": "The master is the rest pose's own head and bicorne (javert_master.png, cut from pose A1). Every eye piece carries its brows and the hat's brim; the brow pieces 12 and 14 are not used.",
+ "master": "javert_parts/javert_face/javert_master.png",
+ "pieces": "javert_parts/javert_face/javert_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 3,
+   "closed": 5,
+   "viewer": 4,
+   "down": 2,
+   "side": 7,
+   "narrow": 6,
+   "wide": 8
+  },
+  "mouth": {
+   "rest": 9,
+   "ah": 10,
+   "ee": 11,
+   "oh": 13,
+   "oo": 15,
+   "m": 17,
+   "f": 18,
+   "l": 19,
+   "grim": 20,
+   "set": 21
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     272,
+     124
+    ],
+    [
+     362,
+     124
+    ],
+    [
+     362,
+     162
+    ],
+    [
+     272,
+     162
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     280,
+     180
+    ],
+    [
+     350,
+     180
+    ],
+    [
+     350,
+     215
+    ],
+    [
+     280,
+     215
+    ]
+   ]
+  }
+ }
+}

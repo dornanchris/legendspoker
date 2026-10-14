@@ -51,6 +51,8 @@ import caesarRig from '../art/caesar/rig.json'
 import caesarAnim from '../art/caesar/anim.json'
 import nemoRig from '../art/nemo/rig.json'
 import nemoAnim from '../art/nemo/anim.json'
+import javertRig from '../art/javert/rig.json'
+import javertAnim from '../art/javert/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -116,6 +118,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   pope: { rig: popeRig as unknown as RigData, anim: popeAnim as unknown as AnimData, base: 'art/pope/' },
   caesar: { rig: caesarRig as unknown as RigData, anim: caesarAnim as unknown as AnimData, base: 'art/caesar/' },
   nemo: { rig: nemoRig as unknown as RigData, anim: nemoAnim as unknown as AnimData, base: 'art/nemo/' },
+  javert: { rig: javertRig as unknown as RigData, anim: javertAnim as unknown as AnimData, base: 'art/javert/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 

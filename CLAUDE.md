@@ -157,7 +157,7 @@ art-tools/
                   Pirate Cove, the same way; merlin_parts/, lancelot_parts/,
                   green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot;
                   cerberus_parts/, scipio_parts/, spartacus_parts/, pope_parts/,
-                  caesar_parts/: Rome (all built); nemo_parts/ (built), javert_parts/:
+                  caesar_parts/: Rome (all built); nemo_parts/, javert_parts/ (built), alice_parts/:
                   Baker Street
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
@@ -432,6 +432,8 @@ Holmes's armchair at the far right (wider than 16:9 only). The V R sits at
 58% across, high: a short screen's ceiling crop (`crop` 140) can take its top.
 **Nemo is built** (`#/puppet/nemo`, 24 clips, seat 1), the great pearl on
 the felt by his right hand (`keep_white` keeps its highlight).
+**Javert is built** (`#/puppet/javert`, 24 clips, seat 2), in a plain black
+bicorne (the owner's call over a top hat: less recognisable).
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
