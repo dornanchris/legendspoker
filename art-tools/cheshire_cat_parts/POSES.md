@@ -19,7 +19,7 @@ Tags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: fad
 | B1 | All in: both paws push his whole stack | MECH |
 | B2 | Show: flips his cards over with a paw | MECH |
 | B3 | Collect: both paws gathering the pot in | MECH |
-| B4 | Fading away, beginning with the end of his tail: tail and hindquarters gone | TELL |
+| B4 | Fading away tail first: tail and body up to mid-chest gone, the rest floating | TELL |
 | B5 | His head drifts a little way off his shoulders (decoy for B4) | IDLE |
 | B6 | Blinks one eye, then the other: one eye shut | TELL |
 | C1 | Washes a paw (decoy for B6) | IDLE |
@@ -90,7 +90,7 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: chest up, sitting 
 1. All in: both front paws pushing his whole stack of chips forward, eyes bright
 2. Showing: his right front paw flipping two cards face up; the card faces are BLANK white, no ranks, no suits
 3. Collecting the pot: both front paws out on the felt, gathering a pile of chips in
-4. Fading away, beginning with the end of his tail: his tail and his whole back half are GONE (simply not drawn, plain white, no outline), only his head, chest and front paws left, grinning
+4. Fading away, beginning with the end of his tail: his tail is GONE, and so is his whole body from the table edge up to the middle of his chest, a clean edge of plain white across where his belly was, so his head, shoulders, upper chest and front legs float above the table with white below them; his front paws still resting on the table's edge, grinning (the gone parts simply not drawn, plain white, no outline)
 5. His head drifting a little way up off his shoulders, a clear gap of white between head and neck, grinning; body, paws and tail as at rest
 6. Blinking one eye: the eye nearer the viewer shut, the other open, the grin unchanged; paws and tail as at rest
 
