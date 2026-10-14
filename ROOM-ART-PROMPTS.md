@@ -43,7 +43,7 @@ The table screen has to hold four opponents, Death dealing between them, and the
 | Camelot | Firelight and candle gold, with cool grey stone and blue night in the windows | — |
 | Imperial Rome | Brazier orange and fresco colour above, dusky violet through the window | 1 |
 | Baker Street | Gaslight yellow and firelight, fog-grey at the window | — |
-| Transylvania | Firelight red-orange against cold blue moonlight | 2 |
+| Transylvania | Firelight red-orange from the right against cold blue moonlight from the left | 1 |
 | The Station | Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red) | 1 |
 | The Champions' Tables (the Hall of Doors) | Dark, lit only by what the open doors let in | 1 |
 | The Last Crossing | One oil lamp, warm and small, against storm-dark blue | — |
@@ -274,17 +274,17 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 - **The room:** The great hall of Castle Dracula: bare stone, black oak, and a hearth big enough to stand in, with one high-backed chair beside it that nobody else uses. Tall windows look out on the Carpathians and far too much moon. There is not a mirror in the building; the Count threw the last one out of a window.
 - **Presence:** The chair by the fire is not empty.
 - **Sounds (for reference):** a great hearth crackling; wolves, far off in the pass; wind worrying the shutters; water dripping somewhere in the stone; hooves pacing in the courtyard
-- **Light:** Firelight red-orange against cold blue moonlight.
-- **Avoid:** Nothing from Universal's or Hammer's Dracula films, no Bela Lugosi, no Castlevania.
+- **Light:** Firelight red-orange from the right against cold blue moonlight from the left.
+- **Avoid:** Nothing from Universal's or Hammer's Dracula films, no Bela Lugosi, no Castlevania, no Coppola film. No mirrors, no coffins, no bats indoors in the backdrop.
 
 **Backdrop plate:**
 
 ```
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
 
-The room: The great hall of Castle Dracula at night: bare grey stone, black oak beams, a hearth big enough to stand in with one high-backed chair beside it, tall arched windows onto the moonlit Carpathian mountains with far too much moon, iron candelabra, dust. No mirrors anywhere.
-Light: Firelight red-orange against cold blue moonlight.
-Must NOT resemble: Nothing from Universal's or Hammer's Dracula films, no Bela Lugosi, no Castlevania.
+The room: The great hall of Castle Dracula at night: bare grey stone walls in big smooth blocks, black oak beams across the top of the picture, dust, cobwebs only in the high corners. Dead centre at the back, behind the dealer: a plain stretch of grey stone and a tall closed oak door in a pointed arch, softly lit, calm and mid-toned. High on the LEFT, two tall pointed-arch windows onto the moonlit Carpathian mountains, one at about 8% across and one at EXACTLY 27% across, their tops near the top of the picture and their sills at about a quarter of the way down, above the players' heads: cold blue moonlight, snowy peaks, and in the window at 27% an enormous full moon, far too big. At the far RIGHT, from EXACTLY 86% across to the right edge, a stone hearth big enough to stand in, a fire roaring in it, the opening from about 22% to 50% of the way down, a heavy carved stone mantel above it. Between the table and the hearth, at EXACTLY 73% across, ONE high-backed carved black oak chair turned three-quarters toward the middle of the room, standing back by the fire so it looks small: its tall back rising to about a sixth of the way down, its seat at about 40% of the way down, the chair EMPTY, red velvet on the seat and back. One tall iron candelabrum standing on the floor at EXACTLY 42% across, its candles at about a quarter of the way down. Nothing bright at 19% or 80% across, where the end players sit. No mirrors anywhere.
+Light: Firelight red-orange from the right against cold blue moonlight from the left.
+Must NOT resemble: Nothing from Universal's or Hammer's Dracula films, no Bela Lugosi, no Castlevania, no Coppola film. No mirrors, no coffins, no bats indoors in the backdrop.
 ```
 
 **Moving and story pieces:**
@@ -293,12 +293,11 @@ Must NOT resemble: Nothing from Universal's or Hammer's Dracula films, no Bela L
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
 
 For the room: Transylvania. Parts:
-- The high-backed chair by the fire, empty
-- The same chair with a dark, still figure seated in it, watching (Dracula in silhouette, only his eyes catching the firelight): it goes when he sits at the table
-- The hearth fire in 2 states: roaring (3 frames) and sunk to embers (2 frames)
-- Candle flames: 3 frames
-- Clouds crossing the moon: 2 frames
-- A bat crossing a window
+- The same high-backed chair as in the backdrop, drawn alone at the size it is there, with a dark, still figure seated in it, watching: Dracula in silhouette, a tall thin man in black with a high collar, only his eyes catching the firelight (it goes when he sits at the table)
+- The hearth fire, drawn alone at the size it is in the backdrop: roaring (3 frames, each a slightly different flicker) and sunk to embers (2 frames)
+- The candles of the candelabrum, drawn alone at the size they are in the backdrop: 3 frames, each a slightly different flicker
+- A thin cloud crossing the moon, drawn alone at the size of the moon in the backdrop: 2 frames
+- A small bat, wings up and wings down (2 frames), to cross a window
 
 Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
 ```
