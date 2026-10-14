@@ -33,6 +33,10 @@ The spec (<id>_parts/face.json):
                                       head's skin round them (shading the drawing
                                       has there that the patch no longer matches)
     "clear": {"mouth": {"below": 272, "x": [165, 212]}}
+                                      (a region may also give "outline" and "fade",
+                                      the patch's stripped edge and its fade in
+                                      pixels, and "match": false to keep the
+                                      patch's own colours: black fur)
                                       a mouth patch whose upper lip (within those
                                       columns) is above that row is moved down to
                                       it: the drawings open the mouth upward, into
@@ -105,6 +109,10 @@ def bake(master, patch, at, region=None, clear=None, outline=5, fade=4):
     H = np.array(Image.open(master).convert('RGBA')).astype(float)
     P = Image.open(patch).convert('RGBA')
     x, y, k = at
+    # a region may set its own edge ("outline", "fade": a patch cut tight under
+    # the eyes) and turn off the skin match ("match": false: black fur, where
+    # the skin test finds amber eyes and brown muzzle and tints the patch blue)
+    outline, fade = (region or {}).get('outline', outline), (region or {}).get('fade', fade)
     p = np.array(P.resize((round(P.width * k), round(P.height * k)), Image.LANCZOS)).astype(float)
     if clear:                                                # an open mouth drops the jaw, not the nose
         y += lip_drop(p, x, y, clear)
@@ -122,7 +130,7 @@ def bake(master, patch, at, region=None, clear=None, outline=5, fade=4):
     ring = core & ~ndimage.binary_erosion(core, iterations=10)
     skin = lambda a: (a[..., 0] > 150) & (a[..., 0] - a[..., 2] > 50)
     s = ring & skin(L) & skin(H) & (H[..., 3] > 200)
-    if s.sum() > 50:
+    if s.sum() > 50 and (region or {}).get('match', True):
         gain = H[s][:, :3].mean(0) / np.maximum(L[s][:, :3].mean(0), 1)
         L[..., :3] = np.clip(L[..., :3] * gain, 0, 255)
 

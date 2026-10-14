@@ -152,7 +152,7 @@ art-tools/
                   blackbeard_parts/, kidd_parts/, silver_parts/, davy_jones_parts/: the
                   Pirate Cove, the same way; merlin_parts/, lancelot_parts/,
                   green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot;
-                  cerberus_parts/, scipio_parts/: Rome (prompts only so far)
+                  cerberus_parts/ (built), scipio_parts/: Rome
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -400,7 +400,12 @@ green skin: the owner; a bandaged neck, battered armour; his return lines
 rewritten colder), a separate puppet the table seats when he comes back
 (`RETURNED` in `web/puppet/cast.ts`). The helm has no mouth: a face with
 `speech.nod` nods as it speaks. **Arthur is built** (`#/puppet/arthur`, 24
-clips, seat 4): **Camelot is complete on the real table screen.** **The style lock** (the owner: Davy Jones and Merlin
+clips, seat 4): **Camelot is complete on the real table screen.**
+**Rome has begun: Cerberus is built** (`#/puppet/cerberus`, 24 clips, seat 3,
+a quarter bigger, the snakes kept as drawn). His master is the rest pose's
+own three heads (the face sheet spaced them differently), with eyes and
+muzzles on the middle head only; every head change is a whole-figure frame.
+Rome stays the plain table until its room and all five have puppets. **The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
 style drifted a step each time. Now `poses.py` (`"style_lock": true`) names

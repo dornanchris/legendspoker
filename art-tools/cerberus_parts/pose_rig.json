@@ -1,0 +1,788 @@
+{
+ "id": "cerberus",
+ "name": "Cerberus",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets. Built a quarter bigger, as the Cyclops and the Green Knight are. The master is the rest pose's OWN three heads (cerberus_face/cerberus_master.png, cut from A1): the face sheet's three-head drawing is spaced differently, so its face pieces (the middle head's eyes and muzzles) are fitted onto A1's middle head instead. Every pose but rest is a whole-figure frame with its own drawn heads, placed ('reg') by the bottom-left corner of its drawn felt. His front legs are the 'arms'.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "rest": "A1",
+ "table_y": 362,
+ "scale": 1.25,
+ "origin_x": 225,
+ "register_box": [
+  120,
+  290,
+  360,
+  350
+ ],
+ "register_span": 40,
+ "collar_y": 290,
+ "neck": [
+  270,
+  270
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  180,
+  230,
+  360,
+  290
+ ],
+ "master": {
+  "piece": "cerberus_parts/cerberus_face/cerberus_master.png",
+  "cut_below": 288,
+  "face": "cerberus_parts/face.json",
+  "file": "cerberus_parts/cerberus_rig/master.png",
+  "layers": "cerberus_parts/cerberus_rig/face",
+  "head_box": [
+   0,
+   0,
+   486,
+   300
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "cloth": [
+   0,
+   90
+  ],
+  "shoulder_y": 280
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    70,
+    310
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     280
+    ],
+    [
+     130,
+     280
+    ],
+    [
+     130,
+     305
+    ],
+    [
+     0,
+     310
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right front leg and paw",
+     "poly": [
+      [
+       10,
+       300
+      ],
+      [
+       150,
+       300
+      ],
+      [
+       175,
+       330
+      ],
+      [
+       190,
+       370
+      ],
+      [
+       198,
+       462
+      ],
+      [
+       70,
+       464
+      ],
+      [
+       55,
+       420
+      ],
+      [
+       28,
+       380
+      ],
+      [
+       10,
+       350
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    420,
+    310
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     360,
+     280
+    ],
+    [
+     486,
+     280
+    ],
+    [
+     486,
+     305
+    ],
+    [
+     360,
+     310
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left front leg and paw",
+     "poly": [
+      [
+       322,
+       330
+      ],
+      [
+       350,
+       300
+      ],
+      [
+       480,
+       300
+      ],
+      [
+       486,
+       330
+      ],
+      [
+       472,
+       370
+      ],
+      [
+       452,
+       400
+      ],
+      [
+       448,
+       464
+      ],
+      [
+       318,
+       464
+      ],
+      [
+       316,
+       400
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      180,
+      370
+     ],
+     [
+      310,
+      370
+     ],
+     [
+      310,
+      492
+     ],
+     [
+      180,
+      492
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      170,
+      360
+     ],
+     [
+      340,
+      360
+     ],
+     [
+      340,
+      492
+     ],
+     [
+      170,
+      492
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      90,
+      330
+     ],
+     [
+      420,
+      330
+     ],
+     [
+      420,
+      492
+     ],
+     [
+      90,
+      492
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      100,
+      320
+     ],
+     [
+      420,
+      320
+     ],
+     [
+      420,
+      492
+     ],
+     [
+      100,
+      492
+     ]
+    ]
+   ]
+  },
+  "attention": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "watch": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "yawn": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "asleep": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "growl": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "scratch": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "sniff": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "pant": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "stare": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      180,
+      360
+     ],
+     [
+      400,
+      360
+     ],
+     [
+      400,
+      492
+     ],
+     [
+      180,
+      492
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    18,
+    14,
+    486,
+    474
+   ],
+   "what": "at rest, front paws on the edge"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    523,
+    34,
+    486,
+    454
+   ],
+   "what": "peeking: a paw lifts the cards, heads peer down",
+   "reg": [
+    1.0,
+    0,
+    20
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1024,
+    15,
+    495,
+    473
+   ],
+   "what": "checking: a paw taps the felt",
+   "reg": [
+    1.0,
+    -6,
+    1
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    18,
+    504,
+    484,
+    469
+   ],
+   "what": "calling: a paw slides chips",
+   "reg": [
+    1.0,
+    0,
+    6
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    522,
+    529,
+    487,
+    444
+   ],
+   "what": "betting: the middle head noses a stack forward",
+   "reg": [
+    1.0,
+    -1,
+    30
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1029,
+    504,
+    497,
+    470
+   ],
+   "what": "folding: the middle head noses the cards away",
+   "reg": [
+    1.0,
+    -3,
+    5
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    15,
+    9,
+    486,
+    472
+   ],
+   "what": "all in: both paws shove the stack",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    515,
+    14,
+    495,
+    467
+   ],
+   "what": "showing",
+   "reg": [
+    1.0,
+    -7,
+    8
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1030,
+    14,
+    490,
+    467
+   ],
+   "what": "collecting: both paws drag the pot in",
+   "reg": [
+    1.0,
+    -2,
+    8
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    15,
+    495,
+    490,
+    481
+   ],
+   "what": "all three heads snap to attention (TELL strong)",
+   "reg": [
+    1.0,
+    0,
+    -7
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    516,
+    506,
+    494,
+    470
+   ],
+   "what": "two heads watch you, one the pot (decoy)",
+   "reg": [
+    1.0,
+    -6,
+    4
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1032,
+    503,
+    493,
+    473
+   ],
+   "what": "the left head yawns (TELL weak)",
+   "reg": [
+    1.0,
+    -1,
+    1
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    18,
+    17,
+    487,
+    469
+   ],
+   "what": "the right head asleep (decoy)",
+   "reg": [
+    1.0,
+    0,
+    5
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    519,
+    18,
+    491,
+    468
+   ],
+   "what": "the heads growl at each other (TELL tilted)",
+   "reg": [
+    1.0,
+    -4,
+    6
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1013,
+    17,
+    517,
+    469
+   ],
+   "what": "the middle head scratches behind an ear (decoy)",
+   "reg": [
+    1.0,
+    -17,
+    5
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    12,
+    505,
+    504,
+    470
+   ],
+   "what": "the right head sniffs",
+   "reg": [
+    1.0,
+    -6,
+    4
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    509,
+    507,
+    502,
+    468
+   ],
+   "what": "all three pant",
+   "reg": [
+    1.0,
+    -13,
+    6
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1029,
+    510,
+    488,
+    465
+   ],
+   "what": "all three stare at you",
+   "reg": [
+    1.0,
+    -1,
+    9
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    15,
+    16,
+    496,
+    468
+   ],
+   "what": "talking: the middle head growls low",
+   "reg": [
+    1.0,
+    -4,
+    6
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    522,
+    59,
+    488,
+    425
+   ],
+   "what": "facing a big bet: hackles up, heads low",
+   "reg": [
+    1.0,
+    -2,
+    49
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1000,
+    65,
+    527,
+    419
+   ],
+   "what": "lost a pot: ears flat, looking away",
+   "reg": [
+    1.0,
+    0,
+    55
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    15,
+    501,
+    489,
+    473
+   ],
+   "what": "won a pot: tongues out, a paw draws chips",
+   "reg": [
+    1.0,
+    -4,
+    2
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    522,
+    550,
+    488,
+    424
+   ],
+   "what": "heads up: heads low, eyes locked",
+   "reg": [
+    1.0,
+    -2,
+    51
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1031,
+    502,
+    494,
+    472
+   ],
+   "what": "knocked out: drops down and pads away",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  }
+ },
+ "runtime": "../web/art/cerberus",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "wood_rows_only": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": true
+}

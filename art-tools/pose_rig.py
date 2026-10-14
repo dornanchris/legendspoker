@@ -57,7 +57,8 @@ the columns at his back (the chair's outline). "felt_lines": n drops anything
 under about 2n pixels thick below the table line in frames (the drawn
 rail's outline curving across the felt). "drop_rail": n drops every
 rail-orange shape reaching within n rows of the table line in frames
-("rail_blue": only colours with less blue than that, for a bare-armed
+("rail_orange": a bright gold-orange rail counts too, the red test's miss;
+"rail_blue": only colours with less blue than that, for a bare-armed
 character whose skin is the rail's orange; "rail_green": only colours with
 more green than that share of their red, for a red cloak). "wood_rows_only":
 the wood colour counts only at and below the rail, pixel by pixel (not whole
@@ -377,8 +378,21 @@ def main(spec_path):
             print(f'  {n} -> {rest}: scale {s:.2f}, shift {dx}, {dy} (error {err:.1f})')
     # the poses in the rest pose's space
 
-    char = lambda a: (a[..., 3] > 128) & ~table_colour(a, ty)
-    chair = poly_mask(shape, spec['exclude'][rest]) if rest in spec.get('exclude', {}) else np.zeros(shape, bool)
+    def rail_gold(a):
+        """With "rail_orange": the drawn rail's bright gold-orange at and below its
+        top (rest-pose rows), and its outline round it. Collars are that colour
+        too, but well above the rail."""
+        if not spec.get('rail_orange'):
+            return np.zeros(a.shape[:2], bool)
+        c = a[..., :3].astype(int)
+        g = (c[..., 0] > 170) & (c[..., 0] - c[..., 1] > 40) & (c[..., 1] > 70) & (c[..., 2] < 90)
+        g[:max(0, ty - 12)] = False
+        return ndimage.binary_dilation(g, iterations=2)
+    char = lambda a: (a[..., 3] > 128) & ~table_colour(a, ty) & ~rail_gold(a)
+    chair = np.zeros(shape, bool)                          # the chair, or (a list of polygons) bits of the drawn rail
+    ex = spec.get('exclude', {}).get(rest)
+    for poly in ([ex] if ex and isinstance(ex[0][0], (int, float)) else ex or []):
+        chair |= poly_mask(shape, poly)
 
     # ---------------------------------------------------------------- arms
     assets = {}
@@ -420,6 +434,8 @@ def main(spec_path):
                 m &= poly_mask(src.shape[:2], a['poly'])
             for ex in a.get('except', []):
                 m &= ~poly_mask(src.shape[:2], ex)
+            if a['pose'] == rest:
+                m &= ~rail_gold(src)
             if a.get('drop_red'):                          # chips: the game draws its own
                 c = src[..., :3].astype(int)
                 coloured = ((c[..., 0] > 110) & (c[..., 1] < 70) & (c[..., 2] < 80)) | \
@@ -656,6 +672,8 @@ def main(spec_path):
             rail = (c[..., 0] > 1.6 * c[..., 1] + 10) & (c[..., 0] > 60) & ~props
             rail &= c[..., 2] < spec.get('rail_blue', 256)   # bare skin is that orange too, but bluer
             rail &= c[..., 1] > spec.get('rail_green', 0) * c[..., 0]   # and a red cloak is that, but far less green
+            if spec.get('rail_orange'):                    # a bright gold-orange rail (Cerberus's sheets), which the red test misses
+                rail |= (c[..., 0] > 170) & (c[..., 0] - c[..., 1] > 40) & (c[..., 1] > 70) & (c[..., 2] < 90) & ~props
             lab, n = ndimage.label(rail)
             if n:
                 low = np.unique(lab[ty + FM - spec['drop_rail']:][rail[ty + FM - spec['drop_rail']:]])
