@@ -240,16 +240,16 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 - **The room:** The first-floor sitting room at 221B, as Watson described it: the acid-stained chemistry table shoved against the wall, letters jack-knifed to the mantelpiece, V.R. picked out in bullet holes. Gaslight, a coal fire, fog pressing at the bow window, and a violin case nobody else may open.
 - **Sounds (for reference):** coal settling in the grate; hansom cab wheels on wet cobbles; a clock ticking on the mantel; a single violin string, plucked; street cries muffled by fog
 - **Light:** Gaslight yellow and firelight, fog-grey at the window.
-- **Avoid:** Nothing from the BBC Sherlock, the Guy Ritchie films or Elementary: no smiley face in bullet holes, no modern flat.
+- **Avoid:** Nothing from the BBC Sherlock, the Guy Ritchie films or Elementary: no smiley face in bullet holes, no modern flat. No deerstalker hanging anywhere (that is an illustrator's addition, not Watson's room).
 
 **Backdrop plate:**
 
 ```
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
 
-The room: The first-floor sitting room at 221B Baker Street, as Watson described it: a chemistry table covered in acid-stained flasks shoved against the wall, letters stuck to the mantelpiece with a jack-knife, the letters V R picked out in bullet holes on the wallpaper, gas lamps, a coal fire, a violin case, a Persian slipper, and a bow window with yellow London fog pressing against the glass. Holmes's armchair by the fire.
+The room: The first-floor sitting room at 221B Baker Street, London, on a foggy evening, as Watson described it: warm, cluttered, lived in. Patterned wallpaper in deep red and olive, dark wood panelling up to about half height. Dead centre at the back, behind the dealer: a plain stretch of wallpaper and a closed, dark-panelled door to the landing, softly lit, calm and mid-toned. At the far LEFT edge, from the left side to about 16% across, a tall bow window of small square panes, thick yellow-grey London fog pressing against the glass, heavy curtains tied back; its top reaches about a tenth of the way down. At the far RIGHT, from about 84% across to the right edge, a fireplace with a coal fire burning bright in the grate; its mantelpiece at about 30% of the way down, with a clock, a pipe rack and a bundle of letters pinned to the wooden mantel by a jack-knife standing upright; Holmes's worn armchair beside it, its back reaching about half height. TWO gas lamps on brass wall brackets, each with a glass shade and a bright yellow flame, in the gaps BETWEEN the players: one at EXACTLY 27% across and one at EXACTLY 73% across, the flame at about a quarter of the way down. At EXACTLY 42% across, against the wall, a chemistry table crowded with flasks, test tubes and a retort, acid-stained; its top at about 42% of the way down and the glassware rising to about 30% of the way down. High on the wallpaper at EXACTLY 58% across, above head height (about 12 to 20% of the way down), the letters V R picked out in neat bullet holes. A violin case lying on top of a low bookcase at about 66% across, the bookcase top at about 40% of the way down, stacked with papers and scrapbooks; a Persian slipper on the mantelpiece. Nothing bright at 19% or 80% across, where the end players sit.
 Light: Gaslight yellow and firelight, fog-grey at the window.
-Must NOT resemble: Nothing from the BBC Sherlock, the Guy Ritchie films or Elementary: no smiley face in bullet holes, no modern flat.
+Must NOT resemble: Nothing from the BBC Sherlock, the Guy Ritchie films or Elementary: no smiley face in bullet holes, no modern flat. No deerstalker hanging anywhere (that is an illustrator's addition, not Watson's room).
 ```
 
 **Moving and story pieces:**
@@ -258,9 +258,9 @@ Must NOT resemble: Nothing from the BBC Sherlock, the Guy Ritchie films or Eleme
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
 
 For the room: Baker Street. Parts:
-- Coal fire: 3 frames
-- Fog drifting past the window: 2 frames
-- Gas lamp flame flicker
+- The coal fire in the grate, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- One gas lamp flame inside its glass shade, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- A drift of yellow-grey fog, drawn alone at the size of the window panes: 2 frames, each a slightly different shape
 
 Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
 ```
