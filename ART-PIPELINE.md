@@ -106,8 +106,8 @@ Seats at Rome: 1 Spartacus, 2 the Pope, 3 Cerberus (mirrored, giant),
 
 ## Planned second looks
 
-- **Holmes in the deerstalker** (the owner): after the bareheaded Holmes is
-  built, redo his six prompts with Paget's ear-flapped travelling cap (flaps
+- **Holmes in the deerstalker** (the owner): prompts written,
+  `sherlock_deerstalker_parts/POSES.md` (the bareheaded kit stays). Redo his six prompts with Paget's ear-flapped travelling cap (flaps
   tied up, no cape) as a second puppet, the way the Green Knight has
   `green_knight_bare` (`RETURNED` in `web/puppet/cast.ts`). Same poses, same
   tells, same pipe: a look, never a different read. Proposed rule (the owner
