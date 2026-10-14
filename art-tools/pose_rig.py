@@ -482,7 +482,7 @@ def main(spec_path):
                 for pp in a.get('props', []):
                     pr_ |= poly_mask(src.shape[:2], pp)
                 m &= ndimage.binary_dilation(ndimage.binary_opening(m, iterations=t), iterations=t) | pr_
-            m = biggest(m)
+            m = biggest(m) | (m & props)                  # a prop lying apart from the hand (Holmes's pipe)
             m = ndimage.binary_fill_holes(m) & (src[..., 3] > 128) & ~(white & ~m)
             rgba = src.copy()
             rgba[..., 3] = np.where(m, src[..., 3], 0)
