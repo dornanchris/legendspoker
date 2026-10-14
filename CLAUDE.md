@@ -3,6 +3,9 @@
 Read this before touching anything. It is the short version of the decisions
 that are already settled, so we don't re-litigate them every session.
 
+**Art work (drawing and building the cast): read `ART-PIPELINE.md`** for the
+workflow, the build steps and the queue.
+
 ## WHAT THIS IS
 
 A single-player, character-driven Texas Hold'em "world tour". Eight themed
@@ -130,6 +133,7 @@ web/
   build.mjs       esbuild -> web/bundle.js (gitignored, regenerate it)
   serve.mjs       dependency-free static server; Phase 4 replaces it with Vite
 ROSTER.md         GENERATED casting book: never edit by hand
+ART-PIPELINE.md   the art workflow, step by step, and the queue of characters
 art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   cut_sheet.py    split_parts plus each kit's fixes as data (<id>_parts/cut.json):
@@ -170,6 +174,8 @@ art-tools/
   web_half.py     the half-size puppet images the table screen loads
   face_rig.py     bakes a face-overlay sheet into seam-free eye/brow/mouth
                   layers on a master head
+  build/          the build helpers: pose_boxes, corner_regs, fit_master,
+                  frames_sheet (python), bench_shots, room_shot (playwright)
   pose_rig.py     builds a puppet from complete pose drawings: one-piece
                   forearm+hand assets on elbow pivots (the White House
                   table's and Death's game rigs)
