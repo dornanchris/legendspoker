@@ -98,8 +98,8 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
-| Baker Street | built | Nemo, Javert, Holmes (both looks) | | the Cheshire Cat (redraw in Cerberus's animal style, Cerberus's pose sheet A attached as the style image: his first sheet drew furry illustration; prompts in `cheshire_cat_parts/POSES.md`) |
-| Transylvania | prompt only | | | Van Helsing, the Monster, the Wolf Man, the Headless Horseman, Dracula |
+| Baker Street | built | Nemo, Javert, Holmes (both looks) | the Cheshire Cat (Cerberus's animal style) | |
+| Transylvania | prompt only | | | Van Helsing (prompts in `van_helsing_parts/POSES.md`), then the Monster, the Wolf Man, the Headless Horseman, Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
 | Hidden (later, the owner: "worry about the Easter egg people at the end") | The Pyre: prompt | | | JFK, the Phoenix, Loki; the Stranger (online avatar) |
