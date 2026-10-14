@@ -22,6 +22,9 @@ CLAUDE.md first (the rules and the state); this is the HOW and the QUEUE.
   Washington's pose sheet A (style) to the first prompt; from the second on,
   the character's own sheet, their pose sheet A, and Washington's sheet A.
   The owner rejected drift toward detailed illustration (Davy Jones, Merlin).
+  **An animal** takes Cerberus's pose sheet A as the style image instead
+  (`style_ref` / `style_sheet` in the spec; the Cheshire Cat, after his first
+  sheet came out as furry illustration against Washington's).
 
 ## One character, start to finish
 
@@ -95,7 +98,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
-| Baker Street | built | Nemo, Javert, Holmes (both looks) | | the Cheshire Cat (redraw in the flat style: his first sheet drew fur; prompts in `cheshire_cat_parts/POSES.md`) |
+| Baker Street | built | Nemo, Javert, Holmes (both looks) | | the Cheshire Cat (redraw in Cerberus's animal style, Cerberus's pose sheet A attached as the style image: his first sheet drew furry illustration; prompts in `cheshire_cat_parts/POSES.md`) |
 | Transylvania | prompt only | | | Van Helsing, the Monster, the Wolf Man, the Headless Horseman, Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |

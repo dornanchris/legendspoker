@@ -448,7 +448,9 @@ at a time, and vanishing tail first, grin last (reliability ~0.8, the reading
 table's legible guest). Loose and aggressive (3000 cash hands: VPIP 50, AF
 1.4), the table's donor at -180 to -240 bb/100 (Alice was -91). His
 dialogue replaced hers line for line; draft like the rest. His prompts:
-`cheshire_cat_parts/POSES.md` (vanished parts are drawn as plain white).
+`cheshire_cat_parts/POSES.md` (vanished parts are drawn as plain white; style from
+Cerberus's pose sheet A, the owner's call for an animal, after the first sheet
+came out as furry illustration).
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,

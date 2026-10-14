@@ -7,12 +7,16 @@ NO = s['no']
 # so the style drifted a little each time. Now every prompt names one fixed
 # reference, Washington's pose sheet A, and says what the style is in words.
 LOCK = bool(s.get('style_lock'))
-STYLE = (f"STYLE, the most important rule: match the {s.get('style_ord', 'SECOND')} attached image (Washington, from the first table) exactly: simple, chunky cartoon shapes; "
+# An animal takes its style from Cerberus's sheet instead (the owner: the Cheshire
+# Cat drew as furry illustration against Washington's): `style_ref` names the
+# image, `style_sheet` the sheet in every later prompt.
+STYLE = (f"STYLE, the most important rule: match the {s.get('style_ord', 'SECOND')} attached image ({s.get('style_ref', 'Washington, from the first table')}) exactly: simple, chunky cartoon shapes; "
          "bold, even dark outlines; smooth flat colour with ONE soft shadow tone; bright, clean, saturated colour; a face with only a few lines "
          "(no fine wrinkles, no pores, no cross-hatching); hair and beard drawn as a few big smooth locks, never strand by strand; cloth and metal "
          "with a few big folds or highlights, no texture, no stitching, no grime, no scratches. Readable at thumbnail size. NOT a detailed "
          "illustration, NOT painterly, NOT gritty, NOT realistic.")
-SHORT = (" Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, "
+SHEET = s.get('style_sheet', "Washington's sheet")
+SHORT = (f" Keep the simple, chunky, flat cartoon style of the attached sheets and of {SHEET}: few lines, big smooth shapes, "
          "flat colour, no fine detail or texture.")
 def sheet_intro(first):
     if first:
