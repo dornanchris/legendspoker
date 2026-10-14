@@ -51,8 +51,9 @@ export const SAVE_VERSION = 1
  *    hands, as at the other tables a sixth player joins).
  * 11: the hidden visitor -- JFK takes an empty chair at the White House when
  *    the player wins a pot holding a three and a five.
+ * 12: the Cheshire Cat takes Alice's chair at Baker Street.
  */
-export const ENGINE_VERSION = 11
+export const ENGINE_VERSION = 12
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

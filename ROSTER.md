@@ -737,36 +737,36 @@ Hugo compares him to the dog that Asturian peasants say is born in every litter 
 - Tell (tilted, 0.7): *his hand shakes, very slightly*
 - Idle noise: *straightens his stock*; *consults a small black notebook*; *glances at the door like a man expecting an escape*; *taps his cane on the floor once*
 
-**Look.** Silhouette: tall, in a long greatcoat that buttons to the chin, hat brim low over the eyes, and — Hugo's own detail — enormous side-whiskers climbing toward a flat nose with deep nostrils. A face that almost never moves, so any movement reads. Prop: the greatcoat's high collar and its row of buttons; that is the tell surface. **Prop:** Greatcoat buttoned to the collar.
+**Look.** Silhouette: tall, in a long greatcoat that buttons to the chin, a plain black bicorne low over the eyes (the Paris police's hat from 1829; no cockade, no uniform), and — Hugo's own detail — enormous side-whiskers climbing toward a flat nose with deep nostrils. A face that almost never moves, so any movement reads. Prop: the greatcoat's high collar and its row of buttons; that is the tell surface. **Prop:** Greatcoat buttoned to the collar.
 
 **Public domain.** Hugo's novel (1862) and its nineteenth-century illustrations are public domain. Nothing from the stage musical or its films: no lyrics, no "Stars", no prisoner-number chant, no costume from any production. Hugo's text only.
 
-### Alice — *Late of Wonderland*
+### The Cheshire Cat — *We're All Mad Here*
 
 Literature · Alice's Adventures in Wonderland (Carroll, 1865)
 
-> Told a pack of cards they were nothing but a pack of cards. She has never once been afraid of me.
+> Vanishes when he likes and leaves the grin behind. He is the only guest at any of my tables who has ever asked me whether I am mad. I said no. He said that was what he would say too.
 
-Lewis Carroll's Alice falls down a rabbit-hole in Alice's Adventures in Wonderland (1865) and climbs through a mirror in Through the Looking-Glass (1871). She grows and shrinks, argues with a caterpillar, sits through a mad tea-party, and ends up a witness at the trial of the Knave of Hearts, where she tells the whole court — a pack of playing cards — that they are nothing but a pack of cards.
+The Cheshire Cat first appears in the Duchess's kitchen in Lewis Carroll's Alice's Adventures in Wonderland (1865), grinning from ear to ear beside the hearth, the only creature in the house not sneezing. He is the one who tells Alice that everyone in Wonderland is mad, 'or you wouldn't have come here', and directs her to the Hatter and the March Hare, either of whom she may visit: 'they're both mad'.
 
-What makes her a person is that nothing in Wonderland frightens her for long. She argues with duchesses, queens and caterpillars as equals, and corrects them when they are wrong, which is often. Tenniel drew her for both books. She is at Baker Street because curiosity would get her anywhere — and because, at a table of practised faces, hers is the one that shows exactly what she thinks.
+He can vanish and reappear at will, and at Alice's request does it 'quite slowly, beginning with the end of the tail, and ending with the grin, which remained some time after the rest of it had gone'. At the Queen's croquet ground only his head appears, and the King, the Queen and the executioner argue over whether a head without a body can be cut off. 'Grinning like a Cheshire cat' was an English saying long before Carroll; Tenniel drew him for the first edition as a large, solid tabby with an enormous grin.
 
-**At the table.** She plays a great many hands, because she wants to see what happens, and she seldom folds to a small bet for the same reason. Every so often she does something nobody can account for — a call, a raise, a check — just to find out. She almost never bluffs; she cannot see the point of pretending. She does not adjust to anyone. Why would she?
+**At the table.** He plays a great many hands and plays them for the fun of it, poking at pots with small bets and now and then doing something nobody can account for, to see what happens. He bluffs more than anyone here, and minds less than anyone when he is caught. Nothing rattles him. And he cannot help it: every so often a part of him goes missing, and what goes, and when, means more than he would like.
 
 | aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
 |---|---|---|---|---|---|---|---|
-| .40 | .38 | .05 | .20 | .10 | .30 | .62 | .10 |
+| .55 | .34 | .20 | .03 | .35 | .40 | .62 | .20 |
 
-- Quirk: `whim` (chance 0.08) — Now and then does something unaccountable, just to see.
-- Quirk: `calls_small` (maxBB 3, chance 0.6) — Will not fold to a small bet (up to maxBB big blinds).
-- Tell (strong, 0.9): *her eyes go very wide*
-- Tell (weak, 0.9): *frowns at her cards as if they had said something rude*
-- Tell (bluffing, 0.88): *bites her lip*
-- Idle noise: *smooths her pinafore*; *counts the pips on a card*; *tries to see what the dealer is holding*; *fidgets in a chair far too big for her*
+- Quirk: `whim` (chance 0.1) — Now and then does something unaccountable, just to see.
+- Quirk: `needle` (chance 0.22) — When checked to, makes small probing bets regardless of the hand.
+- Tell (strong, 0.82): *fades away, beginning with the end of his tail and ending with the grin*
+- Tell (weak, 0.8): *blinks one eye, then the other*
+- Tell (bluffing, 0.8): *the tip of his tail twitches*
+- Idle noise: *his tail sways lazily*; *washes a paw*; *his head drifts a little way off his shoulders, and back*; *grins at the dealer*
 
-**Look.** Silhouette: a small figure in a full-skirted dress and white pinafore, long hair held back by a band — Tenniel's Alice. Keep the blue the design doc wants, but a deep Victorian blue, never Disney's powder blue with a black bow. Large, expressive eyes: by design her face, not a prop, is the tell surface. Prop: a little bottle labelled DRINK ME, beside her chips. **Prop:** A little bottle labelled DRINK ME.
+**Look.** Silhouette: Tenniel's Cheshire Cat: a large, solid, round-faced tabby cat, warm grey-brown with darker stripes, sitting up at the table like a person, front paws on its edge, with an enormous grin from ear to ear full of teeth. The owner's call: he took Alice's chair at Baker Street (the Alice sheets came out looking like Disney's). His body is the tell surface: the tail, the eyes, and parts of him fading away, the grin last. Never Disney's pink-and-purple stripes, never the Burton film's blue-grey cat. **Prop:** His grin.
 
-**Public domain.** Carroll's books and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely — its dress, bow, character designs and songs — and the 2010 Burton film. Keep the Cheshire Cat out of this table; he is saved for later.
+**Public domain.** Carroll's books (1865, 1871) and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely (its pink-and-purple striped cat, its songs) and the 2010 Burton film's design. Tenniel's cat and Carroll's text only.
 
 ### Sherlock Holmes — *The Consulting Detective*
 

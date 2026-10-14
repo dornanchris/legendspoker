@@ -311,10 +311,10 @@ Four detectives blur. The table is now: Sherlock (analytical), Captain Nemo
 (mysterious intellectual), Inspector Javert (rigid, relentless) + one open
 seat. **The fourth must NOT be another stern man** — Nemo and Javert are both
 brooding intense types and it needs lightness/trickery.
-- **[DECISION] The fourth seat is ALICE.** Recognizable instantly, changes the
+- **[SUPERSEDED, the owner during the art pass: the Cheshire Cat took this seat;
+  see below.] The fourth seat was ALICE.** Recognizable instantly, changes the
   whole visual composition (three men in dark Victorian coats + a girl in a
-  blue dress reads at a glance; drawn in YELLOW since the art pass, Tenniel's own
-  colours from The Nursery "Alice", because the blue drew as Disney's), and plays curious/unpredictable — calls
+  blue dress reads at a glance), and plays curious/unpredictable — calls
   strange bets to see what happens, unintimidated by Javert or Nemo.
   Her dial-set is genuinely unique in the game: **unpredictable play but
   legible emotions** — high VPIP, low deception. She's the one person at the
@@ -325,8 +325,16 @@ brooding intense types and it needs lightness/trickery.
   leak. He doesn't contrast with the table, he opts out of its central
   mechanic. Save him for the Wonderland/Easter table where unreadability is
   the joke. Same objection killed the Invisible Man.
-  **Pending (the owner, during the art pass):** the Cheshire Cat is an idea to
-  return to later, not dropped; Alice keeps this seat.
+  **[DECISION, the owner, during the art pass] The Cheshire Cat takes the
+  fourth seat after all**, ENGINE_VERSION 12. Two drawing attempts gave an
+  Alice that read as Disney's or as an anime knock-off, and the owner answered
+  the objection above: he is NOT unreadable, because his body gives him away a
+  piece at a time. His tells are the tail (the tip twitching), the eyes
+  (blinking one at a time) and Carroll's own vanishing, tail first and the
+  grin last. So he keeps Alice's job at the table, the one legible guest among
+  practised faces (reliability ~0.8), and the lightness and trickery the seat
+  needed: loose, aggressive, bluffs and pokes at pots for the fun of it
+  (`whim`, `needle`). A Wonderland table later would need another host.
 - **Jekyll/Hyde was the strongest runner-up** — one seat, two personalities,
   switching mid-session (tight and apologetic → reckless and aggressive) is a
   dial-set nobody else has and a real tells puzzle. **Cut on animation cost:**

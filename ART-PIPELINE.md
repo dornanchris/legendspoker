@@ -95,11 +95,11 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
-| Baker Street | built | Nemo, Javert | | **Alice** (prompts rewritten: Tenniel's yellow, the owner's call after a Disney-looking first sheet), then Holmes |
+| Baker Street | built | Nemo, Javert | | **the Cheshire Cat** (seat 3, in Alice's chair: prompts written, `cheshire_cat_parts/POSES.md`), then Holmes |
 | Transylvania | prompt only | | | Van Helsing, the Monster, the Wolf Man, the Headless Horseman, Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
-| Hidden (later, the owner: "worry about the Easter egg people at the end") | The Pyre: prompt | | | JFK, the Phoenix, Loki; the Stranger (online avatar); the Cheshire Cat (a pending idea, the owner's: not designed) |
+| Hidden (later, the owner: "worry about the Easter egg people at the end") | The Pyre: prompt | | | JFK, the Phoenix, Loki; the Stranger (online avatar) |
 
 Seats at Rome: 1 Spartacus, 2 the Pope, 3 Cerberus (mirrored, giant),
 4 Scipio (mirrored); Caesar arrives into the first empty chair (any side).

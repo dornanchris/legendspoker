@@ -1,0 +1,104 @@
+{
+  "id": "cheshire_cat",
+  "name": "The Cheshire Cat",
+  "short": "the Cat",
+  "epithet": "We're All Mad Here",
+  "pronoun": "he",
+  "table": "baker_street",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "Alice's Adventures in Wonderland (Carroll, 1865)",
+  "dials": {
+    "aggression": 0.55,
+    "tightness": 0.34,
+    "bluffFrequency": 0.2,
+    "tiltSensitivity": 0.03,
+    "adaptivity": 0.35,
+    "betRespect": 0.4,
+    "skill": 0.62,
+    "noise": 0.2
+  },
+  "quirks": [
+    {
+      "type": "whim",
+      "chance": 0.1
+    },
+    {
+      "type": "needle",
+      "chance": 0.22
+    }
+  ],
+  "tells": [
+    {
+      "signal": "fades_out",
+      "text": "fades away, beginning with the end of his tail and ending with the grin",
+      "correlate": "strong",
+      "reliability": 0.82
+    },
+    {
+      "signal": "blinks_one",
+      "text": "blinks one eye, then the other",
+      "correlate": "weak",
+      "reliability": 0.8
+    },
+    {
+      "signal": "tail_tip",
+      "text": "the tip of his tail twitches",
+      "correlate": "bluffing",
+      "reliability": 0.8
+    }
+  ],
+  "idles": [
+    "his tail sways lazily",
+    "washes a paw",
+    "his head drifts a little way off his shoulders, and back",
+    "grins at the dealer"
+  ],
+  "profile": {
+    "ledger": "Vanishes when he likes and leaves the grin behind. He is the only guest at any of my tables who has ever asked me whether I am mad. I said no. He said that was what he would say too.",
+    "ledger_beaten": "He lost, grinned, and faded out a piece at a time. The grin stayed for some while after the rest of him had gone.",
+    "history": [
+      "The Cheshire Cat first appears in the Duchess's kitchen in Lewis Carroll's Alice's Adventures in Wonderland (1865), grinning from ear to ear beside the hearth, the only creature in the house not sneezing. He is the one who tells Alice that everyone in Wonderland is mad, 'or you wouldn't have come here', and directs her to the Hatter and the March Hare, either of whom she may visit: 'they're both mad'.",
+      "He can vanish and reappear at will, and at Alice's request does it 'quite slowly, beginning with the end of the tail, and ending with the grin, which remained some time after the rest of it had gone'. At the Queen's croquet ground only his head appears, and the King, the Queen and the executioner argue over whether a head without a body can be cut off. 'Grinning like a Cheshire cat' was an English saying long before Carroll; Tenniel drew him for the first edition as a large, solid tabby with an enormous grin."
+    ],
+    "at_the_table": "He plays a great many hands and plays them for the fun of it, poking at pots with small bets and now and then doing something nobody can account for, to see what happens. He bluffs more than anyone here, and minds less than anyone when he is caught. Nothing rattles him. And he cannot help it: every so often a part of him goes missing, and what goes, and when, means more than he would like.",
+    "look": "Silhouette: Tenniel's Cheshire Cat: a large, solid, round-faced tabby cat, warm grey-brown with darker stripes, sitting up at the table like a person, front paws on its edge, with an enormous grin from ear to ear full of teeth. The owner's call: he took Alice's chair at Baker Street (the Alice sheets came out looking like Disney's). His body is the tell surface: the tail, the eyes, and parts of him fading away, the grin last. Never Disney's pink-and-purple stripes, never the Burton film's blue-grey cat.",
+    "prop": "His grin",
+    "public_domain": "Carroll's books (1865, 1871) and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely (its pink-and-purple striped cat, its songs) and the 2010 Burton film's design. Tenniel's cat and Carroll's text only."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. I shan't be here long anyway.",
+      "Fold. Every way leads somewhere else.",
+      "Fold. I'll just fade out of this one.",
+      "Fold. It doesn't much matter which way you go."
+    ],
+    "check": [
+      "Check. Or not. It's all the same to a cat.",
+      "Check. Do you play croquet with the Queen today?",
+      "Check. I'm thinking about vanishing."
+    ],
+    "call": [
+      "Call. I want to see where this goes.",
+      "Call. We're all mad here.",
+      "Call. It would be a shame to leave before the end.",
+      "Call. Curious, isn't it?"
+    ],
+    "bet": [
+      "Bet. A small one, to see what it does.",
+      "Bet. That depends a good deal on where you want to get to.",
+      "Bet. You'll see me there."
+    ],
+    "raise": [
+      "Raise. Did you say pig, or fig?",
+      "Raise. If you only walk long enough.",
+      "Raise. I'm mad. You're mad."
+    ],
+    "all_in": [
+      "All in. Grin and all.",
+      "Everything. I'll leave the grin.",
+      "All in. You'd have to be mad not to."
+    ]
+  }
+}

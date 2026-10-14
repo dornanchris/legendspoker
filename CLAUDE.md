@@ -157,7 +157,7 @@ art-tools/
                   Pirate Cove, the same way; merlin_parts/, lancelot_parts/,
                   green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot;
                   cerberus_parts/, scipio_parts/, spartacus_parts/, pope_parts/,
-                  caesar_parts/: Rome (all built); nemo_parts/, javert_parts/ (built), alice_parts/:
+                  caesar_parts/: Rome (all built); nemo_parts/, javert_parts/ (built), cheshire_cat_parts/:
                   Baker Street
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
@@ -434,6 +434,14 @@ Holmes's armchair at the far right (wider than 16:9 only). The V R sits at
 the felt by his right hand (`keep_white` keeps its highlight).
 **Javert is built** (`#/puppet/javert`, 24 clips, seat 2), in a plain black
 bicorne (the owner's call over a top hat: less recognisable).
+**The Cheshire Cat takes Alice's chair** (seat 3, mirrored; the owner's call,
+ENGINE_VERSION 12: the Alice sheets drew as Disney's). The design doc had
+rejected him as unreadable; his tells answer that: his tail, eyes blinking one
+at a time, and vanishing tail first, grin last (reliability ~0.8, the reading
+table's legible guest). Loose and aggressive (3000 cash hands: VPIP 50, AF
+1.4), the table's donor at -180 to -240 bb/100 (Alice was -91). His
+dialogue replaced hers line for line; draft like the rest. His prompts:
+`cheshire_cat_parts/POSES.md` (vanished parts are drawn as plain white).
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
@@ -566,7 +574,7 @@ new art against that layout.
   banter pass: Kidd's bucket, Silver's "immortal Hawke" (Treasure Island
   ch. 7), Crassus standing surety for Caesar's debts, Washington's 1776
   order against swearing, Lincoln's 1842 line on the name of Washington,
-  the Sussex Vampire index entries, Alice's marmalade, the Long Island
+  the Sussex Vampire index entries, the Long Island
   retreat.
 - **The staged table (first pass) has gaps.** Someone without a puppet who
   sits down mid-table (the uninvited guest) leaves the chair empty, plate
@@ -680,7 +688,7 @@ new art against that layout.
   the bettor is dealt from a range (`betRange` in decide.ts: bigger bets and
   river bets narrower, a short stack's preflop shove wide), and each
   character believes it as far as its `betRespect` dial says -- low is
-  the calling station, and Green Knight and Alice keep that job. Clearly bad
+  the calling station, and the Green Knight keeps that job. Clearly bad
   calls into bets of 40%+ of the pot fell from 1180 to 759 per 4800 hands,
   on the river from 285 to 105.
   Calibrated against what AI bettors actually held: preflop the estimate

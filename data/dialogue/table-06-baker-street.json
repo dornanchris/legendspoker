@@ -5,14 +5,14 @@
   "champion": "sherlock",
   "status": "draft",
   "notes": {
-    "tone": "A 19th-century LITERATURE table, not a detective table: four books, four temperaments. Holmes reads, Nemo withholds, Javert enforces, Alice wonders. Humor from mannerism: Holmes insufferable, Javert literal, Nemo courteous and elsewhere, Alice logical in a way nobody else at the table is.",
-    "difficulty": "Late-middle table, so legibility drops: Holmes, Nemo and Javert are practised faces. Alice is the deliberate exception, the one face at the reading table that means what it shows. Holmes says so once in banter (bs_al_sh_03a); that is a hint about how to read the table, not about anyone's cards.",
+    "tone": "A 19th-century LITERATURE table, not a detective table: four books, four temperaments. Holmes reads, Nemo withholds, Javert enforces, the Cat riddles. Humor from mannerism: Holmes insufferable, Javert literal, Nemo courteous and elsewhere, the Cat cheerfully mad and logical about it. The Cat took Alice's chair (the owner's call during the art pass: the Alice sheets came out looking like Disney's).",
+    "difficulty": "Late-middle table, so legibility drops: Holmes, Nemo and Javert are practised faces. The Cat is the deliberate exception: his body gives him away a piece at a time (tail, eyes, fading), the most legible tells at the reading table. Holmes says so once in banter (bs_ch_sh_03a); that is a hint about how to read the table, not about anyone's cards.",
     "dealer_plant": "The single 'the dealer arranged it' line for this table is bs_plant_02. Holmes, who investigates everything, answers instantly and does not investigate this. Do NOT add a second.",
     "sherlock": "Seated from hand one. His reveal is reads_you: once he has enough data, he narrates the PLAYER's real, observed habits back to them. Those lines describe behaviour only, never cards. This is Holmes's alone; Socrates at Athens must never do it.",
     "reads_you": "One line per matching condition, spoken between hands. Conditions: loose (enters a lot of pots), tight (enters very few), aggressive (bets and raises far more than calls), passive (calls far more than bets), bluffed (just won a pot uncontested by betting a weak hand), folds_fast (folds much faster than calls or raises), thinks_long (takes much longer before a bet or raise than before a call or check). The 'bluffed' lines never say what the player held.",
-    "canon": "Doyle, Verne, Hugo and Carroll text only; Paget, Neuville/Riou, Hugo's period illustrators and Tenniel for pictures. No Moriarty (not in this game), no Irene Adler by name, no Les Miserables musical, no Disney Alice or Nautilus, nothing from any modern Holmes adaptation.",
+    "canon": "Doyle, Verne, Hugo and Carroll text only; Paget, Neuville/Riou, Hugo's period illustrators and Tenniel for pictures. No Moriarty (not in this game), no Irene Adler by name, no Les Miserables musical, no Disney Cheshire Cat or Nautilus, nothing from any modern Holmes adaptation.",
     "leak_rule": "No line may reference hand strength while cards are live.",
-    "voice": "Champion (Holmes) + Death are voiced. Nemo, Javert and Alice are text + vocalization."
+    "voice": "Champion (Holmes) + Death are voiced. Nemo, Javert and the Cat are text + vocalization."
   },
 
   "earned_names": {
@@ -153,100 +153,99 @@
       ]
     },
 
-    "alice_javert": {
-      "relationship": "The most rigid man in literature and the least intimidated child. Alice has already faced down a Queen who wanted 'sentence first, verdict afterwards'. Oddly, on that point she and Javert agree completely.",
+    "cheshire_javert": {
+      "relationship": "The man who cannot bear a thing out of its place, and a cat who is never entirely in his. Javert has spent his life making sure people stay where the law puts them. The Cat stays nowhere, and leaves his grin behind as evidence.",
       "exchanges": [
         [
-          { "id": "bs_al_jv_01a", "speaker": "alice", "text": "I was at a trial once where the Queen wanted the sentence first and the verdict afterwards." },
-          { "id": "bs_al_jv_01b", "speaker": "javert", "text": "That is a disgrace to the court." },
-          { "id": "bs_al_jv_01c", "speaker": "alice", "text": "That's exactly what I told her!" },
-          { "id": "bs_al_jv_01d", "speaker": "javert", "text": "[regards her for a moment with something very like approval]", "type": "stage_direction" }
+          { "id": "bs_ch_jv_01a", "speaker": "javert", "text": "Remain in your seat." },
+          { "id": "bs_ch_jv_01b", "speaker": "cheshire_cat", "text": "Which part of me?" },
+          { "id": "bs_ch_jv_01c", "speaker": "javert", "text": "All of it." },
+          { "id": "bs_ch_jv_01d", "speaker": "cheshire_cat", "text": "I'll do my best. The grin is very reliable. The rest of me comes and goes." }
         ],
         [
-          { "id": "bs_al_jv_02a", "speaker": "alice", "text": "What does an inspector inspect?" },
-          { "id": "bs_al_jv_02b", "speaker": "javert", "text": "Everyone." },
-          { "id": "bs_al_jv_02c", "speaker": "alice", "text": "How very tiring for you." }
+          { "id": "bs_ch_jv_02a", "speaker": "cheshire_cat", "text": "A dog's not mad, you grant that? A dog growls when it's angry, and wags its tail when it's pleased." },
+          { "id": "bs_ch_jv_02b", "speaker": "javert", "text": "That is correct conduct for a dog." },
+          { "id": "bs_ch_jv_02c", "speaker": "cheshire_cat", "text": "Now I growl when I'm pleased, and wag my tail when I'm angry. Therefore I'm mad." },
+          { "id": "bs_ch_jv_02d", "speaker": "javert", "text": "[writes something in his notebook, and underlines it twice]", "type": "stage_direction" }
         ],
         [
-          { "id": "bs_al_jv_03a", "speaker": "javert", "text": "You fell down a hole, trespassed in a royal garden, and contradicted a Queen." },
-          { "id": "bs_al_jv_03b", "speaker": "alice", "text": "She was ever so rude first." },
-          { "id": "bs_al_jv_03c", "speaker": "javert", "text": "That is not a defence." },
-          { "id": "bs_al_jv_03d", "speaker": "alice", "text": "It is in Wonderland. It's the only defence anybody there has." }
+          { "id": "bs_ch_jv_03a", "speaker": "javert", "text": "A head without a body cannot be arrested." },
+          { "id": "bs_ch_jv_03b", "speaker": "cheshire_cat", "text": "The King said it could be beheaded, though." },
+          { "id": "bs_ch_jv_03c", "speaker": "javert", "text": "The King was wrong. There must be a body. That is procedure." },
+          { "id": "bs_ch_jv_03d", "speaker": "cheshire_cat", "text": "You and the executioner would have got on beautifully." }
         ]
       ],
       "needles": [
         [
-          { "id": "bs_nd_05a", "speaker": "alice", "to": "javert", "text": "You folded! Is that allowed, for a policeman?" },
-          { "id": "bs_nd_05b", "speaker": "javert", "text": "It is permitted. It is not encouraged." }
+          { "id": "bs_nd_05a", "speaker": "cheshire_cat", "to": "javert", "text": "Folded, Inspector? I'd have thought you'd see it through to the end." },
+          { "id": "bs_nd_05b", "speaker": "javert", "text": "I see everything through to the end. Not every hand." }
         ],
         [
-          { "id": "bs_nd_06a", "speaker": "javert", "to": "alice", "text": "Correct procedure. You may go." },
-          { "id": "bs_nd_06b", "speaker": "alice", "text": "I'm not going anywhere. I'm only folded, not arrested." }
+          { "id": "bs_nd_06a", "speaker": "javert", "to": "cheshire_cat", "text": "You left the pot. Most of you." },
+          { "id": "bs_nd_06b", "speaker": "cheshire_cat", "text": "The best part of me stayed to watch." }
         ]
       ]
     },
 
-    "alice_sherlock": {
-      "relationship": "The man who observes everything and the child who notices everything. Holmes famously scolds Watson for climbing the seventeen steps at 221B hundreds of times without counting them (A Scandal in Bohemia); Alice has counted them. And the reading table's two poles: the best reader in literature, and the one face at the table that means what it shows.",
+    "cheshire_sherlock": {
+      "relationship": "The best reader in literature, and a face that is never all there at once. Holmes deduces a man from his cuff; the Cat has, at times, no cuff, no man and no face, only a grin. The reading table's two poles: Holmes reads everyone, and the Cat's body says more than he means it to, a piece at a time.",
       "exchanges": [
         [
-          { "id": "bs_al_sh_01a", "speaker": "sherlock", "text": "Miss Alice. How many steps are there from the hall up to this room?" },
-          { "id": "bs_al_sh_01b", "speaker": "alice", "text": "Seventeen." },
-          { "id": "bs_al_sh_01c", "speaker": "sherlock", "text": "...My friend Watson has climbed them hundreds of times and could not tell me." },
-          { "id": "bs_al_sh_01d", "speaker": "alice", "text": "I expect he wasn't bored enough. I count things when I'm bored." }
+          { "id": "bs_ch_sh_01a", "speaker": "sherlock", "text": "You have been in a kitchen this evening. Pepper. A great deal of pepper." },
+          { "id": "bs_ch_sh_01b", "speaker": "cheshire_cat", "text": "The Duchess's. I was the only one not sneezing." },
+          { "id": "bs_ch_sh_01c", "speaker": "sherlock", "text": "And the baby?" },
+          { "id": "bs_ch_sh_01d", "speaker": "cheshire_cat", "text": "Turned into a pig. I thought it would." }
         ],
         [
-          { "id": "bs_al_sh_02a", "speaker": "sherlock", "text": "Eliminate the impossible, and whatever remains, however improbable, must be the truth." },
-          { "id": "bs_al_sh_02b", "speaker": "alice", "text": "The White Queen believes six impossible things before breakfast." },
-          { "id": "bs_al_sh_02c", "speaker": "sherlock", "text": "Then she is a very poor witness." },
-          { "id": "bs_al_sh_02d", "speaker": "alice", "text": "She says it only wants practice." }
+          { "id": "bs_ch_sh_02a", "speaker": "sherlock", "text": "When you have eliminated the impossible, whatever remains, however improbable, must be the truth." },
+          { "id": "bs_ch_sh_02b", "speaker": "cheshire_cat", "text": "And when you've eliminated the cat, whatever remains is the grin." },
+          { "id": "bs_ch_sh_02c", "speaker": "sherlock", "text": "That is not a deduction. That is a conjuring trick." },
+          { "id": "bs_ch_sh_02d", "speaker": "cheshire_cat", "text": "It's both, if you watch it slowly enough." }
         ],
         [
-          { "id": "bs_al_sh_03a", "speaker": "sherlock", "text": "Yours is the only honest face at this table, Miss Alice. It is extraordinarily restful." },
-          { "id": "bs_al_sh_03b", "speaker": "alice", "text": "I don't see why everyone says that as if it were a pity." }
+          { "id": "bs_ch_sh_03a", "speaker": "sherlock", "text": "You cannot help it, can you? A little of you goes missing, and it is always the part that would have kept the secret." },
+          { "id": "bs_ch_sh_03b", "speaker": "cheshire_cat", "text": "I never said I could keep a secret. I said I could keep a grin." }
         ],
         [
-          { "id": "bs_al_sh_04a", "speaker": "sherlock", "text": "There is a crumb of cake on your sleeve, Miss Alice. Iced. Recent." },
-          { "id": "bs_al_sh_04b", "speaker": "alice", "text": "It said EAT ME. I didn't see why not." },
-          { "id": "bs_al_sh_04c", "speaker": "sherlock", "text": "I can think of at least four reasons." },
-          { "id": "bs_al_sh_04d", "speaker": "alice", "text": "I expect I grew too tall to hear them." }
+          { "id": "bs_ch_sh_04a", "speaker": "cheshire_cat", "text": "Are you mad, Mr Holmes?" },
+          { "id": "bs_ch_sh_04b", "speaker": "sherlock", "text": "I am the most perfectly reasoning machine the world has seen." },
+          { "id": "bs_ch_sh_04c", "speaker": "cheshire_cat", "text": "Then you must be. You came here." }
         ]
       ],
       "needles": [
         [
-          { "id": "bs_nd_07a", "speaker": "sherlock", "to": "alice", "text": "Retreating, Miss Alice? That is unlike you." },
-          { "id": "bs_nd_07b", "speaker": "alice", "text": "I'm not retreating. I'm being curious from further away." }
+          { "id": "bs_nd_07a", "speaker": "sherlock", "to": "cheshire_cat", "text": "Vanishing again? You were losing in any case." },
+          { "id": "bs_nd_07b", "speaker": "cheshire_cat", "text": "I was losing slowly. That's quite different." }
         ],
         [
-          { "id": "bs_nd_08a", "speaker": "alice", "to": "sherlock", "text": "You folded! Didn't you deduce anything?" },
+          { "id": "bs_nd_08a", "speaker": "cheshire_cat", "to": "sherlock", "text": "Folded! Didn't you deduce anything?" },
           { "id": "bs_nd_08b", "speaker": "sherlock", "text": "I deduced that the evening is young." }
         ]
       ]
     },
 
-    "alice_nemo": {
-      "relationship": "Alice cannot see the use of a book without pictures or conversations. Nemo carried twelve thousand books to the bottom of the sea and has not spoken to a stranger in years. She is the one person at this table he answers at length.",
+    "cheshire_nemo": {
+      "relationship": "Nemo went under the sea to vanish from the world, and needed a submarine to do it. The Cat does it sitting down. Nemo is the one man at the table who understands why anyone would want to.",
       "exchanges": [
         [
-          { "id": "bs_al_nm_01a", "speaker": "alice", "text": "Is it true you have a library under the sea?" },
-          { "id": "bs_al_nm_01b", "speaker": "nemo", "text": "Twelve thousand volumes." },
-          { "id": "bs_al_nm_01c", "speaker": "alice", "text": "With pictures?" },
-          { "id": "bs_al_nm_01d", "speaker": "nemo", "text": "...Some. I will have more drawn." }
+          { "id": "bs_ch_nm_01a", "speaker": "nemo", "text": "You disappear whenever you choose, I am told." },
+          { "id": "bs_ch_nm_01b", "speaker": "cheshire_cat", "text": "And you went to the bottom of the sea to manage it. That's a great deal of trouble." },
+          { "id": "bs_ch_nm_01c", "speaker": "nemo", "text": "It was worth every fathom." }
         ],
         [
-          { "id": "bs_al_nm_02a", "speaker": "nemo", "text": "You fell a very long way, I am told, and were not afraid." },
-          { "id": "bs_al_nm_02b", "speaker": "alice", "text": "It was all very slow. I took a jar of marmalade off a shelf on the way down." },
-          { "id": "bs_al_nm_02c", "speaker": "nemo", "text": "I have been deeper than anyone living. Never so politely." }
+          { "id": "bs_ch_nm_02a", "speaker": "cheshire_cat", "text": "Which way ought I to go from here, Captain?" },
+          { "id": "bs_ch_nm_02b", "speaker": "nemo", "text": "Down." },
+          { "id": "bs_ch_nm_02c", "speaker": "cheshire_cat", "text": "I like a man who knows where he wants to get to." }
         ]
       ],
       "needles": [
         [
-          { "id": "bs_nd_09a", "speaker": "alice", "to": "nemo", "text": "You folded! Is it because we're not underwater?" },
-          { "id": "bs_nd_09b", "speaker": "nemo", "text": "Partly. I am out of my element. You are always in yours." }
+          { "id": "bs_nd_09a", "speaker": "cheshire_cat", "to": "nemo", "text": "You folded, Captain. Diving for cover?" },
+          { "id": "bs_nd_09b", "speaker": "nemo", "text": "Surfacing for air. There is a difference." }
         ],
         [
-          { "id": "bs_nd_10a", "speaker": "nemo", "to": "alice", "text": "Even the curious must surface sometimes, Miss Alice." },
-          { "id": "bs_nd_10b", "speaker": "alice", "text": "I'll go down again. I always do." }
+          { "id": "bs_nd_10a", "speaker": "nemo", "to": "cheshire_cat", "text": "Even you must come back sometimes." },
+          { "id": "bs_nd_10b", "speaker": "cheshire_cat", "text": "I always come back. It's going that I'm known for." }
         ]
       ]
     },
@@ -284,20 +283,20 @@
       { "id": "bs_p0_01", "speaker": "sherlock", "text": "You have come from Rome, I perceive. There is dog hair on your cuff: three distinct kinds, and yet I believe it was only one dog.", "note": "Echoes his first words to Watson ('You have been in Afghanistan, I perceive'). Rome is always the previous table." },
       { "id": "bs_p0_02", "speaker": "javert", "text": "Keep your hands on the table, where I can see them." },
       { "id": "bs_p0_03", "speaker": "nemo", "text": "Another visitor from the land. They always bring the noise in with them." },
-      { "id": "bs_p0_04", "speaker": "alice", "text": "Are you one of the players, or one of the cards? It's so hard to tell, in some places." },
+      { "id": "bs_p0_04", "speaker": "cheshire_cat", "text": "How did you get here? Never mind. You must be mad, or you wouldn't have come." },
       { "id": "bs_p0_05", "speaker": "sherlock", "text": "Please don't speak. You will only confirm what I have already deduced." }
     ],
     "tier_1": [
       { "id": "bs_p1_01", "speaker": "sherlock", "text": "An Irregular, then. My Irregulars go everywhere, see everything and overhear everyone, for a shilling apiece. You may yet be worth the shilling." },
       { "id": "bs_p1_02", "speaker": "javert", "text": "You have broken no rule yet. I am waiting for the first." },
       { "id": "bs_p1_03", "speaker": "nemo", "text": "You are quieter than most people from the land. It is a beginning." },
-      { "id": "bs_p1_04", "speaker": "alice", "text": "You're not nearly as dull as I thought you'd be. I thought you'd be very dull." }
+      { "id": "bs_p1_04", "speaker": "cheshire_cat", "text": "You're still here. Most people have stopped being here by now." }
     ],
     "tier_2": [
       { "id": "bs_p2_01", "speaker": "sherlock", "text": "{name}. You have an entry in my index now, under V: 'Visitors, unaccountable'. It falls just below 'Vampires in Transylvania'.", "note": "Holmes's index is canon; in The Sussex Vampire he reads out 'Vampires in Transylvania' from it. A wink at the next table, not a Death foreshadow." },
       { "id": "bs_p2_02", "speaker": "javert", "text": "I have looked for something against you. I have found nothing. I will keep looking, but you should know that." },
       { "id": "bs_p2_03", "speaker": "nemo", "text": "You would do well at sea. Nobody there asks where you came from." },
-      { "id": "bs_p2_04", "speaker": "alice", "text": "When you win, the Inspector's whiskers bristle. I do like watching it." }
+      { "id": "bs_p2_04", "speaker": "cheshire_cat", "text": "When you win, the Inspector's whiskers bristle. I've half a mind to grow some." }
     ],
     "tier_3": [
       { "id": "bs_p3_01", "speaker": "sherlock", "text": "Detective.", "note": "From the only consulting detective in the world, the word means one thing: he considers you a reader of people, like him. First time anyone here gives the player a title." },
@@ -305,9 +304,9 @@
       { "id": "bs_p3_03", "speaker": "nemo", "text": "There is a spare cabin aboard the Nautilus. It has not had a guest worth the name in a long time." },
       {
         "id": "bs_p3_04",
-        "speaker": "alice",
-        "text": "Have you noticed nobody ever looks at the dealer? I do. Sometimes he looks back.",
-        "foreshadow": "Sounds like a child's spooky aside. The one honest face at the reading table is the only one watching the right person, and the dealer is watching back."
+        "speaker": "cheshire_cat",
+        "text": "Have you noticed nobody ever looks at the dealer? I do. He and I are the only ones here who can leave whenever we like.",
+        "foreshadow": "Sounds like the Cat's usual nonsense about vanishing. The one guest at the reading table watching the right person, and the only one who knows that Death, like him, is never quite all there."
       }
     ]
   },
@@ -361,9 +360,9 @@
       { "id": "bs_out_javert_01", "speaker": "javert", "text": "Defeated. I will report it exactly as it happened, including my own errors." },
       { "id": "bs_out_javert_02", "speaker": "javert", "text": "[stands, sets his hat square, and goes out without looking back]", "type": "stage_direction" }
     ],
-    "alice": [
-      { "id": "bs_out_alice_01", "speaker": "alice", "text": "Who cares for you? You're nothing but a pack of cards!", "note": "Carroll's own line, from the trial at the end of Wonderland. At a card table it was always going to come out." },
-      { "id": "bs_out_alice_02", "speaker": "alice", "text": "Oh, what a curious game! I'm sure I shall dream about it." }
+    "cheshire_cat": [
+      { "id": "bs_out_cheshire_01", "speaker": "cheshire_cat", "text": "You'll see me there.", "note": "Carroll: the Cat's parting words to Alice before he first vanishes." },
+      { "id": "bs_out_cheshire_02", "speaker": "cheshire_cat", "text": "[fades away, beginning with the end of his tail and ending with the grin, which stays at the table some while after the rest of him has gone]", "type": "stage_direction" }
     ],
     "sherlock": [
       { "id": "bs_out_sherlock_01", "speaker": "sherlock", "text": "Beaten. A novel sensation. I shall want to examine it at leisure." },
@@ -373,8 +372,8 @@
 
   "player_busted": [
     { "id": "bs_bust_01", "speaker": "sherlock", "text": "Come back. You are not yet solved." },
-    { "id": "bs_bust_02", "speaker": "alice", "text": "The King says: begin at the beginning, go on till you come to the end, then stop. You haven't come to the end yet." },
-    { "id": "bs_bust_03", "speaker": "death", "text": "Most of this table has come back from an ending at least once. You can manage it.", "note": "True: Holmes after the waterfall, Nemo in a second novel, Alice through the looking-glass. Not Javert." }
+    { "id": "bs_bust_02", "speaker": "cheshire_cat", "text": "Gone already? You'll come back. Everyone does, here. It's the going that takes practice." },
+    { "id": "bs_bust_03", "speaker": "death", "text": "Most of this table has come back from an ending at least once. You can manage it.", "note": "True: Holmes after the waterfall, Nemo in a second novel, the Cat every few minutes. Not Javert." }
   ],
 
   "champion_defeat": [

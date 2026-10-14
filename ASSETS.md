@@ -88,7 +88,7 @@ not. Every character's own note lives in its data file
 | The Wolf Man | European werewolf folklore | Universal's *The Wolf Man* (1941): Larry Talbot, the silver cane, the curse poem. ⚠ Consider a different display name — see below |
 | Dracula | Stoker, 1897; the 1927 stage play's cape is now PD in the US | Bela Lugosi's likeness (his estate has asserted rights); Universal's film designs |
 | Davy Jones | Sailors' folklore — the devil of the deep, Davy Jones' locker | Disney's tentacle face, the organ, the heart in a chest |
-| Alice | Carroll, 1865; Tenniel's illustrations | Disney's 1951 film design |
+| The Cheshire Cat | Carroll, 1865; Tenniel's illustrations | Disney's 1951 pink-and-purple cat; the 2010 Burton design |
 | The Headless Horseman | Irving, 1820 | Disney's 1949 short; Burton's 1999 film |
 | Loki (hidden guest) | The Poetic and Prose Eddas (13th c.) and old translations (Brodeur 1916, Bellows 1923): fair-faced, bare-headed, the stitch-scarred mouth (Brokkr), a golden game piece | Marvel's Loki above all: no green-and-gold, no curved horned helmet, no slicked black hair, no actor likeness, no film or comic lines, no "God of Mischief" branding. Not Wagner's Loge either |
 | The Phoenix (hidden) | Herodotus 2.73 (red and gold, eagle-shaped, Heliopolis), Ovid, Pliny | Fawkes (Harry Potter books and films), Marvel's Phoenix / the X-Men, any human figure or woman in flames |

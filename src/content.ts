@@ -38,7 +38,7 @@ import scipio from '../data/characters/scipio.json'
 import caesar from '../data/characters/caesar.json'
 import nemo from '../data/characters/nemo.json'
 import javert from '../data/characters/javert.json'
-import alice from '../data/characters/alice.json'
+import cheshire_cat from '../data/characters/cheshire_cat.json'
 import sherlock from '../data/characters/sherlock.json'
 import vanHelsing from '../data/characters/van_helsing.json'
 import monster from '../data/characters/monster.json'
@@ -352,7 +352,7 @@ const characterList = [
   kidd, silver, davyJones, blackbeard,
   merlin, lancelot, greenKnight, arthur,
   spartacus, pope, cerberus, scipio, caesar,
-  nemo, javert, alice, sherlock,
+  nemo, javert, cheshire_cat, sherlock,
   vanHelsing, monster, wolfMan, headlessHorseman, dracula,
   greyAlien, martian, robot, astronaut, theAi,
   death,
