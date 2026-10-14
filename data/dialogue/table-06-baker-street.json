@@ -98,6 +98,13 @@
           { "id": "bs_sh_jv_04b", "speaker": "sherlock", "text": "Of everyone. Criminals are merely the interesting entries." },
           { "id": "bs_sh_jv_04c", "speaker": "javert", "text": "Am I in it?" },
           { "id": "bs_sh_jv_04d", "speaker": "sherlock", "text": "Under J. Between 'Jackals' and 'Jezail bullets'." }
+        ],
+        [
+          { "id": "bs_sh_jv_05a", "speaker": "javert", "text": "You sit bareheaded, Monsieur Holmes. A man of position wears a hat." },
+          { "id": "bs_sh_jv_05b", "speaker": "sherlock", "text": "Out of doors, Inspector. This is my sitting room. I keep a cloth cap with ear-flaps for the country, where there is weather. There is no weather in here." },
+          { "id": "bs_sh_jv_05c", "speaker": "javert", "text": "A police officer is always on duty." },
+          { "id": "bs_sh_jv_05d", "speaker": "sherlock", "text": "Then you have spent an hour on duty in another man's house, at his card table, by his fire, in your hat. Either you mean to leave in a great hurry, or nobody has ever told you to take it off. I suspect both." },
+          { "id": "bs_sh_jv_05e", "speaker": "javert", "text": "[touches the brim of his bicorne, and does not take it off]", "type": "stage_direction", "note": "The owner's: Holmes is drawn bareheaded (Doyle's 'ear-flapped travelling cap' is for the country; Paget only drew it there), Javert keeps his bicorne. Lincoln keeps his hat at the White House too, so no rule is broken: the joke is on Javert." }
         ]
       ],
       "needles": [
