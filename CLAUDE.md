@@ -152,7 +152,8 @@ art-tools/
                   blackbeard_parts/, kidd_parts/, silver_parts/, davy_jones_parts/: the
                   Pirate Cove, the same way; merlin_parts/, lancelot_parts/,
                   green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot;
-                  cerberus_parts/ (built), scipio_parts/: Rome
+                  cerberus_parts/ (built), scipio_parts/, spartacus_parts/,
+                  pope_parts/, caesar_parts/: Rome
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -405,12 +406,12 @@ clips, seat 4): **Camelot is complete on the real table screen.**
 a quarter bigger, the snakes kept as drawn). His master is the rest pose's
 own three heads (the face sheet spaced them differently), with eyes and
 muzzles on the middle head only; every head change is a whole-figure frame.
-**Rome's room is built** (`?room=rome`): brazier fires flicker, and
-Caesar's wreath waits on its cushion until he arrives. But the first plate
-put both braziers right behind seats 1 and 4 and the cushion's plinth past
-the edge of a 16:9 screen, so at 16:9 neither shows. The backdrop prompt
-now gives exact places (braziers at 27% and 73%, head height, in the gaps;
-the cushion in a niche at 42%), for a redraw; the pieces need only new spots.
+**Rome's room is built** (`?room=rome`), from the redrawn plate (the
+first put both braziers behind seats 1 and 4; the prompt now gives exact
+places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
+and Caesar's wreath waits on the cushion in the niche by the door until he
+arrives. The niche came out at 37%, behind seat 2's head, so the wreath
+shows mostly once that chair is empty.
 Rome stays the plain table until all five have puppets. **The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
