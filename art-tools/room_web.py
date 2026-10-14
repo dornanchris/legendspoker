@@ -18,7 +18,8 @@ line sits. The numbers are mock_screen.py's, so the mock and the game agree.
 A room may have pieces (art-tools/rooms/<room>/pieces.json): cut from a
 sheet on white, each the components wholly inside its box (or, with "crop",
 everything inside it, cut where the box cuts; with "bright": [r, g], only
-the bright fire inside it: Camelot's hearth frames drew the whole fireplace), written as PNGs
+the bright fire inside it: Camelot's hearth frames drew the whole fireplace;
+"flip" mirrors it), written as PNGs
 beside the backdrop, with where they stand in design space. `presence` names
 the piece shown until the table's late champion arrives and the one after;
 `loops` cycle frames (lamp flames) at each of their spots.
@@ -90,6 +91,8 @@ def cut_pieces():
         ys, xs = np.nonzero(mask)
         t, b_, l, r = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
         rgba = np.dstack([sheet[t:b_, l:r], (mask[t:b_, l:r] * 255).astype('uint8')])
+        if p.get('flip'):                                  # drawn facing the wrong way (Dracula's chair)
+            rgba = rgba[:, ::-1]
         Image.fromarray(rgba, 'RGBA').save(os.path.join(OUT, name + '.png'), optimize=True)
         piece = {'img': name + '.png', 'aspect': round((r - l) / (b_ - t), 4)}
         if 'x' in p:

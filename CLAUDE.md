@@ -171,7 +171,7 @@ art-tools/
                   shares) and a folder per venue: its backdrop, and its
                   pieces (pieces.json: the cut, where they stand, story
                   pieces and loops). white_house/, athens/, pirate_cove/, camelot/, rome/,
-                  baker_street/
+                  baker_street/, transylvania/
   mock_screen.py  draws the table screen with the current art: game first
   room_web.py     publishes a room to web/art/rooms/: its rim curve, chairs
                   and pieces (preview one: web/index.html?room=athens)
@@ -456,8 +456,12 @@ white, and the grin left alone is placed where his mouth is at rest:
 **Baker Street is complete on the real table screen.**
 **Transylvania has begun: Van Helsing is built** (`#/puppet/van_helsing`, 24
 clips, seat 1), his doctor's bag on the felt by his left elbow, his spectacles
-the strong tell (off, polished, back on). The room and the other four
-(the Monster's prompts are in `monster_parts/POSES.md`) are still to come.
+the strong tell (off, polished, back on). **Transylvania's room is built**
+(`?room=transylvania`): Dracula watches from the chair by the fire at 73%
+across (a presence piece, mirrored to face the table) until he sits down;
+the hearth fire flickers at the far right (wider than 16:9 only), the
+candelabrum's three flames at 39%. The other four (the Monster's prompts are
+in `monster_parts/POSES.md`) are still to come.
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,

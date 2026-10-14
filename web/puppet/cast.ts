@@ -67,6 +67,7 @@ import pirateCove from '../art/rooms/pirate_cove/room.json'
 import camelot from '../art/rooms/camelot/room.json'
 import rome from '../art/rooms/rome/room.json'
 import bakerStreet from '../art/rooms/baker_street/room.json'
+import transylvania from '../art/rooms/transylvania/room.json'
 
 /**
  * The puppets the web build knows: each one's rig (generated) and its anim
@@ -167,4 +168,5 @@ export const ROOMS: Record<string, RoomEntry> = {
   camelot: { data: camelot as unknown as RoomData, base: 'art/rooms/camelot/' },
   rome: { data: rome as unknown as RoomData, base: 'art/rooms/rome/' },
   baker_street: { data: bakerStreet as unknown as RoomData, base: 'art/rooms/baker_street/' },
+  transylvania: { data: transylvania as unknown as RoomData, base: 'art/rooms/transylvania/' },
 }
