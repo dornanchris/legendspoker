@@ -1,0 +1,926 @@
+{
+ "id": "scipio",
+ "name": "Scipio Africanus",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets. Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. The ivory elephant stands by his right hand and goes with that forearm's piece. The drawn rail is gold-orange (rail_orange), as on Cerberus's sheets.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    19,
+    16,
+    480,
+    466
+   ],
+   "what": "at rest, the ivory elephant by his right hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    526,
+    23,
+    488,
+    459
+   ],
+   "what": "peeking",
+   "reg": [
+    1.0,
+    0,
+    7
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1041,
+    17,
+    478,
+    465
+   ],
+   "what": "checking",
+   "reg": [
+    1.0,
+    0,
+    1
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    19,
+    505,
+    480,
+    467
+   ],
+   "what": "calling",
+   "reg": [
+    1.0,
+    0,
+    -1
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    526,
+    504,
+    488,
+    468
+   ],
+   "what": "betting",
+   "reg": [
+    1.0,
+    0,
+    -2
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1041,
+    499,
+    478,
+    473
+   ],
+   "what": "folding",
+   "reg": [
+    1.0,
+    0,
+    -7
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    17,
+    24,
+    491,
+    459
+   ],
+   "what": "all in",
+   "reg": [
+    1.0,
+    0,
+    8
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    524,
+    19,
+    490,
+    463
+   ],
+   "what": "showing",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1029,
+    18,
+    492,
+    465
+   ],
+   "what": "collecting",
+   "reg": [
+    1.0,
+    0,
+    1
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    14,
+    506,
+    501,
+    466
+   ],
+   "what": "moves the elephant out of the way (TELL)",
+   "reg": [
+    1.0,
+    -3,
+    0
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    523,
+    510,
+    495,
+    462
+   ],
+   "what": "taps the elephant's trunk (decoy)",
+   "reg": [
+    1.0,
+    -1,
+    5
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1035,
+    503,
+    485,
+    469
+   ],
+   "what": "looks up, as though advised (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -2
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    18,
+    13,
+    489,
+    471
+   ],
+   "what": "studies each player in turn (decoy)",
+   "reg": [
+    1.0,
+    0,
+    -5
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    523,
+    18,
+    489,
+    466
+   ],
+   "what": "turns the elephant to face the door (TELL)",
+   "reg": [
+    1.0,
+    -1,
+    0
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1028,
+    20,
+    491,
+    464
+   ],
+   "what": "sets his chips out in ranks (decoy)",
+   "reg": [
+    1.0,
+    -1,
+    2
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    14,
+    497,
+    492,
+    478
+   ],
+   "what": "straightens his cloak, Greek fashion",
+   "reg": [
+    1.0,
+    -4,
+    -12
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    524,
+    503,
+    487,
+    472
+   ],
+   "what": "an appraising look at you",
+   "reg": [
+    1.0,
+    0,
+    -6
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1030,
+    510,
+    489,
+    465
+   ],
+   "what": "chin in hand, thinking",
+   "reg": [
+    1.0,
+    0,
+    1
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    18,
+    19,
+    487,
+    464
+   ],
+   "what": "talking",
+   "reg": [
+    1.0,
+    0,
+    2
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    524,
+    19,
+    489,
+    464
+   ],
+   "what": "facing a big bet",
+   "reg": [
+    1.0,
+    0,
+    2
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1031,
+    24,
+    489,
+    459
+   ],
+   "what": "lost a pot",
+   "reg": [
+    1.0,
+    0,
+    7
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    18,
+    499,
+    488,
+    473
+   ],
+   "what": "won a pot",
+   "reg": [
+    1.0,
+    0,
+    -7
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    524,
+    536,
+    494,
+    436
+   ],
+   "what": "heads up",
+   "reg": [
+    1.0,
+    0,
+    30
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1031,
+    485,
+    490,
+    487
+   ],
+   "what": "knocked out",
+   "reg": [
+    1.0,
+    0,
+    -5
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 362,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  220,
+  350,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 185,
+ "neck": [
+  240,
+  185
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  190,
+  180,
+  330,
+  240
+ ],
+ "master": {
+  "piece": "scipio_parts/scipio_face/scipio_face_01.png",
+  "cut_below": 335,
+  "face": "scipio_parts/face.json",
+  "file": "scipio_parts/scipio_rig/master.png",
+  "layers": "scipio_parts/scipio_rig/face",
+  "head_box": [
+   140,
+   0,
+   325,
+   195
+  ],
+  "place": [
+   -11,
+   1,
+   0.57
+  ],
+  "replace_head": true,
+  "biggest": true,
+  "head_poly": [
+   [
+    140,
+    0
+   ],
+   [
+    325,
+    0
+   ],
+   [
+    325,
+    150
+   ],
+   [
+    305,
+    172
+   ],
+   [
+    285,
+    180
+   ],
+   [
+    262,
+    188
+   ],
+   [
+    212,
+    190
+   ],
+   [
+    185,
+    176
+   ],
+   [
+    170,
+    165
+   ],
+   [
+    148,
+    148
+   ]
+  ],
+  "keep_poly": [
+   [
+    30,
+    0
+   ],
+   [
+    340,
+    0
+   ],
+   [
+    340,
+    265
+   ],
+   [
+    305,
+    300
+   ],
+   [
+    270,
+    315
+   ],
+   [
+    245,
+    335
+   ],
+   [
+    150,
+    337
+   ],
+   [
+    100,
+    300
+   ],
+   [
+    78,
+    282
+   ],
+   [
+    35,
+    255
+   ]
+  ],
+  "heads": {
+   "viewer": "scipio_parts/scipio_face/scipio_face_16.png"
+  },
+  "cloth": [
+   15,
+   140
+  ],
+  "shoulder_y": 170,
+  "spare_red": true
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     280
+    ],
+    [
+     90,
+     280
+    ],
+    [
+     90,
+     315
+    ],
+    [
+     10,
+     320
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and hand, and the ivory elephant",
+     "poly": [
+      [
+       0,
+       325
+      ],
+      [
+       25,
+       300
+      ],
+      [
+       110,
+       312
+      ],
+      [
+       160,
+       296
+      ],
+      [
+       180,
+       345
+      ],
+      [
+       255,
+       352
+      ],
+      [
+       264,
+       400
+      ],
+      [
+       256,
+       446
+      ],
+      [
+       130,
+       446
+      ],
+      [
+       20,
+       442
+      ],
+      [
+       0,
+       420
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    445,
+    312
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     268
+    ],
+    [
+     478,
+     268
+    ],
+    [
+     478,
+     305
+    ],
+    [
+     400,
+     305
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, bracer and hand",
+     "poly": [
+      [
+       300,
+       442
+      ],
+      [
+       304,
+       392
+      ],
+      [
+       328,
+       352
+      ],
+      [
+       372,
+       322
+      ],
+      [
+       402,
+       292
+      ],
+      [
+       472,
+       292
+      ],
+      [
+       480,
+       330
+      ],
+      [
+       478,
+       420
+      ],
+      [
+       452,
+       444
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      180,
+      370
+     ],
+     [
+      320,
+      370
+     ],
+     [
+      320,
+      470
+     ],
+     [
+      180,
+      470
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      170,
+      360
+     ],
+     [
+      330,
+      360
+     ],
+     [
+      330,
+      470
+     ],
+     [
+      170,
+      470
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      100,
+      350
+     ],
+     [
+      440,
+      350
+     ],
+     [
+      440,
+      470
+     ],
+     [
+      100,
+      470
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      100,
+      345
+     ],
+     [
+      450,
+      345
+     ],
+     [
+      450,
+      470
+     ],
+     [
+      100,
+      470
+     ]
+    ]
+   ]
+  },
+  "elephant_aside": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "tap_trunk": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "look_up": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "study": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "elephant_door": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "ranks": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      150,
+      350
+     ],
+     [
+      400,
+      350
+     ],
+     [
+      400,
+      470
+     ],
+     [
+      150,
+      470
+     ]
+    ]
+   ]
+  },
+  "cloak": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "appraise": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "chin": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      170,
+      360
+     ],
+     [
+      330,
+      360
+     ],
+     [
+      330,
+      470
+     ],
+     [
+      170,
+      470
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     540,
+     -60
+    ],
+    [
+     540,
+     370
+    ],
+    [
+     -60,
+     370
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/scipio",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  14,
+  42
+ ],
+ "wood_rows_only": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ }
+}

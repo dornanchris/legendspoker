@@ -41,6 +41,8 @@ import arthurRig from '../art/arthur/rig.json'
 import arthurAnim from '../art/arthur/anim.json'
 import cerberusRig from '../art/cerberus/rig.json'
 import cerberusAnim from '../art/cerberus/anim.json'
+import scipioRig from '../art/scipio/rig.json'
+import scipioAnim from '../art/scipio/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -100,6 +102,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   green_knight_bare: { rig: greenKnightBareRig as unknown as RigData, anim: greenKnightBareAnim as unknown as AnimData, base: 'art/green_knight_bare/' },
   arthur: { rig: arthurRig as unknown as RigData, anim: arthurAnim as unknown as AnimData, base: 'art/arthur/' },
   cerberus: { rig: cerberusRig as unknown as RigData, anim: cerberusAnim as unknown as AnimData, base: 'art/cerberus/' },
+  scipio: { rig: scipioRig as unknown as RigData, anim: scipioAnim as unknown as AnimData, base: 'art/scipio/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 

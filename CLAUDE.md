@@ -156,7 +156,7 @@ art-tools/
                   blackbeard_parts/, kidd_parts/, silver_parts/, davy_jones_parts/: the
                   Pirate Cove, the same way; merlin_parts/, lancelot_parts/,
                   green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot;
-                  cerberus_parts/ (built), scipio_parts/, spartacus_parts/,
+                  cerberus_parts/ and scipio_parts/ (built), spartacus_parts/,
                   pope_parts/, caesar_parts/: Rome
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
@@ -412,6 +412,9 @@ clips, seat 4): **Camelot is complete on the real table screen.**
 a quarter bigger, the snakes kept as drawn). His master is the rest pose's
 own three heads (the face sheet spaced them differently), with eyes and
 muzzles on the middle head only; every head change is a whole-figure frame.
+**Scipio is built** (`#/puppet/scipio`, 24 clips, seat 4, mirrored), the
+ivory elephant by his right hand; his skin is the drawn rail's orange, so
+`rail_orange` takes thresholds (`scipio_parts/README.md`).
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,

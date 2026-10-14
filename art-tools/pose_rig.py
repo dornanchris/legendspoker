@@ -378,6 +378,11 @@ def main(spec_path):
             print(f'  {n} -> {rest}: scale {s:.2f}, shift {dx}, {dy} (error {err:.1f})')
     # the poses in the rest pose's space
 
+    RO = spec.get('rail_orange')
+    RO = RO if isinstance(RO, dict) else {}                # {"red", "blue"}: where skin is that orange too (Scipio)
+    gold = lambda c: ((c[..., 0] > RO.get('red', 170)) & (c[..., 0] - c[..., 1] > 40) & (c[..., 1] > 70)
+                      & (c[..., 2] < RO.get('blue', 90)))
+
     def rail_gold(a):
         """With "rail_orange": the drawn rail's bright gold-orange at and below its
         top (rest-pose rows), and its outline round it. Collars are that colour
@@ -385,7 +390,7 @@ def main(spec_path):
         if not spec.get('rail_orange'):
             return np.zeros(a.shape[:2], bool)
         c = a[..., :3].astype(int)
-        g = (c[..., 0] > 170) & (c[..., 0] - c[..., 1] > 40) & (c[..., 1] > 70) & (c[..., 2] < 90)
+        g = gold(c)
         g[:max(0, ty - 12)] = False
         return ndimage.binary_dilation(g, iterations=2)
     char = lambda a: (a[..., 3] > 128) & ~table_colour(a, ty) & ~rail_gold(a)
@@ -673,7 +678,7 @@ def main(spec_path):
             rail &= c[..., 2] < spec.get('rail_blue', 256)   # bare skin is that orange too, but bluer
             rail &= c[..., 1] > spec.get('rail_green', 0) * c[..., 0]   # and a red cloak is that, but far less green
             if spec.get('rail_orange'):                    # a bright gold-orange rail (Cerberus's sheets), which the red test misses
-                rail |= (c[..., 0] > 170) & (c[..., 0] - c[..., 1] > 40) & (c[..., 1] > 70) & (c[..., 2] < 90) & ~props
+                rail |= gold(c) & ~props
             lab, n = ndimage.label(rail)
             if n:
                 low = np.unique(lab[ty + FM - spec['drop_rail']:][rail[ty + FM - spec['drop_rail']:]])
