@@ -2,7 +2,7 @@
 
 Baker Street's seat 2 (left of the dealer): drawn facing the viewer's right, as the game shows him. Built the way Scipio is (`art-tools/pose_rig.py`), style-locked.
 
-His look, from his character file: tall, in a long greatcoat that buttons to the chin, hat brim low over the eyes, and, Hugo's own detail, enormous side-whiskers climbing toward a flat nose with deep nostrils. A face that almost never moves, so any movement reads. His tell surface is the greatcoat: its high collar and its row of buttons. At rest the top two buttons are open, so buttoning it to the collar is a big, readable shape.
+His look, from his character file: tall, in a long greatcoat that buttons to the chin, a black bicorne low over the eyes (the owner's call over the first sheet's top hat, which read less as Javert; the bicorne was the Paris police's hat from 1829, so it is period, and it is worn here with his greatcoat, not with any production's uniform), and, Hugo's own detail, enormous side-whiskers climbing toward a flat nose with deep nostrils. A face that almost never moves, so any movement reads. His tell surface is the greatcoat: its high collar and its row of buttons. At rest the top two buttons are open, so buttoning it to the collar is a big, readable shape.
 
 Ruled out (his character file): the stage musical and every film of it: no lyrics, no costume from any production. Hugo's text and the nineteenth-century illustrations only. Layout from Lancelot's character sheet, style from Washington's pose sheet A.
 
@@ -27,7 +27,7 @@ Tags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: but
 | C3 | Taps his cane on the floor once (decoy for C2) | IDLE |
 | C4 | Consults a small black notebook | IDLE |
 | C5 | Sits bolt upright, arms rigid on the table | IDLE |
-| C6 | Tugs his hat brim lower | IDLE |
+| C6 | Settles his bicorne lower on his brow | IDLE |
 | D1 | Talking: one finger pointed, an accusation | BEAT |
 | D2 | Facing a big bet: eyes narrowed under the brim | BEAT |
 | D3 | Lost a pot: a stiff, grim nod | BEAT |
@@ -44,7 +44,7 @@ One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in thi
 ```
 Character sheet for 2D animation rigging: Inspector Javert, of Victor Hugo's Les Misérables (1862), as Hugo describes him and the nineteenth-century illustrations show him. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No plate armour, no gauntlets, no striped surcoat, no long hair. Take the STYLE from the SECOND attached image.
 
-Javert: a tall, gaunt police inspector of about fifty, rigid and upright; a stern, narrow face that almost never moves; a flat nose with deep nostrils; thick dark side-whiskers climbing up his cheeks toward the nose (Hugo's detail), clean-shaven chin and lip; small, hard, deep-set eyes; a narrow-brimmed dark top hat worn low over his eyes; a long dark grey-blue greatcoat with a high turned-up collar and a single row of brass buttons, a white stock at the throat. His tell surface is the coat: show it buttoned to the middle of the chest, with the top two buttons OPEN. Grim, exact, incorruptible. NO police uniform, NO badge, NO sash. Nothing from the stage musical or any film.
+Javert: a tall, gaunt police inspector of about fifty, rigid and upright; a stern, narrow face that almost never moves; a flat nose with deep nostrils; thick dark side-whiskers climbing up his cheeks toward the nose (Hugo's detail), clean-shaven chin and lip; small, hard, deep-set eyes; a plain black bicorne hat worn crosswise, low over his eyes (the hat of the Paris police from 1829), no cockade, no trim; a long dark grey-blue greatcoat with a high turned-up collar and a single row of brass buttons, a white stock at the throat. His tell surface is the coat: show it buttoned to the middle of the chest, with the top two buttons OPEN. Grim, exact, incorruptible. NO top hat. NO police uniform, NO badge, NO sash, NO cockade. Nothing from the stage musical or any film.
 
 Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.
 
@@ -63,7 +63,7 @@ STYLE, the most important rule: match the SECOND attached image (Washington, fro
 ### Pose sheet A
 
 ```
-Character pose sheet for 2D animation reference: Javert, exactly as on the attached character sheet (a tall, gaunt police inspector of about fifty, a stern, almost motionless face with a flat nose and deep nostrils, thick dark side-whiskers climbing up his cheeks, a narrow-brimmed dark top hat worn low over his eyes, a long dark grey-blue greatcoat with a high collar and a single row of brass buttons, a white stock at the throat, colours, line weight, flat cartoon style).
+Character pose sheet for 2D animation reference: Javert, exactly as on the attached character sheet (a tall, gaunt police inspector of about fifty, a stern, almost motionless face with a flat nose and deep nostrils, thick dark side-whiskers climbing up his cheeks, a plain black bicorne hat worn crosswise, low over his eyes (the hat of the Paris police from 1829), no cockade, no trim, a long dark grey-blue greatcoat with a high collar and a single row of brass buttons, a white stock at the throat, colours, line weight, flat cartoon style).
 
 Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: waist up, seated behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, the same size, in the same place in its cell, with the table edge at the same height in every cell. Leave a little white between him and the cell's edges, the top of his hat included: nothing of him is cut off. Nothing below the table edge. No chair: nothing at all behind him, just white.
 
@@ -76,13 +76,13 @@ IMPORTANT for every pose: the arm that the pose does not mention stays EXACTLY a
 5. Betting: his right hand setting a stack of chips down, exact, well forward
 6. Folding: his right hand laying two cards down face down, squared together
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No police uniform, no badge, no tricolour sash, no musical-theatre costume, no chair.
+Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No top hat, no police uniform, no badge, no cockade, no tricolour sash, no musical-theatre costume, no chair.
 ```
 
 ### Pose sheet B
 
 ```
-Character pose sheet for 2D animation reference: Javert, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same face, side-whiskers, hat, long dark greatcoat and its row of buttons.
+Character pose sheet for 2D animation reference: Javert, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same face, side-whiskers, black bicorne, long dark greatcoat and its row of buttons.
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). His greatcoat is buttoned to the middle of his chest, its top two buttons OPEN, unless the pose says otherwise. Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 
@@ -93,13 +93,13 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind t
 5. Straightening the white stock at his throat with his right hand, the coat still open at the top
 6. Staring straight at the viewer without blinking: eyes wide, fixed, unmoving; arms as at rest
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No police uniform, no badge, no tricolour sash, no musical-theatre costume, no chair.
+Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No top hat, no police uniform, no badge, no cockade, no tricolour sash, no musical-theatre costume, no chair.
 ```
 
 ### Pose sheet C
 
 ```
-Character pose sheet for 2D animation reference: Javert, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same face, side-whiskers, hat, long dark greatcoat and its row of buttons.
+Character pose sheet for 2D animation reference: Javert, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same face, side-whiskers, black bicorne, long dark greatcoat and its row of buttons.
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). His greatcoat is buttoned to the middle of his chest, its top two buttons OPEN, unless the pose says otherwise. Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 
@@ -108,26 +108,26 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind t
 3. Tapping a dark walking cane on the floor once: his right hand gripping the cane's round brass knob, just above the table's edge, the cane going down out of sight below the table
 4. Consulting a small black notebook held open in his right hand in front of his chest, eyes on it
 5. Sitting bolt upright, shoulders square, both arms rigid on the table
-6. Tugging the brim of his hat lower with his right hand
+6. Settling his bicorne lower on his brow with his right hand
 
-Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No police uniform, no badge, no tricolour sash, no musical-theatre costume, no chair.
+Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No top hat, no police uniform, no badge, no cockade, no tricolour sash, no musical-theatre costume, no chair.
 ```
 
 ### Pose sheet D
 
 ```
-Character pose sheet for 2D animation reference: Javert, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same face, side-whiskers, hat, long dark greatcoat and its row of buttons.
+Character pose sheet for 2D animation reference: Javert, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same face, side-whiskers, black bicorne, long dark greatcoat and its row of buttons.
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). His greatcoat is buttoned to the middle of his chest, its top two buttons OPEN, unless the pose says otherwise. Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 
 1. Talking: his right index finger pointed forward, an accusation
-2. Facing a big bet: eyes narrowed under the hat brim; arms as at rest
+2. Facing a big bet: eyes narrowed under the bicorne; arms as at rest
 3. Lost a pot: a stiff, grim nod, mouth set; arms as at rest
 4. Won a pot: no smile, his right hand drawing a few chips toward him
 5. Down to two players: leaning in on both forearms, eyes hard
 6. Knocked out: rising from his seat, buttoning his coat to the collar with his right hand, a stiff bow
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No police uniform, no badge, no tricolour sash, no musical-theatre costume, no chair.
+Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No top hat, no police uniform, no badge, no cockade, no tricolour sash, no musical-theatre costume, no chair.
 ```
 
 ### Face overlay sheet
