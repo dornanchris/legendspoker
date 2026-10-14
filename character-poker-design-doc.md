@@ -131,7 +131,7 @@ Tour order matters and is part of the lock. **32 characters total** — 8 tables
 | 2 | **Athens — The Symposium** — Greece | Socrates, Leonidas, Medusa, the Cyclops | **Odysseus** | Arrives ~10 hands after first elimination. Comic. Skippable (see below). |
 | 3 | **Pirate Cove** — Caribbean | Captain Kidd, Long John Silver, Davy Jones | **Blackbeard** | Seated from hand one. Dominates the room. |
 | 4 | **Camelot** — Britain | Merlin, Lancelot, the Green Knight | **King Arthur** | Seated from hand one. Gracious host. |
-| 5 | **Imperial Rome** — Italy | Spartacus, a Pope (TBD), Cerberus | **Julius Caesar** | Arrives after the first elimination. |
+| 5 | **Imperial Rome** — Italy | Spartacus, a Pope (TBD), Cerberus, Scipio Africanus | **Julius Caesar** | Arrives after the first elimination. |
 | 6 | **Baker Street** — London | Captain Nemo, Inspector Javert, Alice | **Sherlock Holmes** | Seated from hand one. Reveal = narrating YOUR tells. |
 | 7 | **Transylvania** — Romania | Van Helsing, Frankenstein's Monster, Wolf Man, Headless Horseman | **Dracula** | Watches from the fireplace, joins after two eliminations. **Predator.** |
 | 8 | **The Station** — sci-fi | Grey Alien, Martian, Robot, Astronaut | **The AI** | The room turns: lights fail, gravity glitches, the Robot stands up as something else. |
@@ -187,7 +187,10 @@ budget, and three of them were the same "watch, then join" move.
   Table is now **Spartacus** (the one person at the table who was *owned* by
   Rome), a **Pope** (Renaissance Rome; mitre and robes read nothing like a
   toga; pure scheming deception — Borgia/Alexander VI is the placeholder), and
-  **Cerberus**.
+  **Cerberus**. *[DECISION, owner] **Scipio Africanus** holds the fourth chair
+  (the "fourth NPC holding the chair" rule above): the general who beat
+  Hannibal, the Republic at its best, against the man who ended it. He is the
+  table's patient reader; an ivory elephant from Zama is his tell surface.*
 - **The Station:** Reptilian CUT, **Astronaut** IN — preserves the one honest
   human read at the table.
 

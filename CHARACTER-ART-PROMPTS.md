@@ -1376,7 +1376,7 @@ Must NOT resemble: Historical figure, died 1718. Build from the 1724 General His
 ### The Green Knight — *Knight of the Green Chapel*
 
 - **Who:** Rode into Camelot at New Year and offered anyone the first blow with his own axe. Someone took it. He took it well.
-- **Look:** Silhouette: enormous — a head taller than anyone seated, broad as a door, with a great bush of green beard and green hair to the shoulders. Green skin, green clothes worked with gold, and no armour: the poem says he came in peace. Face: green, grinning, bright-eyed. Prop: the holly branch at his side, a big dark spiky shape that rustles; the axe leans against the table.
+- **Look:** Silhouette: enormous, a head taller than anyone seated and broad as a door, in bright green plate edged with gold under a closed green great helm, his eyes bright in the visor slit. Knocked out, he takes the blow; when he comes back the helm is gone and he is beaten and colder: a pale, weathered, dark-bearded face, a bandage at his neck, dented plate and a torn mantle. Prop: the holly branch at his side, a big dark spiky shape that rustles; the head of his axe rests on the table's edge.
 - **Prop:** A holly branch
 - **Tells:** the holly branch at his side rustles; laughs, and the rafters shake; runs a thumb along the head of his axe
 - **Idles:** moss creeps a little further along his sleeve; somewhere outside, his horse stamps; the chair creaks under his weight; he studies the table as if measuring it for a blow
@@ -1387,7 +1387,7 @@ Must NOT resemble: Historical figure, died 1718. Build from the 1724 General His
 ```
 Bright, warm cartoon style like a modern animated adventure game: bold dark outlines, clean painted shading, slightly exaggerated but dignified features, warm table-lamp light. NOT dark, gritty or photoreal. Human characters keep human, dignified faces: caricature what the history records, never anything animal-like. Waist-up, seated at a round poker table, body and head turned about 30 degrees to the viewer's right, as if facing the table's centre from a seat on its left; forearms resting on the felt; the table's rounded edge crosses the body at the waist. Plain dark background, no text, no logos, no watermark, no cards or chips other than any prop named.
 
-Character: The Green Knight, Knight of the Green Chapel. Silhouette: enormous — a head taller than anyone seated, broad as a door, with a great bush of green beard and green hair to the shoulders. Green skin, green clothes worked with gold, and no armour: the poem says he came in peace. Face: green, grinning, bright-eyed. Prop: the holly branch at his side, a big dark spiky shape that rustles; the axe leans against the table.
+Character: The Green Knight, Knight of the Green Chapel. Silhouette: enormous, a head taller than anyone seated and broad as a door, in bright green plate edged with gold under a closed green great helm, his eyes bright in the visor slit. Knocked out, he takes the blow; when he comes back the helm is gone and he is beaten and colder: a pale, weathered, dark-bearded face, a bandage at his neck, dented plate and a torn mantle. Prop: the holly branch at his side, a big dark spiky shape that rustles; the head of his axe rests on the table's edge.
 Prop: A holly branch.
 IMPORTANT, must NOT resemble: The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman.
 ```
@@ -1784,7 +1784,7 @@ Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of cop
 ### Cerberus — *The Hound at the Gate*
 
 - **Who:** Lets everyone in. Lets nobody out. We have kept the same hours for a very long time.
-- **Look:** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a low ridge of small snakes along the neck and spine after Apollodorus, kept subtle so it never clutters the read. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.
+- **Look:** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw. Apollodorus also gives him a serpent's tail and snakes along his back, but the table hides both: the tail lives only in his stage directions, and no snakes are drawn, because at forty points a ridge of them reads as Medusa's hair (the owner's call). The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.
 - **Prop:** Three iron collars on one chain
 - **Tells:** all three heads snap to attention; the left head yawns; the heads growl at each other
 - **Idles:** the middle head scratches behind an ear; one head falls asleep; two heads watch you; one watches the pot; the right head sniffs at the nearest robe
@@ -1795,7 +1795,7 @@ Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of cop
 ```
 Bright, warm cartoon style like a modern animated adventure game: bold dark outlines, clean painted shading, slightly exaggerated but dignified features, warm table-lamp light. NOT dark, gritty or photoreal. Human characters keep human, dignified faces: caricature what the history records, never anything animal-like. Waist-up, seated at a round poker table, body and head turned about 30 degrees to the viewer's right, as if facing the table's centre from a seat on its left; forearms resting on the felt; the table's rounded edge crosses the body at the waist. Plain dark background, no text, no logos, no watermark, no cards or chips other than any prop named.
 
-Character: Cerberus, The Hound at the Gate. Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a low ridge of small snakes along the neck and spine after Apollodorus, kept subtle so it never clutters the read. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.
+Character: Cerberus, The Hound at the Gate. Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw. Apollodorus also gives him a serpent's tail and snakes along his back, but the table hides both: the tail lives only in his stage directions, and no snakes are drawn, because at forty points a ridge of them reads as Medusa's hair (the owner's call). The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.
 Prop: Three iron collars on one chain.
 IMPORTANT, must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads.
 ```
@@ -1822,7 +1822,6 @@ Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the 
 
 This sheet: body and arms. Parts:
 - Massive black body and chest with NO heads and NO front legs, sitting upright at the table like a person, cut off at the table line, three neck stumps showing
-- A low ridge of small snakes along the neck and spine: 6 small snakes as separate pieces, each in 2 poses (lying flat, raised)
 - Front legs (shoulder to paw), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads.
@@ -1966,6 +1965,114 @@ This sheet: props and tell pieces. Parts:
 - A gold flash of light for the ring, as an overlay
 
 Must NOT resemble: Historical figure, died 1503; Pinturicchio's portrait is public domain. Avoid the 2011 television series ("The Borgias", "Borgia") and any poison-ring cliché. The jokes stay on his politics and his family, never on the faith. The display name is still an open design question; "the Pope" may yet be renamed.
+```
+
+### Scipio Africanus — *The Man Who Beat Hannibal*
+
+- **Who:** Seventeen at his first battle, and he spent it saving his father. He beat Hannibal by studying him. Rome thanked him with an audit.
+- **Look:** Silhouette: a clean-shaven Roman general in his thirties, short dark hair, a strong, calm, watchful face. A red general's cloak worn loose in the Greek fashion (Cato complained of it) over a plain bronze cuirass. No helmet, no laurel (that is Caesar's). Prop: a small carved ivory elephant, a trophy from Zama, standing on the felt beside his chips: big enough to read at a fifth of the screen, and it carries two of his three tells.
+- **Prop:** An ivory elephant from Zama
+- **Tells:** moves the ivory elephant out of the way; looks up, as though someone above had advised him; turns the ivory elephant to face the door
+- **Idles:** studies each player in turn, like a map; sets his chips out in ranks, with lanes between them; straightens his cloak, Greek fashion; taps the ivory elephant's trunk
+- **Copyright note:** Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are.
+- **Art note:** No helmet, no laurel (that is Caesar's). Never a straight-arm salute. Nothing from the 1937 film Scipione l'africano.
+
+**Step 1 — reference portrait:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game: bold dark outlines, clean painted shading, slightly exaggerated but dignified features, warm table-lamp light. NOT dark, gritty or photoreal. Human characters keep human, dignified faces: caricature what the history records, never anything animal-like. Waist-up, seated at a round poker table, body and head turned about 30 degrees to the viewer's right, as if facing the table's centre from a seat on its left; forearms resting on the felt; the table's rounded edge crosses the body at the waist. Plain dark background, no text, no logos, no watermark, no cards or chips other than any prop named.
+
+Character: Scipio Africanus, The Man Who Beat Hannibal. Silhouette: a clean-shaven Roman general in his thirties, short dark hair, a strong, calm, watchful face. A red general's cloak worn loose in the Greek fashion (Cato complained of it) over a plain bronze cuirass. No helmet, no laurel (that is Caesar's). Prop: a small carved ivory elephant, a trophy from Zama, standing on the felt beside his chips: big enough to read at a fifth of the screen, and it carries two of his three tells.
+Prop: An ivory elephant from Zama.
+IMPORTANT, must NOT resemble: Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are.
+```
+
+**Step 2, Sheet 1 — Face kit:**
+
+```
+Puppet parts sheet for 2D animation rigging, for Scipio Africanus, the character in the attached image. Match it exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: face kit. Parts:
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece. No collar, shirt or clothing on it: the bare neck ends in a clean V where a collar would sit
+- Short dark hair, combed forward, as a separate piece
+- Eyebrows, near and far (they differ in three-quarter view), each in 3 clearly different shapes: neutral; angry (inner end pulled down); worried (inner end pushed up). Raised is done by moving them, so no raised pose
+- Eyes: each a WHOLE eye, the white, iris and lid drawn together. In three-quarter view the near eye and the far eye differ, so draw BOTH, in each state: looking at the viewer; looking toward the table's centre; looking down (at their cards); looking away; wide open; half-closed; narrowed (squinting); closed (blinking)
+- Nose as a separate piece
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a small, dry smile. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Same lip and skin colour as the reference. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+
+Note: No helmet, no laurel (that is Caesar's). Never a straight-arm salute. Nothing from the 1937 film Scipione l'africano.
+
+Must NOT resemble: Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are.
+```
+
+**Step 2, Sheet 2 — Body and arms:**
+
+```
+Puppet parts sheet for 2D animation rigging, for Scipio Africanus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: body and arms. Parts:
+- Torso with NO head and NO arms: a plain bronze muscled cuirass under a red general's cloak worn loose over the left shoulder, Greek fashion. Seated, from the shoulders down to the lap, cut off straight well BELOW the waist: the round table's edge covers the bottom, so draw more than will show. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
+- Cloak: back layer and the front drape over the left shoulder as separate pieces
+- Upper arms in white tunic sleeves, left and right
+- Bare forearms, left and right, each in two angles: lying along the table, and raised
+
+Note: No helmet, no laurel (that is Caesar's). Never a straight-arm salute. Nothing from the 1937 film Scipione l'africano.
+
+Must NOT resemble: Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are.
+```
+
+**Step 2, Sheet 3 — Card-action hands:**
+
+```
+Puppet parts sheet for 2D animation rigging, for Scipio Africanus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: card-action hands. Parts:
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
+- Pose: knuckles rapping the table (checking)
+- Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
+- Pose: open, shoving forward hard (going all in)
+- Pose: flat, sliding sideways (folding cards away)
+- Pose: cupped, raking toward the body (collecting a pot)
+- Pose: fist
+- Pose: turning something over, thumb underneath (showing cards; cards NOT drawn)
+
+Note: No helmet, no laurel (that is Caesar's). Never a straight-arm salute. Nothing from the 1937 film Scipione l'africano.
+
+Must NOT resemble: Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are.
+```
+
+**Step 2, Sheet 4 — Character hands:**
+
+```
+Puppet parts sheet for 2D animation rigging, for Scipio Africanus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: character hands. Parts:
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Pose: flat on the table, relaxed
+- Pose: open palm up (a shrug, or a gesture while talking)
+- Pose: relaxed, fingers loosely curled (idle)
+- Hand lifting a small ivory elephant (elephant NOT drawn)
+- One finger tapping (an elephant's trunk; elephant NOT drawn)
+- Hand straightening a cloak at the shoulder
+- Fist under the chin
+
+Note: No helmet, no laurel (that is Caesar's). Never a straight-arm salute. Nothing from the 1937 film Scipione l'africano.
+
+Must NOT resemble: Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are.
+```
+
+**Step 2, Sheet 5 — Props and tell pieces:**
+
+```
+Puppet parts sheet for 2D animation rigging, for Scipio Africanus, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: props and tell pieces. Parts:
+- A small carved ivory elephant, trunk raised, in 3 views: facing the table's centre, facing away, facing the viewer
+
+Note: No helmet, no laurel (that is Caesar's). Never a straight-arm salute. Nothing from the 1937 film Scipione l'africano.
+
+Must NOT resemble: Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are.
 ```
 
 ### Spartacus — *Gladiator of Capua*

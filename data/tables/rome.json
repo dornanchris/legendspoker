@@ -6,7 +6,8 @@
   "seats": [
     "spartacus",
     "pope",
-    "cerberus"
+    "cerberus",
+    "scipio"
   ],
   "champion": "caesar",
   "arrival": {
@@ -15,14 +16,14 @@
     "delayHands": 0,
     "stack": "average"
   },
-  "handsPerLevel": 9,
+  "handsPerLevel": 8,
   "dialogue": "table-05-rome.json",
   "buyIn": 2000,
   "respectStart": 0,
   "place": "Castel Sant'Angelo, Rome",
   "region": "Italy",
   "era": "The Republic, the Renaissance and the underworld, all at once",
-  "teaser": "A slave, a pope, a three-headed dog, and a chair spoken for.",
+  "teaser": "A slave, a general, a pope, a three-headed dog, and a chair spoken for.",
   "hook": "In Rome, every seat is inherited, bought or taken by force. You are about to find out which kind yours is.",
   "room": "A high hall inside Castel Sant'Angelo: the emperor Hadrian's tomb, later walled into a papal fortress. Ancient brick below, Renaissance frescoes above, braziers for light. An iron chain runs from the wall to the dog's chair, and nobody is certain who holds the other end.",
   "music": "A slow processional for low brass and frame drum, with a Renaissance lute figure drifting in and out: martial and courtly by turns, never hurried.",

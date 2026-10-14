@@ -490,7 +490,7 @@ A year on, Gawain keeps the bargain. On the way he is the guest of a lord who pr
 - Tell (weak, 0.74): *runs a thumb along the head of his axe*
 - Idle noise: *moss creeps a little further along his sleeve*; *somewhere outside, his horse stamps*; *the chair creaks under his weight*; *he studies the table as if measuring it for a blow*
 
-**Look.** Silhouette: enormous — a head taller than anyone seated, broad as a door, with a great bush of green beard and green hair to the shoulders. Green skin, green clothes worked with gold, and no armour: the poem says he came in peace. Face: green, grinning, bright-eyed. Prop: the holly branch at his side, a big dark spiky shape that rustles; the axe leans against the table. **Prop:** A holly branch.
+**Look.** Silhouette: enormous, a head taller than anyone seated and broad as a door, in bright green plate edged with gold under a closed green great helm, his eyes bright in the visor slit. Knocked out, he takes the blow; when he comes back the helm is gone and he is beaten and colder: a pale, weathered, dark-bearded face, a bandage at his neck, dented plate and a torn mantle. Prop: the holly branch at his side, a big dark spiky shape that rustles; the head of his axe rests on the table's edge. **Prop:** A holly branch.
 
 **Public domain.** The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman.
 
@@ -536,7 +536,7 @@ In Malory he pulls the sword from the stone as a boy, fetching one for his foste
 
 **Earned names.** nobody → “tiro” → *your name* → “Imperator”
 
-Buy-in 2000, blinds up every 9 hands. Julius Caesar arrives after 1 elimination, bringing the average stack.
+Buy-in 2000, blinds up every 8 hands. Julius Caesar arrives after 1 elimination, bringing the average stack.
 
 ### Spartacus — *Gladiator of Capua*
 
@@ -617,6 +617,33 @@ He is in Rome's own epic. In Virgil's Aeneid the Sibyl gets Aeneas past him by t
 **Look.** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a low ridge of small snakes along the neck and spine after Apollodorus, kept subtle so it never clutters the read. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own. **Prop:** Three iron collars on one chain.
 
 **Public domain.** Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads.
+
+### Scipio Africanus — *The Man Who Beat Hannibal*
+
+History · 236–183 BC · general, victor of Zama
+
+> Seventeen at his first battle, and he spent it saving his father. He beat Hannibal by studying him. Rome thanked him with an audit.
+
+Publius Cornelius Scipio, of one of Rome's great families. At seventeen he saved his wounded father at the Ticinus (Polybius); he survived Cannae, and afterwards, Livy says, drew his sword on young nobles who meant to abandon Italy and made them swear to stay. When his father and uncle were killed in Spain, nobody else would stand for the command, and he was given it at about twenty-five. He took New Carthage by sending men across its lagoon at the ebb, a tide he had learned about from fishermen, and he told the soldiers Neptune had promised it.
+
+In 202 BC he beat Hannibal at Zama, in Africa, leaving lanes in his lines for Hannibal's elephants to charge harmlessly through, and took the name Africanus. He had learned much of it from Hannibal himself. Livy tells of a captive young woman he returned untouched to the man she was to marry, with her ransom as a wedding gift; the Renaissance painted it again and again. Later his enemies in the Senate called him to account for public money. He tore up the account book in front of them, and he died in retirement at Liternum, in 183 BC, having asked not to be buried in Rome.
+
+**At the table.** He plays few hands and plays them firmly, and he spends the rest of the time watching you. Nobody at this table changes his game to suit an opponent faster; whatever you did the last time, he has planned for. He rarely bluffs. With a strong hand he likes to let you charge at him first, the way he let the elephants run, and close in afterwards. Losing does not rattle him. He was at Cannae.
+
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .66 | .72 | .14 | .08 | .80 | .70 | .55 | .30 |
+
+- Quirk: `patient` (minEquity 0.56) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
+- Quirk: `check_raise` (minEquity 0.74, chance 0.5) — Checks strength on the flop and turn, then raises when bet into.
+- Tell (strong, 0.7): *moves the ivory elephant out of the way*
+- Tell (bluffing, 0.68): *looks up, as though someone above had advised him*
+- Tell (weak, 0.68): *turns the ivory elephant to face the door*
+- Idle noise: *studies each player in turn, like a map*; *sets his chips out in ranks, with lanes between them*; *straightens his cloak, Greek fashion*; *taps the ivory elephant's trunk*
+
+**Look.** Silhouette: a clean-shaven Roman general in his thirties, short dark hair, a strong, calm, watchful face. A red general's cloak worn loose in the Greek fashion (Cato complained of it) over a plain bronze cuirass. No helmet, no laurel (that is Caesar's). Prop: a small carved ivory elephant, a trophy from Zama, standing on the felt beside his chips: big enough to read at a fifth of the screen, and it carries two of his three tells. **Prop:** An ivory elephant from Zama.
+
+**Public domain.** Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano.
 
 ### Julius Caesar — *Dictator for Life*
 

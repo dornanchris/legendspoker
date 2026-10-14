@@ -34,6 +34,7 @@ import arthur from '../data/characters/arthur.json'
 import spartacus from '../data/characters/spartacus.json'
 import pope from '../data/characters/pope.json'
 import cerberus from '../data/characters/cerberus.json'
+import scipio from '../data/characters/scipio.json'
 import caesar from '../data/characters/caesar.json'
 import nemo from '../data/characters/nemo.json'
 import javert from '../data/characters/javert.json'
@@ -330,7 +331,7 @@ const characterList = [
   socrates, leonidas, medusa, cyclops, odysseus,
   kidd, silver, davyJones, blackbeard,
   merlin, lancelot, greenKnight, arthur,
-  spartacus, pope, cerberus, caesar,
+  spartacus, pope, cerberus, scipio, caesar,
   nemo, javert, alice, sherlock,
   vanHelsing, monster, wolfMan, headlessHorseman, dracula,
   greyAlien, martian, robot, astronaut, theAi,

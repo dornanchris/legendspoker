@@ -47,8 +47,10 @@ export const SAVE_VERSION = 1
  * 9: the `skill` dial -- reading bets in context, the particular bettor and
  *    tells -- set by table; tells drawn in every game, watched or not; the
  *    first three tables' tells sharpened.
+ * 10: Scipio takes Rome's fourth chair (and Rome's blinds climb every 8
+ *    hands, as at the other tables a sixth player joins).
  */
-export const ENGINE_VERSION = 9
+export const ENGINE_VERSION = 10
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

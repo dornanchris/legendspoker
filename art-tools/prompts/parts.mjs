@@ -102,7 +102,6 @@ export const PARTS = {
     ],
     body: [
       'Massive black body and chest with NO heads and NO front legs, sitting upright at the table like a person, cut off at the table line, three neck stumps showing',
-      'A low ridge of small snakes along the neck and spine: 6 small snakes as separate pieces, each in 2 poses (lying flat, raised)',
       'Front legs (shoulder to paw), left and right, each in two angles: lying along the table, and raised',
     ],
     hands: hands('Big front paws with blunt claws (no fingers), each with a short stub of the leg, cut straight across. Draw each pose ONCE, as the right paw: the game mirrors it for the left.', ['A hind paw raised, scratching (as if behind an ear)'], ['flat on the table, relaxed', 'tapping the table (checking)', 'pushing forward (as if pushing chips; chips NOT drawn)', 'shoving forward hard (all in)', 'sweeping sideways (folding)', 'curled, raking toward the body (collecting a pot)', 'resting, curled under']),
@@ -391,6 +390,13 @@ export const PARTS = {
     body: body('a short, thick body in one plain, shabby cloak'),
     hands: hands('Hands', ['Fingertip scratching the nose', 'Hand holding a shallow wine cup', 'Hands pulling a cloak tighter', 'Fingers scratching the beard']),
     props: ['A shallow wine cup, full and empty'],
+  },
+  scipio: {
+    face: face({ hair: ['Short dark hair, combed forward, as a separate piece'], mouthsExtra: 'a small, dry smile' }),
+    body: body('a plain bronze muscled cuirass under a red general\'s cloak worn loose over the left shoulder, Greek fashion', ['Cloak: back layer and the front drape over the left shoulder as separate pieces'], { upper: 'Upper arms in white tunic sleeves, left and right', fore: 'Bare forearms, left and right, each in two angles: lying along the table, and raised' }),
+    hands: hands('Hands', ['Hand lifting a small ivory elephant (elephant NOT drawn)', 'One finger tapping (an elephant\'s trunk; elephant NOT drawn)', 'Hand straightening a cloak at the shoulder', 'Fist under the chin']),
+    props: ['A small carved ivory elephant, trunk raised, in 3 views: facing the table\'s centre, facing away, facing the viewer'],
+    note: 'No helmet, no laurel (that is Caesar\'s). Never a straight-arm salute. Nothing from the 1937 film Scipione l\'africano.',
   },
   spartacus: {
     face: face({ hair: ['Cropped hair as a separate piece'], nose: 'A nose broken more than once, as a separate piece' }),

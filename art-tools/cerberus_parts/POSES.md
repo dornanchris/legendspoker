@@ -2,7 +2,7 @@
 
 Rome's seat 3 (right of Death): drawn facing the viewer's right and MIRRORED by the game to face the table's centre. Built the way the other casts are (`art-tools/pose_rig.py`), a quarter bigger, as the Cyclops and the Green Knight are: he is a monster at a table of men.
 
-His look, from his character file and the design doc: three heads on one massive body, nothing else in the game looks like it. Black, short-coated, heavy in the jaw, a low ridge of small snakes along the necks after Apollodorus, kept subtle. Each neck has a studded bronze collar (Rome's colour, and it keeps three black heads apart at 40 points). He sits up behind the table like a great dog, front paws on its edge where the others rest their forearms. **The heads are the tell surface:** each can watch, sleep, yawn or snarl on its own; most of the time they are just being dogs.
+His look, from his character file and the design doc: three heads on one massive body, nothing else in the game looks like it. Black, short-coated, heavy in the jaw. No snakes: Apollodorus gives him snakes along his back and a serpent's tail, but the table hides both, and a ridge of snakes on show reads as Medusa's hair at forty points (the owner's call). Each neck has a studded bronze collar (Rome's colour, and it keeps three black heads apart at 40 points). He sits up behind the table like a great dog, front paws on its edge where the others rest their forearms. **The heads are the tell surface:** each can watch, sleep, yawn or snarl on its own; most of the time they are just being dogs.
 
 He does not speak (the design doc): growls, whines and yawns carry it, and Death translates now and then. His `talk` pose is a low growl from the middle head; his callouts are stage directions ('[noses his cards away]').
 
@@ -46,7 +46,7 @@ One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in thi
 ```
 Character sheet for 2D animation rigging: Cerberus, the three-headed hound who guards the gate of the underworld in Greek myth (Hesiod, Apollodorus, Greek vase painting). Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No man, no armour, no hair, no human hands. Take the STYLE from the SECOND attached image.
 
-Cerberus: a huge hound, bigger than a man, with THREE heads on three strong necks rising from one massive body: a left head, a middle head and a right head, all the same breed, each clearly separate. A short, glossy BLACK coat with a warm sheen; heavy jaws, pointed upright ears, big glowing amber eyes; each neck wears a broad bronze collar with round studs; a low ridge of small dark snakes along the top of the necks, small and subtle. Big front paws with dark claws. Menacing but alive and doglike, every head with its own mood. NOT a cartoon puppy, not cute, not oversized and friendly; no names; nothing from the Harry Potter books or films or Disney's Hercules.
+Cerberus: a huge hound, bigger than a man, with THREE heads on three strong necks rising from one massive body: a left head, a middle head and a right head, all the same breed, each clearly separate. A short, glossy BLACK coat with a warm sheen; heavy jaws, pointed upright ears, big glowing amber eyes; each neck wears a broad bronze collar with round studs. NO snakes anywhere: not on the heads, necks or back. Big front paws with dark claws. Menacing but alive and doglike, every head with its own mood. NOT a cartoon puppy, not cute, not oversized and friendly; no names; nothing from the Harry Potter books or films or Disney's Hercules.
 
 Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.
 
@@ -65,7 +65,7 @@ STYLE, the most important rule: match the SECOND attached image (Washington, fro
 ### Pose sheet A
 
 ```
-Character pose sheet for 2D animation reference: Cerberus, exactly as on the attached character sheet (a huge black three-headed hound, short glossy black coat, heavy jaws, pointed ears, glowing amber eyes, each neck in a studded bronze collar, a low ridge of small dark snakes along the top of the necks, his two front paws resting on the table's edge, colours, line weight, flat cartoon style).
+Character pose sheet for 2D animation reference: Cerberus, exactly as on the attached character sheet (a huge black three-headed hound, short glossy black coat, heavy jaws, pointed ears, glowing amber eyes, each neck in a studded bronze collar, no snakes anywhere, his two front paws resting on the table's edge, colours, line weight, flat cartoon style).
 
 Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: chest up, sitting up behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, the same size, in the same place in its cell, with the table edge at the same height in every cell. Leave a little white between him and the cell's edges, the tops of all three heads and their ears included: nothing of him is cut off. Nothing below the table edge. No chair: nothing at all behind him, just white.
 

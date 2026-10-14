@@ -145,7 +145,8 @@ art-tools/
                   champion): pose sheets, face sheet, pose_rig.json;
                   blackbeard_parts/, kidd_parts/, silver_parts/, davy_jones_parts/: the
                   Pirate Cove, the same way; merlin_parts/, lancelot_parts/,
-                  green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot
+                  green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot;
+                  cerberus_parts/, scipio_parts/: Rome (prompts only so far)
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -226,7 +227,7 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   ledger / settings / about → ending. Hash-routed plain DOM, no framework.
 - **All 11 tables playable:** the 8 story tables, Champions' Tables I and II
   ("The Hall of Doors"), and the finale ("The Last Crossing", hidden from the
-  map until it opens). 35 roster characters + Death, all data. Late champions
+  map until it opens). 36 roster characters + Death, all data. Late champions
   arrive per the design doc via `Arrival` rules in `game.ts`; Odysseus is
   missable. The Green Knight keeps his appointment: knocked out, he retakes
   his chair 20 hands later if the table is still going, at any table he sits
@@ -509,10 +510,14 @@ new art against that layout.
   and `.narration` only become visible through an animation the setting
   switches off, so those lines reach only the log. Callouts use a timer and
   are unaffected; the fix is the same timer for the older bubbles.
-- **Roster count is 35, not 32.** The v4 table lists 5 characters at Athens,
-  Transylvania and the Station (4 seats + a late champion). And Rome has only
-  3 seated NPCs where the "late champion needs a fourth NPC holding the
-  chair" rule implies 4 — Caesar takes the first vacated chair instead.
+- **Roster count is 36, not 32.** The v4 table lists 5 characters at Athens,
+  Transylvania and the Station (4 seats + a late champion), and Rome now has
+  them too: **Scipio Africanus holds Rome's fourth chair** (the owner's call,
+  ENGINE_VERSION 10), the "fourth NPC holding the chair" the design doc's rule
+  asks for. Caesar still takes the first chair to come free. Scipio is the
+  table's tight reader (3000 cash hands: VPIP 22, AF 1.2, against Spartacus
+  44 / 1.6, the Pope 30 / 1.4, Cerberus 29 / 0.9, Caesar 39 / 1.8); his tell
+  surface is an ivory elephant from Zama. His lines are draft like the rest.
 - **Dials are tuned on 3000-hand cash sims** per table (`npm run sim 3000
   all`) — enough for VPIP/AF, not for win rates. Retune on more hands. The
   early tables keep deliberate caricatures (Roosevelt, Lancelot, the Cyclops
