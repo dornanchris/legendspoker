@@ -104,6 +104,18 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 Seats at Rome: 1 Spartacus, 2 the Pope, 3 Cerberus (mirrored, giant),
 4 Scipio (mirrored); Caesar arrives into the first empty chair (any side).
 
+## Planned second looks
+
+- **Holmes in the deerstalker** (the owner): after the bareheaded Holmes is
+  built, redo his six prompts with Paget's ear-flapped travelling cap (flaps
+  tied up, no cape) as a second puppet, the way the Green Knight has
+  `green_knight_bare` (`RETURNED` in `web/puppet/cast.ts`). Same poses, same
+  tells, same pipe: a look, never a different read. Proposed rule (the owner
+  to confirm; the switch itself is game work, for another thread): bareheaded
+  at Baker Street, his own sitting room; in the cap everywhere else (the
+  Champions' tables, open tables), where he is travelling, which in practice
+  means once you have beaten him. Doyle's own logic, so it needs no menu.
+
 ## Starting a new thread
 
 Paste this to begin:
