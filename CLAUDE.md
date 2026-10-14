@@ -167,7 +167,8 @@ art-tools/
   rooms/          finished room art: table.webp (the one table every room
                   shares) and a folder per venue: its backdrop, and its
                   pieces (pieces.json: the cut, where they stand, story
-                  pieces and loops). white_house/, athens/, pirate_cove/, camelot/, rome/
+                  pieces and loops). white_house/, athens/, pirate_cove/, camelot/, rome/,
+                  baker_street/
   mock_screen.py  draws the table screen with the current art: game first
   room_web.py     publishes a room to web/art/rooms/: its rim curve, chairs
                   and pieces (preview one: web/index.html?room=athens)
@@ -424,6 +425,10 @@ colour, so the rail test takes only long thin strips (`rail_long`).
 **Caesar is built** (`#/puppet/caesar`, 24 clips, any chair, mirrored as
 the seat needs; `arrive` sets the wreath on his head as he sits down):
 **Rome is complete on the real table screen.**
+**Baker Street's room is built** (`?room=baker_street`): the two gas-lamp
+flames flicker in the gaps between seats 1-2 and 3-4, the coal fire by
+Holmes's armchair at the far right (wider than 16:9 only). The V R sits at
+58% across, high: a short screen's ceiling crop (`crop` 140) can take its top.
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
