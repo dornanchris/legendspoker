@@ -95,7 +95,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
-| Baker Street | built | Nemo, Javert | | **the Cheshire Cat** (seat 3, in Alice's chair: prompts written, `cheshire_cat_parts/POSES.md`), then Holmes |
+| Baker Street | built | Nemo, Javert | | **Holmes** (prompts written, `sherlock_parts/POSES.md`); the Cheshire Cat (prompts written, `cheshire_cat_parts/POSES.md`; the first sheet drew fur texture, to return to) |
 | Transylvania | prompt only | | | Van Helsing, the Monster, the Wolf Man, the Headless Horseman, Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
