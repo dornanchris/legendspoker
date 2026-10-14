@@ -51,7 +51,13 @@ overlay sheet. Kit folder: `art-tools/<id>_parts/`.
    polygons drawn on a gridded crop of A1. The master head is face piece 01
    placed with `place` (find it with `art-tools/build/fit_master.py`), or the
    rest pose's own head (Cerberus). `face.json` maps face pieces to layers;
-   fits are cached in `<id>_rig/face/fits.json` (fix bad fits by hand).
+   fits are cached in `<id>_rig/face/fits.json` (fix bad fits by hand: one
+   scale for a whole set, as Spartacus's mouths).
+   **The newer sheets draw a gold-orange rail**, the colour of skin and gold
+   cloth. Start from Spartacus (bare skin), Scipio (gold bracers crossing
+   the rail) or the Pope (gold embroidery, red robes): `rail_orange`
+   `{"red": 120, "blue": 24}`, `rail_blue` 40, and as needed `rail_green`,
+   `rail_long`, `no_wood`, a narrow `rail_band`. Their READMEs say why.
 6. **Build:** `python3 art-tools/pose_rig.py art-tools/<id>_parts/pose_rig.json`
    (validate line: under ~1% of pixels differ), then
    `python3 art-tools/build/frames_sheet.py <id>` and LOOK at every frame:
@@ -86,7 +92,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | Table | Room | Built | Sheets in, to build | Prompts next |
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
-| Rome | built (redrawn plate) | Cerberus, Scipio, Spartacus | the Pope | **Caesar** (prompts written, `caesar_parts/POSES.md`) |
+| Rome | built (redrawn plate) | Cerberus, Scipio, Spartacus, the Pope | (Caesar's sheets owed) | **Caesar** (prompts written, `caesar_parts/POSES.md`) |
 | Baker Street | prompt only | | | Nemo, Javert, Alice, Holmes |
 | Transylvania | prompt only | | | Van Helsing, the Monster, the Wolf Man, the Headless Horseman, Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |

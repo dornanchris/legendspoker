@@ -1,0 +1,290 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "pope_face_01.png",
+      "label": "",
+      "x": 12,
+      "y": 14,
+      "w": 464,
+      "h": 529,
+      "pivot": [
+        232.0,
+        264.5
+      ],
+      "area": 147683
+    },
+    {
+      "index": 2,
+      "file": "pope_face_02.png",
+      "label": "",
+      "x": 387,
+      "y": 186,
+      "w": 160,
+      "h": 125,
+      "pivot": [
+        80.0,
+        62.5
+      ],
+      "area": 16040
+    },
+    {
+      "index": 3,
+      "file": "pope_face_03.png",
+      "label": "",
+      "x": 563,
+      "y": 182,
+      "w": 162,
+      "h": 128,
+      "pivot": [
+        81.0,
+        64.0
+      ],
+      "area": 16406
+    },
+    {
+      "index": 4,
+      "file": "pope_face_04.png",
+      "label": "",
+      "x": 740,
+      "y": 184,
+      "w": 180,
+      "h": 127,
+      "pivot": [
+        90.0,
+        63.5
+      ],
+      "area": 18407
+    },
+    {
+      "index": 5,
+      "file": "pope_face_05.png",
+      "label": "",
+      "x": 934,
+      "y": 183,
+      "w": 175,
+      "h": 128,
+      "pivot": [
+        87.5,
+        64.0
+      ],
+      "area": 17795
+    },
+    {
+      "index": 6,
+      "file": "pope_face_06.png",
+      "label": "",
+      "x": 1124,
+      "y": 182,
+      "w": 188,
+      "h": 129,
+      "pivot": [
+        94.0,
+        64.5
+      ],
+      "area": 19253
+    },
+    {
+      "index": 7,
+      "file": "pope_face_07.png",
+      "label": "",
+      "x": 1328,
+      "y": 180,
+      "w": 182,
+      "h": 130,
+      "pivot": [
+        91.0,
+        65.0
+      ],
+      "area": 18974
+    },
+    {
+      "index": 8,
+      "file": "pope_face_08.png",
+      "label": "",
+      "x": 609,
+      "y": 338,
+      "w": 219,
+      "h": 110,
+      "pivot": [
+        109.5,
+        55.0
+      ],
+      "area": 17271
+    },
+    {
+      "index": 9,
+      "file": "pope_face_09.png",
+      "label": "",
+      "x": 898,
+      "y": 345,
+      "w": 219,
+      "h": 102,
+      "pivot": [
+        109.5,
+        51.0
+      ],
+      "area": 15632
+    },
+    {
+      "index": 10,
+      "file": "pope_face_10.png",
+      "label": "",
+      "x": 1132,
+      "y": 432,
+      "w": 389,
+      "h": 540,
+      "pivot": [
+        194.5,
+        270.0
+      ],
+      "area": 142831
+    },
+    {
+      "index": 11,
+      "file": "pope_face_11.png",
+      "label": "",
+      "x": 20,
+      "y": 573,
+      "w": 213,
+      "h": 165,
+      "pivot": [
+        106.5,
+        82.5
+      ],
+      "area": 26476
+    },
+    {
+      "index": 12,
+      "file": "pope_face_12.png",
+      "label": "",
+      "x": 257,
+      "y": 573,
+      "w": 215,
+      "h": 173,
+      "pivot": [
+        107.5,
+        86.5
+      ],
+      "area": 27525
+    },
+    {
+      "index": 13,
+      "file": "pope_face_13.png",
+      "label": "",
+      "x": 491,
+      "y": 576,
+      "w": 207,
+      "h": 167,
+      "pivot": [
+        103.5,
+        83.5
+      ],
+      "area": 25766
+    },
+    {
+      "index": 14,
+      "file": "pope_face_14.png",
+      "label": "",
+      "x": 722,
+      "y": 576,
+      "w": 203,
+      "h": 165,
+      "pivot": [
+        101.5,
+        82.5
+      ],
+      "area": 25265
+    },
+    {
+      "index": 15,
+      "file": "pope_face_15.png",
+      "label": "",
+      "x": 945,
+      "y": 574,
+      "w": 200,
+      "h": 164,
+      "pivot": [
+        100.0,
+        82.0
+      ],
+      "area": 24529
+    },
+    {
+      "index": 16,
+      "file": "pope_face_16.png",
+      "label": "",
+      "x": 20,
+      "y": 767,
+      "w": 199,
+      "h": 162,
+      "pivot": [
+        99.5,
+        81.0
+      ],
+      "area": 24324
+    },
+    {
+      "index": 17,
+      "file": "pope_face_17.png",
+      "label": "",
+      "x": 242,
+      "y": 768,
+      "w": 199,
+      "h": 161,
+      "pivot": [
+        99.5,
+        80.5
+      ],
+      "area": 24623
+    },
+    {
+      "index": 18,
+      "file": "pope_face_18.png",
+      "label": "",
+      "x": 467,
+      "y": 769,
+      "w": 201,
+      "h": 160,
+      "pivot": [
+        100.5,
+        80.0
+      ],
+      "area": 24311
+    },
+    {
+      "index": 19,
+      "file": "pope_face_19.png",
+      "label": "",
+      "x": 688,
+      "y": 763,
+      "w": 217,
+      "h": 170,
+      "pivot": [
+        108.5,
+        85.0
+      ],
+      "area": 27624
+    },
+    {
+      "index": 20,
+      "file": "pope_face_20.png",
+      "label": "",
+      "x": 925,
+      "y": 766,
+      "w": 200,
+      "h": 162,
+      "pivot": [
+        100.0,
+        81.0
+      ],
+      "area": 24514
+    }
+  ]
+}

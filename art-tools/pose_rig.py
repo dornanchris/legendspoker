@@ -142,6 +142,9 @@ def poly_mask(shape, pts):
     return np.array(m) > 0
 
 
+NO_WOOD = False
+
+
 def table_colour(a, ty, with_wood=True):
     """Felt and the dark wood of the rail and chair (the rail's highlights are
     handled by polygons). Brown counts as wood only where it reaches the rail
@@ -155,6 +158,8 @@ def table_colour(a, ty, with_wood=True):
         felt &= b > r + 25
     if FELT_DARK_TEAL:                                  # the felt's shadows inside drawn ripples (blue as green)
         felt |= (r < 60) & (g > r + 15) & (b > r + 15)
+    if NO_WOOD:                                         # no chair and a gold rail: dark red is his robe (the Pope)
+        return felt
     wood = (r - g > 40) & (g < 75) & (r < 200) & (a[..., 3] > 0)
     if WOOD_ROWS_ONLY:
         rows = np.zeros_like(wood)
@@ -348,8 +353,9 @@ def upscale(rgba, k):
 
 def main(spec_path):
     spec = json.load(open(spec_path))
-    global WOOD_ROWS_ONLY
+    global WOOD_ROWS_ONLY, NO_WOOD
     WOOD_ROWS_ONLY = bool(spec.get('wood_rows_only'))
+    NO_WOOD = bool(spec.get('no_wood'))
     global FELT_TEAL
     FELT_TEAL = bool(spec.get('felt_teal'))
     global FELT_BLUE, FELT_DARK_TEAL
@@ -392,6 +398,12 @@ def main(spec_path):
         c = a[..., :3].astype(int)
         g = gold(c)
         g[:max(0, ty - 12)] = False
+        if spec.get('rail_long'):                          # embroidery that colour stays: only long thin strips are rail
+            lab, n = ndimage.label(g)
+            sl = ndimage.find_objects(lab)
+            long_ = [i + 1 for i, (ys, xs) in enumerate(sl)
+                     if xs.stop - xs.start >= max(40, spec['rail_long'] * (ys.stop - ys.start))]
+            g = np.isin(lab, long_)
         return ndimage.binary_dilation(g, iterations=2)
     char = lambda a: (a[..., 3] > 128) & ~table_colour(a, ty) & ~rail_gold(a)
     chair = np.zeros(shape, bool)                          # the chair, or (a list of polygons) bits of the drawn rail
@@ -687,6 +699,13 @@ def main(spec_path):
                     above, below_ = spec['rail_band']
                     sl = ndimage.find_objects(lab)
                     low = [l for l in low if sl[l - 1][0].start >= ty + FM - above and sl[l - 1][0].stop <= ty + FM + below_]
+                if spec.get('rail_long'):                  # embroidery the rail's colour (the Pope's cuffs): only long thin strips
+                    sl = ndimage.find_objects(lab)          # at the table line are rail, whatever band they reach
+                    r_ = spec['rail_long']
+                    low = list(low) + [l for l in range(1, n + 1)
+                                       if sl[l - 1][1].stop - sl[l - 1][1].start >= r_ * (sl[l - 1][0].stop - sl[l - 1][0].start)
+                                       and sl[l - 1][1].stop - sl[l - 1][1].start >= 40
+                                       and ty + FM - 25 <= (sl[l - 1][0].start + sl[l - 1][0].stop) / 2 <= ty + FM + 70]
                 fm &= ~ndimage.binary_dilation(np.isin(lab, low), iterations=1)
         if spec.get('felt_lines'):                         # the drawn rail's outline lying on the felt
             t = spec['felt_lines']

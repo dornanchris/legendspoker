@@ -1,0 +1,992 @@
+{
+ "id": "pope",
+ "name": "The Pope",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets. The master is the rest pose's OWN head and mitre (pope_face/pope_master.png, cut from A1, as Cerberus's is): the face sheet's head was drawn with a wider mitre. Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. The drawn rail is gold-orange, like his skin and his embroidery: rail_orange with thresholds.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    19,
+    8,
+    487,
+    476
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, the ring on his right hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    522,
+    10,
+    489,
+    474
+   ],
+   "what": "Peeking at his cards (right hand)",
+   "reg": [
+    1.0,
+    -2,
+    2
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1029,
+    6,
+    488,
+    478
+   ],
+   "what": "Check: one finger taps the felt",
+   "reg": [
+    1.0,
+    0,
+    -2
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    19,
+    495,
+    487,
+    478
+   ],
+   "what": "Call: slides a short stack forward, graciously",
+   "reg": [
+    1.0,
+    0,
+    -2
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    524,
+    499,
+    487,
+    474
+   ],
+   "what": "Bet: sets a stack down, a magnanimous gesture",
+   "reg": [
+    1.0,
+    0,
+    2
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1029,
+    496,
+    488,
+    477
+   ],
+   "what": "Fold: lays his cards down with a small sigh",
+   "reg": [
+    1.0,
+    0,
+    -1
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    18,
+    4,
+    488,
+    480
+   ],
+   "what": "All in: both hands push his whole stack, beaming",
+   "reg": [
+    1.0,
+    -1,
+    -4
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    514,
+    11,
+    496,
+    473
+   ],
+   "what": "Show: turns his cards over",
+   "reg": [
+    1.0,
+    -10,
+    3
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1026,
+    5,
+    491,
+    479
+   ],
+   "what": "Collect: both arms gathering the pot",
+   "reg": [
+    1.0,
+    -2,
+    -3
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    18,
+    491,
+    486,
+    483
+   ],
+   "what": "Turns the ring on his finger (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -7
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    514,
+    494,
+    503,
+    480
+   ],
+   "what": "Admires his own ring, hand raised (decoy for B4)",
+   "reg": [
+    1.0,
+    -6,
+    -4
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1028,
+    490,
+    490,
+    484
+   ],
+   "what": "Smooths his robes, unhurried (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -8
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    18,
+    8,
+    502,
+    487
+   ],
+   "what": "Adjusts his mitre (decoy for B6)",
+   "reg": [
+    1.0,
+    -1,
+    -11
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    525,
+    7,
+    486,
+    488
+   ],
+   "what": "Folds his hands in his lap: they leave the table (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -12
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1028,
+    7,
+    489,
+    489
+   ],
+   "what": "Murmurs something in Latin, eyes half closed (decoy for C2)",
+   "reg": [
+    1.0,
+    -1,
+    -12
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    19,
+    496,
+    488,
+    491
+   ],
+   "what": "Smiles benevolently at the whole table",
+   "reg": [
+    1.0,
+    0,
+    -15
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    525,
+    498,
+    486,
+    489
+   ],
+   "what": "A quiet chuckle, one hand on his belly",
+   "reg": [
+    1.0,
+    0,
+    -13
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1029,
+    503,
+    491,
+    484
+   ],
+   "what": "Fingertips together, considering",
+   "reg": [
+    1.0,
+    0,
+    -8
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    19,
+    7,
+    487,
+    483
+   ],
+   "what": "Talking: one hand open, persuasive",
+   "reg": [
+    1.0,
+    0,
+    -7
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    522,
+    6,
+    489,
+    484
+   ],
+   "what": "Facing a big bet: eyebrows raised, a patient smile",
+   "reg": [
+    1.0,
+    -2,
+    -8
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1029,
+    6,
+    488,
+    484
+   ],
+   "what": "Lost a pot: a pained smile, hand to his chest",
+   "reg": [
+    1.0,
+    0,
+    -8
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    19,
+    500,
+    487,
+    479
+   ],
+   "what": "Won a pot: beaming, gathering chips in",
+   "reg": [
+    1.0,
+    0,
+    -3
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    523,
+    498,
+    490,
+    481
+   ],
+   "what": "Heads up: leaning in, fingertips together",
+   "reg": [
+    1.0,
+    -1,
+    -5
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1029,
+    490,
+    488,
+    489
+   ],
+   "what": "Knocked out: rises, gathers his robes, a gracious nod",
+   "reg": [
+    1.0,
+    0,
+    -13
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 380,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  240,
+  350,
+  350
+ ],
+ "register_span": 40,
+ "collar_y": 265,
+ "neck": [
+  250,
+  265
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  180,
+  250,
+  340,
+  300
+ ],
+ "master": {
+  "piece": "pope_parts/pope_face/pope_master.png",
+  "cut_below": 282,
+  "face": "pope_parts/face.json",
+  "file": "pope_parts/pope_rig/master.png",
+  "layers": "pope_parts/pope_rig/face",
+  "head_box": [
+   0,
+   0,
+   487,
+   300
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    120,
+    0
+   ],
+   [
+    310,
+    0
+   ],
+   [
+    318,
+    170
+   ],
+   [
+    316,
+    240
+   ],
+   [
+    300,
+    268
+   ],
+   [
+    260,
+    282
+   ],
+   [
+    200,
+    282
+   ],
+   [
+    160,
+    262
+   ],
+   [
+    140,
+    230
+   ],
+   [
+    125,
+    180
+   ]
+  ],
+  "heads": {
+   "viewer": "pope_parts/pope_face/pope_face_10.png"
+  },
+  "cloth": [
+   15,
+   140
+  ],
+  "shoulder_y": 250
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    60,
+    350
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     20,
+     310
+    ],
+    [
+     110,
+     310
+    ],
+    [
+     110,
+     340
+    ],
+    [
+     20,
+     345
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right sleeve, cuff, hand and ring",
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       80,
+       325
+      ],
+      [
+       150,
+       345
+      ],
+      [
+       190,
+       365
+      ],
+      [
+       245,
+       380
+      ],
+      [
+       258,
+       430
+      ],
+      [
+       252,
+       476
+      ],
+      [
+       120,
+       476
+      ],
+      [
+       60,
+       452
+      ],
+      [
+       30,
+       405
+      ],
+      [
+       0,
+       392
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    440,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     390,
+     305
+    ],
+    [
+     480,
+     305
+    ],
+    [
+     480,
+     340
+    ],
+    [
+     390,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left sleeve, cuff and hand",
+     "poly": [
+      [
+       300,
+       476
+      ],
+      [
+       305,
+       420
+      ],
+      [
+       330,
+       385
+      ],
+      [
+       360,
+       360
+      ],
+      [
+       400,
+       335
+      ],
+      [
+       487,
+       330
+      ],
+      [
+       487,
+       392
+      ],
+      [
+       462,
+       408
+      ],
+      [
+       440,
+       476
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      180,
+      385
+     ],
+     [
+      340,
+      385
+     ],
+     [
+      340,
+      476
+     ],
+     [
+      180,
+      476
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      375
+     ],
+     [
+      350,
+      375
+     ],
+     [
+      350,
+      476
+     ],
+     [
+      160,
+      476
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      90,
+      365
+     ],
+     [
+      460,
+      365
+     ],
+     [
+      460,
+      476
+     ],
+     [
+      90,
+      476
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      90,
+      360
+     ],
+     [
+      470,
+      360
+     ],
+     [
+      470,
+      476
+     ],
+     [
+      90,
+      476
+     ]
+    ]
+   ]
+  },
+  "turn_ring": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     392
+    ],
+    [
+     -60,
+     392
+    ]
+   ]
+  },
+  "admire_ring": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "smooth_robes": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     392
+    ],
+    [
+     -60,
+     392
+    ]
+   ]
+  },
+  "mitre": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     392
+    ],
+    [
+     -60,
+     392
+    ]
+   ]
+  },
+  "hands_in_lap": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     392
+    ],
+    [
+     -60,
+     392
+    ]
+   ]
+  },
+  "latin": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "benevolent": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "chuckle": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     392
+    ],
+    [
+     -60,
+     392
+    ]
+   ]
+  },
+  "fingertips": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     392
+    ],
+    [
+     -60,
+     392
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      375
+     ],
+     [
+      350,
+      375
+     ],
+     [
+      350,
+      476
+     ],
+     [
+      160,
+      476
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     392
+    ],
+    [
+     -60,
+     392
+    ]
+   ]
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     388
+    ],
+    [
+     -60,
+     388
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/pope",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  14,
+  42
+ ],
+ "rail_blue": 40,
+ "wood_rows_only": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "rail_green": 0.3,
+ "rail_long": 3,
+ "no_wood": true
+}
