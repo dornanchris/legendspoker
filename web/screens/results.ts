@@ -104,8 +104,17 @@ export function resultsScreen(root: HTMLElement): void {
   if (effects.unlocked) {
     const u = effects.unlocked
     body.append(h('p', { class: 'unlocked' },
-      u.kind === 'finale' ? 'One more table has appeared on the map.' : `Now open: ${u.name}${u.place && u.place !== 'TODO' && !u.name.includes(u.place) ? ` — ${u.place}` : ''}.`))
+      u.kind === 'finale' ? 'One more table has appeared on the map.'
+        : u.kind === 'hidden' ? 'Something is burning on the map.' : `Now open: ${u.name}${u.place && u.place !== 'TODO' && !u.name.includes(u.place) ? ` — ${u.place}` : ''}.`))
   }
+  // The Phoenix's gauntlet (tour.ts). Nothing says it exists until the last
+  // second place it needs; after that, the room tells you what it did.
+  const PHOENIX: Record<string, string> = {
+    stirring: 'A single warm feather drifts down onto the felt. Something has been keeping count of the times you came second.',
+    open: 'The feather on the felt is burning now. Something has flown a very long way to sit across from you.',
+    reset: 'The Phoenix forgets you, and every second place goes with it. The road starts again at the first table.',
+  }
+  if (effects.phoenix && PHOENIX[effects.phoenix]) body.append(h('p', { class: 'note' }, PHOENIX[effects.phoenix]))
   if (o.won && o.mode === 'tour' && table.kind === 'tour' && effects.firstClear) {
     body.append(h('p', { class: 'dim small' }, `Open tables at ${table.name} are now available from the map.`))
   }
@@ -113,6 +122,9 @@ export function resultsScreen(root: HTMLElement): void {
   const actions = h('div', { class: 'actions' })
   if (finale && o.won) {
     actions.append(h('button', { type: 'button', class: 'primary', onclick: () => go('/ending') }, 'Take the deck'))
+  } else if (table.kind === 'hidden') {
+    // One sitting only: won or lost, its table closes behind you.
+    actions.append(h('button', { type: 'button', class: 'primary', onclick: () => go('/tour') }, 'Onward'))
   } else {
     actions.append(h('button', { type: 'button', class: 'primary', onclick: () => go('/tour') }, 'Onward'))
     actions.append(h('button', { type: 'button', onclick: () => {

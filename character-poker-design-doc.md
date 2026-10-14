@@ -191,6 +191,21 @@ budget, and three of them were the same "watch, then join" move.
   (the "fourth NPC holding the chair" rule above): the general who beat
   Hannibal, the Republic at its best, against the man who ended it. He is the
   table's patient reader; an ivory elephant from Zama is his tell surface.*
+
+### [DECISION, owner] Two more hidden characters, and the online avatar
+
+- **JFK, the White House's hidden visitor.** Win a pot at the presidents'
+  table holding a three and a five (the thirty-fifth president) while a
+  chair is empty, and he sits down. A guest like Loki: invisible until met.
+  Always "thirty-five", never "3/5" (the Three-Fifths Clause, at a table
+  with Washington and Lincoln); never a word about his death.
+- **The Phoenix, the hidden grind.** Second place at every story table, then
+  a win at the eighth, and the Phoenix opens its table for one heads-up
+  sitting. Win: unlocked, the rarest thing in the game. Lose: the gauntlet
+  resets. Coming back from losing is the whole point of the bird.
+- **The Stranger, the default online avatar** (online is not designed yet):
+  faceless under a wide-brimmed hat, coat collar up, nothing that says man
+  or woman. Under non-negotiable #3 it has no tells, only a cosmetic loop.
 - **The Station:** Reptilian CUT, **Astronaut** IN — preserves the one honest
   human read at the table.
 

@@ -47,6 +47,7 @@ The table screen has to hold four opponents, Death dealing between them, and the
 | The Station | Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red) | 1 |
 | The Champions' Tables (the Hall of Doors) | Dark, lit only by what the open doors let in | 1 |
 | The Last Crossing | One oil lamp, warm and small, against storm-dark blue | — |
+| The Pyre | Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar | 1 |
 
 ---
 
@@ -401,6 +402,41 @@ For the room: The Last Crossing. Parts:
 - Rain on the window: 2 frames
 - The ferryman's lantern and boat, small, drifting across the window
 - The door, shut and open a crack
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## The Pyre
+
+**What makes it unique:** The hidden table (the Phoenix's gauntlet): dawn instead of night, sandstone and spice instead of gold and wood. Ash drifts across the felt like snow. One opponent, so the room can be grand and still read: everything bright is high and at the sides.
+
+- **The room:** The inner court of the temple of the Sun at Heliopolis, in the last hour before dawn: tall sandstone columns, a sky going from violet to gold beyond them, and on a stone altar at the back a nest of cinnamon and myrrh, smouldering. Death's table stands in the middle of the court. Ash drifts across the felt like snow and never settles.
+- **Sounds (for reference):** a dry wind through the columns; spice crackling on embers; a single bird call, far up in the dawn; ash hissing as it lands on warm stone
+- **Light:** Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar.
+- **Avoid:** Nothing from the Harry Potter books or films, Marvel's Phoenix or any modern film or game. No hieroglyphs that spell words, no text.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: The inner court of an ancient Egyptian temple of the Sun, in the last hour before dawn: tall sandstone columns with papyrus capitals and faded painted bands, open to a sky going from violet at the top to gold low down between the columns. At the back, high on a stone altar, a nest of cinnamon sticks and myrrh, smouldering, with a thin column of smoke. Warm, glowing, hopeful, never dark or scary.
+Light: Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar.
+Must NOT resemble: Nothing from the Harry Potter books or films, Marvel's Phoenix or any modern film or game. No hieroglyphs that spell words, no text.
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: The Pyre. Parts:
+- The empty nest on the altar, without the bird, for after it has stepped down to the table
+- Drifting ash flakes, 3 frames, grey and pale, to fall slowly across the scene
+- The smouldering nest: 3 frames of glowing embers and a curl of smoke
+- The dawn sky between the columns, a second, slightly brighter version, for the sun coming up as the sitting goes on
 
 Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
 ```

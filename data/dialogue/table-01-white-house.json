@@ -204,6 +204,51 @@
       ]
     },
 
+    "jfk_table": {
+      "relationship": "The hidden visitor (table.visitor): the thirty-fifth president, who walks in when the player wins a pot holding a three and a five while a chair is empty. These fire only once he is seated. He is the youngest man ever elected; the others are older, grander and mildly put out. Never refer to his death or to any assassination.",
+      "exchanges": [
+        [
+          { "id": "wh_jfk_tr_01a", "speaker": "jfk", "text": "Youngest man ever elected." },
+          { "id": "wh_jfk_tr_01b", "speaker": "roosevelt", "text": "I was forty-two!" },
+          { "id": "wh_jfk_tr_01c", "speaker": "jfk", "text": "Elected, Colonel." },
+          { "id": "wh_jfk_tr_01d", "speaker": "roosevelt", "text": "Bully for the technicality!", "note": "TR took office at 42 in 1901 and was first elected in 1904; Kennedy was elected at 43." }
+        ],
+        [
+          { "id": "wh_jfk_fdr_01a", "speaker": "fdr", "text": "A Navy man, I hear." },
+          { "id": "wh_jfk_fdr_01b", "speaker": "jfk", "text": "PT-109. A motor torpedo boat." },
+          { "id": "wh_jfk_fdr_01c", "speaker": "fdr", "text": "I was Assistant Secretary of the Navy. I'd have found you a bigger boat." },
+          { "id": "wh_jfk_fdr_01d", "speaker": "jfk", "text": "A Japanese destroyer found me a smaller one.", "note": "The Amagiri ran PT-109 down in August 1943 and cut it in two." }
+        ],
+        [
+          { "id": "wh_jfk_fdr_02a", "speaker": "fdr", "text": "Your father was my ambassador in London." },
+          { "id": "wh_jfk_fdr_02b", "speaker": "jfk", "text": "He had his own ideas about London." },
+          { "id": "wh_jfk_fdr_02c", "speaker": "fdr", "text": "He had his own ideas about everything. That is why I sent him to London.", "note": "Joseph P. Kennedy, ambassador 1938-40. That FDR wanted him at a distance is the common account; keep it a quip." }
+        ],
+        [
+          { "id": "wh_jfk_al_01a", "speaker": "lincoln", "text": "They tell me you wrote a book about courage." },
+          { "id": "wh_jfk_al_01b", "speaker": "jfk", "text": "Eight senators who voted against their own side." },
+          { "id": "wh_jfk_al_01c", "speaker": "lincoln", "text": "Only eight?" },
+          { "id": "wh_jfk_al_01d", "speaker": "jfk", "text": "It was a short book.", "note": "Profiles in Courage (1956)." }
+        ],
+        [
+          { "id": "wh_jfk_gw_01a", "speaker": "jfk", "text": "'Ask not what your country can do for you.' That was my inaugural." },
+          { "id": "wh_jfk_gw_01b", "speaker": "washington", "text": "My second was a hundred and thirty-five words." },
+          { "id": "wh_jfk_gw_01c", "speaker": "jfk", "text": "Mine was better." },
+          { "id": "wh_jfk_gw_01d", "speaker": "washington", "text": "Mine was shorter.", "note": "Washington's second inaugural (1793) is the shortest on record, 135 words." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "wh_nd_09a", "speaker": "jfk", "to": "roosevelt", "text": "Speak softly, Colonel. You folded." },
+          { "id": "wh_nd_09b", "speaker": "roosevelt", "text": "I carried a big stick! I simply chose not to swing it!" }
+        ],
+        [
+          { "id": "wh_nd_10a", "speaker": "fdr", "to": "jfk", "text": "There, my boy. The old hands still have a trick or two." },
+          { "id": "wh_nd_10b", "speaker": "jfk", "text": "Nobody ever said you weren't a politician, Mr. President." }
+        ]
+      ]
+    },
+
     "lincoln_fdr": {
       "relationship": "Two wartime presidents. Quiet mutual recognition — the table's one serious beat. Use sparingly.",
       "exchanges": [
@@ -278,7 +323,19 @@
     { "id": "wh_gw_hu_04", "speaker": "washington", "text": "Good. Again.", "trigger": "player_wins_pot" }
   ],
 
+  "visitor_arrival": [
+    { "id": "wh_jfk_in_01", "speaker": "narration", "text": "A door opens somewhere down the hall. A young man in a narrow navy suit comes in with his hands in his jacket pockets, finds the empty chair, and sits down in it as if the meeting had been called for him.", "note": "The player has just won a pot holding a three and a five: the thirty-fifth president. Nobody says 'three-fifths'." },
+    { "id": "wh_jfk_in_02", "speaker": "jfk", "text": "Thirty-five. I believe somebody called my number." },
+    { "id": "wh_jfk_in_03", "speaker": "death", "text": "Mr. President. You were not on the list." },
+    { "id": "wh_jfk_in_04", "speaker": "jfk", "text": "I rarely was. I usually came anyway." },
+    { "id": "wh_jfk_in_05", "speaker": "washington", "text": "[counts along the portraits on the wall, to thirty-five, and nods once]", "type": "stage_direction" }
+  ],
+
   "eliminated": {
+    "jfk": [
+      { "id": "wh_jfk_out_01", "speaker": "jfk", "text": "Well. We chose this one because it was hard.", "note": "The 1962 Rice University speech: 'not because they are easy, but because they are hard'." },
+      { "id": "wh_jfk_out_02", "speaker": "jfk", "text": "[straightens his tie, nods to the portraits, and goes out the way he came in]", "type": "stage_direction" }
+    ],
     "lincoln": [
       { "id": "wh_al_out_01", "speaker": "lincoln", "text": "I lost to Douglas once. It did not go the way he expected afterwards.", "note": "True: lost the 1858 Senate race to Stephen Douglas, beat him for the presidency in 1860." },
       { "id": "wh_al_out_02", "speaker": "lincoln", "text": "Don't get up. I'll sit by the fire and see how it comes out." }

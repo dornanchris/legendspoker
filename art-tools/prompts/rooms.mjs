@@ -98,9 +98,17 @@ const ROOMS = {
     presence: [],
     avoid: 'Nothing from Pratchett\'s Discworld, Bergman\'s The Seventh Seal or Gaiman\'s Sandman.',
   },
+  pyre: {
+    unique: 'The hidden table (the Phoenix\'s gauntlet): dawn instead of night, sandstone and spice instead of gold and wood. Ash drifts across the felt like snow. One opponent, so the room can be grand and still read: everything bright is high and at the sides.',
+    backdrop: 'The inner court of an ancient Egyptian temple of the Sun, in the last hour before dawn: tall sandstone columns with papyrus capitals and faded painted bands, open to a sky going from violet at the top to gold low down between the columns. At the back, high on a stone altar, a nest of cinnamon sticks and myrrh, smouldering, with a thin column of smoke. Warm, glowing, hopeful, never dark or scary',
+    light: 'Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar',
+    moving: ['Drifting ash flakes, 3 frames, grey and pale, to fall slowly across the scene', 'The smouldering nest: 3 frames of glowing embers and a curl of smoke', 'The dawn sky between the columns, a second, slightly brighter version, for the sun coming up as the sitting goes on'],
+    presence: ['The empty nest on the altar, without the bird, for after it has stepped down to the table'],
+    avoid: 'Nothing from the Harry Potter books or films, Marvel\'s Phoenix or any modern film or game. No hieroglyphs that spell words, no text.',
+  },
 };
 
-const order = ['white_house', 'athens', 'pirate_cove', 'camelot', 'rome', 'baker_street', 'transylvania', 'station', 'champions', 'finale'];
+const order = ['white_house', 'athens', 'pirate_cove', 'camelot', 'rome', 'baker_street', 'transylvania', 'station', 'champions', 'finale', 'pyre'];
 const block = s => '```\n' + s.trim() + '\n```\n\n';
 let out = `# Room art prompts
 

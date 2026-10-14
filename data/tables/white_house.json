@@ -17,6 +17,11 @@
   "buyIn": 2000,
   "respectStart": 0,
   "lessons": 0.9,
+  "visitor": {
+    "character": "jfk",
+    "holeRanks": ["3", "5"],
+    "stack": "average"
+  },
   "place": "Washington, D.C.",
   "region": "United States",
   "era": "Every administration at once",

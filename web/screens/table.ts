@@ -763,7 +763,7 @@ export function tableScreen(root: HTMLElement): () => void {
     // hang off `met`, and career marks are checked when this hand's record is
     // written, before the queue gets round to showing him. Meeting someone
     // twice changes nothing, so a replay cannot double-count it.
-    if (e.type === 'arrival' && e.cause === 'banishment') store.meet(e.id)
+    if (e.type === 'arrival' && (e.cause === 'banishment' || CHARACTERS[e.id]?.role === 'guest')) store.meet(e.id)
     if (e.type === 'arrival' || e.type === 'eliminated' || e.type === 'level') {
       if (replaying) applyStructural(e)
     }

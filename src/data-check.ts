@@ -11,7 +11,7 @@
  *
  *   npm run check:data
  */
-import { CHARACTERS, TABLES, DIALOGUE, DEALER, MARKS, STORY, UNINVITED, fullCast, type Line } from './content.js'
+import { CHARACTERS, TABLES, DIALOGUE, DEALER, MARKS, STORY, UNINVITED, fullCast, tableSpeakers, type Line } from './content.js'
 import { QUIRKS } from './quirks.js'
 import { CONDITION_TYPES, conditionErrors } from './marks.js'
 import { CALLOUT_ACTIONS, isStage } from './chatter.js'
@@ -35,7 +35,10 @@ for (const c of Object.values(CHARACTERS)) {
   const w = `character ${c.id}`
   if (c.role === 'guest') {
     // On a table, he would be on the map, in the intro and in the ledger.
-    if (c.table !== null) err(w, 'a guest belongs to no table: "table" must be null')
+    // ...or to a hidden table, which is off the map until it opens.
+    if (c.table !== null && TABLES.find((t) => t.id === c.table)?.kind !== 'hidden') {
+      err(w, 'a guest belongs to no table, or to a hidden one: "table" must be null')
+    }
     if (c.arrives) err(w, 'a guest is not a late arrival')
   } else if (!TABLES.some((t) => t.id === c.table)) err(w, `unknown table "${c.table}"`)
   if (!['he', 'she', 'it', 'they'].includes(c.pronoun)) err(w, `bad pronoun "${c.pronoun}"`)
@@ -74,7 +77,9 @@ for (const t of TABLES) {
   positions.add(t.position)
   for (const id of t.seats) if (!CHARACTERS[id]) err(w, `seat "${id}" is not a character`)
   for (const id of fullCast(t)) {
-    if (CHARACTERS[id]?.role === 'guest') err(w, `"${id}" is a guest: seating him here puts him on the map`)
+    // A hidden table (the Phoenix's) is off the map until it opens: the one
+    // place a guest may hold a chair.
+    if (CHARACTERS[id]?.role === 'guest' && t.kind !== 'hidden') err(w, `"${id}" is a guest: seating him here puts him on the map`)
   }
   if (t.champion && !fullCast(t).includes(t.champion)) err(w, `champion "${t.champion}" never sits at this table`)
   if (t.lessons !== undefined && !(t.lessons >= 0 && t.lessons <= 1)) err(w, `lessons must be a chance, 0..1 (got ${t.lessons})`)
@@ -85,6 +90,15 @@ for (const t of TABLES) {
     if (a.afterEliminationOf && !t.seats.includes(a.afterEliminationOf)) err(w, `arrival waits on "${a.afterEliminationOf}", who is not seated`)
     if (!a.afterEliminationOf && !a.afterEliminations) err(w, 'arrival has no trigger')
     if (!t.presence) warn(w, 'late arrival but no presence line')
+  }
+  if (t.visitor) {
+    const v = t.visitor
+    const RANKS = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
+    if (CHARACTERS[v.character]?.role !== 'guest') err(w, `visitor "${v.character}" must be a guest, or the ROSTER and the map give him away`)
+    if (v.holeRanks?.length !== 2 || !v.holeRanks.every((r) => RANKS.includes(r))) err(w, 'visitor.holeRanks must be two card ranks')
+    if (t.kind === 'finale') err(w, 'no visitors at the finale')
+    if (!DIALOGUE[t.id]?.visitor_arrival?.length) err(w, 'a visitor needs visitor_arrival lines')
+    if (!DIALOGUE[t.id]?.eliminated?.[v.character]?.length) err(w, `no eliminated lines for the visitor ${v.character}`)
   }
   if (t.seats.length + 1 > 6) err(w, 'more than five opponents will not fit a landscape phone')
   for (const k of ['place', 'region', 'era', 'teaser', 'hook', 'room', 'music', 'entrance'] as const) {
@@ -142,7 +156,7 @@ for (const t of TABLES) {
   const d = DIALOGUE[t.id]
   if (!d) continue
   const w = `dialogue ${t.id}`
-  const speakers = new Set(['death', 'narration', ...fullCast(t)])
+  const speakers = new Set(['death', 'narration', ...tableSpeakers(t)])
   const all = (xs: Line[] | undefined, sub: string) => (xs ?? []).forEach((l) => checkLine(l, `${w} ${sub}`, speakers))
 
   all(d.table_intro, 'table_intro')
@@ -150,6 +164,7 @@ for (const t of TABLES) {
   all(d.death_asides, 'death_asides')
   all(d.champion_arrival, 'champion_arrival')
   all(d.champion_missed, 'champion_missed')
+  all(d.visitor_arrival, 'visitor_arrival')
   all(d.champion_headsup, 'champion_headsup')
   all(d.player_busted, 'player_busted')
   all(d.champion_defeat, 'champion_defeat')
@@ -167,14 +182,15 @@ for (const t of TABLES) {
   if (!d.table_intro?.length) err(w, 'no table_intro')
   // The one "the dealer arranged it" beat. More than one sequence is a second plant.
   const plant = d.dealer_plant ?? []
-  if (t.kind !== 'finale' && plant.length === 0) err(w, 'no dealer_plant')
+  if (t.kind !== 'finale' && t.kind !== 'hidden' && plant.length === 0) err(w, 'no dealer_plant')
   if (plant.length) {
     const tr = plant[0].trigger ?? ''
     if (!/^hand_\d+_start$/.test(tr) && tr !== 'champion_arrival') err(w, `dealer_plant must open with hand_NN_start or champion_arrival, not "${tr}"`)
     if (plant.slice(1).some((l) => l.trigger)) err(w, 'dealer_plant has a second trigger: that is a second plant')
   }
   if (t.kind !== 'finale') {
-    for (const tier of ['tier_0', 'tier_1', 'tier_2', 'tier_3']) {
+    // A heads-up table that starts at a higher tier only needs the tiers it can reach.
+    for (const tier of ['tier_0', 'tier_1', 'tier_2', 'tier_3'].slice(t.respectStart)) {
       if (!d.player_directed?.[tier]?.length) err(w, `player_directed.${tier} is empty`)
     }
   }
@@ -204,7 +220,7 @@ for (const t of TABLES) {
 for (const t of TABLES) {
   const d = DIALOGUE[t.id]
   if (!d) continue
-  const speakers = new Set(['death', 'narration', ...fullCast(t)])
+  const speakers = new Set(['death', 'narration', ...tableSpeakers(t)])
   for (const [key, pair] of Object.entries(d.banter_pairs ?? {})) {
     const w = `dialogue ${t.id} needles ${key}`
     // Needles belong to a pair with a relationship: both people must be in it.
@@ -214,9 +230,9 @@ for (const t of TABLES) {
       x.forEach((l) => checkLine(l, w, speakers))
       const [first] = x
       if (!first.to) err(w, `needle ${first.id}: the first line must say who it is aimed at ("to")`)
-      else if (!fullCast(t).includes(first.to)) err(w, `needle ${first.id}: "${first.to}" is not at this table`)
+      else if (!tableSpeakers(t).includes(first.to)) err(w, `needle ${first.id}: "${first.to}" is not at this table`)
       else if (first.to === first.speaker) err(w, `needle ${first.id}: aimed at the speaker`)
-      if (!fullCast(t).includes(first.speaker)) err(w, `needle ${first.id}: only a player can take a pot, not "${first.speaker}"`)
+      if (!tableSpeakers(t).includes(first.speaker)) err(w, `needle ${first.id}: only a player can take a pot, not "${first.speaker}"`)
       for (const who of [first.speaker, first.to]) {
         if (who && !inPair.has(who)) err(w, `needle ${first.id}: "${who}" has no exchange in this pair; needles are for pairs with a relationship`)
       }

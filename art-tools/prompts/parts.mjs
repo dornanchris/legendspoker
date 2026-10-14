@@ -255,6 +255,20 @@ export const PARTS = {
     props: [],
     note: 'Build his face from the Brady and Gardner photographs, and keep it dignified: a long, narrow, gaunt face and a kind, tired look. An earlier attempt read as apelike: no heavy jutting brow ridge, no flat or wide nose, no wide lipless mouth, no protruding jaw, no oversized ears. He wears the hat at all times.',
   },
+  jfk: {
+    face: face({ hair: ['Thick reddish-brown hair swept to one side, as a separate piece'], mouthsExtra: 'a broad grin with teeth' }),
+    body: body('a narrow navy two-button suit, white shirt and thin dark tie', ['The tie as a separate piece, straight and pulled a little askew']),
+    hands: hands('Hands', ['Hand straightening a tie knot', 'Hand flat and edge-on, chopping the air', 'Hand pressed to the small of the back', 'Hand running back through the hair']),
+    props: ['A coconut shell paperweight on a small wooden base, a short message carved into the husk'],
+    note: 'Hidden visitor: a spoiler. Built from art-tools/jfk_parts/POSES.md, not these parts. No sunglasses, nothing in his mouth, no actor likeness.',
+  },
+  phoenix: {
+    face: ['A great red-and-gold bird\'s head, three-quarter, a curved golden beak, big gold eyes, with a crest of small bright flames: the crest burning steadily; flared up tall; dimmed to dark red embers', 'The beak: closed; a little open; wide open (singing)'],
+    body: ['The chest and shoulders sitting upright, no head, cut off at the table line', 'The long tail of fire-coloured plumes, as a separate piece'],
+    hands: ['Folded wingtips lying on a table, as forearms: at rest; tapping; sweeping chips; lifting a card corner; spread wide'],
+    props: ['A small heap of warm grey ash, with a few embers', 'Drifting ash flakes and sparks, a few of each'],
+    note: 'Hidden opponent: a spoiler. Built from art-tools/phoenix_parts/POSES.md. Not Fawkes, not Marvel\'s Phoenix, no human figure.',
+  },
   loki: {
     face: face({ hair: ['Fair hair worn loose: back layer and front strands as separate pieces'],
       eyes: 'sharp', eyesExtra: 'looking ahead with the iris a strange, different colour for a moment (his tell)',

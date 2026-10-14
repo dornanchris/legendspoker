@@ -115,7 +115,8 @@ export function introScreen(root: HTMLElement, params: string[]): void {
   else if (table.kind === 'finale' && (rec?.losses ?? 0) > 0) {
     const n = Math.min(5, (rec?.losses ?? 0) + 1)
     lines = d?.rematch_ladder?.[String(n)] ?? d?.table_intro ?? []
-  } else if (rec?.cleared) lines = dealer('replay_cleared')
+  } else if (table.kind === 'hidden') lines = d?.table_intro ?? [] // every sitting is its first
+  else if (rec?.cleared) lines = dealer('replay_cleared')
   else if ((rec?.losses ?? 0) > 0) lines = dealer('rematch_table')
   else lines = d?.table_intro ?? []
 

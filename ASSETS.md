@@ -66,6 +66,13 @@ are free to depict. Modern/copyrighted franchises (Star Wars, Star Trek, Alien,
 Doctor Who, Terminator) are OFF the table. Verify each character's copyright
 status before committing art time.
 
+**JFK (hidden visitor, died 1963) is the one exception to the ~70-year line,
+and it is the owner's call.** A real person is not a copyright question: the
+risk is likeness and publicity rights held by an estate, small for a free,
+unmonetised game, larger if it ever ships in a store. His speeches as
+President are US government works and public domain. Keep him a cartoon of
+the public figure, not any actor's portrayal, and never refer to his death.
+
 ---
 
 ## CHARACTER COPYRIGHT TRAPS — the famous version is usually NOT the free one
@@ -84,6 +91,8 @@ not. Every character's own note lives in its data file
 | Alice | Carroll, 1865; Tenniel's illustrations | Disney's 1951 film design |
 | The Headless Horseman | Irving, 1820 | Disney's 1949 short; Burton's 1999 film |
 | Loki (hidden guest) | The Poetic and Prose Eddas (13th c.) and old translations (Brodeur 1916, Bellows 1923): fair-faced, bare-headed, the stitch-scarred mouth (Brokkr), a golden game piece | Marvel's Loki above all: no green-and-gold, no curved horned helmet, no slicked black hair, no actor likeness, no film or comic lines, no "God of Mischief" branding. Not Wagner's Loge either |
+| The Phoenix (hidden) | Herodotus 2.73 (red and gold, eagle-shaped, Heliopolis), Ovid, Pliny | Fawkes (Harry Potter books and films), Marvel's Phoenix / the X-Men, any human figure or woman in flames |
+| JFK (hidden visitor) | His public life and speeches (US government works) | Any film or TV portrayal (JFK 1991, Thirteen Days, Jackie) or actor's likeness |
 | Merlin | Geoffrey of Monmouth, Malory | T. H. White (still in copyright: "Merlyn", living backwards, the owl Archimedes); Disney |
 | The Green Knight | *Sir Gawain and the Green Knight* (14th c.). NB the poem gives him **no armour** — holly and an axe. The design doc's "green armour" is a choice, not the source | The 2021 A24 film; any staging with his own severed head (that steps on the Horseman) |
 | Spartacus | Plutarch, Appian | The 1960 film (its "I am Spartacus" scene) and the TV series |

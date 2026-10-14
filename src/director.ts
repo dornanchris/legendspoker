@@ -542,6 +542,8 @@ export class TableRun {
     // Retaking your own chair is a RETURN, not the table's champion arriving:
     // it plays the returner's own scene, at any table, open ones included.
     if (e.replaces === e.id) return this.onReturn(e.id)
+    // The hidden visitor (JFK at the White House): his own scene, tour or open.
+    if (this.table.visitor?.character === e.id) return this.onVisitor()
     if (this.mode === 'open') return []
     const beats: Beat[] = []
     // The entrance is a scene: play it in order, and stop at the first line
@@ -556,6 +558,13 @@ export class TableRun {
       this.plantDone = true
       for (const l of plant) beats.push(this.say(l))
     }
+    this.lastOptionalHand = this.handNo
+    return beats
+  }
+
+  /** The visitor's entrance, in order, leaving out anyone no longer at the table. */
+  private onVisitor(): Beat[] {
+    const beats = (this.dialogue.visitor_arrival ?? []).filter((l) => this.canSpeak(l.speaker)).map((l) => this.say(l))
     this.lastOptionalHand = this.handNo
     return beats
   }

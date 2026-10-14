@@ -1,0 +1,105 @@
+{
+  "id": "phoenix",
+  "name": "The Phoenix",
+  "short": "The Phoenix",
+  "epithet": "The Bird That Comes Back",
+  "pronoun": "it",
+  "table": "pyre",
+  "role": "guest",
+  "unlockedBy": "beaten",
+  "arrives": false,
+  "origin": "Myth",
+  "era": "Herodotus, Ovid and Pliny · once in five hundred years",
+  "dials": {
+    "aggression": 0.74,
+    "tightness": 0.58,
+    "bluffFrequency": 0.24,
+    "tiltSensitivity": 0.0,
+    "adaptivity": 0.85,
+    "betRespect": 0.7,
+    "skill": 0.9,
+    "noise": 0.2
+  },
+  "quirks": [
+    {
+      "type": "heads_up_pressure",
+      "chance": 0.55
+    },
+    {
+      "type": "overbet",
+      "minEquity": 0.78,
+      "potFraction": 1.3,
+      "chance": 0.5
+    }
+  ],
+  "tells": [
+    {
+      "signal": "flames_flare",
+      "text": "the flames along its crest flare up",
+      "correlate": "strong",
+      "reliability": 0.6
+    },
+    {
+      "signal": "preens",
+      "text": "preens one wing, unhurried",
+      "correlate": "bluffing",
+      "reliability": 0.58
+    },
+    {
+      "signal": "embers",
+      "text": "its feathers dim to embers",
+      "correlate": "weak",
+      "reliability": 0.58
+    }
+  ],
+  "idles": [
+    "a spark drifts up from its crest",
+    "shakes a little ash from its feathers",
+    "turns its head toward the light",
+    "watches you with one gold eye"
+  ],
+  "callouts": {
+    "fold": [
+      "[turns its cards face down with one wingtip, and looks away]",
+      "[lets the cards go; a little ash settles on them]",
+      "[folds its wings, and its cards with them]"
+    ],
+    "check": [
+      "[taps the felt once with a talon]",
+      "[tilts its head, and waits]",
+      "[a soft trill, and nothing more]"
+    ],
+    "call": [
+      "[slides chips forward with a wingtip]",
+      "[nudges a stack in with its beak]",
+      "[pushes chips forward; a few are warm to the touch]"
+    ],
+    "bet": [
+      "[sets a stack down with its beak]",
+      "[sweeps chips forward with one wing]",
+      "[a clear, high note, and a stack goes in]"
+    ],
+    "raise": [
+      "[spreads its wings a little, and pushes more in]",
+      "[two notes, rising, and a bigger stack]",
+      "[sweeps a heap forward with both wings]"
+    ],
+    "all_in": [
+      "[spreads its wings wide and sweeps everything in]",
+      "[sings one long note, and pushes every chip forward]",
+      "[gathers its whole stack under one wing and gives it to the pot]"
+    ]
+  },
+  "profile": {
+    "ledger": "It does not stay beaten, and it does not stay down. It came because you kept finishing one place short, and getting up again. It recognised the habit.",
+    "ledger_beaten": "Beaten, heads up, at the end of the longest road in the game. It burned down to ash, as it does, and in the morning it was back, a little smaller, and pleased with you.",
+    "history": [
+      "Herodotus heard of it at Heliopolis, in Egypt: a bird that came to the temple of the Sun once in five hundred years, red and gold, shaped and sized like an eagle, carrying its dead father from Arabia in an egg of myrrh to bury him there. He saw only a painting of it, he says, and did not believe the story. Ovid and Pliny tell of its nest of spices, and of a new phoenix rising from the old one when it dies.",
+      "Later writers settled the part everyone remembers: that at the end of its long life it burns, and rises again from its own ashes. There is only ever one. It is the oldest image people have for coming back from losing, and it has been on banners, coins and city seals for two thousand years."
+    ],
+    "at_the_table": "It plays only heads up, and it plays as well as anyone at this end of the tour: it reads you quickly, it presses when it is alone with you, and when it has the best of it, it bets more than the pot. It never tilts. It has burned to nothing more times than anyone can count, and it has never once minded. Its flames tell you things, sometimes. About as often as they lie.",
+    "look": "Silhouette: a great bird the size of an eagle and then some, red and gold, sitting up at the table like a person, wings folded where another player's arms would rest, a crest of small living flames along the head, a long tail of fire-coloured plumes falling away behind the chair. Bright, warm cartoon flames, never scary. NOT any modern phoenix: not Fawkes from the Harry Potter books and films, not Marvel's Phoenix, no human figure, no woman in flames. Its tell surface is the crest and the feathers: flames up, flames down to embers.",
+    "prop": "Its own crest of flame",
+    "public_domain": "Classical myth: Herodotus (Histories 2.73), Ovid (Metamorphoses 15), Pliny (Natural History 10.2), all public domain. Nothing from the Harry Potter books or films (Fawkes), Marvel's Phoenix or the X-Men, or any modern film or game. No speech: it sings and trills, and Death translates."
+  }
+}

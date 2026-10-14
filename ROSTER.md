@@ -614,7 +614,7 @@ He is in Rome's own epic. In Virgil's Aeneid the Sibyl gets Aeneas past him by t
 - Tell (tilted, 0.72): *the heads growl at each other*
 - Idle noise: *the middle head scratches behind an ear*; *one head falls asleep*; *two heads watch you; one watches the pot*; *the right head sniffs at the nearest robe*
 
-**Look.** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a low ridge of small snakes along the neck and spine after Apollodorus, kept subtle so it never clutters the read. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own. **Prop:** Three iron collars on one chain.
+**Look.** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw. Apollodorus also gives him a serpent's tail and snakes along his back, but the table hides both: the tail lives only in his stage directions, and no snakes are drawn, because at forty points a ridge of them reads as Medusa's hair (the owner's call). The heads are the tell surface: each can watch, sleep, yawn or snarl on its own. **Prop:** Three iron collars on one chain.
 
 **Public domain.** Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads.
 
@@ -643,7 +643,7 @@ In 202 BC he beat Hannibal at Zama, in Africa, leaving lanes in his lines for Ha
 
 **Look.** Silhouette: a clean-shaven Roman general in his thirties, short dark hair, a strong, calm, watchful face. A red general's cloak worn loose in the Greek fashion (Cato complained of it) over a plain bronze cuirass. No helmet, no laurel (that is Caesar's). Prop: a small carved ivory elephant, a trophy from Zama, standing on the felt beside his chips: big enough to read at a fifth of the screen, and it carries two of his three tells. **Prop:** An ivory elephant from Zama.
 
-**Public domain.** Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano.
+**Public domain.** Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are.
 
 ### Julius Caesar — *Dictator for Life*
 
@@ -1150,6 +1150,24 @@ Buy-in 5000, blinds up every 12 hands.
 
 Seats: Death.
 
+## 12. The Pyre
+
+*The temple of the Sun, Heliopolis · Egypt · The five hundredth year*
+
+**Hook.** Eight times you were the last one beaten, and eight times you came back. Something noticed. It has flown a very long way to sit across from you, and it will only sit down once.
+
+**Room.** The inner court of the temple of the Sun at Heliopolis, in the last hour before dawn: tall sandstone columns, a sky going from violet to gold beyond them, and on a stone altar at the back a nest of cinnamon and myrrh, smouldering. Death's table stands in the middle of the court. Ash drifts across the felt like snow and never settles.
+
+**Entrance.** It is waiting on the altar when you come in, a great red-and-gold bird sitting very still in a nest of smouldering spice. When you sit down it steps down from the altar, crosses the court and takes the chair opposite, and the ash it shakes from its wings is warm.
+
+**Music.** A single high reed pipe over a low drone and a frame drum that quickens very slowly, as if toward a sunrise that never quite arrives. **Ambience:** a dry wind through the columns, spice crackling on embers, a single bird call, far up in the dawn, ash hissing as it lands on warm stone.
+
+**Earned names.** nobody → “fledgling” → *your name* → “Ashborn”
+
+Buy-in 5000, blinds up every 12 hands.
+
+Seats: The Phoenix.
+
 ## The Dealer
 
 ### Death — *The Dealer*
@@ -1202,3 +1220,56 @@ He once wagered his own head with a dwarf named Brokkr that Brokkr's brother cou
 **Look.** Silhouette: lean and restless, sharp-featured and handsome, as the Prose Edda insists he is. Plain Norse dress in ash-grey, rust and smoke: a wool tunic, a short cloak pinned at one shoulder, bare-headed, fair hair worn loose. No crown and no helmet of any kind. The mouth is the tell surface: a row of pale, old stitch-scars across both lips from Brokkr's awl, and a smile that uses only half of them. Hands never still. **Prop:** A small golden game piece from the gods' own board.
 
 **Public domain.** Norse myth as the Poetic Edda and Snorri's Prose Edda record it (13th century), and their old English translations (Brodeur 1916, Bellows 1923): all public domain. Must NOT resemble Marvel's Loki in any way: no green-and-gold costume, no curved golden horned helmet, no slicked-back black hair, no likeness of any actor who has played him, no lines or catchphrases from the films or comics, and not the 'God of Mischief' branding. Avoid Wagner's Loge and modern retellings as sources too. Build him from the Eddas: fair-faced, bare-headed, the stitched mouth.
+
+### John F. Kennedy — *The Thirty-Fifth*
+
+**Guest.** History · 1917–1963 · 35th President of the United States
+
+> He came in on a three and a five, the youngest man ever elected to the chair he once held, and sat down as if the meeting had been called for him. I did not invite him. I have written him down anyway.
+
+John Fitzgerald Kennedy, the thirty-fifth President of the United States and the youngest ever elected, at forty-three. In the Second World War he commanded the motor torpedo boat PT-109 in the Solomon Islands; when a Japanese destroyer ran it down in the dark in 1943, he towed an injured crewman miles to an island by a strap clenched in his teeth, and the crew were rescued after he cut a message into a coconut husk. He kept the coconut on his desk in the Oval Office as a paperweight.
+
+He won the 1960 election by one of the narrowest margins of the century, after the first televised presidential debates. In office he set the country on its way to the Moon and, in October 1962, faced down the Cuban missile crisis, thirteen days in which both sides pushed their chips forward and neither showed its cards. He suffered from chronic back pain his whole adult life, and kept a rocking chair in the Oval Office for it. He wrote Profiles in Courage, a book about eight senators who voted against their own side.
+
+**At the table.** He plays a good many hands and plays them with confidence, and he will take a pot nobody is guarding. He bluffs more than the men in the portraits, and with more charm. Nobody at the White House hides less: when he is comfortable it shows, and when he is not, it shows in his back.
+
+| aggression | tightness | bluff | tilt | adaptivity | noise |
+|---|---|---|---|---|---|
+| .62 | .46 | .30 | .15 | .55 | .05 |
+
+- Quirk: `steal` (chance 0.4, minEquity 0.32) — Raises unopened pots before the flop with a wide range.
+- Tell (strong, 0.92): *rocks back in his chair, easy*
+- Tell (bluffing, 0.9): *straightens his tie*
+- Tell (weak, 0.9): *presses a hand to the small of his back*
+- Idle noise: *runs a hand through his hair*; *taps the coconut shell on the felt*; *chops the air with one hand, mid-thought*; *glances up at the portraits on the wall*
+
+**Look.** Silhouette: a young, lean man in a narrow navy two-button suit, white shirt, thin dark tie, thick reddish-brown hair swept to one side, a broad, easy grin. No hat, no sunglasses, nothing in his mouth (FDR's holder is the table's one thing in a mouth). Prop: the PT-109 coconut shell paperweight, on the felt beside his chips. His tells are big shapes: rocking back in the chair, a hand to his tie, a hand to the small of his back. **Prop:** The PT-109 coconut shell paperweight.
+
+**Public domain.** A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause.
+
+### The Phoenix — *The Bird That Comes Back*
+
+**Guest.** Myth · Herodotus, Ovid and Pliny · once in five hundred years
+
+> It does not stay beaten, and it does not stay down. It came because you kept finishing one place short, and getting up again. It recognised the habit.
+
+Herodotus heard of it at Heliopolis, in Egypt: a bird that came to the temple of the Sun once in five hundred years, red and gold, shaped and sized like an eagle, carrying its dead father from Arabia in an egg of myrrh to bury him there. He saw only a painting of it, he says, and did not believe the story. Ovid and Pliny tell of its nest of spices, and of a new phoenix rising from the old one when it dies.
+
+Later writers settled the part everyone remembers: that at the end of its long life it burns, and rises again from its own ashes. There is only ever one. It is the oldest image people have for coming back from losing, and it has been on banners, coins and city seals for two thousand years.
+
+**At the table.** It plays only heads up, and it plays as well as anyone at this end of the tour: it reads you quickly, it presses when it is alone with you, and when it has the best of it, it bets more than the pot. It never tilts. It has burned to nothing more times than anyone can count, and it has never once minded. Its flames tell you things, sometimes. About as often as they lie.
+
+| aggression | tightness | bluff | tilt | adaptivity | noise |
+|---|---|---|---|---|---|
+| .74 | .58 | .24 | .00 | .85 | .20 |
+
+- Quirk: `heads_up_pressure` (chance 0.55) — Alone in a pot with one opponent, applies relentless pressure.
+- Quirk: `overbet` (minEquity 0.78, potFraction 1.3, chance 0.5) — With a strong hand, bets far more than the pot.
+- Tell (strong, 0.6): *the flames along its crest flare up*
+- Tell (bluffing, 0.58): *preens one wing, unhurried*
+- Tell (weak, 0.58): *its feathers dim to embers*
+- Idle noise: *a spark drifts up from its crest*; *shakes a little ash from its feathers*; *turns its head toward the light*; *watches you with one gold eye*
+
+**Look.** Silhouette: a great bird the size of an eagle and then some, red and gold, sitting up at the table like a person, wings folded where another player's arms would rest, a crest of small living flames along the head, a long tail of fire-coloured plumes falling away behind the chair. Bright, warm cartoon flames, never scary. NOT any modern phoenix: not Fawkes from the Harry Potter books and films, not Marvel's Phoenix, no human figure, no woman in flames. Its tell surface is the crest and the feathers: flames up, flames down to embers. **Prop:** Its own crest of flame.
+
+**Public domain.** Classical myth: Herodotus (Histories 2.73), Ovid (Metamorphoses 15), Pliny (Natural History 10.2), all public domain. Nothing from the Harry Potter books or films (Fawkes), Marvel's Phoenix or the X-Men, or any modern film or game. No speech: it sings and trills, and Death translates.

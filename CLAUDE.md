@@ -98,6 +98,8 @@ src/
   data-check.ts   `npm run check:data` — the type checker for content
   replay-check.ts `npm run check:replay` — save mid-hand, resume, identical
   loki-check.ts   `npm run check:loki` — the hidden six-seven event, forced (spoilers)
+  visitor-check.ts `npm run check:visitor` — JFK's three-five arrival, forced (spoilers)
+  phoenix-check.ts `npm run check:phoenix` — the Phoenix's gauntlet rules (spoilers)
   roster.ts       `npm run roster` — regenerates ROSTER.md from data/
   reads.ts        `npm run reads` — how each character reads a bet (a report)
   headsup.ts      `npm run headsup [matches] [ids]` — who beats whom one on one,
@@ -139,7 +141,11 @@ art-tools/
   faces_preview.py  a strip of every head swap on the seated puppet
   fdr_parts/, roosevelt_parts/, washington_parts/  the White House cast, each
                   with seat.json and <id>_layout.json; see each README
-  jfk_parts/      JFK's kit: built, at no table (see CURRENT STATE)
+  jfk_parts/      JFK, the White House's hidden visitor: POSES.md (the
+                  style-locked redraw); jfk/ and jfk_rig/ are the old one-face kit
+  phoenix_parts/  the Phoenix, the hidden heads-up opponent: POSES.md only
+  avatar_parts/   the Stranger, the default ONLINE avatar (online is not
+                  designed yet): POSES.md only, cosmetic, no tells (rule 3)
   socrates_parts/, leonidas_parts/, medusa_parts/, cyclops_parts/,
                   odysseus_parts/  the Athens table (seats 1-4 and its late
                   champion): pose sheets, face sheet, pose_rig.json;
@@ -225,9 +231,9 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 - **Screens:** title → invitation (sign your name; onboarding without a
   tutorial) → tour map → table intro (Death's narration) → table → results →
   ledger / settings / about → ending. Hash-routed plain DOM, no framework.
-- **All 11 tables playable:** the 8 story tables, Champions' Tables I and II
-  ("The Hall of Doors"), and the finale ("The Last Crossing", hidden from the
-  map until it opens). 36 roster characters + Death, all data. Late champions
+- **All 12 tables playable:** the 8 story tables, Champions' Tables I and II
+  ("The Hall of Doors"), the finale ("The Last Crossing", hidden from the
+  map until it opens), and the Phoenix's hidden table (below). 36 roster characters + Death, all data. Late champions
   arrive per the design doc via `Arrival` rules in `game.ts`; Odysseus is
   missable. The Green Knight keeps his appointment: knocked out, he retakes
   his chair 20 hands later if the table is still going, at any table he sits
@@ -468,12 +474,35 @@ loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **Layering rule for the table screen:** the room's table covers a puppet only
 below the puppet's own table line as well as below the rim (see
 `web/puppet/README.md`); the end seats' rim curves up above the drawn rail.
-**JFK is built but at no table** (the owner): an idea for a hidden event
-like Loki's, winning a pot with a three and a five (the 35th president) and
-JFK taking a seat. Open before it goes in: he died in 1963, inside ASSETS.md's
-"dead >~70 yrs" line for public-domain figures (the rule 5 question is the
-owner's); and call it "thirty-five", never "3/5", which at a table with
-Washington and Lincoln reads as the Three-Fifths Clause.
+**JFK is the White House's hidden visitor (ENGINE_VERSION 11; the owner's
+call, which settles the rule 5 question his 1963 death raised: a real person
+is a likeness question, not a copyright one; see ASSETS.md).** Win a pot at
+the White House holding a three and a five while a chair stands empty, and
+the thirty-fifth president walks in and sits in it with an average stack
+(`visitor` in the table file; an Arrival with `onHumanWin` in game.ts; his
+entrance is `visitor_arrival` and his banter `jfk_table` in the White House
+dialogue). Tour and open tables alike, once a sitting, never if he is already
+seated, never if the win ended the table. Role `guest`: off the ROSTER and the
+map, a Ledger page once met, dealt in at open tables after that, secret mark
+"Thirty-Five". `npm run check:visitor` forces it. Always "thirty-five", never
+"3/5", which at a table with Washington and Lincoln reads as the Three-Fifths
+Clause; and nothing ever refers to his death. His old seat_puppet kit has one
+face; `jfk_parts/POSES.md` is the style-locked redraw (6 images); until it is
+built the staged table shows his plate in an empty chair.
+**The Phoenix is the hidden grind (the owner's design: "a very rare character
+to unlock").** Finish SECOND at all eight story tables (tour sittings, any
+order, `save.phoenix.seconds`), then win the eighth, and its table opens: The
+Pyre (`kind: 'hidden'`, `data/tables/pyre.json`, the temple of the Sun at
+Heliopolis), one heads-up sitting, dealt by Death. Beat it and it is unlocked
+(a guest with `unlockedBy: 'beaten'`, so meeting it is not enough to deal it
+in at open tables; secret mark "From the Ashes"); lose and the gauntlet
+RESETS: every second place forgotten, the pyre closed. Once beaten it never
+reopens. Rules in `advanceGauntlet` (tour.ts), checked by `npm run
+check:phoenix`; the results screen marks each step (the eighth second, the
+opening, the reset). It is mute (Death translates), never tilts, and is the
+second-best heads-up player in the game: 55% against Death 58% (`npm run
+headsup 30` with the late champions). Its prompts: `phoenix_parts/POSES.md`;
+its room: ROOM-ART-PROMPTS.md.
 Lincoln wears his hat at all times. Death wears a black hooded robe with a
 purple lining and a gold skull brooch (the owner's call, over the drafted grey
 shroud); rooms keep enough light behind him that the black reads.

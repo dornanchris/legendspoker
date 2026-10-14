@@ -15,6 +15,9 @@ export type TableState = 'sealed' | 'open' | 'cleared'
 
 export function tableState(save: Save, id: string): TableState {
   const t = TABLE_BY_ID[id]
+  // The Phoenix's table is open only while its gauntlet holds it open, and
+  // sealed (off the map) the rest of the time, beaten or not.
+  if (t?.kind === 'hidden') return save.phoenix?.open ? 'open' : 'sealed'
   if (save.tables[id]?.cleared) return 'cleared'
   if (!t) return 'sealed'
   if (t.kind === 'tour') {
@@ -36,7 +39,7 @@ export function tableState(save: Save, id: string): TableState {
 export function isVisible(save: Save, id: string): boolean {
   const t = TABLE_BY_ID[id]
   if (!t) return false
-  if (t.kind === 'finale') return tableState(save, id) !== 'sealed'
+  if (t.kind === 'finale' || t.kind === 'hidden') return tableState(save, id) !== 'sealed'
   return true
 }
 
@@ -134,10 +137,11 @@ export function openTableCast(table: TableData, save: Save, rng: () => number): 
   // A missable champion who never sat down is not unlocked, and cannot host.
   const locals = shuffled(room.some(beaten) ? room.filter(beaten) : table.seats, rng)
   const host = locals.slice(0, 1)
-  // A guest is unlocked by meeting him: nobody beats their way to Loki.
+  // A guest is unlocked by meeting him: nobody beats their way to Loki. The
+  // Phoenix is the exception: it has to be beaten (unlockedBy).
   const unlocked = [
     ...ROSTER.filter((c) => beaten(c.id)),
-    ...GUESTS.filter((c) => save.characters[c.id]?.met),
+    ...GUESTS.filter((c) => (c.unlockedBy === 'beaten' ? beaten(c.id) : save.characters[c.id]?.met)),
   ].filter((c) => !host.includes(c.id)).map((c) => c.id)
   const pool = shuffled(unlocked, rng)
   // Fall back on the room's own cast if not enough is unlocked yet.
@@ -171,7 +175,51 @@ export type OutcomeEffects = {
   firstClear: boolean
   /** A table the win opened on the map. */
   unlocked: TableData | null
+  /**
+   * The Phoenix's gauntlet, when this sitting moved it: 'stirring' (the last
+   * second place it needed), 'open' (it has come), 'reset' (it was lost to,
+   * and every second place is forgotten), 'beaten'.
+   */
+  phoenix: 'stirring' | 'open' | 'reset' | 'beaten' | null
 }
+
+// ---------------------------------------------------------------- the Phoenix
+
+/** The table where the gauntlet ends: the last story table. */
+export const GAUNTLET_END = () => TOUR[TOUR.length - 1]
+
+/**
+ * The Phoenix's hidden gauntlet (the owner's design: "a hidden grind, and a
+ * very rare character to unlock"). Finish SECOND at every story table, then
+ * win the eighth, and the Phoenix opens its table: one heads-up sitting.
+ * Beat it and it is unlocked; lose and the gauntlet resets -- every second
+ * place forgotten. Seconds count in tour sittings only, and in any order;
+ * once it is beaten the gauntlet is over for good.
+ */
+function advanceGauntlet(save: Save, o: TableOutcome, table: TableData | undefined): OutcomeEffects['phoenix'] {
+  const g = save.phoenix
+  if (!table || o.mode !== 'tour') return null
+  if (table.kind === 'hidden') {
+    g.attempts++
+    g.open = false
+    if (o.won) return 'beaten'
+    g.seconds = []
+    return 'reset'
+  }
+  if (table.kind !== 'tour' || save.characters[GAUNTLET_PHOENIX]?.beaten) return null
+  const all = () => TOUR.every((t) => g.seconds.includes(t.id))
+  if (o.place === 2 && !g.seconds.includes(table.id)) {
+    g.seconds.push(table.id)
+    if (all()) return 'stirring'
+  }
+  if (o.won && table.id === GAUNTLET_END().id && all() && !g.open) {
+    g.open = true
+    return 'open'
+  }
+  return null
+}
+
+const GAUNTLET_PHOENIX = 'phoenix'
 
 /**
  * Apply a finished sitting to the save. Winning a table beats everyone who
@@ -183,7 +231,7 @@ export function applyOutcome(save: Save, o: TableOutcome, now = new Date().toISO
   const before = new Set(TABLES.filter((t) => tableState(save, t.id) !== 'sealed').map((t) => t.id))
   const rec = tableRecord(save, o.table)
   const table = TABLE_BY_ID[o.table]
-  const effects: OutcomeEffects = { newlyBeaten: [], firstClear: false, unlocked: null }
+  const effects: OutcomeEffects = { newlyBeaten: [], firstClear: false, unlocked: null, phoenix: null }
 
   if (o.mode === 'tour') {
     rec.attempts++
@@ -221,6 +269,7 @@ export function applyOutcome(save: Save, o: TableOutcome, now = new Date().toISO
     if (table?.kind === 'finale') save.record.deathLosses++
   }
 
+  effects.phoenix = advanceGauntlet(save, o, table)
   const after = TABLES.filter((t) => tableState(save, t.id) !== 'sealed')
   effects.unlocked = after.find((t) => !before.has(t.id)) ?? null
   return effects

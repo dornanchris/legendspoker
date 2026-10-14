@@ -1,0 +1,171 @@
+{
+ "style_lock": true,
+ "title": "John F. Kennedy",
+ "name": "John F. Kennedy",
+ "him": "him",
+ "extremity": "the top of his hair",
+ "same": "face, hair, navy suit, tie and coconut shell",
+ "recap": "a young, lean man in his forties in a narrow navy two-button suit, a white shirt and a thin dark tie, thick reddish-brown hair swept to one side, a broad, easy grin, and a carved coconut shell paperweight on the felt beside his right hand",
+ "keep": " The coconut shell sits on the felt beside his right hand (the left of the picture) unless the pose says otherwise.",
+ "no": "No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.",
+ "intro": "The hidden visitor at the White House (see CLAUDE.md): he walks in when the player wins a pot holding a three and a five while a chair is empty, so he can sit in ANY of the four chairs. Drawn facing the viewer's right and MIRRORED by the game for the other side. Built the way the Pirate Cove and Camelot casts are (`art-tools/pose_rig.py`), style-locked. This replaces the earlier seat_puppet kit (`jfk/`, `jfk_rig/`), which had one face, sunglasses and a cigarette.\n\nHis look, from his character file: young and lean, a narrow navy two-button suit, a thin dark tie, thick reddish-brown hair swept to one side, a broad easy grin. No sunglasses and nothing in his mouth (FDR's holder is the table's one thing in a mouth). His prop is the PT-109 coconut shell he kept on his desk as a paperweight, on the felt by his right hand.\n\nRuled out (his character file): any film or television portrayal and any actor's likeness. Layout from Lancelot's character sheet, style from Washington's pose sheet A.\n\nTags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: rocking back in his chair (strong) beside running a hand through his hair; straightening his tie (bluffing) beside chopping the air mid-thought; a hand to the small of his back (weak) beside tapping the coconut shell. C6 is his `arrive` clip, played as he sits down.",
+ "table": [
+  [
+   "A1",
+   "Rest: forearms on the table's edge, hands apart, the coconut shell on the felt by his right hand",
+   "IDLE"
+  ],
+  [
+   "A2",
+   "Peeking at his cards (right hand)",
+   "MECH"
+  ],
+  [
+   "A3",
+   "Check: two fingers tap the felt",
+   "MECH"
+  ],
+  [
+   "A4",
+   "Call: slides a short stack forward",
+   "MECH"
+  ],
+  [
+   "A5",
+   "Bet: sets a stack down, confident",
+   "MECH"
+  ],
+  [
+   "A6",
+   "Fold: tosses his cards down, easy",
+   "MECH"
+  ],
+  [
+   "B1",
+   "All in: both hands push his whole stack, a grin",
+   "MECH"
+  ],
+  [
+   "B2",
+   "Show: turns his cards over",
+   "MECH"
+  ],
+  [
+   "B3",
+   "Collect: both arms drawing the pot in",
+   "MECH"
+  ],
+  [
+   "B4",
+   "Rocks back in his chair, easy",
+   "TELL"
+  ],
+  [
+   "B5",
+   "Runs a hand through his hair (decoy for B4)",
+   "IDLE"
+  ],
+  [
+   "B6",
+   "Straightens his tie",
+   "TELL"
+  ],
+  [
+   "C1",
+   "Chops the air with one hand, mid-thought (decoy for B6)",
+   "IDLE"
+  ],
+  [
+   "C2",
+   "Presses a hand to the small of his back",
+   "TELL"
+  ],
+  [
+   "C3",
+   "Taps the coconut shell on the felt (decoy for C2)",
+   "IDLE"
+  ],
+  [
+   "C4",
+   "Glances up at the portraits on the wall",
+   "IDLE"
+  ],
+  [
+   "C5",
+   "A broad grin at the table",
+   "IDLE"
+  ],
+  [
+   "C6",
+   "Arrive: just sitting down, one hand still in his jacket pocket",
+   "BEAT"
+  ],
+  [
+   "D1",
+   "Talking: one hand chopping the air",
+   "BEAT"
+  ],
+  [
+   "D2",
+   "Facing a big bet: a level look, considering",
+   "BEAT"
+  ],
+  [
+   "D3",
+   "Lost a pot: a rueful half-smile",
+   "BEAT"
+  ],
+  [
+   "D4",
+   "Won a pot: a broad grin, drawing the chips in",
+   "BEAT"
+  ],
+  [
+   "D5",
+   "Heads up: leaning in on both forearms",
+   "BEAT"
+  ],
+  [
+   "D6",
+   "Knocked out: rises, straightens his tie, a nod",
+   "BEAT"
+  ]
+ ],
+ "howto": "One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, then Washington's pose sheet A (`art-tools/washington_parts/sources/poses_a.png`) for the style. From the second prompt on, attach Kennedy's own character sheet, his pose sheet A once it exists, AND Washington's pose sheet A again, and nothing else.",
+ "character": "Character sheet for 2D animation rigging: John F. Kennedy, the thirty-fifth President of the United States, as he looked in office in the early 1960s. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No armour, no gauntlets, no surcoat, no long hair. Take the STYLE from the SECOND attached image.\n\nKennedy: a lean man in his forties, youthful; thick reddish-brown hair swept to one side with a soft quiff at the front; a broad, easy, confident grin and bright eyes; a narrow navy two-button suit with slim lapels, a crisp white shirt, a thin dark navy tie. His prop: a coconut shell paperweight, half a brown husk with a short carved message on it, set on a small wooden base, about the size of his fist. Charming, quick, relaxed. NO sunglasses, NO hat, NOTHING in his mouth. Not a likeness of any actor; nothing from any film or television portrayal.\n\nPure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.\n\nThe angle: a gentle three-quarter view, turned about 25 degrees from front-on, facing the viewer's right. Both eyes, the whole nose, the mouth and both shoulders clearly visible. NOT profile.\n\nDraw, all facing the viewer's right, at the same size:\n- Finished heads, each with the neck, the shirt collar and the knot of the tie: neutral, a slight smile; talking, mouth open mid-word; a broad grin; a rueful half-smile\n- The torso in the suit: no head, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands\n- Two forearms in the navy sleeves with a little white cuff, lying on a table, pointing toward its centre, open at the elbow end\n- The coconut shell paperweight on its own\n- Four seated reference poses, waist up behind the curved edge of a round green poker table, forearms resting on its edge, hands apart, the coconut shell on the felt beside his right hand (the left of the picture): neutral; rocking back in his chair, easy; straightening his tie; a hand pressed to the small of his back",
+ "sheets": {
+  "A": [
+   "At rest: both forearms lying along the table's edge, his hands resting on the felt in front of him, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; the coconut shell on the felt beside his right hand; a slight, confident smile, mouth closed",
+   "Peeking at his cards: his right hand cupped over two cards on the felt, thumb lifting the near corner, eyes down",
+   "Checking: two fingers of his right hand tapping the felt",
+   "Calling: his right hand sliding a short stack of chips forward",
+   "Betting: his right hand setting a stack of chips down well forward, confident",
+   "Folding: his right hand tossing two cards down face down, easy"
+  ],
+  "B": [
+   "All in: both hands pushing his whole stack of chips forward, grinning",
+   "Showing: his right hand turning two cards face up; the card faces are BLANK white, no ranks, no suits",
+   "Collecting the pot: both forearms out on the felt, drawing a pile of chips in",
+   "Rocking back in his chair, easy and relaxed, shoulders back, his hands sliding back to the table's edge",
+   "Running his right hand back through his hair",
+   "Straightening the knot of his tie with his right hand; his left as at rest"
+  ],
+  "C": [
+   "Chopping the air with his right hand, flat and edge-on, mid-thought, as he did when he spoke",
+   "Pressing his right hand to the small of his back, wincing very slightly",
+   "Tapping the coconut shell on the felt with one finger of his right hand",
+   "Glancing up and to his left at something on the wall above, arms as at rest",
+   "A broad, warm grin at the table; arms as at rest",
+   "Just sitting down at the table, his left hand still in his jacket pocket, his right hand on the table's edge, looking round with a grin"
+  ],
+  "D": [
+   "Talking: his right hand chopping the air, mid-word",
+   "Facing a big bet: a level, steady look, considering; arms as at rest",
+   "Lost a pot: a rueful half-smile, a small shrug; arms as at rest",
+   "Won a pot: a broad grin, his right hand drawing a few chips toward him",
+   "Down to two players: leaning in on both forearms, eyes level",
+   "Knocked out: rising from his seat, straightening his tie with his right hand, a small nod to the table"
+  ]
+ },
+ "face": "Character sheet for 2D animation rigging: Kennedy's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head. Draw that head once, top left, with the neck, the collar and the knot of the tie, as the reference, mouth closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.\n\n- His eyes with the lids half closed; closed; looking toward the viewer; looking down at the table; looking up; narrowed, considering (one piece each, both eyes with the skin around them)\n- His brows raised; his brows drawn down (one piece each, both brows)\n- Lower-face patches, each the mouth with the skin around it (he is clean-shaven), cut straight across just under the nose and again a little below the lower lip: closed at rest; open \"ah\"; wide \"ee\"; round \"oh\"; pursed \"oo\"; lips pressed \"m\"; lower lip under the teeth \"f\"; tongue tip behind the teeth \"l\"; a broad grin with teeth; a rueful half-smile\n- His head turned toward the viewer, nearly front-on"
+}

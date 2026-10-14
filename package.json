@@ -12,6 +12,8 @@
     "check:data": "tsx src/data-check.ts",
     "check:replay": "tsx src/replay-check.ts",
     "check:loki": "tsx src/loki-check.ts",
+    "check:visitor": "tsx src/visitor-check.ts",
+    "check:phoenix": "tsx src/phoenix-check.ts",
     "roster": "tsx src/roster.ts",
     "reads": "tsx src/reads.ts",
     "headsup": "tsx src/headsup.ts",

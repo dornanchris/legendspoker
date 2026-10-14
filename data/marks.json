@@ -327,5 +327,23 @@
     "hidden": true,
     "secret": true,
     "when": { "type": "met", "character": "loki" }
+  },
+  {
+    "id": "thirty_five",
+    "title": "Thirty-Five",
+    "text": "A three and a five, and a door opened down the hall. The thirty-fifth sat down at the presidents' table as if he had been expected. He had not been. He rarely was. I have entered him all the same.",
+    "hint": "An entry not yet written.",
+    "hidden": true,
+    "secret": true,
+    "when": { "type": "met", "character": "jfk" }
+  },
+  {
+    "id": "from_the_ashes",
+    "title": "From the Ashes",
+    "text": "Second at every table on the tour, then first at the last of them, and then the bird itself, heads up, in the hour before dawn. It burned down to nothing and came back pleased with you. Nobody else has this entry.",
+    "hint": "An entry not yet written.",
+    "hidden": true,
+    "secret": true,
+    "when": { "type": "table_cleared", "table": "pyre" }
   }
 ]

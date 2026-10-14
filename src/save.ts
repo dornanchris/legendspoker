@@ -49,8 +49,10 @@ export const SAVE_VERSION = 1
  *    first three tables' tells sharpened.
  * 10: Scipio takes Rome's fourth chair (and Rome's blinds climb every 8
  *    hands, as at the other tables a sixth player joins).
+ * 11: the hidden visitor -- JFK takes an empty chair at the White House when
+ *    the player wins a pot holding a three and a five.
  */
-export const ENGINE_VERSION = 10
+export const ENGINE_VERSION = 11
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 
@@ -149,6 +151,11 @@ export type Save = {
   record: CareerRecord
   active: ActiveTable | null
   story: { firstMapSeen: boolean; endingSeen: boolean; lastPlayed: string | null }
+  /**
+   * The Phoenix's hidden gauntlet (tour.ts): the story tables where the player
+   * has finished second since the last reset, and whether its table is open.
+   */
+  phoenix: { seconds: string[]; open: boolean; attempts: number }
 }
 
 export const defaultSettings = (): Settings => ({
@@ -215,6 +222,7 @@ export function freshSave(): Save {
     record: newCareer(),
     active: null,
     story: { firstMapSeen: false, endingSeen: false, lastPlayed: null },
+    phoenix: { seconds: [], open: false, attempts: 0 },
   }
 }
 
@@ -244,6 +252,11 @@ export function migrate(raw: unknown): Save {
     record: { ...base.record, ...(r.record ?? {}) },
     active: r.active && Array.isArray(r.active.decisions) ? r.active : null,
     story: { ...base.story, ...(r.story ?? {}) },
+    phoenix: {
+      ...base.phoenix,
+      ...(r.phoenix ?? {}),
+      seconds: Array.isArray(r.phoenix?.seconds) ? [...r.phoenix.seconds] : [],
+    },
   }
 }
 

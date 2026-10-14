@@ -3613,6 +3613,114 @@ Must NOT resemble: An archetype, the calm machine that runs the ship, owned by n
 
 ## Hidden guest (spoiler — keep out of anything public)
 
+### John F. Kennedy — *The Thirty-Fifth*
+
+- **Who:** He came in on a three and a five, the youngest man ever elected to the chair he once held, and sat down as if the meeting had been called for him. I did not invite him. I have written him down anyway.
+- **Look:** Silhouette: a young, lean man in a narrow navy two-button suit, white shirt, thin dark tie, thick reddish-brown hair swept to one side, a broad, easy grin. No hat, no sunglasses, nothing in his mouth (FDR's holder is the table's one thing in a mouth). Prop: the PT-109 coconut shell paperweight, on the felt beside his chips. His tells are big shapes: rocking back in the chair, a hand to his tie, a hand to the small of his back.
+- **Prop:** The PT-109 coconut shell paperweight
+- **Tells:** rocks back in his chair, easy; straightens his tie; presses a hand to the small of his back
+- **Idles:** runs a hand through his hair; taps the coconut shell on the felt; chops the air with one hand, mid-thought; glances up at the portraits on the wall
+- **Copyright note:** A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause.
+- **Art note:** Hidden visitor: a spoiler. Built from art-tools/jfk_parts/POSES.md, not these parts. No sunglasses, nothing in his mouth, no actor likeness.
+
+**Step 1 — reference portrait:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game: bold dark outlines, clean painted shading, slightly exaggerated but dignified features, warm table-lamp light. NOT dark, gritty or photoreal. Human characters keep human, dignified faces: caricature what the history records, never anything animal-like. Waist-up, seated at a round poker table, body and head turned about 30 degrees to the viewer's right, as if facing the table's centre from a seat on its left; forearms resting on the felt; the table's rounded edge crosses the body at the waist. Plain dark background, no text, no logos, no watermark, no cards or chips other than any prop named.
+
+Character: John F. Kennedy, The Thirty-Fifth. Silhouette: a young, lean man in a narrow navy two-button suit, white shirt, thin dark tie, thick reddish-brown hair swept to one side, a broad, easy grin. No hat, no sunglasses, nothing in his mouth (FDR's holder is the table's one thing in a mouth). Prop: the PT-109 coconut shell paperweight, on the felt beside his chips. His tells are big shapes: rocking back in the chair, a hand to his tie, a hand to the small of his back.
+Prop: The PT-109 coconut shell paperweight.
+IMPORTANT, must NOT resemble: A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause.
+```
+
+**Step 2, Sheet 1 — Face kit:**
+
+```
+Puppet parts sheet for 2D animation rigging, for John F. Kennedy, the character in the attached image. Match it exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: face kit. Parts:
+- Blank head: skin only, with ears and neck, NO eyes, eyebrows, nose or mouth drawn on it. Draw it bald: the hair is a separate piece. No collar, shirt or clothing on it: the bare neck ends in a clean V where a collar would sit
+- Thick reddish-brown hair swept to one side, as a separate piece
+- Eyebrows, near and far (they differ in three-quarter view), each in 3 clearly different shapes: neutral; angry (inner end pulled down); worried (inner end pushed up). Raised is done by moving them, so no raised pose
+- Eyes: each a WHOLE eye, the white, iris and lid drawn together. In three-quarter view the near eye and the far eye differ, so draw BOTH, in each state: looking at the viewer; looking toward the table's centre; looking down (at their cards); looking away; wide open; half-closed; narrowed (squinting); closed (blinking)
+- Nose as a separate piece
+- Mouths, each a separate piece: frown; angry grimace (teeth clenched); tight-lipped; nervous (pursed, pulled to one side); neutral closed; slight smile; broad smile showing teeth; laughing, wide open; talking "ah"; talking "oh"; talking "ee"; lips pressed together ("m/b/p"); top teeth on lower lip ("f/v"); a broad grin with teeth. Each is the MOUTH ONLY (lips, teeth, tongue) cut out on its own: no nose, no chin, no cheeks, no skin around it. Same lip and skin colour as the reference. Draw EVERY mouth listed, the unhappy ones too: do not turn them into smiles
+
+Note: Hidden visitor: a spoiler. Built from art-tools/jfk_parts/POSES.md, not these parts. No sunglasses, nothing in his mouth, no actor likeness.
+
+Must NOT resemble: A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause.
+```
+
+**Step 2, Sheet 2 — Body and arms:**
+
+```
+Puppet parts sheet for 2D animation rigging, for John F. Kennedy, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: body and arms. Parts:
+- Torso with NO head and NO arms: a narrow navy two-button suit, white shirt and thin dark tie. Seated, from the shoulders down to the lap, cut off straight well BELOW the waist: the round table's edge covers the bottom, so draw more than will show. Any collar is EMPTY: no neck or mannequin inside it. The sleeves stop at the shoulder: NO forearms or hands anywhere on the torso
+- The tie as a separate piece, straight and pulled a little askew
+- Upper arms (shoulder to elbow), near and far, as separate pieces, in the sleeve
+- Forearms (elbow to wrist, NO hand), near and far, in two angles: lying on the table pointing in toward its centre, and raised. The hand pieces cover their ends
+
+Note: Hidden visitor: a spoiler. Built from art-tools/jfk_parts/POSES.md, not these parts. No sunglasses, nothing in his mouth, no actor likeness.
+
+Must NOT resemble: A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause.
+```
+
+**Step 2, Sheet 3 — Card-action hands:**
+
+```
+Puppet parts sheet for 2D animation rigging, for John F. Kennedy, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: card-action hands. Parts:
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Pose: lifting the corner of a playing card to peek (the card itself NOT drawn)
+- Pose: knuckles rapping the table (checking)
+- Pose: pushing forward, palm and fingers low (as if pushing chips; chips NOT drawn)
+- Pose: open, shoving forward hard (going all in)
+- Pose: flat, sliding sideways (folding cards away)
+- Pose: cupped, raking toward the body (collecting a pot)
+- Pose: fist
+- Pose: turning something over, thumb underneath (showing cards; cards NOT drawn)
+
+Note: Hidden visitor: a spoiler. Built from art-tools/jfk_parts/POSES.md, not these parts. No sunglasses, nothing in his mouth, no actor likeness.
+
+Must NOT resemble: A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause.
+```
+
+**Step 2, Sheet 4 — Character hands:**
+
+```
+Puppet parts sheet for 2D animation rigging, for John F. Kennedy, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: character hands. Parts:
+- Hands: each hand WITH its cuff and a short stub of whatever covers the wrist (sleeve, glove cuff, or bare forearm), cut straight across the stub; the forearm piece goes under that stub. Draw each pose ONCE, as the right hand: the game mirrors it for the left
+- Pose: flat on the table, relaxed
+- Pose: open palm up (a shrug, or a gesture while talking)
+- Pose: relaxed, fingers loosely curled (idle)
+- Hand straightening a tie knot
+- Hand flat and edge-on, chopping the air
+- Hand pressed to the small of the back
+- Hand running back through the hair
+
+Note: Hidden visitor: a spoiler. Built from art-tools/jfk_parts/POSES.md, not these parts. No sunglasses, nothing in his mouth, no actor likeness.
+
+Must NOT resemble: A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause.
+```
+
+**Step 2, Sheet 5 — Props and tell pieces:**
+
+```
+Puppet parts sheet for 2D animation rigging, for John F. Kennedy, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: props and tell pieces. Parts:
+- A coconut shell paperweight on a small wooden base, a short message carved into the husk
+
+Note: Hidden visitor: a spoiler. Built from art-tools/jfk_parts/POSES.md, not these parts. No sunglasses, nothing in his mouth, no actor likeness.
+
+Must NOT resemble: A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause.
+```
+
 ### Loki — *The Sly God*
 
 - **Who:** Nobody invited him. He came anyway, which is the only way he has ever arrived anywhere. His daughter keeps a hall of the dead in the north, so professionally we are in touch.
@@ -3720,6 +3828,68 @@ This sheet: props and tell pieces. Parts:
 Note: Hidden guest: a spoiler. Keep his art out of anything public. No crown, no helmet, no horns, no green-and-gold, no slicked black hair.
 
 Must NOT resemble: Norse myth as the Poetic Edda and Snorri's Prose Edda record it (13th century), and their old English translations (Brodeur 1916, Bellows 1923): all public domain. Must NOT resemble Marvel's Loki in any way: no green-and-gold costume, no curved golden horned helmet, no slicked-back black hair, no likeness of any actor who has played him, no lines or catchphrases from the films or comics, and not the 'God of Mischief' branding. Avoid Wagner's Loge and modern retellings as sources too. Build him from the Eddas: fair-faced, bare-headed, the stitched mouth.
+```
+
+### The Phoenix — *The Bird That Comes Back*
+
+- **Who:** It does not stay beaten, and it does not stay down. It came because you kept finishing one place short, and getting up again. It recognised the habit.
+- **Look:** Silhouette: a great bird the size of an eagle and then some, red and gold, sitting up at the table like a person, wings folded where another player's arms would rest, a crest of small living flames along the head, a long tail of fire-coloured plumes falling away behind the chair. Bright, warm cartoon flames, never scary. NOT any modern phoenix: not Fawkes from the Harry Potter books and films, not Marvel's Phoenix, no human figure, no woman in flames. Its tell surface is the crest and the feathers: flames up, flames down to embers.
+- **Prop:** Its own crest of flame
+- **Tells:** the flames along its crest flare up; preens one wing, unhurried; its feathers dim to embers
+- **Idles:** a spark drifts up from its crest; shakes a little ash from its feathers; turns its head toward the light; watches you with one gold eye
+- **Copyright note:** Classical myth: Herodotus (Histories 2.73), Ovid (Metamorphoses 15), Pliny (Natural History 10.2), all public domain. Nothing from the Harry Potter books or films (Fawkes), Marvel's Phoenix or the X-Men, or any modern film or game. No speech: it sings and trills, and Death translates.
+- **Art note:** Hidden opponent: a spoiler. Built from art-tools/phoenix_parts/POSES.md. Not Fawkes, not Marvel's Phoenix, no human figure.
+
+**Step 1 — reference portrait:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game: bold dark outlines, clean painted shading, slightly exaggerated but dignified features, warm table-lamp light. NOT dark, gritty or photoreal. Human characters keep human, dignified faces: caricature what the history records, never anything animal-like. Waist-up, seated at a round poker table, body and head turned about 30 degrees to the viewer's right, as if facing the table's centre from a seat on its left; forearms resting on the felt; the table's rounded edge crosses the body at the waist. Plain dark background, no text, no logos, no watermark, no cards or chips other than any prop named.
+
+Character: The Phoenix, The Bird That Comes Back. Silhouette: a great bird the size of an eagle and then some, red and gold, sitting up at the table like a person, wings folded where another player's arms would rest, a crest of small living flames along the head, a long tail of fire-coloured plumes falling away behind the chair. Bright, warm cartoon flames, never scary. NOT any modern phoenix: not Fawkes from the Harry Potter books and films, not Marvel's Phoenix, no human figure, no woman in flames. Its tell surface is the crest and the feathers: flames up, flames down to embers.
+Prop: Its own crest of flame.
+IMPORTANT, must NOT resemble: Classical myth: Herodotus (Histories 2.73), Ovid (Metamorphoses 15), Pliny (Natural History 10.2), all public domain. Nothing from the Harry Potter books or films (Fawkes), Marvel's Phoenix or the X-Men, or any modern film or game. No speech: it sings and trills, and Death translates.
+```
+
+**Step 2, Sheet 1 — Face kit:**
+
+```
+Puppet parts sheet for 2D animation rigging, for The Phoenix, the character in the attached image. Match it exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: face kit. Parts:
+- A great red-and-gold bird's head, three-quarter, a curved golden beak, big gold eyes, with a crest of small bright flames: the crest burning steadily; flared up tall; dimmed to dark red embers
+- The beak: closed; a little open; wide open (singing)
+
+Note: Hidden opponent: a spoiler. Built from art-tools/phoenix_parts/POSES.md. Not Fawkes, not Marvel's Phoenix, no human figure.
+
+Must NOT resemble: Classical myth: Herodotus (Histories 2.73), Ovid (Metamorphoses 15), Pliny (Natural History 10.2), all public domain. Nothing from the Harry Potter books or films (Fawkes), Marvel's Phoenix or the X-Men, or any modern film or game. No speech: it sings and trills, and Death translates.
+```
+
+**Step 2, Sheet 2 — Body and arms:**
+
+```
+Puppet parts sheet for 2D animation rigging, for The Phoenix, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: body and arms. Parts:
+- The chest and shoulders sitting upright, no head, cut off at the table line
+- The long tail of fire-coloured plumes, as a separate piece
+
+Note: Hidden opponent: a spoiler. Built from art-tools/phoenix_parts/POSES.md. Not Fawkes, not Marvel's Phoenix, no human figure.
+
+Must NOT resemble: Classical myth: Herodotus (Histories 2.73), Ovid (Metamorphoses 15), Pliny (Natural History 10.2), all public domain. Nothing from the Harry Potter books or films (Fawkes), Marvel's Phoenix or the X-Men, or any modern film or game. No speech: it sings and trills, and Death translates.
+```
+
+**Step 2, Sheet 3 — Props and tell pieces:**
+
+```
+Puppet parts sheet for 2D animation rigging, for The Phoenix, the character in the attached images. Match them exactly: same face, proportions, skin, lip and hair colours, line weight and painting style. Landscape 3:2. Pure white background (#FFFFFF). Every part is a separate piece with a closed dark outline, laid out in a loose grid with wide empty gaps: nothing touches or overlaps anything else. Flat, even lighting, no cast shadows, no text or labels, no table, no cards, no chips, and no smoke or glow unless it is listed as a part. Everything in the same three-quarter view as the reference (turned toward the viewer's right), at the same scale. Draw ONLY the parts listed: no extra views, no finished heads, no turnarounds. One sheet per image: no collage, no frames or borders.
+
+This sheet: props and tell pieces. Parts:
+- A small heap of warm grey ash, with a few embers
+- Drifting ash flakes and sparks, a few of each
+
+Note: Hidden opponent: a spoiler. Built from art-tools/phoenix_parts/POSES.md. Not Fawkes, not Marvel's Phoenix, no human figure.
+
+Must NOT resemble: Classical myth: Herodotus (Histories 2.73), Ovid (Metamorphoses 15), Pliny (Natural History 10.2), all public domain. Nothing from the Harry Potter books or films (Fawkes), Marvel's Phoenix or the X-Men, or any modern film or game. No speech: it sings and trills, and Death translates.
 ```
 
 ---

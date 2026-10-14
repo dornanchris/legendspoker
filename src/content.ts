@@ -52,6 +52,8 @@ import astronaut from '../data/characters/astronaut.json'
 import theAi from '../data/characters/the_ai.json'
 import death from '../data/characters/death.json'
 import loki from '../data/characters/loki.json'
+import jfk from '../data/characters/jfk.json'
+import phoenix from '../data/characters/phoenix.json'
 
 import tWhiteHouse from '../data/tables/white_house.json'
 import tAthens from '../data/tables/athens.json'
@@ -64,6 +66,7 @@ import tStation from '../data/tables/station.json'
 import tChampions1 from '../data/tables/champions_1.json'
 import tChampions2 from '../data/tables/champions_2.json'
 import tFinale from '../data/tables/finale.json'
+import tPyre from '../data/tables/pyre.json'
 
 import dWhiteHouse from '../data/dialogue/table-01-white-house.json'
 import dAthens from '../data/dialogue/table-02-athens.json'
@@ -76,6 +79,7 @@ import dStation from '../data/dialogue/table-08-station.json'
 import dChampions1 from '../data/dialogue/table-09-champions-1.json'
 import dChampions2 from '../data/dialogue/table-10-champions-2.json'
 import dFinale from '../data/dialogue/table-11-finale.json'
+import dPyre from '../data/dialogue/table-12-pyre.json'
 import dDealer from '../data/dialogue/dealer.json'
 import dUninvited from '../data/dialogue/uninvited.json'
 
@@ -115,6 +119,12 @@ export type CharacterData = {
   arrives: boolean
   /** Comes back after being knocked out. See ReturnData. */
   returns?: ReturnData
+  /**
+   * A guest is unlocked (dealt in at open tables) once MET -- unless this
+   * says 'beaten': the Phoenix has to be beaten, heads up, at the end of its
+   * gauntlet (tour.ts).
+   */
+  unlockedBy?: 'met' | 'beaten'
   origin: string
   era: string
   dials: Dials
@@ -173,7 +183,8 @@ export type ArrivalData = {
 
 export type TableData = {
   id: string
-  kind: 'tour' | 'champions' | 'finale'
+  /** 'hidden' is the Phoenix's table: off the map until its gauntlet opens it. */
+  kind: 'tour' | 'champions' | 'finale' | 'hidden'
   /** Order on the tour: 1-8 the story tables, 9-10 champions, 11 the finale. */
   position: number
   name: string
@@ -201,6 +212,13 @@ export type TableData = {
    * `lessons`). The first tables only; absent means never.
    */
   lessons?: number
+  /**
+   * A hidden visitor: someone the table never seats who walks in when the
+   * player wins a pot holding `holeRanks` while a chair stands empty (JFK at
+   * the White House, for a three and a five: the thirty-fifth president).
+   * The character is a guest, invisible until met; tour and open alike.
+   */
+  visitor?: { character: string; holeRanks: string[]; stack: 'average' | number }
 }
 
 export type Line = {
@@ -239,6 +257,8 @@ export type DialogueData = {
   player_directed?: Record<string, Line[]>
   death_asides?: Line[]
   champion_arrival?: Line[]
+  /** The hidden visitor's entrance (TableData.visitor), played in order. */
+  visitor_arrival?: Line[]
   champion_missed?: Line[]
   champion_headsup?: Line[]
   eliminated?: Record<string, Line[]>
@@ -336,17 +356,17 @@ const characterList = [
   vanHelsing, monster, wolfMan, headlessHorseman, dracula,
   greyAlien, martian, robot, astronaut, theAi,
   death,
-  loki,
+  loki, jfk, phoenix,
 ] as unknown as CharacterData[]
 
 const tableList = [
   tWhiteHouse, tAthens, tPirateCove, tCamelot, tRome, tBakerStreet,
-  tTransylvania, tStation, tChampions1, tChampions2, tFinale,
+  tTransylvania, tStation, tChampions1, tChampions2, tFinale, tPyre,
 ] as unknown as TableData[]
 
 const dialogueList = [
   dWhiteHouse, dAthens, dPirateCove, dCamelot, dRome, dBakerStreet,
-  dTransylvania, dStation, dChampions1, dChampions2, dFinale,
+  dTransylvania, dStation, dChampions1, dChampions2, dFinale, dPyre,
 ] as unknown as DialogueData[]
 
 export const CHARACTERS: Record<string, CharacterData> = Object.fromEntries(
@@ -413,6 +433,11 @@ export function openingCast(table: TableData): string[] {
   return [...table.seats]
 }
 
+/** Everyone who may speak at a table: its full cast, plus a hidden visitor. */
+export function tableSpeakers(table: TableData): string[] {
+  return table.visitor ? [...fullCast(table), table.visitor.character] : fullCast(table)
+}
+
 /** Every character who can sit at a table, arrivals included. */
 export function fullCast(table: TableData): string[] {
   const cast = [...table.seats]
@@ -442,6 +467,10 @@ export function arrivalRules(table: TableData, mode: 'tour' | 'open', seats: str
     const r = CHARACTERS[id]?.returns
     if (r) rules.push({ personality: personality(id), afterEliminationOf: id, delayHands: r.afterHands, stack: r.stack })
   }
+  const v = table.visitor
+  if (v && !seats.includes(v.character)) {
+    rules.push({ personality: personality(v.character), onHumanWin: [...v.holeRanks], delayHands: 0, stack: v.stack })
+  }
   return rules
 }
 
@@ -452,7 +481,7 @@ export function arrivalRules(table: TableData, mode: 'tour' | 'open', seats: str
  * the engine itself protects anyone a late arrival is waiting on.
  */
 export function banishmentFor(table: TableData): Banishment | undefined {
-  if (table.kind === 'finale') return undefined
+  if (table.kind === 'finale' || table.kind === 'hidden') return undefined
   const exclude = characterList.filter((c) => c.role === 'dealer').map((c) => c.id)
   if (table.champion) exclude.push(table.champion)
   return {

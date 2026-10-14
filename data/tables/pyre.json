@@ -1,0 +1,30 @@
+{
+  "id": "pyre",
+  "kind": "hidden",
+  "position": 12,
+  "name": "The Pyre",
+  "seats": [
+    "phoenix"
+  ],
+  "champion": "phoenix",
+  "arrival": null,
+  "handsPerLevel": 12,
+  "dialogue": "table-12-pyre.json",
+  "buyIn": 5000,
+  "respectStart": 2,
+  "place": "The temple of the Sun, Heliopolis",
+  "region": "Egypt",
+  "era": "The five hundredth year",
+  "teaser": "Something kept count of the times you came second.",
+  "hook": "Eight times you were the last one beaten, and eight times you came back. Something noticed. It has flown a very long way to sit across from you, and it will only sit down once.",
+  "room": "The inner court of the temple of the Sun at Heliopolis, in the last hour before dawn: tall sandstone columns, a sky going from violet to gold beyond them, and on a stone altar at the back a nest of cinnamon and myrrh, smouldering. Death's table stands in the middle of the court. Ash drifts across the felt like snow and never settles.",
+  "music": "A single high reed pipe over a low drone and a frame drum that quickens very slowly, as if toward a sunrise that never quite arrives.",
+  "entrance": "It is waiting on the altar when you come in, a great red-and-gold bird sitting very still in a nest of smouldering spice. When you sit down it steps down from the altar, crosses the court and takes the chair opposite, and the ash it shakes from its wings is warm.",
+  "ambience": [
+    "a dry wind through the columns",
+    "spice crackling on embers",
+    "a single bird call, far up in the dawn",
+    "ash hissing as it lands on warm stone"
+  ],
+  "presence": null
+}
