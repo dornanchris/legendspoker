@@ -511,7 +511,12 @@ def main(spec_path):
     # filled from the coat above the rail only (the rail's highlight is skin-coloured)
     # and never from rail-hued pixels (red far above green: wood, its highlight)
     railish = R[..., 0].astype(int) > 1.8 * R[..., 1].astype(int) + 10
-    body[..., :3] = diffuse_fill(R[..., :3], hole, body_vis & ~railish & (np.arange(shape[0])[:, None] < ty - 3)).astype(np.uint8)
+    known = body_vis & ~railish & (np.arange(shape[0])[:, None] < ty - 3)
+    src = R[..., :3].copy()
+    if spec.get('fill'):                                   # the smoothing reads only the coat, never the felt past the hole's edge
+        _, (iy, ix) = ndimage.distance_transform_edt(~known, return_indices=True)
+        src = np.where((~known & ~hole)[..., None], R[..., :3][iy, ix], src)
+    body[..., :3] = np.where(hole[..., None], diffuse_fill(src, hole, known), R[..., :3]).astype(np.uint8)
     body[..., 3] = np.where(body_vis | hole, 255, 0)
     body[..., 3] = np.where(np.arange(shape[0])[:, None] < ty + 30, body[..., 3], 0)
     body[..., 3] = np.minimum(body[..., 3], np.where(body_vis, R[..., 3], 255))

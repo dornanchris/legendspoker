@@ -1,0 +1,1361 @@
+{
+ "id": "van_helsing",
+ "name": "Abraham Van Helsing",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets (Washington's). Transylvania's seat 1. The master is the rest pose's OWN head (van_helsing_face/van_helsing_master.png), as Javert's is. Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt. His doctor's bag stands on the felt by his left elbow: part of that forearm's piece at rest (a props box), and a props box in every frame but the last, where he takes it up.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    13,
+    17,
+    494,
+    466
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, spectacles on, the doctor's bag by his left elbow"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    519,
+    29,
+    498,
+    454
+   ],
+   "reg": [
+    1.0,
+    1,
+    12
+   ],
+   "what": "Peeking at his cards (right hand)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1029,
+    25,
+    495,
+    458
+   ],
+   "reg": [
+    1.0,
+    1,
+    8
+   ],
+   "what": "Check: two fingers tap the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    13,
+    512,
+    494,
+    454
+   ],
+   "reg": [
+    1.0,
+    0,
+    12
+   ],
+   "what": "Call: slides a short stack"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    519,
+    510,
+    498,
+    456
+   ],
+   "reg": [
+    1.0,
+    1,
+    10
+   ],
+   "what": "Bet: sets a stack down, deliberate"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1029,
+    509,
+    495,
+    461
+   ],
+   "reg": [
+    1.0,
+    1,
+    9
+   ],
+   "what": "Fold: lays his cards down"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    12,
+    17,
+    498,
+    454
+   ],
+   "reg": [
+    1.0,
+    1,
+    12
+   ],
+   "what": "All in: both hands push his stack"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    522,
+    17,
+    492,
+    454
+   ],
+   "reg": [
+    1.0,
+    1,
+    12
+   ],
+   "what": "Show: turns his cards over"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1026,
+    22,
+    502,
+    449
+   ],
+   "reg": [
+    1.0,
+    1,
+    17
+   ],
+   "what": "Collect: both arms drawing the pot in"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    12,
+    492,
+    498,
+    466
+   ],
+   "reg": [
+    1.0,
+    1,
+    0
+   ],
+   "what": "TELL strong: spectacles off, polished on a white handkerchief"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    522,
+    499,
+    492,
+    459
+   ],
+   "reg": [
+    1.0,
+    1,
+    7
+   ],
+   "what": "Writes a line in his leather diary (decoy for spectacles)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1026,
+    489,
+    498,
+    469
+   ],
+   "reg": [
+    1.0,
+    1,
+    -3
+   ],
+   "what": "TELL weak: touches the crucifix at his collar"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    11,
+    15,
+    497,
+    476
+   ],
+   "reg": [
+    1.0,
+    -2,
+    -10
+   ],
+   "what": "Checks a pocket that smells of garlic (decoy for crucifix)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    522,
+    16,
+    491,
+    475
+   ],
+   "reg": [
+    1.0,
+    1,
+    -9
+   ],
+   "what": "TELL tilted: mutters something in Dutch"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1027,
+    8,
+    497,
+    483
+   ],
+   "reg": [
+    1.0,
+    1,
+    -17
+   ],
+   "what": "Sniffs the air, frowning (decoy for mutter)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    14,
+    499,
+    494,
+    474
+   ],
+   "reg": [
+    1.0,
+    1,
+    -7
+   ],
+   "what": "Glances at the fireplace"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    522,
+    516,
+    491,
+    457
+   ],
+   "reg": [
+    1.0,
+    1,
+    9
+   ],
+   "what": "Peers over his spectacles at you"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1028,
+    509,
+    496,
+    464
+   ],
+   "reg": [
+    1.0,
+    1,
+    2
+   ],
+   "what": "Settles his spectacles up his nose"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    9,
+    17,
+    498,
+    464
+   ],
+   "reg": [
+    1.0,
+    -4,
+    2
+   ],
+   "what": "Talking: one finger raised, lecturing"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    521,
+    25,
+    494,
+    456
+   ],
+   "reg": [
+    1.0,
+    1,
+    10
+   ],
+   "what": "Facing a big bet: brows down, studying"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1029,
+    26,
+    496,
+    455
+   ],
+   "reg": [
+    1.0,
+    1,
+    11
+   ],
+   "what": "Lost a pot: a sigh, a shake of the head"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    13,
+    497,
+    493,
+    457
+   ],
+   "reg": [
+    1.0,
+    1,
+    9
+   ],
+   "what": "Won a pot: a warm smile, drawing chips in"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    521,
+    532,
+    493,
+    422
+   ],
+   "reg": [
+    1.0,
+    1,
+    44
+   ],
+   "what": "Heads up: leaning in on both forearms"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1029,
+    489,
+    495,
+    465
+   ],
+   "reg": [
+    1.0,
+    1,
+    1
+   ],
+   "what": "Knocked out: rises, takes up his bag, a bow"
+  }
+ },
+ "rest": "A1",
+ "table_y": 375,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  240,
+  350,
+  350
+ ],
+ "register_span": 40,
+ "collar_y": 230,
+ "neck": [
+  250,
+  230
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  200,
+  200,
+  330,
+  260
+ ],
+ "master": {
+  "piece": "van_helsing_parts/van_helsing_face/van_helsing_master.png",
+  "cut_below": 250,
+  "face": "van_helsing_parts/face.json",
+  "file": "van_helsing_parts/van_helsing_rig/master.png",
+  "layers": "van_helsing_parts/van_helsing_rig/face",
+  "head_box": [
+   0,
+   0,
+   494,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    140,
+    0
+   ],
+   [
+    352,
+    0
+   ],
+   [
+    352,
+    150
+   ],
+   [
+    332,
+    200
+   ],
+   [
+    292,
+    236
+   ],
+   [
+    222,
+    246
+   ],
+   [
+    175,
+    216
+   ],
+   [
+    150,
+    160
+   ],
+   [
+    140,
+    100
+   ]
+  ],
+  "shoulder_y": 215
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    370
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     330
+    ],
+    [
+     110,
+     330
+    ],
+    [
+     110,
+     362
+    ],
+    [
+     10,
+     366
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand",
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       60,
+       322
+      ],
+      [
+       130,
+       356
+      ],
+      [
+       200,
+       364
+      ],
+      [
+       230,
+       395
+      ],
+      [
+       236,
+       446
+      ],
+      [
+       150,
+       450
+      ],
+      [
+       90,
+       432
+      ],
+      [
+       30,
+       422
+      ],
+      [
+       0,
+       412
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    452,
+    360
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     320
+    ],
+    [
+     470,
+     320
+    ],
+    [
+     470,
+     350
+    ],
+    [
+     400,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand, and the doctor's bag beside it",
+     "poly": [
+      [
+       298,
+       368
+      ],
+      [
+       330,
+       357
+      ],
+      [
+       378,
+       340
+      ],
+      [
+       380,
+       290
+      ],
+      [
+       420,
+       284
+      ],
+      [
+       490,
+       286
+      ],
+      [
+       490,
+       434
+      ],
+      [
+       420,
+       442
+      ],
+      [
+       410,
+       450
+      ],
+      [
+       298,
+       450
+      ]
+     ],
+     "props": [
+      [
+       [
+        388,
+        280
+       ],
+       [
+        494,
+        280
+       ],
+       [
+        494,
+        440
+       ],
+       [
+        388,
+        440
+       ]
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ],
+    [
+     [
+      170,
+      392
+     ],
+     [
+      300,
+      392
+     ],
+     [
+      300,
+      466
+     ],
+     [
+      170,
+      466
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ],
+    [
+     [
+      190,
+      378
+     ],
+     [
+      284,
+      378
+     ],
+     [
+      284,
+      466
+     ],
+     [
+      190,
+      466
+     ]
+    ],
+    [
+     [
+      284,
+      395
+     ],
+     [
+      312,
+      395
+     ],
+     [
+      312,
+      466
+     ],
+     [
+      284,
+      466
+     ]
+    ]
+   ],
+   "except": [
+    [
+     [
+      275,
+      354
+     ],
+     [
+      318,
+      354
+     ],
+     [
+      318,
+      381
+     ],
+     [
+      275,
+      381
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ],
+    [
+     [
+      215,
+      372
+     ],
+     [
+      388,
+      372
+     ],
+     [
+      388,
+      466
+     ],
+     [
+      215,
+      466
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ],
+    [
+     [
+      150,
+      362
+     ],
+     [
+      388,
+      362
+     ],
+     [
+      388,
+      466
+     ],
+     [
+      150,
+      466
+     ]
+    ]
+   ]
+  },
+  "spectacles": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "diary": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ],
+    [
+     [
+      150,
+      382
+     ],
+     [
+      318,
+      382
+     ],
+     [
+      318,
+      466
+     ],
+     [
+      150,
+      466
+     ]
+    ]
+   ]
+  },
+  "crucifix": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "garlic": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "mutter": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "sniff": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "fireplace": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "over_spectacles": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "settle": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ],
+    [
+     [
+      160,
+      385
+     ],
+     [
+      292,
+      385
+     ],
+     [
+      292,
+      466
+     ],
+     [
+      160,
+      466
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      388,
+      280
+     ],
+     [
+      494,
+      280
+     ],
+     [
+      494,
+      440
+     ],
+     [
+      388,
+      440
+     ]
+    ]
+   ]
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "runtime": "../web/art/van_helsing",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "wood_rows_only": true,
+ "no_wood": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "fill": [
+  [
+   [
+    190,
+    350
+   ],
+   [
+    345,
+    350
+   ],
+   [
+    345,
+    430
+   ],
+   [
+    190,
+    430
+   ]
+  ]
+ ]
+}

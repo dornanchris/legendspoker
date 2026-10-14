@@ -1,0 +1,346 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "van_helsing_face_01.png",
+      "label": "",
+      "x": 13,
+      "y": 15,
+      "w": 332,
+      "h": 433,
+      "pivot": [
+        166.0,
+        216.5
+      ],
+      "area": 102944
+    },
+    {
+      "index": 2,
+      "file": "van_helsing_face_02.png",
+      "label": "",
+      "x": 379,
+      "y": 94,
+      "w": 231,
+      "h": 146,
+      "pivot": [
+        115.5,
+        73.0
+      ],
+      "area": 26480
+    },
+    {
+      "index": 3,
+      "file": "van_helsing_face_03.png",
+      "label": "",
+      "x": 625,
+      "y": 96,
+      "w": 228,
+      "h": 145,
+      "pivot": [
+        114.0,
+        72.5
+      ],
+      "area": 25956
+    },
+    {
+      "index": 4,
+      "file": "van_helsing_face_04.png",
+      "label": "",
+      "x": 867,
+      "y": 95,
+      "w": 231,
+      "h": 143,
+      "pivot": [
+        115.5,
+        71.5
+      ],
+      "area": 25927
+    },
+    {
+      "index": 5,
+      "file": "van_helsing_face_05.png",
+      "label": "",
+      "x": 1115,
+      "y": 96,
+      "w": 226,
+      "h": 143,
+      "pivot": [
+        113.0,
+        71.5
+      ],
+      "area": 25541
+    },
+    {
+      "index": 6,
+      "file": "van_helsing_face_06.png",
+      "label": "",
+      "x": 363,
+      "y": 282,
+      "w": 229,
+      "h": 141,
+      "pivot": [
+        114.5,
+        70.5
+      ],
+      "area": 25557
+    },
+    {
+      "index": 7,
+      "file": "van_helsing_face_07.png",
+      "label": "",
+      "x": 609,
+      "y": 285,
+      "w": 229,
+      "h": 138,
+      "pivot": [
+        114.5,
+        69.0
+      ],
+      "area": 24975
+    },
+    {
+      "index": 8,
+      "file": "van_helsing_face_08.png",
+      "label": "",
+      "x": 856,
+      "y": 282,
+      "w": 232,
+      "h": 144,
+      "pivot": [
+        116.0,
+        72.0
+      ],
+      "area": 26359
+    },
+    {
+      "index": 9,
+      "file": "van_helsing_face_09.png",
+      "label": "",
+      "x": 1100,
+      "y": 305,
+      "w": 117,
+      "h": 61,
+      "pivot": [
+        58.5,
+        30.5
+      ],
+      "area": 3138
+    },
+    {
+      "index": 10,
+      "file": "van_helsing_face_10.png",
+      "label": "",
+      "x": 1223,
+      "y": 309,
+      "w": 80,
+      "h": 65,
+      "pivot": [
+        40.0,
+        32.5
+      ],
+      "area": 2374
+    },
+    {
+      "index": 11,
+      "file": "van_helsing_face_11.png",
+      "label": "",
+      "x": 1312,
+      "y": 298,
+      "w": 116,
+      "h": 89,
+      "pivot": [
+        58.0,
+        44.5
+      ],
+      "area": 3438
+    },
+    {
+      "index": 12,
+      "file": "van_helsing_face_12.png",
+      "label": "",
+      "x": 1433,
+      "y": 305,
+      "w": 90,
+      "h": 86,
+      "pivot": [
+        45.0,
+        43.0
+      ],
+      "area": 2520
+    },
+    {
+      "index": 13,
+      "file": "van_helsing_face_13.png",
+      "label": "",
+      "x": 54,
+      "y": 479,
+      "w": 195,
+      "h": 148,
+      "pivot": [
+        97.5,
+        74.0
+      ],
+      "area": 22106
+    },
+    {
+      "index": 14,
+      "file": "van_helsing_face_14.png",
+      "label": "",
+      "x": 272,
+      "y": 476,
+      "w": 188,
+      "h": 151,
+      "pivot": [
+        94.0,
+        75.5
+      ],
+      "area": 21566
+    },
+    {
+      "index": 15,
+      "file": "van_helsing_face_15.png",
+      "label": "",
+      "x": 490,
+      "y": 480,
+      "w": 193,
+      "h": 150,
+      "pivot": [
+        96.5,
+        75.0
+      ],
+      "area": 21453
+    },
+    {
+      "index": 16,
+      "file": "van_helsing_face_16.png",
+      "label": "",
+      "x": 702,
+      "y": 477,
+      "w": 184,
+      "h": 156,
+      "pivot": [
+        92.0,
+        78.0
+      ],
+      "area": 21692
+    },
+    {
+      "index": 17,
+      "file": "van_helsing_face_17.png",
+      "label": "",
+      "x": 895,
+      "y": 477,
+      "w": 170,
+      "h": 152,
+      "pivot": [
+        85.0,
+        76.0
+      ],
+      "area": 19515
+    },
+    {
+      "index": 18,
+      "file": "van_helsing_face_18.png",
+      "label": "",
+      "x": 1079,
+      "y": 477,
+      "w": 172,
+      "h": 150,
+      "pivot": [
+        86.0,
+        75.0
+      ],
+      "area": 19515
+    },
+    {
+      "index": 19,
+      "file": "van_helsing_face_19.png",
+      "label": "",
+      "x": 1298,
+      "y": 475,
+      "w": 176,
+      "h": 125,
+      "pivot": [
+        88.0,
+        62.5
+      ],
+      "area": 16636
+    },
+    {
+      "index": 20,
+      "file": "van_helsing_face_20.png",
+      "label": "",
+      "x": 1103,
+      "y": 597,
+      "w": 372,
+      "h": 413,
+      "pivot": [
+        186.0,
+        206.5
+      ],
+      "area": 100715
+    },
+    {
+      "index": 21,
+      "file": "van_helsing_face_21.png",
+      "label": "",
+      "x": 94,
+      "y": 689,
+      "w": 191,
+      "h": 149,
+      "pivot": [
+        95.5,
+        74.5
+      ],
+      "area": 21678
+    },
+    {
+      "index": 22,
+      "file": "van_helsing_face_22.png",
+      "label": "",
+      "x": 336,
+      "y": 690,
+      "w": 187,
+      "h": 151,
+      "pivot": [
+        93.5,
+        75.5
+      ],
+      "area": 21436
+    },
+    {
+      "index": 23,
+      "file": "van_helsing_face_23.png",
+      "label": "",
+      "x": 561,
+      "y": 691,
+      "w": 199,
+      "h": 143,
+      "pivot": [
+        99.5,
+        71.5
+      ],
+      "area": 21249
+    },
+    {
+      "index": 24,
+      "file": "van_helsing_face_24.png",
+      "label": "",
+      "x": 795,
+      "y": 693,
+      "w": 191,
+      "h": 146,
+      "pivot": [
+        95.5,
+        73.0
+      ],
+      "area": 21605
+    }
+  ]
+}

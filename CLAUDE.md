@@ -159,7 +159,8 @@ art-tools/
                   cerberus_parts/, scipio_parts/, spartacus_parts/, pope_parts/,
                   caesar_parts/: Rome (all built); nemo_parts/, javert_parts/, sherlock_parts/ (built),
                   sherlock_deerstalker_parts/, cheshire_cat_parts/:
-                  Baker Street (all built)
+                  Baker Street (all built); van_helsing_parts/ (built),
+                  monster_parts/: Transylvania
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -453,6 +454,10 @@ dialogue replaced hers line for line; draft like the rest. **He is built**
 sheet came out as furry illustration); vanished parts are drawn as plain
 white, and the grin left alone is placed where his mouth is at rest:
 **Baker Street is complete on the real table screen.**
+**Transylvania has begun: Van Helsing is built** (`#/puppet/van_helsing`, 24
+clips, seat 1), his doctor's bag on the felt by his left elbow, his spectacles
+the strong tell (off, polished, back on). The room and the other four
+(the Monster's prompts are in `monster_parts/POSES.md`) are still to come.
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
