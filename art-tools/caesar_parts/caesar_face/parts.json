@@ -1,0 +1,290 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "caesar_face_01.png",
+      "label": "",
+      "x": 17,
+      "y": 28,
+      "w": 420,
+      "h": 398,
+      "pivot": [
+        210.0,
+        199.0
+      ],
+      "area": 99910
+    },
+    {
+      "index": 2,
+      "file": "caesar_face_02.png",
+      "label": "",
+      "x": 382,
+      "y": 127,
+      "w": 176,
+      "h": 125,
+      "pivot": [
+        88.0,
+        62.5
+      ],
+      "area": 18157
+    },
+    {
+      "index": 3,
+      "file": "caesar_face_03.png",
+      "label": "",
+      "x": 567,
+      "y": 128,
+      "w": 173,
+      "h": 123,
+      "pivot": [
+        86.5,
+        61.5
+      ],
+      "area": 17600
+    },
+    {
+      "index": 4,
+      "file": "caesar_face_04.png",
+      "label": "",
+      "x": 748,
+      "y": 129,
+      "w": 176,
+      "h": 122,
+      "pivot": [
+        88.0,
+        61.0
+      ],
+      "area": 17714
+    },
+    {
+      "index": 5,
+      "file": "caesar_face_05.png",
+      "label": "",
+      "x": 939,
+      "y": 128,
+      "w": 176,
+      "h": 125,
+      "pivot": [
+        88.0,
+        62.5
+      ],
+      "area": 18186
+    },
+    {
+      "index": 6,
+      "file": "caesar_face_06.png",
+      "label": "",
+      "x": 1128,
+      "y": 128,
+      "w": 182,
+      "h": 125,
+      "pivot": [
+        91.0,
+        62.5
+      ],
+      "area": 18611
+    },
+    {
+      "index": 7,
+      "file": "caesar_face_07.png",
+      "label": "",
+      "x": 1323,
+      "y": 129,
+      "w": 180,
+      "h": 125,
+      "pivot": [
+        90.0,
+        62.5
+      ],
+      "area": 18438
+    },
+    {
+      "index": 8,
+      "file": "caesar_face_08.png",
+      "label": "",
+      "x": 615,
+      "y": 309,
+      "w": 191,
+      "h": 121,
+      "pivot": [
+        95.5,
+        60.5
+      ],
+      "area": 19298
+    },
+    {
+      "index": 9,
+      "file": "caesar_face_09.png",
+      "label": "",
+      "x": 844,
+      "y": 309,
+      "w": 194,
+      "h": 121,
+      "pivot": [
+        97.0,
+        60.5
+      ],
+      "area": 19399
+    },
+    {
+      "index": 10,
+      "file": "caesar_face_10.png",
+      "label": "",
+      "x": 18,
+      "y": 470,
+      "w": 144,
+      "h": 130,
+      "pivot": [
+        72.0,
+        65.0
+      ],
+      "area": 14635
+    },
+    {
+      "index": 11,
+      "file": "caesar_face_11.png",
+      "label": "",
+      "x": 170,
+      "y": 470,
+      "w": 146,
+      "h": 135,
+      "pivot": [
+        73.0,
+        67.5
+      ],
+      "area": 15139
+    },
+    {
+      "index": 12,
+      "file": "caesar_face_12.png",
+      "label": "",
+      "x": 327,
+      "y": 471,
+      "w": 144,
+      "h": 132,
+      "pivot": [
+        72.0,
+        66.0
+      ],
+      "area": 14669
+    },
+    {
+      "index": 13,
+      "file": "caesar_face_13.png",
+      "label": "",
+      "x": 479,
+      "y": 470,
+      "w": 136,
+      "h": 131,
+      "pivot": [
+        68.0,
+        65.5
+      ],
+      "area": 13821
+    },
+    {
+      "index": 14,
+      "file": "caesar_face_14.png",
+      "label": "",
+      "x": 624,
+      "y": 470,
+      "w": 134,
+      "h": 133,
+      "pivot": [
+        67.0,
+        66.5
+      ],
+      "area": 13697
+    },
+    {
+      "index": 15,
+      "file": "caesar_face_15.png",
+      "label": "",
+      "x": 766,
+      "y": 470,
+      "w": 138,
+      "h": 131,
+      "pivot": [
+        69.0,
+        65.5
+      ],
+      "area": 14134
+    },
+    {
+      "index": 16,
+      "file": "caesar_face_16.png",
+      "label": "",
+      "x": 914,
+      "y": 471,
+      "w": 143,
+      "h": 132,
+      "pivot": [
+        71.5,
+        66.0
+      ],
+      "area": 14718
+    },
+    {
+      "index": 17,
+      "file": "caesar_face_17.png",
+      "label": "",
+      "x": 1068,
+      "y": 471,
+      "w": 145,
+      "h": 134,
+      "pivot": [
+        72.5,
+        67.0
+      ],
+      "area": 14747
+    },
+    {
+      "index": 18,
+      "file": "caesar_face_18.png",
+      "label": "",
+      "x": 1222,
+      "y": 472,
+      "w": 147,
+      "h": 133,
+      "pivot": [
+        73.5,
+        66.5
+      ],
+      "area": 15364
+    },
+    {
+      "index": 19,
+      "file": "caesar_face_19.png",
+      "label": "",
+      "x": 1378,
+      "y": 471,
+      "w": 140,
+      "h": 130,
+      "pivot": [
+        70.0,
+        65.0
+      ],
+      "area": 14234
+    },
+    {
+      "index": 20,
+      "file": "caesar_face_20.png",
+      "label": "",
+      "x": 528,
+      "y": 605,
+      "w": 470,
+      "h": 397,
+      "pivot": [
+        235.0,
+        198.5
+      ],
+      "area": 97682
+    }
+  ]
+}

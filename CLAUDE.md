@@ -156,8 +156,8 @@ art-tools/
                   blackbeard_parts/, kidd_parts/, silver_parts/, davy_jones_parts/: the
                   Pirate Cove, the same way; merlin_parts/, lancelot_parts/,
                   green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot;
-                  cerberus_parts/, scipio_parts/, spartacus_parts/, pope_parts/
-                  (built), caesar_parts/: Rome
+                  cerberus_parts/, scipio_parts/, spartacus_parts/, pope_parts/,
+                  caesar_parts/: Rome (all built)
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -175,7 +175,8 @@ art-tools/
   face_rig.py     bakes a face-overlay sheet into seam-free eye/brow/mouth
                   layers on a master head
   build/          the build helpers: pose_boxes, corner_regs, fit_master,
-                  frames_sheet (python), bench_shots, room_shot (playwright)
+                  frames_sheet (python), bench_shots, room_shot, table_shot
+                  (playwright)
   pose_rig.py     builds a puppet from complete pose drawings: one-piece
                   forearm+hand assets on elbow pivots (the White House
                   table's and Death's game rigs)
@@ -420,14 +421,16 @@ shackle scar on his left wrist.
 **The Pope is built** (`#/puppet/pope`, 24 clips, seat 2), his master the
 rest pose's own head, as Cerberus's; his gold embroidery is the rail's
 colour, so the rail test takes only long thin strips (`rail_long`).
-Rome's four chairs are built; **Caesar** (sheets owed) is the last.
+**Caesar is built** (`#/puppet/caesar`, 24 clips, any chair, mirrored as
+the seat needs; `arrive` sets the wreath on his head as he sits down):
+**Rome is complete on the real table screen.**
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
 and Caesar's wreath waits on the cushion in the niche by the door until he
 arrives. The niche came out at 37%, behind seat 2's head, so the wreath
 shows mostly once that chair is empty.
-Rome stays the plain table until all five have puppets. **The style lock** (the owner: Davy Jones and Merlin
+**The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
 style drifted a step each time. Now `poses.py` (`"style_lock": true`) names

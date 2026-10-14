@@ -75,7 +75,9 @@ overlay sheet. Kit folder: `art-tools/<id>_parts/`.
 **A table goes live on the real screen only when its room and every one of
 its puppets exist** (`ROOMS` and `PUPPETS` in `web/puppet/cast.ts`).
 Preview a room with any built cast: serve `web/` (`PORT=5181 node web/serve.mjs`)
-and `node art-tools/build/room_shot.cjs <room> out.png`.
+and `node art-tools/build/room_shot.cjs <room> out.png`. Once a table's cast is
+built, `node art-tools/build/table_shot.cjs <table> out.png` shows it as the
+game stages it (with a save that has cleared the tables before it).
 
 ## Rooms
 
@@ -92,8 +94,8 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | Table | Room | Built | Sheets in, to build | Prompts next |
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
-| Rome | built (redrawn plate) | Cerberus, Scipio, Spartacus, the Pope | **Caesar** (all six sheets in) | |
-| Baker Street | prompt rewritten with exact positions (backdrop + pieces sent) | | | Nemo, Javert, Alice, Holmes |
+| Rome: **live on the real table** | built (redrawn plate) | all five | | |
+| Baker Street | prompt with exact positions, sent to the owner: backdrop + pieces owed | | | Nemo, Javert, Alice, Holmes (no poses_spec yet) |
 | Transylvania | prompt only | | | Van Helsing, the Monster, the Wolf Man, the Headless Horseman, Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |

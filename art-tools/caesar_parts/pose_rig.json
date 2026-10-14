@@ -1,0 +1,886 @@
+{
+ "id": "caesar",
+ "name": "Julius Caesar",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets. Rome's champion: he arrives into any chair, so the game mirrors him as the seat needs. The master is the rest pose's OWN head and wreath (caesar_face/caesar_master.png), as the Pope's is. Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. The drawn rail is gold-orange, like his skin; his toga's purple border would pass the wood test (no_wood).",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    19,
+    27,
+    482,
+    462
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, the wreath low on his brow"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    508,
+    34,
+    503,
+    455
+   ],
+   "what": "Peeking at his cards (right hand)",
+   "reg": [
+    1.0,
+    -8,
+    7
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1024,
+    28,
+    496,
+    461
+   ],
+   "what": "Check: two fingers tap the felt",
+   "reg": [
+    1.0,
+    -4,
+    1
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    18,
+    508,
+    483,
+    466
+   ],
+   "what": "Call: slides a short stack forward",
+   "reg": [
+    1.0,
+    -1,
+    -4
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    516,
+    510,
+    495,
+    463
+   ],
+   "what": "Bet: sets a stack down, decisive",
+   "reg": [
+    1.0,
+    0,
+    -2
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1027,
+    510,
+    493,
+    463
+   ],
+   "what": "Fold: lays his cards down, dismissive",
+   "reg": [
+    1.0,
+    -1,
+    -2
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    19,
+    27,
+    485,
+    461
+   ],
+   "what": "All in: both hands push his whole stack, the die is cast",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    520,
+    25,
+    491,
+    463
+   ],
+   "what": "Show: turns his cards over",
+   "reg": [
+    1.0,
+    0,
+    -2
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1021,
+    29,
+    498,
+    459
+   ],
+   "what": "Collect: both arms drawing the pot in",
+   "reg": [
+    1.0,
+    -7,
+    2
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    19,
+    513,
+    483,
+    457
+   ],
+   "what": "Adjusts his laurel wreath (TELL)",
+   "reg": [
+    1.0,
+    0,
+    4
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    512,
+    513,
+    499,
+    457
+   ],
+   "what": "Rubs his temple (decoy for B4)",
+   "reg": [
+    1.0,
+    -8,
+    4
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1026,
+    518,
+    493,
+    452
+   ],
+   "what": "Drums his fingers on the table's edge (TELL)",
+   "reg": [
+    1.0,
+    -2,
+    9
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    19,
+    20,
+    487,
+    469
+   ],
+   "what": "Straightens the purple border of his toga (decoy for B6)",
+   "reg": [
+    1.0,
+    -1,
+    -8
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    522,
+    17,
+    493,
+    473
+   ],
+   "what": "Smiles like a man counting votes (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -11
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1030,
+    20,
+    488,
+    470
+   ],
+   "what": "Glances round the table with suspicion (decoy for C2)",
+   "reg": [
+    1.0,
+    -1,
+    -8
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    19,
+    504,
+    489,
+    473
+   ],
+   "what": "Dictates something to no one, one finger raised",
+   "reg": [
+    1.0,
+    0,
+    -11
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    522,
+    509,
+    492,
+    468
+   ],
+   "what": "A cool, appraising look at the viewer",
+   "reg": [
+    1.0,
+    0,
+    -6
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1029,
+    506,
+    489,
+    471
+   ],
+   "what": "Arrive: setting the wreath on his head as he sits down",
+   "reg": [
+    1.0,
+    0,
+    -9
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    15,
+    18,
+    492,
+    470
+   ],
+   "what": "Talking: one finger raised, as if dictating",
+   "reg": [
+    1.0,
+    -4,
+    -9
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    518,
+    12,
+    494,
+    476
+   ],
+   "what": "Facing a big bet: chin up, eyes narrowed",
+   "reg": [
+    1.0,
+    -5,
+    -15
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1022,
+    24,
+    496,
+    464
+   ],
+   "what": "Lost a pot: a thin, tight smile",
+   "reg": [
+    1.0,
+    -6,
+    -3
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    15,
+    507,
+    491,
+    466
+   ],
+   "what": "Won a pot: a satisfied smile, drawing chips in",
+   "reg": [
+    1.0,
+    -4,
+    -5
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    518,
+    530,
+    497,
+    443
+   ],
+   "what": "Heads up: leaning in on both forearms, eyes level",
+   "reg": [
+    1.0,
+    -4,
+    18
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1027,
+    498,
+    491,
+    475
+   ],
+   "what": "Knocked out: rises, wraps his toga round him, a last look back",
+   "reg": [
+    1.0,
+    -1,
+    -14
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 365,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  230,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 225,
+ "neck": [
+  225,
+  225
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  170,
+  220,
+  330,
+  280
+ ],
+ "master": {
+  "piece": "caesar_parts/caesar_face/caesar_master.png",
+  "cut_below": 222,
+  "face": "caesar_parts/face.json",
+  "file": "caesar_parts/caesar_rig/master.png",
+  "layers": "caesar_parts/caesar_rig/face",
+  "head_box": [
+   0,
+   0,
+   482,
+   300
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    128,
+    0
+   ],
+   [
+    338,
+    0
+   ],
+   [
+    338,
+    170
+   ],
+   [
+    320,
+    196
+   ],
+   [
+    302,
+    214
+   ],
+   [
+    256,
+    218
+   ],
+   [
+    214,
+    208
+   ],
+   [
+    182,
+    184
+   ],
+   [
+    164,
+    166
+   ],
+   [
+    138,
+    120
+   ]
+  ],
+  "heads": {
+   "viewer": "caesar_parts/caesar_face/caesar_face_20.png"
+  },
+  "cloth": [
+   15,
+   140
+  ],
+  "shoulder_y": 200
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    30,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     300
+    ],
+    [
+     100,
+     300
+    ],
+    [
+     100,
+     335
+    ],
+    [
+     10,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and hand",
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       60,
+       325
+      ],
+      [
+       130,
+       340
+      ],
+      [
+       190,
+       360
+      ],
+      [
+       235,
+       385
+      ],
+      [
+       246,
+       430
+      ],
+      [
+       238,
+       462
+      ],
+      [
+       110,
+       462
+      ],
+      [
+       60,
+       420
+      ],
+      [
+       25,
+       390
+      ],
+      [
+       0,
+       378
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    440,
+    335
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     390,
+     300
+    ],
+    [
+     480,
+     300
+    ],
+    [
+     480,
+     330
+    ],
+    [
+     390,
+     330
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, the toga's fold and hand",
+     "poly": [
+      [
+       288,
+       462
+      ],
+      [
+       292,
+       420
+      ],
+      [
+       310,
+       385
+      ],
+      [
+       340,
+       360
+      ],
+      [
+       380,
+       340
+      ],
+      [
+       430,
+       328
+      ],
+      [
+       482,
+       330
+      ],
+      [
+       482,
+       372
+      ],
+      [
+       456,
+       398
+      ],
+      [
+       420,
+       462
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      170,
+      370
+     ],
+     [
+      330,
+      370
+     ],
+     [
+      330,
+      462
+     ],
+     [
+      170,
+      462
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      360
+     ],
+     [
+      340,
+      360
+     ],
+     [
+      340,
+      462
+     ],
+     [
+      160,
+      462
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      90,
+      350
+     ],
+     [
+      450,
+      350
+     ],
+     [
+      450,
+      462
+     ],
+     [
+      90,
+      462
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      90,
+      345
+     ],
+     [
+      460,
+      345
+     ],
+     [
+      460,
+      462
+     ],
+     [
+      90,
+      462
+     ]
+    ]
+   ]
+  },
+  "wreath": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "temple": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "drum": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "toga_border": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "votes": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "suspicion": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "dictate": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "appraise": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "arrive": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     374
+    ],
+    [
+     -60,
+     374
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      360
+     ],
+     [
+      340,
+      360
+     ],
+     [
+      340,
+      462
+     ],
+     [
+      160,
+      462
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     374
+    ],
+    [
+     -60,
+     374
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/caesar",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "wood_rows_only": true,
+ "no_wood": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ }
+}
