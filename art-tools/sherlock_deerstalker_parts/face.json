@@ -1,0 +1,70 @@
+{
+ "note": "The master is the rest pose's own head and deerstalker (cut from pose A1). Every eye piece carries its brows and the cap's brim.",
+ "master": "sherlock_deerstalker_parts/sherlock_deerstalker_face/sherlock_deerstalker_master.png",
+ "pieces": "sherlock_deerstalker_parts/sherlock_deerstalker_face/sherlock_deerstalker_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7,
+   "wide": 8
+  },
+  "mouth": {
+   "rest": 9,
+   "ah": 10,
+   "ee": 11,
+   "oh": 12,
+   "oo": 13,
+   "m": 14,
+   "f": 16,
+   "l": 17,
+   "irritated": 18,
+   "pleased": 19
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     265,
+     108
+    ],
+    [
+     355,
+     108
+    ],
+    [
+     355,
+     145
+    ],
+    [
+     265,
+     145
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     275,
+     165
+    ],
+    [
+     345,
+     165
+    ],
+    [
+     345,
+     205
+    ],
+    [
+     275,
+     205
+    ]
+   ]
+  }
+ }
+}

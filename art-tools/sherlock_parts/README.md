@@ -3,7 +3,7 @@
 Baker Street's champion, seat 4, seated from the first hand (drawn facing the
 viewer's right; the game mirrors him to face the table's centre). Bareheaded
 at home, the owner's call; the deerstalker is a second look in
-`../sherlock_deerstalker_parts/` (prompts only so far). Style-locked sheets in
+`../sherlock_deerstalker_parts/` (built). Style-locked sheets in
 `sources/`. `POSES.md` has the prompts.
 
 ## The game's puppet

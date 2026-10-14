@@ -158,7 +158,7 @@ art-tools/
                   green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot;
                   cerberus_parts/, scipio_parts/, spartacus_parts/, pope_parts/,
                   caesar_parts/: Rome (all built); nemo_parts/, javert_parts/, sherlock_parts/ (built),
-                  sherlock_deerstalker_parts/, cheshire_cat_parts/:
+                  sherlock_deerstalker_parts/ (built), cheshire_cat_parts/:
                   Baker Street
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
@@ -436,8 +436,11 @@ the felt by his right hand (`keep_white` keeps its highlight).
 **Javert is built** (`#/puppet/javert`, 24 clips, seat 2), in a plain black
 bicorne (the owner's call over a top hat: less recognisable).
 **Holmes is built** (`#/puppet/sherlock`, 24 clips, seat 4, mirrored),
-bareheaded in his own sitting room (Javert asks about it, in banter); his
-deerstalker is a planned second look (`sherlock_deerstalker_parts/`).
+bareheaded in his own sitting room (Javert asks about it, in banter). **His
+deerstalker look is built too** (`#/puppet/sherlock_deerstalker`, 24 clips,
+`"of": "sherlock"` in its anim.json, like `green_knight_bare`): the owner's
+unlockable second look. Nothing seats it yet; the proposed rule (bareheaded
+at Baker Street, the cap everywhere else) is game work, for another thread.
 **The Cheshire Cat takes Alice's chair** (seat 3, mirrored; the owner's call,
 ENGINE_VERSION 12: the Alice sheets drew as Disney's). The design doc had
 rejected him as unreadable; his tells answer that: his tail, eyes blinking one

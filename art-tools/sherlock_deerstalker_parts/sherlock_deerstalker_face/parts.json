@@ -1,0 +1,276 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "sherlock_deerstalker_face_01.png",
+      "label": "",
+      "x": 20,
+      "y": 3,
+      "w": 382,
+      "h": 475,
+      "pivot": [
+        191.0,
+        237.5
+      ],
+      "area": 120442
+    },
+    {
+      "index": 2,
+      "file": "sherlock_deerstalker_face_02.png",
+      "label": "",
+      "x": 420,
+      "y": 139,
+      "w": 257,
+      "h": 157,
+      "pivot": [
+        128.5,
+        78.5
+      ],
+      "area": 31484
+    },
+    {
+      "index": 3,
+      "file": "sherlock_deerstalker_face_03.png",
+      "label": "",
+      "x": 689,
+      "y": 139,
+      "w": 265,
+      "h": 157,
+      "pivot": [
+        132.5,
+        78.5
+      ],
+      "area": 32041
+    },
+    {
+      "index": 4,
+      "file": "sherlock_deerstalker_face_04.png",
+      "label": "",
+      "x": 967,
+      "y": 138,
+      "w": 269,
+      "h": 158,
+      "pivot": [
+        134.5,
+        79.0
+      ],
+      "area": 33053
+    },
+    {
+      "index": 5,
+      "file": "sherlock_deerstalker_face_05.png",
+      "label": "",
+      "x": 1252,
+      "y": 138,
+      "w": 273,
+      "h": 158,
+      "pivot": [
+        136.5,
+        79.0
+      ],
+      "area": 33469
+    },
+    {
+      "index": 6,
+      "file": "sherlock_deerstalker_face_06.png",
+      "label": "",
+      "x": 509,
+      "y": 309,
+      "w": 280,
+      "h": 163,
+      "pivot": [
+        140.0,
+        81.5
+      ],
+      "area": 35694
+    },
+    {
+      "index": 7,
+      "file": "sherlock_deerstalker_face_07.png",
+      "label": "",
+      "x": 814,
+      "y": 310,
+      "w": 282,
+      "h": 163,
+      "pivot": [
+        141.0,
+        81.5
+      ],
+      "area": 35720
+    },
+    {
+      "index": 8,
+      "file": "sherlock_deerstalker_face_08.png",
+      "label": "",
+      "x": 1120,
+      "y": 309,
+      "w": 285,
+      "h": 166,
+      "pivot": [
+        142.5,
+        83.0
+      ],
+      "area": 36848
+    },
+    {
+      "index": 9,
+      "file": "sherlock_deerstalker_face_09.png",
+      "label": "",
+      "x": 21,
+      "y": 502,
+      "w": 196,
+      "h": 155,
+      "pivot": [
+        98.0,
+        77.5
+      ],
+      "area": 22776
+    },
+    {
+      "index": 10,
+      "file": "sherlock_deerstalker_face_10.png",
+      "label": "",
+      "x": 224,
+      "y": 503,
+      "w": 188,
+      "h": 154,
+      "pivot": [
+        94.0,
+        77.0
+      ],
+      "area": 21757
+    },
+    {
+      "index": 11,
+      "file": "sherlock_deerstalker_face_11.png",
+      "label": "",
+      "x": 422,
+      "y": 503,
+      "w": 193,
+      "h": 154,
+      "pivot": [
+        96.5,
+        77.0
+      ],
+      "area": 22105
+    },
+    {
+      "index": 12,
+      "file": "sherlock_deerstalker_face_12.png",
+      "label": "",
+      "x": 624,
+      "y": 503,
+      "w": 186,
+      "h": 153,
+      "pivot": [
+        93.0,
+        76.5
+      ],
+      "area": 20994
+    },
+    {
+      "index": 13,
+      "file": "sherlock_deerstalker_face_13.png",
+      "label": "",
+      "x": 819,
+      "y": 503,
+      "w": 187,
+      "h": 151,
+      "pivot": [
+        93.5,
+        75.5
+      ],
+      "area": 21236
+    },
+    {
+      "index": 14,
+      "file": "sherlock_deerstalker_face_14.png",
+      "label": "",
+      "x": 1015,
+      "y": 503,
+      "w": 188,
+      "h": 148,
+      "pivot": [
+        94.0,
+        74.0
+      ],
+      "area": 21185
+    },
+    {
+      "index": 15,
+      "file": "sherlock_deerstalker_face_15.png",
+      "label": "",
+      "x": 1159,
+      "y": 508,
+      "w": 359,
+      "h": 484,
+      "pivot": [
+        179.5,
+        242.0
+      ],
+      "area": 110509
+    },
+    {
+      "index": 16,
+      "file": "sherlock_deerstalker_face_16.png",
+      "label": "",
+      "x": 85,
+      "y": 694,
+      "w": 215,
+      "h": 161,
+      "pivot": [
+        107.5,
+        80.5
+      ],
+      "area": 26106
+    },
+    {
+      "index": 17,
+      "file": "sherlock_deerstalker_face_17.png",
+      "label": "",
+      "x": 324,
+      "y": 694,
+      "w": 220,
+      "h": 161,
+      "pivot": [
+        110.0,
+        80.5
+      ],
+      "area": 26257
+    },
+    {
+      "index": 18,
+      "file": "sherlock_deerstalker_face_18.png",
+      "label": "",
+      "x": 577,
+      "y": 693,
+      "w": 225,
+      "h": 162,
+      "pivot": [
+        112.5,
+        81.0
+      ],
+      "area": 27414
+    },
+    {
+      "index": 19,
+      "file": "sherlock_deerstalker_face_19.png",
+      "label": "",
+      "x": 827,
+      "y": 693,
+      "w": 235,
+      "h": 162,
+      "pivot": [
+        117.5,
+        81.0
+      ],
+      "area": 28952
+    }
+  ]
+}

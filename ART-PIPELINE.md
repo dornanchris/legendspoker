@@ -56,7 +56,7 @@ overlay sheet. Kit folder: `art-tools/<id>_parts/`.
    **The newer sheets draw a gold-orange rail**, the colour of skin and gold
    cloth. Start from Spartacus (bare skin), Scipio (gold bracers crossing
    the rail) or the Pope (gold embroidery, red robes): `rail_orange`
-   `{"red": 120, "blue": 24}`, `rail_blue` 40, and as needed `rail_green`,
+   `{"red": 120, "blue": 24}` (and `"green"`, default 70: Holmes in the cap), `rail_blue` 40, and as needed `rail_green`,
    `rail_long`, `no_wood`, a narrow `rail_band`. Their READMEs say why.
 6. **Build:** `python3 art-tools/pose_rig.py art-tools/<id>_parts/pose_rig.json`
    (validate line: under ~1% of pixels differ), then
@@ -95,7 +95,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
-| Baker Street | built | Nemo, Javert, Holmes | | the Cheshire Cat (redraw in the flat style; prompts in `cheshire_cat_parts/POSES.md`); Holmes's deerstalker look (prompts in `sherlock_deerstalker_parts/POSES.md`) |
+| Baker Street | built | Nemo, Javert, Holmes (both looks) | | the Cheshire Cat (redraw in the flat style: his first sheet drew fur; prompts in `cheshire_cat_parts/POSES.md`) |
 | Transylvania | prompt only | | | Van Helsing, the Monster, the Wolf Man, the Headless Horseman, Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
@@ -106,8 +106,9 @@ Seats at Rome: 1 Spartacus, 2 the Pope, 3 Cerberus (mirrored, giant),
 
 ## Planned second looks
 
-- **Holmes in the deerstalker** (the owner): prompts written,
-  `sherlock_deerstalker_parts/POSES.md` (the bareheaded kit stays). Redo his six prompts with Paget's ear-flapped travelling cap (flaps
+- **Holmes in the deerstalker** (the owner): BUILT,
+  `#/puppet/sherlock_deerstalker` from `sherlock_deerstalker_parts/` (the
+  bareheaded kit stays). Paget's ear-flapped travelling cap (flaps
   tied up, no cape) as a second puppet, the way the Green Knight has
   `green_knight_bare` (`RETURNED` in `web/puppet/cast.ts`). Same poses, same
   tells, same pipe: a look, never a different read. Proposed rule (the owner

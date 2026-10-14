@@ -386,7 +386,7 @@ def main(spec_path):
 
     RO = spec.get('rail_orange')
     RO = RO if isinstance(RO, dict) else {}                # {"red", "blue"}: where skin is that orange too (Scipio)
-    gold = lambda c: ((c[..., 0] > RO.get('red', 170)) & (c[..., 0] - c[..., 1] > 40) & (c[..., 1] > 70)
+    gold = lambda c: ((c[..., 0] > RO.get('red', 170)) & (c[..., 0] - c[..., 1] > 40) & (c[..., 1] > RO.get('green', 70))
                       & (c[..., 2] < RO.get('blue', 90)))
 
     def rail_gold(a):
@@ -452,7 +452,7 @@ def main(spec_path):
             for ex in a.get('except', []):
                 m &= ~poly_mask(src.shape[:2], ex)
             if a['pose'] == rest:
-                m &= ~rail_gold(src)
+                m &= ~(rail_gold(src) & ~props)                # (a prop the rail's gold, Holmes's pipe band, stays)
             if a.get('drop_red'):                          # chips: the game draws its own
                 c = src[..., :3].astype(int)
                 coloured = ((c[..., 0] > 110) & (c[..., 1] < 70) & (c[..., 2] < 80)) | \

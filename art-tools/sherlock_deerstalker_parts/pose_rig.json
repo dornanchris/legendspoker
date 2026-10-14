@@ -1,0 +1,1311 @@
+{
+ "id": "sherlock_deerstalker",
+ "name": "Sherlock Holmes (deerstalker)",
+ "note": "Holmes's second look, the deerstalker (the owner's call), built from the bareheaded kit's settings: same frames, same props, same tells. Polygons in the rest pose (A1) pixels. Style-locked sheets, bareheaded (the owner's call; the deerstalker is a second look, sherlock_deerstalker_parts). Baker Street's champion, seat 4, mirrored. The master is the rest pose's OWN head (sherlock_face/sherlock_master.png), as Javert's is. The clay pipe lies on the felt by his right hand: part of that forearm's piece at rest, a props box in every frame; the two frames where he holds it drop the second pipe the sheets also drew on the felt (except). The drawn rail is gold-orange, like his skin.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    14,
+    7,
+    490,
+    486
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, the clay pipe on the felt by his right hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    519,
+    9,
+    498,
+    484
+   ],
+   "what": "Peeking at his cards (right hand)",
+   "reg": [
+    1.0,
+    0,
+    2
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1031,
+    8,
+    492,
+    485
+   ],
+   "what": "Check: one long finger taps the felt",
+   "reg": [
+    1.0,
+    0,
+    1
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    14,
+    500,
+    490,
+    470
+   ],
+   "what": "Call: slides a short stack forward",
+   "reg": [
+    1.0,
+    0,
+    16
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    518,
+    508,
+    499,
+    462
+   ],
+   "what": "Bet: sets a stack down, precise",
+   "reg": [
+    1.0,
+    -1,
+    24
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1031,
+    505,
+    492,
+    465
+   ],
+   "what": "Fold: lays his cards down, bored",
+   "reg": [
+    1.0,
+    0,
+    21
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    15,
+    8,
+    490,
+    484
+   ],
+   "what": "All in: both hands push his whole stack, eyes alight",
+   "reg": [
+    1.0,
+    0,
+    2
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    519,
+    9,
+    498,
+    483
+   ],
+   "what": "Show: turns his cards over",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1031,
+    9,
+    491,
+    483
+   ],
+   "what": "Collect: both arms drawing the pot in",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    15,
+    494,
+    490,
+    484
+   ],
+   "what": "Puts his fingertips together (TELL)",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    514,
+    535,
+    504,
+    443
+   ],
+   "what": "Examines a speck on the tablecloth, bent close (decoy for B4)",
+   "reg": [
+    1.0,
+    -5,
+    44
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1031,
+    505,
+    491,
+    473
+   ],
+   "what": "Draws on his pipe (TELL)",
+   "reg": [
+    1.0,
+    0,
+    14
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    15,
+    6,
+    491,
+    487
+   ],
+   "what": "Turns his lens over in his fingers (decoy for B6)",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    522,
+    3,
+    492,
+    490
+   ],
+   "what": "Taps his pipe stem against his teeth (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -3
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1029,
+    12,
+    492,
+    481
+   ],
+   "what": "Glances at your hands (decoy for C2)",
+   "reg": [
+    1.0,
+    0,
+    6
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    15,
+    495,
+    491,
+    483
+   ],
+   "what": "Looks at the mantel as if it had lied to him",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    522,
+    505,
+    491,
+    473
+   ],
+   "what": "A sharp, reading look straight at the viewer",
+   "reg": [
+    1.0,
+    -1,
+    13
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1031,
+    499,
+    490,
+    479
+   ],
+   "what": "Leans back, eyes half closed, bored",
+   "reg": [
+    1.0,
+    0,
+    8
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    15,
+    5,
+    490,
+    487
+   ],
+   "what": "Talking: one finger raised, explaining",
+   "reg": [
+    1.0,
+    0,
+    -1
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    518,
+    5,
+    488,
+    487
+   ],
+   "what": "Facing a big bet: eyes narrowed, chin on his hand",
+   "reg": [
+    1.0,
+    -1,
+    -1
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1018,
+    5,
+    502,
+    487
+   ],
+   "what": "Lost a pot: a thin, irritated smile",
+   "reg": [
+    1.0,
+    0,
+    -1
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    15,
+    505,
+    490,
+    468
+   ],
+   "what": "Won a pot: a quick, pleased smile, drawing chips in",
+   "reg": [
+    1.0,
+    0,
+    18
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    517,
+    527,
+    499,
+    446
+   ],
+   "what": "Heads up: leaning in on both forearms, eyes bright",
+   "reg": [
+    1.0,
+    0,
+    40
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1028,
+    498,
+    492,
+    475
+   ],
+   "what": "Knocked out: rises, pipe in hand, a curt bow",
+   "reg": [
+    1.0,
+    0,
+    11
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 378,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  230,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 210,
+ "neck": [
+  260,
+  210
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  200,
+  190,
+  340,
+  260
+ ],
+ "master": {
+  "piece": "sherlock_deerstalker_parts/sherlock_deerstalker_face/sherlock_deerstalker_master.png",
+  "cut_below": 225,
+  "face": "sherlock_deerstalker_parts/face.json",
+  "file": "sherlock_deerstalker_parts/sherlock_deerstalker_rig/master.png",
+  "layers": "sherlock_deerstalker_parts/sherlock_deerstalker_rig/face",
+  "head_box": [
+   0,
+   0,
+   490,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    150,
+    0
+   ],
+   [
+    380,
+    0
+   ],
+   [
+    380,
+    115
+   ],
+   [
+    358,
+    125
+   ],
+   [
+    352,
+    170
+   ],
+   [
+    330,
+    205
+   ],
+   [
+    290,
+    215
+   ],
+   [
+    245,
+    210
+   ],
+   [
+    205,
+    185
+   ],
+   [
+    185,
+    125
+   ],
+   [
+    160,
+    120
+   ]
+  ],
+  "heads": {
+   "viewer": "sherlock_deerstalker_parts/sherlock_deerstalker_face/sherlock_deerstalker_face_15.png"
+  },
+  "cloth": [
+   15,
+   140
+  ],
+  "shoulder_y": 195
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    50,
+    360
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     310
+    ],
+    [
+     110,
+     310
+    ],
+    [
+     110,
+     345
+    ],
+    [
+     10,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the clay pipe",
+     "poly": [
+      [
+       0,
+       350
+      ],
+      [
+       70,
+       340
+      ],
+      [
+       150,
+       358
+      ],
+      [
+       230,
+       370
+      ],
+      [
+       275,
+       395
+      ],
+      [
+       285,
+       450
+      ],
+      [
+       275,
+       484
+      ],
+      [
+       10,
+       484
+      ],
+      [
+       0,
+       450
+      ]
+     ],
+     "props": [
+      [
+       [
+        20,
+        425
+       ],
+       [
+        185,
+        425
+       ],
+       [
+        185,
+        482
+       ],
+       [
+        20,
+        482
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    455,
+    360
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     320
+    ],
+    [
+     490,
+     320
+    ],
+    [
+     490,
+     350
+    ],
+    [
+     400,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       312,
+       484
+      ],
+      [
+       318,
+       430
+      ],
+      [
+       345,
+       395
+      ],
+      [
+       385,
+       378
+      ],
+      [
+       430,
+       365
+      ],
+      [
+       490,
+       362
+      ],
+      [
+       490,
+       430
+      ],
+      [
+       470,
+       455
+      ],
+      [
+       460,
+       484
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      170,
+      380
+     ],
+     [
+      330,
+      380
+     ],
+     [
+      330,
+      474
+     ],
+     [
+      170,
+      474
+     ]
+    ],
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      370
+     ],
+     [
+      340,
+      370
+     ],
+     [
+      340,
+      474
+     ],
+     [
+      160,
+      474
+     ]
+    ],
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      150,
+      360
+     ],
+     [
+      480,
+      360
+     ],
+     [
+      480,
+      474
+     ],
+     [
+      150,
+      474
+     ]
+    ],
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      150,
+      355
+     ],
+     [
+      480,
+      355
+     ],
+     [
+      480,
+      474
+     ],
+     [
+      150,
+      474
+     ]
+    ],
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "fingertips": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "speck": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "pipe": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "except": [
+    [
+     [
+      10,
+      410
+     ],
+     [
+      190,
+      410
+     ],
+     [
+      190,
+      484
+     ],
+     [
+      10,
+      484
+     ]
+    ]
+   ]
+  },
+  "lens": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "pipe_teeth": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "except": [
+    [
+     [
+      10,
+      410
+     ],
+     [
+      190,
+      410
+     ],
+     [
+      190,
+      484
+     ],
+     [
+      10,
+      484
+     ]
+    ]
+   ]
+  },
+  "your_hands": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "mantel": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "reading": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "bored": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      370
+     ],
+     [
+      340,
+      370
+     ],
+     [
+      340,
+      474
+     ],
+     [
+      160,
+      474
+     ]
+    ],
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      408
+     ],
+     [
+      190,
+      408
+     ],
+     [
+      190,
+      472
+     ],
+     [
+      10,
+      472
+     ]
+    ]
+   ]
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     560,
+     -60
+    ],
+    [
+     560,
+     388
+    ],
+    [
+     -60,
+     388
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/sherlock_deerstalker",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "wood_rows_only": true,
+ "no_wood": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 34,
+  "green": 50
+ }
+}
