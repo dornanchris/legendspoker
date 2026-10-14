@@ -43,4 +43,7 @@ for i, k in enumerate('ABCD'):
     out.append(block(intro + "\n\n" + body + "\n\n" + tail))
 out.append("### Face overlay sheet\n")
 out.append(block(s['face'] + ('\n\n' + SHORT.strip() if LOCK else '')))
-open(sys.argv[2], 'w').write("\n".join(out))
+text = "\n".join(out)
+for a, b in s.get('replace', []):                          # a non-human body (Cerberus): the template's arms and hands
+    text = text.replace(a, b)
+open(sys.argv[2], 'w').write(text)

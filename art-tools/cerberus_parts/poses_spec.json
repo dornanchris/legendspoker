@@ -167,5 +167,35 @@
    "Knocked out: dropping down from the table, turning away to pad off, one head looking back over his shoulder"
   ]
  },
- "face": "Character sheet for 2D animation rigging: Cerberus's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of his MIDDLE head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head. Draw the three heads together once, top left, as in the at-rest pose, as the reference, mouths closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.\n\n- The middle head's eyes, each piece both eyes with the black fur around them: lids half closed; closed; looking toward the viewer; looking down at the table; looking to the side; narrowed, wary\n- The middle head's muzzle and jaw, each a separate piece cut across just below the eyes: closed; a low growl, lips curled; open, panting, tongue out; a whine, mouth slightly open; a snarl, teeth bared\n- The LEFT head on its own neck and collar, at its size and angle in the at-rest pose, four times: calm; eyes closed, asleep; yawning wide; snarling\n- The RIGHT head on its own neck and collar, at its size and angle in the at-rest pose, four times: calm; eyes closed, asleep; sniffing, nose out; snarling\n- The middle head turned toward the viewer, nearly front-on"
+ "face": "Character sheet for 2D animation rigging: Cerberus's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of his MIDDLE head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head. Draw the three heads together once, top left, as in the at-rest pose, as the reference, mouths closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.\n\n- The middle head's eyes, each piece both eyes with the black fur around them: lids half closed; closed; looking toward the viewer; looking down at the table; looking to the side; narrowed, wary\n- The middle head's muzzle and jaw, each a separate piece cut across just below the eyes: closed; a low growl, lips curled; open, panting, tongue out; a whine, mouth slightly open; a snarl, teeth bared\n- The LEFT head on its own neck and collar, at its size and angle in the at-rest pose, four times: calm; eyes closed, asleep; yawning wide; snarling\n- The RIGHT head on its own neck and collar, at its size and angle in the at-rest pose, four times: calm; eyes closed, asleep; sniffing, nose out; snarling\n- The middle head turned toward the viewer, nearly front-on",
+ "replace": [
+  [
+   "the arm that the pose does not mention stays EXACTLY as in pose 1, same position, same hand.",
+   "the paw that the pose does not mention stays EXACTLY as in pose 1, same position."
+  ],
+  [
+   "The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart).",
+   "The paw a pose does not mention stays EXACTLY as in the at-rest pose (front paws resting apart)."
+  ],
+  [
+   "Every pose: waist up, seated behind",
+   "Every pose: chest up, sitting up behind"
+  ],
+  [
+   "Every pose: waist up, behind",
+   "Every pose: chest up, sitting up behind"
+  ],
+  [
+   "hair, beard and fur",
+   "fur"
+  ],
+  [
+   "hair and beard drawn as a few big smooth locks, never strand by strand",
+   "fur drawn as a few big smooth shapes, never hair by hair"
+  ],
+  [
+   "a face with only a few lines (no fine wrinkles, no pores, no cross-hatching)",
+   "faces with only a few lines (no fine wrinkles, no cross-hatching)"
+  ]
+ ]
 }
