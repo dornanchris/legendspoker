@@ -205,16 +205,16 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 - **Presence:** A laurel wreath waits on a cushion by the door. Its owner has been promised the next free chair.
 - **Sounds (for reference):** brazier crackle; a heavy chain shifting on stone; distant bells over the city; a far-off arena crowd, rising and falling; a pen scratching on parchment
 - **Light:** Brazier orange and fresco colour above, dusky violet through the window.
-- **Avoid:** Nothing from the film Gladiator or the television series Rome or The Borgias.
+- **Avoid:** Nothing from the film Gladiator, the television series Rome or The Borgias, Angels and Demons or Assassin's Creed. No modern Rome (no cars, no electric lights, no Vatican dome in modern lighting).
 
 **Backdrop plate:**
 
 ```
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
 
-The room: A high hall inside Castel Sant'Angelo in Rome: rough ancient Roman brick in the lower walls, bright Renaissance frescoes of clouds and allegorical figures on the vaulted ceiling above, iron braziers burning, a window onto the city at dusk. A heavy iron chain runs from a ring in the wall toward one of the seats. By the door, a laurel wreath waits on a red cushion.
+The room: A high hall inside Castel Sant'Angelo in Rome, at dusk: Hadrian's tomb, later walled into a papal fortress. The lower walls are rough ancient Roman brick, warm red-brown, with a few round arches; above them, from about a third of the way down, bright Renaissance frescoes: painted clouds, sky blue and gold, and robed allegorical figures, on a high vaulted ceiling across the top of the picture. Dead centre at the back, behind the dealer: a plain stretch of old brick and a closed bronze-studded door in a round arch, softly lit, calm and mid-toned. On the LEFT side, a tall arched window open onto the city at dusk: domes and rooftops, the river, a violet and orange sky; in front of it, against the wall, a tall iron brazier on three legs, its bowl at about half height, burning bright. On the RIGHT side, a second tall iron brazier, its bowl at about half height, burning bright, and above it a heavy iron ring set in the brick at about a quarter of the way down; a thick iron chain hangs from the ring and runs down and across toward the middle of the right half of the room, ending at about half height, out of sight behind where a player will sit (at about 66% across). Purple and gold hangings with tassels between the frescoed panels. Near the right edge, beside a second, smaller doorway, a low marble pedestal with a red velvet cushion on it, its top at about half height, the cushion EMPTY.
 Light: Brazier orange and fresco colour above, dusky violet through the window.
-Must NOT resemble: Nothing from the film Gladiator or the television series Rome or The Borgias.
+Must NOT resemble: Nothing from the film Gladiator, the television series Rome or The Borgias, Angels and Demons or Assassin's Creed. No modern Rome (no cars, no electric lights, no Vatican dome in modern lighting).
 ```
 
 **Moving and story pieces:**
@@ -223,10 +223,9 @@ Must NOT resemble: Nothing from the film Gladiator or the television series Rome
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
 
 For the room: Imperial Rome. Parts:
-- The laurel wreath on its cushion by the door, as a separate piece (it goes when Caesar arrives)
-- Brazier flames: 3 frames
-- The iron chain, slack and pulled taut
-- Smoke rising from a brazier
+- A golden laurel wreath lying on a red velvet cushion, as a separate piece drawn at the size of the cushion on its pedestal in the backdrop (it stands there until Caesar arrives)
+- A brazier fire, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- A thin curl of smoke rising from a brazier, alone: 3 frames, each a slightly different curl
 
 Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
 ```

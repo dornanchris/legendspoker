@@ -52,11 +52,11 @@ const ROOMS = {
   },
   rome: {
     unique: 'Three eras stacked in one room: ancient brick below, Renaissance frescoes above, and a chain to the dog\'s chair. The richest room: imperial purple and gold.',
-    backdrop: 'A high hall inside Castel Sant\'Angelo in Rome: rough ancient Roman brick in the lower walls, bright Renaissance frescoes of clouds and allegorical figures on the vaulted ceiling above, iron braziers burning, a window onto the city at dusk. A heavy iron chain runs from a ring in the wall toward one of the seats. By the door, a laurel wreath waits on a red cushion',
+    backdrop: 'A high hall inside Castel Sant\'Angelo in Rome, at dusk: Hadrian\'s tomb, later walled into a papal fortress. The lower walls are rough ancient Roman brick, warm red-brown, with a few round arches; above them, from about a third of the way down, bright Renaissance frescoes: painted clouds, sky blue and gold, and robed allegorical figures, on a high vaulted ceiling across the top of the picture. Dead centre at the back, behind the dealer: a plain stretch of old brick and a closed bronze-studded door in a round arch, softly lit, calm and mid-toned. On the LEFT side, a tall arched window open onto the city at dusk: domes and rooftops, the river, a violet and orange sky; in front of it, against the wall, a tall iron brazier on three legs, its bowl at about half height, burning bright. On the RIGHT side, a second tall iron brazier, its bowl at about half height, burning bright, and above it a heavy iron ring set in the brick at about a quarter of the way down; a thick iron chain hangs from the ring and runs down and across toward the middle of the right half of the room, ending at about half height, out of sight behind where a player will sit (at about 66% across). Purple and gold hangings with tassels between the frescoed panels. Near the right edge, beside a second, smaller doorway, a low marble pedestal with a red velvet cushion on it, its top at about half height, the cushion EMPTY',
     light: 'Brazier orange and fresco colour above, dusky violet through the window',
-    moving: ['Brazier flames: 3 frames', 'The iron chain, slack and pulled taut', 'Smoke rising from a brazier'],
-    presence: ['The laurel wreath on its cushion by the door, as a separate piece (it goes when Caesar arrives)'],
-    avoid: 'Nothing from the film Gladiator or the television series Rome or The Borgias.',
+    moving: ['A brazier fire, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker', 'A thin curl of smoke rising from a brazier, alone: 3 frames, each a slightly different curl'],
+    presence: ['A golden laurel wreath lying on a red velvet cushion, as a separate piece drawn at the size of the cushion on its pedestal in the backdrop (it stands there until Caesar arrives)'],
+    avoid: 'Nothing from the film Gladiator, the television series Rome or The Borgias, Angels and Demons or Assassin\'s Creed. No modern Rome (no cars, no electric lights, no Vatican dome in modern lighting).',
   },
   baker_street: {
     unique: 'The most cluttered and lived-in room: a Victorian sitting room full of evidence.',
