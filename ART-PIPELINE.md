@@ -95,7 +95,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
-| Baker Street | built | | **Nemo** (all six sheets in) | **Javert** (prompts written, `javert_parts/POSES.md`), then Alice, Holmes |
+| Baker Street | built | Nemo | | **Javert** (prompts written, `javert_parts/POSES.md`), then Alice, Holmes |
 | Transylvania | prompt only | | | Van Helsing, the Monster, the Wolf Man, the Headless Horseman, Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |

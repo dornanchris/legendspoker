@@ -1,0 +1,1310 @@
+{
+ "id": "nemo",
+ "name": "Captain Nemo",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets. Baker Street's seat 1. The master is the rest pose's OWN head and cap (nemo_face/nemo_master.png), as the Pope's is. The great pearl lies on the felt by his right hand and goes with that forearm's piece in the rest pose; every frame keeps it as a prop. Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. The drawn rail is gold-orange, like his skin.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    15,
+    8,
+    492,
+    478
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, the great pearl on the felt by his right hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    521,
+    27,
+    490,
+    459
+   ],
+   "what": "Peeking at his cards (right hand)",
+   "reg": [
+    1.0,
+    2,
+    19
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1024,
+    8,
+    498,
+    478
+   ],
+   "what": "Check: two knuckles rap the felt",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    18,
+    500,
+    489,
+    467
+   ],
+   "what": "Call: slides a short stack forward",
+   "reg": [
+    1.0,
+    3,
+    11
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    522,
+    501,
+    489,
+    466
+   ],
+   "what": "Bet: sets a stack down, precise",
+   "reg": [
+    1.0,
+    3,
+    12
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1026,
+    504,
+    496,
+    463
+   ],
+   "what": "Fold: lays his cards down, disdainful",
+   "reg": [
+    1.0,
+    2,
+    15
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    13,
+    5,
+    496,
+    482
+   ],
+   "what": "All in: both hands push his whole stack, grim",
+   "reg": [
+    1.0,
+    2,
+    -4
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    520,
+    27,
+    492,
+    460
+   ],
+   "what": "Show: turns his cards over",
+   "reg": [
+    1.0,
+    0,
+    18
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1021,
+    30,
+    504,
+    457
+   ],
+   "what": "Collect: both arms drawing the pot in",
+   "reg": [
+    1.0,
+    0,
+    21
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    13,
+    499,
+    496,
+    484
+   ],
+   "what": "Closes his eyes, as if listening to distant music (TELL)",
+   "reg": [
+    1.0,
+    3,
+    -6
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    524,
+    504,
+    488,
+    479
+   ],
+   "what": "Hums a fugue under his breath, eyes half closed (decoy for B4)",
+   "reg": [
+    1.0,
+    3,
+    -1
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1026,
+    502,
+    497,
+    481
+   ],
+   "what": "Lets his gaze drift to the window (TELL)",
+   "reg": [
+    1.0,
+    3,
+    -3
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    12,
+    20,
+    494,
+    474
+   ],
+   "what": "Consults a pocket chronometer (decoy for B6)",
+   "reg": [
+    1.0,
+    3,
+    4
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    517,
+    25,
+    495,
+    469
+   ],
+   "what": "Turns the great pearl between his fingers (TELL)",
+   "reg": [
+    1.0,
+    -1,
+    9
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1027,
+    15,
+    498,
+    479
+   ],
+   "what": "Taps the table as if sounding a hull (decoy for C2)",
+   "reg": [
+    1.0,
+    3,
+    -1
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    12,
+    508,
+    494,
+    458
+   ],
+   "what": "Sketches something in a small notebook",
+   "reg": [
+    1.0,
+    3,
+    20
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    521,
+    504,
+    490,
+    462
+   ],
+   "what": "A cold, level look straight at the viewer",
+   "reg": [
+    1.0,
+    3,
+    16
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1027,
+    533,
+    496,
+    433
+   ],
+   "what": "Arms folded on the table, brooding",
+   "reg": [
+    1.0,
+    3,
+    45
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    14,
+    6,
+    496,
+    484
+   ],
+   "what": "Talking: one hand raised, flat and final",
+   "reg": [
+    1.0,
+    0,
+    -6
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    521,
+    8,
+    491,
+    482
+   ],
+   "what": "Facing a big bet: brows drawn, a long cold stare",
+   "reg": [
+    1.0,
+    2,
+    -4
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1026,
+    32,
+    496,
+    458
+   ],
+   "what": "Lost a pot: jaw set, eyes lowered",
+   "reg": [
+    1.0,
+    3,
+    20
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    17,
+    504,
+    491,
+    468
+   ],
+   "what": "Won a pot: a grave half-smile, drawing chips in",
+   "reg": [
+    1.0,
+    3,
+    10
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    522,
+    527,
+    490,
+    445
+   ],
+   "what": "Heads up: leaning in on both forearms, eyes hard",
+   "reg": [
+    1.0,
+    3,
+    33
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1026,
+    497,
+    496,
+    475
+   ],
+   "what": "Knocked out: rises, pockets the pearl, turns away without a word",
+   "reg": [
+    1.0,
+    3,
+    3
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 366,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  230,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 235,
+ "neck": [
+  250,
+  235
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  180,
+  220,
+  340,
+  280
+ ],
+ "master": {
+  "piece": "nemo_parts/nemo_face/nemo_master.png",
+  "cut_below": 230,
+  "face": "nemo_parts/face.json",
+  "file": "nemo_parts/nemo_rig/master.png",
+  "layers": "nemo_parts/nemo_rig/face",
+  "head_box": [
+   0,
+   0,
+   492,
+   300
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    130,
+    0
+   ],
+   [
+    365,
+    0
+   ],
+   [
+    365,
+    190
+   ],
+   [
+    352,
+    215
+   ],
+   [
+    320,
+    232
+   ],
+   [
+    270,
+    240
+   ],
+   [
+    220,
+    236
+   ],
+   [
+    180,
+    215
+   ],
+   [
+    150,
+    180
+   ],
+   [
+    135,
+    120
+   ]
+  ],
+  "heads": {
+   "viewer": "nemo_parts/nemo_face/nemo_face_02.png"
+  },
+  "cloth": [
+   15,
+   140
+  ],
+  "shoulder_y": 210
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    45,
+    350
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     300
+    ],
+    [
+     100,
+     300
+    ],
+    [
+     100,
+     335
+    ],
+    [
+     10,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and hand, and the great pearl",
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       60,
+       322
+      ],
+      [
+       120,
+       340
+      ],
+      [
+       170,
+       355
+      ],
+      [
+       235,
+       375
+      ],
+      [
+       256,
+       420
+      ],
+      [
+       250,
+       478
+      ],
+      [
+       120,
+       478
+      ],
+      [
+       20,
+       478
+      ],
+      [
+       0,
+       440
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    450,
+    340
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     300
+    ],
+    [
+     492,
+     300
+    ],
+    [
+     492,
+     330
+    ],
+    [
+     400,
+     330
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and hand",
+     "poly": [
+      [
+       300,
+       478
+      ],
+      [
+       312,
+       410
+      ],
+      [
+       340,
+       375
+      ],
+      [
+       380,
+       352
+      ],
+      [
+       430,
+       336
+      ],
+      [
+       492,
+       332
+      ],
+      [
+       492,
+       400
+      ],
+      [
+       470,
+       425
+      ],
+      [
+       455,
+       478
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      170,
+      370
+     ],
+     [
+      330,
+      370
+     ],
+     [
+      330,
+      478
+     ],
+     [
+      170,
+      478
+     ]
+    ],
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      360
+     ],
+     [
+      340,
+      360
+     ],
+     [
+      340,
+      478
+     ],
+     [
+      160,
+      478
+     ]
+    ],
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      90,
+      350
+     ],
+     [
+      470,
+      350
+     ],
+     [
+      470,
+      478
+     ],
+     [
+      90,
+      478
+     ]
+    ],
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      90,
+      345
+     ],
+     [
+      480,
+      345
+     ],
+     [
+      480,
+      478
+     ],
+     [
+      90,
+      478
+     ]
+    ],
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "listen": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "fugue": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "window": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "chronometer": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "pearl": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "except": [
+    [
+     [
+      20,
+      390
+     ],
+     [
+      110,
+      390
+     ],
+     [
+      110,
+      478
+     ],
+     [
+      20,
+      478
+     ]
+    ]
+   ]
+  },
+  "hull": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "notebook": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "cold_look": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "arms_folded": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      360
+     ],
+     [
+      340,
+      360
+     ],
+     [
+      340,
+      478
+     ],
+     [
+      160,
+      478
+     ]
+    ],
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      28,
+      396
+     ],
+     [
+      100,
+      396
+     ],
+     [
+      100,
+      472
+     ],
+     [
+      28,
+      472
+     ]
+    ]
+   ]
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     560,
+     -60
+    ],
+    [
+     560,
+     378
+    ],
+    [
+     -60,
+     378
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/nemo",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "wood_rows_only": true,
+ "no_wood": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "keep_white": [
+  [
+   [
+    28,
+    396
+   ],
+   [
+    100,
+    396
+   ],
+   [
+    100,
+    472
+   ],
+   [
+    28,
+    472
+   ]
+  ]
+ ]
+}

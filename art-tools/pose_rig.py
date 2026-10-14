@@ -470,6 +470,8 @@ def main(spec_path):
                 m &= ~ndimage.binary_dilation(blue, iterations=1) & ~(near & (c.min(-1) > 170) & (np.ptp(c, axis=-1) < 45))
             c = src[..., :3].astype(int)                   # the sheet's white caught between a hand and him
             white = (c.min(-1) > 236) & (np.ptp(c, axis=-1) < 12) & (src[..., 3] > 128)
+            for kw in spec.get('keep_white', []):          # a white highlight that is his (Nemo's pearl)
+                white &= ~poly_mask(src.shape[:2], kw)
             lab, n = ndimage.label(white)
             if n:
                 sz = ndimage.sum(white, lab, range(1, n + 1))
@@ -675,6 +677,8 @@ def main(spec_path):
                 fm &= ~ndimage.binary_dilation(np.isin(lab, 1 + np.nonzero(sz >= 40)[0]), iterations=1)
         c = F[..., :3].astype(int)                         # the sheet's white caught between an arm and him
         white = (c.min(-1) > 236) & (np.ptp(c, axis=-1) < 12) & (F[..., 3] > 128)
+        for kw in spec.get('keep_white', []):
+            white &= ~pm(kw)
         lab, n = ndimage.label(white)
         trapped = np.zeros(fshape, bool)
         if n:

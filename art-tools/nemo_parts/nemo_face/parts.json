@@ -1,0 +1,290 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "nemo_face_01.png",
+      "label": "",
+      "x": 14,
+      "y": 16,
+      "w": 410,
+      "h": 429,
+      "pivot": [
+        205.0,
+        214.5
+      ],
+      "area": 118416
+    },
+    {
+      "index": 2,
+      "file": "nemo_face_02.png",
+      "label": "",
+      "x": 1112,
+      "y": 13,
+      "w": 402,
+      "h": 432,
+      "pivot": [
+        201.0,
+        216.0
+      ],
+      "area": 112938
+    },
+    {
+      "index": 3,
+      "file": "nemo_face_03.png",
+      "label": "",
+      "x": 430,
+      "y": 117,
+      "w": 206,
+      "h": 105,
+      "pivot": [
+        103.0,
+        52.5
+      ],
+      "area": 17352
+    },
+    {
+      "index": 4,
+      "file": "nemo_face_04.png",
+      "label": "",
+      "x": 680,
+      "y": 118,
+      "w": 208,
+      "h": 104,
+      "pivot": [
+        104.0,
+        52.0
+      ],
+      "area": 17405
+    },
+    {
+      "index": 5,
+      "file": "nemo_face_05.png",
+      "label": "",
+      "x": 936,
+      "y": 119,
+      "w": 209,
+      "h": 101,
+      "pivot": [
+        104.5,
+        50.5
+      ],
+      "area": 17190
+    },
+    {
+      "index": 6,
+      "file": "nemo_face_06.png",
+      "label": "",
+      "x": 425,
+      "y": 249,
+      "w": 207,
+      "h": 101,
+      "pivot": [
+        103.5,
+        50.5
+      ],
+      "area": 16367
+    },
+    {
+      "index": 7,
+      "file": "nemo_face_07.png",
+      "label": "",
+      "x": 675,
+      "y": 249,
+      "w": 208,
+      "h": 99,
+      "pivot": [
+        104.0,
+        49.5
+      ],
+      "area": 16315
+    },
+    {
+      "index": 8,
+      "file": "nemo_face_08.png",
+      "label": "",
+      "x": 932,
+      "y": 249,
+      "w": 211,
+      "h": 99,
+      "pivot": [
+        105.5,
+        49.5
+      ],
+      "area": 16608
+    },
+    {
+      "index": 9,
+      "file": "nemo_face_09.png",
+      "label": "",
+      "x": 488,
+      "y": 424,
+      "w": 226,
+      "h": 77,
+      "pivot": [
+        113.0,
+        38.5
+      ],
+      "area": 12534
+    },
+    {
+      "index": 10,
+      "file": "nemo_face_10.png",
+      "label": "",
+      "x": 767,
+      "y": 426,
+      "w": 244,
+      "h": 78,
+      "pivot": [
+        122.0,
+        39.0
+      ],
+      "area": 13670
+    },
+    {
+      "index": 11,
+      "file": "nemo_face_11.png",
+      "label": "",
+      "x": 34,
+      "y": 536,
+      "w": 256,
+      "h": 193,
+      "pivot": [
+        128.0,
+        96.5
+      ],
+      "area": 37651
+    },
+    {
+      "index": 12,
+      "file": "nemo_face_12.png",
+      "label": "",
+      "x": 338,
+      "y": 535,
+      "w": 257,
+      "h": 199,
+      "pivot": [
+        128.5,
+        99.5
+      ],
+      "area": 38912
+    },
+    {
+      "index": 13,
+      "file": "nemo_face_13.png",
+      "label": "",
+      "x": 635,
+      "y": 534,
+      "w": 261,
+      "h": 197,
+      "pivot": [
+        130.5,
+        98.5
+      ],
+      "area": 39432
+    },
+    {
+      "index": 14,
+      "file": "nemo_face_14.png",
+      "label": "",
+      "x": 938,
+      "y": 535,
+      "w": 253,
+      "h": 198,
+      "pivot": [
+        126.5,
+        99.0
+      ],
+      "area": 38093
+    },
+    {
+      "index": 15,
+      "file": "nemo_face_15.png",
+      "label": "",
+      "x": 1235,
+      "y": 536,
+      "w": 264,
+      "h": 192,
+      "pivot": [
+        132.0,
+        96.0
+      ],
+      "area": 38885
+    },
+    {
+      "index": 16,
+      "file": "nemo_face_16.png",
+      "label": "",
+      "x": 36,
+      "y": 760,
+      "w": 263,
+      "h": 189,
+      "pivot": [
+        131.5,
+        94.5
+      ],
+      "area": 38159
+    },
+    {
+      "index": 17,
+      "file": "nemo_face_17.png",
+      "label": "",
+      "x": 337,
+      "y": 757,
+      "w": 257,
+      "h": 195,
+      "pivot": [
+        128.5,
+        97.5
+      ],
+      "area": 38051
+    },
+    {
+      "index": 18,
+      "file": "nemo_face_18.png",
+      "label": "",
+      "x": 635,
+      "y": 753,
+      "w": 261,
+      "h": 198,
+      "pivot": [
+        130.5,
+        99.0
+      ],
+      "area": 39632
+    },
+    {
+      "index": 19,
+      "file": "nemo_face_19.png",
+      "label": "",
+      "x": 937,
+      "y": 758,
+      "w": 259,
+      "h": 188,
+      "pivot": [
+        129.5,
+        94.0
+      ],
+      "area": 37206
+    },
+    {
+      "index": 20,
+      "file": "nemo_face_20.png",
+      "label": "",
+      "x": 1240,
+      "y": 758,
+      "w": 259,
+      "h": 191,
+      "pivot": [
+        129.5,
+        95.5
+      ],
+      "area": 37252
+    }
+  ]
+}
