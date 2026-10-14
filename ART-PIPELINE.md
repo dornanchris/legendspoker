@@ -86,7 +86,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | Table | Room | Built | Sheets in, to build | Prompts next |
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
-| Rome | built (redrawn plate) | Cerberus, Scipio | Spartacus, the Pope | **Caesar** (prompts written, `caesar_parts/POSES.md`) |
+| Rome | built (redrawn plate) | Cerberus, Scipio, Spartacus | the Pope | **Caesar** (prompts written, `caesar_parts/POSES.md`) |
 | Baker Street | prompt only | | | Nemo, Javert, Alice, Holmes |
 | Transylvania | prompt only | | | Van Helsing, the Monster, the Wolf Man, the Headless Horseman, Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |

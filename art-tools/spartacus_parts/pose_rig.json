@@ -1,0 +1,898 @@
+{
+ "id": "spartacus",
+ "name": "Spartacus",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets. Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. The drawn rail is gold-orange and so is his skin: rail_orange with thresholds, as Scipio's.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    18,
+    15,
+    489,
+    469
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, the wrist scar showing"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    524,
+    27,
+    487,
+    457
+   ],
+   "what": "Peeking at his cards (right hand)",
+   "reg": [
+    1.0,
+    0,
+    12
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1029,
+    22,
+    489,
+    462
+   ],
+   "what": "Check: knuckles rap the felt",
+   "reg": [
+    1.0,
+    0,
+    7
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    18,
+    504,
+    489,
+    471
+   ],
+   "what": "Call: slides a short stack forward",
+   "reg": [
+    1.0,
+    0,
+    -1
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    524,
+    512,
+    487,
+    463
+   ],
+   "what": "Bet: shoves a stack forward, hard",
+   "reg": [
+    1.0,
+    0,
+    6
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1029,
+    504,
+    490,
+    471
+   ],
+   "what": "Fold: flicks his cards away",
+   "reg": [
+    1.0,
+    0,
+    -2
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    18,
+    19,
+    489,
+    465
+   ],
+   "what": "All in: both hands drive his whole stack forward",
+   "reg": [
+    1.0,
+    0,
+    4
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    524,
+    24,
+    487,
+    460
+   ],
+   "what": "Show: turns his cards over",
+   "reg": [
+    1.0,
+    0,
+    9
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1029,
+    23,
+    488,
+    461
+   ],
+   "what": "Collect: both arms drag the pot in",
+   "reg": [
+    1.0,
+    0,
+    8
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    18,
+    497,
+    488,
+    477
+   ],
+   "what": "Rolls his shoulders like a fighter before a bout (TELL)",
+   "reg": [
+    1.0,
+    0,
+    -8
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    524,
+    514,
+    488,
+    460
+   ],
+   "what": "Rolls his neck (decoy for B4)",
+   "reg": [
+    1.0,
+    0,
+    9
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1029,
+    518,
+    488,
+    456
+   ],
+   "what": "Rubs the old shackle scar on his left wrist (TELL)",
+   "reg": [
+    1.0,
+    0,
+    13
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    18,
+    18,
+    488,
+    466
+   ],
+   "what": "Flexes his hands, fingers spread (decoy for B6)",
+   "reg": [
+    1.0,
+    0,
+    3
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    524,
+    24,
+    487,
+    461
+   ],
+   "what": "Stares hard across the table (TELL)",
+   "reg": [
+    1.0,
+    0,
+    9
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1029,
+    20,
+    488,
+    465
+   ],
+   "what": "Glances at the doors (decoy for C2)",
+   "reg": [
+    1.0,
+    0,
+    5
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    18,
+    504,
+    488,
+    470
+   ],
+   "what": "Grips the table's edge as if testing its weight",
+   "reg": [
+    1.0,
+    -1,
+    -1
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    522,
+    500,
+    489,
+    474
+   ],
+   "what": "A short, hard laugh",
+   "reg": [
+    1.0,
+    -1,
+    -5
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1027,
+    502,
+    489,
+    472
+   ],
+   "what": "Arms folded on the table, watching",
+   "reg": [
+    1.0,
+    0,
+    -3
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    18,
+    20,
+    490,
+    464
+   ],
+   "what": "Talking: one fist on the table, blunt",
+   "reg": [
+    1.0,
+    0,
+    5
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    524,
+    34,
+    487,
+    450
+   ],
+   "what": "Facing a big bet: jaw set, leaning in",
+   "reg": [
+    1.0,
+    0,
+    19
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1029,
+    17,
+    488,
+    467
+   ],
+   "what": "Lost a pot: a hard exhale, head tilted back",
+   "reg": [
+    1.0,
+    0,
+    2
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    16,
+    508,
+    484,
+    466
+   ],
+   "what": "Won a pot: a fierce grin, dragging chips in",
+   "reg": [
+    1.0,
+    -3,
+    3
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    511,
+    534,
+    506,
+    440
+   ],
+   "what": "Heads up: leaning over the table on both fists",
+   "reg": [
+    1.0,
+    -3,
+    29
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1031,
+    488,
+    486,
+    486
+   ],
+   "what": "Knocked out: stands, looks once at the doors, goes",
+   "reg": [
+    1.0,
+    0,
+    -3
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 362,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  220,
+  350,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 185,
+ "neck": [
+  230,
+  190
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  180,
+  180,
+  330,
+  240
+ ],
+ "master": {
+  "piece": "spartacus_parts/spartacus_face/spartacus_face_01.png",
+  "cut_below": 305,
+  "face": "spartacus_parts/face.json",
+  "file": "spartacus_parts/spartacus_rig/master.png",
+  "layers": "spartacus_parts/spartacus_rig/face",
+  "head_box": [
+   150,
+   0,
+   355,
+   200
+  ],
+  "place": [
+   -15,
+   3,
+   0.63
+  ],
+  "replace_head": true,
+  "biggest": true,
+  "head_poly": [
+   [
+    160,
+    0
+   ],
+   [
+    352,
+    0
+   ],
+   [
+    352,
+    160
+   ],
+   [
+    332,
+    180
+   ],
+   [
+    302,
+    195
+   ],
+   [
+    250,
+    198
+   ],
+   [
+    220,
+    186
+   ],
+   [
+    200,
+    172
+   ],
+   [
+    176,
+    162
+   ],
+   [
+    160,
+    142
+   ]
+  ],
+  "keep_poly": [
+   [
+    40,
+    0
+   ],
+   [
+    345,
+    0
+   ],
+   [
+    345,
+    250
+   ],
+   [
+    312,
+    296
+   ],
+   [
+    250,
+    306
+   ],
+   [
+    150,
+    302
+   ],
+   [
+    100,
+    272
+   ],
+   [
+    85,
+    252
+   ],
+   [
+    40,
+    242
+   ]
+  ],
+  "heads": {
+   "viewer": "spartacus_parts/spartacus_face/spartacus_face_20.png"
+  },
+  "cloth": [
+   15,
+   140
+  ],
+  "shoulder_y": 170
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    30,
+    340
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     290
+    ],
+    [
+     90,
+     290
+    ],
+    [
+     90,
+     320
+    ],
+    [
+     10,
+     325
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and hand",
+     "poly": [
+      [
+       0,
+       305
+      ],
+      [
+       50,
+       305
+      ],
+      [
+       120,
+       325
+      ],
+      [
+       180,
+       345
+      ],
+      [
+       225,
+       360
+      ],
+      [
+       242,
+       410
+      ],
+      [
+       236,
+       454
+      ],
+      [
+       105,
+       454
+      ],
+      [
+       60,
+       422
+      ],
+      [
+       0,
+       410
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    450,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     270
+    ],
+    [
+     482,
+     270
+    ],
+    [
+     482,
+     305
+    ],
+    [
+     400,
+     305
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, the shackle scar and hand",
+     "poly": [
+      [
+       308,
+       454
+      ],
+      [
+       314,
+       400
+      ],
+      [
+       345,
+       368
+      ],
+      [
+       385,
+       334
+      ],
+      [
+       420,
+       308
+      ],
+      [
+       472,
+       298
+      ],
+      [
+       489,
+       330
+      ],
+      [
+       489,
+       420
+      ],
+      [
+       442,
+       454
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      180,
+      370
+     ],
+     [
+      330,
+      370
+     ],
+     [
+      330,
+      470
+     ],
+     [
+      180,
+      470
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      355
+     ],
+     [
+      340,
+      355
+     ],
+     [
+      340,
+      470
+     ],
+     [
+      160,
+      470
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      90,
+      350
+     ],
+     [
+      450,
+      350
+     ],
+     [
+      450,
+      470
+     ],
+     [
+      90,
+      470
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      90,
+      345
+     ],
+     [
+      460,
+      345
+     ],
+     [
+      460,
+      470
+     ],
+     [
+      90,
+      470
+     ]
+    ]
+   ]
+  },
+  "shoulders": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "neck": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "scar": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "flex": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "stare": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "doors": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "table_weight": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "laugh": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "arms_folded": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      160,
+      355
+     ],
+     [
+      340,
+      355
+     ],
+     [
+      340,
+      470
+     ],
+     [
+      160,
+      470
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "poly": [
+    [
+     -60,
+     -60
+    ],
+    [
+     550,
+     -60
+    ],
+    [
+     550,
+     370
+    ],
+    [
+     -60,
+     370
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/spartacus",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "wood_rows_only": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "rail_blue": 40
+}

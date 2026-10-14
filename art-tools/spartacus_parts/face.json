@@ -1,0 +1,70 @@
+{
+ "master": "spartacus_parts/spartacus_face/spartacus_face_01.png",
+ "pieces": "spartacus_parts/spartacus_face/spartacus_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7,
+   "raised": 8,
+   "hard": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 17,
+   "grin": 18,
+   "set": 19
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     190,
+     120
+    ],
+    [
+     330,
+     120
+    ],
+    [
+     330,
+     195
+    ],
+    [
+     190,
+     195
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     140,
+     215
+    ],
+    [
+     320,
+     215
+    ],
+    [
+     320,
+     310
+    ],
+    [
+     140,
+     310
+    ]
+   ]
+  }
+ }
+}
