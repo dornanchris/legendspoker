@@ -57,6 +57,8 @@ import sherlockRig from '../art/sherlock/rig.json'
 import sherlockAnim from '../art/sherlock/anim.json'
 import sherlockDeerstalkerRig from '../art/sherlock_deerstalker/rig.json'
 import sherlockDeerstalkerAnim from '../art/sherlock_deerstalker/anim.json'
+import cheshireCatRig from '../art/cheshire_cat/rig.json'
+import cheshireCatAnim from '../art/cheshire_cat/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -125,6 +127,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   javert: { rig: javertRig as unknown as RigData, anim: javertAnim as unknown as AnimData, base: 'art/javert/' },
   sherlock: { rig: sherlockRig as unknown as RigData, anim: sherlockAnim as unknown as AnimData, base: 'art/sherlock/' },
   sherlock_deerstalker: { rig: sherlockDeerstalkerRig as unknown as RigData, anim: sherlockDeerstalkerAnim as unknown as AnimData, base: 'art/sherlock_deerstalker/' },
+  cheshire_cat: { rig: cheshireCatRig as unknown as RigData, anim: cheshireCatAnim as unknown as AnimData, base: 'art/cheshire_cat/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 

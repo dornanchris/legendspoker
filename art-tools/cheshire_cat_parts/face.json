@@ -1,0 +1,73 @@
+{
+ "note": "The master is the rest pose's own head. Piece 1 is the face sheet's reference head, 19 the head turned to the viewer (unused). The sheet drew eight eye pieces (no far-eye wink) and nine muzzles (no separate f: m serves).",
+ "master": "cheshire_cat_parts/cheshire_cat_face/cheshire_cat_master.png",
+ "pieces": "cheshire_cat_parts/cheshire_cat_face/cheshire_cat_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "down": 4,
+   "side": 5,
+   "narrow": 6,
+   "wide": 7,
+   "viewer": 8,
+   "wink": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 15,
+   "l": 16,
+   "enormous": 17,
+   "lopsided": 18
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     270,
+     82
+    ],
+    [
+     440,
+     82
+    ],
+    [
+     440,
+     156
+    ],
+    [
+     270,
+     156
+    ]
+   ],
+   "outline": 2,
+   "fade": 1
+  },
+  "mouth": {
+   "keep": [
+    [
+     250,
+     146
+    ],
+    [
+     450,
+     146
+    ],
+    [
+     450,
+     214
+    ],
+    [
+     250,
+     214
+    ]
+   ]
+  }
+ }
+}

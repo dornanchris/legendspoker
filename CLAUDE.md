@@ -158,8 +158,8 @@ art-tools/
                   green_knight_parts/, green_knight_bare_parts/, arthur_parts/: Camelot;
                   cerberus_parts/, scipio_parts/, spartacus_parts/, pope_parts/,
                   caesar_parts/: Rome (all built); nemo_parts/, javert_parts/, sherlock_parts/ (built),
-                  sherlock_deerstalker_parts/ (built), cheshire_cat_parts/:
-                  Baker Street
+                  sherlock_deerstalker_parts/, cheshire_cat_parts/:
+                  Baker Street (all built)
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
@@ -447,10 +447,12 @@ rejected him as unreadable; his tells answer that: his tail, eyes blinking one
 at a time, and vanishing tail first, grin last (reliability ~0.8, the reading
 table's legible guest). Loose and aggressive (3000 cash hands: VPIP 50, AF
 1.4), the table's donor at -180 to -240 bb/100 (Alice was -91). His
-dialogue replaced hers line for line; draft like the rest. His prompts:
-`cheshire_cat_parts/POSES.md` (vanished parts are drawn as plain white; style from
-Cerberus's pose sheet A, the owner's call for an animal, after the first sheet
-came out as furry illustration).
+dialogue replaced hers line for line; draft like the rest. **He is built**
+(`#/puppet/cheshire_cat`, 23 clips), drawn in Cerberus's animal style
+(Cerberus's pose sheet A as the style image, the owner's call, after a first
+sheet came out as furry illustration); vanished parts are drawn as plain
+white, and the grin left alone is placed where his mouth is at rest:
+**Baker Street is complete on the real table screen.**
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,

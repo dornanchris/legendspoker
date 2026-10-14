@@ -1,0 +1,276 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "cheshire_cat_face_01.png",
+      "label": "",
+      "x": 18,
+      "y": 24,
+      "w": 456,
+      "h": 402,
+      "pivot": [
+        228.0,
+        201.0
+      ],
+      "area": 113860
+    },
+    {
+      "index": 2,
+      "file": "cheshire_cat_face_02.png",
+      "label": "",
+      "x": 475,
+      "y": 60,
+      "w": 270,
+      "h": 137,
+      "pivot": [
+        135.0,
+        68.5
+      ],
+      "area": 26585
+    },
+    {
+      "index": 3,
+      "file": "cheshire_cat_face_03.png",
+      "label": "",
+      "x": 750,
+      "y": 59,
+      "w": 266,
+      "h": 137,
+      "pivot": [
+        133.0,
+        68.5
+      ],
+      "area": 25993
+    },
+    {
+      "index": 4,
+      "file": "cheshire_cat_face_04.png",
+      "label": "",
+      "x": 1020,
+      "y": 60,
+      "w": 256,
+      "h": 136,
+      "pivot": [
+        128.0,
+        68.0
+      ],
+      "area": 25179
+    },
+    {
+      "index": 5,
+      "file": "cheshire_cat_face_05.png",
+      "label": "",
+      "x": 1277,
+      "y": 59,
+      "w": 247,
+      "h": 138,
+      "pivot": [
+        123.5,
+        69.0
+      ],
+      "area": 24878
+    },
+    {
+      "index": 6,
+      "file": "cheshire_cat_face_06.png",
+      "label": "",
+      "x": 476,
+      "y": 234,
+      "w": 271,
+      "h": 142,
+      "pivot": [
+        135.5,
+        71.0
+      ],
+      "area": 26884
+    },
+    {
+      "index": 7,
+      "file": "cheshire_cat_face_07.png",
+      "label": "",
+      "x": 754,
+      "y": 235,
+      "w": 256,
+      "h": 144,
+      "pivot": [
+        128.0,
+        72.0
+      ],
+      "area": 25667
+    },
+    {
+      "index": 8,
+      "file": "cheshire_cat_face_08.png",
+      "label": "",
+      "x": 1019,
+      "y": 235,
+      "w": 248,
+      "h": 141,
+      "pivot": [
+        124.0,
+        70.5
+      ],
+      "area": 24863
+    },
+    {
+      "index": 9,
+      "file": "cheshire_cat_face_09.png",
+      "label": "",
+      "x": 1270,
+      "y": 238,
+      "w": 255,
+      "h": 139,
+      "pivot": [
+        127.5,
+        69.5
+      ],
+      "area": 25078
+    },
+    {
+      "index": 10,
+      "file": "cheshire_cat_face_10.png",
+      "label": "",
+      "x": 15,
+      "y": 452,
+      "w": 321,
+      "h": 141,
+      "pivot": [
+        160.5,
+        70.5
+      ],
+      "area": 23956
+    },
+    {
+      "index": 11,
+      "file": "cheshire_cat_face_11.png",
+      "label": "",
+      "x": 336,
+      "y": 445,
+      "w": 292,
+      "h": 148,
+      "pivot": [
+        146.0,
+        74.0
+      ],
+      "area": 23329
+    },
+    {
+      "index": 12,
+      "file": "cheshire_cat_face_12.png",
+      "label": "",
+      "x": 626,
+      "y": 450,
+      "w": 310,
+      "h": 140,
+      "pivot": [
+        155.0,
+        70.0
+      ],
+      "area": 22620
+    },
+    {
+      "index": 13,
+      "file": "cheshire_cat_face_13.png",
+      "label": "",
+      "x": 933,
+      "y": 450,
+      "w": 295,
+      "h": 138,
+      "pivot": [
+        147.5,
+        69.0
+      ],
+      "area": 19824
+    },
+    {
+      "index": 14,
+      "file": "cheshire_cat_face_14.png",
+      "label": "",
+      "x": 1232,
+      "y": 456,
+      "w": 292,
+      "h": 131,
+      "pivot": [
+        146.0,
+        65.5
+      ],
+      "area": 19717
+    },
+    {
+      "index": 15,
+      "file": "cheshire_cat_face_15.png",
+      "label": "",
+      "x": 12,
+      "y": 634,
+      "w": 295,
+      "h": 136,
+      "pivot": [
+        147.5,
+        68.0
+      ],
+      "area": 19470
+    },
+    {
+      "index": 16,
+      "file": "cheshire_cat_face_16.png",
+      "label": "",
+      "x": 313,
+      "y": 629,
+      "w": 307,
+      "h": 143,
+      "pivot": [
+        153.5,
+        71.5
+      ],
+      "area": 21015
+    },
+    {
+      "index": 17,
+      "file": "cheshire_cat_face_17.png",
+      "label": "",
+      "x": 630,
+      "y": 626,
+      "w": 282,
+      "h": 146,
+      "pivot": [
+        141.0,
+        73.0
+      ],
+      "area": 22397
+    },
+    {
+      "index": 18,
+      "file": "cheshire_cat_face_18.png",
+      "label": "",
+      "x": 915,
+      "y": 626,
+      "w": 287,
+      "h": 146,
+      "pivot": [
+        143.5,
+        73.0
+      ],
+      "area": 19895
+    },
+    {
+      "index": 19,
+      "file": "cheshire_cat_face_19.png",
+      "label": "",
+      "x": 1154,
+      "y": 600,
+      "w": 369,
+      "h": 363,
+      "pivot": [
+        184.5,
+        181.5
+      ],
+      "area": 88981
+    }
+  ]
+}

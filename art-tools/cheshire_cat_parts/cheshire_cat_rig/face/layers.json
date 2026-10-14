@@ -1,0 +1,24 @@
+{
+ "eyes": {
+  "half": "eyes_half.png",
+  "closed": "eyes_closed.png",
+  "down": "eyes_down.png",
+  "side": "eyes_side.png",
+  "narrow": "eyes_narrow.png",
+  "wide": "eyes_wide.png",
+  "viewer": "eyes_viewer.png",
+  "wink": "eyes_wink.png"
+ },
+ "mouth": {
+  "rest": "mouth_rest.png",
+  "ah": "mouth_ah.png",
+  "ee": "mouth_ee.png",
+  "oh": "mouth_oh.png",
+  "oo": "mouth_oo.png",
+  "m": "mouth_m.png",
+  "f": "mouth_f.png",
+  "l": "mouth_l.png",
+  "enormous": "mouth_enormous.png",
+  "lopsided": "mouth_lopsided.png"
+ }
+}
