@@ -32,3 +32,5 @@ web/bundle.js.map
 
 # Python bytecode from the art tools
 __pycache__/
+# the art build helpers (ART-PIPELINE.md) are source, not output
+!art-tools/build/
