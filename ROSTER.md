@@ -614,7 +614,7 @@ He is in Rome's own epic. In Virgil's Aeneid the Sibyl gets Aeneas past him by t
 - Tell (tilted, 0.72): *the heads growl at each other*
 - Idle noise: *the middle head scratches behind an ear*; *one head falls asleep*; *two heads watch you; one watches the pot*; *the right head sniffs at the nearest robe*
 
-**Look.** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw. Apollodorus also gives him a serpent's tail and snakes along his back, but the table hides both: the tail lives only in his stage directions, and no snakes are drawn, because at forty points a ridge of them reads as Medusa's hair (the owner's call). The heads are the tell surface: each can watch, sleep, yawn or snarl on its own. **Prop:** Three iron collars on one chain.
+**Look.** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a few small dark snakes rising from behind the necks after Apollodorus (who gives him snakes along his back and a serpent's tail), kept behind the heads and darker than the fur so they never cover a face or read as Medusa's hair (the owner kept them). Each neck in a studded bronze collar. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own. **Prop:** Three iron collars on one chain.
 
 **Public domain.** Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads.
 

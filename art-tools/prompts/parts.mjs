@@ -102,6 +102,7 @@ export const PARTS = {
     ],
     body: [
       'Massive black body and chest with NO heads and NO front legs, sitting upright at the table like a person, cut off at the table line, three neck stumps showing',
+      'A few small dark snakes rising from behind the necks, as separate pieces',
       'Front legs (shoulder to paw), left and right, each in two angles: lying along the table, and raised',
     ],
     hands: hands('Big front paws with blunt claws (no fingers), each with a short stub of the leg, cut straight across. Draw each pose ONCE, as the right paw: the game mirrors it for the left.', ['A hind paw raised, scratching (as if behind an ear)'], ['flat on the table, relaxed', 'tapping the table (checking)', 'pushing forward (as if pushing chips; chips NOT drawn)', 'shoving forward hard (all in)', 'sweeping sideways (folding)', 'curled, raking toward the body (collecting a pot)', 'resting, curled under']),

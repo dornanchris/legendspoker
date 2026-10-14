@@ -1784,7 +1784,7 @@ Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of cop
 ### Cerberus — *The Hound at the Gate*
 
 - **Who:** Lets everyone in. Lets nobody out. We have kept the same hours for a very long time.
-- **Look:** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw. Apollodorus also gives him a serpent's tail and snakes along his back, but the table hides both: the tail lives only in his stage directions, and no snakes are drawn, because at forty points a ridge of them reads as Medusa's hair (the owner's call). The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.
+- **Look:** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a few small dark snakes rising from behind the necks after Apollodorus (who gives him snakes along his back and a serpent's tail), kept behind the heads and darker than the fur so they never cover a face or read as Medusa's hair (the owner kept them). Each neck in a studded bronze collar. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.
 - **Prop:** Three iron collars on one chain
 - **Tells:** all three heads snap to attention; the left head yawns; the heads growl at each other
 - **Idles:** the middle head scratches behind an ear; one head falls asleep; two heads watch you; one watches the pot; the right head sniffs at the nearest robe
@@ -1795,7 +1795,7 @@ Must NOT resemble: Geoffrey, Wace, Chrétien and Malory are centuries out of cop
 ```
 Bright, warm cartoon style like a modern animated adventure game: bold dark outlines, clean painted shading, slightly exaggerated but dignified features, warm table-lamp light. NOT dark, gritty or photoreal. Human characters keep human, dignified faces: caricature what the history records, never anything animal-like. Waist-up, seated at a round poker table, body and head turned about 30 degrees to the viewer's right, as if facing the table's centre from a seat on its left; forearms resting on the felt; the table's rounded edge crosses the body at the waist. Plain dark background, no text, no logos, no watermark, no cards or chips other than any prop named.
 
-Character: Cerberus, The Hound at the Gate. Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw. Apollodorus also gives him a serpent's tail and snakes along his back, but the table hides both: the tail lives only in his stage directions, and no snakes are drawn, because at forty points a ridge of them reads as Medusa's hair (the owner's call). The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.
+Character: Cerberus, The Hound at the Gate. Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a few small dark snakes rising from behind the necks after Apollodorus (who gives him snakes along his back and a serpent's tail), kept behind the heads and darker than the fur so they never cover a face or read as Medusa's hair (the owner kept them). Each neck in a studded bronze collar. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own.
 Prop: Three iron collars on one chain.
 IMPORTANT, must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads.
 ```
@@ -1822,6 +1822,7 @@ Puppet parts sheet for 2D animation rigging, for Cerberus, the character in the 
 
 This sheet: body and arms. Parts:
 - Massive black body and chest with NO heads and NO front legs, sitting upright at the table like a person, cut off at the table line, three neck stumps showing
+- A few small dark snakes rising from behind the necks, as separate pieces
 - Front legs (shoulder to paw), left and right, each in two angles: lying along the table, and raised
 
 Must NOT resemble: Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads.
