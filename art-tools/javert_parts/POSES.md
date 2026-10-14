@@ -135,7 +135,7 @@ Cards have plain dark backs. Pure white background around each pose; poses do no
 ```
 Character sheet for 2D animation rigging: Javert's face overlays, exactly matching the attached sheets' style, colours and line weight.
 
-Every piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head. Draw that head once, top left, with the hat, the neck and the top of the coat collar, as the reference, mouth closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.
+Every piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head: the eyes and the mouths too are turned three-quarter, toward the viewer's right, NOT front-on and NOT symmetrical. Draw that head once, top left, with the hat, the neck and the top of the coat collar, as the reference, mouth closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.
 
 - His eyes with the lids half closed; closed; looking toward the viewer; looking down at the table; looking to the side; narrowed; wide and staring (one piece each, both eyes with the skin around them)
 - His brows raised; his brows drawn down (one piece each, both brows)
