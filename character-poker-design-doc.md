@@ -313,7 +313,8 @@ seat. **The fourth must NOT be another stern man** — Nemo and Javert are both
 brooding intense types and it needs lightness/trickery.
 - **[DECISION] The fourth seat is ALICE.** Recognizable instantly, changes the
   whole visual composition (three men in dark Victorian coats + a girl in a
-  blue dress reads at a glance), and plays curious/unpredictable — calls
+  blue dress reads at a glance; drawn in YELLOW since the art pass, Tenniel's own
+  colours from The Nursery "Alice", because the blue drew as Disney's), and plays curious/unpredictable — calls
   strange bets to see what happens, unintimidated by Javert or Nemo.
   Her dial-set is genuinely unique in the game: **unpredictable play but
   legible emotions** — high VPIP, low deception. She's the one person at the
@@ -324,6 +325,8 @@ brooding intense types and it needs lightness/trickery.
   leak. He doesn't contrast with the table, he opts out of its central
   mechanic. Save him for the Wonderland/Easter table where unreadability is
   the joke. Same objection killed the Invisible Man.
+  **Pending (the owner, during the art pass):** the Cheshire Cat is an idea to
+  return to later, not dropped; Alice keeps this seat.
 - **Jekyll/Hyde was the strongest runner-up** — one seat, two personalities,
   switching mid-session (tight and apologetic → reckless and aggressive) is a
   dial-set nobody else has and a real tells puzzle. **Cut on animation cost:**
