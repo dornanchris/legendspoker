@@ -162,7 +162,7 @@ art-tools/
   rooms/          finished room art: table.webp (the one table every room
                   shares) and a folder per venue: its backdrop, and its
                   pieces (pieces.json: the cut, where they stand, story
-                  pieces and loops). white_house/, athens/, pirate_cove/, camelot/
+                  pieces and loops). white_house/, athens/, pirate_cove/, camelot/, rome/
   mock_screen.py  draws the table screen with the current art: game first
   room_web.py     publishes a room to web/art/rooms/: its rim curve, chairs
                   and pieces (preview one: web/index.html?room=athens)
@@ -405,7 +405,13 @@ clips, seat 4): **Camelot is complete on the real table screen.**
 a quarter bigger, the snakes kept as drawn). His master is the rest pose's
 own three heads (the face sheet spaced them differently), with eyes and
 muzzles on the middle head only; every head change is a whole-figure frame.
-Rome stays the plain table until its room and all five have puppets. **The style lock** (the owner: Davy Jones and Merlin
+**Rome's room is built** (`?room=rome`): brazier fires flicker, and
+Caesar's wreath waits on its cushion until he arrives. But the first plate
+put both braziers right behind seats 1 and 4 and the cushion's plinth past
+the edge of a 16:9 screen, so at 16:9 neither shows. The backdrop prompt
+now gives exact places (braziers at 27% and 73%, head height, in the gaps;
+the cushion in a niche at 42%), for a redraw; the pieces need only new spots.
+Rome stays the plain table until all five have puppets. **The style lock** (the owner: Davy Jones and Merlin
 drifted from the presidents' cartoon toward detailed illustration): each
 character's first prompt used to borrow the LAST character's sheet, so the
 style drifted a step each time. Now `poses.py` (`"style_lock": true`) names
