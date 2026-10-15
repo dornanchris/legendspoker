@@ -66,11 +66,12 @@ show, collect; tells `grin` (strong) beside `laugh`, `drum` (bluffing) beside
 ## For a Rive artist
 
 The owner may hire an animator to rig Teddy in Rive. `RIVE_PARTS.md` has the
-six prompts for drawing him once as parts (body, right hands x2, left arm and
-props, head and face, and reference poses for the new win and loss moments);
-the motion list for the artist (always-on idles, every action with versions,
-win and loss tiers, tells and decoys, fidgets, speech shapes, the rules) is
-the owner's Claude Doc "Teddy Roosevelt: Animation Brief". Its names differ
-from today's clips in places (`win` / `lose` for `won_pot` / `lost_pot`), and
-the tiers need the table to pick a version by pot size: game work, once a
-`.riv` exists.
+five prompts for drawing him once as parts (body, right arm and hands, left
+arm and props, head and face, and two new reference poses). The brief for the
+artist is the owner's Claude Doc "Teddy Roosevelt: Animation Brief": the
+essentials only, a rig that breathes, blinks, glances and talks, and 15
+animations (peek, check, bet, all in, fold, win, big win, lose, knocked out,
+and the three tells with their decoys). Hands are empty; the game moves the
+cards and chips. Names differ from today's clips in places (`win` / `lose`
+for `won_pot` / `lost_pot`; `bet` serves calls and raises): game work, once
+a `.riv` exists.

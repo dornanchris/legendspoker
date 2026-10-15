@@ -366,11 +366,13 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 real device.
 **Rive, by a hired artist (the owner's direction):** Teddy Roosevelt first.
 `art-tools/roosevelt_parts/RIVE_PARTS.md` has the prompts for drawing him
-once as parts; the artist's motion list is the owner's Claude Doc "Teddy
-Roosevelt: Animation Brief" (53 animations: 25 to replace today's clips, 28
-for variety, such as win and loss tiers by pot size). Versions of an action
-are picked by public information (bet size, pot size) or at random, never by
-the character's cards (rule 2).
+once as parts; the artist's brief is the owner's Claude Doc "Teddy Roosevelt:
+Animation Brief". Essentials only (the owner: 40 characters, not 2,000
+animations): a rig that breathes, blinks, glances and talks, and 15
+animations (5 actions, 4 results, 3 tells and their decoys); empty hands, the
+game moves cards and chips. More later, once it works. Any versions of an
+action must be picked by public information or at random, never by the
+character's cards (rule 2).
 
 **Art direction (the owner's calls, from the FDR and Lincoln tests):** 2D
 cut-out puppets in the bright cartoon style of those tests, not the dark
