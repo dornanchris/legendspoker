@@ -1,6 +1,6 @@
 # Teddy Roosevelt: Animation Brief
 
-Rig and animate Teddy Roosevelt in Rive from the supplied parts. This first round is the essentials: a rig that breathes, blinks, glances and talks, and 15 animations. He is one of 40 characters, so the set is kept small; we will add to it once this works.
+Rig and animate Teddy Roosevelt in Rive from the supplied parts. This first round is the essentials: a rig that breathes, blinks, glances and talks, and 13 animations. He is one of 40 characters, so the set is kept small; we will add to it once this works.
 
 ## The character
 
@@ -10,7 +10,7 @@ Loud, eager and proud. Barrel chest, heavy moustache, huge toothy grin, round st
 - At rest his forearms lie along the table's padded edge, hands resting apart on the felt.
 - The game flips him horizontally for seats on the right.
 - On a phone he is about 220 px wide and his face about 40 px tall, so motion must read as big shapes.
-- **He never picks up or holds cards or chips.** The game draws and moves them. His hands make the motion over the empty felt in front of him: pushing forward, flicking, rapping, sweeping in.
+- **He never picks up or holds cards or chips.** The game draws and moves them. His hands make the motion over the empty felt in front of him: pushing forward, flicking, rapping.
 
 ## Deliverables
 
@@ -30,14 +30,14 @@ Teddy drawn once as separate parts, plus drawings of each pose to animate toward
 | --- | --- |
 | `roosevelt_sheet` | Character sheet: colours, proportions, the look to keep. `face_overlays` is his face sheet from the current game |
 | `poses_a` to `poses_d` (24 poses) | Reference for the moves below at their peak. The rest pose is top left of `poses_a`. There are more poses than this round needs; ignore the cards and chips in his hands |
-| `rive_6_new_poses` (6 poses) | More reference: huge win, big win, crushing loss, knocked out, charging in, arms folded. Only the huge win and knocked out are needed this round |
+| `rive_6_new_poses` (6 poses) | More reference: huge win, big win, crushing loss, knocked out, charging in, arms folded. Only the huge win is needed this round |
 | `rive_1_body` | Torso with no arms or head (coat drawn complete under the arms), upper arms hanging and raised, folded arms as one piece, the watch chain |
 | `rive_2_right_arm_table` | Right forearm without a hand; 9 empty hands: rest, knuckle rap, cupped (peek), pushing forward, flick, turning over, sweeping in, drum, flat slap |
 | `rive_3_right_hands_gestures` | 11 right hands: raised fist, slamming fist, point, tap, palm up, palm out, handshake, pinch, spectacles push, handkerchief, thumbs up |
 | `rive_4_left_arm_props` | Left forearm; 6 hands (rest, holding spectacles, holding the watch, raised fist, sweeping in, pressing down); spectacles on and folded, handkerchief, pocket watch open and closed |
 | `rive_5_head_face` | Bare head; empty eye whites with separate pupils; lids; brows (drawn with the eyes); moustache; 13 mouths for speech and expressions; 4 whole heads (at rest, facing the viewer, thrown back laughing, chin down glaring). The bare head came out narrower than his face: `face_overlays` shows its true shape |
 
-The sheets hold more than these 15 animations need (the watch, the extra hands and poses); they are there for later rounds.
+The sheets hold more than these 13 animations need (the watch, the extra hands and poses); they are there for later rounds.
 
 Joint ends are drawn rounded and running past the joint, anything another piece covers is drawn complete, and no piece carries another's shadow.
 
@@ -54,21 +54,19 @@ These run the whole time, under every animation. The game triggers each one; the
 
 His lines appear as speech bubbles; the game plays `talk` for as long as one is on screen. The talking mouth must not look like the grin tell: lips moving, not a wide toothy smile.
 
-## The 15 animations
+## The 13 animations
 
 His hands are always empty: the game moves the real cards and chips at the same moment.
 
 | Name | What he does | Length |
 | --- | --- | --- |
-| `peek` | Right hand cups low over the felt in front of him, thumb lifts, eyes down, hand withdraws | 1.6 s |
 | `check` | Two hard raps of the knuckles on the felt | 1.1 s |
 | `bet` | Leans in and pushes his right hand forward along the felt, firm (used for calls and raises too) | 1.6 s |
-| `all_in` | Both hands sweep forward together, grinning, chest out | 2 s |
+| `all_in` | Both hands push forward together, grinning, chest out | 2 s |
 | `fold` | A dismissive flick of the right hand toward the middle | 1.2 s |
-| `win` | Sweeps the pot in with both forearms, then pumps one fist once, delighted | 2.4 s |
+| `win` | A satisfied nod and a closed smile | 1.4 s |
 | `win_big` | Both fists thrown high over his head, chest out, head back, a shout of triumph, then brings them down | 3 s |
 | `lose` | A scowl, arms folded, then back to rest | 2.4 s |
-| `knocked_out` | Rises from the chair, holds his right hand out toward the viewer to shake, smiling through it, then turns and walks off to the left | 3.5 s |
 
 **Tells and decoys** need the most care. Each tell has a decoy that starts the same way: a glance sees the same thing, and only a close look catches the one detail that differs. Keep that detail clear but not obvious.
 
@@ -80,7 +78,7 @@ His hands are always empty: the game moves the real cards and chips at the same 
 
 ## Rules every animation follows
 
-1. **Start and end exactly on the rest pose**, except `knocked_out`. The game chains animations and may cut one short.
+1. **Start and end exactly on the rest pose**. The game chains animations and may cut one short.
 2. **Face separate from body.** Blinks, glances and talking play over any body animation without fighting it.
 3. **Nothing below the table's edge is seen.** Hands may reach onto the felt and over the padded edge; lap, legs and chair never show. The table's edge in the rest drawing is the line.
 4. **Limbs bend, never stretch.** An arm may foreshorten as it reaches toward the viewer; it never gets longer.

@@ -368,9 +368,10 @@ real device.
 `art-tools/roosevelt_parts/RIVE_PARTS.md` has the prompts for drawing him
 once as parts; the artist's brief is the owner's Claude Doc "Teddy Roosevelt:
 Animation Brief". Essentials only (the owner: 40 characters, not 2,000
-animations): a rig that breathes, blinks, glances and talks, and 15
-animations (5 actions, 4 results, 3 tells and their decoys); empty hands, the
-game moves cards and chips. More later, once it works. Any versions of an
+animations): a rig that breathes, blinks, glances and talks, and 13
+animations (4 actions, 3 results, 3 tells and their decoys); empty hands, the
+game moves cards and chips; no peek, and a knocked-out character says a line
+and fades out. More later, once it works. Any versions of an
 action must be picked by public information or at random, never by the
 character's cards (rule 2).
 
