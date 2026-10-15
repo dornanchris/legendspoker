@@ -18,8 +18,7 @@ Loud, eager and proud. Barrel chest, heavy moustache, huge toothy grin, round st
 | --- | --- |
 | Rive file | One `.riv`, one artboard named `roosevelt`, every animation named exactly as below |
 | Rest pose | Matches the rest drawing (top left of poses_a) |
-| Face layer | Blink, gaze and mouth on their own layer, so they play over any body animation |
-| Mouth input | One input that selects the speech shape (see Speech) |
+| Face layer | Blink, glances and talking on their own layer, so they play over any body animation |
 | Source | The `.rev` project file |
 | Preview | A screen recording of every animation, for sign-off |
 
@@ -44,28 +43,16 @@ Joint ends are drawn rounded and running past the joint, anything another piece 
 
 ## Built into the rig
 
-These run the whole time, under every animation. The game triggers each blink, glance and mouth shape; the file supplies how they look.
+These run the whole time, under every animation. The game triggers each one; the file supplies how they look.
 
 | Name | What he does | Length |
 | --- | --- | --- |
 | `breathe` | A slow breath: chest and shoulders rise and fall a few pixels | 4.4 s loop |
 | `blink` | Lids half, closed, half, open | 0.16 s |
 | `gaze_ahead` `gaze_down` `gaze_viewer` | Pupils, with a slight head tilt, settle on that direction and hold | 0.2 s, then hold |
+| `talk` | Mouth opens and closes in an uneven rhythm, the moustache moving with it | 1 s loop |
 
-**Speech.** The game drives his mouth letter by letter, switching shape about every 0.05 to 0.09 s. One input selects the shape:
-
-| Shape | For |
-| --- | --- |
-| `rest` | Closed, between words |
-| `ah` | a, i, k, g, h |
-| `ee` | e, y, s, z, c |
-| `oh` | o |
-| `oo` | u, w, r, sh |
-| `m` | m, b, p |
-| `f` | f, v |
-| `l` | l, n, t, d, th |
-
-The moustache moves a little with the mouth. The `ee` shape must not look like the grin tell: lips apart, not a wide toothy smile.
+His lines appear as speech bubbles; the game plays `talk` for as long as one is on screen. The talking mouth must not look like the grin tell: lips moving, not a wide toothy smile.
 
 ## The 15 animations
 
@@ -94,7 +81,7 @@ His hands are always empty: the game moves the real cards and chips at the same 
 ## Rules every animation follows
 
 1. **Start and end exactly on the rest pose**, except `knocked_out`. The game chains animations and may cut one short.
-2. **Face separate from body.** Blinks, gaze and speech play over any body animation without fighting it.
+2. **Face separate from body.** Blinks, glances and talking play over any body animation without fighting it.
 3. **Nothing below the table's edge is seen.** Hands may reach onto the felt and over the padded edge; lap, legs and chair never show. The table's edge in the rest drawing is the line.
 4. **Limbs bend, never stretch.** An arm may foreshorten as it reaches toward the viewer; it never gets longer.
 5. **Works mirrored.** No motion may read wrong flipped left to right.
