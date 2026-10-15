@@ -91,7 +91,7 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind t
 1. All in: both gauntlets pushing his whole stack of chips forward, the pumpkin's light bright
 2. Showing: his right gauntlet turning two cards face up; the card faces are BLANK white, no ranks, no suits
 3. Collecting the pot: both forearms out on the felt, drawing a pile of chips in
-4. The candle in his pumpkin burning BRIGHTER: a strong warm glow round the eye holes and mouth slit and a soft halo of light round the whole pumpkin; the rest of him perfectly still, arms as at rest
+4. The candle in his pumpkin burning BRIGHTER: a strong warm glow round the carved eyes and carved mouth and a soft halo of light round the whole pumpkin; the rest of him perfectly still, arms as at rest
 5. Settling the pumpkin on his collar: both gauntlets lifted to the pumpkin, holding it at the sides, straightening it on his collar, candle steady
 6. Drumming a gauntlet on the table: the fingers of his right gauntlet raised and drumming on the felt, two short motion lines beside them; left arm as at rest
 
@@ -122,7 +122,7 @@ Character pose sheet for 2D animation reference: the Headless Horseman, exactly 
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). He has NO HEAD in any pose: the pumpkin on his collar is all there is above the collar, and it stays on the collar unless the pose says otherwise. The pumpkin is EXACTLY the one on the attached character sheet: the same angry slanted eyes, the same jagged-toothed mouth, the same scars, the candle inside; no fire pours out of it. His armour, cloak and brass skull bosses are EXACTLY as on the character sheet. Keep the gothic graphic-novel style of the attached character sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour, worn leather and metal; serious and imposing, NOT a children's cartoon, NOT cute.
 
-1. Talking: his right gauntlet raised a little, palm open, the pumpkin's light pulsing a little brighter at the mouth slit
+1. Talking: his right gauntlet raised a little, palm open, the pumpkin's light pulsing a little brighter at the carved mouth
 2. Facing a big bet: leaning back, both gauntlets flat on the felt, the pumpkin's light low and steady
 3. Lost a pot: his shoulders slumped, the pumpkin tipped forward, its light dimmed; arms as at rest
 4. Won a pot: his right gauntlet drawing a few chips toward him, the pumpkin's light bright
@@ -140,7 +140,7 @@ Character sheet for 2D animation rigging: the Headless Horseman's pumpkin, exact
 Every piece is drawn at EXACTLY the angle and size of the pumpkin in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over it. Draw the pumpkin once, top left, sitting on the high riveted collar, as the reference, candle steady. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels. The carved face is ALWAYS the same one as on the attached character sheet: two angry, slanted, angular eyes and a jagged-toothed mouth, the same scars. Only the light changes.
 
 - The pumpkin alone, its candle at different strengths, one piece each: steady; brighter; very bright, with a warm halo; dim; guttering, uneven light, a thin curl of smoke; out, the holes dark
-- The glow at the mouth slit only, for speech, three pieces: a little brighter; brighter; brightest
+- The glow at the carved mouth only, for speech, three pieces: a little brighter; brighter; brightest
 - The pumpkin turned toward the viewer, nearly front-on, candle steady
 
 Keep the gothic graphic-novel style of the attached character sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour, worn leather and metal; serious and imposing, NOT a children's cartoon, NOT cute.
