@@ -25,6 +25,16 @@ CLAUDE.md first (the rules and the state); this is the HOW and the QUEUE.
   **An animal** takes Cerberus's pose sheet A as the style image instead
   (`style_ref` / `style_sheet` in the spec; the Cheshire Cat, after his first
   sheet came out as furry illustration against Washington's).
+- **The gothic style (the owner, at the Headless Horseman: the flat cartoon
+  "looks childish ... since Cheshire"; "split the difference" with the dark
+  table mock-ups).** A spec's `style` / `style_short` replace the style words:
+  bold outlines and readable shapes kept, adult proportions, deep 3-4 tone
+  shading, candlelit rim light, rich muted colour. The first prompt takes its
+  MOOD from `art-tools/style/gothic_mood.png` (the owner's mock-up; the prompt
+  forbids its Universal monster, its pumpkin and its interface). The Horseman
+  is the test; once his sheet is approved it is the style image. OPEN (the
+  owner's call): which tables move to it, and whether Van Helsing, the Wolf
+  Man and the Cheshire Cat are redrawn.
 
 ## One character, start to finish
 

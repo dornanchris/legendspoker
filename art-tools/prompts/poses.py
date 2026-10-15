@@ -10,13 +10,16 @@ LOCK = bool(s.get('style_lock'))
 # An animal takes its style from Cerberus's sheet instead (the owner: the Cheshire
 # Cat drew as furry illustration against Washington's): `style_ref` names the
 # image, `style_sheet` the sheet in every later prompt.
-STYLE = (f"STYLE, the most important rule: match the {s.get('style_ord', 'SECOND')} attached image ({s.get('style_ref', 'Washington, from the first table')}) exactly: simple, chunky cartoon shapes; "
+# The gothic style (the owner, from the Horseman on: "split the difference" between
+# the bright cartoon and the dark table mock-ups; the flat cartoon read as a
+# children's game): a spec's own `style` and `style_short` replace the words below.
+STYLE = s.get('style') or (f"STYLE, the most important rule: match the {s.get('style_ord', 'SECOND')} attached image ({s.get('style_ref', 'Washington, from the first table')}) exactly: simple, chunky cartoon shapes; "
          "bold, even dark outlines; smooth flat colour with ONE soft shadow tone; bright, clean, saturated colour; a face with only a few lines "
          "(no fine wrinkles, no pores, no cross-hatching); hair and beard drawn as a few big smooth locks, never strand by strand; cloth and metal "
          "with a few big folds or highlights, no texture, no stitching, no grime, no scratches. Readable at thumbnail size. NOT a detailed "
          "illustration, NOT painterly, NOT gritty, NOT realistic.")
 SHEET = s.get('style_sheet', "Washington's sheet")
-SHORT = (f" Keep the simple, chunky, flat cartoon style of the attached sheets and of {SHEET}: few lines, big smooth shapes, "
+SHORT = (' ' + s['style_short']) if s.get('style_short') else (f" Keep the simple, chunky, flat cartoon style of the attached sheets and of {SHEET}: few lines, big smooth shapes, "
          "flat colour, no fine detail or texture.")
 def sheet_intro(first):
     if first:
