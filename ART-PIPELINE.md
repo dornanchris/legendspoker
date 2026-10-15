@@ -32,7 +32,8 @@ CLAUDE.md first (the rules and the state); this is the HOW and the QUEUE.
   shading, candlelit rim light, rich muted colour. The first prompt takes its
   MOOD from `art-tools/style/gothic_mood.png` (the owner's mock-up; the prompt
   forbids its Universal monster, its pumpkin and its interface). The Horseman
-  is the test; once his sheet is approved it is the style image. OPEN (the
+  is the test: his sheet is APPROVED (the owner's tweaks: plate armour, skull
+  bosses, a jagged-toothed carving) and is the style image from here on. OPEN (the
   owner's call): which tables move to it, and whether Van Helsing, the Wolf
   Man and the Cheshire Cat are redrawn.
 
