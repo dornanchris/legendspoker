@@ -75,3 +75,10 @@ and the three tells with their decoys). Hands are empty; the game moves the
 cards and chips. Names differ from today's clips in places (`win` / `lose`
 for `won_pot` / `lost_pot`; `bet` serves calls and raises): game work, once
 a `.riv` exists.
+
+The owner drew the six-sheet version of the prompts (commit 997ec89, before
+the trim to five): `sources/rive_1_body.png` to `rive_6_new_poses.png`, a
+superset of what the 15 animations need. `ANIMATION_BRIEF.md` is the brief as
+sent (the same text as the owner's doc, without the byline). The face sheet's
+bare head came out narrower than his face, so `face_overlays.png` goes to the
+artist as well, for the head's true shape.
