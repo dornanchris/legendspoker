@@ -13,6 +13,7 @@ import roosAnim from '../art/roosevelt/anim.json'
 import deathRig from '../art/death/rig.json'
 import deathAnim from '../art/death/anim.json'
 import washingtonAnim from '../art/washington/anim.json'
+import washingtonIk from '../art/washington/ik.json'
 import socratesRig from '../art/socrates/rig.json'
 import socratesAnim from '../art/socrates/anim.json'
 import leonidasRig from '../art/leonidas/rig.json'
@@ -107,7 +108,7 @@ export const RETURNED: Record<string, string> = { green_knight: 'green_knight_ba
 
 export const PUPPETS: Record<string, CastEntry> = {
   lincoln: { rig: lincolnRig as unknown as RigData, anim: lincolnAnim as unknown as AnimData, base: 'art/lincoln/', ik: lincolnIk as unknown as IkData },
-  washington: { rig: washingtonRig as unknown as RigData, anim: washingtonAnim as unknown as AnimData, base: 'art/washington/' },
+  washington: { rig: washingtonRig as unknown as RigData, anim: washingtonAnim as unknown as AnimData, base: 'art/washington/', ik: washingtonIk as unknown as IkData },
   fdr: { rig: fdrRig as unknown as RigData, anim: fdrAnim as unknown as AnimData, base: 'art/fdr/' },
   roosevelt: { rig: roosRig as unknown as RigData, anim: roosAnim as unknown as AnimData, base: 'art/roosevelt/' },
   socrates: { rig: socratesRig as unknown as RigData, anim: socratesAnim as unknown as AnimData, base: 'art/socrates/' },

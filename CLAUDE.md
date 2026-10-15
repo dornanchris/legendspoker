@@ -162,7 +162,8 @@ art-tools/
                   Baker Street (all built); van_helsing_parts/ (built),
                   monster_parts/: Transylvania
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
-                  arms resting along the rim: the model for the next sheets
+                  arms resting along the rim: the model for the next sheets;
+                  ik_split.py cuts his IK arm from a pose (the IK prototype)
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
                   back); death_layout.json assembles him
   prompts/        generators for the two art-prompt files below
@@ -549,12 +550,18 @@ never started under fast-forward or in a resume's catch-up, and an idle
 never interrupts anything; Reduce motion stops sway and breath. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **The IK prototype (the owner's test of smoother motion before Rive or Unity;
-Lincoln only, off unless `?ik=1`):** a two-bone IK arm on the same Canvas 2D
-puppet player (`web/puppet/ik.ts`, `web/puppet/README.md`), cut from his
-existing check-arm image (`art-tools/lincoln_parts/ik_split.py`); `check_ik`,
-650 ms, bends the elbow to put the finger on the felt and returns exactly to
-rest; a cut-short clip on an IK puppet hands back over 0.15 s instead of
-snapping. Awaiting the owner's review before any other puppet uses it.
+Lincoln and Washington, off unless `?ik=1`):** a two-bone IK arm on the same
+Canvas 2D puppet player (`web/puppet/ik.ts`, `web/puppet/README.md`). Two ways
+to make the parts, kept side by side for the owner to compare: Lincoln's arm is
+cut from his existing check-arm image (`art-tools/lincoln_parts/ik_split.py`;
+`check_ik` only), Washington's hands were drawn as parts (the rigging-parts
+sheet, `art-tools/washington_parts/RIG_PARTS.md` and `ik_build.py`; eight `_ik`
+clips: check, tap, peek, call, fold, show, square, talk). `#/iktest` seats them
+together (Lincoln seat 1, Washington mirrored in seat 4; `?clip=call`). The
+elbow bends to put the hand on the felt and returns exactly to rest; a
+cut-short clip on an IK puppet hands back over 0.15 s instead of snapping.
+`npx tsx web/puppet/ik-check.ts` checks both. Awaiting the owner's review
+before any other puppet uses it.
 **Layering rule for the table screen:** the room's table covers a puppet only
 below the puppet's own table line as well as below the rim (see
 `web/puppet/README.md`); the end seats' rim curves up above the drawn rail.

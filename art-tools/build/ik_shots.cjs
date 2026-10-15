@@ -1,9 +1,10 @@
 // The IK prototype, measured and photographed on the real stage at phone size.
 // Serve web/ first (PORT=5181 node web/serve.mjs), then
 //   node art-tools/build/ik_shots.cjs out_dir
-// For ?ik=0 (the old check) and ?ik=1 (the IK check): frame cost (update + draw)
-// over 8 s of both Lincolns checking every 1.4 s, with the CPU slowed 4x as a
-// stand-in for a phone; decoded image memory; then each Lincoln's arm at fixed
+// For ?ik=0 (the old check) and ?ik=1 (the IK check), with #/iktest's seats
+// (Lincoln in seat 1, Washington mirrored in seat 4): frame cost (update + draw)
+// over 8 s of both checking every 1.4 s, with the CPU slowed 4x as a
+// stand-in for a phone; decoded image memory; then each arm at fixed
 // times in the clip (seat 1, and seat 4 mirrored), as crops, and a whole screen.
 const { chromium } = require('/opt/node22/lib/node_modules/playwright')
 const fs = require('fs')
@@ -26,7 +27,7 @@ const fs = require('fs')
     const r = await p.evaluate(() => {
       const st = window.__ik.stage
       return { frames: st.stats.frames, avgMs: st.stats.total / st.stats.frames, maxMs: st.stats.max,
-        lincolnMB: st.player(1).decodedBytes() / 1048576, heapMB: performance.memory ? performance.memory.usedJSHeapSize / 1048576 : null }
+        seat1MB: st.player(1).decodedBytes() / 1048576, seat4MB: st.player(4).decodedBytes() / 1048576, heapMB: performance.memory ? performance.memory.usedJSHeapSize / 1048576 : null }
     })
     report['ik=' + ik] = { ...r, errors: errs }
     // stills at fixed clip times: no sway, both seats seeked

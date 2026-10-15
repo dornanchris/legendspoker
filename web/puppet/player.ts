@@ -70,7 +70,7 @@ export class PuppetPlayer {
     if (ik && entry.ik) {
       const base = entry.base + (small ? 'half/' : '')
       const images = new Map<string, HTMLImageElement>()
-      const imgs = entry.ik.chains.flatMap((c) => [c.parts.upper.img, c.parts.fore.img, ...Object.values(c.parts.hands).map((h) => h.img)])
+      const imgs = entry.ik.chains.flatMap((c) => [c.parts.upper.img, c.parts.fore.img, ...(c.parts.under ? [c.parts.under.img] : []), ...Object.values(c.parts.hands).map((h) => h.img)])
       await Promise.all(imgs.map((src) => new Promise<void>((ok, fail) => {
         const im = new Image()
         im.onload = () => ok()
@@ -100,6 +100,11 @@ export class PuppetPlayer {
     return this.resolve(name) in this.entry.anim.clips
   }
 
+  /** How long the clip played for a name lasts (seconds), or 0 without one. */
+  duration(name: string): number {
+    return this.entry.anim.clips[this.resolve(name)]?.duration ?? 0
+  }
+
   get clipNames(): string[] {
     return Object.keys(this.entry.anim.clips)
   }
@@ -123,7 +128,8 @@ export class PuppetPlayer {
    * only; every other puppet keeps its old, exact behaviour).
    */
   private release(cut: Playing[]): void {
-    if (!this.puppet.ik) return
+    // a scrubbed (held) clip has nowhere to hand back from: the bench seeks, it does not play
+    if (!this.puppet.ik || this.hold) return
     for (const p of cut) {
       if (p.t <= 0 || p.t >= p.clip.duration) continue
       const bones: Release['bones'] = []
@@ -151,6 +157,7 @@ export class PuppetPlayer {
     const p = this.playing.find((q) => q.name === name)!
     p.t = Math.max(0, Math.min(t, p.clip.duration))
     this.hold = true
+    this.releases = []
   }
 
   setLoop(name: string, loop: boolean): void {

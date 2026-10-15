@@ -1,0 +1,234 @@
+{
+  "source": "rig_parts.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "washington_rigparts_01.png",
+      "label": "",
+      "x": 102,
+      "y": 17,
+      "w": 243,
+      "h": 347,
+      "pivot": [
+        121.5,
+        173.5
+      ],
+      "area": 56513
+    },
+    {
+      "index": 2,
+      "file": "washington_rigparts_02.png",
+      "label": "",
+      "x": 878,
+      "y": 17,
+      "w": 209,
+      "h": 360,
+      "pivot": [
+        104.5,
+        180.0
+      ],
+      "area": 54615
+    },
+    {
+      "index": 3,
+      "file": "washington_rigparts_03.png",
+      "label": "",
+      "x": 354,
+      "y": 157,
+      "w": 316,
+      "h": 235,
+      "pivot": [
+        158.0,
+        117.5
+      ],
+      "area": 40150
+    },
+    {
+      "index": 4,
+      "file": "washington_rigparts_04.png",
+      "label": "",
+      "x": 1101,
+      "y": 165,
+      "w": 309,
+      "h": 228,
+      "pivot": [
+        154.5,
+        114.0
+      ],
+      "area": 38973
+    },
+    {
+      "index": 5,
+      "file": "washington_rigparts_05.png",
+      "label": "",
+      "x": 11,
+      "y": 413,
+      "w": 178,
+      "h": 239,
+      "pivot": [
+        89.0,
+        119.5
+      ],
+      "area": 24918
+    },
+    {
+      "index": 6,
+      "file": "washington_rigparts_06.png",
+      "label": "",
+      "x": 163,
+      "y": 413,
+      "w": 159,
+      "h": 243,
+      "pivot": [
+        79.5,
+        121.5
+      ],
+      "area": 21975
+    },
+    {
+      "index": 7,
+      "file": "washington_rigparts_07.png",
+      "label": "",
+      "x": 315,
+      "y": 411,
+      "w": 199,
+      "h": 241,
+      "pivot": [
+        99.5,
+        120.5
+      ],
+      "area": 25283
+    },
+    {
+      "index": 8,
+      "file": "washington_rigparts_08.png",
+      "label": "",
+      "x": 452,
+      "y": 410,
+      "w": 190,
+      "h": 251,
+      "pivot": [
+        95.0,
+        125.5
+      ],
+      "area": 26137
+    },
+    {
+      "index": 9,
+      "file": "washington_rigparts_09.png",
+      "label": "",
+      "x": 600,
+      "y": 409,
+      "w": 231,
+      "h": 261,
+      "pivot": [
+        115.5,
+        130.5
+      ],
+      "area": 29414
+    },
+    {
+      "index": 10,
+      "file": "washington_rigparts_10.png",
+      "label": "",
+      "x": 762,
+      "y": 405,
+      "w": 252,
+      "h": 263,
+      "pivot": [
+        126.0,
+        131.5
+      ],
+      "area": 30491
+    },
+    {
+      "index": 11,
+      "file": "washington_rigparts_11.png",
+      "label": "",
+      "x": 920,
+      "y": 409,
+      "w": 248,
+      "h": 254,
+      "pivot": [
+        124.0,
+        127.0
+      ],
+      "area": 30016
+    },
+    {
+      "index": 12,
+      "file": "washington_rigparts_12.png",
+      "label": "",
+      "x": 1106,
+      "y": 409,
+      "w": 281,
+      "h": 236,
+      "pivot": [
+        140.5,
+        118.0
+      ],
+      "area": 30860
+    },
+    {
+      "index": 13,
+      "file": "washington_rigparts_13.png",
+      "label": "",
+      "x": 1353,
+      "y": 414,
+      "w": 177,
+      "h": 211,
+      "pivot": [
+        88.5,
+        105.5
+      ],
+      "area": 21494
+    },
+    {
+      "index": 14,
+      "file": "washington_rigparts_14.png",
+      "label": "",
+      "x": 250,
+      "y": 701,
+      "w": 278,
+      "h": 272,
+      "pivot": [
+        139.0,
+        136.0
+      ],
+      "area": 38488
+    },
+    {
+      "index": 15,
+      "file": "washington_rigparts_15.png",
+      "label": "",
+      "x": 593,
+      "y": 711,
+      "w": 322,
+      "h": 210,
+      "pivot": [
+        161.0,
+        105.0
+      ],
+      "area": 33745
+    },
+    {
+      "index": 16,
+      "file": "washington_rigparts_16.png",
+      "label": "",
+      "x": 917,
+      "y": 698,
+      "w": 272,
+      "h": 240,
+      "pivot": [
+        136.0,
+        120.0
+      ],
+      "area": 33622
+    }
+  ]
+}

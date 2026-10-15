@@ -32,7 +32,12 @@ export type IkChainData = {
   bend?: 1 | -1
   /** Slots the chain stands in for while it shows a hand. */
   hides: string[]
-  parts: { upper: IkPartData; fore: IkPartData; hands: Record<string, IkPartData> }
+  /**
+   * `under`, if any, is drawn on the body behind the arm while the chain
+   * moves, and does not move: the coat the resting arm covered (the rig's body
+   * image has only a smear there, as nothing ever showed it before).
+   */
+  parts: { upper: IkPartData; fore: IkPartData; hands: Record<string, IkPartData>; under?: IkPartData }
 }
 
 export type IkData = { note?: string; chains: IkChainData[] }

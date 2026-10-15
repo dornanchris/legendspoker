@@ -100,3 +100,25 @@ so running it never overwrites the game's puppet.
 
 `POSES.md` lists his 24 poses and the prompts for the four pose sheets and
 the face-overlay sheet.
+
+## IK arms (the prototype; `?ik=1`)
+
+`RIG_PARTS.md` is the prompt for the rigging-parts sheet (`sources/rig_parts.png`):
+his hands drawn as separate parts, each with its own cuff and a stub of sleeve.
+`cut_sheet.py` with `cut_rigparts.json` cuts it into `washington_rigparts/`, and
+
+    python3 art-tools/washington_parts/ik_build.py
+
+writes `web/art/washington/ik.json` and its `ik_*` images (full and half size).
+The upper arm and forearm are his own rest sleeve, so the chain at rest IS his
+rest pose; each drawn hand is laid on the forearm's end by its wrist (where its
+stub meets its cuff), turned to the forearm's line, at one scale per arm (0.68
+near, 0.55 far), and the stub dropped. The sheet drew left hands pointing like
+the right ones, so they are mirrored. `under_near` is clean coat where his
+resting arm lay (the rig's body has a smear there), over `torso_over`.
+
+The clips are `*_ik` in `anim.json`; `npx tsx web/puppet/ik-check.ts washington`
+checks them and `node art-tools/build/ik_clips.cjs washington <dir>` shoots
+each at phone size, both seats, IK above and the old clip below.
+The far arm's forearm is nearly hidden (12 px between elbow and wrist), so the
+cuff tell keeps its old swap; its three hands are built but unused.

@@ -194,6 +194,7 @@ export class Puppet {
       const add = (part: IkPartData | undefined, m: Mat) => {
         if (part) out.push({ img: this.ik!.images.get(part.img)!, m: mul(m, ikRest(part, this.ik!.up)), z: part.z, onTable: part.onTable })
       }
+      add(c.data.parts.under, bones.get(c.data.bone)!)
       add(c.data.parts.upper, ms.upper)
       add(c.data.parts.fore, ms.fore)
       add(hand, ms.hand)
