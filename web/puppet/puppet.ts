@@ -1,5 +1,9 @@
 import { type LoadedRig, type Mat, IDENTITY, mul, translate, rotate, scale } from './rig.js'
 import { type ClipData, type Channel, sample, swapAt } from './clip.js'
+import { type IkPose, type IkPartData, IkChain, ikRest } from './ik.js'
+
+/** A rig's IK chains with their images loaded (`up`: the images are that many times smaller than the rig). */
+export type LoadedIk = { chains: IkChain[]; images: Map<string, HTMLImageElement>; up: number }
 
 /**
  * One puppet on screen: its pose this frame, and how to draw it.
@@ -22,7 +26,10 @@ export class Puppet {
   /** Each bone's direction (unit x, y) and length, to its first child bone. */
   private axes = new Map<string, [number, number, number]>()
 
-  constructor(readonly rig: LoadedRig) {
+  /** Each IK chain's pose this frame (Lincoln's prototype arm; none for every other puppet). */
+  readonly ikPose = new Map<string, IkPose>()
+
+  constructor(readonly rig: LoadedRig, readonly ik: LoadedIk | null = null) {
     for (const b of rig.bones) {
       const child = rig.bones.find((c) => c.parent === b.name)
       if (!child) continue
@@ -42,6 +49,7 @@ export class Puppet {
   reset(): void {
     for (const b of this.rig.bones) this.pose.set(b.name, { rot: 0, x: 0, y: 0, sx: 0, sy: 0, len: 0 })
     this.slots.clear()
+    for (const c of this.ik?.chains ?? []) this.ikPose.set(c.data.chain, { x: 0, y: 0, rot: 0, state: null })
   }
 
   add(bone: string, ch: Channel, v: number): void {
@@ -63,6 +71,24 @@ export class Puppet {
       const s = swapAt(swaps, t)
       if (s !== null) this.show(slot, s === '-' ? null : s)
     }
+    for (const [chain, chans] of Object.entries(clip.ik ?? {})) {
+      const p = this.ikPose.get(chain)
+      if (!p) continue
+      for (const [ch, keys] of Object.entries(chans)) p[ch as 'x' | 'y' | 'rot'] += sample(keys!, t)
+    }
+    for (const [chain, swaps] of Object.entries(clip.ikSwaps ?? {})) {
+      const p = this.ikPose.get(chain)
+      const s = swapAt(swaps, t)
+      if (p && s !== null) p.state = s
+    }
+  }
+
+  /** An IK chain's pose added to (a cut-short clip handing back to rest: player.ts). */
+  addIk(chain: string, x: number, y: number, rot: number, state?: string | null): void {
+    const p = this.ikPose.get(chain)
+    if (!p) return
+    p.x += x; p.y += y; p.rot += rot
+    if (state !== undefined && p.state === null) p.state = state
   }
 
   /**
@@ -139,13 +165,40 @@ export class Puppet {
    * `onTable`, only the parts that rest on the table, to be drawn again over it.
    */
   paint(ctx: CanvasRenderingContext2D, view: Mat, onTable = false): void {
-    const bones = this.boneMatrices()
-    for (const p of this.visibleParts()) {
-      if (onTable && !p.onTable) continue
-      const m = mul(mul(view, bones.get(p.bone)!), this.rig.rest.get(p.name)!)
+    for (const d of this.drawables()) {
+      if (onTable && !d.onTable) continue
+      const m = mul(view, d.m)
       ctx.setTransform(m[0], m[1], m[2], m[3], m[4], m[5])
-      ctx.drawImage(this.rig.images.get(p.img)!, 0, 0)
+      ctx.drawImage(d.img, 0, 0)
     }
+  }
+
+  /**
+   * What is drawn this frame, back to front: each image with its matrix (its
+   * pixels -> posed rig pixels). An IK chain showing a hand stands in for its
+   * slots (the rig's own forearm piece and upper-arm patch) with its three images.
+   */
+  drawables(): { img: HTMLImageElement; m: Mat; z: number; onTable: boolean }[] {
+    const bones = this.boneMatrices()
+    // a chain shows while it has a hand, unless a clip has emptied its slots (a whole-figure frame hides the arms)
+    const emptied = (slot: string) => this.slots.has(slot) && this.slots.get(slot) === null
+    const active = this.ik ? this.ik.chains.filter((c) => this.ikPose.get(c.data.chain)?.state && !c.data.hides.some(emptied)) : []
+    const hidden = new Set(active.flatMap((c) => c.data.hides))
+    const out = this.visibleParts().filter((p) => !hidden.has(p.slot)).map((p) => ({
+      img: this.rig.images.get(p.img)!, m: mul(bones.get(p.bone)!, this.rig.rest.get(p.name)!), z: p.z, onTable: p.onTable,
+    }))
+    for (const c of active) {
+      const pose = this.ikPose.get(c.data.chain)!
+      const ms = c.matrices(pose, bones.get(c.data.bone)!)
+      const hand = c.data.parts.hands[pose.state!]
+      const add = (part: IkPartData | undefined, m: Mat) => {
+        if (part) out.push({ img: this.ik!.images.get(part.img)!, m: mul(m, ikRest(part, this.ik!.up)), z: part.z, onTable: part.onTable })
+      }
+      add(c.data.parts.upper, ms.upper)
+      add(c.data.parts.fore, ms.fore)
+      add(hand, ms.hand)
+    }
+    return out.sort((a, b) => a.z - b.z)
   }
 
   /** The top of the head at rest, in rig pixels (a hat included): where speech goes. */

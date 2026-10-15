@@ -28,6 +28,16 @@ export type ClipData = {
   note?: string
   tracks: Record<string, Partial<Record<Channel, Key[]>>>
   swaps?: Record<string, [number, string | null][]>
+  /**
+   * IK chains (web/puppet/ik.ts; a rig with an ik.json): the wrist's offset
+   * from rest, x and y in rig pixels, and the hand's turn about it, rot in
+   * degrees; keys as for tracks.
+   */
+  ik?: Record<string, Partial<Record<'x' | 'y' | 'rot', Key[]>>>
+  /** Which hand a chain shows from a time on (null: the chain off, the rig's own arm back). */
+  ikSwaps?: Record<string, [number, string | null][]>
+  /** Seconds a clip takes to hand back to rest if it is cut short (IK puppets only; default 0.15). */
+  release?: number
 }
 
 export const EASE: Record<Ease, (u: number) => number> = {

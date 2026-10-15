@@ -3623,6 +3623,156 @@
      ]
     ]
    }
+  },
+  "check_ik": {
+   "duration": 0.65,
+   "note": "The IK prototype's check (web/puppet/ik.ts; played for 'check' with ?ik=1). His right arm is three images cut from the check piece he already had: the wrist is moved and the elbow found by two-bone IK, so the arm bends rather than swapping drawings. The hand lifts a little, reaches forward over the padded rail to a fixed spot on the felt (the wrist 20 px forward and 46 down, in table space: the rail's cushion is about 75 rig px deep at his seats), the finger taps, the hand comes back to exactly where it rests. The laced rest pieces cannot part, so both arms change image as the lift begins and as the hands meet again, in place; the left arm never moves.",
+   "tracks": {},
+   "swaps": {
+    "arm_far": [
+     [
+      0.02,
+      "alone"
+     ],
+     [
+      0.63,
+      null
+     ]
+    ]
+   },
+   "ik": {
+    "arm_near": {
+     "x": [
+      [
+       0,
+       0
+      ],
+      [
+       0.02,
+       0
+      ],
+      [
+       0.16,
+       8,
+       "out"
+      ],
+      [
+       0.3,
+       20,
+       "inOut"
+      ],
+      [
+       0.4,
+       20,
+       "hold"
+      ],
+      [
+       0.56,
+       6,
+       "inOut"
+      ],
+      [
+       0.63,
+       0,
+       "out"
+      ],
+      [
+       0.65,
+       0
+      ]
+     ],
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.02,
+       0
+      ],
+      [
+       0.16,
+       -14,
+       "out"
+      ],
+      [
+       0.3,
+       46,
+       "in"
+      ],
+      [
+       0.4,
+       46,
+       "hold"
+      ],
+      [
+       0.52,
+       -6,
+       "out"
+      ],
+      [
+       0.63,
+       0,
+       "in"
+      ],
+      [
+       0.65,
+       0
+      ]
+     ],
+     "rot": [
+      [
+       0,
+       0
+      ],
+      [
+       0.02,
+       0
+      ],
+      [
+       0.16,
+       -10,
+       "out"
+      ],
+      [
+       0.3,
+       6,
+       "in"
+      ],
+      [
+       0.4,
+       6,
+       "hold"
+      ],
+      [
+       0.52,
+       -4,
+       "out"
+      ],
+      [
+       0.63,
+       0,
+       "in"
+      ],
+      [
+       0.65,
+       0
+      ]
+     ]
+    }
+   },
+   "ikSwaps": {
+    "arm_near": [
+     [
+      0.02,
+      "point"
+     ],
+     [
+      0.63,
+      null
+     ]
+    ]
+   }
   }
  },
  "cues": {

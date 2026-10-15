@@ -7,6 +7,7 @@ import { ledgerScreen } from './screens/ledger.js'
 import { settingsScreen, aboutScreen } from './screens/settings.js'
 import { endingScreen } from './screens/ending.js'
 import { puppetScreen } from './screens/puppet.js'
+import { ikTestScreen } from './screens/iktest.js'
 import * as sound from './sound.js'
 
 /**
@@ -27,6 +28,7 @@ import * as sound from './sound.js'
  *   #/ledger/:tab/:id  the ledger
  *   #/settings  #/about  #/ending
  *   #/puppet/:id       the puppet bench (animation preview; not part of the game)
+ *   #/iktest           the IK prototype on the real stage (?ik=1 / ?ik=0)
  */
 
 type Screen = (root: HTMLElement, params: string[]) => void | (() => void)
@@ -43,6 +45,7 @@ const ROUTES: Record<string, Screen> = {
   about: aboutScreen,
   ending: endingScreen,
   puppet: puppetScreen,
+  iktest: ikTestScreen,
 }
 
 let cleanup: (() => void) | void = undefined

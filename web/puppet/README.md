@@ -92,3 +92,24 @@ triggers, loops, slows and scrubs every clip beside its reference drawing,
 and drives the eyes, brows and mouth by hand. Space replays, B blinks, S speaks.
 
 Presentation only: the randomness is `Math.random`, never the game RNG.
+
+## The IK prototype (Lincoln only, off by default)
+
+`?ik=1` (or localStorage `legends-poker/ik` = 1) turns it on; without it every
+puppet, Lincoln included, plays exactly as before. `ik.ts` is a two-bone IK
+arm: `web/art/lincoln/ik.json` (written by `art-tools/lincoln_parts/ik_split.py`,
+which cuts his EXISTING check-arm image into upper arm, forearm and hand, no
+new drawing) gives the shoulder, elbow and wrist and the bend side. A clip's
+`ik` tracks move the wrist (x, y offsets in rig pixels = table space, so a
+mirrored seat mirrors the target) and turn the hand (`rot`); `ikSwaps` choose
+the hand image; while a chain shows a hand it stands in for the slots in
+`hides`, and steps aside whenever a clip empties those slots (a whole-figure
+frame). A zero offset gives exactly the rest matrices, so a clip that ends at
+zero ends at rest. The player plays `<name>_ik` for `<name>` when it has one
+(the game still asks for `check`), and on an IK puppet a clip cut short hands
+back to rest over `release` s (0.15) instead of snapping. Everything runs on
+the player's clock (the stage's pace, fast-forward rules and Reduce motion
+unchanged). Checks: `npx tsx web/puppet/ik-check.ts` (joints, lengths, the
+finger on the felt, exact rest), `#/iktest` on the real stage, and
+`art-tools/build/ik_shots.cjs` / `ik_blend.cjs` (phone-size stills of both
+seats, frame cost, memory, hand-back smoothness).

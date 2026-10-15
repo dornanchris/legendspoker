@@ -548,6 +548,13 @@ wordless fidgets and decoys (`fidgets`). Clips run at the pace setting, are
 never started under fast-forward or in a resume's catch-up, and an idle
 never interrupts anything; Reduce motion stops sway and breath. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
+**The IK prototype (the owner's test of smoother motion before Rive or Unity;
+Lincoln only, off unless `?ik=1`):** a two-bone IK arm on the same Canvas 2D
+puppet player (`web/puppet/ik.ts`, `web/puppet/README.md`), cut from his
+existing check-arm image (`art-tools/lincoln_parts/ik_split.py`); `check_ik`,
+650 ms, bends the elbow to put the finger on the felt and returns exactly to
+rest; a cut-short clip on an IK puppet hands back over 0.15 s instead of
+snapping. Awaiting the owner's review before any other puppet uses it.
 **Layering rule for the table screen:** the room's table covers a puppet only
 below the puppet's own table line as well as below the rim (see
 `web/puppet/README.md`); the end seats' rim curves up above the drawn rail.

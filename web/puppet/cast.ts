@@ -1,8 +1,10 @@
+import type { IkData } from './ik.js'
 import type { RigData } from './rig.js'
 import type { ClipData } from './clip.js'
 import type { FaceConfig } from './face.js'
 import lincolnRig from '../art/lincoln/rig.json'
 import lincolnAnim from '../art/lincoln/anim.json'
+import lincolnIk from '../art/lincoln/ik.json'
 import washingtonRig from '../art/washington/rig.json'
 import fdrRig from '../art/fdr/rig.json'
 import fdrAnim from '../art/fdr/anim.json'
@@ -94,7 +96,8 @@ export type AnimData = {
   gutter?: string[]
 }
 
-export type CastEntry = { rig: RigData; anim: AnimData; base: string }
+/** `ik`: the IK prototype's arm chains (web/puppet/ik.ts), Lincoln only for now. */
+export type CastEntry = { rig: RigData; anim: AnimData; base: string; ik?: IkData }
 
 /**
  * Someone who comes back changed (the Green Knight, beaten and bareheaded):
@@ -103,7 +106,7 @@ export type CastEntry = { rig: RigData; anim: AnimData; base: string }
 export const RETURNED: Record<string, string> = { green_knight: 'green_knight_bare' }
 
 export const PUPPETS: Record<string, CastEntry> = {
-  lincoln: { rig: lincolnRig as unknown as RigData, anim: lincolnAnim as unknown as AnimData, base: 'art/lincoln/' },
+  lincoln: { rig: lincolnRig as unknown as RigData, anim: lincolnAnim as unknown as AnimData, base: 'art/lincoln/', ik: lincolnIk as unknown as IkData },
   washington: { rig: washingtonRig as unknown as RigData, anim: washingtonAnim as unknown as AnimData, base: 'art/washington/' },
   fdr: { rig: fdrRig as unknown as RigData, anim: fdrAnim as unknown as AnimData, base: 'art/fdr/' },
   roosevelt: { rig: roosRig as unknown as RigData, anim: roosAnim as unknown as AnimData, base: 'art/roosevelt/' },

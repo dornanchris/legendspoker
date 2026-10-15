@@ -101,6 +101,8 @@ export class Stage {
   /** Reduce motion: no sway or breath. */
   still = false
   onReady: (() => void) | null = null
+  /** What each frame costs (update + draw, ms), for measuring (the IK prototype's test page). */
+  readonly stats = { frames: 0, total: 0, max: 0 }
 
   constructor(readonly canvas: HTMLCanvasElement, readonly room: RoomEntry, readonly seatCount: number) {
     this.ctx = canvas.getContext('2d')!
@@ -177,6 +179,11 @@ export class Stage {
 
   has(seat: number): boolean {
     return this.actors.has(seat)
+  }
+
+  /** The figure in a chair (the IK test page seeks its clips). */
+  player(seat: number) {
+    return this.actors.get(seat)?.player ?? null
   }
 
   /** The figure in a chair, for its face (speech). */
@@ -299,6 +306,7 @@ export class Stage {
 
   private frame(now: number) {
     if (!this.alive) return
+    const t0 = performance.now()
     const dt = Math.min(0.05, (now - this.last) / 1000)
     this.last = now
     this.clock += dt
@@ -319,6 +327,8 @@ export class Stage {
       a.player.update(dt)
     }
     this.draw()
+    const ms = performance.now() - t0
+    this.stats.frames++; this.stats.total += ms; this.stats.max = Math.max(this.stats.max, ms)
     this.raf = requestAnimationFrame((t) => this.frame(t))
   }
 
