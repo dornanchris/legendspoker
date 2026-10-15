@@ -328,17 +328,24 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 
 /* ---------------------------------------------------------------- cards */
 .card {
-  width: 40px; height: 56px; border-radius: 5px;
+  width: calc(40px * var(--s, 1)); height: calc(56px * var(--s, 1)); border-radius: calc(5px * var(--s, 1));
   background: var(--card-bg); color: var(--card-ink);
   display: grid; grid-template-rows: 1fr 1fr; place-items: center;
-  font-weight: 700; font-size: 1.05rem; line-height: 1;
+  font-weight: 700; font-size: calc(1.05rem * var(--s, 1)); line-height: 1;
   border: 1px solid #0006; font-variant-numeric: tabular-nums;
-  padding: 5px 0 6px; flex: none;
+  padding: calc(5px * var(--s, 1)) 0 calc(6px * var(--s, 1)); flex: none;
 }
 .card .suit { font-size: 1.1em; }
-.card.small { width: 28px; height: 38px; font-size: .78rem; border-radius: 4px; padding: 3px 0 4px; }
+.card.small {
+  width: calc(28px * var(--s2, 1)); height: calc(38px * var(--s2, 1)); font-size: calc(.78rem * var(--s2, 1));
+  border-radius: calc(4px * var(--s2, 1)); padding: calc(3px * var(--s2, 1)) 0 calc(4px * var(--s2, 1));
+}
 .card.tiny { width: 22px; height: 30px; font-size: .66rem; border-radius: 3px; padding: 2px 0 3px; }
-.card.red { color: var(--red); }
+.card.red, .card.hearts { color: var(--red); }
+/* A four-colour deck: diamonds blue and clubs green, so no suit passes for its twin at a glance. */
+.card.diamonds { color: #1f5fbf; }
+.card.clubs { color: #1d7a3a; }
+.card.spades { color: var(--card-ink); }
 .card.back {
   background: repeating-linear-gradient(45deg, #43324a, #43324a 4px, #35283b 4px, #35283b 8px);
   border-color: #0008;
@@ -473,17 +480,17 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .narration:empty { display: none; }
 .narration.show { animation: narrate 6s ease-out both; }
 @keyframes narrate { 0% { opacity: 0; } 6% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; } }
-.board { display: flex; gap: 6px; min-height: 58px; align-items: center; }
-.pot { font-size: 1.1rem; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; }
+.board { display: flex; gap: calc(6px * var(--s, 1)); min-height: calc(58px * var(--s, 1)); align-items: center; }
+.pot { font-size: calc(1.1rem * var(--s2, 1)); font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; }
 .pot .pile { min-width: 20px; }
-.pot .label { color: var(--dim); font-size: .72rem; letter-spacing: .14em; }
+.pot .label { color: var(--dim); font-size: calc(.72rem * var(--s2, 1)); letter-spacing: .14em; }
 
 .you { display: flex; align-items: center; gap: 16px; justify-content: center; }
 .you-info { display: flex; gap: 10px; align-items: center; }
-.you-name { font-weight: 700; font-family: var(--serif); font-size: 1.05rem; }
+.you-name { font-weight: 700; font-family: var(--serif); font-size: calc(1.05rem * var(--s2, 1)); }
 .you-name.earned { color: var(--gold-soft); }
-.you .stack { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 600; }
-.you-cards { display: flex; gap: 6px; min-height: 56px; }
+.you .stack { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 600; font-size: calc(1rem * var(--s2, 1)); }
+.you-cards { display: flex; gap: calc(6px * var(--s, 1)); min-height: calc(56px * var(--s, 1)); }
 .you .bet { min-width: 64px; }
 
 .controls { display: grid; gap: 5px; justify-items: center; min-height: 74px; }
@@ -545,16 +552,16 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .chip.gold, .chip-side.gold { --c: #cf9f22; --e: #fff4d2; }
 .chip.orange, .chip-side.orange { --c: #d0652a; }
 .chip {
-  display: block; width: 15px; height: 15px; border-radius: 50%;
+  display: block; width: calc(15px * var(--s, 1)); height: calc(15px * var(--s, 1)); border-radius: 50%;
   background:
     radial-gradient(circle, var(--c) 0 40%, var(--e) 41% 47%, var(--c) 48% 62%, transparent 63%),
     repeating-conic-gradient(var(--c) 0 30deg, var(--e) 30deg 45deg);
   box-shadow: 0 2px 4px #000b, inset 0 0 0 1px #0005;
 }
-.pile { display: inline-flex; align-items: flex-end; gap: 2px; min-height: 22px; }
+.pile { display: inline-flex; align-items: flex-end; gap: calc(2px * var(--s, 1)); min-height: calc(22px * var(--s, 1)); }
 .pile .col { display: flex; flex-direction: column-reverse; }
 .chip-side {
-  display: block; width: 18px; height: 5px; border-radius: 3px / 2px;
+  display: block; width: calc(18px * var(--s, 1)); height: calc(5px * var(--s, 1)); border-radius: 17% / 40%;
   /* Shading for a cylinder over the edge inserts; a dark seam under each chip. */
   background:
     linear-gradient(90deg, #0005, transparent 28%, transparent 68%, #0006),
@@ -570,7 +577,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
    bet appearing never nudges the cards beside it. */
 .bet { display: flex; align-items: flex-end; gap: 4px; flex: none; }
 .bet.empty { visibility: hidden; }
-.bet .amt { color: var(--gold-soft); font-size: .78rem; font-weight: 650; font-variant-numeric: tabular-nums; line-height: 1; }
+.bet .amt { color: var(--gold-soft); font-size: calc(.78rem * var(--s, 1)); text-shadow: 0 1px 3px #000; font-weight: 650; font-variant-numeric: tabular-nums; line-height: 1; }
 
 /* ---------------------------------------------------------------- the staged table */
 /* A table whose room is drawn (web/puppet/stage.ts): the room and its figures
@@ -582,20 +589,20 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .felt.staged .deck-spot { position: absolute; width: 1px; height: 1px; pointer-events: none; }
 .felt.staged .opponents { position: absolute; inset: 0; display: block; z-index: 2; pointer-events: none; }
 .felt.staged .seat {
-  position: absolute; transform: translateX(-50%); width: var(--plate, 158px); max-width: none; font-size: .86rem;
-  padding: 3px 8px 4px; border-radius: 9px; border-color: #6d604f; background: #141116e0;
+  position: absolute; transform: translateX(-50%); width: var(--plate, 158px); max-width: none; font-size: calc(.86rem * var(--s2, 1));
+  padding: calc(3px * var(--s2, 1)) calc(8px * var(--s2, 1)) calc(4px * var(--s2, 1)); border-radius: 9px; border-color: #6d604f; background: #141116e0;
   box-shadow: 0 4px 14px #0008; pointer-events: auto;
 }
 .felt.staged .seat.champion { border-color: #c9a22788; }
 .felt.staged .seat.acting { border-color: var(--gold); }
 .felt.staged .seat.out { background: #14111680; }
 .felt.staged .seat .hand-row { margin: 2px 0 0; min-height: 0; }
-.felt.staged .seat .cards { min-height: 31px; }
+.felt.staged .seat .cards { min-height: calc(31px * var(--s2, 1)); }
 /* this street's bet lies on the felt in front of the plate, toward the middle */
-.felt.staged .seat .bet { position: absolute; top: calc(100% + 26px); }
+.felt.staged .seat .bet { position: absolute; top: calc(100% + 26px * var(--s2, 1)); }
 .felt.staged .seat[data-side="l"] .bet { left: 62%; }
 .felt.staged .seat[data-side="r"] .bet { right: 62%; flex-direction: row-reverse; }
-.felt.staged .seat .last { position: absolute; right: 8px; bottom: 6px; font-size: .74rem; min-height: 0; }
+.felt.staged .seat .last { position: absolute; right: 8px; bottom: 6px; font-size: calc(.74rem * var(--s2, 1)); min-height: 0; }
 .felt.staged .seat .tell {
   position: absolute; left: 0; right: 0; top: calc(100% + 3px);
   text-align: center; text-shadow: 0 1px 3px #000, 0 0 8px #000c; color: #e4d3b4;
@@ -609,7 +616,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   position: absolute; z-index: 2; transform: translateX(-50%); margin: 0; flex-direction: column; align-items: center; gap: 0;
   padding: 3px 14px 4px; border: 1px solid #6d604f; border-radius: 9px; background: #141116e0; box-shadow: 0 4px 14px #0008;
 }
-.felt.staged .dealer-name { color: var(--ink); font-size: .74rem; }
+.felt.staged .dealer-name { color: var(--ink); font-size: calc(.74rem * var(--s2, 1)); }
 .felt.staged .dealer-line {
   position: absolute; left: 50%; bottom: calc(100% + var(--lift, 160px) + 8px); transform: translateX(-50%);
   width: max-content; max-width: min(30em, 70vw); text-align: center; padding: 5px 12px; border-radius: 8px;
@@ -620,11 +627,22 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .felt.staged .middle { position: absolute; z-index: 2; transform: translateX(-50%); gap: 4px; }
 .felt.staged .pot { text-shadow: 0 1px 3px #000; }
 .felt.staged .you {
-  position: absolute; z-index: 3; left: 50%; bottom: 8px; transform: translateX(-50%);
+  /* bottom left, out from under the board, which grows with the screen */
+  position: absolute; z-index: 3; left: 8px; bottom: 8px;
   padding: 4px 10px; border-radius: 10px; background: #14111699;
 }
 .felt.staged .controls { position: absolute; z-index: 5; right: 12px; bottom: 8px; min-height: 0; justify-items: end; }
 .felt.staged .prompt { text-shadow: 0 1px 3px #000; color: #e4d9c4; }
+
+/* The words grow with the plates (--s2, set by table.ts from the screen's
+   height; 1 on a phone): tells, lines, callouts, Death's lines, your buttons. */
+.felt.staged .seat .tell { font-size: calc(.78rem * var(--s2, 1)); }
+.felt.staged .seat .say { font-size: calc(.86rem * var(--s2, 1)); width: calc(210px * var(--s2, 1)); margin-left: calc(-105px * var(--s2, 1)); }
+.felt.staged .seat .callout { font-size: calc(.8rem * var(--s2, 1)); max-width: calc(200px * var(--s2, 1)); }
+.felt.staged .dealer-line { font-size: calc(.85rem * var(--s2, 1)); }
+.felt.staged .controls, .felt.staged .prompt { font-size: calc(.85rem * var(--s2, 1)); }
+.felt.staged .controls { gap: calc(5px * var(--s2, 1)); }
+.felt.staged .controls button { font-size: calc(1rem * var(--s2, 1)); min-width: calc(96px * var(--s2, 1)); }
 
 /* ---------------------------------------------------------------- small landscape */
 @media (max-width: 900px) {
@@ -638,7 +656,6 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .ledger-book { grid-template-columns: 200px 1fr; }
   .marks-list { grid-template-columns: 1fr; }
   .log-panel { position: absolute; right: 0; top: 38px; bottom: 0; z-index: 30; box-shadow: -10px 0 30px #000c; }
-  .felt.staged .you { left: 8px; transform: none; }
 }
 @media (max-height: 460px) {
   :root { font-size: 13px; }
@@ -648,18 +665,18 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .felt { gap: 3px; padding: 5px 10px 5px; }
   .seat { padding: 4px 6px; }
   .seat .hand-row { min-height: 30px; margin: 3px 0 2px; }
-  .chip-side { width: 16px; height: 4px; }
-  .card { width: 34px; height: 48px; font-size: .95rem; }
-  .card.small { width: 23px; height: 31px; font-size: .7rem; }
-  .board { min-height: 50px; }
-  .you-cards { min-height: 48px; }
+  .chip-side { width: calc(16px * var(--s, 1)); height: calc(4px * var(--s, 1)); }
+  .card { width: calc(34px * var(--s, 1)); height: calc(48px * var(--s, 1)); font-size: calc(.95rem * var(--s, 1)); }
+  .card.small { width: calc(23px * var(--s2, 1)); height: calc(31px * var(--s2, 1)); font-size: calc(.7rem * var(--s2, 1)); }
+  .board { min-height: calc(50px * var(--s, 1)); }
+  .you-cards { min-height: calc(48px * var(--s, 1)); }
   .controls { min-height: 64px; }
   button { min-height: 34px; }
-  .felt.staged .seat { font-size: .74rem; padding: 2px 5px 3px; }
+  .felt.staged .seat { font-size: calc(.74rem * var(--s2, 1)); padding: 2px 5px 3px; }
   .felt.staged .seat .cards { min-height: 0; }
   .felt.staged .seat .last { right: 5px; bottom: 4px; font-size: .66rem; }
-  .felt.staged .seat .tell { font-size: .66rem; line-height: 1.2; }
-  .felt.staged .seat .bet { top: calc(100% + 20px); }
+  .felt.staged .seat .tell { font-size: calc(.66rem * var(--s2, 1)); line-height: 1.2; }
+  .felt.staged .seat .bet { top: calc(100% + 20px * var(--s2, 1)); }
   .felt.staged .seat[data-side="l"] .bet { left: 75%; }
   .felt.staged .seat[data-side="r"] .bet { right: 75%; }
   /* no room for Death's plate: his figure says who deals. His lines still go over his head. */

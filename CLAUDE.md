@@ -349,6 +349,15 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   a knock for a check, muck, rake, your-turn) are generated, not recorded,
   with pitch jitter on every play; Settings has Sound and Volume. Audio
   unlocks on the first tap or key press anywhere.
+- **The game's pieces grow with the screen** (the owner: cards and chips
+  were "hard to see" on a monitor). `scaleGame` in table.ts sets `--s` from
+  the window's height (1 up to a phone's 385 px, ~2.8 at 1080, the owner's
+  4x from 1540 up) for the cards, chips and bet amounts, and `--s2` (half
+  the growth) for the plates, their type, speech and the buttons; a straight
+  4x at 1080 laid the board over your own cards. On the staged table your
+  hand sits bottom left and the board starts under Death's plate. **A
+  four-colour deck**: spades black, hearts red, diamonds blue, clubs green
+  (a card's class is its suit).
 - A pot nobody called is won **without showing**: the winner's cards stay
   face down. (The screen used to turn them up, a free read.)
 
@@ -601,8 +610,8 @@ new art against that layout.
   only. Two speech bubbles can overlap (a seat's line under Death's). Death's
   clips draw their own cards and chips, which double the game's flights for a
   moment. A window narrower than 16:9 shows the room low with dark above.
-  Plates are fixed-size type, so on a large monitor the game reads small
-  against the art.
+  The table bar at the top (Leave, the table's name, Log) is still
+  phone-sized on a large monitor.
 - **"Reduce motion" hides the older speech bubbles.** With it on, `.say`
   and `.narration` only become visible through an animation the setting
   switches off, so those lines reach only the log. Callouts use a timer and

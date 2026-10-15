@@ -45,14 +45,14 @@ const FF_SCALE = 0.12
 const THINKING_LONG_MS = 25000
 
 const SUIT = { clubs: '♣', diamonds: '♦', hearts: '♥', spades: '♠' } as const
-const isRed = (c: Card) => c.suit === 'hearts' || c.suit === 'diamonds'
 const cardKey = (c: Card) => `${c.rank}${c.suit[0]}`
 const cardText = (c: Card) => `${c.rank === 'T' ? '10' : c.rank}${SUIT[c.suit]}`
 const handText = (cards: Card[]) => cards.map(cardText).join(' ')
 
 export function cardEl(c: Card | null, size: '' | 'small' | 'tiny' = ''): HTMLElement {
   const d = h('div', {
-    class: `card${size ? ' ' + size : ''}${c && isRed(c) ? ' red' : ''}${c ? '' : ' back'}`,
+    // a four-colour deck (spades black, hearts red, diamonds blue, clubs green): no suit is mistaken for its twin
+    class: `card${size ? ' ' + size : ''}${c ? ' ' + c.suit : ' back'}`,
   })
   if (c) {
     d.append(h('span', { class: 'rank' }, c.rank === 'T' ? '10' : c.rank), h('span', { class: 'suit' }, SUIT[c.suit]))
@@ -205,8 +205,9 @@ export function tableScreen(root: HTMLElement): () => void {
   if (!settings.showLog || narrow) els.logPanel.classList.add('collapsed')
 
   const leave = h('button', { type: 'button', class: 'ghost small', onclick: () => go('/') }, '‹ Leave')
-  root.append(
-    h('div', { class: 'table-screen' },
+  const screenEl = h('div', { class: 'table-screen' })
+  root.append(screenEl)
+  screenEl.append(
       h('header', { class: 'table-bar' },
         leave,
         h('div', { class: 'where' },
@@ -230,7 +231,7 @@ export function tableScreen(root: HTMLElement): () => void {
         els.narration,
         els.toasts,
         els.fx),
-      els.logPanel),
+      els.logPanel,
   )
   els.logToggle.addEventListener('click', () => {
     els.logPanel.classList.toggle('collapsed')
@@ -302,18 +303,36 @@ export function tableScreen(root: HTMLElement): () => void {
   let stageReady = false
 
   /**
+   * The cards, chips and plates were sized for a phone, where they are big
+   * enough; on a monitor they were specks (the owner: "hard to see"). So the
+   * game's pieces grow with the screen's height: --s, for the cards and the
+   * chips, is 1 up to a phone's 385 px, about 2.8 at 1080 and 4 (the owner's
+   * figure) from 1540 up; --s2, for the plates and their type, grows half as
+   * fast, so they never swamp the figures. A straight 4x at 1080 laid the
+   * board over your own cards and the plates over one another.
+   */
+  let plateScale = 1
+  function scaleGame() {
+    const s = Math.max(1, Math.min(4, window.innerHeight / 385))
+    plateScale = 1 + (s - 1) / 2
+    screenEl.style.setProperty('--s', s.toFixed(3))
+    screenEl.style.setProperty('--s2', plateScale.toFixed(3))
+  }
+
+  /**
    * Lay the plates, Death's plate, his deck and the middle of the table over
    * the room as it is drawn at this size. Each plate sits on the felt just in
    * front of its figure; --lift is the height from the plate up to the top of
    * the head, where that seat's speech goes.
    */
   function layoutStage() {
+    scaleGame()
     if (!stage) return
     const g = stage.geometry()
     // plates as wide as the chairs are apart allows, and never off the screen
     const xs = [...g.seats.entries()].filter(([i]) => i !== DEATH).map(([, s]) => s.x).sort((a, b) => a - b)
     const gap = Math.min(...xs.slice(1).map((x, i) => x - xs[i]))
-    const plate = Math.max(104, Math.min(158, gap - 10))
+    const plate = Math.max(104, Math.min(158 * plateScale, gap - 10))
     const width = els.stageCanvas.clientWidth
     els.opponents.style.setProperty('--plate', `${plate}px`)
     const place = (el: HTMLElement, at: SeatSpot, below: number) => {
@@ -331,7 +350,9 @@ export function tableScreen(root: HTMLElement): () => void {
     const d = g.seats.get(DEATH)!
     place(els.dealer, d, 64)
     const mid = els.dealer.parentElement?.querySelector<HTMLElement>('.middle')
-    if (mid) { mid.style.left = `${d.x}px`; mid.style.top = `${d.line + 128 * g.k}px` }
+    // the board under Death's plate, however tall the plate has grown
+    const below = els.dealer.offsetTop + els.dealer.offsetHeight + 6 * plateScale
+    if (mid) { mid.style.left = `${d.x}px`; mid.style.top = `${Math.max(d.line + 128 * g.k, below)}px` }
     els.deck.style.left = `${g.deck.x}px`
     els.deck.style.top = `${g.deck.y}px`
   }
@@ -436,6 +457,7 @@ export function tableScreen(root: HTMLElement): () => void {
   }
   const resized = new ResizeObserver(() => layoutStage())
   resized.observe(els.stageCanvas)
+  window.addEventListener('resize', scaleGame)
 
   /** The stacks as drawn. Chips landing from a pot add to these until the engine's figure arrives. */
   let shownStacks: number[] = []
@@ -1579,6 +1601,7 @@ export function tableScreen(root: HTMLElement): () => void {
     clearInterval(ambient)
     stage?.destroy()
     resized.disconnect()
+    window.removeEventListener('resize', scaleGame)
     for (const t of timers) clearTimeout(t)
     if (keyHandler) window.removeEventListener('keydown', keyHandler)
     store.flush()
