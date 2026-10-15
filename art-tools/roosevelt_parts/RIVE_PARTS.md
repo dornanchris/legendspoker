@@ -22,6 +22,9 @@ What is different from a pose sheet, and why:
 - **No shading crosses a joint, and nothing casts a shadow on another piece**
   (no arm shadow on the coat): the pieces move, and the shadows would not.
 - **Sleeves are drawn straight**; the rig bends them.
+- **His hands are always empty.** No cards or chips are drawn or held: the
+  game's own card and chip animations carry them, and his hands make the
+  motion over the felt (the owner's call: simpler for the artist and for us).
 - **The face is layered**: empty eye whites with separate pupils (he can look
   anywhere), lids, brows, the moustache over a separate mouth, the spectacles
   their own piece (his tilt tell takes them off).
@@ -55,26 +58,24 @@ Rigging rules: every joint end is ROUNDED and runs a little past the joint, so t
 Keep exactly the style of the attached images. No cigar, pipe or cigarette anywhere.
 ```
 
-## 2. Right arm and hands: cards and chips
+## 2. Right arm and hands: table moves (empty hands)
 
 ```
 Rigging parts sheet for 2D cut-out animation: Theodore Roosevelt's RIGHT ARM (the one nearer the viewer) AND HANDS, exactly as in the FIRST attached image's top-left pose (seated at a poker table, three-quarter view facing the viewer's right, forearms along the table's edge, hands resting apart) and the SECOND attached character sheet: the same brown jacket sleeve, the same white shirt cuff and cufflink, the same skin colour, line weight and style. Every piece drawn at EXACTLY the size and angle it has in that top-left pose, so it can be laid back over it.
 
-Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no body, no head, no table.
+Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no body, no head, no table. The hands are EMPTY: no cards, no chips, nothing held.
 
 - The forearm: the jacket sleeve from the elbow to the wrist with the white shirt cuff showing, its elbow end ROUNDED and drawn a little longer than needed (it hides under the upper arm), its wrist end open: NO hand
 - Hands, each on its own, each with a short stub of wrist that runs INTO the cuff (so it can turn inside it without a gap), each at the angle it would have at the end of that forearm:
   1. resting flat on the felt, relaxed, fingers together (exactly as in the top-left pose)
   2. a loose fist, knuckles down, rapping the table
-  3. cupped over two playing cards lying face down, thumb lifting the near corner
-  4. pushing a short stack of chips forward with the fingertips
-  5. planting a tall stack of chips, fingers wrapped round it
-  6. flicking two cards away face down, fingers spread
-  7. turning two cards face up; the card faces are BLANK white, no ranks, no suits
-  8. the side of the hand and curled fingers drawing a pile of chips in toward him
-  9. the fingers raised a little, ready to drum on the felt
-
-Cards have plain dark backs. Chips are plain red, white and blue.
+  3. cupped low, palm down, thumb lifted a little, as if shielding something small on the table
+  4. flat, palm down, fingertips leading, pushing forward along the table
+  5. fingers spread, the wrist flicked outward, a dismissive flick
+  6. turning palm up, fingers loose, as if turning something over
+  7. the side of the hand down on the table, fingers curled, sweeping in toward him
+  8. the fingers raised a little, ready to drum on the table
+  9. open and flat, slapping down on the table
 
 Rigging rules: every joint end is ROUNDED and runs a little past the joint, so the next piece can turn under it without a gap. Draw anything another piece covers COMPLETE, as if that piece were not there. No shading or cast shadow from one piece may be drawn onto another. Sleeves are drawn straight, not bent. Shading stays inside each piece and never crosses a joint.
 
@@ -118,7 +119,7 @@ Pure white background (#FFFFFF). Every piece separate, with a closed dark outlin
   2. holding a pair of round steel spectacles by the bridge, lifted
   3. holding an open gold pocket watch in the palm, its chain running off the edge of the piece
   4. a tight fist, knuckles toward the viewer, raised
-  5. the side of the hand drawing a pile of chips in toward him
+  5. the side of the hand down on the table, fingers curled, sweeping in toward him
   6. open, palm down, flat on the felt, pressing (leaning his weight on it)
 - Props, each on its own:
   7. his round steel spectacles alone, at the angle they sit on his face in that pose
@@ -167,8 +168,8 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind t
 2. A big win: one fist punched up beside his head, the enormous grin, all teeth
 3. A crushing loss: his right fist brought down hard on the felt, teeth gritted, glaring at the table
 4. Knocked out: standing up from the table, right hand held out to shake hands, chin up, smiling through it
-5. Charging in: leaning far forward over the table on his left forearm, his right hand shoving a tall stack of chips into the middle, jaw set
+5. Charging in: leaning far forward over the table on his left forearm, his empty right hand shoved flat toward the middle of the table, jaw set
 6. Waiting on a decision: arms folded across his chest, leaning back, one brow raised, impatient
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No cigar, pipe or cigarette.
+No cards and no chips anywhere: his hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No cigar, pipe or cigarette.
 ```
