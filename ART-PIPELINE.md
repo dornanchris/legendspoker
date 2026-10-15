@@ -99,7 +99,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
 | Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
-| Transylvania | built | Van Helsing | | the Monster (prompts in `monster_parts/POSES.md`; build him a quarter bigger), the Wolf Man (`wolf_man_parts/POSES.md`, Cerberus's style), then the Headless Horseman, Dracula |
+| Transylvania | built | Van Helsing | the Wolf Man | the Monster (prompts in `monster_parts/POSES.md`; build him a quarter bigger), the Headless Horseman (`headless_horseman_parts/POSES.md`), then Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
 | Hidden (later, the owner: "worry about the Easter egg people at the end") | The Pyre: prompt | | | JFK, the Phoenix, Loki; the Stranger (online avatar) |
