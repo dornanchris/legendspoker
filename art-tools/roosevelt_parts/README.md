@@ -62,3 +62,15 @@ show, collect; tells `grin` (strong) beside `laugh`, `drum` (bluffing) beside
 `won_pot`, `heads_up`.
 
 `POSES.md` lists his 24 poses and the prompts.
+
+## For a Rive artist
+
+The owner may hire an animator to rig Teddy in Rive. `RIVE_PARTS.md` has the
+six prompts for drawing him once as parts (body, right hands x2, left arm and
+props, head and face, and reference poses for the new win and loss moments);
+the motion list for the artist (always-on idles, every action with versions,
+win and loss tiers, tells and decoys, fidgets, speech shapes, the rules) is
+the owner's Claude Doc "Teddy Roosevelt: Animation Brief". Its names differ
+from today's clips in places (`win` / `lose` for `won_pot` / `lost_pot`), and
+the tiers need the table to pick a version by pot size: game work, once a
+`.riv` exists.

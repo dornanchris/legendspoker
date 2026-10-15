@@ -364,6 +364,13 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 
 **Not started:** Rive integration, recorded audio and music, Capacitor + a
 real device.
+**Rive, by a hired artist (the owner's direction):** Teddy Roosevelt first.
+`art-tools/roosevelt_parts/RIVE_PARTS.md` has the prompts for drawing him
+once as parts; the artist's motion list is the owner's Claude Doc "Teddy
+Roosevelt: Animation Brief" (53 animations: 25 to replace today's clips, 28
+for variety, such as win and loss tiers by pot size). Versions of an action
+are picked by public information (bet size, pot size) or at random, never by
+the character's cards (rule 2).
 
 **Art direction (the owner's calls, from the FDR and Lincoln tests):** 2D
 cut-out puppets in the bright cartoon style of those tests, not the dark
