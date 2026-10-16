@@ -45,7 +45,10 @@ sheet E (rest, the big win with hands raised, the crushing loss; prompt at the
 end of the White House kits' POSES.md), gives the big win and loss; until it
 is drawn the table uses the small win and the old beats. After any anim.json
 change, re-run `python3 art-tools/build/win_small.py`,
-`python3 art-tools/build/tell_hold.py` and `python3 art-tools/build/life.py`.
+`fallback_clips.py`, `tell_hold.py` and `life.py` (all in art-tools/build/),
+then **`python3 art-tools/build/puppet_audit.py`**: every puppet held to one
+list (life, the clips the table asks for, win/lose, a cue for every tell and
+idle line, holds, seated frames, half-size images); it must print 0.
 A whole-figure frame's body must reach the table line, or the room shows
 under it and the figure floats (Lincoln's did: `lincoln_parts/frame_seat.py`).
 

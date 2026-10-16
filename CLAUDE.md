@@ -566,7 +566,12 @@ never interrupts anything; Reduce motion stops sway and breath. **Every figure
 is alive at rest** (the owner: "living figures"): blinks, glances, breathing
 (1.3% of the torso), head sway (1.1 degrees) and a slow weight shift of the
 whole upper body (0.45 degrees about the table line; `sway.body`), Death at
-half that, all set by `art-tools/build/life.py`. The table
+half that, all set by `art-tools/build/life.py`. Going out, a figure plays
+its `knocked_out` clip if it has one, then **fades from the chair** (0.8 s,
+stage.ts; the owner: a line, then gone); a puppet with no heads-up drawing
+leans in from its rest pose (`art-tools/build/fallback_clips.py`).
+`python3 art-tools/build/puppet_audit.py` holds all 30 puppets to the same
+list and prints 0 missing. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the
 same Canvas 2D puppet player (`web/puppet/ik.ts`, `web/puppet/README.md`),

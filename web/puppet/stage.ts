@@ -27,6 +27,9 @@ import { type Mat, mul, translate, scale } from './rig.js'
  */
 
 /** How much a clip matters: an idle gives way to anything; nothing cuts a tell or an action short. */
+/** Seconds a figure takes to fade from the table once out (and its last clip, if any, is done). */
+const FADE = 0.8
+
 export const PRIO = { idle: 0, tell: 1, act: 2 } as const
 export type Prio = (typeof PRIO)[keyof typeof PRIO]
 
@@ -44,8 +47,10 @@ type Actor = {
   line: number
   current: { name: string; prio: Prio } | null
   pending: { name: string; prio: Prio; at: number } | null
-  /** Out of the table: drawn until the clip it left on is over, then not at all. */
+  /** Out of the table: drawn until the clip it left on is over, then faded out (the owner: a line, then gone). */
   leaving: boolean
+  /** 1 seated; falls to 0 once they have left and their last clip is over. */
+  fade: number
 }
 
 export type SeatSpot = {
@@ -159,7 +164,7 @@ export class Stage {
     const [w] = this.room.data.design
     this.actors.set(seat, {
       id, player, x, scale: sc, flip: x > w / 2 + 1, line: this.rimAt(x) + sink,
-      current: null, pending: null, leaving: false,
+      current: null, pending: null, leaving: false, fade: 1,
     })
     // a clip asked for before the figure was loaded (an arrival's entrance)
     const early = this.early.get(seat)
@@ -318,7 +323,10 @@ export class Stage {
     }))
     for (const [seat, a] of this.actors) {
       if (a.current && a.player.timeOf(a.current.name) < 0) a.current = null
-      if (!a.current && a.leaving) { this.actors.delete(seat); continue }
+      if (!a.current && a.leaving) {
+        a.fade -= this.still ? 1 : (dt * (this.speed || 1)) / FADE
+        if (a.fade <= 0) { this.actors.delete(seat); continue }
+      }
       if (!a.current && a.pending) {
         const p = a.pending
         a.pending = null
@@ -394,7 +402,8 @@ export class Stage {
       v = mul(v, scale(a.flip ? -a.scale : a.scale, a.scale))
       return mul(v, translate(-r.canvas.w / 2, -r.tableLine))
     })
-    order.forEach((a, i) => a.player.puppet.paint(ctx, views[i]))
+    order.forEach((a, i) => { ctx.globalAlpha = a.fade; a.player.puppet.paint(ctx, views[i]) })
+    ctx.globalAlpha = 1
 
     if (this.table) {
       set(D)
@@ -407,6 +416,7 @@ export class Stage {
       ctx.beginPath()
       ctx.rect(-5000, -5000, 10000, a.line + 5000)
       ctx.clip()
+      ctx.globalAlpha = a.fade
       a.player.puppet.paint(ctx, views[i])
       ctx.restore()
     })
@@ -414,7 +424,7 @@ export class Stage {
     ctx.save()
     set(D)
     ctx.clip(this.rimPath)
-    order.forEach((a, i) => a.player.puppet.paint(ctx, views[i], true))
+    order.forEach((a, i) => { ctx.globalAlpha = a.fade; a.player.puppet.paint(ctx, views[i], true) })
     ctx.restore()
   }
 
