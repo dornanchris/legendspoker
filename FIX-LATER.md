@@ -47,6 +47,26 @@ is done, and say so in the commit.
 
 ## Game and words (other threads)
 
+- **Jekyll and Hyde take Frankenstein's Monster's seat at Transylvania**
+  (the owner, after the Monster's gothic sheet "looks like Tom Hiddleston after
+  a rough weekend"; the sheet is kept in `monster_parts/sources/rejected/`).
+  The art is under way (`jekyll_parts/`, `hyde_parts/`); the game side is not
+  built. The owner's rules:
+  - **One seat, two men, 50/50 per sitting:** each sitting deals either Dr.
+    Jekyll or Mr. Hyde in seat 2. Pick it from the sitting's seed so a resume
+    replays the same man (never from the live game RNG after the deal starts).
+  - **The return is a trigger, not a timer:** once Dracula has arrived and
+    Jekyll/Hyde has been knocked out, the OTHER one comes back into an empty
+    chair when the player wins a pot holding the same two ranks as the hand
+    that knocked him out (knocked out by pocket aces: win again with pocket
+    aces). An Arrival like JFK's `onHumanWin`. Open questions for that thread:
+    ranks only or suits too (ranks: "pocket aces" is a rank pair); and what
+    counts when an AI, not the player, knocked him out (proposed: the same
+    ranks either way, the hand that beat him).
+  - Two character files (two dial sets: Jekyll tight and apologetic, Hyde
+    reckless and aggressive, the design doc's runner-up), the Monster's
+    dialogue replaced, an ENGINE_VERSION bump (a table's cast), a check script
+    like `check:visitor` that forces the return.
 - **How the player gets called names** (the owner: "We should reevaluate the
   way we get called names here. It can wait."): the earned names by respect
   tier (`src/tour.ts`, the dialogue's tiered lines), and the one line that
