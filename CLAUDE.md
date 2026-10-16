@@ -105,6 +105,7 @@ src/
   loki-check.ts   `npm run check:loki` — the hidden six-seven event, forced (spoilers)
   visitor-check.ts `npm run check:visitor` — JFK's three-five arrival, forced (spoilers)
   phoenix-check.ts `npm run check:phoenix` — the Phoenix's gauntlet rules (spoilers)
+  other-check.ts  `npm run check:other` — Jekyll/Hyde: the 50/50 chair and the other half's return, forced
   roster.ts       `npm run roster` — regenerates ROSTER.md from data/
   reads.ts        `npm run reads` — how each character reads a bet (a report)
   headsup.ts      `npm run headsup [matches] [ids]` — who beats whom one on one,
@@ -163,8 +164,8 @@ art-tools/
                   cerberus_parts/, scipio_parts/, spartacus_parts/, pope_parts/,
                   caesar_parts/: Rome (all built); nemo_parts/, javert_parts/, sherlock_parts/ (built),
                   sherlock_deerstalker_parts/, cheshire_cat_parts/:
-                  Baker Street (all built); van_helsing_parts/ (built),
-                  monster_parts/: Transylvania
+                  Baker Street (all built); van_helsing_parts/, jekyll_parts/,
+                  hyde_parts/ (built): Transylvania; monster_parts/ (rejected, a record)
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets;
                   ik_split.py cuts his IK arm from a pose (the IK prototype)
@@ -480,8 +481,25 @@ the strong tell (off, polished, back on). **Transylvania's room is built**
 (`?room=transylvania`): Dracula watches from the chair by the fire at 73%
 across (a presence piece, mirrored to face the table) until he sits down;
 the hearth fire flickers at the far right (wider than 16:9 only), the
-candelabrum's three flames at 39%. The other four (the Monster's prompts are
-in `monster_parts/POSES.md`) are still to come.
+candelabrum's three flames at 39%.
+**Jekyll and Hyde take Frankenstein's Monster's chair** (seat 2; the owner's
+call, ENGINE_VERSION 13: the Monster's gothic sheet read as a handsome actor,
+kept in `monster_parts/sources/rejected/`). ONE chair, TWO men: each sitting
+deals Jekyll OR Hyde, 50/50, tossed once from the sitting's seed
+(`sittingSeats` in content.ts; the save keeps the seats it was dealt), and
+an open table never deals both. Once Dracula has sat down and the one dealt
+in is knocked out, the OTHER walks back in to an empty chair the next time
+the player WINS a pot holding the same two ranks as the hand that knocked him
+out, whoever's hand that was (the player's or an AI's; ranks, not suits; a
+later win, never the knockout itself): `other` in both character files, an
+Arrival with `onHumanWinLike` + `afterArrivalOf` in game.ts, `npm run
+check:other` forces it both ways round. Jekyll is tight and apologetic (3000
+cash hands: VPIP 24, AF 0.4), Hyde loose and aggressive (VPIP 62, AF 2.1);
+`npm run sim` now runs a two-man chair's table twice, once with each. Both are
+built (`#/puppet/jekyll`, `#/puppet/hyde`, 24 clips each), the first gothic
+puppets (the Horseman's style); Hyde at 0.88 scale, small as Stevenson has
+him, in Jekyll's coat; his sheets' table edge arcs up between his arms, cut by
+pose_rig's `fill_rail`. The Wolf Man and the Horseman are still to come.
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
@@ -575,7 +593,7 @@ half that, all set by `art-tools/build/life.py`. Going out, a figure plays
 its `knocked_out` clip if it has one, then **fades from the chair** (0.8 s,
 stage.ts; the owner: a line, then gone); a puppet with no heads-up drawing
 leans in from its rest pose (`art-tools/build/fallback_clips.py`).
-`python3 art-tools/build/puppet_audit.py` holds all 32 puppets to the same
+`python3 art-tools/build/puppet_audit.py` holds all 34 puppets to the same
 list and prints 0 missing. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the
@@ -654,7 +672,10 @@ new art against that layout.
   ch. 7), Crassus standing surety for Caesar's debts, Washington's 1776
   order against swearing, Lincoln's 1842 line on the name of Washington,
   the Sussex Vampire index entries, the Long Island
-  retreat.
+  retreat. From Jekyll and Hyde's lines: Enfield's "about as emotional as a
+  bagpipe" Sawbones, Dracula's Piccadilly house, the Count able to "grow and
+  become small", Lanyon's phial of "blood-red liquor", "the smell of kernels"
+  at Hyde's death.
 - **The staged table (first pass) has gaps.** Someone without a puppet who
   sits down mid-table would leave the chair empty, plate only (both guests,
   JFK and Loki, now have puppets; the Phoenix has none, at its own table). Two speech bubbles can overlap (a seat's line under Death's). Death's

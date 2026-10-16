@@ -832,8 +832,25 @@ def main(spec_path):
             pb = pad(body)
             rgba[..., :3] = np.where(under[..., None], pb[..., :3], rgba[..., :3])
             rgba[..., 3] = np.where(under, pb[..., 3], rgba[..., 3])
-        for poly in fr.get('fill', []):                    # coat filled in from round it
-            hole = pm(poly)
+        fills = [pm(poly) for poly in fr.get('fill', [])]
+        if spec.get('fill_rail') and 'fill_rail' not in fr.get('skip', []):
+            # The round table's far edge, drawn arcing up between his arms above
+            # the table line (Hyde's sheets): long flat strips of the rail's
+            # red-brown in a band over the line, repainted from his coat. Only
+            # wide, shallow shapes: a hand's shading is never that.
+            fr_ = spec['fill_rail']
+            cc = rgba[..., :3].astype(int)
+            railc = ((cc[..., 0] - cc[..., 1] > 28) & (cc[..., 1] < 85) & (cc[..., 2] < 45) & (cc[..., 0] > 50)
+                     & (rgba[..., 3] > 0) & ~props)
+            band = np.zeros(fshape, bool)
+            band[max(0, ty + FM - fr_.get('above', 60)):ty + FM + fr_.get('below', 4)] = True
+            lab, n = ndimage.label(railc & band)
+            sl = ndimage.find_objects(lab)
+            keep = [i + 1 for i, s in enumerate(sl) if s and s[1].stop - s[1].start >= fr_.get('min_w', 30)
+                    and s[0].stop - s[0].start <= fr_.get('max_h', 30)]
+            if keep:
+                fills.append(ndimage.binary_dilation(np.isin(lab, keep), iterations=2) & band & (rgba[..., 3] > 0))
+        for hole in fills:                                 # coat filled in from round it
             cc = rgba[..., :3].astype(int)                 # the coat's own tone: not outline, not skin
             known = (rgba[..., 3] > 200) & (cc.max(-1) > 14) & (cc.max(-1) < 42) & (np.ptp(cc, axis=-1) < 12) & ~hole
             # smoothed over the nearest coat everywhere, so a hand beside the

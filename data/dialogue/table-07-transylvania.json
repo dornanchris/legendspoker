@@ -5,7 +5,7 @@
   "champion": "dracula",
   "status": "draft",
   "notes": {
-    "tone": "Gothic with the lights on. Every monster here treats its own legend as ordinary: Dracula asks your blood type the way anyone asks where you are from. Jokes come from the characters' own books (Stoker, Shelley, Irving, the folk tales), never from the films.",
+    "tone": "Gothic with the lights on. Every monster here treats its own legend as ordinary: Dracula asks your blood type the way anyone asks where you are from. Jokes come from the characters' own books (Stoker, Stevenson, Irving, the folk tales), never from the films.",
     "difficulty": "Penultimate table. The contempt has teeth now, but it is aristocratic rather than rowdy. Van Helsing is the one kind voice, and he is kind the way a doctor is.",
     "arrival": "Dracula watches from the chair by the fire and says nothing until champion_arrival (after two eliminations). The table's presence line carries him until then. His lines anywhere else must not fire before he is seated.",
     "dealer_plant": "The single 'the dealer arranged it' beat is tv_plant_01..03, fired straight after the arrival beat (tv_arrive_01..03). 'The dealer's little project' lives inside it on purpose, so it is part of the one beat rather than a second. Do NOT add another.",
@@ -14,7 +14,8 @@
     "banter": "Pair keys join ids that themselves contain underscores; parse against the id list. headless_horseman_table follows the washington_table pattern: it fires after the Horseman contests a pot, using the exchange whose other speaker was in that pot. van_helsing_dracula can only fire after the arrival.",
     "seating": "Two of the four seats are gone by the time Dracula sits down, so nothing scripted after the arrival depends on a particular guest. The arrival reaction is narration; the plant is Van Helsing's even if he is out (tv_elim_vh_02 has him stay to watch). Anywhere else, skip a line whose speaker is out. Each earned name can be announced by a second line if the first speaker has gone.",
     "leak_rule": "No line may reference hand strength while cards are live.",
-    "voice": "Champion (Dracula) + Death are voiced. Van Helsing, the Monster and the Wolf Man are text + vocalization. The Horseman is silent."
+    "seat_2": "One chair, two men. Each sitting deals Dr. Jekyll OR Mr. Hyde into seat 2, never both, so every Jekyll line has a Hyde twin (banter pairs, player_directed, eliminated) and neither is written to answer the other. Each knows of the other: Jekyll apologises for Hyde and will not say his name if he can help it; Hyde calls him 'Harry' and 'the doctor' and spends his money. Once Dracula is seated and the one dealt in is knocked out, the other walks in when the player wins holding the two ranks that beat him; that scene lives in their character files (`other`), not here. Everything is from Stevenson's novella: no film lines, no film looks.",
+    "voice": "Champion (Dracula) + Death are voiced. Van Helsing, Jekyll or Hyde and the Wolf Man are text + vocalization. The Horseman is silent."
   },
 
   "earned_names": {
@@ -41,7 +42,7 @@
       "speaker": "death",
       "text": "Most of this table has met me before. They were not, on the whole, cooperative.",
       "trigger": "table_open",
-      "note": "True: Dracula, the Horseman and the parts that make the Monster have all been through Death's hands once."
+      "note": "True: Dracula and the Horseman have both been through Death's hands once, and so has seat 2: one body was found behind the cabinet door, for two men."
     },
     {
       "id": "tv_intro_03",
@@ -114,80 +115,157 @@
       ]
     },
 
-    "monster_van_helsing": {
-      "relationship": "Science and its sins. Van Helsing is a doctor who pours one man's blood into another and still believes in the soul; the Monster is what a doctor's ambition made and then abandoned. Each is the other's best evidence.",
+    "jekyll_van_helsing": {
+      "relationship": "Two doctors, one who saves and one who trespassed. Van Helsing pours one man's blood into another to keep a life going and still believes in the soul; Jekyll, M.D., D.C.L., LL.D., F.R.S., mixed a draught to divide his own soul in two and lost the better half. Each is the other's cautionary tale. Jekyll will not say what is in the phial; Van Helsing has guessed most of it.",
       "exchanges": [
         [
-          { "id": "tv_mo_vh_01a", "speaker": "van_helsing", "text": "I have read of your maker. A brilliant man." },
-          { "id": "tv_mo_vh_01b", "speaker": "monster", "text": "For nearly two years. Then I opened my eyes, and he ran." },
-          { "id": "tv_mo_vh_01c", "speaker": "van_helsing", "text": "Then he was no doctor. A doctor stays." },
-          { "id": "tv_mo_vh_01d", "speaker": "monster", "text": "...You are the first to say so." }
+          { "id": "tv_jk_vh_01a", "speaker": "van_helsing", "text": "Doctor Jekyll. M.D., D.C.L., LL.D., F.R.S. You have more letters than I have." },
+          { "id": "tv_jk_vh_01b", "speaker": "jekyll", "text": "And you have more living patients, Professor, I suspect." },
+          { "id": "tv_jk_vh_01c", "speaker": "van_helsing", "text": "You do not practise?" },
+          { "id": "tv_jk_vh_01d", "speaker": "jekyll", "text": "I gave it up for research. Some of it on myself. I do not recommend it." }
         ],
         [
-          { "id": "tv_mo_vh_02a", "speaker": "monster", "text": "They say you put four men's blood into one young woman." },
-          { "id": "tv_mo_vh_02b", "speaker": "van_helsing", "text": "To save her life." },
-          { "id": "tv_mo_vh_02c", "speaker": "monster", "text": "Did it?" },
-          { "id": "tv_mo_vh_02d", "speaker": "van_helsing", "text": "For a time. Then something else came." }
+          { "id": "tv_jk_vh_02a", "speaker": "jekyll", "text": "They tell me you put four men's blood into one young woman, Professor." },
+          { "id": "tv_jk_vh_02b", "speaker": "van_helsing", "text": "To save her life." },
+          { "id": "tv_jk_vh_02c", "speaker": "jekyll", "text": "I once put something into a living man to set him free." },
+          { "id": "tv_jk_vh_02d", "speaker": "van_helsing", "text": "And did it?" },
+          { "id": "tv_jk_vh_02e", "speaker": "jekyll", "text": "Oh, yes. That was the trouble." }
         ],
         [
-          { "id": "tv_mo_vh_03a", "speaker": "van_helsing", "text": "A question, if you permit. Have you a soul?" },
-          { "id": "tv_mo_vh_03b", "speaker": "monster", "text": "I had hoped you would tell me. You have the degrees." },
-          { "id": "tv_mo_vh_03c", "speaker": "van_helsing", "text": "I have many degrees. None of them in that." }
+          { "id": "tv_jk_vh_03a", "speaker": "van_helsing", "text": "Forgive me. Professional curiosity. What is in your phial, Doctor?" },
+          { "id": "tv_jk_vh_03b", "speaker": "jekyll", "text": "A prescription. For my own use." },
+          { "id": "tv_jk_vh_03c", "speaker": "van_helsing", "text": "A doctor who treats himself has a fool for a patient." },
+          { "id": "tv_jk_vh_03d", "speaker": "jekyll", "text": "Worse, Professor. I have been treating someone else entirely." }
         ],
         [
-          { "id": "tv_mo_vh_04a", "speaker": "monster", "text": "Professor. If I were ill, would you treat me?" },
-          { "id": "tv_mo_vh_04b", "speaker": "van_helsing", "text": "I would. A doctor does not choose his patients." },
-          { "id": "tv_mo_vh_04c", "speaker": "monster", "text": "My maker chose. He chose not to." },
-          { "id": "tv_mo_vh_04d", "speaker": "van_helsing", "text": "Then I shall treat you twice." }
+          { "id": "tv_jk_vh_04a", "speaker": "jekyll", "text": "I came to believe that man is not truly one, Professor, but truly two." },
+          { "id": "tv_jk_vh_04b", "speaker": "van_helsing", "text": "I believe he has one soul, and it is enough work for anybody to look after." },
+          { "id": "tv_jk_vh_04c", "speaker": "jekyll", "text": "...Yes. I wish we had met thirty years ago.", "note": "'Man is not truly one, but truly two' is Jekyll's own, from his full statement." }
         ]
       ],
       "needles": [
         [
-          { "id": "tv_nd_03a", "speaker": "van_helsing", "to": "monster", "text": "You gave way, my friend. There is no shame in it." },
-          { "id": "tv_nd_03b", "speaker": "monster", "text": "There is always shame in it, Professor. I am simply used to it." }
+          { "id": "tv_nd_16a", "speaker": "van_helsing", "to": "jekyll", "text": "You give way, Doctor. Wisely, I think." },
+          { "id": "tv_nd_16b", "speaker": "jekyll", "text": "I have had a lifetime's practice at stepping back from things, Professor. It is the evenings I find difficult." }
         ],
         [
-          { "id": "tv_nd_04a", "speaker": "monster", "to": "van_helsing", "text": "You folded, Professor." },
-          { "id": "tv_nd_04b", "speaker": "van_helsing", "text": "I am a doctor. I have learned to leave the room when I am asked." }
+          { "id": "tv_nd_17a", "speaker": "jekyll", "to": "van_helsing", "text": "You withdraw, Professor. Very proper." },
+          { "id": "tv_nd_17b", "speaker": "van_helsing", "text": "A doctor knows when not to operate. You know it too, I think. Now." }
         ]
       ]
     },
 
-    "wolf_man_monster": {
-      "relationship": "Two creatures who never asked to be what they are. The Monster was made without being consulted; the werewolf of folklore is cursed, or born to it. Both have been driven out of villages. They are the only two at the table who understand each other without trying.",
+    "hyde_van_helsing": {
+      "relationship": "The hunter and a thing he has never hunted: not a creature come from outside, but what a respectable doctor let out of himself. Van Helsing would treat him if he could find the patient. Hyde despises him the way he despises all of Jekyll's friends: doctors, lawyers, men with letters after their names.",
       "exchanges": [
         [
-          { "id": "tv_wm_mo_01a", "speaker": "monster", "text": "Were you born to it, or made?" },
-          { "id": "tv_wm_mo_01b", "speaker": "wolf_man", "text": "Depends which village you ask." },
-          { "id": "tv_wm_mo_01c", "speaker": "monster", "text": "I was made. Nobody asked me." },
-          { "id": "tv_wm_mo_01d", "speaker": "wolf_man", "text": "Nobody asked me either. That part's the same everywhere." }
+          { "id": "tv_hy_vh_01a", "speaker": "van_helsing", "text": "Mr. Hyde. And what are you to Doctor Jekyll? His patient?" },
+          { "id": "tv_hy_vh_01b", "speaker": "hyde", "text": "His holiday, Professor. Every man needs one." },
+          { "id": "tv_hy_vh_01c", "speaker": "van_helsing", "text": "I have taken holidays. I came home from them the same man." },
+          { "id": "tv_hy_vh_01d", "speaker": "hyde", "text": "More fool you." }
         ],
         [
-          { "id": "tv_wm_mo_02a", "speaker": "wolf_man", "text": "What do you eat, anyway? Big fellow like you." },
-          { "id": "tv_wm_mo_02b", "speaker": "monster", "text": "Acorns. Berries. I will not kill a lamb to fill my stomach." },
-          { "id": "tv_wm_mo_02c", "speaker": "wolf_man", "text": "[glances at the player, then quickly away]", "type": "stage_direction", "note": "Pays off the tier-1 nickname if it has landed; plain embarrassment if it has not." }
+          { "id": "tv_hy_vh_02a", "speaker": "hyde", "text": "You've the look of a doctor. Prying." },
+          { "id": "tv_hy_vh_02b", "speaker": "van_helsing", "text": "And you have the look of a man the doctor was sent for too late." },
+          { "id": "tv_hy_vh_02c", "speaker": "hyde", "text": "Ha! Lanyon looked at me like that once. It killed him." },
+          { "id": "tv_hy_vh_02d", "speaker": "van_helsing", "text": "Then I shall look more carefully than he did." }
         ],
         [
-          { "id": "tv_wm_mo_03a", "speaker": "wolf_man", "text": "They ever throw things at you?" },
-          { "id": "tv_wm_mo_03b", "speaker": "monster", "text": "Stones. A whole village, once." },
-          { "id": "tv_wm_mo_03c", "speaker": "wolf_man", "text": "With me it's dogs." },
-          { "id": "tv_wm_mo_03d", "speaker": "monster", "text": "I would take the dogs. Dogs are honest about it." }
+          { "id": "tv_hy_vh_03a", "speaker": "van_helsing", "text": "I am told a doctor saw you trample a child, Mr. Hyde, and went white with the wish to kill you." },
+          { "id": "tv_hy_vh_03b", "speaker": "hyde", "text": "Some Sawbones from Edinburgh. About as emotional as a bagpipe." },
+          { "id": "tv_hy_vh_03c", "speaker": "van_helsing", "text": "I am from Amsterdam. We are calmer. Do not test it.", "note": "Enfield's own description of the doctor who was fetched for the trampled child: 'about as emotional as a bagpipe'." }
         ],
         [
-          { "id": "tv_wm_mo_04a", "speaker": "monster", "text": "Do you read?" },
-          { "id": "tv_wm_mo_04b", "speaker": "wolf_man", "text": "Tried. I chew the corners." },
-          { "id": "tv_wm_mo_04c", "speaker": "monster", "text": "I found Paradise Lost in a portmanteau in the woods. It changed my life." },
-          { "id": "tv_wm_mo_04d", "speaker": "wolf_man", "text": "I found a bag in the woods once. I ate the lunch." }
+          { "id": "tv_hy_vh_04a", "speaker": "hyde", "text": "Where's your garlic, Professor? Doesn't work on me, does it?" },
+          { "id": "tv_hy_vh_04b", "speaker": "van_helsing", "text": "No. For you I find nothing in the books. Only the doctor, and his will." },
+          { "id": "tv_hy_vh_04c", "speaker": "hyde", "text": "His will? It leaves everything to me.", "note": "Jekyll's will, which Utterson keeps in his safe and hates, leaves everything to Edward Hyde." }
         ]
       ],
       "needles": [
         [
-          { "id": "tv_nd_05a", "speaker": "wolf_man", "to": "monster", "text": "Ha! The big fellow backs down!" },
-          { "id": "tv_nd_05b", "speaker": "monster", "text": "I have been driven out of better places than a pot." }
+          { "id": "tv_nd_18a", "speaker": "van_helsing", "to": "hyde", "text": "So. Even you can be made to step back, Mr. Hyde." },
+          { "id": "tv_nd_18b", "speaker": "hyde", "text": "From a pot, Professor. I don't forget a face. Specially one I'd like to hit." }
         ],
         [
-          { "id": "tv_nd_06a", "speaker": "monster", "to": "wolf_man", "text": "You let it go." },
-          { "id": "tv_nd_06b", "speaker": "wolf_man", "text": "I'm trying a new thing. Restraint. It's horrible." }
+          { "id": "tv_nd_19a", "speaker": "hyde", "to": "van_helsing", "text": "Ha! The Professor turns tail." },
+          { "id": "tv_nd_19b", "speaker": "van_helsing", "text": "I turn nothing, Mr. Hyde. I write it down. You would be surprised what comes of things written down.", "note": "Stevenson's case closes on two documents: Lanyon's narrative and Jekyll's full statement." }
+        ]
+      ]
+    },
+
+    "hyde_wolf_man": {
+      "relationship": "Two men who become something else. The werewolf of folklore turns by the moon and is sorry in the morning; Hyde came out of a draught, and in the end came without it, and is never sorry at all. The Wolf Man finds that the most frightening thing at the table.",
+      "exchanges": [
+        [
+          { "id": "tv_hy_wm_01a", "speaker": "wolf_man", "text": "So you change too, huh? What sets you off? The moon?" },
+          { "id": "tv_hy_wm_01b", "speaker": "hyde", "text": "A glass of something red, at first. Lately, nothing at all. I just come." },
+          { "id": "tv_hy_wm_01c", "speaker": "wolf_man", "text": "...That's worse. Mine at least keeps a calendar." }
+        ],
+        [
+          { "id": "tv_hy_wm_02a", "speaker": "wolf_man", "text": "Do you feel bad, after? I always feel bad after." },
+          { "id": "tv_hy_wm_02b", "speaker": "hyde", "text": "After? I'm never there after. The doctor gets the mornings." },
+          { "id": "tv_hy_wm_02c", "speaker": "wolf_man", "text": "Lucky him." },
+          { "id": "tv_hy_wm_02d", "speaker": "hyde", "text": "Ha! Ask him." }
+        ],
+        [
+          { "id": "tv_hy_wm_03a", "speaker": "hyde", "text": "You and I should go out one night, dog." },
+          { "id": "tv_hy_wm_03b", "speaker": "wolf_man", "text": "I don't go out with people who call me dog." },
+          { "id": "tv_hy_wm_03c", "speaker": "hyde", "text": "Wolf, then. Whatever you are at the time." },
+          { "id": "tv_hy_wm_03d", "speaker": "wolf_man", "text": "[edges his chair an inch further from Hyde's]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "tv_hy_wm_04a", "speaker": "wolf_man", "text": "You smell like the doctor. Underneath." },
+          { "id": "tv_hy_wm_04b", "speaker": "hyde", "text": "Say that again." },
+          { "id": "tv_hy_wm_04c", "speaker": "wolf_man", "text": "Like him. Underneath. Same man, different coat. Well. Same coat." },
+          { "id": "tv_hy_wm_04d", "speaker": "hyde", "text": "Keep your nose to yourself, or lose it." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "tv_nd_20a", "speaker": "wolf_man", "to": "hyde", "text": "Ha! The little one backs down!" },
+          { "id": "tv_nd_20b", "speaker": "hyde", "text": "Call me little again, dog, and find out how little." }
+        ],
+        [
+          { "id": "tv_nd_21a", "speaker": "hyde", "to": "wolf_man", "text": "Tail between your legs, eh, dog?" },
+          { "id": "tv_nd_21b", "speaker": "wolf_man", "text": "It's not a full moon. I'm not even trying." }
+        ]
+      ]
+    },
+
+    "jekyll_wolf_man": {
+      "relationship": "The two at the table who are sorry in the morning. The werewolf of folklore never asked for it; Jekyll did, and has regretted it in detail ever since. They understand each other without wanting to, and both would rather not discuss the other fellow.",
+      "exchanges": [
+        [
+          { "id": "tv_jk_wm_01a", "speaker": "wolf_man", "text": "You're the doctor, right? The one with the... other fellow." },
+          { "id": "tv_jk_wm_01b", "speaker": "jekyll", "text": "I should be very grateful if we did not discuss him." },
+          { "id": "tv_jk_wm_01c", "speaker": "wolf_man", "text": "Sure. Sure. Nobody wants to discuss mine either." }
+        ],
+        [
+          { "id": "tv_jk_wm_02a", "speaker": "jekyll", "text": "Forgive me. Does it hurt? The change?" },
+          { "id": "tv_jk_wm_02b", "speaker": "wolf_man", "text": "Every time. You?" },
+          { "id": "tv_jk_wm_02c", "speaker": "jekyll", "text": "The first time: a grinding in the bones, a horror of the spirit. After that it grew easier. That was the worst of it." },
+          { "id": "tv_jk_wm_02d", "speaker": "wolf_man", "text": "...Yeah. It's the getting used to it.", "note": "Jekyll's statement: 'a grinding in the bones, deadly nausea, and a horror of the spirit'." }
+        ],
+        [
+          { "id": "tv_jk_wm_03a", "speaker": "wolf_man", "text": "Can't you just stop it? With the medicine?" },
+          { "id": "tv_jk_wm_03b", "speaker": "jekyll", "text": "I could, once. The salt ran out. The new supply was not the same." },
+          { "id": "tv_jk_wm_03c", "speaker": "wolf_man", "text": "Huh. Nobody ever found anything for mine either." },
+          { "id": "tv_jk_wm_03d", "speaker": "jekyll", "text": "I am sorry. Truly." }
+        ],
+        [
+          { "id": "tv_jk_wm_04a", "speaker": "jekyll", "text": "What do you do with the mornings? Afterwards?" },
+          { "id": "tv_jk_wm_04b", "speaker": "wolf_man", "text": "Count the chickens. Apologise to whoever's short." },
+          { "id": "tv_jk_wm_04c", "speaker": "jekyll", "text": "I write letters. Very long letters." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "tv_nd_22a", "speaker": "wolf_man", "to": "jekyll", "text": "You folded, Doc. Very sensible." },
+          { "id": "tv_nd_22b", "speaker": "jekyll", "text": "I am sensible all day long. It is the evenings that worry me." }
+        ],
+        [
+          { "id": "tv_nd_23a", "speaker": "jekyll", "to": "wolf_man", "text": "You stood aside. I am obliged to you." },
+          { "id": "tv_nd_23b", "speaker": "wolf_man", "text": "Don't mention it. Really, don't. People get ideas." }
         ]
       ]
     },
@@ -201,9 +279,15 @@
           { "id": "tv_hh_01c", "speaker": "van_helsing", "text": "A different Abraham. It is a very common name in Holland.", "note": "Irving's Brom Bones is 'Abraham, or, according to the Dutch abbreviation, Brom Van Brunt'. Van Helsing is also an Abraham." }
         ],
         [
-          { "id": "tv_hh_02a", "speaker": "monster", "text": "I was made from too many men. You are missing part of one." },
-          { "id": "tv_hh_02b", "speaker": "headless_horseman", "text": "[is perfectly still for a long moment; then offers a gauntlet across the table]", "type": "stage_direction" },
-          { "id": "tv_hh_02c", "speaker": "monster", "text": "[shakes it, gravely]", "type": "stage_direction" }
+          { "id": "tv_hh_06a", "speaker": "jekyll", "text": "You ride out every night for the part of yourself you lost. I understand. I lost a part of myself too." },
+          { "id": "tv_hh_06b", "speaker": "headless_horseman", "text": "[is perfectly still for a long moment; then offers a gauntlet across the table]", "type": "stage_direction" },
+          { "id": "tv_hh_06c", "speaker": "jekyll", "text": "[shakes it, gravely]", "type": "stage_direction" },
+          { "id": "tv_hh_06d", "speaker": "jekyll", "text": "Mine, I am afraid, keeps coming back." }
+        ],
+        [
+          { "id": "tv_hh_07a", "speaker": "hyde", "text": "Lost your head, trooper? Ha! Somebody lost a whole doctor once. Nobody's out looking for him." },
+          { "id": "tv_hh_07b", "speaker": "headless_horseman", "text": "[sets one gauntlet flat on the felt, very slowly, an inch from Hyde's hand]", "type": "stage_direction" },
+          { "id": "tv_hh_07c", "speaker": "hyde", "text": "...Fine. Fine. I like you, trooper. Keep your hand where it is." }
         ],
         [
           { "id": "tv_hh_03a", "speaker": "wolf_man", "text": "You smell like cold leaves and gunpowder." },
@@ -232,8 +316,12 @@
           { "id": "tv_nd_08b", "speaker": "van_helsing", "text": "A courtesy, from a Hessian. I shall write it down." }
         ],
         [
-          { "id": "tv_nd_09a", "speaker": "headless_horseman", "to": "monster", "text": "[inclines the pumpkin toward the Monster: a bow, of sorts]", "type": "stage_direction" },
-          { "id": "tv_nd_09b", "speaker": "monster", "text": "You are gracious in victory. I would not know how that feels." }
+          { "id": "tv_nd_24a", "speaker": "headless_horseman", "to": "jekyll", "text": "[inclines the pumpkin toward Dr. Jekyll: a bow, of sorts]", "type": "stage_direction" },
+          { "id": "tv_nd_24b", "speaker": "jekyll", "text": "Most gracious. You have my butler's manners, and very nearly his silence." }
+        ],
+        [
+          { "id": "tv_nd_25a", "speaker": "headless_horseman", "to": "hyde", "text": "[points one gauntlet at Hyde, then at the door]", "type": "stage_direction" },
+          { "id": "tv_nd_25b", "speaker": "hyde", "text": "Don't you point at me, pumpkin. I've seen off bigger men than you. Taller, anyway." }
         ],
         [
           { "id": "tv_nd_10a", "speaker": "wolf_man", "to": "headless_horseman", "text": "Ha! Somebody lose their head?" },
@@ -273,28 +361,56 @@
       ]
     },
 
-    "dracula_monster": {
-      "relationship": "Shelley's creature was made from the dead by a student who ran from his own work; Stoker's Count was a man who declined to stay dead. Two of the century's great returns from the grave: one never asked for it, and one will not stop. Only after the arrival.",
+    "dracula_jekyll": {
+      "relationship": "Two gentlemen who kept a second address in London. Stoker's Count bought Carfax and a house in Piccadilly to hide his boxes of earth; Jekyll took rooms in Soho for Hyde and kept the old dissecting-theatre door on the by-street for his comings and goings. The Count finds the doctor's guilt quaint, and says so. Only after the arrival.",
       "exchanges": [
         [
-          { "id": "tv_dr_mo_01a", "speaker": "dracula", "text": "You were assembled from the dead, I understand." },
-          { "id": "tv_dr_mo_01b", "speaker": "monster", "text": "From several of them." },
-          { "id": "tv_dr_mo_01c", "speaker": "dracula", "text": "I merely declined to stay dead. It is much less work." },
-          { "id": "tv_dr_mo_01d", "speaker": "monster", "text": "And much less company." }
+          { "id": "tv_dr_jk_01a", "speaker": "dracula", "text": "You kept a second house in London, Doctor, I hear. In Soho." },
+          { "id": "tv_dr_jk_01b", "speaker": "jekyll", "text": "For a... relation." },
+          { "id": "tv_dr_jk_01c", "speaker": "dracula", "text": "I kept several. One in Piccadilly. It is so much easier, having somewhere to go at night." },
+          { "id": "tv_dr_jk_01d", "speaker": "jekyll", "text": "I would rather we did not compare, Count." }
         ],
         [
-          { "id": "tv_dr_mo_02a", "speaker": "monster", "text": "Do you ever wish someone had made you, Count? So there would be someone to blame?" },
-          { "id": "tv_dr_mo_02b", "speaker": "dracula", "text": "No. I prefer to be responsible for myself. It is so much less disappointing." }
+          { "id": "tv_dr_jk_02a", "speaker": "jekyll", "text": "Do you never regret any of it, Count?" },
+          { "id": "tv_dr_jk_02b", "speaker": "dracula", "text": "Regret is for men with one lifetime, Doctor. I have outlived mine." },
+          { "id": "tv_dr_jk_02c", "speaker": "jekyll", "text": "I have only the one. And I seem to have to share it." }
         ]
       ],
       "needles": [
         [
-          { "id": "tv_nd_14a", "speaker": "dracula", "to": "monster", "text": "You gave way. How very well brought up." },
-          { "id": "tv_nd_14b", "speaker": "monster", "text": "I brought myself up. Through a chink in a wall." }
+          { "id": "tv_nd_26a", "speaker": "dracula", "to": "jekyll", "text": "You yield, Doctor. You always do, by daylight." },
+          { "id": "tv_nd_26b", "speaker": "jekyll", "text": "It is not daylight, Count. I should be obliged if you did not remind me." }
         ],
         [
-          { "id": "tv_nd_15a", "speaker": "monster", "to": "dracula", "text": "You yielded, Count." },
-          { "id": "tv_nd_15b", "speaker": "dracula", "text": "Take it. You look as though you need feeding more than I do." }
+          { "id": "tv_nd_27a", "speaker": "jekyll", "to": "dracula", "text": "You stand aside, Count. Most kind." },
+          { "id": "tv_nd_27b", "speaker": "dracula", "text": "Keep it, Doctor. Buy your friend in Soho something to wear that fits." }
+        ]
+      ]
+    },
+
+    "dracula_hyde": {
+      "relationship": "Appetite, two ways. Stoker's Count takes what he needs and is a gentleman about it; Hyde takes what he wants for the pleasure of the taking and is a gentleman about nothing. Each finds the other vulgar. Neither of them needs an invitation to get in, and the Count would like it understood that his reasons are better. Only after the arrival.",
+      "exchanges": [
+        [
+          { "id": "tv_dr_hy_01a", "speaker": "dracula", "text": "You are very small, Mr. Hyde." },
+          { "id": "tv_dr_hy_01b", "speaker": "hyde", "text": "Small enough to get in where you can't. Nobody has to invite me." },
+          { "id": "tv_dr_hy_01c", "speaker": "dracula", "text": "No. One can see why nobody does." }
+        ],
+        [
+          { "id": "tv_dr_hy_02a", "speaker": "hyde", "text": "What do you do it for, Count? The blood?" },
+          { "id": "tv_dr_hy_02b", "speaker": "dracula", "text": "Sustenance." },
+          { "id": "tv_dr_hy_02c", "speaker": "hyde", "text": "Liar. You like it." },
+          { "id": "tv_dr_hy_02d", "speaker": "dracula", "text": "I do not discuss my appetites at table, Mr. Hyde. You might try it." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "tv_nd_28a", "speaker": "dracula", "to": "hyde", "text": "You gave way, Mr. Hyde. I had heard you trample things." },
+          { "id": "tv_nd_28b", "speaker": "hyde", "text": "Small things, Count. They tell me you can make yourself small. Try it near me.", "note": "Van Helsing's account of the Count's powers in Stoker: he can 'grow and become small'." }
+        ],
+        [
+          { "id": "tv_nd_29a", "speaker": "hyde", "to": "dracula", "text": "Ha! The Count runs home to his box of dirt!" },
+          { "id": "tv_nd_29b", "speaker": "dracula", "text": "Shout, Mr. Hyde. It is what small men do in large houses." }
         ]
       ]
     }
@@ -304,7 +420,8 @@
     "tier_0": [
       { "id": "tv_p0_01", "speaker": "van_helsing", "text": "This one has read about monsters in books. It is not the same thing." },
       { "id": "tv_p0_02", "speaker": "wolf_man", "text": "Something over there smells scared. Oh. It's the new one." },
-      { "id": "tv_p0_03", "speaker": "monster", "text": "Look, then. Everyone does. Then play your cards." },
+      { "id": "tv_p0_03", "speaker": "jekyll", "text": "Good evening. Do sit down. I shall try to be good company; I generally manage it until dark." },
+      { "id": "tv_p0_06", "speaker": "hyde", "text": "What are you staring at? Everybody stares. Sit down and lose." },
       { "id": "tv_p0_04", "speaker": "headless_horseman", "text": "[turns his whole body away from the player]", "type": "stage_direction" },
       { "id": "tv_p0_05", "speaker": "dracula", "text": "How kind. Somebody has brought supper.", "note": "Only after the arrival." }
     ],
@@ -315,7 +432,8 @@
       { "id": "tv_p1_04", "speaker": "dracula", "text": "[looks up from the player's throat to the player's face]", "type": "stage_direction", "note": "Only after the arrival." }
     ],
     "tier_2": [
-      { "id": "tv_p2_01", "speaker": "monster", "text": "{name}. Forgive me. When someone has a name, I like to use it.", "note": "He was never given one." },
+      { "id": "tv_p2_01", "speaker": "jekyll", "text": "{name}. Forgive me; one ought to use a person's proper name. I have come to set great store by names.", "note": "A man who signs two of them." },
+      { "id": "tv_p2_05", "speaker": "hyde", "text": "{name}, is it? I'll remember that. I remember everyone who costs me money. Well. Costs Harry money." },
       { "id": "tv_p2_02", "speaker": "wolf_man", "text": "All right, {name}. No more 'lamb'. You've earned that." },
       { "id": "tv_p2_03", "speaker": "headless_horseman", "text": "[lifts the pumpkin an inch from his collar, as a gentleman tips his hat]", "type": "stage_direction" },
       { "id": "tv_p2_04", "speaker": "dracula", "text": "Tell me, {name}, what is your blood type? Forgive me. Habit.", "note": "Only after the arrival. The register of the whole table: a legend treating its legend as small talk." }
@@ -325,9 +443,15 @@
       { "id": "tv_p3_02", "speaker": "wolf_man", "text": "Hunter. Yeah. I know the smell." },
       {
         "id": "tv_p3_03",
-        "speaker": "monster",
-        "text": "I was a man's great work, once, and he could not bear the sight of me. I hope whoever is finishing you has more nerve.",
-        "foreshadow": "First read: a grim joke, someone at this table will finish you off. Second read: someone is finishing you the way a maker finishes a work; the tour is the making, and the dealer is the maker. Said by the one person here who knows what it is to be someone's project."
+        "speaker": "jekyll",
+        "text": "Hunter. I once set out to make myself into something new, and I succeeded. Do take care what you are being made into, and by whom.",
+        "foreshadow": "First read: a warning from a man who regrets what he turned himself into. Second read: the player IS being made into something; the tour is the making, and the dealer is the maker. Jekyll and Hyde are never seated together, so a sitting carries this or tv_p3_05, never both."
+      },
+      {
+        "id": "tv_p3_05",
+        "speaker": "hyde",
+        "text": "Hunter, is it? Somebody's making something of you. Harry Jekyll thought he was making something once. He made me.",
+        "foreshadow": "First read: a sneer at the new title. Second read: someone IS making something of the player, and the dealer is the maker. Hyde's twin of tv_p3_03; only one of them can be seated."
       },
       { "id": "tv_p3_04", "speaker": "dracula", "text": "Come back any night you like, Hunter. You will not need an invitation.", "note": "Only after the arrival. The rule of his legend, turned inside out as a courtesy." }
     ]
@@ -385,9 +509,13 @@
       { "id": "tv_elim_vh_01", "speaker": "van_helsing", "text": "Somebody write it down. In this house, writing it down is how we win." },
       { "id": "tv_elim_vh_02", "speaker": "van_helsing", "text": "I am not leaving. Not with him in the house. I shall watch from the wall.", "note": "Sets up tv_plant_01..03, which he speaks even after elimination." }
     ],
-    "monster": [
-      { "id": "tv_elim_mo_01", "speaker": "monster", "text": "It is all right. I have been turned away from warmer houses than this." },
-      { "id": "tv_elim_mo_02", "speaker": "monster", "text": "I shall go north, where it is cold and nobody stares." }
+    "jekyll": [
+      { "id": "tv_elim_jk_01", "speaker": "jekyll", "text": "Forgive me, all of you. I must go home and write a very long letter.", "note": "His full statement of the case, written behind the cabinet door." },
+      { "id": "tv_elim_jk_02", "speaker": "jekyll", "text": "If a small man in my coat should come asking for my chair, I beg you, do not let him sit down." }
+    ],
+    "hyde": [
+      { "id": "tv_elim_hy_01", "speaker": "hyde", "text": "Keep it! It was his money anyway." },
+      { "id": "tv_elim_hy_02", "speaker": "hyde", "text": "I'll go out the back way. I always do.", "note": "The dissecting-theatre door on the by-street, which Enfield saw him use." }
     ],
     "wolf_man": [
       { "id": "tv_elim_wm_01", "speaker": "wolf_man", "text": "[howls once, then looks embarrassed about it]", "type": "stage_direction" },

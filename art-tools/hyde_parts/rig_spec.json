@@ -1,0 +1,364 @@
+{
+ "kit": "hyde_parts",
+ "id": "hyde",
+ "name": "Mr. Hyde",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets. Transylvania's seat 2, the other half of Jekyll's seat. The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. Built at 0.88 (`scale`): the sheets drew him hunched but not small, and Stevenson's Hyde is small. The broken cane lies on the felt by his right hand: part of that forearm's piece at rest and a props box in every frame.",
+ "what": {
+  "A1": "Rest: hairy hands on the felt, apart, the broken cane by his right hand",
+  "A2": "Peek: right hand cupped low over the felt",
+  "A3": "Check: a hairy knuckle raps the felt",
+  "A4": "Call: right hand shoves forward along the felt",
+  "A5": "Bet: leans in, right hand shoved well forward",
+  "A6": "Fold: a contemptuous flick of the hand",
+  "B1": "All in: both hands shove forward together, grinning",
+  "B2": "Show: right hand slaps palm up",
+  "B3": "Big win: both fists raised, a gleeful, nasty grin (`win_big`)",
+  "B4": "The displeasing smile, slow and wide",
+  "B5": "Sucks his teeth, head cocked (decoy for B4)",
+  "B6": "Drums his hairy knuckles on the felt",
+  "C1": "Cracks his knuckles (decoy for B6)",
+  "C2": "Hunches down into the too-big coat, collar up round his ears",
+  "C3": "Shoves the long sleeves back up his arms (decoy for C2)",
+  "C4": "Glares round the table",
+  "C5": "Sniggers to himself, a hand over his mouth",
+  "C6": "Arrive: scrambling up into the chair, the big coat slipping off one shoulder",
+  "D1": "Talking: jabbing a finger, husky",
+  "D2": "Facing a big bet: chin low, eyes narrowed, a hand on the broken cane",
+  "D3": "Lost a pot: a sneer, a shove of the hand",
+  "D4": "Crushing loss: both fists slammed on the felt, teeth bared (`lose_big`)",
+  "D5": "Heads up: leaning in low on both forearms",
+  "D6": "A cackle, head thrown back"
+ },
+ "prop": [
+  [
+   22,
+   352
+  ],
+  [
+   60,
+   338
+  ],
+  [
+   152,
+   372
+  ],
+  [
+   152,
+   428
+  ],
+  [
+   88,
+   428
+  ],
+  [
+   8,
+   398
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "smile": "B4",
+  "suck_teeth": "B5",
+  "drum": "B6",
+  "crack": "C1",
+  "hunch": "C2",
+  "sleeves": "C3",
+  "glare": "C4",
+  "snigger": "C5",
+  "arrive": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "laugh": "D6"
+ },
+ "common": {
+  "table_y": 312,
+  "scale": 0.88,
+  "origin_x": 335,
+  "register_box": [
+   150,
+   200,
+   350,
+   290
+  ],
+  "register_span": 40,
+  "collar_y": 200,
+  "neck": [
+   272,
+   200
+  ],
+  "frame_margin": 60,
+  "stock_box": [
+   200,
+   170,
+   330,
+   240
+  ]
+ },
+ "cut_below": 240,
+ "keep_poly": [
+  [
+   190,
+   0
+  ],
+  [
+   410,
+   0
+  ],
+  [
+   410,
+   150
+  ],
+  [
+   382,
+   190
+  ],
+  [
+   342,
+   215
+  ],
+  [
+   302,
+   242
+  ],
+  [
+   250,
+   246
+  ],
+  [
+   220,
+   218
+  ],
+  [
+   200,
+   182
+  ],
+  [
+   190,
+   120
+  ]
+ ],
+ "shoulder_y": 200,
+ "arms": {
+  "near": {
+   "elbow": [
+    60,
+    300
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     255
+    ],
+    [
+     110,
+     255
+    ],
+    [
+     110,
+     300
+    ],
+    [
+     0,
+     305
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the broken cane by it",
+     "poly": [
+      [
+       0,
+       300
+      ],
+      [
+       70,
+       285
+      ],
+      [
+       130,
+       290
+      ],
+      [
+       180,
+       305
+      ],
+      [
+       230,
+       320
+      ],
+      [
+       275,
+       360
+      ],
+      [
+       280,
+       405
+      ],
+      [
+       220,
+       410
+      ],
+      [
+       160,
+       430
+      ],
+      [
+       90,
+       430
+      ],
+      [
+       8,
+       400
+      ],
+      [
+       0,
+       360
+      ]
+     ],
+     "props": [
+      [
+       [
+        22,
+        352
+       ],
+       [
+        60,
+        338
+       ],
+       [
+        152,
+        372
+       ],
+       [
+        152,
+        428
+       ],
+       [
+        88,
+        428
+       ],
+       [
+        8,
+        398
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    452,
+    295
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     255
+    ],
+    [
+     480,
+     255
+    ],
+    [
+     480,
+     295
+    ],
+    [
+     400,
+     295
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       312,
+       345
+      ],
+      [
+       350,
+       320
+      ],
+      [
+       390,
+       300
+      ],
+      [
+       440,
+       285
+      ],
+      [
+       482,
+       290
+      ],
+      [
+       486,
+       350
+      ],
+      [
+       455,
+       365
+      ],
+      [
+       440,
+       410
+      ],
+      [
+       370,
+       415
+      ],
+      [
+       318,
+       405
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "felt_dark_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6,
+  "drop_wood": true,
+  "fill_rail": {
+   "above": 70,
+   "below": 4,
+   "min_w": 30,
+   "max_h": 30
+  }
+ },
+ "frame_extra": {}
+}

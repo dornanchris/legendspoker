@@ -1,0 +1,13 @@
+{
+ "note": "The master is the rest pose's own head. Eyes 2-8; 9-10 (eyes with brows raised and drawn down), head 1 and the front head 18 are unused; mouths 11-23 (19, a second closed mouth, unused).",
+ "master": "hyde_parts/hyde_face/hyde_master.png",
+ "pieces": "hyde_parts/hyde_face/hyde_face_%02d.png",
+ "layers": {
+  "eyes": {"half": 2, "closed": 3, "viewer": 4, "down": 5, "side": 6, "narrow": 7, "wide": 8},
+  "mouth": {"rest": 11, "ah": 12, "ee": 13, "oh": 14, "oo": 15, "m": 16, "f": 17, "l": 20, "grin": 21, "sneer": 22, "suck": 23}
+ },
+ "regions": {
+  "eyes": {"keep": [[280, 85], [378, 85], [378, 135], [280, 135]]},
+  "mouth": {"keep": [[288, 140], [368, 140], [368, 188], [288, 188]]}
+ }
+}

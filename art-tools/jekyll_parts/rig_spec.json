@@ -1,0 +1,366 @@
+{
+ "kit": "jekyll_parts",
+ "id": "jekyll",
+ "name": "Dr. Jekyll",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (the Horseman's style). Transylvania's seat 2, one half of the seat (Hyde is the other). The master is the rest pose's OWN head (jekyll_face/jekyll_master.png). Every pose but rest a whole-figure frame with its own drawn head, placed by the bottom-left corner of its drawn felt. His phial of the draught stands on the felt by his right hand: part of that forearm's piece at rest and a props box in every frame but `phial` (B6), where he holds it up.",
+ "what": {
+  "A1": "Rest: forearms on the table's edge, hands apart, the phial by his right hand",
+  "A2": "Peek: right hand cupped low over the felt",
+  "A3": "Check: two fingers tap the felt",
+  "A4": "Call: right hand pushes forward along the felt",
+  "A5": "Bet: right hand pushed well forward, measured",
+  "A6": "Fold: a courteous push of the hand toward the middle",
+  "B1": "All in: both hands push forward together",
+  "B2": "Show: right hand turns palm up",
+  "B3": "Big win: both hands raised, a delighted, slightly sheepish smile (`win_big`)",
+  "B4": "His right hand turned to Hyde's for a moment; he pulls his cuff over it",
+  "B5": "Rubs his hands together as if cold (decoy for B4)",
+  "B6": "Holds the phial up to the light",
+  "C1": "Taps the phial with a fingernail, not looking at it (decoy for B6)",
+  "C2": "Dabs his brow with a white handkerchief",
+  "C3": "Consults his gold pocket watch (decoy for C2)",
+  "C4": "Glances toward the door, uneasy",
+  "C5": "A courteous, kindly smile at the table",
+  "C6": "Arrive: sitting down, straightening his coat, composed but pale",
+  "D1": "Talking: one hand open, explaining",
+  "D2": "Facing a big bet: fingertips together, grave",
+  "D3": "Lost a pot: a polite, rueful nod",
+  "D4": "Crushing loss: his head in one hand, the other closed round the phial (`lose_big`)",
+  "D5": "Heads up: leaning in on both forearms",
+  "D6": "A gentle laugh, a hand on his chest"
+ },
+ "prop": [
+  [
+   34,
+   360
+  ],
+  [
+   68,
+   360
+  ],
+  [
+   73,
+   398
+  ],
+  [
+   73,
+   460
+  ],
+  [
+   29,
+   460
+  ],
+  [
+   29,
+   398
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "hyde_hand": "B4",
+  "rub_hands": "B5",
+  "phial": "B6",
+  "tap_phial": "C1",
+  "brow": "C2",
+  "watch": "C3",
+  "door": "C4",
+  "kind_smile": "C5",
+  "arrive": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "laugh": "D6"
+ },
+ "common": {
+  "table_y": 376,
+  "scale": 1.0,
+  "origin_x": 305,
+  "register_box": [
+   150,
+   240,
+   350,
+   340
+  ],
+  "register_span": 40,
+  "collar_y": 215,
+  "neck": [
+   262,
+   215
+  ],
+  "frame_margin": 60,
+  "stock_box": [
+   200,
+   200,
+   330,
+   260
+  ]
+ },
+ "cut_below": 250,
+ "keep_poly": [
+  [
+   160,
+   0
+  ],
+  [
+   368,
+   0
+  ],
+  [
+   368,
+   140
+  ],
+  [
+   348,
+   190
+  ],
+  [
+   330,
+   215
+  ],
+  [
+   300,
+   238
+  ],
+  [
+   230,
+   242
+  ],
+  [
+   205,
+   218
+  ],
+  [
+   185,
+   190
+  ],
+  [
+   163,
+   150
+  ]
+ ],
+ "shoulder_y": 215,
+ "arms": {
+  "near": {
+   "elbow": [
+    55,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     305
+    ],
+    [
+     105,
+     305
+    ],
+    [
+     105,
+     345
+    ],
+    [
+     0,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the phial by it",
+     "poly": [
+      [
+       0,
+       340
+      ],
+      [
+       60,
+       330
+      ],
+      [
+       110,
+       345
+      ],
+      [
+       160,
+       360
+      ],
+      [
+       210,
+       368
+      ],
+      [
+       250,
+       385
+      ],
+      [
+       258,
+       450
+      ],
+      [
+       245,
+       476
+      ],
+      [
+       180,
+       476
+      ],
+      [
+       130,
+       460
+      ],
+      [
+       74,
+       462
+      ],
+      [
+       28,
+       462
+      ],
+      [
+       0,
+       445
+      ]
+     ],
+     "props": [
+      [
+       [
+        34,
+        360
+       ],
+       [
+        68,
+        360
+       ],
+       [
+        73,
+        398
+       ],
+       [
+        73,
+        460
+       ],
+       [
+        29,
+        460
+       ],
+       [
+        29,
+        398
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    452,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     305
+    ],
+    [
+     478,
+     305
+    ],
+    [
+     478,
+     340
+    ],
+    [
+     400,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       312,
+       392
+      ],
+      [
+       350,
+       372
+      ],
+      [
+       400,
+       352
+      ],
+      [
+       440,
+       338
+      ],
+      [
+       482,
+       342
+      ],
+      [
+       486,
+       415
+      ],
+      [
+       460,
+       430
+      ],
+      [
+       430,
+       468
+      ],
+      [
+       360,
+       470
+      ],
+      [
+       316,
+       458
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "felt_dark_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6,
+  "drop_wood": true
+ },
+ "frame_extra": {
+  "phial": {
+   "props": []
+  }
+ }
+}

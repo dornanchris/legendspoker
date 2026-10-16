@@ -11,7 +11,7 @@
  *
  *   npm run check:data
  */
-import { CHARACTERS, TABLES, DIALOGUE, DEALER, MARKS, STORY, UNINVITED, fullCast, tableSpeakers, type Line } from './content.js'
+import { CHARACTERS, TABLES, TABLE_BY_ID, DIALOGUE, DEALER, MARKS, STORY, UNINVITED, fullCast, tableSpeakers, type Line } from './content.js'
 import { QUIRKS } from './quirks.js'
 import { CONDITION_TYPES, conditionErrors } from './marks.js'
 import { CALLOUT_ACTIONS, isStage } from './chatter.js'
@@ -339,6 +339,23 @@ for (const c of Object.values(CHARACTERS)) {
   if (r.stack !== 'average' && !(typeof r.stack === 'number' && r.stack > 0)) err(w, 'stack must be "average" or a positive number')
   if (!r.lines?.some((l) => l.speaker === c.id)) err(w, 'the returner has nothing to say')
   for (const l of r.lines ?? []) checkLine(l, w, new Set(['death', 'narration', c.id]))
+}
+
+// ---------------------------------------------------------------- one chair, two men
+
+for (const c of Object.values(CHARACTERS)) {
+  const o = c.other
+  if (!o) continue
+  const w = `character ${c.id} other`
+  const them = CHARACTERS[o.character]
+  if (!them) { err(w, `"${o.character}" is not a character`); continue }
+  if (them.other?.character !== c.id) err(w, `"${o.character}" must name "${c.id}" as his other half too`)
+  if (them.table !== c.table) err(w, `"${o.character}" must belong to the same table`)
+  if (c.returns || them.returns) err(w, 'a two-man chair has its own return (the other half); not also `returns`')
+  if (o.stack !== 'average' && !(typeof o.stack === 'number' && o.stack > 0)) err(w, 'stack must be "average" or a positive number')
+  if (!o.lines?.some((l) => l.speaker === o.character)) err(w, `the returning half, ${o.character}, has nothing to say`)
+  for (const l of o.lines ?? []) checkLine(l, w, new Set(['death', 'narration', o.character, ...(c.table ? tableSpeakers(TABLE_BY_ID[c.table]!) : [])]))
+  if (TABLES.some((t) => t.seats.includes(c.id) && t.seats.includes(o.character))) err(w, 'both halves hold chairs at one table: seat one, the sitting deals the other')
 }
 
 // ---------------------------------------------------------------- the uninvited guest

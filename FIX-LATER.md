@@ -47,11 +47,15 @@ is done, and say so in the commit.
 
 ## Game and words (other threads)
 
-- **Jekyll and Hyde take Frankenstein's Monster's seat at Transylvania**
-  (the owner, after the Monster's gothic sheet "looks like Tom Hiddleston after
-  a rough weekend"; the sheet is kept in `monster_parts/sources/rejected/`).
-  The art is under way (`jekyll_parts/`, `hyde_parts/`); the game side is not
-  built. The owner's rules:
+- ~~**Jekyll and Hyde take Frankenstein's Monster's seat at Transylvania**~~
+  DONE (ENGINE_VERSION 13; CLAUDE.md has how). Settled as proposed: ranks
+  only, the hand that beat him whoever played it, and only a LATER win (the
+  knockout itself never counts). Still open: Jekyll's exit line "If a small
+  man in my coat should come asking for my chair..." hints at the return;
+  cut it if the return should be a pure surprise. Hyde's sheets drew him
+  Jekyll's size (built at 0.88). Jekyll's B5 decoy drew one hairy hand
+  (it gives the tell away a little; reroll if it shows in play). The rules
+  as asked:
   - **One seat, two men, 50/50 per sitting:** each sitting deals either Dr.
     Jekyll or Mr. Hyde in seat 2. Pick it from the sitting's seed so a resume
     replays the same man (never from the live game RNG after the deal starts).

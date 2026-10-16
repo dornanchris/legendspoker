@@ -450,6 +450,8 @@ export function tableScreen(root: HTMLElement): () => void {
       layoutStage()
       if (active.mode === 'tour' && table.arrival) stage?.preload(table.arrival.character)
       for (const id of seatIds) if (id && RETURNED[id]) stage?.preload(RETURNED[id])
+      // the other half of a two-man chair, so he is ready if he walks back in
+      for (const id of seatIds) { const o = id ? CHARACTERS[id]?.other?.character : undefined; if (o) stage?.preload(o) }
     }
     layoutStage()
     stage.load(seatIds).catch(unstage)

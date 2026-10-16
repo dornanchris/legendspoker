@@ -1,0 +1,13 @@
+{
+ "note": "The master is the rest pose's own head. Eyes 2-7 (no narrowed piece came); the separate brows 8-9, head 1 and the front head 16 are unused; mouths 10-20 (16 is the head).",
+ "master": "jekyll_parts/jekyll_face/jekyll_master.png",
+ "pieces": "jekyll_parts/jekyll_face/jekyll_face_%02d.png",
+ "layers": {
+  "eyes": {"half": 2, "closed": 3, "viewer": 4, "down": 5, "side": 6, "wide": 7},
+  "mouth": {"rest": 10, "ah": 11, "ee": 12, "oh": 13, "oo": 14, "m": 15, "f": 17, "l": 18, "smile": 19, "anxious": 20}
+ },
+ "regions": {
+  "eyes": {"keep": [[245, 88], [352, 88], [352, 130], [245, 130]]},
+  "mouth": {"keep": [[258, 135], [342, 135], [342, 182], [258, 182]]}
+ }
+}

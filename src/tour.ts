@@ -8,7 +8,7 @@
  * screen. What the player sees is what the table CALLS them, which changes
  * as they climb, and is announced explicitly when it flips.
  */
-import { TABLES, TOUR, TABLE_BY_ID, ROSTER, GUESTS, fullCast, type TableData } from './content.js'
+import { TABLES, TOUR, TABLE_BY_ID, ROSTER, GUESTS, CHARACTERS, fullCast, type TableData } from './content.js'
 import { characterRecord, tableRecord, type Save } from './save.js'
 
 export type TableState = 'sealed' | 'open' | 'cleared'
@@ -132,7 +132,11 @@ function shuffled<T>(xs: T[], rng: () => number): T[] {
  * with little unlocked, the table looks much as it always did.
  */
 export function openTableCast(table: TableData, save: Save, rng: () => number): string[] {
-  const beaten = (id: string) => !!save.characters[id]?.beaten
+  // Beating either half of a two-man chair unlocks the chair.
+  const beaten = (id: string) => {
+    const o = CHARACTERS[id]?.other?.character
+    return !!save.characters[id]?.beaten || (!!o && !!save.characters[o]?.beaten)
+  }
   const room = fullCast(table)
   // A missable champion who never sat down is not unlocked, and cannot host.
   const locals = shuffled(room.some(beaten) ? room.filter(beaten) : table.seats, rng)
@@ -146,7 +150,14 @@ export function openTableCast(table: TableData, save: Save, rng: () => number): 
   const pool = shuffled(unlocked, rng)
   // Fall back on the room's own cast if not enough is unlocked yet.
   for (const id of locals) if (!pool.includes(id) && !host.includes(id)) pool.push(id)
-  return shuffled([...host, ...pool.slice(0, OPEN_TABLE_CHAIRS - host.length)], rng)
+  // One chair, two men: never both halves at one table (sittingSeats flips the coin for the one dealt).
+  const half = (id: string) => CHARACTERS[id]?.other?.character
+  const dealt = [...host]
+  for (const id of pool) {
+    if (dealt.length >= OPEN_TABLE_CHAIRS) break
+    if (!dealt.some((d) => d === half(id))) dealt.push(id)
+  }
+  return shuffled(dealt, rng)
 }
 
 export function canPlayOpenTable(save: Save, table: TableData): boolean {

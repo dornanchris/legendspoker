@@ -1,4 +1,4 @@
-import { CHARACTERS, MARKS, TABLE_BY_ID, type CharacterData } from '../../src/content.js'
+import { CHARACTERS, MARKS, TABLE_BY_ID, sittingSeats, type CharacterData } from '../../src/content.js'
 import { applyOutcome, openTableCast } from '../../src/tour.js'
 import { tableRecord, ENGINE_VERSION } from '../../src/save.js'
 import * as store from '../store.js'
@@ -91,6 +91,8 @@ export function startTable(tableId: string, mode: 'tour' | 'open'): boolean {
     const rng = () => ((x = (x * 1664525 + 1013904223) >>> 0) / 2 ** 32)
     seats = openTableCast(table, s, rng)
   }
+  // One chair, two men (Jekyll or Hyde): the coin is tossed once, here, and the save keeps it.
+  seats = sittingSeats(seats, seed)
   const rec = tableRecord(s, tableId)
   store.update((st) => {
     st.active = {

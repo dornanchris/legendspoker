@@ -544,6 +544,10 @@ export class TableRun {
     if (e.replaces === e.id) return this.onReturn(e.id)
     // The hidden visitor (JFK at the White House): his own scene, tour or open.
     if (this.table.visitor?.character === e.id) return this.onVisitor()
+    // The other half of a two-man chair (Hyde for the Jekyll who fell): the
+    // fallen one's scene, at any table.
+    const half = [...this.sat].find((id) => id !== e.id && CHARACTERS[id]?.other?.character === e.id)
+    if (half) return this.onReturn(half, CHARACTERS[half]!.other!.lines)
     if (this.mode === 'open') return []
     const beats: Beat[] = []
     // The entrance is a scene: play it in order, and stop at the first line
@@ -570,9 +574,9 @@ export class TableRun {
   }
 
   /** One line per speaker of the returner's scene, in order. */
-  private onReturn(id: string): Beat[] {
-    this.h.returned.push(id)
-    const lines = CHARACTERS[id]?.returns?.lines ?? []
+  private onReturn(id: string, scene?: Line[]): Beat[] {
+    if (!scene) this.h.returned.push(id)
+    const lines = scene ?? CHARACTERS[id]?.returns?.lines ?? []
     const beats: Beat[] = []
     for (const speaker of new Set(lines.map((l) => l.speaker))) {
       if (!this.canSpeak(speaker)) continue

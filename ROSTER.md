@@ -840,32 +840,32 @@ Seward describes him as a man with a temper of the ice-brook and the kindliest a
 
 **Public domain.** Stoker's Dracula (1897) is public domain. Build him from the novel: clean-shaven, reddish hair, bushy brows, a professor's black coat. Nothing from the 2004 Van Helsing film: no broad-brimmed hat, long leather coat, crossbow or gadgets, and no likeness of any actor who has played him. His Dutch English is used lightly, never as a comic accent.
 
-### Frankenstein's Monster — *The Creature of Ingolstadt*
+### Dr. Henry Jekyll — *The Physician of Cavendish Square*
 
-Literature · Frankenstein (Shelley, 1818)
+Literature · Strange Case of Dr Jekyll and Mr Hyde (Stevenson, 1886)
 
-> Built from people I had already collected. Never given a name, so the world lent him his maker's.
+> One body came to me, in a coat too large for it, with two men's names attached. I am still not certain which of them I collected.
 
-The creature of Mary Shelley's Frankenstein; or, The Modern Prometheus (1818), built by the student Victor Frankenstein at Ingolstadt from materials gathered in charnel houses and the dissecting room. He is eight feet tall, with yellow skin, lustrous black hair and watery eyes. He wakes on a dreary November night to see his maker run from the room, and teaches himself to speak and read by watching a family through a chink in a cottage wall.
+Henry Jekyll, M.D., D.C.L., LL.D., F.R.S., of Robert Louis Stevenson's Strange Case of Dr Jekyll and Mr Hyde (1886): a large, well-made, smooth-faced man of fifty, with every mark of capacity and kindness, who gives good dinners in a handsome old house in a square. Behind it stands the dissecting theatre he bought from a celebrated surgeon's heirs, and its blistered door opens on a by-street. Convinced that man is not truly one, but truly two, he mixed a draught that set his lesser half loose in a body of its own, and called him Edward Hyde. He took rooms for him in Soho, told his servants to obey him as they would their master, and made a will leaving him everything.
 
-In a leather portmanteau he finds Paradise Lost, a volume of Plutarch's Lives and The Sorrows of Werter, and reads them as true histories. He asks for kindness, then for a companion, and is refused both; his revenge is terrible, and his grief at the end is worse. He is at this table because he was invited, which has not happened to him often. He is resigned to being called Frankenstein.
+His friends are few and loyal: Utterson the lawyer, who would not stop asking; Lanyon, who saw the change with his own eyes and did not survive the shock; Poole, the butler, who heard the wrong voice behind the cabinet door. The salt that fixed the draught ran out, and the new supply would not serve; the first had been impure. He wrote his full statement under the last of the old powders, locked in his cabinet, and was never seen again. He accepted this invitation on condition that he would come as himself. Nobody can promise him that any more, the dealer included.
 
-**At the table.** Courteous, careful, and nearly impossible to bet out of a small pot: he will not be turned away for the price of two blinds. He almost never bluffs. He takes his losses quietly, one after another, until the day he does not, and then he stops thinking and pushes everything in. He is slow to anger and very hard to bring back from it.
+**At the table.** Tight and patient. He comes into few pots, folds to a big raise without a real hand, and is plainly sorry to be playing at all; he seldom bluffs and bets small when he bets. But once he has put a share of his stack in, he will not be bet out of the pot: he sees things through, which has always been his difficulty. Losses get under his skin faster than his manners suggest, and when he tilts he plays like a looser, rougher man.
 
 | aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
 |---|---|---|---|---|---|---|---|
-| .40 | .55 | .10 | .55 | .40 | .40 | .68 | .40 |
+| .30 | .72 | .06 | .70 | .45 | .60 | .68 | .40 |
 
+- Quirk: `patient` (minEquity 0.58) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
 - Quirk: `committed` (fraction 0.3) — Once a share of the stack is in the pot, will not fold a hand with a real chance.
-- Quirk: `check_raise` (minEquity 0.78, chance 0.5) — Checks strength on the flop and turn, then raises when bet into.
-- Tell (strong, 0.64): *sets his book face-down on the table*
-- Tell (weak, 0.62): *turns a page he is not reading*
-- Tell (tilted, 0.66): *the table creaks under his grip*
-- Idle noise: *reads a line of Milton, lips moving*; *flinches from the firelight*; *stares at his own hands*; *straightens a coat that was never made for him*
+- Tell (tilted, 0.66): *his hand, for a moment, is not his own; he pulls his cuff over it*
+- Tell (strong, 0.64): *holds the phial up to the light*
+- Tell (weak, 0.62): *dabs his brow with a handkerchief*
+- Idle noise: *rubs his hands as if they were cold*; *taps the phial with a fingernail*; *consults his pocket watch*; *glances toward the door*
 
-**Look.** Silhouette: enormous. Eight feet tall, shoulders filling his fifth of the screen, head near the top of the frame. Long, lustrous black hair; yellow skin stretched thin over muscle; watery eyes nearly the colour of their sockets; straight black lips. A good coat that was never cut for him. Prop: a small battered book in a very large hand; where he puts it is the tell surface. **Prop:** A battered copy of Paradise Lost.
+**Look.** Silhouette: large and well made, upright, broad-shouldered, a little heavy at fifty. Smooth-faced and clean-shaven, a fine forehead, dark hair greying and neatly brushed, the face of a respectable physician with something tired at the eyes. A dark frock coat, a grey waistcoat with a watch chain across it, a black cravat, a white handkerchief. Hands large, firm, white and comely. Prop: a small glass phial of blood-red draught standing on the felt by his hand; picking it up is the tell surface. **Prop:** A phial of blood-red draught.
 
-**Public domain.** Shelley's novel (1818) is public domain. Universal's 1931 makeup is not, and is still protected as a design: no neck bolts, no flat-topped head, no green skin, no stitches or forehead scar, no grunting or stiff-armed walk. Shelley's creature is articulate and well read, yellow-skinned with flowing black hair.
+**Public domain.** Stevenson's novella (1886) is public domain. Build him from the text only: a large, smooth-faced, kindly gentleman of fifty. No likeness of any actor who has played him (Barrymore 1920, March 1931, Tracy 1941 or later), no top hat and opera cape from the stage versions, no bubbling laboratory of coloured flasks, no green potion, and nothing from The League of Extraordinary Gentlemen. One phial, blood-red, as Lanyon found it.
 
 ### The Wolf Man — *Loup-Garou*
 

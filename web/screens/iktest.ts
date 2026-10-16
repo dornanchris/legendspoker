@@ -22,7 +22,7 @@ export function ikTestScreen(root: HTMLElement): () => void {
   const label = h('p', { style: 'position:absolute;left:8px;top:4px;margin:0;color:#ddd;font:12px sans-serif;z-index:2' },
     `IK arms: ${ikEnabled() ? 'on' : 'off (?ik=0)'}, ${clip}`)
   root.append(h('div', { style: 'position:fixed;inset:0;background:#000' }, canvas, label))
-  const stage = new Stage(canvas, ROOMS.white_house, 4)
+  const stage = new Stage(canvas, ROOMS[q.get('room') ?? ''] ?? ROOMS.white_house, 4)
   let timer = 0
   stage.onReady = () => {
     ;(window as any).__ik = { stage, ready: true }

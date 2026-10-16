@@ -1,0 +1,1425 @@
+{
+ "id": "hyde",
+ "name": "Mr. Hyde",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets. Transylvania's seat 2, the other half of Jekyll's seat. The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. Built at 0.88 (`scale`): the sheets drew him hunched but not small, and Stevenson's Hyde is small. The broken cane lies on the felt by his right hand: part of that forearm's piece at rest and a props box in every frame.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    16,
+    80,
+    493,
+    427
+   ],
+   "what": "Rest: hairy hands on the felt, apart, the broken cane by his right hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    525,
+    110,
+    485,
+    397
+   ],
+   "reg": [
+    1.0,
+    0,
+    30
+   ],
+   "what": "Peek: right hand cupped low over the felt"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1027,
+    100,
+    493,
+    407
+   ],
+   "reg": [
+    1.0,
+    1,
+    20
+   ],
+   "what": "Check: a hairy knuckle raps the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    16,
+    554,
+    493,
+    404
+   ],
+   "reg": [
+    1.0,
+    0,
+    23
+   ],
+   "what": "Call: right hand shoves forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    524,
+    562,
+    490,
+    396
+   ],
+   "reg": [
+    1.0,
+    1,
+    31
+   ],
+   "what": "Bet: leans in, right hand shoved well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1027,
+    558,
+    493,
+    400
+   ],
+   "reg": [
+    1.0,
+    1,
+    27
+   ],
+   "what": "Fold: a contemptuous flick of the hand"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    16,
+    104,
+    502,
+    392
+   ],
+   "reg": [
+    1.0,
+    1,
+    35
+   ],
+   "what": "All in: both hands shove forward together, grinning"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    534,
+    106,
+    472,
+    390
+   ],
+   "reg": [
+    1.0,
+    1,
+    37
+   ],
+   "what": "Show: right hand slaps palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1010,
+    35,
+    511,
+    461
+   ],
+   "reg": [
+    1.0,
+    -13,
+    -34
+   ],
+   "what": "Big win: both fists raised, a gleeful, nasty grin (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    16,
+    554,
+    502,
+    405
+   ],
+   "reg": [
+    1.0,
+    1,
+    22
+   ],
+   "what": "The displeasing smile, slow and wide"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    534,
+    540,
+    472,
+    419
+   ],
+   "reg": [
+    1.0,
+    1,
+    8
+   ],
+   "what": "Sucks his teeth, head cocked (decoy for B4)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1023,
+    569,
+    497,
+    391
+   ],
+   "reg": [
+    1.0,
+    0,
+    37
+   ],
+   "what": "Drums his hairy knuckles on the felt"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    16,
+    69,
+    501,
+    432
+   ],
+   "reg": [
+    1.0,
+    1,
+    -4
+   ],
+   "what": "Cracks his knuckles (decoy for B6)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    530,
+    117,
+    477,
+    384
+   ],
+   "reg": [
+    1.0,
+    0,
+    44
+   ],
+   "what": "Hunches down into the too-big coat, collar up round his ears"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1023,
+    83,
+    497,
+    417
+   ],
+   "reg": [
+    1.0,
+    1,
+    10
+   ],
+   "what": "Shoves the long sleeves back up his arms (decoy for C2)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    16,
+    548,
+    498,
+    411
+   ],
+   "reg": [
+    1.0,
+    1,
+    16
+   ],
+   "what": "Glares round the table"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    530,
+    561,
+    477,
+    398
+   ],
+   "reg": [
+    1.0,
+    0,
+    29
+   ],
+   "what": "Sniggers to himself, a hand over his mouth"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1011,
+    561,
+    509,
+    398
+   ],
+   "reg": [
+    1.0,
+    -11,
+    29
+   ],
+   "what": "Arrive: scrambling up into the chair, the big coat slipping off one shoulder"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    17,
+    81,
+    495,
+    419
+   ],
+   "reg": [
+    1.0,
+    0,
+    9
+   ],
+   "what": "Talking: jabbing a finger, husky"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    524,
+    114,
+    484,
+    386
+   ],
+   "reg": [
+    1.0,
+    -3,
+    42
+   ],
+   "what": "Facing a big bet: chin low, eyes narrowed, a hand on the broken cane"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1024,
+    93,
+    495,
+    407
+   ],
+   "reg": [
+    1.0,
+    0,
+    21
+   ],
+   "what": "Lost a pot: a sneer, a shove of the hand"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    17,
+    550,
+    495,
+    409
+   ],
+   "reg": [
+    1.0,
+    0,
+    19
+   ],
+   "what": "Crushing loss: both fists slammed on the felt, teeth bared (`lose_big`)"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    528,
+    593,
+    480,
+    366
+   ],
+   "reg": [
+    1.0,
+    1,
+    62
+   ],
+   "what": "Heads up: leaning in low on both forearms"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1024,
+    536,
+    495,
+    423
+   ],
+   "reg": [
+    1.0,
+    0,
+    5
+   ],
+   "what": "A cackle, head thrown back"
+  }
+ },
+ "rest": "A1",
+ "table_y": 312,
+ "scale": 0.88,
+ "origin_x": 335,
+ "register_box": [
+  150,
+  200,
+  350,
+  290
+ ],
+ "register_span": 40,
+ "collar_y": 200,
+ "neck": [
+  272,
+  200
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  200,
+  170,
+  330,
+  240
+ ],
+ "master": {
+  "piece": "hyde_parts/hyde_face/hyde_master.png",
+  "cut_below": 240,
+  "face": "hyde_parts/face.json",
+  "file": "hyde_parts/hyde_rig/master.png",
+  "layers": "hyde_parts/hyde_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    190,
+    0
+   ],
+   [
+    410,
+    0
+   ],
+   [
+    410,
+    150
+   ],
+   [
+    382,
+    190
+   ],
+   [
+    342,
+    215
+   ],
+   [
+    302,
+    242
+   ],
+   [
+    250,
+    246
+   ],
+   [
+    220,
+    218
+   ],
+   [
+    200,
+    182
+   ],
+   [
+    190,
+    120
+   ]
+  ],
+  "shoulder_y": 200
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    60,
+    300
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     255
+    ],
+    [
+     110,
+     255
+    ],
+    [
+     110,
+     300
+    ],
+    [
+     0,
+     305
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the broken cane by it",
+     "poly": [
+      [
+       0,
+       300
+      ],
+      [
+       70,
+       285
+      ],
+      [
+       130,
+       290
+      ],
+      [
+       180,
+       305
+      ],
+      [
+       230,
+       320
+      ],
+      [
+       275,
+       360
+      ],
+      [
+       280,
+       405
+      ],
+      [
+       220,
+       410
+      ],
+      [
+       160,
+       430
+      ],
+      [
+       90,
+       430
+      ],
+      [
+       8,
+       400
+      ],
+      [
+       0,
+       360
+      ]
+     ],
+     "props": [
+      [
+       [
+        22,
+        352
+       ],
+       [
+        60,
+        338
+       ],
+       [
+        152,
+        372
+       ],
+       [
+        152,
+        428
+       ],
+       [
+        88,
+        428
+       ],
+       [
+        8,
+        398
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    452,
+    295
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     255
+    ],
+    [
+     480,
+     255
+    ],
+    [
+     480,
+     295
+    ],
+    [
+     400,
+     295
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       312,
+       345
+      ],
+      [
+       350,
+       320
+      ],
+      [
+       390,
+       300
+      ],
+      [
+       440,
+       285
+      ],
+      [
+       482,
+       290
+      ],
+      [
+       486,
+       350
+      ],
+      [
+       455,
+       365
+      ],
+      [
+       440,
+       410
+      ],
+      [
+       370,
+       415
+      ],
+      [
+       318,
+       405
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "smile": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "suck_teeth": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "drum": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "crack": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "hunch": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "sleeves": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "glare": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "snigger": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "arrive": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  },
+  "laugh": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      22,
+      352
+     ],
+     [
+      60,
+      338
+     ],
+     [
+      152,
+      372
+     ],
+     [
+      152,
+      428
+     ],
+     [
+      88,
+      428
+     ],
+     [
+      8,
+      398
+     ]
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/hyde",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6,
+ "drop_wood": true,
+ "fill_rail": {
+  "above": 70,
+  "below": 4,
+  "min_w": 30,
+  "max_h": 30
+ }
+}

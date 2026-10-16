@@ -52,8 +52,10 @@ export const SAVE_VERSION = 1
  * 11: the hidden visitor -- JFK takes an empty chair at the White House when
  *    the player wins a pot holding a three and a five.
  * 12: the Cheshire Cat takes Alice's chair at Baker Street.
+ * 13: Jekyll or Hyde (50/50 a sitting) takes the Monster's chair at
+ *    Transylvania, and the other half can walk back in.
  */
-export const ENGINE_VERSION = 12
+export const ENGINE_VERSION = 13
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

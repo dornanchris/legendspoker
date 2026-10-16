@@ -41,6 +41,10 @@ if (TABLE) {
       process.exit(1)
     }
     lineups.push({ title: t.name, cast: content.fullCast(t).map(content.personality) })
+    // A two-man chair (Jekyll or Hyde): the table again with the other half seated.
+    const cast = content.fullCast(t)
+    const swap = cast.map((c) => content.CHARACTERS[c]?.other?.character ?? c)
+    if (swap.some((c, i) => c !== cast[i])) lineups.push({ title: `${t.name}, the other half`, cast: swap.map(content.personality) })
   }
 }
 

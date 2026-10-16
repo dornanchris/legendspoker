@@ -41,7 +41,8 @@ import javert from '../data/characters/javert.json'
 import cheshire_cat from '../data/characters/cheshire_cat.json'
 import sherlock from '../data/characters/sherlock.json'
 import vanHelsing from '../data/characters/van_helsing.json'
-import monster from '../data/characters/monster.json'
+import jekyll from '../data/characters/jekyll.json'
+import hyde from '../data/characters/hyde.json'
 import wolfMan from '../data/characters/wolf_man.json'
 import headlessHorseman from '../data/characters/headless_horseman.json'
 import dracula from '../data/characters/dracula.json'
@@ -119,6 +120,8 @@ export type CharacterData = {
   arrives: boolean
   /** Comes back after being knocked out. See ReturnData. */
   returns?: ReturnData
+  /** One chair, two men: see OtherData. */
+  other?: OtherData
   /**
    * A guest is unlocked (dealt in at open tables) once MET -- unless this
    * says 'beaten': the Phoenix has to be beaten, heads up, at the end of its
@@ -159,6 +162,22 @@ export type ReturnData = {
   afterHands: number
   stack: 'average' | number
   /** The scene: one line per speaker, in the order the speakers first appear. */
+  lines: Line[]
+}
+
+/**
+ * Two men in one chair (Jekyll and Hyde). Wherever this character is dealt
+ * into a table's seats, each sitting seats him OR `character`, 50/50 from
+ * the sitting's seed (sittingSeats). Once the one dealt in is knocked out,
+ * the other walks back in to an empty chair when the player wins a pot
+ * holding the same two ranks as the hand that knocked him out -- at a tour
+ * table, only after its late champion has sat down. Both characters carry
+ * an `other` naming each other; `lines` is the scene when THIS one's other
+ * half comes back.
+ */
+export type OtherData = {
+  character: string
+  stack: 'average' | number
   lines: Line[]
 }
 
@@ -353,7 +372,7 @@ const characterList = [
   merlin, lancelot, greenKnight, arthur,
   spartacus, pope, cerberus, scipio, caesar,
   nemo, javert, cheshire_cat, sherlock,
-  vanHelsing, monster, wolfMan, headlessHorseman, dracula,
+  vanHelsing, jekyll, hyde, wolfMan, headlessHorseman, dracula,
   greyAlien, martian, robot, astronaut, theAi,
   death,
   loki, jfk, phoenix,
@@ -433,9 +452,37 @@ export function openingCast(table: TableData): string[] {
   return [...table.seats]
 }
 
-/** Everyone who may speak at a table: its full cast, plus a hidden visitor. */
+/** Everyone who may speak at a table: its full cast, the other halves of its seats, plus a hidden visitor. */
 export function tableSpeakers(table: TableData): string[] {
-  return table.visitor ? [...fullCast(table), table.visitor.character] : fullCast(table)
+  const cast = fullCast(table)
+  for (const id of [...cast]) {
+    const o = CHARACTERS[id]?.other?.character
+    if (o && !cast.includes(o)) cast.push(o)
+  }
+  return table.visitor ? [...cast, table.visitor.character] : cast
+}
+
+/**
+ * The chairs as one sitting deals them: anyone with an `other` is that man
+ * or his other half, 50/50, decided by the sitting's seed so a resumed seat
+ * (which keeps the seats it was dealt) and a check run agree. A list that
+ * already holds both halves (it never should: openTableCast deals one) keeps
+ * them apart by flipping the second.
+ */
+export function sittingSeats(seats: string[], seed: number): string[] {
+  const out: string[] = []
+  seats.forEach((id, i) => {
+    const o = CHARACTERS[id]?.other?.character
+    let pick = id
+    if (o) {
+      let x = (seed ^ Math.imul(i + 1, 0x9e3779b1)) >>> 0
+      x = Math.imul(x ^ (x >>> 16), 0x45d9f3b) >>> 0
+      pick = ((x ^ (x >>> 16)) & 1) ? o : id
+      if (out.includes(pick)) pick = pick === id ? o : id
+    }
+    out.push(pick)
+  })
+  return out
 }
 
 /** Every character who can sit at a table, arrivals included. */
@@ -466,6 +513,18 @@ export function arrivalRules(table: TableData, mode: 'tour' | 'open', seats: str
   for (const id of a ? [...seats, a.character] : seats) {
     const r = CHARACTERS[id]?.returns
     if (r) rules.push({ personality: personality(id), afterEliminationOf: id, delayHands: r.afterHands, stack: r.stack })
+  }
+  // The other half of anyone dealt in (Hyde for Jekyll, Jekyll for Hyde).
+  for (const id of seats) {
+    const o = CHARACTERS[id]?.other
+    if (!o || seats.includes(o.character)) continue
+    rules.push({
+      personality: personality(o.character),
+      onHumanWinLike: id,
+      afterArrivalOf: a?.character,
+      delayHands: 0,
+      stack: o.stack,
+    })
   }
   const v = table.visitor
   if (v && !seats.includes(v.character)) {
