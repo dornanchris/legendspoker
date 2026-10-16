@@ -710,3 +710,120 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .bench-line, .bench-text { flex: 1 1 100%; min-width: 0; }
 .bench-row input[type=range] { flex: 1; }
 .bench-help, .bench-status { font-size: .8rem; opacity: .75; }
+
+/* ---------------------------------------------------------------- the curtain call
+   The end of a table (results.ts): comes down over the felt with the room still
+   breathing behind it, and plays in beats (--i). A tap shows them all (.all).
+   Every beat is visible without its animation, so Reduce motion simply shows it. */
+.curtain {
+  position: fixed; inset: 0; z-index: 60; overflow: hidden;
+  display: grid; place-items: center; padding: 14px 16px;
+  animation: curtain-in .7s ease-out both;
+}
+.curtain.won { background: radial-gradient(ellipse at 30% 35%, #3a2a0cdd, #0d0a07f2 62%); }
+.curtain.lost { background: radial-gradient(ellipse at 30% 35%, #1d2230dd, #0b0b10f2 62%); }
+.curtain.lifted { display: none; }
+@keyframes curtain-in { from { opacity: 0; backdrop-filter: blur(0); } to { opacity: 1; backdrop-filter: blur(3px); } }
+
+.curtain-panel {
+  position: relative; z-index: 1; width: min(1100px, 100%); max-height: 100%;
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 4px 34px; align-items: start;
+}
+.results .curtain-panel { margin: 0 auto; max-width: 1100px; }
+.curtain-panel .verdict { text-align: center; display: grid; justify-items: center; align-content: start; }
+.curtain-panel .tally-col { overflow-y: auto; max-height: calc(100vh - 40px); padding: 0 4px 0 14px; }
+.results .curtain-panel .tally-col { max-height: none; }
+.curtain-panel .kicker { letter-spacing: .3em; text-transform: uppercase; color: var(--dim); font-size: .78rem; margin: 0 0 6px; }
+.curtain-panel .headline { font-family: var(--serif); font-size: clamp(1.9rem, 5.2vw, 3.4rem); line-height: 1.05; margin: 8px 0 4px; }
+.curtain.won .headline, .results .headline.won {
+  background: linear-gradient(100deg, #b98b1f 20%, #fff2c2 45%, #e2c86a 55%, #b98b1f 80%);
+  background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: beat-in .7s cubic-bezier(.2, .8, .2, 1.2) both, gilt 3.2s ease-in-out 1.4s infinite;
+  animation-delay: calc(var(--i, 0) * .45s + .3s), calc(var(--i, 0) * .45s + 1.4s);
+}
+@keyframes gilt { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
+.curtain.lost .headline { color: #dcd3e6; text-shadow: 0 0 22px #6d7ab055; }
+.curtain-panel .subline { font-family: var(--serif); font-size: 1.08rem; color: #e6dccb; margin: 0 0 8px; max-width: 34em; }
+.curtain-panel .death-says { text-align: left; max-width: 30em; }
+.curtain-panel .actions { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+
+.beat { animation: beat-in .6s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * .45s + .3s); }
+.curtain.all .beat, .curtain.all .headline { animation-delay: 0s !important; animation-duration: .2s; }
+@keyframes beat-in { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+
+/* The crest: the best hand they took a pot with, dealt into a fan. */
+.crest { min-height: 92px; display: grid; justify-items: center; margin: 4px 0 2px; }
+.crest .fan { position: relative; height: 84px; width: 230px; }
+.crest .fan .card {
+  position: absolute; left: 50%; top: 6px; --s: 1.35;
+  transform: translateX(calc(-50% + var(--k) * 30px)) rotate(calc(var(--k) * 7deg)); transform-origin: 50% 120%;
+  box-shadow: 0 8px 18px #000a; animation: deal-in .55s cubic-bezier(.2, .9, .3, 1.15) both;
+  animation-delay: calc(var(--i, 0) * .45s + .45s + (var(--k) + 2) * .09s);
+}
+.curtain.all .crest .fan .card { animation-delay: 0s; }
+.curtain.won .crest .fan .card { outline: 2px solid var(--gold); outline-offset: 1px; box-shadow: 0 0 18px 2px #c9a22766, 0 8px 18px #000a; }
+@keyframes deal-in {
+  from { opacity: 0; transform: translate(-50%, -60px) rotate(-30deg) scale(.6); }
+}
+.crest .fan-label { margin: 2px 0 0; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-soft); }
+.curtain.lost .crest .fan-label { color: #b9b3c9; }
+
+/* The people, in the order they fell: their own drawn faces, with a stamp. */
+.sitters { display: flex; flex-wrap: wrap; gap: 12px; margin: 2px 0 6px; }
+.sitter { margin: 0; width: 92px; display: grid; justify-items: center; position: relative; }
+.sitter .face {
+  width: 86px; height: 86px; border-radius: 50%; background-size: 108% auto; background-position: 50% 6%;
+  background-repeat: no-repeat; background-color: #2c2622;
+  box-shadow: 0 0 0 2px #5b4f43, 0 6px 14px #0009; filter: saturate(.9);
+}
+.sitter .medallion { width: 86px; height: 86px; font-size: 1.6rem; }
+.sitter figcaption { font-size: .82rem; text-align: center; margin-top: 14px; color: var(--ink); display: grid; }
+.sitter figcaption small { color: var(--gold-soft); font-size: .7rem; }
+.sitter .stamp {
+  position: absolute; top: 72px; left: 50%; transform: translateX(-50%) rotate(-6deg);
+  font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap;
+  padding: 2px 6px; border: 2px solid currentColor; border-radius: 3px; background: #0d0a08cc;
+  color: #c96b5f; font-weight: 700;
+}
+.curtain.won .sitter .face, .results .sitter .face { filter: grayscale(.55) brightness(.85); }
+.sitter.last .face { filter: none; box-shadow: 0 0 0 3px var(--gold), 0 0 22px #c9a22788, 0 6px 14px #0009; }
+.sitter.last .stamp { color: var(--gold-soft); }
+.curtain.lost .sitter .stamp { color: #a9b6d9; }
+.sitter.victor .face { filter: none; box-shadow: 0 0 0 2px #8e86a8, 0 6px 14px #0009; }
+.curtain.lost .sitter.victor .stamp { color: #e7dfcf; }
+
+/* The best of what they did: plain tallies, no bars (NOT BUILDING). */
+.tiles { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 8px; }
+.tile { min-width: 84px; padding: 6px 10px 5px; border: 1px solid var(--edge); border-radius: 6px; background: #ffffff08; display: grid; text-align: center; }
+.tile b { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+.curtain.won .tile b { color: var(--gold-soft); }
+.tile span { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+
+/* Gold dust falling on a win, ash rising on a loss. */
+.motes { position: absolute; inset: 0; pointer-events: none; }
+.motes i {
+  position: absolute; left: var(--x); top: -4%; width: calc(5px * var(--z)); height: calc(5px * var(--z)); border-radius: 50%;
+  background: radial-gradient(circle, #fff3c4, #c9a227 60%, transparent 70%); opacity: 0;
+  animation: fall var(--t) linear var(--d) infinite;
+}
+.curtain.lost .motes i { top: 104%; background: radial-gradient(circle, #c8c4d6, #6f6a80 60%, transparent 70%); animation-name: rise; }
+@keyframes fall { 10% { opacity: .9; } 90% { opacity: .7; } to { transform: translate(18px, 108vh); opacity: 0; } }
+@keyframes rise { 10% { opacity: .45; } 90% { opacity: .3; } to { transform: translate(-24px, -108vh); opacity: 0; } }
+:root.reduce-motion .motes { display: none; }
+
+/* A phone held sideways: tighter, and the right column scrolls. */
+@media (max-height: 460px) {
+  .curtain { padding: 8px 12px; }
+  .curtain-panel { gap: 2px 20px; }
+  .curtain-panel .headline { font-size: 1.8rem; margin: 2px 0; }
+  .crest { min-height: 64px; }
+  .crest .fan { height: 60px; }
+  .crest .fan .card { --s: 1; }
+  .curtain-panel .subline { font-size: .95rem; }
+  .curtain-panel .death-says { font-size: .92rem; margin: .4em 0; }
+  .sitter { width: 68px; }
+  .sitter .face, .sitter .medallion { width: 60px; height: 60px; }
+  .sitter .stamp { top: 50px; font-size: .56rem; }
+  .sitter figcaption { margin-top: 10px; }
+  .curtain-panel .tally-col { max-height: calc(100vh - 20px); }
+}

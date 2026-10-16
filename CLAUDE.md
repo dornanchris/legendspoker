@@ -366,6 +366,20 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   (a card's class is its suit).
 - A pot nobody called is won **without showing**: the winner's cards stay
   face down. (The screen used to turn them up, a free read.)
+- **The curtain call** (the owner: "something that lets you feel good that
+  you won, and something that makes you feel good you lost"): the end of a
+  table comes down OVER the felt (`curtainCall` in `web/screens/results.ts`),
+  the room still breathing behind it, and plays in beats: the best hand the
+  player took a pot with dealt in a fan, the verdict (gilded for a win), Death's
+  word, the people who fell in the order they fell (their own drawn heads,
+  `art-tools/build/portraits.py`, stamped Out 4th / Beaten / Outlasted, "by
+  your hand" for a knockout), plain tallies (hands, pots, biggest pot,
+  knockouts), the table's name for the player, then the ledger's gains. Gold
+  dust falls on a win, ash rises on a loss; a loss leads with Rematch and what
+  the player outlasted. A tap shows every beat at once; Reduce motion shows
+  them still. The table screen counts the sitting from its events (`count` in
+  table.ts, presentation only). `#/curtain/won|lost/:table` previews it from
+  made-up numbers; `#/results` is the same panel as a page.
 
 **Not started:** Rive integration, recorded audio and music, Capacitor + a
 real device.

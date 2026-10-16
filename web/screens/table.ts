@@ -12,7 +12,7 @@ import * as store from '../store.js'
 import { h, go, sleep, formatChips, ordinal } from '../dom.js'
 import * as sound from '../sound.js'
 import { fly as launch, flipOver as turnOver, centre, chipDisc, flightColours, drawPile, chipCount, type Pt } from '../fx.js'
-import { setResult } from './results.js'
+import { setResult, curtainCall, type Sitting } from './results.js'
 import { ROOMS, PUPPETS, RETURNED } from '../puppet/cast.js'
 import { Stage, PRIO, DEALER as DEATH, type Prio, type SeatSpot } from '../puppet/stage.js'
 import { markTitle } from './shared.js'
@@ -784,8 +784,35 @@ export function tableScreen(root: HTMLElement): () => void {
     }
   }
 
+  /**
+   * The sitting as the curtain call tells it (results.ts): the player's best
+   * moments and who fell around them. Counted from the events, live and in a
+   * resume's catch-up alike, so a resumed sitting still has its whole story.
+   * Presentation only: nothing here touches the game.
+   */
+  const sitting: Sitting = { potsWon: 0, biggestPot: 0, best: null, knockouts: [], fallen: [], bustedBy: null }
+  function count(e: HandEvent) {
+    if (e.type === 'result' && e.seat === HUMAN_SEAT && e.delta > 0) {
+      sitting.potsWon++
+      sitting.biggestPot = Math.max(sitting.biggestPot, e.delta)
+    } else if (e.type === 'eliminated' && e.seat !== HUMAN_SEAT) {
+      sitting.fallen.push({ id: e.id, place: e.place })
+    } else if (e.type === 'handEnd') {
+      const sum = run.lastSummary
+      if (!sum) return
+      sitting.knockouts.push(...sum.knockouts)
+      if (sum.bustedBy.length) sitting.bustedBy = sum.bustedBy[0]
+      for (const w of sum.showdownWins) {
+        if (!sitting.best || w.rank > sitting.best.rank || (w.rank === sitting.best.rank && w.amount > sitting.best.amount)) {
+          sitting.best = { rank: w.rank, cards: w.cards, amount: w.amount }
+        }
+      }
+    }
+  }
+
   function onEvent(e: HandEvent) {
     const beats = run.onEvent(e)
+    count(e)
     // The uninvited guest is met the moment he sits down, live OR in a resume
     // replay, and off the presentation clock: his ledger page and his mark
     // hang off `met`, and career marks are checked when this hand's record is
@@ -1615,13 +1642,18 @@ export function tableScreen(root: HTMLElement): () => void {
       s.active = null
     })
     flushTime()
-    setResult({ outcome, effects: effects!, marks: newMarks, facts, name: run.earnedName() })
+    const result = { outcome, effects: effects!, marks: newMarks, facts, name: run.earnedName(), sitting }
+    setResult(result)
     els.prompt.textContent = won ? 'You hold every chip.' : 'You are out.'
     log(won ? 'You win the table.' : 'You are out.', 'big')
     void settled().then(() => {
       if (!alive) return
+      // The curtain call comes down over the table: the room keeps breathing
+      // behind it, and the felt where it happened stays in view.
       els.buttons.replaceChildren(
         h('button', { type: 'button', class: 'primary', onclick: () => go('/results') }, 'Continue'))
+      const veil = curtainCall(result, () => veil.remove())
+      root.append(veil)
     })
   }
 

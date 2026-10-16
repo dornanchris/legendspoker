@@ -8,6 +8,7 @@ import { settingsScreen, aboutScreen } from './screens/settings.js'
 import { endingScreen } from './screens/ending.js'
 import { puppetScreen } from './screens/puppet.js'
 import { ikTestScreen } from './screens/iktest.js'
+import { curtainPreview } from './screens/results.js'
 import * as sound from './sound.js'
 
 /**
@@ -29,6 +30,7 @@ import * as sound from './sound.js'
  *   #/settings  #/about  #/ending
  *   #/puppet/:id       the puppet bench (animation preview; not part of the game)
  *   #/iktest           the IK arms on the real stage (?ik=0 for the old clips)
+ *   #/curtain/won|lost/:table  the end-of-table curtain call, from made-up numbers
  */
 
 type Screen = (root: HTMLElement, params: string[]) => void | (() => void)
@@ -46,6 +48,7 @@ const ROUTES: Record<string, Screen> = {
   ending: endingScreen,
   puppet: puppetScreen,
   iktest: ikTestScreen,
+  curtain: curtainPreview,
 }
 
 let cleanup: (() => void) | void = undefined
