@@ -6,7 +6,7 @@ His look, from his character file and Irving: huge, cloaked and square-shouldere
 
 Ruled out (his character file): Disney's 1949 cartoon and Burton's 1999 film: no flaming jack-o'-lantern with a leering grin, no cackle, no filed teeth, no actor's head, no tree of the dead. The candle is our addition, not Irving's, and stays a plain candle. Layout from Lancelot's character sheet, mood from `art-tools/style/gothic_mood.png`.
 
-Tags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: the candle burning brighter (strong) beside settling the pumpkin on his collar (light and pumpkin both times); the flame guttering (tilted) beside a cold smell of leaves drifting from him (a faint drift of dead leaves); drumming a gauntlet on the table (weak) beside his sword rattling in its scabbard (a hand moving at the table). 'Turns his whole body to look at you' is C4.
+Tags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: the candle burning brighter (strong) beside settling the pumpkin on his collar (light and pumpkin both times); the flame guttering (tilted) beside a cold smell of leaves drifting from him (a faint drift of dead leaves); drumming a gauntlet on the table (weak) beside his sword rattling in its scabbard (a hand moving at the table). 'Turns his whole body to look at you' is C4. B3 and D4 are the big win and the crushing loss; his gauntlets are empty in every pose (the game moves the cards and chips); knocked out, he says his line and fades from the chair, so no exit pose. The candle stays steady in every pose but the two tells that change it (B4, C2) and the lost pot (D3), so the light means something.
 
 The owner's tweaks to the approved sheet: battered plate armour and a ragged cloak with brass skull bosses in place of the Hessian coat (a revenant, not a trooper on parade), and a classic carved jack-o'-lantern face with jagged teeth, angry rather than laughing. The candle still never becomes fire pouring out of the head (that, and a laughing face, stay Disney's).
 
@@ -15,12 +15,12 @@ The owner's tweaks to the approved sheet: battered plate armour and a ragged clo
 | A1 | Rest: gauntlets on the table's edge, apart, the pumpkin on his collar, candle steady | IDLE |
 | A2 | Peeking at his cards (right gauntlet) | MECH |
 | A3 | Check: a gauntleted finger taps the felt | MECH |
-| A4 | Call: slides a short stack forward | MECH |
-| A5 | Bet: pushes a stack forward | MECH |
-| A6 | Fold: flicks his cards away | MECH |
-| B1 | All in: both gauntlets push his whole stack | MECH |
-| B2 | Show: turns his cards over | MECH |
-| B3 | Collect: both arms drawing the pot in | MECH |
+| A4 | Call: right gauntlet pushes forward along the felt | MECH |
+| A5 | Bet: leans in, right gauntlet pushed well forward | MECH |
+| A6 | Fold: a curt flick of the right gauntlet | MECH |
+| B1 | All in: both gauntlets push forward together | MECH |
+| B2 | Show: right gauntlet turns palm up | MECH |
+| B3 | Big win: both gauntlets raised high (`win_big`) | BEAT |
 | B4 | The candle in his pumpkin burns brighter | TELL |
 | B5 | Settles the pumpkin on his collar (decoy for B4) | IDLE |
 | B6 | Drums a gauntlet on the table | TELL |
@@ -30,12 +30,12 @@ The owner's tweaks to the approved sheet: battered plate armour and a ragged clo
 | C4 | Turns his whole body to look at you | IDLE |
 | C5 | Draws his cloak about his shoulders | IDLE |
 | C6 | Sits very still, the pumpkin tilted a little toward the pot | IDLE |
-| D1 | Talking: one gauntlet raised, the pumpkin's light pulsing | BEAT |
+| D1 | Talking: one gauntlet raised, palm open | BEAT |
 | D2 | Facing a big bet: leaning back, gauntlets flat | BEAT |
 | D3 | Lost a pot: shoulders slump, the light dims | BEAT |
-| D4 | Won a pot: drawing chips in, the light bright | BEAT |
+| D4 | Crushing loss: a gauntlet slammed flat, the pumpkin bowed (`lose_big`) | BEAT |
 | D5 | Heads up: leaning in on both forearms | BEAT |
-| D6 | Knocked out: rises, pumpkin under his arm, turns to go | BEAT |
+| D6 | A slow, grave nod to the table | BEAT |
 
 ## Prompts
 
@@ -72,13 +72,13 @@ Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: waist up
 IMPORTANT for every pose: the arm that the pose does not mention stays EXACTLY as in pose 1, same position, same hand. He has NO HEAD in any pose: the pumpkin on his collar is all there is above the collar, and it stays on the collar unless the pose says otherwise. The pumpkin is EXACTLY the one on the attached character sheet: the same angry slanted eyes, the same jagged-toothed mouth, the same scars, the candle inside; no fire pours out of it. His armour, cloak and brass skull bosses are EXACTLY as on the character sheet. Keep the gothic graphic-novel style of the attached character sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour, worn leather and metal; serious and imposing, NOT a children's cartoon, NOT cute.
 
 1. At rest: both forearms lying along the table's edge, his steel gauntlets resting on the felt in front of him, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; the pumpkin square on his collar, candle steady
-2. Peeking at his cards: his right gauntlet cupped over two cards on the felt, thumb lifting the near corner, the pumpkin tipped down toward them
+2. Peeking at his cards: his right gauntlet cupped low over the felt in front of him, thumb lifted a little, as if shielding something small; the pumpkin tipped down toward it
 3. Checking: one finger of his right gauntlet tapping the felt
-4. Calling: his right gauntlet sliding a short stack of chips forward
-5. Betting: his right gauntlet pushing a stack of chips well forward
-6. Folding: his right gauntlet flicking two cards away face down
+4. Calling: his right gauntlet flat, fingertips leading, pushing forward along the felt
+5. Betting: leaning in, his right gauntlet pushed well forward along the felt
+6. Folding: a curt flick of his right gauntlet toward the middle of the table, fingers spread
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair.
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair, no cards, no chips.
 ```
 
 ### Pose sheet B
@@ -88,14 +88,14 @@ Character pose sheet for 2D animation reference: the Headless Horseman, exactly 
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). He has NO HEAD in any pose: the pumpkin on his collar is all there is above the collar, and it stays on the collar unless the pose says otherwise. The pumpkin is EXACTLY the one on the attached character sheet: the same angry slanted eyes, the same jagged-toothed mouth, the same scars, the candle inside; no fire pours out of it. His armour, cloak and brass skull bosses are EXACTLY as on the character sheet. Keep the gothic graphic-novel style of the attached character sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour, worn leather and metal; serious and imposing, NOT a children's cartoon, NOT cute.
 
-1. All in: both gauntlets pushing his whole stack of chips forward, the pumpkin's light bright
-2. Showing: his right gauntlet turning two cards face up; the card faces are BLANK white, no ranks, no suits
-3. Collecting the pot: both forearms out on the felt, drawing a pile of chips in
+1. All in: both gauntlets pushing forward along the felt together, the pumpkin leaning in
+2. Showing: his right gauntlet turning palm up from the felt, as if turning something over
+3. A big win: both gauntlets raised high above his collar, clenched in triumph, the pumpkin tipped back a little, candle steady
 4. The candle in his pumpkin burning BRIGHTER: a strong warm glow round the carved eyes and carved mouth and a soft halo of light round the whole pumpkin; the rest of him perfectly still, arms as at rest
 5. Settling the pumpkin on his collar: both gauntlets lifted to the pumpkin, holding it at the sides, straightening it on his collar, candle steady
 6. Drumming a gauntlet on the table: the fingers of his right gauntlet raised and drumming on the felt, two short motion lines beside them; left arm as at rest
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair.
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair, no cards, no chips.
 ```
 
 ### Pose sheet C
@@ -112,7 +112,7 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind t
 5. Drawing his black cloak about his shoulders with his right gauntlet
 6. Sitting very still, the pumpkin tilted a little toward the middle of the table (the right of the picture), as if listening; arms as at rest
 
-Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair.
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair, no cards, no chips.
 ```
 
 ### Pose sheet D
@@ -122,14 +122,14 @@ Character pose sheet for 2D animation reference: the Headless Horseman, exactly 
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). He has NO HEAD in any pose: the pumpkin on his collar is all there is above the collar, and it stays on the collar unless the pose says otherwise. The pumpkin is EXACTLY the one on the attached character sheet: the same angry slanted eyes, the same jagged-toothed mouth, the same scars, the candle inside; no fire pours out of it. His armour, cloak and brass skull bosses are EXACTLY as on the character sheet. Keep the gothic graphic-novel style of the attached character sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour, worn leather and metal; serious and imposing, NOT a children's cartoon, NOT cute.
 
-1. Talking: his right gauntlet raised a little, palm open, the pumpkin's light pulsing a little brighter at the carved mouth
-2. Facing a big bet: leaning back, both gauntlets flat on the felt, the pumpkin's light low and steady
+1. Talking: his right gauntlet raised a little, palm open, the candle steady
+2. Facing a big bet: leaning back, both gauntlets flat on the felt, candle steady
 3. Lost a pot: his shoulders slumped, the pumpkin tipped forward, its light dimmed; arms as at rest
-4. Won a pot: his right gauntlet drawing a few chips toward him, the pumpkin's light bright
-5. Down to two players: leaning in on both forearms, the pumpkin lowered toward the viewer, its light bright
-6. Knocked out: rising from his seat, the pumpkin lifted off his collar and tucked under his left arm, candle out, turning away toward the left of the picture
+4. A crushing loss: one gauntlet slammed flat on the felt, the other clenched beside it, the pumpkin bowed low toward the table, candle steady
+5. Down to two players: leaning in on both forearms, the pumpkin lowered toward the viewer, candle steady
+6. A slow, grave nod to the table: the pumpkin dipped forward toward the viewer, both gauntlets flat on the felt, candle steady
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair.
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair, no cards, no chips.
 ```
 
 ### Face overlay sheet

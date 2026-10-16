@@ -7,8 +7,8 @@
  "same": "headless armoured body, ragged black cloak with brass skull bosses, steel gauntlets and the scarred, lit pumpkin on the collar",
  "recap": "a towering headless revenant in dark, battered plate armour: a riveted steel breastplate crossed by worn leather straps, banded pauldrons and a high riveted collar, a ragged black cloak with an oxblood lining fastened at both shoulders by round brass bosses shaped like skulls, articulated dark steel gauntlets; on his collar, where his head should be, an old, scarred, lopsided pumpkin, deep orange going brown, its stalk dried black, carved with two angry, slanted, angular eyes and a jagged-toothed mouth, a candle burning inside, its hard orange light spilling out of the carving and lighting the collar from below; only the small candle flame shows at the stalk, no fire pours out",
  "keep": " He has NO HEAD in any pose: the pumpkin on his collar is all there is above the collar, and it stays on the collar unless the pose says otherwise. The pumpkin is EXACTLY the one on the attached character sheet: the same angry slanted eyes, the same jagged-toothed mouth, the same scars, the candle inside; no fire pours out of it. His armour, cloak and brass skull bosses are EXACTLY as on the character sheet.",
- "no": "No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair.",
- "intro": "Transylvania's seat 4 (far right): drawn facing the viewer's right and MIRRORED by the game to face the table's centre. Built the way Van Helsing is (`art-tools/pose_rig.py`), in the GOTHIC style (the owner, after the flat sheet came out childish: 'split the difference' with the dark table mock-ups; the design doc's tone is 'dark and gothic with deliberate bright spots'). His approved character sheet is the style reference for the rest of the table.\n\nHis look, from his character file and Irving: huge, cloaked and square-shouldered, stopping abruptly at the collar; the missing head is the strongest shape at the table. A Hessian trooper's coat (blue with red facings) under a heavy riding cloak, gauntlets, a cavalry sword. On his collar sits a carved pumpkin with a plain candle inside, and its LIGHT is the tell surface: brighter, guttering. He has no face, so the face sheet is the pumpkin in its states of light.\n\nRuled out (his character file): Disney's 1949 cartoon and Burton's 1999 film: no flaming jack-o'-lantern with a leering grin, no cackle, no filed teeth, no actor's head, no tree of the dead. The candle is our addition, not Irving's, and stays a plain candle. Layout from Lancelot's character sheet, mood from `art-tools/style/gothic_mood.png`.\n\nTags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: the candle burning brighter (strong) beside settling the pumpkin on his collar (light and pumpkin both times); the flame guttering (tilted) beside a cold smell of leaves drifting from him (a faint drift of dead leaves); drumming a gauntlet on the table (weak) beside his sword rattling in its scabbard (a hand moving at the table). 'Turns his whole body to look at you' is C4.\n\nThe owner's tweaks to the approved sheet: battered plate armour and a ragged cloak with brass skull bosses in place of the Hessian coat (a revenant, not a trooper on parade), and a classic carved jack-o'-lantern face with jagged teeth, angry rather than laughing. The candle still never becomes fire pouring out of the head (that, and a laughing face, stay Disney's).",
+ "no": "No head, no laughing pumpkin, no fire pouring out of the pumpkin, no horse, no tree, no chair, no cards, no chips.",
+ "intro": "Transylvania's seat 4 (far right): drawn facing the viewer's right and MIRRORED by the game to face the table's centre. Built the way Van Helsing is (`art-tools/pose_rig.py`), in the GOTHIC style (the owner, after the flat sheet came out childish: 'split the difference' with the dark table mock-ups; the design doc's tone is 'dark and gothic with deliberate bright spots'). His approved character sheet is the style reference for the rest of the table.\n\nHis look, from his character file and Irving: huge, cloaked and square-shouldered, stopping abruptly at the collar; the missing head is the strongest shape at the table. A Hessian trooper's coat (blue with red facings) under a heavy riding cloak, gauntlets, a cavalry sword. On his collar sits a carved pumpkin with a plain candle inside, and its LIGHT is the tell surface: brighter, guttering. He has no face, so the face sheet is the pumpkin in its states of light.\n\nRuled out (his character file): Disney's 1949 cartoon and Burton's 1999 film: no flaming jack-o'-lantern with a leering grin, no cackle, no filed teeth, no actor's head, no tree of the dead. The candle is our addition, not Irving's, and stays a plain candle. Layout from Lancelot's character sheet, mood from `art-tools/style/gothic_mood.png`.\n\nTags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: the candle burning brighter (strong) beside settling the pumpkin on his collar (light and pumpkin both times); the flame guttering (tilted) beside a cold smell of leaves drifting from him (a faint drift of dead leaves); drumming a gauntlet on the table (weak) beside his sword rattling in its scabbard (a hand moving at the table). 'Turns his whole body to look at you' is C4. B3 and D4 are the big win and the crushing loss; his gauntlets are empty in every pose (the game moves the cards and chips); knocked out, he says his line and fades from the chair, so no exit pose. The candle stays steady in every pose but the two tells that change it (B4, C2) and the lost pot (D3), so the light means something.\n\nThe owner's tweaks to the approved sheet: battered plate armour and a ragged cloak with brass skull bosses in place of the Hessian coat (a revenant, not a trooper on parade), and a classic carved jack-o'-lantern face with jagged teeth, angry rather than laughing. The candle still never becomes fire pouring out of the head (that, and a laughing face, stay Disney's).",
  "table": [
   [
    "A1",
@@ -27,33 +27,33 @@
   ],
   [
    "A4",
-   "Call: slides a short stack forward",
+   "Call: right gauntlet pushes forward along the felt",
    "MECH"
   ],
   [
    "A5",
-   "Bet: pushes a stack forward",
+   "Bet: leans in, right gauntlet pushed well forward",
    "MECH"
   ],
   [
    "A6",
-   "Fold: flicks his cards away",
+   "Fold: a curt flick of the right gauntlet",
    "MECH"
   ],
   [
    "B1",
-   "All in: both gauntlets push his whole stack",
+   "All in: both gauntlets push forward together",
    "MECH"
   ],
   [
    "B2",
-   "Show: turns his cards over",
+   "Show: right gauntlet turns palm up",
    "MECH"
   ],
   [
    "B3",
-   "Collect: both arms drawing the pot in",
-   "MECH"
+   "Big win: both gauntlets raised high (`win_big`)",
+   "BEAT"
   ],
   [
    "B4",
@@ -102,7 +102,7 @@
   ],
   [
    "D1",
-   "Talking: one gauntlet raised, the pumpkin's light pulsing",
+   "Talking: one gauntlet raised, palm open",
    "BEAT"
   ],
   [
@@ -117,7 +117,7 @@
   ],
   [
    "D4",
-   "Won a pot: drawing chips in, the light bright",
+   "Crushing loss: a gauntlet slammed flat, the pumpkin bowed (`lose_big`)",
    "BEAT"
   ],
   [
@@ -127,7 +127,7 @@
   ],
   [
    "D6",
-   "Knocked out: rises, pumpkin under his arm, turns to go",
+   "A slow, grave nod to the table",
    "BEAT"
   ]
  ],
@@ -136,16 +136,16 @@
  "sheets": {
   "A": [
    "At rest: both forearms lying along the table's edge, his steel gauntlets resting on the felt in front of him, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; the pumpkin square on his collar, candle steady",
-   "Peeking at his cards: his right gauntlet cupped over two cards on the felt, thumb lifting the near corner, the pumpkin tipped down toward them",
+   "Peeking at his cards: his right gauntlet cupped low over the felt in front of him, thumb lifted a little, as if shielding something small; the pumpkin tipped down toward it",
    "Checking: one finger of his right gauntlet tapping the felt",
-   "Calling: his right gauntlet sliding a short stack of chips forward",
-   "Betting: his right gauntlet pushing a stack of chips well forward",
-   "Folding: his right gauntlet flicking two cards away face down"
+   "Calling: his right gauntlet flat, fingertips leading, pushing forward along the felt",
+   "Betting: leaning in, his right gauntlet pushed well forward along the felt",
+   "Folding: a curt flick of his right gauntlet toward the middle of the table, fingers spread"
   ],
   "B": [
-   "All in: both gauntlets pushing his whole stack of chips forward, the pumpkin's light bright",
-   "Showing: his right gauntlet turning two cards face up; the card faces are BLANK white, no ranks, no suits",
-   "Collecting the pot: both forearms out on the felt, drawing a pile of chips in",
+   "All in: both gauntlets pushing forward along the felt together, the pumpkin leaning in",
+   "Showing: his right gauntlet turning palm up from the felt, as if turning something over",
+   "A big win: both gauntlets raised high above his collar, clenched in triumph, the pumpkin tipped back a little, candle steady",
    "The candle in his pumpkin burning BRIGHTER: a strong warm glow round the eye holes and mouth slit and a soft halo of light round the whole pumpkin; the rest of him perfectly still, arms as at rest",
    "Settling the pumpkin on his collar: both gauntlets lifted to the pumpkin, holding it at the sides, straightening it on his collar, candle steady",
    "Drumming a gauntlet on the table: the fingers of his right gauntlet raised and drumming on the felt, two short motion lines beside them; left arm as at rest"
@@ -159,12 +159,12 @@
    "Sitting very still, the pumpkin tilted a little toward the middle of the table (the right of the picture), as if listening; arms as at rest"
   ],
   "D": [
-   "Talking: his right gauntlet raised a little, palm open, the pumpkin's light pulsing a little brighter at the mouth slit",
-   "Facing a big bet: leaning back, both gauntlets flat on the felt, the pumpkin's light low and steady",
+   "Talking: his right gauntlet raised a little, palm open, the candle steady",
+   "Facing a big bet: leaning back, both gauntlets flat on the felt, candle steady",
    "Lost a pot: his shoulders slumped, the pumpkin tipped forward, its light dimmed; arms as at rest",
-   "Won a pot: his right gauntlet drawing a few chips toward him, the pumpkin's light bright",
-   "Down to two players: leaning in on both forearms, the pumpkin lowered toward the viewer, its light bright",
-   "Knocked out: rising from his seat, the pumpkin lifted off his collar and tucked under his left arm, candle out, turning away toward the left of the picture"
+   "A crushing loss: one gauntlet slammed flat on the felt, the other clenched beside it, the pumpkin bowed low toward the table, candle steady",
+   "Down to two players: leaning in on both forearms, the pumpkin lowered toward the viewer, candle steady",
+   "A slow, grave nod to the table: the pumpkin dipped forward toward the viewer, both gauntlets flat on the felt, candle steady"
   ]
  },
  "face": "Character sheet for 2D animation rigging: the Headless Horseman's pumpkin, exactly matching the attached sheets' style, colours and line weight. He has NO head and NO face: the pumpkin on his collar is his face, and its candlelight is how he shows anything.\n\nEvery piece is drawn at EXACTLY the angle and size of the pumpkin in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over it. Draw the pumpkin once, top left, sitting on the high riveted collar, as the reference, candle steady. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels. The carved face is ALWAYS the same one as on the attached character sheet: two angry, slanted, angular eyes and a jagged-toothed mouth, the same scars. Only the light changes.\n\n- The pumpkin alone, its candle at different strengths, one piece each: steady; brighter; very bright, with a warm halo; dim; guttering, uneven light, a thin curl of smoke; out, the holes dark\n- The glow at the mouth slit only, for speech, three pieces: a little brighter; brighter; brightest\n- The pumpkin turned toward the viewer, nearly front-on, candle steady",
@@ -185,5 +185,6 @@
    "round the eye holes",
    "round the carved eyes"
   ]
- ]
+ ],
+ "empty_hands": true
 }
