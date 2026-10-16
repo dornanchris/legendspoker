@@ -27,8 +27,9 @@ is done, and say so in the commit.
 - **IK arms (rigging-parts sheets)** for everyone but Washington, as each
   character comes up for a fix. Teddy's can come from his six Rive sheets
   (`art-tools/roosevelt_parts/sources/rive_*.png`).
-- **The JFK seat_puppet kit** (`jfk_parts/jfk/`, `jfk_rig/`) is retired once
-  the redraw in `jfk_parts/POSES.md` is built.
+- **JFK's and Loki's sheets drew a little more painted** than the presidents'
+  cartoon (soft shading). They read fine at the table; redraw only if they
+  stand out in play.
 
 ## The table screen (from the owner's screenshots)
 
@@ -39,8 +40,7 @@ is done, and say so in the commit.
 - **Death's dealt cards fly over his own "DEATH deals" plate** as they leave
   his hands: start the flights below the plate, or put the plate under them.
 - **Tell and idle text overlaps the name plates.**
-- From CLAUDE.md's staged-table gaps, still open: a guest without a puppet
-  leaves the chair empty (JFK and Loki fix this once built); two speech
+- From CLAUDE.md's staged-table gaps, still open: two speech
   bubbles can overlap; Death's clips draw their own cards and chips over the
   game's flights; a window narrower than 16:9 shows the room low; the top bar
   is phone-sized on a monitor; Reduce motion hides the older speech bubbles.

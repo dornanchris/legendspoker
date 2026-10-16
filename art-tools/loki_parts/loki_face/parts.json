@@ -1,0 +1,374 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "loki_face_01.png",
+      "label": "",
+      "x": 13,
+      "y": 12,
+      "w": 309,
+      "h": 362,
+      "pivot": [
+        154.5,
+        181.0
+      ],
+      "area": 82504
+    },
+    {
+      "index": 2,
+      "file": "loki_face_02.png",
+      "label": "",
+      "x": 320,
+      "y": 102,
+      "w": 188,
+      "h": 104,
+      "pivot": [
+        94.0,
+        52.0
+      ],
+      "area": 16872
+    },
+    {
+      "index": 3,
+      "file": "loki_face_03.png",
+      "label": "",
+      "x": 518,
+      "y": 101,
+      "w": 180,
+      "h": 105,
+      "pivot": [
+        90.0,
+        52.5
+      ],
+      "area": 16453
+    },
+    {
+      "index": 4,
+      "file": "loki_face_04.png",
+      "label": "",
+      "x": 704,
+      "y": 100,
+      "w": 186,
+      "h": 107,
+      "pivot": [
+        93.0,
+        53.5
+      ],
+      "area": 17020
+    },
+    {
+      "index": 5,
+      "file": "loki_face_05.png",
+      "label": "",
+      "x": 895,
+      "y": 101,
+      "w": 183,
+      "h": 106,
+      "pivot": [
+        91.5,
+        53.0
+      ],
+      "area": 16603
+    },
+    {
+      "index": 6,
+      "file": "loki_face_06.png",
+      "label": "",
+      "x": 1083,
+      "y": 101,
+      "w": 193,
+      "h": 111,
+      "pivot": [
+        96.5,
+        55.5
+      ],
+      "area": 18407
+    },
+    {
+      "index": 7,
+      "file": "loki_face_07.png",
+      "label": "",
+      "x": 1279,
+      "y": 101,
+      "w": 238,
+      "h": 108,
+      "pivot": [
+        119.0,
+        54.0
+      ],
+      "area": 21876
+    },
+    {
+      "index": 8,
+      "file": "loki_face_08.png",
+      "label": "",
+      "x": 327,
+      "y": 227,
+      "w": 219,
+      "h": 107,
+      "pivot": [
+        109.5,
+        53.5
+      ],
+      "area": 20296
+    },
+    {
+      "index": 9,
+      "file": "loki_face_09.png",
+      "label": "",
+      "x": 689,
+      "y": 244,
+      "w": 245,
+      "h": 105,
+      "pivot": [
+        122.5,
+        52.5
+      ],
+      "area": 21993
+    },
+    {
+      "index": 10,
+      "file": "loki_face_10.png",
+      "label": "",
+      "x": 1014,
+      "y": 246,
+      "w": 228,
+      "h": 108,
+      "pivot": [
+        114.0,
+        54.0
+      ],
+      "area": 21299
+    },
+    {
+      "index": 11,
+      "file": "loki_face_11.png",
+      "label": "",
+      "x": 33,
+      "y": 384,
+      "w": 206,
+      "h": 121,
+      "pivot": [
+        103.0,
+        60.5
+      ],
+      "area": 19124
+    },
+    {
+      "index": 12,
+      "file": "loki_face_12.png",
+      "label": "",
+      "x": 255,
+      "y": 384,
+      "w": 196,
+      "h": 120,
+      "pivot": [
+        98.0,
+        60.0
+      ],
+      "area": 17867
+    },
+    {
+      "index": 13,
+      "file": "loki_face_13.png",
+      "label": "",
+      "x": 467,
+      "y": 384,
+      "w": 194,
+      "h": 120,
+      "pivot": [
+        97.0,
+        60.0
+      ],
+      "area": 17575
+    },
+    {
+      "index": 14,
+      "file": "loki_face_14.png",
+      "label": "",
+      "x": 673,
+      "y": 383,
+      "w": 176,
+      "h": 122,
+      "pivot": [
+        88.0,
+        61.0
+      ],
+      "area": 15818
+    },
+    {
+      "index": 15,
+      "file": "loki_face_15.png",
+      "label": "",
+      "x": 864,
+      "y": 382,
+      "w": 181,
+      "h": 122,
+      "pivot": [
+        90.5,
+        61.0
+      ],
+      "area": 16227
+    },
+    {
+      "index": 16,
+      "file": "loki_face_16.png",
+      "label": "",
+      "x": 1061,
+      "y": 381,
+      "w": 197,
+      "h": 122,
+      "pivot": [
+        98.5,
+        61.0
+      ],
+      "area": 18043
+    },
+    {
+      "index": 17,
+      "file": "loki_face_17.png",
+      "label": "",
+      "x": 1276,
+      "y": 381,
+      "w": 231,
+      "h": 125,
+      "pivot": [
+        115.5,
+        62.5
+      ],
+      "area": 21633
+    },
+    {
+      "index": 18,
+      "file": "loki_face_18.png",
+      "label": "",
+      "x": 207,
+      "y": 514,
+      "w": 199,
+      "h": 118,
+      "pivot": [
+        99.5,
+        59.0
+      ],
+      "area": 17675
+    },
+    {
+      "index": 19,
+      "file": "loki_face_19.png",
+      "label": "",
+      "x": 425,
+      "y": 514,
+      "w": 193,
+      "h": 116,
+      "pivot": [
+        96.5,
+        58.0
+      ],
+      "area": 17003
+    },
+    {
+      "index": 20,
+      "file": "loki_face_20.png",
+      "label": "",
+      "x": 642,
+      "y": 514,
+      "w": 201,
+      "h": 119,
+      "pivot": [
+        100.5,
+        59.5
+      ],
+      "area": 17695
+    },
+    {
+      "index": 21,
+      "file": "loki_face_21.png",
+      "label": "",
+      "x": 868,
+      "y": 514,
+      "w": 205,
+      "h": 116,
+      "pivot": [
+        102.5,
+        58.0
+      ],
+      "area": 18081
+    },
+    {
+      "index": 22,
+      "file": "loki_face_22.png",
+      "label": "",
+      "x": 1098,
+      "y": 510,
+      "w": 209,
+      "h": 129,
+      "pivot": [
+        104.5,
+        64.5
+      ],
+      "area": 19862
+    },
+    {
+      "index": 23,
+      "file": "loki_face_23.png",
+      "label": "",
+      "x": 13,
+      "y": 628,
+      "w": 335,
+      "h": 380,
+      "pivot": [
+        167.5,
+        190.0
+      ],
+      "area": 91136
+    },
+    {
+      "index": 24,
+      "file": "loki_face_24.png",
+      "label": "",
+      "x": 371,
+      "y": 639,
+      "w": 351,
+      "h": 368,
+      "pivot": [
+        175.5,
+        184.0
+      ],
+      "area": 90828
+    },
+    {
+      "index": 25,
+      "file": "loki_face_25.png",
+      "label": "",
+      "x": 758,
+      "y": 637,
+      "w": 356,
+      "h": 370,
+      "pivot": [
+        178.0,
+        185.0
+      ],
+      "area": 91608
+    },
+    {
+      "index": 26,
+      "file": "loki_face_26.png",
+      "label": "",
+      "x": 1137,
+      "y": 627,
+      "w": 375,
+      "h": 383,
+      "pivot": [
+        187.5,
+        191.5
+      ],
+      "area": 95133
+    }
+  ]
+}

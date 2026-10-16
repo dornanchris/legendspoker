@@ -148,10 +148,10 @@ art-tools/
   faces_preview.py  a strip of every head swap on the seated puppet
   fdr_parts/, roosevelt_parts/, washington_parts/  the White House cast, each
                   with seat.json and <id>_layout.json; see each README
-  jfk_parts/      JFK, the White House's hidden visitor: POSES.md (the
-                  style-locked redraw); jfk/ and jfk_rig/ are the old one-face kit
+  jfk_parts/      JFK, the White House's hidden visitor (built; rig_spec.json);
+                  jfk/ and sources/jfk_sheet_old.png are the old one-face kit
   phoenix_parts/  the Phoenix, the hidden heads-up opponent: POSES.md only
-  loki_parts/     Loki, the uninvited guest: POSES.md only (spoilers)
+  loki_parts/     Loki, the uninvited guest (built; rig_spec.json; spoilers)
   avatar_parts/   the Stranger, the default ONLINE avatar (online is not
                   designed yet): POSES.md only, cosmetic, no tells (rule 3)
   socrates_parts/, leonidas_parts/, medusa_parts/, cyclops_parts/,
@@ -575,7 +575,7 @@ half that, all set by `art-tools/build/life.py`. Going out, a figure plays
 its `knocked_out` clip if it has one, then **fades from the chair** (0.8 s,
 stage.ts; the owner: a line, then gone); a puppet with no heads-up drawing
 leans in from its rest pose (`art-tools/build/fallback_clips.py`).
-`python3 art-tools/build/puppet_audit.py` holds all 30 puppets to the same
+`python3 art-tools/build/puppet_audit.py` holds all 32 puppets to the same
 list and prints 0 missing. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the
@@ -607,8 +607,15 @@ map, a Ledger page once met, dealt in at open tables after that, secret mark
 "Thirty-Five". `npm run check:visitor` forces it. Always "thirty-five", never
 "3/5", which at a table with Washington and Lincoln reads as the Three-Fifths
 Clause; and nothing ever refers to his death. His old seat_puppet kit has one
-face; `jfk_parts/POSES.md` is the style-locked redraw (6 images); until it is
-built the staged table shows his plate in an empty chair.
+face; **the style-locked redraw is built** (`#/puppet/jfk`, 25 clips, from
+`jfk_parts/POSES.md`): hands empty, the big win (fists raised) and the
+crushing loss (a hand over his eyes) among his 24 poses, an `arrive` clip as
+he walks in, any chair, mirrored as the seat needs. **Loki is built** the same
+way (`#/puppet/loki`, 26 clips; his half smile and amber eyes are face swaps)
+and plays `arrive` as he takes the banished player's chair. Both guests'
+kits are written by `art-tools/build/rig_from_spec.py` from a short
+`rig_spec.json`, the master their rest pose's own head
+(`art-tools/build/own_master.py`).
 **The Phoenix is the hidden grind (the owner's design: "a very rare character
 to unlock").** Finish SECOND at all eight story tables (tour sittings, any
 order, `save.phoenix.seconds`), then win the eighth, and its table opens: The
@@ -649,8 +656,8 @@ new art against that layout.
   the Sussex Vampire index entries, the Long Island
   retreat.
 - **The staged table (first pass) has gaps.** Someone without a puppet who
-  sits down mid-table (the uninvited guest) leaves the chair empty, plate
-  only. Two speech bubbles can overlap (a seat's line under Death's). Death's
+  sits down mid-table would leave the chair empty, plate only (both guests,
+  JFK and Loki, now have puppets; the Phoenix has none, at its own table). Two speech bubbles can overlap (a seat's line under Death's). Death's
   clips draw their own cards and chips, which double the game's flights for a
   moment. A window narrower than 16:9 shows the room low with dark above.
   The table bar at the top (Leave, the table's name, Log) is still

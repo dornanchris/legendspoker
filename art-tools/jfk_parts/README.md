@@ -1,9 +1,44 @@
 # John F. Kennedy's parts
 
-**Being redrawn:** `POSES.md` (from `poses_spec.json`) is the style-locked
-kit for `pose_rig.py`: no sunglasses, nothing in his mouth, empty hands, the
-big win (B3) and crushing loss (D4) among the 24 poses. Everything below is
-the old one-face seat_puppet kit, retired once the redraw is built.
+**The redraw is built** (`#/puppet/jfk`, 25 clips): `POSES.md` (from
+`poses_spec.json`), the six sheets in `sources/` (`jfk_sheet.png` the new
+character sheet), built by `art-tools/pose_rig.py` the way Van Helsing is:
+
+    python3 art-tools/cut_sheet.py art-tools/jfk_parts/cut_face.json
+    python3 art-tools/build/own_master.py art-tools/jfk_parts jfk 320
+    python3 art-tools/build/pose_boxes.py art-tools/jfk_parts
+    python3 art-tools/build/corner_regs.py art-tools/jfk_parts
+    python3 art-tools/build/rig_from_spec.py art-tools/jfk_parts/rig_spec.json
+    python3 art-tools/pose_rig.py art-tools/jfk_parts/pose_rig.json
+    python3 art-tools/build/frames_sheet.py jfk
+    python3 art-tools/jfk_parts/clips.py
+    python3 art-tools/build/win_small.py; python3 art-tools/build/fallback_clips.py
+    python3 art-tools/build/tell_hold.py; python3 art-tools/build/life.py
+    python3 art-tools/web_half.py jfk
+
+- **The master is the rest pose's own head** (`jfk_face/jfk_master.png`).
+- **Face** (`face.json`): eyes half 2, closed 3, viewer 4, down 5, up 6,
+  narrow 7; mouths rest 10, ah 11, ee 12, oh 13, oo 14, m 15, f 16, l 18,
+  grin 19 (his small win), half_smile 20. Brows 8-9, head 1 and the front
+  head 17 are unused.
+- **The coconut shell** is a props box in the near forearm's piece and every
+  frame, cut tight (the drawn rail beside it stays out). In `tap_shell` (C3)
+  the sheet drew it further right, under his finger, so that frame has its
+  own box and the shell moves for the length of the tap.
+- `back_strip` 6 clears a hairline left at the cells' left edge.
+- He shrinks a little in `rock_back` (B4 was drawn smaller): it reads as
+  leaning back, so it is kept.
+
+**Clips** (`web/art/jfk/anim.json`): check, peek, call, bet, fold, all in,
+show, hands empty; tells `rock_back` (strong) beside `hair`, `tie` (bluffing)
+beside `chop`, `back` (weak) beside `tap_shell`; idle `portraits`; beats
+talk, big bet, lost pot, `lose_big` (a hand over his eyes), `win_big` (fists
+raised), heads up, laugh, `grin`, and `arrive` (one hand still in his
+jacket pocket), played as he walks in. Fidgets: grin, look at you.
+
+Everything below is the OLD one-face seat_puppet kit (`jfk/`,
+`jfk_rig/cuffs.json`, `sources/jfk_sheet_old.png`), kept as a record; the
+game no longer uses it, and `art-tools/jfk_layout.json` is now pose_rig's.
 
 Cut with `split_parts.py` from one sheet (`sources/jfk_sheet_old.png`), in
 Lincoln's flat cartoon style: navy suit, sunglasses, cigarette. `jfk/` holds every piece, a numbered

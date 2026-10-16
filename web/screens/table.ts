@@ -1303,6 +1303,7 @@ export function tableScreen(root: HTMLElement): () => void {
       const ui = seatUI.get(e.seat)
       ui?.root.classList.add('arriving')
       if (ui) ui.stack.textContent = formatChips(e.stack)
+      if (!instant) cue(e.seat, 'arrive', PRIO.tell)
       log(`${CHARACTERS[e.id]?.short ?? e.id} is sitting in the chair, behind the same ${formatChips(e.stack)} chips.`, 'big')
     }, t(BASE.level))
   }

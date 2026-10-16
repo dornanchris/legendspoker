@@ -131,7 +131,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | Transylvania (gothic from here) | built | Van Helsing (redraw later) | the Wolf Man (old style: redraw first, FIX-LATER.md) | the Monster (prompts in `monster_parts/POSES.md`; build him a quarter bigger), the Headless Horseman (`headless_horseman_parts/POSES.md`), then Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
-| Hidden guests: **next** (the owner: they keep coming up in testing) | (they sit in the table's room) | | | JFK (`jfk_parts/POSES.md`, redrawn: empty hands, B3 big win, D4 crushing loss), Loki (`loki_parts/POSES.md`) |
+| Hidden guests (they sit in the table's room) | | JFK (redrawn), Loki | | |
 | Hidden (later) | The Pyre: prompt | | | the Phoenix; the Stranger (online avatar) |
 
 Seats at Rome: 1 Spartacus, 2 the Pope, 3 Cerberus (mirrored, giant),

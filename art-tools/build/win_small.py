@@ -18,7 +18,7 @@ only nod.
 import glob, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SMILES = ['smile', 'pleased', 'beam', 'half_smile', 'wry', 'grin', 'proud', 'enormous', 'pant']
+SMILES = ['smile', 'pleased', 'beam', 'grin', 'half_smile', 'wry', 'proud', 'enormous', 'pant']
 NOD_ONLY = {'javert', 'leonidas', 'green_knight',          # no smile for them
             'caesar', 'socrates'}                         # their smile is a tell, drawn as a whole frame
 CHIPS = re.compile(r'chip|gather|drawing|dragging|sweep', re.I)

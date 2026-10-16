@@ -63,6 +63,10 @@ import cheshireCatRig from '../art/cheshire_cat/rig.json'
 import cheshireCatAnim from '../art/cheshire_cat/anim.json'
 import vanHelsingRig from '../art/van_helsing/rig.json'
 import vanHelsingAnim from '../art/van_helsing/anim.json'
+import jfkRig from '../art/jfk/rig.json'
+import jfkAnim from '../art/jfk/anim.json'
+import lokiRig from '../art/loki/rig.json'
+import lokiAnim from '../art/loki/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -142,6 +146,9 @@ export const PUPPETS: Record<string, CastEntry> = {
   sherlock_deerstalker: { rig: sherlockDeerstalkerRig as unknown as RigData, anim: sherlockDeerstalkerAnim as unknown as AnimData, base: 'art/sherlock_deerstalker/' },
   cheshire_cat: { rig: cheshireCatRig as unknown as RigData, anim: cheshireCatAnim as unknown as AnimData, base: 'art/cheshire_cat/' },
   van_helsing: { rig: vanHelsingRig as unknown as RigData, anim: vanHelsingAnim as unknown as AnimData, base: 'art/van_helsing/' },
+  // the hidden guests: either may sit in any chair, at any table
+  jfk: { rig: jfkRig as unknown as RigData, anim: jfkAnim as unknown as AnimData, base: 'art/jfk/' },
+  loki: { rig: lokiRig as unknown as RigData, anim: lokiAnim as unknown as AnimData, base: 'art/loki/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
 }
 

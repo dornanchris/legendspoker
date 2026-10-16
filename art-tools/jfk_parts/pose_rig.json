@@ -1,0 +1,1416 @@
+{
+ "id": "jfk",
+ "name": "John F. Kennedy",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets (the redraw; the old seat_puppet kit is jfk/ and jfk_sheet_old.png). The White House's hidden visitor: any empty chair, drawn facing right and mirrored. The master is the rest pose's OWN head (jfk_face/jfk_master.png). Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt. The PT-109 coconut shell sits on the felt by his right hand: part of that forearm's piece at rest, a props box in every frame.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    13,
+    21,
+    495,
+    465
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, the coconut shell by his right hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    523,
+    29,
+    491,
+    457
+   ],
+   "reg": [
+    1.0,
+    1,
+    8
+   ],
+   "what": "Peek: right hand cupped low over the felt"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1029,
+    21,
+    494,
+    465
+   ],
+   "reg": [
+    1.0,
+    1,
+    0
+   ],
+   "what": "Check: two fingers tap the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    14,
+    509,
+    495,
+    461
+   ],
+   "reg": [
+    1.0,
+    0,
+    4
+   ],
+   "what": "Call: right hand pushes forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    523,
+    505,
+    491,
+    468
+   ],
+   "reg": [
+    1.0,
+    0,
+    0
+   ],
+   "what": "Bet: leans in, right hand pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1028,
+    500,
+    495,
+    470
+   ],
+   "reg": [
+    1.0,
+    0,
+    -5
+   ],
+   "what": "Fold: an easy flick of the right hand"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    17,
+    42,
+    498,
+    449
+   ],
+   "reg": [
+    1.0,
+    1,
+    23
+   ],
+   "what": "All in: both hands push forward together, a grin"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    530,
+    34,
+    479,
+    452
+   ],
+   "reg": [
+    1.0,
+    2,
+    16
+   ],
+   "what": "Show: right hand turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1025,
+    8,
+    495,
+    477
+   ],
+   "reg": [
+    1.0,
+    2,
+    -10
+   ],
+   "what": "Big win: both fists raised, a broad grin"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    14,
+    512,
+    498,
+    451
+   ],
+   "reg": [
+    1.0,
+    1,
+    14
+   ],
+   "what": "TELL strong: rocks back in his chair, easy"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    527,
+    504,
+    482,
+    460
+   ],
+   "reg": [
+    1.0,
+    1,
+    9
+   ],
+   "what": "Runs a hand through his hair (decoy for rocking back)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1024,
+    503,
+    497,
+    464
+   ],
+   "reg": [
+    1.0,
+    2,
+    4
+   ],
+   "what": "TELL bluffing: straightens his tie"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    16,
+    22,
+    495,
+    464
+   ],
+   "reg": [
+    1.0,
+    1,
+    1
+   ],
+   "what": "Chops the air, mid-thought (decoy for the tie)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    526,
+    23,
+    483,
+    463
+   ],
+   "reg": [
+    1.0,
+    1,
+    2
+   ],
+   "what": "TELL weak: a hand pressed to the small of his back"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1025,
+    23,
+    496,
+    463
+   ],
+   "reg": [
+    1.0,
+    2,
+    1
+   ],
+   "what": "Taps the coconut shell (decoy for his back)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    15,
+    504,
+    496,
+    461
+   ],
+   "reg": [
+    1.0,
+    1,
+    4
+   ],
+   "what": "Glances up at the portraits on the wall"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    526,
+    505,
+    483,
+    461
+   ],
+   "reg": [
+    1.0,
+    1,
+    4
+   ],
+   "what": "A broad grin at the table"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1024,
+    499,
+    497,
+    467
+   ],
+   "reg": [
+    1.0,
+    1,
+    -2
+   ],
+   "what": "Arrive: sitting down, one hand still in his jacket pocket"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    16,
+    19,
+    494,
+    466
+   ],
+   "reg": [
+    1.0,
+    1,
+    -2
+   ],
+   "what": "Talking: one hand chopping the air"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    525,
+    20,
+    487,
+    465
+   ],
+   "reg": [
+    1.0,
+    2,
+    -1
+   ],
+   "what": "Facing a big bet: a level look"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1027,
+    25,
+    494,
+    460
+   ],
+   "reg": [
+    1.0,
+    2,
+    4
+   ],
+   "what": "Lost a pot: a rueful half-smile, a shrug"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    16,
+    518,
+    494,
+    446
+   ],
+   "reg": [
+    1.0,
+    1,
+    19
+   ],
+   "what": "Crushing loss: a hand over his eyes"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    525,
+    518,
+    487,
+    446
+   ],
+   "reg": [
+    1.0,
+    2,
+    19
+   ],
+   "what": "Heads up: leaning in on both forearms"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1027,
+    504,
+    494,
+    460
+   ],
+   "reg": [
+    1.0,
+    2,
+    5
+   ],
+   "what": "Laughing, head back a little"
+  }
+ },
+ "rest": "A1",
+ "table_y": 370,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  230,
+  350,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 200,
+ "neck": [
+  228,
+  200
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  180,
+  170,
+  300,
+  260
+ ],
+ "master": {
+  "piece": "jfk_parts/jfk_face/jfk_master.png",
+  "cut_below": 245,
+  "face": "jfk_parts/face.json",
+  "file": "jfk_parts/jfk_rig/master.png",
+  "layers": "jfk_parts/jfk_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    138,
+    0
+   ],
+   [
+    325,
+    0
+   ],
+   [
+    325,
+    150
+   ],
+   [
+    305,
+    195
+   ],
+   [
+    285,
+    222
+   ],
+   [
+    262,
+    240
+   ],
+   [
+    215,
+    240
+   ],
+   [
+    180,
+    215
+   ],
+   [
+    152,
+    175
+   ],
+   [
+    138,
+    130
+   ]
+  ],
+  "shoulder_y": 205
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    60,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     290
+    ],
+    [
+     110,
+     290
+    ],
+    [
+     110,
+     335
+    ],
+    [
+     0,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the coconut shell by it",
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       60,
+       322
+      ],
+      [
+       120,
+       335
+      ],
+      [
+       175,
+       345
+      ],
+      [
+       220,
+       355
+      ],
+      [
+       270,
+       380
+      ],
+      [
+       292,
+       440
+      ],
+      [
+       275,
+       458
+      ],
+      [
+       200,
+       458
+      ],
+      [
+       150,
+       452
+      ],
+      [
+       0,
+       455
+      ]
+     ],
+     "props": [
+      [
+       [
+        24,
+        342
+       ],
+       [
+        134,
+        342
+       ],
+       [
+        137,
+        452
+       ],
+       [
+        14,
+        452
+       ],
+       [
+        14,
+        414
+       ],
+       [
+        24,
+        411
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    450,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     295
+    ],
+    [
+     480,
+     295
+    ],
+    [
+     480,
+     330
+    ],
+    [
+     400,
+     330
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       325,
+       385
+      ],
+      [
+       360,
+       362
+      ],
+      [
+       400,
+       345
+      ],
+      [
+       440,
+       330
+      ],
+      [
+       482,
+       335
+      ],
+      [
+       485,
+       410
+      ],
+      [
+       455,
+       425
+      ],
+      [
+       435,
+       445
+      ],
+      [
+       380,
+       448
+      ],
+      [
+       330,
+       442
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "rock_back": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "hair": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "tie": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "chop": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "back": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "tap_shell": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      85,
+      338
+     ],
+     [
+      196,
+      338
+     ],
+     [
+      201,
+      452
+     ],
+     [
+      76,
+      452
+     ],
+     [
+      76,
+      415
+     ],
+     [
+      85,
+      410
+     ]
+    ]
+   ]
+  },
+  "portraits": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "grin": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "arrive": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  },
+  "laugh": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      24,
+      342
+     ],
+     [
+      134,
+      342
+     ],
+     [
+      137,
+      452
+     ],
+     [
+      14,
+      452
+     ],
+     [
+      14,
+      414
+     ],
+     [
+      24,
+      411
+     ]
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/jfk",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "wood_rows_only": true,
+ "no_wood": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6
+}
