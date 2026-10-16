@@ -136,3 +136,12 @@ the IK prototype, beside Washington's arm built from hands drawn as parts. The
 owner chose Washington's way; Lincoln's cast entry no longer loads `ik.json`,
 so his old clips play. The script, `ik.json` and the `ik_*` images stay as a
 record (`npx tsx web/puppet/ik-check.ts lincoln` still checks them).
+
+## Frames seated on the chair
+
+Seven of his whole-figure frames (lean back, stretch, hat tip, greet, rub
+eyes, laugh, drum) stopped short of the table line, by up to 41 rig px, so the
+room showed under him (the owner: "off the chair"). `frame_seat.py` moves the
+torso bone down onto the table while each is up, and the lean back a little
+left and 5% smaller, so it reads as sitting back. No other puppet's frames
+needed it.

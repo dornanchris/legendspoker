@@ -562,7 +562,11 @@ the tell), one at a time (no ambient gesture starts while another seat's is
 showing, and its words stay 3.6 s), plus
 wordless fidgets and decoys (`fidgets`). Clips run at the pace setting, are
 never started under fast-forward or in a resume's catch-up, and an idle
-never interrupts anything; Reduce motion stops sway and breath. The table
+never interrupts anything; Reduce motion stops sway and breath. **Every figure
+is alive at rest** (the owner: "living figures"): blinks, glances, breathing
+(1.3% of the torso), head sway (1.1 degrees) and a slow weight shift of the
+whole upper body (0.45 degrees about the table line; `sway.body`), Death at
+half that, all set by `art-tools/build/life.py`. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the
 same Canvas 2D puppet player (`web/puppet/ik.ts`, `web/puppet/README.md`),

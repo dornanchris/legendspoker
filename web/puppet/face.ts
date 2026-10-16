@@ -17,7 +17,8 @@ import type { Puppet } from './puppet.js'
 export type FaceConfig = {
   blink: { every: [number, number]; double: number; frames: [string, number][] }
   gaze: { idle: [string, number][]; hold: [number, number]; tilt: Record<string, [number, number, number]> }
-  sway: { rot: number; x: number; y: number; periods: [number, number, number]; follow: number }
+  /** `body`: degrees the whole upper body drifts, about the table line (a slow weight shift; the head sways on top). */
+  sway: { rot: number; x: number; y: number; periods: [number, number, number]; follow: number; body?: number }
   breath: { period: number; sy: number }
   speech: {
     vowel: number; consonant: number; space: number; pause: number
@@ -164,6 +165,7 @@ export class Face {
       p.add('head', 'x', c.sway.x * Math.sin((2 * Math.PI * t) / px + 1.3))
       p.add('head', 'y', c.sway.y * Math.sin((2 * Math.PI * t) / py + 0.7))
       p.add('torso', 'sy', c.breath.sy * (0.5 - Math.cos((2 * Math.PI * t) / c.breath.period) / 2))
+      if (c.sway.body) p.add('torso', 'rot', c.sway.body * Math.sin((2 * Math.PI * t) / (pr * 1.7) + 2.1))
     }
   }
 }
