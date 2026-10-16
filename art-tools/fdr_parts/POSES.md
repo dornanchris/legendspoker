@@ -170,3 +170,24 @@ Cards have plain dark backs. Pure white background around each pose; poses do no
 
 (Turning the holder in his fingers, the old B6, is dropped: the cape takes
 its cell, and the ash tap's decoy can be `holder_low`.)
+
+### Reactions sheet (E): the big win and the crushing loss
+
+The owner's reactions, sized by the pot: an ordinary win is a nod and a smile
+the puppet already has (`win_small`, art-tools/build/win_small.py); a pot worth
+most of his stack plays the big win, and losing one the crushing loss. Pose 1
+is his rest pose again, only to measure the sheet by. Attach
+`art-tools/fdr_parts/sources/poses_a.png` FIRST, then
+`art-tools/fdr_parts/sources/fdr_sheet.png`, and nothing of anyone else's.
+
+```
+Character pose sheet for 2D animation reference: Franklin D. Roosevelt, exactly as on the attached sheets, drawn to match the FIRST attached pose sheet: same size, same angle, same table edge height, same naval cape chained at the throat over his pinstripe suit, pince-nez, and the cigarette holder in his teeth.
+
+Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind him, no chair, nothing of him cut off by the edge of the picture (raised hands included). Nothing below the table edge.
+
+1. EXACTLY his at-rest pose, the top-left pose of the attached pose sheet, copied as it is
+2. A big win: both arms raised high above his head, hands open, head tipped back laughing, the cigarette holder jutting up from his grin
+3. A crushing loss: slumped back, one hand pressed to his brow, the cigarette holder drooping from his lips
+
+No cards and no chips anywhere: his hands are empty. Pure white background around each pose; the poses do not touch. No text, no numbers, no labels. No hat, no drinks, no ashtray, no chair.
+```

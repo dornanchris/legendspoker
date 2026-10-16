@@ -603,6 +603,9 @@ export function tableScreen(root: HTMLElement): () => void {
     els.youName.title = n ? `The table calls you ${n}` : 'The table does not address you'
   }
 
+  /** Until when the table is watching someone's gesture: no new ambient one starts (see the scheduler). */
+  let quietUntil = 0
+
   function showTell(seat: number, text: string, real: boolean) {
     const ui = seatUI.get(seat)
     if (!ui) return
@@ -610,7 +613,8 @@ export function tableScreen(root: HTMLElement): () => void {
     ui.tell.classList.remove('fade')
     void ui.tell.offsetWidth
     ui.tell.classList.add('fade')
-    if (real) ui.tellUntil = Date.now() + 2600
+    if (real) ui.tellUntil = Date.now() + 3600
+    quietUntil = Date.now() + 3600
     if (!replaying) store.sawHabit(ui.id, text)
     const clip = cueFor(seat, text)
     if (clip) cue(seat, clip, real ? PRIO.tell : PRIO.idle)
@@ -1062,6 +1066,20 @@ export function tableScreen(root: HTMLElement): () => void {
         // first, and quietly: it was never won, so it is not called a pot.
         const real = e.pots.filter((p) => !p.returned)
         const ordered = [...e.pots.filter((p) => p.returned), ...real]
+        // Each winner reacts once, to all they won: a nod for an ordinary pot,
+        // the big win when it was most of what they sat down to the hand with.
+        const wonBy = new Map<number, number>()
+        for (const p of real) for (const w of p.winners) wonBy.set(w, (wonBy.get(w) ?? 0) + p.amount / p.winners.length)
+        const reacted = new Set<number>()
+        const winClip = (w: number) => {
+          const win = PUPPETS[figureAt(w)]?.anim.win
+          const big = (wonBy.get(w) ?? 0) >= 0.6 * Math.max(1, chipsAt.handStart[w] ?? 0)
+          return (big ? win?.big : win?.small) ?? 'won_pot'
+        }
+        const loseClip = (s: number, amount: number) => {
+          const lose = PUPPETS[figureAt(s)]?.anim.lose
+          return (amount >= Math.max(1, chipsAt.handStart[s] ?? 0) ? lose?.big : lose?.small) ?? 'lost_pot'
+        }
         ordered.forEach((pot) => {
           chipsAt.pot = Math.max(0, chipsAt.pot - pot.amount)
           const left = chipsAt.pot
@@ -1092,15 +1110,18 @@ export function tableScreen(root: HTMLElement): () => void {
               }
             }
             for (const w of pot.winners) seatUI.get(w)?.root.classList.add('winner')
-            // Death pushes it over; the winner draws it in; at a showdown, the
-            // ones who lost the main pot take it as they take it.
+            // Death pushes it over and the chips fly; the winner reacts (never
+            // a hand raking the pot in: that is the chips' job); at a
+            // showdown, the ones who lost the main pot take it as they take it.
             const to = pot.winners[0]
             const side = to === HUMAN_SEAT ? 'you' : stage?.geometry().seats.get(to)?.side === 'r' ? 'right' : 'left'
             act(DEATH, `push_${side}`)
-            for (const w of pot.winners) if (w !== HUMAN_SEAT) act(w, 'collect')
+            for (const w of pot.winners) {
+              if (w !== HUMAN_SEAT && !reacted.has(w)) { reacted.add(w); act(w, winClip(w)) }
+            }
             if (contested && i === 0) {
               for (const { seat } of e.revealed) {
-                if (seat !== HUMAN_SEAT && !pot.winners.includes(seat)) act(seat, 'lost_pot', PRIO.tell)
+                if (seat !== HUMAN_SEAT && !pot.winners.includes(seat)) act(seat, loseClip(seat, pot.amount), PRIO.tell)
               }
             }
             const label = real.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
@@ -1310,6 +1331,10 @@ export function tableScreen(root: HTMLElement): () => void {
    */
   const ambient = setInterval(() => {
     if (!alive || replaying || document.hidden) return
+    // One gesture at a time (the owner: too much moving at once to tell what
+    // is what): while anyone's tell, idle or fidget is showing, nobody else
+    // starts one. A real tell still plays when it happens; it is never queued.
+    if (Date.now() < quietUntil) return
     for (const [i, ui] of seatUI) {
       if (out.has(i) || Date.now() < ui.tellUntil) continue
       const c = CHARACTERS[ui.id]
@@ -1317,7 +1342,8 @@ export function tableScreen(root: HTMLElement): () => void {
       const vocab = [...c.idles, ...c.tells.map((t) => t.text)]
       if (!vocab.length || Math.random() > c.dials.noise * 0.3) continue
       showTell(i, vocab[Math.floor(Math.random() * vocab.length)], false)
-      ui.tellUntil = Date.now() + 2200
+      ui.tellUntil = Date.now() + 3200
+      return
     }
     // Where they are drawn, the figures also fidget without words: small
     // business, and the decoys drawn beside each tell (MOTION-SPEC), so that
@@ -1327,6 +1353,8 @@ export function tableScreen(root: HTMLElement): () => void {
       const fidgets = PUPPETS[figureAt(i)]?.anim.fidgets ?? []
       if (out.has(i) || !fidgets.length || Math.random() > 0.022) continue
       cue(i, fidgets[Math.floor(Math.random() * fidgets.length)], PRIO.idle)
+      quietUntil = Date.now() + 3200
+      break
     }
     if (Math.random() < 0.012) cue(DEATH, Math.random() < 0.5 ? 'weary' : 'look_up', PRIO.idle)
   }, 1300)

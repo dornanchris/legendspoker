@@ -231,7 +231,7 @@ export class Stage {
     a.current = { name: clip, prio }
     a.pending = null
     const anim = PUPPETS[a.id]?.anim
-    if (anim?.gutter?.includes(clip)) this.gutter(a.x, (anim.clips[clip]?.duration ?? 0) / (this.speed || 1))
+    if (anim?.gutter?.includes(clip)) this.gutter(a.x, a.player.duration(clip) / (this.speed || 1))
   }
 
   /** The lamp nearest a chair (the room's first loop: its flames) gutters for a while. */

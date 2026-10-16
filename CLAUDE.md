@@ -544,12 +544,22 @@ room is drawn (`ROOMS` in `web/puppet/cast.ts`) with a puppet for everyone
 dealt in is STAGED, the room and figures on a canvas under the felt and the
 game's plates, cards and chips over them; anywhere else keeps the plain
 table. The figures act out only what the screen already shows: each
-opponent's action, peeking at the deal, showing and collecting at showdown,
-losing a contested pot, going out, the heads-up lean; Death deals (from his
+opponent's action, peeking at the deal, showing at showdown, reacting to a
+win by its size (the owner: raking the pot in is the chips' job, and lame; an
+ordinary pot is `win_small`, a nod and a smile built from the head and mouth
+every puppet has, `art-tools/build/win_small.py`; a pot worth most of the
+stack is the big win, `win_big`, hands raised, from a reactions sheet E,
+falling back to the old `won_pot` beat where it is not a hand raking chips),
+losing a contested pot (`lose_big` the same way, once drawn), going out, the
+heads-up lean; Death deals (from his
 deck: the card flights start there), lays the flop and turn, pushes each pot
 toward its winner, shows the guest out; lips move to callouts and lines; a
 tell or idle is acted by its WORDS (`cues` in anim.json, held to the
-character's data by check:data), real tell and ambient noise alike, plus
+character's data by check:data), real tell and ambient noise alike, held on
+their pose 0.9 s longer (`hold` in the clip, `art-tools/build/tell_hold.py`:
+every cued clip and fidget alike, never the tells alone, or length would be
+the tell), one at a time (no ambient gesture starts while another seat's is
+showing, and its words stay 3.6 s), plus
 wordless fidgets and decoys (`fidgets`). Clips run at the pace setting, are
 never started under fast-forward or in a resume's catch-up, and an idle
 never interrupts anything; Reduce motion stops sway and breath. The table

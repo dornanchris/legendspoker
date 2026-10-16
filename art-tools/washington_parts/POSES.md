@@ -139,3 +139,24 @@ Every piece is drawn at EXACTLY the angle and size of his head in the at-rest po
 - His head turned toward the viewer, nearly front-on
 - His head with the chin raised, sitting straighter
 ```
+
+### Reactions sheet (E): the big win and the crushing loss
+
+The owner's reactions, sized by the pot: an ordinary win is a nod and a smile
+the puppet already has (`win_small`, art-tools/build/win_small.py); a pot worth
+most of his stack plays the big win, and losing one the crushing loss. Pose 1
+is his rest pose again, only to measure the sheet by. Attach
+`art-tools/washington_parts/sources/poses_a.png` FIRST, then
+`art-tools/washington_parts/sources/washington_sheet.png`, and nothing of anyone else's.
+
+```
+Character pose sheet for 2D animation reference: George Washington, exactly as on the attached sheets, drawn to match the FIRST attached pose sheet: same size, same angle, same table edge height, same blue and buff Continental Army coat, white powdered hair, bareheaded.
+
+Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind him, no chair, nothing of him cut off by the edge of the picture (raised hands included). Nothing below the table edge.
+
+1. EXACTLY his at-rest pose, the top-left pose of the attached pose sheet, copied as it is
+2. A big win: both hands raised high above his head, palms open, chest out, chin up, a rare broad smile
+3. A crushing loss: sitting very straight, eyes closed, jaw clenched, both hands pressed flat on the table's edge
+
+No cards and no chips anywhere: his hands are empty. Pure white background around each pose; the poses do not touch. No text, no numbers, no labels. No hat, no cane, no cigars, no pipes, no glasses of drink.
+```

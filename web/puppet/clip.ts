@@ -38,6 +38,13 @@ export type ClipData = {
   ikSwaps?: Record<string, [number, string | null][]>
   /** Seconds a clip takes to hand back to rest if it is cut short (IK puppets only; default 0.15). */
   release?: number
+  /**
+   * [at, secs]: the clip stops at `at` and holds that pose for `secs` before
+   * going on (the tells, their decoys and every other gesture the table cues
+   * from words, all alike, so the player has time to see them;
+   * art-tools/build/tell_hold.ts).
+   */
+  hold?: [number, number]
 }
 
 export const EASE: Record<Ease, (u: number) => number> = {

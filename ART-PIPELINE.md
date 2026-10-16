@@ -40,7 +40,12 @@ CLAUDE.md first (the rules and the state); this is the HOW and the QUEUE.
 ## One character, start to finish
 
 The six images: character sheet, pose sheets A-D (24 poses, 3x2 each), face
-overlay sheet. Kit folder: `art-tools/<id>_parts/`.
+overlay sheet. Kit folder: `art-tools/<id>_parts/`. A seventh, the reactions
+sheet E (rest, the big win with hands raised, the crushing loss; prompt at the
+end of the White House kits' POSES.md), gives the big win and loss; until it
+is drawn the table uses the small win and the old beats. After any anim.json
+change, re-run `python3 art-tools/build/win_small.py` and
+`python3 art-tools/build/tell_hold.py`.
 
 1. **Prompts.** Write `<id>_parts/poses_spec.json` (copy a recent one:
    `scipio_parts`, `pope_parts`; a non-human body uses `replace`, see

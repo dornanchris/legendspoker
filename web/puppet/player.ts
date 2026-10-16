@@ -15,7 +15,8 @@ import type { ClipData } from './clip.js'
  * and every playing clip add to it.
  */
 
-type Playing = { name: string; clip: ClipData; t: number; loop: boolean }
+/** `held`: seconds spent so far in the clip's hold (ClipData.hold). */
+type Playing = { name: string; clip: ClipData; t: number; loop: boolean; held: number }
 
 /**
  * A clip cut short, handing back to rest (IK puppets only): what it had added
@@ -103,7 +104,8 @@ export class PuppetPlayer {
 
   /** How long the clip played for a name lasts (seconds), or 0 without one. */
   duration(name: string): number {
-    return this.entry.anim.clips[this.resolve(name)]?.duration ?? 0
+    const clip = this.entry.anim.clips[this.resolve(name)]
+    return clip ? clip.duration + (clip.hold?.[1] ?? 0) : 0
   }
 
   get clipNames(): string[] {
@@ -116,7 +118,7 @@ export class PuppetPlayer {
     if (!clip) throw new Error(`no clip "${name}"`)
     this.release(this.playing.filter((p) => p.name === name))
     this.playing = this.playing.filter((p) => p.name !== name)
-    this.playing.push({ name, clip, t: 0, loop })
+    this.playing.push({ name, clip, t: 0, loop, held: 0 })
   }
 
   stop(name?: string): void {
@@ -170,8 +172,16 @@ export class PuppetPlayer {
     this.face.update(dt)
     if (!this.hold) {
       for (const p of this.playing) {
-        p.t += dt * this.speed
-        if (p.t >= p.clip.duration && p.loop) p.t %= p.clip.duration
+        let adv = dt * this.speed
+        const hold = p.clip.hold
+        if (hold && p.held < hold[1] && p.t + adv > hold[0]) {
+          // reach the held pose, then stay there until the hold is spent
+          const pause = Math.min(adv - Math.max(0, hold[0] - p.t), hold[1] - p.held)
+          p.held += pause
+          adv -= pause
+        }
+        p.t += adv
+        if (p.t >= p.clip.duration && p.loop) { p.t %= p.clip.duration; p.held = 0 }
       }
       this.playing = this.playing.filter((p) => p.t < p.clip.duration || p.loop)
       for (const r of this.releases) r.t += dt * this.speed

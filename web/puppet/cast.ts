@@ -92,6 +92,13 @@ export type AnimData = {
   cues?: Record<string, string>
   /** Clips with no words: fidgets and the decoys drawn beside each tell, played as ambient noise. */
   fidgets?: string[]
+  /**
+   * What a winner plays: `small` for an ordinary pot, `big` for one worth most
+   * of the stack they began the hand with (art-tools/build/win_small.py).
+   */
+  win?: { small: string; big: string }
+  /** What a player who lost a contested pot plays: `big` when it was worth more than their stack. */
+  lose?: { small: string; big: string }
   /** Clips during which the room's lamp nearest the seat gutters (Davy Jones's flickering lamp). */
   gutter?: string[]
 }
