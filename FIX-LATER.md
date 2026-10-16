@@ -12,8 +12,7 @@ is done, and say so in the commit.
   approved sheet is the style image; ART-PIPELINE.md). Already built in the
   flat cartoon, to redraw in it later:
   - **Van Helsing** (built, Transylvania seat 1).
-  - **The Wolf Man** (his sheets are in but not built: build him only once he
-    is redrawn, or build the old sheets now if the table needs him first).
+  - ~~**The Wolf Man**~~ DONE: redrawn gothic and built.
   - **The Cheshire Cat** (built, Baker Street seat 3, in Cerberus's style).
 - **Reactions for the rest of the cast** (the owner: "probably all"). The
   big win (hands raised) and the crushing loss: reactions sheet E for every

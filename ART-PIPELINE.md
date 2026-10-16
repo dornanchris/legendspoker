@@ -128,7 +128,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
 | Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
-| Transylvania (gothic from here) | built | Van Helsing (redraw later), Jekyll, Hyde | | WITH THE OWNER: the Horseman's pose and face sheets (his character sheet approved), (Jekyll and Hyde are BUILT: they replace the Monster, whose gothic sheet was rejected); both gothic, hands empty, big win B3 and crushing loss D4. The Wolf Man's gothic prompts are out (`wolf_man_parts/POSES.md`; his old Cerberus-style sheets are in `sources/old_style/`, unbuilt). Then Dracula |
+| Transylvania (gothic from here) | built | Van Helsing (redraw later), Jekyll, Hyde, the Wolf Man | | WITH THE OWNER: the Horseman's pose and face sheets (his character sheet approved), (Jekyll and Hyde are BUILT: they replace the Monster, whose gothic sheet was rejected); both gothic, hands empty, big win B3 and crushing loss D4. Then Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
 | Hidden guests (they sit in the table's room) | | JFK (redrawn), Loki | | |

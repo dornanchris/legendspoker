@@ -1,0 +1,304 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "wolf_man_face_01.png",
+      "label": "",
+      "x": 8,
+      "y": 11,
+      "w": 332,
+      "h": 370,
+      "pivot": [
+        166.0,
+        185.0
+      ],
+      "area": 76738
+    },
+    {
+      "index": 2,
+      "file": "wolf_man_face_02.png",
+      "label": "",
+      "x": 333,
+      "y": 99,
+      "w": 164,
+      "h": 146,
+      "pivot": [
+        82.0,
+        73.0
+      ],
+      "area": 19087
+    },
+    {
+      "index": 3,
+      "file": "wolf_man_face_03.png",
+      "label": "",
+      "x": 513,
+      "y": 104,
+      "w": 150,
+      "h": 142,
+      "pivot": [
+        75.0,
+        71.0
+      ],
+      "area": 17320
+    },
+    {
+      "index": 4,
+      "file": "wolf_man_face_04.png",
+      "label": "",
+      "x": 678,
+      "y": 100,
+      "w": 159,
+      "h": 148,
+      "pivot": [
+        79.5,
+        74.0
+      ],
+      "area": 18902
+    },
+    {
+      "index": 5,
+      "file": "wolf_man_face_05.png",
+      "label": "",
+      "x": 855,
+      "y": 104,
+      "w": 147,
+      "h": 145,
+      "pivot": [
+        73.5,
+        72.5
+      ],
+      "area": 16710
+    },
+    {
+      "index": 6,
+      "file": "wolf_man_face_06.png",
+      "label": "",
+      "x": 1018,
+      "y": 107,
+      "w": 154,
+      "h": 142,
+      "pivot": [
+        77.0,
+        71.0
+      ],
+      "area": 18023
+    },
+    {
+      "index": 7,
+      "file": "wolf_man_face_07.png",
+      "label": "",
+      "x": 1184,
+      "y": 103,
+      "w": 163,
+      "h": 146,
+      "pivot": [
+        81.5,
+        73.0
+      ],
+      "area": 19170
+    },
+    {
+      "index": 8,
+      "file": "wolf_man_face_08.png",
+      "label": "",
+      "x": 1363,
+      "y": 103,
+      "w": 156,
+      "h": 147,
+      "pivot": [
+        78.0,
+        73.5
+      ],
+      "area": 18382
+    },
+    {
+      "index": 9,
+      "file": "wolf_man_face_09.png",
+      "label": "",
+      "x": 24,
+      "y": 373,
+      "w": 248,
+      "h": 160,
+      "pivot": [
+        124.0,
+        80.0
+      ],
+      "area": 24821
+    },
+    {
+      "index": 10,
+      "file": "wolf_man_face_10.png",
+      "label": "",
+      "x": 276,
+      "y": 366,
+      "w": 251,
+      "h": 165,
+      "pivot": [
+        125.5,
+        82.5
+      ],
+      "area": 27982
+    },
+    {
+      "index": 11,
+      "file": "wolf_man_face_11.png",
+      "label": "",
+      "x": 524,
+      "y": 358,
+      "w": 253,
+      "h": 174,
+      "pivot": [
+        126.5,
+        87.0
+      ],
+      "area": 28566
+    },
+    {
+      "index": 12,
+      "file": "wolf_man_face_12.png",
+      "label": "",
+      "x": 782,
+      "y": 360,
+      "w": 227,
+      "h": 168,
+      "pivot": [
+        113.5,
+        84.0
+      ],
+      "area": 25988
+    },
+    {
+      "index": 13,
+      "file": "wolf_man_face_13.png",
+      "label": "",
+      "x": 1023,
+      "y": 355,
+      "w": 236,
+      "h": 169,
+      "pivot": [
+        118.0,
+        84.5
+      ],
+      "area": 26303
+    },
+    {
+      "index": 14,
+      "file": "wolf_man_face_14.png",
+      "label": "",
+      "x": 1270,
+      "y": 356,
+      "w": 242,
+      "h": 168,
+      "pivot": [
+        121.0,
+        84.0
+      ],
+      "area": 27572
+    },
+    {
+      "index": 15,
+      "file": "wolf_man_face_15.png",
+      "label": "",
+      "x": 92,
+      "y": 551,
+      "w": 273,
+      "h": 171,
+      "pivot": [
+        136.5,
+        85.5
+      ],
+      "area": 29604
+    },
+    {
+      "index": 16,
+      "file": "wolf_man_face_16.png",
+      "label": "",
+      "x": 412,
+      "y": 548,
+      "w": 272,
+      "h": 174,
+      "pivot": [
+        136.0,
+        87.0
+      ],
+      "area": 30405
+    },
+    {
+      "index": 17,
+      "file": "wolf_man_face_17.png",
+      "label": "",
+      "x": 722,
+      "y": 544,
+      "w": 274,
+      "h": 178,
+      "pivot": [
+        137.0,
+        89.0
+      ],
+      "area": 32484
+    },
+    {
+      "index": 18,
+      "file": "wolf_man_face_18.png",
+      "label": "",
+      "x": 1023,
+      "y": 540,
+      "w": 289,
+      "h": 180,
+      "pivot": [
+        144.5,
+        90.0
+      ],
+      "area": 33008
+    },
+    {
+      "index": 19,
+      "file": "wolf_man_face_19.png",
+      "label": "",
+      "x": 1135,
+      "y": 667,
+      "w": 385,
+      "h": 348,
+      "pivot": [
+        192.5,
+        174.0
+      ],
+      "area": 77311
+    },
+    {
+      "index": 20,
+      "file": "wolf_man_face_20.png",
+      "label": "",
+      "x": 88,
+      "y": 754,
+      "w": 348,
+      "h": 228,
+      "pivot": [
+        174.0,
+        114.0
+      ],
+      "area": 46762
+    },
+    {
+      "index": 21,
+      "file": "wolf_man_face_21.png",
+      "label": "",
+      "x": 551,
+      "y": 800,
+      "w": 425,
+      "h": 184,
+      "pivot": [
+        212.5,
+        92.0
+      ],
+      "area": 52970
+    }
+  ]
+}

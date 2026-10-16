@@ -1,0 +1,343 @@
+{
+ "kit": "wolf_man_parts",
+ "id": "wolf_man",
+ "name": "The Wolf Man",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (the Horseman's style). Transylvania's seat 3, drawn facing right and mirrored. The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. No prop: his ears and claws are the tell surface.",
+ "what": {
+  "A1": "Rest: forearms on the table's edge, hands apart, ears up",
+  "A2": "Peeking at his cards (right hand)",
+  "A3": "Check: one clawed finger taps the felt",
+  "A4": "Call: right hand pushes forward along the felt",
+  "A5": "Bet: leans in, right hand pushed well forward",
+  "A6": "Fold: a gruff push of the hand toward the middle",
+  "B1": "All in: both hands push forward together",
+  "B2": "Show: right hand turns palm up",
+  "B3": "Big win: both fists raised, a joyful howl (`win_big`)",
+  "B4": "Sniffs at the pot, muzzle stretched toward the middle",
+  "B5": "Growls at a draught (decoy for B4)",
+  "B6": "His ears flatten",
+  "C1": "Scratches behind one ear (decoy for B6)",
+  "C2": "His claws scrape the felt",
+  "C3": "Sheds on the tablecloth, brushing the fur away (decoy for C2)",
+  "C4": "Glances at the window and the moon",
+  "C5": "Looks at the viewer, ears pricked, a little sheepish",
+  "C6": "Ears swivel back toward a sound behind him",
+  "D1": "Talking: one clawed hand raised, apologetic",
+  "D2": "Facing a big bet: hackles up, eyes narrowed",
+  "D3": "Lost a pot: ears down, a low whine",
+  "D4": "Crushing loss: ears flat, head hung low, a long whine (`lose_big`)",
+  "D5": "Heads up: leaning in on both forearms, teeth showing",
+  "D6": "A rough laugh, half a bark"
+ },
+ "prop": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "sniff": "B4",
+  "growl": "B5",
+  "ears_flat": "B6",
+  "scratch": "C1",
+  "claws": "C2",
+  "shed": "C3",
+  "window": "C4",
+  "sheepish": "C5",
+  "ears_back": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "laugh": "D6"
+ },
+ "common": {
+  "table_y": 366,
+  "scale": 1.0,
+  "origin_x": 300,
+  "register_box": [
+   150,
+   240,
+   350,
+   330
+  ],
+  "register_span": 40,
+  "collar_y": 250,
+  "neck": [
+   262,
+   250
+  ],
+  "frame_margin": 60,
+  "stock_box": [
+   200,
+   220,
+   330,
+   280
+  ]
+ },
+ "cut_below": 265,
+ "keep_poly": [
+  [
+   140,
+   0
+  ],
+  [
+   420,
+   0
+  ],
+  [
+   420,
+   230
+  ],
+  [
+   385,
+   252
+  ],
+  [
+   330,
+   268
+  ],
+  [
+   262,
+   275
+  ],
+  [
+   205,
+   258
+  ],
+  [
+   160,
+   215
+  ],
+  [
+   140,
+   130
+  ]
+ ],
+ "shoulder_y": 250,
+ "arms": {
+  "near": {
+   "elbow": [
+    50,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     300
+    ],
+    [
+     110,
+     300
+    ],
+    [
+     110,
+     345
+    ],
+    [
+     0,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and clawed hand",
+     "poly": [
+      [
+       0,
+       335
+      ],
+      [
+       60,
+       330
+      ],
+      [
+       120,
+       345
+      ],
+      [
+       175,
+       360
+      ],
+      [
+       235,
+       380
+      ],
+      [
+       272,
+       420
+      ],
+      [
+       275,
+       470
+      ],
+      [
+       190,
+       476
+      ],
+      [
+       120,
+       470
+      ],
+      [
+       40,
+       440
+      ],
+      [
+       0,
+       420
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    455,
+    340
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     300
+    ],
+    [
+     485,
+     300
+    ],
+    [
+     485,
+     340
+    ],
+    [
+     400,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and clawed hand",
+     "poly": [
+      [
+       315,
+       400
+      ],
+      [
+       350,
+       375
+      ],
+      [
+       395,
+       352
+      ],
+      [
+       445,
+       335
+      ],
+      [
+       490,
+       345
+      ],
+      [
+       492,
+       420
+      ],
+      [
+       455,
+       440
+      ],
+      [
+       420,
+       476
+      ],
+      [
+       330,
+       476
+      ],
+      [
+       312,
+       450
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "felt_dark_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6,
+  "drop_wood": true
+ },
+ "frame_extra": {
+  "sniff": {
+   "biggest": true
+  }
+ },
+ "no_prop": [
+  "A2",
+  "A3",
+  "A4",
+  "A5",
+  "A6",
+  "B1",
+  "B2",
+  "B3",
+  "B4",
+  "B5",
+  "B6",
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5",
+  "C6",
+  "D1",
+  "D2",
+  "D3",
+  "D4",
+  "D5",
+  "D6"
+ ]
+}
