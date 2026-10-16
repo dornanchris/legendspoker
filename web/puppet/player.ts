@@ -31,17 +31,18 @@ type Release = {
 }
 
 /**
- * The IK prototype is off unless asked for: `?ik=1` (or localStorage
- * legends-poker/ik = 1). With it, a puppet with IK chains plays `<clip>_ik`
- * in place of `<clip>` where it has one; the name the game asks for is unchanged.
+ * IK arms are on (the owner's pick, from Washington's test): a puppet with IK
+ * chains plays `<clip>_ik` in place of `<clip>` where it has one; the name the
+ * game asks for is unchanged. `?ik=0` (or localStorage legends-poker/ik = 0)
+ * turns them off, to compare with the old clips.
  */
 export function ikEnabled(): boolean {
   try {
     const q = new URLSearchParams(location.search).get('ik')
-    if (q !== null) return q === '1'
-    return localStorage.getItem('legends-poker/ik') === '1'
+    if (q !== null) return q !== '0'
+    return localStorage.getItem('legends-poker/ik') !== '0'
   } catch {
-    return false
+    return true
   }
 }
 

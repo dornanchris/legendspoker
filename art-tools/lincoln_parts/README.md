@@ -128,3 +128,11 @@ drawing shows only close up.
 - The hands that hold a cigar (87, 91, 94, 97) are not his; leave them out.
 - Heads 11 (nearly front-on) and 12 (facing the other way) are not used.
 - The cards have a red back, not Death's; hide them.
+
+## The IK arm (retired)
+
+`ik_split.py` cut his check arm into upper arm, forearm and pointing hand for
+the IK prototype, beside Washington's arm built from hands drawn as parts. The
+owner chose Washington's way; Lincoln's cast entry no longer loads `ik.json`,
+so his old clips play. The script, `ik.json` and the `ik_*` images stay as a
+record (`npx tsx web/puppet/ik-check.ts lincoln` still checks them).

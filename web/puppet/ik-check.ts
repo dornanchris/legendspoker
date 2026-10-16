@@ -1,8 +1,8 @@
 /**
  * The IK prototype's numbers, without a browser:  npx tsx web/puppet/ik-check.ts [id ...]
  *
- * Every `_ik` clip of each puppet (lincoln and washington by default), sampled
- * every 5 ms: a zero offset gives exactly the rest matrices; the upper arm and
+ * Every `_ik` clip of each puppet (washington by default; lincoln's retired arm
+ * still checks by name), sampled every 5 ms: a zero offset gives exactly the rest matrices; the upper arm and
  * forearm meet at the elbow and the forearm and hand at the wrist at every
  * moment; the bones never stretch; every hand state the clip shows exists; the
  * clip ends at rest. Where the chain has a fingertip (Lincoln's), check_ik's
@@ -16,7 +16,7 @@ import { apply, type Mat } from './rig.js'
 
 const I: Mat = [1, 0, 0, 1, 0, 0]
 const near = (a: [number, number], b: [number, number]) => Math.hypot(a[0] - b[0], a[1] - b[1])
-const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['lincoln', 'washington']
+const ids = process.argv.slice(2).length ? process.argv.slice(2) : ['washington']
 const fails: string[] = []
 
 for (const id of ids) {

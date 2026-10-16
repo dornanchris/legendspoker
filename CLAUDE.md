@@ -364,16 +364,11 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 
 **Not started:** Rive integration, recorded audio and music, Capacitor + a
 real device.
-**Rive, by a hired artist (the owner's direction):** Teddy Roosevelt first.
-`art-tools/roosevelt_parts/RIVE_PARTS.md` has the prompts for drawing him
-once as parts; the artist's brief is the owner's Claude Doc "Teddy Roosevelt:
-Animation Brief". Essentials only (the owner: 40 characters, not 2,000
-animations): a rig that breathes, blinks, glances and talks, and 13
-animations (4 actions, 3 results, 3 tells and their decoys); empty hands, the
-game moves cards and chips; no peek, and a knocked-out character says a line
-and fades out. More later, once it works. Any versions of an
-action must be picked by public information or at random, never by the
-character's cards (rule 2).
+**Rive is shelved** (the owner: a hired animator is not affordable). The
+brief and parts prompts written for one stay as a record
+(`art-tools/roosevelt_parts/RIVE_PARTS.md`, `ANIMATION_BRIEF.md`, and his
+six drawn parts sheets in `sources/rive_*.png`, which can feed his IK arms).
+Animation goes the way of Washington's IK arms (below).
 
 **Art direction (the owner's calls, from the FDR and Lincoln tests):** 2D
 cut-out puppets in the bright cartoon style of those tests, not the dark
@@ -559,19 +554,19 @@ wordless fidgets and decoys (`fidgets`). Clips run at the pace setting, are
 never started under fast-forward or in a resume's catch-up, and an idle
 never interrupts anything; Reduce motion stops sway and breath. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
-**The IK prototype (the owner's test of smoother motion before Rive or Unity;
-Lincoln and Washington, off unless `?ik=1`):** a two-bone IK arm on the same
-Canvas 2D puppet player (`web/puppet/ik.ts`, `web/puppet/README.md`). Two ways
-to make the parts, kept side by side for the owner to compare: Lincoln's arm is
-cut from his existing check-arm image (`art-tools/lincoln_parts/ik_split.py`;
-`check_ik` only), Washington's hands were drawn as parts (the rigging-parts
-sheet, `art-tools/washington_parts/RIG_PARTS.md` and `ik_build.py`; eight `_ik`
-clips: check, tap, peek, call, fold, show, square, talk). `#/iktest` seats them
-together (Lincoln seat 1, Washington mirrored in seat 4; `?clip=call`). The
-elbow bends to put the hand on the felt and returns exactly to rest; a
-cut-short clip on an IK puppet hands back over 0.15 s instead of snapping.
-`npx tsx web/puppet/ik-check.ts` checks both. Awaiting the owner's review
-before any other puppet uses it.
+**IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the
+same Canvas 2D puppet player (`web/puppet/ik.ts`, `web/puppet/README.md`),
+ON by default (`?ik=0` for the old clips). Two ways to make the parts were
+tried side by side, and the owner chose hands DRAWN AS PARTS: Washington's
+rigging-parts sheet (`art-tools/washington_parts/RIG_PARTS.md`, built by
+`ik_build.py`; eight `_ik` clips: check, tap, peek, call, fold, show,
+square, talk) over Lincoln's arm cut from a pose drawing (retired: his cast
+entry no longer loads it; `ik_split.py` and his `ik.json` stay as a record).
+The elbow bends to put the hand on the felt and returns exactly to rest; a
+cut-short clip hands back over 0.15 s instead of snapping; a chain's `under`
+image covers the smear a pose-built body has where the resting arm lay.
+`#/iktest` shows Washington in seats 1 and 4; `npx tsx web/puppet/ik-check.ts`
+checks every `_ik` clip. Each next character needs a rigging-parts sheet.
 **Layering rule for the table screen:** the room's table covers a puppet only
 below the puppet's own table line as well as below the rim (see
 `web/puppet/README.md`); the end seats' rim curves up above the drawn rail.

@@ -28,7 +28,7 @@ import * as sound from './sound.js'
  *   #/ledger/:tab/:id  the ledger
  *   #/settings  #/about  #/ending
  *   #/puppet/:id       the puppet bench (animation preview; not part of the game)
- *   #/iktest           the IK prototype on the real stage (?ik=1 / ?ik=0)
+ *   #/iktest           the IK arms on the real stage (?ik=0 for the old clips)
  */
 
 type Screen = (root: HTMLElement, params: string[]) => void | (() => void)

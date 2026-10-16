@@ -93,13 +93,14 @@ and drives the eyes, brows and mouth by hand. Space replays, B blinks, S speaks.
 
 Presentation only: the randomness is `Math.random`, never the game RNG.
 
-## The IK prototype (Lincoln and Washington, off by default)
+## IK arms (on by default; Washington's)
 
-`?ik=1` (or localStorage `legends-poker/ik` = 1) turns it on; without it every
-puppet, Lincoln included, plays exactly as before. `ik.ts` is a two-bone IK
-arm: `web/art/lincoln/ik.json` (written by `art-tools/lincoln_parts/ik_split.py`,
-which cuts his EXISTING check-arm image into upper arm, forearm and hand, no
-new drawing) gives the shoulder, elbow and wrist and the bend side. A clip's
+`?ik=0` (or localStorage `legends-poker/ik` = 0) turns them off, and every
+puppet plays exactly as before. Only puppets whose cast entry has `ik` use
+them (Washington today). `ik.ts` is a two-bone IK
+arm: `web/art/<id>/ik.json` (Washington's is written by
+`art-tools/washington_parts/ik_build.py`) gives each chain's shoulder, elbow
+and wrist, the bend side and its images (upper arm, forearm, a hand per state). A clip's
 `ik` tracks move the wrist (x, y offsets in rig pixels = table space, so a
 mirrored seat mirrors the target) and turn the hand (`rot`); `ikSwaps` choose
 the hand image; while a chain shows a hand it stands in for the slots in
@@ -110,14 +111,14 @@ zero ends at rest. The player plays `<name>_ik` for `<name>` when it has one
 back to rest over `release` s (0.15) instead of snapping. Everything runs on
 the player's clock (the stage's pace, fast-forward rules and Reduce motion
 unchanged). Checks: `npx tsx web/puppet/ik-check.ts [id ...]` (every `_ik`
-clip: joints, lengths, reach, hand states, exact rest; Lincoln's finger on the
-felt), `#/iktest` on the real stage (`?seats=`, `?clip=`), and
+clip: joints, lengths, reach, hand states, exact rest), `#/iktest` on the real stage (`?seats=`, `?clip=`), and
 `art-tools/build/ik_shots.cjs` / `ik_blend.cjs` / `ik_clips.cjs` (phone-size
 stills of both seats, frame cost, memory, hand-back smoothness, every clip).
 
-**Two ways to make the arm, side by side for the owner to compare.** Lincoln's
-is CUT from a pose drawing he already had (one hand, the point; his laced rest
-hands cannot be parted, so the hand swaps in and out at the ends). Washington's
+**Two ways to make the arm were compared; the owner chose Washington's.** Lincoln's
+was CUT from a pose drawing he already had (one hand, the point; his laced rest
+hands cannot be parted, so the hand swapped in and out at the ends); it is
+retired, his cast entry no longer loads it. Washington's
 hands were DRAWN as parts (`art-tools/washington_parts/RIG_PARTS.md`, built by
 `ik_build.py`): nine right hands, each with its own cuff, laid on the end of his
 rest forearm by the wrist, so all eight of his right-hand clips have an `_ik`
