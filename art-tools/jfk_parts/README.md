@@ -5,7 +5,7 @@ kit for `pose_rig.py`: no sunglasses, nothing in his mouth, empty hands, the
 big win (B3) and crushing loss (D4) among the 24 poses. Everything below is
 the old one-face seat_puppet kit, retired once the redraw is built.
 
-Cut with `split_parts.py` from one sheet (`sources/jfk_sheet.png`), in
+Cut with `split_parts.py` from one sheet (`sources/jfk_sheet_old.png`), in
 Lincoln's flat cartoon style: navy suit, sunglasses, cigarette. `jfk/` holds every piece, a numbered
 `_contact_sheet.png` and `parts.json` with a label on each.
 
@@ -29,7 +29,7 @@ give it a set.
 
 ## Three-quarter expression sheet
 
-Attach this sheet (`sources/jfk_sheet.png`) and Lincoln's
+Attach this sheet (`sources/jfk_sheet_old.png`) and Lincoln's
 (`art-tools/lincoln_parts/sources/lincoln_sheet.png`):
 
 ```
