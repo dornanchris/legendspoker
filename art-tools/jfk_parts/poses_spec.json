@@ -8,7 +8,7 @@
  "recap": "a young, lean man in his forties in a narrow navy two-button suit, a white shirt and a thin dark tie, thick reddish-brown hair swept to one side, a broad, easy grin, and a carved coconut shell paperweight on the felt beside his right hand",
  "keep": " The coconut shell sits on the felt beside his right hand (the left of the picture) unless the pose says otherwise.",
  "no": "No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.",
- "intro": "The hidden visitor at the White House (see CLAUDE.md): he walks in when the player wins a pot holding a three and a five while a chair is empty, so he can sit in ANY of the four chairs. Drawn facing the viewer's right and MIRRORED by the game for the other side. Built the way the Pirate Cove and Camelot casts are (`art-tools/pose_rig.py`), style-locked. This replaces the earlier seat_puppet kit (`jfk/`, `jfk_rig/`), which had one face, sunglasses and a cigarette.\n\nHis look, from his character file: young and lean, a narrow navy two-button suit, a thin dark tie, thick reddish-brown hair swept to one side, a broad easy grin. No sunglasses and nothing in his mouth (FDR's holder is the table's one thing in a mouth). His prop is the PT-109 coconut shell he kept on his desk as a paperweight, on the felt by his right hand.\n\nRuled out (his character file): any film or television portrayal and any actor's likeness. Layout from Lancelot's character sheet, style from Washington's pose sheet A.\n\nTags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: rocking back in his chair (strong) beside running a hand through his hair; straightening his tie (bluffing) beside chopping the air mid-thought; a hand to the small of his back (weak) beside tapping the coconut shell. C6 is his `arrive` clip, played as he sits down.",
+ "intro": "The hidden visitor at the White House (see CLAUDE.md): he walks in when the player wins a pot holding a three and a five while a chair is empty, so he can sit in ANY of the four chairs. Drawn facing the viewer's right and MIRRORED by the game for the other side. Built the way the Pirate Cove and Camelot casts are (`art-tools/pose_rig.py`), style-locked. This replaces the earlier seat_puppet kit (`jfk/`, `jfk_rig/`), which had one face, sunglasses and a cigarette.\n\nHis look, from his character file: young and lean, a narrow navy two-button suit, a thin dark tie, thick reddish-brown hair swept to one side, a broad easy grin. No sunglasses and nothing in his mouth (FDR's holder is the table's one thing in a mouth). His prop is the PT-109 coconut shell he kept on his desk as a paperweight, on the felt by his right hand.\n\nRuled out (his character file): any film or television portrayal and any actor's likeness. Layout from Lancelot's character sheet, style from Washington's pose sheet A.\n\nTags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: rocking back in his chair (strong) beside running a hand through his hair; straightening his tie (bluffing) beside chopping the air mid-thought; a hand to the small of his back (weak) beside tapping the coconut shell. C6 is his `arrive` clip, played as he sits down. B3 and D4 are the big win and the crushing loss (no separate reactions sheet); his hands are empty in every pose (the game moves the cards and chips); knocked out, he says his line and fades from the chair, so no exit pose.",
  "table": [
   [
    "A1",
@@ -17,7 +17,7 @@
   ],
   [
    "A2",
-   "Peeking at his cards (right hand)",
+   "Peek: right hand cupped low over the felt, thumb lifting",
    "MECH"
   ],
   [
@@ -27,33 +27,33 @@
   ],
   [
    "A4",
-   "Call: slides a short stack forward",
+   "Call: right hand pushes forward along the felt",
    "MECH"
   ],
   [
    "A5",
-   "Bet: sets a stack down, confident",
+   "Bet: leans in, right hand pushed well forward, confident",
    "MECH"
   ],
   [
    "A6",
-   "Fold: tosses his cards down, easy",
+   "Fold: an easy flick of the right hand toward the middle",
    "MECH"
   ],
   [
    "B1",
-   "All in: both hands push his whole stack, a grin",
+   "All in: both hands push forward together, a grin",
    "MECH"
   ],
   [
    "B2",
-   "Show: turns his cards over",
+   "Show: right hand turns palm up, as if turning cards over",
    "MECH"
   ],
   [
    "B3",
-   "Collect: both arms drawing the pot in",
-   "MECH"
+   "Big win: both hands raised high, a broad grin (`win_big`)",
+   "BEAT"
   ],
   [
    "B4",
@@ -117,7 +117,7 @@
   ],
   [
    "D4",
-   "Won a pot: a broad grin, drawing the chips in",
+   "Crushing loss: a hand over his eyes, a rueful shake of the head (`lose_big`)",
    "BEAT"
   ],
   [
@@ -127,7 +127,7 @@
   ],
   [
    "D6",
-   "Knocked out: rises, straightens his tie, a nod",
+   "Laughing, head back a little",
    "BEAT"
   ]
  ],
@@ -136,16 +136,16 @@
  "sheets": {
   "A": [
    "At rest: both forearms lying along the table's edge, his hands resting on the felt in front of him, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; the coconut shell on the felt beside his right hand; a slight, confident smile, mouth closed",
-   "Peeking at his cards: his right hand cupped over two cards on the felt, thumb lifting the near corner, eyes down",
+   "Peeking at his cards: his right hand cupped low over the felt in front of him, thumb lifted a little, as if shielding something small; eyes down",
    "Checking: two fingers of his right hand tapping the felt",
-   "Calling: his right hand sliding a short stack of chips forward",
-   "Betting: his right hand setting a stack of chips down well forward, confident",
-   "Folding: his right hand tossing two cards down face down, easy"
+   "Calling: his right hand flat, fingertips leading, pushing forward along the felt",
+   "Betting: leaning in, his right hand pushed well forward along the felt, confident",
+   "Folding: an easy flick of his right hand toward the middle of the table, fingers spread"
   ],
   "B": [
-   "All in: both hands pushing his whole stack of chips forward, grinning",
-   "Showing: his right hand turning two cards face up; the card faces are BLANK white, no ranks, no suits",
-   "Collecting the pot: both forearms out on the felt, drawing a pile of chips in",
+   "All in: both hands pushing forward along the felt together, grinning",
+   "Showing: his right hand turning palm up from the felt, as if turning something over",
+   "A big win: both hands raised high above his head, a broad, delighted grin, chin up",
    "Rocking back in his chair, easy and relaxed, shoulders back, his hands sliding back to the table's edge",
    "Running his right hand back through his hair",
    "Straightening the knot of his tie with his right hand; his left as at rest"
@@ -162,10 +162,11 @@
    "Talking: his right hand chopping the air, mid-word",
    "Facing a big bet: a level, steady look, considering; arms as at rest",
    "Lost a pot: a rueful half-smile, a small shrug; arms as at rest",
-   "Won a pot: a broad grin, his right hand drawing a few chips toward him",
+   "A crushing loss: sitting back, one hand over his eyes, a rueful shake of the head; his other hand on the table's edge",
    "Down to two players: leaning in on both forearms, eyes level",
-   "Knocked out: rising from his seat, straightening his tie with his right hand, a small nod to the table"
+   "Laughing at the table's joke, head back a little, one hand flat on the felt"
   ]
  },
- "face": "Character sheet for 2D animation rigging: Kennedy's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head. Draw that head once, top left, with the neck, the collar and the knot of the tie, as the reference, mouth closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.\n\n- His eyes with the lids half closed; closed; looking toward the viewer; looking down at the table; looking up; narrowed, considering (one piece each, both eyes with the skin around them)\n- His brows raised; his brows drawn down (one piece each, both brows)\n- Lower-face patches, each the mouth with the skin around it (he is clean-shaven), cut straight across just under the nose and again a little below the lower lip: closed at rest; open \"ah\"; wide \"ee\"; round \"oh\"; pursed \"oo\"; lips pressed \"m\"; lower lip under the teeth \"f\"; tongue tip behind the teeth \"l\"; a broad grin with teeth; a rueful half-smile\n- His head turned toward the viewer, nearly front-on"
+ "face": "Character sheet for 2D animation rigging: Kennedy's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head. Draw that head once, top left, with the neck, the collar and the knot of the tie, as the reference, mouth closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.\n\n- His eyes with the lids half closed; closed; looking toward the viewer; looking down at the table; looking up; narrowed, considering (one piece each, both eyes with the skin around them)\n- His brows raised; his brows drawn down (one piece each, both brows)\n- Lower-face patches, each the mouth with the skin around it (he is clean-shaven), cut straight across just under the nose and again a little below the lower lip: closed at rest; open \"ah\"; wide \"ee\"; round \"oh\"; pursed \"oo\"; lips pressed \"m\"; lower lip under the teeth \"f\"; tongue tip behind the teeth \"l\"; a broad grin with teeth; a rueful half-smile\n- His head turned toward the viewer, nearly front-on",
+ "empty_hands": true
 }

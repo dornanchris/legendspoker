@@ -33,9 +33,17 @@ CLAUDE.md first (the rules and the state); this is the HOW and the QUEUE.
   MOOD from `art-tools/style/gothic_mood.png` (the owner's mock-up; the prompt
   forbids its Universal monster, its pumpkin and its interface). The Horseman
   is the test: his sheet is APPROVED (the owner's tweaks: plate armour, skull
-  bosses, a jagged-toothed carving) and is the style image from here on. OPEN (the
-  owner's call): which tables move to it, and whether Van Helsing, the Wolf
-  Man and the Cheshire Cat are redrawn.
+  bosses, a jagged-toothed carving) and is the style image from here on.
+  **Settled (the owner: "Gothic Style yes"): from Transylvania on** (its cast
+  and the Station's). Van Helsing, the Wolf Man and the Cheshire Cat are to be
+  redrawn in it later (FIX-LATER.md); the hidden guests keep the presidents'
+  cartoon (JFK sits at the White House; Loki is met mostly at early tables).
+- **Make the next characters as they are needed, then go back and fix**
+  (the owner). Fixes owed are kept in `FIX-LATER.md`, not in anyone's memory.
+- **Lean into stop motion** (the owner): more drawn whole-figure poses rather
+  than more bones. New kits put the big win and the crushing loss inside their
+  24 poses (JFK and Loki: B3 and D4) and draw empty hands (`"empty_hands":
+  true` in the spec: the game's flights move the cards and chips).
 
 ## One character, start to finish
 
@@ -120,10 +128,11 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
 | Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
-| Transylvania | built | Van Helsing | the Wolf Man | the Monster (prompts in `monster_parts/POSES.md`; build him a quarter bigger), the Headless Horseman (`headless_horseman_parts/POSES.md`), then Dracula |
+| Transylvania (gothic from here) | built | Van Helsing (redraw later) | the Wolf Man (old style: redraw first, FIX-LATER.md) | the Monster (prompts in `monster_parts/POSES.md`; build him a quarter bigger), the Headless Horseman (`headless_horseman_parts/POSES.md`), then Dracula |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
-| Hidden (later, the owner: "worry about the Easter egg people at the end") | The Pyre: prompt | | | JFK, the Phoenix, Loki; the Stranger (online avatar) |
+| Hidden guests: **next** (the owner: they keep coming up in testing) | (they sit in the table's room) | | | JFK (`jfk_parts/POSES.md`, redrawn: empty hands, B3 big win, D4 crushing loss), Loki (`loki_parts/POSES.md`) |
+| Hidden (later) | The Pyre: prompt | | | the Phoenix; the Stranger (online avatar) |
 
 Seats at Rome: 1 Spartacus, 2 the Pope, 3 Cerberus (mirrored, giant),
 4 Scipio (mirrored); Caesar arrives into the first empty chair (any side).
@@ -135,17 +144,16 @@ Seats at Rome: 1 Spartacus, 2 the Pope, 3 Cerberus (mirrored, giant),
   bareheaded kit stays). Paget's ear-flapped travelling cap (flaps
   tied up, no cape) as a second puppet, the way the Green Knight has
   `green_knight_bare` (`RETURNED` in `web/puppet/cast.ts`). Same poses, same
-  tells, same pipe: a look, never a different read. Proposed rule (the owner
-  to confirm; the switch itself is game work, for another thread): bareheaded
-  at Baker Street, his own sitting room; in the cap everywhere else (the
-  Champions' tables, open tables), where he is travelling, which in practice
-  means once you have beaten him. Doyle's own logic, so it needs no menu.
+  tells, same pipe: a look, never a different read. The owner's rule: an
+  earned skin. Once Holmes is unlocked, beating him heads up earns the hat.
+  The unlock is game work, for another thread (FIX-LATER.md); this thread only
+  builds the skins.
 
 ## Starting a new thread
 
 Paste this to begin:
 
 > Continue the Legends Poker art pipeline on branch `claude/cool-curie-2nbhme`.
-> Read CLAUDE.md and ART-PIPELINE.md first. Then: build the characters whose
+> Read CLAUDE.md, ART-PIPELINE.md and FIX-LATER.md first. Then: build the characters whose
 > sheets are in (see the queue), and give me the next character's prompts in
 > full in chat.

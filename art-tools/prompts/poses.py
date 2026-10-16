@@ -45,7 +45,9 @@ for i, k in enumerate(k for k in 'ABCD' if k in s['sheets']):   # the avatar has
     poses = s['sheets'][k]
     intro = sheet_intro(True if i == 0 else False)
     body = "\n".join(f"{n+1}. {p}" for n, p in enumerate(poses))
-    tail = ("Cards have plain dark backs. " if k != 'C' else "") + "Pure white background around each pose; poses do not touch. No text, no numbers, no labels. " + NO
+    # empty hands (the owner: the game's own cards and chips do that work): no cards or chips drawn at all
+    cards = "No cards and no chips anywhere: the hands are empty. " if s.get('empty_hands') else ("Cards have plain dark backs. " if k != 'C' else "")
+    tail = cards + "Pure white background around each pose; poses do not touch. No text, no numbers, no labels. " + NO
     out.append(f"### Pose sheet {k}\n")
     out.append(block(intro + "\n\n" + body + "\n\n" + tail))
 if s.get('face'):                                             # a faceless figure has no face sheet

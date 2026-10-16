@@ -6,19 +6,19 @@ His look, from his character file: young and lean, a narrow navy two-button suit
 
 Ruled out (his character file): any film or television portrayal and any actor's likeness. Layout from Lancelot's character sheet, style from Washington's pose sheet A.
 
-Tags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: rocking back in his chair (strong) beside running a hand through his hair; straightening his tie (bluffing) beside chopping the air mid-thought; a hand to the small of his back (weak) beside tapping the coconut shell. C6 is his `arrive` clip, played as he sits down.
+Tags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: rocking back in his chair (strong) beside running a hand through his hair; straightening his tie (bluffing) beside chopping the air mid-thought; a hand to the small of his back (weak) beside tapping the coconut shell. C6 is his `arrive` clip, played as he sits down. B3 and D4 are the big win and the crushing loss (no separate reactions sheet); his hands are empty in every pose (the game moves the cards and chips); knocked out, he says his line and fades from the chair, so no exit pose.
 
 | # | Pose | Tag |
 |---|---|---|
 | A1 | Rest: forearms on the table's edge, hands apart, the coconut shell on the felt by his right hand | IDLE |
-| A2 | Peeking at his cards (right hand) | MECH |
+| A2 | Peek: right hand cupped low over the felt, thumb lifting | MECH |
 | A3 | Check: two fingers tap the felt | MECH |
-| A4 | Call: slides a short stack forward | MECH |
-| A5 | Bet: sets a stack down, confident | MECH |
-| A6 | Fold: tosses his cards down, easy | MECH |
-| B1 | All in: both hands push his whole stack, a grin | MECH |
-| B2 | Show: turns his cards over | MECH |
-| B3 | Collect: both arms drawing the pot in | MECH |
+| A4 | Call: right hand pushes forward along the felt | MECH |
+| A5 | Bet: leans in, right hand pushed well forward, confident | MECH |
+| A6 | Fold: an easy flick of the right hand toward the middle | MECH |
+| B1 | All in: both hands push forward together, a grin | MECH |
+| B2 | Show: right hand turns palm up, as if turning cards over | MECH |
+| B3 | Big win: both hands raised high, a broad grin (`win_big`) | BEAT |
 | B4 | Rocks back in his chair, easy | TELL |
 | B5 | Runs a hand through his hair (decoy for B4) | IDLE |
 | B6 | Straightens his tie | TELL |
@@ -31,9 +31,9 @@ Tags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: roc
 | D1 | Talking: one hand chopping the air | BEAT |
 | D2 | Facing a big bet: a level look, considering | BEAT |
 | D3 | Lost a pot: a rueful half-smile | BEAT |
-| D4 | Won a pot: a broad grin, drawing the chips in | BEAT |
+| D4 | Crushing loss: a hand over his eyes, a rueful shake of the head (`lose_big`) | BEAT |
 | D5 | Heads up: leaning in on both forearms | BEAT |
-| D6 | Knocked out: rises, straightens his tie, a nod | BEAT |
+| D6 | Laughing, head back a little | BEAT |
 
 ## Prompts
 
@@ -70,13 +70,13 @@ Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: waist up
 IMPORTANT for every pose: the arm that the pose does not mention stays EXACTLY as in pose 1, same position, same hand. The coconut shell sits on the felt beside his right hand (the left of the picture) unless the pose says otherwise. Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 
 1. At rest: both forearms lying along the table's edge, his hands resting on the felt in front of him, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; the coconut shell on the felt beside his right hand; a slight, confident smile, mouth closed
-2. Peeking at his cards: his right hand cupped over two cards on the felt, thumb lifting the near corner, eyes down
+2. Peeking at his cards: his right hand cupped low over the felt in front of him, thumb lifted a little, as if shielding something small; eyes down
 3. Checking: two fingers of his right hand tapping the felt
-4. Calling: his right hand sliding a short stack of chips forward
-5. Betting: his right hand setting a stack of chips down well forward, confident
-6. Folding: his right hand tossing two cards down face down, easy
+4. Calling: his right hand flat, fingertips leading, pushing forward along the felt
+5. Betting: leaning in, his right hand pushed well forward along the felt, confident
+6. Folding: an easy flick of his right hand toward the middle of the table, fingers spread
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.
 ```
 
 ### Pose sheet B
@@ -86,14 +86,14 @@ Character pose sheet for 2D animation reference: John F. Kennedy, exactly as on 
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). The coconut shell sits on the felt beside his right hand (the left of the picture) unless the pose says otherwise. Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 
-1. All in: both hands pushing his whole stack of chips forward, grinning
-2. Showing: his right hand turning two cards face up; the card faces are BLANK white, no ranks, no suits
-3. Collecting the pot: both forearms out on the felt, drawing a pile of chips in
+1. All in: both hands pushing forward along the felt together, grinning
+2. Showing: his right hand turning palm up from the felt, as if turning something over
+3. A big win: both hands raised high above his head, a broad, delighted grin, chin up
 4. Rocking back in his chair, easy and relaxed, shoulders back, his hands sliding back to the table's edge
 5. Running his right hand back through his hair
 6. Straightening the knot of his tie with his right hand; his left as at rest
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.
 ```
 
 ### Pose sheet C
@@ -110,7 +110,7 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind t
 5. A broad, warm grin at the table; arms as at rest
 6. Just sitting down at the table, his left hand still in his jacket pocket, his right hand on the table's edge, looking round with a grin
 
-Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.
 ```
 
 ### Pose sheet D
@@ -123,11 +123,11 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind t
 1. Talking: his right hand chopping the air, mid-word
 2. Facing a big bet: a level, steady look, considering; arms as at rest
 3. Lost a pot: a rueful half-smile, a small shrug; arms as at rest
-4. Won a pot: a broad grin, his right hand drawing a few chips toward him
+4. A crushing loss: sitting back, one hand over his eyes, a rueful shake of the head; his other hand on the table's edge
 5. Down to two players: leaning in on both forearms, eyes level
-6. Knocked out: rising from his seat, straightening his tie with his right hand, a small nod to the table
+6. Laughing at the table's joke, head back a little, one hand flat on the felt
 
-Cards have plain dark backs. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No sunglasses, no hat, no cigar or cigarette, nothing in his mouth, no chair.
 ```
 
 ### Face overlay sheet

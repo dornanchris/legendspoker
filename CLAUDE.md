@@ -4,7 +4,9 @@ Read this before touching anything. It is the short version of the decisions
 that are already settled, so we don't re-litigate them every session.
 
 **Art work (drawing and building the cast): read `ART-PIPELINE.md`** for the
-workflow, the build steps and the queue.
+workflow, the build steps and the queue, and `FIX-LATER.md` for what is owed
+(the owner: make the next characters as they are needed, then go back and
+fix).
 
 ## WHAT THIS IS
 
@@ -134,6 +136,7 @@ web/
   serve.mjs       dependency-free static server; Phase 4 replaces it with Vite
 ROSTER.md         GENERATED casting book: never edit by hand
 ART-PIPELINE.md   the art workflow, step by step, and the queue of characters
+FIX-LATER.md      what we go back to: redraws, layout bugs, owed decisions
 art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   cut_sheet.py    split_parts plus each kit's fixes as data (<id>_parts/cut.json):
@@ -148,6 +151,7 @@ art-tools/
   jfk_parts/      JFK, the White House's hidden visitor: POSES.md (the
                   style-locked redraw); jfk/ and jfk_rig/ are the old one-face kit
   phoenix_parts/  the Phoenix, the hidden heads-up opponent: POSES.md only
+  loki_parts/     Loki, the uninvited guest: POSES.md only (spoilers)
   avatar_parts/   the Stranger, the default ONLINE avatar (online is not
                   designed yet): POSES.md only, cosmetic, no tells (rule 3)
   socrates_parts/, leonidas_parts/, medusa_parts/, cyclops_parts/,
@@ -455,8 +459,9 @@ bicorne (the owner's call over a top hat: less recognisable).
 bareheaded in his own sitting room (Javert asks about it, in banter). **His
 deerstalker look is built too** (`#/puppet/sherlock_deerstalker`, 24 clips,
 `"of": "sherlock"` in its anim.json, like `green_knight_bare`): the owner's
-unlockable second look. Nothing seats it yet; the proposed rule (bareheaded
-at Baker Street, the cap everywhere else) is game work, for another thread.
+unlockable second look: once Holmes is unlocked, beating him heads up earns
+the hat (the owner). Nothing seats it yet; that is game work, for another
+thread (FIX-LATER.md).
 **The Cheshire Cat takes Alice's chair** (seat 3, mirrored; the owner's call,
 ENGINE_VERSION 12: the Alice sheets drew as Disney's). The design doc had
 rejected him as unreadable; his tells answer that: his tail, eyes blinking one
@@ -946,8 +951,9 @@ Order within the phase, cheapest-risk first:
 3. Capacitor scaffolding (and Vite/React only if they earn it), then the
    device test.
 
-Also owed before Phase 5: a human edit pass on the draft dialogue, and the
-open naming decisions (the AI, the Pope, and "The Wolf Man" — see ASSETS.md).
+Also owed before Phase 5: a human edit pass on the draft dialogue. The
+naming decisions are settled (the owner): "The AI" stays the AI, the Pope is
+Alexander VI, "The Wolf Man" stays (ASSETS.md).
 
 **Dev machine is Windows, so iOS is not available** — Capacitor's iOS target
 needs a Mac with Xcode plus $99/yr. Android is $25 one-off and works from

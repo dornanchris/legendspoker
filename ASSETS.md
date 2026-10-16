@@ -85,7 +85,7 @@ not. Every character's own note lives in its data file
 | Character | Safe source | Must not resemble |
 |---|---|---|
 | Frankenstein's Monster | Shelley, 1818: eight feet, yellow skin, black hair, articulate, well read | Universal's 1931 makeup — flat head, neck bolts, green skin, grunting |
-| The Wolf Man | European werewolf folklore | Universal's *The Wolf Man* (1941): Larry Talbot, the silver cane, the curse poem. ⚠ Consider a different display name — see below |
+| The Wolf Man | European werewolf folklore | Universal's *The Wolf Man* (1941): Larry Talbot, the silver cane, the curse poem. Display name "The Wolf Man" kept (the owner) — see below |
 | Dracula | Stoker, 1897; the 1927 stage play's cape is now PD in the US | Bela Lugosi's likeness (his estate has asserted rights); Universal's film designs |
 | Davy Jones | Sailors' folklore — the devil of the deep, Davy Jones' locker | Disney's tentacle face, the organ, the heart in a chest |
 | The Cheshire Cat | Carroll, 1865; Tenniel's illustrations | Disney's 1951 pink-and-purple cat; the 2010 Burton design |
@@ -104,7 +104,7 @@ not. Every character's own note lives in its data file
 | The Martian | Wells, 1898 | *Mars Attacks* (brain in a fishbowl helmet); Marvin the Martian |
 | The Robot | Retro-futurist archetype; the word is Čapek's (1920, PD) | Robby the Robot (MGM, 1956); Gort; the *Lost in Space* robot |
 | The Astronaut | Archetype | NASA insignia (use is restricted); any real astronaut |
-| The AI | Our own design: a pale white lens, amber emergency light | HAL 9000 — the name, the red eye, the lines. It still has no name: an open decision |
+| The AI | Our own design: a pale white lens, amber emergency light | HAL 9000 — the name, the red eye, the lines. Its name is "the AI" (the owner: "The AI is fine") |
 | Death | Folk Grim Reaper; the medieval danse macabre (Death playing chess is a c.1480 church painting) | Pratchett's Death (small caps, the horse, cats, curry); Bergman's *Seventh Seal*; Gaiman's Death |
 
 `npm run check:data` has a tripwire list for the lines most likely to slip in
@@ -114,4 +114,6 @@ it whenever a new trap is found.
 **Open naming question.** "The Wolf Man" as a *name* is the title of a
 Universal film, and Universal guards its monsters' trade dress. The character
 is the folklore werewolf and should be safe, but "The Werewolf" as the
-display name removes the question entirely. Decide before any store listing.
+display name removes the question entirely. **Decided (the owner): "The Wolf
+Man" stays** ("Wolfman is perfect"); the folklore werewolf, nothing of
+Universal's. Revisit only if a store listing raises it.

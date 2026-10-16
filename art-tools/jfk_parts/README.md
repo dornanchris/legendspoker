@@ -1,5 +1,10 @@
 # John F. Kennedy's parts
 
+**Being redrawn:** `POSES.md` (from `poses_spec.json`) is the style-locked
+kit for `pose_rig.py`: no sunglasses, nothing in his mouth, empty hands, the
+big win (B3) and crushing loss (D4) among the 24 poses. Everything below is
+the old one-face seat_puppet kit, retired once the redraw is built.
+
 Cut with `split_parts.py` from one sheet (`sources/jfk_sheet.png`), in
 Lincoln's flat cartoon style: navy suit, sunglasses, cigarette. `jfk/` holds every piece, a numbered
 `_contact_sheet.png` and `parts.json` with a label on each.
