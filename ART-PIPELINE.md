@@ -130,7 +130,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
 | Transylvania: **live on the real table** (gothic from here) | built | all six (Van Helsing to redraw gothic; Jekyll, Hyde, the Wolf Man, the Horseman, Dracula) | | |
 | The Station: **live on the real table** | built (`?room=station`: the ceiling lens, the amber room after the turn) | all five (the Astronaut, the style baseline; the Robot; the AI, the Robot recoloured; the Martian; the Grey) | | |
-| Hall of Doors, Last Crossing: **live on the real table** | built (the Hall drawn twice: `champions_1`, `champions_2`; the dock house) | (cast reused; Death plays at the finale) | | |
+| Hall of Doors, Last Crossing: **live on the real table** | built (the Hall drawn twice: `champions_1`, `champions_2`; the dock house) | cast reused; the finale: the Stranger (the player, in their colour), Death as a player, Pravuil dealing | | |
 | Hidden guests (they sit in the table's room) | | JFK (redrawn), Loki | | |
 | Hidden: the Pyre: **live on the real table** | built (heads up) | the Phoenix | | |
 | **Art for single-player: complete.** Later | | | | Death and the Stranger as ONLINE avatars (three-quarter, any chair, cosmetic loops only: rule 3) when online is designed; the redraw list in FIX-LATER.md |

@@ -154,8 +154,9 @@ art-tools/
                   jfk/ and sources/jfk_sheet_old.png are the old one-face kit
   phoenix_parts/  the Phoenix, the hidden heads-up opponent (built; rig_spec.json)
   loki_parts/     Loki, the uninvited guest (built; rig_spec.json; spoilers)
-  avatar_parts/   the Stranger, the default ONLINE avatar (online is not
-                  designed yet): POSES.md only, cosmetic, no tells (rule 3)
+  avatar_parts/   the Stranger: the player's own figure at the finale, in
+                  their colour (accent masks), and later the default ONLINE
+                  avatar (built; cosmetic, no tells: rule 3)
   socrates_parts/, leonidas_parts/, medusa_parts/, cyclops_parts/,
                   odysseus_parts/  the Athens table (seats 1-4 and its late
                   champion): pose sheets, face sheet, pose_rig.json;
@@ -579,11 +580,18 @@ it burns down when knocked out. **Every room is built, and every table is
 staged on the real table screen** (`#/intro/<table>`): the Pyre (heads up: the
 Phoenix at seat 3's place, beside the rising sun), the Hall of Doors (two
 plates of one room: `champions_1` with the left doors open, `champions_2` the
-right), and the Last Crossing, where Death is the opponent: a room with
-`dealerPlays` draws his chair as the dealer's figure, hides the dealer's plate,
-and his player's clips the kit lacks are his dealer's (`art-tools/build/
-death_player.py`: call from bet, heads_up from steeple). A heads-up room gives
-its own chairs in pieces.json (`seats`). The single-player game's art is
+right), and the Last Crossing, in its own format (the owner's call): the one
+time the player is SEEN, the Stranger (`#/puppet/stranger`) in the left chair
+with the scarf, hat band and cuffs in the colour the player picks in Settings
+("Your colour": baked masks tinted at load, `web/puppet/accent.ts`); Death as a
+player (`#/puppet/death_player`, three-quarter, mirrored) in the right; and
+**Pravuil, the Recording Angel** (`#/puppet/pravuil`, front-on, the dealer's
+clips) dealing between them. "Pravuil keeps the books. Someone has to witness
+this." The room says so in data (`dealerId`, `dealerName`, `cast`, `you`,
+`youAs` in room.json, from pieces.json); Death's lines come from his chair
+wherever he is seated, and the Stranger acts out the player's own actions,
+peeks, wins and losses and fidgets at random: never a tell. A heads-up room
+gives its own chairs in pieces.json (`seats`). The single-player game's art is
 complete; Death and the Stranger as ONLINE avatars wait on online (FIX-LATER.md).
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact

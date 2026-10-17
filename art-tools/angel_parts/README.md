@@ -14,6 +14,7 @@ Build:
     python3 art-tools/build/pose_boxes.py art-tools/angel_parts
     python3 art-tools/build/rig_from_spec.py art-tools/angel_parts/rig_spec.json
     python3 art-tools/pose_rig.py art-tools/angel_parts/pose_rig.json
+    python3 art-tools/angel_parts/halo.py
     python3 art-tools/build/frames_sheet.py pravuil
     python3 art-tools/angel_parts/clips.py
     python3 art-tools/build/life.py
@@ -39,3 +40,7 @@ Quirks:
 
 Clips (17): deal_left, deal_right, deal_you, burn, flop, turn, shuffle, cut,
 rake, push_left, push_you, push_right, steeple, weary, look_up, quill, wings.
+
+`halo.py` clears the sheet's white from inside the halo ring of the rest
+body (the frames' own heads have it clear; otherwise the halo flickers white
+and dark as he deals). Re-run it after every pose_rig.py.

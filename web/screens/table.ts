@@ -158,6 +158,8 @@ export function tableScreen(root: HTMLElement): () => void {
   // before its own cast has puppets (like ?pace, a knob for looking, not a setting)
   const room = ROOMS[new URLSearchParams(location.search).get('room') ?? table.id]
   const staged = !!room && Stage.fits(room, active.seats.length) && active.seats.every((id) => !!PUPPETS[id])
+  /** The player is drawn in their own chair (the finale): their figure acts out what they do, as the others' do. */
+  const youSeen = staged && !!room?.data.you
 
   // ------------------------------------------------------------ DOM
 
@@ -172,7 +174,7 @@ export function tableScreen(root: HTMLElement): () => void {
     board: h('div', { class: 'board', 'aria-label': 'Community cards' }),
     pot: h('span', { class: 'pot-value' }, '0'),
     potPile: h('span', { class: 'pile', 'aria-hidden': 'true' }),
-    dealerName: h('span', { class: 'dealer-name' }, 'Death'),
+    dealerName: h('span', { class: 'dealer-name' }, room?.data.dealerName ?? 'Death'),
     fx: h('div', { class: 'fx', 'aria-hidden': 'true' }),
     youBet: betSpot(),
     youName: h('span', { class: 'you-name' }),
@@ -330,7 +332,7 @@ export function tableScreen(root: HTMLElement): () => void {
     if (!stage) return
     const g = stage.geometry()
     // plates as wide as the chairs are apart allows, and never off the screen
-    const xs = [...g.seats.entries()].filter(([i]) => i !== DEATH).map(([, s]) => s.x).sort((a, b) => a - b)
+    const xs = [...g.seats.entries()].filter(([i]) => i !== DEATH && i !== HUMAN_SEAT).map(([, s]) => s.x).sort((a, b) => a - b)
     const gap = Math.min(...xs.slice(1).map((x, i) => x - xs[i]))
     const plate = Math.max(104, Math.min(158 * plateScale, gap - 10))
     const width = els.stageCanvas.clientWidth
@@ -349,13 +351,9 @@ export function tableScreen(root: HTMLElement): () => void {
     }
     const d = g.seats.get(DEATH)!
     place(els.dealer, d, 64)
-    // where the dealer plays (the finale) his chair's plate is his: no second plate under it
-    const plays = !!room?.data.dealerPlays
-    els.dealer.style.visibility = plays ? 'hidden' : ''
-    const anchor = plays ? seatUI.get(1)?.root ?? els.dealer : els.dealer
     const mid = els.dealer.parentElement?.querySelector<HTMLElement>('.middle')
-    // the board under Death's plate, however tall the plate has grown
-    const below = anchor.offsetTop + anchor.offsetHeight + 6 * plateScale
+    // the board under the dealer's plate, however tall the plate has grown
+    const below = els.dealer.offsetTop + els.dealer.offsetHeight + 6 * plateScale
     if (mid) { mid.style.left = `${d.x}px`; mid.style.top = `${Math.max(d.line + 128 * g.k, below)}px` }
     els.deck.style.left = `${g.deck.x}px`
     els.deck.style.top = `${g.deck.y}px`
@@ -365,7 +363,9 @@ export function tableScreen(root: HTMLElement): () => void {
   /** Who sits in a chair as the stage draws them: the changed figure of someone who came back. */
   const changed = new Map<number, string>()
   function figureAt(seat: number): string {
-    return changed.get(seat) ?? seatIds[seat] ?? ''
+    if (seat === HUMAN_SEAT) return youSeen ? room?.data.youAs ?? 'stranger' : ''
+    const id = changed.get(seat) ?? seatIds[seat] ?? ''
+    return room?.data.cast?.[id] ?? id
   }
 
   function syncStage() {
@@ -458,6 +458,7 @@ export function tableScreen(root: HTMLElement): () => void {
       for (const id of seatIds) { const o = id ? CHARACTERS[id]?.other?.character : undefined; if (o) stage?.preload(o) }
     }
     layoutStage()
+    stage.accent = settings.accent
     stage.load(seatIds).catch(unstage)
     ;(window as any).__stage = stage
   }
@@ -645,7 +646,8 @@ export function tableScreen(root: HTMLElement): () => void {
     step(() => {
       log(logText, `say${speaker === 'death' ? ' death' : ''}${b.stage ? ' stage' : ''}`)
       if (ff) return
-      if (speaker === 'death') {
+      // where Death plays (the finale) he speaks from his chair, like anyone seated
+      if (speaker === 'death' && !seatIds.includes('death')) {
         speak(DEATH, b.text)
         els.dealerLine.textContent = `“${b.text}”`
         els.dealerLine.classList.remove('show')
@@ -936,7 +938,7 @@ export function tableScreen(root: HTMLElement): () => void {
           // each of them looks at what they were dealt, in their own time
           if (!instant) {
             for (const seat of seated) {
-              if (seat !== HUMAN_SEAT) later(() => cue(seat, 'peek', PRIO.tell), (dealTime + 300 + Math.random() * 1600) * paceScale)
+              if (seat !== HUMAN_SEAT || youSeen) later(() => cue(seat, 'peek', PRIO.tell), (dealTime + 300 + Math.random() * 1600) * paceScale)
             }
           }
           order.forEach((seat, k) => {
@@ -1013,7 +1015,7 @@ export function tableScreen(root: HTMLElement): () => void {
             ui.root.classList.add('acting')
             ui.last.textContent = describe(e.decision)
           }
-          if (!you) {
+          if (!you || youSeen) {
             act(e.seat, decision === 'fold' ? 'fold' : decision === 'check' ? 'check'
               : e.stacks[e.seat] === 0 ? 'all_in' : decision === 'call' ? 'call' : 'bet')
           }
@@ -1147,14 +1149,14 @@ export function tableScreen(root: HTMLElement): () => void {
             // a hand raking the pot in: that is the chips' job); at a
             // showdown, the ones who lost the main pot take it as they take it.
             const to = pot.winners[0]
-            const side = to === HUMAN_SEAT ? 'you' : stage?.geometry().seats.get(to)?.side === 'r' ? 'right' : 'left'
+            const side = to === HUMAN_SEAT && !youSeen ? 'you' : stage?.geometry().seats.get(to)?.side === 'r' ? 'right' : 'left'
             act(DEATH, `push_${side}`)
             for (const w of pot.winners) {
-              if (w !== HUMAN_SEAT && !reacted.has(w)) { reacted.add(w); act(w, winClip(w)) }
+              if ((w !== HUMAN_SEAT || youSeen) && !reacted.has(w)) { reacted.add(w); act(w, winClip(w)) }
             }
             if (contested && i === 0) {
               for (const { seat } of e.revealed) {
-                if (seat !== HUMAN_SEAT && !pot.winners.includes(seat)) act(seat, loseClip(seat, pot.amount), PRIO.tell)
+                if ((seat !== HUMAN_SEAT || youSeen) && !pot.winners.includes(seat)) act(seat, loseClip(seat, pot.amount), PRIO.tell)
               }
             }
             const label = real.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
@@ -1383,7 +1385,7 @@ export function tableScreen(root: HTMLElement): () => void {
     // business, and the decoys drawn beside each tell (MOTION-SPEC), so that
     // a gesture alone means nothing. Death only ever looks weary.
     if (!stage) return
-    for (const [i] of seatUI) {
+    for (const i of [...seatUI.keys(), ...(youSeen ? [HUMAN_SEAT] : [])]) {
       const fidgets = PUPPETS[figureAt(i)]?.anim.fidgets ?? []
       if (out.has(i) || !fidgets.length || Math.random() > 0.022) continue
       cue(i, fidgets[Math.floor(Math.random() * fidgets.length)], PRIO.idle)

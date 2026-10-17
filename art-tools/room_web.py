@@ -63,8 +63,9 @@ while x <= tx + tw:
 # seat 1 is on the player's left and the last seat on their right.
 SEATS = {'4': [[150, 0.52, 2], [470, 0.52, 2], [1130, 0.52, 2], [1440, 0.52, 2]]}
 # a room for a heads-up table gives its own chairs in pieces.json ("seats":
-# {"1": [[x, scale, sink]]}), and "dealer_plays" where the dealer is the
-# opponent (the finale: his chair is drawn as the dealer's figure)
+# {"1": [[x, scale, sink]]}); the finale also names its dealer ("dealer_id",
+# "dealer_name": Pravuil, while Death plays), swaps figures ("cast": Death as
+# a player) and seats the player ("you": [x, scale, sink], "you_as")
 _spec = json.load(open(os.path.join(SRC, 'pieces.json'))) if os.path.exists(os.path.join(SRC, 'pieces.json')) else {}
 SEATS = {**SEATS, **_spec.get('seats', {})}
 def cut_pieces():
@@ -126,7 +127,8 @@ json.dump({
     'dealer': [W / 2, 0.5, 2],
     # the deck under Death's right hand at rest, from his table line, in design px
     'deck': [45, 32],
-    **({'dealerPlays': True} if _spec.get('dealer_plays') else {}),
+    **{k: _spec[j] for j, k in (('dealer_id', 'dealerId'), ('dealer_name', 'dealerName'), ('cast', 'cast'),
+                                ('you', 'you'), ('you_as', 'youAs')) if j in _spec},
     **cut_pieces(),
 }, open(os.path.join(OUT, 'room.json'), 'w'), separators=(',', ':'))
 print('wrote', OUT)

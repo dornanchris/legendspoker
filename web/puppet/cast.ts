@@ -222,8 +222,14 @@ export type RoomData = {
   seats: Record<string, [number, number, number][]>
   dealer: [number, number, number]
   deck: [number, number]
-  /** The dealer is the opponent (the finale): his chair is drawn as the dealer's figure, at the dealer's spot. */
-  dealerPlays?: boolean
+  /** Who deals here, if not Death (the finale: Pravuil, while Death plays), and the name on the dealer's plate. */
+  dealerId?: string
+  dealerName?: string
+  /** Figures swapped for this room: whoever is dealt in as the key is drawn as the value (the finale: Death as a player). */
+  cast?: Record<string, string>
+  /** The player seen in their own chair (the finale only): [centre x, scale, sink], drawn as `youAs` in their colour. */
+  you?: [number, number, number]
+  youAs?: string
   /** Loose pieces of the room: placed ones have a centre x, a foot and a height (design px). */
   pieces?: Record<string, { img: string; aspect: number; x?: number; bottom?: number; h?: number }>
   /** The piece standing in the room until the late champion arrives, and the one after. */

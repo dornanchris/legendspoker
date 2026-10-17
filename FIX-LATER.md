@@ -49,25 +49,25 @@ is done, and say so in the commit.
   and the felt, so `art-tools/avatar_parts/accent.py` recolours them by hue
   (teal, crimson, gold, violet, ivory, emerald; `accents.png`). At build
   time, bake a mask of those pixels per image and tint it at runtime, or
-  bake one set per accent: online's design decides which.
-  **Death's player sheets are drawn too** (`art-tools/death_avatar_parts/
-  sources/`: character sheet, poses A, B, C and the face sheet); his puppet
-  is not built either.
+  bake one set per accent: online's design decides which. **Both are now
+  built** for the finale (`stranger`, `death_player`), the Stranger with baked
+  masks tinted at load; online decides which clips play, and when.
 
 ## The finale's new format (the owner's call; the design doc has it)
 
-- **The Recording Angel, Pravuil, deals the Last Crossing**: prompts in
-  `art-tools/angel_parts/POSES.md` (front-on dealer kit, Death's style; two
-  ferryman draws rejected, in `sources/rejected/`). Then build three puppets:
-  the Angel, Death as a player (`death_avatar_parts/`, sheets drawn) and the
-  Stranger (`avatar_parts/`, sheets drawn, its scarf in the player's accent
-  colour).
-- **Restage the finale**: the Stranger in seat 1 (the player's actions only,
-  no tells), Death in seat 4 (mirrored), the Angel in the dealer's place;
-  drop `dealer_plays` from the room. Check the plate's chairs fit.
-- **Reword the finale's text** to match: the entrance, and any of Death's
-  lines that have him dealing; a line or two for the Angel's presence
-  ("Someone has to witness it"). The ferryman stays out on the river.
+- **DONE:** Pravuil, Death as a player and the Stranger are built; the Last
+  Crossing is restaged (the Stranger left in the player's colour, Death right,
+  Pravuil dealing); the entrance, the room, the bust and ending stage
+  directions and the ending's first line reworded; Death introduces him
+  ("Pravuil keeps the books. Someone has to witness this."). The ferryman stays
+  out on the river.
+- **Still open:** Pravuil never speaks, so the dealer's speech bubble is unused
+  at the finale; Death's lines show in his seat's bubble. The ending text keeps
+  "the ledger on the bench by the door" as Death's own (Pravuil's book goes
+  with him): the owner may want one or the other.
+- **Pravuil's rest head** keeps a faint grey edge along the hair inside the
+  halo (`angel_parts/halo.py` clears the sheet's white disc); invisible at
+  table size.
 
 ## Room and puppet leftovers (the last build)
 
