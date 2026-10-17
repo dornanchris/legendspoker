@@ -1,0 +1,234 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "martian_face_01.png",
+      "label": "",
+      "x": 25,
+      "y": 40,
+      "w": 376,
+      "h": 272,
+      "pivot": [
+        188.0,
+        136.0
+      ],
+      "area": 81570
+    },
+    {
+      "index": 2,
+      "file": "martian_face_02.png",
+      "label": "",
+      "x": 432,
+      "y": 48,
+      "w": 345,
+      "h": 198,
+      "pivot": [
+        172.5,
+        99.0
+      ],
+      "area": 47678
+    },
+    {
+      "index": 3,
+      "file": "martian_face_03.png",
+      "label": "",
+      "x": 795,
+      "y": 42,
+      "w": 331,
+      "h": 201,
+      "pivot": [
+        165.5,
+        100.5
+      ],
+      "area": 47820
+    },
+    {
+      "index": 4,
+      "file": "martian_face_04.png",
+      "label": "",
+      "x": 1144,
+      "y": 39,
+      "w": 362,
+      "h": 209,
+      "pivot": [
+        181.0,
+        104.5
+      ],
+      "area": 52045
+    },
+    {
+      "index": 5,
+      "file": "martian_face_05.png",
+      "label": "",
+      "x": 29,
+      "y": 318,
+      "w": 353,
+      "h": 187,
+      "pivot": [
+        176.5,
+        93.5
+      ],
+      "area": 46321
+    },
+    {
+      "index": 6,
+      "file": "martian_face_06.png",
+      "label": "",
+      "x": 405,
+      "y": 270,
+      "w": 359,
+      "h": 212,
+      "pivot": [
+        179.5,
+        106.0
+      ],
+      "area": 51960
+    },
+    {
+      "index": 7,
+      "file": "martian_face_07.png",
+      "label": "",
+      "x": 780,
+      "y": 269,
+      "w": 359,
+      "h": 213,
+      "pivot": [
+        179.5,
+        106.5
+      ],
+      "area": 51818
+    },
+    {
+      "index": 8,
+      "file": "martian_face_08.png",
+      "label": "",
+      "x": 1148,
+      "y": 266,
+      "w": 359,
+      "h": 221,
+      "pivot": [
+        179.5,
+        110.5
+      ],
+      "area": 53596
+    },
+    {
+      "index": 9,
+      "file": "martian_face_09.png",
+      "label": "",
+      "x": 18,
+      "y": 520,
+      "w": 198,
+      "h": 144,
+      "pivot": [
+        99.0,
+        72.0
+      ],
+      "area": 18023
+    },
+    {
+      "index": 10,
+      "file": "martian_face_10.png",
+      "label": "",
+      "x": 232,
+      "y": 528,
+      "w": 186,
+      "h": 140,
+      "pivot": [
+        93.0,
+        70.0
+      ],
+      "area": 16491
+    },
+    {
+      "index": 11,
+      "file": "martian_face_11.png",
+      "label": "",
+      "x": 434,
+      "y": 505,
+      "w": 199,
+      "h": 169,
+      "pivot": [
+        99.5,
+        84.5
+      ],
+      "area": 20165
+    },
+    {
+      "index": 12,
+      "file": "martian_face_12.png",
+      "label": "",
+      "x": 644,
+      "y": 510,
+      "w": 199,
+      "h": 151,
+      "pivot": [
+        99.5,
+        75.5
+      ],
+      "area": 18332
+    },
+    {
+      "index": 13,
+      "file": "martian_face_13.png",
+      "label": "",
+      "x": 860,
+      "y": 521,
+      "w": 195,
+      "h": 147,
+      "pivot": [
+        97.5,
+        73.5
+      ],
+      "area": 17142
+    },
+    {
+      "index": 14,
+      "file": "martian_face_14.png",
+      "label": "",
+      "x": 1077,
+      "y": 515,
+      "w": 213,
+      "h": 148,
+      "pivot": [
+        106.5,
+        74.0
+      ],
+      "area": 18726
+    },
+    {
+      "index": 15,
+      "file": "martian_face_15.png",
+      "label": "",
+      "x": 1309,
+      "y": 530,
+      "w": 210,
+      "h": 132,
+      "pivot": [
+        105.0,
+        66.0
+      ],
+      "area": 16526
+    },
+    {
+      "index": 16,
+      "file": "martian_face_16.png",
+      "label": "",
+      "x": 543,
+      "y": 663,
+      "w": 427,
+      "h": 323,
+      "pivot": [
+        213.5,
+        161.5
+      ],
+      "area": 109727
+    }
+  ]
+}

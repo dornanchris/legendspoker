@@ -1,0 +1,451 @@
+{
+ "kit": "martian_parts",
+ "id": "martian",
+ "name": "The Martian",
+ "note": "Polygons in the rest pose (A1) pixels. The Station's style (the Astronaut's sheets the style images). Seat 2, drawn facing right, not mirrored. Wells's Martian: a head in a brass seat, its two bunches of tentacles lying on the felt as forearms (elbows where they leave the seat's rim). The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. No prop. The table line is high in these sheets (the tentacles lie far out on the felt), so frames keep 175 px below it. The table line is the drawn rail's top (244), just under the seat's rim.",
+ "what": {
+  "A1": "Rest: both tentacle bunches on the felt, apart, eyes on the table",
+  "A2": "Peeking at its cards (right bunch)",
+  "A3": "Check: two tentacle-tips tap the felt",
+  "A4": "Call: right bunch slides forward along the felt",
+  "A5": "Bet: head leans forward, right bunch pushed well forward",
+  "A6": "Fold: a flick of the right bunch",
+  "B1": "All in: both bunches push forward together",
+  "B2": "Show: tentacle-tips turn something over",
+  "B3": "Big win: both bunches raised and writhing, beak wide (`win_big`)",
+  "B4": "Its tentacles curl",
+  "B5": "Drums three tentacles in sequence (decoy for B4)",
+  "B6": "Works something out on its tentacle-tips",
+  "C1": "Its great eyes blink out of time with each other",
+  "C2": "Its skin shifts colour, faintly",
+  "C3": "Breathes heavily in the heavy air",
+  "C4": "Looks down at Earth through the window (decoy for C1)",
+  "C5": "Turns to look at you",
+  "C6": "Sags in its seat under Earth's gravity (a fidget)",
+  "D1": "Talking: beak open, hooting, a bunch lifted",
+  "D2": "Facing a big bet: head drawn back, eyes wide",
+  "D3": "Lost a pot: head sagging, eyes half shut",
+  "D4": "Crushing loss: tentacles thrashing, beak wide (`lose_big`)",
+  "D5": "Heads up: head far forward, tentacles stretched",
+  "D6": "A low hooting laugh"
+ },
+ "prop": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "curl": "B4",
+  "drum": "B5",
+  "count": "B6",
+  "blink_odd": "C1",
+  "colour": "C2",
+  "breathe": "C3",
+  "earth": "C4",
+  "turn": "C5",
+  "sag": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "laugh": "D6"
+ },
+ "common": {
+  "table_y": 244,
+  "scale": 1.0,
+  "origin_x": 300,
+  "register_box": [
+   150,
+   60,
+   380,
+   200
+  ],
+  "register_span": 40,
+  "collar_y": 195,
+  "neck": [
+   250,
+   200
+  ],
+  "frame_margin": 130,
+  "stock_box": [
+   160,
+   170,
+   360,
+   240
+  ]
+ },
+ "cut_below": 205,
+ "keep_poly": [
+  [
+   50,
+   0
+  ],
+  [
+   425,
+   0
+  ],
+  [
+   425,
+   170
+  ],
+  [
+   400,
+   182
+  ],
+  [
+   345,
+   192
+  ],
+  [
+   340,
+   214
+  ],
+  [
+   285,
+   214
+  ],
+  [
+   268,
+   198
+  ],
+  [
+   200,
+   192
+  ],
+  [
+   150,
+   182
+  ],
+  [
+   95,
+   172
+  ],
+  [
+   55,
+   145
+  ]
+ ],
+ "shoulder_y": 200,
+ "arms": {
+  "near": {
+   "elbow": [
+    115,
+    205
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     78,
+     172
+    ],
+    [
+     165,
+     172
+    ],
+    [
+     165,
+     238
+    ],
+    [
+     78,
+     238
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its right bunch of eight tentacles, lying on the felt",
+     "poly": [
+      [
+       60,
+       190
+      ],
+      [
+       160,
+       180
+      ],
+      [
+       180,
+       235
+      ],
+      [
+       225,
+       290
+      ],
+      [
+       262,
+       340
+      ],
+      [
+       268,
+       418
+      ],
+      [
+       200,
+       418
+      ],
+      [
+       110,
+       418
+      ],
+      [
+       10,
+       418
+      ],
+      [
+       0,
+       330
+      ],
+      [
+       15,
+       260
+      ],
+      [
+       40,
+       215
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    390,
+    200
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     365,
+     170
+    ],
+    [
+     410,
+     170
+    ],
+    [
+     410,
+     232
+    ],
+    [
+     365,
+     232
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its left bunch of eight tentacles, lying on the felt",
+     "poly": [
+      [
+       355,
+       180
+      ],
+      [
+       410,
+       175
+      ],
+      [
+       445,
+       225
+      ],
+      [
+       480,
+       280
+      ],
+      [
+       492,
+       340
+      ],
+      [
+       480,
+       418
+      ],
+      [
+       360,
+       418
+      ],
+      [
+       320,
+       370
+      ],
+      [
+       325,
+       310
+      ],
+      [
+       345,
+       250
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "felt_dark_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6,
+  "wood_rows_only": true
+ },
+ "frame_extra": {
+  "peek": {
+   "below": 175
+  },
+  "check": {
+   "below": 175
+  },
+  "call": {
+   "below": 175
+  },
+  "bet": {
+   "below": 175
+  },
+  "fold": {
+   "below": 175
+  },
+  "all_in": {
+   "below": 175,
+   "biggest": true
+  },
+  "show": {
+   "below": 175,
+   "biggest": true
+  },
+  "win_big": {
+   "below": 175,
+   "biggest": true,
+   "props": [
+    [
+     [
+      60,
+      150
+     ],
+     [
+      450,
+      150
+     ],
+     [
+      450,
+      244
+     ],
+     [
+      60,
+      244
+     ]
+    ]
+   ]
+  },
+  "curl": {
+   "below": 175
+  },
+  "drum": {
+   "below": 175
+  },
+  "count": {
+   "below": 175
+  },
+  "blink_odd": {
+   "below": 175
+  },
+  "colour": {
+   "below": 175
+  },
+  "breathe": {
+   "below": 175
+  },
+  "earth": {
+   "below": 175
+  },
+  "turn": {
+   "below": 175
+  },
+  "sag": {
+   "below": 175
+  },
+  "talk": {
+   "below": 175
+  },
+  "big_bet": {
+   "below": 175
+  },
+  "lost_pot": {
+   "below": 175
+  },
+  "lose_big": {
+   "below": 175
+  },
+  "heads_up": {
+   "below": 175
+  },
+  "laugh": {
+   "below": 175
+  }
+ },
+ "no_prop": [
+  "A2",
+  "A3",
+  "A4",
+  "A5",
+  "A6",
+  "B1",
+  "B2",
+  "B3",
+  "B4",
+  "B5",
+  "B6",
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5",
+  "C6",
+  "D1",
+  "D2",
+  "D3",
+  "D4",
+  "D5",
+  "D6"
+ ],
+ "master_extra": {
+  "keep_white": true
+ }
+}

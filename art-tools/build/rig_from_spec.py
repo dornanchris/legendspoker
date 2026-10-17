@@ -33,6 +33,7 @@ rig = {
         'face': f'{kit}/face.json', 'file': f'{kit}/{id_}_rig/master.png',
         'layers': f'{kit}/{id_}_rig/face', 'head_box': [0, 0, 495, 320], 'place': [0, 0, 1.0],
         'replace_head': False, 'keep_poly': spec['keep_poly'], 'shoulder_y': spec['shoulder_y'],
+        **spec.get('master_extra', {}),
     },
     'arms': spec['arms'], 'frames': frames, 'runtime': f'../web/art/{id_}',
     **spec['filters'],

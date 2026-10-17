@@ -618,7 +618,8 @@ def main(spec_path):
         if 'keep_poly' in m:                               # only the head and neck: its own shoulders are not the body's
             ma_ = np.array(mimg.convert('RGBA'))
             ma_[..., 3] = np.where(poly_mask(ma_.shape[:2], m['keep_poly']), ma_[..., 3], 0)
-            ma_[..., 3] = np.where(ma_[..., :3].min(-1) > 225, 0, ma_[..., 3])    # sheet white caught between curls
+            if not m.get('keep_white'):                    # (not where white is drawn: the Martian's eye highlights)
+                ma_[..., 3] = np.where(ma_[..., :3].min(-1) > 225, 0, ma_[..., 3])    # sheet white caught between curls
             if m.get('spare_red'):
                 c_ = ma_[..., :3].astype(int)
                 red = (c_[..., 0] > 110) & (c_[..., 1] * 3 < c_[..., 0]) & (c_[..., 2] * 3 < c_[..., 0])

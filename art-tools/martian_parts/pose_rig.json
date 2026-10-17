@@ -1,0 +1,779 @@
+{
+ "id": "martian",
+ "name": "The Martian",
+ "note": "Polygons in the rest pose (A1) pixels. The Station's style (the Astronaut's sheets the style images). Seat 2, drawn facing right, not mirrored. Wells's Martian: a head in a brass seat, its two bunches of tentacles lying on the felt as forearms (elbows where they leave the seat's rim). The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. No prop. The table line is high in these sheets (the tentacles lie far out on the felt), so frames keep 175 px below it. The table line is the drawn rail's top (244), just under the seat's rim.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    14,
+    48,
+    492,
+    418
+   ],
+   "what": "Rest: both tentacle bunches on the felt, apart, eyes on the table"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    525,
+    45,
+    492,
+    421
+   ],
+   "reg": [
+    1.0,
+    1,
+    -3
+   ],
+   "what": "Peeking at its cards (right bunch)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1037,
+    46,
+    488,
+    420
+   ],
+   "reg": [
+    1.0,
+    1,
+    -2
+   ],
+   "what": "Check: two tentacle-tips tap the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    14,
+    526,
+    492,
+    429
+   ],
+   "reg": [
+    1.0,
+    0,
+    -11
+   ],
+   "what": "Call: right bunch slides forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    525,
+    520,
+    492,
+    435
+   ],
+   "reg": [
+    1.0,
+    1,
+    -17
+   ],
+   "what": "Bet: head leans forward, right bunch pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1037,
+    532,
+    488,
+    423
+   ],
+   "reg": [
+    1.0,
+    1,
+    -5
+   ],
+   "what": "Fold: a flick of the right bunch"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    13,
+    83,
+    497,
+    415
+   ],
+   "reg": [
+    1.0,
+    1,
+    3
+   ],
+   "what": "All in: both bunches push forward together"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    520,
+    94,
+    487,
+    404
+   ],
+   "reg": [
+    1.0,
+    -8,
+    14
+   ],
+   "what": "Show: tentacle-tips turn something over"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1024,
+    14,
+    511,
+    484
+   ],
+   "reg": [
+    1.15,
+    -3,
+    -147
+   ],
+   "what": "Big win: both bunches raised and writhing, beak wide (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    13,
+    551,
+    497,
+    416
+   ],
+   "reg": [
+    1.0,
+    1,
+    3
+   ],
+   "what": "Its tentacles curl"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    529,
+    551,
+    482,
+    417
+   ],
+   "reg": [
+    1.0,
+    1,
+    2
+   ],
+   "what": "Drums three tentacles in sequence (decoy for B4)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1029,
+    551,
+    494,
+    417
+   ],
+   "reg": [
+    1.0,
+    1,
+    2
+   ],
+   "what": "Works something out on its tentacle-tips"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    12,
+    43,
+    498,
+    431
+   ],
+   "reg": [
+    1.0,
+    1,
+    -13
+   ],
+   "what": "Its great eyes blink out of time with each other"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    528,
+    43,
+    486,
+    431
+   ],
+   "reg": [
+    1.0,
+    1,
+    -13
+   ],
+   "what": "Its skin shifts colour, faintly"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1029,
+    35,
+    495,
+    439
+   ],
+   "reg": [
+    1.0,
+    1,
+    -21
+   ],
+   "what": "Breathes heavily in the heavy air"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    12,
+    520,
+    498,
+    438
+   ],
+   "reg": [
+    1.0,
+    1,
+    -20
+   ],
+   "what": "Looks down at Earth through the window (decoy for C1)"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    528,
+    518,
+    486,
+    440
+   ],
+   "reg": [
+    1.0,
+    1,
+    -22
+   ],
+   "what": "Turns to look at you"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1032,
+    556,
+    492,
+    402
+   ],
+   "reg": [
+    1.0,
+    1,
+    16
+   ],
+   "what": "Sags in its seat under Earth's gravity (a fidget)"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    15,
+    42,
+    513,
+    431
+   ],
+   "reg": [
+    1.0,
+    0,
+    -13
+   ],
+   "what": "Talking: beak open, hooting, a bunch lifted"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    532,
+    39,
+    480,
+    435
+   ],
+   "reg": [
+    1.0,
+    1,
+    -17
+   ],
+   "what": "Facing a big bet: head drawn back, eyes wide"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1031,
+    74,
+    492,
+    400
+   ],
+   "reg": [
+    1.0,
+    1,
+    18
+   ],
+   "what": "Lost a pot: head sagging, eyes half shut"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    16,
+    503,
+    493,
+    457
+   ],
+   "reg": [
+    1.0,
+    1,
+    -39
+   ],
+   "what": "Crushing loss: tentacles thrashing, beak wide (`lose_big`)"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    528,
+    520,
+    485,
+    440
+   ],
+   "reg": [
+    1.0,
+    1,
+    -22
+   ],
+   "what": "Heads up: head far forward, tentacles stretched"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1032,
+    507,
+    491,
+    453
+   ],
+   "reg": [
+    1.0,
+    0,
+    -35
+   ],
+   "what": "A low hooting laugh"
+  }
+ },
+ "rest": "A1",
+ "table_y": 244,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  60,
+  380,
+  200
+ ],
+ "register_span": 40,
+ "collar_y": 195,
+ "neck": [
+  250,
+  200
+ ],
+ "frame_margin": 130,
+ "stock_box": [
+  160,
+  170,
+  360,
+  240
+ ],
+ "master": {
+  "piece": "martian_parts/martian_face/martian_master.png",
+  "cut_below": 205,
+  "face": "martian_parts/face.json",
+  "file": "martian_parts/martian_rig/master.png",
+  "layers": "martian_parts/martian_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    50,
+    0
+   ],
+   [
+    425,
+    0
+   ],
+   [
+    425,
+    170
+   ],
+   [
+    400,
+    182
+   ],
+   [
+    345,
+    192
+   ],
+   [
+    340,
+    214
+   ],
+   [
+    285,
+    214
+   ],
+   [
+    268,
+    198
+   ],
+   [
+    200,
+    192
+   ],
+   [
+    150,
+    182
+   ],
+   [
+    95,
+    172
+   ],
+   [
+    55,
+    145
+   ]
+  ],
+  "shoulder_y": 200,
+  "keep_white": true
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    115,
+    205
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     78,
+     172
+    ],
+    [
+     165,
+     172
+    ],
+    [
+     165,
+     238
+    ],
+    [
+     78,
+     238
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its right bunch of eight tentacles, lying on the felt",
+     "poly": [
+      [
+       60,
+       190
+      ],
+      [
+       160,
+       180
+      ],
+      [
+       180,
+       235
+      ],
+      [
+       225,
+       290
+      ],
+      [
+       262,
+       340
+      ],
+      [
+       268,
+       418
+      ],
+      [
+       200,
+       418
+      ],
+      [
+       110,
+       418
+      ],
+      [
+       10,
+       418
+      ],
+      [
+       0,
+       330
+      ],
+      [
+       15,
+       260
+      ],
+      [
+       40,
+       215
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    390,
+    200
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     365,
+     170
+    ],
+    [
+     410,
+     170
+    ],
+    [
+     410,
+     232
+    ],
+    [
+     365,
+     232
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its left bunch of eight tentacles, lying on the felt",
+     "poly": [
+      [
+       355,
+       180
+      ],
+      [
+       410,
+       175
+      ],
+      [
+       445,
+       225
+      ],
+      [
+       480,
+       280
+      ],
+      [
+       492,
+       340
+      ],
+      [
+       480,
+       418
+      ],
+      [
+       360,
+       418
+      ],
+      [
+       320,
+       370
+      ],
+      [
+       325,
+       310
+      ],
+      [
+       345,
+       250
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 175
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 175
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 175
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 175
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 175
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 175,
+   "biggest": true
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 175,
+   "biggest": true
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 175,
+   "biggest": true,
+   "props": [
+    [
+     [
+      60,
+      150
+     ],
+     [
+      450,
+      150
+     ],
+     [
+      450,
+      244
+     ],
+     [
+      60,
+      244
+     ]
+    ]
+   ]
+  },
+  "curl": {
+   "pose": "B4",
+   "head": "own",
+   "below": 175
+  },
+  "drum": {
+   "pose": "B5",
+   "head": "own",
+   "below": 175
+  },
+  "count": {
+   "pose": "B6",
+   "head": "own",
+   "below": 175
+  },
+  "blink_odd": {
+   "pose": "C1",
+   "head": "own",
+   "below": 175
+  },
+  "colour": {
+   "pose": "C2",
+   "head": "own",
+   "below": 175
+  },
+  "breathe": {
+   "pose": "C3",
+   "head": "own",
+   "below": 175
+  },
+  "earth": {
+   "pose": "C4",
+   "head": "own",
+   "below": 175
+  },
+  "turn": {
+   "pose": "C5",
+   "head": "own",
+   "below": 175
+  },
+  "sag": {
+   "pose": "C6",
+   "head": "own",
+   "below": 175
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 175
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 175
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 175
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 175
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 175
+  },
+  "laugh": {
+   "pose": "D6",
+   "head": "own",
+   "below": 175
+  }
+ },
+ "runtime": "../web/art/martian",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6,
+ "wood_rows_only": true
+}

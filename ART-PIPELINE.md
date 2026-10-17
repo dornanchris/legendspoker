@@ -129,7 +129,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
 | Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
 | Transylvania: **live on the real table** (gothic from here) | built | all six (Van Helsing to redraw gothic; Jekyll, Hyde, the Wolf Man, the Horseman, Dracula) | | |
-| The Station | built (`?room=station`: the ceiling lens, the amber room after the turn) | the Astronaut (the style baseline), the Robot, the AI (the Robot recoloured: `the_ai_parts/recolour.py`) | | WITH THE OWNER: the Martian, the Grey (redraw); then the Station stages |
+| The Station | built (`?room=station`: the ceiling lens, the amber room after the turn) | the Astronaut (the style baseline), the Robot, the AI (the Robot recoloured: `the_ai_parts/recolour.py`), the Martian | | WITH THE OWNER: the Grey (redraw); then the Station stages |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
 | Hidden guests (they sit in the table's room) | | JFK (redrawn), Loki | | |
 | Hidden (later) | The Pyre: prompt | | | the Phoenix; the Stranger (online avatar) |
