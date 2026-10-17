@@ -1,0 +1,13 @@
+{
+ "eyes": {
+  "half": "eyes_half.png",
+  "closed": "eyes_closed.png",
+  "left": "eyes_left.png",
+  "right": "eyes_right.png",
+  "down": "eyes_down.png"
+ },
+ "mouth": {
+  "closed": "mouth_closed.png",
+  "open": "mouth_open.png"
+ }
+}

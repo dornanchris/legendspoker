@@ -14,7 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 
 for path in sorted(glob.glob(os.path.join(ROOT, 'web', 'art', '*', 'anim.json'))):
     pid = os.path.basename(os.path.dirname(path))
-    if pid == 'death':
+    if pid in ('death', 'pravuil'):
         continue
     raw = open(path).read()
     anim = json.loads(raw)

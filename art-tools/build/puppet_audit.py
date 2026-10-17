@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 REQUIRED = ['check', 'call', 'bet', 'fold', 'all_in', 'peek', 'show', 'talk', 'heads_up', 'lost_pot', 'win_small']
 # knocked_out is not required: without one the figure says its line and fades (web/puppet/stage.ts)
 LIFE = {'breath': 0.013, 'rot': 1.1, 'x': 2.2, 'y': 1.4, 'body': 0.45}
-CALM = {'death': 0.5}
+CALM = {'death': 0.5, 'pravuil': 0.5}
 FLOAT_OK = {('cheshire_cat', 'grin_only')}        # the grin alone, left hanging on purpose
 
 bad = 0
@@ -41,7 +41,7 @@ for path in sorted(glob.glob(os.path.join(ROOT, 'web', 'art', '*', 'anim.json'))
         miss.append('life ' + ','.join(off))
     if not f.get('blink') or not f.get('gaze'):
         miss.append('no blink/gaze')
-    if pid != 'death':
+    if pid not in ('death', 'pravuil'):            # the dealers: no poker clips, no character file
         miss += [f'clip {c}' for c in REQUIRED if c not in clips]
         for side in ('win', 'lose'):
             v = anim.get(side)

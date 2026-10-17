@@ -93,6 +93,8 @@ import deathPlayerRig from '../art/death_player/rig.json'
 import deathPlayerAnim from '../art/death_player/anim.json'
 import strangerRig from '../art/stranger/rig.json'
 import strangerAnim from '../art/stranger/anim.json'
+import pravuilRig from '../art/pravuil/rig.json'
+import pravuilAnim from '../art/pravuil/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -198,6 +200,8 @@ export const PUPPETS: Record<string, CastEntry> = {
   death_player: { rig: deathPlayerRig as unknown as RigData, anim: deathPlayerAnim as unknown as AnimData, base: 'art/death_player/' },
   // the player, seen once (the finale's left-hand chair), in their own colour; later the online avatar
   stranger: { rig: strangerRig as unknown as RigData, anim: strangerAnim as unknown as AnimData, base: 'art/stranger/' },
+  // the Recording Angel, who deals the finale while Death plays (front-on, like Death's dealer kit)
+  pravuil: { rig: pravuilRig as unknown as RigData, anim: pravuilAnim as unknown as AnimData, base: 'art/pravuil/' },
 }
 
 /**

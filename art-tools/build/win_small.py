@@ -45,7 +45,7 @@ def tell_mouths(anim, cid):
 for path in sorted(glob.glob(os.path.join(ROOT, 'web', 'art', '*', 'anim.json'))):
     art = os.path.dirname(path)
     pid = os.path.basename(art)
-    if pid in ('death', 'rooms'):
+    if pid in ('death', 'pravuil', 'rooms'):
         continue
     raw = open(path).read()
     anim = json.loads(raw)

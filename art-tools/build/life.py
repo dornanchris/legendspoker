@@ -12,7 +12,7 @@ import glob, json, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 LIFE = {'breath': 0.013, 'rot': 1.1, 'x': 2.2, 'y': 1.4, 'body': 0.45}   # breath: torso scale; rot/body: degrees; x/y: rig px
-CALM = {'death': 0.5}                                                     # a fraction of LIFE
+CALM = {'death': 0.5, 'pravuil': 0.5}                                                     # a fraction of LIFE
 
 for path in sorted(glob.glob(os.path.join(ROOT, 'web', 'art', '*', 'anim.json'))):
     pid = os.path.basename(os.path.dirname(path))
