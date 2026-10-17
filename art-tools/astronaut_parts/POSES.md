@@ -67,8 +67,8 @@ Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: waist up
 
 IMPORTANT for every pose: the arm that the pose does not mention stays EXACTLY as in pose 1, same position, same hand. His round helmet stands on the felt beside his right hand (the left of the picture) unless the pose says otherwise. The suit has NO flags, NO patches, NO insignia and NO lettering anywhere. Keep EXACTLY the inked graphic-novel style of the attached sheets and of Count Dracula's sheet: thick, even, dark outlines; flat, hard-edged cel shading in three or four tones with deep shadows; a little dry-brush texture in the shadows only; muted colour; a cool blue Earthlight rim and warm lamplight as flat bands. NO airbrush, NO soft gradients, NO glossy 3D look; NOT a children's cartoon, NOT cute.
 
-1. At rest: both forearms lying along the table's edge, his gloved hands resting on the felt in front of his, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; the round helmet on the felt beside his right hand; a tired, kind look, mouth closed
-2. Peeking at his cards: his right glove cupped low over the felt in front of his, thumb lifted a little, as if shielding something small; eyes down
+1. At rest: both forearms lying along the table's edge, his gloved hands resting on the felt in front of him, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; the round helmet on the felt beside his right hand; a tired, kind look, mouth closed
+2. Peeking at his cards: his right glove cupped low over the felt in front of him, thumb lifted a little, as if shielding something small; eyes down
 3. Checking: two gloved fingers of his right hand tapping the felt
 4. Calling: his right glove flat, fingertips leading, pushing forward along the felt
 5. Betting: leaning in, his right glove pushed well forward along the felt, hopeful
@@ -103,7 +103,7 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind t
 
 1. Touching the creased photograph tucked in his right cuff with two fingers of his left glove, looking down at it, softly
 2. Checking his oxygen gauge: his left wrist lifted to eye level, reading the round gauge on it, frowning slightly; his right arm as at rest
-3. Rubbing a scuff on the helmet beside his with his right glove, eyes down; his left arm as at rest
+3. Rubbing a scuff on the helmet beside him with his right glove, eyes down; his left arm as at rest
 4. His right glove open, palm up, just above the felt, a single small plain round token hovering an inch above it in the low gravity, his eyes on it, about to catch it
 5. Turning his head and shoulders toward the viewer with a tired, kind smile; arms as at rest
 6. Rolling his shoulders inside the stiff suit, stretching a little, eyes half closed; arms as at rest
