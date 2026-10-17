@@ -44,7 +44,7 @@ The table screen has to hold four opponents, Death dealing between them, and the
 | Imperial Rome | Brazier orange and fresco colour above, dusky violet through the window | 1 |
 | Baker Street | Gaslight yellow and firelight, fog-grey at the window | — |
 | Transylvania | Firelight red-orange from the right against cold blue moonlight from the left | 1 |
-| The Station | Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red) | 1 |
+| The Station | Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red) | — |
 | The Champions' Tables (the Hall of Doors) | Dark, lit only by what the open doors let in | 1 |
 | The Last Crossing | One oil lamp, warm and small, against storm-dark blue | — |
 | The Pyre | Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar | 1 |
@@ -306,22 +306,28 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 ## The Station
 
-**What makes it unique:** The only room with no fire: cool steel, soft lamps and the whole Earth in the window. The room itself is a player, as a pale lens in the ceiling.
+**What makes it unique:** The only room with no fire: cool steel, soft lamps and the whole Earth in the window. The room itself is a player, as a pale lens in the ceiling, until the turn: the lights fail, the lens goes dark, and the room comes down to the table.
 
 - **The room:** A round lounge on a slowly turning station: brushed steel, soft lamps, Death's table standing on the deck though nobody bolted it down, and one enormous window full of the Earth. The gravity is made, not given, and it is not quite right; now and then a chip lifts off the felt and settles again. A single lens sits in the ceiling, pale and unblinking.
 - **Presence:** The room is listening.
 - **Sounds (for reference):** air handlers breathing, slightly out of step; the hull ticking as it turns into sunlight; a soft chime from nowhere in particular; a chip lifting off the felt and clicking back down; a deep, slow hum under everything
 - **Light:** Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red).
-- **Avoid:** No NASA or agency insignia, no flags. Nothing from 2001: A Space Odyssey: no red eye, no HAL.
+- **Avoid:** No NASA or agency insignia, no flags, no lettering on the panels. Nothing from 2001: A Space Odyssey or any film or game: no red eye, no red light, no HAL.
 
 **Backdrop plate:**
 
 ```
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
 
-The room: A round lounge on a slowly turning space station: brushed steel and white panels, soft lamps, and one enormous curved window filling the back wall with the Earth, blue and white against black space. In the ceiling above the table, a single round lens: a brass-rimmed iris of overlapping blades with a pale white light behind it.
+The room: A round lounge on a slowly turning space station, at station-night. Curved walls of brushed steel in big plain panels, softly lit, with a low curved ceiling and its ribs across the top of the picture. Dead centre at the back, behind the dealer: a plain stretch of pale grey steel panelling and a closed, round-cornered bulkhead door, softly lit, calm and mid-toned. HIGH across the back wall, ABOVE the players' heads, ONE enormous curved window from about 20% to about 80% across, its bottom edge at about a fifth of the way down and its top running up into the ceiling: the Earth fills the lower part of it, a great curve of blue ocean and white cloud, its bright sunlit edge toward the LEFT and its night side, deep blue with a few city lights, toward the middle and right; black space and a few stars above it. Below the window, behind the heads, plain calm steel. At EXACTLY 50% across, in the ceiling at the very top of the picture, a round brass socket the size of a dinner plate, its iris of overlapping blades CLOSED and dark (the lens is drawn separately). Two round wall lamps glowing a soft warm white, in the gaps BETWEEN the players at EXACTLY 27% and EXACTLY 73% across, at about a quarter of the way down. At the far LEFT, from the left edge to about 14% across, a curved console wall of round dials and small dim green and white indicator lights, no lettering. At the far RIGHT, from about 86% across to the right edge, a round porthole onto stars and a thin sliver of the Moon, and a coiled air hose hanging on a hook beside it. Nothing bright at 19% or 80% across, where the end players sit. No red light anywhere. Take the STYLE from the SECOND attached image (a player who sits in this room): its outlines and flat, hard-edged shading, a little softer and less saturated.
 Light: Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red).
-Must NOT resemble: No NASA or agency insignia, no flags. Nothing from 2001: A Space Odyssey: no red eye, no HAL.
+Must NOT resemble: No NASA or agency insignia, no flags, no lettering on the panels. Nothing from 2001: A Space Odyssey or any film or game: no red eye, no red light, no HAL.
+```
+
+**After-the-turn plate** (attach the finished backdrop):
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. The SAME room as the attached backdrop, redrawn after the turn: EXACTLY the same picture, the same camera, every wall, window, door, console and porthole in exactly the same place, with ONLY the light changed. The two wall lamps and the console lights are OFF and dark; the ceiling socket's iris is closed and dark; thin strips of dim AMBER emergency light run along the base of the walls and the ribs of the ceiling, and the room is darker and amber-tinted; the Earth in the window stays bright and blue, now the main light. Amber, NEVER red. No people, no table, no text.
 ```
 
 **Moving and story pieces:**
@@ -330,11 +336,11 @@ Must NOT resemble: No NASA or agency insignia, no flags. Nothing from 2001: A Sp
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
 
 For the room: The Station. Parts:
-- An amber emergency-lighting overlay for after the turn, as a flat tint
-- The Earth, as a separate plate that turns slowly
-- Stars
-- The ceiling lens in 3 apertures
-- A single poker chip floating an inch above the felt
+- The ceiling lens, drawn alone at the size of the socket in the backdrop: its brass-rimmed iris of overlapping blades OPEN with a pale, cool white light behind it; half open; narrowed to a small ring (3 pieces; never red)
+- The Earth in the window, drawn alone at the size it is in the backdrop: 2 frames, its clouds drifted a little between them
+- A few stars, small, twinkling: 2 frames
+- The two wall lamps, drawn alone at the size they are in the backdrop: lit, and dimmed a shade (for the lights dimming)
+- A single plain round poker chip floating an inch above a strip of green felt, with a soft shadow under it
 
 Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
 ```

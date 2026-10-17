@@ -35,7 +35,7 @@ Tags (MOTION-SPEC.md): its two tells beside idles that move the same part: the l
 
 ## Prompts
 
-Draw the Robot FIRST. One fresh ChatGPT chat for all six. The first prompt attaches ONE image: the Robot's approved character sheet (`art-tools/robot_parts/sources/robot_sheet.png`), which is the layout, the body and the style. From the second prompt on, attach the AI's own character sheet, its pose sheet A once it exists, AND the Robot's character sheet again, and nothing else. If its first sheet comes out airbrushed, add Count Dracula's pose sheet A (`art-tools/dracula_parts/sources/poses_a.png`) to every prompt for the style.
+Draw the Robot FIRST. One fresh ChatGPT chat for all six. The first prompt attaches ONE image: the Robot's approved character sheet (`art-tools/robot_parts/sources/robot_sheet.png`), which is the layout, the body and the style. From the second prompt on, attach the AI's own character sheet, its pose sheet A once it exists, AND the Robot's character sheet again, and nothing else. If its first sheet comes out airbrushed, add the Astronaut's pose sheet A (`art-tools/astronaut_parts/sources/poses_a.png`) to every prompt for the style.
 
 ### Character sheet
 
