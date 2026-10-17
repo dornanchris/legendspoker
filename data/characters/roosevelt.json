@@ -92,7 +92,13 @@
       "Raise! Charge!",
       "Raise. It takes more than that to stop a Bull Moose.",
       "Raise! Big stick!",
-      "Raise! Delighted!"
+      "Raise! Delighted!",
+      "Raise! The Great White Fleet sails round the table!"
+    ],
+    "reraised": [
+      "Re-raise ME? I dug a ditch through Panama! I can dig in here!",
+      "I took the Isthmus! I'll take this too!",
+      "Ha! Push back, will you? Bully!"
     ],
     "all_in": [
       "All in! Charge!",
@@ -104,13 +110,17 @@
       "Bully! Bully! BULLY!",
       "Speak softly and carry a big stack!",
       "Up San Juan Hill and down the other side with the pot!",
-      "Ha! Delightful! Simply delightful!"
+      "Ha! Delightful! Simply delightful!",
+      "And the Great White Fleet sails home!"
     ],
     "lose": [
       "I've been shot and kept talking. This is a scratch.",
       "Bah! I'm going hunting.",
       "Do not mention the bear.",
       "A grand fight! I'd lose it again for the fun of it."
+    ],
+    "win_straight": [
+      "Straight up San Juan Hill!"
     ]
   }
 }

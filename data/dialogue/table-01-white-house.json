@@ -99,6 +99,11 @@
           { "id": "wh_tr_fdr_05b", "speaker": "roosevelt", "text": "Do not call me that at the table.", "status": "draft" },
           { "id": "wh_tr_fdr_05c", "speaker": "fdr", "text": "Eleanor does.", "status": "draft" },
           { "id": "wh_tr_fdr_05d", "speaker": "roosevelt", "text": "Eleanor has earned it.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_tr_fdr_06a", "speaker": "roosevelt", "text": "I built the West Wing, Franklin. What did you ever add to the house?", "status": "draft" },
+          { "id": "wh_tr_fdr_06b", "speaker": "fdr", "text": "A swimming pool. The public paid for it, by subscription.", "status": "draft" },
+          { "id": "wh_tr_fdr_06c", "speaker": "roosevelt", "text": "...That's a better trick than the West Wing.", "status": "draft" }
         ]
       ],
       "needles": [
@@ -113,6 +118,10 @@
         [
           { "id": "wh_nd_11a", "speaker": "fdr", "to": "roosevelt", "text": "Speak softly, cousin. You can leave the big stick by the door.", "status": "draft" },
           { "id": "wh_nd_11b", "speaker": "roosevelt", "text": "I'll fetch it on the way out. And beat you with it.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_12a", "speaker": "fdr", "to": "roosevelt", "text": "I vetoed six hundred bills, Theodore. Yours was easy.", "status": "draft" },
+          { "id": "wh_nd_12b", "speaker": "roosevelt", "text": "Six hundred! Did you sign anything?", "status": "draft" }
         ]
       ]
     },
@@ -142,6 +151,12 @@
           { "id": "wh_al_tr_04b", "speaker": "roosevelt", "text": "The bullet went through the manuscript first. Fifty pages, folded double. Long speeches save lives!", "status": "draft" },
           { "id": "wh_al_tr_04c", "speaker": "lincoln", "text": "Mine was two minutes.", "status": "draft" },
           { "id": "wh_al_tr_04d", "speaker": "roosevelt", "text": "...Well. Yours was better.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_al_tr_05a", "speaker": "roosevelt", "text": "My boy Quentin took a pony up in the White House elevator. To cheer up his brother.", "status": "draft" },
+          { "id": "wh_al_tr_05b", "speaker": "lincoln", "text": "My Tad drove two goats through the East Room.", "status": "draft" },
+          { "id": "wh_al_tr_05c", "speaker": "roosevelt", "text": "During a reception?", "status": "draft" },
+          { "id": "wh_al_tr_05d", "speaker": "lincoln", "text": "During a reception.", "status": "draft" }
         ]
       ],
       "needles": [
@@ -152,6 +167,11 @@
         [
           { "id": "wh_nd_04a", "speaker": "lincoln", "to": "roosevelt", "text": "Theodore. Did you just go around an obstacle?", "status": "draft" },
           { "id": "wh_nd_04b", "speaker": "roosevelt", "text": "...Once. Tell no one.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_13a", "speaker": "lincoln", "to": "roosevelt", "text": "I pardoned a turkey once, Theodore. You I'll let off with a warning.", "status": "draft" },
+          { "id": "wh_nd_13b", "speaker": "roosevelt", "text": "I am not a turkey!", "status": "draft" },
+          { "id": "wh_nd_13c", "speaker": "lincoln", "text": "He said the same.", "status": "draft" }
         ]
       ]
     },
@@ -184,6 +204,20 @@
           { "id": "wh_gw_05b", "speaker": "washington", "text": "I did.", "status": "draft" },
           { "id": "wh_gw_05c", "speaker": "roosevelt", "text": "Bully! What was it like?", "status": "draft" },
           { "id": "wh_gw_05d", "speaker": "washington", "text": "Cold.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_gw_06a", "speaker": "roosevelt", "text": "I named it the White House, General! Officially! What did you add to the place?", "status": "draft" },
+          { "id": "wh_gw_06b", "speaker": "washington", "text": "The ground it stands on.", "status": "draft" },
+          { "id": "wh_gw_06c", "speaker": "roosevelt", "text": "...Bully.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_gw_07a", "speaker": "roosevelt", "text": "General! Settle it for the children. The cherry tree. Did you?", "status": "draft" },
+          { "id": "wh_gw_07b", "speaker": "washington", "text": "Ask the tree.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_gw_08a", "speaker": "lincoln", "text": "You chose a fine spot for the house, General.", "status": "draft" },
+          { "id": "wh_gw_08b", "speaker": "washington", "text": "I never slept a night in it.", "status": "draft" },
+          { "id": "wh_gw_08c", "speaker": "lincoln", "text": "Mary made up for it. She spent the whole budget on wallpaper and china.", "status": "draft" }
         ]
       ],
       "needles": [
@@ -239,6 +273,20 @@
           { "id": "wh_jfk_gw_01b", "speaker": "washington", "text": "My second was a hundred and thirty-five words." },
           { "id": "wh_jfk_gw_01c", "speaker": "jfk", "text": "Mine was better." },
           { "id": "wh_jfk_gw_01d", "speaker": "washington", "text": "Mine was shorter.", "note": "Washington's second inaugural (1793) is the shortest on record, 135 words." }
+        ],
+        [
+          { "id": "wh_jfk_fdr_03a", "speaker": "jfk", "text": "Mr. President, I swim in your pool every day. For my back.", "status": "draft" },
+          { "id": "wh_jfk_fdr_03b", "speaker": "fdr", "text": "Then it's doing exactly what it was built for.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_jfk_al_02a", "speaker": "jfk", "text": "Jackie found a desk in the basement, made from a British ship. It's in the Oval Office now.", "status": "draft" },
+          { "id": "wh_jfk_al_02b", "speaker": "lincoln", "text": "Oval? In my day it was a square room and a line of office-seekers down the stairs.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_jfk_gw_02a", "speaker": "jfk", "text": "General, the cherry tree. I have to ask.", "status": "draft" },
+          { "id": "wh_jfk_gw_02b", "speaker": "washington", "text": "It is a very good story.", "status": "draft" },
+          { "id": "wh_jfk_gw_02c", "speaker": "jfk", "text": "But is it true?", "status": "draft" },
+          { "id": "wh_jfk_gw_02d", "speaker": "washington", "text": "It is a very good story.", "status": "draft" }
         ]
       ],
       "needles": [

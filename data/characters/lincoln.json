@@ -83,7 +83,7 @@
     ],
     "bet": [
       "Bet. A modest sum. I was a country lawyer.",
-      "Let's see who's in earnest.",
+      "Bet. If you won't use those chips, I'd like to borrow them.",
       "Bet. Four score and seven chips.",
       "Bet. The Union's credit is good."
     ],
@@ -92,6 +92,10 @@
       "I'll raise. Events have controlled me long enough.",
       "Raise. A house divided cannot stand. Pick a side.",
       "Raise. I'd stand up for it, but I'd hit the ceiling."
+    ],
+    "reraised": [
+      "Now there's somebody who fights. I could have used you in '62.",
+      "Pushing me? I have been pushed by a whole Congress."
     ],
     "all_in": [
       "All in. With malice toward none.",
@@ -112,6 +116,15 @@
       "Four score and seven chips ago, I had a stack.",
       "A house divided. Mine, it seems.",
       "I've lost elections with better grace than that. Not many."
+    ],
+    "lose_full_house": [
+      "Beaten by a full house. Houses and I have a history."
+    ],
+    "win_full_house": [
+      "A house divided against itself cannot stand. A full house can."
+    ],
+    "win_straight": [
+      "An honest straight, from Honest Abe."
     ]
   }
 }

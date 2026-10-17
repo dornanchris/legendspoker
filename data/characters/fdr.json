@@ -88,15 +88,20 @@
       "Bet. A little stimulus for the table."
     ],
     "raise": [
-      "Raise. The only thing to fear is fear itself.",
+      "Raise. Add it to the alphabet agencies.",
       "I'll raise. My left hand insists.",
       "Raise. Put it to Congress.",
       "Raise. Alphabet soup: R, A, I, S, E."
     ],
+    "reraised": [
+      "Re-raise me? I tried to pack the Supreme Court. I can pack a pot.",
+      "Opposition! I was elected four times on it."
+    ],
     "all_in": [
       "All in, my friends. Every last chip.",
       "All in. Four terms' worth.",
-      "The whole stack. I did say I juggle."
+      "The whole stack. I did say I juggle.",
+      "All in. The only thing you have to fear is getting felted."
     ],
     "win": [
       "New deal!",
@@ -109,7 +114,13 @@
       "Well, that hand didn't have a leg to stand on. Neither do I, and I did all right.",
       "The only thing to fear was that last card. Fear was right.",
       "Back to the fireside, then.",
-      "I'd take it to the Supreme Court, but they'd only rule against me again."
+      "I'd appeal, but the Court never did like me."
+    ],
+    "lose_flush": [
+      "The only thing we had to fear was the flush draw. I did mention it."
+    ],
+    "win_flush": [
+      "The only thing you have to fear is the flush draw."
     ]
   }
 }

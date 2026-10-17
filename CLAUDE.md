@@ -279,7 +279,12 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   has spoken (`showdownWord` in director.ts, about 0.45 of the time, never
   two hands running). The cards are public by then, so these, and only
   these, may name a hand: this is where the puns live (Lincoln's "I do
-  proclaim: this pot is mine"). Each joke comes from the character's own
+  proclaim: this pot is mine"). A pool can name the winning hand
+  (`win_flush`, `lose_full_house`: FDR's "the only thing you have to fear
+  is the flush draw", Lincoln's full house that CAN stand), preferred when
+  it fits. **`reraised`**: said calling or raising when one's own bet was
+  just raised over on that street (Teddy's Panama ditch), a reply, so it
+  may follow the raiser's words. Each joke comes from the character's own
   legend, never a modern wink; Death stays dry. The White House is the
   first table written this way (the owner reviews the dial before the
   rest). None of this needs an ENGINE_VERSION bump.

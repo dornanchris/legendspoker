@@ -14,7 +14,7 @@
 import { CHARACTERS, TABLES, TABLE_BY_ID, DIALOGUE, DEALER, MARKS, STORY, UNINVITED, fullCast, tableSpeakers, type Line } from './content.js'
 import { QUIRKS } from './quirks.js'
 import { CONDITION_TYPES, conditionErrors } from './marks.js'
-import { CALLOUT_ACTIONS, SHOWDOWN_POOLS, isStage } from './chatter.js'
+import { CALLOUT_ACTIONS, SHOWDOWN_POOLS, HAND_POOLS, RERAISED, isStage } from './chatter.js'
 import { readdirSync, readFileSync, existsSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
@@ -283,7 +283,7 @@ for (const c of Object.values(CHARACTERS)) {
   const mute = (spoken.get(c.id)?.lines ?? 0) > 0 && spoken.get(c.id)!.stage === spoken.get(c.id)!.lines
   const tells = (c.tells ?? []).map((t) => t.text.toLowerCase())
   for (const [action, lines] of Object.entries(co)) {
-    if (![...CALLOUT_ACTIONS, ...SHOWDOWN_POOLS].includes(action as never)) { err(w, `unknown action "${action}"`); continue }
+    if (![...CALLOUT_ACTIONS, RERAISED, ...SHOWDOWN_POOLS, ...HAND_POOLS].includes(action as never)) { err(w, `unknown action "${action}"`); continue }
     if (!Array.isArray(lines) || !lines.length) { err(w, `${action} must be a non-empty list of lines`); continue }
     const seen = new Set<string>()
     for (const text of lines) {
@@ -297,7 +297,7 @@ for (const c of Object.values(CHARACTERS)) {
       if (/\{\w+\}/.test(text)) err(w, `${action}: "${text}" -- callouts address the table, not the player: no placeholders`)
       for (const re of TRIPWIRES) if (re.test(text)) err(w, `${action}: "${text}" -- tripwire ${re}`)
       // A showdown's words come after the cards are face up: talking about the hand gives nothing away.
-      if (!(SHOWDOWN_POOLS as string[]).includes(action)) for (const re of CALLOUT_LEAKS) if (re.test(text)) err(w, `${action}: "${text}" -- reads as hand strength (${re})`)
+      if (!([...SHOWDOWN_POOLS, ...HAND_POOLS] as string[]).includes(action)) for (const re of CALLOUT_LEAKS) if (re.test(text)) err(w, `${action}: "${text}" -- reads as hand strength (${re})`)
       for (const t of tells) if (text.toLowerCase().includes(t)) err(w, `${action}: "${text}" -- repeats the tell "${t}" and would teach a false read`)
       if (c.role === 'dealer' && CONTRACTION.test(text)) err(w, `${action}: "${text}" -- Death does not use contractions`)
       if (text.length > 70) warn(w, `${action}: "${text}" is long for a callout (${text.length} chars)`)

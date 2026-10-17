@@ -39,7 +39,7 @@ import { CHARACTERS, DEALER, tellLine, type TableData, type DialogueData, type L
 import { preflopStrength, type Card } from './equity.js'
 import { fillLine, tierFor, RESPECT_POINTS, RESPECT_THRESHOLDS, earnedName } from './tour.js'
 import { handRank, marksForHand, marksForTable, type HandFacts, type TableFacts } from './marks.js'
-import { Chatter, type CalloutBeat } from './chatter.js'
+import { Chatter, HAND_NAMES, type CalloutBeat } from './chatter.js'
 
 export type Beat =
   | { kind: 'line'; id: string; speaker: string; text: string; stage: boolean }
@@ -890,7 +890,7 @@ export class TableRun {
     if (e.seat === HUMAN || !id || !this.canSpeak(id)) return []
     const allIn = (a === 'call' || a === 'bet' || a === 'raise') && e.stacks[e.seat] === 0
     const seated = this.seats.filter((s) => s !== null).length
-    const c = this.chatter.callout({ id, hand: this.h.no, street: this.h.street, action: a, allIn, seated })
+    const c = this.chatter.callout({ id, hand: this.h.no, street: this.h.street, action: a, allIn, seated, seat: e.seat })
     return c ? [c] : []
   }
 
@@ -910,7 +910,10 @@ export class TableRun {
       if (d > best) { best = d; winner = this.h.ids[s]! }
     }
     const losers = shown.filter((s) => (this.h.deltas.get(s) ?? 0) < 0).map((s) => this.h.ids[s]!)
-    const c = this.chatter.showdown(hand, winner, losers)
+    // The main pot's winning hand, by name, when it had one winner.
+    const main = sd.pots[0]
+    const rank = main?.winners.length === 1 && main.ranking ? RANKINGS.indexOf(main.ranking) : -1
+    const c = this.chatter.showdown(hand, winner, losers, HAND_NAMES[rank] ?? null)
     return c ? [c] : []
   }
 

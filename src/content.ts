@@ -185,7 +185,14 @@ export type OtherData = {
 export type CalloutAction = 'fold' | 'check' | 'call' | 'bet' | 'raise' | 'all_in'
 /** Said after a showdown, when the cards are face up: taking the pot, or losing it. */
 export type ShowdownPool = 'win' | 'lose'
-export type Callouts = Partial<Record<CalloutAction | ShowdownPool, string[]>>
+/** The winning hand's name, as a showdown pool's suffix: `lose_flush` is said on losing to a flush. */
+export type HandName =
+  | 'high_card' | 'pair' | 'two_pair' | 'three_of_a_kind' | 'straight'
+  | 'flush' | 'full_house' | 'four_of_a_kind' | 'straight_flush' | 'royal_flush'
+export type HandPool = `${ShowdownPool}_${HandName}`
+/** Said calling or raising when one's own bet or raise has just been raised over. */
+export type ReraisedPool = 'reraised'
+export type Callouts = Partial<Record<CalloutAction | ReraisedPool | ShowdownPool | HandPool, string[]>>
 
 export type ArrivalData = {
   character: string

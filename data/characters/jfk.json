@@ -78,6 +78,10 @@
       "Raise. Let's not negotiate out of fear.",
       "Raise. Eyeball to eyeball."
     ],
+    "reraised": [
+      "Thirteen days I can do. Thirteen seconds is nothing.",
+      "Pressure? I've been rammed by a destroyer."
+    ],
     "all_in": [
       "All in. We choose to.",
       "Everything. The torch has been passed.",
@@ -86,13 +90,16 @@
     "win": [
       "Ask not what the pot can do for you.",
       "We choose to win this pot, and do the other things.",
-      "One brief, shining moment.",
+      "Ich bin ein Gewinner.",
       "Not because it was easy. Because it was mine."
     ],
     "lose": [
       "Victory has a hundred fathers. That pot's an orphan.",
       "I'll take full responsibility.",
       "Well. They can't all be the moon."
+    ],
+    "win_full_house": [
+      "A full house. Jackie will want to redecorate it."
     ]
   },
   "profile": {

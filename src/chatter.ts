@@ -35,7 +35,7 @@
  * Nothing here branches on who anyone is. Who says what is data.
  */
 import { mulberry32 } from './rng.js'
-import { CHARACTERS, type CalloutAction, type Callouts, type Line, type ShowdownPool } from './content.js'
+import { CHARACTERS, type CalloutAction, type Callouts, type HandName, type HandPool, type Line, type ReraisedPool, type ShowdownPool } from './content.js'
 import type { Action } from './decide.js'
 
 export type CalloutBeat = {
@@ -44,8 +44,8 @@ export type CalloutBeat = {
   text: string
   /** A gesture rather than speech: the data wraps it in [brackets]. */
   stage: boolean
-  /** Which pool it came from: the public action, all_in, or a showdown's win or lose. */
-  action: CalloutAction | ShowdownPool
+  /** Which pool it came from: the public action, all_in, reraised, or a showdown's. */
+  action: CalloutAction | ReraisedPool | ShowdownPool | HandPool
 }
 
 export const CALLOUT_ACTIONS: CalloutAction[] = ['fold', 'check', 'call', 'bet', 'raise', 'all_in']
@@ -55,6 +55,26 @@ export const CALLOUT_ACTIONS: CalloutAction[] = ['fold', 'check', 'call', 'bet',
  * public by then, so these are where the puns about the hand itself go.
  */
 export const SHOWDOWN_POOLS: ShowdownPool[] = ['win', 'lose']
+/**
+ * The winning hand by name, in poker-ts's order (RANKINGS in game.ts).
+ * `win_flush` is said taking a pot with a flush, `lose_flush` losing to one:
+ * a joke that only works for that hand. Preferred over the plain pool when
+ * there is one, so a rare hand's line is not lost among the general ones.
+ */
+export const HAND_NAMES: HandName[] = [
+  'high_card', 'pair', 'two_pair', 'three_of_a_kind', 'straight',
+  'flush', 'full_house', 'four_of_a_kind', 'straight_flush', 'royal_flush',
+]
+export const HAND_POOLS: HandPool[] = SHOWDOWN_POOLS.flatMap((p) => HAND_NAMES.map((n) => `${p}_${n}` as HandPool))
+/** Chance a showdown speaker with words for this exact hand uses them. */
+const HAND_POOL_CHANCE = 0.75
+/**
+ * Said calling or raising again after one's own bet or raise was raised over
+ * on the same street ("You want a fight?"). Public: everyone saw the raise.
+ * Spoken a little more readily than the action's own lines.
+ */
+export const RERAISED: ReraisedPool = 'reraised'
+const RERAISED_BOOST = 1.5
 /** Chance a showdown says anything, and the hands between two of them. */
 export const SHOWDOWN_CHANCE = 0.45
 export const SHOWDOWN_GAP_HANDS = 2
@@ -92,6 +112,8 @@ export type PublicAction = {
   allIn: boolean
   /** Players at the table, the player included: the chairs are in plain sight. */
   seated: number
+  /** The speaker's chair: whether their own bet was just raised over is public. */
+  seat?: number
 }
 
 export const isStage = (text: string) => /^\[[^\]]*\]$/.test(text.trim())
@@ -113,6 +135,10 @@ export class Chatter {
   private street = ''
   private aggressor = -1
   private foldedTo = new Map<number, number>()
+  /** Seats whose bet or raise has been raised over on this street, not yet answered. */
+  private raisedOver = new Set<number>()
+  /** The seat answering a raise over its own bet with the action just observed, else -1. */
+  private answering = -1
 
   constructor(seed: number, lookup: (id: string) => Callouts | undefined = (id) => CHARACTERS[id]?.callouts) {
     this.rng = mulberry32((seed ^ 0xca11ab1e) >>> 0)
@@ -134,8 +160,13 @@ export class Chatter {
       // A new street starts with nobody's bet on the table. The blinds are
       // not a bet anyone chose, so folding to them needles nobody.
       this.aggressor = -1
+      this.raisedOver.clear()
     }
-    if (action === 'bet' || action === 'raise') this.aggressor = seat
+    this.answering = this.raisedOver.delete(seat) && (action === 'call' || action === 'raise') ? seat : -1
+    if (action === 'bet' || action === 'raise') {
+      if (action === 'raise' && this.aggressor >= 0 && this.aggressor !== seat) this.raisedOver.add(this.aggressor)
+      this.aggressor = seat
+    }
     else if (action === 'fold' && faced && this.aggressor >= 0 && this.aggressor !== seat) {
       this.foldedTo.set(seat, this.aggressor)
     }
@@ -152,14 +183,19 @@ export class Chatter {
     if (!own) return null
     const kind: CalloutAction = a.allIn && a.action !== 'fold' && a.action !== 'check' ? 'all_in' : a.action
     // No words for going all in: the action underneath still has some.
-    const pool: CalloutAction = kind === 'all_in' && !own.all_in?.length ? a.action : kind
+    let pool: CalloutAction | ReraisedPool = kind === 'all_in' && !own.all_in?.length ? a.action : kind
+    // Answering a raise over one's own bet: observe() saw it a moment ago.
+    const answer = kind !== 'all_in' && a.seat !== undefined && a.seat === this.answering && !!own.reraised?.length
+    if (answer) pool = RERAISED
     const lines = own[pool]
     if (!lines?.length) return null
     const street = `${a.hand}:${a.street}`
-    if (street === this.lastStreet) return null
+    // An answer to a raise is a reply, not a second remark: it may follow
+    // the raiser's own words on the street, and breaks the quiet as an all in does.
+    if (street === this.lastStreet && !answer) return null
     const last = this.spoke.get(a.id)
-    if (kind !== 'all_in' && last !== undefined && a.hand - last <= CALLOUT_QUIET_HANDS) return null
-    let chance = CALLOUT_CHANCE[kind] * (SHORT_TABLE[a.seated] ?? 1)
+    if (kind !== 'all_in' && !answer && last !== undefined && a.hand - last <= CALLOUT_QUIET_HANDS) return null
+    let chance = CALLOUT_CHANCE[kind] * (SHORT_TABLE[a.seated] ?? 1) * (answer ? RERAISED_BOOST : 1)
     if (a.street === 'preflop' && (kind === 'fold' || kind === 'call')) chance *= PREFLOP_ROUTINE
     // Draw only when something could be said, as the director does: a
     // character with nothing to say costs the stream nothing.
@@ -167,24 +203,32 @@ export class Chatter {
     const text = lines[this.draw(`${a.id}.${pool}`, lines.length)]
     this.lastStreet = street
     this.spoke.set(a.id, a.hand)
-    return { kind: 'callout', speaker: a.id, text, stage: isStage(text), action: kind }
+    return { kind: 'callout', speaker: a.id, text, stage: isStage(text), action: answer ? RERAISED : kind }
   }
 
   /**
    * Maybe a word after a showdown: the winner's `win`, else a loser's `lose`.
-   * `losers` are seats that showed and lost, in no favoured order. Public:
-   * everyone has just seen the cards and who was paid.
+   * `losers` are seats that showed and lost, in no favoured order; `won`
+   * names the winning hand when the main pot had one winner (`win_flush`,
+   * `lose_flush`). Public: everyone has just seen the cards and who was paid.
    */
-  showdown(hand: number, winner: string | null, losers: string[]): CalloutBeat | null {
+  showdown(hand: number, winner: string | null, losers: string[], won: HandName | null = null): CalloutBeat | null {
     if (hand - this.lastShowdown < SHOWDOWN_GAP_HANDS) return null
+    const has = (id: string, pool: ShowdownPool) => {
+      const own = this.lookup(id)
+      return !!own?.[pool]?.length || (!!won && !!own?.[`${pool}_${won}`]?.length)
+    }
     const offers: [string, ShowdownPool][] = []
-    if (winner && this.lookup(winner)?.win?.length) offers.push([winner, 'win'])
-    for (const id of losers) if (this.lookup(id)?.lose?.length) offers.push([id, 'lose'])
+    if (winner && has(winner, 'win')) offers.push([winner, 'win'])
+    for (const id of losers) if (has(id, 'lose')) offers.push([id, 'lose'])
     if (!offers.length || this.rng() >= SHOWDOWN_CHANCE) return null
     // The winner first, usually: crowing is the funnier half.
-    const [id, pool] = offers[0][1] === 'win' && (offers.length === 1 || this.rng() < 0.65)
+    const [id, plain] = offers[0][1] === 'win' && (offers.length === 1 || this.rng() < 0.65)
       ? offers[0] : offers[1 + Math.floor(this.rng() * (offers.length - 1))] ?? offers[0]
-    const lines = this.lookup(id)![pool]!
+    const own = this.lookup(id)!
+    const exact = won ? `${plain}_${won}` as HandPool : null
+    const pool = exact && own[exact]?.length && (!own[plain]?.length || this.rng() < HAND_POOL_CHANCE) ? exact : plain
+    const lines = own[pool]!
     const text = lines[this.draw(`${id}.${pool}`, lines.length)]
     this.lastShowdown = hand
     this.spoke.set(id, hand)
