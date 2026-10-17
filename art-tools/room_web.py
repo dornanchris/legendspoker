@@ -62,11 +62,18 @@ while x <= tx + tw:
 # By seat number: the player is seat 0 at the bottom; play goes clockwise, so
 # seat 1 is on the player's left and the last seat on their right.
 SEATS = {'4': [[150, 0.52, 2], [470, 0.52, 2], [1130, 0.52, 2], [1440, 0.52, 2]]}
+# a room for a heads-up table gives its own chairs in pieces.json ("seats":
+# {"1": [[x, scale, sink]]}), and "dealer_plays" where the dealer is the
+# opponent (the finale: his chair is drawn as the dealer's figure)
+_spec = json.load(open(os.path.join(SRC, 'pieces.json'))) if os.path.exists(os.path.join(SRC, 'pieces.json')) else {}
+SEATS = {**SEATS, **_spec.get('seats', {})}
 def cut_pieces():
     spec_file = os.path.join(SRC, 'pieces.json')
     if not os.path.exists(spec_file):
         return {}
     spec = json.load(open(spec_file))
+    if not spec.get('sheet'):                              # a room with no loose pieces (only its seats)
+        return {}
     sheet = np.array(Image.open(os.path.join(SRC, spec['sheet'])).convert('RGB'))
     fg = sheet.astype(int).min(axis=2) < 235
     lab, _ = nd.label(fg, structure=np.ones((3, 3)))
@@ -119,6 +126,7 @@ json.dump({
     'dealer': [W / 2, 0.5, 2],
     # the deck under Death's right hand at rest, from his table line, in design px
     'deck': [45, 32],
+    **({'dealerPlays': True} if _spec.get('dealer_plays') else {}),
     **cut_pieces(),
 }, open(os.path.join(OUT, 'room.json'), 'w'), separators=(',', ':'))
 print('wrote', OUT)

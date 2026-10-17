@@ -95,6 +95,8 @@ export class Stage {
   private pieces = new Map<string, Img>()
   private loading = new Map<string, Promise<PuppetPlayer>>()
   private early = new Map<number, { name: string; prio: Prio; at: number }>()
+  /** A chair whose figure is the dealer's (the finale: Death plays, so seat 1 IS him). */
+  private alias = new Map<number, number>()
   /** Which presence piece stands in the room: before the late champion, after, or none. */
   private presence: 'before' | 'after' | null = null
   /** Each loop spot's frame and when it next changes (s). */
@@ -140,6 +142,8 @@ export class Stage {
     }))
     this.flicker = (this.room.data.loops ?? []).map((l) => l.spots.map(() => ({ frame: 0, next: 0 })))
     this.gutters = (this.room.data.loops ?? []).map((l) => l.spots.map(() => 0))
+    // where the dealer plays (the finale), his chair is the dealer's figure, not a second Death
+    if (this.room.data.dealerPlays) seatIds.forEach((id, i) => { if (i > 0 && id === 'death') this.alias.set(i, DEALER) })
     await Promise.all([this.seat(DEALER, 'death'), ...seatIds.map((id, i) => (i > 0 && id ? this.seat(i, id) : null))])
     if (!this.alive) return
     this.last = performance.now()
@@ -155,6 +159,7 @@ export class Stage {
 
   /** Put someone in a chair (null empties it). Someone with no puppet leaves it empty. */
   async seat(seat: number, id: string | null): Promise<void> {
+    if (this.alias.has(seat)) return
     this.actors.delete(seat)
     const entry = id ? PUPPETS[id] : undefined
     if (!id || !entry) return
@@ -182,21 +187,21 @@ export class Stage {
 
   /** Who is drawn in a chair (null: nobody, or someone with no puppet). */
   idAt(seat: number): string | null {
-    return this.actors.get(seat)?.id ?? null
+    return this.actors.get(this.at(seat))?.id ?? null
   }
 
   has(seat: number): boolean {
-    return this.actors.has(seat)
+    return this.actors.has(this.at(seat))
   }
 
   /** The figure in a chair (the IK test page seeks its clips). */
   player(seat: number) {
-    return this.actors.get(seat)?.player ?? null
+    return this.actors.get(this.at(seat))?.player ?? null
   }
 
   /** The figure in a chair, for its face (speech). */
   face(seat: number) {
-    return this.actors.get(seat)?.player.face ?? null
+    return this.actors.get(this.at(seat))?.player.face ?? null
   }
 
   /**
@@ -205,6 +210,7 @@ export class Stage {
    * playing to end (one waiting at most: the newest).
    */
   cue(seat: number, clip: string, prio: Prio): boolean {
+    seat = this.at(seat)
     const a = this.actors.get(seat)
     if (!a && prio !== PRIO.idle) {                        // still loading: played when they sit down
       this.early.set(seat, { name: clip, prio, at: performance.now() })
@@ -222,13 +228,13 @@ export class Stage {
   }
 
   busy(seat: number): boolean {
-    const a = this.actors.get(seat)
+    const a = this.actors.get(this.at(seat))
     return !!a && a.current !== null && a.player.timeOf(a.current.name) >= 0
   }
 
   /** They have left the table: finish what they are doing, then the chair is empty. */
   leave(seat: number): void {
-    const a = this.actors.get(seat)
+    const a = this.actors.get(this.at(seat))
     if (a) { a.leaving = true; a.pending = null }
   }
 
@@ -253,6 +259,11 @@ export class Stage {
       if (Math.abs(sx - x) + Math.abs(bottom - line) / 2 < Math.abs(bx - x) + Math.abs(bb - line) / 2) best = j
     })
     this.gutters[0][best] = this.clock + secs
+  }
+
+  /** The figure a chair is drawn as (the dealer's, where he plays). */
+  private at(seat: number): number {
+    return this.alias.get(seat) ?? seat
   }
 
   setStill(still: boolean) {
@@ -294,7 +305,7 @@ export class Stage {
     const seats = new Map<number, SeatSpot>()
     const spot = (seat: number, [x, sc, sink]: [number, number, number]) => {
       const line = this.rimAt(x) + sink
-      const a = this.actors.get(seat)
+      const a = this.actors.get(this.at(seat))
       const top = a ? a.player.puppet.headTop() : 500
       const rigLine = a ? a.player.puppet.rig.tableLine : 880
       seats.set(seat, {

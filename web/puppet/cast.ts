@@ -77,6 +77,8 @@ import martianRig from '../art/martian/rig.json'
 import martianAnim from '../art/martian/anim.json'
 import greyRig from '../art/grey_alien/rig.json'
 import greyAnim from '../art/grey_alien/anim.json'
+import phoenixRig from '../art/phoenix/rig.json'
+import phoenixAnim from '../art/phoenix/anim.json'
 import theAiRig from '../art/the_ai/rig.json'
 import theAiAnim from '../art/the_ai/anim.json'
 import jekyllRig from '../art/jekyll/rig.json'
@@ -95,6 +97,10 @@ import rome from '../art/rooms/rome/room.json'
 import bakerStreet from '../art/rooms/baker_street/room.json'
 import transylvania from '../art/rooms/transylvania/room.json'
 import station from '../art/rooms/station/room.json'
+import champions1 from '../art/rooms/champions_1/room.json'
+import champions2 from '../art/rooms/champions_2/room.json'
+import finale from '../art/rooms/finale/room.json'
+import pyre from '../art/rooms/pyre/room.json'
 
 /**
  * The puppets the web build knows: each one's rig (generated) and its anim
@@ -176,6 +182,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   robot: { rig: robotRig as unknown as RigData, anim: robotAnim as unknown as AnimData, base: 'art/robot/' },
   martian: { rig: martianRig as unknown as RigData, anim: martianAnim as unknown as AnimData, base: 'art/martian/' },
   grey_alien: { rig: greyRig as unknown as RigData, anim: greyAnim as unknown as AnimData, base: 'art/grey_alien/' },
+  phoenix: { rig: phoenixRig as unknown as RigData, anim: phoenixAnim as unknown as AnimData, base: 'art/phoenix/' },
   the_ai: { rig: theAiRig as unknown as RigData, anim: theAiAnim as unknown as AnimData, base: 'art/the_ai/' },
   // the hidden guests: either may sit in any chair, at any table
   jfk: { rig: jfkRig as unknown as RigData, anim: jfkAnim as unknown as AnimData, base: 'art/jfk/' },
@@ -201,6 +208,8 @@ export type RoomData = {
   seats: Record<string, [number, number, number][]>
   dealer: [number, number, number]
   deck: [number, number]
+  /** The dealer is the opponent (the finale): his chair is drawn as the dealer's figure, at the dealer's spot. */
+  dealerPlays?: boolean
   /** Loose pieces of the room: placed ones have a centre x, a foot and a height (design px). */
   pieces?: Record<string, { img: string; aspect: number; x?: number; bottom?: number; h?: number }>
   /** The piece standing in the room until the late champion arrives, and the one after. */
@@ -220,4 +229,9 @@ export const ROOMS: Record<string, RoomEntry> = {
   baker_street: { data: bakerStreet as unknown as RoomData, base: 'art/rooms/baker_street/' },
   transylvania: { data: transylvania as unknown as RoomData, base: 'art/rooms/transylvania/' },
   station: { data: station as unknown as RoomData, base: 'art/rooms/station/' },
+  // the Hall of Doors, one room drawn twice: table I with the left doors open, table II the right
+  champions_1: { data: champions1 as unknown as RoomData, base: 'art/rooms/champions_1/' },
+  champions_2: { data: champions2 as unknown as RoomData, base: 'art/rooms/champions_2/' },
+  finale: { data: finale as unknown as RoomData, base: 'art/rooms/finale/' },
+  pyre: { data: pyre as unknown as RoomData, base: 'art/rooms/pyre/' },
 }

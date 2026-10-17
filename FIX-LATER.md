@@ -31,6 +31,27 @@ is done, and say so in the commit.
   cartoon (soft shading). They read fine at the table; redraw only if they
   stand out in play.
 
+## Online (when it is designed)
+
+- **Death as an online avatar** (the owner; the design doc: beating the game
+  unlocks Death as a playable avatar, which is the sequel storyline's payoff).
+  His kit is front-on, for the dealer's place and the finale; an avatar sits in
+  any chair, so he needs a three-quarter drawing, mirrored as the seat needs.
+  Rule 3: an online avatar's moves have ZERO correlation with its cards, so
+  cosmetic loops only, ideally unlike any single-player tell. Draw him with the
+  Stranger (`art-tools/avatar_parts/POSES.md`, whose prompts are still in the
+  first tables' flat style and put cards and chips in its hands: rewrite them
+  in the current style, hands empty, first).
+
+## Room and puppet leftovers (the last build)
+
+- **The Phoenix:** a sliver of the drawn rail by its near wing at rest; its
+  knocked-out flame is cut straight a little below the table line; its open
+  beak is clipped by the head's outline (it reads as a little open).
+- **The Pyre's, the Last Crossing's and the Hall's pieces are not used yet**
+  (the nest, ash, dawn sky; the lamp, rain, boat, door): drawn at other sizes
+  than the backdrops' (each pieces.json says why). The rooms read without them.
+
 ## The table screen (from the owner's screenshots)
 
 - **The Station's ceiling lens is cut off at 16:9.** The backdrop drew its

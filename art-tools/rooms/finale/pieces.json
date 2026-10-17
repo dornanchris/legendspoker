@@ -1,0 +1,5 @@
+{
+ "note": "The Last Crossing: Death is the opponent, heads up, across the table; his chair is the dealer's spot and his figure the dealer's (dealer_plays). The pieces (sources/pieces.png: the lamp flame on the felt, rain on the windows, the ferryman's boat, the door shut and ajar) are not used yet: the window and door pieces are drawn at other sizes than the backdrop's, and the lamp stands on the felt, which the room's layers draw behind the table.",
+ "seats": {"1": [[800, 0.5, 2]]},
+ "dealer_plays": true
+}

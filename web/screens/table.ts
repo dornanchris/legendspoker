@@ -349,9 +349,13 @@ export function tableScreen(root: HTMLElement): () => void {
     }
     const d = g.seats.get(DEATH)!
     place(els.dealer, d, 64)
+    // where the dealer plays (the finale) his chair's plate is his: no second plate under it
+    const plays = !!room?.data.dealerPlays
+    els.dealer.style.visibility = plays ? 'hidden' : ''
+    const anchor = plays ? seatUI.get(1)?.root ?? els.dealer : els.dealer
     const mid = els.dealer.parentElement?.querySelector<HTMLElement>('.middle')
     // the board under Death's plate, however tall the plate has grown
-    const below = els.dealer.offsetTop + els.dealer.offsetHeight + 6 * plateScale
+    const below = anchor.offsetTop + anchor.offsetHeight + 6 * plateScale
     if (mid) { mid.style.left = `${d.x}px`; mid.style.top = `${Math.max(d.line + 128 * g.k, below)}px` }
     els.deck.style.left = `${g.deck.x}px`
     els.deck.style.top = `${g.deck.y}px`

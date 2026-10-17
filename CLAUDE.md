@@ -152,7 +152,7 @@ art-tools/
                   with seat.json and <id>_layout.json; see each README
   jfk_parts/      JFK, the White House's hidden visitor (built; rig_spec.json);
                   jfk/ and sources/jfk_sheet_old.png are the old one-face kit
-  phoenix_parts/  the Phoenix, the hidden heads-up opponent: POSES.md only
+  phoenix_parts/  the Phoenix, the hidden heads-up opponent (built; rig_spec.json)
   loki_parts/     Loki, the uninvited guest (built; rig_spec.json; spoilers)
   avatar_parts/   the Stranger, the default ONLINE avatar (online is not
                   designed yet): POSES.md only, cosmetic, no tells (rule 3)
@@ -552,6 +552,19 @@ its mouth never moves, so its face pieces are made from its own head
 strong tell) and a glow in its eyes when it speaks. **The Station is complete on
 the real table screen**, the turn included: the Robot knocked out, the room goes
 amber and the AI sits down in its chair.
+**The Phoenix is built** (`#/puppet/phoenix`, 24 clips, the Pyre's one chair):
+the Station's graphic-novel style, its wings its forearms, its crest the tell
+surface (flaring, dimming to embers), a beak that opens as Death translates, and
+it burns down when knocked out. **Every room is built, and every table is
+staged on the real table screen** (`#/intro/<table>`): the Pyre (heads up: the
+Phoenix at seat 3's place, beside the rising sun), the Hall of Doors (two
+plates of one room: `champions_1` with the left doors open, `champions_2` the
+right), and the Last Crossing, where Death is the opponent: a room with
+`dealerPlays` draws his chair as the dealer's figure, hides the dealer's plate,
+and his player's clips the kit lacks are his dealer's (`art-tools/build/
+death_player.py`: call from bet, heads_up from steeple). A heads-up room gives
+its own chairs in pieces.json (`seats`). The single-player game's art is
+complete; Death and the Stranger as ONLINE avatars wait on online (FIX-LATER.md).
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
@@ -645,7 +658,7 @@ half that, all set by `art-tools/build/life.py`. Going out, a figure plays
 its `knocked_out` clip if it has one, then **fades from the chair** (0.8 s,
 stage.ts; the owner: a line, then gone); a puppet with no heads-up drawing
 leans in from its rest pose (`art-tools/build/fallback_clips.py`).
-`python3 art-tools/build/puppet_audit.py` holds all 42 puppets to the same
+`python3 art-tools/build/puppet_audit.py` holds all 43 puppets to the same
 list and prints 0 missing. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the
@@ -730,7 +743,7 @@ new art against that layout.
   at Hyde's death.
 - **The staged table (first pass) has gaps.** Someone without a puppet who
   sits down mid-table would leave the chair empty, plate only (both guests,
-  JFK and Loki, now have puppets; the Phoenix has none, at its own table). Two speech bubbles can overlap (a seat's line under Death's). Death's
+  JFK and Loki, now have puppets, and so does the Phoenix). Two speech bubbles can overlap (a seat's line under Death's). Death's
   clips draw their own cards and chips, which double the game's flights for a
   moment. A window narrower than 16:9 shows the room low with dark above.
   The table bar at the top (Leave, the table's name, Log) is still

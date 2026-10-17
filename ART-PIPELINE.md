@@ -130,9 +130,10 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
 | Transylvania: **live on the real table** (gothic from here) | built | all six (Van Helsing to redraw gothic; Jekyll, Hyde, the Wolf Man, the Horseman, Dracula) | | |
 | The Station: **live on the real table** | built (`?room=station`: the ceiling lens, the amber room after the turn) | all five (the Astronaut, the style baseline; the Robot; the AI, the Robot recoloured; the Martian; the Grey) | | |
-| Hall of Doors, Last Crossing | prompt only | (cast reused) | | the Hall of Doors' backdrop and doors; the Last Crossing's dock house |
+| Hall of Doors, Last Crossing: **live on the real table** | built (the Hall drawn twice: `champions_1`, `champions_2`; the dock house) | (cast reused; Death plays at the finale) | | |
 | Hidden guests (they sit in the table's room) | | JFK (redrawn), Loki | | |
-| Hidden: the Pyre | The Pyre: prompt | | the Phoenix (character sheet in; poses coming) | WITH THE OWNER: the Phoenix's pose and face sheets, then the Pyre's room; the Stranger (online avatar) waits on online |
+| Hidden: the Pyre: **live on the real table** | built (heads up) | the Phoenix | | |
+| **Art for single-player: complete.** Later | | | | Death and the Stranger as ONLINE avatars (three-quarter, any chair, cosmetic loops only: rule 3) when online is designed; the redraw list in FIX-LATER.md |
 
 Seats at Rome: 1 Spartacus, 2 the Pope, 3 Cerberus (mirrored, giant),
 4 Scipio (mirrored); Caesar arrives into the first empty chair (any side).
