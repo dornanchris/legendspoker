@@ -128,7 +128,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
 | Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
-| Transylvania: **live on the real table** (gothic from here) | built | Van Helsing (redraw later), Jekyll, Hyde, the Wolf Man, the Horseman | | Dracula (he arrives; Jekyll and Hyde replaced the Monster) |
+| Transylvania: **live on the real table** (gothic from here) | built | Van Helsing (redraw later), Jekyll, Hyde, the Wolf Man, the Horseman | | WITH THE OWNER: Dracula's sheets (`dracula_parts/POSES.md`, the owner's look: young, caped, red-eyed; gothic, the chalice his prop, `arrive` C6) |
 | The Station | prompt only | | | the Grey Alien, the Martian, the Robot, the Astronaut, the AI (a ceiling lens; light) |
 | Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
 | Hidden guests (they sit in the table's room) | | JFK (redrawn), Loki | | |

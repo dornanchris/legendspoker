@@ -943,9 +943,9 @@ Stoker's Count is not a caped seducer. He is an old man dressed in black, with a
 - Tell (weak, 0.6): *steeples his fingers*
 - Idle noise: *sips from his chalice*; *runs a fingernail along the table*; *smiles without showing his teeth*; *watches the pulse in someone's throat*
 
-**Look.** Silhouette: tall and thin, in black without a speck of colour, a long white moustache drooping past the chin. Stoker's face: a thin, high-bridged nose, pointed ears, extreme pallor, very red lips, sharp white teeth, and eyebrows so massive they almost meet over the nose. The brows are half the tell surface; the other half is the prop, a dark, heavy chalice. **Prop:** A dark chalice.
+**Look.** Silhouette: tall and thin, in black, the high red-lined collar of his cape standing up behind his head in two points. Younger than Stoker's old man (he has fed): a gaunt, very pale face, black hair swept back from a widow's peak, pointed ears, red eyes, very red lips, sharp white fangs, heavy dark brows that almost meet, long black nails; a red brocade waistcoat, a white jabot, a red cravat with a ruby brooch, a ruby ring. The brows are half the tell surface; the other half is the prop, a dark, heavy chalice. **Prop:** A dark chalice.
 
-**Public domain.** Stoker's novel (1897) is public domain. Bela Lugosi's likeness and Universal's 1931 design are not, nor are the later screen Draculas: no slicked hair and widow's peak, no high-collared opera cape, no medallion, no evening dress, no film lines. Nosferatu's bald Orlok is out too. Build him from Stoker: old, white-moustached, heavy-browed, all in black.
+**Public domain.** Stoker's novel (1897) is public domain, and so, in the US, is the high-collared cape of the 1927 stage play. Bela Lugosi's likeness and Universal's film designs are not: not his face, no medallion on a ribbon, no film lines. Red eyes, pointed ears and fangs keep the owner's design clear of them. Nosferatu's bald Orlok is out too.
 
 ## 8. The Station
 
