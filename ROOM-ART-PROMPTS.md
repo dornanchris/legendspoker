@@ -47,7 +47,7 @@ The table screen has to hold four opponents, Death dealing between them, and the
 | The Station | Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red) | — |
 | The Champions' Tables (the Hall of Doors) | Dark, lit only by what the open doors let in | 1 |
 | The Last Crossing | One oil lamp, warm and small, against storm-dark blue | — |
-| The Pyre | Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar | 1 |
+| The Pyre | Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar | — |
 
 ---
 
@@ -415,7 +415,7 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 ## The Pyre
 
-**What makes it unique:** The hidden table (the Phoenix's gauntlet): dawn instead of night, sandstone and spice instead of gold and wood. Ash drifts across the felt like snow. One opponent, so the room can be grand and still read: everything bright is high and at the sides.
+**What makes it unique:** The hidden table (the Phoenix's gauntlet): dawn instead of night, sandstone and spice instead of gold and wood. Ash drifts across the felt like snow. Heads up, so only two figures sit at it: Death and the Phoenix, who has stepped down from its nest on the altar to play.
 
 - **The room:** The inner court of the temple of the Sun at Heliopolis, in the last hour before dawn: tall sandstone columns, a sky going from violet to gold beyond them, and on a stone altar at the back a nest of cinnamon and myrrh, smouldering. Death's table stands in the middle of the court. Ash drifts across the felt like snow and never settles.
 - **Sounds (for reference):** a dry wind through the columns; spice crackling on embers; a single bird call, far up in the dawn; ash hissing as it lands on warm stone
@@ -425,9 +425,9 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 **Backdrop plate:**
 
 ```
-Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no birds, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. This table is played HEADS UP: only TWO figures will sit across the middle band, the dealer dead centre (50% across) and one great bird at about 70% across, their heads about a quarter to a third of the way down: the wall behind each of them is calm and plain, so they read against it. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
 
-The room: The inner court of an ancient Egyptian temple of the Sun, in the last hour before dawn: tall sandstone columns with papyrus capitals and faded painted bands, open to a sky going from violet at the top to gold low down between the columns. At the back, high on a stone altar, a nest of cinnamon sticks and myrrh, smouldering, with a thin column of smoke. Warm, glowing, hopeful, never dark or scary.
+The room: The inner court of the temple of the Sun at Heliopolis, in the last hour before dawn. Tall sandstone columns with papyrus capitals and faded painted bands of red, blue and gold, standing in a row across the back, and between them the open sky, going from deep violet at the top to warm gold low down at the horizon. Dead centre at the back, behind the dealer: the broad flat face of a sandstone pylon wall, plain and softly lit, calm and mid-toned. Behind the bird's seat at about 70% across: plain sandstone wall, calm. On the LEFT, at EXACTLY 28% across, a tall stepped stone altar, its top at about 40% of the way down, and on top of it a great round nest of cinnamon sticks and myrrh, EMPTY, smouldering, a thin column of pale smoke rising from it to the top of the picture: this is where the bird has stepped down from. At the far LEFT and far RIGHT edges, the brightest gold of the dawn between the columns. A few grey flakes of ash drifting in the air, high up. No birds anywhere in this plate. Warm, glowing, hopeful, never dark or scary. Take the STYLE from the SECOND attached image (the bird who plays in this room): its thick inked outlines and flat, hard-edged shading, a little softer and less saturated.
 Light: Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar.
 Must NOT resemble: Nothing from the Harry Potter books or films, Marvel's Phoenix or any modern film or game. No hieroglyphs that spell words, no text.
 ```
@@ -438,9 +438,8 @@ Must NOT resemble: Nothing from the Harry Potter books or films, Marvel's Phoeni
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
 
 For the room: The Pyre. Parts:
-- The empty nest on the altar, without the bird, for after it has stepped down to the table
-- Drifting ash flakes, 3 frames, grey and pale, to fall slowly across the scene
-- The smouldering nest: 3 frames of glowing embers and a curl of smoke
+- The smouldering nest on the altar, drawn alone at the size it is in the backdrop: 3 frames of glowing embers and a curl of smoke
+- Drifting ash flakes, grey and pale: 3 frames, to fall slowly across the scene
 - The dawn sky between the columns, a second, slightly brighter version, for the sun coming up as the sitting goes on
 
 Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
