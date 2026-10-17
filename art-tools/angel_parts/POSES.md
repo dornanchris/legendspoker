@@ -28,7 +28,7 @@ and a thin plain gold halo. NOT radiant or glowing (the finale is lit by one
 lamp), no sword, no trumpet, no armour, not a cherub, not a statue, nothing
 creepy. Nothing about it says man or woman.
 
-Drawn: `sources/angel_sheet.png`, `sources/poses_a.png`, `sources/poses_b.png`, `sources/poses_c.png` (C5 has little motion strokes by the wings: drop them at the cut, they are separate small pieces) (the owner: "I do like the angel"), a
+Drawn (every sheet): `sources/angel_sheet.png`, `sources/faces.png`, `sources/poses_a.png`, `sources/poses_b.png`, `sources/poses_c.png` (C5 has little motion strokes by the wings: drop them at the cut, they are separate small pieces) (the owner: "I do like the angel"), a
 young-looking man with curly hair; the prompts below follow the drawing.
 
 Earlier draws, kept as a record (`sources/rejected/`): a ferryman in an ochre

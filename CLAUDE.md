@@ -176,7 +176,7 @@ art-tools/
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
                   back); death_layout.json assembles him
   angel_parts/    Pravuil, the Recording Angel, who deals the finale while Death plays
-                  (the owner's call): POSES.md, prompts only (two ferryman
+                  (the owner's call): POSES.md and every sheet drawn, not built (two ferryman
                   draws rejected); death_avatar_parts/ is Death as a player
                   (sheets drawn)
   prompts/        generators for the two art-prompt files below
