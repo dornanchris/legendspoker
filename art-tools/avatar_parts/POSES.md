@@ -27,6 +27,18 @@ The default avatar for ONLINE play, which is not designed yet: drawn now so the 
 | C5 | Pulls a glove snug at the wrist | LOOP |
 | C6 | Glances round the room | LOOP |
 
+## Drawn
+
+`sources/`: `stranger_sheet.png`, `poses_a.png`, `poses_b.png` (with
+`poses_b_alt.png`, the other draw) and `poses_c.png`. The coat came out dark
+brown, not charcoal: kept. The puppet is not built (online is not designed).
+
+**Accent colours, the player's free choice** (the owner): the scarf, hat band
+and glove cuffs are the one teal in the drawing (hue 175-202, clear of the
+blue rim light at 210+ and the felt at 80-150), so `accent.py` swaps them by
+hue and keeps the drawing's light and shadow. `accents.png` shows teal,
+crimson, gold, violet, ivory and emerald.
+
 ## Prompts
 
 One fresh ChatGPT chat for all four. The first prompt attaches THREE images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, then the Astronaut's character sheet (`art-tools/astronaut_parts/sources/astronaut_sheet.png`) and his pose sheet A (`art-tools/astronaut_parts/sources/poses_a.png`) for the style. From the second prompt on, attach the Stranger's own character sheet, its pose sheet A once it exists, AND the Astronaut's pose sheet A, and nothing else. There is no face sheet: it has no face.

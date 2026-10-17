@@ -41,6 +41,15 @@ is done, and say so in the commit.
   style, hands empty). Rule 3: an online avatar's moves have ZERO correlation
   with its cards, so sheet C of each is cosmetic loops only (LOOP), and the game
   side (which clips play online, and when) waits for online's design.
+  **The Stranger's sheets are drawn** (`art-tools/avatar_parts/sources/`:
+  the character sheet, poses A, B (and an alternate B) and C); its puppet is
+  not built. **Its accent is the player's to choose** (the owner: free, so
+  avatars differ a little until others are unlocked): the scarf, hat band
+  and glove cuffs are drawn teal, hue 175-202, apart from the blue rim light
+  and the felt, so `art-tools/avatar_parts/accent.py` recolours them by hue
+  (teal, crimson, gold, violet, ivory, emerald; `accents.png`). At build
+  time, bake a mask of those pixels per image and tint it at runtime, or
+  bake one set per accent: online's design decides which.
 
 ## Room and puppet leftovers (the last build)
 
