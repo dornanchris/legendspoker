@@ -1,0 +1,1196 @@
+{
+ "id": "astronaut",
+ "name": "The Astronaut",
+ "note": "Polygons in the rest pose (A1) pixels. The Station's style baseline (the owner). Seat 4, drawn facing right and mirrored. The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. His round helmet stands on the felt by his right hand: part of that forearm's piece at rest and a props box in every frame but `lose_big` (D4), where he rests his forehead on it in the middle.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    14,
+    20,
+    488,
+    472
+   ],
+   "what": "Rest: gloves on the felt, apart, the helmet by his right hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    519,
+    34,
+    495,
+    458
+   ],
+   "reg": [
+    1.0,
+    0,
+    14
+   ],
+   "what": "Peeking at his cards (right glove)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1029,
+    21,
+    492,
+    472
+   ],
+   "reg": [
+    1.0,
+    0,
+    1
+   ],
+   "what": "Check: two gloved fingers tap the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    14,
+    516,
+    488,
+    470
+   ],
+   "reg": [
+    1.0,
+    0,
+    3
+   ],
+   "what": "Call: right glove pushes forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    518,
+    512,
+    496,
+    479
+   ],
+   "reg": [
+    1.0,
+    -1,
+    -1
+   ],
+   "what": "Bet: leans in, right glove pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1029,
+    518,
+    492,
+    468
+   ],
+   "reg": [
+    1.0,
+    0,
+    4
+   ],
+   "what": "Fold: a small resigned push"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    14,
+    35,
+    493,
+    458
+   ],
+   "reg": [
+    1.0,
+    0,
+    15
+   ],
+   "what": "All in: both gloves push forward together"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    520,
+    40,
+    495,
+    453
+   ],
+   "reg": [
+    1.0,
+    -1,
+    20
+   ],
+   "what": "Show: right glove turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1025,
+    7,
+    498,
+    486
+   ],
+   "reg": [
+    1.0,
+    -5,
+    -13
+   ],
+   "what": "Big win: gloved fists in the air, a huge grin (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    14,
+    514,
+    492,
+    468
+   ],
+   "reg": [
+    1.0,
+    0,
+    4
+   ],
+   "what": "Grins, then hides it"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    520,
+    511,
+    495,
+    471
+   ],
+   "reg": [
+    1.0,
+    0,
+    1
+   ],
+   "what": "Yawns (decoy for B4)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1029,
+    504,
+    491,
+    478
+   ],
+   "reg": [
+    1.0,
+    0,
+    -6
+   ],
+   "what": "Glances out of the window at Earth"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    13,
+    19,
+    489,
+    465
+   ],
+   "reg": [
+    1.0,
+    -1,
+    7
+   ],
+   "what": "Touches a photograph tucked in his sleeve (decoy for B6)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    516,
+    16,
+    499,
+    468
+   ],
+   "reg": [
+    1.0,
+    0,
+    4
+   ],
+   "what": "Checks the oxygen gauge on his wrist"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1028,
+    16,
+    494,
+    468
+   ],
+   "reg": [
+    1.0,
+    -1,
+    4
+   ],
+   "what": "Rubs a scuff on his helmet (decoy for C2)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    12,
+    503,
+    491,
+    464
+   ],
+   "reg": [
+    1.0,
+    0,
+    9
+   ],
+   "what": "Floats a token an inch off his palm and catches it"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    516,
+    507,
+    497,
+    459
+   ],
+   "reg": [
+    1.0,
+    0,
+    13
+   ],
+   "what": "Turns to look at you, a kind smile"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1023,
+    498,
+    501,
+    468
+   ],
+   "reg": [
+    1.0,
+    -5,
+    4
+   ],
+   "what": "Rolls his shoulders in the stiff suit (a fidget)"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    18,
+    23,
+    486,
+    468
+   ],
+   "reg": [
+    1.0,
+    0,
+    4
+   ],
+   "what": "Talking: a glove raised, palm open"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    518,
+    10,
+    498,
+    481
+   ],
+   "reg": [
+    1.0,
+    0,
+    -9
+   ],
+   "what": "Facing a big bet: sitting back, eyebrows up"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1030,
+    26,
+    490,
+    465
+   ],
+   "reg": [
+    1.0,
+    0,
+    7
+   ],
+   "what": "Lost a pot: a rueful half smile"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    10,
+    524,
+    494,
+    444
+   ],
+   "reg": [
+    1.0,
+    -6,
+    29
+   ],
+   "what": "Crushing loss: his forehead on his helmet (`lose_big`)"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    518,
+    533,
+    498,
+    435
+   ],
+   "reg": [
+    1.0,
+    0,
+    38
+   ],
+   "what": "Heads up: leaning in on both forearms"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1031,
+    510,
+    489,
+    458
+   ],
+   "reg": [
+    1.0,
+    0,
+    14
+   ],
+   "what": "A tired laugh"
+  }
+ },
+ "rest": "A1",
+ "table_y": 368,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  220,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 172,
+ "neck": [
+  278,
+  175
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  200,
+  150,
+  340,
+  220
+ ],
+ "master": {
+  "piece": "astronaut_parts/astronaut_face/astronaut_master.png",
+  "cut_below": 200,
+  "face": "astronaut_parts/face.json",
+  "file": "astronaut_parts/astronaut_rig/master.png",
+  "layers": "astronaut_parts/astronaut_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    172,
+    0
+   ],
+   [
+    388,
+    0
+   ],
+   [
+    388,
+    60
+   ],
+   [
+    362,
+    120
+   ],
+   [
+    342,
+    165
+   ],
+   [
+    315,
+    182
+   ],
+   [
+    280,
+    188
+   ],
+   [
+    245,
+    172
+   ],
+   [
+    212,
+    150
+   ],
+   [
+    182,
+    135
+   ],
+   [
+    168,
+    90
+   ]
+  ],
+  "shoulder_y": 178
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    90,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     30,
+     255
+    ],
+    [
+     140,
+     255
+    ],
+    [
+     140,
+     320
+    ],
+    [
+     30,
+     320
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and glove, and the helmet by it",
+     "poly": [
+      [
+       0,
+       292
+      ],
+      [
+       100,
+       292
+      ],
+      [
+       160,
+       338
+      ],
+      [
+       212,
+       358
+      ],
+      [
+       262,
+       390
+      ],
+      [
+       302,
+       430
+      ],
+      [
+       304,
+       472
+      ],
+      [
+       0,
+       472
+      ]
+     ],
+     "props": [
+      [
+       [
+        0,
+        292
+       ],
+       [
+        174,
+        292
+       ],
+       [
+        174,
+        470
+       ],
+       [
+        0,
+        470
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    468,
+    298
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     420,
+     248
+    ],
+    [
+     488,
+     248
+    ],
+    [
+     488,
+     298
+    ],
+    [
+     420,
+     298
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, the oxygen gauge and glove",
+     "poly": [
+      [
+       320,
+       420
+      ],
+      [
+       340,
+       380
+      ],
+      [
+       380,
+       350
+      ],
+      [
+       420,
+       320
+      ],
+      [
+       460,
+       288
+      ],
+      [
+       488,
+       298
+      ],
+      [
+       488,
+       425
+      ],
+      [
+       460,
+       442
+      ],
+      [
+       440,
+       472
+      ],
+      [
+       328,
+       472
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "grin": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "yawn": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "window": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "photo": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "gauge": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "scuff": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "token": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "turn": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "stretch": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": []
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  },
+  "laugh": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      292
+     ],
+     [
+      174,
+      292
+     ],
+     [
+      174,
+      470
+     ],
+     [
+      0,
+      470
+     ]
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/astronaut",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6,
+ "wood_rows_only": true
+}

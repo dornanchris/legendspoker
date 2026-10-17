@@ -1,0 +1,332 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "astronaut_face_01.png",
+      "label": "",
+      "x": 17,
+      "y": 7,
+      "w": 387,
+      "h": 365,
+      "pivot": [
+        193.5,
+        182.5
+      ],
+      "area": 90213
+    },
+    {
+      "index": 2,
+      "file": "astronaut_face_02.png",
+      "label": "",
+      "x": 424,
+      "y": 48,
+      "w": 271,
+      "h": 125,
+      "pivot": [
+        135.5,
+        62.5
+      ],
+      "area": 27550
+    },
+    {
+      "index": 3,
+      "file": "astronaut_face_03.png",
+      "label": "",
+      "x": 690,
+      "y": 45,
+      "w": 267,
+      "h": 128,
+      "pivot": [
+        133.5,
+        64.0
+      ],
+      "area": 27452
+    },
+    {
+      "index": 4,
+      "file": "astronaut_face_04.png",
+      "label": "",
+      "x": 946,
+      "y": 39,
+      "w": 270,
+      "h": 134,
+      "pivot": [
+        135.0,
+        67.0
+      ],
+      "area": 28780
+    },
+    {
+      "index": 5,
+      "file": "astronaut_face_05.png",
+      "label": "",
+      "x": 1207,
+      "y": 38,
+      "w": 269,
+      "h": 135,
+      "pivot": [
+        134.5,
+        67.5
+      ],
+      "area": 28653
+    },
+    {
+      "index": 6,
+      "file": "astronaut_face_06.png",
+      "label": "",
+      "x": 506,
+      "y": 199,
+      "w": 267,
+      "h": 129,
+      "pivot": [
+        133.5,
+        64.5
+      ],
+      "area": 27482
+    },
+    {
+      "index": 7,
+      "file": "astronaut_face_07.png",
+      "label": "",
+      "x": 798,
+      "y": 200,
+      "w": 280,
+      "h": 128,
+      "pivot": [
+        140.0,
+        64.0
+      ],
+      "area": 28947
+    },
+    {
+      "index": 8,
+      "file": "astronaut_face_08.png",
+      "label": "",
+      "x": 1085,
+      "y": 197,
+      "w": 270,
+      "h": 131,
+      "pivot": [
+        135.0,
+        65.5
+      ],
+      "area": 28316
+    },
+    {
+      "index": 9,
+      "file": "astronaut_face_09.png",
+      "label": "",
+      "x": 527,
+      "y": 359,
+      "w": 124,
+      "h": 58,
+      "pivot": [
+        62.0,
+        29.0
+      ],
+      "area": 2288
+    },
+    {
+      "index": 10,
+      "file": "astronaut_face_10.png",
+      "label": "",
+      "x": 636,
+      "y": 358,
+      "w": 84,
+      "h": 69,
+      "pivot": [
+        42.0,
+        34.5
+      ],
+      "area": 1658
+    },
+    {
+      "index": 11,
+      "file": "astronaut_face_11.png",
+      "label": "",
+      "x": 780,
+      "y": 369,
+      "w": 151,
+      "h": 55,
+      "pivot": [
+        75.5,
+        27.5
+      ],
+      "area": 3820
+    },
+    {
+      "index": 12,
+      "file": "astronaut_face_12.png",
+      "label": "",
+      "x": 926,
+      "y": 354,
+      "w": 112,
+      "h": 71,
+      "pivot": [
+        56.0,
+        35.5
+      ],
+      "area": 2571
+    },
+    {
+      "index": 13,
+      "file": "astronaut_face_13.png",
+      "label": "",
+      "x": 70,
+      "y": 448,
+      "w": 205,
+      "h": 134,
+      "pivot": [
+        102.5,
+        67.0
+      ],
+      "area": 19900
+    },
+    {
+      "index": 14,
+      "file": "astronaut_face_14.png",
+      "label": "",
+      "x": 354,
+      "y": 445,
+      "w": 212,
+      "h": 137,
+      "pivot": [
+        106.0,
+        68.5
+      ],
+      "area": 20602
+    },
+    {
+      "index": 15,
+      "file": "astronaut_face_15.png",
+      "label": "",
+      "x": 639,
+      "y": 445,
+      "w": 213,
+      "h": 135,
+      "pivot": [
+        106.5,
+        67.5
+      ],
+      "area": 21433
+    },
+    {
+      "index": 16,
+      "file": "astronaut_face_16.png",
+      "label": "",
+      "x": 943,
+      "y": 445,
+      "w": 216,
+      "h": 140,
+      "pivot": [
+        108.0,
+        70.0
+      ],
+      "area": 21656
+    },
+    {
+      "index": 17,
+      "file": "astronaut_face_17.png",
+      "label": "",
+      "x": 1229,
+      "y": 446,
+      "w": 217,
+      "h": 138,
+      "pivot": [
+        108.5,
+        69.0
+      ],
+      "area": 21700
+    },
+    {
+      "index": 18,
+      "file": "astronaut_face_18.png",
+      "label": "",
+      "x": 70,
+      "y": 599,
+      "w": 210,
+      "h": 135,
+      "pivot": [
+        105.0,
+        67.5
+      ],
+      "area": 20605
+    },
+    {
+      "index": 19,
+      "file": "astronaut_face_19.png",
+      "label": "",
+      "x": 354,
+      "y": 599,
+      "w": 206,
+      "h": 133,
+      "pivot": [
+        103.0,
+        66.5
+      ],
+      "area": 20089
+    },
+    {
+      "index": 20,
+      "file": "astronaut_face_20.png",
+      "label": "",
+      "x": 637,
+      "y": 597,
+      "w": 217,
+      "h": 130,
+      "pivot": [
+        108.5,
+        65.0
+      ],
+      "area": 20786
+    },
+    {
+      "index": 21,
+      "file": "astronaut_face_21.png",
+      "label": "",
+      "x": 935,
+      "y": 600,
+      "w": 218,
+      "h": 134,
+      "pivot": [
+        109.0,
+        67.0
+      ],
+      "area": 21668
+    },
+    {
+      "index": 22,
+      "file": "astronaut_face_22.png",
+      "label": "",
+      "x": 1224,
+      "y": 595,
+      "w": 219,
+      "h": 138,
+      "pivot": [
+        109.5,
+        69.0
+      ],
+      "area": 22249
+    },
+    {
+      "index": 23,
+      "file": "astronaut_face_23.png",
+      "label": "",
+      "x": 551,
+      "y": 725,
+      "w": 333,
+      "h": 294,
+      "pivot": [
+        166.5,
+        147.0
+      ],
+      "area": 62638
+    }
+  ]
+}
