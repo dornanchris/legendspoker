@@ -441,6 +441,11 @@ for (const id of existsSync(art) ? readdirSync(art) : []) {
   const w = `web/art/${id}/anim.json`
   // a changed figure of a character (the Green Knight after his return) says whose it is
   const c = CHARACTERS[anim.of ?? id]
+  if (anim.avatar) {                 // the player's own figure (the Stranger): no character, no tells (rule 3), loops only
+    if (Object.keys(anim.cues ?? {}).length) err(w, 'an avatar acts out no tells')
+    for (const clip of anim.fidgets ?? []) if (!anim.clips?.[clip]) err(w, `fidget "${clip}" is not a clip`)
+    continue
+  }
   if (!c && (anim.cues || anim.fidgets)) { err(w, 'cues for someone who is not a character'); continue }
   if (!c) continue
   const words = new Set([...c.tells.map((t) => t.text), ...c.idles])

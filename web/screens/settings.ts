@@ -4,6 +4,7 @@ import * as store from '../store.js'
 import { h, go } from '../dom.js'
 import { header } from './shared.js'
 import * as sound from '../sound.js'
+import { ACCENTS, type AccentName } from '../puppet/accent.js'
 
 /**
  * Settings (BUILD-PLAN screen 10). Only controls that do something today:
@@ -51,6 +52,21 @@ export function settingsScreen(root: HTMLElement): void {
     sound.chips(3)
   })
 
+  // the player's colour: free to choose, so their own figure is a little their own
+  const colour = h('div', { class: 'segmented swatches', role: 'radiogroup', 'aria-label': 'Your colour' },
+    (Object.entries(ACCENTS) as [AccentName, (typeof ACCENTS)[AccentName]][]).map(([v, a]) => {
+      const on = (s.accent ?? 'teal') === v
+      const b = h('button', { type: 'button', role: 'radio', 'aria-checked': String(on), class: on ? 'on' : '', title: a.label },
+        h('i', { class: 'swatch', style: `background:${a.swatch}` }), a.label)
+      b.addEventListener('click', () => {
+        store.update((x) => { x.settings.accent = v })
+        for (const o of colour.children) { o.classList.remove('on'); o.setAttribute('aria-checked', 'false') }
+        b.classList.add('on')
+        b.setAttribute('aria-checked', 'true')
+      })
+      return b
+    }))
+
   const nameInput = h('input', { type: 'text', maxlength: '24', value: save.player?.name ?? '', 'aria-label': 'Your name' }) as HTMLInputElement
   nameInput.addEventListener('change', () => {
     const name = nameInput.value.replace(/\s+/g, ' ').trim()
@@ -72,6 +88,7 @@ export function settingsScreen(root: HTMLElement): void {
         ? h('p', { class: 'warning' }, 'This browser is not letting the game save. Progress will last until the page is closed.')
         : null,
       save.player ? h('label', { class: 'setting stacked' }, h('b', null, 'Your name, as signed'), nameInput) : null,
+      h('div', { class: 'setting stacked' }, h('b', null, 'Your colour'), h('small', null, 'A colour of your own.'), colour),
       h('div', { class: 'setting stacked' }, h('b', null, 'Table pace'),
         h('small', null, 'How quickly the table is shown to you. It never changes how a hand plays.'), pace),
       toggle('Sound', 'Cards dealt, chips pushed, the knock of a check.', 'sound'),

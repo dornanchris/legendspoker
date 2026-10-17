@@ -248,6 +248,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .segmented button:first-child { border-radius: 6px 0 0 6px; }
 .segmented button:last-child { border-radius: 0 6px 6px 0; }
 .segmented button.on { background: #c9a22733; border-color: #c9a22788; color: var(--gold-soft); }
+.swatches button { display: inline-flex; align-items: center; justify-content: center; gap: 0.35em; }
+.swatch { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 50%; border: 1px solid #0006; }
 .danger-zone { border-color: #6b3b3b88; }
 .warning { color: #f0c27a; border: 1px solid #f0c27a55; padding: 8px 12px; border-radius: 6px; }
 .about-body h2 { font-size: 1.8rem; margin: 0 0 .2em; }

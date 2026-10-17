@@ -51,7 +51,9 @@ for path in sorted(glob.glob(os.path.join(ROOT, 'web', 'art', '*', 'anim.json'))
                 miss += [f'{side}.{t} -> {c}?' for t, c in v.items() if c not in clips]
         cid = anim.get('of', pid)
         cf = os.path.join(ROOT, 'data', 'characters', f'{cid}.json')
-        if os.path.exists(cf):
+        if anim.get('avatar'):                        # the player's own figure: no character file, no tells (rule 3)
+            pass
+        elif os.path.exists(cf):
             ch = json.load(open(cf))
             for text in [t['text'] for t in ch.get('tells', [])] + ch.get('idles', []):
                 clip = anim.get('cues', {}).get(text)

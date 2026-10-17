@@ -1,3 +1,5 @@
+import type { Accent } from './accent.js'
+
 /**
  * A puppet rig, as art-tools/seat_puppet.py exports it (web/art/<id>/rig.json):
  * bones with pivots, and parts (images) hung on them in their rest pose.
@@ -63,8 +65,43 @@ export function rotate(deg: number): Mat {
 export const apply = (m: Mat, x: number, y: number): [number, number] =>
   [m[0] * x + m[2] * y + m[4], m[1] * x + m[3] * y + m[5]]
 
+/** An image as the puppet draws it: as loaded, or tinted onto a canvas (the player's accent). */
+export type Pic = HTMLImageElement | HTMLCanvasElement
+export const picSize = (p: Pic): [number, number] =>
+  p instanceof HTMLCanvasElement ? [p.width, p.height] : [p.naturalWidth, p.naturalHeight]
+
+/** An image with its accent (mask white where the teal is) recoloured: see web/puppet/accent.ts. */
+function tint(im: Pic, mask: HTMLImageElement, a: Accent): HTMLCanvasElement {
+  const [w, h] = picSize(im)
+  const out = document.createElement('canvas')
+  out.width = w
+  out.height = h
+  const g = out.getContext('2d')!
+  g.drawImage(im, 0, 0)
+  const layer = (fill: string, alpha = 1) => {
+    const t = document.createElement('canvas')
+    t.width = w
+    t.height = h
+    const tg = t.getContext('2d')!
+    tg.drawImage(mask, 0, 0, w, h)
+    tg.globalCompositeOperation = 'source-in'
+    tg.fillStyle = fill
+    tg.globalAlpha = alpha
+    tg.fillRect(0, 0, w, h)
+    return t
+  }
+  g.globalCompositeOperation = 'color'                 // the hue and colour of the accent, the drawing's lightness
+  g.drawImage(layer(a.color), 0, 0)
+  if (a.lift > 0) {
+    g.globalCompositeOperation = 'screen'              // a pale accent on a dark scarf needs lifting
+    g.drawImage(layer(a.liftColor ?? '#ffffff', a.lift), 0, 0)
+  }
+  g.globalCompositeOperation = 'source-over'
+  return out
+}
+
 export type LoadedRig = RigData & {
-  images: Map<string, HTMLImageElement>
+  images: Map<string, Pic>
   /** Each part's rest matrix, mapping its image's pixels to canvas pixels. */
   rest: Map<string, Mat>
   bone: Map<string, RigBone>
@@ -78,26 +115,34 @@ export type LoadedRig = RigData & {
  * (the table's half-size copies, art-tools/web_half.py) and are scaled back
  * up; `table: false` skips the bench's preview table.
  */
-export async function loadRig(data: RigData, base: string, opts: { up?: number; table?: boolean } = {}): Promise<LoadedRig> {
+export async function loadRig(data: RigData, base: string, opts: { up?: number; table?: boolean; accent?: Accent } = {}): Promise<LoadedRig> {
   const up = opts.up ?? 1
-  const images = new Map<string, HTMLImageElement>()
-  const load = (src: string) => new Promise<void>((ok, fail) => {
-    if (images.has(src)) return ok()
+  const images = new Map<string, Pic>()
+  const img = (src: string) => new Promise<HTMLImageElement>((ok, fail) => {
     const im = new Image()
-    im.onload = () => ok()
-    im.onerror = () => fail(new Error(`puppet image not found: ${base}${src}`))
-    im.src = base + src
-    images.set(src, im)
+    im.onload = () => ok(im)
+    im.onerror = () => fail(new Error(`puppet image not found: ${src}`))
+    im.src = src
   })
+  const load = async (src: string) => {
+    if (images.has(src)) return
+    images.set(src, await img(base + src))
+  }
   await Promise.all([...data.parts.map((p) => load(p.img)), opts.table === false ? null : load(data.table)])
+  const a = opts.accent
+  if (a) {
+    await Promise.all(a.masks.filter((src) => images.has(src)).map(async (src) => {
+      images.set(src, tint(images.get(src)!, await img(base + 'accent/' + src), a))
+    }))
+  }
 
   const rest = new Map<string, Mat>()
   for (const p of data.parts) {
-    const im = images.get(p.img)!
+    const [iw, ih] = picSize(images.get(p.img)!)
     let m = translate(p.cx, p.cy)
     m = mul(m, rotate(-p.rot))                     // PIL's counter-clockwise is canvas's negative
     m = mul(m, scale(p.scale * up * (p.flip ? -1 : 1), p.scale * up))
-    m = mul(m, translate(-im.naturalWidth / 2, -im.naturalHeight / 2))
+    m = mul(m, translate(-iw / 2, -ih / 2))
     rest.set(p.name, m)
   }
   const bone = new Map(data.bones.map((b) => [b.name, b]))

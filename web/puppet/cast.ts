@@ -91,6 +91,8 @@ import lokiRig from '../art/loki/rig.json'
 import lokiAnim from '../art/loki/anim.json'
 import deathPlayerRig from '../art/death_player/rig.json'
 import deathPlayerAnim from '../art/death_player/anim.json'
+import strangerRig from '../art/stranger/rig.json'
+import strangerAnim from '../art/stranger/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -134,6 +136,8 @@ export type AnimData = {
   lose?: { small: string; big: string }
   /** Clips during which the room's lamp nearest the seat gutters (Davy Jones's flickering lamp). */
   gutter?: string[]
+  /** The images whose drawn teal is the player's colour (the Stranger): art-tools/avatar_parts/accent_masks.py. */
+  accent?: { masks: string[] }
 }
 
 /** `ik`: the IK prototype's arm chains (web/puppet/ik.ts), Lincoln only for now. */
@@ -192,6 +196,8 @@ export const PUPPETS: Record<string, CastEntry> = {
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
   // the finale's: Death at three-quarter, in a player's chair (the room's `cast` seats him for 'death')
   death_player: { rig: deathPlayerRig as unknown as RigData, anim: deathPlayerAnim as unknown as AnimData, base: 'art/death_player/' },
+  // the player, seen once (the finale's left-hand chair), in their own colour; later the online avatar
+  stranger: { rig: strangerRig as unknown as RigData, anim: strangerAnim as unknown as AnimData, base: 'art/stranger/' },
 }
 
 /**

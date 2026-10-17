@@ -1,0 +1,7 @@
+{
+ "note": "The master is the rest pose's own head: the hat over a faceless shadow. No face sheet and no face layers: it has no face to move. It talks with its hands (the talk frame) and a nod.",
+ "master": "avatar_parts/stranger_face/stranger_master.png",
+ "pieces": "avatar_parts/stranger_face/stranger_face_%02d.png",
+ "layers": {},
+ "regions": {}
+}

@@ -72,6 +72,8 @@ export type Settings = {
   sound: boolean
   /** 0..1. */
   volume: number
+  /** The player's colour (web/puppet/accent.ts): presentation only. */
+  accent: string
 }
 
 export type TableRecord = {
@@ -169,6 +171,7 @@ export const defaultSettings = (): Settings => ({
   largeText: false,
   sound: true,
   volume: 0.8,
+  accent: 'teal',
 })
 
 export const newTableRecord = (): TableRecord => ({

@@ -2,6 +2,7 @@ import { h, go } from '../dom.js'
 import { CHARACTERS } from '../../src/content.js'
 import { PUPPETS } from '../puppet/cast.js'
 import { PuppetPlayer } from '../puppet/player.js'
+import * as store from '../store.js'
 import { type Mat, mul, translate, scale } from '../puppet/rig.js'
 
 /**
@@ -85,7 +86,9 @@ export function puppetScreen(root: HTMLElement, params: string[]): () => void {
   let scrub: HTMLInputElement | null = null
   let speakNow = () => {}
 
-  PuppetPlayer.load(entry).then((p) => {
+  // the player's colour on the Stranger: their setting, or ?accent= to look at another
+  const accent = new URLSearchParams(location.search).get('accent') ?? store.get().settings.accent
+  PuppetPlayer.load(entry, false, undefined, accent).then((p) => {
     player = p
     ;(window as any).__puppet = p
     ;(window as any).__bench = opts

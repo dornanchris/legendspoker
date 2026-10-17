@@ -109,6 +109,8 @@ export class Stage {
   speed = 1
   /** Reduce motion: no sway or breath. */
   still = false
+  /** The player's colour (web/puppet/accent.ts), for the figure that is them: set before load. */
+  accent: string | undefined
   onReady: (() => void) | null = null
   /** What each frame costs (update + draw, ms), for measuring (the IK prototype's test page). */
   readonly stats = { frames: 0, total: 0, max: 0 }
@@ -154,7 +156,7 @@ export class Stage {
   /** Someone who will sit down later (a late champion): their images load now, so they appear the moment they do. */
   preload(id: string): void {
     const entry = PUPPETS[id]
-    if (entry && !this.loading.has(id)) this.loading.set(id, PuppetPlayer.load(entry, true))
+    if (entry && !this.loading.has(id)) this.loading.set(id, PuppetPlayer.load(entry, true, undefined, this.accent))
   }
 
   /** Put someone in a chair (null empties it). Someone with no puppet leaves it empty. */
@@ -165,7 +167,7 @@ export class Stage {
     if (!id || !entry) return
     const ready = this.loading.get(id)
     this.loading.delete(id)
-    const player = await (ready ?? PuppetPlayer.load(entry, true))
+    const player = await (ready ?? PuppetPlayer.load(entry, true, undefined, this.accent))
     if (!this.alive) return
     player.face.still = this.still
     const [x, sc, sink] = seat === DEALER ? this.room.data.dealer : this.room.data.seats[String(this.seatCount)][seat - 1]

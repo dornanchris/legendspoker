@@ -2,7 +2,8 @@ import { Puppet, type LoadedIk } from './puppet.js'
 import { IkChain } from './ik.js'
 import { type Channel, sample, swapAt, EASE } from './clip.js'
 import { Face } from './face.js'
-import { loadRig } from './rig.js'
+import { loadRig, picSize } from './rig.js'
+import { accentFor } from './accent.js'
 import type { CastEntry } from './cast.js'
 import type { ClipData } from './clip.js'
 
@@ -64,10 +65,11 @@ export class PuppetPlayer {
   }
 
   /** `small`: the half-size images, for the table (the bench keeps the full ones for its close-ups). */
-  static async load(entry: CastEntry, small = false, ik = ikEnabled()): Promise<PuppetPlayer> {
+  static async load(entry: CastEntry, small = false, ik = ikEnabled(), accent?: string): Promise<PuppetPlayer> {
+    const tint = accentFor(accent, entry.anim.accent?.masks)          // the player's colour (the Stranger)
     const rig = small
-      ? await loadRig(entry.rig, entry.base + 'half/', { up: 2, table: false })
-      : await loadRig(entry.rig, entry.base)
+      ? await loadRig(entry.rig, entry.base + 'half/', { up: 2, table: false, accent: tint })
+      : await loadRig(entry.rig, entry.base, { accent: tint })
     let loaded: LoadedIk | null = null
     if (ik && entry.ik) {
       const base = entry.base + (small ? 'half/' : '')
@@ -95,7 +97,7 @@ export class PuppetPlayer {
   /** Every image this puppet holds, as decoded RGBA bytes (width x height x 4): the cost in memory. */
   decodedBytes(): number {
     const ims = [...this.puppet.rig.images.values(), ...(this.puppet.ik?.images.values() ?? [])]
-    return ims.reduce((n, im) => n + im.naturalWidth * im.naturalHeight * 4, 0)
+    return ims.reduce((n, im) => n + picSize(im)[0] * picSize(im)[1] * 4, 0)
   }
 
   has(name: string): boolean {

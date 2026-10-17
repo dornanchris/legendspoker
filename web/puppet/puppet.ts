@@ -1,4 +1,4 @@
-import { type LoadedRig, type Mat, IDENTITY, mul, translate, rotate, scale } from './rig.js'
+import { type LoadedRig, type Mat, type Pic, IDENTITY, mul, translate, rotate, scale, picSize } from './rig.js'
 import { type ClipData, type Channel, sample, swapAt } from './clip.js'
 import { type IkPose, type IkPartData, IkChain, ikRest } from './ik.js'
 
@@ -178,7 +178,7 @@ export class Puppet {
    * pixels -> posed rig pixels). An IK chain showing a hand stands in for its
    * slots (the rig's own forearm piece and upper-arm patch) with its three images.
    */
-  drawables(): { img: HTMLImageElement; m: Mat; z: number; onTable: boolean }[] {
+  drawables(): { img: Pic; m: Mat; z: number; onTable: boolean }[] {
     const bones = this.boneMatrices()
     // a chain shows while it has a hand, unless a clip has emptied its slots (a whole-figure frame hides the arms)
     const emptied = (slot: string) => this.slots.has(slot) && this.slots.get(slot) === null
@@ -208,8 +208,8 @@ export class Puppet {
     for (const p of this.rig.parts) {
       if (p.bone !== 'head' || !p.visible) continue
       const m = this.rig.rest.get(p.name)!
-      const im = this.rig.images.get(p.img)!
-      for (const [x, y] of [[0, 0], [im.naturalWidth, 0], [0, im.naturalHeight], [im.naturalWidth, im.naturalHeight]]) {
+      const [iw, ih] = picSize(this.rig.images.get(p.img)!)
+      for (const [x, y] of [[0, 0], [iw, 0], [0, ih], [iw, ih]]) {
         top = Math.min(top, m[1] * x + m[3] * y + m[5])
       }
     }
