@@ -50,7 +50,7 @@ The angle: a gentle three-quarter view, turned about 25 degrees from front-on, f
 
 Draw, all facing the viewer's right, at the same size:
 - Finished heads, each with the thin neck and the top of the shoulders: neutral, eyes open; a thin pale membrane sliding sideways across both eyes; the head tilted far over to one side; the head lowered a little, watching
-- The torso: no head, thin, smooth and grey, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands
+- The torso: no head, thin, plain and grey, no muscles, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands
 - Two thin grey forearms with long-fingered hands lying on a table, pointing toward its centre, open at the elbow end
 - Four seated reference poses, waist up behind the curved edge of a round green poker table, forearms resting on its edge, hands apart: neutral; the membrane sliding sideways across its eyes; its head tilted far over; its long fingers splayed wide on the felt
 
