@@ -33,15 +33,14 @@ is done, and say so in the commit.
 
 ## Online (when it is designed)
 
-- **Death as an online avatar** (the owner; the design doc: beating the game
-  unlocks Death as a playable avatar, which is the sequel storyline's payoff).
-  His kit is front-on, for the dealer's place and the finale; an avatar sits in
-  any chair, so he needs a three-quarter drawing, mirrored as the seat needs.
-  Rule 3: an online avatar's moves have ZERO correlation with its cards, so
-  cosmetic loops only, ideally unlike any single-player tell. Draw him with the
-  Stranger (`art-tools/avatar_parts/POSES.md`, whose prompts are still in the
-  first tables' flat style and put cards and chips in its hands: rewrite them
-  in the current style, hands empty, first).
+- **Death and the Stranger as online avatars** (the owner: "I would much rather
+  have them and not need them"; the design doc: beating the game unlocks Death
+  as a playable avatar). Prompts written: `art-tools/death_avatar_parts/POSES.md`
+  (three-quarter, any chair, from his dealer sheet, no deck) and
+  `art-tools/avatar_parts/POSES.md` (the Stranger, redone in the later tables'
+  style, hands empty). Rule 3: an online avatar's moves have ZERO correlation
+  with its cards, so sheet C of each is cosmetic loops only (LOOP), and the game
+  side (which clips play online, and when) waits for online's design.
 
 ## Room and puppet leftovers (the last build)
 
