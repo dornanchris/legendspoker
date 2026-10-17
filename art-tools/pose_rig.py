@@ -63,6 +63,8 @@ character whose skin is the rail's orange; "rail_green": only colours with
 more green than that share of their red, for a red cloak). "wood_rows_only":
 the wood colour counts only at and below the rail, pixel by pixel (not whole
 shapes reaching it), for a red cloak or crest that hangs down to the rail.
+A frame with "halo": [r, g, b] turns a glow drawn round him on the paper
+(the Horseman's candle) into that colour, see-through as it fades to white.
 "felt_holes": felt below the rail that hole-filling enclosed (between two
 hands) is dropped again. "felt_blue": the felt is only its bluer shades (a character in the felt's
 green, Medusa's snakes). "felt_teal": the felt counts in its bluer shades too (the teal a sheet drew
@@ -825,6 +827,22 @@ def main(spec_path):
         if n:
             sz = ndimage.sum(rgba[..., 3] > 0, lab, range(1, n + 1))
             rgba[..., 3] = np.where(np.isin(lab, 1 + np.nonzero(sz < 80)[0]) & ~props, 0, rgba[..., 3])
+        # "halo": [r, g, b], a glow drawn round him on the paper (the Horseman's
+        # candle burning brighter): the light pixels reaching the outside are
+        # that colour laid over white, so each becomes the colour at the alpha
+        # that mix needs, and the glow fades out instead of ending in a cream edge
+        if fr.get('halo'):
+            hc = np.array(fr['halo'], float)
+            c = rgba[..., :3].astype(float)
+            light = (rgba[..., 3] > 0) & (c[..., 0] > 245) & (c[..., 1] > 195) & ~props
+            lab, n = ndimage.label(light)
+            outside = ndimage.binary_dilation(rgba[..., 3] == 0, iterations=1)
+            touch = np.unique(lab[outside & light])
+            halo = np.isin(lab, touch[touch > 0])
+            a = np.clip((255 - c[..., 2]) / (255 - hc[2]), 0, 1)
+            a *= np.clip(ndimage.distance_transform_edt(rgba[..., 3] > 0) / 14, 0, 1)   # and feathered
+            rgba[..., :3] = np.where(halo[..., None], hc, rgba[..., :3]).astype(np.uint8)
+            rgba[..., 3] = np.where(halo, a * 255, rgba[..., 3]).astype(np.uint8)
         # "body_under": where a prop the game draws itself was cut out (cards
         # held up), his body from the rest pose shows instead of a hole
         for poly in fr.get('body_under', []):

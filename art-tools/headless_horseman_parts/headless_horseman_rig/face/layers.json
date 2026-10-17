@@ -1,0 +1,11 @@
+{
+ "mouth": {
+  "ah": "mouth_ah.png",
+  "oh": "mouth_oh.png",
+  "ee": "mouth_ee.png",
+  "l": "mouth_l.png",
+  "oo": "mouth_oo.png",
+  "m": "mouth_m.png",
+  "f": "mouth_f.png"
+ }
+}

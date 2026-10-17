@@ -165,7 +165,8 @@ art-tools/
                   caesar_parts/: Rome (all built); nemo_parts/, javert_parts/, sherlock_parts/ (built),
                   sherlock_deerstalker_parts/, cheshire_cat_parts/:
                   Baker Street (all built); van_helsing_parts/, jekyll_parts/,
-                  hyde_parts/, wolf_man_parts/ (built): Transylvania; monster_parts/ (rejected, a record)
+                  hyde_parts/, wolf_man_parts/,
+                  headless_horseman_parts/ (built): Transylvania; monster_parts/ (rejected, a record)
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets;
                   ik_split.py cuts his IK arm from a pose (the IK prototype)
@@ -516,7 +517,12 @@ him, in Jekyll's coat; his sheets' table edge arcs up between his arms, cut by
 pose_rig's `fill_rail`. **The Wolf Man is built** (`#/puppet/wolf_man`, 24
 clips, seat 3, mirrored), redrawn gothic (his Cerberus-style sheets were never
 built): a real wolf's head, his ears the tell surface, a howl for a big win.
-Only the Horseman is still to come (then Dracula, who arrives).
+**The Headless Horseman is built** (`#/puppet/headless_horseman`, 24 clips,
+seat 4, mirrored): a pumpkin on his collar is his face, and its candle the tell
+surface (burning brighter, guttering); he talks by the light in his own
+carving brightening, and never blinks. **Transylvania is complete on the real
+table screen** (Dracula, who arrives, has no puppet yet: his chair would stand
+empty, plate only).
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
@@ -610,7 +616,7 @@ half that, all set by `art-tools/build/life.py`. Going out, a figure plays
 its `knocked_out` clip if it has one, then **fades from the chair** (0.8 s,
 stage.ts; the owner: a line, then gone); a puppet with no heads-up drawing
 leans in from its rest pose (`art-tools/build/fallback_clips.py`).
-`python3 art-tools/build/puppet_audit.py` holds all 35 puppets to the same
+`python3 art-tools/build/puppet_audit.py` holds all 36 puppets to the same
 list and prints 0 missing. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the

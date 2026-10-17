@@ -1,0 +1,766 @@
+{
+ "id": "headless_horseman",
+ "name": "The Headless Horseman",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (his own character sheet is the style image). Transylvania's seat 4, drawn facing right and mirrored. The master is the rest pose's OWN pumpkin. Every pose but rest a whole-figure frame with its own drawn pumpkin. No prop: the candle's light is the tell surface.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    14,
+    16,
+    497,
+    472
+   ],
+   "what": "Rest: gauntlets on the table's edge, apart, the pumpkin on his collar, candle steady"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    527,
+    47,
+    485,
+    441
+   ],
+   "reg": [
+    1.0,
+    0,
+    31
+   ],
+   "what": "Peeking at his cards (right gauntlet)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1027,
+    24,
+    495,
+    464
+   ],
+   "reg": [
+    1.0,
+    0,
+    8
+   ],
+   "what": "Check: a gauntleted finger taps the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    16,
+    512,
+    495,
+    443
+   ],
+   "reg": [
+    1.0,
+    0,
+    29
+   ],
+   "what": "Call: right gauntlet pushes forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    527,
+    526,
+    485,
+    429
+   ],
+   "reg": [
+    1.0,
+    0,
+    43
+   ],
+   "what": "Bet: leans in, right gauntlet pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1027,
+    517,
+    493,
+    438
+   ],
+   "reg": [
+    1.0,
+    0,
+    34
+   ],
+   "what": "Fold: a curt flick of the right gauntlet"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    13,
+    34,
+    498,
+    466
+   ],
+   "reg": [
+    1.0,
+    -2,
+    13
+   ],
+   "what": "All in: both gauntlets push forward together"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    517,
+    34,
+    494,
+    459
+   ],
+   "reg": [
+    1.0,
+    -9,
+    13
+   ],
+   "what": "Show: right gauntlet turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    984,
+    10,
+    549,
+    484
+   ],
+   "reg": [
+    1.0,
+    0,
+    -11
+   ],
+   "what": "Big win: both gauntlets raised high (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    13,
+    500,
+    498,
+    461
+   ],
+   "reg": [
+    1.0,
+    -2,
+    11
+   ],
+   "what": "The candle in his pumpkin burns brighter"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    514,
+    502,
+    497,
+    460
+   ],
+   "reg": [
+    1.0,
+    -12,
+    13
+   ],
+   "what": "Settles the pumpkin on his collar (decoy for B4)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1021,
+    520,
+    502,
+    442
+   ],
+   "reg": [
+    1.0,
+    -5,
+    31
+   ],
+   "what": "Drums a gauntlet on the table"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    12,
+    14,
+    497,
+    475
+   ],
+   "reg": [
+    1.0,
+    -1,
+    -3
+   ],
+   "what": "His sword rattles in its scabbard (decoy for B6)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    523,
+    11,
+    488,
+    478
+   ],
+   "reg": [
+    1.0,
+    -3,
+    -6
+   ],
+   "what": "The flame in his pumpkin gutters"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1026,
+    29,
+    498,
+    460
+   ],
+   "reg": [
+    1.0,
+    -1,
+    12
+   ],
+   "what": "A smell of cold leaves drifts from him (decoy for C2)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    13,
+    502,
+    497,
+    464
+   ],
+   "reg": [
+    1.0,
+    0,
+    8
+   ],
+   "what": "Turns his whole body to look at you"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    524,
+    502,
+    487,
+    464
+   ],
+   "reg": [
+    1.0,
+    -2,
+    8
+   ],
+   "what": "Draws his cloak about his shoulders"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1027,
+    523,
+    497,
+    444
+   ],
+   "reg": [
+    1.0,
+    0,
+    28
+   ],
+   "what": "Sits very still, the pumpkin tilted a little toward the pot"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    13,
+    12,
+    497,
+    479
+   ],
+   "reg": [
+    1.0,
+    -1,
+    -6
+   ],
+   "what": "Talking: one gauntlet raised, palm open"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    510,
+    12,
+    502,
+    479
+   ],
+   "reg": [
+    1.0,
+    -16,
+    -6
+   ],
+   "what": "Facing a big bet: leaning back, gauntlets flat"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1021,
+    72,
+    503,
+    419
+   ],
+   "reg": [
+    1.0,
+    -6,
+    54
+   ],
+   "what": "Lost a pot: shoulders slump, the light dims"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    14,
+    565,
+    497,
+    393
+   ],
+   "reg": [
+    1.0,
+    -2,
+    79
+   ],
+   "what": "Crushing loss: a gauntlet slammed flat, the pumpkin bowed (`lose_big`)"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    518,
+    529,
+    494,
+    429
+   ],
+   "reg": [
+    1.0,
+    -9,
+    43
+   ],
+   "what": "Heads up: leaning in on both forearms"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1021,
+    567,
+    502,
+    392
+   ],
+   "reg": [
+    1.0,
+    -6,
+    80
+   ],
+   "what": "A slow, grave nod to the table"
+  }
+ },
+ "rest": "A1",
+ "table_y": 362,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  170,
+  200,
+  380,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 178,
+ "neck": [
+  262,
+  178
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  190,
+  160,
+  350,
+  230
+ ],
+ "master": {
+  "piece": "headless_horseman_parts/headless_horseman_face/headless_horseman_master.png",
+  "cut_below": 185,
+  "face": "headless_horseman_parts/face.json",
+  "file": "headless_horseman_parts/headless_horseman_rig/master.png",
+  "layers": "headless_horseman_parts/headless_horseman_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    172,
+    0
+   ],
+   [
+    352,
+    0
+   ],
+   [
+    354,
+    120
+   ],
+   [
+    338,
+    160
+   ],
+   [
+    300,
+    182
+   ],
+   [
+    240,
+    184
+   ],
+   [
+    200,
+    168
+   ],
+   [
+    178,
+    132
+   ],
+   [
+    170,
+    80
+   ]
+  ],
+  "shoulder_y": 190
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    45,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     280
+    ],
+    [
+     110,
+     280
+    ],
+    [
+     110,
+     330
+    ],
+    [
+     0,
+     335
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and steel gauntlet",
+     "poly": [
+      [
+       0,
+       320
+      ],
+      [
+       60,
+       308
+      ],
+      [
+       130,
+       328
+      ],
+      [
+       200,
+       358
+      ],
+      [
+       250,
+       385
+      ],
+      [
+       278,
+       420
+      ],
+      [
+       282,
+       472
+      ],
+      [
+       180,
+       472
+      ],
+      [
+       100,
+       440
+      ],
+      [
+       30,
+       420
+      ],
+      [
+       0,
+       410
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    455,
+    315
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     275
+    ],
+    [
+     497,
+     275
+    ],
+    [
+     497,
+     318
+    ],
+    [
+     400,
+     318
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and steel gauntlet",
+     "poly": [
+      [
+       318,
+       400
+      ],
+      [
+       345,
+       372
+      ],
+      [
+       390,
+       348
+      ],
+      [
+       440,
+       318
+      ],
+      [
+       492,
+       318
+      ],
+      [
+       497,
+       400
+      ],
+      [
+       482,
+       440
+      ],
+      [
+       462,
+       472
+      ],
+      [
+       330,
+       472
+      ],
+      [
+       315,
+       445
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "brighter": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "halo": [
+    255,
+    190,
+    60
+   ]
+  },
+  "settle": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "drum": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "sword": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "gutter": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "leaves": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "turn": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "cloak": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "still": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "nod": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "runtime": "../web/art/headless_horseman",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6,
+ "wood_rows_only": true,
+ "keep_white": [
+  [
+   [
+    165,
+    0
+   ],
+   [
+    365,
+    0
+   ],
+   [
+    365,
+    195
+   ],
+   [
+    165,
+    195
+   ]
+  ]
+ ]
+}

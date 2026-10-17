@@ -1,0 +1,373 @@
+{
+ "kit": "headless_horseman_parts",
+ "id": "headless_horseman",
+ "name": "The Headless Horseman",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (his own character sheet is the style image). Transylvania's seat 4, drawn facing right and mirrored. The master is the rest pose's OWN pumpkin. Every pose but rest a whole-figure frame with its own drawn pumpkin. No prop: the candle's light is the tell surface.",
+ "what": {
+  "A1": "Rest: gauntlets on the table's edge, apart, the pumpkin on his collar, candle steady",
+  "A2": "Peeking at his cards (right gauntlet)",
+  "A3": "Check: a gauntleted finger taps the felt",
+  "A4": "Call: right gauntlet pushes forward along the felt",
+  "A5": "Bet: leans in, right gauntlet pushed well forward",
+  "A6": "Fold: a curt flick of the right gauntlet",
+  "B1": "All in: both gauntlets push forward together",
+  "B2": "Show: right gauntlet turns palm up",
+  "B3": "Big win: both gauntlets raised high (`win_big`)",
+  "B4": "The candle in his pumpkin burns brighter",
+  "B5": "Settles the pumpkin on his collar (decoy for B4)",
+  "B6": "Drums a gauntlet on the table",
+  "C1": "His sword rattles in its scabbard (decoy for B6)",
+  "C2": "The flame in his pumpkin gutters",
+  "C3": "A smell of cold leaves drifts from him (decoy for C2)",
+  "C4": "Turns his whole body to look at you",
+  "C5": "Draws his cloak about his shoulders",
+  "C6": "Sits very still, the pumpkin tilted a little toward the pot",
+  "D1": "Talking: one gauntlet raised, palm open",
+  "D2": "Facing a big bet: leaning back, gauntlets flat",
+  "D3": "Lost a pot: shoulders slump, the light dims",
+  "D4": "Crushing loss: a gauntlet slammed flat, the pumpkin bowed (`lose_big`)",
+  "D5": "Heads up: leaning in on both forearms",
+  "D6": "A slow, grave nod to the table"
+ },
+ "prop": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "brighter": "B4",
+  "settle": "B5",
+  "drum": "B6",
+  "sword": "C1",
+  "gutter": "C2",
+  "leaves": "C3",
+  "turn": "C4",
+  "cloak": "C5",
+  "still": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "nod": "D6"
+ },
+ "common": {
+  "table_y": 362,
+  "scale": 1.0,
+  "origin_x": 300,
+  "register_box": [
+   170,
+   200,
+   380,
+   330
+  ],
+  "register_span": 40,
+  "collar_y": 178,
+  "neck": [
+   262,
+   178
+  ],
+  "frame_margin": 60,
+  "stock_box": [
+   190,
+   160,
+   350,
+   230
+  ]
+ },
+ "cut_below": 185,
+ "keep_poly": [
+  [
+   172,
+   0
+  ],
+  [
+   352,
+   0
+  ],
+  [
+   354,
+   120
+  ],
+  [
+   338,
+   160
+  ],
+  [
+   300,
+   182
+  ],
+  [
+   240,
+   184
+  ],
+  [
+   200,
+   168
+  ],
+  [
+   178,
+   132
+  ],
+  [
+   170,
+   80
+  ]
+ ],
+ "shoulder_y": 190,
+ "arms": {
+  "near": {
+   "elbow": [
+    45,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     280
+    ],
+    [
+     110,
+     280
+    ],
+    [
+     110,
+     330
+    ],
+    [
+     0,
+     335
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and steel gauntlet",
+     "poly": [
+      [
+       0,
+       320
+      ],
+      [
+       60,
+       308
+      ],
+      [
+       130,
+       328
+      ],
+      [
+       200,
+       358
+      ],
+      [
+       250,
+       385
+      ],
+      [
+       278,
+       420
+      ],
+      [
+       282,
+       472
+      ],
+      [
+       180,
+       472
+      ],
+      [
+       100,
+       440
+      ],
+      [
+       30,
+       420
+      ],
+      [
+       0,
+       410
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    455,
+    315
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     275
+    ],
+    [
+     497,
+     275
+    ],
+    [
+     497,
+     318
+    ],
+    [
+     400,
+     318
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and steel gauntlet",
+     "poly": [
+      [
+       318,
+       400
+      ],
+      [
+       345,
+       372
+      ],
+      [
+       390,
+       348
+      ],
+      [
+       440,
+       318
+      ],
+      [
+       492,
+       318
+      ],
+      [
+       497,
+       400
+      ],
+      [
+       482,
+       440
+      ],
+      [
+       462,
+       472
+      ],
+      [
+       330,
+       472
+      ],
+      [
+       315,
+       445
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "felt_dark_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6,
+  "wood_rows_only": true,
+  "keep_white": [
+   [
+    [
+     165,
+     0
+    ],
+    [
+     365,
+     0
+    ],
+    [
+     365,
+     195
+    ],
+    [
+     165,
+     195
+    ]
+   ]
+  ]
+ },
+ "frame_extra": {
+  "show": {
+   "biggest": true
+  },
+  "brighter": {
+   "halo": [
+    255,
+    190,
+    60
+   ]
+  },
+  "win_big": {
+   "biggest": true
+  }
+ },
+ "no_prop": [
+  "A2",
+  "A3",
+  "A4",
+  "A5",
+  "A6",
+  "B1",
+  "B2",
+  "B3",
+  "B4",
+  "B5",
+  "B6",
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5",
+  "C6",
+  "D1",
+  "D2",
+  "D3",
+  "D4",
+  "D5",
+  "D6"
+ ]
+}
