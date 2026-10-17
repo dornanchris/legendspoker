@@ -77,25 +77,39 @@
     ],
     "call": [
       "I'll go along with that.",
-      "Call. Why not?",
       "Call. Let the people decide.",
-      "I'll see it. Charmed, I'm sure."
+      "I'll see it. Charmed, I'm sure.",
+      "Call. Every dollar finds its way home eventually."
     ],
     "bet": [
       "A little something, to keep the conversation going.",
       "Bet. Consider it a fireside chat.",
-      "Bet. Relief, recovery, reform."
+      "Bet. Relief, recovery, reform.",
+      "Bet. A little stimulus for the table."
     ],
     "raise": [
-      "Raise, my friends.",
       "Raise. The only thing to fear is fear itself.",
       "I'll raise. My left hand insists.",
-      "Raise. Put it to Congress."
+      "Raise. Put it to Congress.",
+      "Raise. Alphabet soup: R, A, I, S, E."
     ],
     "all_in": [
       "All in, my friends. Every last chip.",
       "All in. Four terms' worth.",
       "The whole stack. I did say I juggle."
+    ],
+    "win": [
+      "New deal!",
+      "Happy days are here again.",
+      "A fair share for everyone. Mostly me.",
+      "Relief, recovery, reform. In that order.",
+      "Four terms, my friends. You'd think you'd have learned."
+    ],
+    "lose": [
+      "Well, that hand didn't have a leg to stand on. Neither do I, and I did all right.",
+      "The only thing to fear was that last card. Fear was right.",
+      "Back to the fireside, then.",
+      "I'd take it to the Supreme Court, but they'd only rule against me again."
     ]
   }
 }

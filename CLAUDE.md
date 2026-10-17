@@ -274,7 +274,15 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   hand at a full table, ~1 per 5 hands heads-up), shown as a seat bubble on
   its own timer and cut under fast-forward. **Needles**: a pair's one-off
   exchange when one folded to the other's bet and the other won
-  (`banter_pairs.<pair>.needles`). Neither needs an ENGINE_VERSION bump.
+  (`banter_pairs.<pair>.needles`). **Showdown lines**: `win` and `lose`
+  pools in `callouts`, said once two hands are turned over and nobody else
+  has spoken (`showdownWord` in director.ts, about 0.45 of the time, never
+  two hands running). The cards are public by then, so these, and only
+  these, may name a hand: this is where the puns live (Lincoln's "I do
+  proclaim: this pot is mine"). Each joke comes from the character's own
+  legend, never a modern wink; Death stays dry. The White House is the
+  first table written this way (the owner reviews the dial before the
+  rest). None of this needs an ENGINE_VERSION bump.
 - **Respect:** per table, points from pots / showdowns / knockouts, tiers at
   4 / 10 / 18, heads-up with the champion forces tier 2, a win forces tier 3.
   The name flip is always announced (toast + the tier's first line).

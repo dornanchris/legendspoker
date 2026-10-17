@@ -66,35 +66,52 @@
     "fold": [
       "I'll let this one go by.",
       "Fold. I sat on a proclamation for two months. I can sit on this.",
-      "I'll sit by the fire for this one.",
+      "I'll go split a few rails until the next one.",
       "Fold. There is a time for everything, and this isn't it."
     ],
     "check": [
       "Check.",
       "I'll hold my peace.",
-      "Check. Go on, I'm listening."
+      "Check. Go on, I'm listening.",
+      "Check. Honest Abe holds his tongue."
     ],
     "call": [
       "I'll see that.",
       "Call. Best not to swap horses mid-stream.",
-      "Call. I'd like to hear the rest of the argument.",
-      "I'll pay to hear the end of the story."
+      "I'll pay to hear the end of the story.",
+      "Call. Of the people, by the people, for the pot."
     ],
     "bet": [
-      "I'll put something on it.",
       "Bet. A modest sum. I was a country lawyer.",
-      "Let's see who's in earnest."
+      "Let's see who's in earnest.",
+      "Bet. Four score and seven chips.",
+      "Bet. The Union's credit is good."
     ],
     "raise": [
-      "Raise.",
       "Raise. I am a slow walker, but I never walk back.",
       "I'll raise. Events have controlled me long enough.",
-      "Raise, and I'll say no more about it."
+      "Raise. A house divided cannot stand. Pick a side.",
+      "Raise. I'd stand up for it, but I'd hit the ceiling."
     ],
     "all_in": [
       "All in. With malice toward none.",
-      "All of it. Let's settle it, one way or the other.",
-      "Everything. I've split heavier things than this pile."
+      "Everything. I've split heavier things than this pile.",
+      "Four score and seven chips... and the rest of them. All in.",
+      "All of it. Let's settle it, one way or the other."
+    ],
+    "win": [
+      "I do proclaim: this pot is mine.",
+      "I hereby emancipate these chips from your keeping.",
+      "Of the chips, by the chips, for the chips.",
+      "A house divided. I'll take the half with the chips in it.",
+      "I'm only liberating them. They'll be happier over here.",
+      "That reminds me of a story. It ends with me taking the pot."
+    ],
+    "lose": [
+      "You can fool some of the people some of the time. Tonight it was me.",
+      "Four score and seven chips ago, I had a stack.",
+      "A house divided. Mine, it seems.",
+      "I've lost elections with better grace than that. Not many."
     ]
   }
 }

@@ -69,7 +69,7 @@
       "Bah! Fold.",
       "Fold! A tactical withdrawal. I'll charge the next one.",
       "I retire from the field. Briefly!",
-      "Fold. Even a Rough Rider has to water the horses."
+      "Fold. Don't name a toy after it."
     ],
     "check": [
       "Check. Don't get used to it.",
@@ -78,26 +78,39 @@
     ],
     "call": [
       "Call! I never turn down a scrap.",
-      "I'll see that, and gladly!",
       "Call! Into the arena!",
+      "Call! A square deal!",
       "Call. Up the hill we go!"
     ],
     "bet": [
       "Bully! Bet!",
       "Bet. And a big stick behind it.",
-      "Here's a wager with some vim in it!",
+      "Speak softly. Bet loudly!",
       "Bet! The strenuous life!"
     ],
     "raise": [
       "Raise! Charge!",
       "Raise. It takes more than that to stop a Bull Moose.",
-      "Raise! Up the hill!",
+      "Raise! Big stick!",
       "Raise! Delighted!"
     ],
     "all_in": [
       "All in! Charge!",
       "Everything! Over the obstacles, not around them!",
       "All of it! I've been shot before!"
+    ],
+    "win": [
+      "Bully!",
+      "Bully! Bully! BULLY!",
+      "Speak softly and carry a big stack!",
+      "Up San Juan Hill and down the other side with the pot!",
+      "Ha! Delightful! Simply delightful!"
+    ],
+    "lose": [
+      "I've been shot and kept talking. This is a scratch.",
+      "Bah! I'm going hunting.",
+      "Do not mention the bear.",
+      "A grand fight! I'd lose it again for the fun of it."
     ]
   }
 }

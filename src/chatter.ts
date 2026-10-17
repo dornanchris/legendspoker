@@ -35,7 +35,7 @@
  * Nothing here branches on who anyone is. Who says what is data.
  */
 import { mulberry32 } from './rng.js'
-import { CHARACTERS, type CalloutAction, type Callouts, type Line } from './content.js'
+import { CHARACTERS, type CalloutAction, type Callouts, type Line, type ShowdownPool } from './content.js'
 import type { Action } from './decide.js'
 
 export type CalloutBeat = {
@@ -44,11 +44,20 @@ export type CalloutBeat = {
   text: string
   /** A gesture rather than speech: the data wraps it in [brackets]. */
   stage: boolean
-  /** Which pool it came from: the public action, or all_in. */
-  action: CalloutAction
+  /** Which pool it came from: the public action, all_in, or a showdown's win or lose. */
+  action: CalloutAction | ShowdownPool
 }
 
 export const CALLOUT_ACTIONS: CalloutAction[] = ['fold', 'check', 'call', 'bet', 'raise', 'all_in']
+/**
+ * Said once the cards are face up, at the hand's end: the one who took the
+ * pot crowing (`win`), or one who showed and lost (`lose`). The cards are
+ * public by then, so these are where the puns about the hand itself go.
+ */
+export const SHOWDOWN_POOLS: ShowdownPool[] = ['win', 'lose']
+/** Chance a showdown says anything, and the hands between two of them. */
+export const SHOWDOWN_CHANCE = 0.45
+export const SHOWDOWN_GAP_HANDS = 2
 
 /** Chance an action speaks, before the cooldowns. */
 export const CALLOUT_CHANCE: Record<CalloutAction, number> = {
@@ -98,6 +107,7 @@ export class Chatter {
   private bags = new Map<string, number[]>()
   private lastDrawn = new Map<string, number>()
   private lastNeedle = -Infinity
+  private lastShowdown = -Infinity
   // Per-hand, per-street bookkeeping for needles.
   private hand = -1
   private street = ''
@@ -158,6 +168,27 @@ export class Chatter {
     this.lastStreet = street
     this.spoke.set(a.id, a.hand)
     return { kind: 'callout', speaker: a.id, text, stage: isStage(text), action: kind }
+  }
+
+  /**
+   * Maybe a word after a showdown: the winner's `win`, else a loser's `lose`.
+   * `losers` are seats that showed and lost, in no favoured order. Public:
+   * everyone has just seen the cards and who was paid.
+   */
+  showdown(hand: number, winner: string | null, losers: string[]): CalloutBeat | null {
+    if (hand - this.lastShowdown < SHOWDOWN_GAP_HANDS) return null
+    const offers: [string, ShowdownPool][] = []
+    if (winner && this.lookup(winner)?.win?.length) offers.push([winner, 'win'])
+    for (const id of losers) if (this.lookup(id)?.lose?.length) offers.push([id, 'lose'])
+    if (!offers.length || this.rng() >= SHOWDOWN_CHANCE) return null
+    // The winner first, usually: crowing is the funnier half.
+    const [id, pool] = offers[0][1] === 'win' && (offers.length === 1 || this.rng() < 0.65)
+      ? offers[0] : offers[1 + Math.floor(this.rng() * (offers.length - 1))] ?? offers[0]
+    const lines = this.lookup(id)![pool]!
+    const text = lines[this.draw(`${id}.${pool}`, lines.length)]
+    this.lastShowdown = hand
+    this.spoke.set(id, hand)
+    return { kind: 'callout', speaker: id, text, stage: isStage(text), action: pool }
   }
 
   /** Maybe one of the needles on offer. The caller has already filtered them. */

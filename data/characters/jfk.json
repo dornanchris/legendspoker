@@ -82,6 +82,17 @@
       "All in. We choose to.",
       "Everything. The torch has been passed.",
       "All in. Ask not."
+    ],
+    "win": [
+      "Ask not what the pot can do for you.",
+      "We choose to win this pot, and do the other things.",
+      "One brief, shining moment.",
+      "Not because it was easy. Because it was mine."
+    ],
+    "lose": [
+      "Victory has a hundred fathers. That pot's an orphan.",
+      "I'll take full responsibility.",
+      "Well. They can't all be the moon."
     ]
   },
   "profile": {

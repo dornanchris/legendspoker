@@ -109,6 +109,10 @@
         [
           { "id": "wh_nd_02a", "speaker": "fdr", "to": "roosevelt", "text": "There goes the cavalry. Round the long way, for once.", "status": "draft" },
           { "id": "wh_nd_02b", "speaker": "roosevelt", "text": "A strategic withdrawal, cousin. I've read about them.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_11a", "speaker": "fdr", "to": "roosevelt", "text": "Speak softly, cousin. You can leave the big stick by the door.", "status": "draft" },
+          { "id": "wh_nd_11b", "speaker": "roosevelt", "text": "I'll fetch it on the way out. And beat you with it.", "status": "draft" }
         ]
       ]
     },
@@ -256,6 +260,51 @@
           { "id": "wh_al_fdr_01a", "speaker": "fdr", "text": "You had a war as well." },
           { "id": "wh_al_fdr_01b", "speaker": "lincoln", "text": "I had the one where we were the enemy." },
           { "id": "wh_al_fdr_01c", "speaker": "fdr", "text": "...Yes. I would take mine." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "wh_nd_lf_01a", "speaker": "lincoln", "to": "fdr", "text": "Fold to me again, Franklin, and I'll issue a proclamation about it.", "status": "draft" },
+          { "id": "wh_nd_lf_01b", "speaker": "fdr", "text": "Make it a fireside one. I'll listen from here.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_lf_02a", "speaker": "fdr", "to": "lincoln", "text": "A new deal for you next time, Mr. Lincoln.", "status": "draft" },
+          { "id": "wh_nd_lf_02b", "speaker": "lincoln", "text": "I'll settle for the old Union and my chips back.", "status": "draft" }
+        ]
+      ]
+    },
+
+    "lincoln_washington": {
+      "relationship": "Lincoln reveres Washington, and would very much like to take a pot off him. Washington answers in as few words as the joke allows.",
+      "exchanges": [
+        [
+          { "id": "wh_lw_01a", "speaker": "lincoln", "text": "General, I've been meaning to liberate a few chips from your purse.", "status": "draft" },
+          { "id": "wh_lw_01b", "speaker": "washington", "text": "You may try.", "status": "draft" },
+          { "id": "wh_lw_01c", "speaker": "lincoln", "text": "I've freed harder things than chips.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_lw_02a", "speaker": "lincoln", "text": "Is it true about the cherry tree, General?", "status": "draft" },
+          { "id": "wh_lw_02b", "speaker": "washington", "text": "A parson made it up to sell a book.", "status": "draft" },
+          { "id": "wh_lw_02c", "speaker": "lincoln", "text": "So you could tell a lie.", "status": "draft" },
+          { "id": "wh_lw_02d", "speaker": "washington", "text": "I did not. He did.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_lw_03a", "speaker": "washington", "text": "Mr. Lincoln. You sit very tall at a card table.", "status": "draft" },
+          { "id": "wh_lw_03b", "speaker": "lincoln", "text": "Six foot four, General. The hat is for the rest of the argument.", "status": "draft" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "wh_nd_lw_01a", "speaker": "lincoln", "to": "washington", "text": "Just liberating a little something from the General's purse.", "status": "draft" },
+          { "id": "wh_nd_lw_01b", "speaker": "washington", "text": "[counts what is left, exactly]", "type": "stage_direction", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_lw_02a", "speaker": "lincoln", "to": "washington", "text": "I do proclaim, General: that one was mine.", "status": "draft" },
+          { "id": "wh_nd_lw_02b", "speaker": "washington", "text": "So it was.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_lw_03a", "speaker": "washington", "to": "lincoln", "text": "Sit down, Mr. President.", "status": "draft" },
+          { "id": "wh_nd_lw_03b", "speaker": "lincoln", "text": "General, I am six foot four. This is me sitting down.", "status": "draft" }
         ]
       ]
     }

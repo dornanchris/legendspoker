@@ -183,7 +183,9 @@ export type OtherData = {
 
 /** The public actions a callout can answer. all_in is any action that empties the stack. */
 export type CalloutAction = 'fold' | 'check' | 'call' | 'bet' | 'raise' | 'all_in'
-export type Callouts = Partial<Record<CalloutAction, string[]>>
+/** Said after a showdown, when the cards are face up: taking the pot, or losing it. */
+export type ShowdownPool = 'win' | 'lose'
+export type Callouts = Partial<Record<CalloutAction | ShowdownPool, string[]>>
 
 export type ArrivalData = {
   character: string

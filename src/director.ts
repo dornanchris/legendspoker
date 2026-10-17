@@ -706,6 +706,7 @@ export class TableRun {
     // --- banter, between hands, from the two who just fought over a pot
     beats.push(...this.banter(e.hand))
     beats.push(...this.needle(e.hand, beats))
+    beats.push(...this.showdownWord(e.hand, beats))
 
     // --- marks
     const facts: HandFacts = {
@@ -890,6 +891,26 @@ export class TableRun {
     const allIn = (a === 'call' || a === 'bet' || a === 'raise') && e.stacks[e.seat] === 0
     const seated = this.seats.filter((s) => s !== null).length
     const c = this.chatter.callout({ id, hand: this.h.no, street: this.h.street, action: a, allIn, seated })
+    return c ? [c] : []
+  }
+
+  /**
+   * A word after a showdown, once the cards are face up: the winner crowing or
+   * a loser grumbling (src/chatter.ts). Only when two or more hands were shown
+   * and nothing else has been said at this boundary.
+   */
+  private showdownWord(hand: number, said: Beat[]): Beat[] {
+    const sd = this.h.showdown
+    if (!sd || sd.revealed.length < 2 || said.some((b) => b.kind === 'line' || b.kind === 'callout')) return []
+    const shown = sd.revealed.map((r) => r.seat).filter((s) => s !== HUMAN && this.h.ids[s] && this.canSpeak(this.h.ids[s]!))
+    let winner: string | null = null
+    let best = 0
+    for (const s of shown) {
+      const d = this.h.deltas.get(s) ?? 0
+      if (d > best) { best = d; winner = this.h.ids[s]! }
+    }
+    const losers = shown.filter((s) => (this.h.deltas.get(s) ?? 0) < 0).map((s) => this.h.ids[s]!)
+    const c = this.chatter.showdown(hand, winner, losers)
     return c ? [c] : []
   }
 
