@@ -1047,6 +1047,14 @@ new art against that layout.
   that npm runs them from the repo root.
 - After pulling, `npm install` before `npm run web`. The web build needs
   esbuild, which older checkouts do not have.
+- **A pull that changes `patches/` needs `node_modules/poker-ts` deleted
+  first.** `npm install` keeps the installed poker-ts (same version), so
+  patch-package tries the new patch over the old one and fails -- and
+  locally it used to exit 0, leaving the OLD engine in the bundle. That is
+  how a player's nut flush lost a main pot to a pair of tens at Camelot,
+  weeks after the side-pot fix. Now postinstall runs with `--error-on-fail`
+  and stamps node_modules with a digest of `patches/` (`web/patches.mjs`),
+  and `npm run web` refuses to build against any other stamp.
 
 ## NEXT MILESTONE
 
