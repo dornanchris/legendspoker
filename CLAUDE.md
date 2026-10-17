@@ -143,7 +143,8 @@ art-tools/
   cut_sheet.py    split_parts plus each kit's fixes as data (<id>_parts/cut.json):
                   pieces that touched, a prop drawn across the next head
   build_puppet.py init/render a layout to preview puppet assembly
-  dracula_parts/  41 split Dracula layers (incomplete — see gaps)
+  dracula_parts/  Dracula, Transylvania's champion (built; rig_spec.json);
+                  old_parts/ is the pre-gothic parts kit
   seat_puppet.py  builds a seated three-quarter puppet from a small spec
                   (<id>_parts/seat.json): trims the cuffs, writes the layout
   faces_preview.py  a strip of every head swap on the seated puppet
@@ -520,9 +521,12 @@ built): a real wolf's head, his ears the tell surface, a howl for a big win.
 **The Headless Horseman is built** (`#/puppet/headless_horseman`, 24 clips,
 seat 4, mirrored): a pumpkin on his collar is his face, and its candle the tell
 surface (burning brighter, guttering); he talks by the light in his own
-carving brightening, and never blinks. **Transylvania is complete on the real
-table screen** (Dracula, who arrives, has no puppet yet: his chair would stand
-empty, plate only).
+carving brightening, and never blinks. **Count Dracula is built**
+(`#/puppet/dracula`, 24 clips, any chair, mirrored as the seat needs), in the
+owner's look (young, caped, red-eyed, fanged; the cape is the 1927 stage
+play's, ASSETS.md), his chalice on the felt; `arrive` sweeps his cape back as he
+sits. **Transylvania is complete on the real table screen**, his arrival
+included.
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
@@ -616,7 +620,7 @@ half that, all set by `art-tools/build/life.py`. Going out, a figure plays
 its `knocked_out` clip if it has one, then **fades from the chair** (0.8 s,
 stage.ts; the owner: a line, then gone); a puppet with no heads-up drawing
 leans in from its rest pose (`art-tools/build/fallback_clips.py`).
-`python3 art-tools/build/puppet_audit.py` holds all 36 puppets to the same
+`python3 art-tools/build/puppet_audit.py` holds all 37 puppets to the same
 list and prints 0 missing. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the
@@ -881,10 +885,6 @@ new art against that layout.
   rather than fetch them, or file:// stops working.
 - `MOTION-SPEC.md` layer 3 (per-character vocabulary) is an empty template.
   No character has an authored tell cluster yet.
-- Dracula's parts are incomplete: **no chalice** (his signature prop and half
-  his tell cluster), only three mouth shapes (needs a talking set and a
-  losing face), one brow pair, and fixed pupils (need separate pupil layers
-  for look-direction).
 
 ## GOTCHAS THAT COST TIME BEFORE
 
