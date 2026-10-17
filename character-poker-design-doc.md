@@ -544,22 +544,31 @@ beta problem; it is a "how does this ship" problem. Phase 10 at the earliest.
 
 ---
 
-## [DECISION, owner] THE FINALE'S FORMAT — the Ferryman deals, you are seen
+## [DECISION, owner] THE FINALE'S FORMAT — the Recording Angel deals, you are seen
 
-Death plays the finale, so he does not deal it. **The Ferryman** does: the
-boatman whose lantern is out on the river in the room's description has tied
-up and come in to deal the last table (unnamed, never Charon, no Greek
-imagery, per the setting rules above; Death's oldest colleague, in Death's
-colours but bareheaded, gaunt, white-bearded, a stole of gold fares; silent
-and wry; Death does the talking). And the table is laid out once,
-differently: **the player is seen**, as the Stranger (the default avatar, in
-the accent colour the player chose), in the left chair; Death, as a player at
-three-quarter, in the right; the Ferryman between them at the back. It is the
-one time the camera pulls back, and it sets up the reward: having seen
-yourself as the Stranger, beating Death makes him your avatar. Rejected for
-the dealer's chair: Loki (spends the hidden cameo on everyone who finishes, and
-a trickster dealing the deciding hand reads as a rigged deck), Marley and
-Sisyphus (the owner: "keep it simple and on brand").
+Death plays the finale, so he does not deal it. **The Recording Angel** does:
+the one whose work is to witness and write down, come to the dock house
+because this hand has to be witnessed ("Someone has to witness it," Death
+says, and nothing more). Nobody doubts the honesty of the deal, and it hints
+at the sequel (other halls have an interest in a mortal among legends)
+without spending any of it: never named beyond its office, never explains,
+almost silent. A working angel, not a glorious one: a plain white robe,
+sleeves pushed up, a quill behind the ear, ink on the fingertips, wings folded
+and dusty, a thin halo, not glowing (the room has one lamp); nothing about it
+says man or woman. The room is not Heaven, as rejected above: the Angel is a
+visitor, and the ferryman's lantern stays out on the river.
+
+And the table is laid out once, differently: **the player is seen**, as the
+Stranger (the default avatar, in the accent colour the player chose), in the
+left chair; Death, as a player at three-quarter, in the right; the Angel
+between them at the back. It is the one time the camera pulls back, and it
+sets up the reward: having seen yourself as the Stranger, beating Death makes
+him your avatar.
+
+Rejected for the dealer's chair: Loki (spends the hidden cameo on everyone who
+finishes, and a trickster dealing the deciding hand reads as a rigged deck);
+Marley and Sisyphus ("keep it simple"); the Ferryman, drawn twice (an ochre
+oilskin read as a fisherman; in Death's colours, "unreasonably creepy").
 
 ---
 
