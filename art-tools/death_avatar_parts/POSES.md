@@ -25,6 +25,12 @@ Death as a PLAYER: the avatar the design doc promises for beating the game ("Bea
 | C5 | Flexes his bone fingers one by one | LOOP |
 | C6 | Looks up, as if at a clock nobody else can see | LOOP |
 
+## Drawn
+
+`sources/`: `death_player_sheet.png`, `poses_a.png`, `poses_b.png`,
+`poses_c.png` and `faces.png`: every sheet, all plainly the dealer turned to
+three-quarter. The puppet is not built (online is not designed).
+
 ## Prompts
 
 One fresh ChatGPT chat for all five. The first prompt attaches TWO images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the three-quarter layout, then Death's own character sheet (`art-tools/death_parts/sources/death_sheet.png`) for his look and style. From the second prompt on, attach this Death's new character sheet, its pose sheet A once it exists, AND Death's dealer sheet (`art-tools/death_parts/sources/death_sheet.png`), and nothing else.

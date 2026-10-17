@@ -50,6 +50,9 @@ is done, and say so in the commit.
   (teal, crimson, gold, violet, ivory, emerald; `accents.png`). At build
   time, bake a mask of those pixels per image and tint it at runtime, or
   bake one set per accent: online's design decides which.
+  **Death's player sheets are drawn too** (`art-tools/death_avatar_parts/
+  sources/`: character sheet, poses A, B, C and the face sheet); his puppet
+  is not built either.
 
 ## Room and puppet leftovers (the last build)
 
