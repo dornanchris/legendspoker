@@ -63,7 +63,7 @@ STYLE, the most important rule: match the SECOND and THIRD attached images (the 
 ### Pose sheet A
 
 ```
-Character pose sheet for 2D animation reference: The Phoenix, exactly as on the attached character sheet (a great red-and-gold bird the size of a large eagle, sitting up behind the table like a person, a crest of small bright cartoon flames along the top of its head, a golden beak, big gold eyes, its wings folded forward with the wingtips resting on the felt like forearms, a long tail of fire-coloured plumes falling away behind it, colours, line weight, flat cartoon style).
+Character pose sheet for 2D animation reference: The Phoenix, exactly as on the attached character sheet (a great red-and-gold bird the size of a large eagle, sitting up behind the table like a person, a crest of small bright cartoon flames along the top of its head, a golden beak, big gold eyes, its wings folded forward with the wingtips resting on the felt like forearms, a long tail of fire-coloured plumes falling away behind it, colours, line weight, graphic-novel style).
 
 Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: chest up, sitting up behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, the same size, in the same place in its cell, with the table edge at the same height in every cell. Leave a little white between it and the cell's edges, the tips of its crest of flame included: nothing of it is cut off. Nothing below the table edge. No chair: nothing at all behind it, just white.
 

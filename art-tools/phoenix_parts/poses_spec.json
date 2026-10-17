@@ -10,6 +10,10 @@
  "no": "No human figure, no woman, no person in flames, no hands, no chair, no text, no cards, no chips.",
  "replace": [
   [
+   "colours, line weight, flat cartoon style)",
+   "colours, line weight, graphic-novel style)"
+  ],
+  [
    "the arm that the pose does not mention stays EXACTLY as in pose 1, same position, same hand.",
    "the wing that the pose does not mention stays EXACTLY as in pose 1, same position."
   ],
