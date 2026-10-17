@@ -1,0 +1,319 @@
+{
+ "kit": "death_avatar_parts",
+ "id": "death_player",
+ "name": "Death (as a player)",
+ "note": "Polygons in the rest pose (A1) pixels. Death at three-quarter, as a player: the finale's right-hand chair (mirrored), and later an online avatar (cosmetic loops only, rule 3). The master is the rest pose's OWN head; the jaw talks (face sheet pieces 2-4). Every pose but rest a whole-figure frame with its own drawn head. No prop.",
+ "what": {
+  "A1": "Rest: forearms on the table's edge, bone hands apart",
+  "A2": "Peeking at his cards (right hand)",
+  "A3": "Check: one bone finger taps the felt",
+  "A4": "Call: right hand pushes forward along the felt",
+  "A5": "Bet: leans in, right hand pushed well forward",
+  "A6": "Fold: a weary flick of the fingers",
+  "B1": "All in: both hands push forward together",
+  "B2": "Show: right hand turns palm up",
+  "B3": "Big win: arms opened wide, palms up, a host welcoming guests (`win_big`)",
+  "B4": "Crushing loss: hood bowed, a hand over the brow (`lose_big`)",
+  "B5": "Heads up: elbows on the table, fingers steepled",
+  "B6": "Talking: right hand raised, palm open, jaw dropped",
+  "C1": "LOOP: draws the hood forward with both hands",
+  "C2": "LOOP: turns the gold skull brooch between two fingers",
+  "C3": "LOOP: brushes grey ash from his sleeve",
+  "C4": "LOOP: settles the robe on his shoulders, a small shrug (also a lost pot)",
+  "C5": "LOOP: flexes his bone fingers one by one",
+  "C6": "LOOP: looks up and aside, as at a clock nobody else can see"
+ },
+ "prop": null,
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "lose_big": "B4",
+  "heads_up": "B5",
+  "talk": "B6",
+  "hood": "C1",
+  "brooch": "C2",
+  "ash": "C3",
+  "shrug": "C4",
+  "flex": "C5",
+  "clock": "C6",
+  "lost_pot": "C4"
+ },
+ "common": {
+  "table_y": 360,
+  "scale": 1.0,
+  "origin_x": 300,
+  "register_box": [
+   150,
+   220,
+   350,
+   340
+  ],
+  "register_span": 40,
+  "collar_y": 195,
+  "neck": [
+   255,
+   195
+  ],
+  "frame_margin": 60,
+  "stock_box": [
+   210,
+   180,
+   340,
+   240
+  ]
+ },
+ "cut_below": 205,
+ "keep_poly": [
+  [
+   118,
+   0
+  ],
+  [
+   352,
+   0
+  ],
+  [
+   352,
+   160
+  ],
+  [
+   332,
+   182
+  ],
+  [
+   300,
+   196
+  ],
+  [
+   200,
+   196
+  ],
+  [
+   168,
+   184
+  ],
+  [
+   130,
+   160
+  ],
+  [
+   116,
+   100
+  ]
+ ],
+ "shoulder_y": 200,
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     290
+    ],
+    [
+     90,
+     290
+    ],
+    [
+     90,
+     335
+    ],
+    [
+     0,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm in its sleeve and the bone hand",
+     "poly": [
+      [
+       0,
+       320
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       110,
+       310
+      ],
+      [
+       150,
+       345
+      ],
+      [
+       190,
+       352
+      ],
+      [
+       230,
+       370
+      ],
+      [
+       262,
+       410
+      ],
+      [
+       278,
+       462
+      ],
+      [
+       200,
+       474
+      ],
+      [
+       120,
+       462
+      ],
+      [
+       60,
+       440
+      ],
+      [
+       0,
+       430
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    452,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     280
+    ],
+    [
+     500,
+     280
+    ],
+    [
+     500,
+     320
+    ],
+    [
+     400,
+     320
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm in its sleeve and the bone hand",
+     "poly": [
+      [
+       300,
+       380
+      ],
+      [
+       320,
+       350
+      ],
+      [
+       360,
+       340
+      ],
+      [
+       400,
+       330
+      ],
+      [
+       440,
+       308
+      ],
+      [
+       482,
+       312
+      ],
+      [
+       500,
+       350
+      ],
+      [
+       500,
+       420
+      ],
+      [
+       420,
+       432
+      ],
+      [
+       408,
+       458
+      ],
+      [
+       300,
+       458
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "back_strip": 6,
+  "wood_rows_only": true,
+  "wood_blue": 0.34,
+  "rail_holes": [
+   30,
+   20
+  ]
+ },
+ "frame_extra": {
+  "show": {
+   "biggest": true
+  },
+  "win_big": {
+   "except": [
+    [
+     [
+      0,
+      330
+     ],
+     [
+      110,
+      330
+     ],
+     [
+      110,
+      441
+     ],
+     [
+      0,
+      441
+     ]
+    ]
+   ]
+  }
+ },
+ "no_prop": []
+}

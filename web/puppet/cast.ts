@@ -89,6 +89,8 @@ import jfkRig from '../art/jfk/rig.json'
 import jfkAnim from '../art/jfk/anim.json'
 import lokiRig from '../art/loki/rig.json'
 import lokiAnim from '../art/loki/anim.json'
+import deathPlayerRig from '../art/death_player/rig.json'
+import deathPlayerAnim from '../art/death_player/anim.json'
 import whiteHouse from '../art/rooms/white_house/room.json'
 import athens from '../art/rooms/athens/room.json'
 import pirateCove from '../art/rooms/pirate_cove/room.json'
@@ -188,6 +190,8 @@ export const PUPPETS: Record<string, CastEntry> = {
   jfk: { rig: jfkRig as unknown as RigData, anim: jfkAnim as unknown as AnimData, base: 'art/jfk/' },
   loki: { rig: lokiRig as unknown as RigData, anim: lokiAnim as unknown as AnimData, base: 'art/loki/' },
   death: { rig: deathRig as unknown as RigData, anim: deathAnim as unknown as AnimData, base: 'art/death/' },
+  // the finale's: Death at three-quarter, in a player's chair (the room's `cast` seats him for 'death')
+  death_player: { rig: deathPlayerRig as unknown as RigData, anim: deathPlayerAnim as unknown as AnimData, base: 'art/death_player/' },
 }
 
 /**

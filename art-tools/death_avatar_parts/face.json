@@ -1,0 +1,35 @@
+{
+ "note": "The master is the rest pose's own head. The jaw (41 parted, 42 open, 43 wide) is made from it by jaw.py: the face sheet's jaw patches (2-5) were drawn larger and covered the nose, so they are unused, like the eye sockets (6-8) and the front head (9): a skull does not blink, and he turns in whole-figure frames. Closed is the master's own jaw.",
+ "master": "death_avatar_parts/death_player_face/death_player_master.png",
+ "pieces": "death_avatar_parts/death_player_face/death_player_face_%02d.png",
+ "layers": {
+  "mouth": {
+   "parted": 41,
+   "open": 42,
+   "wide": 43
+  }
+ },
+ "regions": {
+  "mouth": {
+   "keep": [
+    [
+     222,
+     138
+    ],
+    [
+     306,
+     138
+    ],
+    [
+     306,
+     192
+    ],
+    [
+     222,
+     192
+    ]
+   ],
+   "match": false
+  }
+ }
+}

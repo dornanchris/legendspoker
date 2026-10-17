@@ -147,6 +147,7 @@ def poly_mask(shape, pts):
 
 
 NO_WOOD = False
+WOOD_BLUE = None
 
 
 def table_colour(a, ty, with_wood=True):
@@ -165,6 +166,8 @@ def table_colour(a, ty, with_wood=True):
     if NO_WOOD:                                         # no chair and a gold rail: dark red is his robe (the Pope)
         return felt
     wood = (r - g > 40) & (g < 75) & (r < 200) & (a[..., 3] > 0)
+    if WOOD_BLUE:                                       # a purple lining is that red too, but far bluer (Death's robe)
+        wood &= b < r * WOOD_BLUE
     if WOOD_ROWS_ONLY:
         rows = np.zeros_like(wood)
         rows[max(0, ty - 8):] = True
@@ -365,6 +368,8 @@ def main(spec_path):
     global FELT_BLUE, FELT_DARK_TEAL
     FELT_BLUE = bool(spec.get('felt_blue'))
     FELT_DARK_TEAL = bool(spec.get('felt_dark_teal'))
+    global WOOD_BLUE
+    WOOD_BLUE = spec.get('wood_blue')
     kit = os.path.dirname(os.path.abspath(spec_path))
     out_dir = os.path.join(kit, f"{spec['id']}_pose")
     os.makedirs(out_dir, exist_ok=True)
@@ -488,6 +493,14 @@ def main(spec_path):
                 m &= ndimage.binary_dilation(ndimage.binary_opening(m, iterations=t), iterations=t) | pr_
             m = biggest(m) | (m & props)                  # a prop lying apart from the hand (Holmes's pipe)
             m = ndimage.binary_fill_holes(m) & (src[..., 3] > 128) & ~(white & ~m)
+            if spec.get('rail_holes'):                     # the drawn rail under and between the resting arms
+                above, below_ = spec['rail_holes']
+                c = src[..., :3].astype(int)
+                band = np.zeros(m.shape, bool)
+                band[max(0, ty - above):ty + below_] = True
+                rail = (c[..., 0] > 1.6 * c[..., 1] + 10) & (c[..., 0] > 60) & (c[..., 2] < spec.get('rail_blue', 256)) & ~props
+                m &= ~ndimage.binary_dilation(rail & band, iterations=1)
+                m = biggest(m) | (m & props)
             rgba = src.copy()
             rgba[..., 3] = np.where(m, src[..., 3], 0)
             if not a.get('props'):                         # (peeling would eat the chips' red)
@@ -747,6 +760,17 @@ def main(spec_path):
             low = np.zeros(fshape, bool)
             low[ty + FM - 10:] = True
             fm &= ~(low & table_colour(F, ty + FM, with_wood=False))
+        if spec.get('rail_holes'):                         # the rail enclosed between his arms: filling holes brought it back
+            c = F[..., :3].astype(int)
+            above, below_ = spec['rail_holes']
+            band = np.zeros(fshape, bool)
+            band[max(0, ty + FM - above):ty + FM + below_] = True
+            rail = (c[..., 0] > 1.6 * c[..., 1] + 10) & (c[..., 0] > 60) & (c[..., 2] < spec.get('rail_blue', 256)) & ~props
+            fm &= ~ndimage.binary_dilation(rail & band, iterations=1)
+            lab_, n_ = ndimage.label(fm)                   # and the crumbs it leaves
+            if n_:
+                sz_ = ndimage.sum(fm, lab_, range(1, n_ + 1))
+                fm = np.isin(lab_, 1 + np.nonzero(sz_ >= 150)[0])
         for box in fr.get('drop_red', []):                 # a red chair drawn behind him (the Robot's sheets)
             c = F[..., :3].astype(int)
             red = fm & (c[..., 0] > 80) & (c[..., 1] * 2 < c[..., 0]) & (c[..., 2] * 2 < c[..., 0]) & pm(box)

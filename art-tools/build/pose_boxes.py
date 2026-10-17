@@ -6,13 +6,15 @@ mitre) is kept with the cell its middle sits in.
   python3 art-tools/build/pose_boxes.py art-tools/scipio_parts
 Then:  python3 art-tools/build/corner_regs.py art-tools/scipio_parts
 """
-import json, sys
+import json, os, sys
 import numpy as np
 from PIL import Image
 from scipy import ndimage
 kit = sys.argv[1].rstrip('/')
 out = {}
 for sh in 'ABCD':
+    if not os.path.exists(f'{kit}/sources/poses_{sh.lower()}.png'):
+        continue                 # three sheets (the finale's dealer and avatars)
     im = np.array(Image.open(f'{kit}/sources/poses_{sh.lower()}.png').convert('RGB')).astype(int)
     H, W, _ = im.shape
     fg = im.min(2) < 235

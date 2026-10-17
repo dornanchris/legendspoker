@@ -9,6 +9,8 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 cid = sys.argv[1]; sc = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
 K = f'art-tools/{cid}_parts/'; D = K + f'{cid}_pose/'
+KITS = {'death_player': 'death_avatar_parts', 'stranger': 'avatar_parts', 'pravuil': 'angel_parts'}   # a kit named apart from its puppet
+if cid in KITS: K = f'art-tools/{KITS[cid]}/'; D = K + f'{cid}_pose/'
 spec = json.load(open(K + 'pose_rig.json'))
 FM = spec.get('frame_margin', 60); ty = spec['table_y']
 body = Image.open(D + 'body.png')
