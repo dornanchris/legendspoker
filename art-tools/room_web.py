@@ -23,6 +23,9 @@ the bright fire inside it: Camelot's hearth frames drew the whole fireplace;
 beside the backdrop, with where they stand in design space. `presence` names
 the piece shown until the table's late champion arrives and the one after;
 `loops` cycle frames (lamp flames) at each of their spots.
+"after_backdrop" names a second backdrop, the same room drawn after the champion
+has come (the Station's turn: lamps off, amber emergency light), drawn in place
+of the first once the presence is 'after'.
 """
 import json, os, shutil, sys
 import numpy as np
@@ -98,7 +101,11 @@ def cut_pieces():
         if 'x' in p:
             piece.update(x=p['x'], bottom=p['bottom'], h=p['h'])
         out[name] = piece
-    return {'pieces': out, 'presence': spec.get('presence'), 'loops': spec.get('loops', [])}
+    res = {'pieces': out, 'presence': spec.get('presence'), 'loops': spec.get('loops', [])}
+    if spec.get('after_backdrop'):                         # the same room once the champion has come (the Station's turn)
+        shutil.copyfile(os.path.join(SRC, spec['after_backdrop']), os.path.join(OUT, spec['after_backdrop']))
+        res['backdropAfter'] = spec['after_backdrop']
+    return res
 
 json.dump({
     'id': room,

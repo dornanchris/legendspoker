@@ -33,6 +33,18 @@ is done, and say so in the commit.
 
 ## The table screen (from the owner's screenshots)
 
+- **The Station's ceiling lens is cut off at 16:9.** The backdrop drew its
+  socket at the very top of the picture, so the open lens (the room watching)
+  shows only on windows taller than 16:9; at 16:9 just the socket's lower rim.
+  A redrawn plate with the socket lower, or the lens moved down, would fix it.
+- **The Station's wall lamps** sit at 23% and 77% across (the prompt asked 27%
+  and 73%), glowing just beside the end seats' heads. They read; nudge only if
+  they distract.
+- **The AI's tells are the lens only**: nothing on the ceiling plays while it
+  watches without a chair (its tells fire once it sits). The sheet's half and
+  narrowed lens pieces are cut but unused; the "lights dim" tell dims the lens,
+  not the room's lamps (the stage dims only loop pieces, and the Station has none).
+
 - **A wide screen cuts off the player's own seat:** the plate at the left
   edge and the hole cards at the bottom (seen at the Pirate Cove).
 - **A bet's chip pile lands beside or over the board** when the seat's pile

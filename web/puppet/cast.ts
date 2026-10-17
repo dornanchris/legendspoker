@@ -73,6 +73,8 @@ import astronautRig from '../art/astronaut/rig.json'
 import astronautAnim from '../art/astronaut/anim.json'
 import robotRig from '../art/robot/rig.json'
 import robotAnim from '../art/robot/anim.json'
+import theAiRig from '../art/the_ai/rig.json'
+import theAiAnim from '../art/the_ai/anim.json'
 import jekyllRig from '../art/jekyll/rig.json'
 import jekyllAnim from '../art/jekyll/anim.json'
 import hydeRig from '../art/hyde/rig.json'
@@ -88,6 +90,7 @@ import camelot from '../art/rooms/camelot/room.json'
 import rome from '../art/rooms/rome/room.json'
 import bakerStreet from '../art/rooms/baker_street/room.json'
 import transylvania from '../art/rooms/transylvania/room.json'
+import station from '../art/rooms/station/room.json'
 
 /**
  * The puppets the web build knows: each one's rig (generated) and its anim
@@ -167,6 +170,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   dracula: { rig: draculaRig as unknown as RigData, anim: draculaAnim as unknown as AnimData, base: 'art/dracula/' },
   astronaut: { rig: astronautRig as unknown as RigData, anim: astronautAnim as unknown as AnimData, base: 'art/astronaut/' },
   robot: { rig: robotRig as unknown as RigData, anim: robotAnim as unknown as AnimData, base: 'art/robot/' },
+  the_ai: { rig: theAiRig as unknown as RigData, anim: theAiAnim as unknown as AnimData, base: 'art/the_ai/' },
   // the hidden guests: either may sit in any chair, at any table
   jfk: { rig: jfkRig as unknown as RigData, anim: jfkAnim as unknown as AnimData, base: 'art/jfk/' },
   loki: { rig: lokiRig as unknown as RigData, anim: lokiAnim as unknown as AnimData, base: 'art/loki/' },
@@ -183,6 +187,8 @@ export type RoomData = {
   /** Design px of ceiling a short screen may lose off the top. */
   crop: number
   backdrop: { img: string; w: number; h: number }
+  /** The same room once the late champion has come (the Station's turn), drawn in its place. */
+  backdropAfter?: string
   table: { img: string; x: number; y: number; w: number; h: number }
   rim: { x0: number; step: number; y: (number | null)[] }
   /** By the number of opponents: [centre x, scale, sink] for seat 1, 2, ... */
@@ -207,4 +213,5 @@ export const ROOMS: Record<string, RoomEntry> = {
   rome: { data: rome as unknown as RoomData, base: 'art/rooms/rome/' },
   baker_street: { data: bakerStreet as unknown as RoomData, base: 'art/rooms/baker_street/' },
   transylvania: { data: transylvania as unknown as RoomData, base: 'art/rooms/transylvania/' },
+  station: { data: station as unknown as RoomData, base: 'art/rooms/station/' },
 }

@@ -168,8 +168,8 @@ art-tools/
                   Baker Street (all built); van_helsing_parts/, jekyll_parts/,
                   hyde_parts/, wolf_man_parts/,
                   headless_horseman_parts/ (built): Transylvania; monster_parts/ (rejected, a record);
-                  astronaut_parts/, robot_parts/ (built), grey_alien_parts/, martian_parts/,
-                  the_ai_parts/ (prompts): the Station
+                  astronaut_parts/, robot_parts/, the_ai_parts/ (built; the AI is
+                  the Robot recoloured), grey_alien_parts/, martian_parts/ (prompts): the Station
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets;
                   ik_split.py cuts his IK arm from a pose (the IK prototype)
@@ -534,7 +534,16 @@ clips, seat 4, mirrored), a man (the owner's call), his helmet on the felt; his
 sheets are the Station's style baseline (the Grey's first sheets drew airbrushed).
 **The Robot is built** (`#/puppet/robot`, 24 clips, seat 3, mirrored): its chest
 lamp, eye lamps and grille are the tell surface; it talks by its own grille
-lighting up. The Station's room is not built yet, so nothing there is staged.
+lighting up. **The AI is built** (`#/puppet/the_ai`, 27 clips): the Robot taken
+over (the owner: "just change its glow"), made from the Robot's built images by
+`art-tools/the_ai_parts/recolour.py`: its chest lamp a pale, cold white lens
+(never red: HAL), its eye-lamps dark; its tells are the lens narrowing and
+dimming (two frames made from the Robot's), `arrive` the slumped body sitting
+back up in the Robot's chair. **The Station's room is built** (`?room=station`):
+the open ceiling lens stands in its socket while the AI watches, and at the turn
+the room swaps to `after.webp` (lamps off, amber, never red; `backdropAfter` in
+room.json, drawn once the presence is 'after', so a resumed sitting lands in
+the right room). The table stages once the Martian and the Grey are built.
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
@@ -628,7 +637,7 @@ half that, all set by `art-tools/build/life.py`. Going out, a figure plays
 its `knocked_out` clip if it has one, then **fades from the chair** (0.8 s,
 stage.ts; the owner: a line, then gone); a puppet with no heads-up drawing
 leans in from its rest pose (`art-tools/build/fallback_clips.py`).
-`python3 art-tools/build/puppet_audit.py` holds all 39 puppets to the same
+`python3 art-tools/build/puppet_audit.py` holds all 40 puppets to the same
 list and prints 0 missing. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the

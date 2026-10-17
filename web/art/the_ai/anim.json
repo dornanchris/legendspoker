@@ -1,0 +1,3363 @@
+{
+ "note": "The AI: the Robot's clips (art-tools/the_ai_parts/clips.py), its glow taken over by recolour.py: the lens in its chest is the tell surface; its eye-lamps are dark.",
+ "face": {
+  "blink": {
+   "every": [
+    3600,
+    3600
+   ],
+   "double": 0,
+   "frames": []
+  },
+  "gaze": {
+   "idle": [
+    [
+     "ahead",
+     1
+    ]
+   ],
+   "hold": [
+    1.4,
+    3.2
+   ],
+   "tilt": {
+    "ahead": [
+     0,
+     0,
+     0
+    ],
+    "down": [
+     1.6,
+     1,
+     2.5
+    ],
+    "viewer": [
+     -0.8,
+     -1.5,
+     0
+    ],
+    "narrow": [
+     0.8,
+     0,
+     0.5
+    ]
+   }
+  },
+  "sway": {
+   "rot": 1.1,
+   "x": 2.2,
+   "y": 1.4,
+   "periods": [
+    5.3,
+    6.9,
+    4.6
+   ],
+   "follow": 5,
+   "body": 0.45
+  },
+  "breath": {
+   "period": 4.4,
+   "sy": 0.013
+  },
+  "speech": {
+   "vowel": 0.085,
+   "consonant": 0.055,
+   "space": 0.045,
+   "pause": 0.3,
+   "map": {
+    "a": "ah",
+    "i": "ah",
+    "e": "ee",
+    "y": "ee",
+    "o": "oh",
+    "u": "oo",
+    "w": "oo",
+    "q": "oo",
+    "m": "m",
+    "b": "m",
+    "p": "m",
+    "f": "f",
+    "v": "f",
+    "l": "l",
+    "n": "l",
+    "t": "l",
+    "d": "l",
+    "th": "l",
+    "s": "ee",
+    "z": "ee",
+    "c": "ee",
+    "x": "ee",
+    "j": "ee",
+    "ch": "ee",
+    "sh": "oo",
+    "k": "ah",
+    "g": "ah",
+    "h": "ah",
+    "r": "oo",
+    "oo": "oo",
+    "ee": "ee"
+   }
+  }
+ },
+ "clips": {
+  "check": {
+   "duration": 1.2,
+   "note": "One metal finger taps the felt, precisely.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.15,
+       1.5,
+       "in"
+      ],
+      [
+       0.27,
+       0,
+       "out"
+      ],
+      [
+       0.85,
+       0
+      ],
+      [
+       0.87,
+       1.5,
+       "hold"
+      ],
+      [
+       1.15,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      0.85,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      0.85,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      0.85,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      0.85,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      0.85,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      0.85,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.15,
+      "check"
+     ],
+     [
+      0.85,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      0.85,
+      null
+     ]
+    ]
+   }
+  },
+  "peek": {
+   "duration": 1.6,
+   "note": "A metal hand cupped low over its cards, head tipped down.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.18,
+       1.5,
+       "in"
+      ],
+      [
+       0.3,
+       0,
+       "out"
+      ],
+      [
+       1.25,
+       0
+      ],
+      [
+       1.27,
+       1.5,
+       "hold"
+      ],
+      [
+       1.55,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.25,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.25,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.25,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.25,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.25,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.25,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.18,
+      "peek"
+     ],
+     [
+      1.25,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.25,
+      null
+     ]
+    ]
+   }
+  },
+  "call": {
+   "duration": 1.5,
+   "note": "A flat hand slides forward along the felt (the chips are the game's).",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.18,
+       1.5,
+       "in"
+      ],
+      [
+       0.3,
+       0,
+       "out"
+      ],
+      [
+       1.15,
+       0
+      ],
+      [
+       1.17,
+       1.5,
+       "hold"
+      ],
+      [
+       1.45,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.15,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.15,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.15,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.15,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.15,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.15,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.18,
+      "call"
+     ],
+     [
+      1.15,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      1.15,
+      null
+     ]
+    ]
+   }
+  },
+  "bet": {
+   "duration": 1.5,
+   "note": "Leans forward, a hand pushed well forward, exactly.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.15,
+       1.5,
+       "in"
+      ],
+      [
+       0.27,
+       0,
+       "out"
+      ],
+      [
+       1.1,
+       0
+      ],
+      [
+       1.12,
+       1.5,
+       "hold"
+      ],
+      [
+       1.4000000000000001,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      1.1,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      1.1,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      1.1,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      1.1,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      1.1,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      1.1,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.15,
+      "bet"
+     ],
+     [
+      1.1,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.15,
+      "-"
+     ],
+     [
+      1.1,
+      null
+     ]
+    ]
+   }
+  },
+  "all_in": {
+   "duration": 2.0,
+   "note": "Both metal hands push forward together.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       3,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       1.6,
+       0
+      ],
+      [
+       1.62,
+       3,
+       "hold"
+      ],
+      [
+       1.9000000000000001,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "all_in"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ]
+   }
+  },
+  "show": {
+   "duration": 1.8,
+   "note": "A hand turns palm up (the game turns the cards).",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       1.5,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       1.4,
+       0
+      ],
+      [
+       1.42,
+       1.5,
+       "hold"
+      ],
+      [
+       1.7,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.4,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.4,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.4,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.4,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.4,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.4,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "show"
+     ],
+     [
+      1.4,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.4,
+      null
+     ]
+    ]
+   }
+  },
+  "fold": {
+   "duration": 1.3,
+   "note": "A neat push of the hand, palm down.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.18,
+       1.5,
+       "in"
+      ],
+      [
+       0.3,
+       0,
+       "out"
+      ],
+      [
+       0.9,
+       0
+      ],
+      [
+       0.92,
+       1.5,
+       "hold"
+      ],
+      [
+       1.2,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.18,
+      "fold"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.18,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ]
+   }
+  },
+  "win_big": {
+   "duration": 2.4,
+   "note": "BEAT: a big pot won: both arms straight up, antennae up, lamps bright.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       -2,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       -2,
+       "hold"
+      ],
+      [
+       2.3,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "win_big"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   }
+  },
+  "talk": {
+   "duration": 2.2,
+   "note": "BEAT: talking, the grille lit, a hand raised. Play beside a spoken line.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       1.5,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       1.5,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "talk"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   }
+  },
+  "big_bet": {
+   "duration": 2.2,
+   "note": "BEAT: facing a big bet: stiffly upright.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.25,
+       1.5,
+       "in"
+      ],
+      [
+       0.37,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       1.5,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.25,
+      "big_bet"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.25,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   }
+  },
+  "lost_pot": {
+   "duration": 2.2,
+   "note": "BEAT: lost a pot: head bowed, lamp eyes dimmed.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       1.5,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       1.5,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "lost_pot"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   }
+  },
+  "lose_big": {
+   "duration": 2.6,
+   "note": "BEAT: a crushing loss: slumped, its lamps gone dark, a wisp of smoke.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       0,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       2.2,
+       0
+      ],
+      [
+       2.22,
+       0,
+       "hold"
+      ],
+      [
+       2.5,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "lose_big"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ]
+   }
+  },
+  "heads_up": {
+   "duration": 2.6,
+   "note": "BEAT: down to two: leaning forward on both forearms, lamps bright.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.3,
+       3,
+       "in"
+      ],
+      [
+       0.42,
+       0,
+       "out"
+      ],
+      [
+       2.2,
+       0
+      ],
+      [
+       2.22,
+       3,
+       "hold"
+      ],
+      [
+       2.5,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.3,
+      "heads_up"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.3,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ]
+   }
+  },
+  "laugh": {
+   "duration": 2.0,
+   "note": "BEAT: laughs, the grille glowing in short bars, antennae bobbing.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       1.5,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       1.6,
+       0
+      ],
+      [
+       1.62,
+       1.5,
+       "hold"
+      ],
+      [
+       1.9000000000000001,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "laugh"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ]
+   }
+  },
+  "lamp": {
+   "duration": 2.4,
+   "note": "TELL: its chest lamp flickers.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       0,
+       "hold"
+      ],
+      [
+       2.3,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "lamp"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    1.11,
+    0.9
+   ]
+  },
+  "eyes_dim": {
+   "duration": 2.4,
+   "note": "IDLE (decoy for the lamp): its eye-lamps dim and brighten.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       0,
+       "hold"
+      ],
+      [
+       2.3,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "eyes_dim"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    1.11,
+    0.9
+   ]
+  },
+  "whir": {
+   "duration": 2.2,
+   "note": "TELL: whirs, briefly.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       0,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "whir"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    1.01,
+    0.9
+   ]
+  },
+  "recalibrate": {
+   "duration": 2.0,
+   "note": "IDLE (decoy for the whir): recalibrates with a click.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       0,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       1.6,
+       0
+      ],
+      [
+       1.62,
+       0,
+       "hold"
+      ],
+      [
+       1.9000000000000001,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "recalibrate"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    0.9,
+    0.9
+   ]
+  },
+  "head_turn": {
+   "duration": 2.4,
+   "note": "TELL: rotates its head to the pot and back.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       0,
+       "hold"
+      ],
+      [
+       2.3,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "head_turn"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    1.11,
+    0.9
+   ]
+  },
+  "antennae": {
+   "duration": 2.2,
+   "note": "IDLE (decoy for the head turn): its antennae twitch.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       0,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "antennae"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    1.01,
+    0.9
+   ]
+  },
+  "steam": {
+   "duration": 2.2,
+   "note": "IDLE: vents a thin puff of steam.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       1.8,
+       0
+      ],
+      [
+       1.82,
+       0,
+       "hold"
+      ],
+      [
+       2.1,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "steam"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      1.8,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    1.01,
+    0.9
+   ]
+  },
+  "turn": {
+   "duration": 2.0,
+   "note": "IDLE: turns to look at you, both lamp eyes on you.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       0,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       1.6,
+       0
+      ],
+      [
+       1.62,
+       0,
+       "hold"
+      ],
+      [
+       1.9000000000000001,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "turn"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      1.6,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    0.9,
+    0.9
+   ]
+  },
+  "polish": {
+   "duration": 2.4,
+   "note": "IDLE: polishes a scratch on its chest.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       1.5,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       1.5,
+       "hold"
+      ],
+      [
+       2.3,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "polish"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    1.11,
+    0.9
+   ]
+  },
+  "win_small": {
+   "duration": 1.6,
+   "note": "BEAT (GENERATED by art-tools/build/win_small.py): won a small pot: two satisfied nods, no smile.",
+   "tracks": {
+    "head": {
+     "rot": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       3,
+       "inOut"
+      ],
+      [
+       0.45,
+       0.2,
+       "inOut"
+      ],
+      [
+       0.68,
+       2.2,
+       "inOut"
+      ],
+      [
+       0.95,
+       0,
+       "inOut"
+      ]
+     ],
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       1.2,
+       "inOut"
+      ],
+      [
+       0.45,
+       0,
+       "inOut"
+      ],
+      [
+       0.68,
+       0.8,
+       "inOut"
+      ],
+      [
+       0.95,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   }
+  },
+  "narrow": {
+   "duration": 2.4,
+   "note": "TELL: the lens in its chest narrows to a bright point.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       0,
+       "hold"
+      ],
+      [
+       2.3,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "narrow"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    1.11,
+    0.9
+   ]
+  },
+  "dimmed": {
+   "duration": 2.4,
+   "note": "TELL: its lens dims a shade, as the room's lights do.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0,
+       "in"
+      ],
+      [
+       0.33999999999999997,
+       0,
+       "out"
+      ],
+      [
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       0,
+       "hold"
+      ],
+      [
+       2.3,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.22,
+      "dimmed"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.22,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   },
+   "hold": [
+    1.11,
+    0.9
+   ]
+  },
+  "arrive": {
+   "duration": 1.6,
+   "note": "BEAT: played as it takes the Robot's chair: the slumped body sits back up.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.9,
+       0
+      ],
+      [
+       0.92,
+       2,
+       "hold"
+      ],
+      [
+       1.2,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0,
+      "lose_big"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0,
+      "-"
+     ],
+     [
+      0.9,
+      null
+     ]
+    ]
+   }
+  }
+ },
+ "cues": {
+  "the lens narrows": "narrow",
+  "the lights in the room dim a shade": "dimmed",
+  "the lens tracks your hands": "turn",
+  "the hull creaks": "recalibrate",
+  "somewhere, a fan speeds up": "whir",
+  "the gravity shifts, a little": "antennae"
+ },
+ "fidgets": [
+  "polish"
+ ],
+ "reference": {
+  "rest": "ref_rest.png",
+  "peek": "ref_peek.png",
+  "check": "ref_check.png",
+  "call": "ref_call.png",
+  "bet": "ref_bet.png",
+  "fold": "ref_fold.png",
+  "all_in": "ref_all_in.png",
+  "show": "ref_show.png",
+  "win_big": "ref_win_big.png",
+  "lamp": "ref_lamp.png",
+  "eyes_dim": "ref_eyes_dim.png",
+  "whir": "ref_whir.png",
+  "recalibrate": "ref_recalibrate.png",
+  "head_turn": "ref_head_turn.png",
+  "antennae": "ref_antennae.png",
+  "steam": "ref_steam.png",
+  "turn": "ref_turn.png",
+  "polish": "ref_polish.png",
+  "talk": "ref_talk.png",
+  "big_bet": "ref_big_bet.png",
+  "lost_pot": "ref_lost_pot.png",
+  "lose_big": "ref_lose_big.png",
+  "heads_up": "ref_heads_up.png",
+  "laugh": "ref_laugh.png"
+ },
+ "win": {
+  "small": "win_small",
+  "big": "win_big"
+ },
+ "lose": {
+  "small": "lost_pot",
+  "big": "lose_big"
+ }
+}

@@ -1,5 +1,9 @@
 # The AI: every pose, and the prompts
 
+> **Superseded: not drawn.** The owner chose to make the AI from the Robot's
+> built images, its glow taken over (`recolour.py`, README.md). These prompts
+> stay as a record.
+
 The Station's champion. Before the turn it has no body: a lens in the ceiling (a room piece; ROOM-ART-PROMPTS.md, the Station). When the Robot is knocked out the lights fail, the gravity lets go, and the Robot sits back down with a lens where its chest lamp used to be: this puppet, drawn from the Robot's own sheets (draw the Robot first), in its chair (seat 3, mirrored by the game; any chair, as the seat needs). C6 is `arrive`, the body sitting back up as the lens opens for the first time.
 
 Its look, from its character file: the calm machine that runs the station, owned by nobody. The eye-lamps stay dark; the chest lamp has irised open into the lens; it sits the way a person sits, which is worse. The iris is the tell surface. NEVER red: HAL 9000 is protected, and so is every film computer: no red eye, no red dot, none of its lines, no singing, no name.

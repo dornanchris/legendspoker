@@ -89,6 +89,8 @@ export class Stage {
   private last = 0
   private alive = true
   private backdrop: Img | null = null
+  /** The room after its turn (the Station's amber light), if it has one. */
+  private backdropAfter: Img | null = null
   private table: Img | null = null
   private pieces = new Map<string, Img>()
   private loading = new Map<string, Promise<PuppetPlayer>>()
@@ -132,6 +134,7 @@ export class Stage {
     const [bd, tb] = await Promise.all([image(base + this.room.data.backdrop.img), image(base + this.room.data.table.img)])
     this.backdrop = bd
     this.table = tb
+    if (this.room.data.backdropAfter) this.backdropAfter = await image(base + this.room.data.backdropAfter)
     await Promise.all(Object.entries(this.room.data.pieces ?? {}).map(async ([name, p]) => {
       this.pieces.set(name, await image(base + p.img))
     }))
@@ -364,7 +367,9 @@ export class Stage {
       const s = Math.max(1, cw / k / d.backdrop.w)
       const bw = d.backdrop.w * s, bh = d.backdrop.h * s
       set(D)
-      ctx.drawImage(this.backdrop, d.design[0] / 2 - bw / 2, d.design[1] - bh, bw, bh)
+      // after the turn (the champion has come) the room may be drawn again, lit otherwise
+      const room = this.presence === 'after' && this.backdropAfter ? this.backdropAfter : this.backdrop
+      ctx.drawImage(room, d.design[0] / 2 - bw / 2, d.design[1] - bh, bw, bh)
       // the room's pieces, scaled with the backdrop about its foot
       set(mul(mul(mul(D, translate(d.design[0] / 2, d.design[1])), scale(s, s)), translate(-d.design[0] / 2, -d.design[1])))
       const piece = (name: string, x: number, bottom: number, h: number, alpha = 1) => {
