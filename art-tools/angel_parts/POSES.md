@@ -21,6 +21,9 @@ and a thin plain gold halo. NOT radiant or glowing (the finale is lit by one
 lamp), no sword, no trumpet, no armour, not a cherub, not a statue, nothing
 creepy. Nothing about it says man or woman.
 
+Drawn: `sources/angel_sheet.png` (the owner: "I do like the angel"), a
+young-looking man with curly hair; the prompts below follow the drawing.
+
 Earlier draws, kept as a record (`sources/rejected/`): a ferryman in an ochre
 oilskin (a fisherman, not Death's partner) and a ferryman in Death's colours
 ("unreasonably creepy"; the owner).
@@ -94,7 +97,7 @@ STYLE, the most important rule: match the FIRST attached image (the game's deale
 ### Pose sheet A: at rest and the deal
 
 ```
-Character pose sheet for 2D animation reference: the Recording Angel, exactly as on the attached character sheet: ageless and calm, a kind face, short neat hair, nothing that says man or woman, a plain white robe with a thin gold edge, the sleeves pushed up, a quill behind one ear, ink on the fingertips, large off-white wings folded close behind with dusty grey tips, a thin plain gold halo; NOT glowing. Same colours, line weight and painted cartoon style.
+Character pose sheet for 2D animation reference: the Recording Angel, exactly as on the attached character sheet: young-looking and ageless, a calm, kind face with a faint smile, curly light-brown hair, a plain cream-white robe with a thin gold edge and gold buttons at the shoulders, the sleeves pushed up, a grey quill tucked behind one ear, ink-darkened fingertips, large off-white wings folded behind with dusty grey tips, a thin plain gold halo; NOT glowing. Same colours, line weight and painted cartoon style.
 
 Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: FRONT-ON, facing the viewer, waist up, seated behind the far curved edge of a round green poker table, centred in the cell, the same size, in the same place in its cell, with the table edge at the same height in every cell. Leave a little white between the Angel and the cell's edges, the halo and the tops of the wings included: nothing is cut off. Nothing below the table edge. No chair: nothing at all behind the Angel but its folded wings, then white.
 
@@ -113,7 +116,7 @@ Cards have plain dark backs; any card face shown is BLANK white. Pure white back
 ### Pose sheet B: the board, the shuffle, the rake
 
 ```
-Character pose sheet for 2D animation reference: the Recording Angel, exactly as on the attached sheets, drawn to match the attached pose sheet: front-on, same size, same place in each cell, same table edge height, same white robe with the gold edge, pushed-up sleeves, quill behind the ear, folded wings and thin gold halo; NOT glowing.
+Character pose sheet for 2D animation reference: the Recording Angel, exactly as on the attached sheets, drawn to match the attached pose sheet: front-on, same size, same place in each cell, same table edge height, same curly light-brown hair, cream-white robe with the gold edge, pushed-up sleeves, quill behind the ear, inky fingertips, folded wings and thin gold halo; NOT glowing.
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: front-on, waist up, behind the far curved edge of a round green poker table, no chair, nothing behind the Angel but its folded wings, nothing cut off by the cell's edge. Nothing below the table edge. The hand a pose does not mention stays EXACTLY as in the first pose of the attached sheet.
 
@@ -130,7 +133,7 @@ Cards have plain dark backs; any card face shown is BLANK white. Pure white back
 ### Pose sheet C: the pot, and its quiet moments
 
 ```
-Character pose sheet for 2D animation reference: the Recording Angel, exactly as on the attached sheets, drawn to match the attached pose sheets: front-on, same size, same place in each cell, same table edge height, same white robe with the gold edge, pushed-up sleeves, quill behind the ear, folded wings and thin gold halo; NOT glowing.
+Character pose sheet for 2D animation reference: the Recording Angel, exactly as on the attached sheets, drawn to match the attached pose sheets: front-on, same size, same place in each cell, same table edge height, same curly light-brown hair, cream-white robe with the gold edge, pushed-up sleeves, quill behind the ear, inky fingertips, folded wings and thin gold halo; NOT glowing.
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: front-on, waist up, behind the far curved edge of a round green poker table, no chair, nothing behind the Angel but its folded wings, nothing cut off by the cell's edge. Nothing below the table edge. The hand a pose does not mention stays EXACTLY as in the at-rest pose (one hand flat, one on the deck).
 
