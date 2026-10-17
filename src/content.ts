@@ -192,7 +192,9 @@ export type HandName =
 export type HandPool = `${ShowdownPool}_${HandName}`
 /** Said calling or raising when one's own bet or raise has just been raised over. */
 export type ReraisedPool = 'reraised'
-export type Callouts = Partial<Record<CalloutAction | ReraisedPool | ShowdownPool | HandPool, string[]>>
+/** Said by the winner of a showdown when this character showed and lost to them: `beat_cyclops`. */
+export type BeatPool = `beat_${string}`
+export type Callouts = Partial<Record<CalloutAction | ReraisedPool | ShowdownPool | HandPool | BeatPool, string[]>>
 
 export type ArrivalData = {
   character: string

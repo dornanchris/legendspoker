@@ -116,6 +116,10 @@
       "Penelope will unravel this one tonight.",
       "Ah well. The sea takes everything eventually."
     ],
+    "beat_cyclops": [
+      "You lost to Nobody.",
+      "Tell your father Nobody did it."
+    ],
     "win_full_house": [
       "A full house. Mine had a hundred and eight suitors in it."
     ],

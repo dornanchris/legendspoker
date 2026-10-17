@@ -35,7 +35,7 @@
  * Nothing here branches on who anyone is. Who says what is data.
  */
 import { mulberry32 } from './rng.js'
-import { CHARACTERS, type CalloutAction, type Callouts, type HandName, type HandPool, type Line, type ReraisedPool, type ShowdownPool } from './content.js'
+import { CHARACTERS, type CalloutAction, type Callouts, type BeatPool, type HandName, type HandPool, type Line, type ReraisedPool, type ShowdownPool } from './content.js'
 import type { Action } from './decide.js'
 
 export type CalloutBeat = {
@@ -45,7 +45,7 @@ export type CalloutBeat = {
   /** A gesture rather than speech: the data wraps it in [brackets]. */
   stage: boolean
   /** Which pool it came from: the public action, all_in, reraised, or a showdown's. */
-  action: CalloutAction | ReraisedPool | ShowdownPool | HandPool
+  action: CalloutAction | ReraisedPool | ShowdownPool | HandPool | BeatPool
 }
 
 export const CALLOUT_ACTIONS: CalloutAction[] = ['fold', 'check', 'call', 'bet', 'raise', 'all_in']
@@ -66,6 +66,13 @@ export const HAND_NAMES: HandName[] = [
   'flush', 'full_house', 'four_of_a_kind', 'straight_flush', 'royal_flush',
 ]
 export const HAND_POOLS: HandPool[] = SHOWDOWN_POOLS.flatMap((p) => HAND_NAMES.map((n) => `${p}_${n}` as HandPool))
+/**
+ * A winner's line for one loser in particular (`beat_cyclops`: Odysseus,
+ * "You lost to Nobody"). The best joke a showdown can have and a rare
+ * meeting, so it is said far more readily than the general pools.
+ */
+export const BEAT_PREFIX = 'beat_'
+const BEAT_CHANCE = 0.85
 /** Chance a showdown speaker with words for this exact hand uses them. */
 const HAND_POOL_CHANCE = 0.75
 /**
@@ -214,6 +221,12 @@ export class Chatter {
    */
   showdown(hand: number, winner: string | null, losers: string[], won: HandName | null = null): CalloutBeat | null {
     if (hand - this.lastShowdown < SHOWDOWN_GAP_HANDS) return null
+    const mine = winner ? this.lookup(winner) : undefined
+    const marks = losers.filter((id) => mine?.[`${BEAT_PREFIX}${id}`]?.length)
+    if (winner && marks.length && this.rng() < BEAT_CHANCE) {
+      const pool: BeatPool = `${BEAT_PREFIX}${marks[Math.floor(this.rng() * marks.length)]}`
+      return this.said(hand, winner, pool, mine![pool]!)
+    }
     const has = (id: string, pool: ShowdownPool) => {
       const own = this.lookup(id)
       return !!own?.[pool]?.length || (!!won && !!own?.[`${pool}_${won}`]?.length)
@@ -228,7 +241,11 @@ export class Chatter {
     const own = this.lookup(id)!
     const exact = won ? `${plain}_${won}` as HandPool : null
     const pool = exact && own[exact]?.length && (!own[plain]?.length || this.rng() < HAND_POOL_CHANCE) ? exact : plain
-    const lines = own[pool]!
+    return this.said(hand, id, pool, own[pool]!)
+  }
+
+  /** A showdown's word, drawn from its pool's bag. */
+  private said(hand: number, id: string, pool: ShowdownPool | HandPool | BeatPool, lines: string[]): CalloutBeat {
     const text = lines[this.draw(`${id}.${pool}`, lines.length)]
     this.lastShowdown = hand
     this.spoke.set(id, hand)

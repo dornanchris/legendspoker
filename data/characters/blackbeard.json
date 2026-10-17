@@ -97,10 +97,39 @@
       "Raise, and be damned to you!",
       "Raise! I shot a man for less."
     ],
+    "reraised": [
+      "You'd raise ME? Light the matches!",
+      "Ha! A fight! At last!",
+      "Damn your eyes, I like you."
+    ],
     "all_in": [
       "Damnation seize my soul! All in!",
       "Everything! Board 'em!",
       "All of it! Let the whole cove hear it!"
+    ],
+    "win": [
+      "I'm on fire!",
+      "Ha! Strike your colours!",
+      "That's how you take a prize!",
+      "The Queen Anne's Revenge thanks you kindly!"
+    ],
+    "lose": [
+      "Bah! I've lost my head over less.",
+      "Even my beard's gone out.",
+      "Damnation! Light another match!",
+      "Ocracoke all over again."
+    ],
+    "beat_davy_jones": [
+      "Not yet, Jones! Not yet!"
+    ],
+    "beat_kidd": [
+      "Should've taken the pardon, Kidd."
+    ],
+    "win_four_of_a_kind": [
+      "Four of a kind! Fire every gun!"
+    ],
+    "win_straight": [
+      "Straight through the blockade!"
     ]
   }
 }

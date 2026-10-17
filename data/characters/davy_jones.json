@@ -92,10 +92,32 @@
       "Raise. Mind the locker.",
       "Raise. No need to shout."
     ],
+    "reraised": [
+      "You're swimming out of your depth.",
+      "The deeper you go, the quieter it gets."
+    ],
     "all_in": [
       "All in. All at once, the way the sea does it.",
       "Everything. Down it goes.",
       "All in. Fathoms deep."
+    ],
+    "win": [
+      "Everything comes down to me eventually.",
+      "Into the locker.",
+      "[draws the chips under, without a sound]",
+      "Fathoms."
+    ],
+    "lose": [
+      "The tide goes out.",
+      "It will come back to me.",
+      "No matter. Everyone comes down eventually.",
+      "Drowned men are patient men."
+    ],
+    "beat_blackbeard": [
+      "You'll come down to me yet, Captain."
+    ],
+    "win_full_house": [
+      "A full house. Like the locker."
     ]
   }
 }
