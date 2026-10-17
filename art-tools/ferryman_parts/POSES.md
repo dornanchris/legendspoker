@@ -8,11 +8,16 @@ the left chair, Death in the right, the Ferryman between them at the back,
 front-on, where Death deals everywhere else.
 
 **Never named Charon, never Greek** (the design doc: no named underworld
-imagery at the finale; the gods are the sequel's). He is a boatman: old,
-weathered, quiet. He must look nothing like Death or the Stranger: no hood, no
-black, no fedora. A faded ochre oilskin coat and a sou'wester rain hat, a long
-grey beard, big rope-worn hands, one old coin on a cord at his throat (the
-fare). He deals in silence: Death does the talking.
+imagery at the finale; the gods are the sequel's). He is **Death's oldest
+colleague**, and dressed like it: Death's colours (a slate-grey cloak with
+Death's purple lining, old gold), but his own silhouette: no hood, no hat,
+a bald head with long wispy white hair and beard, gaunt and pale as river
+mist, a stole hung with the gold coins of every fare he has taken, a coin for
+a clasp. A dry, knowing half smile: the wry one of the pair. He deals in
+silence: Death does the talking.
+
+The first draw (`sources/rejected/ferryman_oilskin.png`, an ochre oilskin and
+sou'wester) was a fisherman, not Death's partner (the owner).
 
 Built like Death's dealer kit (`art-tools/death_parts/POSES.md`): front-on,
 never mirrored, so the prompts say "the hand on the LEFT OF THE PICTURE";
@@ -39,13 +44,12 @@ Stranger) and the right (Death).
 | C1 | Pushing the pot to the left of the picture | pot to the Stranger |
 | C2 | Pushing the pot toward the viewer | pot (spare) |
 | C3 | Pushing the pot to the right of the picture | pot to Death |
-| C4 | Touching the brim of his sou'wester, a quiet nod | greeting, idle |
-| C5 | Turning the old coin at his throat between finger and thumb | idle |
+| C4 | A slow, knowing nod toward the right of the picture (to Death) | greeting, idle |
+| C5 | Walking a gold coin across his knuckles | idle |
 | C6 | Leaning in on his forearms, hands clasped, watching | the last card |
 
 Faces: blink, looking to each side (watching a chair act), looking down at
-the deal, a small tired nod, the faintest smile, the mouth a little open (a
-rare word).
+the deal, the dry half smile, the mouth a little open (a rare word).
 
 ## Prompts
 
@@ -61,21 +65,20 @@ lesson: an attached sheet leaks its character).
 ### Character sheet
 
 ```
-Character sheet for 2D animation rigging: the Ferryman, an old boatman who has tied up his boat and come in out of the rain to deal cards at the last table. Copy ONLY the LAYOUT and the STYLE of the FIRST attached sheet (what goes where, and how it is drawn): take NOTHING of its character. No hood, no skull, no black robe, no bone hands, no brooch. The SECOND attached image shows how a dealer sits front-on behind the table: copy that posture only.
+Character sheet for 2D animation rigging: the Ferryman, Death's oldest colleague, the boatman who carries the dead across the river, come in from his boat to deal cards at the last table. Copy ONLY the LAYOUT and the STYLE of the FIRST attached sheet (what goes where, and how it is drawn): take NOTHING of its character. No hood, no skull, no bone hands, no skull brooch. The SECOND attached image shows how a dealer sits front-on behind the table: copy that posture only.
 
-The Ferryman: a lean, weathered old man, tall and a little stooped, patient and kind, very tired; a long grey beard and grey eyebrows, deep-set calm eyes, a face lined by wind and river; a faded ochre-yellow oilskin coat, worn and creased, glistening with rain, buttoned to the throat, over a dark grey wool jumper; a matching ochre oilskin sou'wester rain hat with its long brim at the back; big knotted, rope-worn hands; one old, worn coin on a leather cord at his throat. Quiet and gentle, never sinister: a man who has rowed a great many people across and has never once been in a hurry.
+The Ferryman: tall, gaunt and very old; a long narrow face with sunken cheeks and deep-set eyes, skin pale and grey as river mist; pale, colourless eyes (NOT glowing); bald on top, with long, thin, wispy white hair and a long, thin, wispy white beard; NO hat and NO hood. A heavy, ragged, river-stained cloak in dark slate grey with a deep purple lining (the same colours as Death's robe, so they are plainly of the same household), fastened at the throat with one old gold coin as its clasp; over his shoulders, a long dark stole hung with rows of small old gold coins, the fares he has taken. Long, bony fingers with a few tarnished old rings. A dry, knowing half smile: Death's partner of very long standing, who has heard every excuse and believed none of them. Eerie and wry, never monstrous: NOT a skeleton, NOT a zombie, NOT drowned, no seaweed, no barnacles.
 
 Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.
 
 The angle: FRONT-ON, facing the viewer, like the dealer in the SECOND attached image: he deals from the far side of the table, facing the player.
 
 Draw, all front-on, at the same size:
-- Finished heads with the sou'wester, the beard and the coat's collar: level, eyes open; eyes closed (a blink); looking to the left of the picture; looking to the right of the picture; looking down at the table
-- The torso in the oilskin coat with the coin on its cord: no head, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands
-- Two forearms in the oilskin sleeves with his big weathered hands, lying on a table, open at the elbow end
-- The sou'wester on its own
+- Finished heads with the white hair, the beard and the cloak's collar with its coin clasp: level, eyes open, the half smile; eyes closed (a blink); looking to the left of the picture; looking to the right of the picture; looking down at the table
+- The torso in the cloak and the coin stole: no head, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands
+- Two forearms in the cloak's sleeves with his long, bony, ringed hands, lying on a table, open at the elbow end
 - A round portrait for a nameplate: his head and shoulders inside a circle, facing the viewer
-- Four seated reference poses, waist up behind the far curved edge of a round green poker table, front-on: at rest, forearms on the table, hands apart, one hand resting on a squared deck of cards; dealing a card; shuffling the deck; touching the brim of his hat
+- Four seated reference poses, waist up behind the far curved edge of a round green poker table, front-on: at rest, forearms on the table, hands apart, one hand resting on a squared deck of cards; dealing a card; shuffling the deck; walking a gold coin across his knuckles
 
 Cards have plain dark backs; any card face shown is BLANK white.
 
@@ -85,9 +88,9 @@ STYLE, the most important rule: match the FIRST attached image (the game's deale
 ### Pose sheet A: at rest and the deal
 
 ```
-Character pose sheet for 2D animation reference: the Ferryman, exactly as on the attached character sheet: a lean, weathered old boatman with a long grey beard, a faded ochre-yellow oilskin coat and sou'wester rain hat, a dark grey jumper, big rope-worn hands, an old coin on a leather cord at his throat. Same colours, line weight and painted cartoon style.
+Character pose sheet for 2D animation reference: the Ferryman, exactly as on the attached character sheet: Death's oldest colleague: tall, gaunt and very old, pale grey skin, pale colourless eyes, bald with long wispy white hair and beard, no hat, no hood, a ragged slate-grey cloak with a deep purple lining fastened with a gold coin, a dark stole hung with old gold coins, long bony ringed hands, a dry knowing half smile. Same colours, line weight and painted cartoon style.
 
-Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: FRONT-ON, facing the viewer, waist up, seated behind the far curved edge of a round green poker table, centred in the cell, the same size, in the same place in its cell, with the table edge at the same height in every cell. Leave a little white between him and the cell's edges, the top of his hat included: nothing of him is cut off. Nothing below the table edge. No chair: nothing at all behind him, just white.
+Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: FRONT-ON, facing the viewer, waist up, seated behind the far curved edge of a round green poker table, centred in the cell, the same size, in the same place in its cell, with the table edge at the same height in every cell. Leave a little white between him and the cell's edges, the top of his head included: nothing of him is cut off. Nothing below the table edge. No chair: nothing at all behind him, just white.
 
 IMPORTANT for every pose: the hand that the pose does not mention stays EXACTLY as in pose 1, same position, same shape.
 
@@ -98,13 +101,13 @@ IMPORTANT for every pose: the hand that the pose does not mention stays EXACTLY 
 5. Pitching one card across the felt toward the RIGHT of the picture with the hand on the left of the picture, the arm crossing in front of him
 6. Burning a card: sliding one card face down onto the felt just beside the deck
 
-Cards have plain dark backs; any card face shown is BLANK white. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No hood, no skull, no oar, no boat, no lantern, no chair.
+Cards have plain dark backs; any card face shown is BLANK white. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No hood, no hat, no skull, no oar, no boat, no lantern, no chair.
 ```
 
 ### Pose sheet B: the board, the shuffle, the rake
 
 ```
-Character pose sheet for 2D animation reference: the Ferryman, exactly as on the attached sheets, drawn to match the attached pose sheet: front-on, same size, same place in each cell, same table edge height, same ochre oilskin coat and sou'wester, grey beard, coin on its cord and big weathered hands.
+Character pose sheet for 2D animation reference: the Ferryman, exactly as on the attached sheets, drawn to match the attached pose sheet: front-on, same size, same place in each cell, same table edge height, same slate-grey cloak with the purple lining, coin stole and coin clasp, bald head with wispy white hair and beard, long bony ringed hands.
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: front-on, waist up, behind the far curved edge of a round green poker table, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The hand a pose does not mention stays EXACTLY as in the first pose of the attached sheet.
 
@@ -115,24 +118,24 @@ Draw 6 poses, 3 across and 2 down, in this order. Every pose: front-on, waist up
 5. Cutting the deck: the hand on the left of the picture lifting the top half away
 6. Raking the bets into the middle: both forearms out on the felt, hands cupped, drawing a few chips toward the centre
 
-Cards have plain dark backs; any card face shown is BLANK white. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No hood, no skull, no oar, no boat, no lantern, no chair.
+Cards have plain dark backs; any card face shown is BLANK white. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No hood, no hat, no skull, no oar, no boat, no lantern, no chair.
 ```
 
 ### Pose sheet C: the pot, and his quiet moments
 
 ```
-Character pose sheet for 2D animation reference: the Ferryman, exactly as on the attached sheets, drawn to match the attached pose sheets: front-on, same size, same place in each cell, same table edge height, same ochre oilskin coat and sou'wester, grey beard, coin on its cord and big weathered hands.
+Character pose sheet for 2D animation reference: the Ferryman, exactly as on the attached sheets, drawn to match the attached pose sheets: front-on, same size, same place in each cell, same table edge height, same slate-grey cloak with the purple lining, coin stole and coin clasp, bald head with wispy white hair and beard, long bony ringed hands.
 
 Draw 6 poses, 3 across and 2 down, in this order. Every pose: front-on, waist up, behind the far curved edge of a round green poker table, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The hand a pose does not mention stays EXACTLY as in the at-rest pose (one hand flat, one on the deck).
 
 1. Pushing a pile of chips across the felt toward the LEFT of the picture with the hand on the left of the picture
 2. Pushing a pile of chips straight forward toward the viewer with both hands
 3. Pushing a pile of chips across the felt toward the RIGHT of the picture with the hand on the right of the picture (the deck set just beside it)
-4. Touching the brim of his sou'wester with two fingers of the hand on the left of the picture, a small polite nod
-5. Turning the old coin at his throat between finger and thumb of the hand on the left of the picture, thoughtful
-6. Leaning in, forearms on the table, his big hands clasped loosely in front of him, watching the table quietly
+4. A slow, knowing nod toward the RIGHT of the picture, the half smile, hands as at rest
+5. Walking one gold coin across the knuckles of the hand on the left of the picture, just above the felt, unhurried
+6. Leaning in, forearms on the table, his long bony hands clasped loosely in front of him, watching the table quietly
 
-Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No hood, no skull, no oar, no boat, no lantern, no chair.
+Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No hood, no hat, no skull, no oar, no boat, no lantern, no chair.
 ```
 
 ### Face sheet
@@ -140,10 +143,10 @@ Pure white background around each pose; poses do not touch. No text, no numbers,
 ```
 Character sheet for 2D animation rigging: the Ferryman's face overlays, exactly matching the attached sheets' style, colours and line weight.
 
-Every piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (front-on, under the sou'wester), so each one can be laid over that head. Draw that head once, top left, with the hat, the beard and the coat's collar, as the reference, eyes open, mouth closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.
+Every piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (front-on), so each one can be laid over that head. Draw that head once, top left, with the white hair, the beard and the cloak's collar with its coin clasp, as the reference, eyes open, mouth closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.
 
 - Eye patches, each both eyes with the brows and the skin around them, cut as one band: open (rest); half closed; closed (a blink); looking to the left of the picture; looking to the right of the picture; looking down
-- Mouth patches, each the mouth in the beard with the moustache over it: closed (rest); a little open (a quiet word); the faintest tired smile
+- Mouth patches, each the mouth in the beard with the moustache over it: the dry half smile (rest); closed and straight; a little open (a quiet word)
 - The whole head turned a little toward the left of the picture, watching that side of the table
 - The whole head turned a little toward the right of the picture
 - The whole head bowed, looking down at the cards in front of him
