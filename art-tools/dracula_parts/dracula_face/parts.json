@@ -1,276 +1,332 @@
 {
-  "source": "dracula_face.png",
+  "source": "face_overlays.png",
   "canvas": {
     "w": 1536,
     "h": 1024
   },
-  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
   "parts": [
     {
       "index": 1,
       "file": "dracula_face_01.png",
       "label": "",
-      "x": 77,
-      "y": 37,
-      "w": 438,
-      "h": 608,
+      "x": 2,
+      "y": 13,
+      "w": 317,
+      "h": 447,
       "pivot": [
-        219.0,
-        304.0
+        158.5,
+        223.5
       ],
-      "area": 164149
+      "area": 93433
     },
     {
       "index": 2,
       "file": "dracula_face_02.png",
       "label": "",
-      "x": 503,
-      "y": 18,
-      "w": 570,
-      "h": 631,
+      "x": 303,
+      "y": 123,
+      "w": 202,
+      "h": 147,
       "pivot": [
-        285.0,
-        315.5
+        101.0,
+        73.5
       ],
-      "area": 144565
+      "area": 25343
     },
     {
       "index": 3,
       "file": "dracula_face_03.png",
       "label": "",
-      "x": 1087,
-      "y": 70,
-      "w": 164,
-      "h": 96,
+      "x": 503,
+      "y": 123,
+      "w": 201,
+      "h": 148,
       "pivot": [
-        82.0,
-        48.0
+        100.5,
+        74.0
       ],
-      "area": 5638
+      "area": 25205
     },
     {
       "index": 4,
       "file": "dracula_face_04.png",
       "label": "",
-      "x": 1309,
-      "y": 70,
-      "w": 164,
-      "h": 95,
+      "x": 701,
+      "y": 122,
+      "w": 205,
+      "h": 148,
       "pivot": [
-        82.0,
-        47.5
+        102.5,
+        74.0
       ],
-      "area": 5651
+      "area": 25622
     },
     {
       "index": 5,
       "file": "dracula_face_05.png",
       "label": "",
-      "x": 1106,
-      "y": 204,
-      "w": 138,
-      "h": 73,
+      "x": 907,
+      "y": 123,
+      "w": 207,
+      "h": 146,
       "pivot": [
-        69.0,
-        36.5
+        103.5,
+        73.0
       ],
-      "area": 5155
+      "area": 25964
     },
     {
       "index": 6,
       "file": "dracula_face_06.png",
       "label": "",
-      "x": 1316,
-      "y": 204,
-      "w": 138,
-      "h": 73,
+      "x": 1114,
+      "y": 123,
+      "w": 202,
+      "h": 147,
       "pivot": [
-        69.0,
-        36.5
+        101.0,
+        73.5
       ],
-      "area": 5171
+      "area": 25401
     },
     {
       "index": 7,
       "file": "dracula_face_07.png",
       "label": "",
-      "x": 1120,
-      "y": 317,
-      "w": 127,
-      "h": 47,
+      "x": 1313,
+      "y": 122,
+      "w": 205,
+      "h": 147,
       "pivot": [
-        63.5,
-        23.5
+        102.5,
+        73.5
       ],
-      "area": 2505
+      "area": 26043
     },
     {
       "index": 8,
       "file": "dracula_face_08.png",
       "label": "",
-      "x": 1314,
-      "y": 317,
-      "w": 127,
-      "h": 47,
+      "x": 522,
+      "y": 297,
+      "w": 256,
+      "h": 203,
       "pivot": [
-        63.5,
-        23.5
+        128.0,
+        101.5
       ],
-      "area": 2516
+      "area": 42397
     },
     {
       "index": 9,
       "file": "dracula_face_09.png",
       "label": "",
-      "x": 1118,
-      "y": 397,
-      "w": 130,
-      "h": 90,
+      "x": 801,
+      "y": 297,
+      "w": 254,
+      "h": 203,
       "pivot": [
-        65.0,
-        45.0
+        127.0,
+        101.5
       ],
-      "area": 7871
+      "area": 41957
     },
     {
       "index": 10,
       "file": "dracula_face_10.png",
       "label": "",
-      "x": 1317,
-      "y": 397,
-      "w": 130,
-      "h": 91,
+      "x": 22,
+      "y": 547,
+      "w": 177,
+      "h": 140,
       "pivot": [
-        65.0,
-        45.5
+        88.5,
+        70.0
       ],
-      "area": 7877
+      "area": 17870
     },
     {
       "index": 11,
       "file": "dracula_face_11.png",
       "label": "",
-      "x": 1153,
-      "y": 516,
-      "w": 86,
-      "h": 88,
+      "x": 207,
+      "y": 546,
+      "w": 171,
+      "h": 146,
       "pivot": [
-        43.0,
-        44.0
+        85.5,
+        73.0
       ],
-      "area": 5369
+      "area": 18461
     },
     {
       "index": 12,
       "file": "dracula_face_12.png",
       "label": "",
-      "x": 1323,
-      "y": 516,
-      "w": 85,
-      "h": 88,
+      "x": 384,
+      "y": 546,
+      "w": 173,
+      "h": 146,
       "pivot": [
-        42.5,
-        44.0
+        86.5,
+        73.0
       ],
-      "area": 5363
+      "area": 17476
     },
     {
       "index": 13,
       "file": "dracula_face_13.png",
       "label": "",
-      "x": 255,
-      "y": 687,
-      "w": 100,
-      "h": 151,
+      "x": 558,
+      "y": 546,
+      "w": 176,
+      "h": 145,
       "pivot": [
-        50.0,
-        75.5
+        88.0,
+        72.5
       ],
-      "area": 9537
+      "area": 18592
     },
     {
       "index": 14,
       "file": "dracula_face_14.png",
       "label": "",
-      "x": 663,
-      "y": 675,
-      "w": 219,
-      "h": 54,
+      "x": 742,
+      "y": 546,
+      "w": 165,
+      "h": 145,
       "pivot": [
-        109.5,
-        27.0
+        82.5,
+        72.5
       ],
-      "area": 6033
+      "area": 17097
     },
     {
       "index": 15,
       "file": "dracula_face_15.png",
       "label": "",
-      "x": 661,
-      "y": 746,
-      "w": 220,
-      "h": 73,
+      "x": 911,
+      "y": 546,
+      "w": 163,
+      "h": 142,
       "pivot": [
-        110.0,
-        36.5
+        81.5,
+        71.0
       ],
-      "area": 5587
+      "area": 16537
     },
     {
       "index": 16,
       "file": "dracula_face_16.png",
       "label": "",
-      "x": 1141,
-      "y": 746,
-      "w": 70,
-      "h": 114,
+      "x": 1082,
+      "y": 544,
+      "w": 163,
+      "h": 146,
       "pivot": [
-        35.0,
-        57.0
+        81.5,
+        73.0
       ],
-      "area": 3848
+      "area": 17432
     },
     {
       "index": 17,
       "file": "dracula_face_17.png",
       "label": "",
-      "x": 1298,
-      "y": 751,
-      "w": 68,
-      "h": 115,
+      "x": 1193,
+      "y": 558,
+      "w": 339,
+      "h": 449,
       "pivot": [
-        34.0,
-        57.5
+        169.5,
+        224.5
       ],
-      "area": 3776
+      "area": 100438
     },
     {
       "index": 18,
       "file": "dracula_face_18.png",
       "label": "",
-      "x": 270,
-      "y": 855,
-      "w": 69,
-      "h": 89,
+      "x": 21,
+      "y": 714,
+      "w": 178,
+      "h": 149,
       "pivot": [
-        34.5,
-        44.5
+        89.0,
+        74.5
       ],
-      "area": 2710
+      "area": 19731
     },
     {
       "index": 19,
       "file": "dracula_face_19.png",
       "label": "",
-      "x": 678,
-      "y": 839,
-      "w": 179,
-      "h": 142,
+      "x": 207,
+      "y": 714,
+      "w": 168,
+      "h": 144,
       "pivot": [
-        89.5,
-        71.0
+        84.0,
+        72.0
       ],
-      "area": 15422
+      "area": 17705
+    },
+    {
+      "index": 20,
+      "file": "dracula_face_20.png",
+      "label": "",
+      "x": 381,
+      "y": 714,
+      "w": 176,
+      "h": 151,
+      "pivot": [
+        88.0,
+        75.5
+      ],
+      "area": 19654
+    },
+    {
+      "index": 21,
+      "file": "dracula_face_21.png",
+      "label": "",
+      "x": 566,
+      "y": 713,
+      "w": 187,
+      "h": 151,
+      "pivot": [
+        93.5,
+        75.5
+      ],
+      "area": 20706
+    },
+    {
+      "index": 22,
+      "file": "dracula_face_22.png",
+      "label": "",
+      "x": 768,
+      "y": 713,
+      "w": 191,
+      "h": 158,
+      "pivot": [
+        95.5,
+        79.0
+      ],
+      "area": 21138
+    },
+    {
+      "index": 23,
+      "file": "dracula_face_23.png",
+      "label": "",
+      "x": 971,
+      "y": 710,
+      "w": 188,
+      "h": 170,
+      "pivot": [
+        94.0,
+        85.0
+      ],
+      "area": 21865
     }
   ]
 }

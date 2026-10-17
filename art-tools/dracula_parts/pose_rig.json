@@ -1,0 +1,1237 @@
+{
+ "id": "dracula",
+ "name": "Count Dracula",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (the Horseman's style), the owner's look. Transylvania's champion: any chair, drawn facing right and mirrored as the seat needs. The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. His dark iron chalice stands on the felt by his right hand: part of that forearm's piece at rest and a props box in every frame but `sip` (C2) and `swirl` (C5), where he holds it.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    14,
+    16,
+    492,
+    477
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, the chalice by his right hand, a thin closed smile"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    519,
+    28,
+    495,
+    465
+   ],
+   "reg": [
+    1.0,
+    -1,
+    12
+   ],
+   "what": "Peeking at his cards (right hand)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1028,
+    18,
+    494,
+    475
+   ],
+   "reg": [
+    1.0,
+    0,
+    2
+   ],
+   "what": "Check: one long black nail taps the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    14,
+    511,
+    489,
+    458
+   ],
+   "reg": [
+    1.0,
+    0,
+    18
+   ],
+   "what": "Call: right hand pushes forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    517,
+    519,
+    515,
+    472
+   ],
+   "reg": [
+    1.0,
+    0,
+    26
+   ],
+   "what": "Bet: leans in, right hand pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1047,
+    512,
+    475,
+    457
+   ],
+   "reg": [
+    1.0,
+    0,
+    19
+   ],
+   "what": "Fold: a bored flick of the fingers"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    11,
+    20,
+    497,
+    475
+   ],
+   "reg": [
+    1.0,
+    -1,
+    3
+   ],
+   "what": "All in: both hands push forward together"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    520,
+    16,
+    463,
+    477
+   ],
+   "reg": [
+    1.0,
+    -1,
+    0
+   ],
+   "what": "Show: right hand turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    992,
+    17,
+    541,
+    477
+   ],
+   "reg": [
+    1.0,
+    -2,
+    0
+   ],
+   "what": "Big win: both hands raised and spread, the cape opening like wings, fangs bared (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    12,
+    511,
+    492,
+    462
+   ],
+   "reg": [
+    1.0,
+    0,
+    15
+   ],
+   "what": "Raises one eyebrow"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    519,
+    508,
+    479,
+    465
+   ],
+   "reg": [
+    1.0,
+    -1,
+    11
+   ],
+   "what": "Smiles without showing his teeth (decoy for B4)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1014,
+    507,
+    509,
+    466
+   ],
+   "reg": [
+    1.0,
+    -1,
+    10
+   ],
+   "what": "Steeples his fingers"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    12,
+    17,
+    495,
+    475
+   ],
+   "reg": [
+    1.0,
+    -1,
+    1
+   ],
+   "what": "Runs a fingernail along the table (decoy for B6)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    517,
+    17,
+    497,
+    475
+   ],
+   "reg": [
+    1.0,
+    -4,
+    1
+   ],
+   "what": "Sips from his chalice (a tell AND an idle: the same drawing)"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1029,
+    15,
+    496,
+    477
+   ],
+   "reg": [
+    1.0,
+    0,
+    -1
+   ],
+   "what": "Watches the pulse in someone's throat"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    13,
+    504,
+    494,
+    469
+   ],
+   "reg": [
+    1.0,
+    -2,
+    8
+   ],
+   "what": "Turns to look at you"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    519,
+    506,
+    489,
+    467
+   ],
+   "reg": [
+    1.0,
+    -1,
+    10
+   ],
+   "what": "Swirls the wine in his chalice (a fidget)"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1021,
+    502,
+    501,
+    471
+   ],
+   "reg": [
+    1.0,
+    -2,
+    6
+   ],
+   "what": "Arriving: sweeps his cape back as he takes the chair (`arrive`)"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    12,
+    11,
+    494,
+    481
+   ],
+   "reg": [
+    1.0,
+    -1,
+    -5
+   ],
+   "what": "Talking: one long hand raised, palm open"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    519,
+    13,
+    492,
+    479
+   ],
+   "reg": [
+    1.0,
+    -2,
+    -3
+   ],
+   "what": "Facing a big bet: sits back, looking down his nose"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1022,
+    20,
+    502,
+    472
+   ],
+   "reg": [
+    1.0,
+    -3,
+    4
+   ],
+   "what": "Lost a pot: a thin, cold smile, eyes narrowed"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    13,
+    506,
+    495,
+    466
+   ],
+   "reg": [
+    1.0,
+    -1,
+    10
+   ],
+   "what": "Crushing loss: a snarl, fangs bared, nails gouging the felt (`lose_big`)"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    521,
+    510,
+    487,
+    462
+   ],
+   "reg": [
+    1.0,
+    0,
+    14
+   ],
+   "what": "Heads up: leaning in on both forearms"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1024,
+    504,
+    498,
+    468
+   ],
+   "reg": [
+    1.0,
+    0,
+    8
+   ],
+   "what": "A low laugh, head tipped back, fangs showing"
+  }
+ },
+ "rest": "A1",
+ "table_y": 372,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  220,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 190,
+ "neck": [
+  270,
+  190
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  210,
+  180,
+  340,
+  240
+ ],
+ "master": {
+  "piece": "dracula_parts/dracula_face/dracula_master.png",
+  "cut_below": 215,
+  "face": "dracula_parts/face.json",
+  "file": "dracula_parts/dracula_rig/master.png",
+  "layers": "dracula_parts/dracula_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    160,
+    0
+   ],
+   [
+    352,
+    0
+   ],
+   [
+    352,
+    70
+   ],
+   [
+    348,
+    130
+   ],
+   [
+    332,
+    165
+   ],
+   [
+    300,
+    186
+   ],
+   [
+    265,
+    194
+   ],
+   [
+    222,
+    182
+   ],
+   [
+    200,
+    152
+   ],
+   [
+    176,
+    112
+   ],
+   [
+    163,
+    60
+   ]
+  ],
+  "shoulder_y": 195
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    50,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     300
+    ],
+    [
+     100,
+     300
+    ],
+    [
+     100,
+     345
+    ],
+    [
+     0,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the chalice by it",
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       60,
+       325
+      ],
+      [
+       120,
+       350
+      ],
+      [
+       170,
+       360
+      ],
+      [
+       200,
+       375
+      ],
+      [
+       232,
+       400
+      ],
+      [
+       262,
+       430
+      ],
+      [
+       268,
+       472
+      ],
+      [
+       200,
+       472
+      ],
+      [
+       140,
+       452
+      ],
+      [
+       118,
+       472
+      ],
+      [
+       16,
+       472
+      ],
+      [
+       0,
+       450
+      ]
+     ],
+     "props": [
+      [
+       [
+        16,
+        310
+       ],
+       [
+        118,
+        310
+       ],
+       [
+        118,
+        472
+       ],
+       [
+        16,
+        472
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    462,
+    332
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     410,
+     290
+    ],
+    [
+     492,
+     290
+    ],
+    [
+     492,
+     332
+    ],
+    [
+     410,
+     332
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       335,
+       420
+      ],
+      [
+       360,
+       385
+      ],
+      [
+       390,
+       368
+      ],
+      [
+       430,
+       355
+      ],
+      [
+       470,
+       340
+      ],
+      [
+       492,
+       350
+      ],
+      [
+       492,
+       440
+      ],
+      [
+       440,
+       440
+      ],
+      [
+       420,
+       470
+      ],
+      [
+       340,
+       470
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "eyebrow": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "smile": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "steeple": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "fingernail": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "sip": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "props": []
+  },
+  "pulse": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "turn": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "swirl": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "props": [],
+   "except": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ],
+   "fill": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      374
+     ],
+     [
+      16,
+      374
+     ]
+    ]
+   ]
+  },
+  "arrive": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  },
+  "laugh": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/dracula",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6,
+ "wood_rows_only": true
+}

@@ -1,0 +1,398 @@
+{
+ "kit": "dracula_parts",
+ "id": "dracula",
+ "name": "Count Dracula",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (the Horseman's style), the owner's look. Transylvania's champion: any chair, drawn facing right and mirrored as the seat needs. The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. His dark iron chalice stands on the felt by his right hand: part of that forearm's piece at rest and a props box in every frame but `sip` (C2) and `swirl` (C5), where he holds it.",
+ "what": {
+  "A1": "Rest: forearms on the table's edge, hands apart, the chalice by his right hand, a thin closed smile",
+  "A2": "Peeking at his cards (right hand)",
+  "A3": "Check: one long black nail taps the felt",
+  "A4": "Call: right hand pushes forward along the felt",
+  "A5": "Bet: leans in, right hand pushed well forward",
+  "A6": "Fold: a bored flick of the fingers",
+  "B1": "All in: both hands push forward together",
+  "B2": "Show: right hand turns palm up",
+  "B3": "Big win: both hands raised and spread, the cape opening like wings, fangs bared (`win_big`)",
+  "B4": "Raises one eyebrow",
+  "B5": "Smiles without showing his teeth (decoy for B4)",
+  "B6": "Steeples his fingers",
+  "C1": "Runs a fingernail along the table (decoy for B6)",
+  "C2": "Sips from his chalice (a tell AND an idle: the same drawing)",
+  "C3": "Watches the pulse in someone's throat",
+  "C4": "Turns to look at you",
+  "C5": "Swirls the wine in his chalice (a fidget)",
+  "C6": "Arriving: sweeps his cape back as he takes the chair (`arrive`)",
+  "D1": "Talking: one long hand raised, palm open",
+  "D2": "Facing a big bet: sits back, looking down his nose",
+  "D3": "Lost a pot: a thin, cold smile, eyes narrowed",
+  "D4": "Crushing loss: a snarl, fangs bared, nails gouging the felt (`lose_big`)",
+  "D5": "Heads up: leaning in on both forearms",
+  "D6": "A low laugh, head tipped back, fangs showing"
+ },
+ "prop": [
+  [
+   16,
+   310
+  ],
+  [
+   118,
+   310
+  ],
+  [
+   118,
+   472
+  ],
+  [
+   16,
+   472
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "eyebrow": "B4",
+  "smile": "B5",
+  "steeple": "B6",
+  "fingernail": "C1",
+  "sip": "C2",
+  "pulse": "C3",
+  "turn": "C4",
+  "swirl": "C5",
+  "arrive": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "laugh": "D6"
+ },
+ "common": {
+  "table_y": 372,
+  "scale": 1.0,
+  "origin_x": 300,
+  "register_box": [
+   150,
+   220,
+   350,
+   340
+  ],
+  "register_span": 40,
+  "collar_y": 190,
+  "neck": [
+   270,
+   190
+  ],
+  "frame_margin": 60,
+  "stock_box": [
+   210,
+   180,
+   340,
+   240
+  ]
+ },
+ "cut_below": 215,
+ "keep_poly": [
+  [
+   160,
+   0
+  ],
+  [
+   352,
+   0
+  ],
+  [
+   352,
+   70
+  ],
+  [
+   348,
+   130
+  ],
+  [
+   332,
+   165
+  ],
+  [
+   300,
+   186
+  ],
+  [
+   265,
+   194
+  ],
+  [
+   222,
+   182
+  ],
+  [
+   200,
+   152
+  ],
+  [
+   176,
+   112
+  ],
+  [
+   163,
+   60
+  ]
+ ],
+ "shoulder_y": 195,
+ "arms": {
+  "near": {
+   "elbow": [
+    50,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     300
+    ],
+    [
+     100,
+     300
+    ],
+    [
+     100,
+     345
+    ],
+    [
+     0,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the chalice by it",
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       60,
+       325
+      ],
+      [
+       120,
+       350
+      ],
+      [
+       170,
+       360
+      ],
+      [
+       200,
+       375
+      ],
+      [
+       232,
+       400
+      ],
+      [
+       262,
+       430
+      ],
+      [
+       268,
+       472
+      ],
+      [
+       200,
+       472
+      ],
+      [
+       140,
+       452
+      ],
+      [
+       118,
+       472
+      ],
+      [
+       16,
+       472
+      ],
+      [
+       0,
+       450
+      ]
+     ],
+     "props": [
+      [
+       [
+        16,
+        310
+       ],
+       [
+        118,
+        310
+       ],
+       [
+        118,
+        472
+       ],
+       [
+        16,
+        472
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    462,
+    332
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     410,
+     290
+    ],
+    [
+     492,
+     290
+    ],
+    [
+     492,
+     332
+    ],
+    [
+     410,
+     332
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       335,
+       420
+      ],
+      [
+       360,
+       385
+      ],
+      [
+       390,
+       368
+      ],
+      [
+       430,
+       355
+      ],
+      [
+       470,
+       340
+      ],
+      [
+       492,
+       350
+      ],
+      [
+       492,
+       440
+      ],
+      [
+       440,
+       440
+      ],
+      [
+       420,
+       470
+      ],
+      [
+       340,
+       470
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "felt_dark_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6,
+  "wood_rows_only": true
+ },
+ "frame_extra": {
+  "sip": {
+   "props": []
+  },
+  "swirl": {
+   "props": [],
+   "except": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      472
+     ],
+     [
+      16,
+      472
+     ]
+    ]
+   ],
+   "fill": [
+    [
+     [
+      16,
+      310
+     ],
+     [
+      118,
+      310
+     ],
+     [
+      118,
+      374
+     ],
+     [
+      16,
+      374
+     ]
+    ]
+   ]
+  }
+ },
+ "no_prop": []
+}
