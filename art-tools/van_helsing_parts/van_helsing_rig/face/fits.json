@@ -1,87 +1,72 @@
 {
  "van_helsing_face_02.png": [
-  204,
-  71,
-  0.61
+  206,
+  116,
+  0.49
  ],
  "van_helsing_face_03.png": [
-  205,
-  71,
-  0.62
+  229,
+  69,
+  0.49
  ],
  "van_helsing_face_04.png": [
-  204,
-  71,
-  0.62
+  205,
+  114,
+  0.51
  ],
  "van_helsing_face_05.png": [
-  205,
-  68,
-  0.63
+  238,
+  72,
+  0.48
  ],
- "van_helsing_face_06.png": [
-  204,
-  71,
-  0.62
+ "van_helsing_face_09.png": [
+  240,
+  115,
+  0.48
  ],
- "van_helsing_face_07.png": [
-  204,
-  73,
-  0.62
+ "van_helsing_face_10.png": [
+  250,
+  113,
+  0.48
  ],
- "van_helsing_face_08.png": [
-  206,
-  74,
-  0.6
+ "van_helsing_face_11.png": [
+  246,
+  109,
+  0.48
+ ],
+ "van_helsing_face_12.png": [
+  250,
+  112,
+  0.48
  ],
  "van_helsing_face_13.png": [
-  218,
-  135,
-  0.56
+  255,
+  113,
+  0.48
  ],
  "van_helsing_face_14.png": [
-  224,
-  136,
-  0.54
- ],
- "van_helsing_face_15.png": [
-  222,
-  137,
-  0.54
+  252,
+  115,
+  0.48
  ],
  "van_helsing_face_16.png": [
-  227,
-  135,
-  0.54
+  238,
+  110,
+  0.48
  ],
  "van_helsing_face_17.png": [
-  233,
-  136,
-  0.54
+  243,
+  111,
+  0.48
  ],
  "van_helsing_face_18.png": [
-  231,
-  136,
-  0.55
+  229,
+  110,
+  0.48
  ],
- "van_helsing_face_21.png": [
-  223,
-  137,
-  0.54
- ],
- "van_helsing_face_22.png": [
-  228,
-  138,
-  0.52
- ],
- "van_helsing_face_23.png": [
-  213,
-  134,
-  0.58
- ],
- "van_helsing_face_24.png": [
-  221,
-  139,
-  0.54
+ "van_helsing_face_19.png": [
+  232,
+  106,
+  0.48
  ]
 }

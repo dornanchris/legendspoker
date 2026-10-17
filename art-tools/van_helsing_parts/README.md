@@ -1,50 +1,35 @@
-# Van Helsing's parts
+# Van Helsing's kit
 
-Transylvania's seat 1, drawn facing the viewer's right as the game shows him.
-Style-locked sheets (Washington's pose sheet A) in `sources/`; `POSES.md` has
-the prompts. Stoker's professor: clean-shaven, reddish hair going grey,
-bushy brows, small round spectacles, a black frock coat, a silver crucifix at
-his collar and his doctor's bag on the felt by his left elbow. Nothing of the
-2004 film.
+Transylvania's seat 1, drawn facing right. **Redrawn gothic** (the
+Horseman's sheet as the style image; prompts in `POSES.md`); his first,
+flat-cartoon sheets are in `sources/old_style/` (that puppet was replaced).
+`sources/poses_b_alt.png` is a second draw of sheet B, kept unused.
 
-## The game's puppet
-
-Built by `art-tools/pose_rig.py` from `pose_rig.json`, the way Javert is:
+Built the way Dracula is, from a short `rig_spec.json` (a prop on the felt):
 
     python3 art-tools/cut_sheet.py art-tools/van_helsing_parts/cut_face.json
+    python3 art-tools/build/own_master.py art-tools/van_helsing_parts van_helsing 240
     python3 art-tools/build/pose_boxes.py art-tools/van_helsing_parts
     python3 art-tools/build/corner_regs.py art-tools/van_helsing_parts
+    python3 art-tools/build/rig_from_spec.py art-tools/van_helsing_parts/rig_spec.json
     python3 art-tools/pose_rig.py art-tools/van_helsing_parts/pose_rig.json
+    python3 art-tools/van_helsing_parts/lens.py
     python3 art-tools/build/frames_sheet.py van_helsing
     python3 art-tools/van_helsing_parts/clips.py
-    python3 art-tools/web_half.py van_helsing
+    python3 art-tools/build/win_small.py; python3 art-tools/build/fallback_clips.py
+    python3 art-tools/build/tell_hold.py; python3 art-tools/build/life.py
+    python3 art-tools/web_half.py van_helsing; python3 art-tools/build/portraits.py
 
-- **The master is the rest pose's own head** (`van_helsing_face/van_helsing_master.png`,
-  rows 0-320 of A1, kept to the head and collar by `keep_poly`).
-- **Face** (`face.json`): the eye pieces carry the spectacles and the brows:
-  half 2, closed 3, viewer 4, down 5, side 6, narrow 7, wide 8; mouths rest
-  13, ah 14, ee 15, oh 16, oo 17, m 18, f 21, l 22, smile 23, down 24. The
-  separate brows (9-12, one brow a piece) and mouth 19 are unused. Auto-fits
-  were good.
-- **The doctor's bag** is part of the far forearm's piece at rest (a `props`
-  box, so the rail tests spare its gold clasp) and a `props` box in every
-  frame but the knocked-out one, where he picks it up. The sheet drew it
-  touching the cell's right edge, so its right end is cut straight; the
-  forearm polygon stops 4 pixels short of the edge (the sheet's white).
-- **The waist** between his hands kept the drawn rail's dark red underside:
-  `fill` repaints that strip from the coat. pose_rig's body fill now smooths
-  from the coat only (it used to average in the felt past the hole's edge,
-  which left a blue glow); the rest pose validates at ~2% (the repainted
-  strip).
-- **Chips** are `props` boxes; bet keeps a sliver of rail beside its stack,
-  cut by hand (`except`). The diary is a `props` box (its brown cover read as
-  rail shadow).
-- His spectacles' lenses are see-through: the sheet drew them white, which
-  reads as background.
-
-**Clips** (`web/art/van_helsing/anim.json`, 24, each ending at rest): check,
-peek, call, bet, fold, all in, show, collect; tells `spectacles` (strong:
-off, polished on a white handkerchief) beside `diary`, `crucifix` (weak)
-beside `garlic`, `mutter` (tilted, in Dutch) beside `sniff`; idles
-`fireplace`, `over_spectacles`, `settle`, `look_at_you`; beats talk, big bet,
-lost pot, won pot, heads up, knocked out (takes up his bag, a bow).
+- The master is the rest pose's own head, spectacles on. The face sheet drew
+  two eye pieces WITHOUT spectacles (6, 7): unused, so there are no narrowed
+  or wide eyes; and no brow pieces. Eyes: half, closed, viewer, side; ten
+  mouths, a smile among them (the small win smiles).
+- The doctor's bag is a props box in the near forearm's piece and every
+  frame (it is drawn in all 24 poses, in the same place).
+- `lens.py`: his far lens reaches past his face, and the sheet's white showed
+  through it; it clears small pale patches touching the clear background in
+  every built image. Re-run it after every pose_rig.py.
+- Tells: `spectacles` (strong) beside `diary`, `crucifix` (weak) beside
+  `pocket` (the garlic), `mutter` (tilted) beside `sniff`; idle `fireplace`;
+  fidgets `over_specs`, `settle_specs`, `look_at_you`. B3 and D4 are the big
+  win and the crushing loss. No `knocked_out`: he says his line and fades.

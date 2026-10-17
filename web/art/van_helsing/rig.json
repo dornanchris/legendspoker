@@ -13,7 +13,7 @@
    "name": "torso",
    "parent": null,
    "pivot": [
-    455.0,
+    450.0,
     880
    ]
   },
@@ -21,24 +21,24 @@
    "name": "head",
    "parent": "torso",
    "pivot": [
-    555.0,
-    735.0
+    558.0,
+    713.0
    ]
   },
   {
    "name": "arm_near",
    "parent": "torso",
    "pivot": [
-    345.0,
-    875.0
+    400.0,
+    853.0
    ]
   },
   {
    "name": "arm_far",
    "parent": "torso",
    "pivot": [
-    757.0,
-    865.0
+    765.0,
+    853.0
    ]
   }
  ],
@@ -47,10 +47,7 @@
    "half",
    "closed",
    "viewer",
-   "down",
-   "side",
-   "narrow",
-   "wide"
+   "side"
   ],
   "mouth": [
    "rest",
@@ -69,8 +66,8 @@
   {
    "name": "torso",
    "img": "body.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -83,8 +80,8 @@
   {
    "name": "head.rest",
    "img": "master.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -97,8 +94,8 @@
   {
    "name": "eyes.half",
    "img": "eyes_half.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -112,8 +109,8 @@
   {
    "name": "eyes.closed",
    "img": "eyes_closed.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -127,23 +124,8 @@
   {
    "name": "eyes.viewer",
    "img": "eyes_viewer.png",
-   "cx": 552.0,
-   "cy": 665.0,
-   "rot": 0,
-   "scale": 1.0,
-   "flip": false,
-   "z": 20.1,
-   "slot": "eyes",
-   "visible": false,
-   "onTable": false,
-   "bone": "head",
-   "with": "head.rest"
-  },
-  {
-   "name": "eyes.down",
-   "img": "eyes_down.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -157,38 +139,8 @@
   {
    "name": "eyes.side",
    "img": "eyes_side.png",
-   "cx": 552.0,
-   "cy": 665.0,
-   "rot": 0,
-   "scale": 1.0,
-   "flip": false,
-   "z": 20.1,
-   "slot": "eyes",
-   "visible": false,
-   "onTable": false,
-   "bone": "head",
-   "with": "head.rest"
-  },
-  {
-   "name": "eyes.narrow",
-   "img": "eyes_narrow.png",
-   "cx": 552.0,
-   "cy": 665.0,
-   "rot": 0,
-   "scale": 1.0,
-   "flip": false,
-   "z": 20.1,
-   "slot": "eyes",
-   "visible": false,
-   "onTable": false,
-   "bone": "head",
-   "with": "head.rest"
-  },
-  {
-   "name": "eyes.wide",
-   "img": "eyes_wide.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -202,8 +154,8 @@
   {
    "name": "mouth.rest",
    "img": "mouth_rest.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -217,8 +169,8 @@
   {
    "name": "mouth.ah",
    "img": "mouth_ah.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -232,8 +184,8 @@
   {
    "name": "mouth.ee",
    "img": "mouth_ee.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -247,8 +199,8 @@
   {
    "name": "mouth.oh",
    "img": "mouth_oh.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -262,8 +214,8 @@
   {
    "name": "mouth.oo",
    "img": "mouth_oo.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -277,8 +229,8 @@
   {
    "name": "mouth.m",
    "img": "mouth_m.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -292,8 +244,8 @@
   {
    "name": "mouth.f",
    "img": "mouth_f.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -307,8 +259,8 @@
   {
    "name": "mouth.l",
    "img": "mouth_l.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -322,8 +274,8 @@
   {
    "name": "mouth.smile",
    "img": "mouth_smile.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -337,8 +289,8 @@
   {
    "name": "mouth.down",
    "img": "mouth_down.png",
-   "cx": 552.0,
-   "cy": 665.0,
+   "cx": 547.0,
+   "cy": 628.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -352,8 +304,8 @@
   {
    "name": "torso_over",
    "img": "torso_over.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -366,8 +318,8 @@
   {
    "name": "frame.peek",
    "img": "frame_peek.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -380,8 +332,8 @@
   {
    "name": "frame.check",
    "img": "frame_check.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -394,8 +346,8 @@
   {
    "name": "frame.call",
    "img": "frame_call.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -408,8 +360,8 @@
   {
    "name": "frame.bet",
    "img": "frame_bet.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -422,8 +374,8 @@
   {
    "name": "frame.fold",
    "img": "frame_fold.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -436,8 +388,8 @@
   {
    "name": "frame.all_in",
    "img": "frame_all_in.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -450,8 +402,8 @@
   {
    "name": "frame.show",
    "img": "frame_show.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -462,10 +414,10 @@
    "bone": "torso"
   },
   {
-   "name": "frame.collect",
-   "img": "frame_collect.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "name": "frame.win_big",
+   "img": "frame_win_big.png",
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -478,8 +430,8 @@
   {
    "name": "frame.spectacles",
    "img": "frame_spectacles.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -492,8 +444,8 @@
   {
    "name": "frame.diary",
    "img": "frame_diary.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -506,8 +458,8 @@
   {
    "name": "frame.crucifix",
    "img": "frame_crucifix.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -518,10 +470,10 @@
    "bone": "torso"
   },
   {
-   "name": "frame.garlic",
-   "img": "frame_garlic.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "name": "frame.pocket",
+   "img": "frame_pocket.png",
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -534,8 +486,8 @@
   {
    "name": "frame.mutter",
    "img": "frame_mutter.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -548,8 +500,8 @@
   {
    "name": "frame.sniff",
    "img": "frame_sniff.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -562,8 +514,8 @@
   {
    "name": "frame.fireplace",
    "img": "frame_fireplace.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -574,10 +526,10 @@
    "bone": "torso"
   },
   {
-   "name": "frame.over_spectacles",
-   "img": "frame_over_spectacles.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "name": "frame.over_specs",
+   "img": "frame_over_specs.png",
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -588,10 +540,10 @@
    "bone": "torso"
   },
   {
-   "name": "frame.settle",
-   "img": "frame_settle.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "name": "frame.settle_specs",
+   "img": "frame_settle_specs.png",
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -604,8 +556,8 @@
   {
    "name": "frame.talk",
    "img": "frame_talk.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -618,8 +570,8 @@
   {
    "name": "frame.big_bet",
    "img": "frame_big_bet.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -632,8 +584,8 @@
   {
    "name": "frame.lost_pot",
    "img": "frame_lost_pot.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -644,10 +596,10 @@
    "bone": "torso"
   },
   {
-   "name": "frame.won_pot",
-   "img": "frame_won_pot.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "name": "frame.lose_big",
+   "img": "frame_lose_big.png",
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -660,8 +612,8 @@
   {
    "name": "frame.heads_up",
    "img": "frame_heads_up.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -672,10 +624,10 @@
    "bone": "torso"
   },
   {
-   "name": "frame.knocked_out",
-   "img": "frame_knocked_out.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "name": "frame.laugh",
+   "img": "frame_laugh.png",
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -688,8 +640,8 @@
   {
    "name": "arm_near.rest",
    "img": "arm_near_rest.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -702,8 +654,8 @@
   {
    "name": "arm_far.rest",
    "img": "arm_far_rest.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -716,8 +668,8 @@
   {
    "name": "upper_near",
    "img": "upper_near.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -730,8 +682,8 @@
   {
    "name": "upper_far",
    "img": "upper_far.png",
-   "cx": 552.0,
-   "cy": 738.0,
+   "cx": 547.0,
+   "cy": 753.0,
    "rot": 0,
    "scale": 1.0,
    "flip": false,
@@ -752,118 +704,118 @@
    ],
    "A2": [
     1.0,
-    1,
-    12
+    -3,
+    10
    ],
    "A3": [
     1.0,
-    1,
-    8
+    -2,
+    1
    ],
    "A4": [
     1.0,
-    0,
-    12
+    -11,
+    23
    ],
    "A5": [
     1.0,
-    1,
-    10
+    -16,
+    25
    ],
    "A6": [
     1.0,
-    1,
-    9
+    -19,
+    21
    ],
    "B1": [
     1.0,
-    1,
-    12
+    -6,
+    10
    ],
    "B2": [
     1.0,
-    1,
-    12
+    -8,
+    8
    ],
    "B3": [
     1.0,
-    1,
-    17
+    -24,
+    14
    ],
    "B4": [
     1.0,
-    1,
+    -27,
     0
    ],
    "B5": [
     1.0,
-    1,
-    7
+    -27,
+    6
    ],
    "B6": [
     1.0,
-    1,
-    -3
+    -25,
+    2
    ],
    "C1": [
     1.0,
-    -2,
-    -10
+    -6,
+    3
    ],
    "C2": [
     1.0,
-    1,
-    -9
+    -3,
+    6
    ],
    "C3": [
     1.0,
-    1,
-    -17
+    -8,
+    0
    ],
    "C4": [
     1.0,
-    1,
-    -7
+    -12,
+    20
    ],
    "C5": [
     1.0,
-    1,
-    9
+    -13,
+    25
    ],
    "C6": [
     1.0,
-    1,
-    2
+    -14,
+    28
    ],
    "D1": [
     1.0,
-    -4,
-    2
+    -7,
+    7
    ],
    "D2": [
     1.0,
-    1,
-    10
+    -11,
+    14
    ],
    "D3": [
     1.0,
-    1,
+    -11,
     11
    ],
    "D4": [
     1.0,
-    1,
-    9
+    -24,
+    24
    ],
    "D5": [
     1.0,
-    1,
-    44
+    -25,
+    27
    ],
    "D6": [
     1.0,
-    1,
-    1
+    -24,
+    11
    ]
   }
  },
@@ -875,21 +827,21 @@
   "fold": null,
   "all_in": null,
   "show": null,
-  "collect": null,
+  "win_big": null,
   "spectacles": null,
   "diary": null,
   "crucifix": null,
-  "garlic": null,
+  "pocket": null,
   "mutter": null,
   "sniff": null,
   "fireplace": null,
-  "over_spectacles": null,
-  "settle": null,
+  "over_specs": null,
+  "settle_specs": null,
   "talk": null,
   "big_bet": null,
   "lost_pot": null,
-  "won_pot": null,
+  "lose_big": null,
   "heads_up": null,
-  "knocked_out": null
+  "laugh": null
  }
 }

@@ -514,9 +514,10 @@ dialogue replaced hers line for line; draft like the rest. **He is built**
 sheet came out as furry illustration); vanished parts are drawn as plain
 white, and the grin left alone is placed where his mouth is at rest:
 **Baker Street is complete on the real table screen.**
-**Transylvania has begun: Van Helsing is built** (`#/puppet/van_helsing`, 24
-clips, seat 1), his doctor's bag on the felt by his left elbow, his spectacles
-the strong tell (off, polished, back on). **Transylvania's room is built**
+**Transylvania has begun: Van Helsing is built** (`#/puppet/van_helsing`, 25
+clips, seat 1), redrawn gothic like the rest of his table (his flat-cartoon
+sheets are in `sources/old_style/`), his doctor's bag on the felt by his left
+elbow, his spectacles the strong tell (off, polished, back on). **Transylvania's room is built**
 (`?room=transylvania`): Dracula watches from the chair by the fire at 73%
 across (a presence piece, mirrored to face the table) until he sits down;
 the hearth fire flickers at the far right (wider than 16:9 only), the

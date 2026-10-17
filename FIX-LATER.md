@@ -11,11 +11,10 @@ is done, and say so in the commit.
   Transylvania and the Station are drawn in it (the Headless Horseman's
   approved sheet is the style image; ART-PIPELINE.md). Already built in the
   flat cartoon, to redraw in it later:
-  - **Van Helsing** (built, Transylvania seat 1). The first to do: he is
-    now the one flat-cartoon figure among four gothic ones at his table.
-    **Gothic prompts written** (`van_helsing_parts/POSES.md`, the big win and
-    crushing loss inside his 24, hands empty); his old sheets are in
-    `sources/old_style/`, and his built puppet stays until the new one is.
+  - ~~**Van Helsing**~~ DONE: redrawn gothic and built (his old sheets are in
+    `sources/old_style/`). His face sheet drew two eye pieces without his
+    spectacles, so he has no narrowed or wide eyes and no brows: redraw the
+    face sheet only if he looks stiff.
   - ~~**The Wolf Man**~~ DONE: redrawn gothic and built.
   - **The Cheshire Cat** (built, Baker Street seat 3, in Cerberus's style).
 - **Reactions for the rest of the cast** (the owner: "probably all"). The

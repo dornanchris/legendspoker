@@ -21,44 +21,43 @@ def frame(name, dur, t_in, t_out, note, lead=1.5):
     return {'duration': dur, 'note': note, 'tracks': tracks, 'swaps': sw}
 C = {}
 C['check'] = frame('check', 1.2, 0.15, 0.85, 'Two fingers tap the felt.')
-C['peek'] = frame('peek', 1.6, 0.18, 1.25, 'Lifts the corner of his cards, eyes down through his spectacles.')
-C['call'] = frame('call', 1.5, 0.18, 1.15, 'Slides a short stack forward.')
-C['bet'] = frame('bet', 1.5, 0.15, 1.1, 'Sets a stack down, deliberate.', lead=1.5)
-C['fold'] = frame('fold', 1.3, 0.18, 0.9, 'Lays his cards down face down.')
-C['all_in'] = frame('all_in', 2.0, 0.2, 1.6, 'Both hands push his whole stack in.', lead=3)
-C['show'] = frame('show', 1.8, 0.2, 1.4, 'Turns his cards over (the game draws them face up).')
-C['collect'] = frame('collect', 1.8, 0.2, 1.4, 'Both arms draw the pot in.')
-C['spectacles'] = frame('spectacles', 3.0, 0.25, 2.6, 'TELL: takes off his spectacles and polishes them on a big white handkerchief.', lead=0.5)
-C['diary'] = frame('diary', 2.8, 0.25, 2.4, 'IDLE (decoy for the spectacles): writes a line in his leather diary.', lead=1)
-C['crucifix'] = frame('crucifix', 2.2, 0.22, 1.8, 'TELL: touches the crucifix at his collar, eyes lowered.')
-C['garlic'] = frame('garlic', 2.2, 0.22, 1.8, 'IDLE (decoy for the crucifix): pats a pocket that smells of garlic.')
-C['mutter'] = frame('mutter', 2.0, 0.18, 1.6, 'TELL: mutters something in Dutch, out of the side of his mouth.', lead=0)
-C['sniff'] = frame('sniff', 2.2, 0.22, 1.8, 'IDLE (decoy for the muttering): sniffs the air, frowning.', lead=-0.5)
-C['fireplace'] = frame('fireplace', 2.2, 0.2, 1.8, 'IDLE: glances at the fireplace over his shoulder.', lead=0)
-C['over_spectacles'] = frame('over_spectacles', 2.4, 0.22, 2.0, 'IDLE: peers at you over the top of his spectacles.', lead=1)
-C['settle'] = frame('settle', 1.8, 0.18, 1.4, 'IDLE: settles his spectacles back up his nose.')
-C['talk'] = frame('talk', 2.2, 0.22, 1.8, 'BEAT: one finger raised, lecturing. Play beside a spoken line.')
-C['big_bet'] = frame('big_bet', 2.2, 0.25, 1.8, 'BEAT: facing a big bet: brows drawn down, studying.')
-C['lost_pot'] = frame('lost_pot', 2.2, 0.2, 1.8, 'BEAT: lost a pot: a heavy sigh, a shake of the head.')
-C['won_pot'] = frame('won_pot', 2.2, 0.2, 1.8, 'BEAT: won a pot: a warm, broad smile, drawing the chips in.', lead=2)
-C['heads_up'] = frame('heads_up', 2.6, 0.3, 2.2, 'BEAT: down to two: leaning in on both forearms, eyes keen.', lead=3)
-C['knocked_out'] = frame('knocked_out', 2.8, 0.3, 2.5, 'BEAT: knocked out: rises, takes up his bag, a courteous bow.', lead=-2)
+C['peek'] = frame('peek', 1.6, 0.18, 1.25, 'A hand cupped low over his cards, thumb lifting, eyes down through his spectacles.')
+C['call'] = frame('call', 1.5, 0.18, 1.15, 'A flat hand slides forward along the felt (the chips are the game\'s).')
+C['bet'] = frame('bet', 1.5, 0.15, 1.1, 'Leans in a little, a hand pushed well forward, deliberate.', lead=1.5)
+C['all_in'] = frame('all_in', 2.0, 0.2, 1.6, 'Both hands push forward together.', lead=3)
+C['show'] = frame('show', 1.8, 0.2, 1.4, 'A hand turns palm up (the game turns the cards).')
+C['win_big'] = frame('win_big', 2.4, 0.2, 2.0, 'BEAT: a big pot won: both fists raised high, laughing out loud.', lead=-2)
+C['talk'] = frame('talk', 2.2, 0.22, 1.8, 'BEAT: talking, one finger raised, lecturing. Play beside a spoken line.')
+C['big_bet'] = frame('big_bet', 2.2, 0.25, 1.8, 'BEAT: facing a big bet: brows drawn right down, studying.')
+C['heads_up'] = frame('heads_up', 2.6, 0.3, 2.2, 'BEAT: down to two: leaning in on both forearms, hands clasped, eyes keen.', lead=3)
+C['laugh'] = frame('laugh', 2.0, 0.2, 1.6, 'BEAT: a short, warm laugh, head tipped back.')
+C['fold'] = frame('fold', 1.3, 0.18, 0.9, 'A flat push of the hand toward the middle, a little regretful.')
+C['lost_pot'] = frame('lost_pot', 2.2, 0.2, 1.8, 'BEAT: lost a pot: a heavy sigh, eyes closed.')
+C['lose_big'] = frame('lose_big', 2.6, 0.2, 2.2, 'BEAT: a crushing loss: spectacles pushed up, a hand over his eyes.', lead=0)
+C['spectacles'] = frame('spectacles', 2.6, 0.22, 2.2, 'TELL: takes off his spectacles and polishes them on a white handkerchief.', lead=0)
+C['diary'] = frame('diary', 2.6, 0.22, 2.2, 'IDLE (decoy for the spectacles): writes a line in his leather diary.', lead=0)
+C['crucifix'] = frame('crucifix', 2.4, 0.22, 2.0, 'TELL: touches the crucifix at his collar.', lead=0)
+C['pocket'] = frame('pocket', 2.4, 0.22, 2.0, 'IDLE (decoy for the crucifix): pats a coat pocket that smells of garlic.', lead=0)
+C['mutter'] = frame('mutter', 2.2, 0.22, 1.8, 'TELL: mutters something in Dutch, aside.', lead=0)
+C['sniff'] = frame('sniff', 2.2, 0.22, 1.8, 'IDLE (decoy for the muttering): sniffs the air, frowning.', lead=0)
+C['fireplace'] = frame('fireplace', 2.4, 0.2, 2.0, 'IDLE: glances at the fireplace over his shoulder.', lead=0)
+C['over_specs'] = frame('over_specs', 2.0, 0.2, 1.6, 'IDLE: peers at you over the top of his spectacles.', lead=0)
+C['settle_specs'] = frame('settle_specs', 1.8, 0.2, 1.4, 'IDLE: settles his spectacles back up his nose with one finger.', lead=0)
 C['look_at_you'] = {'duration': 2.0, 'note': 'BEAT: looks straight at the player.',
                     'tracks': {'head': {'rot': [[0, 0], [0.2, -0.8, 'in'], [0.3, 0, 'out'], [1.6, 0], [1.7, -0.8, 'in'], [1.9, 0, 'out']]}},
                     'swaps': {'eyes': [[0.15, 'viewer'], [1.7, N]]}}
 face = json.loads(json.dumps(kidd['face']))
-face['gaze']['idle'] = [['ahead', 0.55], ['viewer', 0.15], ['down', 0.2], ['side', 0.1]]
-a = {'note': "Hand-authored: Van Helsing's face timing and his clips (poker actions, tells beside their decoys, beats). "
+face['gaze']['idle'] = [['ahead', 0.65], ['viewer', 0.15], ['side', 0.2]]   # no eyes drawn looking down
+face['gaze']['tilt'] = {k: v for k, v in face['gaze']['tilt'].items() if k in ('ahead', 'viewer')}
+face['gaze']['tilt']['side'] = [0.4, 1.0, 0]
+a = {'note': "Hand-authored: Van Helsing's face timing (gothic redraw) and his clips (poker actions, tells beside their decoys, beats). "
              "rig.json and the images beside it are generated by art-tools/pose_rig.py.",
      'face': face, 'clips': C,
-     'cues': {'takes off his spectacles and cleans them': 'spectacles',
-              'touches the crucifix at his collar': 'crucifix',
-              'mutters something in Dutch': 'mutter',
-              'checks a pocket that smells of garlic': 'garlic',
-              'sniffs the air, frowning': 'sniff',
-              'glances at the fireplace': 'fireplace',
+          'cues': {'takes off his spectacles and cleans them': 'spectacles', 'touches the crucifix at his collar': 'crucifix',
+              'mutters something in Dutch': 'mutter', 'checks a pocket that smells of garlic': 'pocket',
+              'sniffs the air, frowning': 'sniff', 'glances at the fireplace': 'fireplace',
               'writes a line in a leather diary': 'diary'},
-     'fidgets': ['over_spectacles', 'settle', 'look_at_you']}
+     'fidgets': ['over_specs', 'settle_specs', 'look_at_you']}
 ref = {'rest': 'ref_rest.png'}
 pose_of = {n: f['pose'] for n, f in spec['frames'].items()}; pose_of['rest'] = 'A1'
 for clip, pose in pose_of.items():

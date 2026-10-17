@@ -1,0 +1,347 @@
+{
+ "kit": "van_helsing_parts",
+ "id": "van_helsing",
+ "name": "Abraham Van Helsing",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (the Horseman's style), redrawn from the flat-cartoon kit (sources/old_style/). Transylvania's seat 1, drawn facing right. The master is the rest pose's OWN head (spectacles on); eyes and mouths are layers on it. Every pose but rest a whole-figure frame with its own drawn head. The doctor's bag stands on the felt by his left elbow (the left of the picture) in every pose: a props box in the near forearm's piece and every frame.",
+ "what": {
+  "A1": "Rest: forearms on the table's edge, hands apart, spectacles on, the bag by his left elbow",
+  "A2": "Peeking at his cards (right hand)",
+  "A3": "Check: two fingers tap the felt",
+  "A4": "Call: right hand pushes forward along the felt",
+  "A5": "Bet: leans in, right hand pushed well forward, deliberate",
+  "A6": "Fold: a flat push of the hand toward the middle",
+  "B1": "All in: both hands push forward together",
+  "B2": "Show: right hand turns palm up",
+  "B3": "Big win: both fists raised, a delighted laugh (`win_big`)",
+  "B4": "Takes off his spectacles and cleans them on a white handkerchief",
+  "B5": "Writes a line in a leather diary (decoy for B4)",
+  "B6": "Touches the crucifix at his collar",
+  "C1": "Checks a pocket that smells of garlic (decoy for B6)",
+  "C2": "Mutters something in Dutch, aside",
+  "C3": "Sniffs the air, frowning (decoy for C2)",
+  "C4": "Glances at the fireplace, over his right shoulder",
+  "C5": "Peers over the top of his spectacles at the viewer",
+  "C6": "Settles his spectacles back on his nose with one finger",
+  "D1": "Talking: one finger raised, lecturing",
+  "D2": "Facing a big bet: brows drawn down, studying",
+  "D3": "Lost a pot: a heavy sigh, a shake of the head",
+  "D4": "Crushing loss: spectacles pushed up, a hand over his eyes (`lose_big`)",
+  "D5": "Heads up: leaning in on both forearms, eyes keen",
+  "D6": "A short, warm laugh, head tipped back"
+ },
+ "prop": [
+  [
+   0,
+   310
+  ],
+  [
+   114,
+   310
+  ],
+  [
+   114,
+   448
+  ],
+  [
+   0,
+   448
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "spectacles": "B4",
+  "diary": "B5",
+  "crucifix": "B6",
+  "pocket": "C1",
+  "mutter": "C2",
+  "sniff": "C3",
+  "fireplace": "C4",
+  "over_specs": "C5",
+  "settle_specs": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "laugh": "D6"
+ },
+ "common": {
+  "table_y": 372,
+  "scale": 1.0,
+  "origin_x": 300,
+  "register_box": [
+   150,
+   220,
+   350,
+   340
+  ],
+  "register_span": 40,
+  "collar_y": 205,
+  "neck": [
+   258,
+   205
+  ],
+  "frame_margin": 60,
+  "stock_box": [
+   200,
+   175,
+   320,
+   235
+  ]
+ },
+ "cut_below": 225,
+ "keep_poly": [
+  [
+   150,
+   0
+  ],
+  [
+   370,
+   0
+  ],
+  [
+   370,
+   120
+  ],
+  [
+   345,
+   170
+  ],
+  [
+   318,
+   198
+  ],
+  [
+   305,
+   228
+  ],
+  [
+   200,
+   228
+  ],
+  [
+   195,
+   195
+  ],
+  [
+   165,
+   155
+  ],
+  [
+   150,
+   90
+  ]
+ ],
+ "shoulder_y": 205,
+ "arms": {
+  "near": {
+   "elbow": [
+    100,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     40,
+     300
+    ],
+    [
+     130,
+     300
+    ],
+    [
+     130,
+     345
+    ],
+    [
+     40,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the doctor's bag by it",
+     "poly": [
+      [
+       0,
+       310
+      ],
+      [
+       95,
+       310
+      ],
+      [
+       150,
+       330
+      ],
+      [
+       190,
+       352
+      ],
+      [
+       235,
+       366
+      ],
+      [
+       265,
+       384
+      ],
+      [
+       288,
+       420
+      ],
+      [
+       292,
+       464
+      ],
+      [
+       200,
+       464
+      ],
+      [
+       150,
+       442
+      ],
+      [
+       114,
+       448
+      ],
+      [
+       0,
+       448
+      ]
+     ],
+     "props": [
+      [
+       [
+        0,
+        310
+       ],
+       [
+        114,
+        310
+       ],
+       [
+        114,
+        448
+       ],
+       [
+        0,
+        448
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    465,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     420,
+     300
+    ],
+    [
+     492,
+     300
+    ],
+    [
+     492,
+     345
+    ],
+    [
+     420,
+     345
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       310,
+       425
+      ],
+      [
+       328,
+       388
+      ],
+      [
+       368,
+       372
+      ],
+      [
+       410,
+       360
+      ],
+      [
+       450,
+       342
+      ],
+      [
+       480,
+       345
+      ],
+      [
+       470,
+       410
+      ],
+      [
+       440,
+       418
+      ],
+      [
+       432,
+       452
+      ],
+      [
+       400,
+       464
+      ],
+      [
+       318,
+       464
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "felt_dark_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6,
+  "drop_wood": true
+ },
+ "frame_extra": {},
+ "no_prop": []
+}

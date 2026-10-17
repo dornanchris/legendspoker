@@ -128,7 +128,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
 | Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
-| Transylvania: **live on the real table** (gothic from here) | built | all six (Van Helsing to redraw gothic; Jekyll, Hyde, the Wolf Man, the Horseman, Dracula) | | |
+| Transylvania: **live on the real table** (gothic from here) | built | all six, all gothic (Van Helsing redrawn; Jekyll, Hyde, the Wolf Man, the Horseman, Dracula) | | |
 | The Station: **live on the real table** | built (`?room=station`: the ceiling lens, the amber room after the turn) | all five (the Astronaut, the style baseline; the Robot; the AI, the Robot recoloured; the Martian; the Grey) | | |
 | Hall of Doors, Last Crossing: **live on the real table** | built (the Hall drawn twice: `champions_1`, `champions_2`; the dock house) | cast reused; the finale: the Stranger (the player, in their colour), Death as a player, Pravuil dealing | | |
 | Hidden guests (they sit in the table's room) | | JFK (redrawn), Loki | | |
