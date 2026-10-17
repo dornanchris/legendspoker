@@ -54,6 +54,22 @@ is done, and say so in the commit.
   sources/`: character sheet, poses A, B, C and the face sheet); his puppet
   is not built either.
 
+## The finale's new format (the owner's call; the design doc has it)
+
+- **The Ferryman deals the Last Crossing**: prompts in
+  `art-tools/ferryman_parts/POSES.md` (front-on dealer kit, Death's style).
+  Then build three puppets: the Ferryman, Death as a player
+  (`death_avatar_parts/`, sheets drawn) and the Stranger (`avatar_parts/`,
+  sheets drawn, its scarf in the player's accent colour).
+- **Restage the finale**: the Stranger in seat 1 (the player's actions only,
+  no tells), Death in seat 4 (mirrored), the Ferryman in the dealer's place;
+  drop `dealer_plays` from the room. Check the plate's chairs fit; the right
+  window shows the ferryman's boat out on the water, so lay the drawn empty
+  window piece (`rooms/finale/sources/pieces.png`) over it: he is inside.
+- **Reword the finale's text** to match: the intro's "a ferryman's lantern is
+  taking someone else across", the room description, the entrance, and any of
+  Death's lines that have him dealing.
+
 ## Room and puppet leftovers (the last build)
 
 - **The Phoenix:** a sliver of the drawn rail by its near wing at rest; its

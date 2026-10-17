@@ -544,6 +544,24 @@ beta problem; it is a "how does this ship" problem. Phase 10 at the earliest.
 
 ---
 
+## [DECISION, owner] THE FINALE'S FORMAT — the Ferryman deals, you are seen
+
+Death plays the finale, so he does not deal it. **The Ferryman** does: the
+boatman whose lantern is out on the river in the room's description has tied
+up and come in to deal the last table (unnamed, never Charon, no Greek
+imagery, per the setting rules above; an old man in a faded ochre oilskin and
+sou'wester, silent; Death does the talking). And the table is laid out once,
+differently: **the player is seen**, as the Stranger (the default avatar, in
+the accent colour the player chose), in the left chair; Death, as a player at
+three-quarter, in the right; the Ferryman between them at the back. It is the
+one time the camera pulls back, and it sets up the reward: having seen
+yourself as the Stranger, beating Death makes him your avatar. Rejected for
+the dealer's chair: Loki (spends the hidden cameo on everyone who finishes, and
+a trickster dealing the deciding hand reads as a rigged deck), Marley and
+Sisyphus (the owner: "keep it simple and on brand").
+
+---
+
 ## SEQUEL SLOT — reserved material (do not spend in game one)
 
 The title is a **franchise slot**: *Legends Poker: [Campaign]*. Nothing below is
