@@ -84,12 +84,14 @@ const ROOMS = {
     avoid: 'No NASA or agency insignia, no flags, no lettering on the panels. Nothing from 2001: A Space Odyssey or any film or game: no red eye, no red light, no HAL.',
   },
   champions: {
-    unique: 'One hall for both champions\' tables: eight tall doors round a round hall, each spilling its own room\'s light. Which four stand open changes between the two tables.',
-    backdrop: 'A round hall whose ceiling is lost in darkness, floored in polished black stone, with eight tall doors set round its wall. Draw every door CLOSED in this plate. Between the first and the eighth, a ninth door, small, plain and shut',
+    unique: 'One hall for both champions\' tables: eight tall doors round a round hall, each spilling its own room\'s light, and a ninth, small and shut, right behind Death. Table I opens the four doors on the left (the first four tables), table II the four on the right: two plates of one room.',
+    backdrop: 'A round hall at night whose ceiling is lost in darkness, floored in polished black stone, its curved wall of smooth dark stone with EIGHT tall arched doors set into it, each a different old wooden door. They stand in the gaps BETWEEN the players and at the far sides, NEVER behind a head: on the LEFT half at EXACTLY 42%, 27%, 12% and 4% across, on the RIGHT half at EXACTLY 58%, 73%, 88% and 96% across, their arches reaching about a tenth of the way down. In this plate the FOUR LEFT doors stand OPEN, each spilling its own room\'s light across the dark stone: at 42% warm gold lamplight and the edge of a red curtain (a president\'s drawing room), at 27% golden oil-lamp light and a glimpse of a painted Greek wall, at 12% blue moonlight and sea spray (a pirate cove), at 4% the red-gold firelight of a castle hall. The FOUR RIGHT doors are SHUT, dark wood in dark stone. Dead centre at the back, at EXACTLY 50% across, behind the dealer: a NINTH door, small, plain and pale grey, shut, softly lit by the light from the others so it is calm and mid-toned, never black; nothing about it draws the eye. The wall behind each head (19%, 34%, 66%, 80% across) is plain dark stone, faintly lit. No text, no numbers, no signs on the doors',
     light: 'Dark, lit only by what the open doors let in',
+    after: 'The SAME hall as the attached backdrop, for the second champions\' table: EXACTLY the same picture, the same camera, every door in exactly the same place, with ONLY the doors changed. Now the FOUR LEFT doors are SHUT, dark wood in dark stone, and the FOUR RIGHT doors stand OPEN, each spilling its own room\'s light across the dark stone: at 58% orange brazier light from a Roman hall, at 73% yellow gaslight and grey fog (a London sitting room), at 88% red-orange firelight from a castle hearth, at 96% the cool blue light of the Earth from a space station window. The small plain ninth door at 50%, behind the dealer, is still shut, calm and mid-toned. No people, no table, no text',
+    afterTitle: 'Table II plate (attach the finished backdrop)',
     moving: [],
-    presence: ['Each of the eight doors OPEN, as separate pieces, each spilling its own room\'s light: gold firelight (White House), oil-lamp gold (Athens), moonlit sea (Pirate Cove), great-hall firelight (Camelot), brazier orange (Rome), gaslight and fog (Baker Street), red firelight (Transylvania), blue Earthlight (the Station). The first table opens the first four; the second opens the last four'],
-    avoid: '',
+    presence: [],
+    avoid: 'No text or numbers on the doors, no portals of swirling magic, nothing from any film or game: they are ordinary old doors with light behind them.',
   },
   finale: {
     unique: 'The smallest room: no gold, no crowd, one lamp and the two of you. Death sits across from you, front-on, for the first time as a player.',
@@ -169,7 +171,7 @@ for (const id of order) {
   out += `- **Light:** ${r.light}.\n`;
   if (r.avoid) out += `- **Avoid:** ${r.avoid}\n`;
   out += `\n**Backdrop plate:**\n\n` + block(`${LOOK} ${r.plate ? r.plate + '.' : PLATE}\n\nThe room: ${r.backdrop}.\nLight: ${r.light}.${r.avoid ? '\nMust NOT resemble: ' + r.avoid : ''}`);
-  if (r.after) out += `**After-the-turn plate** (attach the finished backdrop):\n\n` + block(`${LOOK} ${r.after}.`);
+  if (r.after) out += `**${r.afterTitle || 'After-the-turn plate (attach the finished backdrop)'}:**\n\n` + block(`${LOOK} ${r.after}.`);
   const pieces = [...r.presence, ...r.moving];
   if (pieces.length) out += `**Moving and story pieces:**\n\n` + block(`${LOOK} ${PIECES}\n\nFor the room: ${name}. Parts:\n${pieces.map(p => '- ' + p).join('\n')}\n\nSoft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.`);
 }

@@ -45,7 +45,7 @@ The table screen has to hold four opponents, Death dealing between them, and the
 | Baker Street | Gaslight yellow and firelight, fog-grey at the window | — |
 | Transylvania | Firelight red-orange from the right against cold blue moonlight from the left | 1 |
 | The Station | Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red) | — |
-| The Champions' Tables (the Hall of Doors) | Dark, lit only by what the open doors let in | 1 |
+| The Champions' Tables (the Hall of Doors) | Dark, lit only by what the open doors let in | — |
 | The Last Crossing | One oil lamp, warm and small, against storm-dark blue | — |
 | The Pyre | Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar | — |
 
@@ -324,7 +324,7 @@ Light: Cool white lamplight and blue Earthlight; after the turn, dim amber emerg
 Must NOT resemble: No NASA or agency insignia, no flags, no lettering on the panels. Nothing from 2001: A Space Odyssey or any film or game: no red eye, no red light, no HAL.
 ```
 
-**After-the-turn plate** (attach the finished backdrop):
+**After-the-turn plate (attach the finished backdrop):**
 
 ```
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. The SAME room as the attached backdrop, redrawn after the turn: EXACTLY the same picture, the same camera, every wall, window, door, console and porthole in exactly the same place, with ONLY the light changed. The two wall lamps and the console lights are OFF and dark; the ceiling socket's iris is closed and dark; thin strips of dim AMBER emergency light run along the base of the walls and the ribs of the ceiling, and the room is darker and amber-tinted; the Earth in the window stays bright and blue, now the main light. Amber, NEVER red. No people, no table, no text.
@@ -349,31 +349,28 @@ Soft glows, smoke and light spill are listed so you know they are needed; they a
 
 ## The Champions' Tables — the Hall of Doors
 
-**What makes it unique:** One hall for both champions' tables: eight tall doors round a round hall, each spilling its own room's light. Which four stand open changes between the two tables.
+**What makes it unique:** One hall for both champions' tables: eight tall doors round a round hall, each spilling its own room's light, and a ninth, small and shut, right behind Death. Table I opens the four doors on the left (the first four tables), table II the four on the right: two plates of one room.
 
 - **The room (table I):** A round hall whose ceiling is lost in the dark, floored in polished black stone, with eight tall doors set around its wall — one for every table on the tour. Tonight the first four stand open, each spilling its own room's light and weather across the floor, and the round table sits where those four lights cross. Between the first door and the eighth there is a ninth, small, plain and shut; nobody at the table looks at it.
 - **The room (table II):** The same hall, turned: now the last four doors stand open — brazier-light from Rome, gaslight and fog from Baker Street, red firelight from the Count's hall, the Station's blue Earthlight — and the first four are shut. Their light crosses at the round table, so every champion sits lit by their own room. The small, plain ninth door is still shut.
 - **Sounds (for reference):** a hush under a ceiling too high to see; surf on a beach, faintly, through one doorway; wind at a castle window, through another; chips clicking on felt, echoing upward; a heavy door settling in its frame; a dog growling, three times over, through one doorway; hooves and cab wheels on wet cobbles, through another; a great fire settling in its hearth; a station's low hum from the fourth door
 - **Light:** Dark, lit only by what the open doors let in.
+- **Avoid:** No text or numbers on the doors, no portals of swirling magic, nothing from any film or game: they are ordinary old doors with light behind them.
 
 **Backdrop plate:**
 
 ```
 Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
 
-The room: A round hall whose ceiling is lost in darkness, floored in polished black stone, with eight tall doors set round its wall. Draw every door CLOSED in this plate. Between the first and the eighth, a ninth door, small, plain and shut.
+The room: A round hall at night whose ceiling is lost in darkness, floored in polished black stone, its curved wall of smooth dark stone with EIGHT tall arched doors set into it, each a different old wooden door. They stand in the gaps BETWEEN the players and at the far sides, NEVER behind a head: on the LEFT half at EXACTLY 42%, 27%, 12% and 4% across, on the RIGHT half at EXACTLY 58%, 73%, 88% and 96% across, their arches reaching about a tenth of the way down. In this plate the FOUR LEFT doors stand OPEN, each spilling its own room's light across the dark stone: at 42% warm gold lamplight and the edge of a red curtain (a president's drawing room), at 27% golden oil-lamp light and a glimpse of a painted Greek wall, at 12% blue moonlight and sea spray (a pirate cove), at 4% the red-gold firelight of a castle hall. The FOUR RIGHT doors are SHUT, dark wood in dark stone. Dead centre at the back, at EXACTLY 50% across, behind the dealer: a NINTH door, small, plain and pale grey, shut, softly lit by the light from the others so it is calm and mid-toned, never black; nothing about it draws the eye. The wall behind each head (19%, 34%, 66%, 80% across) is plain dark stone, faintly lit. No text, no numbers, no signs on the doors.
 Light: Dark, lit only by what the open doors let in.
+Must NOT resemble: No text or numbers on the doors, no portals of swirling magic, nothing from any film or game: they are ordinary old doors with light behind them.
 ```
 
-**Moving and story pieces:**
+**Table II plate (attach the finished backdrop):**
 
 ```
-Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
-
-For the room: The Champions' Tables — the Hall of Doors. Parts:
-- Each of the eight doors OPEN, as separate pieces, each spilling its own room's light: gold firelight (White House), oil-lamp gold (Athens), moonlit sea (Pirate Cove), great-hall firelight (Camelot), brazier orange (Rome), gaslight and fog (Baker Street), red firelight (Transylvania), blue Earthlight (the Station). The first table opens the first four; the second opens the last four
-
-Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. The SAME hall as the attached backdrop, for the second champions' table: EXACTLY the same picture, the same camera, every door in exactly the same place, with ONLY the doors changed. Now the FOUR LEFT doors are SHUT, dark wood in dark stone, and the FOUR RIGHT doors stand OPEN, each spilling its own room's light across the dark stone: at 58% orange brazier light from a Roman hall, at 73% yellow gaslight and grey fog (a London sitting room), at 88% red-orange firelight from a castle hearth, at 96% the cool blue light of the Earth from a space station window. The small plain ninth door at 50%, behind the dealer, is still shut, calm and mid-toned. No people, no table, no text.
 ```
 
 ---
