@@ -1,0 +1,194 @@
+{
+ "title": "The Martian",
+ "name": "the Martian",
+ "him": "it",
+ "extremity": "the top of its head",
+ "same": "great rounded grey-brown head, two huge dark eyes, V-shaped beak, brass seat rim and two bunches of thin tentacles",
+ "recap": "one great rounded head, about four feet across, set low in a squat brass seat whose round rim shows just above the table's edge; oily grey-brown skin, two enormous round dark eyes, a small V-shaped beak of a mouth below them, no body, no neck; sixteen whip-thin tentacles growing from beneath the head in two bunches of eight, one bunch each side, lying on the felt like arms",
+ "keep": " It has NO body and NO arms: the two bunches of eight thin tentacles are its arms, one bunch each side, lying on the felt like forearms. The brass seat's round rim stays just above the table's edge in every pose.",
+ "no": "No exposed brain, no glass bubble helmet, no green skin, no ray-gun, no fighting-machine, no chair, no cards, no chips.",
+ "intro": "The Station (table 8, a round lounge on a space station above the Earth), seat 2, drawn facing the viewer's right. Built the way the Transylvania cast is (`art-tools/pose_rig.py`, a short `rig_spec.json`), in the same graphic-novel style: the Headless Horseman's approved sheet is the style image, lit by the station (a cool blue Earthlight rim light and warm lamps) instead of candles.\n\nIts look is Wells's own (The War of the Worlds, 1898, public domain): merely a head, four feet across, two huge dark eyes, a quivering V-shaped beak, sixteen whip-thin tentacles in two bunches of eight, sitting in a three-legged brass seat, a small cousin of the fighting-machines. No exposed brain, no bubble helmet, no green skin, no ray-gun: nothing from the films, the musical, Mars Attacks! or Marvin the Martian. Its tentacle bunches take the place of forearms.\n\nTags (MOTION-SPEC.md): its tells beside idles that move the same part: tentacles curling (strong) beside drumming three tentacles in sequence; working something out on its tentacle-tips (weak) beside the same bunch at rest, so both read as the tentacles; its eyes blinking out of time (bluffing) beside looking down at the Earth (the eyes). Its skin shifting colour and its heavy breathing are idles. B3 and D4 are the big win and the crushing loss; its tentacles hold nothing.",
+ "table": [
+  [
+   "A1",
+   "Rest: both tentacle bunches on the felt, apart, eyes on the table",
+   "IDLE"
+  ],
+  [
+   "A2",
+   "Peeking at its cards (right bunch)",
+   "MECH"
+  ],
+  [
+   "A3",
+   "Check: two tentacle-tips tap the felt",
+   "MECH"
+  ],
+  [
+   "A4",
+   "Call: right bunch slides forward along the felt",
+   "MECH"
+  ],
+  [
+   "A5",
+   "Bet: head leans forward, right bunch pushed well forward",
+   "MECH"
+  ],
+  [
+   "A6",
+   "Fold: a flick of the right bunch",
+   "MECH"
+  ],
+  [
+   "B1",
+   "All in: both bunches push forward together",
+   "MECH"
+  ],
+  [
+   "B2",
+   "Show: tentacle-tips turn something over",
+   "MECH"
+  ],
+  [
+   "B3",
+   "Big win: both bunches raised and writhing, beak wide (`win_big`)",
+   "BEAT"
+  ],
+  [
+   "B4",
+   "Its tentacles curl",
+   "TELL"
+  ],
+  [
+   "B5",
+   "Drums three tentacles in sequence (decoy for B4)",
+   "IDLE"
+  ],
+  [
+   "B6",
+   "Works something out on its tentacle-tips",
+   "TELL"
+  ],
+  [
+   "C1",
+   "Its great eyes blink out of time with each other",
+   "TELL"
+  ],
+  [
+   "C2",
+   "Its skin shifts colour, faintly",
+   "IDLE"
+  ],
+  [
+   "C3",
+   "Breathes heavily in the heavy air",
+   "IDLE"
+  ],
+  [
+   "C4",
+   "Looks down at Earth through the window (decoy for C1)",
+   "IDLE"
+  ],
+  [
+   "C5",
+   "Turns to look at you",
+   "IDLE"
+  ],
+  [
+   "C6",
+   "Sags in its seat under Earth's gravity (a fidget)",
+   "IDLE"
+  ],
+  [
+   "D1",
+   "Talking: beak open, hooting, a bunch lifted",
+   "BEAT"
+  ],
+  [
+   "D2",
+   "Facing a big bet: head drawn back, eyes wide",
+   "BEAT"
+  ],
+  [
+   "D3",
+   "Lost a pot: head sagging, eyes half shut",
+   "BEAT"
+  ],
+  [
+   "D4",
+   "Crushing loss: tentacles thrashing, beak wide (`lose_big`)",
+   "BEAT"
+  ],
+  [
+   "D5",
+   "Heads up: head far forward, tentacles stretched",
+   "BEAT"
+  ],
+  [
+   "D6",
+   "A low hooting laugh",
+   "BEAT"
+  ]
+ ],
+ "howto": "One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, then the Headless Horseman's approved character sheet (`art-tools/headless_horseman_parts/sources/headless_horseman_sheet.png`) for the style. From the second prompt on, attach its own character sheet, its pose sheet A once it exists, AND the Horseman's character sheet again, and nothing else.",
+ "replace": [
+  [
+   "colours, line weight, flat cartoon style)",
+   "colours, line weight, graphic-novel style)"
+  ],
+  [
+   "same position, same hand.",
+   "same position."
+  ],
+  [
+   "(hands resting apart)",
+   "(the two bunches of tentacles resting apart)"
+  ],
+  [
+   "No cards and no chips anywhere: the hands are empty.",
+   "No cards and no chips anywhere: its tentacles hold nothing."
+  ]
+ ],
+ "character": "Character sheet for 2D animation rigging: a Martian, of H. G. Wells's The War of the Worlds (1898), drawn from Wells's own description. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No plate armour, no surcoat, no hair, no human face or body. Take the STYLE from the SECOND attached image.\n\nThe Martian, as Wells's narrator saw it close: a creature that is merely a head: one great rounded head about four feet across, with oily, glistening grey-brown skin like wet leather, two enormous round dark eyes set close together at the front, and below them a small V-shaped beak of a mouth with a quivering lipless rim. It has no neck, no body and no arms. From beneath the head grow sixteen long, whip-thin tentacles in two bunches of eight, one bunch on each side, which it uses as hands. It sits in a squat brass seat on three jointed metal legs, a small cousin of its great fighting-machines, the round brass rim of the seat cradling the bottom of the head. Heavy-breathing and slow in Earth's gravity, patient, and quietly hungry for whatever is left undefended. NOT cute, NOT a cartoon alien, NO exposed brain, NO glass bubble helmet, NO green skin, NO ray-gun. Nothing from any film, the musical or any cartoon.\n\nPure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.\n\nThe angle: a gentle three-quarter view, turned about 25 degrees from front-on, facing the viewer's right. Both eyes, the beak and both bunches of tentacles clearly visible. NOT profile.\n\nDraw, all facing the viewer's right, at the same size:\n- Finished heads, each in the top of the brass seat's rim: neutral; the beak open mid-sound; one eye blinked shut, the other open; both eyes narrowed, intent\n- The head in its brass seat with NO tentacles, cut off straight just below the seat's rim\n- Two bunches of eight thin tentacles, each lying on a table, pointing toward its centre, open at the end where they leave the head\n- On its own: the empty brass seat on its three jointed legs\n- Four seated reference poses, the head in its seat behind the curved edge of a round green poker table, the seat's rim just above the table's edge, both bunches of tentacles lying on the felt, apart: neutral; its tentacles curled up tight; its eyes blinking out of time with each other; touching its tentacle-tips together one after another, as if counting",
+ "sheets": {
+  "A": [
+   "At rest: both bunches of thin tentacles lying over the table's edge and out onto the felt in front of it, the two bunches a hand's width apart, relaxed and NOT touching, NOT tangled together; its eyes on the table, beak closed",
+   "Peeking at its cards: the tips of its right bunch of tentacles (the left of the picture) curled low over the felt in front of it, as if shielding something small; its eyes down",
+   "Checking: two tentacle-tips of its right bunch tapping the felt",
+   "Calling: its right bunch of tentacles sliding forward along the felt, tips leading",
+   "Betting: its great head leaning forward in its seat, its right bunch of tentacles pushed well forward along the felt",
+   "Folding: a dismissive flick of its right bunch of tentacles toward the middle of the table"
+  ],
+  "B": [
+   "All in: both bunches of tentacles pushing forward along the felt together, its head leaning in",
+   "Showing: the tips of its right bunch lifting from the felt and turning over, as if turning something over",
+   "A big win: both bunches of tentacles raised high and spread wide above its head, writhing, its beak wide open",
+   "The tentacles of both bunches curled up tight into coils on the felt; the rest of it perfectly still",
+   "Drumming three tentacles of its right bunch on the felt one after another, two short motion marks beside them; the left bunch as at rest",
+   "Working something out on its tentacle-tips: the tips of its right bunch touching together one after another, as if counting, its eyes on them; the left bunch as at rest"
+  ],
+  "C": [
+   "Its two great eyes blinking out of time with each other: the left eye shut, the right eye open; tentacles as at rest",
+   "Its skin shifting colour, faintly: a soft wave of pale blue-grey passing across its head; tentacles as at rest",
+   "Breathing heavily in the heavy air: its great head swelled a little, the beak open, the skin round it pulsing; tentacles as at rest",
+   "Looking down at the Earth through a window: its great eyes turned down and toward the right of the picture; tentacles as at rest",
+   "Turning its head toward the viewer, both great eyes on the viewer; tentacles as at rest",
+   "Sagging in its seat under Earth's heavy gravity: its head sunk a little lower in the brass rim, tentacles lying limp"
+  ],
+  "D": [
+   "Talking: its beak open, hooting, its right bunch of tentacles lifted a little and loose",
+   "Facing a big bet: its head drawn back in its seat, its eyes wide, both bunches of tentacles flat on the felt",
+   "Lost a pot: its head sagging in its seat, eyes half shut; tentacles as at rest",
+   "A crushing loss: both bunches of tentacles thrashing and slapping the felt, beak wide open in a howl, eyes squeezed shut",
+   "Down to two players: its great head leaning far forward over the felt, both bunches of tentacles stretched forward, eyes on the viewer",
+   "A low, hooting laugh: its beak open, its head bobbing back, its tentacles rippling"
+  ]
+ },
+ "face": "Character sheet for 2D animation rigging: the Martian's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of its head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head: the eyes and the beaks too are turned three-quarter, toward the viewer's right, NOT front-on and NOT symmetrical. Draw that head once, top left, in the brass seat's rim, as the reference, beak closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.\n\n- Its eyes (one piece each, both eyes with the skin around them): half closed; closed; the LEFT eye shut and the right open; the RIGHT eye shut and the left open; looking toward the viewer; looking down; narrowed; wide\n- Its beak (one piece each, the beak with the skin around it): closed at rest; open a little; open wide; round, as if hooting; pinched small; the rim quivering; the corners lifted, pleased\n- Its head turned toward the viewer, nearly front-on",
+ "style_lock": true,
+ "style": "STYLE, the most important rule: match the SECOND attached image (the Headless Horseman, from an earlier table) exactly: a GOTHIC GRAPHIC-NOVEL style for a grown-up card game, halfway between a bright cartoon and a dark painted illustration. Take NOTHING of his character: no armour, no pumpkin, no cloak. Keep what the game needs: a bold dark outline round every shape, big clear readable shapes, a silhouette that reads at a tiny size. Grown-up proportions, never chibi, never cute; shading in three or four tones with deep, dramatic shadows; the light of a space station: a cool blue rim light from the Earth in a great window on one side, soft warm lamplight on the other; rich but MUTED colour, nothing candy-bright; worn surfaces with soft highlights, a little texture in the shadows only. Quiet, strange and a little lonely. NOT a children's cartoon, NOT cute, NOT toy-like, NOT round and bouncy, NOT photoreal, NOT muddy or murky, NOT glossy chrome sci-fi.",
+ "style_short": "Keep the graphic-novel style of the attached character sheets: bold dark outlines, grown-up proportions, deep three- or four-tone shading, a cool blue Earthlight rim light and warm lamplight, rich muted colour; quiet and strange, NOT a children's cartoon, NOT cute.",
+ "style_ref": null,
+ "style_sheet": "the attached character sheets",
+ "empty_hands": true
+}

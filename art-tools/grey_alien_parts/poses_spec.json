@@ -1,0 +1,182 @@
+{
+ "title": "The Grey",
+ "name": "the Grey",
+ "him": "it",
+ "extremity": "the top of its head",
+ "same": "huge teardrop head, black almond eyes, smooth grey skin, thin neck and shoulders and long thin grey fingers",
+ "recap": "a slight figure of modern folklore: a HUGE smooth hairless head shaped like an upturned teardrop on a thin neck and narrow sloping shoulders, enormous glossy black almond eyes with no whites and no pupils, two tiny slits for a nose, a small lipless mouth that never moves, smooth grey skin, no clothes and nothing on its body, thin arms and long thin grey fingers, four to a hand",
+ "keep": " Its mouth never moves and never opens. Its huge black eyes have no whites and no pupils, only a soft highlight; where it looks is shown by the turn of its head. It wears nothing and carries nothing.",
+ "no": "No clothes, no spaceship, no flying saucer, no light beams, no antennae, no green skin, no chair, no cards, no chips.",
+ "intro": "The Station (table 8, a round lounge on a space station above the Earth), seat 1 (far left), drawn facing the viewer's right. Built the way the Transylvania cast is (`art-tools/pose_rig.py`, a short `rig_spec.json`), in the same graphic-novel style: the Headless Horseman's approved sheet is the style image, lit by the station (a cool blue Earthlight rim light and warm lamps) instead of candles.\n\nIts look, from its character file: the visitor of modern folklore, owned by nobody: an upturned teardrop of a head on a thin neck, huge black almond eyes, a mouth that never moves, long thin fingers. Built from the archetype: nothing from the 1987 Communion cover, Close Encounters, any television series or any real person's account.\n\nTags (MOTION-SPEC.md): its three tells, each beside an idle that moves the same part: blinking sideways (strong, a pale membrane across the eyes) beside staring at the backs of your cards (the eyes); its head tilting forty degrees (bluffing) beside watching someone breathe (the head); its long fingers splaying (weak) beside touching the table as if it had never seen wood (the fingers). Humming is C4. Its mouth never moves, so it talks with a faint glow in its eyes (the face sheet). B3 and D4 are the big win and the crushing loss; its hands are empty in every pose.",
+ "table": [
+  [
+   "A1",
+   "Rest: forearms on the table's edge, long fingers apart, black eyes on the table",
+   "IDLE"
+  ],
+  [
+   "A2",
+   "Peeking at its cards (right hand)",
+   "MECH"
+  ],
+  [
+   "A3",
+   "Check: one long finger taps the felt",
+   "MECH"
+  ],
+  [
+   "A4",
+   "Call: right hand pushes forward along the felt",
+   "MECH"
+  ],
+  [
+   "A5",
+   "Bet: leans in, right hand pushed well forward",
+   "MECH"
+  ],
+  [
+   "A6",
+   "Fold: turns its hand palm up, letting go",
+   "MECH"
+  ],
+  [
+   "B1",
+   "All in: both hands push forward together",
+   "MECH"
+  ],
+  [
+   "B2",
+   "Show: right hand turns palm up",
+   "MECH"
+  ],
+  [
+   "B3",
+   "Big win: thin arms raised and spread, face unchanged (`win_big`)",
+   "BEAT"
+  ],
+  [
+   "B4",
+   "Blinks sideways: a membrane across its eyes",
+   "TELL"
+  ],
+  [
+   "B5",
+   "Stares at the backs of your cards (decoy for B4)",
+   "IDLE"
+  ],
+  [
+   "B6",
+   "Its long fingers splay on the table",
+   "TELL"
+  ],
+  [
+   "C1",
+   "Touches the table as if it had never seen wood (decoy for B6)",
+   "IDLE"
+  ],
+  [
+   "C2",
+   "Its head tilts forty degrees",
+   "TELL"
+  ],
+  [
+   "C3",
+   "Watches someone breathe, with interest (decoy for C2)",
+   "IDLE"
+  ],
+  [
+   "C4",
+   "Hums at a pitch you feel in your teeth",
+   "IDLE"
+  ],
+  [
+   "C5",
+   "Turns to look at you",
+   "IDLE"
+  ],
+  [
+   "C6",
+   "Studies its own long fingers (a fidget)",
+   "IDLE"
+  ],
+  [
+   "D1",
+   "Talking: a hand raised, palm open, a glow in its eyes",
+   "BEAT"
+  ],
+  [
+   "D2",
+   "Facing a big bet: very still and upright",
+   "BEAT"
+  ],
+  [
+   "D3",
+   "Lost a pot: its head tilts slowly, puzzled",
+   "BEAT"
+  ],
+  [
+   "D4",
+   "Crushing loss: both hands over its great head, bowed (`lose_big`)",
+   "BEAT"
+  ],
+  [
+   "D5",
+   "Heads up: leaning in on both forearms",
+   "BEAT"
+  ],
+  [
+   "D6",
+   "A slow, deep nod",
+   "BEAT"
+  ]
+ ],
+ "howto": "One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, then the Headless Horseman's approved character sheet (`art-tools/headless_horseman_parts/sources/headless_horseman_sheet.png`) for the style. From the second prompt on, attach its own character sheet, its pose sheet A once it exists, AND the Horseman's character sheet again, and nothing else.",
+ "character": "Character sheet for 2D animation rigging: the Grey, the visitor of modern folklore (small, grey, large-headed, with great black eyes), built from the archetype, which belongs to nobody. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No plate armour, no striped surcoat, no long hair, no human face. Take the STYLE from the SECOND attached image.\n\nThe Grey: a slight, slender figure with a HUGE smooth hairless head shaped like an upturned teardrop, wide across the top and narrowing to a small pointed chin, on a thin neck and narrow, sloping shoulders. Enormous glossy black almond-shaped eyes slanting up at the outer corners, with no whites and no pupils, only a soft highlight. Two tiny slits for a nose. A small, straight, lipless mouth that never moves. Smooth, faintly luminous grey skin, a little paler on the face. Thin arms and long, thin grey fingers, four to a hand, with no nails. It wears nothing and carries nothing; its body is smooth and plain, without detail. Calm, curious and utterly unreadable: it studies the card table as if poker were a specimen. Not cute, not a cartoon alien, not green, no antennae. Nothing from any film, television series or book cover.\n\nPure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.\n\nThe angle: a gentle three-quarter view, turned about 25 degrees from front-on, facing the viewer's right. Both eyes, the face and both shoulders clearly visible. NOT profile.\n\nDraw, all facing the viewer's right, at the same size:\n- Finished heads, each with the thin neck and the top of the shoulders: neutral, eyes open; a thin pale membrane sliding sideways across both eyes; the head tilted far over to one side; the head lowered a little, watching\n- The torso: no head, thin, smooth and grey, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands\n- Two thin grey forearms with long-fingered hands lying on a table, pointing toward its centre, open at the elbow end\n- Four seated reference poses, waist up behind the curved edge of a round green poker table, forearms resting on its edge, hands apart: neutral; the membrane sliding sideways across its eyes; its head tilted far over; its long fingers splayed wide on the felt",
+ "sheets": {
+  "A": [
+   "At rest: both thin forearms lying along the table's edge, its long grey fingers resting on the felt in front of it, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; its head level, its black eyes on the table",
+   "Peeking at its cards: its right hand cupped low over the felt in front of it, the long fingers curled as if shielding something small; its head tipped down",
+   "Checking: one long finger of its right hand tapping the felt",
+   "Calling: its right hand flat, fingertips leading, pushing forward along the felt",
+   "Betting: leaning in, its right hand pushed well forward along the felt, unhurried",
+   "Folding: its right hand lifting from the felt and turning palm up, the long fingers opening, letting something go"
+  ],
+  "B": [
+   "All in: both hands pushing forward along the felt together, its head lowered, intent",
+   "Showing: its right hand turning palm up from the felt, as if turning something over",
+   "A big win: both thin arms raised and spread wide, the long fingers spread, its head tipped back a little; its face does not change at all",
+   "Blinking SIDEWAYS: a thin, pale, half-clear membrane sliding sideways across both black eyes, from the outer corners in; the rest of it perfectly still, arms as at rest",
+   "Staring at the viewer's cards: its head tipped a little forward and toward the viewer, its eyes fixed low, perfectly still; arms as at rest",
+   "The long fingers of both hands splayed wide and flat on the felt, stretched as far apart as they go"
+  ],
+  "C": [
+   "Touching the table as if it had never seen wood: one long fingertip of its right hand stroking the wooden rim of the table, its head bent close to look at it; left arm as at rest",
+   "Its whole head tilted far over toward its left shoulder, about forty degrees, still looking at the middle of the table; arms as at rest",
+   "Watching someone breathe, with interest: its head turned toward the right of the picture and tipped a little, as if studying someone's chest rise and fall; arms as at rest",
+   "Humming: faint, fine vibration lines round its head and throat, its mouth closed; arms as at rest",
+   "Turning its head and shoulders toward the viewer, its huge black eyes on the viewer; arms as at rest",
+   "Lifting its right hand and studying its own long fingers, turning them slowly in front of its eyes, as if it had never noticed them before; left arm as at rest"
+  ],
+  "D": [
+   "Talking without moving its mouth: its right hand raised a little, palm open, the long fingers loose, a faint soft glow deep in its black eyes",
+   "Facing a big bet: sitting very still and upright, its head drawn back a little, both hands flat on the felt",
+   "Lost a pot: its head tilting slowly to one side, as if puzzled, studying the middle of the table; arms as at rest",
+   "A crushing loss: both long hands spread over the top of its huge head, its head bowed low toward the table",
+   "Down to two players: leaning in on both forearms, its head lowered toward the viewer, eyes fixed on the viewer",
+   "A slow, deep nod, its head dipped forward, both hands flat on the felt"
+  ]
+ },
+ "face": "Character sheet for 2D animation rigging: the Grey's face overlays, exactly matching the attached sheets' style, colours and line weight. Its mouth never moves, so there are no mouths: only its eyes.\n\nEvery piece is drawn at EXACTLY the angle and size of its head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head: the eyes too are turned three-quarter, toward the viewer's right, NOT front-on and NOT symmetrical. Draw that head once, top left, with the thin neck, as the reference. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.\n\n- Its eyes (one piece each, both eyes with the grey skin around them): a thin pale membrane drawn halfway sideways across both eyes; drawn fully across; the soft highlights moved as if looking toward the viewer; looking down at the table; the upper edge of both eyes lowered, heavy-lidded; the eyes a little wider\n- Its eyes with a soft glow deep inside them, for when it speaks: faint; brighter; brightest (one piece each)\n- Its head turned toward the viewer, nearly front-on",
+ "style_lock": true,
+ "style": "STYLE, the most important rule: match the SECOND attached image (the Headless Horseman, from an earlier table) exactly: a GOTHIC GRAPHIC-NOVEL style for a grown-up card game, halfway between a bright cartoon and a dark painted illustration. Take NOTHING of his character: no armour, no pumpkin, no cloak. Keep what the game needs: a bold dark outline round every shape, big clear readable shapes, a silhouette that reads at a tiny size. Grown-up proportions, never chibi, never cute; shading in three or four tones with deep, dramatic shadows; the light of a space station: a cool blue rim light from the Earth in a great window on one side, soft warm lamplight on the other; rich but MUTED colour, nothing candy-bright; worn surfaces with soft highlights, a little texture in the shadows only. Quiet, strange and a little lonely. NOT a children's cartoon, NOT cute, NOT toy-like, NOT round and bouncy, NOT photoreal, NOT muddy or murky, NOT glossy chrome sci-fi.",
+ "style_short": "Keep the graphic-novel style of the attached character sheets: bold dark outlines, grown-up proportions, deep three- or four-tone shading, a cool blue Earthlight rim light and warm lamplight, rich muted colour; quiet and strange, NOT a children's cartoon, NOT cute.",
+ "style_ref": null,
+ "style_sheet": "the attached character sheets",
+ "empty_hands": true,
+ "replace": [
+  [
+   "colours, line weight, flat cartoon style)",
+   "colours, line weight, graphic-novel style)"
+  ]
+ ]
+}
