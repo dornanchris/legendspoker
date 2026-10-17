@@ -23,7 +23,7 @@ SHORT = (' ' + s['style_short']) if s.get('style_short') else (f" Keep the simpl
          "flat colour, no fine detail or texture.")
 def sheet_intro(first):
     if first:
-        return (f"Character pose sheet for 2D animation reference: {s['name']}, exactly as on the attached character sheet ({s['recap']}, colours, line weight, flat cartoon style).\n\n"
+        return (f"Character pose sheet for 2D animation reference: {s['name']}, exactly as on the attached character sheet ({s['recap']}, colours, line weight, {'style' if s.get('style') else 'flat cartoon style'}).\n\n"
                 "Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: waist up, seated behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, the same size, in the same place in its cell, with the table edge at the same height in every cell. "
                 f"Leave a little white between {s['him']} and the cell's edges, {s['extremity']} included: nothing of {s['him']} is cut off. Nothing below the table edge. No chair: nothing at all behind {s['him']}, just white.\n\n"
                 f"IMPORTANT for every pose: the arm that the pose does not mention stays EXACTLY as in pose 1, same position, same hand.{s.get('keep','')}"
