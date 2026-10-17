@@ -284,6 +284,78 @@
           { "id": "at_nd_12b", "speaker": "leonidas", "text": "Tell him nothing." }
         ]
       ]
+    },
+
+    "medusa_cyclops": {
+      "relationship": "Two monsters out of the old stories, at the same table: she turns men to stone, he eats them. Homer's Cyclops keeps no laws and wastes nothing; Medusa's victims are left standing about as statues (Ovid, Metamorphoses 4), which to him is very poor housekeeping.",
+      "exchanges": [
+        [
+          { "id": "at_me_cy_01a", "speaker": "cyclops", "text": "You. Snake hair. You turn men to stone?", "status": "draft" },
+          { "id": "at_me_cy_01b", "speaker": "medusa", "text": "When they look.", "status": "draft" },
+          { "id": "at_me_cy_01c", "speaker": "cyclops", "text": "Then how do you eat them?", "status": "draft" },
+          { "id": "at_me_cy_01d", "speaker": "medusa", "text": "...I don't.", "status": "draft" },
+          { "id": "at_me_cy_01e", "speaker": "cyclops", "text": "Waste.", "status": "draft" }
+        ],
+        [
+          { "id": "at_me_cy_02a", "speaker": "medusa", "text": "Do you ever look away, giant?", "status": "draft" },
+          { "id": "at_me_cy_02b", "speaker": "cyclops", "text": "Why? You are not frightening.", "status": "draft" },
+          { "id": "at_me_cy_02c", "speaker": "medusa", "text": "That is the nicest thing anyone has said to me in three thousand years.", "status": "draft" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "at_nd_13a", "speaker": "medusa", "to": "cyclops", "text": "Folded, giant? You've gone very still. It happens near me.", "status": "draft" },
+          { "id": "at_nd_13b", "speaker": "cyclops", "text": "I am NOT stone. I am ANGRY. It looks the same.", "status": "draft" }
+        ]
+      ]
+    },
+
+    "leonidas_cyclops": {
+      "relationship": "The king who held a narrow pass against an empire (Herodotus 7) and the giant who held a cave against twelve men (Odyssey 9), and lost it to the one who walked out under a sheep. Each thinks his own stand was the harder.",
+      "exchanges": [
+        [
+          { "id": "at_le_cy_01a", "speaker": "leonidas", "text": "I held a pass against a million men.", "status": "draft" },
+          { "id": "at_le_cy_01b", "speaker": "cyclops", "text": "I held a cave against twelve.", "status": "draft" },
+          { "id": "at_le_cy_01c", "speaker": "leonidas", "text": "And?", "status": "draft" },
+          { "id": "at_le_cy_01d", "speaker": "cyclops", "text": "...Do not ask.", "status": "draft" }
+        ],
+        [
+          { "id": "at_le_cy_02a", "speaker": "cyclops", "text": "Spartan. You are small.", "status": "draft" },
+          { "id": "at_le_cy_02b", "speaker": "leonidas", "text": "Yes.", "status": "draft" },
+          { "id": "at_le_cy_02c", "speaker": "cyclops", "text": "You are not afraid?", "status": "draft" },
+          { "id": "at_le_cy_02d", "speaker": "leonidas", "text": "Small men are never afraid of large ones. Only of fewer ones.", "status": "draft" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "at_nd_14a", "speaker": "leonidas", "to": "cyclops", "text": "You gave ground, giant.", "status": "draft" },
+          { "id": "at_nd_14b", "speaker": "cyclops", "text": "One step!", "status": "draft" },
+          { "id": "at_nd_14c", "speaker": "leonidas", "text": "It begins with one.", "status": "draft" }
+        ]
+      ]
+    },
+
+    "socrates_odysseus": {
+      "relationship": "Plato's Republic ends with a story Socrates tells: the souls choosing their next lives, and the last of them, Odysseus's, cured of ambition by everything he suffered, searching a long time for the quiet life of a private man nobody else wanted, and choosing it gladly (Republic 10, 620c). Fires only once Odysseus is seated.",
+      "exchanges": [
+        [
+          { "id": "at_so_od_01a", "speaker": "socrates", "text": "I once told a story in which every soul chooses its next life. Yours chose last.", "status": "draft" },
+          { "id": "at_so_od_01b", "speaker": "odysseus", "text": "And what did I pick? A king? A god?", "status": "draft" },
+          { "id": "at_so_od_01c", "speaker": "socrates", "text": "A quiet private man, minding his own business. You searched a long time to find it.", "status": "draft" },
+          { "id": "at_so_od_01d", "speaker": "odysseus", "text": "...That does sound restful.", "status": "draft" }
+        ],
+        [
+          { "id": "at_so_od_02a", "speaker": "odysseus", "text": "They say you never wrote a word down, Socrates.", "status": "draft" },
+          { "id": "at_so_od_02b", "speaker": "socrates", "text": "And they say you never told the same story twice.", "status": "draft" },
+          { "id": "at_so_od_02c", "speaker": "odysseus", "text": "Not to the same people.", "status": "draft" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "at_nd_15a", "speaker": "odysseus", "to": "socrates", "text": "Folded, Socrates? I thought you'd want to examine it.", "status": "draft" },
+          { "id": "at_nd_15b", "speaker": "socrates", "text": "I did. I examined it all the way to the muck.", "status": "draft" }
+        ]
+      ]
     }
   },
 

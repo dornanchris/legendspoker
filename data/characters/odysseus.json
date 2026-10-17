@@ -95,10 +95,32 @@
       "Raise. My ships are all gone; my nerve isn't.",
       "Raise. Ten years at sea teaches patience. Then impatience."
     ],
+    "reraised": [
+      "Out-trick the man who built the horse? Do try.",
+      "Oh, you're clever. I like clever. Usually it's me."
+    ],
     "all_in": [
       "All in. I've lost every ship I ever had. What's one more?",
       "Everything. Home, or the bottom of the sea.",
       "All in. Twenty years, one pot."
+    ],
+    "win": [
+      "Beware of Greeks bearing bets.",
+      "Twenty years to get home. That was quicker.",
+      "A horse, a sheep, a pot. I always get in.",
+      "Pity. I had a lovely story ready for the other way."
+    ],
+    "lose": [
+      "Shipwrecked again. I know the feeling.",
+      "The Sirens sing, and I listen. Every time.",
+      "Penelope will unravel this one tonight.",
+      "Ah well. The sea takes everything eventually."
+    ],
+    "win_full_house": [
+      "A full house. Mine had a hundred and eight suitors in it."
+    ],
+    "win_straight": [
+      "Straight home. For once."
     ]
   }
 }

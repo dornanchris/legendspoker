@@ -96,10 +96,30 @@
       "Raise. Stop talking.",
       "More! Like the wine!"
     ],
+    "reraised": [
+      "You push the giant? The GIANT?",
+      "[leans in until the whole table creaks]",
+      "Small man wants a fight. Good!"
+    ],
     "all_in": [
       "All in! My father is the sea!",
       "ALL. Everything. Now.",
       "All in. Roll the stone across."
+    ],
+    "win": [
+      "Nobody can beat me! ...Why are you laughing?",
+      "MINE. Like the sheep.",
+      "Ha! Polyphemus wins! Say it! Say my name!",
+      "Pay the giant!"
+    ],
+    "lose": [
+      "Bah! Back to the cave.",
+      "Who did that? WHO?",
+      "I am telling my father.",
+      "Hmph. Cheese tastes better than chips anyway."
+    ],
+    "lose_full_house": [
+      "A full house. I had a full cave once. Then a man came."
     ]
   }
 }

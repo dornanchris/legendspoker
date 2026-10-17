@@ -285,9 +285,9 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   it fits. **`reraised`**: said calling or raising when one's own bet was
   just raised over on that street (Teddy's Panama ditch), a reply, so it
   may follow the raiser's words. Each joke comes from the character's own
-  legend, never a modern wink; Death stays dry. The White House is the
-  first table written this way (the owner reviews the dial before the
-  rest). None of this needs an ENGINE_VERSION bump.
+  legend, never a modern wink; Death stays dry. Written so far for the
+  White House (the owner's dial) and Athens (new pairs: Medusa and the
+  Cyclops, Leonidas and the Cyclops, Socrates and Odysseus). None of this needs an ENGINE_VERSION bump.
 - **Respect:** per table, points from pots / showdowns / knockouts, tiers at
   4 / 10 / 18, heads-up with the champion forces tier 2, a win forces tier 3.
   The name flip is always announced (toast + the tier's first line).

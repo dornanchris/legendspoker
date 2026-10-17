@@ -90,10 +90,30 @@
       "More.",
       "Forward. Raise."
     ],
+    "reraised": [
+      "Come and take them.",
+      "If.",
+      "[does not move an inch]"
+    ],
     "all_in": [
       "All.",
       "All in. The pass holds.",
       "Everything. We stay."
+    ],
+    "win": [
+      "We held.",
+      "Come and take them. No? Then I keep them.",
+      "[builds his chips into a wall]",
+      "Spartan."
+    ],
+    "lose": [
+      "On my shield, then.",
+      "Someone showed them the goat path.",
+      "[nods once, as to a worthy enemy]",
+      "Again."
+    ],
+    "win_full_house": [
+      "Sparta has no walls. We are the walls. Also, a full house."
     ]
   }
 }
