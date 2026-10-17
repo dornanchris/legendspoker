@@ -1,0 +1,178 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "grey_alien_face_01.png",
+      "label": "",
+      "x": 55,
+      "y": 7,
+      "w": 302,
+      "h": 341,
+      "pivot": [
+        151.0,
+        170.5
+      ],
+      "area": 71103
+    },
+    {
+      "index": 2,
+      "file": "grey_alien_face_02.png",
+      "label": "",
+      "x": 426,
+      "y": 3,
+      "w": 303,
+      "h": 345,
+      "pivot": [
+        151.5,
+        172.5
+      ],
+      "area": 72284
+    },
+    {
+      "index": 3,
+      "file": "grey_alien_face_03.png",
+      "label": "",
+      "x": 794,
+      "y": 4,
+      "w": 303,
+      "h": 344,
+      "pivot": [
+        151.5,
+        172.0
+      ],
+      "area": 71387
+    },
+    {
+      "index": 4,
+      "file": "grey_alien_face_04.png",
+      "label": "",
+      "x": 1171,
+      "y": 8,
+      "w": 307,
+      "h": 340,
+      "pivot": [
+        153.5,
+        170.0
+      ],
+      "area": 72836
+    },
+    {
+      "index": 5,
+      "file": "grey_alien_face_05.png",
+      "label": "",
+      "x": 55,
+      "y": 349,
+      "w": 304,
+      "h": 321,
+      "pivot": [
+        152.0,
+        160.5
+      ],
+      "area": 68973
+    },
+    {
+      "index": 6,
+      "file": "grey_alien_face_06.png",
+      "label": "",
+      "x": 427,
+      "y": 351,
+      "w": 303,
+      "h": 318,
+      "pivot": [
+        151.5,
+        159.0
+      ],
+      "area": 67315
+    },
+    {
+      "index": 7,
+      "file": "grey_alien_face_07.png",
+      "label": "",
+      "x": 794,
+      "y": 351,
+      "w": 305,
+      "h": 318,
+      "pivot": [
+        152.5,
+        159.0
+      ],
+      "area": 68069
+    },
+    {
+      "index": 8,
+      "file": "grey_alien_face_08.png",
+      "label": "",
+      "x": 1170,
+      "y": 348,
+      "w": 307,
+      "h": 321,
+      "pivot": [
+        153.5,
+        160.5
+      ],
+      "area": 69046
+    },
+    {
+      "index": 9,
+      "file": "grey_alien_face_09.png",
+      "label": "",
+      "x": 50,
+      "y": 669,
+      "w": 308,
+      "h": 329,
+      "pivot": [
+        154.0,
+        164.5
+      ],
+      "area": 70815
+    },
+    {
+      "index": 10,
+      "file": "grey_alien_face_10.png",
+      "label": "",
+      "x": 427,
+      "y": 672,
+      "w": 306,
+      "h": 326,
+      "pivot": [
+        153.0,
+        163.0
+      ],
+      "area": 69789
+    },
+    {
+      "index": 11,
+      "file": "grey_alien_face_11.png",
+      "label": "",
+      "x": 793,
+      "y": 675,
+      "w": 303,
+      "h": 323,
+      "pivot": [
+        151.5,
+        161.5
+      ],
+      "area": 68434
+    },
+    {
+      "index": 12,
+      "file": "grey_alien_face_12.png",
+      "label": "",
+      "x": 1181,
+      "y": 671,
+      "w": 281,
+      "h": 327,
+      "pivot": [
+        140.5,
+        163.5
+      ],
+      "area": 65335
+    }
+  ]
+}

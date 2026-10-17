@@ -1,0 +1,66 @@
+{
+ "note": "The master is the rest pose's own head. Its mouth never moves and the face sheet drew twelve whole heads at another size, so the pieces are made from the master by eyes.py: 41 the membrane half across, 42 fully across (the blink, which is also its tell's shape: it blinks rarely), 44-46 a glow deep in the eyes (speech: faint, brighter, brightest). The sheet's heads are unused; the head turns in whole-figure frames.",
+ "master": "grey_alien_parts/grey_alien_face/grey_alien_master.png",
+ "pieces": "grey_alien_parts/grey_alien_face/grey_alien_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 41,
+   "closed": 42
+  },
+  "mouth": {
+   "oo": 44,
+   "m": 44,
+   "f": 44,
+   "ee": 45,
+   "oh": 45,
+   "l": 45,
+   "ah": 46
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     195,
+     110
+    ],
+    [
+     400,
+     110
+    ],
+    [
+     400,
+     210
+    ],
+    [
+     195,
+     210
+    ]
+   ],
+   "outline": 1,
+   "fade": 2
+  },
+  "mouth": {
+   "keep": [
+    [
+     195,
+     110
+    ],
+    [
+     400,
+     110
+    ],
+    [
+     400,
+     210
+    ],
+    [
+     195,
+     210
+    ]
+   ],
+   "outline": 1,
+   "fade": 2
+  }
+ }
+}

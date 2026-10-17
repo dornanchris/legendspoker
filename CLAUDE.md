@@ -169,7 +169,7 @@ art-tools/
                   hyde_parts/, wolf_man_parts/,
                   headless_horseman_parts/ (built): Transylvania; monster_parts/ (rejected, a record);
                   astronaut_parts/, robot_parts/, the_ai_parts/ (built; the AI is
-                  the Robot recoloured), martian_parts/ (built), grey_alien_parts/ (prompts): the Station
+                  the Robot recoloured), martian_parts/, grey_alien_parts/ (built): the Station
   lincoln_parts/  Lincoln's kit, three-quarter, hats on and off (the hat tip),
                   arms resting along the rim: the model for the next sheets;
                   ik_split.py cuts his IK arm from a pose (the IK prototype)
@@ -545,8 +545,13 @@ the room swaps to `after.webp` (lamps off, amber, never red; `backdropAfter` in
 room.json, drawn once the presence is 'after', so a resumed sitting lands in
 the right room). **The Martian is built** (`#/puppet/martian`, 24 clips, seat 2):
 Wells's head in a brass seat, its two bunches of tentacles lying on the felt as
-its forearms, its tentacles and odd blinking eyes the tell surface. The table
-stages once the Grey is built.
+its forearms, its tentacles and odd blinking eyes the tell surface. **The Grey
+is built** (`#/puppet/grey_alien`, 24 clips, seat 1), from the redrawn sheets:
+its mouth never moves, so its face pieces are made from its own head
+(`grey_alien_parts/eyes.py`): the sideways membrane (its blink, rare, and its
+strong tell) and a glow in its eyes when it speaks. **The Station is complete on
+the real table screen**, the turn included: the Robot knocked out, the room goes
+amber and the AI sits down in its chair.
 **Rome's room is built** (`?room=rome`), from the redrawn plate (the
 first put both braziers behind seats 1 and 4; the prompt now gives exact
 places): the brazier fires flicker in the gaps between seats 1-2 and 3-4,
@@ -640,7 +645,7 @@ half that, all set by `art-tools/build/life.py`. Going out, a figure plays
 its `knocked_out` clip if it has one, then **fades from the chair** (0.8 s,
 stage.ts; the owner: a line, then gone); a puppet with no heads-up drawing
 leans in from its rest pose (`art-tools/build/fallback_clips.py`).
-`python3 art-tools/build/puppet_audit.py` holds all 41 puppets to the same
+`python3 art-tools/build/puppet_audit.py` holds all 42 puppets to the same
 list and prints 0 missing. The table
 loads half-size images (decoded, the five full-size puppets are ~350 MB).
 **IK arms, the owner's pick: Washington's way.** A two-bone IK arm on the

@@ -75,6 +75,8 @@ import robotRig from '../art/robot/rig.json'
 import robotAnim from '../art/robot/anim.json'
 import martianRig from '../art/martian/rig.json'
 import martianAnim from '../art/martian/anim.json'
+import greyRig from '../art/grey_alien/rig.json'
+import greyAnim from '../art/grey_alien/anim.json'
 import theAiRig from '../art/the_ai/rig.json'
 import theAiAnim from '../art/the_ai/anim.json'
 import jekyllRig from '../art/jekyll/rig.json'
@@ -173,6 +175,7 @@ export const PUPPETS: Record<string, CastEntry> = {
   astronaut: { rig: astronautRig as unknown as RigData, anim: astronautAnim as unknown as AnimData, base: 'art/astronaut/' },
   robot: { rig: robotRig as unknown as RigData, anim: robotAnim as unknown as AnimData, base: 'art/robot/' },
   martian: { rig: martianRig as unknown as RigData, anim: martianAnim as unknown as AnimData, base: 'art/martian/' },
+  grey_alien: { rig: greyRig as unknown as RigData, anim: greyAnim as unknown as AnimData, base: 'art/grey_alien/' },
   the_ai: { rig: theAiRig as unknown as RigData, anim: theAiAnim as unknown as AnimData, base: 'art/the_ai/' },
   // the hidden guests: either may sit in any chair, at any table
   jfk: { rig: jfkRig as unknown as RigData, anim: jfkAnim as unknown as AnimData, base: 'art/jfk/' },

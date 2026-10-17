@@ -1,0 +1,441 @@
+{
+ "kit": "grey_alien_parts",
+ "id": "grey_alien",
+ "name": "The Grey",
+ "note": "Polygons in the rest pose (A1) pixels. The Station's style (the Astronaut's sheets the style images). Seat 1, drawn facing right, not mirrored. The master is the rest pose's OWN head; its face pieces are made from it (eyes.py: the sideways membrane, the eye glow), since the face sheet drew whole heads at another size. Every pose but rest a whole-figure frame with its own drawn head. No prop.",
+ "what": {
+  "A1": "Rest: forearms on the table's edge, long fingers apart, black eyes on the table",
+  "A2": "Peeking at its cards (right hand)",
+  "A3": "Check: one long finger taps the felt",
+  "A4": "Call: right hand pushes forward along the felt",
+  "A5": "Bet: leans in, right hand pushed well forward",
+  "A6": "Fold: turns its hand palm up, letting go",
+  "B1": "All in: both hands push forward together",
+  "B2": "Show: right hand turns palm up",
+  "B3": "Big win: thin arms raised and spread, face unchanged (`win_big`)",
+  "B4": "Blinks sideways: a membrane across its eyes",
+  "B5": "Stares at the backs of your cards (decoy for B4)",
+  "B6": "Its long fingers splay on the table",
+  "C1": "Touches the table as if it had never seen wood (decoy for B6)",
+  "C2": "Its head tilts forty degrees",
+  "C3": "Watches someone breathe, with interest (decoy for C2)",
+  "C4": "Hums at a pitch you feel in your teeth",
+  "C5": "Turns to look at you",
+  "C6": "Studies its own long fingers (a fidget)",
+  "D1": "Talking: a hand raised, palm open, a glow in its eyes",
+  "D2": "Facing a big bet: very still and upright",
+  "D3": "Lost a pot: its head tilts slowly, puzzled",
+  "D4": "Crushing loss: both hands over its great head, bowed (`lose_big`)",
+  "D5": "Heads up: leaning in on both forearms",
+  "D6": "A slow, deep nod"
+ },
+ "prop": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "membrane": "B4",
+  "stare": "B5",
+  "splay": "B6",
+  "wood": "C1",
+  "tilt": "C2",
+  "breathe": "C3",
+  "hum": "C4",
+  "turn": "C5",
+  "fingers": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "nod": "D6"
+ },
+ "common": {
+  "table_y": 362,
+  "scale": 1.0,
+  "origin_x": 300,
+  "register_box": [
+   150,
+   270,
+   350,
+   350
+  ],
+  "register_span": 40,
+  "collar_y": 268,
+  "neck": [
+   255,
+   270
+  ],
+  "frame_margin": 80,
+  "stock_box": [
+   190,
+   230,
+   330,
+   300
+  ]
+ },
+ "cut_below": 282,
+ "keep_poly": [
+  [
+   122,
+   0
+  ],
+  [
+   398,
+   0
+  ],
+  [
+   398,
+   140
+  ],
+  [
+   372,
+   190
+  ],
+  [
+   332,
+   236
+  ],
+  [
+   302,
+   262
+  ],
+  [
+   294,
+   286
+  ],
+  [
+   212,
+   286
+  ],
+  [
+   204,
+   242
+  ],
+  [
+   160,
+   205
+  ],
+  [
+   124,
+   152
+  ]
+ ],
+ "shoulder_y": 270,
+ "arms": {
+  "near": {
+   "elbow": [
+    55,
+    390
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     30,
+     268
+    ],
+    [
+     165,
+     262
+    ],
+    [
+     160,
+     350
+    ],
+    [
+     110,
+     388
+    ],
+    [
+     30,
+     395
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its right forearm and long-fingered hand",
+     "poly": [
+      [
+       26,
+       372
+      ],
+      [
+       90,
+       368
+      ],
+      [
+       140,
+       370
+      ],
+      [
+       200,
+       398
+      ],
+      [
+       250,
+       430
+      ],
+      [
+       264,
+       476
+      ],
+      [
+       200,
+       478
+      ],
+      [
+       120,
+       478
+      ],
+      [
+       55,
+       445
+      ],
+      [
+       26,
+       412
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    428,
+    372
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     318,
+     272
+    ],
+    [
+     400,
+     286
+    ],
+    [
+     442,
+     335
+    ],
+    [
+     442,
+     388
+    ],
+    [
+     400,
+     378
+    ],
+    [
+     328,
+     330
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its left forearm and long-fingered hand",
+     "poly": [
+      [
+       384,
+       350
+      ],
+      [
+       436,
+       344
+      ],
+      [
+       436,
+       396
+      ],
+      [
+       448,
+       412
+      ],
+      [
+       436,
+       478
+      ],
+      [
+       316,
+       478
+      ],
+      [
+       318,
+       440
+      ],
+      [
+       345,
+       400
+      ],
+      [
+       372,
+       388
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6,
+  "wood_rows_only": true,
+  "strip_thin": 2,
+  "exclude": {
+   "A1": [
+    [
+     [
+      299,
+      337
+     ],
+     [
+      348,
+      337
+     ],
+     [
+      348,
+      362
+     ],
+     [
+      299,
+      362
+     ]
+    ],
+    [
+     [
+      121,
+      346
+     ],
+     [
+      142,
+      346
+     ],
+     [
+      142,
+      364
+     ],
+     [
+      121,
+      364
+     ]
+    ]
+   ]
+  }
+ },
+ "frame_extra": {
+  "show": {
+   "biggest": true
+  },
+  "win_big": {
+   "biggest": true
+  },
+  "hum": {
+   "marks": [
+    [
+     [
+      85,
+      40
+     ],
+     [
+      180,
+      40
+     ],
+     [
+      180,
+      220
+     ],
+     [
+      85,
+      220
+     ]
+    ],
+    [
+     [
+      335,
+      30
+     ],
+     [
+      425,
+      30
+     ],
+     [
+      425,
+      260
+     ],
+     [
+      335,
+      260
+     ]
+    ]
+   ]
+  }
+ },
+ "no_prop": [
+  "A2",
+  "A3",
+  "A4",
+  "A5",
+  "A6",
+  "B1",
+  "B2",
+  "B3",
+  "B4",
+  "B5",
+  "B6",
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5",
+  "C6",
+  "D1",
+  "D2",
+  "D3",
+  "D4",
+  "D5",
+  "D6"
+ ],
+ "master_extra": {
+  "keep_white": true
+ }
+}

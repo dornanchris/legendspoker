@@ -129,10 +129,10 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
 | Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
 | Transylvania: **live on the real table** (gothic from here) | built | all six (Van Helsing to redraw gothic; Jekyll, Hyde, the Wolf Man, the Horseman, Dracula) | | |
-| The Station | built (`?room=station`: the ceiling lens, the amber room after the turn) | the Astronaut (the style baseline), the Robot, the AI (the Robot recoloured: `the_ai_parts/recolour.py`), the Martian | | WITH THE OWNER: the Grey (redraw); then the Station stages |
-| Hall of Doors, Last Crossing | prompt only | | | (cast reused) |
+| The Station: **live on the real table** | built (`?room=station`: the ceiling lens, the amber room after the turn) | all five (the Astronaut, the style baseline; the Robot; the AI, the Robot recoloured; the Martian; the Grey) | | |
+| Hall of Doors, Last Crossing | prompt only | (cast reused) | | the Hall of Doors' backdrop and doors; the Last Crossing's dock house |
 | Hidden guests (they sit in the table's room) | | JFK (redrawn), Loki | | |
-| Hidden (later) | The Pyre: prompt | | | the Phoenix; the Stranger (online avatar) |
+| Hidden: the Pyre | The Pyre: prompt | | the Phoenix (character sheet in; poses coming) | WITH THE OWNER: the Phoenix's pose and face sheets, then the Pyre's room; the Stranger (online avatar) waits on online |
 
 Seats at Rome: 1 Spartacus, 2 the Pope, 3 Cerberus (mirrored, giant),
 4 Scipio (mirrored); Caesar arrives into the first empty chair (any side).

@@ -40,6 +40,13 @@ is done, and say so in the commit.
 - **The Station's wall lamps** sit at 23% and 77% across (the prompt asked 27%
   and 73%), glowing just beside the end seats' heads. They read; nudge only if
   they distract.
+- **The Grey's rest pose keeps two short stubs of the drawn rail's outline** by
+  its near elbow and far wrist, lying on the felt, and a soft smear where the
+  sheet's white was cut from between its arms and torso (just above the table
+  line). Small at table size; tighten its forearm polygons if they show.
+- **The Martian's tentacles lie behind its name plate** at seat 2 (it sits low:
+  its sheets put the table line high). Fine in play; move the plate only if it
+  hides a tell.
 - **The AI's tells are the lens only**: nothing on the ceiling plays while it
   watches without a chair (its tells fire once it sits). The sheet's half and
   narrowed lens pieces are cut but unused; the "lights dim" tell dims the lens,
