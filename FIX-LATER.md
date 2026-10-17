@@ -17,6 +17,10 @@ is done, and say so in the commit.
     face sheet only if he looks stiff.
   - ~~**The Wolf Man**~~ DONE: redrawn gothic and built.
   - **The Cheshire Cat** (built, Baker Street seat 3, in Cerberus's style).
+    **Gothic prompts written** (`cheshire_cat_parts/POSES.md`, the Wolf Man's way,
+    big win and crushing loss inside his 24, paws empty); his old sheets are in
+    `sources/old_style/`. Baker Street's other three are in the flat cartoon, so
+    a gothic Cat will stand out there (the owner's call to make).
 - **Reactions for the rest of the cast** (the owner: "probably all"). The
   big win (hands raised) and the crushing loss: reactions sheet E for every
   character drawn before JFK and Loki (they have them inside sheets B and D).

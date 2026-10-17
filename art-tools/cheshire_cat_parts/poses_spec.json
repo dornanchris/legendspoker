@@ -6,9 +6,9 @@
  "extremity": "the tips of his ears and his tail",
  "same": "round face, enormous toothy grin, grey-brown tabby coat and long striped tail",
  "recap": "a large, solid, round-faced tabby cat as Tenniel drew him, a warm grey-brown coat with darker brown tabby stripes, a cream chin and chest, round yellow-green eyes, pointed ears, white whiskers, and an ENORMOUS grin from ear to ear full of neat white teeth; sitting up at the table like a person, his two front paws resting on its edge, his long striped tail curling up beside him on the left of the picture",
- "keep": " He is grinning his enormous toothy grin in every pose unless the pose says otherwise. His long striped tail curls up beside him on the left of the picture (behind his back), its tip about level with his shoulder, ABOVE the table edge, unless the pose says otherwise. Where a pose says part of him has vanished, that part is simply NOT DRAWN: plain white, no ghost, no outline, no transparency. Draw NOTHING like the Disney cat: no pink, no purple, no stripes in bright colours. STYLE FOR AN ANIMAL: draw him exactly the way Cerberus is drawn on the attached sheet from Rome: a bold, even dark outline; his fur shown ONLY by a few chunky, rounded tufts on the outline at the cheeks, chest and shoulders, with a few short soft strokes inside them, never hair by hair; soft, smooth shading in two or three tones; clean, warm colour; big simple eyes with a plain pupil and one highlight; chunky paws with a few simple claws; three plain whisker lines a side; the teeth one simple white band with a few lines. His tabby stripes are a few broad bands with clean edges, following the body. NOT a realistic or detailed illustration, NOT furry art, NO fine fur texture, NOT painterly. Take NOTHING of Cerberus himself: ONE head, a CAT, no collar, no snakes, nothing of a dog.",
- "no": "No human hands, no human body, no clothes, no hat, no bow tie, no chair, no Alice, no pink or purple, no text.",
- "intro": "Baker Street's seat 3 (right of the dealer): drawn facing the viewer's right and MIRRORED by the game to face the table's centre, so his tail (on the left of the picture) ends up on the outside of the table. Built the way Cerberus is (`art-tools/pose_rig.py`, a non-human body).\n\nHe took Alice's chair (the owner's call: two Alice sheets came out looking like Disney's). His look, from his character file: Tenniel's Cheshire Cat, a large, solid tabby with an enormous grin, warm grey-brown with darker stripes; never the Disney cat's pink and purple, never the Burton film's. His BODY is the tell surface, so every tell is a big shape: the tail, the eyes, and parts of him vanishing, tail first and the grin last (Carroll's own order). Vanished parts are simply not drawn (plain white), so the puppet can cut them cleanly.\n\nRuled out (his character file): the 1951 Disney film entirely and the 2010 Burton design. Layout from Lancelot's character sheet, style from Cerberus's pose sheet A (the owner: the Cat keeps the same animal style as Cerberus; Washington's sheet drew him as furry illustration).\n\nTags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: fading away tail first, grin last (strong; B4 then C5) beside his head drifting a little way off his shoulders; blinking one eye, then the other (weak) beside washing a paw; the tip of his tail twitching (bluffing) beside his tail swaying lazily. 'Grins at the dealer' is C4.",
+ "keep": " He is grinning his enormous toothy grin in every pose unless the pose says otherwise. His long striped tail curls up beside him on the left of the picture (behind his back), its tip about level with his shoulder, ABOVE the table edge, unless the pose says otherwise. Where a pose says part of him has vanished, that part is simply NOT DRAWN: plain white, no ghost, no outline, no transparency. Draw NOTHING like the Disney cat: no pink, no purple, no stripes in bright colours. HIS FUR: a bold dark outline; the fur shown by a few chunky tufts on the outline at the cheeks, the ruff of his chest and the ears, with soft strokes inside them in the shadows only, never hair by hair. Warm grey-brown with a few broad, darker tabby bands following the body, a cream chin and chest, with the warm lamplit rim light along his ears, shoulders and tail. Big round yellow-green eyes with a slit pupil and one highlight; three plain whisker lines a side; the teeth one clean white band with a few lines. A big, sly, grown-up cat with a little menace in the grin, never cute, never a cuddly toy.",
+ "no": "No human hands, no human body, no clothes, no hat, no bow tie, no chair, no Alice, no pink or purple, no text, no cards, no chips.",
+ "intro": "Baker Street's seat 3 (right of the dealer): drawn facing the viewer's right and MIRRORED by the game to face the table's centre, so his tail (on the left of the picture) ends up on the outside of the table. Built the way Cerberus is (`art-tools/pose_rig.py`, a non-human body). REDRAWN GOTHIC (the owner: the flat cartoon \"looks childish ... since Cheshire\"; FIX-LATER.md): the Horseman's sheet is the style image, as for the Wolf Man; his first sheets, in Cerberus's style, are kept in `sources/old_style/`.\n\nHe took Alice's chair (the owner's call: two Alice sheets came out looking like Disney's). His look, from his character file: Tenniel's Cheshire Cat, a large, solid tabby with an enormous grin, warm grey-brown with darker stripes; never the Disney cat's pink and purple, never the Burton film's. His BODY is the tell surface, so every tell is a big shape: the tail, the eyes, and parts of him vanishing, tail first and the grin last (Carroll's own order). Vanished parts are simply not drawn (plain white), so the puppet can cut them cleanly.\n\nRuled out (his character file): the 1951 Disney film entirely and the 2010 Burton design. Layout from Lancelot's character sheet, style from the Headless Horseman's character sheet.\n\nTags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: fading away tail first, grin last (strong; B4 then C5) beside his head drifting a little way off his shoulders; blinking one eye, then the other (weak) beside washing a paw; the tip of his tail twitching (bluffing) beside his tail swaying lazily. 'Grins at the dealer' is C4. B3 and D4 are the big win and the crushing loss; his paws are empty of cards and chips in every pose (the game moves them).",
  "table": [
   [
    "A1",
@@ -17,7 +17,7 @@
   ],
   [
    "A2",
-   "Peeking at his cards (right paw)",
+   "Peeking at his cards (right paw cupped low over the felt)",
    "MECH"
   ],
   [
@@ -27,33 +27,33 @@
   ],
   [
    "A4",
-   "Call: slides a short stack forward with a paw",
+   "Call: a paw slides forward along the felt",
    "MECH"
   ],
   [
    "A5",
-   "Bet: pushes a stack forward, grinning wider",
+   "Bet: a paw pushed well forward, grinning wider",
    "MECH"
   ],
   [
    "A6",
-   "Fold: flicks his cards away with a paw",
+   "Fold: a lazy flick of the paw toward the middle",
    "MECH"
   ],
   [
    "B1",
-   "All in: both paws push his whole stack",
+   "All in: both paws push forward together",
    "MECH"
   ],
   [
    "B2",
-   "Show: flips his cards over with a paw",
+   "Show: a paw turns palm up",
    "MECH"
   ],
   [
    "B3",
-   "Collect: both paws gathering the pot in",
-   "MECH"
+   "Big win: both front paws thrown up, the grin enormous (`win_big`)",
+   "BEAT"
   ],
   [
    "B4",
@@ -117,7 +117,7 @@
   ],
   [
    "D4",
-   "Won a pot: the grin enormous, drawing chips in",
+   "Crushing loss: ears flat, the grin gone for once, slumped (`lose_big`)",
    "BEAT"
   ],
   [
@@ -131,21 +131,21 @@
    "BEAT"
   ]
  ],
- "howto": "One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, then Cerberus's pose sheet A (`art-tools/cerberus_parts/sources/poses_a.png`) for the style: an animal drawn under the style lock, the owner's pick after the Cat's first sheet came out as furry illustration against Washington's. From the second prompt on, attach the Cat's own character sheet, his pose sheet A once it exists, AND Cerberus's pose sheet A again, and nothing else.",
- "character": "Character sheet for 2D animation rigging: the Cheshire Cat, of Lewis Carroll's Alice's Adventures in Wonderland (1865), as John Tenniel drew him. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No man, no armour, no hair, no human hands. Take the STYLE from the SECOND attached image.\n\nThe Cheshire Cat: a LARGE, solid, round-faced tabby cat, as big as a man sitting at a table; a warm grey-brown coat with darker brown tabby stripes, a cream chin and chest; round yellow-green eyes, pointed ears, long white whiskers; and an ENORMOUS grin stretching from ear to ear, full of neat white teeth: the grin is the most important thing about him and must read at a tiny size. A long, thick striped tail. He sits up at the table like a person, on his haunches, his two front paws resting on the table's edge. Lazy, amused, mischievous, completely unbothered. STYLE FOR AN ANIMAL: draw him exactly the way Cerberus is drawn on the attached sheet from Rome: a bold, even dark outline; his fur shown ONLY by a few chunky, rounded tufts on the outline at the cheeks, chest and shoulders, with a few short soft strokes inside them, never hair by hair; soft, smooth shading in two or three tones; clean, warm colour; big simple eyes with a plain pupil and one highlight; chunky paws with a few simple claws; three plain whisker lines a side; the teeth one simple white band with a few lines. His tabby stripes are a few broad bands with clean edges, following the body. NOT a realistic or detailed illustration, NOT furry art, NO fine fur texture, NOT painterly. Take NOTHING of Cerberus himself: ONE head, a CAT, no collar, no snakes, nothing of a dog. NOT the Disney cat: NO pink, NO purple, NO bright stripes. Nothing from any film.\n\nPure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.\n\nThe angle: a gentle three-quarter view, turned about 25 degrees from front-on, facing the viewer's right. Both eyes, the whole grin and both shoulders clearly visible. NOT profile.\n\nDraw, all facing the viewer's right, at the same size:\n- Finished heads, each with the ears, whiskers, neck and the top of the chest: grinning, calm; talking, mouth open mid-word inside the grin; one eye shut, the other open; eyes narrowed to slits, the grin thinner\n- The grin on its own, floating, with nothing else: just the lips, the teeth and the dark mouth line, as it looks when the rest of the cat has vanished\n- The body: chest and shoulders sitting upright, NO head (cut off just below the chin), cut off straight below the chest; NO front legs\n- Two front legs and paws, lying on a table, pointing toward its centre, open at the shoulder end\n- The long striped tail on its own, curled up in a loose S\n- Four seated reference poses, sitting up behind the curved edge of a round green poker table, both front paws resting on its edge, apart, his tail curled up beside him on the left of the picture: grinning, calm; his tail and back half vanished (simply not drawn, plain white), only his front half left; one eye shut; the tip of his tail twitching",
+ "howto": "One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, then the Headless Horseman's approved character sheet (`art-tools/headless_horseman_parts/sources/headless_horseman_sheet.png`) for the style (the Wolf Man was drawn the same way: a gothic animal). From the second prompt on, attach the Cat's own NEW character sheet, his new pose sheet A once it exists, AND the Horseman's character sheet again, and nothing else. Never attach his old sheets (Cerberus's style).",
+ "character": "Character sheet for 2D animation rigging: the Cheshire Cat, of Lewis Carroll's Alice's Adventures in Wonderland (1865), as John Tenniel drew him. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No man, no armour, no hair, no human hands. Take the STYLE from the SECOND attached image.\n\nThe Cheshire Cat: a LARGE, solid, round-faced tabby cat, as big as a man sitting at a table; a warm grey-brown coat with darker brown tabby stripes, a cream chin and chest; round yellow-green eyes, pointed ears, long white whiskers; and an ENORMOUS grin stretching from ear to ear, full of neat white teeth: the grin is the most important thing about him and must read at a tiny size. A long, thick striped tail. He sits up at the table like a person, on his haunches, his two front paws resting on the table's edge. Lazy, amused, mischievous, completely unbothered. HIS FUR: a bold dark outline; the fur shown by a few chunky tufts on the outline at the cheeks, the ruff of his chest and the ears, with soft strokes inside them in the shadows only, never hair by hair. Warm grey-brown with a few broad, darker tabby bands following the body, a cream chin and chest, with the warm lamplit rim light along his ears, shoulders and tail. Big round yellow-green eyes with a slit pupil and one highlight; three plain whisker lines a side; the teeth one clean white band with a few lines. A big, sly, grown-up cat with a little menace in the grin, never cute, never a cuddly toy. NOT the Disney cat: NO pink, NO purple, NO bright stripes. Nothing from any film.\n\nPure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.\n\nThe angle: a gentle three-quarter view, turned about 25 degrees from front-on, facing the viewer's right. Both eyes, the whole grin and both shoulders clearly visible. NOT profile.\n\nDraw, all facing the viewer's right, at the same size:\n- Finished heads, each with the ears, whiskers, neck and the top of the chest: grinning, calm; talking, mouth open mid-word inside the grin; one eye shut, the other open; eyes narrowed to slits, the grin thinner\n- The grin on its own, floating, with nothing else: just the lips, the teeth and the dark mouth line, as it looks when the rest of the cat has vanished\n- The body: chest and shoulders sitting upright, NO head (cut off just below the chin), cut off straight below the chest; NO front legs\n- Two front legs and paws, lying on a table, pointing toward its centre, open at the shoulder end\n- The long striped tail on its own, curled up in a loose S\n- Four seated reference poses, sitting up behind the curved edge of a round green poker table, both front paws resting on its edge, apart, his tail curled up beside him on the left of the picture: grinning, calm; his tail and back half vanished (simply not drawn, plain white), only his front half left; one eye shut; the tip of his tail twitching",
  "sheets": {
   "A": [
    "At rest: sitting up, both front paws resting on the table's edge, a paw's width apart, NOT touching; his tail curled up beside him on the left of the picture, its tip at shoulder height; the enormous grin; eyes calm",
-   "Peeking at his cards: his right front paw resting over two cards on the felt, one claw lifting the near corner, eyes down",
+   "Peeking at his cards: his right front paw cupped low over the felt in front of him, one claw lifted a little, as if shielding something small; eyes down",
    "Checking: patting the felt once with his right front paw",
-   "Calling: his right front paw sliding a short stack of chips forward",
-   "Betting: his right front paw pushing a stack of chips well forward, the grin wider",
-   "Folding: his right front paw flicking two cards away face down"
+   "Calling: his right front paw flat, sliding forward along the felt",
+   "Betting: leaning in a little, his right front paw pushed well forward along the felt, the grin wider",
+   "Folding: a lazy flick of his right front paw toward the middle of the table"
   ],
   "B": [
-   "All in: both front paws pushing his whole stack of chips forward, eyes bright",
-   "Showing: his right front paw flipping two cards face up; the card faces are BLANK white, no ranks, no suits",
-   "Collecting the pot: both front paws out on the felt, gathering a pile of chips in",
+   "All in: both front paws pushing forward along the felt together, eyes bright",
+   "Showing: his right front paw turning palm up from the felt, as if turning something over",
+   "A big win: both front paws thrown up in the air, the grin bigger than ever, eyes squeezed shut with glee; tail as at rest",
    "Fading away, beginning with the end of his tail: his tail is GONE, and so is his whole body from the table edge up to the middle of his chest, a clean edge of plain white across where his belly was, so his head, shoulders, upper chest and front legs float above the table with white below them; his front paws still resting on the table's edge, grinning (the gone parts simply not drawn, plain white, no outline)",
    "His head drifting a little way up off his shoulders, a clear gap of white between head and neck, grinning; body, paws and tail as at rest",
    "Blinking one eye: the eye nearer the viewer shut, the other open, the grin unchanged; paws and tail as at rest"
@@ -162,12 +162,12 @@
    "Talking: his right front paw raised, one claw lifted as if making a point, mouth open mid-word inside the grin",
    "Facing a big bet: eyes narrowed to slits, the grin thinner; paws as at rest",
    "Lost a pot: ears back, a lopsided grin, a little shrug of the shoulders; paws as at rest",
-   "Won a pot: the grin enormous, his right front paw drawing a few chips toward him",
+   "A crushing loss: ears flat back, the grin GONE for once, a small sour frown, slumped low over the table edge, whiskers drooping; paws as at rest",
    "Down to two players: leaning in over both front paws, eyes wide and bright",
    "Knocked out: half vanished from the tail end (his back half simply not drawn), standing up on his hind legs behind the table, giving a cheery little wave of his right front paw"
   ]
  },
- "face": "Character sheet for 2D animation rigging: the Cheshire Cat's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head: the eyes and the grin too are turned three-quarter, toward the viewer's right, NOT front-on and NOT symmetrical. Draw that head once, top left, with the ears, whiskers and the top of the chest, as the reference, the grin closed (teeth together). Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels. STYLE FOR AN ANIMAL: draw him exactly the way Cerberus is drawn on the attached sheet from Rome: a bold, even dark outline; his fur shown ONLY by a few chunky, rounded tufts on the outline at the cheeks, chest and shoulders, with a few short soft strokes inside them, never hair by hair; soft, smooth shading in two or three tones; clean, warm colour; big simple eyes with a plain pupil and one highlight; chunky paws with a few simple claws; three plain whisker lines a side; the teeth one simple white band with a few lines. His tabby stripes are a few broad bands with clean edges, following the body. NOT a realistic or detailed illustration, NOT furry art, NO fine fur texture, NOT painterly. Take NOTHING of Cerberus himself: ONE head, a CAT, no collar, no snakes, nothing of a dog.\n\n- His eyes, each piece both eyes with the striped fur around them: lids half closed; closed; looking toward the viewer; looking down at the table; looking to the side; narrowed to slits; very wide; the eye nearer the viewer shut and the other open; the far eye shut and the near one open\n- Muzzle patches, each the whole grin with the fur and whiskers around it, cut straight across just under the nose and again below the chin: the grin closed, teeth together (at rest); open \"ah\"; wide \"ee\"; round \"oh\"; pursed \"oo\"; lips pressed \"m\"; \"f\"; \"l\"; the grin ENORMOUS; a thin, lopsided grin\n- His head turned toward the viewer, nearly front-on, grinning",
+ "face": "Character sheet for 2D animation rigging: the Cheshire Cat's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head: the eyes and the grin too are turned three-quarter, toward the viewer's right, NOT front-on and NOT symmetrical. Draw that head once, top left, with the ears, whiskers and the top of the chest, as the reference, the grin closed (teeth together). Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels. HIS FUR: a bold dark outline; the fur shown by a few chunky tufts on the outline at the cheeks, the ruff of his chest and the ears, with soft strokes inside them in the shadows only, never hair by hair. Warm grey-brown with a few broad, darker tabby bands following the body, a cream chin and chest, with the warm lamplit rim light along his ears, shoulders and tail. Big round yellow-green eyes with a slit pupil and one highlight; three plain whisker lines a side; the teeth one clean white band with a few lines. A big, sly, grown-up cat with a little menace in the grin, never cute, never a cuddly toy.\n\n- His eyes, each piece both eyes with the striped fur around them: lids half closed; closed; looking toward the viewer; looking down at the table; looking to the side; narrowed to slits; very wide; the eye nearer the viewer shut and the other open; the far eye shut and the near one open\n- Muzzle patches, each the whole grin with the fur and whiskers around it, cut straight across just under the nose and again below the chin: the grin closed, teeth together (at rest); open \"ah\"; wide \"ee\"; round \"oh\"; pursed \"oo\"; lips pressed \"m\"; \"f\"; \"l\"; the grin ENORMOUS; a thin, lopsided grin\n- His head turned toward the viewer, nearly front-on, grinning",
  "replace": [
   [
    "the arm that the pose does not mention stays EXACTLY as in pose 1, same position, same hand.",
@@ -198,26 +198,17 @@
    "a face with only a few lines (no fine wrinkles, no cross-hatching)"
   ],
   [
-   "smooth flat colour with ONE soft shadow tone",
-   "smooth colour with soft, simple shading in two or three tones"
-  ],
-  [
    "cloth and metal with a few big folds or highlights, no texture, no stitching, no grime, no scratches",
    "no texture, no grime, no scratches"
   ],
   [
-   "Keep the simple, chunky, flat cartoon style",
-   "Keep the simple, chunky cartoon style"
-  ],
-  [
-   "flat colour, no fine detail or texture.",
-   "soft simple shading, fur only as a few chunky tufts, no fine detail or texture."
-  ],
-  [
-   "colours, line weight, flat cartoon style)",
-   "colours, line weight, cartoon style)"
+   "the hands are empty",
+   "the paws are empty"
   ]
  ],
- "style_ref": "Cerberus, the three-headed hound from the Rome table",
- "style_sheet": "Cerberus's sheet"
+ "style_ref": "the Headless Horseman, from the Transylvania table",
+ "style_sheet": "the Headless Horseman's sheet",
+ "style": "STYLE, the most important rule: match the SECOND attached image (the Headless Horseman, from the Transylvania table) exactly: a GOTHIC GRAPHIC-NOVEL style for a grown-up card game, halfway between a bright cartoon and a dark painted illustration. Take NOTHING of his character: no armour, no pumpkin, no cloak, no man: ONE head, a CAT. Keep what the game needs: a bold dark outline round every shape, big clear readable shapes, a silhouette that reads at a tiny size. Adult, realistic proportions (never a big head, never chibi, never cute); shading in three or four tones with deep, dramatic shadows and a warm rim light from candlelight; rich but MUTED colour, nothing candy-bright; cloth with real weight and heavy folds; a little texture in the shadows only. Serious, weary and a little dangerous. NOT a children's cartoon, NOT cute, NOT toy-like, NOT round and bouncy, NOT photoreal, NOT muddy or murky.",
+ "style_short": "Keep the gothic graphic-novel style of the attached sheets and of the Headless Horseman's sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm lamplit rim light, rich muted colour; serious and sombre, NOT a children's cartoon, NOT cute.",
+ "empty_hands": true
 }
