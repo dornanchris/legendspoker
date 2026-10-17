@@ -1,0 +1,70 @@
+{
+ "note": "The master is the rest pose's own head. Eye lamps 2-8: 2 dimmed, 3 dark, 4 shutters half down (narrow, and the blink's half), 5 shutters closed (the blink), 6 toward you, 7 down, 8 bright with a glow. Speech is its own grille lighting up (glow.py writes 31-33 from the master: faint, brighter, brightest); the face sheet's grille strips (9, 10, 12, 13) fit the head at another size and are unused, as are head 1 and the front head 11: its head turns in whole-figure frames.",
+ "master": "robot_parts/robot_face/robot_master.png",
+ "pieces": "robot_parts/robot_face/robot_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 4,
+   "closed": 5,
+   "viewer": 6,
+   "down": 7,
+   "narrow": 4,
+   "wide": 8,
+   "dim": 2,
+   "dark": 3
+  },
+  "mouth": {
+   "oo": 31,
+   "m": 31,
+   "f": 31,
+   "ee": 32,
+   "oh": 32,
+   "l": 32,
+   "ah": 33
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     250,
+     86
+    ],
+    [
+     347,
+     86
+    ],
+    [
+     347,
+     150
+    ],
+    [
+     250,
+     150
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     258,
+     150
+    ],
+    [
+     322,
+     150
+    ],
+    [
+     322,
+     185
+    ],
+    [
+     258,
+     185
+    ]
+   ],
+   "outline": 1,
+   "fade": 2
+  }
+ }
+}

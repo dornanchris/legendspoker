@@ -1,0 +1,536 @@
+{
+ "kit": "robot_parts",
+ "id": "robot",
+ "name": "The Robot",
+ "note": "Polygons in the rest pose (A1) pixels. The Station's style (the Astronaut's sheets the style images). Seat 3, drawn facing right and mirrored. The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. No prop: its chest lamp is part of its body, and every tell is a whole-figure frame. Motion marks (a whirr, a twitch, a tick) are kept by `marks` boxes.",
+ "what": {
+  "A1": "Rest: forearms on the table's edge, hands apart, lamps steady",
+  "A2": "Peeking at its cards (right hand)",
+  "A3": "Check: one metal finger taps the felt",
+  "A4": "Call: right hand pushes forward along the felt",
+  "A5": "Bet: leans forward, right hand pushed well forward",
+  "A6": "Fold: a neat push of the hand",
+  "B1": "All in: both hands push forward together",
+  "B2": "Show: right hand turns palm up",
+  "B3": "Big win: both arms straight up, antennae up, lamps bright (`win_big`)",
+  "B4": "Its chest lamp flickers",
+  "B5": "Its eye-lamps dim and brighten (decoy for B4)",
+  "B6": "Whirs, briefly",
+  "C1": "Recalibrates with a click (decoy for B6)",
+  "C2": "Rotates its head to the pot and back",
+  "C3": "Its antennae twitch (decoy for C2)",
+  "C4": "Vents a thin puff of steam",
+  "C5": "Turns to look at you",
+  "C6": "Polishes a scratch on its chest (a fidget)",
+  "D1": "Talking: the grille lit, a hand raised",
+  "D2": "Facing a big bet: stiffly upright",
+  "D3": "Lost a pot: head bowed, lamp eyes dimmed",
+  "D4": "Crushing loss: slumped, lamps dark, smoke (`lose_big`)",
+  "D5": "Heads up: leaning in on both forearms",
+  "D6": "Laughing: the grille glowing in short bars"
+ },
+ "prop": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   0,
+   1
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "lamp": "B4",
+  "eyes_dim": "B5",
+  "whir": "B6",
+  "recalibrate": "C1",
+  "head_turn": "C2",
+  "antennae": "C3",
+  "steam": "C4",
+  "turn": "C5",
+  "polish": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "laugh": "D6"
+ },
+ "common": {
+  "table_y": 368,
+  "scale": 1.0,
+  "origin_x": 300,
+  "register_box": [
+   150,
+   220,
+   350,
+   340
+  ],
+  "register_span": 40,
+  "collar_y": 190,
+  "neck": [
+   260,
+   192
+  ],
+  "frame_margin": 60,
+  "stock_box": [
+   180,
+   165,
+   320,
+   215
+  ]
+ },
+ "cut_below": 205,
+ "keep_poly": [
+  [
+   165,
+   0
+  ],
+  [
+   345,
+   0
+  ],
+  [
+   345,
+   150
+  ],
+  [
+   330,
+   185
+  ],
+  [
+   290,
+   196
+  ],
+  [
+   230,
+   192
+  ],
+  [
+   190,
+   172
+  ],
+  [
+   168,
+   130
+  ]
+ ],
+ "shoulder_y": 195,
+ "arms": {
+  "near": {
+   "elbow": [
+    45,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     290
+    ],
+    [
+     120,
+     290
+    ],
+    [
+     120,
+     345
+    ],
+    [
+     0,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its right forearm and metal hand",
+     "poly": [
+      [
+       0,
+       340
+      ],
+      [
+       60,
+       325
+      ],
+      [
+       130,
+       345
+      ],
+      [
+       200,
+       375
+      ],
+      [
+       245,
+       400
+      ],
+      [
+       258,
+       472
+      ],
+      [
+       150,
+       472
+      ],
+      [
+       60,
+       440
+      ],
+      [
+       0,
+       430
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    455,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     280
+    ],
+    [
+     493,
+     280
+    ],
+    [
+     493,
+     330
+    ],
+    [
+     400,
+     330
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its left forearm and metal hand",
+     "poly": [
+      [
+       330,
+       420
+      ],
+      [
+       350,
+       385
+      ],
+      [
+       380,
+       365
+      ],
+      [
+       420,
+       345
+      ],
+      [
+       460,
+       330
+      ],
+      [
+       493,
+       340
+      ],
+      [
+       493,
+       410
+      ],
+      [
+       460,
+       430
+      ],
+      [
+       430,
+       472
+      ],
+      [
+       335,
+       472
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "felt_dark_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6,
+  "wood_rows_only": true
+ },
+ "frame_extra": {
+  "whir": {
+   "marks": [
+    [
+     [
+      145,
+      40
+     ],
+     [
+      210,
+      40
+     ],
+     [
+      210,
+      165
+     ],
+     [
+      145,
+      165
+     ]
+    ],
+    [
+     [
+      350,
+      75
+     ],
+     [
+      415,
+      75
+     ],
+     [
+      415,
+      205
+     ],
+     [
+      350,
+      205
+     ]
+    ]
+   ]
+  },
+  "recalibrate": {
+   "marks": [
+    [
+     [
+      365,
+      70
+     ],
+     [
+      410,
+      70
+     ],
+     [
+      410,
+      145
+     ],
+     [
+      365,
+      145
+     ]
+    ]
+   ]
+  },
+  "antennae": {
+   "marks": [
+    [
+     [
+      170,
+      5
+     ],
+     [
+      210,
+      5
+     ],
+     [
+      210,
+      60
+     ],
+     [
+      170,
+      60
+     ]
+    ],
+    [
+     [
+      345,
+      10
+     ],
+     [
+      390,
+      10
+     ],
+     [
+      390,
+      60
+     ],
+     [
+      345,
+      60
+     ]
+    ]
+   ]
+  },
+  "laugh": {
+   "marks": [
+    [
+     [
+      130,
+      30
+     ],
+     [
+      175,
+      30
+     ],
+     [
+      175,
+      90
+     ],
+     [
+      130,
+      90
+     ]
+    ],
+    [
+     [
+      375,
+      115
+     ],
+     [
+      415,
+      115
+     ],
+     [
+      415,
+      175
+     ],
+     [
+      375,
+      175
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "drop_red": [
+    [
+     [
+      -30,
+      240
+     ],
+     [
+      100,
+      240
+     ],
+     [
+      100,
+      375
+     ],
+     [
+      -30,
+      375
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "drop_red": [
+    [
+     [
+      -30,
+      240
+     ],
+     [
+      100,
+      240
+     ],
+     [
+      100,
+      375
+     ],
+     [
+      -30,
+      375
+     ]
+    ]
+   ]
+  },
+  "win_big": {
+   "except": [
+    [
+     [
+      20,
+      350
+     ],
+     [
+      98,
+      350
+     ],
+     [
+      98,
+      415
+     ],
+     [
+      20,
+      415
+     ]
+    ]
+   ]
+  }
+ },
+ "no_prop": [
+  "A2",
+  "A3",
+  "A4",
+  "A5",
+  "A6",
+  "B1",
+  "B2",
+  "B3",
+  "B4",
+  "B5",
+  "B6",
+  "C1",
+  "C2",
+  "C3",
+  "C4",
+  "C5",
+  "C6",
+  "D1",
+  "D2",
+  "D3",
+  "D4",
+  "D5",
+  "D6"
+ ]
+}

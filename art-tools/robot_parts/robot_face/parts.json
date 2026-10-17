@@ -1,0 +1,192 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "robot_face_01.png",
+      "label": "",
+      "x": 16,
+      "y": 11,
+      "w": 319,
+      "h": 402,
+      "pivot": [
+        159.5,
+        201.0
+      ],
+      "area": 74455
+    },
+    {
+      "index": 2,
+      "file": "robot_face_02.png",
+      "label": "",
+      "x": 410,
+      "y": 11,
+      "w": 271,
+      "h": 250,
+      "pivot": [
+        135.5,
+        125.0
+      ],
+      "area": 41696
+    },
+    {
+      "index": 3,
+      "file": "robot_face_03.png",
+      "label": "",
+      "x": 696,
+      "y": 11,
+      "w": 269,
+      "h": 250,
+      "pivot": [
+        134.5,
+        125.0
+      ],
+      "area": 41313
+    },
+    {
+      "index": 4,
+      "file": "robot_face_04.png",
+      "label": "",
+      "x": 976,
+      "y": 10,
+      "w": 273,
+      "h": 251,
+      "pivot": [
+        136.5,
+        125.5
+      ],
+      "area": 41595
+    },
+    {
+      "index": 5,
+      "file": "robot_face_05.png",
+      "label": "",
+      "x": 1252,
+      "y": 11,
+      "w": 268,
+      "h": 250,
+      "pivot": [
+        134.0,
+        125.0
+      ],
+      "area": 41275
+    },
+    {
+      "index": 6,
+      "file": "robot_face_06.png",
+      "label": "",
+      "x": 433,
+      "y": 281,
+      "w": 272,
+      "h": 249,
+      "pivot": [
+        136.0,
+        124.5
+      ],
+      "area": 41263
+    },
+    {
+      "index": 7,
+      "file": "robot_face_07.png",
+      "label": "",
+      "x": 718,
+      "y": 281,
+      "w": 275,
+      "h": 248,
+      "pivot": [
+        137.5,
+        124.0
+      ],
+      "area": 41690
+    },
+    {
+      "index": 8,
+      "file": "robot_face_08.png",
+      "label": "",
+      "x": 1009,
+      "y": 282,
+      "w": 292,
+      "h": 247,
+      "pivot": [
+        146.0,
+        123.5
+      ],
+      "area": 43176
+    },
+    {
+      "index": 9,
+      "file": "robot_face_09.png",
+      "label": "",
+      "x": 109,
+      "y": 553,
+      "w": 309,
+      "h": 115,
+      "pivot": [
+        154.5,
+        57.5
+      ],
+      "area": 29013
+    },
+    {
+      "index": 10,
+      "file": "robot_face_10.png",
+      "label": "",
+      "x": 447,
+      "y": 554,
+      "w": 309,
+      "h": 114,
+      "pivot": [
+        154.5,
+        57.0
+      ],
+      "area": 28842
+    },
+    {
+      "index": 11,
+      "file": "robot_face_11.png",
+      "label": "",
+      "x": 593,
+      "y": 667,
+      "w": 288,
+      "h": 343,
+      "pivot": [
+        144.0,
+        171.5
+      ],
+      "area": 56506
+    },
+    {
+      "index": 12,
+      "file": "robot_face_12.png",
+      "label": "",
+      "x": 776,
+      "y": 553,
+      "w": 312,
+      "h": 112,
+      "pivot": [
+        156.0,
+        56.0
+      ],
+      "area": 28404
+    },
+    {
+      "index": 13,
+      "file": "robot_face_13.png",
+      "label": "",
+      "x": 1121,
+      "y": 551,
+      "w": 310,
+      "h": 115,
+      "pivot": [
+        155.0,
+        57.5
+      ],
+      "area": 29527
+    }
+  ]
+}

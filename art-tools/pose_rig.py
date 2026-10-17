@@ -63,7 +63,9 @@ character whose skin is the rail's orange; "rail_green": only colours with
 more green than that share of their red, for a red cloak). "wood_rows_only":
 the wood colour counts only at and below the rail, pixel by pixel (not whole
 shapes reaching it), for a red cloak or crest that hangs down to the rail.
-A frame with "halo": [r, g, b] turns a glow drawn round him on the paper
+A frame's "drop_red" (polygons) drops the red of a chair drawn behind him
+there. A frame's "marks" (polygons) keep the motion marks drawn beside him, however
+thin (the Robot's whirr and twitch). A frame with "halo": [r, g, b] turns a glow drawn round him on the paper
 (the Horseman's candle) into that colour, see-through as it fades to white.
 "felt_holes": felt below the rail that hole-filling enclosed (between two
 hands) is dropped again. "felt_blue": the felt is only its bluer shades (a character in the felt's
@@ -669,6 +671,10 @@ def main(spec_path):
         props = np.zeros(fshape, bool)
         for pp in fr.get('props', []):
             props |= pm(pp)
+        marks = np.zeros(fshape, bool)                     # motion marks drawn beside him (a whirr, a twitch): kept, however thin
+        for mpoly in fr.get('marks', []):
+            marks |= pm(mpoly)
+        props |= marks
         fm = np.where(props, (F[..., 3] > 128) & ~table_colour(F, ty + FM, with_wood=False),
                       (F[..., 3] > 128) & ~table_colour(F, ty + FM))
         fm &= pm(fr['poly']) if 'poly' in fr else (np.arange(fshape[0])[:, None] < ty + FM + fr.get('below', 60))
@@ -733,12 +739,25 @@ def main(spec_path):
             sz = ndimage.sum(fm, lab, range(1, n + 1))
             fm = np.isin(lab, 1 + np.nonzero(sz >= 150)[0])
         fm = ndimage.binary_fill_holes(fm) & (F[..., 3] > 128) & ~trapped
+        fm |= marks & (F[..., 3] > 128) & ~table_colour(F, ty + FM, with_wood=False)
         if fr.get('biggest'):                              # a neighbouring cell's drawing reaching into this one
             fm = biggest(fm) | (fm & props)
         if spec.get('felt_holes'):                         # felt enclosed between hands and rail: not him
             low = np.zeros(fshape, bool)
             low[ty + FM - 10:] = True
             fm &= ~(low & table_colour(F, ty + FM, with_wood=False))
+        for box in fr.get('drop_red', []):                 # a red chair drawn behind him (the Robot's sheets)
+            c = F[..., :3].astype(int)
+            red = fm & (c[..., 0] > 80) & (c[..., 1] * 2 < c[..., 0]) & (c[..., 2] * 2 < c[..., 0]) & pm(box)
+            lab_, n_ = ndimage.label(red)
+            if n_:                                         # its big red shapes, and the dark folds and outline round them
+                sz_ = ndimage.sum(red, lab_, range(1, n_ + 1))
+                red = np.isin(lab_, 1 + np.nonzero(sz_ >= 60)[0])
+                near = ndimage.binary_dilation(red, iterations=16)
+                dark = c.mean(-1) < 70
+                reddish = (c[..., 0] > 2 * c[..., 1]) & (c[..., 0] > 2 * c[..., 2])
+                fm &= ~ndimage.binary_dilation(near & reddish & pm(box), iterations=2) | (~dark & ~reddish)
+                fm = biggest(fm) | (fm & props)
         for ex in fr.get('except', []):                    # again: filling holes refills one he encloses
             fm &= ~pm(ex)
         own = fr.get('head') == 'own'
