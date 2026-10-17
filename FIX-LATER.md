@@ -16,11 +16,11 @@ is done, and say so in the commit.
     spectacles, so he has no narrowed or wide eyes and no brows: redraw the
     face sheet only if he looks stiff.
   - ~~**The Wolf Man**~~ DONE: redrawn gothic and built.
-  - **The Cheshire Cat** (built, Baker Street seat 3, in Cerberus's style).
-    **Gothic prompts written** (`cheshire_cat_parts/POSES.md`, the Wolf Man's way,
-    big win and crushing loss inside his 24, paws empty); his old sheets are in
-    `sources/old_style/`. Baker Street's other three are in the flat cartoon, so
-    a gothic Cat will stand out there (the owner's call to make).
+  - ~~**The Cheshire Cat**~~ DONE: redrawn gothic and built (old sheets in
+    `sources/old_style/`); he sits well enough beside Baker Street's flat
+    three. Left: where a leg crosses the drawn rail, a few frames keep small
+    bites in the far leg or a thin sliver of rail (his rim light and the rail
+    are the same orange; `cheshire_cat_parts/README.md`).
 - **Reactions for the rest of the cast** (the owner: "probably all"). The
   big win (hands raised) and the crushing loss: reactions sheet E for every
   character drawn before JFK and Loki (they have them inside sheets B and D).

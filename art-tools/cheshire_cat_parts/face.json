@@ -1,73 +1,75 @@
 {
- "note": "The master is the rest pose's own head. Piece 1 is the face sheet's reference head, 19 the head turned to the viewer (unused). The sheet drew eight eye pieces (no far-eye wink) and nine muzzles (no separate f: m serves).",
+ "note": "The master is the rest pose's own head. Eyes 2-10 (9 and 10 both shut the near eye: 10 is unused); mouths 11-20. Head 1 and the front-on head 21 are unused. The skin match is off (match: false): it samples skin as red-dominant, and on his fur it took the pale rim light. Fits 07 and 09 set by hand (their width and bottom edge matched to the others).",
  "master": "cheshire_cat_parts/cheshire_cat_face/cheshire_cat_master.png",
  "pieces": "cheshire_cat_parts/cheshire_cat_face/cheshire_cat_face_%02d.png",
  "layers": {
   "eyes": {
    "half": 2,
    "closed": 3,
-   "down": 4,
-   "side": 5,
-   "narrow": 6,
-   "wide": 7,
-   "viewer": 8,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7,
+   "wide": 8,
    "wink": 9
   },
   "mouth": {
-   "rest": 10,
-   "ah": 11,
-   "ee": 12,
-   "oh": 13,
-   "oo": 14,
-   "m": 15,
-   "f": 15,
-   "l": 16,
-   "enormous": 17,
-   "lopsided": 18
+   "rest": 11,
+   "ah": 12,
+   "ee": 13,
+   "oh": 14,
+   "oo": 15,
+   "m": 16,
+   "f": 17,
+   "l": 18,
+   "enormous": 19,
+   "lopsided": 20
   }
  },
  "regions": {
   "eyes": {
    "keep": [
     [
-     270,
-     82
+     290,
+     95
     ],
     [
      440,
-     82
+     95
     ],
     [
      440,
-     156
+     160
     ],
     [
-     270,
-     156
+     290,
+     160
     ]
    ],
    "outline": 2,
-   "fade": 1
+   "fade": 1,
+   "match": false
   },
   "mouth": {
    "keep": [
     [
-     250,
-     146
+     270,
+     150
     ],
     [
-     450,
-     146
+     445,
+     150
     ],
     [
-     450,
-     214
+     445,
+     240
     ],
     [
-     250,
-     214
+     270,
+     240
     ]
-   ]
+   ],
+   "match": false
   }
  }
 }

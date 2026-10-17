@@ -35,8 +35,8 @@ CLAUDE.md first (the rules and the state); this is the HOW and the QUEUE.
   is the test: his sheet is APPROVED (the owner's tweaks: plate armour, skull
   bosses, a jagged-toothed carving) and is the style image from here on.
   **Settled (the owner: "Gothic Style yes"): from Transylvania on** (its cast
-  and the Station's). Van Helsing, the Wolf Man and the Cheshire Cat are to be
-  redrawn in it later (FIX-LATER.md); the hidden guests keep the presidents'
+  and the Station's). Van Helsing, the Wolf Man and the Cheshire Cat have since
+  been redrawn in it; the hidden guests keep the presidents'
   cartoon (JFK sits at the White House; Loki is met mostly at early tables).
 - **Make the next characters as they are needed, then go back and fix**
   (the owner). Fixes owed are kept in `FIX-LATER.md`, not in anyone's memory.
@@ -127,7 +127,7 @@ add it to `ROOMS` in `web/puppet/cast.ts`.
 |---|---|---|---|---|
 | White House, Athens, Pirate Cove, Camelot | built | all | | |
 | Rome: **live on the real table** | built (redrawn plate) | all five | | |
-| Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat in Cerberus's style) | | |
+| Baker Street: **live on the real table** | built | all five (Holmes in both looks; the Cat redrawn gothic) | | |
 | Transylvania: **live on the real table** (gothic from here) | built | all six, all gothic (Van Helsing redrawn; Jekyll, Hyde, the Wolf Man, the Horseman, Dracula) | | |
 | The Station: **live on the real table** | built (`?room=station`: the ceiling lens, the amber room after the turn) | all five (the Astronaut, the style baseline; the Robot; the AI, the Robot recoloured; the Martian; the Grey) | | |
 | Hall of Doors, Last Crossing: **live on the real table** | built (the Hall drawn twice: `champions_1`, `champions_2`; the dock house) | cast reused; the finale: the Stranger (the player, in their colour), Death as a player, Pravuil dealing | | |

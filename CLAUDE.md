@@ -509,10 +509,10 @@ at a time, and vanishing tail first, grin last (reliability ~0.8, the reading
 table's legible guest). Loose and aggressive (3000 cash hands: VPIP 50, AF
 1.4), the table's donor at -180 to -240 bb/100 (Alice was -91). His
 dialogue replaced hers line for line; draft like the rest. **He is built**
-(`#/puppet/cheshire_cat`, 23 clips), drawn in Cerberus's animal style
-(Cerberus's pose sheet A as the style image, the owner's call, after a first
-sheet came out as furry illustration); vanished parts are drawn as plain
-white, and the grin left alone is placed where his mouth is at rest:
+(`#/puppet/cheshire_cat`, 24 clips), redrawn gothic the Wolf Man's way (his
+Cerberus-style sheets are in `sources/old_style/`), with the big win and the
+crushing loss; vanished parts are drawn as plain white, the grin left alone is
+placed where his mouth is at rest, and he talks through the grin:
 **Baker Street is complete on the real table screen.**
 **Transylvania has begun: Van Helsing is built** (`#/puppet/van_helsing`, 25
 clips, seat 1), redrawn gothic like the rest of his table (his flat-cartoon
