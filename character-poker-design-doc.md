@@ -546,10 +546,12 @@ beta problem; it is a "how does this ship" problem. Phase 10 at the earliest.
 
 ## [DECISION, owner] THE FINALE'S FORMAT — the Recording Angel deals, you are seen
 
-Death plays the finale, so he does not deal it. **The Recording Angel** does:
+Death plays the finale, so he does not deal it. **The Recording Angel,
+Pravuil** (2 Enoch 22-23: the archangel who "wrote all the deeds of the
+Lord"; public domain, no screen baggage), does:
 the one whose work is to witness and write down, come to the dock house
-because this hand has to be witnessed ("Someone has to witness it," Death
-says, and nothing more). Nobody doubts the honesty of the deal, and it hints
+because this hand has to be witnessed ("Pravuil keeps the books. Someone has
+to witness this," Death says, and nothing more). Nobody doubts the honesty of the deal, and it hints
 at the sequel (other halls have an interest in a mortal among legends)
 without spending any of it: never named beyond its office, never explains,
 almost silent. A working angel, not a glorious one: a plain white robe,

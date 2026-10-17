@@ -175,7 +175,7 @@ art-tools/
                   ik_split.py cuts his IK arm from a pose (the IK prototype)
   death_parts/    Death's kit (front-on dealer: deal, shuffle, deck, his card
                   back); death_layout.json assembles him
-  angel_parts/    the Recording Angel, who deals the finale while Death plays
+  angel_parts/    Pravuil, the Recording Angel, who deals the finale while Death plays
                   (the owner's call): POSES.md, prompts only (two ferryman
                   draws rejected); death_avatar_parts/ is Death as a player
                   (sheets drawn)

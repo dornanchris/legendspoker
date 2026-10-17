@@ -1,6 +1,13 @@
-# The Recording Angel: every pose, and the prompts
+# Pravuil, the Recording Angel: every pose, and the prompts
 
-The dealer at the Last Crossing (the owner's call). Death plays the finale, so
+The dealer at the Last Crossing (the owner's call). **Pravuil** (the owner's
+pick): in the Second Book of Enoch (2 Enoch 22-23, the Slavonic Enoch, a
+pseudepigraphal text of about the first century; R. H. Charles and W. R.
+Morfill's 1896 translation is public domain) the archangel "whose knowledge
+was quicker in wisdom than the other archangels, who wrote all the deeds of
+the Lord", who brings out the heavenly books and dictates them to Enoch.
+No film or television has used the name. The prompts still say "the Recording
+Angel": a name means nothing to the image model. Death plays the finale, so
 he does not deal it. The Recording Angel does: the one whose work is to
 witness and write down, come down to the dock house because this hand has to
 be witnessed. Nobody would doubt the honesty of the deal, and it hints at the
@@ -21,7 +28,7 @@ and a thin plain gold halo. NOT radiant or glowing (the finale is lit by one
 lamp), no sword, no trumpet, no armour, not a cherub, not a statue, nothing
 creepy. Nothing about it says man or woman.
 
-Drawn: `sources/angel_sheet.png` (the owner: "I do like the angel"), a
+Drawn: `sources/angel_sheet.png`, `sources/poses_a.png` (the owner: "I do like the angel"), a
 young-looking man with curly hair; the prompts below follow the drawing.
 
 Earlier draws, kept as a record (`sources/rejected/`): a ferryman in an ochre

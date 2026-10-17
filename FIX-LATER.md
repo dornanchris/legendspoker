@@ -56,7 +56,7 @@ is done, and say so in the commit.
 
 ## The finale's new format (the owner's call; the design doc has it)
 
-- **The Recording Angel deals the Last Crossing**: prompts in
+- **The Recording Angel, Pravuil, deals the Last Crossing**: prompts in
   `art-tools/angel_parts/POSES.md` (front-on dealer kit, Death's style; two
   ferryman draws rejected, in `sources/rejected/`). Then build three puppets:
   the Angel, Death as a player (`death_avatar_parts/`, sheets drawn) and the
