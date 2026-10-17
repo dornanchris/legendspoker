@@ -973,7 +973,7 @@ Folklore · Modern folklore · the abduction-story visitor
 
 The Grey is the visitor of modern folklore: small, grey-skinned and large-headed, with great black almond eyes and almost no mouth. It took shape in the second half of the twentieth century, out of accounts from people on lonely roads at night who described bright lights, lost hours, and small grey figures who examined them and let them go. Nobody owns it. Like the older folk tales, it was assembled by thousands of retellings.
 
-At this table it is the Astronaut's rescuer. It found her drifting and brought her aboard, and it has watched her ever since with an attention nobody can read: kindness, or study, or both. It touches wood as if it had never seen any. It stares at the backs of the cards. It has never once explained itself, and it does not seem to think that it should.
+At this table it is the Astronaut's rescuer. It found him drifting and brought him aboard, and it has watched him ever since with an attention nobody can read: kindness, or study, or both. It touches wood as if it had never seen any. It stares at the backs of the cards. It has never once explained itself, and it does not seem to think that it should.
 
 **At the table.** Unhurried, and hard to shake. It plays a middling number of hands, bluffs now and then, and never tilts; it does not seem to know what losing is meant to feel like. It learns a table quickly. With its best hands it goes quiet rather than loud, and lets someone else do the betting. Its face was not built for your benefit.
 
@@ -1048,13 +1048,13 @@ At this table it is the station's crew. It fetches, carries and mends, and keeps
 
 Archetype · The lost explorer
 
-> I am not due to meet her for years yet. It is the best news at this table, and she does not know it.
+> I am not due to meet him for years yet. It is the best news at this table, and he does not know it.
 
-The lost explorer is as old as exploring: the sailor blown off every chart, the castaway on the island, the traveller who went further than anyone and could not find the way back. The astronaut is the newest version of that story. She has no single source and belongs to nobody. She is everyone who has looked down at the whole Earth from a small window and felt, all at once, how far away it was.
+The lost explorer is as old as exploring: the sailor blown off every chart, the castaway on the island, the traveller who went further than anyone and could not find the way back. The astronaut is the newest version of that story. He has no single source and belongs to nobody. He is everyone who has looked down at the whole Earth from a small window and felt, all at once, how far away it was.
 
-Her ship failed a long way out. Something found her drifting and brought her here: the Grey, though it has never said so, and she has never quite managed to thank it. She has been aboard longer than she likes to count. She keeps a photograph up her sleeve, her helmet beside her chips, and her hope where everyone can see it. She is exactly what she looks like.
+His ship failed a long way out. Something found him drifting and brought him here: the Grey, though it has never said so, and he has never quite managed to thank it. He has been aboard longer than he likes to count. He keeps a photograph up his sleeve, his helmet beside his chips, and his hope where everyone can see it. He is exactly what he looks like.
 
-**At the table.** She plays like someone waiting to be rescued: she will nearly always pay a little to see one more card, in case it is the one. She rarely bluffs, and she is not good at pretending. A bad beat stays with her for a few hands. She is the easiest person at this table to read, and she knows it, and she plays anyway.
+**At the table.** He plays like someone waiting to be rescued: he will nearly always pay a little to see one more card, in case it is the one. He rarely bluffs, and he is not good at pretending. A bad beat stays with him for a few hands. He is the easiest person at this table to read, and he knows it, and he plays anyway.
 
 | aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
 |---|---|---|---|---|---|---|---|
@@ -1063,12 +1063,12 @@ Her ship failed a long way out. Something found her drifting and brought her her
 - Quirk: `chaser` (maxPotFraction 0.45, minEquity 0.25) — Calls cheap bets on the flop and turn to see another card.
 - Tell (strong, 0.85): *grins, then hides it*
 - Tell (weak, 0.85): *glances out of the window at Earth*
-- Tell (bluffing, 0.82): *checks the oxygen gauge on her wrist*
-- Idle noise: *rubs a scuff on her helmet, which sits beside her chips*; *floats a chip an inch off the table and catches it*; *yawns*; *touches a photograph tucked in her sleeve*
+- Tell (bluffing, 0.82): *checks the oxygen gauge on his wrist*
+- Idle noise: *rubs a scuff on his helmet, which sits beside his chips*; *floats a chip an inch off the table and catches it*; *yawns*; *touches a photograph tucked in his sleeve*
 
-**Look.** Silhouette: a bulky, scuffed pressure suit, its round helmet off and set on the table beside her chips; the helmet says astronaut at a glance. Short practical hair, tired kind eyes, a grin she cannot quite hide. Prop: the oxygen gauge on her wrist, which she lifts to eye level to read. No flags, no agency patches, no real insignia. **Prop:** A wrist oxygen gauge.
+**Look.** Silhouette: a bulky, scuffed pressure suit, its round helmet off and set on the table beside his chips; the helmet says astronaut at a glance. Short practical hair, tired kind eyes, a grin he cannot quite hide. Prop: the oxygen gauge on his wrist, which he lifts to eye level to read. No flags, no agency patches, no real insignia. **Prop:** A wrist oxygen gauge.
 
-**Public domain.** An archetype, not a person: the lost explorer. She must not resemble any real astronaut, any real agency's suit, or any film's. No NASA or other agency insignia, no flags, no named missions, and nothing taken from any space film. Her suit is our own design, built for a readable silhouette rather than accuracy.
+**Public domain.** An archetype, not a person: the lost explorer. He must not resemble any real astronaut, any real agency's suit, or any film's. No NASA or other agency insignia, no flags, no named missions, and nothing taken from any space film. His suit is our own design, built for a readable silhouette rather than accuracy.
 
 ### The AI — *The Room Itself*
 
