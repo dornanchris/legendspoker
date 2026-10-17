@@ -25,7 +25,9 @@ is done, and say so in the commit.
   big win (hands raised) and the crushing loss: reactions sheet E for every
   character drawn before JFK and Loki (they have them inside sheets B and D).
   Prompts exist for the White House four (end of their POSES.md); write the
-  rest as they come up. Until then the table plays the small win and the old
+  rest as they come up. **Lincoln's is drawn and built** (`lincoln_parts/README.md`);
+  `art-tools/build/reactions.py <id>` adds the two clips to any puppet once its
+  rig has the `win_big` / `lose_big` frames. Until then the table plays the small win and the old
   lost-pot beat (`win` / `lose` in anim.json, `art-tools/build/win_small.py`).
 - **More drawn poses, less rigging** (the owner: "lean into the stop motion
   stuff a bit more"). When a gesture looks stiff as a tweened arm, the fix is

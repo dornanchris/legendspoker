@@ -629,6 +629,30 @@
    "slot": "frame_over"
   },
   {
+   "file": "../web/art/lincoln/frame_win_big.png",
+   "label": "frame.win_big",
+   "x": 144,
+   "y": 171,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/lincoln/frame_lose_big.png",
+   "label": "frame.lose_big",
+   "x": 144,
+   "y": 171,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
    "file": "../web/art/lincoln/arm_near_rest.png",
    "label": "arm_near.rest",
    "x": 312,

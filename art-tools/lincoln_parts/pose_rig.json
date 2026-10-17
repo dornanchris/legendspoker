@@ -5,7 +5,8 @@
  "sheets": {
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
-  "C": "sources/poses_c.png"
+  "C": "sources/poses_c.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -357,6 +358,51 @@
     1.1532,
     -29.0,
     31.8
+   ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    19,
+    108,
+    610,
+    681
+   ],
+   "what": "his rest pose again, only to measure sheet E by",
+   "reg": [
+    0.664,
+    -42.0,
+    -1.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    630,
+    5,
+    710,
+    784
+   ],
+   "what": "a big win: both long arms raised high, hat on, a wide grin",
+   "reg": [
+    0.664,
+    -55.9,
+    -46.8
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1303,
+    23,
+    622,
+    766
+   ],
+   "what": "a crushing loss: a hand over his eyes, shaking his head",
+   "reg": [
+    0.664,
+    -46.0,
+    -50.8
    ]
   }
  },
@@ -1156,6 +1202,16 @@
      ]
     ]
    ]
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "drop_wood": true,
