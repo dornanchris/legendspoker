@@ -665,9 +665,9 @@ opponent's action, peeking at the deal, showing at showdown, reacting to a
 win by its size (the owner: raking the pot in is the chips' job, and lame; an
 ordinary pot is `win_small`, a nod and a smile built from the head and mouth
 every puppet has, `art-tools/build/win_small.py`; a pot worth most of the
-stack is the big win, `win_big`, hands raised, from a reactions sheet E,
-falling back to the old `won_pot` beat where it is not a hand raking chips),
-losing a contested pot (`lose_big` the same way, once drawn), going out, the
+stack is the big win, `win_big`, hands raised, from a reactions sheet E (every
+puppet has one: `art-tools/build/reactions_sheet.py`, ART-PIPELINE.md)),
+losing a contested pot (`lose_big`, the crushing loss, the same way), going out, the
 heads-up lean; Death deals (from his
 deck: the card flights start there), lays the flop and turn, pushes each pot
 toward its winner, shows the guest out; lips move to callouts and lines; a

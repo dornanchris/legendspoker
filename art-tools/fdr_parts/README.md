@@ -76,3 +76,7 @@ master head, `ash_tap` (B5, head bowed over the holder) a frame with its own
 head. Pose C6 (the old cape, lace cuffs) stays unused.
 
 `POSES.md` lists his 24 poses and the prompts.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py fdr`; frames `win_big` (E2) and `lose_big` (E3), then `art-tools/build/rail_clean.py fdr` (after pose_rig.py) clears the sheet's table edge below the table line; clips from `art-tools/build/reactions.py fdr`. His resting hand in the loss is a props box, so `rail_clean.py` leaves his skin alone (its shading is the rail's orange).

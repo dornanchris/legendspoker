@@ -21,16 +21,13 @@ is done, and say so in the commit.
     three. Left: where a leg crosses the drawn rail, a few frames keep small
     bites in the far leg or a thin sliver of rail (his rim light and the rail
     are the same orange; `cheshire_cat_parts/README.md`).
-- **Reactions for the rest of the cast** (the owner: "probably all"). The
-  big win (hands raised) and the crushing loss: reactions sheet E for every
-  character drawn before JFK and Loki (they have them inside sheets B and D).
-  Prompts exist for the White House four (end of their POSES.md); write the
-  rest as they come up. **Built: the White House (but FDR), Athens, the Pirate Cove, Camelot and Rome**
-  (ART-PIPELINE.md has the steps: `build/reactions_sheet.py`, then
-  `build/reactions.py`). Teddy's brown suit is the wood's colour: his older
-  frames (`bet` and others) have small bites at the shoulders; his reactions
-  use `--keep-wood` and are whole. Until then the table plays the small win and the old
-  lost-pot beat (`win` / `lose` in anim.json, `art-tools/build/win_small.py`).
+- ~~**Reactions for the rest of the cast**~~ DONE: every puppet has the big
+  win and the crushing loss (reactions sheet E, `build/reactions_sheet.py`,
+  `build/rail_clean.py`, `build/reactions.py`; ART-PIPELINE.md). Left, a pixel or
+  two at table size: hairlines of the drawn rail's dark edge inside the prop boxes
+  (Nemo's pearl, Holmes's pipe), a nick in Medusa's lower bracelet, a sliver under
+  Scipio's elephant; Teddy's older frames (`bet` and others) still have small bites
+  at the shoulders (his suit is the wood's colour).
 - **More drawn poses, less rigging** (the owner: "lean into the stop motion
   stuff a bit more"). When a gesture looks stiff as a tweened arm, the fix is
   another whole-figure drawing, not another bone.

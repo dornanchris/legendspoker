@@ -632,6 +632,34 @@
    "bone": "torso"
   },
   {
+   "name": "frame.win_big",
+   "img": "frame_win_big.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.lose_big",
+   "img": "frame_lose_big.png",
+   "cx": 545.0,
+   "cy": 750.5,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
    "name": "arm_near.rest",
    "img": "arm_near_rest.png",
    "cx": 545.0,
@@ -929,6 +957,21 @@
     1.06,
     -18,
     -21
+   ],
+   "E1": [
+    0.7867,
+    12.0,
+    -7.0
+   ],
+   "E2": [
+    0.7867,
+    -58.8,
+    -86.5
+   ],
+   "E3": [
+    0.7867,
+    -12.0,
+    56.7
    ]
   }
  },
@@ -953,6 +996,8 @@
   "cape": [
    0.0,
    -17.0
-  ]
+  ],
+  "win_big": null,
+  "lose_big": null
  }
 }

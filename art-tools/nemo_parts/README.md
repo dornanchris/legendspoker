@@ -34,3 +34,7 @@ call, bet, fold, all in, show, collect; tells `listen` (strong) beside
 `fugue`, `window` (weak) beside `chronometer`, `pearl` (bluffing) beside
 `hull`; idles `notebook`, `cold_look`, `arms_folded`, `look_at_you`; beats
 talk, big bet, lost pot, won pot, heads up, knocked out.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py nemo`; frames `win_big` (E2) and `lose_big` (E3), then `art-tools/build/rail_clean.py nemo` (after pose_rig.py) clears the sheet's table edge below the table line; clips from `art-tools/build/reactions.py nemo`. The pearl is a props box in both frames (`frame_extra` style, added to `pose_rig.json`).

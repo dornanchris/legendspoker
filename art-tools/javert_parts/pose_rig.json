@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     0,
     1
    ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    13,
+    124,
+    626,
+    644
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.7473,
+    55.0,
+    0.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    606,
+    16,
+    708,
+    752
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.7473,
+    13.2,
+    -53.1
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1315,
+    209,
+    623,
+    559
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.7473,
+    58.0,
+    67.3
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   270,
   235
  ],
- "frame_margin": 60,
+ "frame_margin": 83,
  "stock_box": [
   200,
   220,
@@ -860,6 +906,18 @@
      392
     ]
    ]
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true,
+   "below": 110
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true,
+   "below": 110
   }
  },
  "runtime": "../web/art/javert",

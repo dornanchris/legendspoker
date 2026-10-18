@@ -44,3 +44,7 @@ kit's list): check, peek, call, bet, fold, all in, show, collect; tells
 `pipe_teeth` (weak) beside `your_hands`; idles `mantel`, `reading`, `bored`,
 `look_at_you`; beats talk, big bet, lost pot, won pot, heads up, knocked out.
 Preview at `#/puppet/sherlock_deerstalker`.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py sherlock_deerstalker`; frames `win_big` (E2) and `lose_big` (E3), then `art-tools/build/rail_clean.py sherlock_deerstalker` (after pose_rig.py) clears the sheet's table edge below the table line; clips from `art-tools/build/reactions.py sherlock_deerstalker`. Placed with `--rest-props` (the pipe), plus a wider pipe box: sheet E laid the pipe further out.

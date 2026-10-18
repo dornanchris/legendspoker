@@ -55,8 +55,13 @@ is drawn the table uses the small win and the old beats. To build one:
 `python3 art-tools/build/reactions_sheet.py <id> [--keep-wood]` (places sheet E
 against the rest pose and adds the frames to `pose_rig.json`; `--keep-wood` for a
 coat the table's wood colour), `pose_rig.py`, `ik_build.py` if the kit has IK
-arms, `art-tools/build/reactions.py <id>` (the two clips), then win_small,
-tell_hold, life, web_half. Built so far: the White House (but FDR), Athens, the Pirate Cove, Camelot and Rome. Check each with E1 laid over the rest pose: a prop drawn elsewhere (Merlin's staff) can throw the fit off. After any anim.json
+arms, `art-tools/build/rail_clean.py <id>` (the sheet's table edge left below
+the table line: frames are drawn again over the table), `art-tools/build/reactions.py
+<id>` (the two clips), then win_small, tell_hold, life, web_half. **Every puppet
+has both reactions now.** Check each with E1 laid over the rest pose: a prop drawn
+elsewhere (Merlin's staff) can throw the fit off. A prop on the felt (a pearl, a
+pipe, a hand resting there) needs a props box in the frame, or the clean-up and the
+`biggest` cut can take it. After any anim.json
 change, re-run `python3 art-tools/build/win_small.py`,
 `fallback_clips.py`, `tell_hold.py` and `life.py` (all in art-tools/build/),
 then **`python3 art-tools/build/puppet_audit.py`**: every puppet held to one

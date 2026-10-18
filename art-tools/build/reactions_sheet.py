@@ -136,7 +136,7 @@ if spec.get('frame_margin', 0) < need:
     print(f'  frame_margin {spec.get("frame_margin", 0)} -> {need} (raised hands)')
     spec['frame_margin'] = need
 for name, pose in (('win_big', 'E2'), ('lose_big', 'E3')):
-    f = {'pose': pose, 'head': 'own', 'biggest': True}
+    f = {'pose': pose, 'head': 'own', 'biggest': True, 'below': 110}   # deep enough for a prop on the felt (a pearl, a pipe)
     if REST_PROPS:                                             # a prop on the felt in the same place (Leonidas's helmet)
         f.setdefault('props', []).extend(pp for a in spec['arms'].values() for pp in a['assets'][a['rest']].get('props', []))
     if KEEP_WOOD:                                              # all of him above the rail, as drawn

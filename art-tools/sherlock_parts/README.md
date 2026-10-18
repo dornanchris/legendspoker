@@ -34,3 +34,7 @@ peek, call, bet, fold, all in, show, collect; tells `fingertips` (strong)
 beside `speck`, `pipe` (bluffing) beside `lens`, `pipe_teeth` (weak) beside
 `your_hands`; idles `mantel`, `reading`, `bored`, `look_at_you`; beats talk,
 big bet, lost pot, won pot, heads up, knocked out.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py sherlock`; frames `win_big` (E2) and `lose_big` (E3), then `art-tools/build/rail_clean.py sherlock` (after pose_rig.py) clears the sheet's table edge below the table line; clips from `art-tools/build/reactions.py sherlock`. Placed with `--rest-props` (the pipe), plus a wider pipe box: sheet E laid the pipe further out.

@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     3,
     3
    ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    7,
+    163,
+    635,
+    582
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8898,
+    -14.0,
+    1.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    606,
+    22,
+    814,
+    724
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8898,
+    -57.2,
+    -128.9
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1312,
+    248,
+    626,
+    498
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8898,
+    -6.0,
+    64.2
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   250,
   235
  ],
- "frame_margin": 60,
+ "frame_margin": 158,
  "stock_box": [
   180,
   220,
@@ -1264,6 +1310,58 @@
     [
      -60,
      378
+    ]
+   ]
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true,
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      380
+     ],
+     [
+      120,
+      380
+     ],
+     [
+      120,
+      480
+     ],
+     [
+      10,
+      480
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true,
+   "below": 110,
+   "props": [
+    [
+     [
+      10,
+      380
+     ],
+     [
+      120,
+      380
+     ],
+     [
+      120,
+      480
+     ],
+     [
+      10,
+      480
+     ]
     ]
    ]
   }

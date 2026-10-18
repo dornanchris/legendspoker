@@ -35,3 +35,7 @@ peek, call, bet, fold, all in, show, collect; tells `button` (strong) beside
 `stock`, `stare` (weak) beside `door`, `shake` (tilted) beside `cane`; idles
 `notebook`, `upright`, `bicorne`, `look_at_you`; beats talk, big bet, lost
 pot, won pot, heads up, knocked out.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py javert`; frames `win_big` (E2) and `lose_big` (E3), then `art-tools/build/rail_clean.py javert` (after pose_rig.py) clears the sheet's table edge below the table line; clips from `art-tools/build/reactions.py javert`.
