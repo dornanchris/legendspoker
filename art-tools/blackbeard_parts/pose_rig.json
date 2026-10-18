@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     -2
    ],
    "what": "knocked out: a mocking bow"
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    6,
+    132,
+    630,
+    637
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.6905,
+    37.0,
+    3.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    594,
+    47,
+    754,
+    722
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.6905,
+    -2.4,
+    -19.8
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1303,
+    213,
+    634,
+    556
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.6905,
+    37.7,
+    85.2
+   ]
   }
  },
  "rest": "A1",
@@ -886,6 +932,76 @@
    "pose": "D6",
    "head": "own",
    "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true,
+   "props": [
+    [
+     [
+      -400,
+      -600
+     ],
+     [
+      888,
+      -600
+     ],
+     [
+      888,
+      357
+     ],
+     [
+      -400,
+      357
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true,
+   "props": [
+    [
+     [
+      -400,
+      -600
+     ],
+     [
+      888,
+      -600
+     ],
+     [
+      888,
+      357
+     ],
+     [
+      -400,
+      357
+     ]
+    ]
+   ],
+   "except": [
+    [
+     [
+      -600,
+      -600
+     ],
+     [
+      -15,
+      -600
+     ],
+     [
+      -15,
+      900
+     ],
+     [
+      -600,
+      900
+     ]
+    ]
+   ]
   }
  },
  "runtime": "../web/art/blackbeard",

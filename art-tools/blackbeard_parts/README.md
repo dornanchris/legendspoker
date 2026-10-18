@@ -37,3 +37,7 @@ all in, show, collect; tells `stroke` (strong) beside `ribbon`, `still`
 `laugh`, `look_at_you`; beats `talk`, `big_bet`, `lost_pot` (a roar),
 `won_pot` (arms wide), `heads_up`, `knocked_out` (a mocking bow). His tells
 and idles are cued by their words (`cues`).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py blackbeard`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py blackbeard`. His brown coat is the wood's colour: placed with `--keep-wood`, and `lose_big` cuts a scrap of the next cell (`except`, x < -15).

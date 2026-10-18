@@ -44,3 +44,7 @@ collect; tells `squawk` (strong) beside `preen`, `sidle` (bluffing) beside
 `won_pot` (a wink), `heads_up` (the smile gone cold), `knocked_out` (two
 fingers to his brow). His tells and idles are cued by their words (`cues`);
 `flap`, `chin` and `look_at_you` are wordless fidgets.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py silver`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py silver`. (His rest pose reports ~15 0ifferent from its drawing: the parrot is a separate piece. It always has; not a fault.)

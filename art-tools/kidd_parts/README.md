@@ -30,3 +30,7 @@ fold, all in, show, collect; tells `pat` (strong) beside `straighten`,
 `neck`, `count`, `hat_tip`, `look_at_you`; beats `talk`, `big_bet`,
 `lost_pot` (palms up: robbery), `won_pot`, `heads_up`, `knocked_out` (rises
 holding out his papers). His tells and idles are cued by their words (`cues`).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py kidd`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py kidd`.

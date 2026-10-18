@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     0,
     5
    ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    11,
+    162,
+    615,
+    608
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.7472,
+    42.0,
+    -2.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    532,
+    15,
+    837,
+    755
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.7472,
+    -49.9,
+    -83.4
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1307,
+    270,
+    630,
+    500
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.7472,
+    42.0,
+    74.2
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   280,
   210
  ],
- "frame_margin": 60,
+ "frame_margin": 113,
  "stock_box": [
   220,
   210,
@@ -837,6 +883,16 @@
    "pose": "D6",
    "head": "own",
    "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "runtime": "../web/art/davy_jones",

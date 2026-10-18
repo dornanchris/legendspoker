@@ -553,6 +553,30 @@
    "on_table": true
   },
   {
+   "file": "../web/art/blackbeard/frame_win_big.png",
+   "label": "frame.win_big",
+   "x": 245,
+   "y": 455,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/blackbeard/frame_lose_big.png",
+   "label": "frame.lose_big",
+   "x": 245,
+   "y": 455,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
    "file": "../web/art/blackbeard/arm_near_rest.png",
    "label": "arm_near.rest",
    "x": 305,

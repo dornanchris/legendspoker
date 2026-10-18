@@ -13,7 +13,7 @@
  "note": "Long John Silver, rebuilt from the pose illustrations by pose_rig.py.",
  "parts": [
   {
-   "file": "../web/art/silver/body.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/body.png",
    "label": "torso",
    "x": 305,
    "y": 529,
@@ -24,7 +24,7 @@
    "slot": "torso"
   },
   {
-   "file": "../web/art/silver/master.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/master.png",
    "label": "head.rest",
    "x": 422,
    "y": 536,
@@ -35,7 +35,7 @@
    "slot": "head"
   },
   {
-   "file": "../web/art/silver/eyes_half.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/eyes_half.png",
    "label": "eyes.half",
    "x": 422,
    "y": 536,
@@ -46,7 +46,7 @@
    "slot": "eyes"
   },
   {
-   "file": "../web/art/silver/eyes_closed.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/eyes_closed.png",
    "label": "eyes.closed",
    "x": 422,
    "y": 536,
@@ -57,7 +57,7 @@
    "slot": "eyes"
   },
   {
-   "file": "../web/art/silver/eyes_viewer.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/eyes_viewer.png",
    "label": "eyes.viewer",
    "x": 422,
    "y": 536,
@@ -68,7 +68,7 @@
    "slot": "eyes"
   },
   {
-   "file": "../web/art/silver/eyes_down.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/eyes_down.png",
    "label": "eyes.down",
    "x": 422,
    "y": 536,
@@ -79,7 +79,7 @@
    "slot": "eyes"
   },
   {
-   "file": "../web/art/silver/eyes_side.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/eyes_side.png",
    "label": "eyes.side",
    "x": 422,
    "y": 536,
@@ -90,7 +90,7 @@
    "slot": "eyes"
   },
   {
-   "file": "../web/art/silver/eyes_narrow.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/eyes_narrow.png",
    "label": "eyes.narrow",
    "x": 422,
    "y": 536,
@@ -101,7 +101,7 @@
    "slot": "eyes"
   },
   {
-   "file": "../web/art/silver/brows_raised.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/brows_raised.png",
    "label": "brows.raised",
    "x": 422,
    "y": 536,
@@ -112,7 +112,7 @@
    "slot": "brows"
   },
   {
-   "file": "../web/art/silver/brows_down.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/brows_down.png",
    "label": "brows.down",
    "x": 422,
    "y": 536,
@@ -123,7 +123,7 @@
    "slot": "brows"
   },
   {
-   "file": "../web/art/silver/mouth_rest.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_rest.png",
    "label": "mouth.rest",
    "x": 422,
    "y": 536,
@@ -134,7 +134,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_ah.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_ah.png",
    "label": "mouth.ah",
    "x": 422,
    "y": 536,
@@ -145,7 +145,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_ee.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_ee.png",
    "label": "mouth.ee",
    "x": 422,
    "y": 536,
@@ -156,7 +156,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_oh.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_oh.png",
    "label": "mouth.oh",
    "x": 422,
    "y": 536,
@@ -167,7 +167,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_oo.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_oo.png",
    "label": "mouth.oo",
    "x": 422,
    "y": 536,
@@ -178,7 +178,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_m.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_m.png",
    "label": "mouth.m",
    "x": 422,
    "y": 536,
@@ -189,7 +189,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_f.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_f.png",
    "label": "mouth.f",
    "x": 422,
    "y": 536,
@@ -200,7 +200,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_l.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_l.png",
    "label": "mouth.l",
    "x": 422,
    "y": 536,
@@ -211,7 +211,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_grin.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_grin.png",
    "label": "mouth.grin",
    "x": 422,
    "y": 536,
@@ -222,7 +222,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_laugh.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_laugh.png",
    "label": "mouth.laugh",
    "x": 422,
    "y": 536,
@@ -233,7 +233,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/mouth_cold.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/mouth_cold.png",
    "label": "mouth.cold",
    "x": 422,
    "y": 536,
@@ -244,7 +244,7 @@
    "slot": "mouth"
   },
   {
-   "file": "../web/art/silver/head_viewer.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/head_viewer.png",
    "label": "head.viewer",
    "x": 392,
    "y": 521,
@@ -255,7 +255,7 @@
    "slot": "head"
   },
   {
-   "file": "../web/art/silver/torso_over.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/torso_over.png",
    "label": "torso_over",
    "x": 305,
    "y": 529,
@@ -266,7 +266,7 @@
    "slot": "torso_over"
   },
   {
-   "file": "../web/art/silver/prop_parrot.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/prop_parrot.png",
    "label": "parrot.rest",
    "x": 305,
    "y": 529,
@@ -277,7 +277,7 @@
    "slot": "parrot"
   },
   {
-   "file": "../web/art/silver/frame_peek.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_peek.png",
    "label": "frame.peek",
    "x": 245,
    "y": 469,
@@ -289,7 +289,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_check.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_check.png",
    "label": "frame.check",
    "x": 245,
    "y": 469,
@@ -301,7 +301,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_call.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_call.png",
    "label": "frame.call",
    "x": 245,
    "y": 469,
@@ -313,7 +313,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_bet.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_bet.png",
    "label": "frame.bet",
    "x": 245,
    "y": 469,
@@ -325,7 +325,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_fold.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_fold.png",
    "label": "frame.fold",
    "x": 245,
    "y": 469,
@@ -337,7 +337,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_all_in.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_all_in.png",
    "label": "frame.all_in",
    "x": 245,
    "y": 469,
@@ -349,7 +349,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_show.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_show.png",
    "label": "frame.show",
    "x": 245,
    "y": 469,
@@ -361,7 +361,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_collect.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_collect.png",
    "label": "frame.collect",
    "x": 245,
    "y": 469,
@@ -373,7 +373,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_squawk.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_squawk.png",
    "label": "frame.squawk",
    "x": 245,
    "y": 469,
@@ -385,7 +385,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_preen.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_preen.png",
    "label": "frame.preen",
    "x": 245,
    "y": 469,
@@ -397,7 +397,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_sidle.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_sidle.png",
    "label": "frame.sidle",
    "x": 245,
    "y": 469,
@@ -409,7 +409,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_flap.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_flap.png",
    "label": "frame.flap",
    "x": 245,
    "y": 469,
@@ -421,7 +421,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_stroke.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_stroke.png",
    "label": "frame.stroke",
    "x": 245,
    "y": 469,
@@ -433,7 +433,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_apron.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_apron.png",
    "label": "frame.apron",
    "x": 245,
    "y": 469,
@@ -445,7 +445,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_grin_round.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_grin_round.png",
    "label": "frame.grin_round",
    "x": 245,
    "y": 469,
@@ -457,7 +457,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_crutch.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_crutch.png",
    "label": "frame.crutch",
    "x": 245,
    "y": 469,
@@ -469,7 +469,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_chin.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_chin.png",
    "label": "frame.chin",
    "x": 245,
    "y": 469,
@@ -481,7 +481,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_talk.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_talk.png",
    "label": "frame.talk",
    "x": 245,
    "y": 469,
@@ -493,7 +493,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_big_bet.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_big_bet.png",
    "label": "frame.big_bet",
    "x": 245,
    "y": 469,
@@ -505,7 +505,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_lost_pot.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_lost_pot.png",
    "label": "frame.lost_pot",
    "x": 245,
    "y": 469,
@@ -517,7 +517,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_won_pot.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_won_pot.png",
    "label": "frame.won_pot",
    "x": 245,
    "y": 469,
@@ -529,7 +529,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_heads_up.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_heads_up.png",
    "label": "frame.heads_up",
    "x": 245,
    "y": 469,
@@ -541,7 +541,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/frame_knocked_out.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/frame_knocked_out.png",
    "label": "frame.knocked_out",
    "x": 245,
    "y": 469,
@@ -553,7 +553,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/arm_near_rest.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/arm_near_rest.png",
    "label": "arm_near.rest",
    "x": 305,
    "y": 529,
@@ -565,7 +565,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/arm_far_rest.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/arm_far_rest.png",
    "label": "arm_far.rest",
    "x": 305,
    "y": 529,
@@ -577,7 +577,7 @@
    "on_table": true
   },
   {
-   "file": "../web/art/silver/upper_near.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/upper_near.png",
    "label": "upper_near",
    "x": 305,
    "y": 529,
@@ -588,7 +588,7 @@
    "slot": "upper_near"
   },
   {
-   "file": "../web/art/silver/upper_far.png",
+   "file": "../../../../tmp/claude-0/-home-user-legendspoker/c643603b-585a-5e9b-aad3-7a7aa49c7a36/scratchpad/silver_exp/upper_far.png",
    "label": "upper_far",
    "x": 305,
    "y": 529,

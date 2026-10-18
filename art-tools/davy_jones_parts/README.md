@@ -47,3 +47,7 @@ idles `crab`, `haze`, `hat_water`, `look_at_you`; beats `talk`, `big_bet`,
 `knocked_out` (rises streaming and turns away). Cued by their words
 (`cues`); `light`, `hat_water` and `look_at_you` are wordless fidgets.
 `shadow` also gutters the Cove's lantern nearest him (`gutter`).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py davy_jones`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py davy_jones`.
