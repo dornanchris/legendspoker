@@ -1042,25 +1042,28 @@ new art against that layout.
 - Any new chip-handling code needs a conservation check. `tourney.ts` has one,
   and it is the only reason the poker-ts pot bug was found rather than shipped.
 - `patches/` is load-bearing. `npm install` runs `patch-package` via
-  postinstall; if that step is ever skipped, chips start vanishing again.
+  postinstall (`web/patches.mjs install`); if that step is ever skipped,
+  chips start vanishing again.
 - **Dev machine is Windows.** `new URL('.', import.meta.url).pathname` gives
   `/D:/...` there — a leading slash that path-joins into `\D:\...` and 404s
   everything. Use `fileURLToPath`. Node scripts must not assume POSIX paths or
   that npm runs them from the repo root.
 - After pulling, `npm install` before `npm run web`. The web build needs
   esbuild, which older checkouts do not have.
-- **A pull that changes `patches/` needs `node_modules/poker-ts` deleted
-  first.** `npm install` keeps the installed poker-ts (same version), so
-  patch-package tries the new patch over the old one and fails -- and
+- **A pull that changes `patches/` used to need `node_modules/poker-ts`
+  deleted first.** `npm install` keeps the installed poker-ts (same version),
+  so patch-package tries the new patch over the old one and fails -- and
   locally it used to exit 0, leaving the OLD engine in the bundle. That is
   how a player's nut flush lost a main pot to a pair of tens at Camelot,
-  weeks after the side-pot fix. Now postinstall runs with `--error-on-fail`
-  and stamps node_modules with a digest of `patches/` (`web/patches.mjs`),
-  and `npm run web` refuses to build against any other stamp; and the game
-  itself refuses to deal on the wrong rules (`src/engine-guard.ts` plays two
-  stacked hands first). The cure is always: delete node_modules, `npm
-  install`, rebuild. If you change the patch, check the guard's two hands
-  still settle as it expects.
+  weeks after the side-pot fix. Now postinstall is `node web/patches.mjs
+  install`: it stamps node_modules with a digest of `patches/`, and when the
+  stamp is stale (or patching fails with no stamp) it puts each patched
+  package back as published -- the lockfile's tarball, from npm's cache,
+  unpacked over the old copy -- and patches again with `--error-on-fail`.
+  So plain `npm install` is the cure. `npm run web` still refuses to build
+  against any other stamp, and the game itself refuses to deal on the wrong
+  rules (`src/engine-guard.ts` plays two stacked hands first). If you change
+  the patch, check the guard's two hands still settle as it expects.
 
 ## NEXT MILESTONE
 

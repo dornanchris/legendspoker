@@ -13,7 +13,7 @@ const here = (p) => fileURLToPath(new URL(p, import.meta.url))
 if (!patchesApplied()) {
   console.error(
     'node_modules/poker-ts is not patched with this checkout\'s patches/.\n' +
-      'Delete node_modules/poker-ts and run npm install, then build again.',
+      'Run npm install (it puts poker-ts back and patches it), then build again.',
   )
   process.exit(1)
 }
