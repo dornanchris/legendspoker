@@ -144,3 +144,24 @@ Every piece is drawn at EXACTLY the angle and size of his head in the at-rest po
 
 Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 ```
+
+### Reactions sheet (E): the big win and the crushing loss
+
+The owner's reactions, sized by the pot: an ordinary win is a nod and a smile
+the puppet already has (`win_small`, art-tools/build/win_small.py); a pot worth
+most of his stack plays the big win, and losing one the crushing loss. Pose 1
+is his rest pose again, only to measure the sheet by. Attach
+`art-tools/nemo_parts/sources/poses_a.png` FIRST, then
+`art-tools/nemo_parts/sources/nemo_sheet.png`, and nothing of anyone else's.
+
+```
+Character pose sheet for 2D animation reference: Captain Nemo, exactly as on the attached sheets, drawn to match the FIRST attached pose sheet: same size, same angle, same table edge height, same face, full dark beard, flat captain's cap, dark coat and the great pearl.
+
+Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind him, no chair, nothing of him cut off by the edge of the picture (raised hands included). Nothing below the table edge. In every pose the great white pearl lies on the felt beside his right hand (the left of the picture).
+
+1. EXACTLY his at-rest pose, the top-left pose of the attached pose sheet, copied as it is
+2. A big win: both arms raised high above his head, hands open, head back, a rare, fierce laugh
+3. A crushing loss: one hand pressed over his eyes, his shoulders hunched, the other hand flat on the felt beside the pearl
+
+No cards and no chips anywhere: his hands are empty. Pure white background around each pose; the poses do not touch. No text, no numbers, no labels. No submarine, no diving helmet, no sword, no chair.
+```
