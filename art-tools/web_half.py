@@ -26,7 +26,7 @@ for pid in ids:
     os.makedirs(out, exist_ok=True)
     imgs = sorted({p['img'] for p in rig['parts']})
     for f in os.listdir(out):
-        if f not in imgs: os.remove(os.path.join(out, f))
+        if f not in imgs and not f.startswith('ik_'): os.remove(os.path.join(out, f))   # ik_*: made by ik_build.py
     for f in imgs:
         im = Image.open(os.path.join(d, f))
         im.resize((max(1, round(im.width / 2)), max(1, round(im.height / 2))), Image.LANCZOS).save(os.path.join(out, f), optimize=True)

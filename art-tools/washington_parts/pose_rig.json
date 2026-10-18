@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -168,6 +169,51 @@
     461
    ],
    "what": "heads up: leaning in on both fists"
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    12,
+    185,
+    626,
+    603
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.785,
+    24.0,
+    -1.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    608,
+    6,
+    790,
+    782
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.785,
+    -16.0,
+    -115.6
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1306,
+    195,
+    626,
+    593
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.785,
+    24.4,
+    6.1
+   ]
   }
  },
  "rest": "A1",
@@ -2387,6 +2433,16 @@
      ]
     ]
    ]
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "stock_box": [
@@ -2394,5 +2450,6 @@
   140,
   305,
   230
- ]
+ ],
+ "frame_margin": 145
 }

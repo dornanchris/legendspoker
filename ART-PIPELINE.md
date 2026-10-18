@@ -51,9 +51,12 @@ The six images: character sheet, pose sheets A-D (24 poses, 3x2 each), face
 overlay sheet. Kit folder: `art-tools/<id>_parts/`. A seventh, the reactions
 sheet E (rest, the big win with hands raised, the crushing loss; prompt at the
 end of the White House kits' POSES.md), gives the big win and loss; until it
-is drawn the table uses the small win and the old beats. Built so far: Lincoln's
-(`lincoln_parts/README.md` has the placement); `art-tools/build/reactions.py <id>`
-then adds the two clips. After any anim.json
+is drawn the table uses the small win and the old beats. To build one:
+`python3 art-tools/build/reactions_sheet.py <id> [--keep-wood]` (places sheet E
+against the rest pose and adds the frames to `pose_rig.json`; `--keep-wood` for a
+coat the table's wood colour), `pose_rig.py`, `ik_build.py` if the kit has IK
+arms, `art-tools/build/reactions.py <id>` (the two clips), then win_small,
+tell_hold, life, web_half. Built so far: Lincoln, Washington, Teddy Roosevelt. After any anim.json
 change, re-run `python3 art-tools/build/win_small.py`,
 `fallback_clips.py`, `tell_hold.py` and `life.py` (all in art-tools/build/),
 then **`python3 art-tools/build/puppet_audit.py`**: every puppet held to one

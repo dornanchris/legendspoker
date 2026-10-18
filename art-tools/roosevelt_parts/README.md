@@ -82,3 +82,7 @@ superset of what the 15 animations need. `ANIMATION_BRIEF.md` is the brief as
 sent (the same text as the owner's doc, without the byline). The face sheet's
 bare head came out narrower than his face, so `face_overlays.png` goes to the
 artist as well, for the head's true shape.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py roosevelt`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py roosevelt`. His brown suit is the wood colour: placed with `--keep-wood`.

@@ -122,3 +122,7 @@ checks them and `node art-tools/build/ik_clips.cjs washington <dir>` shoots
 each at phone size, both seats, IK above and the old clip below.
 The far arm's forearm is nearly hidden (12 px between elbow and wrist), so the
 cuff tell keeps its old swap; its three hands are built but unused.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py washington`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py washington`. Rebuild order with his IK arms: pose_rig.py, then ik_build.py (the IK images are kept through rebuilds now).

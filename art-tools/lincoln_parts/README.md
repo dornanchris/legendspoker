@@ -148,12 +148,8 @@ needed it.
 
 ## Reactions sheet E (the big win and the crushing loss)
 
-`sources/poses_e.png`: three figures drawn about 1.5x sheet A's size. E1 is
-his rest pose again, only to measure by: its head and shoulders fitted onto
-A1's at scale 0.664 (91% overlap of the silhouettes); E2 and E3 keep that
-scale and are shifted by their own table's centre and top (the cells' tables
-differ in width). E2's raised right hand reaches past the gap between cells,
-so its box runs to x 1340 and both frames keep only their `biggest` piece.
-Frames `win_big` (E2) and `lose_big` (E3); their clips come from
-`art-tools/build/reactions.py lincoln` (his kit has no clips script), then
-win_small, fallback_clips, tell_hold, life and web_half as usual.
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py lincoln`
+(E1, his rest pose redrawn about 1.5x size, fitted onto A1 at scale 0.66, 92%
+overlap; E2 and E3 placed by their own tables). Frames `win_big` (E2) and
+`lose_big` (E3); clips from `art-tools/build/reactions.py lincoln` (his kit has
+no clips script). Steps in ART-PIPELINE.md.

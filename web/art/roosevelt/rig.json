@@ -636,6 +636,34 @@
    "bone": "torso"
   },
   {
+   "name": "frame.win_big",
+   "img": "frame_win_big.png",
+   "cx": 548.0,
+   "cy": 769.0,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.lose_big",
+   "img": "frame_lose_big.png",
+   "cx": 548.0,
+   "cy": 769.0,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
    "name": "arm_near.rest",
    "img": "arm_near_rest.png",
    "cx": 548.0,
@@ -954,6 +982,21 @@
     1.0,
     -22,
     30
+   ],
+   "E1": [
+    0.8072,
+    36.0,
+    -36.0
+   ],
+   "E2": [
+    0.8072,
+    -29.4,
+    -140.1
+   ],
+   "E3": [
+    0.8072,
+    33.2,
+    12.4
    ]
   }
  },
@@ -984,6 +1027,8 @@
   ],
   "polish": null,
   "push_specs": null,
-  "moustache": null
+  "moustache": null,
+  "win_big": null,
+  "lose_big": null
  }
 }

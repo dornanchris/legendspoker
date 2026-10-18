@@ -365,14 +365,14 @@
    "box": [
     19,
     108,
-    610,
+    622,
     681
    ],
-   "what": "his rest pose again, only to measure sheet E by",
+   "what": "the rest pose again, only to measure sheet E by",
    "reg": [
-    0.664,
-    -42.0,
-    -1.0
+    0.6601,
+    -41.0,
+    -2.0
    ]
   },
   "E2": {
@@ -380,29 +380,29 @@
    "box": [
     630,
     5,
-    710,
+    707,
     784
    ],
-   "what": "a big win: both long arms raised high, hat on, a wide grin",
+   "what": "a big win (reactions sheet E)",
    "reg": [
-    0.664,
-    -55.9,
-    -46.8
+    0.6601,
+    -61.1,
+    -46.2
    ]
   },
   "E3": {
    "sheet": "E",
    "box": [
     1303,
-    23,
+    179,
     622,
-    766
+    610
    ],
-   "what": "a crushing loss: a hand over his eyes, shaking his head",
+   "what": "a crushing loss (reactions sheet E)",
    "reg": [
-    0.664,
-    -46.0,
-    -50.8
+    0.6601,
+    -41.0,
+    56.7
    ]
   }
  },

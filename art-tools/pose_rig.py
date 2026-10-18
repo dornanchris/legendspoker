@@ -1022,7 +1022,7 @@ def main(spec_path):
     rt = os.path.join(HERE, spec['runtime'])
     if os.path.isdir(rt):
         for f in os.listdir(rt):
-            if f.endswith('.png') and not f.startswith('ref_'):
+            if f.endswith('.png') and not f.startswith(('ref_', 'ik_')):   # ik_*: the IK arm's parts (ik_build.py)
                 os.remove(os.path.join(rt, f))
     os.makedirs(rt, exist_ok=True)
     for f in os.listdir(out_dir):
