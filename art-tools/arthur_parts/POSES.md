@@ -144,3 +144,24 @@ Every piece is drawn at EXACTLY the angle and size of his head in the at-rest po
 
 Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 ```
+
+### Reactions sheet (E): the big win and the crushing loss
+
+The owner's reactions, sized by the pot: an ordinary win is a nod and a smile
+the puppet already has (`win_small`, art-tools/build/win_small.py); a pot worth
+most of his stack plays the big win, and losing one the crushing loss. Pose 1
+is his rest pose again, only to measure the sheet by. Attach
+`art-tools/arthur_parts/sources/poses_a.png` FIRST, then
+`art-tools/arthur_parts/sources/arthur_sheet.png`, and nothing of anyone else's.
+
+```
+Character pose sheet for 2D animation reference: King Arthur, exactly as on the attached sheets, drawn to match the FIRST attached pose sheet: same size, same angle, same table edge height, same crown, red mantle, mail, beard and sword.
+
+Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind him, no chair, nothing of him cut off by the edge of the picture (raised hands included). Nothing below the table edge. In every pose the crown stays on his head, and the sheathed sword stands upright beside his right shoulder (the left of the picture), its hilt at chin height.
+
+1. EXACTLY his at-rest pose, the top-left pose of the attached pose sheet, copied as it is
+2. A big win: both arms raised high above his head, hands open, a broad royal laugh, the crown still on his head
+3. A crushing loss: one hand over his eyes, shoulders slumped, the crown slightly askew, the other hand flat on the felt
+
+No cards and no chips anywhere: his hands are empty. Pure white background around each pose; the poses do not touch. No text, no numbers, no labels. No sword drawn, no Excalibur held up, no Grail, no chair.
+```

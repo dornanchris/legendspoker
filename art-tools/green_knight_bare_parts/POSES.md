@@ -134,3 +134,24 @@ Every piece is drawn at EXACTLY the angle and size of his bare head in the at-re
 
 Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 ```
+
+### Reactions sheet (E): the big win and the crushing loss
+
+The owner's reactions, sized by the pot: an ordinary win is a nod and a smile
+the puppet already has (`win_small`, art-tools/build/win_small.py); a pot worth
+most of his stack plays the big win, and losing one the crushing loss. Pose 1
+is his rest pose again, only to measure the sheet by. Attach
+`art-tools/green_knight_bare_parts/sources/poses_a.png` FIRST, then
+`art-tools/green_knight_bare_parts/sources/return_sheet.png`, and nothing of anyone else's.
+
+```
+Character pose sheet for 2D animation reference: the Green Knight, after his return, exactly as on the attached sheets, drawn to match the FIRST attached pose sheet: same size, same angle, same table edge height, same battered green armour, bare head, bandage, holly branch and axe, the same giant size.
+
+Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind him, no chair, nothing of him cut off by the edge of the picture (raised hands included). Nothing below the table edge. In every pose he wears no helm (his bare head, as on the attached return sheet, with the bandage at his neck), the holly branch stays tucked behind his right shoulder (the left of the picture), and the axe head stays on the table's edge where it lies at rest.
+
+1. EXACTLY his at-rest pose, the top-left pose of the attached pose sheet, copied as it is
+2. A big win: both fists raised high above his head, a cold, hard grin, eyes narrowed in grim satisfaction
+3. A crushing loss: one hand pressed to the bandage at his neck, head bowed, eyes shut, teeth gritted, the other fist resting on the table's edge
+
+No cards and no chips anywhere: his hands are empty. Pure white background around each pose; the poses do not touch. No text, no numbers, no labels. No helm, no horse, no green skin, no chair.
+```
