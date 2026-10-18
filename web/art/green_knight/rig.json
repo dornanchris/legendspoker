@@ -80,7 +80,7 @@
   {
    "name": "head.rest",
    "img": "master.png",
-   "cx": 369.88,
+   "cx": 530.53,
    "cy": 634.2,
    "rot": 0,
    "scale": 0.6625000000000001,
@@ -94,7 +94,7 @@
   {
    "name": "eyes.half",
    "img": "eyes_half.png",
-   "cx": 369.88,
+   "cx": 530.53,
    "cy": 634.2,
    "rot": 0,
    "scale": 0.6625000000000001,
@@ -109,7 +109,7 @@
   {
    "name": "eyes.closed",
    "img": "eyes_closed.png",
-   "cx": 369.88,
+   "cx": 530.53,
    "cy": 634.2,
    "rot": 0,
    "scale": 0.6625000000000001,
@@ -124,7 +124,7 @@
   {
    "name": "eyes.viewer",
    "img": "eyes_viewer.png",
-   "cx": 369.88,
+   "cx": 530.53,
    "cy": 634.2,
    "rot": 0,
    "scale": 0.6625000000000001,
@@ -139,7 +139,7 @@
   {
    "name": "eyes.down",
    "img": "eyes_down.png",
-   "cx": 369.88,
+   "cx": 530.53,
    "cy": 634.2,
    "rot": 0,
    "scale": 0.6625000000000001,
@@ -154,7 +154,7 @@
   {
    "name": "eyes.side",
    "img": "eyes_side.png",
-   "cx": 369.88,
+   "cx": 530.53,
    "cy": 634.2,
    "rot": 0,
    "scale": 0.6625000000000001,
@@ -169,7 +169,7 @@
   {
    "name": "eyes.narrow",
    "img": "eyes_narrow.png",
-   "cx": 369.88,
+   "cx": 530.53,
    "cy": 634.2,
    "rot": 0,
    "scale": 0.6625000000000001,
@@ -184,7 +184,7 @@
   {
    "name": "eyes.wide",
    "img": "eyes_wide.png",
-   "cx": 369.88,
+   "cx": 530.53,
    "cy": 634.2,
    "rot": 0,
    "scale": 0.6625000000000001,
@@ -199,7 +199,7 @@
   {
    "name": "eyes.laugh",
    "img": "eyes_laugh.png",
-   "cx": 369.88,
+   "cx": 530.53,
    "cy": 634.2,
    "rot": 0,
    "scale": 0.6625000000000001,

@@ -26,7 +26,7 @@
   {
    "file": "../web/art/green_knight/master.png",
    "label": "head.rest",
-   "x": 189,
+   "x": 350,
    "y": 494,
    "scale": 0.6625000000000001,
    "rot": 0,
@@ -37,7 +37,7 @@
   {
    "file": "../web/art/green_knight/eyes_half.png",
    "label": "eyes.half",
-   "x": 189,
+   "x": 350,
    "y": 494,
    "scale": 0.6625000000000001,
    "rot": 0,
@@ -48,7 +48,7 @@
   {
    "file": "../web/art/green_knight/eyes_closed.png",
    "label": "eyes.closed",
-   "x": 189,
+   "x": 350,
    "y": 494,
    "scale": 0.6625000000000001,
    "rot": 0,
@@ -59,7 +59,7 @@
   {
    "file": "../web/art/green_knight/eyes_viewer.png",
    "label": "eyes.viewer",
-   "x": 189,
+   "x": 350,
    "y": 494,
    "scale": 0.6625000000000001,
    "rot": 0,
@@ -70,7 +70,7 @@
   {
    "file": "../web/art/green_knight/eyes_down.png",
    "label": "eyes.down",
-   "x": 189,
+   "x": 350,
    "y": 494,
    "scale": 0.6625000000000001,
    "rot": 0,
@@ -81,7 +81,7 @@
   {
    "file": "../web/art/green_knight/eyes_side.png",
    "label": "eyes.side",
-   "x": 189,
+   "x": 350,
    "y": 494,
    "scale": 0.6625000000000001,
    "rot": 0,
@@ -92,7 +92,7 @@
   {
    "file": "../web/art/green_knight/eyes_narrow.png",
    "label": "eyes.narrow",
-   "x": 189,
+   "x": 350,
    "y": 494,
    "scale": 0.6625000000000001,
    "rot": 0,
@@ -103,7 +103,7 @@
   {
    "file": "../web/art/green_knight/eyes_wide.png",
    "label": "eyes.wide",
-   "x": 189,
+   "x": 350,
    "y": 494,
    "scale": 0.6625000000000001,
    "rot": 0,
@@ -114,7 +114,7 @@
   {
    "file": "../web/art/green_knight/eyes_laugh.png",
    "label": "eyes.laugh",
-   "x": 189,
+   "x": 350,
    "y": 494,
    "scale": 0.6625000000000001,
    "rot": 0,
