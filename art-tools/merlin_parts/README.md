@@ -39,3 +39,7 @@ show, collect; tells `glow` (strong: the staff hums) beside `tap`, `gaze`
 room's nearest candle flame gutters, `gutter`), `still`, `look_at_you`;
 beats `talk`, `big_bet`, `lost_pot` (a small nod), `won_pot`, `heads_up`
 (hands clasped, eyes fixed), `knocked_out` (takes his staff, turns to go).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py merlin`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py merlin`. His staff threw the automatic fit off (67

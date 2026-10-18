@@ -45,12 +45,13 @@ def felt_mask(c):
     return teal | green
 
 
-# the three tables: column runs of felt along a row near the bottom of the felt
+# the three tables: a column of the felt's band with no felt in any row is the
+# white gap between cells (a hand or a prop on the felt breaks a single row)
 F = felt_mask(S)
 rows = np.nonzero(F.sum(1) > S.shape[1] * 0.3)[0]
-y = int(rows.max()) - 12
+has = F[rows.min():rows.max() + 1].any(0)
 runs, x0 = [], None
-for x, on in enumerate(F[y]):
+for x, on in enumerate(has):
     if on and x0 is None: x0 = x
     if not on and x0 is not None:
         if x - x0 > 100: runs.append([x0, x])

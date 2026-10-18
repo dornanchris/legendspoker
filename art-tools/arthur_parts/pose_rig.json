@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     -2,
     -10
    ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    17,
+    186,
+    576,
+    600
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8182,
+    7.0,
+    -11.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    572,
+    18,
+    819,
+    768
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8182,
+    -63.4,
+    -143.5
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1298,
+    251,
+    637,
+    535
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8182,
+    -18.8,
+    34.8
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   255,
   180
  ],
- "frame_margin": 60,
+ "frame_margin": 173,
  "stock_box": [
   190,
   180,
@@ -858,6 +904,16 @@
    "pose": "D6",
    "head": "own",
    "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "runtime": "../web/art/arthur",

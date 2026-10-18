@@ -31,3 +31,7 @@ check, peek, call, bet, fold, all in, show, collect; tells `holly` (strong)
 beside `moss`, `laugh` (bluffing) beside `grin`, `axe` (weak) beside
 `measure`; idles `door`, `creak`, `lean_back`, `look_at_you`; beats `talk`,
 `big_bet`, `lost_pot`, `won_pot`, `heads_up`, `knocked_out`.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py green_knight`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py green_knight`.

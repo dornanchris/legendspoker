@@ -25,7 +25,7 @@ is done, and say so in the commit.
   big win (hands raised) and the crushing loss: reactions sheet E for every
   character drawn before JFK and Loki (they have them inside sheets B and D).
   Prompts exist for the White House four (end of their POSES.md); write the
-  rest as they come up. **Built: the White House (but FDR), Athens and the Pirate Cove**
+  rest as they come up. **Built: the White House (but FDR), Athens, the Pirate Cove and Camelot**
   (ART-PIPELINE.md has the steps: `build/reactions_sheet.py`, then
   `build/reactions.py`). Teddy's brown suit is the wood's colour: his older
   frames (`bet` and others) have small bites at the shoulders; his reactions

@@ -28,3 +28,7 @@ call, bet (at once: his `snap` quirk), fold, all in, show, collect; tells
 `cup`, `fond`, `listen`, `look_at_you`; beats `talk`, `big_bet`,
 `lost_pot` (a gracious nod), `won_pot`, `heads_up`, `knocked_out` (takes
 Excalibur and bows).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py arthur`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py arthur`. `sources/poses_e_alt.png` is a first draw with magenta smudges on the mail, kept unused.

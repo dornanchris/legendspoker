@@ -576,6 +576,34 @@
    "bone": "torso"
   },
   {
+   "name": "frame.win_big",
+   "img": "frame_win_big.png",
+   "cx": 538.12,
+   "cy": 731.25,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.lose_big",
+   "img": "frame_lose_big.png",
+   "cx": 538.12,
+   "cy": 731.25,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
    "name": "arm_near.rest",
    "img": "arm_near_rest.png",
    "cx": 538.0,
@@ -754,6 +782,21 @@
     1.0,
     3,
     5
+   ],
+   "E1": [
+    0.8558,
+    -29.0,
+    -8.0
+   ],
+   "E2": [
+    0.8558,
+    -72.2,
+    -69.6
+   ],
+   "E3": [
+    0.8558,
+    -26.9,
+    -97.0
    ]
   }
  },
@@ -780,6 +823,8 @@
   "lost_pot": null,
   "won_pot": null,
   "heads_up": null,
-  "knocked_out": null
+  "knocked_out": null,
+  "win_big": null,
+  "lose_big": null
  }
 }

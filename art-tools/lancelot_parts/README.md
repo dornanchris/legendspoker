@@ -34,3 +34,7 @@ show, collect; tells `polish` (strong: polishes his gauntlet) beside
 `talk`, `big_bet`, `lost_pot` (wounded pride), `won_pot` (a dazzling smile),
 `heads_up`, `knocked_out` (a stiff bow, turning away). Cued by their words
 (`cues`); `bored`, `proud` and `look_at_you` are wordless fidgets.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py lancelot`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py lancelot`.

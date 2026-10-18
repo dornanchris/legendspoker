@@ -28,3 +28,7 @@ tells and idles.
 **Clips** (`web/art/green_knight_bare/anim.json`, 24): as the helmed set,
 colder: `cold_smile` for the grin, `arrive` (C6: looming over the table) as
 he sits back down, `lost_pot` a fist on the table, `knocked_out` a curt nod.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py green_knight_bare`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py green_knight_bare`. The fit reads low (61-73

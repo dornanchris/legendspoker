@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     0,
     0
    ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    13,
+    66,
+    619,
+    703
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.775,
+    39.0,
+    -68.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    575,
+    12,
+    783,
+    757
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.775,
+    -28.8,
+    -72.6
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1312,
+    66,
+    632,
+    703
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.775,
+    39.0,
+    -61.7
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   300,
   215
  ],
- "frame_margin": 60,
+ "frame_margin": 102,
  "stock_box": [
   220,
   215,
@@ -879,6 +925,16 @@
    "pose": "D6",
    "head": "own",
    "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "runtime": "../web/art/merlin",

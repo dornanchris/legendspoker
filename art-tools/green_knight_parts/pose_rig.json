@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     3,
     5
    ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    12,
+    130,
+    619,
+    654
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8558,
+    -29.0,
+    -8.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    613,
+    24,
+    722,
+    760
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8558,
+    -72.2,
+    -69.6
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1317,
+    158,
+    617,
+    626
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8558,
+    -26.9,
+    -97.0
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   245,
   225
  ],
- "frame_margin": 60,
+ "frame_margin": 127,
  "stock_box": [
   180,
   225,
@@ -888,6 +934,16 @@
    "pose": "D6",
    "head": "own",
    "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "runtime": "../web/art/green_knight",
