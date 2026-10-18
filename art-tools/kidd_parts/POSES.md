@@ -164,3 +164,24 @@ Every piece is drawn at EXACTLY the angle and size of his head in the at-rest po
 - His head turned back over his shoulder, worried
 - His head turned toward the viewer, nearly front-on
 ```
+
+### Reactions sheet (E): the big win and the crushing loss
+
+The owner's reactions, sized by the pot: an ordinary win is a nod and a smile
+the puppet already has (`win_small`, art-tools/build/win_small.py); a pot worth
+most of his stack plays the big win, and losing one the crushing loss. Pose 1
+is his rest pose again, only to measure the sheet by. Attach
+`art-tools/kidd_parts/sources/poses_a.png` FIRST, then
+`art-tools/kidd_parts/sources/kidd_sheet.png`, and nothing of anyone else's.
+
+```
+Character pose sheet for 2D animation reference: Captain Kidd, exactly as on the attached sheets, drawn to match the FIRST attached pose sheet: same size, same angle, same table edge height, same wig, hat, coat and cravat.
+
+Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind him, no chair, nothing of him cut off by the edge of the picture (raised hands included). Nothing below the table edge. In every pose his hat stays on his head.
+
+1. EXACTLY his at-rest pose, the top-left pose of the attached pose sheet, copied as it is
+2. A big win: both arms raised high above his head, hands open, a wide relieved grin of a man finally paid what he is owed
+3. A crushing loss: his head sunk into one hand, elbow on the table, eyes shut, a bitter frown: a man the law has turned against again
+
+No cards and no chips anywhere: his hands are empty. Pure white background around each pose; the poses do not touch. No text, no numbers, no labels. No treasure chest, no map, no sword, no noose, no chair.
+```

@@ -141,3 +141,24 @@ Every piece is drawn at EXACTLY the angle and size of his head in the at-rest po
 - The parrot on her own, at exactly her size and place on his shoulder, in four poses: sitting; squawking; preening; sidling
 - His head turned toward the viewer, nearly front-on
 ```
+
+### Reactions sheet (E): the big win and the crushing loss
+
+The owner's reactions, sized by the pot: an ordinary win is a nod and a smile
+the puppet already has (`win_small`, art-tools/build/win_small.py); a pot worth
+most of his stack plays the big win, and losing one the crushing loss. Pose 1
+is his rest pose again, only to measure the sheet by. Attach
+`art-tools/silver_parts/sources/poses_a.png` FIRST, then
+`art-tools/silver_parts/sources/silver_sheet.png`, and nothing of anyone else's.
+
+```
+Character pose sheet for 2D animation reference: Long John Silver, exactly as on the attached sheets, drawn to match the FIRST attached pose sheet: same size, same angle, same table edge height, same apron, coat, crutch and parrot.
+
+Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind him, no chair, nothing of him cut off by the edge of the picture (raised hands included). Nothing below the table edge. In every pose the parrot stays on his right shoulder (the left of the picture) and the crutch top under his left arm.
+
+1. EXACTLY his at-rest pose, the top-left pose of the attached pose sheet, copied as it is
+2. A big win: both arms raised high above his head, hands open, a huge beaming grin, the parrot flapping its wings on his shoulder
+3. A crushing loss: one hand pressed over his eyes, his other hand flat on the felt, the parrot hunched and ruffled on his shoulder
+
+No cards and no chips anywhere: his hands are empty. Pure white background around each pose; the poses do not touch. No text, no numbers, no labels. No sword, no pistol, no treasure, no map, no chair.
+```
