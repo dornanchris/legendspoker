@@ -34,4 +34,4 @@ beside `moss`, `laugh` (bluffing) beside `grin`, `axe` (weak) beside
 
 ## Reactions sheet E
 
-`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py green_knight`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py green_knight`.
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py green_knight`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py green_knight`. The fit reads low (61-73%) only because the holly branch is drawn differently; the body lines up.

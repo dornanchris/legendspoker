@@ -42,4 +42,4 @@ beats `talk`, `big_bet`, `lost_pot` (a small nod), `won_pot`, `heads_up`
 
 ## Reactions sheet E
 
-`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py merlin`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py merlin`. His staff threw the automatic fit off (67
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py merlin`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py merlin`. His staff threw the automatic fit off (67%): E1 was refitted by hand on the figure without the staff (x > 30% of the rest pose), 96%, and E2/E3 rescaled to match.
