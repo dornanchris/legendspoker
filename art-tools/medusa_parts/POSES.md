@@ -177,7 +177,7 @@ is her rest pose again, only to measure the sheet by. Attach
 ```
 Character pose sheet for 2D animation reference: Medusa, exactly as on the attached sheets, drawn to match the FIRST attached pose sheet: same size, same angle, same table edge height, same dress and snakes.
 
-Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind her, no chair, nothing of her cut off by the edge of the picture (raised hands included). Nothing below the table edge. In every pose her hands empty of anything but what the pose says.
+Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind her, no chair, nothing of her cut off by the edge of the picture (raised hands included). Nothing below the table edge. In every pose her snakes are drawn as on the attached sheets, the same number and colours.
 
 1. EXACTLY her at-rest pose, the top-left pose of the attached pose sheet, copied as it is
 2. A big win: both arms raised, palms open, head thrown back laughing, every snake rearing up and hissing in delight
