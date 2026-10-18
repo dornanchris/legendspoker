@@ -38,3 +38,10 @@ peek, call, bet, fold, all in, show, collect; tells `elephant_aside`
 `elephant_door` (weak) beside `ranks`; idles `cloak`, `appraise`, `chin`,
 `look_at_you`; beats talk, big bet, lost pot, won pot, heads up, knocked
 out. Every pose but rest is a whole-figure frame with its own drawn head.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py scipio`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py scipio`. Then run `art-tools/scipio_parts/rail_e.py` (after pose_rig.py, before web_half.py):
+
+- `keep_white` (pose_rig.json) keeps his teeth and the elephant's cream saddle-cloth, which the build took for white background caught inside the figure.
+- The sheet's drawn table edge sits just under his table line, and whole-figure frames are drawn again over the table: the frames' `except` boxes cut it either side of the elephant, and `rail_e.py` clears it between the legs and under the belly, never inside the elephant's outline (the hull of its ivory pieces) above the belly line, so the gold-edged saddle-cloth stays.
