@@ -67,6 +67,12 @@ change, re-run `python3 art-tools/build/win_small.py`,
 then **`python3 art-tools/build/puppet_audit.py`**: every puppet held to one
 list (life, the clips the table asks for, win/lose, a cue for every tell and
 idle line, holds, seated frames, half-size images); it must print 0.
+**Paper flecks** (the owner saw white specks in Lancelot's hair): the sheet's
+white caught between curls and the outline survives every cut. `python3
+art-tools/build/paper_flecks.py <id> [--dry]` colours each small paper-white or
+grey fleck at the outline, ringed by dark line and hair, with the nearest dark
+pixel (plate and silk highlights stay). Run it after pose_rig.py and the
+reaction steps, before web_half. Done for Lancelot and both Green Knights.
 A whole-figure frame's body must reach the table line, or the room shows
 under it and the figure floats (Lincoln's did: `lincoln_parts/frame_seat.py`).
 

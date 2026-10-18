@@ -896,5 +896,6 @@
  "wood_rows_only": true,
  "felt_holes": true,
  "felt_blue": true,
- "felt_dark_teal": true
+ "felt_dark_teal": true,
+ "strip_thin": 2
 }

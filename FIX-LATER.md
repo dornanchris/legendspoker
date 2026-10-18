@@ -28,6 +28,15 @@ is done, and say so in the commit.
   (Nemo's pearl, Holmes's pipe), a nick in Medusa's lower bracelet, a sliver under
   Scipio's elephant; Teddy's older frames (`bet` and others) still have small bites
   at the shoulders (his suit is the wood's colour).
+- **Unwanted colours at the table** (the owner, playing: the Green Knight, both
+  looks, and specks in Lancelot's hair). Done for those three: the felt and rail
+  tests keep the Knight's gold (`green_knight_parts/README.md`), and
+  `build/paper_flecks.py` colours over the sheet's white caught in hair. Left:
+  bigger pockets of paper between the holly's twigs (over 120 px, so the fleck
+  pass leaves them), a few small orange stubs where a frame meets the drawn rail
+  at its ends, a nub of outline by the Knight's far rest gauntlet. Worth a
+  `paper_flecks.py --dry` across the cast, puppet by puppet, looked at before
+  it is applied.
 - **More drawn poses, less rigging** (the owner: "lean into the stop motion
   stuff a bit more"). When a gesture looks stiff as a tweened arm, the fix is
   another whole-figure drawing, not another bone.
