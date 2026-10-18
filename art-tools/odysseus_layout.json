@@ -553,6 +553,30 @@
    "on_table": true
   },
   {
+   "file": "../web/art/odysseus/frame_win_big.png",
+   "label": "frame.win_big",
+   "x": 240,
+   "y": 458,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/odysseus/frame_lose_big.png",
+   "label": "frame.lose_big",
+   "x": 240,
+   "y": 458,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
    "file": "../web/art/odysseus/arm_near_rest.png",
    "label": "arm_near.rest",
    "x": 300,

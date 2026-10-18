@@ -36,3 +36,7 @@ beside `exits`, `lean_back` (strong) beside `stretch`; idles `wring`,
 (fair enough), `won_pot` (a wink), `arrive` (soaking wet, apologising:
 played as he sits down), `knocked_out` (the cap set straight for the road
 home). His tells and idles are cued by their words (`cues`).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py odysseus`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py odysseus`.

@@ -42,3 +42,7 @@ show, collect; tells `nose` (bluffing) beside `beard`, `private_smile`
 `stretch`, `cloak`, `laugh`, `look_at_you`; beats `talk`, `big_bet`,
 `lost_pot`, `won_pot` (a toast), `heads_up`, `knocked_out` (the cup turned
 upside down). His tells and idles are cued by their words (`cues`).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py socrates`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py socrates`.

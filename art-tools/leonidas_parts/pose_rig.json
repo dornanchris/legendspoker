@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     -16
    ],
    "what": "knocked out: the helmet lifted"
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    16,
+    248,
+    604,
+    533
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8441,
+    1.0,
+    2.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    640,
+    20,
+    646,
+    761
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8441,
+    -10.4,
+    -163.4
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1296,
+    322,
+    631,
+    459
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8441,
+    -10.0,
+    66.1
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   290,
   205
  ],
- "frame_margin": 60,
+ "frame_margin": 193,
  "stock_box": [
   240,
   215,
@@ -1211,6 +1257,56 @@
   "knocked_out": {
    "pose": "D6",
    "head": "own"
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true,
+   "props": [
+    [
+     [
+      0,
+      178
+     ],
+     [
+      156,
+      178
+     ],
+     [
+      156,
+      436
+     ],
+     [
+      0,
+      436
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true,
+   "props": [
+    [
+     [
+      0,
+      178
+     ],
+     [
+      156,
+      178
+     ],
+     [
+      156,
+      436
+     ],
+     [
+      0,
+      436
+     ]
+    ]
+   ]
   }
  },
  "runtime": "../web/art/leonidas",

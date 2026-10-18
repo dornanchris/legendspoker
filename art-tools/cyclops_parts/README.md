@@ -40,3 +40,7 @@ show, collect; tells `narrow` (strong) beside `blink`, `sniff` (weak) beside
 `look_at_you`; beats `talk` (pointing), `big_bet`, `lost_pot` (a growl),
 `won_pot` (the grin), `heads_up`, `knocked_out` (picks up his club). His tells
 and idles are cued by their words (`cues`).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py cyclops`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py cyclops`.

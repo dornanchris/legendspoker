@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     -39
    ],
    "what": "knocked out: sets his cap straight"
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    9,
+    121,
+    596,
+    629
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.7792,
+    57.0,
+    1.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    528,
+    115,
+    866,
+    637
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.7792,
+    -57.2,
+    -7.6
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1338,
+    180,
+    597,
+    570
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.7792,
+    54.3,
+    29.8
+   ]
   }
  },
  "rest": "A1",
@@ -820,6 +866,16 @@
    "pose": "D6",
    "head": "own",
    "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "runtime": "../web/art/odysseus",

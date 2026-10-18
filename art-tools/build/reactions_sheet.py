@@ -3,7 +3,7 @@ kit built from a hand-written pose_rig.json: finds the three figures, places
 them against the rest pose, and adds poses E1-E3 and the frames `win_big` (E2)
 and `lose_big` (E3). Then rebuild as usual, and run reactions.py for the clips:
 
-  python3 art-tools/build/reactions_sheet.py lincoln [--keep-wood]
+  python3 art-tools/build/reactions_sheet.py lincoln [--keep-wood] [--rest-props]
   python3 art-tools/pose_rig.py art-tools/lincoln_parts/pose_rig.json
   python3 art-tools/build/reactions.py lincoln   (then win_small, tell_hold, life, web_half)
 
@@ -16,7 +16,8 @@ and lands in the next one's, so both frames keep only their biggest piece.
 Raises `frame_margin` so raised hands are not cut off at the frame's top.
 --keep-wood: a coat the wood's colour (Teddy's brown suit) loses bites to the
 table test; this keeps everything above the rail as drawn (a props box: felt
-is still cleared). Writes the placement it found; check it with frames_sheet.py.
+is still cleared). --rest-props: the rest arms' props boxes (a prop on the felt
+drawn in the same place, Leonidas's helmet) go into both frames. Writes the placement it found; check it with frames_sheet.py.
 """
 import json, os, sys
 import numpy as np
@@ -29,6 +30,7 @@ import pose_rig as pr
 
 args = [a for a in sys.argv[1:] if not a.startswith('--')]
 KEEP_WOOD = '--keep-wood' in sys.argv
+REST_PROPS = '--rest-props' in sys.argv
 pid = args[0]
 kit = os.path.join(ROOT, 'art-tools', (args[1] if len(args) > 1 else pid + '_parts'))
 spec_path = os.path.join(kit, 'pose_rig.json')
@@ -134,8 +136,10 @@ if spec.get('frame_margin', 0) < need:
     spec['frame_margin'] = need
 for name, pose in (('win_big', 'E2'), ('lose_big', 'E3')):
     f = {'pose': pose, 'head': 'own', 'biggest': True}
+    if REST_PROPS:                                             # a prop on the felt in the same place (Leonidas's helmet)
+        f.setdefault('props', []).extend(pp for a in spec['arms'].values() for pp in a['assets'][a['rest']].get('props', []))
     if KEEP_WOOD:                                              # all of him above the rail, as drawn
         ty, w = spec['table_y'], A.shape[1]
-        f['props'] = [[[-400, -600], [w + 400, -600], [w + 400, ty - 8], [-400, ty - 8]]]
+        f.setdefault('props', []).append([[-400, -600], [w + 400, -600], [w + 400, ty - 8], [-400, ty - 8]])
     spec['frames'][name] = f
 json.dump(spec, open(spec_path, 'w'), indent=1)

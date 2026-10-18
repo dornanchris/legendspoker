@@ -37,3 +37,7 @@ show, collect; tells `still` (strong) beside `drowse`, `hiss` (weak) beside
 `look_at_you`; beats `talk`, `big_bet`, `lost_pot`, `won_pot`, `heads_up`,
 `knocked_out` (the himation drawn round her). Her tells and idles are cued by
 their words (`cues`).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py medusa`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py medusa`. Sheet E drew her table edge as a wider arc than her other sheets: `rail_e.py` clears what the rail filter leaves (run it after pose_rig.py), and E2 is lowered 8 px so the frame meets the table. Left: a small nick in the lower bracelet of the crushing loss (its gold is the rail's colour).

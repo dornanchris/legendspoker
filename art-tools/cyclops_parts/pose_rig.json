@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     -31
    ],
    "what": "knocked out: picks up his club"
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    13,
+    220,
+    618,
+    546
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8453,
+    3.0,
+    -1.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    617,
+    23,
+    672,
+    743
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8453,
+    -27.0,
+    -141.3
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1295,
+    219,
+    639,
+    548
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8453,
+    -0.8,
+    2.4
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   300,
   215
  ],
- "frame_margin": 60,
+ "frame_margin": 171,
  "stock_box": [
   240,
   215,
@@ -771,6 +817,16 @@
   "knocked_out": {
    "pose": "D6",
    "head": "own"
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "runtime": "../web/art/cyclops",

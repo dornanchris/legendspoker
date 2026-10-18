@@ -56,7 +56,7 @@ is drawn the table uses the small win and the old beats. To build one:
 against the rest pose and adds the frames to `pose_rig.json`; `--keep-wood` for a
 coat the table's wood colour), `pose_rig.py`, `ik_build.py` if the kit has IK
 arms, `art-tools/build/reactions.py <id>` (the two clips), then win_small,
-tell_hold, life, web_half. Built so far: Lincoln, Washington, Teddy Roosevelt. After any anim.json
+tell_hold, life, web_half. Built so far: the White House (but FDR) and Athens. After any anim.json
 change, re-run `python3 art-tools/build/win_small.py`,
 `fallback_clips.py`, `tell_hold.py` and `life.py` (all in art-tools/build/),
 then **`python3 art-tools/build/puppet_audit.py`**: every puppet held to one

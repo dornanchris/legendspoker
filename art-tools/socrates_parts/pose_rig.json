@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     -2,
     14
    ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    10,
+    209,
+    617,
+    553
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8481,
+    21.0,
+    -2.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    591,
+    11,
+    754,
+    751
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8481,
+    -36.7,
+    -159.7
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1309,
+    286,
+    620,
+    476
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8481,
+    20.6,
+    63.3
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   255,
   215
  ],
- "frame_margin": 60,
+ "frame_margin": 189,
  "stock_box": [
   200,
   230,
@@ -859,6 +905,16 @@
   "knocked_out": {
    "pose": "D6",
    "head": "own"
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "runtime": "../web/art/socrates",

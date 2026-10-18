@@ -3074,6 +3074,246 @@
      ]
     ]
    }
+  },
+  "win_big": {
+   "duration": 2.4,
+   "note": "BEAT: a big pot won (most of the stack): hands raised high.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       -2,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       2.0,
+       0
+      ],
+      [
+       2.02,
+       -2,
+       "hold"
+      ],
+      [
+       2.3,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "win_big"
+     ],
+     [
+      2.0,
+      null
+     ]
+    ]
+   }
+  },
+  "lose_big": {
+   "duration": 2.6,
+   "note": "BEAT: a crushing loss: a hand over the eyes.",
+   "tracks": {
+    "torso": {
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.2,
+       0,
+       "in"
+      ],
+      [
+       0.32,
+       0,
+       "out"
+      ],
+      [
+       2.2,
+       0
+      ],
+      [
+       2.22,
+       0,
+       "hold"
+      ],
+      [
+       2.5,
+       0,
+       "inOut"
+      ]
+     ]
+    }
+   },
+   "swaps": {
+    "torso": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.2,
+      "-"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.2,
+      "lose_big"
+     ],
+     [
+      2.2,
+      null
+     ]
+    ]
+   }
   }
  },
  "cues": {
@@ -3118,10 +3358,10 @@
  },
  "win": {
   "small": "win_small",
-  "big": "won_pot"
+  "big": "win_big"
  },
  "lose": {
   "small": "lost_pot",
-  "big": "lost_pot"
+  "big": "lose_big"
  }
 }

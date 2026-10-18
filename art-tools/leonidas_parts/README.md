@@ -37,3 +37,7 @@ show, collect; tells `fists` (strong) beside `arms_folded`, `chin`
 `knuckles`, `cloak`, `helmet`, `look_at_you`; beats `talk`, `big_bet`,
 `lost_pot`, `won_pot` (a curt nod), `heads_up`, `knocked_out` (the helmet
 lifted to put on). His tells and idles are cued by their words (`cues`).
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py leonidas`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py leonidas`. Placed with `--rest-props` (his helmet on the felt).
