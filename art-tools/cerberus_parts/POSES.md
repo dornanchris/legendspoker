@@ -147,3 +147,24 @@ Every piece is drawn at EXACTLY the angle and size of his MIDDLE head in the at-
 
 Keep the simple, chunky, flat cartoon style of the attached sheets and of Washington's sheet: few lines, big smooth shapes, flat colour, no fine detail or texture.
 ```
+
+### Reactions sheet (E): the big win and the crushing loss
+
+The owner's reactions, sized by the pot: an ordinary win is a nod and a smile
+the puppet already has (`win_small`, art-tools/build/win_small.py); a pot worth
+most of his stack plays the big win, and losing one the crushing loss. Pose 1
+is his rest pose again, only to measure the sheet by. Attach
+`art-tools/cerberus_parts/sources/poses_a.png` FIRST, then
+`art-tools/cerberus_parts/sources/cerberus_sheet.png`, and nothing of anyone else's.
+
+```
+Character pose sheet for 2D animation reference: Cerberus, exactly as on the attached sheets, drawn to match the FIRST attached pose sheet: same size, same angle, same table edge height, same three heads, black coat, bronze collars and paws, the same giant size.
+
+Draw 3 poses side by side in one row across the middle of the picture, each the same size as the poses on the attached pose sheet. Every pose: chest up, sitting up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, nothing behind him, no chair, nothing of him cut off by the edge of the picture (raised paws included). Nothing below the table edge. In every pose all three heads are drawn, each on its own neck, never one hidden behind another.
+
+1. EXACTLY his at-rest pose, the top-left pose of the attached pose sheet, copied as it is
+2. A big win: both front paws thrown up off the table, all three heads thrown back howling in joy, mouths wide
+3. A crushing loss: all three heads drooping low over the table, ears flat, eyes shut, a front paw over the middle head's muzzle, the other paw flat on the table's edge
+
+No cards and no chips anywhere: his paws are empty. Pure white background around each pose; the poses do not touch. No text, no numbers, no labels. No chains, no gates, no flames, no fourth head, no chair.
+```
