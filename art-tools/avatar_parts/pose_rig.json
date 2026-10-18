@@ -1,0 +1,636 @@
+{
+ "id": "stranger",
+ "name": "The Stranger",
+ "note": "Polygons in the rest pose (A1) pixels. The default avatar: the player, seen once, in the finale's left-hand chair, and later online. No face (a shadow under the hat), so no face layers; NO tells (rule 3): it acts out only what the player did. Its scarf, hat band and cuffs are the one teal (hue 175-202): the player's accent colour replaces it at load (web/puppet/player.ts).",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    16,
+    29,
+    493,
+    471
+   ],
+   "what": "Rest: forearms on the table's edge, gloved hands apart"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    525,
+    35,
+    485,
+    464
+   ],
+   "reg": [
+    1.0,
+    22,
+    1
+   ],
+   "what": "Peeking at the cards (right hand)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1026,
+    34,
+    493,
+    466
+   ],
+   "reg": [
+    1.0,
+    8,
+    -11
+   ],
+   "what": "Check: two fingers tap the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    16,
+    522,
+    493,
+    467
+   ],
+   "reg": [
+    1.0,
+    -2,
+    18
+   ],
+   "what": "Call: right hand pushes forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    525,
+    527,
+    485,
+    462
+   ],
+   "reg": [
+    1.0,
+    -13,
+    10
+   ],
+   "what": "Bet: leans in, right hand pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1026,
+    520,
+    493,
+    470
+   ],
+   "reg": [
+    1.0,
+    7,
+    5
+   ],
+   "what": "Fold: a small push of the hand"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    12,
+    14,
+    522,
+    485
+   ],
+   "reg": [
+    1.0,
+    -15,
+    -14
+   ],
+   "what": "All in: both hands push forward together"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    547,
+    24,
+    473,
+    475
+   ],
+   "reg": [
+    1.0,
+    24,
+    20
+   ],
+   "what": "Show: right hand turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1019,
+    20,
+    506,
+    479
+   ],
+   "reg": [
+    1.0,
+    -7,
+    -4
+   ],
+   "what": "Big win: both fists raised (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    14,
+    526,
+    501,
+    464
+   ],
+   "reg": [
+    1.0,
+    -3,
+    34
+   ],
+   "what": "Crushing loss: hat brim pulled down, head bowed (`lose_big`)"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    531,
+    515,
+    489,
+    474
+   ],
+   "reg": [
+    1.0,
+    14,
+    14
+   ],
+   "what": "Heads up: leaning in on both forearms"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1035,
+    515,
+    487,
+    474
+   ],
+   "reg": [
+    1.0,
+    23,
+    7
+   ],
+   "what": "Talking: a hand raised, palm open"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    16,
+    17,
+    502,
+    485
+   ],
+   "reg": [
+    1.0,
+    -1,
+    -12
+   ],
+   "what": "LOOP: tips the brim of the hat"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    529,
+    20,
+    484,
+    482
+   ],
+   "reg": [
+    1.0,
+    14,
+    1
+   ],
+   "what": "LOOP: settles the scarf at the collar"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1021,
+    27,
+    500,
+    475
+   ],
+   "reg": [
+    1.0,
+    28,
+    4
+   ],
+   "what": "LOOP: leans back, settling in"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    16,
+    515,
+    501,
+    477
+   ],
+   "reg": [
+    1.0,
+    8,
+    -3
+   ],
+   "what": "LOOP: turns the coat collar up"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    529,
+    520,
+    485,
+    473
+   ],
+   "reg": [
+    1.0,
+    -27,
+    0
+   ],
+   "what": "LOOP: pulls a glove snug at the wrist"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1027,
+    520,
+    494,
+    473
+   ],
+   "reg": [
+    1.0,
+    -13,
+    3
+   ],
+   "what": "LOOP: glances round the room"
+  }
+ },
+ "rest": "A1",
+ "table_y": 360,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  220,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 190,
+ "neck": [
+  250,
+  190
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  210,
+  180,
+  340,
+  240
+ ],
+ "master": {
+  "piece": "avatar_parts/stranger_face/stranger_master.png",
+  "cut_below": 200,
+  "face": "avatar_parts/face.json",
+  "file": "avatar_parts/stranger_rig/master.png",
+  "layers": "avatar_parts/stranger_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    90,
+    0
+   ],
+   [
+    410,
+    0
+   ],
+   [
+    410,
+    118
+   ],
+   [
+    332,
+    126
+   ],
+   [
+    322,
+    150
+   ],
+   [
+    302,
+    186
+   ],
+   [
+    250,
+    194
+   ],
+   [
+    212,
+    178
+   ],
+   [
+    184,
+    150
+   ],
+   [
+    174,
+    126
+   ],
+   [
+    90,
+    118
+   ]
+  ],
+  "shoulder_y": 200
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    45,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     20,
+     280
+    ],
+    [
+     110,
+     280
+    ],
+    [
+     110,
+     335
+    ],
+    [
+     20,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "the right forearm in its coat sleeve and the gloved hand",
+     "poly": [
+      [
+       15,
+       330
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       110,
+       300
+      ],
+      [
+       150,
+       330
+      ],
+      [
+       200,
+       350
+      ],
+      [
+       240,
+       365
+      ],
+      [
+       280,
+       410
+      ],
+      [
+       286,
+       446
+      ],
+      [
+       230,
+       452
+      ],
+      [
+       150,
+       432
+      ],
+      [
+       60,
+       426
+      ],
+      [
+       15,
+       400
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    440,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     280
+    ],
+    [
+     482,
+     280
+    ],
+    [
+     482,
+     320
+    ],
+    [
+     400,
+     320
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "the left forearm in its coat sleeve and the gloved hand",
+     "poly": [
+      [
+       300,
+       400
+      ],
+      [
+       320,
+       370
+      ],
+      [
+       350,
+       360
+      ],
+      [
+       400,
+       340
+      ],
+      [
+       440,
+       310
+      ],
+      [
+       476,
+       330
+      ],
+      [
+       482,
+       380
+      ],
+      [
+       470,
+       410
+      ],
+      [
+       432,
+       442
+      ],
+      [
+       320,
+       446
+      ],
+      [
+       300,
+       430
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110
+  },
+  "lose_big": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "heads_up": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "tip": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "scarf": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "settle": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "collar": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "glove": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "glance": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "runtime": "../web/art/stranger",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "back_strip": 6,
+ "wood_rows_only": true,
+ "rail_holes": [
+  30,
+  20
+ ]
+}

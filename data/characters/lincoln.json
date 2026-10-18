@@ -46,10 +46,9 @@
     }
   ],
   "idles": [
-    "crosses one long leg over the other",
-    "glances at the clock on the mantel",
+    "stretches his long back until the chair creaks",
     "rubs his eyes",
-    "smooths the brim of the hat on his knee"
+    "tips his hat to someone across the table"
   ],
   "profile": {
     "ledger": "Saw Lee surrender at Appomattox. Five days later he went to the theatre.",
@@ -59,43 +58,73 @@
       "He was the tallest president, six foot four, and a teller of jokes and stories, some of them to his own cabinet at the worst moments of the war. He could also wait: he sat on the Emancipation Proclamation for two months until a battlefield victory could give it weight, and announced it five days after Antietam. He reads people the way he read law, slowly and all the way through."
     ],
     "at_the_table": "Tight, and in no hurry about it. He folds most hands, and before the flop he gives up almost anything to a raise — until his stack runs short, when the patience ends. When he does play, he calls more than he raises, and he almost never tells a lie with his chips. A bad beat does not move him. He watches between hands and adjusts, slowly, to what he sees.",
-    "look": "Silhouette: the longest frame at the table, bare-headed, the stovepipe hat resting on his knee with its crown showing above the table edge. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen.",
-    "prop": "Stovepipe hat, on his knee",
+    "look": "Silhouette: the longest frame at the table, and taller still in the stovepipe hat he never takes off; he tips it, pushes it back, straightens it. Face, after the Brady and Gardner photographs: long and narrow, hollow cheeks under high cheekbones, deep-set tired eyes, a long straight nose, thin lips, the chin beard along the jaw with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen.",
+    "prop": "Stovepipe hat, always worn",
     "public_domain": "Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film."
   },
   "callouts": {
     "fold": [
       "I'll let this one go by.",
       "Fold. I sat on a proclamation for two months. I can sit on this.",
-      "I'll sit by the fire for this one.",
+      "I'll go split a few rails until the next one.",
       "Fold. There is a time for everything, and this isn't it."
     ],
     "check": [
       "Check.",
       "I'll hold my peace.",
-      "Check. Go on, I'm listening."
+      "Check. Go on, I'm listening.",
+      "Check. Honest Abe holds his tongue."
     ],
     "call": [
       "I'll see that.",
       "Call. Best not to swap horses mid-stream.",
-      "Call. I'd like to hear the rest of the argument.",
-      "I'll pay to hear the end of the story."
+      "I'll pay to hear the end of the story.",
+      "Call. Of the people, by the people, for the pot."
     ],
     "bet": [
-      "I'll put something on it.",
       "Bet. A modest sum. I was a country lawyer.",
-      "Let's see who's in earnest."
+      "Bet. If you won't use those chips, I'd like to borrow them.",
+      "Bet. Four score and seven chips.",
+      "Bet. The Union's credit is good."
     ],
     "raise": [
-      "Raise.",
       "Raise. I am a slow walker, but I never walk back.",
       "I'll raise. Events have controlled me long enough.",
-      "Raise, and I'll say no more about it."
+      "Raise. A house divided cannot stand. Pick a side.",
+      "Raise. I'd stand up for it, but I'd hit the ceiling."
+    ],
+    "reraised": [
+      "Now there's somebody who fights. I could have used you in '62.",
+      "Pushing me? I have been pushed by a whole Congress."
     ],
     "all_in": [
       "All in. With malice toward none.",
-      "All of it. Let's settle it, one way or the other.",
-      "Everything. I've split heavier things than this pile."
+      "Everything. I've split heavier things than this pile.",
+      "Four score and seven chips... and the rest of them. All in.",
+      "All of it. Let's settle it, one way or the other."
+    ],
+    "win": [
+      "I do proclaim: this pot is mine.",
+      "I hereby emancipate these chips from your keeping.",
+      "Of the chips, by the chips, for the chips.",
+      "A house divided. I'll take the half with the chips in it.",
+      "I'm only liberating them. They'll be happier over here.",
+      "That reminds me of a story. It ends with me taking the pot."
+    ],
+    "lose": [
+      "You can fool some of the people some of the time. Tonight it was me.",
+      "Four score and seven chips ago, I had a stack.",
+      "A house divided. Mine, it seems.",
+      "I've lost elections with better grace than that. Not many."
+    ],
+    "lose_full_house": [
+      "Beaten by a full house. Houses and I have a history."
+    ],
+    "win_full_house": [
+      "A house divided against itself cannot stand. A full house can."
+    ],
+    "win_straight": [
+      "An honest straight, from Honest Abe."
     ]
   }
 }

@@ -1,0 +1,290 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "jekyll_face_01.png",
+      "label": "",
+      "x": 13,
+      "y": 25,
+      "w": 329,
+      "h": 417,
+      "pivot": [
+        164.5,
+        208.5
+      ],
+      "area": 95802
+    },
+    {
+      "index": 2,
+      "file": "jekyll_face_02.png",
+      "label": "",
+      "x": 337,
+      "y": 171,
+      "w": 201,
+      "h": 136,
+      "pivot": [
+        100.5,
+        68.0
+      ],
+      "area": 21195
+    },
+    {
+      "index": 3,
+      "file": "jekyll_face_03.png",
+      "label": "",
+      "x": 539,
+      "y": 171,
+      "w": 197,
+      "h": 138,
+      "pivot": [
+        98.5,
+        69.0
+      ],
+      "area": 21031
+    },
+    {
+      "index": 4,
+      "file": "jekyll_face_04.png",
+      "label": "",
+      "x": 738,
+      "y": 170,
+      "w": 194,
+      "h": 140,
+      "pivot": [
+        97.0,
+        70.0
+      ],
+      "area": 20824
+    },
+    {
+      "index": 5,
+      "file": "jekyll_face_05.png",
+      "label": "",
+      "x": 934,
+      "y": 170,
+      "w": 189,
+      "h": 138,
+      "pivot": [
+        94.5,
+        69.0
+      ],
+      "area": 20325
+    },
+    {
+      "index": 6,
+      "file": "jekyll_face_06.png",
+      "label": "",
+      "x": 1126,
+      "y": 170,
+      "w": 192,
+      "h": 137,
+      "pivot": [
+        96.0,
+        68.5
+      ],
+      "area": 20538
+    },
+    {
+      "index": 7,
+      "file": "jekyll_face_07.png",
+      "label": "",
+      "x": 1322,
+      "y": 168,
+      "w": 190,
+      "h": 140,
+      "pivot": [
+        95.0,
+        70.0
+      ],
+      "area": 20882
+    },
+    {
+      "index": 8,
+      "file": "jekyll_face_08.png",
+      "label": "",
+      "x": 382,
+      "y": 356,
+      "w": 223,
+      "h": 94,
+      "pivot": [
+        111.5,
+        47.0
+      ],
+      "area": 14019
+    },
+    {
+      "index": 9,
+      "file": "jekyll_face_09.png",
+      "label": "",
+      "x": 649,
+      "y": 357,
+      "w": 215,
+      "h": 99,
+      "pivot": [
+        107.5,
+        49.5
+      ],
+      "area": 15092
+    },
+    {
+      "index": 10,
+      "file": "jekyll_face_10.png",
+      "label": "",
+      "x": 22,
+      "y": 504,
+      "w": 174,
+      "h": 161,
+      "pivot": [
+        87.0,
+        80.5
+      ],
+      "area": 22338
+    },
+    {
+      "index": 11,
+      "file": "jekyll_face_11.png",
+      "label": "",
+      "x": 220,
+      "y": 504,
+      "w": 182,
+      "h": 168,
+      "pivot": [
+        91.0,
+        84.0
+      ],
+      "area": 23205
+    },
+    {
+      "index": 12,
+      "file": "jekyll_face_12.png",
+      "label": "",
+      "x": 423,
+      "y": 504,
+      "w": 179,
+      "h": 165,
+      "pivot": [
+        89.5,
+        82.5
+      ],
+      "area": 22632
+    },
+    {
+      "index": 13,
+      "file": "jekyll_face_13.png",
+      "label": "",
+      "x": 621,
+      "y": 504,
+      "w": 179,
+      "h": 169,
+      "pivot": [
+        89.5,
+        84.5
+      ],
+      "area": 22529
+    },
+    {
+      "index": 14,
+      "file": "jekyll_face_14.png",
+      "label": "",
+      "x": 817,
+      "y": 505,
+      "w": 171,
+      "h": 170,
+      "pivot": [
+        85.5,
+        85.0
+      ],
+      "area": 21651
+    },
+    {
+      "index": 15,
+      "file": "jekyll_face_15.png",
+      "label": "",
+      "x": 1005,
+      "y": 504,
+      "w": 182,
+      "h": 168,
+      "pivot": [
+        91.0,
+        84.0
+      ],
+      "area": 23375
+    },
+    {
+      "index": 16,
+      "file": "jekyll_face_16.png",
+      "label": "",
+      "x": 1116,
+      "y": 530,
+      "w": 402,
+      "h": 462,
+      "pivot": [
+        201.0,
+        231.0
+      ],
+      "area": 116860
+    },
+    {
+      "index": 17,
+      "file": "jekyll_face_17.png",
+      "label": "",
+      "x": 29,
+      "y": 732,
+      "w": 203,
+      "h": 175,
+      "pivot": [
+        101.5,
+        87.5
+      ],
+      "area": 27286
+    },
+    {
+      "index": 18,
+      "file": "jekyll_face_18.png",
+      "label": "",
+      "x": 280,
+      "y": 729,
+      "w": 197,
+      "h": 181,
+      "pivot": [
+        98.5,
+        90.5
+      ],
+      "area": 26895
+    },
+    {
+      "index": 19,
+      "file": "jekyll_face_19.png",
+      "label": "",
+      "x": 518,
+      "y": 727,
+      "w": 204,
+      "h": 172,
+      "pivot": [
+        102.0,
+        86.0
+      ],
+      "area": 27126
+    },
+    {
+      "index": 20,
+      "file": "jekyll_face_20.png",
+      "label": "",
+      "x": 762,
+      "y": 727,
+      "w": 202,
+      "h": 175,
+      "pivot": [
+        101.0,
+        87.5
+      ],
+      "area": 26785
+    }
+  ]
+}

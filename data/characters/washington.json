@@ -68,30 +68,53 @@
     "fold": [
       "[folds without a word]",
       "[returns his cards to the dealer, edges squared]",
-      "No."
+      "No.",
+      "Fold. A strategic retreat. I have made a career of them."
     ],
     "check": [
       "[a single tap on the table]",
-      "Check."
+      "Check.",
+      "Check. I am a patient man."
     ],
     "call": [
       "Call.",
       "[writes the sum in a small account book, then calls]",
-      "Very well."
+      "Very well.",
+      "Call. I have crossed colder water than this."
     ],
     "bet": [
       "Bet.",
-      "[sets out a measured stack and says nothing]"
+      "[sets out a measured stack and says nothing]",
+      "Bet. Mind the money. I am on most of it.",
+      "I cannot tell a lie. Or can I?"
     ],
     "raise": [
       "Raise.",
       "I raise.",
-      "[raises, and offers no remark]"
+      "[raises, and offers no remark]",
+      "Raise. Cross the river with me, or go home."
+    ],
+    "reraised": [
+      "I have been outnumbered before.",
+      "[the faintest nod, as to a worthy enemy]"
     ],
     "all_in": [
       "All.",
       "Across the river, then.",
-      "[pushes every chip forward in one even motion]"
+      "[pushes every chip forward in one even motion]",
+      "All in. Victory or death. A figure of speech, dealer."
+    ],
+    "win": [
+      "I cannot tell a lie. That was mine.",
+      "First in war, first in peace, first in this pot.",
+      "The Delaware was colder.",
+      "[gathers the pot into one neat column, and says nothing]"
+    ],
+    "lose": [
+      "[accepts it with a slight bow]",
+      "They were not wooden. The teeth. Since everyone is looking at me.",
+      "Valley Forge was worse.",
+      "I lost more battles than I won. I won the one that mattered."
     ]
   }
 }

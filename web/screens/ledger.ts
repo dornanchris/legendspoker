@@ -240,7 +240,7 @@ function venuePage(page: HTMLElement, t: TableData) {
   page.append(
     h('header', { class: 'page-head venue' },
       h('div', null,
-        h('p', { class: 'kicker' }, t.kind === 'tour' ? `Table ${t.position} of 8` : t.kind === 'champions' ? 'Beyond the tour' : 'The end of the line'),
+        h('p', { class: 'kicker' }, t.kind === 'tour' ? `Table ${t.position} of 8` : t.kind === 'champions' ? 'Beyond the tour' : t.kind === 'hidden' ? 'Off the map' : 'The end of the line'),
         h('h2', null, sealedBeyond ? 'Sealed' : t.name),
         h('p', { class: 'meta' }, sealedBeyond ? '' : [text(t.place), text(t.region)].filter(Boolean).join(' · ')),
         text(t.era) && !sealedBeyond ? h('p', { class: 'meta dim' }, text(t.era)) : null)),

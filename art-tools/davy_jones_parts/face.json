@@ -1,0 +1,92 @@
+{
+ "master": "davy_jones_parts/davy_jones_face/davy_jones_face_01.png",
+ "pieces": "davy_jones_parts/davy_jones_face/davy_jones_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "wide": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "hum": 17,
+   "l": 18,
+   "smile": 19
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     280,
+     122
+    ],
+    [
+     396,
+     122
+    ],
+    [
+     396,
+     150
+    ],
+    [
+     280,
+     150
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     280,
+     150
+    ],
+    [
+     396,
+     150
+    ],
+    [
+     396,
+     180
+    ],
+    [
+     280,
+     180
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     272,
+     205
+    ],
+    [
+     388,
+     205
+    ],
+    [
+     388,
+     262
+    ],
+    [
+     272,
+     262
+    ]
+   ]
+  }
+ }
+}

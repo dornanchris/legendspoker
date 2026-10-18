@@ -66,6 +66,13 @@ are free to depict. Modern/copyrighted franchises (Star Wars, Star Trek, Alien,
 Doctor Who, Terminator) are OFF the table. Verify each character's copyright
 status before committing art time.
 
+**JFK (hidden visitor, died 1963) is the one exception to the ~70-year line,
+and it is the owner's call.** A real person is not a copyright question: the
+risk is likeness and publicity rights held by an estate, small for a free,
+unmonetised game, larger if it ever ships in a store. His speeches as
+President are US government works and public domain. Keep him a cartoon of
+the public figure, not any actor's portrayal, and never refer to his death.
+
 ---
 
 ## CHARACTER COPYRIGHT TRAPS — the famous version is usually NOT the free one
@@ -78,12 +85,14 @@ not. Every character's own note lives in its data file
 | Character | Safe source | Must not resemble |
 |---|---|---|
 | Frankenstein's Monster | Shelley, 1818: eight feet, yellow skin, black hair, articulate, well read | Universal's 1931 makeup — flat head, neck bolts, green skin, grunting |
-| The Wolf Man | European werewolf folklore | Universal's *The Wolf Man* (1941): Larry Talbot, the silver cane, the curse poem. ⚠ Consider a different display name — see below |
+| The Wolf Man | European werewolf folklore | Universal's *The Wolf Man* (1941): Larry Talbot, the silver cane, the curse poem. Display name "The Wolf Man" kept (the owner) — see below |
 | Dracula | Stoker, 1897; the 1927 stage play's cape is now PD in the US | Bela Lugosi's likeness (his estate has asserted rights); Universal's film designs |
 | Davy Jones | Sailors' folklore — the devil of the deep, Davy Jones' locker | Disney's tentacle face, the organ, the heart in a chest |
-| Alice | Carroll, 1865; Tenniel's illustrations | Disney's 1951 film design |
+| The Cheshire Cat | Carroll, 1865; Tenniel's illustrations | Disney's 1951 pink-and-purple cat; the 2010 Burton design |
 | The Headless Horseman | Irving, 1820 | Disney's 1949 short; Burton's 1999 film |
 | Loki (hidden guest) | The Poetic and Prose Eddas (13th c.) and old translations (Brodeur 1916, Bellows 1923): fair-faced, bare-headed, the stitch-scarred mouth (Brokkr), a golden game piece | Marvel's Loki above all: no green-and-gold, no curved horned helmet, no slicked black hair, no actor likeness, no film or comic lines, no "God of Mischief" branding. Not Wagner's Loge either |
+| The Phoenix (hidden) | Herodotus 2.73 (red and gold, eagle-shaped, Heliopolis), Ovid, Pliny | Fawkes (Harry Potter books and films), Marvel's Phoenix / the X-Men, any human figure or woman in flames |
+| JFK (hidden visitor) | His public life and speeches (US government works) | Any film or TV portrayal (JFK 1991, Thirteen Days, Jackie) or actor's likeness |
 | Merlin | Geoffrey of Monmouth, Malory | T. H. White (still in copyright: "Merlyn", living backwards, the owl Archimedes); Disney |
 | The Green Knight | *Sir Gawain and the Green Knight* (14th c.). NB the poem gives him **no armour** — holly and an axe. The design doc's "green armour" is a choice, not the source | The 2021 A24 film; any staging with his own severed head (that steps on the Horseman) |
 | Spartacus | Plutarch, Appian | The 1960 film (its "I am Spartacus" scene) and the TV series |
@@ -95,7 +104,7 @@ not. Every character's own note lives in its data file
 | The Martian | Wells, 1898 | *Mars Attacks* (brain in a fishbowl helmet); Marvin the Martian |
 | The Robot | Retro-futurist archetype; the word is Čapek's (1920, PD) | Robby the Robot (MGM, 1956); Gort; the *Lost in Space* robot |
 | The Astronaut | Archetype | NASA insignia (use is restricted); any real astronaut |
-| The AI | Our own design: a pale white lens, amber emergency light | HAL 9000 — the name, the red eye, the lines. It still has no name: an open decision |
+| The AI | Our own design: a pale white lens, amber emergency light | HAL 9000 — the name, the red eye, the lines. Its name is "the AI" (the owner: "The AI is fine") |
 | Death | Folk Grim Reaper; the medieval danse macabre (Death playing chess is a c.1480 church painting) | Pratchett's Death (small caps, the horse, cats, curry); Bergman's *Seventh Seal*; Gaiman's Death |
 
 `npm run check:data` has a tripwire list for the lines most likely to slip in
@@ -105,4 +114,6 @@ it whenever a new trap is found.
 **Open naming question.** "The Wolf Man" as a *name* is the title of a
 Universal film, and Universal guards its monsters' trade dress. The character
 is the folklore werewolf and should be safe, but "The Werewolf" as the
-display name removes the question entirely. Decide before any store listing.
+display name removes the question entirely. **Decided (the owner): "The Wolf
+Man" stays** ("Wolfman is perfect"); the folklore werewolf, nothing of
+Universal's. Revisit only if a store listing raises it.

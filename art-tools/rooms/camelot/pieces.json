@@ -1,0 +1,235 @@
+{
+  "note": "Camelot's room pieces, cut from sources/pieces.png by room_web.py. Spots are in the screen's design space (1600x900): [centre x, foot, height]. The backdrop is 1916x821, so design x = image x * 1.096 - 250, y = image y * 1.096. The sheet drew each hearth frame as a whole fireplace and each candle flame on its candle, so the fire is cut by brightness ('bright') and the flames above the wax ('crop'). Flames sit on the painted candles of both candle wheels and the wall sconces; the fire and its sparks on the hearth at the far left, which shows only on screens wider than 16:9.",
+  "sheet": "sources/pieces.png",
+  "pieces": {
+    "fire_1": {
+      "box": [
+        120,
+        270,
+        450,
+        505
+      ],
+      "bright": [
+        235,
+        150
+      ]
+    },
+    "fire_2": {
+      "box": [
+        625,
+        270,
+        955,
+        505
+      ],
+      "bright": [
+        235,
+        150
+      ]
+    },
+    "fire_3": {
+      "box": [
+        1130,
+        270,
+        1460,
+        505
+      ],
+      "bright": [
+        235,
+        150
+      ]
+    },
+    "flame_1": {
+      "box": [
+        60,
+        630,
+        190,
+        811
+      ],
+      "crop": true
+    },
+    "flame_2": {
+      "box": [
+        310,
+        640,
+        440,
+        814
+      ],
+      "crop": true
+    },
+    "flame_3": {
+      "box": [
+        560,
+        640,
+        690,
+        811
+      ],
+      "crop": true
+    },
+    "spark_1": {
+      "box": [
+        775,
+        700,
+        960,
+        975
+      ]
+    },
+    "spark_2": {
+      "box": [
+        1040,
+        700,
+        1250,
+        975
+      ]
+    },
+    "spark_3": {
+      "box": [
+        1305,
+        700,
+        1500,
+        975
+      ]
+    }
+  },
+  "presence": null,
+  "loops": [
+    {
+      "frames": [
+        "flame_1",
+        "flame_2",
+        "flame_3"
+      ],
+      "every": [
+        0.11,
+        0.24
+      ],
+      "spots": [
+        [
+          172,
+          93,
+          26
+        ],
+        [
+          197,
+          66,
+          30
+        ],
+        [
+          272,
+          54,
+          33
+        ],
+        [
+          369,
+          66,
+          30
+        ],
+        [
+          418,
+          99,
+          28
+        ],
+        [
+          262,
+          126,
+          14
+        ],
+        [
+          353,
+          129,
+          12
+        ],
+        [
+          1186,
+          93,
+          26
+        ],
+        [
+          1235,
+          66,
+          30
+        ],
+        [
+          1332,
+          54,
+          33
+        ],
+        [
+          1407,
+          66,
+          30
+        ],
+        [
+          1432,
+          99,
+          28
+        ],
+        [
+          1340,
+          126,
+          14
+        ],
+        [
+          1249,
+          129,
+          12
+        ],
+        [
+          -13,
+          115,
+          35
+        ],
+        [
+          517,
+          373,
+          28
+        ],
+        [
+          1086,
+          373,
+          28
+        ],
+        [
+          1608,
+          331,
+          34
+        ]
+      ]
+    },
+    {
+      "frames": [
+        "fire_1",
+        "fire_2",
+        "fire_3"
+      ],
+      "every": [
+        0.12,
+        0.25
+      ],
+      "spots": [
+        [
+          -155,
+          540,
+          150
+        ]
+      ]
+    },
+    {
+      "frames": [
+        "spark_1",
+        "spark_2",
+        "spark_3"
+      ],
+      "every": [
+        0.25,
+        0.6
+      ],
+      "spots": [
+        [
+          -150,
+          395,
+          80
+        ]
+      ]
+    }
+  ]
+}

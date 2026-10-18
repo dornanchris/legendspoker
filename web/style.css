@@ -248,6 +248,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .segmented button:first-child { border-radius: 6px 0 0 6px; }
 .segmented button:last-child { border-radius: 0 6px 6px 0; }
 .segmented button.on { background: #c9a22733; border-color: #c9a22788; color: var(--gold-soft); }
+.swatches button { display: inline-flex; align-items: center; justify-content: center; gap: 0.35em; }
+.swatch { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 50%; border: 1px solid #0006; }
 .danger-zone { border-color: #6b3b3b88; }
 .warning { color: #f0c27a; border: 1px solid #f0c27a55; padding: 8px 12px; border-radius: 6px; }
 .about-body h2 { font-size: 1.8rem; margin: 0 0 .2em; }
@@ -328,17 +330,24 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 
 /* ---------------------------------------------------------------- cards */
 .card {
-  width: 40px; height: 56px; border-radius: 5px;
+  width: calc(40px * var(--s, 1)); height: calc(56px * var(--s, 1)); border-radius: calc(5px * var(--s, 1));
   background: var(--card-bg); color: var(--card-ink);
   display: grid; grid-template-rows: 1fr 1fr; place-items: center;
-  font-weight: 700; font-size: 1.05rem; line-height: 1;
+  font-weight: 700; font-size: calc(1.05rem * var(--s, 1)); line-height: 1;
   border: 1px solid #0006; font-variant-numeric: tabular-nums;
-  padding: 5px 0 6px; flex: none;
+  padding: calc(5px * var(--s, 1)) 0 calc(6px * var(--s, 1)); flex: none;
 }
 .card .suit { font-size: 1.1em; }
-.card.small { width: 28px; height: 38px; font-size: .78rem; border-radius: 4px; padding: 3px 0 4px; }
+.card.small {
+  width: calc(28px * var(--s2, 1)); height: calc(38px * var(--s2, 1)); font-size: calc(.78rem * var(--s2, 1));
+  border-radius: calc(4px * var(--s2, 1)); padding: calc(3px * var(--s2, 1)) 0 calc(4px * var(--s2, 1));
+}
 .card.tiny { width: 22px; height: 30px; font-size: .66rem; border-radius: 3px; padding: 2px 0 3px; }
-.card.red { color: var(--red); }
+.card.red, .card.hearts { color: var(--red); }
+/* A four-colour deck: diamonds blue and clubs green, so no suit passes for its twin at a glance. */
+.card.diamonds { color: #1f5fbf; }
+.card.clubs { color: #1d7a3a; }
+.card.spades { color: var(--card-ink); }
 .card.back {
   background: repeating-linear-gradient(45deg, #43324a, #43324a 4px, #35283b 4px, #35283b 8px);
   border-color: #0008;
@@ -414,7 +423,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 /* Tells are italic and quiet on purpose: ambient noise until the player learns
    which combinations matter. */
 .seat .tell { color: #b9a68c; font-size: .78rem; font-style: italic; min-height: 1.2em; line-height: 1.3; }
-.seat .tell.fade { animation: tellfade 2.6s ease-out both; }
+.seat .tell.fade { animation: tellfade 3.6s ease-out both; }
 @keyframes tellfade { 0% { opacity: 0; } 12% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: .55; } }
 /* Scoped to the seat: the log's lines carry the same class names (li.say,
    li.callout), and an unscoped rule hid every spoken line in the log. */
@@ -473,17 +482,17 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .narration:empty { display: none; }
 .narration.show { animation: narrate 6s ease-out both; }
 @keyframes narrate { 0% { opacity: 0; } 6% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; } }
-.board { display: flex; gap: 6px; min-height: 58px; align-items: center; }
-.pot { font-size: 1.1rem; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; }
+.board { display: flex; gap: calc(6px * var(--s, 1)); min-height: calc(58px * var(--s, 1)); align-items: center; }
+.pot { font-size: calc(1.1rem * var(--s2, 1)); font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 6px; }
 .pot .pile { min-width: 20px; }
-.pot .label { color: var(--dim); font-size: .72rem; letter-spacing: .14em; }
+.pot .label { color: var(--dim); font-size: calc(.72rem * var(--s2, 1)); letter-spacing: .14em; }
 
 .you { display: flex; align-items: center; gap: 16px; justify-content: center; }
 .you-info { display: flex; gap: 10px; align-items: center; }
-.you-name { font-weight: 700; font-family: var(--serif); font-size: 1.05rem; }
+.you-name { font-weight: 700; font-family: var(--serif); font-size: calc(1.05rem * var(--s2, 1)); }
 .you-name.earned { color: var(--gold-soft); }
-.you .stack { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 600; }
-.you-cards { display: flex; gap: 6px; min-height: 56px; }
+.you .stack { color: var(--gold); font-variant-numeric: tabular-nums; font-weight: 600; font-size: calc(1rem * var(--s2, 1)); }
+.you-cards { display: flex; gap: calc(6px * var(--s, 1)); min-height: calc(56px * var(--s, 1)); }
 .you .bet { min-width: 64px; }
 
 .controls { display: grid; gap: 5px; justify-items: center; min-height: 74px; }
@@ -545,16 +554,16 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .chip.gold, .chip-side.gold { --c: #cf9f22; --e: #fff4d2; }
 .chip.orange, .chip-side.orange { --c: #d0652a; }
 .chip {
-  display: block; width: 15px; height: 15px; border-radius: 50%;
+  display: block; width: calc(15px * var(--s, 1)); height: calc(15px * var(--s, 1)); border-radius: 50%;
   background:
     radial-gradient(circle, var(--c) 0 40%, var(--e) 41% 47%, var(--c) 48% 62%, transparent 63%),
     repeating-conic-gradient(var(--c) 0 30deg, var(--e) 30deg 45deg);
   box-shadow: 0 2px 4px #000b, inset 0 0 0 1px #0005;
 }
-.pile { display: inline-flex; align-items: flex-end; gap: 2px; min-height: 22px; }
+.pile { display: inline-flex; align-items: flex-end; gap: calc(2px * var(--s, 1)); min-height: calc(22px * var(--s, 1)); }
 .pile .col { display: flex; flex-direction: column-reverse; }
 .chip-side {
-  display: block; width: 18px; height: 5px; border-radius: 3px / 2px;
+  display: block; width: calc(18px * var(--s, 1)); height: calc(5px * var(--s, 1)); border-radius: 17% / 40%;
   /* Shading for a cylinder over the edge inserts; a dark seam under each chip. */
   background:
     linear-gradient(90deg, #0005, transparent 28%, transparent 68%, #0006),
@@ -570,7 +579,72 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
    bet appearing never nudges the cards beside it. */
 .bet { display: flex; align-items: flex-end; gap: 4px; flex: none; }
 .bet.empty { visibility: hidden; }
-.bet .amt { color: var(--gold-soft); font-size: .78rem; font-weight: 650; font-variant-numeric: tabular-nums; line-height: 1; }
+.bet .amt { color: var(--gold-soft); font-size: calc(.78rem * var(--s, 1)); text-shadow: 0 1px 3px #000; font-weight: 650; font-variant-numeric: tabular-nums; line-height: 1; }
+
+/* ---------------------------------------------------------------- the staged table */
+/* A table whose room is drawn (web/puppet/stage.ts): the room and its figures
+   on a canvas under the felt, and the game laid over them. table.ts places
+   each plate on the felt in front of its figure (left/top), and gives it
+   --lift, the height up to the top of the head, where that seat's speech goes. */
+.felt.staged { display: block; padding: 0; background: #0b0a09; }
+.felt.staged .stage { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; }
+.felt.staged .deck-spot { position: absolute; width: 1px; height: 1px; pointer-events: none; }
+.felt.staged .opponents { position: absolute; inset: 0; display: block; z-index: 2; pointer-events: none; }
+.felt.staged .seat {
+  position: absolute; transform: translateX(-50%); width: var(--plate, 158px); max-width: none; font-size: calc(.86rem * var(--s2, 1));
+  padding: calc(3px * var(--s2, 1)) calc(8px * var(--s2, 1)) calc(4px * var(--s2, 1)); border-radius: 9px; border-color: #6d604f; background: #141116e0;
+  box-shadow: 0 4px 14px #0008; pointer-events: auto;
+}
+.felt.staged .seat.champion { border-color: #c9a22788; }
+.felt.staged .seat.acting { border-color: var(--gold); }
+.felt.staged .seat.out { background: #14111680; }
+.felt.staged .seat .hand-row { margin: 2px 0 0; min-height: 0; }
+.felt.staged .seat .cards { min-height: calc(31px * var(--s2, 1)); }
+/* this street's bet lies on the felt in front of the plate, toward the middle */
+.felt.staged .seat .bet { position: absolute; top: calc(100% + 26px * var(--s2, 1)); }
+.felt.staged .seat[data-side="l"] .bet { left: 62%; }
+.felt.staged .seat[data-side="r"] .bet { right: 62%; flex-direction: row-reverse; }
+.felt.staged .seat .last { position: absolute; right: 8px; bottom: 6px; font-size: calc(.74rem * var(--s2, 1)); min-height: 0; }
+.felt.staged .seat .tell {
+  position: absolute; left: 0; right: 0; top: calc(100% + 3px);
+  text-align: center; text-shadow: 0 1px 3px #000, 0 0 8px #000c; color: #e4d3b4;
+}
+/* speech goes over the head, not under the plate */
+.felt.staged .seat .say { top: auto; bottom: calc(100% + var(--lift, 160px) + 6px); left: 50%; right: auto; width: 210px; margin-left: -105px; }
+.felt.staged .seat .say::before { top: auto; bottom: -6px; left: 50%; margin-left: -6px; border-bottom: 0; border-top: 6px solid var(--parchment); }
+.felt.staged .seat .say.stage::before { border-top-color: #2a2622; }
+.felt.staged .seat .callout { top: auto; bottom: calc(100% + var(--lift, 160px) + 4px); max-width: 200px; }
+.felt.staged .dealer {
+  position: absolute; z-index: 2; transform: translateX(-50%); margin: 0; flex-direction: column; align-items: center; gap: 0;
+  padding: 3px 14px 4px; border: 1px solid #6d604f; border-radius: 9px; background: #141116e0; box-shadow: 0 4px 14px #0008;
+}
+.felt.staged .dealer-name { color: var(--ink); font-size: calc(.74rem * var(--s2, 1)); }
+.felt.staged .dealer-line {
+  position: absolute; left: 50%; bottom: calc(100% + var(--lift, 160px) + 8px); transform: translateX(-50%);
+  width: max-content; max-width: min(30em, 70vw); text-align: center; padding: 5px 12px; border-radius: 8px;
+  background: #0b0a09e0; border: 1px solid #c9a22744; opacity: 0;
+}
+.felt.staged .dealer-line.show { animation: deathsays 5.2s ease-out both; }
+@keyframes deathsays { 0% { opacity: 0; } 6% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; } }
+.felt.staged .middle { position: absolute; z-index: 2; transform: translateX(-50%); gap: 4px; }
+.felt.staged .pot { text-shadow: 0 1px 3px #000; }
+.felt.staged .you {
+  /* bottom left, out from under the board, which grows with the screen */
+  position: absolute; z-index: 3; left: 8px; bottom: 8px;
+  padding: 4px 10px; border-radius: 10px; background: #14111699;
+}
+.felt.staged .controls { position: absolute; z-index: 5; right: 12px; bottom: 8px; min-height: 0; justify-items: end; }
+.felt.staged .prompt { text-shadow: 0 1px 3px #000; color: #e4d9c4; }
+
+/* The words grow with the plates (--s2, set by table.ts from the screen's
+   height; 1 on a phone): tells, lines, callouts, Death's lines, your buttons. */
+.felt.staged .seat .tell { font-size: calc(.78rem * var(--s2, 1)); }
+.felt.staged .seat .say { font-size: calc(.86rem * var(--s2, 1)); width: calc(210px * var(--s2, 1)); margin-left: calc(-105px * var(--s2, 1)); }
+.felt.staged .seat .callout { font-size: calc(.8rem * var(--s2, 1)); max-width: calc(200px * var(--s2, 1)); }
+.felt.staged .dealer-line { font-size: calc(.85rem * var(--s2, 1)); }
+.felt.staged .controls, .felt.staged .prompt { font-size: calc(.85rem * var(--s2, 1)); }
+.felt.staged .controls { gap: calc(5px * var(--s2, 1)); }
+.felt.staged .controls button { font-size: calc(1rem * var(--s2, 1)); min-width: calc(96px * var(--s2, 1)); }
 
 /* ---------------------------------------------------------------- small landscape */
 @media (max-width: 900px) {
@@ -593,15 +667,168 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .felt { gap: 3px; padding: 5px 10px 5px; }
   .seat { padding: 4px 6px; }
   .seat .hand-row { min-height: 30px; margin: 3px 0 2px; }
-  .chip-side { width: 16px; height: 4px; }
-  .card { width: 34px; height: 48px; font-size: .95rem; }
-  .card.small { width: 23px; height: 31px; font-size: .7rem; }
-  .board { min-height: 50px; }
-  .you-cards { min-height: 48px; }
+  .chip-side { width: calc(16px * var(--s, 1)); height: calc(4px * var(--s, 1)); }
+  .card { width: calc(34px * var(--s, 1)); height: calc(48px * var(--s, 1)); font-size: calc(.95rem * var(--s, 1)); }
+  .card.small { width: calc(23px * var(--s2, 1)); height: calc(31px * var(--s2, 1)); font-size: calc(.7rem * var(--s2, 1)); }
+  .board { min-height: calc(50px * var(--s, 1)); }
+  .you-cards { min-height: calc(48px * var(--s, 1)); }
   .controls { min-height: 64px; }
   button { min-height: 34px; }
+  .felt.staged .seat { font-size: calc(.74rem * var(--s2, 1)); padding: 2px 5px 3px; }
+  .felt.staged .seat .cards { min-height: 0; }
+  .felt.staged .seat .last { right: 5px; bottom: 4px; font-size: .66rem; }
+  .felt.staged .seat .tell { font-size: calc(.66rem * var(--s2, 1)); line-height: 1.2; }
+  .felt.staged .seat .bet { top: calc(100% + 20px * var(--s2, 1)); }
+  .felt.staged .seat[data-side="l"] .bet { left: 75%; }
+  .felt.staged .seat[data-side="r"] .bet { right: 75%; }
+  /* no room for Death's plate: his figure says who deals. His lines still go over his head. */
+  .felt.staged .dealer { background: none; border: 0; box-shadow: none; padding: 0; }
+  .felt.staged .dealer-name, .felt.staged .dealer-role { display: none; }
+  .felt.staged .you { padding: 2px 8px; bottom: 4px; }
+  .felt.staged .controls { bottom: 4px; right: 8px; }
   .page-head .medallion { width: 56px; height: 56px; font-size: 1.3rem; }
   .ledger-page { padding: 12px 18px 18px; }
   .title-block h1 { font-size: clamp(2rem, 5.4vw, 3.4rem); }
   .menu-item { padding: .5em 1em; }
 }
+
+/* ---------------------------------------------------------------- puppet bench */
+/* #/puppet/<id>: an animation preview, not part of the game. */
+.bench { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 14px; height: 100vh; padding: 12px; box-sizing: border-box; }
+.bench-stage { position: relative; min-height: 0; }
+.bench-canvas { width: 100%; height: 100%; display: block; border-radius: 10px; background: #16141a; }
+.bench-ref-wrap { position: absolute; right: 10px; top: 10px; margin: 0; width: 22%; max-width: 220px; background: #fffc; border-radius: 8px; padding: 4px; }
+.bench-ref { width: 100%; display: block; border-radius: 6px; }
+.bench-ref-wrap figcaption { font-size: .7rem; color: #333; text-align: center; }
+.bench-side { overflow-y: auto; min-height: 0; }
+.bench-side h2 { margin: 0 0 6px; font-size: 1.1rem; }
+.bench-group { border-top: 1px solid #fff2; padding: 8px 0; }
+.bench-group h3 { margin: 0 0 6px; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; opacity: .7; }
+.bench-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 6px 0; }
+.bench-group .segmented { display: flex; flex-wrap: wrap; gap: 4px; }
+.bench-group button { min-height: 30px; padding: .25em .7em; }
+.bench-play { margin: 0 6px 6px 0; }
+.bench-check { display: inline-flex; gap: 4px; align-items: center; font-size: .85rem; }
+.bench-line, .bench-text { flex: 1 1 100%; min-width: 0; }
+.bench-row input[type=range] { flex: 1; }
+.bench-help, .bench-status { font-size: .8rem; opacity: .75; }
+
+/* ---------------------------------------------------------------- the curtain call
+   The end of a table (results.ts): comes down over the felt with the room still
+   breathing behind it, and plays in beats (--i). A tap shows them all (.all).
+   Every beat is visible without its animation, so Reduce motion simply shows it. */
+.curtain {
+  position: fixed; inset: 0; z-index: 60; overflow: hidden;
+  display: grid; place-items: center; padding: 14px 16px;
+  animation: curtain-in .7s ease-out both;
+}
+.curtain.won { background: radial-gradient(ellipse at 30% 35%, #3a2a0cdd, #0d0a07f2 62%); }
+.curtain.lost { background: radial-gradient(ellipse at 30% 35%, #1d2230dd, #0b0b10f2 62%); }
+.curtain.lifted { display: none; }
+@keyframes curtain-in { from { opacity: 0; backdrop-filter: blur(0); } to { opacity: 1; backdrop-filter: blur(3px); } }
+
+.curtain-panel {
+  position: relative; z-index: 1; width: min(1100px, 100%); max-height: 100%;
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 4px 34px; align-items: start;
+}
+.results .curtain-panel { margin: 0 auto; max-width: 1100px; }
+.curtain-panel .verdict { text-align: center; display: grid; justify-items: center; align-content: start; }
+.curtain-panel .tally-col { overflow-y: auto; max-height: calc(100vh - 40px); padding: 0 4px 0 14px; }
+.results .curtain-panel .tally-col { max-height: none; }
+.curtain-panel .kicker { letter-spacing: .3em; text-transform: uppercase; color: var(--dim); font-size: .78rem; margin: 0 0 6px; }
+.curtain-panel .headline { font-family: var(--serif); font-size: clamp(1.9rem, 5.2vw, 3.4rem); line-height: 1.05; margin: 8px 0 4px; }
+.curtain.won .headline, .results .headline.won {
+  background: linear-gradient(100deg, #b98b1f 20%, #fff2c2 45%, #e2c86a 55%, #b98b1f 80%);
+  background-size: 250% 100%; -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: beat-in .7s cubic-bezier(.2, .8, .2, 1.2) both, gilt 3.2s ease-in-out 1.4s infinite;
+  animation-delay: calc(var(--i, 0) * .45s + .3s), calc(var(--i, 0) * .45s + 1.4s);
+}
+@keyframes gilt { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
+.curtain.lost .headline { color: #dcd3e6; text-shadow: 0 0 22px #6d7ab055; }
+.curtain-panel .subline { font-family: var(--serif); font-size: 1.08rem; color: #e6dccb; margin: 0 0 8px; max-width: 34em; }
+.curtain-panel .death-says { text-align: left; max-width: 30em; }
+.curtain-panel .actions { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+
+.beat { animation: beat-in .6s cubic-bezier(.2, .8, .2, 1) both; animation-delay: calc(var(--i, 0) * .45s + .3s); }
+.curtain.all .beat, .curtain.all .headline { animation-delay: 0s !important; animation-duration: .2s; }
+@keyframes beat-in { from { opacity: 0; transform: translateY(10px) scale(.98); } to { opacity: 1; transform: none; } }
+
+/* The crest: the best hand they took a pot with, dealt into a fan. */
+.crest { min-height: 92px; display: grid; justify-items: center; margin: 4px 0 2px; }
+.crest .fan { position: relative; height: 84px; width: 230px; }
+.crest .fan .card {
+  position: absolute; left: 50%; top: 6px; --s: 1.35;
+  transform: translateX(calc(-50% + var(--k) * 30px)) rotate(calc(var(--k) * 7deg)); transform-origin: 50% 120%;
+  box-shadow: 0 8px 18px #000a; animation: deal-in .55s cubic-bezier(.2, .9, .3, 1.15) both;
+  animation-delay: calc(var(--i, 0) * .45s + .45s + (var(--k) + 2) * .09s);
+}
+.curtain.all .crest .fan .card { animation-delay: 0s; }
+.curtain.won .crest .fan .card { outline: 2px solid var(--gold); outline-offset: 1px; box-shadow: 0 0 18px 2px #c9a22766, 0 8px 18px #000a; }
+@keyframes deal-in {
+  from { opacity: 0; transform: translate(-50%, -60px) rotate(-30deg) scale(.6); }
+}
+.crest .fan-label { margin: 2px 0 0; font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-soft); }
+.curtain.lost .crest .fan-label { color: #b9b3c9; }
+
+/* The people, in the order they fell: their own drawn faces, with a stamp. */
+.sitters { display: flex; flex-wrap: wrap; gap: 12px; margin: 2px 0 6px; }
+.sitter { margin: 0; width: 92px; display: grid; justify-items: center; position: relative; }
+.sitter .face {
+  width: 86px; height: 86px; border-radius: 50%; background-size: 108% auto; background-position: 50% 6%;
+  background-repeat: no-repeat; background-color: #2c2622;
+  box-shadow: 0 0 0 2px #5b4f43, 0 6px 14px #0009; filter: saturate(.9);
+}
+.sitter .medallion { width: 86px; height: 86px; font-size: 1.6rem; }
+.sitter figcaption { font-size: .82rem; text-align: center; margin-top: 14px; color: var(--ink); display: grid; }
+.sitter figcaption small { color: var(--gold-soft); font-size: .7rem; }
+.sitter .stamp {
+  position: absolute; top: 72px; left: 50%; transform: translateX(-50%) rotate(-6deg);
+  font-size: .66rem; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap;
+  padding: 2px 6px; border: 2px solid currentColor; border-radius: 3px; background: #0d0a08cc;
+  color: #c96b5f; font-weight: 700;
+}
+.curtain.won .sitter .face, .results .sitter .face { filter: grayscale(.55) brightness(.85); }
+.sitter.last .face { filter: none; box-shadow: 0 0 0 3px var(--gold), 0 0 22px #c9a22788, 0 6px 14px #0009; }
+.sitter.last .stamp { color: var(--gold-soft); }
+.curtain.lost .sitter .stamp { color: #a9b6d9; }
+.sitter.victor .face { filter: none; box-shadow: 0 0 0 2px #8e86a8, 0 6px 14px #0009; }
+.curtain.lost .sitter.victor .stamp { color: #e7dfcf; }
+
+/* The best of what they did: plain tallies, no bars (NOT BUILDING). */
+.tiles { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 8px; }
+.tile { min-width: 84px; padding: 6px 10px 5px; border: 1px solid var(--edge); border-radius: 6px; background: #ffffff08; display: grid; text-align: center; }
+.tile b { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+.curtain.won .tile b { color: var(--gold-soft); }
+.tile span { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
+
+/* Gold dust falling on a win, ash rising on a loss. */
+.motes { position: absolute; inset: 0; pointer-events: none; }
+.motes i {
+  position: absolute; left: var(--x); top: -4%; width: calc(5px * var(--z)); height: calc(5px * var(--z)); border-radius: 50%;
+  background: radial-gradient(circle, #fff3c4, #c9a227 60%, transparent 70%); opacity: 0;
+  animation: fall var(--t) linear var(--d) infinite;
+}
+.curtain.lost .motes i { top: 104%; background: radial-gradient(circle, #c8c4d6, #6f6a80 60%, transparent 70%); animation-name: rise; }
+@keyframes fall { 10% { opacity: .9; } 90% { opacity: .7; } to { transform: translate(18px, 108vh); opacity: 0; } }
+@keyframes rise { 10% { opacity: .45; } 90% { opacity: .3; } to { transform: translate(-24px, -108vh); opacity: 0; } }
+:root.reduce-motion .motes { display: none; }
+
+/* A phone held sideways: tighter, and the right column scrolls. */
+@media (max-height: 460px) {
+  .curtain { padding: 8px 12px; }
+  .curtain-panel { gap: 2px 20px; }
+  .curtain-panel .headline { font-size: 1.8rem; margin: 2px 0; }
+  .crest { min-height: 64px; }
+  .crest .fan { height: 60px; }
+  .crest .fan .card { --s: 1; }
+  .curtain-panel .subline { font-size: .95rem; }
+  .curtain-panel .death-says { font-size: .92rem; margin: .4em 0; }
+  .sitter { width: 68px; }
+  .sitter .face, .sitter .medallion { width: 60px; height: 60px; }
+  .sitter .stamp { top: 50px; font-size: .56rem; }
+  .sitter figcaption { margin-top: 10px; }
+  .curtain-panel .tally-col { max-height: calc(100vh - 20px); }
+}
+
+/* Shown instead of the game when poker-ts is unpatched (src/engine-guard.ts). */
+.engine-error { max-width: 40em; margin: 15vh auto; padding: 0 16px; font: 1.1rem/1.5 var(--serif); color: var(--ink); }

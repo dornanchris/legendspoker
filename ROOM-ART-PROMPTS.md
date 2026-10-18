@@ -1,0 +1,444 @@
+# Room art prompts
+
+The backdrop and the moving and story pieces for every venue, to go with `CHARACTER-ART-PROMPTS.md`. The room descriptions come from `data/tables/*.json` (`room`, `presence`, `ambience`); the art notes are written for the art (`art-tools/prompts/rooms.mjs`, which regenerates this file). Same bright cartoon style as the characters.
+
+## How a room is built
+
+Every room is the same stack of layers, back to front:
+
+1. **Backdrop plate:** the room itself, wide (21:9) so it fills any phone in landscape. Big features go high and at the sides. The band behind the players' heads stays calmer, so faces read. Death deals from the far side, dead centre, so the backdrop directly behind him is the calmest part of all.
+2. **Room pieces that come and go** (the "presence"): the empty couch at Athens, the laurel wreath at Rome, Dracula watching from beside the fire. They are separate so they can leave when the story says.
+3. **The characters** (see `CHARACTER-ART-PROMPTS.md`), drawn with nothing behind them: no chairs are ever shown.
+4. **The table:** Death's table, the SAME in every room (the owner's call): it goes wherever he deals: `art-tools/rooms/table.webp`, a round green-baize table with a padded leather rim. A round top seen from the player's seat, so it's a wide ellipse. You are sitting at it: the game scales the table up so its near half falls below the bottom of the screen, the felt fills the lower part of the picture, and the far rim crosses the screen at about the middle. The far rim runs in front of the dealer and the far seats, and the sides curve down toward you, which is why a character in a side seat is cut lower than one at the back. The table hides every torso below its edge, and every floor.
+5. **Forearms, hands and props on the felt**, then the cards and chips (the game draws those).
+6. **Moving pieces:** fire, lamp flames, rain, the Earth. A few frames each, looped: the room breathes, as the characters do.
+
+**What makes each room its own:** the backdrop, its story pieces and its light. The table stays the same, so every room is read at once as the same game, and only one table has to be drawn. Attach the White House backdrop (`art-tools/rooms/white_house/backdrop.webp`) to every backdrop prompt, for its camera only.
+
+**Leave out of every room:** no text, no UI, no buttons, no chips or cards, no chat or reward panels. The table mock-ups had all of these; the game draws its own few controls.
+
+## The screen: game first
+
+The table screen has to hold four opponents, Death dealing between them, and the whole game, on a phone. The game comes first; the backdrop is what's left over.
+
+- **Laid out for 16:9**, the narrowest phone we support. Wider phones show more backdrop at the sides and nothing else changes, so every room plate is drawn wide (21:9) with nothing important at the far edges.
+- **Top half: five figures.** Death is dead centre, front-on and furthest away. The two back seats flank him, and the two side seats sit nearer and lower, where the rim curves toward you. Each figure gets about a fifth of the screen's width, so a face is about a tenth of its height: roughly 40 points on a small phone. **Tells have to read at that size:** props, hands, the head and the hat, the big shapes the character notes already ask for. Fine facial detail is a bonus, never the tell.
+- **Bottom half: the felt, which carries the game.** The far rim runs at about half height. Below it:
+  - each seat's name plate, on the rim just below them, with their bet in front of it;
+  - the pot and the board in the middle;
+  - your cards at the bottom centre, with your name and stack beside them;
+  - the buttons at the bottom right (the raise slider opens above them), fast-forward at the bottom left;
+  - the table bar at the top left, the log at the top right.
+- **What shows of the backdrop** is the band above the players' heads and the strips at the sides; the rest is behind five players and the table. Put the room's character there: portraits, windows, the fire.
+
+`art-tools/mock_screen.py` draws this screen with the current art (`python3 art-tools/mock_screen.py white_house`), so any new backdrop, table or character can be checked against the game before it's accepted. The first room is in `art-tools/rooms/white_house/` (backdrop and `screen_mock.png`); the table every room shares is `art-tools/rooms/table.webp`. `art-tools/room_web.py <room>` publishes a room to the game.
+
+## At a glance
+
+| Room | Light | Story pieces |
+|---|---|---|
+| The White House | Warm lamplight and firelight, gold and amber | — |
+| Athens — The Symposium | Oil-lamp gold, warm and low, with blue night in the doorway | 2 |
+| Pirate Cove | Lantern orange inside, cool moonlight blue through the opening in the rock | — |
+| Camelot | Firelight and candle gold, with cool grey stone and blue night in the windows | — |
+| Imperial Rome | Brazier orange and fresco colour above, dusky violet through the window | 1 |
+| Baker Street | Gaslight yellow and firelight, fog-grey at the window | — |
+| Transylvania | Firelight red-orange from the right against cold blue moonlight from the left | 1 |
+| The Station | Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red) | — |
+| The Champions' Tables (the Hall of Doors) | Dark, lit only by what the open doors let in | — |
+| The Last Crossing | One oil lamp, warm and small, against storm-dark blue | — |
+| The Pyre | Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar | — |
+
+---
+
+## The White House
+
+**What makes it unique:** The only room that looks like a real place you could visit: lamplight, portraits and rain on the windows, the baseline every other room departs from.
+
+**Status:** Done: backdrop and table in `art-tools/rooms/white_house/`, with a screen mock-up. The Washington Monument sits dead centre in the window, which Death covers; fine.
+
+- **The room:** An oval drawing room upstairs, curtains drawn, a fire under a marble mantel. Portraits of all four players hang on the walls and watch their subjects play. Green felt, brass lamps, and cigar smoke gathering under a high white ceiling.
+- **Sounds (for reference):** fire crackle; rain on tall sash windows; footsteps in a far corridor
+- **Light:** Warm lamplight and firelight, gold and amber.
+- **Avoid:** No presidential seal, eagle crest, presidential flag or any government insignia: US law restricts the use of the seal, and the presidential flag carries it. An American flag is fine. It is NOT the Oval Office: no Resolute desk, no desk at all. No real White House photographs copied.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: The oval drawing room upstairs in the President's house: curved walls in cream and gold, tall sash windows with heavy curtains drawn and rain on the glass, a fire under a white marble mantel, brass lamps, cigar smoke gathering under a high white ceiling. Four gilt-framed portraits on the walls, one of each player (Washington, Lincoln, Theodore Roosevelt, FDR), painted in the game's own cartoon style. The windows at the back look toward the Washington Monument at night, with rain on the glass and the curtains half drawn.
+Light: Warm lamplight and firelight, gold and amber.
+Must NOT resemble: No presidential seal, eagle crest, presidential flag or any government insignia: US law restricts the use of the seal, and the presidential flag carries it. An American flag is fine. It is NOT the Oval Office: no Resolute desk, no desk at all. No real White House photographs copied.
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: The White House. Parts:
+- Fire in the grate: 3 flame frames
+- Rain running down a window pane: 2 frames
+- A curl of cigar smoke, 3 sizes
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## Athens — The Symposium
+
+**What makes it unique:** Couches, oil lamps and wine instead of a card room: a dining room after the meal, and one couch kept for a guest who has not come, his cup poured.
+
+**Status:** Done: backdrop and pieces in `art-tools/rooms/athens/` (`pieces.json` places them). The empty couch and its stand came out behind seat 2, so the cup piece stands by the doorway's left pillar instead; the lamp flames flicker. The star and ladle frames are not used yet.
+
+- **The room:** The men's dining room of a rich Athenian house: painted plaster, oil lamps, couches drawn up around a card table. A great mixing bowl of wine and water stands in the middle of the floor, and nobody has fetched water in hours. One couch is empty, with a full cup set before it.
+- **Presence:** A cup has been poured for a guest who has not come.
+- **Sounds (for reference):** oil lamps guttering; wine ladled from the mixing bowl; crickets in the courtyard; pipes from a party down the street
+- **Light:** Oil-lamp gold, warm and low, with blue night in the doorway.
+- **Avoid:** Nothing from Disney's Hercules or the film 300.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: The men's dining room (the andron) of a rich Athenian house at night: walls of painted plaster in panels of red and ochre with a black band along the bottom and a Greek-key frieze up high, a beamed ceiling, tall bronze oil lamps on stands at the sides. Dining couches with striped cushions stand along the side walls, their high curved head-ends showing. Dead centre at the back, a wide doorway open onto a courtyard under the stars, its far wall pale in the moonlight, so a dark figure in front of it still reads. To the right of the doorway, a great red-figure mixing bowl for wine on a stone pedestal, its rim at about half height, a ladle in it. To the left of the doorway, against the back wall, ONE couch on a low step, empty, its cushions plumped and unused, its head-end at about half height, and beside it a slender bronze stand as tall as the couch's head-end, its small round top EMPTY.
+Light: Oil-lamp gold, warm and low, with blue night in the doorway.
+Must NOT resemble: Nothing from Disney's Hercules or the film 300.
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: Athens — The Symposium. Parts:
+- The slender bronze stand from beside the empty couch, as tall as the couch's head-end, with a shallow two-handled wine cup on its top, FULL to the brim (it stands there until Odysseus arrives)
+- The same stand and cup, the cup drained and set down crooked, a few drops spilled (after he has arrived)
+- Oil lamp flames: 3 frames
+- A ladle dipping in the mixing bowl
+- Stars twinkling in the doorway
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## Pirate Cove
+
+**What makes it unique:** The rowdiest room: a tavern half cut into the rock and half the stern of a wrecked ship, with the sea right outside.
+
+**Status:** Done: backdrop and pieces in `art-tools/rooms/pirate_cove/` (`pieces.json` places them): the lantern flames flicker, the moonlight glints on the water either side of Death, and a gull shifts on the rigging.
+
+- **The room:** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. Death's table stands on the boards among the rum barrels as if it had come ashore with them, the only thing in the room nobody has dared scar with a knife. Through the open side wall, ships ride at anchor in the moonlight.
+- **Sounds (for reference):** surf in the cove; creaking timbers and rigging; rowdy laughter through the wall; a bottle rolling across floorboards; a ship's bell out on the water
+- **Light:** Lantern orange inside, cool moonlight blue through the opening in the rock.
+- **Avoid:** Nothing from Disney's Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger or any skull-and-crossbones flag.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: A smugglers' tavern built into the rock of a hidden cove at night. Dead centre at the back, a wide, rough-edged opening in the rock onto the cove: moonlit water, a pale blue night sky with a few clouds lit silver, and two old sailing ships riding at anchor, small and far off, so a dark figure in front of it still reads; the moon itself high up and to the right of the opening, never dead centre. The LEFT side of the room is the timbered stern of a wrecked ship built into the tavern: dark planks, a row of small gallery windows glowing warm, a carved rail. The RIGHT side is rough grey-brown rock wall, damp, with a heavy wooden door in it. Old rigging and nets hang overhead across the top of the picture, with three ship's lanterns hanging from it: one high on the left, one high on the right, one in the top middle above the opening, each a clear glass-and-iron lantern with a bright flame. Barrels, a coil of rope and a ship's wheel stand against the side walls, their tops at about half height. No flags, no skulls.
+Light: Lantern orange inside, cool moonlight blue through the opening in the rock.
+Must NOT resemble: Nothing from Disney's Pirates of the Caribbean: no Black Pearl, no tentacled crew, no Jolly Roger or any skull-and-crossbones flag.
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: Pirate Cove. Parts:
+- The flame inside one ship's lantern, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- A seagull perched on a rope, 2 poses (head up; head turned), drawn at the size it would be on the rigging
+- Moonlight glinting on the water: 3 small clusters of silver sparkles, each alone
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## Camelot
+
+**What makes it unique:** The hall of the Round Table: the great table itself stands beyond the players, its circle running off into the dark past a hundred empty chairs, while the game is played at Death's table set before it.
+
+**Status:** Done: backdrop and pieces in `art-tools/rooms/camelot/` (`pieces.json` places them): the candle flames on both candle wheels and the wall sconces flicker, and the hearth fire and its sparks at the far left (shown only on screens wider than 16:9). The sheet drew each hearth frame as a whole fireplace and each flame on its candle, so the fire is cut out by brightness and the flames above the wax. The Round Table came out lower than asked, behind Death's table, so it barely shows; the banners carry the room.
+
+- **The room:** The great hall at Camelot. The Round Table runs off into the dark, past a hundred empty chairs, each with a knight's name in gold; tonight Death's table has been set before it, and the knights have carried their own chairs over. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.
+- **Sounds (for reference):** a great hearth fire; wind at a high window; a horse stamping in the yard; cups set down on oak; a far-off chapel bell
+- **Light:** Firelight and candle gold, with cool grey stone and blue night in the windows.
+- **Avoid:** Nothing from Disney's The Sword in the Stone, Monty Python, the A24 Green Knight film, the film Excalibur or the BBC's Merlin. No real coats of arms copied, no lettering on the banners.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: The great hall at Camelot at night, on a feast day. Grey dressed-stone walls, heavy dark timber roof beams high overhead, and long heraldic banners hanging from them across the top of the picture: plain bold devices (a red dragon, a gold lion, a white hart, a green bough) on blue, red and gold cloth, no lettering. Across the back of the hall, far behind the players, the great Round Table, far bigger than a card table: its far edge curves across the room at about 45% of the height and runs off into darkness at both sides, lined with tall, high-backed oak chairs, all empty, each back carved with a name in gold (the names too small to read). The chair backs show in the gaps between the players (about 27%, 42%, 58% and 73% across) and fade into shadow toward the sides. Dead centre behind the dealer: plain grey stone and the empty backs of two chairs, softly lit, calm and mid-toned. On the LEFT side, a huge stone hearth, big enough to stable a horse, with a roaring fire, its mantel at about half height. On the RIGHT side, two tall, narrow arched windows with deep blue night and a few stars outside, and below them a heavy oak door. High up, two iron candle wheels hang from the beams on chains, one over the left third and one over the right third, each ringed with eight lit candles with clear bright flames. Rushes strewn on the floor.
+Light: Firelight and candle gold, with cool grey stone and blue night in the windows.
+Must NOT resemble: Nothing from Disney's The Sword in the Stone, Monty Python, the A24 Green Knight film, the film Excalibur or the BBC's Merlin. No real coats of arms copied, no lettering on the banners.
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: Camelot. Parts:
+- The hearth fire, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- One candle flame, drawn alone at the size the candles on the candle wheels are in the backdrop: 3 frames
+- A few sparks rising from the fire: 3 small clusters of orange sparks, each alone
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## Imperial Rome
+
+**What makes it unique:** Three eras stacked in one room: ancient brick below, Renaissance frescoes above, and a chain to the dog's chair. The richest room: imperial purple and gold.
+
+- **The room:** A high hall inside Castel Sant'Angelo: the emperor Hadrian's tomb, later walled into a papal fortress. Ancient brick below, Renaissance frescoes above, braziers for light. An iron chain runs from the wall to the dog's chair, and nobody is certain who holds the other end.
+- **Presence:** A laurel wreath waits on a cushion by the door. Its owner has been promised the next free chair.
+- **Sounds (for reference):** brazier crackle; a heavy chain shifting on stone; distant bells over the city; a far-off arena crowd, rising and falling; a pen scratching on parchment
+- **Light:** Brazier orange and fresco colour above, dusky violet through the window.
+- **Avoid:** Nothing from the film Gladiator, the television series Rome or The Borgias, Angels and Demons or Assassin's Creed. No modern Rome (no cars, no electric lights, no Vatican dome in modern lighting).
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: A high hall inside Castel Sant'Angelo in Rome, at dusk: Hadrian's tomb, later walled into a papal fortress. The lower walls are rough ancient Roman brick, warm red-brown, with a few round arches; above them, from about a third of the way down, bright Renaissance frescoes: painted clouds, sky blue and gold, and robed allegorical figures, on a high vaulted ceiling across the top of the picture. Dead centre at the back, behind the dealer: a plain stretch of old brick and a closed bronze-studded door in a round arch, softly lit, calm and mid-toned. At the far LEFT edge, a tall arched window open onto the city at dusk: domes and rooftops, the river, a violet and orange sky. TWO tall iron braziers on three legs, burning bright, standing in the gaps BETWEEN the players: one at EXACTLY 27% across and one at EXACTLY 73% across, each so tall that its bowl and fire are at about a third of the way down the picture (head height, between two seated players), the fire reaching up to about a fifth of the way down; nothing else bright at 19% or 80% across, where the end players sit. A heavy iron ring set in the brick high on the right at about 85% across and a quarter of the way down; a thick iron chain hangs from it and runs down and across toward 66% across, ending at about half height, out of sight behind where a player will sit. Purple and gold hangings with tassels between the frescoed panels. Beside the central door, at EXACTLY 42% across, a round-topped niche in the wall, its sill at about 40% of the way down, holding a red velvet cushion, the cushion EMPTY.
+Light: Brazier orange and fresco colour above, dusky violet through the window.
+Must NOT resemble: Nothing from the film Gladiator, the television series Rome or The Borgias, Angels and Demons or Assassin's Creed. No modern Rome (no cars, no electric lights, no Vatican dome in modern lighting).
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: Imperial Rome. Parts:
+- A golden laurel wreath lying on a red velvet cushion, as a separate piece drawn at the size of the cushion on its pedestal in the backdrop (it stands there until Caesar arrives)
+- A brazier fire, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- A thin curl of smoke rising from a brazier, alone: 3 frames, each a slightly different curl
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## Baker Street
+
+**What makes it unique:** The most cluttered and lived-in room: a Victorian sitting room full of evidence.
+
+- **The room:** The first-floor sitting room at 221B, as Watson described it: the acid-stained chemistry table shoved against the wall, letters jack-knifed to the mantelpiece, V.R. picked out in bullet holes. Gaslight, a coal fire, fog pressing at the bow window, and a violin case nobody else may open.
+- **Sounds (for reference):** coal settling in the grate; hansom cab wheels on wet cobbles; a clock ticking on the mantel; a single violin string, plucked; street cries muffled by fog
+- **Light:** Gaslight yellow and firelight, fog-grey at the window.
+- **Avoid:** Nothing from the BBC Sherlock, the Guy Ritchie films or Elementary: no smiley face in bullet holes, no modern flat. No deerstalker hanging anywhere (that is an illustrator's addition, not Watson's room).
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: The first-floor sitting room at 221B Baker Street, London, on a foggy evening, as Watson described it: warm, cluttered, lived in. Patterned wallpaper in deep red and olive, dark wood panelling up to about half height. Dead centre at the back, behind the dealer: a plain stretch of wallpaper and a closed, dark-panelled door to the landing, softly lit, calm and mid-toned. At the far LEFT edge, from the left side to about 16% across, a tall bow window of small square panes, thick yellow-grey London fog pressing against the glass, heavy curtains tied back; its top reaches about a tenth of the way down. At the far RIGHT, from about 84% across to the right edge, a fireplace with a coal fire burning bright in the grate; its mantelpiece at about 30% of the way down, with a clock, a pipe rack and a bundle of letters pinned to the wooden mantel by a jack-knife standing upright; Holmes's worn armchair beside it, its back reaching about half height. TWO gas lamps on brass wall brackets, each with a glass shade and a bright yellow flame, in the gaps BETWEEN the players: one at EXACTLY 27% across and one at EXACTLY 73% across, the flame at about a quarter of the way down. At EXACTLY 42% across, against the wall, a chemistry table crowded with flasks, test tubes and a retort, acid-stained; its top at about 42% of the way down and the glassware rising to about 30% of the way down. High on the wallpaper at EXACTLY 58% across, above head height (about 12 to 20% of the way down), the letters V R picked out in neat bullet holes. A violin case lying on top of a low bookcase at about 66% across, the bookcase top at about 40% of the way down, stacked with papers and scrapbooks; a Persian slipper on the mantelpiece. Nothing bright at 19% or 80% across, where the end players sit.
+Light: Gaslight yellow and firelight, fog-grey at the window.
+Must NOT resemble: Nothing from the BBC Sherlock, the Guy Ritchie films or Elementary: no smiley face in bullet holes, no modern flat. No deerstalker hanging anywhere (that is an illustrator's addition, not Watson's room).
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: Baker Street. Parts:
+- The coal fire in the grate, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- One gas lamp flame inside its glass shade, drawn alone at the size it is in the backdrop: 3 frames, each a slightly different flicker
+- A drift of yellow-grey fog, drawn alone at the size of the window panes: 2 frames, each a slightly different shape
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## Transylvania
+
+**What makes it unique:** The only room where the champion is visible before he plays: Dracula sits watching from a high-backed chair beside the fire until two chairs empty.
+
+- **The room:** The great hall of Castle Dracula: bare stone, black oak, and a hearth big enough to stand in, with one high-backed chair beside it that nobody else uses. Tall windows look out on the Carpathians and far too much moon. There is not a mirror in the building; the Count threw the last one out of a window.
+- **Presence:** The chair by the fire is not empty.
+- **Sounds (for reference):** a great hearth crackling; wolves, far off in the pass; wind worrying the shutters; water dripping somewhere in the stone; hooves pacing in the courtyard
+- **Light:** Firelight red-orange from the right against cold blue moonlight from the left.
+- **Avoid:** Nothing from Universal's or Hammer's Dracula films, no Bela Lugosi, no Castlevania, no Coppola film. No mirrors, no coffins, no bats indoors in the backdrop.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: The great hall of Castle Dracula at night: bare grey stone walls in big smooth blocks, black oak beams across the top of the picture, dust, cobwebs only in the high corners. Dead centre at the back, behind the dealer: a plain stretch of grey stone and a tall closed oak door in a pointed arch, softly lit, calm and mid-toned. High on the LEFT, two tall pointed-arch windows onto the moonlit Carpathian mountains, one at about 8% across and one at EXACTLY 27% across, their tops near the top of the picture and their sills at about a quarter of the way down, above the players' heads: cold blue moonlight, snowy peaks, and in the window at 27% an enormous full moon, far too big. At the far RIGHT, from EXACTLY 86% across to the right edge, a stone hearth big enough to stand in, a fire roaring in it, the opening from about 22% to 50% of the way down, a heavy carved stone mantel above it. Between the table and the hearth, at EXACTLY 73% across, ONE high-backed carved black oak chair turned three-quarters toward the middle of the room, standing back by the fire so it looks small: its tall back rising to about a sixth of the way down, its seat at about 40% of the way down, the chair EMPTY, red velvet on the seat and back. One tall iron candelabrum standing on the floor at EXACTLY 42% across, its candles at about a quarter of the way down. Nothing bright at 19% or 80% across, where the end players sit. No mirrors anywhere.
+Light: Firelight red-orange from the right against cold blue moonlight from the left.
+Must NOT resemble: Nothing from Universal's or Hammer's Dracula films, no Bela Lugosi, no Castlevania, no Coppola film. No mirrors, no coffins, no bats indoors in the backdrop.
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: Transylvania. Parts:
+- The same high-backed chair as in the backdrop, drawn alone at the size it is there, with a dark, still figure seated in it, watching: Dracula in silhouette, a tall thin man in black with a high collar, only his eyes catching the firelight (it goes when he sits at the table)
+- The hearth fire, drawn alone at the size it is in the backdrop: roaring (3 frames, each a slightly different flicker) and sunk to embers (2 frames)
+- The candles of the candelabrum, drawn alone at the size they are in the backdrop: 3 frames, each a slightly different flicker
+- A thin cloud crossing the moon, drawn alone at the size of the moon in the backdrop: 2 frames
+- A small bat, wings up and wings down (2 frames), to cross a window
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## The Station
+
+**What makes it unique:** The only room with no fire: cool steel, soft lamps and the whole Earth in the window. The room itself is a player, as a pale lens in the ceiling, until the turn: the lights fail, the lens goes dark, and the room comes down to the table.
+
+- **The room:** A round lounge on a slowly turning station: brushed steel, soft lamps, Death's table standing on the deck though nobody bolted it down, and one enormous window full of the Earth. The gravity is made, not given, and it is not quite right; now and then a chip lifts off the felt and settles again. A single lens sits in the ceiling, pale and unblinking.
+- **Presence:** The room is listening.
+- **Sounds (for reference):** air handlers breathing, slightly out of step; the hull ticking as it turns into sunlight; a soft chime from nowhere in particular; a chip lifting off the felt and clicking back down; a deep, slow hum under everything
+- **Light:** Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red).
+- **Avoid:** No NASA or agency insignia, no flags, no lettering on the panels. Nothing from 2001: A Space Odyssey or any film or game: no red eye, no red light, no HAL.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: A round lounge on a slowly turning space station, at station-night. Curved walls of brushed steel in big plain panels, softly lit, with a low curved ceiling and its ribs across the top of the picture. Dead centre at the back, behind the dealer: a plain stretch of pale grey steel panelling and a closed, round-cornered bulkhead door, softly lit, calm and mid-toned. HIGH across the back wall, ABOVE the players' heads, ONE enormous curved window from about 20% to about 80% across, its bottom edge at about a fifth of the way down and its top running up into the ceiling: the Earth fills the lower part of it, a great curve of blue ocean and white cloud, its bright sunlit edge toward the LEFT and its night side, deep blue with a few city lights, toward the middle and right; black space and a few stars above it. Below the window, behind the heads, plain calm steel. At EXACTLY 50% across, in the ceiling at the very top of the picture, a round brass socket the size of a dinner plate, its iris of overlapping blades CLOSED and dark (the lens is drawn separately). Two round wall lamps glowing a soft warm white, in the gaps BETWEEN the players at EXACTLY 27% and EXACTLY 73% across, at about a quarter of the way down. At the far LEFT, from the left edge to about 14% across, a curved console wall of round dials and small dim green and white indicator lights, no lettering. At the far RIGHT, from about 86% across to the right edge, a round porthole onto stars and a thin sliver of the Moon, and a coiled air hose hanging on a hook beside it. Nothing bright at 19% or 80% across, where the end players sit. No red light anywhere. Take the STYLE from the SECOND attached image (a player who sits in this room): its outlines and flat, hard-edged shading, a little softer and less saturated.
+Light: Cool white lamplight and blue Earthlight; after the turn, dim amber emergency light (never red).
+Must NOT resemble: No NASA or agency insignia, no flags, no lettering on the panels. Nothing from 2001: A Space Odyssey or any film or game: no red eye, no red light, no HAL.
+```
+
+**After-the-turn plate (attach the finished backdrop):**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. The SAME room as the attached backdrop, redrawn after the turn: EXACTLY the same picture, the same camera, every wall, window, door, console and porthole in exactly the same place, with ONLY the light changed. The two wall lamps and the console lights are OFF and dark; the ceiling socket's iris is closed and dark; thin strips of dim AMBER emergency light run along the base of the walls and the ribs of the ceiling, and the room is darker and amber-tinted; the Earth in the window stays bright and blue, now the main light. Amber, NEVER red. No people, no table, no text.
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: The Station. Parts:
+- The ceiling lens, drawn alone at the size of the socket in the backdrop: its brass-rimmed iris of overlapping blades OPEN with a pale, cool white light behind it; half open; narrowed to a small ring (3 pieces; never red)
+- The Earth in the window, drawn alone at the size it is in the backdrop: 2 frames, its clouds drifted a little between them
+- A few stars, small, twinkling: 2 frames
+- The two wall lamps, drawn alone at the size they are in the backdrop: lit, and dimmed a shade (for the lights dimming)
+- A single plain round poker chip floating an inch above a strip of green felt, with a soft shadow under it
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## The Champions' Tables — the Hall of Doors
+
+**What makes it unique:** One hall for both champions' tables: eight tall doors round a round hall, each spilling its own room's light, and a ninth, small and shut, right behind Death. Table I opens the four doors on the left (the first four tables), table II the four on the right: two plates of one room.
+
+- **The room (table I):** A round hall whose ceiling is lost in the dark, floored in polished black stone, with eight tall doors set around its wall — one for every table on the tour. Tonight the first four stand open, each spilling its own room's light and weather across the floor, and the round table sits where those four lights cross. Between the first door and the eighth there is a ninth, small, plain and shut; nobody at the table looks at it.
+- **The room (table II):** The same hall, turned: now the last four doors stand open — brazier-light from Rome, gaslight and fog from Baker Street, red firelight from the Count's hall, the Station's blue Earthlight — and the first four are shut. Their light crosses at the round table, so every champion sits lit by their own room. The small, plain ninth door is still shut.
+- **Sounds (for reference):** a hush under a ceiling too high to see; surf on a beach, faintly, through one doorway; wind at a castle window, through another; chips clicking on felt, echoing upward; a heavy door settling in its frame; a dog growling, three times over, through one doorway; hooves and cab wheels on wet cobbles, through another; a great fire settling in its hearth; a station's low hum from the fourth door
+- **Light:** Dark, lit only by what the open doors let in.
+- **Avoid:** No text or numbers on the doors, no portals of swirling magic, nothing from any film or game: they are ordinary old doors with light behind them.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale of furniture, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it: none of its curtains, windows, portraits, fireplace, lamps or furniture. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. Five figures will sit across the middle band, at about 19%, 34%, 50%, 66% and 80% of the width, heads about a quarter to a third of the way down: the wall behind each head is calm and plain, so faces read against it. The room shows in the top quarter, in the gaps between them (about 27%, 42%, 58% and 73% across) and at the far sides. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light (fire, lamps, windows) goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: A round hall at night whose ceiling is lost in darkness, floored in polished black stone, its curved wall of smooth dark stone with EIGHT tall arched doors set into it, each a different old wooden door. They stand in the gaps BETWEEN the players and at the far sides, NEVER behind a head: on the LEFT half at EXACTLY 42%, 27%, 12% and 4% across, on the RIGHT half at EXACTLY 58%, 73%, 88% and 96% across, their arches reaching about a tenth of the way down. In this plate the FOUR LEFT doors stand OPEN, each spilling its own room's light across the dark stone: at 42% warm gold lamplight and the edge of a red curtain (a president's drawing room), at 27% golden oil-lamp light and a glimpse of a painted Greek wall, at 12% blue moonlight and sea spray (a pirate cove), at 4% the red-gold firelight of a castle hall. The FOUR RIGHT doors are SHUT, dark wood in dark stone. Dead centre at the back, at EXACTLY 50% across, behind the dealer: a NINTH door, small, plain and pale grey, shut, softly lit by the light from the others so it is calm and mid-toned, never black; nothing about it draws the eye. The wall behind each head (19%, 34%, 66%, 80% across) is plain dark stone, faintly lit. No text, no numbers, no signs on the doors.
+Light: Dark, lit only by what the open doors let in.
+Must NOT resemble: No text or numbers on the doors, no portals of swirling magic, nothing from any film or game: they are ordinary old doors with light behind them.
+```
+
+**Table II plate (attach the finished backdrop):**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. The SAME hall as the attached backdrop, for the second champions' table: EXACTLY the same picture, the same camera, every door in exactly the same place, with ONLY the doors changed. Now the FOUR LEFT doors are SHUT, dark wood in dark stone, and the FOUR RIGHT doors stand OPEN, each spilling its own room's light across the dark stone: at 58% orange brazier light from a Roman hall, at 73% yellow gaslight and grey fog (a London sitting room), at 88% red-orange firelight from a castle hearth, at 96% the cool blue light of the Earth from a space station window. The small plain ninth door at 50%, behind the dealer, is still shut, calm and mid-toned. No people, no table, no text.
+```
+
+---
+
+## The Last Crossing
+
+**What makes it unique:** The smallest room: no gold, no crowd, one lamp and the two of you. Death sits across from you, front-on, for the first time as a player.
+
+- **The room:** A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on Death's table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.
+- **Sounds (for reference):** rain on the windows; wind worrying at a door that will not quite shut; the river pulling at the pilings; an oar, far out on the water; the lamp flame guttering
+- **Light:** One oil lamp, warm and small, against storm-dark blue.
+- **Avoid:** Nothing from Pratchett's Discworld, Bergman's The Seventh Seal or Gaiman's Sandman. No skulls, no scythe, no hourglass in the room: the only death in it is the one at the table.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table goes there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. This table is played HEADS UP against the dealer himself: only ONE figure sits across the middle band, dead centre (50% across), his head about a quarter to a third of the way down. He wears a BLACK hooded robe, so the wall directly behind him must be the calmest and LIGHTEST thing in the picture: warm, plain, mid-toned planks, never black, never busy. The brightest light goes to the sides. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: The inside of a small plank-walled dock house on the near bank of a wide black river, at night, in a storm. Walls of wide, weathered wooden planks lit warm amber by lamplight, a low beamed ceiling across the top of the picture. Dead centre at the back, behind the player across the table: a plain stretch of warm amber planks, softly lit, calm and plain, lighter than anything around it. Two square windows of small panes, one on each side, at EXACTLY 22% and EXACTLY 78% across, their tops at about a tenth of the way down and their sills at about 40% of the way down, rain running down the glass, storm-dark blue night beyond, the black river and the far bank faint. In the RIGHT-hand window, far out on the water, a tiny ferryman's lantern in a small boat with a dark figure aboard, moving away from the shore. At the far LEFT, from the left edge to about 10% across, a plank door standing a crack open onto the rain, a thin line of blue night light down its edge. On the wall between the left window and the centre, at about 36% across and above head height, a long boat hook hanging on two pegs; at about 64% across, a coil of rope hanging on a peg. At the far RIGHT edge, a small shelf with a tin cup and a folded oilskin. No gold, no portraits, no decoration. Take the STYLE from the SECOND attached image (Death, who plays in this room): its outlines and shading, a little softer and less saturated.
+Light: One oil lamp, warm and small, against storm-dark blue.
+Must NOT resemble: Nothing from Pratchett's Discworld, Bergman's The Seventh Seal or Gaiman's Sandman. No skulls, no scythe, no hourglass in the room: the only death in it is the one at the table.
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: The Last Crossing. Parts:
+- The flame of a small brass oil lamp with a glass chimney, the lamp standing on a strip of green felt (it sits on Death's table): 3 frames, the third guttering low
+- Rain running down a window of small panes, drawn alone at the size of the windows in the backdrop: 2 frames
+- The ferryman's boat with its lantern and the dark figure aboard, small, drawn alone at the size it is in the window: 2 frames, the lantern swinging
+- The plank door at the far left: shut, and open a crack (2 pieces)
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+
+---
+
+## The Pyre
+
+**What makes it unique:** The hidden table (the Phoenix's gauntlet): dawn instead of night, sandstone and spice instead of gold and wood. Ash drifts across the felt like snow. Heads up, so only two figures sit at it: Death and the Phoenix, who has stepped down from its nest on the altar to play.
+
+- **The room:** The inner court of the temple of the Sun at Heliopolis, in the last hour before dawn: tall sandstone columns, a sky going from violet to gold beyond them, and on a stone altar at the back a nest of cinnamon and myrrh, smouldering. Death's table stands in the middle of the court. Ash drifts across the felt like snow and never settles.
+- **Sounds (for reference):** a dry wind through the columns; spice crackling on embers; a single bird call, far up in the dawn; ash hissing as it lands on warm stone
+- **Light:** Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar.
+- **Avoid:** Nothing from the Harry Potter books or films, Marvel's Phoenix or any modern film or game. No hieroglyphs that spell words, no text.
+
+**Backdrop plate:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. A background plate for a poker game played in landscape on a phone. Wide 21:9 panorama (about 2.33 to 1). Draw the ROOM ONLY: no people, no birds, no cards, no chips, no text, no UI, no logos. Match ONLY the CAMERA of the attached White House backdrop: the same eye level, the same scale, and the line where the back wall meets the floor about two-thirds of the way down. Take NOTHING else from it. The MIDDLE of the room is EMPTY floor: no table, no chairs, no furniture there, because the card table and the players go there. The card table will cover everything below the middle of the picture, so anything that matters stands at or above half height. This table is played HEADS UP: only TWO figures will sit across the middle band, the dealer dead centre (50% across) and one great bird at about 70% across, their heads about a quarter to a third of the way down: the wall behind each of them is calm and plain, so they read against it. Dead centre is behind the dealer, who wears a black hooded robe: keep it calm and mid-toned there, never black and never the brightest thing in the room. The brightest light goes to the sides and up high. Slightly softer and less saturated than the characters will be, so they stand out.
+
+The room: The inner court of the temple of the Sun at Heliopolis, in the last hour before dawn. Tall sandstone columns with papyrus capitals and faded painted bands of red, blue and gold, standing in a row across the back, and between them the open sky, going from deep violet at the top to warm gold low down at the horizon. Dead centre at the back, behind the dealer: the broad flat face of a sandstone pylon wall, plain and softly lit, calm and mid-toned. Behind the bird's seat at about 70% across: plain sandstone wall, calm. On the LEFT, at EXACTLY 28% across, a tall stepped stone altar, its top at about 40% of the way down, and on top of it a great round nest of cinnamon sticks and myrrh, EMPTY, smouldering, a thin column of pale smoke rising from it to the top of the picture: this is where the bird has stepped down from. At the far LEFT and far RIGHT edges, the brightest gold of the dawn between the columns. A few grey flakes of ash drifting in the air, high up. No birds anywhere in this plate. Warm, glowing, hopeful, never dark or scary. Take the STYLE from the SECOND attached image (the bird who plays in this room): its thick inked outlines and flat, hard-edged shading, a little softer and less saturated.
+Light: Dawn gold low in the sky between the columns; the warm red glow of the nest on the altar.
+Must NOT resemble: Nothing from the Harry Potter books or films, Marvel's Phoenix or any modern film or game. No hieroglyphs that spell words, no text.
+```
+
+**Moving and story pieces:**
+
+```
+Bright, warm cartoon style like a modern animated adventure game, matching the character art: bold dark outlines, clean painted shading, warm light. NOT dark, gritty or photoreal. Loose pieces for animating the room, each a separate piece with a closed dark outline on a pure white background (#FFFFFF), laid out with wide gaps, nothing touching. Flat, even lighting, no text.
+
+For the room: The Pyre. Parts:
+- The smouldering nest on the altar, drawn alone at the size it is in the backdrop: 3 frames of glowing embers and a curl of smoke
+- Drifting ash flakes, grey and pale: 3 frames, to fall slowly across the scene
+- The dawn sky between the columns, a second, slightly brighter version, for the sun coming up as the sitting goes on
+
+Soft glows, smoke and light spill are listed so you know they are needed; they are easiest made in the rig as a blurred, tinted shape, so treat these as reference.
+```
+

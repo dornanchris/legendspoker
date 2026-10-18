@@ -1,0 +1,360 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "fdr_face_01.png",
+      "label": "",
+      "x": 11,
+      "y": 9,
+      "w": 405,
+      "h": 404,
+      "pivot": [
+        202.5,
+        202.0
+      ],
+      "area": 100765
+    },
+    {
+      "index": 2,
+      "file": "fdr_face_02.png",
+      "label": "",
+      "x": 373,
+      "y": 49,
+      "w": 265,
+      "h": 86,
+      "pivot": [
+        132.5,
+        43.0
+      ],
+      "area": 3572
+    },
+    {
+      "index": 3,
+      "file": "fdr_face_03.png",
+      "label": "",
+      "x": 383,
+      "y": 137,
+      "w": 187,
+      "h": 132,
+      "pivot": [
+        93.5,
+        66.0
+      ],
+      "area": 19795
+    },
+    {
+      "index": 4,
+      "file": "fdr_face_04.png",
+      "label": "",
+      "x": 572,
+      "y": 136,
+      "w": 190,
+      "h": 129,
+      "pivot": [
+        95.0,
+        64.5
+      ],
+      "area": 19850
+    },
+    {
+      "index": 5,
+      "file": "fdr_face_05.png",
+      "label": "",
+      "x": 763,
+      "y": 133,
+      "w": 190,
+      "h": 130,
+      "pivot": [
+        95.0,
+        65.0
+      ],
+      "area": 20184
+    },
+    {
+      "index": 6,
+      "file": "fdr_face_06.png",
+      "label": "",
+      "x": 956,
+      "y": 131,
+      "w": 195,
+      "h": 141,
+      "pivot": [
+        97.5,
+        70.5
+      ],
+      "area": 22485
+    },
+    {
+      "index": 7,
+      "file": "fdr_face_07.png",
+      "label": "",
+      "x": 1154,
+      "y": 131,
+      "w": 190,
+      "h": 140,
+      "pivot": [
+        95.0,
+        70.0
+      ],
+      "area": 22314
+    },
+    {
+      "index": 8,
+      "file": "fdr_face_08.png",
+      "label": "",
+      "x": 1346,
+      "y": 124,
+      "w": 184,
+      "h": 141,
+      "pivot": [
+        92.0,
+        70.5
+      ],
+      "area": 20570
+    },
+    {
+      "index": 9,
+      "file": "fdr_face_09.png",
+      "label": "",
+      "x": 613,
+      "y": 288,
+      "w": 205,
+      "h": 102,
+      "pivot": [
+        102.5,
+        51.0
+      ],
+      "area": 16794
+    },
+    {
+      "index": 10,
+      "file": "fdr_face_10.png",
+      "label": "",
+      "x": 846,
+      "y": 290,
+      "w": 202,
+      "h": 105,
+      "pivot": [
+        101.0,
+        52.5
+      ],
+      "area": 16904
+    },
+    {
+      "index": 11,
+      "file": "fdr_face_11.png",
+      "label": "",
+      "x": 1072,
+      "y": 286,
+      "w": 208,
+      "h": 108,
+      "pivot": [
+        104.0,
+        54.0
+      ],
+      "area": 17600
+    },
+    {
+      "index": 12,
+      "file": "fdr_face_12.png",
+      "label": "",
+      "x": 13,
+      "y": 421,
+      "w": 145,
+      "h": 130,
+      "pivot": [
+        72.5,
+        65.0
+      ],
+      "area": 14983
+    },
+    {
+      "index": 13,
+      "file": "fdr_face_13.png",
+      "label": "",
+      "x": 158,
+      "y": 423,
+      "w": 135,
+      "h": 131,
+      "pivot": [
+        67.5,
+        65.5
+      ],
+      "area": 13940
+    },
+    {
+      "index": 14,
+      "file": "fdr_face_14.png",
+      "label": "",
+      "x": 292,
+      "y": 426,
+      "w": 142,
+      "h": 127,
+      "pivot": [
+        71.0,
+        63.5
+      ],
+      "area": 14340
+    },
+    {
+      "index": 15,
+      "file": "fdr_face_15.png",
+      "label": "",
+      "x": 434,
+      "y": 421,
+      "w": 135,
+      "h": 131,
+      "pivot": [
+        67.5,
+        65.5
+      ],
+      "area": 13931
+    },
+    {
+      "index": 16,
+      "file": "fdr_face_16.png",
+      "label": "",
+      "x": 569,
+      "y": 422,
+      "w": 125,
+      "h": 130,
+      "pivot": [
+        62.5,
+        65.0
+      ],
+      "area": 12927
+    },
+    {
+      "index": 17,
+      "file": "fdr_face_17.png",
+      "label": "",
+      "x": 693,
+      "y": 421,
+      "w": 133,
+      "h": 131,
+      "pivot": [
+        66.5,
+        65.5
+      ],
+      "area": 13811
+    },
+    {
+      "index": 18,
+      "file": "fdr_face_18.png",
+      "label": "",
+      "x": 826,
+      "y": 422,
+      "w": 125,
+      "h": 132,
+      "pivot": [
+        62.5,
+        66.0
+      ],
+      "area": 13425
+    },
+    {
+      "index": 19,
+      "file": "fdr_face_19.png",
+      "label": "",
+      "x": 951,
+      "y": 422,
+      "w": 131,
+      "h": 130,
+      "pivot": [
+        65.5,
+        65.0
+      ],
+      "area": 13654
+    },
+    {
+      "index": 20,
+      "file": "fdr_face_20.png",
+      "label": "",
+      "x": 1083,
+      "y": 422,
+      "w": 142,
+      "h": 131,
+      "pivot": [
+        71.0,
+        65.5
+      ],
+      "area": 14450
+    },
+    {
+      "index": 21,
+      "file": "fdr_face_21.png",
+      "label": "",
+      "x": 1224,
+      "y": 426,
+      "w": 159,
+      "h": 127,
+      "pivot": [
+        79.5,
+        63.5
+      ],
+      "area": 15567
+    },
+    {
+      "index": 22,
+      "file": "fdr_face_22.png",
+      "label": "",
+      "x": 1384,
+      "y": 424,
+      "w": 138,
+      "h": 130,
+      "pivot": [
+        69.0,
+        65.0
+      ],
+      "area": 14172
+    },
+    {
+      "index": 23,
+      "file": "fdr_face_23.png",
+      "label": "",
+      "x": 26,
+      "y": 561,
+      "w": 503,
+      "h": 419,
+      "pivot": [
+        251.5,
+        209.5
+      ],
+      "area": 115808
+    },
+    {
+      "index": 24,
+      "file": "fdr_face_24.png",
+      "label": "",
+      "x": 530,
+      "y": 566,
+      "w": 442,
+      "h": 414,
+      "pivot": [
+        221.0,
+        207.0
+      ],
+      "area": 107705
+    },
+    {
+      "index": 25,
+      "file": "fdr_face_25.png",
+      "label": "",
+      "x": 1031,
+      "y": 571,
+      "w": 469,
+      "h": 410,
+      "pivot": [
+        234.5,
+        205.0
+      ],
+      "area": 111323
+    }
+  ]
+}

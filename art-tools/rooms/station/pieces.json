@@ -1,0 +1,24 @@
+{
+ "note": "The Station's room pieces, cut from sources/pieces.png by room_web.py. Spots in design space (1600x900); design x = image x * 1.0962 - 250.2, y = image y * 1.0962. The ceiling lens, open and lit, stands over the backdrop's closed socket at 50% while the AI watches (presence 'before'), cut where the picture's top cuts the socket; at the turn the room swaps to after.webp (the same room in amber emergency light, lamps off, the socket closed) and the lens is gone. Not used: the half and narrowed lens (no tell plays on the ceiling while the AI has no chair), the two Earth strips (two cloud places swapped read as a jump), the star fields, the wall lamps (the backdrop's own lamps glow; nothing dims them yet) and the floating chip.",
+ "sheet": "sources/pieces.png",
+ "after_backdrop": "after.webp",
+ "pieces": {
+  "lens_open": {
+   "box": [
+    248,
+    91,
+    648,
+    242
+   ],
+   "crop": true,
+   "x": 800.5,
+   "bottom": 81.1,
+   "h": 81.0
+  }
+ },
+ "presence": {
+  "before": "lens_open",
+  "after": null
+ },
+ "loops": []
+}

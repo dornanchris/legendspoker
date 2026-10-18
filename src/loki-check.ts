@@ -269,6 +269,11 @@ let contested = 0
 
 for (const table of TABLES) {
   if (table.kind === 'finale') continue
+  if (table.kind === 'hidden') {
+    // The Phoenix's table: heads up, and the only opponent is its champion.
+    if (banishmentFor(table)) fail(`${table.id}: a hidden heads-up table has a banishment rule`)
+    continue
+  }
   const rule = banishmentFor(table)
   if (!rule) { fail(`${table.id}: no banishment rule`); continue }
   // The rule protects the dealer and the champion; the engine itself protects
@@ -445,6 +450,23 @@ for (const id of ['white_house', 'station']) {
   }
 }
 
+// The first seed that fires at each table rarely deals the player another
+// six-seven afterwards, so look on until one does: the rule must not fire twice.
+for (const table of TABLES.filter((t) => t.kind === 'tour')) {
+  if (postEventTriggerWins) break
+  const rule = banishmentFor(table)!
+  for (let k = 0; k < SEARCH * 3 && !postEventTriggerWins; k++) {
+    const seed = (20270101 + k * 6151 + table.position * 97) >>> 0
+    const a = await play(table, 'tour', table.seats, seed, rule)
+    if (a.cutAtEvent < 0) continue
+    const later = a.triggerWins.filter((h) => h > a.triggerWins[0])
+    if (!later.length) continue
+    const bans = a.events.filter((e) => e.type === 'banished').length
+    if (bans !== 1) fail(`${table.id} seed ${seed}: ${bans} banishments after ${later.length} more six-seven wins`)
+    postEventTriggerWins += later.length
+    console.log(`ok   ${table.id.padEnd(14)} seed ${seed}  ${later.length} later six-seven win${later.length === 1 ? '' : 's'} after the event, no second banishment`)
+  }
+}
 if (!postEventTriggerWins) fail('no six-seven win after an event anywhere: "never fires twice" went untested')
 if (!uncontested || !contested) fail(`need both kinds of win (showdown ${contested}, uncontested ${uncontested})`)
 console.log(

@@ -34,13 +34,15 @@ import arthur from '../data/characters/arthur.json'
 import spartacus from '../data/characters/spartacus.json'
 import pope from '../data/characters/pope.json'
 import cerberus from '../data/characters/cerberus.json'
+import scipio from '../data/characters/scipio.json'
 import caesar from '../data/characters/caesar.json'
 import nemo from '../data/characters/nemo.json'
 import javert from '../data/characters/javert.json'
-import alice from '../data/characters/alice.json'
+import cheshire_cat from '../data/characters/cheshire_cat.json'
 import sherlock from '../data/characters/sherlock.json'
 import vanHelsing from '../data/characters/van_helsing.json'
-import monster from '../data/characters/monster.json'
+import jekyll from '../data/characters/jekyll.json'
+import hyde from '../data/characters/hyde.json'
 import wolfMan from '../data/characters/wolf_man.json'
 import headlessHorseman from '../data/characters/headless_horseman.json'
 import dracula from '../data/characters/dracula.json'
@@ -51,6 +53,8 @@ import astronaut from '../data/characters/astronaut.json'
 import theAi from '../data/characters/the_ai.json'
 import death from '../data/characters/death.json'
 import loki from '../data/characters/loki.json'
+import jfk from '../data/characters/jfk.json'
+import phoenix from '../data/characters/phoenix.json'
 
 import tWhiteHouse from '../data/tables/white_house.json'
 import tAthens from '../data/tables/athens.json'
@@ -63,6 +67,7 @@ import tStation from '../data/tables/station.json'
 import tChampions1 from '../data/tables/champions_1.json'
 import tChampions2 from '../data/tables/champions_2.json'
 import tFinale from '../data/tables/finale.json'
+import tPyre from '../data/tables/pyre.json'
 
 import dWhiteHouse from '../data/dialogue/table-01-white-house.json'
 import dAthens from '../data/dialogue/table-02-athens.json'
@@ -75,6 +80,7 @@ import dStation from '../data/dialogue/table-08-station.json'
 import dChampions1 from '../data/dialogue/table-09-champions-1.json'
 import dChampions2 from '../data/dialogue/table-10-champions-2.json'
 import dFinale from '../data/dialogue/table-11-finale.json'
+import dPyre from '../data/dialogue/table-12-pyre.json'
 import dDealer from '../data/dialogue/dealer.json'
 import dUninvited from '../data/dialogue/uninvited.json'
 
@@ -114,6 +120,14 @@ export type CharacterData = {
   arrives: boolean
   /** Comes back after being knocked out. See ReturnData. */
   returns?: ReturnData
+  /** One chair, two men: see OtherData. */
+  other?: OtherData
+  /**
+   * A guest is unlocked (dealt in at open tables) once MET -- unless this
+   * says 'beaten': the Phoenix has to be beaten, heads up, at the end of its
+   * gauntlet (tour.ts).
+   */
+  unlockedBy?: 'met' | 'beaten'
   origin: string
   era: string
   dials: Dials
@@ -151,9 +165,36 @@ export type ReturnData = {
   lines: Line[]
 }
 
+/**
+ * Two men in one chair (Jekyll and Hyde). Wherever this character is dealt
+ * into a table's seats, each sitting seats him OR `character`, 50/50 from
+ * the sitting's seed (sittingSeats). Once the one dealt in is knocked out,
+ * the other walks back in to an empty chair when the player wins a pot
+ * holding the same two ranks as the hand that knocked him out -- at a tour
+ * table, only after its late champion has sat down. Both characters carry
+ * an `other` naming each other; `lines` is the scene when THIS one's other
+ * half comes back.
+ */
+export type OtherData = {
+  character: string
+  stack: 'average' | number
+  lines: Line[]
+}
+
 /** The public actions a callout can answer. all_in is any action that empties the stack. */
 export type CalloutAction = 'fold' | 'check' | 'call' | 'bet' | 'raise' | 'all_in'
-export type Callouts = Partial<Record<CalloutAction, string[]>>
+/** Said after a showdown, when the cards are face up: taking the pot, or losing it. */
+export type ShowdownPool = 'win' | 'lose'
+/** The winning hand's name, as a showdown pool's suffix: `lose_flush` is said on losing to a flush. */
+export type HandName =
+  | 'high_card' | 'pair' | 'two_pair' | 'three_of_a_kind' | 'straight'
+  | 'flush' | 'full_house' | 'four_of_a_kind' | 'straight_flush' | 'royal_flush'
+export type HandPool = `${ShowdownPool}_${HandName}`
+/** Said calling or raising when one's own bet or raise has just been raised over. */
+export type ReraisedPool = 'reraised'
+/** Said by the winner of a showdown when this character showed and lost to them: `beat_cyclops`. */
+export type BeatPool = `beat_${string}`
+export type Callouts = Partial<Record<CalloutAction | ReraisedPool | ShowdownPool | HandPool | BeatPool, string[]>>
 
 export type ArrivalData = {
   character: string
@@ -172,7 +213,8 @@ export type ArrivalData = {
 
 export type TableData = {
   id: string
-  kind: 'tour' | 'champions' | 'finale'
+  /** 'hidden' is the Phoenix's table: off the map until its gauntlet opens it. */
+  kind: 'tour' | 'champions' | 'finale' | 'hidden'
   /** Order on the tour: 1-8 the story tables, 9-10 champions, 11 the finale. */
   position: number
   name: string
@@ -200,6 +242,13 @@ export type TableData = {
    * `lessons`). The first tables only; absent means never.
    */
   lessons?: number
+  /**
+   * A hidden visitor: someone the table never seats who walks in when the
+   * player wins a pot holding `holeRanks` while a chair stands empty (JFK at
+   * the White House, for a three and a five: the thirty-fifth president).
+   * The character is a guest, invisible until met; tour and open alike.
+   */
+  visitor?: { character: string; holeRanks: string[]; stack: 'average' | number }
 }
 
 export type Line = {
@@ -238,6 +287,8 @@ export type DialogueData = {
   player_directed?: Record<string, Line[]>
   death_asides?: Line[]
   champion_arrival?: Line[]
+  /** The hidden visitor's entrance (TableData.visitor), played in order. */
+  visitor_arrival?: Line[]
   champion_missed?: Line[]
   champion_headsup?: Line[]
   eliminated?: Record<string, Line[]>
@@ -330,22 +381,22 @@ const characterList = [
   socrates, leonidas, medusa, cyclops, odysseus,
   kidd, silver, davyJones, blackbeard,
   merlin, lancelot, greenKnight, arthur,
-  spartacus, pope, cerberus, caesar,
-  nemo, javert, alice, sherlock,
-  vanHelsing, monster, wolfMan, headlessHorseman, dracula,
+  spartacus, pope, cerberus, scipio, caesar,
+  nemo, javert, cheshire_cat, sherlock,
+  vanHelsing, jekyll, hyde, wolfMan, headlessHorseman, dracula,
   greyAlien, martian, robot, astronaut, theAi,
   death,
-  loki,
+  loki, jfk, phoenix,
 ] as unknown as CharacterData[]
 
 const tableList = [
   tWhiteHouse, tAthens, tPirateCove, tCamelot, tRome, tBakerStreet,
-  tTransylvania, tStation, tChampions1, tChampions2, tFinale,
+  tTransylvania, tStation, tChampions1, tChampions2, tFinale, tPyre,
 ] as unknown as TableData[]
 
 const dialogueList = [
   dWhiteHouse, dAthens, dPirateCove, dCamelot, dRome, dBakerStreet,
-  dTransylvania, dStation, dChampions1, dChampions2, dFinale,
+  dTransylvania, dStation, dChampions1, dChampions2, dFinale, dPyre,
 ] as unknown as DialogueData[]
 
 export const CHARACTERS: Record<string, CharacterData> = Object.fromEntries(
@@ -412,6 +463,39 @@ export function openingCast(table: TableData): string[] {
   return [...table.seats]
 }
 
+/** Everyone who may speak at a table: its full cast, the other halves of its seats, plus a hidden visitor. */
+export function tableSpeakers(table: TableData): string[] {
+  const cast = fullCast(table)
+  for (const id of [...cast]) {
+    const o = CHARACTERS[id]?.other?.character
+    if (o && !cast.includes(o)) cast.push(o)
+  }
+  return table.visitor ? [...cast, table.visitor.character] : cast
+}
+
+/**
+ * The chairs as one sitting deals them: anyone with an `other` is that man
+ * or his other half, 50/50, decided by the sitting's seed so a resumed seat
+ * (which keeps the seats it was dealt) and a check run agree. A list that
+ * already holds both halves (it never should: openTableCast deals one) keeps
+ * them apart by flipping the second.
+ */
+export function sittingSeats(seats: string[], seed: number): string[] {
+  const out: string[] = []
+  seats.forEach((id, i) => {
+    const o = CHARACTERS[id]?.other?.character
+    let pick = id
+    if (o) {
+      let x = (seed ^ Math.imul(i + 1, 0x9e3779b1)) >>> 0
+      x = Math.imul(x ^ (x >>> 16), 0x45d9f3b) >>> 0
+      pick = ((x ^ (x >>> 16)) & 1) ? o : id
+      if (out.includes(pick)) pick = pick === id ? o : id
+    }
+    out.push(pick)
+  })
+  return out
+}
+
 /** Every character who can sit at a table, arrivals included. */
 export function fullCast(table: TableData): string[] {
   const cast = [...table.seats]
@@ -441,6 +525,22 @@ export function arrivalRules(table: TableData, mode: 'tour' | 'open', seats: str
     const r = CHARACTERS[id]?.returns
     if (r) rules.push({ personality: personality(id), afterEliminationOf: id, delayHands: r.afterHands, stack: r.stack })
   }
+  // The other half of anyone dealt in (Hyde for Jekyll, Jekyll for Hyde).
+  for (const id of seats) {
+    const o = CHARACTERS[id]?.other
+    if (!o || seats.includes(o.character)) continue
+    rules.push({
+      personality: personality(o.character),
+      onHumanWinLike: id,
+      afterArrivalOf: a?.character,
+      delayHands: 0,
+      stack: o.stack,
+    })
+  }
+  const v = table.visitor
+  if (v && !seats.includes(v.character)) {
+    rules.push({ personality: personality(v.character), onHumanWin: [...v.holeRanks], delayHands: 0, stack: v.stack })
+  }
   return rules
 }
 
@@ -451,7 +551,7 @@ export function arrivalRules(table: TableData, mode: 'tour' | 'open', seats: str
  * the engine itself protects anyone a late arrival is waiting on.
  */
 export function banishmentFor(table: TableData): Banishment | undefined {
-  if (table.kind === 'finale') return undefined
+  if (table.kind === 'finale' || table.kind === 'hidden') return undefined
   const exclude = characterList.filter((c) => c.role === 'dealer').map((c) => c.id)
   if (table.champion) exclude.push(table.champion)
   return {

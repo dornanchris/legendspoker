@@ -39,7 +39,7 @@ import { CHARACTERS, DEALER, tellLine, type TableData, type DialogueData, type L
 import { preflopStrength, type Card } from './equity.js'
 import { fillLine, tierFor, RESPECT_POINTS, RESPECT_THRESHOLDS, earnedName } from './tour.js'
 import { handRank, marksForHand, marksForTable, type HandFacts, type TableFacts } from './marks.js'
-import { Chatter, type CalloutBeat } from './chatter.js'
+import { Chatter, HAND_NAMES, type CalloutBeat } from './chatter.js'
 
 export type Beat =
   | { kind: 'line'; id: string; speaker: string; text: string; stage: boolean }
@@ -542,6 +542,12 @@ export class TableRun {
     // Retaking your own chair is a RETURN, not the table's champion arriving:
     // it plays the returner's own scene, at any table, open ones included.
     if (e.replaces === e.id) return this.onReturn(e.id)
+    // The hidden visitor (JFK at the White House): his own scene, tour or open.
+    if (this.table.visitor?.character === e.id) return this.onVisitor()
+    // The other half of a two-man chair (Hyde for the Jekyll who fell): the
+    // fallen one's scene, at any table.
+    const half = [...this.sat].find((id) => id !== e.id && CHARACTERS[id]?.other?.character === e.id)
+    if (half) return this.onReturn(half, CHARACTERS[half]!.other!.lines)
     if (this.mode === 'open') return []
     const beats: Beat[] = []
     // The entrance is a scene: play it in order, and stop at the first line
@@ -560,10 +566,17 @@ export class TableRun {
     return beats
   }
 
+  /** The visitor's entrance, in order, leaving out anyone no longer at the table. */
+  private onVisitor(): Beat[] {
+    const beats = (this.dialogue.visitor_arrival ?? []).filter((l) => this.canSpeak(l.speaker)).map((l) => this.say(l))
+    this.lastOptionalHand = this.handNo
+    return beats
+  }
+
   /** One line per speaker of the returner's scene, in order. */
-  private onReturn(id: string): Beat[] {
-    this.h.returned.push(id)
-    const lines = CHARACTERS[id]?.returns?.lines ?? []
+  private onReturn(id: string, scene?: Line[]): Beat[] {
+    if (!scene) this.h.returned.push(id)
+    const lines = scene ?? CHARACTERS[id]?.returns?.lines ?? []
     const beats: Beat[] = []
     for (const speaker of new Set(lines.map((l) => l.speaker))) {
       if (!this.canSpeak(speaker)) continue
@@ -693,6 +706,7 @@ export class TableRun {
     // --- banter, between hands, from the two who just fought over a pot
     beats.push(...this.banter(e.hand))
     beats.push(...this.needle(e.hand, beats))
+    beats.push(...this.showdownWord(e.hand, beats))
 
     // --- marks
     const facts: HandFacts = {
@@ -876,7 +890,30 @@ export class TableRun {
     if (e.seat === HUMAN || !id || !this.canSpeak(id)) return []
     const allIn = (a === 'call' || a === 'bet' || a === 'raise') && e.stacks[e.seat] === 0
     const seated = this.seats.filter((s) => s !== null).length
-    const c = this.chatter.callout({ id, hand: this.h.no, street: this.h.street, action: a, allIn, seated })
+    const c = this.chatter.callout({ id, hand: this.h.no, street: this.h.street, action: a, allIn, seated, seat: e.seat })
+    return c ? [c] : []
+  }
+
+  /**
+   * A word after a showdown, once the cards are face up: the winner crowing or
+   * a loser grumbling (src/chatter.ts). Only when two or more hands were shown
+   * and nothing else has been said at this boundary.
+   */
+  private showdownWord(hand: number, said: Beat[]): Beat[] {
+    const sd = this.h.showdown
+    if (!sd || sd.revealed.length < 2 || said.some((b) => b.kind === 'line' || b.kind === 'callout')) return []
+    const shown = sd.revealed.map((r) => r.seat).filter((s) => s !== HUMAN && this.h.ids[s] && this.canSpeak(this.h.ids[s]!))
+    let winner: string | null = null
+    let best = 0
+    for (const s of shown) {
+      const d = this.h.deltas.get(s) ?? 0
+      if (d > best) { best = d; winner = this.h.ids[s]! }
+    }
+    const losers = shown.filter((s) => (this.h.deltas.get(s) ?? 0) < 0).map((s) => this.h.ids[s]!)
+    // The main pot's winning hand, by name, when it had one winner.
+    const main = sd.pots[0]
+    const rank = main?.winners.length === 1 && main.ranking ? RANKINGS.indexOf(main.ranking) : -1
+    const c = this.chatter.showdown(hand, winner, losers, HAND_NAMES[rank] ?? null)
     return c ? [c] : []
   }
 

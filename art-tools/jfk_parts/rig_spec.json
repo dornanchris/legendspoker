@@ -1,0 +1,386 @@
+{
+ "kit": "jfk_parts",
+ "id": "jfk",
+ "name": "John F. Kennedy",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets (the redraw; the old seat_puppet kit is jfk/ and jfk_sheet_old.png). The White House's hidden visitor: any empty chair, drawn facing right and mirrored. The master is the rest pose's OWN head (jfk_face/jfk_master.png). Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt. The PT-109 coconut shell sits on the felt by his right hand: part of that forearm's piece at rest, a props box in every frame.",
+ "what": {
+  "A1": "Rest: forearms on the table's edge, hands apart, the coconut shell by his right hand",
+  "A2": "Peek: right hand cupped low over the felt",
+  "A3": "Check: two fingers tap the felt",
+  "A4": "Call: right hand pushes forward along the felt",
+  "A5": "Bet: leans in, right hand pushed well forward",
+  "A6": "Fold: an easy flick of the right hand",
+  "B1": "All in: both hands push forward together, a grin",
+  "B2": "Show: right hand turns palm up",
+  "B3": "Big win: both fists raised, a broad grin",
+  "B4": "TELL strong: rocks back in his chair, easy",
+  "B5": "Runs a hand through his hair (decoy for rocking back)",
+  "B6": "TELL bluffing: straightens his tie",
+  "C1": "Chops the air, mid-thought (decoy for the tie)",
+  "C2": "TELL weak: a hand pressed to the small of his back",
+  "C3": "Taps the coconut shell (decoy for his back)",
+  "C4": "Glances up at the portraits on the wall",
+  "C5": "A broad grin at the table",
+  "C6": "Arrive: sitting down, one hand still in his jacket pocket",
+  "D1": "Talking: one hand chopping the air",
+  "D2": "Facing a big bet: a level look",
+  "D3": "Lost a pot: a rueful half-smile, a shrug",
+  "D4": "Crushing loss: a hand over his eyes",
+  "D5": "Heads up: leaning in on both forearms",
+  "D6": "Laughing, head back a little"
+ },
+ "prop": [
+  [
+   24,
+   342
+  ],
+  [
+   134,
+   342
+  ],
+  [
+   137,
+   452
+  ],
+  [
+   14,
+   452
+  ],
+  [
+   14,
+   414
+  ],
+  [
+   24,
+   411
+  ]
+ ],
+ "frames": {
+  "peek": "A2",
+  "check": "A3",
+  "call": "A4",
+  "bet": "A5",
+  "fold": "A6",
+  "all_in": "B1",
+  "show": "B2",
+  "win_big": "B3",
+  "rock_back": "B4",
+  "hair": "B5",
+  "tie": "B6",
+  "chop": "C1",
+  "back": "C2",
+  "tap_shell": "C3",
+  "portraits": "C4",
+  "grin": "C5",
+  "arrive": "C6",
+  "talk": "D1",
+  "big_bet": "D2",
+  "lost_pot": "D3",
+  "lose_big": "D4",
+  "heads_up": "D5",
+  "laugh": "D6"
+ },
+ "common": {
+  "table_y": 370,
+  "scale": 1.0,
+  "origin_x": 300,
+  "register_box": [
+   150,
+   230,
+   350,
+   330
+  ],
+  "register_span": 40,
+  "collar_y": 200,
+  "neck": [
+   228,
+   200
+  ],
+  "frame_margin": 60,
+  "stock_box": [
+   180,
+   170,
+   300,
+   260
+  ]
+ },
+ "cut_below": 245,
+ "keep_poly": [
+  [
+   138,
+   0
+  ],
+  [
+   325,
+   0
+  ],
+  [
+   325,
+   150
+  ],
+  [
+   305,
+   195
+  ],
+  [
+   285,
+   222
+  ],
+  [
+   262,
+   240
+  ],
+  [
+   215,
+   240
+  ],
+  [
+   180,
+   215
+  ],
+  [
+   152,
+   175
+  ],
+  [
+   138,
+   130
+  ]
+ ],
+ "shoulder_y": 205,
+ "arms": {
+  "near": {
+   "elbow": [
+    60,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     290
+    ],
+    [
+     110,
+     290
+    ],
+    [
+     110,
+     335
+    ],
+    [
+     0,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the coconut shell by it",
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       60,
+       322
+      ],
+      [
+       120,
+       335
+      ],
+      [
+       175,
+       345
+      ],
+      [
+       220,
+       355
+      ],
+      [
+       270,
+       380
+      ],
+      [
+       292,
+       440
+      ],
+      [
+       275,
+       458
+      ],
+      [
+       200,
+       458
+      ],
+      [
+       150,
+       452
+      ],
+      [
+       0,
+       455
+      ]
+     ],
+     "props": [
+      [
+       [
+        24,
+        342
+       ],
+       [
+        134,
+        342
+       ],
+       [
+        137,
+        452
+       ],
+       [
+        14,
+        452
+       ],
+       [
+        14,
+        414
+       ],
+       [
+        24,
+        411
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    450,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     295
+    ],
+    [
+     480,
+     295
+    ],
+    [
+     480,
+     330
+    ],
+    [
+     400,
+     330
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       325,
+       385
+      ],
+      [
+       360,
+       362
+      ],
+      [
+       400,
+       345
+      ],
+      [
+       440,
+       330
+      ],
+      [
+       482,
+       335
+      ],
+      [
+       485,
+       410
+      ],
+      [
+       455,
+       425
+      ],
+      [
+       435,
+       445
+      ],
+      [
+       380,
+       448
+      ],
+      [
+       330,
+       442
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "filters": {
+  "felt_lines": 3,
+  "no_peel": true,
+  "drop_rail": 30,
+  "rail_band": [
+   45,
+   90
+  ],
+  "rail_blue": 40,
+  "wood_rows_only": true,
+  "no_wood": true,
+  "felt_holes": true,
+  "felt_blue": true,
+  "felt_teal": true,
+  "felt_dark_teal": true,
+  "rail_orange": {
+   "red": 120,
+   "blue": 24
+  },
+  "back_strip": 6
+ },
+ "frame_extra": {
+  "tap_shell": {
+   "props": [
+    [
+     [
+      85,
+      338
+     ],
+     [
+      196,
+      338
+     ],
+     [
+      201,
+      452
+     ],
+     [
+      76,
+      452
+     ],
+     [
+      76,
+      415
+     ],
+     [
+      85,
+      410
+     ]
+    ]
+   ]
+  }
+ }
+}

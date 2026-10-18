@@ -1,0 +1,21 @@
+{
+ "eyes": {
+  "half": "eyes_half.png",
+  "closed": "eyes_closed.png",
+  "viewer": "eyes_viewer.png",
+  "down": "eyes_down.png",
+  "narrow": "eyes_narrow.png",
+  "wide": "eyes_wide.png",
+  "dim": "eyes_dim.png",
+  "dark": "eyes_dark.png"
+ },
+ "mouth": {
+  "oo": "mouth_oo.png",
+  "m": "mouth_m.png",
+  "f": "mouth_f.png",
+  "ee": "mouth_ee.png",
+  "oh": "mouth_oh.png",
+  "l": "mouth_l.png",
+  "ah": "mouth_ah.png"
+ }
+}

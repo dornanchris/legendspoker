@@ -1,0 +1,290 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "scipio_face_01.png",
+      "label": "",
+      "x": 24,
+      "y": 27,
+      "w": 422,
+      "h": 431,
+      "pivot": [
+        211.0,
+        215.5
+      ],
+      "area": 116037
+    },
+    {
+      "index": 2,
+      "file": "scipio_face_02.png",
+      "label": "",
+      "x": 362,
+      "y": 144,
+      "w": 169,
+      "h": 106,
+      "pivot": [
+        84.5,
+        53.0
+      ],
+      "area": 14182
+    },
+    {
+      "index": 3,
+      "file": "scipio_face_03.png",
+      "label": "",
+      "x": 550,
+      "y": 144,
+      "w": 168,
+      "h": 106,
+      "pivot": [
+        84.0,
+        53.0
+      ],
+      "area": 14207
+    },
+    {
+      "index": 4,
+      "file": "scipio_face_04.png",
+      "label": "",
+      "x": 739,
+      "y": 145,
+      "w": 170,
+      "h": 107,
+      "pivot": [
+        85.0,
+        53.5
+      ],
+      "area": 14535
+    },
+    {
+      "index": 5,
+      "file": "scipio_face_05.png",
+      "label": "",
+      "x": 931,
+      "y": 145,
+      "w": 172,
+      "h": 112,
+      "pivot": [
+        86.0,
+        56.0
+      ],
+      "area": 15184
+    },
+    {
+      "index": 6,
+      "file": "scipio_face_06.png",
+      "label": "",
+      "x": 1130,
+      "y": 144,
+      "w": 170,
+      "h": 113,
+      "pivot": [
+        85.0,
+        56.5
+      ],
+      "area": 15263
+    },
+    {
+      "index": 7,
+      "file": "scipio_face_07.png",
+      "label": "",
+      "x": 1325,
+      "y": 145,
+      "w": 172,
+      "h": 112,
+      "pivot": [
+        86.0,
+        56.0
+      ],
+      "area": 15390
+    },
+    {
+      "index": 8,
+      "file": "scipio_face_08.png",
+      "label": "",
+      "x": 530,
+      "y": 301,
+      "w": 179,
+      "h": 117,
+      "pivot": [
+        89.5,
+        58.5
+      ],
+      "area": 17073
+    },
+    {
+      "index": 9,
+      "file": "scipio_face_09.png",
+      "label": "",
+      "x": 756,
+      "y": 308,
+      "w": 189,
+      "h": 112,
+      "pivot": [
+        94.5,
+        56.0
+      ],
+      "area": 16540
+    },
+    {
+      "index": 10,
+      "file": "scipio_face_10.png",
+      "label": "",
+      "x": 45,
+      "y": 496,
+      "w": 194,
+      "h": 147,
+      "pivot": [
+        97.0,
+        73.5
+      ],
+      "area": 22801
+    },
+    {
+      "index": 11,
+      "file": "scipio_face_11.png",
+      "label": "",
+      "x": 288,
+      "y": 494,
+      "w": 179,
+      "h": 152,
+      "pivot": [
+        89.5,
+        76.0
+      ],
+      "area": 21699
+    },
+    {
+      "index": 12,
+      "file": "scipio_face_12.png",
+      "label": "",
+      "x": 522,
+      "y": 496,
+      "w": 189,
+      "h": 149,
+      "pivot": [
+        94.5,
+        74.5
+      ],
+      "area": 22421
+    },
+    {
+      "index": 13,
+      "file": "scipio_face_13.png",
+      "label": "",
+      "x": 774,
+      "y": 496,
+      "w": 193,
+      "h": 150,
+      "pivot": [
+        96.5,
+        75.0
+      ],
+      "area": 22676
+    },
+    {
+      "index": 14,
+      "file": "scipio_face_14.png",
+      "label": "",
+      "x": 1032,
+      "y": 496,
+      "w": 194,
+      "h": 149,
+      "pivot": [
+        97.0,
+        74.5
+      ],
+      "area": 22677
+    },
+    {
+      "index": 15,
+      "file": "scipio_face_15.png",
+      "label": "",
+      "x": 1288,
+      "y": 496,
+      "w": 194,
+      "h": 148,
+      "pivot": [
+        97.0,
+        74.0
+      ],
+      "area": 22633
+    },
+    {
+      "index": 16,
+      "file": "scipio_face_16.png",
+      "label": "",
+      "x": 1038,
+      "y": 644,
+      "w": 452,
+      "h": 349,
+      "pivot": [
+        226.0,
+        174.5
+      ],
+      "area": 86580
+    },
+    {
+      "index": 17,
+      "file": "scipio_face_17.png",
+      "label": "",
+      "x": 55,
+      "y": 721,
+      "w": 194,
+      "h": 151,
+      "pivot": [
+        97.0,
+        75.5
+      ],
+      "area": 22971
+    },
+    {
+      "index": 18,
+      "file": "scipio_face_18.png",
+      "label": "",
+      "x": 307,
+      "y": 722,
+      "w": 182,
+      "h": 147,
+      "pivot": [
+        91.0,
+        73.5
+      ],
+      "area": 21212
+    },
+    {
+      "index": 19,
+      "file": "scipio_face_19.png",
+      "label": "",
+      "x": 555,
+      "y": 720,
+      "w": 194,
+      "h": 150,
+      "pivot": [
+        97.0,
+        75.0
+      ],
+      "area": 23098
+    },
+    {
+      "index": 20,
+      "file": "scipio_face_20.png",
+      "label": "",
+      "x": 811,
+      "y": 722,
+      "w": 185,
+      "h": 147,
+      "pivot": [
+        92.5,
+        73.5
+      ],
+      "area": 21596
+    }
+  ]
+}

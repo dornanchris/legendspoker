@@ -1,0 +1,13 @@
+{
+ "note": "The master is the rest pose's own head. Eyes 2-8 (8: the amber eyes, his weak tell), 10 brows down (unused), 9 a wink (unused); mouths 11-22 (17: the half smile, his strong tell; 20: humming). The heads 1 and 23-26 are unused.",
+ "master": "loki_parts/loki_face/loki_master.png",
+ "pieces": "loki_parts/loki_face/loki_face_%02d.png",
+ "layers": {
+  "eyes": {"half": 2, "closed": 3, "viewer": 4, "down": 5, "up": 6, "narrow": 7, "amber": 8},
+  "mouth": {"rest": 11, "ah": 12, "ee": 13, "oh": 14, "oo": 15, "m": 16, "half_smile": 17, "f": 19, "l": 19, "hum": 20, "smile": 21, "laugh": 22}
+ },
+ "regions": {
+  "eyes": {"keep": [[255, 85], [355, 85], [355, 135], [255, 135]]},
+  "mouth": {"keep": [[255, 140], [345, 140], [345, 195], [255, 195]]}
+ }
+}

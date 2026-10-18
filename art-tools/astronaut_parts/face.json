@@ -1,0 +1,70 @@
+{
+ "note": "The master is the rest pose's own head. Eyes 2-8 (half, closed, toward you, down, to the side, narrowed, wide); the eye patches carry his brows, so the separate brow bits 9-12 are unused; mouths 13-22 (21 the grin, 22 rueful). Head 1 and the front head 23 are unused: his head turns in whole-figure frames.",
+ "master": "astronaut_parts/astronaut_face/astronaut_master.png",
+ "pieces": "astronaut_parts/astronaut_face/astronaut_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7,
+   "wide": 8
+  },
+  "mouth": {
+   "rest": 13,
+   "ah": 14,
+   "ee": 15,
+   "oh": 16,
+   "oo": 17,
+   "m": 18,
+   "f": 19,
+   "l": 20,
+   "grin": 21,
+   "rueful": 22
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     225,
+     99
+    ],
+    [
+     348,
+     99
+    ],
+    [
+     348,
+     130
+    ],
+    [
+     225,
+     130
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     240,
+     142
+    ],
+    [
+     338,
+     142
+    ],
+    [
+     338,
+     182
+    ],
+    [
+     240,
+     182
+    ]
+   ]
+  }
+ }
+}

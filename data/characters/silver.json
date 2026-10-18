@@ -93,10 +93,32 @@
       "I'll raise. Don't take it amiss, now.",
       "Raise. Cap'n Flint's idea, not mine."
     ],
+    "reraised": [
+      "Now, now, shipmate. No call for that.",
+      "A gentleman o' fortune! I like you better already."
+    ],
     "all_in": [
       "All in, shipmates. Every doubloon.",
       "Everything. A gentleman o' fortune stakes it all.",
       "All in. Blame the bird."
+    ],
+    "win": [
+      "Well now, shipmates. Ain't that a pretty thing.",
+      "No hard feelings. Barbecue always lands on his foot.",
+      "Changed sides at just the right moment, see.",
+      "Cap'n Flint, count it. Slowly."
+    ],
+    "lose": [
+      "Ah well. I've lost a leg; I can lose a pot.",
+      "Cap'n Flint, take a note: never again.",
+      "Dooty is dooty, shipmate. Yours today.",
+      "One coin in the bottom of the pit. Same as ever."
+    ],
+    "beat_kidd": [
+      "There's your treasure, Captain. Over here now."
+    ],
+    "win_two_pair": [
+      "Two pair. One for me and one for Cap'n Flint."
     ]
   }
 }

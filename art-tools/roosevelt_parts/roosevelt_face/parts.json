@@ -1,0 +1,346 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "roosevelt_face_01.png",
+      "label": "",
+      "x": 12,
+      "y": 28,
+      "w": 306,
+      "h": 385,
+      "pivot": [
+        153.0,
+        192.5
+      ],
+      "area": 87982
+    },
+    {
+      "index": 2,
+      "file": "roosevelt_face_02.png",
+      "label": "",
+      "x": 314,
+      "y": 28,
+      "w": 304,
+      "h": 385,
+      "pivot": [
+        152.0,
+        192.5
+      ],
+      "area": 87314
+    },
+    {
+      "index": 3,
+      "file": "roosevelt_face_03.png",
+      "label": "",
+      "x": 880,
+      "y": 81,
+      "w": 216,
+      "h": 113,
+      "pivot": [
+        108.0,
+        56.5
+      ],
+      "area": 19175
+    },
+    {
+      "index": 4,
+      "file": "roosevelt_face_04.png",
+      "label": "",
+      "x": 1103,
+      "y": 79,
+      "w": 196,
+      "h": 114,
+      "pivot": [
+        98.0,
+        57.0
+      ],
+      "area": 17861
+    },
+    {
+      "index": 5,
+      "file": "roosevelt_face_05.png",
+      "label": "",
+      "x": 1307,
+      "y": 80,
+      "w": 213,
+      "h": 113,
+      "pivot": [
+        106.5,
+        56.5
+      ],
+      "area": 19794
+    },
+    {
+      "index": 6,
+      "file": "roosevelt_face_06.png",
+      "label": "",
+      "x": 629,
+      "y": 157,
+      "w": 219,
+      "h": 72,
+      "pivot": [
+        109.5,
+        36.0
+      ],
+      "area": 7208
+    },
+    {
+      "index": 7,
+      "file": "roosevelt_face_07.png",
+      "label": "",
+      "x": 895,
+      "y": 217,
+      "w": 197,
+      "h": 108,
+      "pivot": [
+        98.5,
+        54.0
+      ],
+      "area": 17645
+    },
+    {
+      "index": 8,
+      "file": "roosevelt_face_08.png",
+      "label": "",
+      "x": 1106,
+      "y": 215,
+      "w": 205,
+      "h": 107,
+      "pivot": [
+        102.5,
+        53.5
+      ],
+      "area": 18601
+    },
+    {
+      "index": 9,
+      "file": "roosevelt_face_09.png",
+      "label": "",
+      "x": 1322,
+      "y": 217,
+      "w": 204,
+      "h": 109,
+      "pivot": [
+        102.0,
+        54.5
+      ],
+      "area": 18201
+    },
+    {
+      "index": 10,
+      "file": "roosevelt_face_10.png",
+      "label": "",
+      "x": 630,
+      "y": 331,
+      "w": 185,
+      "h": 76,
+      "pivot": [
+        92.5,
+        38.0
+      ],
+      "area": 9297
+    },
+    {
+      "index": 11,
+      "file": "roosevelt_face_11.png",
+      "label": "",
+      "x": 827,
+      "y": 336,
+      "w": 186,
+      "h": 76,
+      "pivot": [
+        93.0,
+        38.0
+      ],
+      "area": 9533
+    },
+    {
+      "index": 12,
+      "file": "roosevelt_face_12.png",
+      "label": "",
+      "x": 16,
+      "y": 473,
+      "w": 171,
+      "h": 123,
+      "pivot": [
+        85.5,
+        61.5
+      ],
+      "area": 15146
+    },
+    {
+      "index": 13,
+      "file": "roosevelt_face_13.png",
+      "label": "",
+      "x": 185,
+      "y": 466,
+      "w": 165,
+      "h": 132,
+      "pivot": [
+        82.5,
+        66.0
+      ],
+      "area": 16687
+    },
+    {
+      "index": 14,
+      "file": "roosevelt_face_14.png",
+      "label": "",
+      "x": 350,
+      "y": 463,
+      "w": 165,
+      "h": 131,
+      "pivot": [
+        82.5,
+        65.5
+      ],
+      "area": 16338
+    },
+    {
+      "index": 15,
+      "file": "roosevelt_face_15.png",
+      "label": "",
+      "x": 516,
+      "y": 468,
+      "w": 156,
+      "h": 129,
+      "pivot": [
+        78.0,
+        64.5
+      ],
+      "area": 15283
+    },
+    {
+      "index": 16,
+      "file": "roosevelt_face_16.png",
+      "label": "",
+      "x": 675,
+      "y": 468,
+      "w": 159,
+      "h": 128,
+      "pivot": [
+        79.5,
+        64.0
+      ],
+      "area": 15403
+    },
+    {
+      "index": 17,
+      "file": "roosevelt_face_17.png",
+      "label": "",
+      "x": 831,
+      "y": 471,
+      "w": 166,
+      "h": 121,
+      "pivot": [
+        83.0,
+        60.5
+      ],
+      "area": 15207
+    },
+    {
+      "index": 18,
+      "file": "roosevelt_face_18.png",
+      "label": "",
+      "x": 1005,
+      "y": 474,
+      "w": 162,
+      "h": 124,
+      "pivot": [
+        81.0,
+        62.0
+      ],
+      "area": 15189
+    },
+    {
+      "index": 19,
+      "file": "roosevelt_face_19.png",
+      "label": "",
+      "x": 1169,
+      "y": 472,
+      "w": 169,
+      "h": 124,
+      "pivot": [
+        84.5,
+        62.0
+      ],
+      "area": 16119
+    },
+    {
+      "index": 20,
+      "file": "roosevelt_face_20.png",
+      "label": "",
+      "x": 1343,
+      "y": 470,
+      "w": 183,
+      "h": 130,
+      "pivot": [
+        91.5,
+        65.0
+      ],
+      "area": 17959
+    },
+    {
+      "index": 21,
+      "file": "roosevelt_face_21.png",
+      "label": "",
+      "x": 23,
+      "y": 630,
+      "w": 176,
+      "h": 144,
+      "pivot": [
+        88.0,
+        72.0
+      ],
+      "area": 19114
+    },
+    {
+      "index": 22,
+      "file": "roosevelt_face_22.png",
+      "label": "",
+      "x": 206,
+      "y": 634,
+      "w": 180,
+      "h": 128,
+      "pivot": [
+        90.0,
+        64.0
+      ],
+      "area": 18089
+    },
+    {
+      "index": 23,
+      "file": "roosevelt_face_23.png",
+      "label": "",
+      "x": 515,
+      "y": 618,
+      "w": 338,
+      "h": 372,
+      "pivot": [
+        169.0,
+        186.0
+      ],
+      "area": 86719
+    },
+    {
+      "index": 24,
+      "file": "roosevelt_face_24.png",
+      "label": "",
+      "x": 923,
+      "y": 620,
+      "w": 312,
+      "h": 373,
+      "pivot": [
+        156.0,
+        186.5
+      ],
+      "area": 79054
+    }
+  ]
+}

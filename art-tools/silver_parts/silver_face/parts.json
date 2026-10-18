@@ -1,0 +1,346 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "silver_face_01.png",
+      "label": "",
+      "x": 10,
+      "y": 25,
+      "w": 436,
+      "h": 362,
+      "pivot": [
+        218.0,
+        181.0
+      ],
+      "area": 99420
+    },
+    {
+      "index": 2,
+      "file": "silver_face_02.png",
+      "label": "",
+      "x": 405,
+      "y": 77,
+      "w": 165,
+      "h": 115,
+      "pivot": [
+        82.5,
+        57.5
+      ],
+      "area": 14239
+    },
+    {
+      "index": 3,
+      "file": "silver_face_03.png",
+      "label": "",
+      "x": 586,
+      "y": 77,
+      "w": 163,
+      "h": 113,
+      "pivot": [
+        81.5,
+        56.5
+      ],
+      "area": 14138
+    },
+    {
+      "index": 4,
+      "file": "silver_face_04.png",
+      "label": "",
+      "x": 764,
+      "y": 70,
+      "w": 163,
+      "h": 122,
+      "pivot": [
+        81.5,
+        61.0
+      ],
+      "area": 15131
+    },
+    {
+      "index": 5,
+      "file": "silver_face_05.png",
+      "label": "",
+      "x": 942,
+      "y": 84,
+      "w": 165,
+      "h": 100,
+      "pivot": [
+        82.5,
+        50.0
+      ],
+      "area": 12665
+    },
+    {
+      "index": 6,
+      "file": "silver_face_06.png",
+      "label": "",
+      "x": 1129,
+      "y": 71,
+      "w": 182,
+      "h": 123,
+      "pivot": [
+        91.0,
+        61.5
+      ],
+      "area": 16772
+    },
+    {
+      "index": 7,
+      "file": "silver_face_07.png",
+      "label": "",
+      "x": 1327,
+      "y": 78,
+      "w": 172,
+      "h": 114,
+      "pivot": [
+        86.0,
+        57.0
+      ],
+      "area": 14599
+    },
+    {
+      "index": 8,
+      "file": "silver_face_08.png",
+      "label": "",
+      "x": 515,
+      "y": 220,
+      "w": 192,
+      "h": 93,
+      "pivot": [
+        96.0,
+        46.5
+      ],
+      "area": 13608
+    },
+    {
+      "index": 9,
+      "file": "silver_face_09.png",
+      "label": "",
+      "x": 750,
+      "y": 219,
+      "w": 204,
+      "h": 94,
+      "pivot": [
+        102.0,
+        47.0
+      ],
+      "area": 14519
+    },
+    {
+      "index": 10,
+      "file": "silver_face_10.png",
+      "label": "",
+      "x": 11,
+      "y": 402,
+      "w": 168,
+      "h": 144,
+      "pivot": [
+        84.0,
+        72.0
+      ],
+      "area": 17877
+    },
+    {
+      "index": 11,
+      "file": "silver_face_11.png",
+      "label": "",
+      "x": 182,
+      "y": 404,
+      "w": 150,
+      "h": 142,
+      "pivot": [
+        75.0,
+        71.0
+      ],
+      "area": 15506
+    },
+    {
+      "index": 12,
+      "file": "silver_face_12.png",
+      "label": "",
+      "x": 340,
+      "y": 402,
+      "w": 159,
+      "h": 142,
+      "pivot": [
+        79.5,
+        71.0
+      ],
+      "area": 16476
+    },
+    {
+      "index": 13,
+      "file": "silver_face_13.png",
+      "label": "",
+      "x": 504,
+      "y": 402,
+      "w": 144,
+      "h": 134,
+      "pivot": [
+        72.0,
+        67.0
+      ],
+      "area": 14432
+    },
+    {
+      "index": 14,
+      "file": "silver_face_14.png",
+      "label": "",
+      "x": 655,
+      "y": 402,
+      "w": 125,
+      "h": 136,
+      "pivot": [
+        62.5,
+        68.0
+      ],
+      "area": 12552
+    },
+    {
+      "index": 15,
+      "file": "silver_face_15.png",
+      "label": "",
+      "x": 786,
+      "y": 404,
+      "w": 140,
+      "h": 135,
+      "pivot": [
+        70.0,
+        67.5
+      ],
+      "area": 14188
+    },
+    {
+      "index": 16,
+      "file": "silver_face_16.png",
+      "label": "",
+      "x": 932,
+      "y": 404,
+      "w": 143,
+      "h": 138,
+      "pivot": [
+        71.5,
+        69.0
+      ],
+      "area": 14496
+    },
+    {
+      "index": 17,
+      "file": "silver_face_17.png",
+      "label": "",
+      "x": 1079,
+      "y": 402,
+      "w": 135,
+      "h": 135,
+      "pivot": [
+        67.5,
+        67.5
+      ],
+      "area": 13155
+    },
+    {
+      "index": 18,
+      "file": "silver_face_18.png",
+      "label": "",
+      "x": 1216,
+      "y": 401,
+      "w": 156,
+      "h": 146,
+      "pivot": [
+        78.0,
+        73.0
+      ],
+      "area": 16477
+    },
+    {
+      "index": 19,
+      "file": "silver_face_19.png",
+      "label": "",
+      "x": 1370,
+      "y": 403,
+      "w": 152,
+      "h": 137,
+      "pivot": [
+        76.0,
+        68.5
+      ],
+      "area": 15205
+    },
+    {
+      "index": 20,
+      "file": "silver_face_20.png",
+      "label": "",
+      "x": 14,
+      "y": 616,
+      "w": 258,
+      "h": 332,
+      "pivot": [
+        129.0,
+        166.0
+      ],
+      "area": 42271
+    },
+    {
+      "index": 21,
+      "file": "silver_face_21.png",
+      "label": "",
+      "x": 245,
+      "y": 605,
+      "w": 249,
+      "h": 333,
+      "pivot": [
+        124.5,
+        166.5
+      ],
+      "area": 43050
+    },
+    {
+      "index": 22,
+      "file": "silver_face_22.png",
+      "label": "",
+      "x": 505,
+      "y": 627,
+      "w": 279,
+      "h": 324,
+      "pivot": [
+        139.5,
+        162.0
+      ],
+      "area": 49724
+    },
+    {
+      "index": 23,
+      "file": "silver_face_23.png",
+      "label": "",
+      "x": 781,
+      "y": 616,
+      "w": 274,
+      "h": 312,
+      "pivot": [
+        137.0,
+        156.0
+      ],
+      "area": 42128
+    },
+    {
+      "index": 24,
+      "file": "silver_face_24.png",
+      "label": "",
+      "x": 1024,
+      "y": 562,
+      "w": 501,
+      "h": 413,
+      "pivot": [
+        250.5,
+        206.5
+      ],
+      "area": 120562
+    }
+  ]
+}

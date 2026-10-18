@@ -1,0 +1,93 @@
+{
+ "master": "silver_parts/silver_face/silver_face_01.png",
+ "pieces": "silver_parts/silver_face/silver_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 15,
+   "l": 16,
+   "grin": 17,
+   "laugh": 18,
+   "cold": 19
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     225,
+     72
+    ],
+    [
+     348,
+     72
+    ],
+    [
+     348,
+     107
+    ],
+    [
+     225,
+     107
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     225,
+     107
+    ],
+    [
+     348,
+     107
+    ],
+    [
+     348,
+     136
+    ],
+    [
+     225,
+     136
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     218,
+     150
+    ],
+    [
+     335,
+     150
+    ],
+    [
+     335,
+     240
+    ],
+    [
+     218,
+     240
+    ]
+   ]
+  }
+ }
+}

@@ -93,10 +93,30 @@
       "Raise. A privateer's raise, mind, not a pirate's.",
       "Raise. And a share for the Governor, since he'll take it anyway."
     ],
+    "reraised": [
+      "This is irregular. Highly irregular.",
+      "I'll see you in the Admiralty court!",
+      "I have a commission! Somewhere."
+    ],
     "all_in": [
       "All in. Bury it with me.",
       "Everything. The first rope broke, you know.",
       "All in. Every coin I ever buried."
+    ],
+    "win": [
+      "Lawful prize! I have the paperwork.",
+      "Seized under commission. Perfectly legal.",
+      "Bury that for me, would you? Somewhere I'll remember.",
+      "Mark it in the log: a privateer's prize."
+    ],
+    "lose": [
+      "I protest! I was a privateer!",
+      "The first rope broke, you know. This one held.",
+      "Hanged again, and still not a pirate.",
+      "Mark it down: under protest."
+    ],
+    "beat_blackbeard": [
+      "One for the privateers, Blackbeard."
     ]
   }
 }

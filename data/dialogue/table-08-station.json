@@ -26,7 +26,7 @@
   "respect_tiers": {
     "0": "Contempt. The player is not addressed by any name: a passenger, a specimen, a guest the room did not invite.",
     "1": "Grudging notice. The table starts calling the player 'stowaway'.",
-    "2": "Real address. They speak TO the player, by name. The Astronaut first; she has missed saying new ones.",
+    "2": "Real address. They speak TO the player, by name. The Astronaut first; he has missed saying new ones.",
     "3": "Title. Earned. The room says it first."
   },
 
@@ -58,7 +58,7 @@
       "text": "Hey. Did you let this one aboard? I never heard the airlock.",
       "trigger": "hand_03_start",
       "sequence": "st_plant_02",
-      "note": "She is asking the room, which answers from the walls."
+      "note": "He is asking the room, which answers from the walls."
     },
     {
       "id": "st_plant_02",
@@ -77,7 +77,7 @@
 
   "banter_pairs": {
     "grey_alien_astronaut": {
-      "relationship": "Rescuer and rescued. The Grey found the Astronaut drifting and brought her aboard. She owes it her life and has no idea what it wants; it watches her breathe. Gratitude on one side, an attention nobody can read on the other.",
+      "relationship": "Rescuer and rescued. The Grey found the Astronaut drifting and brought him aboard. He owes it his life and has no idea what it wants; it watches him breathe. Gratitude on one side, an attention nobody can read on the other.",
       "exchanges": [
         [
           { "id": "st_gr_as_01a", "speaker": "astronaut", "text": "You never did tell me why you picked me up." },
@@ -92,7 +92,7 @@
         ],
         [
           { "id": "st_gr_as_03a", "speaker": "astronaut", "text": "I never thanked you. For picking me up." },
-          { "id": "st_gr_as_03b", "speaker": "grey_alien", "text": "[touches the back of her hand with one long finger, the way it touches the table]", "type": "stage_direction" },
+          { "id": "st_gr_as_03b", "speaker": "grey_alien", "text": "[touches the back of his hand with one long finger, the way it touches the table]", "type": "stage_direction" },
           { "id": "st_gr_as_03c", "speaker": "astronaut", "text": "...I'll take that as 'you're welcome'." }
         ],
         [
@@ -132,7 +132,7 @@
           { "id": "st_ma_as_03a", "speaker": "astronaut", "text": "What's Mars like?" },
           { "id": "st_ma_as_03b", "speaker": "martian", "text": "Old. Cold. Its seas are shrinking. That is why we looked at yours." },
           { "id": "st_ma_as_03c", "speaker": "astronaut", "text": "...I'm sorry." },
-          { "id": "st_ma_as_03d", "speaker": "martian", "text": "[looks at her for a long moment with its great eyes, and says nothing]", "type": "stage_direction" }
+          { "id": "st_ma_as_03d", "speaker": "martian", "text": "[looks at him for a long moment with its great eyes, and says nothing]", "type": "stage_direction" }
         ],
         [
           { "id": "st_ma_as_04a", "speaker": "astronaut", "text": "Do you ever miss Mars?" },
@@ -172,8 +172,8 @@
         ],
         [
           { "id": "st_ro_ai_04a", "speaker": "robot", "text": "Station. The Astronaut is sad again." },
-          { "id": "st_ro_ai_04b", "speaker": "the_ai", "text": "I know. Bring her the blanket." },
-          { "id": "st_ro_ai_04c", "speaker": "robot", "text": "She says she does not want the blanket." },
+          { "id": "st_ro_ai_04b", "speaker": "the_ai", "text": "I know. Bring him the blanket." },
+          { "id": "st_ro_ai_04c", "speaker": "robot", "text": "He says he does not want the blanket." },
           { "id": "st_ro_ai_04d", "speaker": "the_ai", "text": "Bring it anyway." }
         ]
       ]
@@ -215,7 +215,7 @@
     },
 
     "robot_astronaut": {
-      "relationship": "The Robot keeps the Astronaut company when the Grey is being strange. It brings her blankets she did not ask for, and it has read in its instructions that humans like to be asked how they are. It asks a great deal.",
+      "relationship": "The Robot keeps the Astronaut company when the Grey is being strange. It brings him blankets he did not ask for, and it has read in its instructions that humans like to be asked how they are. It asks a great deal.",
       "exchanges": [
         [
           { "id": "st_ro_as_01a", "speaker": "robot", "text": "How are you?" },
@@ -243,7 +243,7 @@
     },
 
     "the_ai_astronaut": {
-      "relationship": "The station let the Grey bring her aboard and has kept her alive ever since: her air, her warmth, her day and night. She talks to the walls when she cannot sleep, and the walls have always listened. Whether they are kind is a question she has stopped asking. The room can speak before it has a body, so this pair can fire from hand one.",
+      "relationship": "The station let the Grey bring him aboard and has kept him alive ever since: his air, his warmth, his day and night. He talks to the walls when he cannot sleep, and the walls have always listened. Whether they are kind is a question he has stopped asking. The room can speak before it has a body, so this pair can fire from hand one.",
       "exchanges": [
         [
           { "id": "st_ai_as_01a", "speaker": "astronaut", "text": "Hey. Station. You awake?" },
@@ -304,7 +304,7 @@
     { "id": "st_death_03", "speaker": "death", "text": "It will learn from that. It learns from everything. It is very tiring to watch.", "trigger": "champion_loses_pot" },
     { "id": "st_death_04", "speaker": "death", "text": "One chair empty. The room noticed before you did.", "trigger": "first_elimination" },
     { "id": "st_death_05", "speaker": "death", "text": "Neatly done. Somewhere in the walls, something has made a note.", "trigger": "player_eliminates" },
-    { "id": "st_death_06", "speaker": "death", "text": "A good pot. The Astronaut is pleased for you. She is the only one here who would be.", "trigger": "player_wins_big_pot" },
+    { "id": "st_death_06", "speaker": "death", "text": "A good pot. The Astronaut is pleased for you. He is the only one here who would be.", "trigger": "player_wins_big_pot" },
     { "id": "st_death_07", "speaker": "death", "text": "The blinds go up. Everything up here is falling, all the time. It simply keeps missing the Earth.", "trigger": "blinds_up", "note": "True: that is what an orbit is." }
   ],
 

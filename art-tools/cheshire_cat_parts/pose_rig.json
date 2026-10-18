@@ -1,0 +1,1782 @@
+{
+ "id": "cheshire_cat",
+ "name": "The Cheshire Cat",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (the Horseman's style, as the Wolf Man), redrawn from the Cerberus-style kit (sources/old_style/). Baker Street's seat 3, drawn facing right and mirrored. The master is the rest pose's OWN head (kept clear of the tail); his front legs are the 'arms' (rest only); every other pose is a whole-figure frame with its own drawn head. Vanished parts are drawn as plain white. The 'prop' box is the felt below the rail, not a prop: his dark stripes are the wood's colour, so the paws lying on the felt are kept as drawn there (felt still cleared).",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    15,
+    17,
+    497,
+    459
+   ],
+   "what": "Rest: sitting up, front paws on the table's edge, tail curled up beside him, the grin"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    519,
+    22,
+    492,
+    454
+   ],
+   "reg": [
+    1.0,
+    -8,
+    5
+   ],
+   "what": "Peeking at his cards (right paw cupped low over the felt)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1025,
+    20,
+    497,
+    455
+   ],
+   "reg": [
+    1.0,
+    -1,
+    4
+   ],
+   "what": "Check: pats the felt with one paw"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    15,
+    504,
+    496,
+    459
+   ],
+   "reg": [
+    1.0,
+    -16,
+    0
+   ],
+   "what": "Call: a paw slides forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    520,
+    508,
+    497,
+    455
+   ],
+   "reg": [
+    1.0,
+    -30,
+    4
+   ],
+   "what": "Bet: a paw pushed well forward, grinning wider"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1023,
+    501,
+    499,
+    462
+   ],
+   "reg": [
+    1.0,
+    -21,
+    -3
+   ],
+   "what": "Fold: a lazy flick of the paw toward the middle"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    14,
+    15,
+    508,
+    458
+   ],
+   "reg": [
+    1.0,
+    -4,
+    1
+   ],
+   "what": "All in: both paws push forward together"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    521,
+    15,
+    490,
+    456
+   ],
+   "reg": [
+    1.0,
+    -16,
+    2
+   ],
+   "what": "Show: a paw turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1011,
+    14,
+    511,
+    459
+   ],
+   "reg": [
+    1.0,
+    -15,
+    0
+   ],
+   "what": "Big win: both front paws thrown up, the grin enormous (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    15,
+    494,
+    496,
+    496
+   ],
+   "reg": [
+    1.0,
+    -14,
+    -36
+   ],
+   "what": "Fading away tail first: tail and body up to mid-chest gone, the rest floating"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    514,
+    479,
+    496,
+    511
+   ],
+   "reg": [
+    1.0,
+    -26,
+    -51
+   ],
+   "what": "His head drifts a little way off his shoulders (decoy for B4)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1013,
+    514,
+    508,
+    476
+   ],
+   "reg": [
+    1.0,
+    -25,
+    -16
+   ],
+   "what": "Blinks one eye, then the other: one eye shut"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    13,
+    21,
+    498,
+    461
+   ],
+   "reg": [
+    1.0,
+    -18,
+    -3
+   ],
+   "what": "Washes a paw (decoy for B6)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    520,
+    28,
+    491,
+    456
+   ],
+   "reg": [
+    1.0,
+    -8,
+    3
+   ],
+   "what": "The tip of his tail twitches"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1025,
+    31,
+    498,
+    452
+   ],
+   "reg": [
+    1.0,
+    -6,
+    6
+   ],
+   "what": "His tail sways lazily to the other side (decoy for C2)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    12,
+    497,
+    500,
+    462
+   ],
+   "reg": [
+    1.0,
+    -27,
+    -3
+   ],
+   "what": "Grins at the dealer"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    526,
+    661,
+    485,
+    300
+   ],
+   "reg": [
+    1.0,
+    -18,
+    160
+   ],
+   "what": "Only the grin left, floating where his mouth was (the end of B4)"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1021,
+    498,
+    502,
+    462
+   ],
+   "reg": [
+    1.0,
+    -24,
+    -3
+   ],
+   "what": "A slow, knowing look at the viewer"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    11,
+    4,
+    502,
+    472
+   ],
+   "reg": [
+    1.0,
+    -13,
+    -14
+   ],
+   "what": "Talking: one paw raised, explaining"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    518,
+    31,
+    493,
+    445
+   ],
+   "reg": [
+    1.0,
+    -9,
+    13
+   ],
+   "what": "Facing a big bet: eyes narrowed to slits, the grin thinner"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1019,
+    15,
+    514,
+    457
+   ],
+   "reg": [
+    1.0,
+    -7,
+    2
+   ],
+   "what": "Lost a pot: ears back, a lopsided grin, a shrug"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    5,
+    612,
+    515,
+    347
+   ],
+   "reg": [
+    1.0,
+    -31,
+    113
+   ],
+   "what": "Crushing loss: ears flat, the grin gone for once, slumped (`lose_big`)"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    521,
+    508,
+    500,
+    452
+   ],
+   "reg": [
+    1.0,
+    -26,
+    8
+   ],
+   "what": "Heads up: leaning in on both paws, eyes wide and bright"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1026,
+    487,
+    496,
+    474
+   ],
+   "reg": [
+    1.0,
+    -28,
+    -15
+   ],
+   "what": "Knocked out: half vanished, a cheery wave of one paw"
+  }
+ },
+ "rest": "A1",
+ "table_y": 336,
+ "scale": 1.0,
+ "origin_x": 290,
+ "register_box": [
+  120,
+  250,
+  480,
+  325
+ ],
+ "register_span": 40,
+ "collar_y": 245,
+ "neck": [
+  335,
+  245
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  260,
+  215,
+  420,
+  275
+ ],
+ "master": {
+  "piece": "cheshire_cat_parts/cheshire_cat_face/cheshire_cat_master.png",
+  "cut_below": 262,
+  "face": "cheshire_cat_parts/face.json",
+  "file": "cheshire_cat_parts/cheshire_cat_rig/master.png",
+  "layers": "cheshire_cat_parts/cheshire_cat_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    170,
+    0
+   ],
+   [
+    497,
+    0
+   ],
+   [
+    497,
+    272
+   ],
+   [
+    170,
+    272
+   ]
+  ],
+  "shoulder_y": 255
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    130,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     90,
+     270
+    ],
+    [
+     200,
+     270
+    ],
+    [
+     200,
+     300
+    ],
+    [
+     90,
+     300
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right front leg and paw",
+     "poly": [
+      [
+       80,
+       300
+      ],
+      [
+       200,
+       288
+      ],
+      [
+       240,
+       318
+      ],
+      [
+       275,
+       350
+      ],
+      [
+       302,
+       380
+      ],
+      [
+       302,
+       430
+      ],
+      [
+       220,
+       434
+      ],
+      [
+       180,
+       412
+      ],
+      [
+       130,
+       382
+      ],
+      [
+       80,
+       352
+      ]
+     ],
+     "props": [
+      [
+       [
+        80,
+        300
+       ],
+       [
+        200,
+        288
+       ],
+       [
+        240,
+        318
+       ],
+       [
+        275,
+        350
+       ],
+       [
+        302,
+        380
+       ],
+       [
+        302,
+        430
+       ],
+       [
+        220,
+        434
+       ],
+       [
+        180,
+        412
+       ],
+       [
+        130,
+        382
+       ],
+       [
+        80,
+        352
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    455,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     420,
+     280
+    ],
+    [
+     497,
+     280
+    ],
+    [
+     497,
+     310
+    ],
+    [
+     420,
+     310
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left front leg and paw",
+     "poly": [
+      [
+       360,
+       372
+      ],
+      [
+       390,
+       340
+      ],
+      [
+       420,
+       318
+      ],
+      [
+       450,
+       298
+      ],
+      [
+       497,
+       298
+      ],
+      [
+       497,
+       350
+      ],
+      [
+       492,
+       432
+      ],
+      [
+       400,
+       434
+      ],
+      [
+       362,
+       422
+      ]
+     ],
+     "props": [
+      [
+       [
+        360,
+        372
+       ],
+       [
+        390,
+        340
+       ],
+       [
+        420,
+        318
+       ],
+       [
+        450,
+        298
+       ],
+       [
+        497,
+        298
+       ],
+       [
+        497,
+        350
+       ],
+       [
+        492,
+        432
+       ],
+       [
+        400,
+        434
+       ],
+       [
+        362,
+        422
+       ]
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ],
+   "except": [
+    [
+     [
+      255,
+      318
+     ],
+     [
+      399,
+      318
+     ],
+     [
+      399,
+      349
+     ],
+     [
+      255,
+      349
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "except": [
+    [
+     [
+      40,
+      348
+     ],
+     [
+      497,
+      348
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      40,
+      480
+     ]
+    ]
+   ]
+  },
+  "fade": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "drift": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "blink": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "wash": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "twitch": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "sway": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "grin_dealer": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "grin_only": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "reg": [
+    0.7,
+    171.5,
+    135.6
+   ],
+   "poly": [
+    [
+     255,
+     135
+    ],
+    [
+     435,
+     135
+    ],
+    [
+     435,
+     228
+    ],
+    [
+     255,
+     228
+    ]
+   ]
+  },
+  "knowing": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      0,
+      372
+     ],
+     [
+      60,
+      364
+     ],
+     [
+      150,
+      356
+     ],
+     [
+      250,
+      353
+     ],
+     [
+      350,
+      354
+     ],
+     [
+      420,
+      361
+     ],
+     [
+      465,
+      376
+     ],
+     [
+      497,
+      406
+     ],
+     [
+      497,
+      480
+     ],
+     [
+      0,
+      480
+     ]
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/cheshire_cat",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6,
+ "wood_rows_only": true
+}

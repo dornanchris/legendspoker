@@ -1,0 +1,318 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "lincoln_face_01.png",
+      "label": "MASTER HEAD: neutral, hat on; every overlay below is drawn to fit it",
+      "x": 9,
+      "y": 4,
+      "w": 274,
+      "h": 417,
+      "pivot": [
+        137.0,
+        208.5
+      ],
+      "area": 76875
+    },
+    {
+      "index": 2,
+      "file": "lincoln_face_02.png",
+      "label": "eyes: lids half closed",
+      "x": 294,
+      "y": 43,
+      "w": 184,
+      "h": 127,
+      "pivot": [
+        92.0,
+        63.5
+      ],
+      "area": 19822
+    },
+    {
+      "index": 3,
+      "file": "lincoln_face_03.png",
+      "label": "eyes: closed",
+      "x": 504,
+      "y": 42,
+      "w": 183,
+      "h": 127,
+      "pivot": [
+        91.5,
+        63.5
+      ],
+      "area": 19658
+    },
+    {
+      "index": 4,
+      "file": "lincoln_face_04.png",
+      "label": "eyes: looking toward the viewer",
+      "x": 712,
+      "y": 42,
+      "w": 182,
+      "h": 127,
+      "pivot": [
+        91.0,
+        63.5
+      ],
+      "area": 19604
+    },
+    {
+      "index": 5,
+      "file": "lincoln_face_05.png",
+      "label": "eyes: looking down at the table",
+      "x": 914,
+      "y": 42,
+      "w": 182,
+      "h": 127,
+      "pivot": [
+        91.0,
+        63.5
+      ],
+      "area": 19612
+    },
+    {
+      "index": 6,
+      "file": "lincoln_face_06.png",
+      "label": "eyes: looking up and away",
+      "x": 1121,
+      "y": 42,
+      "w": 182,
+      "h": 131,
+      "pivot": [
+        91.0,
+        65.5
+      ],
+      "area": 20329
+    },
+    {
+      "index": 7,
+      "file": "lincoln_face_07.png",
+      "label": "brows: raised",
+      "x": 1081,
+      "y": 193,
+      "w": 192,
+      "h": 105,
+      "pivot": [
+        96.0,
+        52.5
+      ],
+      "area": 17113
+    },
+    {
+      "index": 8,
+      "file": "lincoln_face_08.png",
+      "label": "brows: drawn together",
+      "x": 1302,
+      "y": 189,
+      "w": 205,
+      "h": 110,
+      "pivot": [
+        102.5,
+        55.0
+      ],
+      "area": 19196
+    },
+    {
+      "index": 9,
+      "file": "lincoln_face_09.png",
+      "label": "mouth patch: rest, closed",
+      "x": 309,
+      "y": 309,
+      "w": 178,
+      "h": 139,
+      "pivot": [
+        89.0,
+        69.5
+      ],
+      "area": 18467
+    },
+    {
+      "index": 10,
+      "file": "lincoln_face_10.png",
+      "label": "mouth patch: \"ah\" (open)",
+      "x": 515,
+      "y": 307,
+      "w": 178,
+      "h": 143,
+      "pivot": [
+        89.0,
+        71.5
+      ],
+      "area": 19020
+    },
+    {
+      "index": 11,
+      "file": "lincoln_face_11.png",
+      "label": "mouth patch: \"ee\" (wide, teeth)",
+      "x": 720,
+      "y": 307,
+      "w": 178,
+      "h": 143,
+      "pivot": [
+        89.0,
+        71.5
+      ],
+      "area": 19066
+    },
+    {
+      "index": 12,
+      "file": "lincoln_face_12.png",
+      "label": "mouth patch: \"oh\" (round)",
+      "x": 929,
+      "y": 308,
+      "w": 175,
+      "h": 141,
+      "pivot": [
+        87.5,
+        70.5
+      ],
+      "area": 18599
+    },
+    {
+      "index": 13,
+      "file": "lincoln_face_13.png",
+      "label": "mouth patch: \"oo\" (pursed)",
+      "x": 1141,
+      "y": 310,
+      "w": 171,
+      "h": 135,
+      "pivot": [
+        85.5,
+        67.5
+      ],
+      "area": 17921
+    },
+    {
+      "index": 14,
+      "file": "lincoln_face_14.png",
+      "label": "mouth patch: \"m\" (lips pressed)",
+      "x": 1348,
+      "y": 311,
+      "w": 173,
+      "h": 136,
+      "pivot": [
+        86.5,
+        68.0
+      ],
+      "area": 18071
+    },
+    {
+      "index": 15,
+      "file": "lincoln_face_15.png",
+      "label": "mouth patch: \"f\" (lower lip under teeth)",
+      "x": 226,
+      "y": 455,
+      "w": 182,
+      "h": 137,
+      "pivot": [
+        91.0,
+        68.5
+      ],
+      "area": 18964
+    },
+    {
+      "index": 16,
+      "file": "lincoln_face_16.png",
+      "label": "mouth patch: \"l\" (tongue tip)",
+      "x": 447,
+      "y": 455,
+      "w": 178,
+      "h": 139,
+      "pivot": [
+        89.0,
+        69.5
+      ],
+      "area": 18661
+    },
+    {
+      "index": 17,
+      "file": "lincoln_face_17.png",
+      "label": "mouth patch: small one-corner smile",
+      "x": 664,
+      "y": 454,
+      "w": 180,
+      "h": 139,
+      "pivot": [
+        90.0,
+        69.5
+      ],
+      "area": 18936
+    },
+    {
+      "index": 18,
+      "file": "lincoln_face_18.png",
+      "label": "mouth patch: tight-lipped",
+      "x": 893,
+      "y": 459,
+      "w": 175,
+      "h": 135,
+      "pivot": [
+        87.5,
+        67.5
+      ],
+      "area": 18155
+    },
+    {
+      "index": 19,
+      "file": "lincoln_face_19.png",
+      "label": "mouth patch: sigh, lips parted",
+      "x": 1114,
+      "y": 462,
+      "w": 176,
+      "h": 133,
+      "pivot": [
+        88.0,
+        66.5
+      ],
+      "area": 18254
+    },
+    {
+      "index": 20,
+      "file": "lincoln_face_20.png",
+      "label": "head, hat on: turned up and away over his shoulder",
+      "x": 99,
+      "y": 583,
+      "w": 362,
+      "h": 431,
+      "pivot": [
+        181.0,
+        215.5
+      ],
+      "area": 92190
+    },
+    {
+      "index": 21,
+      "file": "lincoln_face_21.png",
+      "label": "head, hat on: tipped back, eyes shut",
+      "x": 594,
+      "y": 591,
+      "w": 345,
+      "h": 425,
+      "pivot": [
+        172.5,
+        212.5
+      ],
+      "area": 86386
+    },
+    {
+      "index": 22,
+      "file": "lincoln_face_22.png",
+      "label": "head, hat on: toward the viewer, nearly front-on",
+      "x": 1075,
+      "y": 594,
+      "w": 336,
+      "h": 421,
+      "pivot": [
+        168.0,
+        210.5
+      ],
+      "area": 79803
+    }
+  ]
+}

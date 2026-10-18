@@ -91,10 +91,29 @@
       "I raise.",
       "Raise. The snakes are tired of waiting."
     ],
+    "reraised": [
+      "Raising at me? Bold. Most people can't even look.",
+      "My, you're brave. Or you haven't looked up yet."
+    ],
     "all_in": [
       "All in. Look upon it.",
       "Everything. The snakes insisted.",
       "All of it. Face it, if you can."
+    ],
+    "win": [
+      "Don't look so stony.",
+      "Well. That's petrified the lot of you.",
+      "Nobody move. Not that you could.",
+      "Look on the bright side. Actually, don't look."
+    ],
+    "lose": [
+      "Some days you're the gorgon. Some days you're the statue.",
+      "Beaten by a man with a mirror. Again.",
+      "Stone cold. That one hurt.",
+      "Don't stare. I lost, that's all."
+    ],
+    "win_three_of_a_kind": [
+      "Three of a kind. Like my sisters and me."
     ]
   }
 }

@@ -1,0 +1,650 @@
+{
+ "id": "death_player",
+ "name": "Death (as a player)",
+ "note": "Polygons in the rest pose (A1) pixels. Death at three-quarter, as a player: the finale's right-hand chair (mirrored), and later an online avatar (cosmetic loops only, rule 3). The master is the rest pose's OWN head; the jaw talks (face sheet pieces 2-4). Every pose but rest a whole-figure frame with its own drawn head. No prop.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    14,
+    12,
+    500,
+    476
+   ],
+   "what": "Rest: forearms on the table's edge, bone hands apart"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    527,
+    28,
+    490,
+    460
+   ],
+   "reg": [
+    1.0,
+    9,
+    16
+   ],
+   "what": "Peeking at his cards (right hand)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1030,
+    12,
+    493,
+    476
+   ],
+   "reg": [
+    1.0,
+    11,
+    1
+   ],
+   "what": "Check: one bone finger taps the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    15,
+    503,
+    499,
+    462
+   ],
+   "reg": [
+    1.0,
+    -6,
+    15
+   ],
+   "what": "Call: right hand pushes forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    528,
+    509,
+    487,
+    484
+   ],
+   "reg": [
+    1.0,
+    27,
+    30
+   ],
+   "what": "Bet: leans in, right hand pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1030,
+    501,
+    493,
+    464
+   ],
+   "reg": [
+    1.0,
+    -3,
+    13
+   ],
+   "what": "Fold: a weary flick of the fingers"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    13,
+    15,
+    499,
+    469
+   ],
+   "reg": [
+    1.0,
+    19,
+    10
+   ],
+   "what": "All in: both hands push forward together"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    520,
+    29,
+    478,
+    457
+   ],
+   "reg": [
+    1.0,
+    5,
+    20
+   ],
+   "what": "Show: right hand turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    901,
+    41,
+    631,
+    441
+   ],
+   "reg": [
+    1.0,
+    42,
+    37
+   ],
+   "what": "Big win: arms opened wide, palms up, a host welcoming guests (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    15,
+    512,
+    497,
+    445
+   ],
+   "reg": [
+    1.0,
+    1,
+    31
+   ],
+   "what": "Crushing loss: hood bowed, a hand over the brow (`lose_big`)"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    525,
+    501,
+    485,
+    459
+   ],
+   "reg": [
+    1.0,
+    9,
+    18
+   ],
+   "what": "Heads up: elbows on the table, fingers steepled"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1023,
+    501,
+    498,
+    458
+   ],
+   "reg": [
+    1.0,
+    10,
+    19
+   ],
+   "what": "Talking: right hand raised, palm open, jaw dropped"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    12,
+    16,
+    505,
+    485
+   ],
+   "reg": [
+    1.0,
+    26,
+    -11
+   ],
+   "what": "LOOP: draws the hood forward with both hands"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    525,
+    21,
+    486,
+    479
+   ],
+   "reg": [
+    1.0,
+    40,
+    -6
+   ],
+   "what": "LOOP: turns the gold skull brooch between two fingers"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1020,
+    18,
+    504,
+    484
+   ],
+   "reg": [
+    1.0,
+    28,
+    -9
+   ],
+   "what": "LOOP: brushes grey ash from his sleeve"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    12,
+    506,
+    506,
+    478
+   ],
+   "reg": [
+    1.0,
+    20,
+    -3
+   ],
+   "what": "LOOP: settles the robe on his shoulders, a small shrug (also a lost pot)"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    526,
+    510,
+    485,
+    475
+   ],
+   "reg": [
+    1.0,
+    16,
+    1
+   ],
+   "what": "LOOP: flexes his bone fingers one by one"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1024,
+    528,
+    501,
+    456
+   ],
+   "reg": [
+    1.0,
+    17,
+    19
+   ],
+   "what": "LOOP: looks up and aside, as at a clock nobody else can see"
+  }
+ },
+ "rest": "A1",
+ "table_y": 360,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  220,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 195,
+ "neck": [
+  255,
+  195
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  210,
+  180,
+  340,
+  240
+ ],
+ "master": {
+  "piece": "death_avatar_parts/death_player_face/death_player_master.png",
+  "cut_below": 205,
+  "face": "death_avatar_parts/face.json",
+  "file": "death_avatar_parts/death_player_rig/master.png",
+  "layers": "death_avatar_parts/death_player_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    118,
+    0
+   ],
+   [
+    352,
+    0
+   ],
+   [
+    352,
+    160
+   ],
+   [
+    332,
+    182
+   ],
+   [
+    300,
+    196
+   ],
+   [
+    200,
+    196
+   ],
+   [
+    168,
+    184
+   ],
+   [
+    130,
+    160
+   ],
+   [
+    116,
+    100
+   ]
+  ],
+  "shoulder_y": 200
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     290
+    ],
+    [
+     90,
+     290
+    ],
+    [
+     90,
+     335
+    ],
+    [
+     0,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm in its sleeve and the bone hand",
+     "poly": [
+      [
+       0,
+       320
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       110,
+       310
+      ],
+      [
+       150,
+       345
+      ],
+      [
+       190,
+       352
+      ],
+      [
+       230,
+       370
+      ],
+      [
+       262,
+       410
+      ],
+      [
+       278,
+       462
+      ],
+      [
+       200,
+       474
+      ],
+      [
+       120,
+       462
+      ],
+      [
+       60,
+       440
+      ],
+      [
+       0,
+       430
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    452,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     280
+    ],
+    [
+     500,
+     280
+    ],
+    [
+     500,
+     320
+    ],
+    [
+     400,
+     320
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm in its sleeve and the bone hand",
+     "poly": [
+      [
+       300,
+       380
+      ],
+      [
+       320,
+       350
+      ],
+      [
+       360,
+       340
+      ],
+      [
+       400,
+       330
+      ],
+      [
+       440,
+       308
+      ],
+      [
+       482,
+       312
+      ],
+      [
+       500,
+       350
+      ],
+      [
+       500,
+       420
+      ],
+      [
+       420,
+       432
+      ],
+      [
+       408,
+       458
+      ],
+      [
+       300,
+       458
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "except": [
+    [
+     [
+      0,
+      330
+     ],
+     [
+      110,
+      330
+     ],
+     [
+      110,
+      441
+     ],
+     [
+      0,
+      441
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "heads_up": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "hood": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "brooch": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "ash": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "shrug": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "flex": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "clock": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "runtime": "../web/art/death_player",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "back_strip": 6,
+ "wood_rows_only": true,
+ "wood_blue": 0.34,
+ "rail_holes": [
+  30,
+  20
+ ]
+}

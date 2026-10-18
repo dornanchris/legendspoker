@@ -1,0 +1,332 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "leonidas_face_01.png",
+      "label": "",
+      "x": 17,
+      "y": 8,
+      "w": 388,
+      "h": 346,
+      "pivot": [
+        194.0,
+        173.0
+      ],
+      "area": 90741
+    },
+    {
+      "index": 2,
+      "file": "leonidas_face_02.png",
+      "label": "",
+      "x": 370,
+      "y": 72,
+      "w": 180,
+      "h": 133,
+      "pivot": [
+        90.0,
+        66.5
+      ],
+      "area": 19150
+    },
+    {
+      "index": 3,
+      "file": "leonidas_face_03.png",
+      "label": "",
+      "x": 559,
+      "y": 70,
+      "w": 175,
+      "h": 134,
+      "pivot": [
+        87.5,
+        67.0
+      ],
+      "area": 18901
+    },
+    {
+      "index": 4,
+      "file": "leonidas_face_04.png",
+      "label": "",
+      "x": 741,
+      "y": 71,
+      "w": 178,
+      "h": 134,
+      "pivot": [
+        89.0,
+        67.0
+      ],
+      "area": 18837
+    },
+    {
+      "index": 5,
+      "file": "leonidas_face_05.png",
+      "label": "",
+      "x": 929,
+      "y": 71,
+      "w": 180,
+      "h": 136,
+      "pivot": [
+        90.0,
+        68.0
+      ],
+      "area": 19368
+    },
+    {
+      "index": 6,
+      "file": "leonidas_face_06.png",
+      "label": "",
+      "x": 1121,
+      "y": 67,
+      "w": 191,
+      "h": 139,
+      "pivot": [
+        95.5,
+        69.5
+      ],
+      "area": 21174
+    },
+    {
+      "index": 7,
+      "file": "leonidas_face_07.png",
+      "label": "",
+      "x": 1321,
+      "y": 67,
+      "w": 184,
+      "h": 136,
+      "pivot": [
+        92.0,
+        68.0
+      ],
+      "area": 20041
+    },
+    {
+      "index": 8,
+      "file": "leonidas_face_08.png",
+      "label": "",
+      "x": 659,
+      "y": 218,
+      "w": 223,
+      "h": 101,
+      "pivot": [
+        111.5,
+        50.5
+      ],
+      "area": 15707
+    },
+    {
+      "index": 9,
+      "file": "leonidas_face_09.png",
+      "label": "",
+      "x": 913,
+      "y": 228,
+      "w": 228,
+      "h": 97,
+      "pivot": [
+        114.0,
+        48.5
+      ],
+      "area": 15797
+    },
+    {
+      "index": 10,
+      "file": "leonidas_face_10.png",
+      "label": "",
+      "x": 17,
+      "y": 364,
+      "w": 226,
+      "h": 155,
+      "pivot": [
+        113.0,
+        77.5
+      ],
+      "area": 25636
+    },
+    {
+      "index": 11,
+      "file": "leonidas_face_11.png",
+      "label": "",
+      "x": 241,
+      "y": 363,
+      "w": 214,
+      "h": 157,
+      "pivot": [
+        107.0,
+        78.5
+      ],
+      "area": 24301
+    },
+    {
+      "index": 12,
+      "file": "leonidas_face_12.png",
+      "label": "",
+      "x": 453,
+      "y": 363,
+      "w": 212,
+      "h": 152,
+      "pivot": [
+        106.0,
+        76.0
+      ],
+      "area": 23017
+    },
+    {
+      "index": 13,
+      "file": "leonidas_face_13.png",
+      "label": "",
+      "x": 667,
+      "y": 363,
+      "w": 199,
+      "h": 152,
+      "pivot": [
+        99.5,
+        76.0
+      ],
+      "area": 21594
+    },
+    {
+      "index": 14,
+      "file": "leonidas_face_14.png",
+      "label": "",
+      "x": 872,
+      "y": 364,
+      "w": 213,
+      "h": 152,
+      "pivot": [
+        106.5,
+        76.0
+      ],
+      "area": 22969
+    },
+    {
+      "index": 15,
+      "file": "leonidas_face_15.png",
+      "label": "",
+      "x": 1086,
+      "y": 363,
+      "w": 221,
+      "h": 152,
+      "pivot": [
+        110.5,
+        76.0
+      ],
+      "area": 23849
+    },
+    {
+      "index": 16,
+      "file": "leonidas_face_16.png",
+      "label": "",
+      "x": 1314,
+      "y": 360,
+      "w": 209,
+      "h": 155,
+      "pivot": [
+        104.5,
+        77.5
+      ],
+      "area": 22705
+    },
+    {
+      "index": 17,
+      "file": "leonidas_face_17.png",
+      "label": "",
+      "x": 193,
+      "y": 514,
+      "w": 217,
+      "h": 157,
+      "pivot": [
+        108.5,
+        78.5
+      ],
+      "area": 24263
+    },
+    {
+      "index": 18,
+      "file": "leonidas_face_18.png",
+      "label": "",
+      "x": 421,
+      "y": 515,
+      "w": 222,
+      "h": 139,
+      "pivot": [
+        111.0,
+        69.5
+      ],
+      "area": 22364
+    },
+    {
+      "index": 19,
+      "file": "leonidas_face_19.png",
+      "label": "",
+      "x": 640,
+      "y": 517,
+      "w": 223,
+      "h": 152,
+      "pivot": [
+        111.5,
+        76.0
+      ],
+      "area": 24215
+    },
+    {
+      "index": 20,
+      "file": "leonidas_face_20.png",
+      "label": "",
+      "x": 860,
+      "y": 518,
+      "w": 216,
+      "h": 141,
+      "pivot": [
+        108.0,
+        70.5
+      ],
+      "area": 22055
+    },
+    {
+      "index": 21,
+      "file": "leonidas_face_21.png",
+      "label": "",
+      "x": 1074,
+      "y": 514,
+      "w": 232,
+      "h": 149,
+      "pivot": [
+        116.0,
+        74.5
+      ],
+      "area": 24176
+    },
+    {
+      "index": 22,
+      "file": "leonidas_face_22.png",
+      "label": "",
+      "x": 331,
+      "y": 656,
+      "w": 450,
+      "h": 343,
+      "pivot": [
+        225.0,
+        171.5
+      ],
+      "area": 88958
+    },
+    {
+      "index": 23,
+      "file": "leonidas_face_23.png",
+      "label": "",
+      "x": 800,
+      "y": 651,
+      "w": 453,
+      "h": 350,
+      "pivot": [
+        226.5,
+        175.0
+      ],
+      "area": 99020
+    }
+  ]
+}

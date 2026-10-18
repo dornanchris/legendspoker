@@ -1,0 +1,164 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "death_face_01.png",
+      "label": "",
+      "x": 10,
+      "y": 29,
+      "w": 418,
+      "h": 436,
+      "pivot": [
+        209.0,
+        218.0
+      ],
+      "area": 114663
+    },
+    {
+      "index": 2,
+      "file": "death_face_02.png",
+      "label": "",
+      "x": 459,
+      "y": 234,
+      "w": 176,
+      "h": 148,
+      "pivot": [
+        88.0,
+        74.0
+      ],
+      "area": 17489
+    },
+    {
+      "index": 3,
+      "file": "death_face_03.png",
+      "label": "",
+      "x": 670,
+      "y": 234,
+      "w": 188,
+      "h": 149,
+      "pivot": [
+        94.0,
+        74.5
+      ],
+      "area": 19132
+    },
+    {
+      "index": 4,
+      "file": "death_face_04.png",
+      "label": "",
+      "x": 887,
+      "y": 234,
+      "w": 184,
+      "h": 156,
+      "pivot": [
+        92.0,
+        78.0
+      ],
+      "area": 19808
+    },
+    {
+      "index": 5,
+      "file": "death_face_05.png",
+      "label": "",
+      "x": 1102,
+      "y": 229,
+      "w": 189,
+      "h": 171,
+      "pivot": [
+        94.5,
+        85.5
+      ],
+      "area": 21774
+    },
+    {
+      "index": 6,
+      "file": "death_face_06.png",
+      "label": "",
+      "x": 1327,
+      "y": 230,
+      "w": 177,
+      "h": 154,
+      "pivot": [
+        88.5,
+        77.0
+      ],
+      "area": 18516
+    },
+    {
+      "index": 7,
+      "file": "death_face_07.png",
+      "label": "",
+      "x": 12,
+      "y": 501,
+      "w": 308,
+      "h": 385,
+      "pivot": [
+        154.0,
+        192.5
+      ],
+      "area": 82342
+    },
+    {
+      "index": 8,
+      "file": "death_face_08.png",
+      "label": "",
+      "x": 320,
+      "y": 501,
+      "w": 302,
+      "h": 385,
+      "pivot": [
+        151.0,
+        192.5
+      ],
+      "area": 81306
+    },
+    {
+      "index": 9,
+      "file": "death_face_09.png",
+      "label": "",
+      "x": 623,
+      "y": 516,
+      "w": 312,
+      "h": 377,
+      "pivot": [
+        156.0,
+        188.5
+      ],
+      "area": 77676
+    },
+    {
+      "index": 10,
+      "file": "death_face_10.png",
+      "label": "",
+      "x": 935,
+      "y": 510,
+      "w": 281,
+      "h": 376,
+      "pivot": [
+        140.5,
+        188.0
+      ],
+      "area": 75299
+    },
+    {
+      "index": 11,
+      "file": "death_face_11.png",
+      "label": "",
+      "x": 1217,
+      "y": 501,
+      "w": 308,
+      "h": 385,
+      "pivot": [
+        154.0,
+        192.5
+      ],
+      "area": 80011
+    }
+  ]
+}

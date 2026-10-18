@@ -1,0 +1,19 @@
+{
+ "note": "Transylvania's room pieces, cut from sources/pieces.png by room_web.py. Spots are in the screen's design space (1600x900): [centre x, foot, height]. The backdrop is 1916x821, so design x = image x * 1.0962 - 250.2, y = image y * 1.0962. Dracula watches from the painted chair at 73% across until he sits down at the table (presence; the sheet drew him facing away from the table, so he is mirrored, and in a taller chair than the backdrop's, which shows empty once he has gone). The fire is cut from each drawn fireplace by brightness and flickers in the hearth at the far right, which shows only on screens wider than 16:9; the candle flames, cut above the wax, sit on the candelabrum's three candles at 39%. Not used: the two embers frames (the fire sinking as he arrives needs a second state for a loop), the moon and cloud (two cloud places swapped read as a jump, not a drift) and the bat (a bat flapping in place reads as hovering).",
+ "sheet": "sources/pieces.png",
+ "pieces": {
+  "dracula_watching": {"box": [5, 5, 400, 535], "flip": true, "x": 1277, "bottom": 571, "h": 312},
+  "fire_1": {"box": [430, 90, 700, 300], "bright": [220, 110]},
+  "fire_2": {"box": [890, 90, 1170, 300], "bright": [220, 110]},
+  "fire_3": {"box": [1360, 90, 1630, 300], "bright": [220, 110]},
+  "flame_1": {"box": [1308, 346, 1346, 392], "crop": true},
+  "flame_2": {"box": [1473, 346, 1509, 392], "crop": true},
+  "flame_3": {"box": [1645, 346, 1683, 392], "crop": true}
+ },
+ "presence": {"before": "dracula_watching", "after": null},
+ "loops": [
+  {"frames": ["fire_1", "fire_2", "fire_3"], "every": [0.12, 0.25], "spots": [[1750, 543, 230]]},
+  {"frames": ["flame_1", "flame_2", "flame_3"], "every": [0.11, 0.24],
+   "spots": [[532, 294, 30], [569, 272, 34], [602, 293, 28]]}
+ ]
+}

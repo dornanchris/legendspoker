@@ -1,0 +1,1219 @@
+{
+ "id": "lincoln",
+ "name": "Abraham Lincoln",
+ "note": "Polygons are in each pose's own pixels (the pose cut from its sheet by box). rest = the neutral pose the rig is built on.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "E": "sources/poses_e.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    8,
+    24,
+    300,
+    463
+   ],
+   "what": "at rest, hands laced"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    310,
+    31,
+    289,
+    456
+   ],
+   "what": "peeking at cards: his left arm resting alone",
+   "register_box": [
+    236,
+    250,
+    292,
+    340
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    599,
+    18,
+    310,
+    469
+   ],
+   "what": "checking: his right hand at the rail"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    907,
+    21,
+    298,
+    464
+   ],
+   "what": "calling: a short stack slid forward",
+   "reg": [
+    1.0296,
+    0.2,
+    -6.0
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    1210,
+    18,
+    313,
+    467
+   ],
+   "what": "betting: a tall stack set down forward, leaning in",
+   "reg": [
+    1.0197,
+    -4.7,
+    -11.0
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    13,
+    514,
+    293,
+    466
+   ],
+   "what": "all in: both hands push the stack",
+   "reg": [
+    1.0197,
+    8.1,
+    -21.2
+   ]
+  },
+  "A7": {
+   "sheet": "A",
+   "box": [
+    309,
+    501,
+    288,
+    479
+   ],
+   "what": "folding: his cards flicked away",
+   "reg": [
+    1.0605,
+    1.1,
+    -1.0
+   ]
+  },
+  "A8": {
+   "sheet": "A",
+   "box": [
+    604,
+    495,
+    301,
+    485
+   ],
+   "what": "showing his cards",
+   "reg": [
+    1.0296,
+    -0.8,
+    2.2
+   ]
+  },
+  "A9": {
+   "sheet": "A",
+   "box": [
+    904,
+    508,
+    328,
+    471
+   ],
+   "what": "collecting the pot",
+   "reg": [
+    1.0197,
+    -14.4,
+    -34.4
+   ]
+  },
+  "A10": {
+   "sheet": "A",
+   "box": [
+    1236,
+    504,
+    288,
+    475
+   ],
+   "what": "fidget: lifting the top chip",
+   "reg": [
+    1.0098,
+    10.2,
+    -0.9
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    39,
+    10,
+    472,
+    493
+   ],
+   "what": "strokes his beard (TELL)",
+   "reg": [
+    0.8262,
+    -47.8,
+    7.2
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    535,
+    10,
+    460,
+    493
+   ],
+   "what": "fingertips at his chin (decoy)",
+   "reg": [
+    0.8568,
+    -30.5,
+    0.1
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1018,
+    8,
+    482,
+    495
+   ],
+   "what": "leans back, hands folded (TELL)",
+   "reg": [
+    0.8568,
+    -51.6,
+    -2.5
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    21,
+    514,
+    489,
+    488
+   ],
+   "what": "stretches his back (decoy)",
+   "reg": [
+    0.8568,
+    -58.0,
+    8.7
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1026,
+    514,
+    488,
+    488
+   ],
+   "what": "amused, a hand open",
+   "reg": [
+    0.8568,
+    -41.7,
+    10.4
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    14,
+    22,
+    338,
+    338
+   ],
+   "what": "tips his hat",
+   "reg": [
+    1.1124,
+    -22.5,
+    27.1
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    375,
+    3,
+    339,
+    357
+   ],
+   "what": "hat raised high in greeting",
+   "reg": [
+    1.1058,
+    -58.4,
+    11.8
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    734,
+    24,
+    337,
+    336
+   ],
+   "what": "rubs his eyes",
+   "reg": [
+    1.1742,
+    -15.4,
+    8.5
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    375,
+    361,
+    347,
+    355
+   ],
+   "what": "talking, palm up",
+   "reg": [
+    1.176,
+    -4.9,
+    5.9
+   ]
+  },
+  "C7": {
+   "sheet": "C",
+   "box": [
+    734,
+    361,
+    337,
+    357
+   ],
+   "what": "laughing",
+   "reg": [
+    1.1532,
+    -36.5,
+    1.8
+   ]
+  },
+  "C8": {
+   "sheet": "C",
+   "box": [
+    1094,
+    361,
+    336,
+    355
+   ],
+   "what": "facing a big bet, cards up",
+   "reg": [
+    1.188,
+    -41.6,
+    7.9
+   ]
+  },
+  "C9": {
+   "sheet": "C",
+   "box": [
+    14,
+    719,
+    338,
+    339
+   ],
+   "what": "lost a pot, chin on his hand",
+   "reg": [
+    1.1532,
+    -19.8,
+    23.7
+   ]
+  },
+  "C11": {
+   "sheet": "C",
+   "box": [
+    734,
+    718,
+    337,
+    340
+   ],
+   "what": "knocked out: rising, tipping his hat",
+   "reg": [
+    1.1532,
+    35.6,
+    31.8
+   ]
+  },
+  "C12": {
+   "sheet": "C",
+   "box": [
+    1094,
+    722,
+    336,
+    336
+   ],
+   "what": "drumming his fingers",
+   "reg": [
+    1.1532,
+    -29.0,
+    31.8
+   ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    19,
+    108,
+    622,
+    681
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.6601,
+    -41.0,
+    -2.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    630,
+    5,
+    707,
+    784
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.6601,
+    -61.1,
+    -46.2
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1303,
+    179,
+    622,
+    610
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.6601,
+    -41.0,
+    56.7
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 390,
+ "scale": 1.39,
+ "origin_x": 311.5,
+ "register_box": [
+  60,
+  225,
+  250,
+  330
+ ],
+ "collar_y": 205,
+ "neck": [
+  175,
+  210
+ ],
+ "exclude": {
+  "A1": [
+   [
+    0,
+    250
+   ],
+   [
+    35,
+    250
+   ],
+   [
+    32,
+    270
+   ],
+   [
+    27,
+    285
+   ],
+   [
+    19,
+    298
+   ],
+   [
+    14,
+    302
+   ],
+   [
+    13,
+    396
+   ],
+   [
+    0,
+    400
+   ]
+  ]
+ },
+ "master": {
+  "file": "lincoln_parts/lincoln_rig/master.png",
+  "layers": "lincoln_parts/lincoln_rig/face",
+  "head_box": [
+   70,
+   0,
+   262,
+   232
+  ],
+  "fit": [
+   0.5,
+   1.1
+  ],
+  "piece": "lincoln_parts/lincoln_face/lincoln_face_01.png",
+  "cut_below": 350,
+  "heads": {
+   "viewer": "lincoln_parts/lincoln_face/lincoln_face_22.png"
+  },
+  "replace_head": true
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    16,
+    370
+   ],
+   "extend": 18,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     285
+    ],
+    [
+     48,
+     285
+    ],
+    [
+     56,
+     330
+    ],
+    [
+     45,
+     344
+    ],
+    [
+     25,
+     338
+    ],
+    [
+     9,
+     340
+    ],
+    [
+     0,
+     342
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff, and the laced hands (the fingers cannot be parted)",
+     "poly": [
+      [
+       9,
+       340
+      ],
+      [
+       25,
+       338
+      ],
+      [
+       45,
+       344
+      ],
+      [
+       60,
+       347
+      ],
+      [
+       95,
+       357
+      ],
+      [
+       118,
+       360
+      ],
+      [
+       140,
+       360
+      ],
+      [
+       150,
+       362
+      ],
+      [
+       170,
+       355
+      ],
+      [
+       200,
+       349
+      ],
+      [
+       225,
+       351
+      ],
+      [
+       234,
+       357
+      ],
+      [
+       237,
+       368
+      ],
+      [
+       241,
+       385
+      ],
+      [
+       243,
+       400
+      ],
+      [
+       240,
+       422
+      ],
+      [
+       170,
+       430
+      ],
+      [
+       100,
+       420
+      ],
+      [
+       80,
+       413
+      ],
+      [
+       62,
+       406
+      ],
+      [
+       40,
+       399
+      ],
+      [
+       9,
+       395
+      ]
+     ]
+    },
+    "check": {
+     "pose": "A3",
+     "what": "his right forearm, cuff and hand, a fingertip at the rail",
+     "poly": [
+      [
+       9,
+       334
+      ],
+      [
+       30,
+       331
+      ],
+      [
+       60,
+       342
+      ],
+      [
+       78,
+       350
+      ],
+      [
+       100,
+       348
+      ],
+      [
+       120,
+       343
+      ],
+      [
+       150,
+       338
+      ],
+      [
+       170,
+       340
+      ],
+      [
+       185,
+       350
+      ],
+      [
+       192,
+       385
+      ],
+      [
+       190,
+       405
+      ],
+      [
+       180,
+       413
+      ],
+      [
+       150,
+       412
+      ],
+      [
+       110,
+       405
+      ],
+      [
+       70,
+       402
+      ],
+      [
+       40,
+       401
+      ],
+      [
+       9,
+       400
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    283,
+    372
+   ],
+   "extend": 18,
+   "rest": "rest",
+   "upper": [
+    [
+     300,
+     285
+    ],
+    [
+     252,
+     285
+    ],
+    [
+     248,
+     330
+    ],
+    [
+     262,
+     336
+    ],
+    [
+     278,
+     328
+    ],
+    [
+     300,
+     326
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and cuff, and the back of his hand to the knuckles",
+     "poly": [
+      [
+       234,
+       357
+      ],
+      [
+       245,
+       346
+      ],
+      [
+       262,
+       336
+      ],
+      [
+       278,
+       328
+      ],
+      [
+       300,
+       326
+      ],
+      [
+       300,
+       386
+      ],
+      [
+       277,
+       388
+      ],
+      [
+       268,
+       398
+      ],
+      [
+       262,
+       412
+      ],
+      [
+       242,
+       422
+      ],
+      [
+       243,
+       400
+      ],
+      [
+       241,
+       385
+      ],
+      [
+       237,
+       368
+      ]
+     ]
+    },
+    "alone": {
+     "pose": "A2",
+     "what": "his left forearm, cuff and hand resting alone",
+     "poly": [
+      [
+       156,
+       374
+      ],
+      [
+       172,
+       364
+      ],
+      [
+       188,
+       359
+      ],
+      [
+       204,
+       355
+      ],
+      [
+       214,
+       351
+      ],
+      [
+       228,
+       347
+      ],
+      [
+       245,
+       344
+      ],
+      [
+       262,
+       336
+      ],
+      [
+       278,
+       330
+      ],
+      [
+       292,
+       330
+      ],
+      [
+       292,
+       378
+      ],
+      [
+       272,
+       384
+      ],
+      [
+       264,
+       398
+      ],
+      [
+       242,
+       412
+      ],
+      [
+       200,
+       417
+      ],
+      [
+       162,
+       413
+      ],
+      [
+       154,
+       398
+      ]
+     ],
+     "except": [
+      [
+       [
+        150,
+        300
+       ],
+       [
+        232,
+        315
+       ],
+       [
+        219,
+        344
+       ],
+       [
+        210,
+        354
+       ],
+       [
+        203,
+        358
+       ],
+       [
+        196,
+        362
+       ],
+       [
+        185,
+        367
+       ],
+       [
+        172,
+        368
+       ],
+       [
+        160,
+        370
+       ],
+       [
+        150,
+        372
+       ]
+      ]
+     ],
+     "drop_blue": true
+    }
+   }
+  }
+ },
+ "runtime": "../web/art/lincoln",
+ "register_span": 44,
+ "frame_margin": 120,
+ "stock_box": [
+  120,
+  195,
+  240,
+  250
+ ],
+ "frames": {
+  "bet": {
+   "pose": "A5",
+   "cut_head": true,
+   "props": [
+    [
+     [
+      174,
+      352
+     ],
+     [
+      242,
+      352
+     ],
+     [
+      242,
+      442
+     ],
+     [
+      174,
+      442
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "A6",
+   "cut_head": true,
+   "props": [
+    [
+     [
+      60,
+      330
+     ],
+     [
+      300,
+      330
+     ],
+     [
+      300,
+      470
+     ],
+     [
+      60,
+      470
+     ]
+    ]
+   ]
+  },
+  "collect": {
+   "pose": "A9",
+   "cut_head": true,
+   "props": [
+    [
+     [
+      60,
+      330
+     ],
+     [
+      300,
+      330
+     ],
+     [
+      300,
+      470
+     ],
+     [
+      60,
+      470
+     ]
+    ]
+   ]
+  },
+  "beard": {
+   "pose": "B1",
+   "head": "own"
+  },
+  "chin": {
+   "pose": "B2",
+   "head": "own"
+  },
+  "lean_back": {
+   "pose": "B3",
+   "cut_head": true,
+   "head_margin": 26
+  },
+  "stretch": {
+   "pose": "B4",
+   "head": "own"
+  },
+  "amused": {
+   "pose": "B6",
+   "head": "own"
+  },
+  "hat_tip": {
+   "pose": "C1",
+   "head": "own"
+  },
+  "greet": {
+   "pose": "C2",
+   "head": "own"
+  },
+  "rub_eyes": {
+   "pose": "C3",
+   "head": "own"
+  },
+  "talk": {
+   "pose": "C6",
+   "cut_head": true
+  },
+  "laugh": {
+   "pose": "C7",
+   "head": "own",
+   "except": [
+    [
+     [
+      198,
+      372
+     ],
+     [
+      292,
+      372
+     ],
+     [
+      292,
+      412
+     ],
+     [
+      198,
+      412
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "C8",
+   "head": "own"
+  },
+  "lost_pot": {
+   "pose": "C9",
+   "head": "own"
+  },
+  "knocked_out": {
+   "pose": "C11",
+   "head": "own"
+  },
+  "drum": {
+   "pose": "C12",
+   "head": "own"
+  },
+  "peek": {
+   "pose": "A2",
+   "cut_head": true
+  },
+  "call": {
+   "pose": "A4",
+   "cut_head": true,
+   "props": [
+    [
+     [
+      150,
+      397
+     ],
+     [
+      170,
+      397
+     ],
+     [
+      170,
+      386
+     ],
+     [
+      212,
+      386
+     ],
+     [
+      212,
+      431
+     ],
+     [
+      186,
+      435
+     ],
+     [
+      150,
+      435
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A7",
+   "cut_head": true
+  },
+  "show": {
+   "pose": "A8",
+   "cut_head": true,
+   "except": [
+    [
+     [
+      158,
+      282
+     ],
+     [
+      262,
+      278
+     ],
+     [
+      264,
+      378
+     ],
+     [
+      176,
+      378
+     ],
+     [
+      166,
+      346
+     ],
+     [
+      158,
+      320
+     ]
+    ]
+   ],
+   "body_under": [
+    [
+     [
+      158,
+      282
+     ],
+     [
+      262,
+      278
+     ],
+     [
+      262,
+      330
+     ],
+     [
+      158,
+      330
+     ]
+    ]
+   ],
+   "fill": [
+    [
+     [
+      160,
+      330
+     ],
+     [
+      262,
+      330
+     ],
+     [
+      264,
+      378
+     ],
+     [
+      176,
+      378
+     ],
+     [
+      166,
+      346
+     ]
+    ]
+   ]
+  },
+  "fidget": {
+   "pose": "A10",
+   "cut_head": true,
+   "props": [
+    [
+     [
+      154,
+      332
+     ],
+     [
+      201,
+      332
+     ],
+     [
+      201,
+      429
+     ],
+     [
+      157,
+      429
+     ]
+    ]
+   ]
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
+  }
+ },
+ "drop_wood": true,
+ "back_strip": 95
+}

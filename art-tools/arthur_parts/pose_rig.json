@@ -1,0 +1,931 @@
+{
+ "id": "arthur",
+ "name": "King Arthur",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets. Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. His head is swapped inside an outline (head_poly / keep_poly), clear of Excalibur's hilt and his mantle.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    9,
+    15,
+    496,
+    481
+   ],
+   "what": "at rest, Excalibur at his right shoulder"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    513,
+    25,
+    510,
+    471
+   ],
+   "what": "peeking",
+   "reg": [
+    1.0,
+    0,
+    10
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1030,
+    21,
+    498,
+    475
+   ],
+   "what": "checking",
+   "reg": [
+    1.0,
+    0,
+    6
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    10,
+    512,
+    495,
+    471
+   ],
+   "what": "calling",
+   "reg": [
+    1.0,
+    -2,
+    10
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    514,
+    510,
+    507,
+    473
+   ],
+   "what": "betting, firmly",
+   "reg": [
+    1.0,
+    0,
+    8
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1029,
+    513,
+    498,
+    470
+   ],
+   "what": "folding, gracefully",
+   "reg": [
+    1.0,
+    0,
+    11
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    18,
+    20,
+    487,
+    472
+   ],
+   "what": "all in, resolute",
+   "reg": [
+    1.0,
+    0,
+    9
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    512,
+    23,
+    511,
+    470
+   ],
+   "what": "showing",
+   "reg": [
+    1.0,
+    0,
+    12
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1031,
+    17,
+    497,
+    476
+   ],
+   "what": "collecting",
+   "reg": [
+    1.0,
+    -1,
+    5
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    13,
+    505,
+    491,
+    481
+   ],
+   "what": "his hand on the hilt (TELL)",
+   "reg": [
+    1.0,
+    -1,
+    1
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    513,
+    508,
+    511,
+    476
+   ],
+   "what": "rubs the dent in his crown (decoy)",
+   "reg": [
+    1.0,
+    0,
+    5
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1032,
+    509,
+    495,
+    475
+   ],
+   "what": "crown askew (TELL)",
+   "reg": [
+    1.0,
+    0,
+    6
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    13,
+    12,
+    493,
+    479
+   ],
+   "what": "listens to the wind (decoy)",
+   "reg": [
+    1.0,
+    0,
+    2
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    521,
+    23,
+    494,
+    468
+   ],
+   "what": "looks round at his knights (TELL)",
+   "reg": [
+    1.0,
+    0,
+    13
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1037,
+    24,
+    487,
+    467
+   ],
+   "what": "nods to a servant (decoy)",
+   "reg": [
+    1.0,
+    0,
+    14
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    13,
+    500,
+    488,
+    477
+   ],
+   "what": "a tired, fond smile",
+   "reg": [
+    1.0,
+    -1,
+    4
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    520,
+    500,
+    495,
+    477
+   ],
+   "what": "raises his cup",
+   "reg": [
+    1.0,
+    0,
+    4
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1038,
+    513,
+    486,
+    464
+   ],
+   "what": "hands folded, listening",
+   "reg": [
+    1.0,
+    0,
+    17
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    12,
+    8,
+    495,
+    486
+   ],
+   "what": "talking, gracious",
+   "reg": [
+    1.0,
+    0,
+    -5
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    517,
+    12,
+    501,
+    481
+   ],
+   "what": "facing a big bet",
+   "reg": [
+    1.0,
+    0,
+    0
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1020,
+    15,
+    507,
+    476
+   ],
+   "what": "lost a pot: a sad smile",
+   "reg": [
+    1.0,
+    -7,
+    3
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    10,
+    507,
+    496,
+    476
+   ],
+   "what": "won a pot: a warm smile",
+   "reg": [
+    1.0,
+    -1,
+    5
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    516,
+    526,
+    499,
+    457
+   ],
+   "what": "heads up",
+   "reg": [
+    1.0,
+    0,
+    24
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1020,
+    492,
+    507,
+    491
+   ],
+   "what": "knocked out: Excalibur in hand, a bow",
+   "reg": [
+    1.0,
+    -2,
+    -10
+   ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    17,
+    186,
+    576,
+    600
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8182,
+    7.0,
+    -11.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    572,
+    18,
+    819,
+    768
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8182,
+    -63.4,
+    -143.5
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1298,
+    251,
+    637,
+    535
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8182,
+    -18.8,
+    34.8
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 362,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  220,
+  350,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 185,
+ "neck": [
+  255,
+  180
+ ],
+ "frame_margin": 173,
+ "stock_box": [
+  190,
+  180,
+  330,
+  240
+ ],
+ "master": {
+  "piece": "arthur_parts/arthur_face/arthur_face_01.png",
+  "cut_below": 330,
+  "face": "arthur_parts/face.json",
+  "file": "arthur_parts/arthur_rig/master.png",
+  "layers": "arthur_parts/arthur_rig/face",
+  "head_box": [
+   130,
+   0,
+   352,
+   185
+  ],
+  "place": [
+   -42,
+   -4,
+   0.72
+  ],
+  "replace_head": true,
+  "biggest": true,
+  "head_poly": [
+   [
+    118,
+    0
+   ],
+   [
+    352,
+    0
+   ],
+   [
+    352,
+    150
+   ],
+   [
+    330,
+    180
+   ],
+   [
+    290,
+    198
+   ],
+   [
+    240,
+    200
+   ],
+   [
+    205,
+    190
+   ],
+   [
+    175,
+    190
+   ],
+   [
+    118,
+    186
+   ]
+  ],
+  "keep_poly": [
+   [
+    42,
+    6
+   ],
+   [
+    367,
+    6
+   ],
+   [
+    367,
+    214
+   ],
+   [
+    336,
+    256
+   ],
+   [
+    281,
+    281
+   ],
+   [
+    211,
+    283
+   ],
+   [
+    162,
+    269
+   ],
+   [
+    121,
+    269
+   ],
+   [
+    42,
+    264
+   ]
+  ],
+  "heads": {
+   "viewer": "arthur_parts/arthur_face/arthur_face_15.png"
+  },
+  "cloth": [
+   15,
+   140
+  ],
+  "shoulder_y": 170,
+  "spare_red": true
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     280
+    ],
+    [
+     80,
+     280
+    ],
+    [
+     80,
+     310
+    ],
+    [
+     10,
+     315
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, bracer and hand",
+     "poly": [
+      [
+       0,
+       330
+      ],
+      [
+       110,
+       330
+      ],
+      [
+       200,
+       360
+      ],
+      [
+       255,
+       375
+      ],
+      [
+       262,
+       420
+      ],
+      [
+       245,
+       470
+      ],
+      [
+       140,
+       475
+      ],
+      [
+       100,
+       440
+      ],
+      [
+       40,
+       420
+      ],
+      [
+       0,
+       410
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    465,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     420,
+     280
+    ],
+    [
+     500,
+     280
+    ],
+    [
+     500,
+     310
+    ],
+    [
+     420,
+     310
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, bracer and hand",
+     "poly": [
+      [
+       315,
+       445
+      ],
+      [
+       335,
+       400
+      ],
+      [
+       370,
+       365
+      ],
+      [
+       420,
+       345
+      ],
+      [
+       470,
+       330
+      ],
+      [
+       496,
+       330
+      ],
+      [
+       496,
+       420
+      ],
+      [
+       470,
+       430
+      ],
+      [
+       445,
+       475
+      ],
+      [
+       315,
+       475
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      200,
+      385
+     ],
+     [
+      330,
+      385
+     ],
+     [
+      330,
+      492
+     ],
+     [
+      200,
+      492
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      190,
+      375
+     ],
+     [
+      330,
+      375
+     ],
+     [
+      330,
+      492
+     ],
+     [
+      190,
+      492
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      110,
+      360
+     ],
+     [
+      440,
+      360
+     ],
+     [
+      440,
+      492
+     ],
+     [
+      110,
+      492
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      110,
+      350
+     ],
+     [
+      450,
+      350
+     ],
+     [
+      450,
+      492
+     ],
+     [
+      110,
+      492
+     ]
+    ]
+   ]
+  },
+  "hilt": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "dent": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "crown": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "wind": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "knights": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "servant": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "fond": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "cup": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "listen": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      190,
+      385
+     ],
+     [
+      320,
+      385
+     ],
+     [
+      320,
+      492
+     ],
+     [
+      190,
+      492
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
+  }
+ },
+ "runtime": "../web/art/arthur",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  10,
+  75
+ ],
+ "wood_rows_only": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_dark_teal": true
+}

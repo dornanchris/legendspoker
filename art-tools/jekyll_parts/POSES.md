@@ -1,0 +1,146 @@
+# Dr. Jekyll: every pose, and the prompts
+
+Transylvania's seat 2 (left of the dealer), in place of Frankenstein's Monster (the owner: his gothic sheet 'looks like a handsome actor after a rough weekend'; the sheet is kept in `monster_parts/sources/rejected/`). ONE seat, TWO men: each sitting deals either Dr. Jekyll or Mr. Hyde, 50/50, and once Dracula has arrived and he is knocked out, the OTHER one comes back when the player wins a pot holding the same two ranks that knocked him out (game work: see FIX-LATER.md / CLAUDE.md). Drawn facing the viewer's right, as the game shows him. Gothic style, from the Headless Horseman's approved sheet.
+
+His look, from Stevenson (1886): 'a large, well-made, smooth-faced man of fifty, with something of a slyish cast perhaps, but every mark of capacity and kindness.' A respectable London physician: greying brown hair neatly combed, clean-shaven, a good dark frock coat, a grey waistcoat with a watch chain, a white shirt and a black cravat. His prop is a small glass phial of the draught, 'a blood-red liquor', corked, on the felt by his right hand. Hyde wears THIS coat, far too big for him, so the coat is the thread between the two kits.
+
+Ruled out: every film Jekyll (1920, 1931, 1941 and after) and The League of Extraordinary Gentlemen; no actor's likeness.
+
+Tags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: his right hand for a moment HYDE's hand (tilted: lean, corded, hairy; he pulls his cuff over it) beside rubbing his hands as if cold; holding the phial up to the light (strong) beside tapping it with a fingernail; dabbing his brow with a handkerchief (weak) beside consulting his pocket watch. C6 is `arrive` (he can return in Hyde's place). B3 and D4 are the big win and the crushing loss; hands empty of cards and chips in every pose (the phial is his own); knocked out, he says his line and fades from the chair.
+
+| # | Pose | Tag |
+|---|---|---|
+| A1 | Rest: forearms on the table's edge, hands apart, the phial by his right hand | IDLE |
+| A2 | Peek: right hand cupped low over the felt | MECH |
+| A3 | Check: two fingers tap the felt | MECH |
+| A4 | Call: right hand pushes forward along the felt | MECH |
+| A5 | Bet: right hand pushed well forward, measured | MECH |
+| A6 | Fold: a courteous push of the hand toward the middle | MECH |
+| B1 | All in: both hands push forward together | MECH |
+| B2 | Show: right hand turns palm up | MECH |
+| B3 | Big win: both hands raised, a delighted, slightly sheepish smile (`win_big`) | BEAT |
+| B4 | His right hand turned to Hyde's for a moment; he pulls his cuff over it | TELL |
+| B5 | Rubs his hands together as if cold (decoy for B4) | IDLE |
+| B6 | Holds the phial up to the light | TELL |
+| C1 | Taps the phial with a fingernail, not looking at it (decoy for B6) | IDLE |
+| C2 | Dabs his brow with a white handkerchief | TELL |
+| C3 | Consults his gold pocket watch (decoy for C2) | IDLE |
+| C4 | Glances toward the door, uneasy | IDLE |
+| C5 | A courteous, kindly smile at the table | IDLE |
+| C6 | Arrive: sitting down, straightening his coat, composed but pale | BEAT |
+| D1 | Talking: one hand open, explaining | BEAT |
+| D2 | Facing a big bet: fingertips together, grave | BEAT |
+| D3 | Lost a pot: a polite, rueful nod | BEAT |
+| D4 | Crushing loss: his head in one hand, the other closed round the phial (`lose_big`) | BEAT |
+| D5 | Heads up: leaning in on both forearms | BEAT |
+| D6 | A gentle laugh, a hand on his chest | BEAT |
+
+## Prompts
+
+One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, then the Headless Horseman's approved character sheet (`art-tools/headless_horseman_parts/sources/headless_horseman_sheet.png`) for the style. From the second prompt on, attach Jekyll's own character sheet, his pose sheet A once it exists, AND the Horseman's character sheet again, and nothing else. Draw Jekyll FIRST: Hyde's prompts attach Jekyll's sheet for the coat.
+
+### Character sheet
+
+```
+Character sheet for 2D animation rigging: Dr. Henry Jekyll, of Robert Louis Stevenson's Strange Case of Dr Jekyll and Mr Hyde (1886), as Stevenson describes him. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No plate armour, no gauntlets, no striped surcoat, no long hair. Take the STYLE from the SECOND attached image.
+
+Dr. Jekyll: a large, well-made, smooth-faced man of about fifty, with something a little sly about him but every mark of capability and kindness; greying brown hair, neatly combed; clean-shaven; a strong, pleasant, careworn face with tired eyes. A respectable London physician of the 1880s: a well-cut dark frock coat, a grey waistcoat with a gold watch chain, a white shirt with a high collar and a black silk cravat. His prop: a small corked glass phial, half full of a blood-red liquid. Courteous, careful, a little haunted. No top hat, no cane, no spectacles. Not a likeness of any actor; nothing from any film.
+
+Pure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.
+
+The angle: a gentle three-quarter view, turned about 25 degrees from front-on, facing the viewer's right. Both eyes, the whole nose, the mouth and both shoulders clearly visible. NOT profile.
+
+Draw, all facing the viewer's right, at the same size:
+- Finished heads, each with the neck, the high collar and the cravat: neutral, kindly; talking, mouth open mid-word; anxious, brow damp; a courteous smile
+- The torso in the frock coat and waistcoat: no head, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands
+- Two forearms in the coat sleeves with a white shirt cuff, lying on a table, pointing toward its centre, open at the elbow end
+- On its own: the small corked glass phial of blood-red liquid
+- Four seated reference poses, waist up behind the curved edge of a round green poker table, forearms resting on its edge, hands apart, the phial on the felt beside his right hand (the left of the picture): neutral; holding the phial up to the light; dabbing his brow with a white handkerchief; staring at his own right hand, which is for a moment lean, corded and hairy, not his, his left hand pulling the cuff over it
+
+STYLE, the most important rule: match the SECOND attached image (the Headless Horseman, from the same table) exactly: a GOTHIC GRAPHIC-NOVEL style for a grown-up card game, halfway between a bright cartoon and a dark painted illustration. Take NOTHING of his character: no armour, no pumpkin, no cloak. Keep what the game needs: a bold dark outline round every shape, big clear readable shapes, a silhouette that reads at a tiny size. Adult, realistic proportions (never a big head, never chibi, never cute); shading in three or four tones with deep, dramatic shadows and a warm rim light from candlelight; rich but MUTED colour, nothing candy-bright; cloth with real weight and heavy folds; a little texture in the shadows only. Serious and sombre. NOT a children's cartoon, NOT cute, NOT toy-like, NOT round and bouncy, NOT photoreal, NOT muddy or murky.
+```
+
+### Pose sheet A
+
+```
+Character pose sheet for 2D animation reference: Dr. Jekyll, exactly as on the attached character sheet (a large, well-made, smooth-faced man of fifty, kindly and capable, greying brown hair neatly combed, clean-shaven; a good dark frock coat, a grey waistcoat with a gold watch chain, a white shirt and a black cravat; a small corked glass phial of blood-red liquid on the felt beside his right hand, colours, line weight, gothic style).
+
+Draw 6 poses in a grid, 3 across and 2 down, in this order. Every pose: waist up, seated behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, the same size, in the same place in its cell, with the table edge at the same height in every cell. Leave a little white between him and the cell's edges, the top of his hair included: nothing of him is cut off. Nothing below the table edge. No chair: nothing at all behind him, just white.
+
+IMPORTANT for every pose: the arm that the pose does not mention stays EXACTLY as in pose 1, same position, same hand. The small corked glass phial of blood-red liquid sits on the felt beside his right hand (the left of the picture) unless the pose says otherwise. His hands are his own, smooth and well kept, in every pose but the one that says otherwise. Keep the gothic graphic-novel style of the attached sheets and of the Headless Horseman's sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour; serious and sombre, NOT a children's cartoon, NOT cute.
+
+1. At rest: both forearms lying along the table's edge, his hands resting on the felt in front of him, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; the small corked glass phial of blood-red liquid on the felt beside his right hand; a calm, kindly look, mouth closed
+2. Peeking at his cards: his right hand cupped low over the felt in front of him, thumb lifted a little, as if shielding something small; eyes down
+3. Checking: two fingers of his right hand tapping the felt
+4. Calling: his right hand flat, fingertips leading, pushing forward along the felt
+5. Betting: his right hand pushed well forward along the felt, measured and careful
+6. Folding: a courteous push of his right hand toward the middle of the table, palm down
+
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No top hat, no cane, no spectacles, no laboratory, no chair, no cards, no chips.
+```
+
+### Pose sheet B
+
+```
+Character pose sheet for 2D animation reference: Dr. Jekyll, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same face, greying hair, dark frock coat, grey waistcoat, black cravat and small phial of blood-red liquid.
+
+Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). The small corked glass phial of blood-red liquid sits on the felt beside his right hand (the left of the picture) unless the pose says otherwise. His hands are his own, smooth and well kept, in every pose but the one that says otherwise. Keep the gothic graphic-novel style of the attached sheets and of the Headless Horseman's sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour; serious and sombre, NOT a children's cartoon, NOT cute.
+
+1. All in: both hands pushing forward along the felt together, his jaw set
+2. Showing: his right hand turning palm up from the felt, as if turning something over
+3. A big win: both hands raised above his shoulders, a delighted, slightly sheepish smile, as if he had forgotten himself
+4. His right hand, for a moment, NOT HIS OWN: lean, corded and knuckly, of a dusky pallor, thick with dark hair (Hyde's hand), lying on the felt; he stares at it and pulls his white shirt cuff down over it with his left hand, alarmed
+5. Rubbing his hands together in front of him as if they were cold
+6. Holding the small phial up in his right hand between finger and thumb, studying the blood-red liquid against the light; his left hand as at rest
+
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No top hat, no cane, no spectacles, no laboratory, no chair, no cards, no chips.
+```
+
+### Pose sheet C
+
+```
+Character pose sheet for 2D animation reference: Dr. Jekyll, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same face, greying hair, dark frock coat, grey waistcoat, black cravat and small phial of blood-red liquid.
+
+Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). The small corked glass phial of blood-red liquid sits on the felt beside his right hand (the left of the picture) unless the pose says otherwise. His hands are his own, smooth and well kept, in every pose but the one that says otherwise. Keep the gothic graphic-novel style of the attached sheets and of the Headless Horseman's sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour; serious and sombre, NOT a children's cartoon, NOT cute.
+
+1. Tapping the phial on the felt with one fingernail of his right hand, NOT looking at it, eyes on the table
+2. Dabbing his brow with a folded white handkerchief in his right hand, a sheen of sweat
+3. Consulting a gold pocket watch on its chain, open in his right hand
+4. Glancing over his shoulder toward the left of the picture, as if at a door, uneasy; arms as at rest
+5. A courteous, kindly smile at the table; arms as at rest
+6. Just sitting down at the table, straightening the front of his frock coat with both hands, composed but pale
+
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No top hat, no cane, no spectacles, no laboratory, no chair, no cards, no chips.
+```
+
+### Pose sheet D
+
+```
+Character pose sheet for 2D animation reference: Dr. Jekyll, exactly as on the attached sheets, drawn to match the attached pose sheet: same size, same angle, same place in each cell, same table edge height, same face, greying hair, dark frock coat, grey waistcoat, black cravat and small phial of blood-red liquid.
+
+Draw 6 poses, 3 across and 2 down, in this order. Every pose: waist up, behind the curved edge of a round green poker table, three-quarter view facing the viewer's right, no chair, nothing behind him, nothing of him cut off by the cell's edge. Nothing below the table edge. The arm a pose does not mention stays EXACTLY as in the at-rest pose (hands resting apart). The small corked glass phial of blood-red liquid sits on the felt beside his right hand (the left of the picture) unless the pose says otherwise. His hands are his own, smooth and well kept, in every pose but the one that says otherwise. Keep the gothic graphic-novel style of the attached sheets and of the Headless Horseman's sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour; serious and sombre, NOT a children's cartoon, NOT cute.
+
+1. Talking: his right hand open and raised a little, palm up, explaining courteously, mouth open mid-word
+2. Facing a big bet: elbows on the table's edge, fingertips pressed together in front of his chin, grave
+3. Lost a pot: a polite, rueful nod; arms as at rest
+4. A crushing loss: his forehead resting in his right hand, eyes shut, his left hand closed tight round the phial
+5. Down to two players: leaning in on both forearms, eyes level
+6. A gentle laugh, head tipped back a little, his right hand flat on his chest
+
+No cards and no chips anywhere: the hands are empty. Pure white background around each pose; poses do not touch. No text, no numbers, no labels. No top hat, no cane, no spectacles, no laboratory, no chair, no cards, no chips.
+```
+
+### Face overlay sheet
+
+```
+Character sheet for 2D animation rigging: Dr. Jekyll's face overlays, exactly matching the attached sheets' style, colours and line weight.
+
+Every piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head: the eyes and the mouths too are turned three-quarter, toward the viewer's right, NOT front-on and NOT symmetrical. Draw that head once, top left, with the neck, the high collar and the cravat, as the reference, mouth closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.
+
+- His eyes with the lids half closed; closed; looking toward the viewer; looking down at the table; looking to the side; narrowed; wide and alarmed (one piece each, both eyes with the skin around them)
+- His brows raised; his brows drawn down (one piece each, both brows)
+- Lower-face patches, each the mouth with the skin around it (he is clean-shaven), cut straight across just under the nose and again a little below the lower lip: closed at rest; open "ah"; wide "ee"; round "oh"; pursed "oo"; lips pressed "m"; lower lip under the teeth "f"; tongue tip behind the teeth "l"; a kindly smile; a strained, anxious smile
+- His head turned toward the viewer, nearly front-on
+
+Keep the gothic graphic-novel style of the attached sheets and of the Headless Horseman's sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour; serious and sombre, NOT a children's cartoon, NOT cute.
+```

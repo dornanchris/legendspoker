@@ -1,0 +1,1397 @@
+{
+ "id": "loki",
+ "name": "Loki",
+ "note": "Polygons in the rest pose (A1) pixels. Style-locked sheets. The uninvited guest: any chair, drawn facing right and mirrored. The master is the rest pose's OWN head (loki_face/loki_master.png). Every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt. His golden game piece stands on the felt by his right hand: part of that forearm's piece at rest, a props box in every frame.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    15,
+    21,
+    495,
+    464
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, the golden game piece by his right hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    525,
+    26,
+    485,
+    459
+   ],
+   "reg": [
+    1.0,
+    0,
+    5
+   ],
+   "what": "Peek: right hand cupped low over the felt"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1026,
+    23,
+    494,
+    462
+   ],
+   "reg": [
+    1.0,
+    0,
+    2
+   ],
+   "what": "Check: two fingers tap the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    16,
+    502,
+    494,
+    463
+   ],
+   "reg": [
+    1.0,
+    1,
+    2
+   ],
+   "what": "Call: right hand pushes forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    523,
+    511,
+    490,
+    454
+   ],
+   "reg": [
+    1.0,
+    -2,
+    10
+   ],
+   "what": "Bet: leans in, right hand pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1026,
+    509,
+    494,
+    456
+   ],
+   "reg": [
+    1.0,
+    1,
+    8
+   ],
+   "what": "Fold: a careless flick of the right hand"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    18,
+    73,
+    489,
+    426
+   ],
+   "reg": [
+    1.0,
+    1,
+    38
+   ],
+   "what": "All in: both hands push forward together, a sly grin"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    521,
+    71,
+    487,
+    428
+   ],
+   "reg": [
+    1.0,
+    1,
+    36
+   ],
+   "what": "Show: right hand turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1006,
+    9,
+    523,
+    490
+   ],
+   "reg": [
+    1.0,
+    1,
+    -26
+   ],
+   "what": "Big win: both fists raised, laughing"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    18,
+    513,
+    489,
+    470
+   ],
+   "reg": [
+    1.0,
+    1,
+    -6
+   ],
+   "what": "TELL bluffing: fingertips touching the stitch-scars on his lips"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    521,
+    521,
+    487,
+    462
+   ],
+   "reg": [
+    1.0,
+    1,
+    2
+   ],
+   "what": "Rubs his chin with a knuckle (decoy for the scars)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1013,
+    524,
+    505,
+    459
+   ],
+   "reg": [
+    1.0,
+    -8,
+    5
+   ],
+   "what": "Rolls a fish scale across his knuckles"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    16,
+    18,
+    493,
+    468
+   ],
+   "reg": [
+    1.0,
+    1,
+    -3
+   ],
+   "what": "Counts the players with one finger"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    525,
+    22,
+    486,
+    464
+   ],
+   "reg": [
+    1.0,
+    1,
+    1
+   ],
+   "what": "Glances up at the ceiling, listening (decoy for the eyes)"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1026,
+    25,
+    494,
+    461
+   ],
+   "reg": [
+    1.0,
+    0,
+    4
+   ],
+   "what": "Hums, eyes half closed, head tilted"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    16,
+    512,
+    493,
+    469
+   ],
+   "reg": [
+    1.0,
+    1,
+    -5
+   ],
+   "what": "Turns the golden game piece over in his fingers"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    525,
+    509,
+    485,
+    472
+   ],
+   "reg": [
+    1.0,
+    1,
+    -8
+   ],
+   "what": "A full, easy smile (decoy for the half smile)"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1022,
+    505,
+    498,
+    476
+   ],
+   "reg": [
+    1.0,
+    -2,
+    -12
+   ],
+   "what": "Arrive: taking the chair, looking round, amused"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    18,
+    18,
+    490,
+    474
+   ],
+   "reg": [
+    1.0,
+    1,
+    -10
+   ],
+   "what": "Talking: one hand turning in the air"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    526,
+    30,
+    484,
+    462
+   ],
+   "reg": [
+    1.0,
+    1,
+    2
+   ],
+   "what": "Facing a big bet: chin on his hand"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1028,
+    44,
+    491,
+    448
+   ],
+   "reg": [
+    1.0,
+    1,
+    16
+   ],
+   "what": "Lost a pot: a shrug, palms up"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    18,
+    520,
+    487,
+    444
+   ],
+   "reg": [
+    1.0,
+    0,
+    20
+   ],
+   "what": "Crushing loss: jaw tight, staring at the table"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    522,
+    539,
+    492,
+    425
+   ],
+   "reg": [
+    1.0,
+    1,
+    40
+   ],
+   "what": "Heads up: leaning in on both forearms"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1031,
+    509,
+    488,
+    455
+   ],
+   "reg": [
+    1.0,
+    1,
+    9
+   ],
+   "what": "Laughing, head back"
+  }
+ },
+ "rest": "A1",
+ "table_y": 372,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  240,
+  350,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 222,
+ "neck": [
+  262,
+  222
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  200,
+  200,
+  330,
+  260
+ ],
+ "master": {
+  "piece": "loki_parts/loki_face/loki_master.png",
+  "cut_below": 245,
+  "face": "loki_parts/face.json",
+  "file": "loki_parts/loki_rig/master.png",
+  "layers": "loki_parts/loki_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    138,
+    0
+   ],
+   [
+    392,
+    0
+   ],
+   [
+    392,
+    150
+   ],
+   [
+    370,
+    205
+   ],
+   [
+    330,
+    222
+   ],
+   [
+    290,
+    232
+   ],
+   [
+    230,
+    232
+   ],
+   [
+    195,
+    215
+   ],
+   [
+    160,
+    185
+   ],
+   [
+    138,
+    150
+   ]
+  ],
+  "shoulder_y": 215
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    45,
+    335
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     300
+    ],
+    [
+     100,
+     300
+    ],
+    [
+     100,
+     330
+    ],
+    [
+     0,
+     335
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, cuff and hand, and the game piece by it",
+     "poly": [
+      [
+       0,
+       325
+      ],
+      [
+       60,
+       315
+      ],
+      [
+       100,
+       330
+      ],
+      [
+       150,
+       340
+      ],
+      [
+       200,
+       350
+      ],
+      [
+       255,
+       375
+      ],
+      [
+       275,
+       430
+      ],
+      [
+       260,
+       458
+      ],
+      [
+       190,
+       458
+      ],
+      [
+       140,
+       445
+      ],
+      [
+       100,
+       440
+      ],
+      [
+       30,
+       445
+      ],
+      [
+       0,
+       430
+      ]
+     ],
+     "props": [
+      [
+       [
+        50,
+        346
+       ],
+       [
+        84,
+        346
+       ],
+       [
+        94,
+        412
+       ],
+       [
+        96,
+        442
+       ],
+       [
+        38,
+        442
+       ],
+       [
+        40,
+        412
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    450,
+    335
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     300
+    ],
+    [
+     475,
+     300
+    ],
+    [
+     475,
+     330
+    ],
+    [
+     400,
+     330
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, cuff and hand",
+     "poly": [
+      [
+       320,
+       380
+      ],
+      [
+       360,
+       360
+      ],
+      [
+       410,
+       335
+      ],
+      [
+       440,
+       320
+      ],
+      [
+       478,
+       325
+      ],
+      [
+       485,
+       400
+      ],
+      [
+       460,
+       420
+      ],
+      [
+       440,
+       445
+      ],
+      [
+       380,
+       445
+      ],
+      [
+       325,
+       440
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "scars": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "chin": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "scale": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "count": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "ceiling": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "hum": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "game_piece": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": []
+  },
+  "full_smile": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "arrive": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  },
+  "laugh": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      50,
+      346
+     ],
+     [
+      84,
+      346
+     ],
+     [
+      94,
+      412
+     ],
+     [
+      96,
+      442
+     ],
+     [
+      38,
+      442
+     ],
+     [
+      40,
+      412
+     ]
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/loki",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "wood_rows_only": true,
+ "no_wood": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6
+}

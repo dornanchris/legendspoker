@@ -7,11 +7,11 @@
   "notes": {
     "tone": "The quietest room in the game. After eight theatrical bosses, the last one is calm. Death is lit like a person and talks like one: tired, dry, faintly bored, never theatrical, and he still never lies. Understatement everywhere; the room does the rest.",
     "reveal": "table_intro IS the reveal. The dealer, the one constant all game, is sitting in a player's chair. Nobody explains it. He gets one dry line about the location and then asks to be dealt in.",
-    "dealer": "Who deals this table is deliberately left unstated in every line, so either choice works (the design doc suggests a reskin of the dealer character; heads-up players dealing in turn also fits the empty room). 'Tonight I would like to be dealt in' is true either way.",
+    "dealer": "Pravuil, the Recording Angel, deals this table (the owner's call): Death plays, so someone else must deal, and someone has to witness it. He never speaks; Death introduces him in one line. He shuffles, deals and pushes the pots; at the end he hands Death the deck to give away, writes one line and follows him out.",
     "no_permadeath": "Losing here costs nothing but the attempt. player_busted keeps the door open; rematch_ladder plays on the NEXT visit, keyed by attempt number ('5' covers five and beyond), and escalates toward interest, not boredom.",
     "title": "'Colleague' (tier 3, the starting tier) reads as one card player to another. After champion_defeat it is literal. Do not swap it for anything that says successor, heir or replacement.",
     "ending": "champion_defeat hands straight into story.json's ending. Death hands over the deck: the story reward and the mechanical reward (Death unlocked) are the same event. Keep it quiet.",
-    "dealer_plant": "None. The dealer is the opponent.",
+    "dealer_plant": "None. Pravuil never speaks.",
     "leak_rule": "No line may reference hand strength while cards are live. Death has no tells; nothing here should imply one.",
     "voice": "Death only. No contractions in his lines, as everywhere else."
   },
@@ -38,7 +38,7 @@
     {
       "id": "fn_intro_02",
       "speaker": "narration",
-      "text": "[The dealer is already here — not in the dealer's place, but in the chair across from yours. Forearms on the wood, in the lamplight, waiting.]",
+      "text": "[The dealer is already here — not in the dealer's place, but in the chair across from yours. Forearms on the wood, in the lamplight, waiting. In the dealer's place sits someone you have never seen: winged, a quill behind his ear, a deck under his hand.]",
       "type": "stage_direction",
       "trigger": "table_open"
     },
@@ -54,6 +54,13 @@
       "text": "I have dealt every hand you have played, and every hand anyone else ever has. Tonight I would like to be dealt in.",
       "trigger": "table_open",
       "note": "The reveal, said as plainly as a man asking for a chair."
+    },
+    {
+      "id": "fn_intro_06",
+      "speaker": "death",
+      "text": "Pravuil keeps the books. Someone has to witness this.",
+      "trigger": "table_open",
+      "note": "The owner's line. Pravuil, the Recording Angel of 2 Enoch; the only introduction he gets."
     },
     {
       "id": "fn_intro_05",
@@ -114,7 +121,7 @@
     { "id": "fn_death_02", "speaker": "death", "text": "Everyone gets the same fifty-two. Even now. Even me.", "trigger": "player_bad_beat", "note": "Callback to the White House." },
     { "id": "fn_death_03", "speaker": "death", "text": "Hm. So that is what that is like.", "trigger": "champion_loses_pot", "note": "The first pot he has ever lost. He has never played one before." },
     { "id": "fn_death_04", "speaker": "death", "text": "All of it. I have watched a great many people do that. It looks different from this side of the table.", "trigger": "player_all_in" },
-    { "id": "fn_death_05", "speaker": "death", "text": "Blinds up. Somebody has to keep the game moving. It has always been me.", "trigger": "blinds_up" },
+    { "id": "fn_death_05", "speaker": "death", "text": "Blinds up. That was always my line. It sounds different from this chair.", "trigger": "blinds_up" },
     { "id": "fn_death_06", "speaker": "death", "text": "That was a good deal of my stack. I had not expected to mind.", "trigger": "player_wins_big_pot" }
   ],
 
@@ -138,14 +145,14 @@
     { "id": "fn_bust_01", "speaker": "death", "text": "That is all of your chips. It is not all of you." },
     { "id": "fn_bust_02", "speaker": "death", "text": "Closer than most. I do not say that to be kind; I have never really known how." },
     { "id": "fn_bust_03", "speaker": "death", "text": "Go and get warm. The chair will be here. So will I." },
-    { "id": "fn_bust_04", "speaker": "narration", "text": "[He is already shuffling for the next game.]", "type": "stage_direction" }
+    { "id": "fn_bust_04", "speaker": "narration", "text": "[Pravuil is already shuffling for the next game. Death has not left his chair.]", "type": "stage_direction" }
   ],
 
   "champion_defeat": [
     {
       "id": "fn_end_01",
       "speaker": "narration",
-      "text": "[He looks at the last card for a long moment. Then he gathers the deck, squares it once, the way he has squared it at every table, and slides it across to you.]",
+      "text": "[He looks at the last card for a long moment. Then he holds out his hand, and Pravuil gives him the deck. He squares it once, the way he squared it at every table, and slides it across to you.]",
       "type": "stage_direction"
     },
     {
@@ -159,7 +166,7 @@
     {
       "id": "fn_end_05",
       "speaker": "narration",
-      "text": "[He gets up, slowly, and goes out into the rain without looking back. The lamp is still lit.]",
+      "text": "[He gets up, slowly, and goes out into the rain without looking back. Pravuil writes one line in his book, closes it, and follows him. The lamp is still lit.]",
       "type": "stage_direction"
     }
   ]

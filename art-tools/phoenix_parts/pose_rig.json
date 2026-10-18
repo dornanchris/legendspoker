@@ -1,0 +1,740 @@
+{
+ "id": "phoenix",
+ "name": "The Phoenix",
+ "note": "Polygons in the rest pose (A1) pixels. The graphic-novel style of the last tables (the Astronaut's sheets the style images). The Pyre's one opponent, heads up; drawn facing right and mirrored as the seat needs. Its wings are its forearms. The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. No prop.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    16,
+    13,
+    488,
+    484
+   ],
+   "what": "Rest: sitting up behind the table, wings folded forward, wingtips resting on the felt apart, crest burning steadily"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    520,
+    18,
+    492,
+    479
+   ],
+   "reg": [
+    1.0,
+    0,
+    5
+   ],
+   "what": "Peeking: the right wingtip cupped low over its cards, head bent to look"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1028,
+    12,
+    492,
+    485
+   ],
+   "reg": [
+    1.0,
+    0,
+    -1
+   ],
+   "what": "Check: the right wingtip taps the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    16,
+    512,
+    488,
+    464
+   ],
+   "reg": [
+    1.0,
+    0,
+    20
+   ],
+   "what": "Call: the right wingtip slides forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    520,
+    522,
+    492,
+    454
+   ],
+   "reg": [
+    1.0,
+    0,
+    30
+   ],
+   "what": "Bet: leans in, the right wingtip pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1028,
+    512,
+    492,
+    464
+   ],
+   "reg": [
+    1.0,
+    0,
+    20
+   ],
+   "what": "Fold: a flick of the right wingtip"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    16,
+    7,
+    494,
+    476
+   ],
+   "reg": [
+    1.0,
+    0,
+    9
+   ],
+   "what": "All in: both wings sweep forward together, crest blazing"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    524,
+    38,
+    492,
+    462
+   ],
+   "reg": [
+    1.0,
+    0,
+    39
+   ],
+   "what": "Show: the right wingtip turns over"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1013,
+    15,
+    509,
+    468
+   ],
+   "reg": [
+    1.0,
+    0,
+    16
+   ],
+   "what": "Big win: wings spread high, crest blazing, a triumphant cry (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    16,
+    488,
+    494,
+    501
+   ],
+   "reg": [
+    1.0,
+    0,
+    -17
+   ],
+   "what": "The flames along its crest flare up, tall and bright"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    524,
+    500,
+    492,
+    489
+   ],
+   "reg": [
+    1.0,
+    0,
+    -5
+   ],
+   "what": "A single spark drifts up from its crest (decoy for B4)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1032,
+    511,
+    490,
+    478
+   ],
+   "reg": [
+    1.0,
+    0,
+    6
+   ],
+   "what": "Preens one wing, unhurried"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    16,
+    14,
+    490,
+    475
+   ],
+   "reg": [
+    1.0,
+    0,
+    9
+   ],
+   "what": "Shakes a little ash from its feathers (decoy for B6)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    522,
+    29,
+    493,
+    460
+   ],
+   "reg": [
+    1.0,
+    0,
+    24
+   ],
+   "what": "Its feathers dim to embers, crest low and dark red"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1031,
+    14,
+    491,
+    476
+   ],
+   "reg": [
+    1.0,
+    0,
+    9
+   ],
+   "what": "Turns its head toward the light (decoy for C2)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    16,
+    510,
+    490,
+    467
+   ],
+   "reg": [
+    1.0,
+    0,
+    17
+   ],
+   "what": "Watches you with one gold eye, head turned side-on"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    436,
+    513,
+    694,
+    464
+   ],
+   "reg": [
+    1.0,
+    -80,
+    21
+   ],
+   "what": "Spreads its wings wide, lighting the room (heads-up opener)"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1031,
+    506,
+    491,
+    470
+   ],
+   "reg": [
+    1.0,
+    0,
+    14
+   ],
+   "what": "Sings: beak open, one clear note"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    16,
+    9,
+    489,
+    484
+   ],
+   "reg": [
+    1.0,
+    0,
+    0
+   ],
+   "what": "Talking: a trill, beak a little open"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    522,
+    22,
+    494,
+    471
+   ],
+   "reg": [
+    1.0,
+    0,
+    13
+   ],
+   "what": "Facing a big bet: feathers sleeked flat, perfectly still"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1032,
+    69,
+    490,
+    424
+   ],
+   "reg": [
+    1.0,
+    0,
+    60
+   ],
+   "what": "Lost a pot: feathers ruffled, head tucked a little"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    16,
+    566,
+    489,
+    395
+   ],
+   "reg": [
+    1.0,
+    0,
+    89
+   ],
+   "what": "Crushing loss: head bowed, wings drooping, ash drifting (`lose_big`)"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    522,
+    522,
+    494,
+    439
+   ],
+   "reg": [
+    1.0,
+    0,
+    45
+   ],
+   "what": "Heads up: leaning in, both wingtips forward on the felt"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1032,
+    510,
+    490,
+    451
+   ],
+   "reg": [
+    1.0,
+    0,
+    34
+   ],
+   "what": "Knocked out: burns down, all at once, in a great bright flame"
+  }
+ },
+ "rest": "A1",
+ "table_y": 346,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  120,
+  240,
+  380,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 235,
+ "neck": [
+  250,
+  235
+ ],
+ "frame_margin": 140,
+ "stock_box": [
+  180,
+  210,
+  330,
+  270
+ ],
+ "master": {
+  "piece": "phoenix_parts/phoenix_face/phoenix_master.png",
+  "cut_below": 250,
+  "face": "phoenix_parts/face.json",
+  "file": "phoenix_parts/phoenix_rig/master.png",
+  "layers": "phoenix_parts/phoenix_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    120,
+    0
+   ],
+   [
+    330,
+    0
+   ],
+   [
+    372,
+    140
+   ],
+   [
+    362,
+    215
+   ],
+   [
+    300,
+    232
+   ],
+   [
+    250,
+    252
+   ],
+   [
+    175,
+    240
+   ],
+   [
+    150,
+    170
+   ],
+   [
+    120,
+    100
+   ]
+  ],
+  "shoulder_y": 240,
+  "keep_white": true
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    45,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     250
+    ],
+    [
+     160,
+     240
+    ],
+    [
+     170,
+     330
+    ],
+    [
+     100,
+     335
+    ],
+    [
+     0,
+     360
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its right wingtip on the felt",
+     "poly": [
+      [
+       0,
+       340
+      ],
+      [
+       60,
+       318
+      ],
+      [
+       130,
+       322
+      ],
+      [
+       200,
+       350
+      ],
+      [
+       245,
+       400
+      ],
+      [
+       262,
+       460
+      ],
+      [
+       230,
+       476
+      ],
+      [
+       140,
+       476
+      ],
+      [
+       60,
+       440
+      ],
+      [
+       0,
+       420
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    385,
+    335
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     310,
+     250
+    ],
+    [
+     390,
+     280
+    ],
+    [
+     420,
+     330
+    ],
+    [
+     360,
+     335
+    ],
+    [
+     320,
+     320
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its left wingtip on the felt",
+     "poly": [
+      [
+       340,
+       345
+      ],
+      [
+       380,
+       322
+      ],
+      [
+       420,
+       330
+      ],
+      [
+       460,
+       370
+      ],
+      [
+       476,
+       440
+      ],
+      [
+       462,
+       476
+      ],
+      [
+       370,
+       476
+      ],
+      [
+       340,
+       440
+      ],
+      [
+       330,
+       390
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "flare": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "spark": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "preen": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "ash": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "embers": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "light": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "eye": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "spread": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "sing": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 45
+  }
+ },
+ "runtime": "../web/art/phoenix",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "back_strip": 6,
+ "strip_thin": 2,
+ "no_wood": true
+}

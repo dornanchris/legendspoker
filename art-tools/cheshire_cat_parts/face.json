@@ -1,0 +1,75 @@
+{
+ "note": "The master is the rest pose's own head. Eyes 2-10 (9 and 10 both shut the near eye: 10 is unused); mouths 11-20. Head 1 and the front-on head 21 are unused. The skin match is off (match: false): it samples skin as red-dominant, and on his fur it took the pale rim light. Fits 07 and 09 set by hand (their width and bottom edge matched to the others).",
+ "master": "cheshire_cat_parts/cheshire_cat_face/cheshire_cat_master.png",
+ "pieces": "cheshire_cat_parts/cheshire_cat_face/cheshire_cat_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7,
+   "wide": 8,
+   "wink": 9
+  },
+  "mouth": {
+   "rest": 11,
+   "ah": 12,
+   "ee": 13,
+   "oh": 14,
+   "oo": 15,
+   "m": 16,
+   "f": 17,
+   "l": 18,
+   "enormous": 19,
+   "lopsided": 20
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     290,
+     95
+    ],
+    [
+     440,
+     95
+    ],
+    [
+     440,
+     160
+    ],
+    [
+     290,
+     160
+    ]
+   ],
+   "outline": 2,
+   "fade": 1,
+   "match": false
+  },
+  "mouth": {
+   "keep": [
+    [
+     270,
+     150
+    ],
+    [
+     445,
+     150
+    ],
+    [
+     445,
+     240
+    ],
+    [
+     270,
+     240
+    ]
+   ],
+   "match": false
+  }
+ }
+}

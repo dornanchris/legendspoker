@@ -1,0 +1,93 @@
+{
+ "master": "odysseus_parts/odysseus_face/odysseus_face_01.png",
+ "pieces": "odysseus_parts/odysseus_face/odysseus_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "wink": 7
+  },
+  "brows": {
+   "raised": 8,
+   "together": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 17,
+   "grin": 18,
+   "rueful": 19,
+   "smile": 20
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     190,
+     140
+    ],
+    [
+     318,
+     140
+    ],
+    [
+     318,
+     180
+    ],
+    [
+     190,
+     182
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     190,
+     180
+    ],
+    [
+     318,
+     180
+    ],
+    [
+     318,
+     212
+    ],
+    [
+     190,
+     214
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     210,
+     232
+    ],
+    [
+     335,
+     232
+    ],
+    [
+     335,
+     305
+    ],
+    [
+     210,
+     305
+    ]
+   ]
+  }
+ }
+}

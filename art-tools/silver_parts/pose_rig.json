@@ -1,0 +1,1009 @@
+{
+ "id": "silver",
+ "name": "Long John Silver",
+ "note": "Polygons in the rest pose (A1) pixels. As Kidd: every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. Captain Flint, the parrot, is a prop of the rest pose cut by colour, on the torso, drawn over his head.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    11,
+    13,
+    499,
+    478
+   ],
+   "what": "at rest, hands apart, the parrot on his right shoulder"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    516,
+    35,
+    503,
+    456
+   ],
+   "what": "peeking",
+   "reg": [
+    1.0,
+    4,
+    22
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1026,
+    16,
+    499,
+    475
+   ],
+   "what": "checking",
+   "reg": [
+    1.0,
+    4,
+    3
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    11,
+    501,
+    497,
+    481
+   ],
+   "what": "calling",
+   "reg": [
+    1.0,
+    3,
+    -3
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    516,
+    499,
+    502,
+    482
+   ],
+   "what": "betting, smiling",
+   "reg": [
+    1.0,
+    2,
+    -5
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1026,
+    501,
+    499,
+    480
+   ],
+   "what": "folding, cheerful",
+   "reg": [
+    1.0,
+    3,
+    -3
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    12,
+    15,
+    501,
+    478
+   ],
+   "what": "all in",
+   "reg": [
+    1.0,
+    -4,
+    0
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    519,
+    37,
+    499,
+    456
+   ],
+   "what": "showing",
+   "reg": [
+    1.0,
+    -1,
+    22
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1022,
+    45,
+    506,
+    448
+   ],
+   "what": "collecting",
+   "reg": [
+    1.0,
+    -1,
+    30
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    13,
+    511,
+    500,
+    473
+   ],
+   "what": "the parrot squawks (TELL)",
+   "reg": [
+    1.0,
+    -5,
+    5
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    514,
+    511,
+    503,
+    473
+   ],
+   "what": "the parrot preens (decoy)",
+   "reg": [
+    1.0,
+    -5,
+    6
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1024,
+    516,
+    503,
+    468
+   ],
+   "what": "the parrot sidles along his shoulder (TELL)",
+   "reg": [
+    1.0,
+    2,
+    11
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    10,
+    6,
+    514,
+    502
+   ],
+   "what": "the parrot flaps and settles (decoy)",
+   "reg": [
+    1.0,
+    4,
+    -25
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    513,
+    46,
+    522,
+    462
+   ],
+   "what": "strokes the parrot's head (TELL)",
+   "reg": [
+    1.0,
+    7,
+    15
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1037,
+    49,
+    491,
+    459
+   ],
+   "what": "wipes his hands on his apron (decoy)",
+   "reg": [
+    1.0,
+    -2,
+    18
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    10,
+    515,
+    503,
+    467
+   ],
+   "what": "grins at everyone",
+   "reg": [
+    1.0,
+    4,
+    10
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    521,
+    517,
+    514,
+    465
+   ],
+   "what": "raps his crutch",
+   "reg": [
+    1.0,
+    4,
+    12
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1043,
+    526,
+    485,
+    456
+   ],
+   "what": "chin in hand, friendly",
+   "reg": [
+    1.0,
+    4,
+    21
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    5,
+    23,
+    508,
+    467
+   ],
+   "what": "talking, spinning a yarn",
+   "reg": [
+    1.0,
+    -3,
+    12
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    519,
+    43,
+    496,
+    447
+   ],
+   "what": "facing a big bet: eyes narrowed, still smiling",
+   "reg": [
+    1.0,
+    -3,
+    32
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1014,
+    50,
+    521,
+    438
+   ],
+   "what": "lost a pot: a broad laugh, palms up",
+   "reg": [
+    1.0,
+    -9,
+    39
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    12,
+    527,
+    504,
+    455
+   ],
+   "what": "won a pot: a wink, chips drawn in",
+   "reg": [
+    1.0,
+    0,
+    23
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    520,
+    541,
+    495,
+    440
+   ],
+   "what": "heads up: leaning in, smile gone cold",
+   "reg": [
+    1.0,
+    0,
+    38
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1014,
+    458,
+    521,
+    523
+   ],
+   "what": "knocked out: two fingers to his brow",
+   "reg": [
+    1.0,
+    -9,
+    -45
+   ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    10,
+    178,
+    632,
+    586
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.805,
+    8.0,
+    18.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    519,
+    50,
+    868,
+    714
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.805,
+    -103.9,
+    -81.0
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1316,
+    257,
+    615,
+    507
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.805,
+    15.6,
+    80.0
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 351,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  220,
+  350,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 208,
+ "neck": [
+  262,
+  200
+ ],
+ "frame_margin": 111,
+ "stock_box": [
+  200,
+  200,
+  330,
+  260
+ ],
+ "master": {
+  "piece": "silver_parts/silver_face/silver_face_01.png",
+  "cut_below": 340,
+  "face": "silver_parts/face.json",
+  "file": "silver_parts/silver_rig/master.png",
+  "layers": "silver_parts/silver_rig/face",
+  "head_box": [
+   200,
+   0,
+   352,
+   208
+  ],
+  "replace_head": true,
+  "heads": {
+   "viewer": "silver_parts/silver_face/silver_face_24.png"
+  },
+  "cloth": [
+   15,
+   110
+  ],
+  "fill_poly": [
+   [
+    [
+     330,
+     150
+    ],
+    [
+     352,
+     150
+    ],
+    [
+     352,
+     208
+    ],
+    [
+     330,
+     208
+    ]
+   ]
+  ],
+  "shoulder_y": 170,
+  "props": {
+   "parrot": {
+    "poly": [
+     [
+      30,
+      215
+     ],
+     [
+      40,
+      170
+     ],
+     [
+      80,
+      120
+     ],
+     [
+      120,
+      70
+     ],
+     [
+      160,
+      30
+     ],
+     [
+      192,
+      30
+     ],
+     [
+      208,
+      55
+     ],
+     [
+      208,
+      95
+     ],
+     [
+      200,
+      125
+     ],
+     [
+      185,
+      150
+     ],
+     [
+      180,
+      190
+     ],
+     [
+      130,
+      195
+     ],
+     [
+      95,
+      205
+     ],
+     [
+      50,
+      225
+     ]
+    ],
+    "saturated": 70,
+    "also": [
+     [
+      [
+       176,
+       50
+      ],
+      [
+       196,
+       42
+      ],
+      [
+       208,
+       58
+      ],
+      [
+       207,
+       90
+      ],
+      [
+       197,
+       112
+      ],
+      [
+       184,
+       120
+      ],
+      [
+       176,
+       98
+      ]
+     ],
+     [
+      [
+       105,
+       160
+      ],
+      [
+       180,
+       160
+      ],
+      [
+       180,
+       192
+      ],
+      [
+       105,
+       192
+      ]
+     ]
+    ],
+    "pivot": [
+     150,
+     178
+    ],
+    "parent": "torso",
+    "z": 21.5
+   }
+  },
+  "place": [
+   -83,
+   7,
+   0.68
+  ]
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    30,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     280
+    ],
+    [
+     80,
+     280
+    ],
+    [
+     80,
+     310
+    ],
+    [
+     10,
+     315
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, rolled sleeve and hand",
+     "poly": [
+      [
+       0,
+       300
+      ],
+      [
+       60,
+       285
+      ],
+      [
+       140,
+       300
+      ],
+      [
+       170,
+       330
+      ],
+      [
+       205,
+       370
+      ],
+      [
+       245,
+       390
+      ],
+      [
+       258,
+       420
+      ],
+      [
+       252,
+       465
+      ],
+      [
+       150,
+       465
+      ],
+      [
+       100,
+       425
+      ],
+      [
+       40,
+       405
+      ],
+      [
+       0,
+       395
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    470,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     420,
+     280
+    ],
+    [
+     499,
+     280
+    ],
+    [
+     499,
+     310
+    ],
+    [
+     420,
+     310
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, rolled sleeve and hand",
+     "poly": [
+      [
+       305,
+       425
+      ],
+      [
+       318,
+       395
+      ],
+      [
+       365,
+       372
+      ],
+      [
+       380,
+       330
+      ],
+      [
+       420,
+       310
+      ],
+      [
+       470,
+       302
+      ],
+      [
+       499,
+       320
+      ],
+      [
+       499,
+       410
+      ],
+      [
+       460,
+       420
+      ],
+      [
+       445,
+       465
+      ],
+      [
+       305,
+       465
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      60,
+      300
+     ],
+     [
+      490,
+      300
+     ],
+     [
+      490,
+      492
+     ],
+     [
+      60,
+      492
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      60,
+      300
+     ],
+     [
+      490,
+      300
+     ],
+     [
+      490,
+      492
+     ],
+     [
+      60,
+      492
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      60,
+      300
+     ],
+     [
+      490,
+      300
+     ],
+     [
+      490,
+      492
+     ],
+     [
+      60,
+      492
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      60,
+      300
+     ],
+     [
+      490,
+      300
+     ],
+     [
+      490,
+      492
+     ],
+     [
+      60,
+      492
+     ]
+    ]
+   ]
+  },
+  "squawk": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "preen": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "sidle": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "flap": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "stroke": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "apron": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "grin_round": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "crutch": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "chin": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      60,
+      300
+     ],
+     [
+      490,
+      300
+     ],
+     [
+      490,
+      492
+     ],
+     [
+      60,
+      492
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
+  }
+ },
+ "runtime": "../web/art/silver",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  10,
+  75
+ ],
+ "wood_rows_only": true,
+ "felt_holes": true,
+ "felt_blue": true
+}

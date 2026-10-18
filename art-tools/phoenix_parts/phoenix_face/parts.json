@@ -1,0 +1,206 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "phoenix_face_01.png",
+      "label": "",
+      "x": 16,
+      "y": 12,
+      "w": 384,
+      "h": 436,
+      "pivot": [
+        192.0,
+        218.0
+      ],
+      "area": 99193
+    },
+    {
+      "index": 2,
+      "file": "phoenix_face_02.png",
+      "label": "",
+      "x": 434,
+      "y": 62,
+      "w": 326,
+      "h": 251,
+      "pivot": [
+        163.0,
+        125.5
+      ],
+      "area": 53930
+    },
+    {
+      "index": 3,
+      "file": "phoenix_face_03.png",
+      "label": "",
+      "x": 787,
+      "y": 61,
+      "w": 326,
+      "h": 255,
+      "pivot": [
+        163.0,
+        127.5
+      ],
+      "area": 53811
+    },
+    {
+      "index": 4,
+      "file": "phoenix_face_04.png",
+      "label": "",
+      "x": 1153,
+      "y": 61,
+      "w": 330,
+      "h": 257,
+      "pivot": [
+        165.0,
+        128.5
+      ],
+      "area": 53749
+    },
+    {
+      "index": 5,
+      "file": "phoenix_face_05.png",
+      "label": "",
+      "x": 426,
+      "y": 324,
+      "w": 331,
+      "h": 252,
+      "pivot": [
+        165.5,
+        126.0
+      ],
+      "area": 54626
+    },
+    {
+      "index": 6,
+      "file": "phoenix_face_06.png",
+      "label": "",
+      "x": 787,
+      "y": 327,
+      "w": 336,
+      "h": 250,
+      "pivot": [
+        168.0,
+        125.0
+      ],
+      "area": 54978
+    },
+    {
+      "index": 7,
+      "file": "phoenix_face_07.png",
+      "label": "",
+      "x": 1158,
+      "y": 332,
+      "w": 339,
+      "h": 254,
+      "pivot": [
+        169.5,
+        127.0
+      ],
+      "area": 54609
+    },
+    {
+      "index": 8,
+      "file": "phoenix_face_08.png",
+      "label": "",
+      "x": 15,
+      "y": 458,
+      "w": 383,
+      "h": 501,
+      "pivot": [
+        191.5,
+        250.5
+      ],
+      "area": 117347
+    },
+    {
+      "index": 9,
+      "file": "phoenix_face_09.png",
+      "label": "",
+      "x": 439,
+      "y": 583,
+      "w": 208,
+      "h": 138,
+      "pivot": [
+        104.0,
+        69.0
+      ],
+      "area": 13551
+    },
+    {
+      "index": 10,
+      "file": "phoenix_face_10.png",
+      "label": "",
+      "x": 817,
+      "y": 579,
+      "w": 201,
+      "h": 136,
+      "pivot": [
+        100.5,
+        68.0
+      ],
+      "area": 14193
+    },
+    {
+      "index": 11,
+      "file": "phoenix_face_11.png",
+      "label": "",
+      "x": 1156,
+      "y": 578,
+      "w": 209,
+      "h": 195,
+      "pivot": [
+        104.5,
+        97.5
+      ],
+      "area": 16996
+    },
+    {
+      "index": 12,
+      "file": "phoenix_face_12.png",
+      "label": "",
+      "x": 394,
+      "y": 752,
+      "w": 344,
+      "h": 245,
+      "pivot": [
+        172.0,
+        122.5
+      ],
+      "area": 36032
+    },
+    {
+      "index": 13,
+      "file": "phoenix_face_13.png",
+      "label": "",
+      "x": 753,
+      "y": 715,
+      "w": 377,
+      "h": 290,
+      "pivot": [
+        188.5,
+        145.0
+      ],
+      "area": 54827
+    },
+    {
+      "index": 14,
+      "file": "phoenix_face_14.png",
+      "label": "",
+      "x": 1176,
+      "y": 780,
+      "w": 315,
+      "h": 218,
+      "pivot": [
+        157.5,
+        109.0
+      ],
+      "area": 23494
+    }
+  ]
+}

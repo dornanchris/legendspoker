@@ -1,0 +1,23 @@
+{
+ "note": "The Last Crossing, heads up: the player's own figure (the Stranger, in their colour) in the left chair, Death as a player in the right, Pravuil, the Recording Angel, dealing between them (the owner's call). The pieces (sources/pieces.png: the lamp flame on the felt, rain on the windows, the ferryman's boat, the door shut and ajar) are not used yet: the window and door pieces are drawn at other sizes than the backdrop's, and the lamp stands on the felt, which the room's layers draw behind the table.",
+ "seats": {
+  "1": [
+   [
+    1130,
+    0.52,
+    2
+   ]
+  ]
+ },
+ "you": [
+  470,
+  0.52,
+  2
+ ],
+ "you_as": "stranger",
+ "dealer_id": "pravuil",
+ "dealer_name": "Pravuil",
+ "cast": {
+  "death": "death_player"
+ }
+}

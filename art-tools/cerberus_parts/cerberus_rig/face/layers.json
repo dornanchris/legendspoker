@@ -1,0 +1,17 @@
+{
+ "eyes": {
+  "half": "eyes_half.png",
+  "closed": "eyes_closed.png",
+  "viewer": "eyes_viewer.png",
+  "down": "eyes_down.png",
+  "side": "eyes_side.png",
+  "narrow": "eyes_narrow.png"
+ },
+ "mouth": {
+  "rest": "mouth_rest.png",
+  "growl": "mouth_growl.png",
+  "pant": "mouth_pant.png",
+  "whine": "mouth_whine.png",
+  "snarl": "mouth_snarl.png"
+ }
+}

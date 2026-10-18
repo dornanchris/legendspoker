@@ -1,0 +1,843 @@
+{
+ "id": "cyclops",
+ "name": "Polyphemus the Cyclops",
+ "note": "Polygons in the rest pose (A1) pixels. As Socrates and Leonidas: every pose but rest is a whole-figure frame with its own drawn head, placed ('reg') by the apex of its drawn rail. Drawn the same size as the others on his sheet, so he is built a quarter bigger ('scale' 1.25): the giant at the table.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    16,
+    17,
+    495,
+    464
+   ],
+   "what": "at rest, hands apart, the club leaning by his right elbow"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    525,
+    30,
+    494,
+    451
+   ],
+   "reg": [
+    1.0,
+    -2,
+    13
+   ],
+   "what": "peeking at his cards"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1026,
+    17,
+    499,
+    464
+   ],
+   "reg": [
+    1.0,
+    -6,
+    0
+   ],
+   "what": "checking: a knuckle raps"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    17,
+    499,
+    494,
+    460
+   ],
+   "reg": [
+    1.0,
+    3,
+    19
+   ],
+   "what": "calling"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    524,
+    498,
+    495,
+    461
+   ],
+   "reg": [
+    1.0,
+    -9,
+    20
+   ],
+   "what": "betting"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1032,
+    500,
+    493,
+    477
+   ],
+   "reg": [
+    1.0,
+    -2,
+    21
+   ],
+   "what": "folding"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    15,
+    14,
+    497,
+    466
+   ],
+   "reg": [
+    1.0,
+    -17,
+    18
+   ],
+   "what": "all in"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    525,
+    30,
+    486,
+    450
+   ],
+   "reg": [
+    1.0,
+    14,
+    19
+   ],
+   "what": "showing his cards"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1018,
+    25,
+    507,
+    455
+   ],
+   "reg": [
+    1.0,
+    -5,
+    22
+   ],
+   "what": "collecting the pot"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    16,
+    510,
+    497,
+    450
+   ],
+   "reg": [
+    1.0,
+    9,
+    19
+   ],
+   "what": "the eye narrows (TELL)"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    527,
+    509,
+    484,
+    451
+   ],
+   "reg": [
+    1.0,
+    17,
+    15
+   ],
+   "what": "a slow blink (decoy)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1023,
+    490,
+    501,
+    470
+   ],
+   "reg": [
+    1.0,
+    7,
+    -2
+   ],
+   "what": "sniffs the air (TELL)"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    13,
+    12,
+    494,
+    474
+   ],
+   "reg": [
+    1.0,
+    0,
+    -14
+   ],
+   "what": "tilts his head, listening (decoy)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    517,
+    45,
+    496,
+    442
+   ],
+   "reg": [
+    1.0,
+    3,
+    19
+   ],
+   "what": "thumps the table (TELL)"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1016,
+    45,
+    513,
+    442
+   ],
+   "reg": [
+    1.0,
+    -29,
+    25
+   ],
+   "what": "shifts his weight (decoy)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    15,
+    494,
+    495,
+    484
+   ],
+   "reg": [
+    1.0,
+    6,
+    -13
+   ],
+   "what": "counts his sheep on his fingers"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    523,
+    495,
+    493,
+    483
+   ],
+   "reg": [
+    1.0,
+    22,
+    -13
+   ],
+   "what": "scratches his beard"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1026,
+    490,
+    496,
+    488
+   ],
+   "reg": [
+    1.0,
+    0,
+    -14
+   ],
+   "what": "a hand on the club"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    15,
+    13,
+    500,
+    459
+   ],
+   "reg": [
+    1.0,
+    -7,
+    10
+   ],
+   "what": "talking, pointing"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    516,
+    19,
+    494,
+    453
+   ],
+   "reg": [
+    1.0,
+    -22,
+    14
+   ],
+   "what": "facing a big bet"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1017,
+    23,
+    507,
+    449
+   ],
+   "reg": [
+    1.0,
+    -23,
+    18
+   ],
+   "what": "lost a pot: a growl"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    15,
+    481,
+    497,
+    472
+   ],
+   "reg": [
+    1.0,
+    -22,
+    -3
+   ],
+   "what": "won a pot: a grin"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    514,
+    498,
+    513,
+    455
+   ],
+   "reg": [
+    1.0,
+    0,
+    20
+   ],
+   "what": "heads up: on both fists"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1029,
+    475,
+    496,
+    478
+   ],
+   "reg": [
+    1.0,
+    -35,
+    -31
+   ],
+   "what": "knocked out: picks up his club"
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    13,
+    220,
+    618,
+    546
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8453,
+    3.0,
+    -1.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    617,
+    23,
+    672,
+    743
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8453,
+    -27.0,
+    -141.3
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1295,
+    219,
+    639,
+    548
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8453,
+    -0.8,
+    2.4
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 342,
+ "scale": 1.25,
+ "origin_x": 225,
+ "register_box": [
+  220,
+  230,
+  400,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 222,
+ "neck": [
+  300,
+  215
+ ],
+ "frame_margin": 171,
+ "stock_box": [
+  240,
+  215,
+  360,
+  280
+ ],
+ "master": {
+  "piece": "cyclops_parts/cyclops_face/cyclops_face_01.png",
+  "cut_below": 335,
+  "face": "cyclops_parts/face.json",
+  "file": "cyclops_parts/cyclops_rig/master.png",
+  "layers": "cyclops_parts/cyclops_rig/face",
+  "head_box": [
+   200,
+   0,
+   402,
+   222
+  ],
+  "fit": [
+   0.4,
+   1.1
+  ],
+  "replace_head": true,
+  "heads": {
+   "viewer": "cyclops_parts/cyclops_face/cyclops_face_22.png",
+   "sniff": "cyclops_parts/cyclops_face/cyclops_face_23.png"
+  },
+  "cloth": [
+   140,
+   256
+  ],
+  "fill_poly": [
+   [
+    [
+     200,
+     130
+    ],
+    [
+     245,
+     130
+    ],
+    [
+     245,
+     222
+    ],
+    [
+     200,
+     222
+    ]
+   ],
+   [
+    [
+     370,
+     120
+    ],
+    [
+     402,
+     120
+    ],
+    [
+     402,
+     222
+    ],
+    [
+     370,
+     222
+    ]
+   ]
+  ],
+  "shoulder_y": 170
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     40,
+     290
+    ],
+    [
+     90,
+     290
+    ],
+    [
+     90,
+     310
+    ],
+    [
+     40,
+     310
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and hand",
+     "poly": [
+      [
+       20,
+       300
+      ],
+      [
+       70,
+       290
+      ],
+      [
+       130,
+       300
+      ],
+      [
+       190,
+       330
+      ],
+      [
+       235,
+       350
+      ],
+      [
+       258,
+       390
+      ],
+      [
+       255,
+       440
+      ],
+      [
+       150,
+       440
+      ],
+      [
+       90,
+       410
+      ],
+      [
+       40,
+       380
+      ],
+      [
+       20,
+       360
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    470,
+    310
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     455,
+     290
+    ],
+    [
+     495,
+     290
+    ],
+    [
+     495,
+     305
+    ],
+    [
+     455,
+     305
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and hand",
+     "poly": [
+      [
+       310,
+       360
+      ],
+      [
+       360,
+       330
+      ],
+      [
+       420,
+       305
+      ],
+      [
+       470,
+       295
+      ],
+      [
+       495,
+       300
+      ],
+      [
+       495,
+       440
+      ],
+      [
+       310,
+       440
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own"
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own"
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "props": [
+    [
+     [
+      239,
+      369
+     ],
+     [
+      315,
+      369
+     ],
+     [
+      315,
+      453
+     ],
+     [
+      239,
+      453
+     ]
+    ]
+   ],
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "props": [
+    [
+     [
+      211,
+      318
+     ],
+     [
+      313,
+      318
+     ],
+     [
+      313,
+      467
+     ],
+     [
+      211,
+      467
+     ]
+    ]
+   ],
+   "below": 120
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own"
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "props": [
+    [
+     [
+      95,
+      380
+     ],
+     [
+      475,
+      380
+     ],
+     [
+      475,
+      476
+     ],
+     [
+      95,
+      476
+     ]
+    ]
+   ],
+   "below": 130
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own"
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "props": [
+    [
+     [
+      248,
+      334
+     ],
+     [
+      407,
+      334
+     ],
+     [
+      407,
+      484
+     ],
+     [
+      248,
+      484
+     ]
+    ]
+   ],
+   "below": 140
+  },
+  "narrow": {
+   "pose": "B4",
+   "head": "own"
+  },
+  "blink": {
+   "pose": "B5",
+   "head": "own"
+  },
+  "sniff": {
+   "pose": "B6",
+   "head": "own"
+  },
+  "listen": {
+   "pose": "C1",
+   "head": "own"
+  },
+  "thump": {
+   "pose": "C2",
+   "head": "own"
+  },
+  "shift": {
+   "pose": "C3",
+   "head": "own"
+  },
+  "count": {
+   "pose": "C4",
+   "head": "own"
+  },
+  "beard": {
+   "pose": "C5",
+   "head": "own"
+  },
+  "club": {
+   "pose": "C6",
+   "head": "own"
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own"
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own"
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own"
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own"
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own"
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own"
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
+  }
+ },
+ "runtime": "../web/art/cyclops",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  10,
+  40
+ ],
+ "wood_rows_only": true,
+ "felt_teal": true,
+ "felt_holes": true
+}

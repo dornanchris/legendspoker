@@ -99,6 +99,11 @@
           { "id": "wh_tr_fdr_05b", "speaker": "roosevelt", "text": "Do not call me that at the table.", "status": "draft" },
           { "id": "wh_tr_fdr_05c", "speaker": "fdr", "text": "Eleanor does.", "status": "draft" },
           { "id": "wh_tr_fdr_05d", "speaker": "roosevelt", "text": "Eleanor has earned it.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_tr_fdr_06a", "speaker": "roosevelt", "text": "I built the West Wing, Franklin. What did you ever add to the house?", "status": "draft" },
+          { "id": "wh_tr_fdr_06b", "speaker": "fdr", "text": "A swimming pool. The public paid for it, by subscription.", "status": "draft" },
+          { "id": "wh_tr_fdr_06c", "speaker": "roosevelt", "text": "...That's a better trick than the West Wing.", "status": "draft" }
         ]
       ],
       "needles": [
@@ -109,6 +114,14 @@
         [
           { "id": "wh_nd_02a", "speaker": "fdr", "to": "roosevelt", "text": "There goes the cavalry. Round the long way, for once.", "status": "draft" },
           { "id": "wh_nd_02b", "speaker": "roosevelt", "text": "A strategic withdrawal, cousin. I've read about them.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_11a", "speaker": "fdr", "to": "roosevelt", "text": "Speak softly, cousin. You can leave the big stick by the door.", "status": "draft" },
+          { "id": "wh_nd_11b", "speaker": "roosevelt", "text": "I'll fetch it on the way out. And beat you with it.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_12a", "speaker": "fdr", "to": "roosevelt", "text": "I vetoed six hundred bills, Theodore. Yours was easy.", "status": "draft" },
+          { "id": "wh_nd_12b", "speaker": "roosevelt", "text": "Six hundred! Did you sign anything?", "status": "draft" }
         ]
       ]
     },
@@ -138,6 +151,12 @@
           { "id": "wh_al_tr_04b", "speaker": "roosevelt", "text": "The bullet went through the manuscript first. Fifty pages, folded double. Long speeches save lives!", "status": "draft" },
           { "id": "wh_al_tr_04c", "speaker": "lincoln", "text": "Mine was two minutes.", "status": "draft" },
           { "id": "wh_al_tr_04d", "speaker": "roosevelt", "text": "...Well. Yours was better.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_al_tr_05a", "speaker": "roosevelt", "text": "My boy Quentin took a pony up in the White House elevator. To cheer up his brother.", "status": "draft" },
+          { "id": "wh_al_tr_05b", "speaker": "lincoln", "text": "My Tad drove two goats through the East Room.", "status": "draft" },
+          { "id": "wh_al_tr_05c", "speaker": "roosevelt", "text": "During a reception?", "status": "draft" },
+          { "id": "wh_al_tr_05d", "speaker": "lincoln", "text": "During a reception.", "status": "draft" }
         ]
       ],
       "needles": [
@@ -148,6 +167,11 @@
         [
           { "id": "wh_nd_04a", "speaker": "lincoln", "to": "roosevelt", "text": "Theodore. Did you just go around an obstacle?", "status": "draft" },
           { "id": "wh_nd_04b", "speaker": "roosevelt", "text": "...Once. Tell no one.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_13a", "speaker": "lincoln", "to": "roosevelt", "text": "I pardoned a turkey once, Theodore. You I'll let off with a warning.", "status": "draft" },
+          { "id": "wh_nd_13b", "speaker": "roosevelt", "text": "I am not a turkey!", "status": "draft" },
+          { "id": "wh_nd_13c", "speaker": "lincoln", "text": "He said the same.", "status": "draft" }
         ]
       ]
     },
@@ -180,6 +204,20 @@
           { "id": "wh_gw_05b", "speaker": "washington", "text": "I did.", "status": "draft" },
           { "id": "wh_gw_05c", "speaker": "roosevelt", "text": "Bully! What was it like?", "status": "draft" },
           { "id": "wh_gw_05d", "speaker": "washington", "text": "Cold.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_gw_06a", "speaker": "roosevelt", "text": "I named it the White House, General! Officially! What did you add to the place?", "status": "draft" },
+          { "id": "wh_gw_06b", "speaker": "washington", "text": "The ground it stands on.", "status": "draft" },
+          { "id": "wh_gw_06c", "speaker": "roosevelt", "text": "...Bully.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_gw_07a", "speaker": "roosevelt", "text": "General! Settle it for the children. The cherry tree. Did you?", "status": "draft" },
+          { "id": "wh_gw_07b", "speaker": "washington", "text": "Ask the tree.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_gw_08a", "speaker": "lincoln", "text": "You chose a fine spot for the house, General.", "status": "draft" },
+          { "id": "wh_gw_08b", "speaker": "washington", "text": "I never slept a night in it.", "status": "draft" },
+          { "id": "wh_gw_08c", "speaker": "lincoln", "text": "Mary made up for it. She spent the whole budget on wallpaper and china.", "status": "draft" }
         ]
       ],
       "needles": [
@@ -204,6 +242,65 @@
       ]
     },
 
+    "jfk_table": {
+      "relationship": "The hidden visitor (table.visitor): the thirty-fifth president, who walks in when the player wins a pot holding a three and a five while a chair is empty. These fire only once he is seated. He is the youngest man ever elected; the others are older, grander and mildly put out. Never refer to his death or to any assassination.",
+      "exchanges": [
+        [
+          { "id": "wh_jfk_tr_01a", "speaker": "jfk", "text": "Youngest man ever elected." },
+          { "id": "wh_jfk_tr_01b", "speaker": "roosevelt", "text": "I was forty-two!" },
+          { "id": "wh_jfk_tr_01c", "speaker": "jfk", "text": "Elected, Colonel." },
+          { "id": "wh_jfk_tr_01d", "speaker": "roosevelt", "text": "Bully for the technicality!", "note": "TR took office at 42 in 1901 and was first elected in 1904; Kennedy was elected at 43." }
+        ],
+        [
+          { "id": "wh_jfk_fdr_01a", "speaker": "fdr", "text": "A Navy man, I hear." },
+          { "id": "wh_jfk_fdr_01b", "speaker": "jfk", "text": "PT-109. A motor torpedo boat." },
+          { "id": "wh_jfk_fdr_01c", "speaker": "fdr", "text": "I was Assistant Secretary of the Navy. I'd have found you a bigger boat." },
+          { "id": "wh_jfk_fdr_01d", "speaker": "jfk", "text": "A Japanese destroyer found me a smaller one.", "note": "The Amagiri ran PT-109 down in August 1943 and cut it in two." }
+        ],
+        [
+          { "id": "wh_jfk_fdr_02a", "speaker": "fdr", "text": "Your father was my ambassador in London." },
+          { "id": "wh_jfk_fdr_02b", "speaker": "jfk", "text": "He had his own ideas about London." },
+          { "id": "wh_jfk_fdr_02c", "speaker": "fdr", "text": "He had his own ideas about everything. That is why I sent him to London.", "note": "Joseph P. Kennedy, ambassador 1938-40. That FDR wanted him at a distance is the common account; keep it a quip." }
+        ],
+        [
+          { "id": "wh_jfk_al_01a", "speaker": "lincoln", "text": "They tell me you wrote a book about courage." },
+          { "id": "wh_jfk_al_01b", "speaker": "jfk", "text": "Eight senators who voted against their own side." },
+          { "id": "wh_jfk_al_01c", "speaker": "lincoln", "text": "Only eight?" },
+          { "id": "wh_jfk_al_01d", "speaker": "jfk", "text": "It was a short book.", "note": "Profiles in Courage (1956)." }
+        ],
+        [
+          { "id": "wh_jfk_gw_01a", "speaker": "jfk", "text": "'Ask not what your country can do for you.' That was my inaugural." },
+          { "id": "wh_jfk_gw_01b", "speaker": "washington", "text": "My second was a hundred and thirty-five words." },
+          { "id": "wh_jfk_gw_01c", "speaker": "jfk", "text": "Mine was better." },
+          { "id": "wh_jfk_gw_01d", "speaker": "washington", "text": "Mine was shorter.", "note": "Washington's second inaugural (1793) is the shortest on record, 135 words." }
+        ],
+        [
+          { "id": "wh_jfk_fdr_03a", "speaker": "jfk", "text": "Mr. President, I swim in your pool every day. For my back.", "status": "draft" },
+          { "id": "wh_jfk_fdr_03b", "speaker": "fdr", "text": "Then it's doing exactly what it was built for.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_jfk_al_02a", "speaker": "jfk", "text": "Jackie found a desk in the basement, made from a British ship. It's in the Oval Office now.", "status": "draft" },
+          { "id": "wh_jfk_al_02b", "speaker": "lincoln", "text": "Oval? In my day it was a square room and a line of office-seekers down the stairs.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_jfk_gw_02a", "speaker": "jfk", "text": "General, the cherry tree. I have to ask.", "status": "draft" },
+          { "id": "wh_jfk_gw_02b", "speaker": "washington", "text": "It is a very good story.", "status": "draft" },
+          { "id": "wh_jfk_gw_02c", "speaker": "jfk", "text": "But is it true?", "status": "draft" },
+          { "id": "wh_jfk_gw_02d", "speaker": "washington", "text": "It is a very good story.", "status": "draft" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "wh_nd_09a", "speaker": "jfk", "to": "roosevelt", "text": "Speak softly, Colonel. You folded." },
+          { "id": "wh_nd_09b", "speaker": "roosevelt", "text": "I carried a big stick! I simply chose not to swing it!" }
+        ],
+        [
+          { "id": "wh_nd_10a", "speaker": "fdr", "to": "jfk", "text": "There, my boy. The old hands still have a trick or two." },
+          { "id": "wh_nd_10b", "speaker": "jfk", "text": "Nobody ever said you weren't a politician, Mr. President." }
+        ]
+      ]
+    },
+
     "lincoln_fdr": {
       "relationship": "Two wartime presidents. Quiet mutual recognition — the table's one serious beat. Use sparingly.",
       "exchanges": [
@@ -211,6 +308,51 @@
           { "id": "wh_al_fdr_01a", "speaker": "fdr", "text": "You had a war as well." },
           { "id": "wh_al_fdr_01b", "speaker": "lincoln", "text": "I had the one where we were the enemy." },
           { "id": "wh_al_fdr_01c", "speaker": "fdr", "text": "...Yes. I would take mine." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "wh_nd_lf_01a", "speaker": "lincoln", "to": "fdr", "text": "Fold to me again, Franklin, and I'll issue a proclamation about it.", "status": "draft" },
+          { "id": "wh_nd_lf_01b", "speaker": "fdr", "text": "Make it a fireside one. I'll listen from here.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_lf_02a", "speaker": "fdr", "to": "lincoln", "text": "A new deal for you next time, Mr. Lincoln.", "status": "draft" },
+          { "id": "wh_nd_lf_02b", "speaker": "lincoln", "text": "I'll settle for the old Union and my chips back.", "status": "draft" }
+        ]
+      ]
+    },
+
+    "lincoln_washington": {
+      "relationship": "Lincoln reveres Washington, and would very much like to take a pot off him. Washington answers in as few words as the joke allows.",
+      "exchanges": [
+        [
+          { "id": "wh_lw_01a", "speaker": "lincoln", "text": "General, I've been meaning to liberate a few chips from your purse.", "status": "draft" },
+          { "id": "wh_lw_01b", "speaker": "washington", "text": "You may try.", "status": "draft" },
+          { "id": "wh_lw_01c", "speaker": "lincoln", "text": "I've freed harder things than chips.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_lw_02a", "speaker": "lincoln", "text": "Is it true about the cherry tree, General?", "status": "draft" },
+          { "id": "wh_lw_02b", "speaker": "washington", "text": "A parson made it up to sell a book.", "status": "draft" },
+          { "id": "wh_lw_02c", "speaker": "lincoln", "text": "So you could tell a lie.", "status": "draft" },
+          { "id": "wh_lw_02d", "speaker": "washington", "text": "I did not. He did.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_lw_03a", "speaker": "washington", "text": "Mr. Lincoln. You sit very tall at a card table.", "status": "draft" },
+          { "id": "wh_lw_03b", "speaker": "lincoln", "text": "Six foot four, General. The hat is for the rest of the argument.", "status": "draft" }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "wh_nd_lw_01a", "speaker": "lincoln", "to": "washington", "text": "Just liberating a little something from the General's purse.", "status": "draft" },
+          { "id": "wh_nd_lw_01b", "speaker": "washington", "text": "[counts what is left, exactly]", "type": "stage_direction", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_lw_02a", "speaker": "lincoln", "to": "washington", "text": "I do proclaim, General: that one was mine.", "status": "draft" },
+          { "id": "wh_nd_lw_02b", "speaker": "washington", "text": "So it was.", "status": "draft" }
+        ],
+        [
+          { "id": "wh_nd_lw_03a", "speaker": "washington", "to": "lincoln", "text": "Sit down, Mr. President.", "status": "draft" },
+          { "id": "wh_nd_lw_03b", "speaker": "lincoln", "text": "General, I am six foot four. This is me sitting down.", "status": "draft" }
         ]
       ]
     }
@@ -278,7 +420,19 @@
     { "id": "wh_gw_hu_04", "speaker": "washington", "text": "Good. Again.", "trigger": "player_wins_pot" }
   ],
 
+  "visitor_arrival": [
+    { "id": "wh_jfk_in_01", "speaker": "narration", "text": "A door opens somewhere down the hall. A young man in a narrow navy suit comes in with his hands in his jacket pockets, finds the empty chair, and sits down in it as if the meeting had been called for him.", "note": "The player has just won a pot holding a three and a five: the thirty-fifth president. Nobody says 'three-fifths'." },
+    { "id": "wh_jfk_in_02", "speaker": "jfk", "text": "Thirty-five. I believe somebody called my number." },
+    { "id": "wh_jfk_in_03", "speaker": "death", "text": "Mr. President. You were not on the list." },
+    { "id": "wh_jfk_in_04", "speaker": "jfk", "text": "I rarely was. I usually came anyway." },
+    { "id": "wh_jfk_in_05", "speaker": "washington", "text": "[counts along the portraits on the wall, to thirty-five, and nods once]", "type": "stage_direction" }
+  ],
+
   "eliminated": {
+    "jfk": [
+      { "id": "wh_jfk_out_01", "speaker": "jfk", "text": "Well. We chose this one because it was hard.", "note": "The 1962 Rice University speech: 'not because they are easy, but because they are hard'." },
+      { "id": "wh_jfk_out_02", "speaker": "jfk", "text": "[straightens his tie, nods to the portraits, and goes out the way he came in]", "type": "stage_direction" }
+    ],
     "lincoln": [
       { "id": "wh_al_out_01", "speaker": "lincoln", "text": "I lost to Douglas once. It did not go the way he expected afterwards.", "note": "True: lost the 1858 Senate race to Stephen Douglas, beat him for the presidency in 1860." },
       { "id": "wh_al_out_02", "speaker": "lincoln", "text": "Don't get up. I'll sit by the fire and see how it comes out." }

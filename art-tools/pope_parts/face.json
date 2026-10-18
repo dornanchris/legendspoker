@@ -1,0 +1,93 @@
+{
+ "note": "The master is the rest pose's own head (pope_master.png, cut from pose A1): the face sheet's head has a wider mitre and did not fit it.",
+ "master": "pope_parts/pope_face/pope_master.png",
+ "pieces": "pope_parts/pope_face/pope_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 11,
+   "ah": 12,
+   "ee": 13,
+   "oh": 14,
+   "oo": 15,
+   "m": 16,
+   "f": 17,
+   "l": 18,
+   "beam": 19,
+   "pained": 20
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     205,
+     132
+    ],
+    [
+     312,
+     132
+    ],
+    [
+     312,
+     168
+    ],
+    [
+     205,
+     168
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     205,
+     150
+    ],
+    [
+     312,
+     150
+    ],
+    [
+     312,
+     196
+    ],
+    [
+     205,
+     196
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     192,
+     198
+    ],
+    [
+     314,
+     198
+    ],
+    [
+     314,
+     272
+    ],
+    [
+     192,
+     272
+    ]
+   ]
+  }
+ }
+}

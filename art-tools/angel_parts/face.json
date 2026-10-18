@@ -1,0 +1,13 @@
+{
+ "note": "The master is the rest pose's own head (eyes open, the calm smile). Eyes: 3 half, 4 closed, 5 to the left of the picture, 6 to the right, 7 down (2, open, is the master's own). Mouths: 9 closed and straight, 10 a little open (8, the smile, is the master's own). Heads 11-13 (turned, bowed) are unused: he turns in whole-figure frames. One scale for the set (refit from piece 1).",
+ "master": "angel_parts/pravuil_face/pravuil_master.png",
+ "pieces": "angel_parts/pravuil_face/pravuil_face_%02d.png",
+ "layers": {
+  "eyes": {"half": 3, "closed": 4, "left": 5, "right": 6, "down": 7},
+  "mouth": {"closed": 9, "open": 10}
+ },
+ "regions": {
+  "eyes": {"keep": [[176, 108], [284, 108], [284, 136], [176, 136]]},
+  "mouth": {"keep": [[198, 150], [264, 150], [264, 176], [198, 176]]}
+ }
+}

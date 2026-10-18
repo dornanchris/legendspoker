@@ -1,0 +1,108 @@
+{
+  "id": "scipio",
+  "name": "Scipio Africanus",
+  "short": "Scipio",
+  "epithet": "The Man Who Beat Hannibal",
+  "pronoun": "he",
+  "table": "rome",
+  "role": "seat",
+  "arrives": false,
+  "origin": "History",
+  "era": "236–183 BC · general, victor of Zama",
+  "dials": {
+    "aggression": 0.66,
+    "tightness": 0.72,
+    "bluffFrequency": 0.14,
+    "tiltSensitivity": 0.08,
+    "adaptivity": 0.8,
+    "betRespect": 0.7,
+    "skill": 0.55,
+    "noise": 0.3
+  },
+  "quirks": [
+    {
+      "type": "patient",
+      "minEquity": 0.56
+    },
+    {
+      "type": "check_raise",
+      "minEquity": 0.74,
+      "chance": 0.5
+    }
+  ],
+  "tells": [
+    {
+      "signal": "elephant_aside",
+      "text": "moves the ivory elephant out of the way",
+      "correlate": "strong",
+      "reliability": 0.7
+    },
+    {
+      "signal": "looks_up",
+      "text": "looks up, as though someone above had advised him",
+      "correlate": "bluffing",
+      "reliability": 0.68
+    },
+    {
+      "signal": "elephant_door",
+      "text": "turns the ivory elephant to face the door",
+      "correlate": "weak",
+      "reliability": 0.68
+    }
+  ],
+  "idles": [
+    "studies each player in turn, like a map",
+    "sets his chips out in ranks, with lanes between them",
+    "straightens his cloak, Greek fashion",
+    "taps the ivory elephant's trunk"
+  ],
+  "profile": {
+    "ledger": "Seventeen at his first battle, and he spent it saving his father. He beat Hannibal by studying him. Rome thanked him with an audit.",
+    "ledger_beaten": "He studied you, as he studied Hannibal. This time the lesson went the other way, and he took it as a general should.",
+    "history": [
+      "Publius Cornelius Scipio, of one of Rome's great families. At seventeen he saved his wounded father at the Ticinus (Polybius); he survived Cannae, and afterwards, Livy says, drew his sword on young nobles who meant to abandon Italy and made them swear to stay. When his father and uncle were killed in Spain, nobody else would stand for the command, and he was given it at about twenty-five. He took New Carthage by sending men across its lagoon at the ebb, a tide he had learned about from fishermen, and he told the soldiers Neptune had promised it.",
+      "In 202 BC he beat Hannibal at Zama, in Africa, leaving lanes in his lines for Hannibal's elephants to charge harmlessly through, and took the name Africanus. He had learned much of it from Hannibal himself. Livy tells of a captive young woman he returned untouched to the man she was to marry, with her ransom as a wedding gift; the Renaissance painted it again and again. Later his enemies in the Senate called him to account for public money. He tore up the account book in front of them, and he died in retirement at Liternum, in 183 BC, having asked not to be buried in Rome."
+    ],
+    "at_the_table": "He plays few hands and plays them firmly, and he spends the rest of the time watching you. Nobody at this table changes his game to suit an opponent faster; whatever you did the last time, he has planned for. He rarely bluffs. With a strong hand he likes to let you charge at him first, the way he let the elephants run, and close in afterwards. Losing does not rattle him. He was at Cannae.",
+    "look": "Silhouette: a clean-shaven Roman general in his thirties, short dark hair, a strong, calm, watchful face. A red general's cloak worn loose in the Greek fashion (Cato complained of it) over a plain bronze cuirass. No helmet, no laurel (that is Caesar's). Prop: a small carved ivory elephant, a trophy from Zama, standing on the felt beside his chips: big enough to read at a fifth of the screen, and it carries two of his three tells.",
+    "prop": "An ivory elephant from Zama",
+    "public_domain": "Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are."
+  },
+  "callouts": {
+    "fold": [
+      "Fold. I was at Cannae. I know when to leave a field.",
+      "Fold. Another day, another ground.",
+      "Not here. Not on this ground.",
+      "Fold. I'll study the next one."
+    ],
+    "check": [
+      "Check.",
+      "Check. Let it come.",
+      "Check. I've left you a lane.",
+      "Check. Show me the charge."
+    ],
+    "call": [
+      "Call.",
+      "Call. I'll hold the line.",
+      "Call. Steady.",
+      "Call. Let's see the next ground."
+    ],
+    "bet": [
+      "Bet.",
+      "Bet. Forward, in order.",
+      "Bet. The line advances.",
+      "Bet. In Africa, then."
+    ],
+    "raise": [
+      "Raise. Close the lanes.",
+      "Raise. I've seen this charge before.",
+      "Raise. Take it to Africa.",
+      "Raise. You've shown me enough."
+    ],
+    "all_in": [
+      "All in. Zama, then.",
+      "Everything. Across the lagoon at the ebb.",
+      "All in. Rome, or nothing."
+    ]
+  }
+}

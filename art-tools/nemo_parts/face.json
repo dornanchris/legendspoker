@@ -1,0 +1,69 @@
+{
+ "note": "The master is the rest pose's own head and cap (nemo_master.png, cut from pose A1), as the Pope's is. The sheet drew the mouths front-on, so only the lips and the moustache over them are laid on the three-quarter head (a small mouth region). The brow pieces are not used: every eye piece carries its own brows.",
+ "master": "nemo_parts/nemo_face/nemo_master.png",
+ "pieces": "nemo_parts/nemo_face/nemo_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 3,
+   "closed": 4,
+   "viewer": 5,
+   "down": 6,
+   "side": 7,
+   "narrow": 8
+  },
+  "mouth": {
+   "rest": 11,
+   "ah": 12,
+   "ee": 13,
+   "oh": 14,
+   "oo": 15,
+   "m": 16,
+   "f": 17,
+   "l": 18,
+   "smile": 19,
+   "set": 20
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     245,
+     108
+    ],
+    [
+     340,
+     108
+    ],
+    [
+     340,
+     140
+    ],
+    [
+     245,
+     140
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     278,
+     152
+    ],
+    [
+     345,
+     152
+    ],
+    [
+     345,
+     196
+    ],
+    [
+     278,
+     196
+    ]
+   ]
+  }
+ }
+}

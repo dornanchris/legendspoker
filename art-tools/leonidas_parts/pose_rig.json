@@ -1,0 +1,1321 @@
+{
+ "id": "leonidas",
+ "name": "Leonidas",
+ "note": "Polygons in the rest pose (A1) pixels. As Socrates: every pose but rest is a whole-figure frame with its own drawn head, placed ('reg') by the apex of its drawn rail. His red cloak and crest are the rail's wood colour, so wood counts only at the rail (wood_rows_only) and the rail's orange needs green in it (rail_green).",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    16,
+    20,
+    495,
+    464
+   ],
+   "what": "at rest, hands apart, the helmet by his right elbow"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    521,
+    30,
+    492,
+    454
+   ],
+   "reg": [
+    1.0,
+    8,
+    8
+   ],
+   "what": "peeking at his cards"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1025,
+    20,
+    495,
+    464
+   ],
+   "reg": [
+    1.0,
+    8,
+    -2
+   ],
+   "what": "checking: one knuckle raps"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    16,
+    515,
+    495,
+    458
+   ],
+   "reg": [
+    1.0,
+    6,
+    11
+   ],
+   "what": "calling"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    521,
+    519,
+    498,
+    454
+   ],
+   "reg": [
+    1.0,
+    9,
+    15
+   ],
+   "what": "betting"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1025,
+    519,
+    498,
+    454
+   ],
+   "reg": [
+    1.0,
+    -1,
+    15
+   ],
+   "what": "folding"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    15,
+    29,
+    496,
+    455
+   ],
+   "reg": [
+    1.0,
+    -13,
+    34
+   ],
+   "what": "all in"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    518,
+    21,
+    493,
+    463
+   ],
+   "reg": [
+    1.0,
+    6,
+    11
+   ],
+   "what": "showing his cards"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1011,
+    31,
+    510,
+    453
+   ],
+   "reg": [
+    1.0,
+    -24,
+    27
+   ],
+   "what": "collecting the pot"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    10,
+    504,
+    502,
+    472
+   ],
+   "reg": [
+    1.0,
+    9,
+    0
+   ],
+   "what": "both fists planted (TELL)"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    520,
+    503,
+    490,
+    473
+   ],
+   "reg": [
+    1.0,
+    20,
+    -7
+   ],
+   "what": "arms folded (decoy)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1019,
+    507,
+    501,
+    469
+   ],
+   "reg": [
+    1.0,
+    1,
+    -4
+   ],
+   "what": "cracks his knuckles"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    13,
+    12,
+    496,
+    472
+   ],
+   "reg": [
+    1.0,
+    12,
+    -10
+   ],
+   "what": "lifts his chin (TELL)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    525,
+    22,
+    487,
+    463
+   ],
+   "reg": [
+    1.0,
+    18,
+    -1
+   ],
+   "what": "disdain across the table (decoy)"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1022,
+    17,
+    498,
+    468
+   ],
+   "reg": [
+    1.0,
+    11,
+    -6
+   ],
+   "what": "a hard breath out (TELL)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    15,
+    500,
+    494,
+    477
+   ],
+   "reg": [
+    1.0,
+    5,
+    -9
+   ],
+   "what": "a slow breath in (decoy)"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    521,
+    503,
+    491,
+    474
+   ],
+   "reg": [
+    1.0,
+    -2,
+    -4
+   ],
+   "what": "tugs his cloak straight"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1020,
+    514,
+    505,
+    463
+   ],
+   "reg": [
+    1.0,
+    4,
+    6
+   ],
+   "what": "sets the helmet an inch left"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    15,
+    21,
+    494,
+    464
+   ],
+   "reg": [
+    1.0,
+    2,
+    0
+   ],
+   "what": "talking, one finger up"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    524,
+    17,
+    488,
+    468
+   ],
+   "reg": [
+    1.0,
+    15,
+    -5
+   ],
+   "what": "facing a big bet"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1024,
+    42,
+    496,
+    443
+   ],
+   "reg": [
+    1.0,
+    12,
+    19
+   ],
+   "what": "lost a pot"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    15,
+    507,
+    494,
+    469
+   ],
+   "reg": [
+    1.0,
+    6,
+    -2
+   ],
+   "what": "won a pot: a curt nod"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    513,
+    522,
+    499,
+    454
+   ],
+   "reg": [
+    1.0,
+    -4,
+    12
+   ],
+   "what": "heads up: on both fists"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1026,
+    491,
+    494,
+    485
+   ],
+   "reg": [
+    1.0,
+    12,
+    -16
+   ],
+   "what": "knocked out: the helmet lifted"
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    16,
+    248,
+    604,
+    533
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8441,
+    1.0,
+    2.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    640,
+    20,
+    646,
+    761
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8441,
+    -10.4,
+    -163.4
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1296,
+    322,
+    631,
+    459
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8441,
+    -10.0,
+    66.1
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 343,
+ "scale": 1.0,
+ "origin_x": 270,
+ "register_box": [
+  220,
+  230,
+  400,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 215,
+ "neck": [
+  290,
+  205
+ ],
+ "frame_margin": 193,
+ "stock_box": [
+  240,
+  215,
+  360,
+  280
+ ],
+ "master": {
+  "piece": "leonidas_parts/leonidas_face/leonidas_face_01.png",
+  "cut_below": 338,
+  "face": "leonidas_parts/face.json",
+  "file": "leonidas_parts/leonidas_rig/master.png",
+  "layers": "leonidas_parts/leonidas_rig/face",
+  "head_box": [
+   150,
+   0,
+   378,
+   215
+  ],
+  "fit": [
+   0.4,
+   1.1
+  ],
+  "replace_head": true,
+  "heads": {
+   "chin": "leonidas_parts/leonidas_face/leonidas_face_22.png",
+   "viewer": "leonidas_parts/leonidas_face/leonidas_face_23.png"
+  },
+  "cloth": [
+   40,
+   240
+  ],
+  "fill_poly": [
+   [
+    [
+     150,
+     140
+    ],
+    [
+     205,
+     140
+    ],
+    [
+     205,
+     215
+    ],
+    [
+     150,
+     215
+    ]
+   ],
+   [
+    [
+     340,
+     160
+    ],
+    [
+     378,
+     160
+    ],
+    [
+     378,
+     215
+    ],
+    [
+     340,
+     215
+    ]
+   ]
+  ],
+  "shoulder_y": 170
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    165,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     175,
+     282
+    ],
+    [
+     205,
+     282
+    ],
+    [
+     205,
+     302
+    ],
+    [
+     175,
+     302
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and hand, and the helmet standing by them",
+     "poly": [
+      [
+       0,
+       178
+      ],
+      [
+       112,
+       178
+      ],
+      [
+       152,
+       236
+      ],
+      [
+       160,
+       296
+      ],
+      [
+       200,
+       304
+      ],
+      [
+       242,
+       318
+      ],
+      [
+       282,
+       338
+      ],
+      [
+       298,
+       380
+      ],
+      [
+       294,
+       436
+      ],
+      [
+       0,
+       436
+      ]
+     ],
+     "props": [
+      [
+       [
+        0,
+        178
+       ],
+       [
+        156,
+        178
+       ],
+       [
+        156,
+        436
+       ],
+       [
+        0,
+        436
+       ]
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    450,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     440,
+     282
+    ],
+    [
+     495,
+     282
+    ],
+    [
+     495,
+     300
+    ],
+    [
+     440,
+     300
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and hand",
+     "poly": [
+      [
+       334,
+       350
+      ],
+      [
+       380,
+       330
+      ],
+      [
+       430,
+       314
+      ],
+      [
+       470,
+       298
+      ],
+      [
+       495,
+       318
+      ],
+      [
+       495,
+       372
+      ],
+      [
+       462,
+       402
+      ],
+      [
+       452,
+       436
+      ],
+      [
+       338,
+       436
+      ],
+      [
+       330,
+       400
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ],
+    [
+     [
+      282,
+      377
+     ],
+     [
+      340,
+      377
+     ],
+     [
+      340,
+      431
+     ],
+     [
+      282,
+      431
+     ]
+    ]
+   ],
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ],
+    [
+     [
+      271,
+      315
+     ],
+     [
+      331,
+      315
+     ],
+     [
+      331,
+      434
+     ],
+     [
+      271,
+      434
+     ]
+    ]
+   ],
+   "below": 110
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ],
+    [
+     [
+      152,
+      382
+     ],
+     [
+      434,
+      382
+     ],
+     [
+      434,
+      479
+     ],
+     [
+      152,
+      479
+     ]
+    ]
+   ],
+   "below": 140
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ],
+    [
+     [
+      229,
+      345
+     ],
+     [
+      411,
+      345
+     ],
+     [
+      411,
+      469
+     ],
+     [
+      229,
+      469
+     ]
+    ]
+   ],
+   "below": 140
+  },
+  "fists": {
+   "pose": "B4",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "arms_folded": {
+   "pose": "B5",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "knuckles": {
+   "pose": "B6",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "chin": {
+   "pose": "C1",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "disdain": {
+   "pose": "C2",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "exhale": {
+   "pose": "C3",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "breathe_in": {
+   "pose": "C4",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "cloak": {
+   "pose": "C5",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "helmet": {
+   "pose": "C6",
+   "head": "own"
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "props": [
+    [
+     [
+      -30,
+      170
+     ],
+     [
+      165,
+      170
+     ],
+     [
+      165,
+      445
+     ],
+     [
+      -30,
+      445
+     ]
+    ]
+   ]
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own"
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true,
+   "props": [
+    [
+     [
+      0,
+      178
+     ],
+     [
+      156,
+      178
+     ],
+     [
+      156,
+      436
+     ],
+     [
+      0,
+      436
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true,
+   "props": [
+    [
+     [
+      0,
+      178
+     ],
+     [
+      156,
+      178
+     ],
+     [
+      156,
+      436
+     ],
+     [
+      0,
+      436
+     ]
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/leonidas",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "wood_rows_only": true,
+ "rail_band": [
+  10,
+  40
+ ]
+}

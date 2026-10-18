@@ -1,0 +1,15 @@
+{
+ "master": "roosevelt_parts/roosevelt_face/roosevelt_face_01.png",
+ "pieces": "roosevelt_parts/roosevelt_face/roosevelt_face_%02d.png",
+ "layers": {
+  "eyes": {"half": 3, "closed": 4, "viewer": 5, "down": 7, "up": 8, "narrow": 9},
+  "brows": {"raised": 10, "down": 11},
+  "mouth": {"rest": 12, "ah": 13, "ee": 14, "oh": 15, "oo": 16, "m": 17, "f": 18, "l": 19, "grin": 20, "laugh": 21, "scowl": 22}
+ },
+ "regions": {
+  "eyes": {"keep": [[110, 160], [306, 156], [306, 210], [110, 214]]},
+  "brows": {"keep": [[110, 118], [306, 112], [306, 156], [110, 160]]},
+  "mouth": {"keep": [[150, 214], [306, 214], [306, 335], [150, 335]],
+            "except": [[[228, 180], [278, 180], [282, 222], [262, 230], [236, 226]]]}
+ }
+}

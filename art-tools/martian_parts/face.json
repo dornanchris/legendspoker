@@ -1,0 +1,69 @@
+{
+ "note": "The master is the rest pose's own head. Eyes 2-8 (half, closed, the near eye shut for its out-of-time blink, toward you, down, narrowed, wide; no far-eye-shut piece came). Beaks 10-15 (open a little, open wide, round, pinched, quivering, pleased; 9, closed, is unused: at rest the master's own beak shows). The face sheet drew the beaks nearly front-on, so the patches are kept to the beak itself. Head 1 and the front head 16 are unused. The beaks were placed by hand (fits.json: scale 0.8, centred on the master's beak): the automatic fit put them on the cheek.",
+ "master": "martian_parts/martian_face/martian_master.png",
+ "pieces": "martian_parts/martian_face/martian_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "odd": 4,
+   "viewer": 5,
+   "down": 6,
+   "narrow": 7,
+   "wide": 8
+  },
+  "mouth": {
+   "ah": 11,
+   "ee": 10,
+   "oh": 12,
+   "oo": 12,
+   "m": 13,
+   "f": 13,
+   "l": 10,
+   "pleased": 15,
+   "quiver": 14
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     215,
+     80
+    ],
+    [
+     412,
+     80
+    ],
+    [
+     412,
+     168
+    ],
+    [
+     215,
+     168
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     276,
+     148
+    ],
+    [
+     360,
+     148
+    ],
+    [
+     360,
+     216
+    ],
+    [
+     276,
+     216
+    ]
+   ]
+  }
+ }
+}

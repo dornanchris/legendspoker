@@ -1,0 +1,318 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "blackbeard_face_01.png",
+      "label": "",
+      "x": 13,
+      "y": 4,
+      "w": 418,
+      "h": 326,
+      "pivot": [
+        209.0,
+        163.0
+      ],
+      "area": 98769
+    },
+    {
+      "index": 2,
+      "file": "blackbeard_face_02.png",
+      "label": "",
+      "x": 418,
+      "y": 118,
+      "w": 163,
+      "h": 73,
+      "pivot": [
+        81.5,
+        36.5
+      ],
+      "area": 9357
+    },
+    {
+      "index": 3,
+      "file": "blackbeard_face_03.png",
+      "label": "",
+      "x": 597,
+      "y": 117,
+      "w": 167,
+      "h": 72,
+      "pivot": [
+        83.5,
+        36.0
+      ],
+      "area": 9462
+    },
+    {
+      "index": 4,
+      "file": "blackbeard_face_04.png",
+      "label": "",
+      "x": 781,
+      "y": 117,
+      "w": 160,
+      "h": 76,
+      "pivot": [
+        80.0,
+        38.0
+      ],
+      "area": 9540
+    },
+    {
+      "index": 5,
+      "file": "blackbeard_face_05.png",
+      "label": "",
+      "x": 975,
+      "y": 118,
+      "w": 165,
+      "h": 73,
+      "pivot": [
+        82.5,
+        36.5
+      ],
+      "area": 9401
+    },
+    {
+      "index": 6,
+      "file": "blackbeard_face_06.png",
+      "label": "",
+      "x": 1153,
+      "y": 118,
+      "w": 168,
+      "h": 75,
+      "pivot": [
+        84.0,
+        37.5
+      ],
+      "area": 9832
+    },
+    {
+      "index": 7,
+      "file": "blackbeard_face_07.png",
+      "label": "",
+      "x": 1346,
+      "y": 118,
+      "w": 168,
+      "h": 77,
+      "pivot": [
+        84.0,
+        38.5
+      ],
+      "area": 9913
+    },
+    {
+      "index": 8,
+      "file": "blackbeard_face_08.png",
+      "label": "",
+      "x": 763,
+      "y": 215,
+      "w": 167,
+      "h": 74,
+      "pivot": [
+        83.5,
+        37.0
+      ],
+      "area": 9618
+    },
+    {
+      "index": 9,
+      "file": "blackbeard_face_09.png",
+      "label": "",
+      "x": 965,
+      "y": 218,
+      "w": 165,
+      "h": 73,
+      "pivot": [
+        82.5,
+        36.5
+      ],
+      "area": 9414
+    },
+    {
+      "index": 10,
+      "file": "blackbeard_face_10.png",
+      "label": "",
+      "x": 25,
+      "y": 337,
+      "w": 238,
+      "h": 136,
+      "pivot": [
+        119.0,
+        68.0
+      ],
+      "area": 25283
+    },
+    {
+      "index": 11,
+      "file": "blackbeard_face_11.png",
+      "label": "",
+      "x": 284,
+      "y": 340,
+      "w": 233,
+      "h": 136,
+      "pivot": [
+        116.5,
+        68.0
+      ],
+      "area": 24244
+    },
+    {
+      "index": 12,
+      "file": "blackbeard_face_12.png",
+      "label": "",
+      "x": 536,
+      "y": 336,
+      "w": 227,
+      "h": 134,
+      "pivot": [
+        113.5,
+        67.0
+      ],
+      "area": 23957
+    },
+    {
+      "index": 13,
+      "file": "blackbeard_face_13.png",
+      "label": "",
+      "x": 777,
+      "y": 338,
+      "w": 234,
+      "h": 133,
+      "pivot": [
+        117.0,
+        66.5
+      ],
+      "area": 24151
+    },
+    {
+      "index": 14,
+      "file": "blackbeard_face_14.png",
+      "label": "",
+      "x": 1031,
+      "y": 340,
+      "w": 239,
+      "h": 133,
+      "pivot": [
+        119.5,
+        66.5
+      ],
+      "area": 24639
+    },
+    {
+      "index": 15,
+      "file": "blackbeard_face_15.png",
+      "label": "",
+      "x": 1290,
+      "y": 337,
+      "w": 231,
+      "h": 137,
+      "pivot": [
+        115.5,
+        68.5
+      ],
+      "area": 24007
+    },
+    {
+      "index": 16,
+      "file": "blackbeard_face_16.png",
+      "label": "",
+      "x": 156,
+      "y": 486,
+      "w": 243,
+      "h": 141,
+      "pivot": [
+        121.5,
+        70.5
+      ],
+      "area": 26554
+    },
+    {
+      "index": 17,
+      "file": "blackbeard_face_17.png",
+      "label": "",
+      "x": 420,
+      "y": 488,
+      "w": 230,
+      "h": 134,
+      "pivot": [
+        115.0,
+        67.0
+      ],
+      "area": 24384
+    },
+    {
+      "index": 18,
+      "file": "blackbeard_face_18.png",
+      "label": "",
+      "x": 665,
+      "y": 479,
+      "w": 238,
+      "h": 150,
+      "pivot": [
+        119.0,
+        75.0
+      ],
+      "area": 26662
+    },
+    {
+      "index": 19,
+      "file": "blackbeard_face_19.png",
+      "label": "",
+      "x": 929,
+      "y": 473,
+      "w": 241,
+      "h": 148,
+      "pivot": [
+        120.5,
+        74.0
+      ],
+      "area": 27948
+    },
+    {
+      "index": 20,
+      "file": "blackbeard_face_20.png",
+      "label": "",
+      "x": 1191,
+      "y": 482,
+      "w": 243,
+      "h": 146,
+      "pivot": [
+        121.5,
+        73.0
+      ],
+      "area": 26884
+    },
+    {
+      "index": 21,
+      "file": "blackbeard_face_21.png",
+      "label": "",
+      "x": 238,
+      "y": 623,
+      "w": 478,
+      "h": 375,
+      "pivot": [
+        239.0,
+        187.5
+      ],
+      "area": 141554
+    },
+    {
+      "index": 22,
+      "file": "blackbeard_face_22.png",
+      "label": "",
+      "x": 811,
+      "y": 627,
+      "w": 492,
+      "h": 371,
+      "pivot": [
+        246.0,
+        185.5
+      ],
+      "area": 123840
+    }
+  ]
+}

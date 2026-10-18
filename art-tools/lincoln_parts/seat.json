@@ -1,0 +1,107 @@
+{
+ "id": "lincoln",
+ "name": "Abraham Lincoln",
+ "pieces": "lincoln_parts/lincoln/lincoln_%02d.png",
+ "torso": 14,
+ "head": 7,
+ "heads": [
+  [
+   8,
+   "fit"
+  ],
+  [
+   9,
+   "fit"
+  ],
+  [
+   10,
+   "fit"
+  ],
+  [
+   1,
+   "fit"
+  ],
+  [
+   2,
+   "fit"
+  ],
+  [
+   3,
+   "fit"
+  ],
+  [
+   4,
+   "fit"
+  ],
+  [
+   5,
+   "fit"
+  ],
+  [
+   6,
+   "fit"
+  ]
+ ],
+ "hat": "from_head",
+ "pose": "rim",
+ "far": [
+  82,
+  88
+ ],
+ "near": [
+  82,
+  88
+ ],
+ "hands": [
+  89,
+  90,
+  92
+ ],
+ "cuff": "tube",
+ "collar": 0.2,
+ "tune": {
+  "kt": 2.46,
+  "kh": 1.79,
+  "neck": 118,
+  "hdx": 15,
+  "tyb": 980,
+  "ka": 1.68,
+  "kha": 1.68,
+  "nr": -10,
+  "fr": 190,
+  "nhr": -25,
+  "fhr": 205,
+  "ne": 30,
+  "fe": 30,
+  "ey": -42,
+  "elbow_fade": 20,
+  "wrist_back": 10
+ },
+ "master": {
+  "file": "lincoln_parts/lincoln_face/lincoln_face_01.png",
+  "fit": [
+   0.4,
+   0.62
+  ],
+  "cut_below": 350
+ },
+ "face": "lincoln_parts/face.json",
+ "hand_extras": {
+  "near": [
+   {
+    "name": "fist_down",
+    "file": "lincoln_parts/lincoln_hands/lincoln_hands_05.png",
+    "scale": 0.6,
+    "trim_stub": true
+   },
+   {
+    "name": "fist_up",
+    "file": "lincoln_parts/lincoln_hands/lincoln_hands_06.png",
+    "scale": 0.6,
+    "trim_stub": true
+   }
+  ]
+ },
+ "layout": "lincoln_parts/lincoln_rig/parts_sheet_layout.json",
+ "note": "Superseded for the game by pose_rig.json (the puppet is built from the pose illustrations). Kept because it makes the master head and its face layers (lincoln_rig/master.png, lincoln_rig/face/) that pose_rig uses."
+}

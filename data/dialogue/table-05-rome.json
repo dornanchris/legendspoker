@@ -5,10 +5,11 @@
   "champion": "caesar",
   "status": "draft",
   "notes": {
-    "tone": "Rome mixes eras freely; Death deals across all of history. Three kinds of Roman power at one table: the man Rome owned (Spartacus), the man who bought Rome's highest office (the Pope), and the man whose name became the word for emperor (Caesar). Plus a dog who is pure instinct. Gothic and grand, funny from mannerism: Caesar's third person, the Pope's charm, the dog's three opinions.",
+    "tone": "Rome mixes eras freely; Death deals across all of history. Three kinds of Roman power at one table: the man Rome owned (Spartacus), the man who bought Rome's highest office (the Pope), and the man whose name became the word for emperor (Caesar). Plus the general who saved Rome from Hannibal and was audited for it afterwards (Scipio), and a dog who is pure instinct. Gothic and grand, funny from mannerism: Caesar's third person, the Pope's charm, the dog's three opinions.",
     "difficulty": "Mid-tour. The contempt here is Roman: status, ownership and price, never personal insult. Spartacus sizes you up like stock at a market; the Pope is charming at you rather than to you.",
-    "dealer_plant": "The single 'the dealer arranged it' beat is ro_plant_01-03. It fires on champion_arrival and plays straight after the arrival beat (ro_arrive_01-03): Caesar sits, reads the table like a muster roll, and finds one name he did not enrol; his secretary's record gives the answer, because the arrival lines play without a presence check and any seat may be the chair Caesar just took. Do NOT add a second.",
+    "dealer_plant": "The single 'the dealer arranged it' beat is ro_plant_01-03. It fires on champion_arrival and plays straight after the arrival beat (ro_arrive_01-03): Caesar sits, reads the table like a muster roll, and finds one name he did not enrol; his secretary's record gives the answer, because the arrival lines play without a presence check and any of the four seats may be the chair Caesar just took. Do NOT add a second.",
     "caesar": "Arrives after the first elimination, procedurally rather than grandly: a vacancy was reported and he filled it. He takes the chair the first eliminated player leaves; the presence line (his laurel wreath waiting by the door, its owner promised the next free chair) sets it up. He speaks of himself in the third person some of the time, as his Commentaries do; keep it to about half his lines so it stays a mannerism, not a gimmick. No 'Et tu, Brute' (Shakespeare's, not the sources'). There is deliberately no first_elimination Death aside at this table: that moment belongs to the arrival.",
+    "scipio": "Ancient sources only: Polybius and Livy, Valerius Maximus where flagged. He holds the fourth chair: the table's reader, calm, dry, Republican to the bone. He is the Republic at its best and the reason it began to fear its generals; Caesar is where that fear came true. He never brags about Zama unprompted, and he is the one person here who has lost a battle (Cannae) and says so.",
     "cerberus": "Never speaks. Every Cerberus line is a stage direction, written to follow his name ('Cerberus sniffs at...'). Only Death translates him, drily, and only in banter. No other character understands him, though the Pope pretends to.",
     "spartacus": "Ancient sources only: Plutarch (Life of Crassus 8-11) and Appian (Civil Wars 1.116-120). Nothing from the 1960 film or the TV series. Never 'I am Spartacus'.",
     "pope": "Historical Alexander VI: nepotism, deals, charm, the conclave. The jokes are about his politics and his family, never about the faith. Display name is still an open design question.",
@@ -38,7 +39,7 @@
     {
       "id": "ro_intro_02",
       "speaker": "death",
-      "text": "A runaway gladiator, a Borgia pope and the dog from the gate of the underworld. The first chair to come free is already spoken for. In Rome, it usually is.",
+      "text": "A runaway gladiator, the general who beat Hannibal, a Borgia pope and the dog from the gate of the underworld. The first chair to come free is already spoken for. In Rome, it usually is.",
       "trigger": "table_open"
     },
     {
@@ -63,7 +64,7 @@
       "speaker": "narration",
       "text": "The secretary consults his tablet and holds it up. One line, in a neat hand: the dealer arranged it.",
       "sequence": "ro_plant_03",
-      "note": "The answer comes from the record, not a seated player: any of the three seats may be the chair Caesar has just taken."
+      "note": "The answer comes from the record, not a seated player: any of the four seats may be the chair Caesar has just taken."
     },
     {
       "id": "ro_plant_03",
@@ -189,8 +190,110 @@
       ]
     },
 
+    "scipio_caesar": {
+      "relationship": "The Republic's greatest general and the general who ended the Republic. Scipio refused the title of king in Spain (Polybius 10.40); Caesar pushed a crown away at the Lupercalia, twice, in public (Plutarch, Caesar 61). Scipio answered the Senate's audit by tearing up his accounts; Caesar answered the Senate with an army. And in Africa, against Metellus Scipio, Caesar's soldiers feared the saying that a Scipio could not be beaten there, so Caesar kept a worthless Scipio of his own at the head of his army (Plutarch, Caesar 52; Suetonius 59). Only fires once Caesar has arrived.",
+      "exchanges": [
+        [
+          { "id": "ro_sc_jc_01a", "speaker": "caesar", "text": "In Africa they told Caesar's soldiers a Scipio could never be beaten there." },
+          { "id": "ro_sc_jc_01b", "speaker": "scipio", "text": "They were right." },
+          { "id": "ro_sc_jc_01c", "speaker": "caesar", "text": "So Caesar found a Scipio of his own. A nobody of your family. He kept him at the front of the army." },
+          { "id": "ro_sc_jc_01d", "speaker": "scipio", "text": "And?" },
+          { "id": "ro_sc_jc_01e", "speaker": "caesar", "text": "And a Scipio won in Africa.", "note": "Plutarch, Caesar 52; Suetonius, Caesar 59. The opposing commander was Metellus Scipio, at Thapsus." }
+        ],
+        [
+          { "id": "ro_sc_jc_02a", "speaker": "scipio", "text": "The Spaniards wanted to call me king. I told them imperator would do." },
+          { "id": "ro_sc_jc_02b", "speaker": "caesar", "text": "Caesar was offered a crown at the Lupercalia. He pushed it away. Twice." },
+          { "id": "ro_sc_jc_02c", "speaker": "scipio", "text": "Once was enough for me." },
+          { "id": "ro_sc_jc_02d", "speaker": "caesar", "text": "Caesar wanted to be sure they had all seen him do it.", "note": "Polybius 10.40 (Scipio); Plutarch, Caesar 61 (Caesar). Never 'thrice': that is Shakespeare's count." }
+        ],
+        [
+          { "id": "ro_sc_jc_03a", "speaker": "scipio", "text": "The Senate once asked me for my accounts. I tore the book up in front of them." },
+          { "id": "ro_sc_jc_03b", "speaker": "caesar", "text": "The Senate wanted Caesar in court as well. He brought the legions instead." },
+          { "id": "ro_sc_jc_03c", "speaker": "scipio", "text": "That is the difference between us." },
+          { "id": "ro_sc_jc_03d", "speaker": "caesar", "text": "Yes. Caesar won.", "note": "Polybius 23.14; Livy 38.55. The table's one argument about the Republic: let Caesar have the last word, and let it sound like a loss." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "ro_nd_13a", "speaker": "caesar", "to": "scipio", "text": "Africanus, beaten. Caesar has a note of that." },
+          { "id": "ro_nd_13b", "speaker": "scipio", "text": "Write it beside Cannae. I came back from that too." }
+        ],
+        [
+          { "id": "ro_nd_14a", "speaker": "scipio", "to": "caesar", "text": "Caesar yields. I'll tell the Senate. They'll be relieved." },
+          { "id": "ro_nd_14b", "speaker": "caesar", "text": "The Senate is never relieved for long." }
+        ]
+      ]
+    },
+
+    "spartacus_scipio": {
+      "relationship": "The man Rome owned and the man Rome's order was built round, a century apart. Hannibal came over the Alps into Italy and Scipio sent him home; Spartacus wanted to lead his people out over the same Alps, and his army would not go (Plutarch, Crassus 9). At New Carthage Scipio made two thousand captured craftsmen public slaves of Rome, promising them freedom when the war was won (Polybius 10.17). Spartacus respects him as a soldier and does not forgive him as a Roman.",
+      "exchanges": [
+        [
+          { "id": "ro_sp_sc_01a", "speaker": "spartacus", "text": "Hannibal came over the Alps into Italy. I tried to take my people out over them." },
+          { "id": "ro_sp_sc_01b", "speaker": "scipio", "text": "Hannibal I sent home. By sea, from Africa." },
+          { "id": "ro_sp_sc_01c", "speaker": "spartacus", "text": "Nobody offered to send me home." },
+          { "id": "ro_sp_sc_01d", "speaker": "scipio", "text": "No. Rome sent Crassus." }
+        ],
+        [
+          { "id": "ro_sp_sc_02a", "speaker": "scipio", "text": "At New Carthage I took two thousand craftsmen. I told them they'd be free when the war was won." },
+          { "id": "ro_sp_sc_02b", "speaker": "spartacus", "text": "And were they?" },
+          { "id": "ro_sp_sc_02c", "speaker": "scipio", "text": "The war went well." },
+          { "id": "ro_sp_sc_02d", "speaker": "spartacus", "text": "That isn't what I asked.", "note": "Polybius 10.17. A serious beat; the scene ends on Spartacus's question, unanswered." }
+        ],
+        [
+          { "id": "ro_sp_sc_03a", "speaker": "spartacus", "text": "They say you drew a sword on your own officers once." },
+          { "id": "ro_sp_sc_03b", "speaker": "scipio", "text": "After Cannae. They meant to abandon Italy. I made them swear to stay." },
+          { "id": "ro_sp_sc_03c", "speaker": "spartacus", "text": "I'd have let them go. Free men choose." },
+          { "id": "ro_sp_sc_03d", "speaker": "scipio", "text": "So I hear. Half your army chose, and went south without you.", "note": "Livy 22.53 (the oath at Canusium). Crixus and his men split from Spartacus and were destroyed (Appian 1.117; Plutarch, Crassus 9)." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "ro_nd_15a", "speaker": "scipio", "to": "spartacus", "text": "You withdrew in good order. Rome rarely saw that from you." },
+          { "id": "ro_nd_15b", "speaker": "spartacus", "text": "Rome rarely saw me at all, until it was too late." }
+        ],
+        [
+          { "id": "ro_nd_16a", "speaker": "spartacus", "to": "scipio", "text": "The great general gives ground." },
+          { "id": "ro_nd_16b", "speaker": "scipio", "text": "I was at Cannae. I know when to leave a field." }
+        ]
+      ]
+    },
+
+    "pope_scipio": {
+      "relationship": "The Renaissance's favourite example of restraint and its least restrained pope. Livy's 'continence of Scipio' (26.50: a captive bride returned untouched to her betrothed, her ransom given back as a wedding present) was painted over and over in Italy; Alexander VI was nobody's example of restraint. Scipio was given Spain because nobody else would stand for it (Livy 26.18); the Pope's election was said to have been bought. And Scipio once heard Hannibal rank the great generals (Livy 35.14, as Livy found it in Claudius, after Acilius), a story the Pope takes as advice on elections.",
+      "exchanges": [
+        [
+          { "id": "ro_pope_sc_01a", "speaker": "pope", "text": "The painters adore you, you know. The young woman you gave back to her fiancé." },
+          { "id": "ro_pope_sc_01b", "speaker": "scipio", "text": "With her ransom as a wedding present." },
+          { "id": "ro_pope_sc_01c", "speaker": "pope", "text": "You gave back both. I have never understood that story." },
+          { "id": "ro_pope_sc_01d", "speaker": "scipio", "text": "No. I didn't expect you would." }
+        ],
+        [
+          { "id": "ro_pope_sc_02a", "speaker": "pope", "text": "They gave you Spain at twenty-five, and nobody even stood against you? What did that cost?" },
+          { "id": "ro_pope_sc_02b", "speaker": "scipio", "text": "My father and my uncle. They died there. That was why the post was free." },
+          { "id": "ro_pope_sc_02c", "speaker": "pope", "text": "...Ah. Expensive after all, then.", "note": "Livy 26.18. The one moment the Pope's charm misses; keep his reply short." }
+        ],
+        [
+          { "id": "ro_pope_sc_03a", "speaker": "scipio", "text": "Hannibal once ranked the great generals for me. Alexander first, then Pyrrhus, then himself." },
+          { "id": "ro_pope_sc_03b", "speaker": "pope", "text": "And where were you?" },
+          { "id": "ro_pope_sc_03c", "speaker": "scipio", "text": "I asked where he'd have put himself if he had beaten me. First, he said." },
+          { "id": "ro_pope_sc_03d", "speaker": "pope", "text": "A man after my own heart. Third, until the votes are counted.", "note": "Livy 35.14, which Livy reports at second hand (from Claudius, after Acilius): keep it 'once', not a documented meeting." }
+        ]
+      ],
+      "needles": [
+        [
+          { "id": "ro_nd_17a", "speaker": "pope", "to": "scipio", "text": "Restraint again! The painters will be thrilled." },
+          { "id": "ro_nd_17b", "speaker": "scipio", "text": "Let them paint it. You'll want something to remind you what it looks like." }
+        ],
+        [
+          { "id": "ro_nd_18a", "speaker": "scipio", "to": "pope", "text": "Borgia concedes." },
+          { "id": "ro_nd_18b", "speaker": "pope", "text": "I never concede. I postpone." }
+        ]
+      ]
+    },
+
     "cerberus_table": {
-      "relationship": "Nobody at the table can talk to the dog, so Death translates, drily. Each exchange fires after Cerberus contests a pot with the character in it. The escaped slave meets the guard of the one door nobody gets back out of (Hesiod: he fawns on those who enter and devours those who try to leave); the Pope tries a bribe, which worked on Cerberus exactly once, with a honey cake (Aeneid 6); Caesar recognises a three-headed arrangement.",
+      "relationship": "Nobody at the table can talk to the dog, so Death translates, drily. Each exchange fires after Cerberus contests a pot with the character in it. The escaped slave meets the guard of the one door nobody gets back out of (Hesiod: he fawns on those who enter and devours those who try to leave); the Pope tries a bribe, which worked on Cerberus exactly once, with a honey cake (Aeneid 6); Caesar recognises a three-headed arrangement; Scipio, who took New Carthage by wading its lagoon at the ebb (Polybius 10.14), finds a river with no ebb, and the hound has seen elephants before: Hannibal sent him a great many.",
       "exchanges": [
         [
           { "id": "ro_cer_01a", "speaker": "spartacus", "text": "What does the dog guard?" },
@@ -223,6 +326,16 @@
           { "id": "ro_cer_06a", "speaker": "caesar", "text": "Caesar crossed the Rubicon. And what river do you keep?" },
           { "id": "ro_cer_06b", "speaker": "cerberus", "text": "[licks his chops with all three tongues]", "type": "stage_direction" },
           { "id": "ro_cer_06c", "speaker": "death", "text": "The last one. He would like you to know he has had emperors through it." }
+        ],
+        [
+          { "id": "ro_cer_07a", "speaker": "scipio", "text": "I took a city once by wading its lagoon at low tide." },
+          { "id": "ro_cer_07b", "speaker": "cerberus", "text": "[looks at Scipio with all three heads, then down at the floor, where the river would be]", "type": "stage_direction" },
+          { "id": "ro_cer_07c", "speaker": "death", "text": "He says his river has no low tide. You would not be the first general to ask." }
+        ],
+        [
+          { "id": "ro_cer_08a", "speaker": "scipio", "text": "[sets his ivory elephant down in front of the dog]", "type": "stage_direction" },
+          { "id": "ro_cer_08b", "speaker": "cerberus", "text": "[sniffs it with the left head; the right head growls at it]", "type": "stage_direction" },
+          { "id": "ro_cer_08c", "speaker": "death", "text": "He has seen elephants before. Hannibal sent him a great many." }
         ]
       ],
       "needles": [
@@ -249,6 +362,14 @@
         [
           { "id": "ro_nd_12a", "speaker": "caesar", "to": "cerberus", "text": "Three heads, and not one of them could hold." },
           { "id": "ro_nd_12b", "speaker": "cerberus", "text": "[puts his chins on the table and sulks, three times over]", "type": "stage_direction" }
+        ],
+        [
+          { "id": "ro_nd_19a", "speaker": "cerberus", "to": "scipio", "text": "[sits up very straight at Scipio, three heads in perfect ranks]", "type": "stage_direction" },
+          { "id": "ro_nd_19b", "speaker": "death", "text": "He says he can hold a line too." }
+        ],
+        [
+          { "id": "ro_nd_20a", "speaker": "scipio", "to": "cerberus", "text": "Good dog. You gave way in good order." },
+          { "id": "ro_nd_20b", "speaker": "cerberus", "text": "[the middle head lets Scipio scratch it; the other two pretend not to notice]", "type": "stage_direction" }
         ]
       ]
     }
@@ -260,24 +381,28 @@
       { "id": "ro_p0_02", "speaker": "pope", "text": "Sit, sit. Anywhere you like. No, not there. There." },
       { "id": "ro_p0_03", "speaker": "cerberus", "text": "[sniffs at the player with two heads; the third cannot be bothered]", "type": "stage_direction" },
       { "id": "ro_p0_04", "speaker": "spartacus", "text": "Don't bother looking at the doors. I've already checked them." },
-      { "id": "ro_p0_05", "speaker": "pope", "text": "What a pleasure to meet someone of no importance. It is so rarely allowed me." }
+      { "id": "ro_p0_05", "speaker": "pope", "text": "What a pleasure to meet someone of no importance. It is so rarely allowed me." },
+      { "id": "ro_p0_06", "speaker": "scipio", "text": "I was seventeen at my first battle. I looked about as lost as you do.", "note": "The Ticinus, 218 BC (Polybius 10.3). He saved his father's life there, which he does not mention." }
     ],
     "tier_1": [
       { "id": "ro_p1_01", "speaker": "spartacus", "text": "Tiro. That's what the arena calls a fighter who hasn't had a bout yet. Keep this up and I'll stop calling you it." },
       { "id": "ro_p1_02", "speaker": "pope", "text": "You are learning to smile when you lose. Good. That is most of what Rome can teach anyone." },
       { "id": "ro_p1_03", "speaker": "cerberus", "text": "[turns his middle head to watch the player, and keeps watching]", "type": "stage_direction" },
-      { "id": "ro_p1_04", "speaker": "caesar", "text": "Caesar has made a note of you. It is a short note." }
+      { "id": "ro_p1_04", "speaker": "caesar", "text": "Caesar has made a note of you. It is a short note." },
+      { "id": "ro_p1_05", "speaker": "scipio", "text": "In the legions, tiro meant a recruit before the first battle. You've had yours now." }
     ],
     "tier_2": [
       { "id": "ro_p2_01", "speaker": "spartacus", "text": "{name}. Good. A free person should be called by their own name." },
       { "id": "ro_p2_02", "speaker": "pope", "text": "I have been asking about you. Nobody can tell me anything. I find that enormously attractive in a person." },
       { "id": "ro_p2_03", "speaker": "cerberus", "text": "[lays one head on the table beside the player's chips]", "type": "stage_direction" },
-      { "id": "ro_p2_04", "speaker": "caesar", "text": "Caesar remembers everyone who takes a pot from him. Ask the pirates." }
+      { "id": "ro_p2_04", "speaker": "caesar", "text": "Caesar remembers everyone who takes a pot from him. Ask the pirates." },
+      { "id": "ro_p2_05", "speaker": "scipio", "text": "{name}. I study everyone I sit down against. You have been harder to study than most." }
     ],
     "tier_3": [
       { "id": "ro_p3_01", "speaker": "spartacus", "text": "Imperator.", "note": "The soldiers' acclamation for a victorious general. Appian says Spartacus once served with the Romans; from the one man here who led an army against Rome, the word costs him something. Caesar arrives late, so the gladiator gets to say it first." },
       { "id": "ro_p3_02", "speaker": "caesar", "text": "Caesar's soldiers hailed him Imperator. He had earned it. So have you." },
       { "id": "ro_p3_03", "speaker": "pope", "text": "If you ever want a city, come and see me. I have given away several." },
+      { "id": "ro_p3_05", "speaker": "scipio", "text": "The Spaniards wanted to call me king. I told them imperator would do. It will do for you too.", "note": "Polybius 10.40; Livy 27.19." },
       { "id": "ro_p3_04", "speaker": "cerberus", "text": "[bows all three heads, very slightly, at the same moment]", "type": "stage_direction" }
     ]
   },
@@ -343,6 +468,10 @@
       { "id": "ro_out_pope_01", "speaker": "pope", "text": "Tell them I was poisoned. It will do the family less harm than the truth." },
       { "id": "ro_out_pope_02", "speaker": "pope", "text": "[rises, gathers his robes, and congratulates the winner as though it had all been his idea]", "type": "stage_direction" }
     ],
+    "scipio": [
+      { "id": "ro_out_scipio_01", "speaker": "scipio", "text": "Ungrateful table. You shan't have my bones either.", "note": "Livy 38.53: he asked to be buried at Liternum, not in Rome. The epitaph 'Ungrateful fatherland, you shall not have even my bones' is Valerius Maximus (5.3.2)." },
+      { "id": "ro_out_scipio_02", "speaker": "scipio", "text": "[stands, tucks the ivory elephant under his arm, nods to the winner as one general to another, and goes]", "type": "stage_direction" }
+    ],
     "cerberus": [
       { "id": "ro_out_cerberus_01", "speaker": "cerberus", "text": "[lies down with all three heads at once, with enormous dignity]", "type": "stage_direction" },
       { "id": "ro_out_cerberus_02", "speaker": "cerberus", "text": "[whines from the left head; the other two pretend not to know it]", "type": "stage_direction" }
@@ -355,6 +484,7 @@
 
   "player_busted": [
     { "id": "ro_bust_01", "speaker": "spartacus", "text": "Everyone goes down in their first fight. The ones worth watching get up." },
+    { "id": "ro_bust_04", "speaker": "scipio", "text": "I was at Cannae. Most of the men who saved Rome afterwards were at Cannae. Come back." },
     { "id": "ro_bust_02", "speaker": "pope", "text": "Come back when you have made some friends. It helps enormously, in Rome." },
     { "id": "ro_bust_03", "speaker": "death", "text": "Come back whenever you like. The dog will let you in. That part he has never minded." }
   ],

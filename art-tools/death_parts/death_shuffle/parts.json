@@ -1,0 +1,94 @@
+{
+  "source": "death_shuffle.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "death_shuffle_01.png",
+      "label": "both hands: riffle shuffle",
+      "x": 43,
+      "y": 42,
+      "w": 508,
+      "h": 284,
+      "pivot": [
+        254.0,
+        142.0
+      ],
+      "area": 96112
+    },
+    {
+      "index": 2,
+      "file": "death_shuffle_02.png",
+      "label": "both hands: bridging the shuffle",
+      "x": 589,
+      "y": 46,
+      "w": 419,
+      "h": 272,
+      "pivot": [
+        209.5,
+        136.0
+      ],
+      "area": 82368
+    },
+    {
+      "index": 3,
+      "file": "death_shuffle_03.png",
+      "label": "both hands: squaring the deck",
+      "x": 1043,
+      "y": 42,
+      "w": 471,
+      "h": 296,
+      "pivot": [
+        235.5,
+        148.0
+      ],
+      "area": 87086
+    },
+    {
+      "index": 4,
+      "file": "death_shuffle_04.png",
+      "label": "hand cutting the deck (both halves)",
+      "x": 32,
+      "y": 356,
+      "w": 375,
+      "h": 319,
+      "pivot": [
+        187.5,
+        159.5
+      ],
+      "area": 70286
+    },
+    {
+      "index": 5,
+      "file": "death_shuffle_05.png",
+      "label": "hand spreading the deck in a ribbon",
+      "x": 461,
+      "y": 360,
+      "w": 1052,
+      "h": 322,
+      "pivot": [
+        526.0,
+        161.0
+      ],
+      "area": 126683
+    },
+    {
+      "index": 6,
+      "file": "death_shuffle_06.png",
+      "label": "hand sweeping in a pile of cards",
+      "x": 335,
+      "y": 668,
+      "w": 879,
+      "h": 328,
+      "pivot": [
+        439.5,
+        164.0
+      ],
+      "area": 138732
+    }
+  ]
+}

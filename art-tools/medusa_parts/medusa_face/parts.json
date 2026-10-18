@@ -1,0 +1,360 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "medusa_face_01.png",
+      "label": "",
+      "x": 17,
+      "y": 18,
+      "w": 421,
+      "h": 372,
+      "pivot": [
+        210.5,
+        186.0
+      ],
+      "area": 119946
+    },
+    {
+      "index": 2,
+      "file": "medusa_face_02.png",
+      "label": "",
+      "x": 457,
+      "y": 143,
+      "w": 155,
+      "h": 96,
+      "pivot": [
+        77.5,
+        48.0
+      ],
+      "area": 11671
+    },
+    {
+      "index": 3,
+      "file": "medusa_face_03.png",
+      "label": "",
+      "x": 636,
+      "y": 144,
+      "w": 158,
+      "h": 97,
+      "pivot": [
+        79.0,
+        48.5
+      ],
+      "area": 12076
+    },
+    {
+      "index": 4,
+      "file": "medusa_face_04.png",
+      "label": "",
+      "x": 816,
+      "y": 144,
+      "w": 155,
+      "h": 97,
+      "pivot": [
+        77.5,
+        48.5
+      ],
+      "area": 11759
+    },
+    {
+      "index": 5,
+      "file": "medusa_face_05.png",
+      "label": "",
+      "x": 996,
+      "y": 143,
+      "w": 160,
+      "h": 95,
+      "pivot": [
+        80.0,
+        47.5
+      ],
+      "area": 11936
+    },
+    {
+      "index": 6,
+      "file": "medusa_face_06.png",
+      "label": "",
+      "x": 1180,
+      "y": 143,
+      "w": 157,
+      "h": 96,
+      "pivot": [
+        78.5,
+        48.0
+      ],
+      "area": 11810
+    },
+    {
+      "index": 7,
+      "file": "medusa_face_07.png",
+      "label": "",
+      "x": 1361,
+      "y": 142,
+      "w": 157,
+      "h": 97,
+      "pivot": [
+        78.5,
+        48.5
+      ],
+      "area": 11998
+    },
+    {
+      "index": 8,
+      "file": "medusa_face_08.png",
+      "label": "",
+      "x": 673,
+      "y": 281,
+      "w": 162,
+      "h": 96,
+      "pivot": [
+        81.0,
+        48.0
+      ],
+      "area": 12098
+    },
+    {
+      "index": 9,
+      "file": "medusa_face_09.png",
+      "label": "",
+      "x": 899,
+      "y": 282,
+      "w": 161,
+      "h": 94,
+      "pivot": [
+        80.5,
+        47.0
+      ],
+      "area": 11872
+    },
+    {
+      "index": 10,
+      "file": "medusa_face_10.png",
+      "label": "",
+      "x": 15,
+      "y": 440,
+      "w": 128,
+      "h": 108,
+      "pivot": [
+        64.0,
+        54.0
+      ],
+      "area": 8816
+    },
+    {
+      "index": 11,
+      "file": "medusa_face_11.png",
+      "label": "",
+      "x": 146,
+      "y": 440,
+      "w": 125,
+      "h": 109,
+      "pivot": [
+        62.5,
+        54.5
+      ],
+      "area": 8924
+    },
+    {
+      "index": 12,
+      "file": "medusa_face_12.png",
+      "label": "",
+      "x": 279,
+      "y": 440,
+      "w": 127,
+      "h": 111,
+      "pivot": [
+        63.5,
+        55.5
+      ],
+      "area": 9086
+    },
+    {
+      "index": 13,
+      "file": "medusa_face_13.png",
+      "label": "",
+      "x": 415,
+      "y": 440,
+      "w": 118,
+      "h": 105,
+      "pivot": [
+        59.0,
+        52.5
+      ],
+      "area": 7949
+    },
+    {
+      "index": 14,
+      "file": "medusa_face_14.png",
+      "label": "",
+      "x": 532,
+      "y": 440,
+      "w": 112,
+      "h": 101,
+      "pivot": [
+        56.0,
+        50.5
+      ],
+      "area": 7217
+    },
+    {
+      "index": 15,
+      "file": "medusa_face_15.png",
+      "label": "",
+      "x": 644,
+      "y": 440,
+      "w": 122,
+      "h": 106,
+      "pivot": [
+        61.0,
+        53.0
+      ],
+      "area": 8359
+    },
+    {
+      "index": 16,
+      "file": "medusa_face_16.png",
+      "label": "",
+      "x": 763,
+      "y": 440,
+      "w": 120,
+      "h": 104,
+      "pivot": [
+        60.0,
+        52.0
+      ],
+      "area": 7813
+    },
+    {
+      "index": 17,
+      "file": "medusa_face_17.png",
+      "label": "",
+      "x": 885,
+      "y": 440,
+      "w": 122,
+      "h": 105,
+      "pivot": [
+        61.0,
+        52.5
+      ],
+      "area": 8264
+    },
+    {
+      "index": 18,
+      "file": "medusa_face_18.png",
+      "label": "",
+      "x": 1007,
+      "y": 440,
+      "w": 120,
+      "h": 103,
+      "pivot": [
+        60.0,
+        51.5
+      ],
+      "area": 7804
+    },
+    {
+      "index": 19,
+      "file": "medusa_face_19.png",
+      "label": "",
+      "x": 1133,
+      "y": 439,
+      "w": 126,
+      "h": 107,
+      "pivot": [
+        63.0,
+        53.5
+      ],
+      "area": 8740
+    },
+    {
+      "index": 20,
+      "file": "medusa_face_20.png",
+      "label": "",
+      "x": 1262,
+      "y": 439,
+      "w": 125,
+      "h": 107,
+      "pivot": [
+        62.5,
+        53.5
+      ],
+      "area": 8493
+    },
+    {
+      "index": 21,
+      "file": "medusa_face_21.png",
+      "label": "",
+      "x": 1390,
+      "y": 439,
+      "w": 126,
+      "h": 108,
+      "pivot": [
+        63.0,
+        54.0
+      ],
+      "area": 8755
+    },
+    {
+      "index": 22,
+      "file": "medusa_face_22.png",
+      "label": "",
+      "x": 13,
+      "y": 567,
+      "w": 403,
+      "h": 371,
+      "pivot": [
+        201.5,
+        185.5
+      ],
+      "area": 110248
+    },
+    {
+      "index": 23,
+      "file": "medusa_face_23.png",
+      "label": "",
+      "x": 411,
+      "y": 567,
+      "w": 392,
+      "h": 371,
+      "pivot": [
+        196.0,
+        185.5
+      ],
+      "area": 113088
+    },
+    {
+      "index": 24,
+      "file": "medusa_face_24.png",
+      "label": "",
+      "x": 791,
+      "y": 595,
+      "w": 370,
+      "h": 343,
+      "pivot": [
+        185.0,
+        171.5
+      ],
+      "area": 100530
+    },
+    {
+      "index": 25,
+      "file": "medusa_face_25.png",
+      "label": "",
+      "x": 1166,
+      "y": 569,
+      "w": 359,
+      "h": 369,
+      "pivot": [
+        179.5,
+        184.5
+      ],
+      "area": 104794
+    }
+  ]
+}

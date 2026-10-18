@@ -1,0 +1,6 @@
+{
+ "master": "death_parts/death_face/death_face_01.png",
+ "pieces": "death_parts/death_face/death_face_%02d.png",
+ "layers": {"mouth": {"closed": 2, "parted": 3, "open": 4, "wide": 5, "side": 6}},
+ "regions": {"mouth": {"keep": [[138, 236], [288, 236], [288, 330], [138, 330]]}}
+}

@@ -1,0 +1,70 @@
+{
+ "note": "The master is the rest pose's own head. Eyes 2-8; mouths 9-18 (muzzle patches: 17 tongue lolling, 18 growling). The ear pieces 20-21, head 1 and the front head 19 are unused: his ears move in whole-figure frames.",
+ "master": "wolf_man_parts/wolf_man_face/wolf_man_master.png",
+ "pieces": "wolf_man_parts/wolf_man_face/wolf_man_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7,
+   "wide": 8
+  },
+  "mouth": {
+   "rest": 9,
+   "ah": 10,
+   "ee": 11,
+   "oh": 12,
+   "oo": 13,
+   "m": 14,
+   "f": 15,
+   "l": 16,
+   "happy": 17,
+   "growl": 18
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     285,
+     125
+    ],
+    [
+     395,
+     125
+    ],
+    [
+     395,
+     175
+    ],
+    [
+     285,
+     175
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     290,
+     185
+    ],
+    [
+     420,
+     185
+    ],
+    [
+     420,
+     250
+    ],
+    [
+     290,
+     250
+    ]
+   ]
+  }
+ }
+}

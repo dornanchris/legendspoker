@@ -12,6 +12,8 @@
     "check:data": "tsx src/data-check.ts",
     "check:replay": "tsx src/replay-check.ts",
     "check:loki": "tsx src/loki-check.ts",
+    "check:visitor": "tsx src/visitor-check.ts",
+    "check:phoenix": "tsx src/phoenix-check.ts",
     "roster": "tsx src/roster.ts",
     "reads": "tsx src/reads.ts",
     "headsup": "tsx src/headsup.ts",
@@ -19,7 +21,8 @@
     "check": "npm run typecheck && npm run check:data && npm run check:pots && npm run check:hands && npm run check:replay && npm run check:loki",
     "build:web": "node web/build.mjs",
     "web": "node web/build.mjs && node web/serve.mjs",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package --error-on-fail && node web/patches.mjs stamp",
+    "check:other": "tsx src/other-check.ts"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,136 @@
+{
+  "source": "faces.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "death_player_face_01.png",
+      "label": "",
+      "x": 21,
+      "y": 20,
+      "w": 513,
+      "h": 548,
+      "pivot": [
+        256.5,
+        274.0
+      ],
+      "area": 190499
+    },
+    {
+      "index": 2,
+      "file": "death_player_face_02.png",
+      "label": "",
+      "x": 495,
+      "y": 206,
+      "w": 226,
+      "h": 239,
+      "pivot": [
+        113.0,
+        119.5
+      ],
+      "area": 37445
+    },
+    {
+      "index": 3,
+      "file": "death_player_face_03.png",
+      "label": "",
+      "x": 752,
+      "y": 207,
+      "w": 227,
+      "h": 238,
+      "pivot": [
+        113.5,
+        119.0
+      ],
+      "area": 37475
+    },
+    {
+      "index": 4,
+      "file": "death_player_face_04.png",
+      "label": "",
+      "x": 1009,
+      "y": 206,
+      "w": 233,
+      "h": 239,
+      "pivot": [
+        116.5,
+        119.5
+      ],
+      "area": 39212
+    },
+    {
+      "index": 5,
+      "file": "death_player_face_05.png",
+      "label": "",
+      "x": 1273,
+      "y": 207,
+      "w": 230,
+      "h": 238,
+      "pivot": [
+        115.0,
+        119.0
+      ],
+      "area": 38654
+    },
+    {
+      "index": 6,
+      "file": "death_player_face_06.png",
+      "label": "",
+      "x": 49,
+      "y": 585,
+      "w": 332,
+      "h": 303,
+      "pivot": [
+        166.0,
+        151.5
+      ],
+      "area": 71480
+    },
+    {
+      "index": 7,
+      "file": "death_player_face_07.png",
+      "label": "",
+      "x": 388,
+      "y": 586,
+      "w": 329,
+      "h": 302,
+      "pivot": [
+        164.5,
+        151.0
+      ],
+      "area": 70670
+    },
+    {
+      "index": 8,
+      "file": "death_player_face_08.png",
+      "label": "",
+      "x": 721,
+      "y": 586,
+      "w": 324,
+      "h": 302,
+      "pivot": [
+        162.0,
+        151.0
+      ],
+      "area": 69431
+    },
+    {
+      "index": 9,
+      "file": "death_player_face_09.png",
+      "label": "",
+      "x": 1058,
+      "y": 462,
+      "w": 462,
+      "h": 543,
+      "pivot": [
+        231.0,
+        271.5
+      ],
+      "area": 177531
+    }
+  ]
+}

@@ -350,7 +350,7 @@
     ],
     "arthur": [
       { "id": "cm_elim_arthur_01", "speaker": "arthur", "text": "Well fought. There is no shame in losing to the worthy." },
-      { "id": "cm_elim_arthur_02", "speaker": "arthur", "text": "I have watched this table empty before. It was harder the last time." }
+      { "id": "cm_elim_arthur_02", "speaker": "arthur", "text": "I have watched the Round Table empty before. It was harder the last time." }
     ]
   },
 
@@ -366,7 +366,7 @@
   ],
 
   "champion_defeat": [
-    { "id": "cm_ar_end_01", "speaker": "arthur", "text": "The table is yours. I built it so that no one could sit at its head, and you have found a way anyway." },
+    { "id": "cm_ar_end_01", "speaker": "arthur", "text": "The table is yours. I built mine so that no one could sit at its head, and you have found a way anyway." },
     { "id": "cm_ar_end_02", "speaker": "death", "text": "Four. Four remain. Halfway. I have always found the second half goes quicker.", "note": "Reads as a dry truism about a life. It is also true of the tour." }
   ]
 }

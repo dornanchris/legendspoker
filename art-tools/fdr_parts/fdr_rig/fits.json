@@ -1,0 +1,27 @@
+{
+ "fdr_parts/fdr/fdr_01.png <- fdr_parts/fdr/fdr_02.png": [
+  4,
+  -3,
+  0.99
+ ],
+ "fdr_parts/fdr/fdr_01.png <- fdr_parts/fdr/fdr_03.png": [
+  0,
+  -6,
+  1.05
+ ],
+ "fdr_parts/fdr/fdr_01.png <- fdr_parts/fdr/fdr_04.png": [
+  4,
+  0,
+  0.99
+ ],
+ "fdr_parts/fdr/fdr_01.png <- fdr_parts/fdr/fdr_05.png": [
+  4,
+  0,
+  0.99
+ ],
+ "fdr_parts/fdr/fdr_01.png <- fdr_parts/fdr/fdr_06.png": [
+  6,
+  3,
+  0.98
+ ]
+}

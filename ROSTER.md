@@ -14,11 +14,11 @@ pass and never appears in the game.
 
 **Hook.** You have been seated at a private game in the President's house, among men who have each run the country. They have agreed to deal you in, and to make sure you feel it.
 
-**Room.** An oval drawing room upstairs, curtains drawn, a fire under a marble mantel with a clock on it. Portraits of all four players hang on the walls and watch their subjects play. Green felt, brass lamps, and cigar smoke gathering under a high white ceiling.
+**Room.** An oval drawing room upstairs, curtains drawn, a fire under a marble mantel. Portraits of all four players hang on the walls and watch their subjects play. Green felt, brass lamps, and cigar smoke gathering under a high white ceiling.
 
 **Entrance.** Washington is seated at the head of the table from the first hand. He does not speak, and does not need to.
 
-**Music.** Chamber strings and a parlour piano, stately and restrained, with a quiet march underneath at a walking tempo. **Ambience:** fire crackle, mantel clock ticking, rain on tall sash windows, footsteps in a far corridor.
+**Music.** Chamber strings and a parlour piano, stately and restrained, with a quiet march underneath at a walking tempo. **Ambience:** fire crackle, rain on tall sash windows, footsteps in a far corridor.
 
 **Earned names.** nobody → “tenderfoot” → *your name* → “Challenger”
 
@@ -44,9 +44,9 @@ He was the tallest president, six foot four, and a teller of jokes and stories, 
 - Tell (strong, 0.94): *strokes his beard, slowly*
 - Tell (weak, 0.92): *leans back and folds his long hands*
 - Tell (bluffing, 0.9): *allows himself a small smile*
-- Idle noise: *crosses one long leg over the other*; *glances at the clock on the mantel*; *rubs his eyes*; *smooths the brim of the hat on his knee*
+- Idle noise: *stretches his long back until the chair creaks*; *rubs his eyes*; *tips his hat to someone across the table*
 
-**Look.** Silhouette: the longest frame at the table, bare-headed, the stovepipe hat resting on his knee with its crown showing above the table edge. Face: hollow cheeks, deep-set tired eyes, the chin beard with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen. **Prop:** Stovepipe hat, on his knee.
+**Look.** Silhouette: the longest frame at the table, and taller still in the stovepipe hat he never takes off; he tips it, pushes it back, straightens it. Face, after the Brady and Gardner photographs: long and narrow, hollow cheeks under high cheekbones, deep-set tired eyes, a long straight nose, thin lips, the chin beard along the jaw with no moustache. Tell surface: the beard and his long hands, the largest moving shapes in his fifth of the screen. **Prop:** Stovepipe hat, always worn.
 
 **Public domain.** Historical figure, died 1865; the Brady and Gardner photographs are public domain. Build from those. Avoid any modern screen likeness, including the 2012 Spielberg film, and anything from the vampire-hunter novel or film.
 
@@ -166,7 +166,7 @@ Plato's Symposium puts him at exactly this kind of party. He arrived late, havin
 - Tell (bluffing, 0.88): *scratches his snub nose*
 - Tell (strong, 0.86): *smiles as if at a private joke*
 - Tell (weak, 0.86): *frowns up at the ceiling, as if it had asked him something*
-- Idle noise: *sips from his cup and seems no drunker*; *rubs his bare feet together*; *pulls his plain cloak tighter*; *scratches his beard thoughtfully*
+- Idle noise: *sips from his cup and seems no drunker*; *stretches, and his cloak slips off one shoulder*; *pulls his plain cloak tighter*; *scratches his beard thoughtfully*
 
 **Look.** Silhouette: bald dome, big untidy beard, a short thick body in one plain, shabby cloak — the only unadorned figure at the table, which is exactly why he reads. Face: snub nose, wide bulging eyes, a satyr's face with a good-humoured mouth. Prop: a shallow wine cup, drained and refilled all night. Tells live on the big shapes of the face: nose, smile, the upward glance. **Prop:** Shallow wine cup.
 
@@ -284,7 +284,7 @@ In the Odyssey's first line Homer calls him polytropos, a man of many turns, and
 
 **Hook.** You were taken off a prize ship and brought ashore in irons. The captains will let you play: win a share and sign on as crew, or win enough to buy your freedom.
 
-**Room.** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. The card table is a hatch-cover on two barrels, scarred by knife-points and pistol-butts. Through the open side wall, ships ride at anchor in the moonlight.
+**Room.** A tavern built into the rock of a hidden cove, half of it the stern of a wrecked ship, lanterns swinging from old rigging and the tide slapping at the pilings under the floorboards. Death's table stands on the boards among the rum barrels as if it had come ashore with them, the only thing in the room nobody has dared scar with a knife. Through the open side wall, ships ride at anchor in the moonlight.
 
 **Entrance.** Seated from hand one, in the only chair with its back to the rock wall, smoke curling from under his hat. He does not look up when you are brought in; he lets the room tell you who he is.
 
@@ -405,7 +405,7 @@ He built the legend on purpose. The General History of the Pyrates, published in
 
 **Hook.** It is a feast day, and Arthur will not eat until he has seen a marvel. Tonight you are it: a stranger in the empty chair, playing to prove you belong at the Round Table.
 
-**Room.** The great hall at Camelot, where the game is played around one curve of the Round Table and the rest of its circle runs off into the dark, past a hundred empty chairs, each with a knight's name in gold. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.
+**Room.** The great hall at Camelot. The Round Table runs off into the dark, past a hundred empty chairs, each with a knight's name in gold; tonight Death's table has been set before it, and the knights have carried their own chairs over. Banners hang from the beams, rushes cover the floor, and the hearth could stable a horse. The one chair with no name on it is yours.
 
 **Entrance.** Seated from hand one. Arthur rises to greet you when you are shown in — the only one who does — and does not sit again until you have.
 
@@ -490,7 +490,7 @@ A year on, Gawain keeps the bargain. On the way he is the guest of a lord who pr
 - Tell (weak, 0.74): *runs a thumb along the head of his axe*
 - Idle noise: *moss creeps a little further along his sleeve*; *somewhere outside, his horse stamps*; *the chair creaks under his weight*; *he studies the table as if measuring it for a blow*
 
-**Look.** Silhouette: enormous — a head taller than anyone seated, broad as a door, with a great bush of green beard and green hair to the shoulders. Green skin, green clothes worked with gold, and no armour: the poem says he came in peace. Face: green, grinning, bright-eyed. Prop: the holly branch at his side, a big dark spiky shape that rustles; the axe leans against the table. **Prop:** A holly branch.
+**Look.** Silhouette: enormous, a head taller than anyone seated and broad as a door, in bright green plate edged with gold under a closed green great helm, his eyes bright in the visor slit. Knocked out, he takes the blow; when he comes back the helm is gone and he is beaten and colder: a pale, weathered, dark-bearded face, a bandage at his neck, dented plate and a torn mantle. Prop: the holly branch at his side, a big dark spiky shape that rustles; the head of his axe rests on the table's edge. **Prop:** A holly branch.
 
 **Public domain.** The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman.
 
@@ -536,7 +536,7 @@ In Malory he pulls the sword from the stone as a boy, fetching one for his foste
 
 **Earned names.** nobody → “tiro” → *your name* → “Imperator”
 
-Buy-in 2000, blinds up every 9 hands. Julius Caesar arrives after 1 elimination, bringing the average stack.
+Buy-in 2000, blinds up every 8 hands. Julius Caesar arrives after 1 elimination, bringing the average stack.
 
 ### Spartacus — *Gladiator of Capua*
 
@@ -614,9 +614,36 @@ He is in Rome's own epic. In Virgil's Aeneid the Sibyl gets Aeneas past him by t
 - Tell (tilted, 0.72): *the heads growl at each other*
 - Idle noise: *the middle head scratches behind an ear*; *one head falls asleep*; *two heads watch you; one watches the pot*; *the right head sniffs at the nearest robe*
 
-**Look.** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a low ridge of small snakes along the neck and spine after Apollodorus, kept subtle so it never clutters the read. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own. **Prop:** Three iron collars on one chain.
+**Look.** Silhouette: three heads on one massive body — nothing else in the game looks like it. Black, short-coated, heavy in the jaw, with a few small dark snakes rising from behind the necks after Apollodorus (who gives him snakes along his back and a serpent's tail), kept behind the heads and darker than the fur so they never cover a face or read as Medusa's hair (the owner kept them). Each neck in a studded bronze collar. The heads are the tell surface: each can watch, sleep, yawn or snarl on its own. **Prop:** Three iron collars on one chain.
 
 **Public domain.** Greek myth, attested from Hesiod (c. 700 BC). Build from Greek vase painting and Apollodorus. Nothing resembling the giant three-headed dog of the Harry Potter books and films or the Disney Hercules design: no oversized friendly puppy, no cartoon styling, no names for the individual heads.
+
+### Scipio Africanus — *The Man Who Beat Hannibal*
+
+History · 236–183 BC · general, victor of Zama
+
+> Seventeen at his first battle, and he spent it saving his father. He beat Hannibal by studying him. Rome thanked him with an audit.
+
+Publius Cornelius Scipio, of one of Rome's great families. At seventeen he saved his wounded father at the Ticinus (Polybius); he survived Cannae, and afterwards, Livy says, drew his sword on young nobles who meant to abandon Italy and made them swear to stay. When his father and uncle were killed in Spain, nobody else would stand for the command, and he was given it at about twenty-five. He took New Carthage by sending men across its lagoon at the ebb, a tide he had learned about from fishermen, and he told the soldiers Neptune had promised it.
+
+In 202 BC he beat Hannibal at Zama, in Africa, leaving lanes in his lines for Hannibal's elephants to charge harmlessly through, and took the name Africanus. He had learned much of it from Hannibal himself. Livy tells of a captive young woman he returned untouched to the man she was to marry, with her ransom as a wedding gift; the Renaissance painted it again and again. Later his enemies in the Senate called him to account for public money. He tore up the account book in front of them, and he died in retirement at Liternum, in 183 BC, having asked not to be buried in Rome.
+
+**At the table.** He plays few hands and plays them firmly, and he spends the rest of the time watching you. Nobody at this table changes his game to suit an opponent faster; whatever you did the last time, he has planned for. He rarely bluffs. With a strong hand he likes to let you charge at him first, the way he let the elephants run, and close in afterwards. Losing does not rattle him. He was at Cannae.
+
+| aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
+|---|---|---|---|---|---|---|---|
+| .66 | .72 | .14 | .08 | .80 | .70 | .55 | .30 |
+
+- Quirk: `patient` (minEquity 0.56) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
+- Quirk: `check_raise` (minEquity 0.74, chance 0.5) — Checks strength on the flop and turn, then raises when bet into.
+- Tell (strong, 0.7): *moves the ivory elephant out of the way*
+- Tell (bluffing, 0.68): *looks up, as though someone above had advised him*
+- Tell (weak, 0.68): *turns the ivory elephant to face the door*
+- Idle noise: *studies each player in turn, like a map*; *sets his chips out in ranks, with lanes between them*; *straightens his cloak, Greek fashion*; *taps the ivory elephant's trunk*
+
+**Look.** Silhouette: a clean-shaven Roman general in his thirties, short dark hair, a strong, calm, watchful face. A red general's cloak worn loose in the Greek fashion (Cato complained of it) over a plain bronze cuirass. No helmet, no laurel (that is Caesar's). Prop: a small carved ivory elephant, a trophy from Zama, standing on the felt beside his chips: big enough to read at a fifth of the screen, and it carries two of his three tells. **Prop:** An ivory elephant from Zama.
+
+**Public domain.** Historical figure, died 183 BC. Write from Polybius (books 10, 11, 14, 15, 23) and Livy (books 21-38), with Valerius Maximus only where flagged. No modern novel, film or television portrayal; nothing from the 1937 Italian film Scipione l'africano. Never the straight-arm 'Roman salute': a modern invention, with the worst associations there are.
 
 ### Julius Caesar — *Dictator for Life*
 
@@ -710,36 +737,36 @@ Hugo compares him to the dog that Asturian peasants say is born in every litter 
 - Tell (tilted, 0.7): *his hand shakes, very slightly*
 - Idle noise: *straightens his stock*; *consults a small black notebook*; *glances at the door like a man expecting an escape*; *taps his cane on the floor once*
 
-**Look.** Silhouette: tall, in a long greatcoat that buttons to the chin, hat brim low over the eyes, and — Hugo's own detail — enormous side-whiskers climbing toward a flat nose with deep nostrils. A face that almost never moves, so any movement reads. Prop: the greatcoat's high collar and its row of buttons; that is the tell surface. **Prop:** Greatcoat buttoned to the collar.
+**Look.** Silhouette: tall, in a long greatcoat that buttons to the chin, a plain black bicorne low over the eyes (the Paris police's hat from 1829; no cockade, no uniform), and — Hugo's own detail — enormous side-whiskers climbing toward a flat nose with deep nostrils. A face that almost never moves, so any movement reads. Prop: the greatcoat's high collar and its row of buttons; that is the tell surface. **Prop:** Greatcoat buttoned to the collar.
 
 **Public domain.** Hugo's novel (1862) and its nineteenth-century illustrations are public domain. Nothing from the stage musical or its films: no lyrics, no "Stars", no prisoner-number chant, no costume from any production. Hugo's text only.
 
-### Alice — *Late of Wonderland*
+### The Cheshire Cat — *We're All Mad Here*
 
 Literature · Alice's Adventures in Wonderland (Carroll, 1865)
 
-> Told a pack of cards they were nothing but a pack of cards. She has never once been afraid of me.
+> Vanishes when he likes and leaves the grin behind. He is the only guest at any of my tables who has ever asked me whether I am mad. I said no. He said that was what he would say too.
 
-Lewis Carroll's Alice falls down a rabbit-hole in Alice's Adventures in Wonderland (1865) and climbs through a mirror in Through the Looking-Glass (1871). She grows and shrinks, argues with a caterpillar, sits through a mad tea-party, and ends up a witness at the trial of the Knave of Hearts, where she tells the whole court — a pack of playing cards — that they are nothing but a pack of cards.
+The Cheshire Cat first appears in the Duchess's kitchen in Lewis Carroll's Alice's Adventures in Wonderland (1865), grinning from ear to ear beside the hearth, the only creature in the house not sneezing. He is the one who tells Alice that everyone in Wonderland is mad, 'or you wouldn't have come here', and directs her to the Hatter and the March Hare, either of whom she may visit: 'they're both mad'.
 
-What makes her a person is that nothing in Wonderland frightens her for long. She argues with duchesses, queens and caterpillars as equals, and corrects them when they are wrong, which is often. Tenniel drew her for both books. She is at Baker Street because curiosity would get her anywhere — and because, at a table of practised faces, hers is the one that shows exactly what she thinks.
+He can vanish and reappear at will, and at Alice's request does it 'quite slowly, beginning with the end of the tail, and ending with the grin, which remained some time after the rest of it had gone'. At the Queen's croquet ground only his head appears, and the King, the Queen and the executioner argue over whether a head without a body can be cut off. 'Grinning like a Cheshire cat' was an English saying long before Carroll; Tenniel drew him for the first edition as a large, solid tabby with an enormous grin.
 
-**At the table.** She plays a great many hands, because she wants to see what happens, and she seldom folds to a small bet for the same reason. Every so often she does something nobody can account for — a call, a raise, a check — just to find out. She almost never bluffs; she cannot see the point of pretending. She does not adjust to anyone. Why would she?
+**At the table.** He plays a great many hands and plays them for the fun of it, poking at pots with small bets and now and then doing something nobody can account for, to see what happens. He bluffs more than anyone here, and minds less than anyone when he is caught. Nothing rattles him. And he cannot help it: every so often a part of him goes missing, and what goes, and when, means more than he would like.
 
 | aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
 |---|---|---|---|---|---|---|---|
-| .40 | .38 | .05 | .20 | .10 | .30 | .62 | .10 |
+| .55 | .34 | .20 | .03 | .35 | .40 | .62 | .20 |
 
-- Quirk: `whim` (chance 0.08) — Now and then does something unaccountable, just to see.
-- Quirk: `calls_small` (maxBB 3, chance 0.6) — Will not fold to a small bet (up to maxBB big blinds).
-- Tell (strong, 0.9): *her eyes go very wide*
-- Tell (weak, 0.9): *frowns at her cards as if they had said something rude*
-- Tell (bluffing, 0.88): *bites her lip*
-- Idle noise: *smooths her pinafore*; *counts the pips on a card*; *tries to see what the dealer is holding*; *swings her feet under the chair*
+- Quirk: `whim` (chance 0.1) — Now and then does something unaccountable, just to see.
+- Quirk: `needle` (chance 0.22) — When checked to, makes small probing bets regardless of the hand.
+- Tell (strong, 0.82): *fades away, beginning with the end of his tail and ending with the grin*
+- Tell (weak, 0.8): *blinks one eye, then the other*
+- Tell (bluffing, 0.8): *the tip of his tail twitches*
+- Idle noise: *his tail sways lazily*; *washes a paw*; *his head drifts a little way off his shoulders, and back*; *grins at the dealer*
 
-**Look.** Silhouette: a small figure in a full-skirted dress and white pinafore, long hair held back by a band — Tenniel's Alice. Keep the blue the design doc wants, but a deep Victorian blue, never Disney's powder blue with a black bow. Large, expressive eyes: by design her face, not a prop, is the tell surface. Prop: a little bottle labelled DRINK ME, beside her chips. **Prop:** A little bottle labelled DRINK ME.
+**Look.** Silhouette: Tenniel's Cheshire Cat: a large, solid, round-faced tabby cat, warm grey-brown with darker stripes, sitting up at the table like a person, front paws on its edge, with an enormous grin from ear to ear full of teeth. The owner's call: he took Alice's chair at Baker Street (the Alice sheets came out looking like Disney's). His body is the tell surface: the tail, the eyes, and parts of him fading away, the grin last. Never Disney's pink-and-purple stripes, never the Burton film's blue-grey cat. **Prop:** His grin.
 
-**Public domain.** Carroll's books and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely — its dress, bow, character designs and songs — and the 2010 Burton film. Keep the Cheshire Cat out of this table; he is saved for later.
+**Public domain.** Carroll's books (1865, 1871) and Tenniel's illustrations are public domain. Avoid the 1951 Disney film entirely (its pink-and-purple striped cat, its songs) and the 2010 Burton film's design. Tenniel's cat and Carroll's text only.
 
 ### Sherlock Holmes — *The Consulting Detective*
 
@@ -809,36 +836,36 @@ Seward describes him as a man with a temper of the ice-brook and the kindliest a
 - Tell (bluffing, 0.62): *mutters something in Dutch*
 - Idle noise: *checks a pocket that smells of garlic*; *sniffs the air, frowning*; *glances at the fireplace*; *writes a line in a leather diary*
 
-**Look.** Silhouette: square and solid, shoulders set back over a deep chest, in a plain black professor's frock coat, a doctor's bag at his feet. Clean-shaven, square-jawed, bushy brows, reddish hair swept back off a broad forehead, wide-set blue eyes. Prop: his spectacles. They are small, so the tell is the whole gesture: off, polished on a big white handkerchief, back on. **Prop:** His spectacles.
+**Look.** Silhouette: square and solid, shoulders set back over a deep chest, in a plain black professor's frock coat, his doctor's bag on the table beside him. Clean-shaven, square-jawed, bushy brows, reddish hair swept back off a broad forehead, wide-set blue eyes. Prop: his spectacles. They are small, so the tell is the whole gesture: off, polished on a big white handkerchief, back on. **Prop:** His spectacles.
 
 **Public domain.** Stoker's Dracula (1897) is public domain. Build him from the novel: clean-shaven, reddish hair, bushy brows, a professor's black coat. Nothing from the 2004 Van Helsing film: no broad-brimmed hat, long leather coat, crossbow or gadgets, and no likeness of any actor who has played him. His Dutch English is used lightly, never as a comic accent.
 
-### Frankenstein's Monster — *The Creature of Ingolstadt*
+### Dr. Henry Jekyll — *The Physician of Cavendish Square*
 
-Literature · Frankenstein (Shelley, 1818)
+Literature · Strange Case of Dr Jekyll and Mr Hyde (Stevenson, 1886)
 
-> Built from people I had already collected. Never given a name, so the world lent him his maker's.
+> One body came to me, in a coat too large for it, with two men's names attached. I am still not certain which of them I collected.
 
-The creature of Mary Shelley's Frankenstein; or, The Modern Prometheus (1818), built by the student Victor Frankenstein at Ingolstadt from materials gathered in charnel houses and the dissecting room. He is eight feet tall, with yellow skin, lustrous black hair and watery eyes. He wakes on a dreary November night to see his maker run from the room, and teaches himself to speak and read by watching a family through a chink in a cottage wall.
+Henry Jekyll, M.D., D.C.L., LL.D., F.R.S., of Robert Louis Stevenson's Strange Case of Dr Jekyll and Mr Hyde (1886): a large, well-made, smooth-faced man of fifty, with every mark of capacity and kindness, who gives good dinners in a handsome old house in a square. Behind it stands the dissecting theatre he bought from a celebrated surgeon's heirs, and its blistered door opens on a by-street. Convinced that man is not truly one, but truly two, he mixed a draught that set his lesser half loose in a body of its own, and called him Edward Hyde. He took rooms for him in Soho, told his servants to obey him as they would their master, and made a will leaving him everything.
 
-In a leather portmanteau he finds Paradise Lost, a volume of Plutarch's Lives and The Sorrows of Werter, and reads them as true histories. He asks for kindness, then for a companion, and is refused both; his revenge is terrible, and his grief at the end is worse. He is at this table because he was invited, which has not happened to him often. He is resigned to being called Frankenstein.
+His friends are few and loyal: Utterson the lawyer, who would not stop asking; Lanyon, who saw the change with his own eyes and did not survive the shock; Poole, the butler, who heard the wrong voice behind the cabinet door. The salt that fixed the draught ran out, and the new supply would not serve; the first had been impure. He wrote his full statement under the last of the old powders, locked in his cabinet, and was never seen again. He accepted this invitation on condition that he would come as himself. Nobody can promise him that any more, the dealer included.
 
-**At the table.** Courteous, careful, and nearly impossible to bet out of a small pot: he will not be turned away for the price of two blinds. He almost never bluffs. He takes his losses quietly, one after another, until the day he does not, and then he stops thinking and pushes everything in. He is slow to anger and very hard to bring back from it.
+**At the table.** Tight and patient. He comes into few pots, folds to a big raise without a real hand, and is plainly sorry to be playing at all; he seldom bluffs and bets small when he bets. But once he has put a share of his stack in, he will not be bet out of the pot: he sees things through, which has always been his difficulty. Losses get under his skin faster than his manners suggest, and when he tilts he plays like a looser, rougher man.
 
 | aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
 |---|---|---|---|---|---|---|---|
-| .40 | .55 | .10 | .55 | .40 | .40 | .68 | .40 |
+| .30 | .72 | .06 | .70 | .45 | .60 | .68 | .40 |
 
+- Quirk: `patient` (minEquity 0.58) — Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.
 - Quirk: `committed` (fraction 0.3) — Once a share of the stack is in the pot, will not fold a hand with a real chance.
-- Quirk: `check_raise` (minEquity 0.78, chance 0.5) — Checks strength on the flop and turn, then raises when bet into.
-- Tell (strong, 0.64): *sets his book face-down on the table*
-- Tell (weak, 0.62): *turns a page he is not reading*
-- Tell (tilted, 0.66): *the table creaks under his grip*
-- Idle noise: *reads a line of Milton, lips moving*; *flinches from the firelight*; *stares at his own hands*; *straightens a coat that was never made for him*
+- Tell (tilted, 0.66): *his hand, for a moment, is not his own; he pulls his cuff over it*
+- Tell (strong, 0.64): *holds the phial up to the light*
+- Tell (weak, 0.62): *dabs his brow with a handkerchief*
+- Idle noise: *rubs his hands as if they were cold*; *taps the phial with a fingernail*; *consults his pocket watch*; *glances toward the door*
 
-**Look.** Silhouette: enormous. Eight feet tall, shoulders filling his fifth of the screen, head near the top of the frame. Long, lustrous black hair; yellow skin stretched thin over muscle; watery eyes nearly the colour of their sockets; straight black lips. A good coat that was never cut for him. Prop: a small battered book in a very large hand; where he puts it is the tell surface. **Prop:** A battered copy of Paradise Lost.
+**Look.** Silhouette: large and well made, upright, broad-shouldered, a little heavy at fifty. Smooth-faced and clean-shaven, a fine forehead, dark hair greying and neatly brushed, the face of a respectable physician with something tired at the eyes. A dark frock coat, a grey waistcoat with a watch chain across it, a black cravat, a white handkerchief. Hands large, firm, white and comely. Prop: a small glass phial of blood-red draught standing on the felt by his hand; picking it up is the tell surface. **Prop:** A phial of blood-red draught.
 
-**Public domain.** Shelley's novel (1818) is public domain. Universal's 1931 makeup is not, and is still protected as a design: no neck bolts, no flat-topped head, no green skin, no stitches or forehead scar, no grunting or stiff-armed walk. Shelley's creature is articulate and well read, yellow-skinned with flowing black hair.
+**Public domain.** Stevenson's novella (1886) is public domain. Build him from the text only: a large, smooth-faced, kindly gentleman of fifty. No likeness of any actor who has played him (Barrymore 1920, March 1931, Tracy 1941 or later), no top hat and opera cape from the stage versions, no bubbling laboratory of coloured flasks, no green potion, and nothing from The League of Extraordinary Gentlemen. One phial, blood-red, as Lanyon found it.
 
 ### The Wolf Man — *Loup-Garou*
 
@@ -916,9 +943,9 @@ Stoker's Count is not a caped seducer. He is an old man dressed in black, with a
 - Tell (weak, 0.6): *steeples his fingers*
 - Idle noise: *sips from his chalice*; *runs a fingernail along the table*; *smiles without showing his teeth*; *watches the pulse in someone's throat*
 
-**Look.** Silhouette: tall and thin, in black without a speck of colour, a long white moustache drooping past the chin. Stoker's face: a thin, high-bridged nose, pointed ears, extreme pallor, very red lips, sharp white teeth, and eyebrows so massive they almost meet over the nose. The brows are half the tell surface; the other half is the prop, a dark, heavy chalice. **Prop:** A dark chalice.
+**Look.** Silhouette: tall and thin, in black, the high red-lined collar of his cape standing up behind his head in two points. Younger than Stoker's old man (he has fed): a gaunt, very pale face, black hair swept back from a widow's peak, pointed ears, red eyes, very red lips, sharp white fangs, heavy dark brows that almost meet, long black nails; a red brocade waistcoat, a white jabot, a red cravat with a ruby brooch, a ruby ring. The brows are half the tell surface; the other half is the prop, a dark, heavy chalice. **Prop:** A dark chalice.
 
-**Public domain.** Stoker's novel (1897) is public domain. Bela Lugosi's likeness and Universal's 1931 design are not, nor are the later screen Draculas: no slicked hair and widow's peak, no high-collared opera cape, no medallion, no evening dress, no film lines. Nosferatu's bald Orlok is out too. Build him from Stoker: old, white-moustached, heavy-browed, all in black.
+**Public domain.** Stoker's novel (1897) is public domain, and so, in the US, is the high-collared cape of the 1927 stage play. Bela Lugosi's likeness and Universal's film designs are not: not his face, no medallion on a ribbon, no film lines. Red eyes, pointed ears and fangs keep the owner's design clear of them. Nosferatu's bald Orlok is out too.
 
 ## 8. The Station
 
@@ -926,7 +953,7 @@ Stoker's Count is not a caped seducer. He is an old man dressed in black, with a
 
 **Hook.** Everyone aboard ended up here by accident: drifting, lost, or passing through. You are the newest arrival, and the station would very much like to know what you are for.
 
-**Room.** A round lounge on a slowly turning station: brushed steel, soft lamps, a felt table bolted to the floor, and one enormous window full of the Earth. The gravity is made, not given, and it is not quite right; now and then a chip lifts off the felt and settles again. A single lens sits in the ceiling, pale and unblinking.
+**Room.** A round lounge on a slowly turning station: brushed steel, soft lamps, Death's table standing on the deck though nobody bolted it down, and one enormous window full of the Earth. The gravity is made, not given, and it is not quite right; now and then a chip lifts off the felt and settles again. A single lens sits in the ceiling, pale and unblinking.
 
 **Entrance.** The station is in the room from the first hand: a voice, and a pale lens in the ceiling. When the Robot is knocked out, the lights fail, the gravity lets go, and the Robot sits back down with a lens where its chest lamp used to be.
 
@@ -946,7 +973,7 @@ Folklore · Modern folklore · the abduction-story visitor
 
 The Grey is the visitor of modern folklore: small, grey-skinned and large-headed, with great black almond eyes and almost no mouth. It took shape in the second half of the twentieth century, out of accounts from people on lonely roads at night who described bright lights, lost hours, and small grey figures who examined them and let them go. Nobody owns it. Like the older folk tales, it was assembled by thousands of retellings.
 
-At this table it is the Astronaut's rescuer. It found her drifting and brought her aboard, and it has watched her ever since with an attention nobody can read: kindness, or study, or both. It touches wood as if it had never seen any. It stares at the backs of the cards. It has never once explained itself, and it does not seem to think that it should.
+At this table it is the Astronaut's rescuer. It found him drifting and brought him aboard, and it has watched him ever since with an attention nobody can read: kindness, or study, or both. It touches wood as if it had never seen any. It stares at the backs of the cards. It has never once explained itself, and it does not seem to think that it should.
 
 **At the table.** Unhurried, and hard to shake. It plays a middling number of hands, bluffs now and then, and never tilts; it does not seem to know what losing is meant to feel like. It learns a table quickly. With its best hands it goes quiet rather than loud, and lets someone else do the betting. Its face was not built for your benefit.
 
@@ -1021,13 +1048,13 @@ At this table it is the station's crew. It fetches, carries and mends, and keeps
 
 Archetype · The lost explorer
 
-> I am not due to meet her for years yet. It is the best news at this table, and she does not know it.
+> I am not due to meet him for years yet. It is the best news at this table, and he does not know it.
 
-The lost explorer is as old as exploring: the sailor blown off every chart, the castaway on the island, the traveller who went further than anyone and could not find the way back. The astronaut is the newest version of that story. She has no single source and belongs to nobody. She is everyone who has looked down at the whole Earth from a small window and felt, all at once, how far away it was.
+The lost explorer is as old as exploring: the sailor blown off every chart, the castaway on the island, the traveller who went further than anyone and could not find the way back. The astronaut is the newest version of that story. He has no single source and belongs to nobody. He is everyone who has looked down at the whole Earth from a small window and felt, all at once, how far away it was.
 
-Her ship failed a long way out. Something found her drifting and brought her here: the Grey, though it has never said so, and she has never quite managed to thank it. She has been aboard longer than she likes to count. She keeps a photograph up her sleeve, her helmet beside her chips, and her hope where everyone can see it. She is exactly what she looks like.
+His ship failed a long way out. Something found him drifting and brought him here: the Grey, though it has never said so, and he has never quite managed to thank it. He has been aboard longer than he likes to count. He keeps a photograph up his sleeve, his helmet beside his chips, and his hope where everyone can see it. He is exactly what he looks like.
 
-**At the table.** She plays like someone waiting to be rescued: she will nearly always pay a little to see one more card, in case it is the one. She rarely bluffs, and she is not good at pretending. A bad beat stays with her for a few hands. She is the easiest person at this table to read, and she knows it, and she plays anyway.
+**At the table.** He plays like someone waiting to be rescued: he will nearly always pay a little to see one more card, in case it is the one. He rarely bluffs, and he is not good at pretending. A bad beat stays with him for a few hands. He is the easiest person at this table to read, and he knows it, and he plays anyway.
 
 | aggression | tightness | bluff | tilt | adaptivity | bet respect | skill | noise |
 |---|---|---|---|---|---|---|---|
@@ -1036,12 +1063,12 @@ Her ship failed a long way out. Something found her drifting and brought her her
 - Quirk: `chaser` (maxPotFraction 0.45, minEquity 0.25) — Calls cheap bets on the flop and turn to see another card.
 - Tell (strong, 0.85): *grins, then hides it*
 - Tell (weak, 0.85): *glances out of the window at Earth*
-- Tell (bluffing, 0.82): *checks the oxygen gauge on her wrist*
-- Idle noise: *rubs a scuff on her helmet, which sits beside her chips*; *floats a chip an inch off the table and catches it*; *yawns*; *touches a photograph tucked in her sleeve*
+- Tell (bluffing, 0.82): *checks the oxygen gauge on his wrist*
+- Idle noise: *rubs a scuff on his helmet, which sits beside his chips*; *floats a chip an inch off the table and catches it*; *yawns*; *touches a photograph tucked in his sleeve*
 
-**Look.** Silhouette: a bulky, scuffed pressure suit, its round helmet off and set on the table beside her chips; the helmet says astronaut at a glance. Short practical hair, tired kind eyes, a grin she cannot quite hide. Prop: the oxygen gauge on her wrist, which she lifts to eye level to read. No flags, no agency patches, no real insignia. **Prop:** A wrist oxygen gauge.
+**Look.** Silhouette: a bulky, scuffed pressure suit, its round helmet off and set on the table beside his chips; the helmet says astronaut at a glance. Short practical hair, tired kind eyes, a grin he cannot quite hide. Prop: the oxygen gauge on his wrist, which he lifts to eye level to read. No flags, no agency patches, no real insignia. **Prop:** A wrist oxygen gauge.
 
-**Public domain.** An archetype, not a person: the lost explorer. She must not resemble any real astronaut, any real agency's suit, or any film's. No NASA or other agency insignia, no flags, no named missions, and nothing taken from any space film. Her suit is our own design, built for a readable silhouette rather than accuracy.
+**Public domain.** An archetype, not a person: the lost explorer. He must not resemble any real astronaut, any real agency's suit, or any film's. No NASA or other agency insignia, no flags, no named missions, and nothing taken from any space film. His suit is our own design, built for a readable silhouette rather than accuracy.
 
 ### The AI — *The Room Itself*
 
@@ -1111,7 +1138,7 @@ Seats: Julius Caesar, Sherlock Holmes, Count Dracula, The AI.
 
 **Hook.** Every champion on the tour has lost a table to you. There is one table left, down by the water, and one chair across from yours.
 
-**Room.** A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on one small square table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.
+**Room.** A plank-walled dock house on the near bank of a wide black river, at night, in a storm: one oil lamp on Death's table, two chairs, rain running down the windows. Through the glass, far out on the water, a ferryman's lantern is moving away from the shore with someone else aboard. No gold, no portraits, no crowd — a coil of rope, a boat hook on the wall, a door that never quite shuts.
 
 **Entrance.** He is already seated when you come in through the ninth door — in a player's chair for the first time, forearms on the table in the lamplight, waiting.
 
@@ -1122,6 +1149,24 @@ Seats: Julius Caesar, Sherlock Holmes, Count Dracula, The AI.
 Buy-in 5000, blinds up every 12 hands.
 
 Seats: Death.
+
+## 12. The Pyre
+
+*The temple of the Sun, Heliopolis · Egypt · The five hundredth year*
+
+**Hook.** Eight times you were the last one beaten, and eight times you came back. Something noticed. It has flown a very long way to sit across from you, and it will only sit down once.
+
+**Room.** The inner court of the temple of the Sun at Heliopolis, in the last hour before dawn: tall sandstone columns, a sky going from violet to gold beyond them, and on a stone altar at the back a nest of cinnamon and myrrh, smouldering. Death's table stands in the middle of the court. Ash drifts across the felt like snow and never settles.
+
+**Entrance.** It is waiting on the altar when you come in, a great red-and-gold bird sitting very still in a nest of smouldering spice. When you sit down it steps down from the altar, crosses the court and takes the chair opposite, and the ash it shakes from its wings is warm.
+
+**Music.** A single high reed pipe over a low drone and a frame drum that quickens very slowly, as if toward a sunrise that never quite arrives. **Ambience:** a dry wind through the columns, spice crackling on embers, a single bird call, far up in the dawn, ash hissing as it lands on warm stone.
+
+**Earned names.** nobody → “fledgling” → *your name* → “Ashborn”
+
+Buy-in 5000, blinds up every 12 hands.
+
+Seats: The Phoenix.
 
 ## The Dealer
 
@@ -1137,7 +1182,7 @@ What makes him a person is that he is tired. He has done one job for longer than
 
 No tells, no noise: the endpoint of the legibility curve. Quirks: `check_raise` (minEquity 0.75, chance 0.5) — Checks strength on the flop and turn, then raises when bet into.; `heads_up_pressure` (minEquity 0.6, chance 0.35) — Alone in a pot with one opponent, applies relentless pressure.; `punish_passivity` (foldRate 0.55, chance 0.5, potFraction 0.6) — Bets into a table that has been folding too often..
 
-**Look.** Silhouette: tall, narrow, hooded — a grey burial shroud worn as a cloak, the way the danse macabre painted him, never a monk's black robe. Face: a plain skull half in the hood's shadow, drawn like a woodcut; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal. **Prop:** The deck.
+**Look.** Silhouette: tall, narrow, hooded — a black hooded robe with a deep purple lining, ragged at the hems, crossed with worn leather straps, and a gold skull brooch on a short chain at the collarbone. Face: a plain skull in the hood's shadow; no glowing eyes, no leer. Tired posture, forearms on the table. Prop: the deck, always in his long bone hands. He has no tells, so the hands only ever deal. **Prop:** The deck.
 
 **Public domain.** Folklore: the personified Death of late-medieval Europe — danse macabre murals, Holbein's Dance of Death woodcuts, Albertus Pictor's Death playing chess at Täby. Must not resemble Pratchett's Death (small caps, the horse, cats, curry), Bergman's pale-faced chess player from The Seventh Seal, or Gaiman's Death. No scythe at the table, and never an empty, faceless hood (Ringwraith, Dementor).
 
@@ -1175,3 +1220,56 @@ He once wagered his own head with a dwarf named Brokkr that Brokkr's brother cou
 **Look.** Silhouette: lean and restless, sharp-featured and handsome, as the Prose Edda insists he is. Plain Norse dress in ash-grey, rust and smoke: a wool tunic, a short cloak pinned at one shoulder, bare-headed, fair hair worn loose. No crown and no helmet of any kind. The mouth is the tell surface: a row of pale, old stitch-scars across both lips from Brokkr's awl, and a smile that uses only half of them. Hands never still. **Prop:** A small golden game piece from the gods' own board.
 
 **Public domain.** Norse myth as the Poetic Edda and Snorri's Prose Edda record it (13th century), and their old English translations (Brodeur 1916, Bellows 1923): all public domain. Must NOT resemble Marvel's Loki in any way: no green-and-gold costume, no curved golden horned helmet, no slicked-back black hair, no likeness of any actor who has played him, no lines or catchphrases from the films or comics, and not the 'God of Mischief' branding. Avoid Wagner's Loge and modern retellings as sources too. Build him from the Eddas: fair-faced, bare-headed, the stitched mouth.
+
+### John F. Kennedy — *The Thirty-Fifth*
+
+**Guest.** History · 1917–1963 · 35th President of the United States
+
+> He came in on a three and a five, the youngest man ever elected to the chair he once held, and sat down as if the meeting had been called for him. I did not invite him. I have written him down anyway.
+
+John Fitzgerald Kennedy, the thirty-fifth President of the United States and the youngest ever elected, at forty-three. In the Second World War he commanded the motor torpedo boat PT-109 in the Solomon Islands; when a Japanese destroyer ran it down in the dark in 1943, he towed an injured crewman miles to an island by a strap clenched in his teeth, and the crew were rescued after he cut a message into a coconut husk. He kept the coconut on his desk in the Oval Office as a paperweight.
+
+He won the 1960 election by one of the narrowest margins of the century, after the first televised presidential debates. In office he set the country on its way to the Moon and, in October 1962, faced down the Cuban missile crisis, thirteen days in which both sides pushed their chips forward and neither showed its cards. He suffered from chronic back pain his whole adult life, and kept a rocking chair in the Oval Office for it. He wrote Profiles in Courage, a book about eight senators who voted against their own side.
+
+**At the table.** He plays a good many hands and plays them with confidence, and he will take a pot nobody is guarding. He bluffs more than the men in the portraits, and with more charm. Nobody at the White House hides less: when he is comfortable it shows, and when he is not, it shows in his back.
+
+| aggression | tightness | bluff | tilt | adaptivity | noise |
+|---|---|---|---|---|---|
+| .62 | .46 | .30 | .15 | .55 | .05 |
+
+- Quirk: `steal` (chance 0.4, minEquity 0.32) — Raises unopened pots before the flop with a wide range.
+- Tell (strong, 0.92): *rocks back in his chair, easy*
+- Tell (bluffing, 0.9): *straightens his tie*
+- Tell (weak, 0.9): *presses a hand to the small of his back*
+- Idle noise: *runs a hand through his hair*; *taps the coconut shell on the felt*; *chops the air with one hand, mid-thought*; *glances up at the portraits on the wall*
+
+**Look.** Silhouette: a young, lean man in a narrow navy two-button suit, white shirt, thin dark tie, thick reddish-brown hair swept to one side, a broad, easy grin. No hat, no sunglasses, nothing in his mouth (FDR's holder is the table's one thing in a mouth). Prop: the PT-109 coconut shell paperweight, on the felt beside his chips. His tells are big shapes: rocking back in the chair, a hand to his tie, a hand to the small of his back. **Prop:** The PT-109 coconut shell paperweight.
+
+**Public domain.** A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause.
+
+### The Phoenix — *The Bird That Comes Back*
+
+**Guest.** Myth · Herodotus, Ovid and Pliny · once in five hundred years
+
+> It does not stay beaten, and it does not stay down. It came because you kept finishing one place short, and getting up again. It recognised the habit.
+
+Herodotus heard of it at Heliopolis, in Egypt: a bird that came to the temple of the Sun once in five hundred years, red and gold, shaped and sized like an eagle, carrying its dead father from Arabia in an egg of myrrh to bury him there. He saw only a painting of it, he says, and did not believe the story. Ovid and Pliny tell of its nest of spices, and of a new phoenix rising from the old one when it dies.
+
+Later writers settled the part everyone remembers: that at the end of its long life it burns, and rises again from its own ashes. There is only ever one. It is the oldest image people have for coming back from losing, and it has been on banners, coins and city seals for two thousand years.
+
+**At the table.** It plays only heads up, and it plays as well as anyone at this end of the tour: it reads you quickly, it presses when it is alone with you, and when it has the best of it, it bets more than the pot. It never tilts. It has burned to nothing more times than anyone can count, and it has never once minded. Its flames tell you things, sometimes. About as often as they lie.
+
+| aggression | tightness | bluff | tilt | adaptivity | noise |
+|---|---|---|---|---|---|
+| .74 | .58 | .24 | .00 | .85 | .20 |
+
+- Quirk: `heads_up_pressure` (chance 0.55) — Alone in a pot with one opponent, applies relentless pressure.
+- Quirk: `overbet` (minEquity 0.78, potFraction 1.3, chance 0.5) — With a strong hand, bets far more than the pot.
+- Tell (strong, 0.6): *the flames along its crest flare up*
+- Tell (bluffing, 0.58): *preens one wing, unhurried*
+- Tell (weak, 0.58): *its feathers dim to embers*
+- Idle noise: *a spark drifts up from its crest*; *shakes a little ash from its feathers*; *turns its head toward the light*; *watches you with one gold eye*
+
+**Look.** Silhouette: a great bird the size of an eagle and then some, red and gold, sitting up at the table like a person, wings folded where another player's arms would rest, a crest of small living flames along the head, a long tail of fire-coloured plumes falling away behind the chair. Bright, warm cartoon flames, never scary. NOT any modern phoenix: not Fawkes from the Harry Potter books and films, not Marvel's Phoenix, no human figure, no woman in flames. Its tell surface is the crest and the feathers: flames up, flames down to embers. **Prop:** Its own crest of flame.
+
+**Public domain.** Classical myth: Herodotus (Histories 2.73), Ovid (Metamorphoses 15), Pliny (Natural History 10.2), all public domain. Nothing from the Harry Potter books or films (Fawkes), Marvel's Phoenix or the X-Men, or any modern film or game. No speech: it sings and trills, and Death translates.

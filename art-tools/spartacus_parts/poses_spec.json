@@ -1,0 +1,171 @@
+{
+ "style_lock": true,
+ "title": "Spartacus",
+ "name": "Spartacus",
+ "him": "him",
+ "extremity": "the top of his head",
+ "same": "face, cropped hair, broken nose, bare shoulders, rough cloak and wrist scar",
+ "recap": "a broad-shouldered Thracian fighter in his thirties, cropped dark hair, a short dark beard, a nose broken more than once, bare muscled shoulders and arms under a rough brown wool cloak pinned at one shoulder, a pale band of old shackle scar round his LEFT wrist",
+ "keep": " The pale shackle scar shows round his left wrist in every pose.",
+ "no": "No gladiator helmet, no leather harness, no sword, no chains, no chair.",
+ "intro": "Rome's seat 1 (the player's left): drawn facing the viewer's right, as the game shows him. Built the way Scipio is (`art-tools/pose_rig.py`), style-locked.\n\nHis look, from his character file: broad bare shoulders under a rough Thracian cloak, cropped hair, a nose broken more than once; a fighter, not a showman, so no gladiator helmet. Heavy hands that never quite rest. His prop is the pale band of old shackle scar round his wrist; his wrist and shoulders carry his tells.\n\nRuled out (his character file): Howard Fast's novel, the 1960 film and the television series: no screen-gladiator harness, no 'I am Spartacus'. Build from Plutarch and Appian. Layout from Lancelot's character sheet, style from Washington's pose sheet A.\n\nTags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: rolling his shoulders like a fighter before a bout (strong) beside rolling his neck; rubbing the scar on his wrist (tilted) beside flexing his hands; staring hard across the table (bluffing) beside glancing at the doors. 'Tests the weight of the table' is C4.",
+ "table": [
+  [
+   "A1",
+   "Rest: forearms on the table's edge, hands apart, the wrist scar showing",
+   "IDLE"
+  ],
+  [
+   "A2",
+   "Peeking at his cards (right hand)",
+   "MECH"
+  ],
+  [
+   "A3",
+   "Check: knuckles rap the felt",
+   "MECH"
+  ],
+  [
+   "A4",
+   "Call: slides a short stack forward",
+   "MECH"
+  ],
+  [
+   "A5",
+   "Bet: shoves a stack forward, hard",
+   "MECH"
+  ],
+  [
+   "A6",
+   "Fold: flicks his cards away",
+   "MECH"
+  ],
+  [
+   "B1",
+   "All in: both hands drive his whole stack forward",
+   "MECH"
+  ],
+  [
+   "B2",
+   "Show: turns his cards over",
+   "MECH"
+  ],
+  [
+   "B3",
+   "Collect: both arms drag the pot in",
+   "MECH"
+  ],
+  [
+   "B4",
+   "Rolls his shoulders like a fighter before a bout",
+   "TELL"
+  ],
+  [
+   "B5",
+   "Rolls his neck (decoy for B4)",
+   "IDLE"
+  ],
+  [
+   "B6",
+   "Rubs the old shackle scar on his left wrist",
+   "TELL"
+  ],
+  [
+   "C1",
+   "Flexes his hands, fingers spread (decoy for B6)",
+   "IDLE"
+  ],
+  [
+   "C2",
+   "Stares hard across the table",
+   "TELL"
+  ],
+  [
+   "C3",
+   "Glances at the doors (decoy for C2)",
+   "IDLE"
+  ],
+  [
+   "C4",
+   "Grips the table's edge as if testing its weight",
+   "IDLE"
+  ],
+  [
+   "C5",
+   "A short, hard laugh",
+   "IDLE"
+  ],
+  [
+   "C6",
+   "Arms folded on the table, watching",
+   "IDLE"
+  ],
+  [
+   "D1",
+   "Talking: one fist on the table, blunt",
+   "BEAT"
+  ],
+  [
+   "D2",
+   "Facing a big bet: jaw set, leaning in",
+   "BEAT"
+  ],
+  [
+   "D3",
+   "Lost a pot: a hard exhale, head tilted back",
+   "BEAT"
+  ],
+  [
+   "D4",
+   "Won a pot: a fierce grin, dragging chips in",
+   "BEAT"
+  ],
+  [
+   "D5",
+   "Heads up: leaning over the table on both fists",
+   "BEAT"
+  ],
+  [
+   "D6",
+   "Knocked out: stands, looks once at the doors, goes",
+   "BEAT"
+  ]
+ ],
+ "howto": "One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, then Washington's pose sheet A (`art-tools/washington_parts/sources/poses_a.png`) for the style. From the second prompt on, attach Spartacus's own character sheet, his pose sheet A once it exists, AND Washington's pose sheet A again, and nothing else.",
+ "character": "Character sheet for 2D animation rigging: Spartacus, the Thracian gladiator who led the great slave revolt against Rome in 73-71 BC, as Plutarch and Appian describe him. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No plate armour, no gauntlets, no surcoat, no long hair. Take the STYLE from the SECOND attached image.\n\nSpartacus: a powerful man in his thirties, broad-shouldered and heavy-handed; cropped dark hair and a short dark beard; a strong, weathered face with a nose broken more than once and steady, wary dark eyes; bare muscled shoulders and arms; a rough, plain brown wool cloak pinned at his right shoulder with a simple iron pin, hanging over a plain sleeveless tunic. Round his LEFT wrist, a wide pale band of old scar where a shackle was, clearly visible. A fighter, not a showman. NO gladiator helmet, NO leather harness or armour, NO sword, NO chains. Nothing from any film or television portrayal.\n\nPure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.\n\nThe angle: a gentle three-quarter view, turned about 25 degrees from front-on, facing the viewer's right. Both eyes, the whole nose, the mouth and both shoulders clearly visible. NOT profile.\n\nDraw, all facing the viewer's right, at the same size:\n- Finished heads, each with the neck and the top of the cloak: neutral, wary; talking, mouth open mid-word; a fierce grin; a hard stare\n- The torso in the cloak and tunic: no head, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands\n- Two bare forearms, lying on a table, pointing toward its centre, open at the elbow end, the LEFT one with the pale scar band at the wrist\n- Four seated reference poses, waist up behind the curved edge of a round green poker table, forearms resting on its edge, hands apart: neutral; rolling his shoulders; rubbing the scar on his wrist; staring hard across the table",
+ "sheets": {
+  "A": [
+   "At rest: both forearms lying along the table's edge, his hands resting on the felt in front of him, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; the pale scar band round his left wrist showing; a wary, steady look, mouth closed",
+   "Peeking at his cards: his right hand cupped over two cards on the felt, thumb lifting the near corner, eyes down",
+   "Checking: the knuckles of his right hand rapping the felt once",
+   "Calling: his right hand sliding a short stack of chips forward",
+   "Betting: his right hand shoving a stack of chips well forward, hard",
+   "Folding: his right hand flicking two cards away face down"
+  ],
+  "B": [
+   "All in: both hands driving his whole stack of chips forward",
+   "Showing: his right hand turning two cards face up; the card faces are BLANK white, no ranks, no suits",
+   "Collecting the pot: both forearms out on the felt, dragging a pile of chips in",
+   "Rolling his shoulders like a fighter before a bout, shoulders up and back, chin down; hands as at rest",
+   "Rolling his neck, head tilted to one side, eyes half closed; arms as at rest",
+   "Rubbing the pale scar on his left wrist with the fingers of his right hand"
+  ],
+  "C": [
+   "Flexing both hands on the felt, fingers spread wide",
+   "Staring hard across the table, head forward, eyes narrowed; arms as at rest",
+   "Glancing sideways at the doors, head turned to his left; arms as at rest",
+   "Gripping the table's edge with both hands as if testing its weight, shoulders tense",
+   "A short, hard laugh, head back a little; arms as at rest",
+   "His arms folded on the table in front of him, watching"
+  ],
+  "D": [
+   "Talking: his right fist resting on the table, blunt",
+   "Facing a big bet: jaw set, leaning in a little; arms as at rest",
+   "Lost a pot: a hard exhale, head tilted back; arms as at rest",
+   "Won a pot: a fierce grin, his right hand dragging a few chips toward him",
+   "Down to two players: leaning over the table on both fists, eyes level",
+   "Knocked out: rising from his seat, looking once over his shoulder toward the doors"
+  ]
+ },
+ "face": "Character sheet for 2D animation rigging: Spartacus's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head. Draw that head once, top left, with the neck and the top of the cloak, as the reference, mouth closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels.\n\n- His eyes with the lids half closed; closed; looking toward the viewer; looking down at the table; looking to the side; narrowed (one piece each, both eyes with the skin around them)\n- His brows raised; his brows drawn down (one piece each, both brows)\n- Lower-face patches, each the mouth with the skin around it, cut straight across just under the nose and again a little below the lower lip: closed at rest; open \"ah\"; wide \"ee\"; round \"oh\"; pursed \"oo\"; lips pressed \"m\"; lower lip under the teeth \"f\"; tongue tip behind the teeth \"l\"; a fierce grin; a hard-set mouth\n- His head turned toward the viewer, nearly front-on"
+}

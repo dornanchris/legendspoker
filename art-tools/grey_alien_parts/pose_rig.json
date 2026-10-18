@@ -1,0 +1,832 @@
+{
+ "id": "grey_alien",
+ "name": "The Grey",
+ "note": "Polygons in the rest pose (A1) pixels. The Station's style (the Astronaut's sheets the style images). Seat 1, drawn facing right, not mirrored. The master is the rest pose's OWN head; its face pieces are made from it (eyes.py: the sideways membrane, the eye glow), since the face sheet drew whole heads at another size. Every pose but rest a whole-figure frame with its own drawn head. No prop.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    17,
+    17,
+    490,
+    484
+   ],
+   "what": "Rest: forearms on the table's edge, long fingers apart, black eyes on the table"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    523,
+    20,
+    489,
+    481
+   ],
+   "reg": [
+    1.0,
+    1,
+    3
+   ],
+   "what": "Peeking at its cards (right hand)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1028,
+    17,
+    490,
+    484
+   ],
+   "reg": [
+    1.0,
+    1,
+    0
+   ],
+   "what": "Check: one long finger taps the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    17,
+    520,
+    490,
+    475
+   ],
+   "reg": [
+    1.0,
+    0,
+    17
+   ],
+   "what": "Call: right hand pushes forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    523,
+    533,
+    489,
+    456
+   ],
+   "reg": [
+    1.0,
+    1,
+    30
+   ],
+   "what": "Bet: leans in, right hand pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1028,
+    515,
+    490,
+    472
+   ],
+   "reg": [
+    1.0,
+    1,
+    12
+   ],
+   "what": "Fold: turns its hand palm up, letting go"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    16,
+    20,
+    489,
+    481
+   ],
+   "reg": [
+    1.0,
+    1,
+    4
+   ],
+   "what": "All in: both hands push forward together"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    523,
+    7,
+    485,
+    493
+   ],
+   "reg": [
+    1.0,
+    0,
+    -9
+   ],
+   "what": "Show: right hand turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    947,
+    23,
+    587,
+    477
+   ],
+   "reg": [
+    1.0,
+    1,
+    7
+   ],
+   "what": "Big win: thin arms raised and spread, face unchanged (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    15,
+    511,
+    486,
+    475
+   ],
+   "reg": [
+    1.0,
+    0,
+    9
+   ],
+   "what": "Blinks sideways: a membrane across its eyes"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    521,
+    520,
+    473,
+    467
+   ],
+   "reg": [
+    1.0,
+    1,
+    18
+   ],
+   "what": "Stares at the backs of your cards (decoy for B4)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1014,
+    509,
+    504,
+    478
+   ],
+   "reg": [
+    1.0,
+    1,
+    7
+   ],
+   "what": "Its long fingers splay on the table"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    17,
+    17,
+    490,
+    482
+   ],
+   "reg": [
+    1.0,
+    1,
+    2
+   ],
+   "what": "Touches the table as if it had never seen wood (decoy for B6)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    524,
+    14,
+    488,
+    486
+   ],
+   "reg": [
+    1.0,
+    1,
+    -1
+   ],
+   "what": "Its head tilts forty degrees"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1029,
+    7,
+    491,
+    492
+   ],
+   "reg": [
+    1.0,
+    1,
+    -8
+   ],
+   "what": "Watches someone breathe, with interest (decoy for C2)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    17,
+    508,
+    489,
+    478
+   ],
+   "reg": [
+    1.0,
+    1,
+    6
+   ],
+   "what": "Hums at a pitch you feel in your teeth"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    523,
+    508,
+    488,
+    478
+   ],
+   "reg": [
+    1.0,
+    0,
+    6
+   ],
+   "what": "Turns to look at you"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1028,
+    509,
+    492,
+    477
+   ],
+   "reg": [
+    1.0,
+    1,
+    7
+   ],
+   "what": "Studies its own long fingers (a fidget)"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    17,
+    9,
+    489,
+    492
+   ],
+   "reg": [
+    1.0,
+    1,
+    -8
+   ],
+   "what": "Talking: a hand raised, palm open, a glow in its eyes"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    523,
+    6,
+    488,
+    495
+   ],
+   "reg": [
+    1.0,
+    1,
+    -11
+   ],
+   "what": "Facing a big bet: very still and upright"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1028,
+    16,
+    490,
+    485
+   ],
+   "reg": [
+    1.0,
+    1,
+    -1
+   ],
+   "what": "Lost a pot: its head tilts slowly, puzzled"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    17,
+    519,
+    489,
+    468
+   ],
+   "reg": [
+    1.0,
+    1,
+    16
+   ],
+   "what": "Crushing loss: both hands over its great head, bowed (`lose_big`)"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    523,
+    518,
+    488,
+    469
+   ],
+   "reg": [
+    1.0,
+    1,
+    15
+   ],
+   "what": "Heads up: leaning in on both forearms"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1028,
+    518,
+    490,
+    469
+   ],
+   "reg": [
+    1.0,
+    1,
+    15
+   ],
+   "what": "A slow, deep nod"
+  }
+ },
+ "rest": "A1",
+ "table_y": 362,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  270,
+  350,
+  350
+ ],
+ "register_span": 40,
+ "collar_y": 268,
+ "neck": [
+  255,
+  270
+ ],
+ "frame_margin": 80,
+ "stock_box": [
+  190,
+  230,
+  330,
+  300
+ ],
+ "master": {
+  "piece": "grey_alien_parts/grey_alien_face/grey_alien_master.png",
+  "cut_below": 282,
+  "face": "grey_alien_parts/face.json",
+  "file": "grey_alien_parts/grey_alien_rig/master.png",
+  "layers": "grey_alien_parts/grey_alien_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    122,
+    0
+   ],
+   [
+    398,
+    0
+   ],
+   [
+    398,
+    140
+   ],
+   [
+    372,
+    190
+   ],
+   [
+    332,
+    236
+   ],
+   [
+    302,
+    262
+   ],
+   [
+    294,
+    286
+   ],
+   [
+    212,
+    286
+   ],
+   [
+    204,
+    242
+   ],
+   [
+    160,
+    205
+   ],
+   [
+    124,
+    152
+   ]
+  ],
+  "shoulder_y": 270,
+  "keep_white": true
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    55,
+    390
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     30,
+     268
+    ],
+    [
+     165,
+     262
+    ],
+    [
+     160,
+     350
+    ],
+    [
+     110,
+     388
+    ],
+    [
+     30,
+     395
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its right forearm and long-fingered hand",
+     "poly": [
+      [
+       26,
+       372
+      ],
+      [
+       90,
+       368
+      ],
+      [
+       140,
+       370
+      ],
+      [
+       200,
+       398
+      ],
+      [
+       250,
+       430
+      ],
+      [
+       264,
+       476
+      ],
+      [
+       200,
+       478
+      ],
+      [
+       120,
+       478
+      ],
+      [
+       55,
+       445
+      ],
+      [
+       26,
+       412
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    428,
+    372
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     318,
+     272
+    ],
+    [
+     400,
+     286
+    ],
+    [
+     442,
+     335
+    ],
+    [
+     442,
+     388
+    ],
+    [
+     400,
+     378
+    ],
+    [
+     328,
+     330
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "its left forearm and long-fingered hand",
+     "poly": [
+      [
+       384,
+       350
+      ],
+      [
+       436,
+       344
+      ],
+      [
+       436,
+       396
+      ],
+      [
+       448,
+       412
+      ],
+      [
+       436,
+       478
+      ],
+      [
+       316,
+       478
+      ],
+      [
+       318,
+       440
+      ],
+      [
+       345,
+       400
+      ],
+      [
+       372,
+       388
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "membrane": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "stare": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "splay": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "wood": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "tilt": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "breathe": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "hum": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "marks": [
+    [
+     [
+      85,
+      40
+     ],
+     [
+      180,
+      40
+     ],
+     [
+      180,
+      220
+     ],
+     [
+      85,
+      220
+     ]
+    ],
+    [
+     [
+      335,
+      30
+     ],
+     [
+      425,
+      30
+     ],
+     [
+      425,
+      260
+     ],
+     [
+      335,
+      260
+     ]
+    ]
+   ]
+  },
+  "turn": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "fingers": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "nod": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "runtime": "../web/art/grey_alien",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6,
+ "wood_rows_only": true,
+ "strip_thin": 2,
+ "exclude": {
+  "A1": [
+   [
+    [
+     299,
+     337
+    ],
+    [
+     348,
+     337
+    ],
+    [
+     348,
+     362
+    ],
+    [
+     299,
+     362
+    ]
+   ],
+   [
+    [
+     121,
+     346
+    ],
+    [
+     142,
+     346
+    ],
+    [
+     142,
+     364
+    ],
+    [
+     121,
+     364
+    ]
+   ]
+  ]
+ }
+}

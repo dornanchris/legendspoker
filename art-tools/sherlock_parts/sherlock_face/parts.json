@@ -1,0 +1,276 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "sherlock_face_01.png",
+      "label": "",
+      "x": 21,
+      "y": 12,
+      "w": 380,
+      "h": 459,
+      "pivot": [
+        190.0,
+        229.5
+      ],
+      "area": 119699
+    },
+    {
+      "index": 2,
+      "file": "sherlock_face_02.png",
+      "label": "",
+      "x": 421,
+      "y": 110,
+      "w": 250,
+      "h": 159,
+      "pivot": [
+        125.0,
+        79.5
+      ],
+      "area": 31662
+    },
+    {
+      "index": 3,
+      "file": "sherlock_face_03.png",
+      "label": "",
+      "x": 697,
+      "y": 109,
+      "w": 251,
+      "h": 160,
+      "pivot": [
+        125.5,
+        80.0
+      ],
+      "area": 32002
+    },
+    {
+      "index": 4,
+      "file": "sherlock_face_04.png",
+      "label": "",
+      "x": 973,
+      "y": 108,
+      "w": 253,
+      "h": 161,
+      "pivot": [
+        126.5,
+        80.5
+      ],
+      "area": 32248
+    },
+    {
+      "index": 5,
+      "file": "sherlock_face_05.png",
+      "label": "",
+      "x": 1257,
+      "y": 109,
+      "w": 255,
+      "h": 160,
+      "pivot": [
+        127.5,
+        80.0
+      ],
+      "area": 32602
+    },
+    {
+      "index": 6,
+      "file": "sherlock_face_06.png",
+      "label": "",
+      "x": 535,
+      "y": 286,
+      "w": 252,
+      "h": 159,
+      "pivot": [
+        126.0,
+        79.5
+      ],
+      "area": 31718
+    },
+    {
+      "index": 7,
+      "file": "sherlock_face_07.png",
+      "label": "",
+      "x": 839,
+      "y": 287,
+      "w": 251,
+      "h": 158,
+      "pivot": [
+        125.5,
+        79.0
+      ],
+      "area": 31641
+    },
+    {
+      "index": 8,
+      "file": "sherlock_face_08.png",
+      "label": "",
+      "x": 1132,
+      "y": 286,
+      "w": 253,
+      "h": 159,
+      "pivot": [
+        126.5,
+        79.5
+      ],
+      "area": 31995
+    },
+    {
+      "index": 9,
+      "file": "sherlock_face_09.png",
+      "label": "",
+      "x": 22,
+      "y": 499,
+      "w": 203,
+      "h": 161,
+      "pivot": [
+        101.5,
+        80.5
+      ],
+      "area": 25039
+    },
+    {
+      "index": 10,
+      "file": "sherlock_face_10.png",
+      "label": "",
+      "x": 239,
+      "y": 500,
+      "w": 198,
+      "h": 161,
+      "pivot": [
+        99.0,
+        80.5
+      ],
+      "area": 24459
+    },
+    {
+      "index": 11,
+      "file": "sherlock_face_11.png",
+      "label": "",
+      "x": 446,
+      "y": 502,
+      "w": 189,
+      "h": 155,
+      "pivot": [
+        94.5,
+        77.5
+      ],
+      "area": 22312
+    },
+    {
+      "index": 12,
+      "file": "sherlock_face_12.png",
+      "label": "",
+      "x": 644,
+      "y": 501,
+      "w": 184,
+      "h": 153,
+      "pivot": [
+        92.0,
+        76.5
+      ],
+      "area": 21416
+    },
+    {
+      "index": 13,
+      "file": "sherlock_face_13.png",
+      "label": "",
+      "x": 836,
+      "y": 501,
+      "w": 178,
+      "h": 149,
+      "pivot": [
+        89.0,
+        74.5
+      ],
+      "area": 20809
+    },
+    {
+      "index": 14,
+      "file": "sherlock_face_14.png",
+      "label": "",
+      "x": 1021,
+      "y": 500,
+      "w": 179,
+      "h": 150,
+      "pivot": [
+        89.5,
+        75.0
+      ],
+      "area": 20806
+    },
+    {
+      "index": 15,
+      "file": "sherlock_face_15.png",
+      "label": "",
+      "x": 1151,
+      "y": 522,
+      "w": 363,
+      "h": 471,
+      "pivot": [
+        181.5,
+        235.5
+      ],
+      "area": 108870
+    },
+    {
+      "index": 16,
+      "file": "sherlock_face_16.png",
+      "label": "",
+      "x": 106,
+      "y": 705,
+      "w": 210,
+      "h": 158,
+      "pivot": [
+        105.0,
+        79.0
+      ],
+      "area": 25200
+    },
+    {
+      "index": 17,
+      "file": "sherlock_face_17.png",
+      "label": "",
+      "x": 354,
+      "y": 704,
+      "w": 204,
+      "h": 157,
+      "pivot": [
+        102.0,
+        78.5
+      ],
+      "area": 24465
+    },
+    {
+      "index": 18,
+      "file": "sherlock_face_18.png",
+      "label": "",
+      "x": 607,
+      "y": 701,
+      "w": 222,
+      "h": 157,
+      "pivot": [
+        111.0,
+        78.5
+      ],
+      "area": 26328
+    },
+    {
+      "index": 19,
+      "file": "sherlock_face_19.png",
+      "label": "",
+      "x": 893,
+      "y": 699,
+      "w": 207,
+      "h": 155,
+      "pivot": [
+        103.5,
+        77.5
+      ],
+      "area": 24395
+    }
+  ]
+}

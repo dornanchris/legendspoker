@@ -1,0 +1,165 @@
+{
+  "id": "hyde",
+  "name": "Edward Hyde",
+  "short": "Mr. Hyde",
+  "epithet": "The Man in the Doctor's Coat",
+  "pronoun": "he",
+  "table": "transylvania",
+  "role": "seat",
+  "arrives": false,
+  "origin": "Literature",
+  "era": "Strange Case of Dr Jekyll and Mr Hyde (Stevenson, 1886)",
+  "dials": {
+    "aggression": 0.7,
+    "tightness": 0.4,
+    "bluffFrequency": 0.24,
+    "tiltSensitivity": 0.75,
+    "adaptivity": 0.3,
+    "betRespect": 0.35,
+    "skill": 0.68,
+    "noise": 0.4
+  },
+  "quirks": [
+    {
+      "type": "steal",
+      "chance": 0.35,
+      "minEquity": 0.28
+    },
+    {
+      "type": "charge",
+      "minEquity": 0.6,
+      "chance": 0.4
+    }
+  ],
+  "tells": [
+    {
+      "signal": "smile",
+      "text": "smiles, slow and wide and displeasing",
+      "correlate": "strong",
+      "reliability": 0.64
+    },
+    {
+      "signal": "drum",
+      "text": "drums his hairy knuckles on the felt",
+      "correlate": "bluffing",
+      "reliability": 0.62
+    },
+    {
+      "signal": "hunch",
+      "text": "hunches down into the coat that is too big for him",
+      "correlate": "weak",
+      "reliability": 0.66
+    }
+  ],
+  "idles": [
+    "sucks his teeth",
+    "cracks his knuckles",
+    "shoves his sleeves back up his arms",
+    "glares round the table",
+    "sniggers to himself"
+  ],
+  "profile": {
+    "ledger": "Came to me in another man's clothes, with the smell of kernels on his breath, his face still working. The smallest thing I ever collected, and the hardest to pick up.",
+    "ledger_beaten": "He kicked his chair on the way out and slammed the door. A little later somebody knocked on it, very politely, to apologise.",
+    "history": [
+      "Edward Hyde is the other half of Henry Jekyll in Robert Louis Stevenson's Strange Case of Dr Jekyll and Mr Hyde (1886): pale and dwarfish, smaller, slighter and younger than the doctor, with a husky, whispering, somewhat broken voice and a displeasing smile. He gives everyone who sees him an impression of deformity that nobody can name, and a loathing they cannot explain. Mr Enfield watched him trample a little girl at a street corner and walk on; to buy his way out of the crowd he paid a hundred pounds, ten in gold and the rest in a cheque on Coutts's signed with a respectable name. Later, on a moonlit night, he clubbed Sir Danvers Carew to death with a heavy cane, so hard that it broke; the lawyer Utterson knew the half that was left, for he had given that cane to Jekyll himself.",
+      "He came out of a phial of the doctor's draught and, in the end, came without it: in the doctor's own bed, and on a bench in Regent's Park. When the salt ran out, Poole took an axe to the cabinet door, and he and Utterson found Hyde behind it, dead by his own hand in clothes far too large for him. He was not invited to this table. Jekyll was. Hyde came anyway, in the doctor's coat with the invitation in its pocket, and nobody could find a rule to turn him away."
+    ],
+    "at_the_table": "Reckless and aggressive. He raises pots nobody has opened just to take them, bluffs often, and calls far too much, because he despises anyone who bets at him. With a good hand he will not call when he can raise. He does not adjust, and he does not forgive: a lost pot sets him off, and when he tilts he is worse than wild.",
+    "look": "Silhouette: SMALL. The smallest figure at the table, his head well below everyone else's, swamped by Dr. Jekyll's dark frock coat, the shoulders sliding off him and the cuffs shoved up his arms, the grey waistcoat hanging loose. Pale, younger than the doctor, unkempt black hair, a narrow face with a slow, wide, displeasing smile. Hands lean, corded and knuckly, thickly shaded with black hair. Prop: the broken half of a heavy cane lying on the felt in front of him.",
+    "prop": "The broken half of a heavy cane",
+    "public_domain": "Stevenson's novella (1886) is public domain. Hyde is SMALL: pale, dwarfish, younger than Jekyll, ugly without any deformity anyone can name. Nothing from the films (no ape-man of 1931, no Barrymore spider-fingers of 1920, no Tracy of 1941) and above all no hulking giant from The League of Extraordinary Gentlemen. No fangs, no fur, no monster make-up, no likeness of any actor."
+  },
+  "callouts": {
+    "fold": [
+      "Pah. Take it.",
+      "Fold. Keep your crumbs.",
+      "Fold. I'll have it back off you later.",
+      "Bah. Fold, then. I'm not sorry."
+    ],
+    "check": [
+      "Check. Go on, then.",
+      "Check. Get on with it.",
+      "Check. Your turn, old fellow."
+    ],
+    "call": [
+      "Call. I'll stay and watch you squirm.",
+      "Call. Jekyll's money. Why should I care?",
+      "Call. Put it on the doctor's account.",
+      "Call. Try and shift me."
+    ],
+    "bet": [
+      "Bet. Pay it, or get out of my road.",
+      "Bet. There. Choke on it.",
+      "Bet. Harry Jekyll is good for it."
+    ],
+    "raise": [
+      "Raise. I like to see a man go white.",
+      "Raise! Ha. Look at your faces.",
+      "Raise. Stand in my road, will you?"
+    ],
+    "all_in": [
+      "All of it. Every penny of his.",
+      "All in! Let the doctor pay for it in the morning.",
+      "Everything. I never could stop at once."
+    ]
+  },
+  "other": {
+    "character": "jekyll",
+    "stack": "average",
+    "lines": [
+      {
+        "id": "hy_other_n01",
+        "speaker": "narration",
+        "type": "stage_direction",
+        "text": "[Someone knocks, which nobody in this house has ever done. A tall, well-made gentleman of fifty comes in, pale, his coat buttoned to the throat, and stops just inside the door as though he were not sure he was expected.]"
+      },
+      {
+        "id": "hy_other_n02",
+        "speaker": "narration",
+        "type": "stage_direction",
+        "text": "[The door opens slowly. Dr. Jekyll stands in it, hat in hand, and looks at the empty chair the way a man looks at a bed somebody else has slept in.]"
+      },
+      {
+        "id": "hy_other_01",
+        "speaker": "jekyll",
+        "text": "Forgive me. I believe a relation of mine was here. I have come to settle his account."
+      },
+      {
+        "id": "hy_other_02",
+        "speaker": "jekyll",
+        "text": "I am so sorry. Whatever he said, whatever he did, I shall make it good. Deal me in."
+      },
+      {
+        "id": "hy_other_03",
+        "speaker": "jekyll",
+        "text": "The same two cards. I see. He was always fond of a pattern. May I sit?"
+      },
+      {
+        "id": "hy_other_dr01",
+        "speaker": "dracula",
+        "text": "Doctor. Your friend left in a temper. I trust you will be better company."
+      },
+      {
+        "id": "hy_other_dr02",
+        "speaker": "dracula",
+        "text": "The respectable one. What a pity. The other was more amusing."
+      },
+      {
+        "id": "hy_other_wm01",
+        "speaker": "wolf_man",
+        "text": "Morning, Doc. ...It's always the morning, after. Isn't it."
+      },
+      {
+        "id": "hy_other_d01",
+        "speaker": "death",
+        "text": "The same two cards that saw the small one out. The doctor heard of it, and came to apologise. He will be some time about it."
+      },
+      {
+        "id": "hy_other_d02",
+        "speaker": "death",
+        "text": "One chair, two men, one coat. The coat fits again."
+      }
+    ]
+  }
+}

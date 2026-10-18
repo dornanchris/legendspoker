@@ -1,0 +1,649 @@
+{
+ "id": "pravuil",
+ "name": "Pravuil, the Recording Angel",
+ "note": "Polygons in the rest pose (A1) pixels. The finale's dealer while Death plays: front-on, never mirrored; 'near' is the hand on the LEFT of the picture (flat on the felt), 'far' the one on the right (on the deck, the deck with it). The master is the rest pose's own head, the face layers on it (eyes, two mouths). Every pose but rest a whole-figure frame with its own drawn head. No tells: he is the house.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    10,
+    3,
+    501,
+    498
+   ],
+   "what": "Rest: one hand flat on the felt, the other on the deck"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    526,
+    3,
+    484,
+    498
+   ],
+   "reg": [
+    1.0,
+    9,
+    1
+   ],
+   "what": "Thumbing the top card off the deck"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1025,
+    3,
+    500,
+    498
+   ],
+   "reg": [
+    1.0,
+    4,
+    0
+   ],
+   "what": "Pitching a card to the left of the picture"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    12,
+    508,
+    491,
+    500
+   ],
+   "reg": [
+    1.0,
+    -13,
+    0
+   ],
+   "what": "Sliding a card toward the viewer"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    517,
+    507,
+    502,
+    501
+   ],
+   "reg": [
+    1.0,
+    -15,
+    -1
+   ],
+   "what": "Pitching a card to the right of the picture"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1032,
+    509,
+    492,
+    499
+   ],
+   "reg": [
+    1.0,
+    -13,
+    1
+   ],
+   "what": "Burning a card beside the deck"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    12,
+    3,
+    495,
+    498
+   ],
+   "reg": [
+    1.0,
+    1,
+    0
+   ],
+   "what": "Laying the flop"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    521,
+    3,
+    493,
+    498
+   ],
+   "reg": [
+    1.0,
+    -3,
+    0
+   ],
+   "what": "Turning a card face up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1028,
+    3,
+    496,
+    498
+   ],
+   "reg": [
+    1.0,
+    -3,
+    0
+   ],
+   "what": "Riffle shuffle"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    12,
+    509,
+    494,
+    497
+   ],
+   "reg": [
+    1.0,
+    -24,
+    5
+   ],
+   "what": "Squaring the deck"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    521,
+    509,
+    493,
+    497
+   ],
+   "reg": [
+    1.0,
+    -23,
+    5
+   ],
+   "what": "Cutting the deck"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1028,
+    509,
+    496,
+    497
+   ],
+   "reg": [
+    1.0,
+    -27,
+    5
+   ],
+   "what": "Raking the bets in"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    13,
+    3,
+    501,
+    503
+   ],
+   "reg": [
+    1.0,
+    -15,
+    -3
+   ],
+   "what": "Pushing the pot to the left of the picture"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    527,
+    4,
+    483,
+    501
+   ],
+   "reg": [
+    1.0,
+    -14,
+    -1
+   ],
+   "what": "Pushing the pot toward the viewer"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1023,
+    3,
+    499,
+    502
+   ],
+   "reg": [
+    1.0,
+    -13,
+    -2
+   ],
+   "what": "Pushing the pot to the right of the picture"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    15,
+    509,
+    491,
+    497
+   ],
+   "reg": [
+    1.0,
+    -25,
+    5
+   ],
+   "what": "Taking the quill from behind his ear"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    519,
+    509,
+    491,
+    499
+   ],
+   "reg": [
+    1.0,
+    -26,
+    2
+   ],
+   "what": "The folded wings settling, a small shrug (motion strokes beside the wings: dropped)"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1023,
+    520,
+    497,
+    489
+   ],
+   "reg": [
+    1.0,
+    -34,
+    13
+   ],
+   "what": "Leaning in, hands clasped, watching"
+  }
+ },
+ "rest": "A1",
+ "table_y": 372,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  220,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 200,
+ "neck": [
+  230,
+  198
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  195,
+  200,
+  300,
+  265
+ ],
+ "master": {
+  "piece": "angel_parts/pravuil_face/pravuil_master.png",
+  "cut_below": 200,
+  "face": "angel_parts/face.json",
+  "file": "angel_parts/pravuil_rig/master.png",
+  "layers": "angel_parts/pravuil_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    110,
+    0
+   ],
+   [
+    312,
+    0
+   ],
+   [
+    312,
+    110
+   ],
+   [
+    300,
+    140
+   ],
+   [
+    276,
+    176
+   ],
+   [
+    262,
+    198
+   ],
+   [
+    198,
+    198
+   ],
+   [
+    176,
+    176
+   ],
+   [
+    160,
+    140
+   ],
+   [
+    110,
+    92
+   ]
+  ],
+  "shoulder_y": 205
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    340
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     290
+    ],
+    [
+     100,
+     290
+    ],
+    [
+     100,
+     340
+    ],
+    [
+     10,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "the hand on the left of the picture, flat on the felt, with its sleeve",
+     "poly": [
+      [
+       10,
+       330
+      ],
+      [
+       60,
+       320
+      ],
+      [
+       110,
+       330
+      ],
+      [
+       150,
+       355
+      ],
+      [
+       190,
+       385
+      ],
+      [
+       212,
+       420
+      ],
+      [
+       212,
+       472
+      ],
+      [
+       160,
+       476
+      ],
+      [
+       110,
+       452
+      ],
+      [
+       60,
+       412
+      ],
+      [
+       10,
+       402
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    452,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     290
+    ],
+    [
+     492,
+     290
+    ],
+    [
+     492,
+     330
+    ],
+    [
+     400,
+     330
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "the hand on the right of the picture, on the deck (the deck with it)",
+     "poly": [
+      [
+       305,
+       380
+      ],
+      [
+       330,
+       368
+      ],
+      [
+       350,
+       345
+      ],
+      [
+       380,
+       335
+      ],
+      [
+       420,
+       320
+      ],
+      [
+       462,
+       320
+      ],
+      [
+       492,
+       350
+      ],
+      [
+       482,
+       396
+      ],
+      [
+       420,
+       402
+      ],
+      [
+       398,
+       442
+      ],
+      [
+       330,
+       442
+      ],
+      [
+       305,
+       426
+      ]
+     ],
+     "props": [
+      [
+       [
+        305,
+        378
+       ],
+       [
+        382,
+        378
+       ],
+       [
+        382,
+        442
+       ],
+       [
+        305,
+        442
+       ]
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "thumb": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "pitch_left": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "slide": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110
+  },
+  "pitch_right": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110
+  },
+  "burn": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "flop": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110
+  },
+  "turn": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "riffle": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110
+  },
+  "square": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "cut": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "rake": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "push_left": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "push_you": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "push_right": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "quill": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "wings": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "steeple": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "runtime": "../web/art/pravuil",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_teal": true,
+ "back_strip": 6,
+ "wood_rows_only": true,
+ "rail_holes": [
+  30,
+  20
+ ]
+}

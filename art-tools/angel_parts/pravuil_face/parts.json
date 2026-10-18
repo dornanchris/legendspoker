@@ -1,0 +1,192 @@
+{
+  "source": "faces.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "pravuil_face_01.png",
+      "label": "",
+      "x": 14,
+      "y": 4,
+      "w": 393,
+      "h": 497,
+      "pivot": [
+        196.5,
+        248.5
+      ],
+      "area": 135907
+    },
+    {
+      "index": 2,
+      "file": "pravuil_face_02.png",
+      "label": "",
+      "x": 446,
+      "y": 69,
+      "w": 321,
+      "h": 127,
+      "pivot": [
+        160.5,
+        63.5
+      ],
+      "area": 32346
+    },
+    {
+      "index": 3,
+      "file": "pravuil_face_03.png",
+      "label": "",
+      "x": 804,
+      "y": 69,
+      "w": 329,
+      "h": 127,
+      "pivot": [
+        164.5,
+        63.5
+      ],
+      "area": 34010
+    },
+    {
+      "index": 4,
+      "file": "pravuil_face_04.png",
+      "label": "",
+      "x": 1182,
+      "y": 70,
+      "w": 331,
+      "h": 126,
+      "pivot": [
+        165.5,
+        63.0
+      ],
+      "area": 34173
+    },
+    {
+      "index": 5,
+      "file": "pravuil_face_05.png",
+      "label": "",
+      "x": 446,
+      "y": 217,
+      "w": 321,
+      "h": 128,
+      "pivot": [
+        160.5,
+        64.0
+      ],
+      "area": 32924
+    },
+    {
+      "index": 6,
+      "file": "pravuil_face_06.png",
+      "label": "",
+      "x": 804,
+      "y": 219,
+      "w": 328,
+      "h": 125,
+      "pivot": [
+        164.0,
+        62.5
+      ],
+      "area": 33610
+    },
+    {
+      "index": 7,
+      "file": "pravuil_face_07.png",
+      "label": "",
+      "x": 1177,
+      "y": 218,
+      "w": 329,
+      "h": 127,
+      "pivot": [
+        164.5,
+        63.5
+      ],
+      "area": 33959
+    },
+    {
+      "index": 8,
+      "file": "pravuil_face_08.png",
+      "label": "",
+      "x": 505,
+      "y": 393,
+      "w": 239,
+      "h": 117,
+      "pivot": [
+        119.5,
+        58.5
+      ],
+      "area": 18854
+    },
+    {
+      "index": 9,
+      "file": "pravuil_face_09.png",
+      "label": "",
+      "x": 842,
+      "y": 391,
+      "w": 252,
+      "h": 120,
+      "pivot": [
+        126.0,
+        60.0
+      ],
+      "area": 20426
+    },
+    {
+      "index": 10,
+      "file": "pravuil_face_10.png",
+      "label": "",
+      "x": 1189,
+      "y": 392,
+      "w": 245,
+      "h": 119,
+      "pivot": [
+        122.5,
+        59.5
+      ],
+      "area": 20156
+    },
+    {
+      "index": 11,
+      "file": "pravuil_face_11.png",
+      "label": "",
+      "x": 31,
+      "y": 520,
+      "w": 431,
+      "h": 481,
+      "pivot": [
+        215.5,
+        240.5
+      ],
+      "area": 132098
+    },
+    {
+      "index": 12,
+      "file": "pravuil_face_12.png",
+      "label": "",
+      "x": 535,
+      "y": 518,
+      "w": 425,
+      "h": 483,
+      "pivot": [
+        212.5,
+        241.5
+      ],
+      "area": 131728
+    },
+    {
+      "index": 13,
+      "file": "pravuil_face_13.png",
+      "label": "",
+      "x": 1048,
+      "y": 518,
+      "w": 443,
+      "h": 483,
+      "pivot": [
+        221.5,
+        241.5
+      ],
+      "area": 134655
+    }
+  ]
+}

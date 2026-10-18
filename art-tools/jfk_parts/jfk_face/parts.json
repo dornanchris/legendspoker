@@ -1,0 +1,290 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "jfk_face_01.png",
+      "label": "",
+      "x": 25,
+      "y": 20,
+      "w": 322,
+      "h": 453,
+      "pivot": [
+        161.0,
+        226.5
+      ],
+      "area": 114235
+    },
+    {
+      "index": 2,
+      "file": "jfk_face_02.png",
+      "label": "",
+      "x": 384,
+      "y": 108,
+      "w": 233,
+      "h": 150,
+      "pivot": [
+        116.5,
+        75.0
+      ],
+      "area": 29279
+    },
+    {
+      "index": 3,
+      "file": "jfk_face_03.png",
+      "label": "",
+      "x": 630,
+      "y": 107,
+      "w": 240,
+      "h": 152,
+      "pivot": [
+        120.0,
+        76.0
+      ],
+      "area": 30806
+    },
+    {
+      "index": 4,
+      "file": "jfk_face_04.png",
+      "label": "",
+      "x": 887,
+      "y": 103,
+      "w": 265,
+      "h": 157,
+      "pivot": [
+        132.5,
+        78.5
+      ],
+      "area": 34903
+    },
+    {
+      "index": 5,
+      "file": "jfk_face_05.png",
+      "label": "",
+      "x": 1174,
+      "y": 104,
+      "w": 277,
+      "h": 159,
+      "pivot": [
+        138.5,
+        79.5
+      ],
+      "area": 36595
+    },
+    {
+      "index": 6,
+      "file": "jfk_face_06.png",
+      "label": "",
+      "x": 387,
+      "y": 280,
+      "w": 259,
+      "h": 155,
+      "pivot": [
+        129.5,
+        77.5
+      ],
+      "area": 33874
+    },
+    {
+      "index": 7,
+      "file": "jfk_face_07.png",
+      "label": "",
+      "x": 667,
+      "y": 282,
+      "w": 265,
+      "h": 155,
+      "pivot": [
+        132.5,
+        77.5
+      ],
+      "area": 33849
+    },
+    {
+      "index": 8,
+      "file": "jfk_face_08.png",
+      "label": "",
+      "x": 981,
+      "y": 296,
+      "w": 248,
+      "h": 108,
+      "pivot": [
+        124.0,
+        54.0
+      ],
+      "area": 21477
+    },
+    {
+      "index": 9,
+      "file": "jfk_face_09.png",
+      "label": "",
+      "x": 1249,
+      "y": 306,
+      "w": 265,
+      "h": 103,
+      "pivot": [
+        132.5,
+        51.5
+      ],
+      "area": 23306
+    },
+    {
+      "index": 10,
+      "file": "jfk_face_10.png",
+      "label": "",
+      "x": 24,
+      "y": 493,
+      "w": 206,
+      "h": 148,
+      "pivot": [
+        103.0,
+        74.0
+      ],
+      "area": 23981
+    },
+    {
+      "index": 11,
+      "file": "jfk_face_11.png",
+      "label": "",
+      "x": 243,
+      "y": 492,
+      "w": 192,
+      "h": 153,
+      "pivot": [
+        96.0,
+        76.5
+      ],
+      "area": 22718
+    },
+    {
+      "index": 12,
+      "file": "jfk_face_12.png",
+      "label": "",
+      "x": 446,
+      "y": 492,
+      "w": 203,
+      "h": 155,
+      "pivot": [
+        101.5,
+        77.5
+      ],
+      "area": 24173
+    },
+    {
+      "index": 13,
+      "file": "jfk_face_13.png",
+      "label": "",
+      "x": 664,
+      "y": 491,
+      "w": 201,
+      "h": 158,
+      "pivot": [
+        100.5,
+        79.0
+      ],
+      "area": 24007
+    },
+    {
+      "index": 14,
+      "file": "jfk_face_14.png",
+      "label": "",
+      "x": 882,
+      "y": 492,
+      "w": 192,
+      "h": 157,
+      "pivot": [
+        96.0,
+        78.5
+      ],
+      "area": 23310
+    },
+    {
+      "index": 15,
+      "file": "jfk_face_15.png",
+      "label": "",
+      "x": 1089,
+      "y": 492,
+      "w": 199,
+      "h": 140,
+      "pivot": [
+        99.5,
+        70.0
+      ],
+      "area": 22009
+    },
+    {
+      "index": 16,
+      "file": "jfk_face_16.png",
+      "label": "",
+      "x": 1303,
+      "y": 492,
+      "w": 208,
+      "h": 145,
+      "pivot": [
+        104.0,
+        72.5
+      ],
+      "area": 23129
+    },
+    {
+      "index": 17,
+      "file": "jfk_face_17.png",
+      "label": "",
+      "x": 1079,
+      "y": 621,
+      "w": 325,
+      "h": 383,
+      "pivot": [
+        162.5,
+        191.5
+      ],
+      "area": 79818
+    },
+    {
+      "index": 18,
+      "file": "jfk_face_18.png",
+      "label": "",
+      "x": 124,
+      "y": 708,
+      "w": 240,
+      "h": 166,
+      "pivot": [
+        120.0,
+        83.0
+      ],
+      "area": 30062
+    },
+    {
+      "index": 19,
+      "file": "jfk_face_19.png",
+      "label": "",
+      "x": 378,
+      "y": 708,
+      "w": 231,
+      "h": 162,
+      "pivot": [
+        115.5,
+        81.0
+      ],
+      "area": 28557
+    },
+    {
+      "index": 20,
+      "file": "jfk_face_20.png",
+      "label": "",
+      "x": 622,
+      "y": 708,
+      "w": 236,
+      "h": 161,
+      "pivot": [
+        118.0,
+        80.5
+      ],
+      "area": 28747
+    }
+  ]
+}

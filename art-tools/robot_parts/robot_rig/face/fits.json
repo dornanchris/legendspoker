@@ -1,0 +1,52 @@
+{
+ "robot_face_04.png": [
+  168,
+  2,
+  0.65
+ ],
+ "robot_face_05.png": [
+  171,
+  2,
+  0.65
+ ],
+ "robot_face_06.png": [
+  169,
+  4,
+  0.64
+ ],
+ "robot_face_07.png": [
+  170,
+  4,
+  0.63
+ ],
+ "robot_face_08.png": [
+  170,
+  6,
+  0.64
+ ],
+ "robot_face_02.png": [
+  171,
+  4,
+  0.64
+ ],
+ "robot_face_03.png": [
+  168,
+  3,
+  0.65
+ ],
+ "robot_face_31.png": [
+  0,
+  0,
+  1.0
+ ],
+ "robot_face_32.png": [
+  0,
+  0,
+  1.0
+ ],
+ "robot_face_33.png": [
+  0,
+  0,
+  1.0
+ ]
+}

@@ -1,0 +1,95 @@
+{
+  "table": "pyre",
+  "display_name": "The Pyre",
+  "tour_position": 12,
+  "champion": "phoenix",
+  "status": "draft",
+  "notes": {
+    "tone": "A hidden table, and the end of the longest grind in the game: second place at all eight story tables, then a win at the eighth, then this. Quiet and warm, not grand. The Phoenix does not speak: it sings, trills and burns, and Death translates, drily and a little fondly. It is the game's image for losing and coming back, which is what the player has done eight times to get here.",
+    "rules": "Heads up from the first hand. Win, and the Phoenix is beaten: its ledger page closes and it can be dealt in at open tables. Lose, and the gauntlet resets: every second place is forgotten and the road starts again (tour.ts). Death says so plainly before the first hand, so a loss is never a surprise.",
+    "phoenix": "Every Phoenix line is a stage direction, written to follow its name. Bright cartoon flames: warm, never frightening. Nothing from Fawkes, Marvel's Phoenix or any modern phoenix.",
+    "leak_rule": "No line may reference hand strength while cards are live.",
+    "voice": "Death only. No contractions in his lines."
+  },
+
+  "earned_names": {
+    "tier_1": "fledgling",
+    "tier_3": "Ashborn"
+  },
+
+  "respect_tiers": {
+    "0": "Never reached: the table starts at tier 2.",
+    "1": "Never reached.",
+    "2": "Starting tier: the player's own name. It knows exactly who you are; it has been watching you lose.",
+    "3": "'Ashborn': one who came back from the ashes. A win forces it."
+  },
+
+  "table_intro": [
+    {
+      "id": "py_intro_01",
+      "speaker": "narration",
+      "text": "The temple of the Sun, the hour before dawn. Ash drifts across the felt and never settles. On the altar at the back, in a nest of smouldering spice, a red-and-gold bird watches you sit down.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "py_intro_02",
+      "speaker": "death",
+      "text": "Eight tables, and at every one of them you were the last to fall. Then you got up and won the eighth. It noticed. It always notices that.",
+      "trigger": "table_open"
+    },
+    {
+      "id": "py_intro_03",
+      "speaker": "death",
+      "text": "One sitting, heads up. Beat it, and it is yours. Lose, and it forgets you, and every second place goes with it. It is not cruel. It simply starts again from the ashes, and so will you.",
+      "trigger": "table_open",
+      "note": "The gauntlet rule, stated before the first hand so a loss is never a surprise."
+    },
+    {
+      "id": "py_intro_04",
+      "speaker": "phoenix",
+      "text": "[steps down from the altar, crosses the court, and takes the chair opposite you; the ash it shakes from its wings is warm]",
+      "type": "stage_direction",
+      "trigger": "table_open"
+    }
+  ],
+
+  "player_directed": {
+    "tier_2": [
+      { "id": "py_p2_02", "speaker": "death", "text": "It knows you, {name}. It has watched you lose eight times. It means that kindly: it is the only way it knows to measure anyone." },
+      { "id": "py_p2_01", "speaker": "phoenix", "text": "[looks at you with one gold eye, then the other, as if checking it is the same person both times]", "type": "stage_direction" }
+    ],
+    "tier_3": [
+      { "id": "py_p3_01", "speaker": "death", "text": "It calls you Ashborn. It has never called anyone that who was not, at the time, on fire." },
+      { "id": "py_p3_02", "speaker": "phoenix", "text": "[lowers its crest to you, flames and all]", "type": "stage_direction" }
+    ]
+  },
+
+  "death_asides": [
+    { "id": "py_death_01", "speaker": "death", "text": "Take your time. It has five hundred years. You have rather less, but it does not mind waiting.", "trigger": "player_thinking_long" },
+    { "id": "py_death_02", "speaker": "death", "text": "Bad luck. It knows the feeling. It has burned to nothing more often than anyone has counted.", "trigger": "player_bad_beat" },
+    { "id": "py_death_03", "speaker": "death", "text": "Everything in. It approves. Everything in is how it lives.", "trigger": "player_all_in" },
+    { "id": "py_death_04", "speaker": "death", "text": "The price goes up. The sun is coming up as well. Neither waits for anyone.", "trigger": "blinds_up" },
+    { "id": "py_death_05", "speaker": "death", "text": "It lost that one, and it is delighted. Losing is the part it is best at.", "trigger": "champion_loses_pot" }
+  ],
+
+  "champion_headsup": [
+    { "id": "py_hu_01", "speaker": "phoenix", "text": "[spreads its wings once, wide enough to light the columns, and folds them again]", "type": "stage_direction", "trigger": "headsup_start" },
+    { "id": "py_hu_02", "speaker": "death", "text": "It is pleased. You are learning the one thing it knows: how to come back.", "trigger": "player_wins_pot" }
+  ],
+
+  "eliminated": {
+    "phoenix": [
+      { "id": "py_out_01", "speaker": "phoenix", "text": "[burns down, all at once, to a small heap of warm ash on the chair]", "type": "stage_direction" }
+    ]
+  },
+
+  "player_busted": [
+    { "id": "py_bust_01", "speaker": "death", "text": "And so it forgets you, and the road starts again from the first table. Do not look like that. It has started again more times than anyone. It will be here when you have come second eight more times." },
+    { "id": "py_bust_02", "speaker": "phoenix", "text": "[flies back up to the altar, settles into the spice, and closes its eyes]", "type": "stage_direction" }
+  ],
+
+  "champion_defeat": [
+    { "id": "py_end_01", "speaker": "narration", "text": "The ash on the chair stirs. By the time the sun clears the columns there is a small red-and-gold bird in it, blinking, very pleased with you." },
+    { "id": "py_end_02", "speaker": "death", "text": "That is the rarest thing in my ledger. I have written it down twice, to be sure." }
+  ]
+}

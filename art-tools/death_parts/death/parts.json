@@ -1,0 +1,486 @@
+{
+  "source": "death_sheet.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Draw every piece at its x/y on a canvas of this size and the original sheet is reproduced exactly.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "death_01.png",
+      "label": "head: neutral",
+      "x": 21,
+      "y": 13,
+      "w": 147,
+      "h": 178,
+      "pivot": [
+        73.5,
+        89.0
+      ],
+      "area": 17153
+    },
+    {
+      "index": 2,
+      "file": "death_02.png",
+      "label": "head: talking, jaw open",
+      "x": 169,
+      "y": 13,
+      "w": 147,
+      "h": 179,
+      "pivot": [
+        73.5,
+        89.5
+      ],
+      "area": 17036
+    },
+    {
+      "index": 3,
+      "file": "death_03.png",
+      "label": "head: talking, wide",
+      "x": 317,
+      "y": 13,
+      "w": 146,
+      "h": 177,
+      "pivot": [
+        73.0,
+        88.5
+      ],
+      "area": 17104
+    },
+    {
+      "index": 4,
+      "file": "death_04.png",
+      "label": "head: talking, small",
+      "x": 468,
+      "y": 14,
+      "w": 145,
+      "h": 177,
+      "pivot": [
+        72.5,
+        88.5
+      ],
+      "area": 16758
+    },
+    {
+      "index": 5,
+      "file": "death_05.png",
+      "label": "head: neutral, calm",
+      "x": 614,
+      "y": 16,
+      "w": 141,
+      "h": 174,
+      "pivot": [
+        70.5,
+        87.0
+      ],
+      "area": 16094
+    },
+    {
+      "index": 6,
+      "file": "death_06.png",
+      "label": "head: talking",
+      "x": 761,
+      "y": 15,
+      "w": 142,
+      "h": 176,
+      "pivot": [
+        71.0,
+        88.0
+      ],
+      "area": 16597
+    },
+    {
+      "index": 7,
+      "file": "death_07.png",
+      "label": "head: three-quarter (not used: he always faces you)",
+      "x": 902,
+      "y": 18,
+      "w": 144,
+      "h": 183,
+      "pivot": [
+        72.0,
+        91.5
+      ],
+      "area": 17467
+    },
+    {
+      "index": 8,
+      "file": "death_08.png",
+      "label": "head: three-quarter, glowing eyes (not used)",
+      "x": 1054,
+      "y": 12,
+      "w": 162,
+      "h": 188,
+      "pivot": [
+        81.0,
+        94.0
+      ],
+      "area": 20740
+    },
+    {
+      "index": 9,
+      "file": "death_09.png",
+      "label": "head: three-quarter, glowing eyes (not used)",
+      "x": 1205,
+      "y": 13,
+      "w": 156,
+      "h": 196,
+      "pivot": [
+        78.0,
+        98.0
+      ],
+      "area": 19955
+    },
+    {
+      "index": 10,
+      "file": "death_10.png",
+      "label": "hood from behind (not used)",
+      "x": 1360,
+      "y": 14,
+      "w": 164,
+      "h": 193,
+      "pivot": [
+        82.0,
+        96.5
+      ],
+      "area": 18765
+    },
+    {
+      "index": 11,
+      "file": "death_11.png",
+      "label": "torso, front, with an arm painted on (not used)",
+      "x": 8,
+      "y": 194,
+      "w": 358,
+      "h": 308,
+      "pivot": [
+        179.0,
+        154.0
+      ],
+      "area": 69188
+    },
+    {
+      "index": 12,
+      "file": "death_12.png",
+      "label": "torso, front, no arms",
+      "x": 369,
+      "y": 196,
+      "w": 297,
+      "h": 279,
+      "pivot": [
+        148.5,
+        139.5
+      ],
+      "area": 56271
+    },
+    {
+      "index": 13,
+      "file": "death_13.png",
+      "label": "torso, three-quarter (not used)",
+      "x": 669,
+      "y": 205,
+      "w": 258,
+      "h": 281,
+      "pivot": [
+        129.0,
+        140.5
+      ],
+      "area": 48247
+    },
+    {
+      "index": 14,
+      "file": "death_14.png",
+      "label": "torso from behind (not used)",
+      "x": 937,
+      "y": 207,
+      "w": 274,
+      "h": 272,
+      "pivot": [
+        137.0,
+        136.0
+      ],
+      "area": 52433
+    },
+    {
+      "index": 15,
+      "file": "death_15.png",
+      "label": "shroud from behind (not used)",
+      "x": 1221,
+      "y": 206,
+      "w": 297,
+      "h": 278,
+      "pivot": [
+        148.5,
+        139.0
+      ],
+      "area": 54320
+    },
+    {
+      "index": 16,
+      "file": "death_16.png",
+      "label": "arm: reaching right, low",
+      "x": 19,
+      "y": 500,
+      "w": 289,
+      "h": 157,
+      "pivot": [
+        144.5,
+        78.5
+      ],
+      "area": 21573
+    },
+    {
+      "index": 17,
+      "file": "death_17.png",
+      "label": "arm: reaching down-right",
+      "x": 321,
+      "y": 486,
+      "w": 220,
+      "h": 189,
+      "pivot": [
+        110.0,
+        94.5
+      ],
+      "area": 20139
+    },
+    {
+      "index": 18,
+      "file": "death_18.png",
+      "label": "arm: reaching right",
+      "x": 531,
+      "y": 471,
+      "w": 261,
+      "h": 176,
+      "pivot": [
+        130.5,
+        88.0
+      ],
+      "area": 19494
+    },
+    {
+      "index": 19,
+      "file": "death_19.png",
+      "label": "arm: reaching right, lower",
+      "x": 803,
+      "y": 471,
+      "w": 237,
+      "h": 170,
+      "pivot": [
+        118.5,
+        85.0
+      ],
+      "area": 19385
+    },
+    {
+      "index": 20,
+      "file": "death_20.png",
+      "label": "arm: reaching down",
+      "x": 1047,
+      "y": 475,
+      "w": 164,
+      "h": 205,
+      "pivot": [
+        82.0,
+        102.5
+      ],
+      "area": 16367
+    },
+    {
+      "index": 21,
+      "file": "death_21.png",
+      "label": "arm: reaching down-right, short",
+      "x": 1211,
+      "y": 476,
+      "w": 180,
+      "h": 161,
+      "pivot": [
+        90.0,
+        80.5
+      ],
+      "area": 15565
+    },
+    {
+      "index": 22,
+      "file": "death_22.png",
+      "label": "arm: down, foreshortened",
+      "x": 1426,
+      "y": 488,
+      "w": 94,
+      "h": 156,
+      "pivot": [
+        47.0,
+        78.0
+      ],
+      "area": 9463
+    },
+    {
+      "index": 23,
+      "file": "death_23.png",
+      "label": "arm: reaching down-right",
+      "x": 49,
+      "y": 668,
+      "w": 217,
+      "h": 171,
+      "pivot": [
+        108.5,
+        85.5
+      ],
+      "area": 18122
+    },
+    {
+      "index": 24,
+      "file": "death_24.png",
+      "label": "arm: reaching right, grasping",
+      "x": 251,
+      "y": 673,
+      "w": 271,
+      "h": 142,
+      "pivot": [
+        135.5,
+        71.0
+      ],
+      "area": 18909
+    },
+    {
+      "index": 25,
+      "file": "death_25.png",
+      "label": "arm: toward the camera, open (deal to player)",
+      "x": 542,
+      "y": 638,
+      "w": 221,
+      "h": 200,
+      "pivot": [
+        110.5,
+        100.0
+      ],
+      "area": 23558
+    },
+    {
+      "index": 26,
+      "file": "death_26.png",
+      "label": "arm: reaching left",
+      "x": 770,
+      "y": 667,
+      "w": 177,
+      "h": 149,
+      "pivot": [
+        88.5,
+        74.5
+      ],
+      "area": 13330
+    },
+    {
+      "index": 27,
+      "file": "death_27.png",
+      "label": "arm: raised, grasping",
+      "x": 961,
+      "y": 686,
+      "w": 198,
+      "h": 149,
+      "pivot": [
+        99.0,
+        74.5
+      ],
+      "area": 12316
+    },
+    {
+      "index": 28,
+      "file": "death_28.png",
+      "label": "arm: pointing right",
+      "x": 1213,
+      "y": 642,
+      "w": 296,
+      "h": 158,
+      "pivot": [
+        148.0,
+        79.0
+      ],
+      "area": 17504
+    },
+    {
+      "index": 29,
+      "file": "death_29.png",
+      "label": "arm: reaching down-right, long",
+      "x": 11,
+      "y": 824,
+      "w": 236,
+      "h": 181,
+      "pivot": [
+        118.0,
+        90.5
+      ],
+      "area": 19454
+    },
+    {
+      "index": 30,
+      "file": "death_30.png",
+      "label": "arm: reaching right, open",
+      "x": 279,
+      "y": 833,
+      "w": 281,
+      "h": 164,
+      "pivot": [
+        140.5,
+        82.0
+      ],
+      "area": 21003
+    },
+    {
+      "index": 31,
+      "file": "death_31.png",
+      "label": "arm: down toward the camera",
+      "x": 582,
+      "y": 833,
+      "w": 202,
+      "h": 155,
+      "pivot": [
+        101.0,
+        77.5
+      ],
+      "area": 16175
+    },
+    {
+      "index": 32,
+      "file": "death_32.png",
+      "label": "arm: reaching far right",
+      "x": 807,
+      "y": 827,
+      "w": 260,
+      "h": 163,
+      "pivot": [
+        130.0,
+        81.5
+      ],
+      "area": 21329
+    },
+    {
+      "index": 33,
+      "file": "death_33.png",
+      "label": "arm: toward the camera, left",
+      "x": 1092,
+      "y": 785,
+      "w": 198,
+      "h": 198,
+      "pivot": [
+        99.0,
+        99.0
+      ],
+      "area": 20569
+    },
+    {
+      "index": 34,
+      "file": "death_34.png",
+      "label": "arm: down",
+      "x": 1353,
+      "y": 774,
+      "w": 176,
+      "h": 190,
+      "pivot": [
+        88.0,
+        95.0
+      ],
+      "area": 16989
+    }
+  ]
+}

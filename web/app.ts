@@ -6,7 +6,11 @@ import { resultsScreen } from './screens/results.js'
 import { ledgerScreen } from './screens/ledger.js'
 import { settingsScreen, aboutScreen } from './screens/settings.js'
 import { endingScreen } from './screens/ending.js'
+import { puppetScreen } from './screens/puppet.js'
+import { ikTestScreen } from './screens/iktest.js'
+import { curtainPreview } from './screens/results.js'
 import * as sound from './sound.js'
+import { assertPatchedEngine } from '../src/engine-guard.js'
 
 /**
  * The shell: one hash router over plain screens.
@@ -25,6 +29,9 @@ import * as sound from './sound.js'
  *   #/results          after a table
  *   #/ledger/:tab/:id  the ledger
  *   #/settings  #/about  #/ending
+ *   #/puppet/:id       the puppet bench (animation preview; not part of the game)
+ *   #/iktest           the IK arms on the real stage (?ik=0 for the old clips)
+ *   #/curtain/won|lost/:table  the end-of-table curtain call, from made-up numbers
  */
 
 type Screen = (root: HTMLElement, params: string[]) => void | (() => void)
@@ -40,6 +47,9 @@ const ROUTES: Record<string, Screen> = {
   settings: settingsScreen,
   about: aboutScreen,
   ending: endingScreen,
+  puppet: puppetScreen,
+  iktest: ikTestScreen,
+  curtain: curtainPreview,
 }
 
 let cleanup: (() => void) | void = undefined
@@ -58,6 +68,17 @@ function route() {
 }
 
 function boot() {
+  // A game on the unpatched rules pays pots to the wrong player. Better not
+  // to open at all than to deal one hand of that.
+  try {
+    assertPatchedEngine()
+  } catch (err) {
+    const p = document.createElement('p')
+    p.className = 'engine-error'
+    p.textContent = (err as Error).message
+    document.getElementById('app')!.replaceChildren(p)
+    return
+  }
   store.load()
   store.applySettings()
   window.addEventListener('hashchange', route)

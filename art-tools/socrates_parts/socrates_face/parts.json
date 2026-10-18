@@ -1,0 +1,346 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "socrates_face_01.png",
+      "label": "",
+      "x": 18,
+      "y": 10,
+      "w": 381,
+      "h": 325,
+      "pivot": [
+        190.5,
+        162.5
+      ],
+      "area": 86244
+    },
+    {
+      "index": 2,
+      "file": "socrates_face_02.png",
+      "label": "",
+      "x": 377,
+      "y": 41,
+      "w": 184,
+      "h": 139,
+      "pivot": [
+        92.0,
+        69.5
+      ],
+      "area": 19785
+    },
+    {
+      "index": 3,
+      "file": "socrates_face_03.png",
+      "label": "",
+      "x": 567,
+      "y": 40,
+      "w": 181,
+      "h": 138,
+      "pivot": [
+        90.5,
+        69.0
+      ],
+      "area": 19245
+    },
+    {
+      "index": 4,
+      "file": "socrates_face_04.png",
+      "label": "",
+      "x": 755,
+      "y": 39,
+      "w": 179,
+      "h": 139,
+      "pivot": [
+        89.5,
+        69.5
+      ],
+      "area": 19109
+    },
+    {
+      "index": 5,
+      "file": "socrates_face_05.png",
+      "label": "",
+      "x": 938,
+      "y": 39,
+      "w": 181,
+      "h": 140,
+      "pivot": [
+        90.5,
+        70.0
+      ],
+      "area": 19765
+    },
+    {
+      "index": 6,
+      "file": "socrates_face_06.png",
+      "label": "",
+      "x": 1127,
+      "y": 37,
+      "w": 184,
+      "h": 138,
+      "pivot": [
+        92.0,
+        69.0
+      ],
+      "area": 19852
+    },
+    {
+      "index": 7,
+      "file": "socrates_face_07.png",
+      "label": "",
+      "x": 1319,
+      "y": 39,
+      "w": 184,
+      "h": 139,
+      "pivot": [
+        92.0,
+        69.5
+      ],
+      "area": 20368
+    },
+    {
+      "index": 8,
+      "file": "socrates_face_08.png",
+      "label": "",
+      "x": 646,
+      "y": 190,
+      "w": 238,
+      "h": 102,
+      "pivot": [
+        119.0,
+        51.0
+      ],
+      "area": 17253
+    },
+    {
+      "index": 9,
+      "file": "socrates_face_09.png",
+      "label": "",
+      "x": 937,
+      "y": 198,
+      "w": 241,
+      "h": 97,
+      "pivot": [
+        120.5,
+        48.5
+      ],
+      "area": 16015
+    },
+    {
+      "index": 10,
+      "file": "socrates_face_10.png",
+      "label": "",
+      "x": 17,
+      "y": 342,
+      "w": 260,
+      "h": 166,
+      "pivot": [
+        130.0,
+        83.0
+      ],
+      "area": 35169
+    },
+    {
+      "index": 11,
+      "file": "socrates_face_11.png",
+      "label": "",
+      "x": 266,
+      "y": 344,
+      "w": 213,
+      "h": 162,
+      "pivot": [
+        106.5,
+        81.0
+      ],
+      "area": 25152
+    },
+    {
+      "index": 12,
+      "file": "socrates_face_12.png",
+      "label": "",
+      "x": 478,
+      "y": 343,
+      "w": 208,
+      "h": 160,
+      "pivot": [
+        104.0,
+        80.0
+      ],
+      "area": 24195
+    },
+    {
+      "index": 13,
+      "file": "socrates_face_13.png",
+      "label": "",
+      "x": 686,
+      "y": 342,
+      "w": 200,
+      "h": 160,
+      "pivot": [
+        100.0,
+        80.0
+      ],
+      "area": 23603
+    },
+    {
+      "index": 14,
+      "file": "socrates_face_14.png",
+      "label": "",
+      "x": 888,
+      "y": 342,
+      "w": 195,
+      "h": 154,
+      "pivot": [
+        97.5,
+        77.0
+      ],
+      "area": 21913
+    },
+    {
+      "index": 15,
+      "file": "socrates_face_15.png",
+      "label": "",
+      "x": 1084,
+      "y": 343,
+      "w": 215,
+      "h": 154,
+      "pivot": [
+        107.5,
+        77.0
+      ],
+      "area": 24436
+    },
+    {
+      "index": 16,
+      "file": "socrates_face_16.png",
+      "label": "",
+      "x": 1298,
+      "y": 334,
+      "w": 224,
+      "h": 168,
+      "pivot": [
+        112.0,
+        84.0
+      ],
+      "area": 25768
+    },
+    {
+      "index": 17,
+      "file": "socrates_face_17.png",
+      "label": "",
+      "x": 198,
+      "y": 516,
+      "w": 213,
+      "h": 154,
+      "pivot": [
+        106.5,
+        77.0
+      ],
+      "area": 24102
+    },
+    {
+      "index": 18,
+      "file": "socrates_face_18.png",
+      "label": "",
+      "x": 414,
+      "y": 516,
+      "w": 196,
+      "h": 147,
+      "pivot": [
+        98.0,
+        73.5
+      ],
+      "area": 21083
+    },
+    {
+      "index": 19,
+      "file": "socrates_face_19.png",
+      "label": "",
+      "x": 615,
+      "y": 513,
+      "w": 205,
+      "h": 150,
+      "pivot": [
+        102.5,
+        75.0
+      ],
+      "area": 23074
+    },
+    {
+      "index": 20,
+      "file": "socrates_face_20.png",
+      "label": "",
+      "x": 822,
+      "y": 506,
+      "w": 212,
+      "h": 162,
+      "pivot": [
+        106.0,
+        81.0
+      ],
+      "area": 25206
+    },
+    {
+      "index": 21,
+      "file": "socrates_face_21.png",
+      "label": "",
+      "x": 1033,
+      "y": 494,
+      "w": 217,
+      "h": 179,
+      "pivot": [
+        108.5,
+        89.5
+      ],
+      "area": 29492
+    },
+    {
+      "index": 22,
+      "file": "socrates_face_22.png",
+      "label": "",
+      "x": 1256,
+      "y": 503,
+      "w": 221,
+      "h": 167,
+      "pivot": [
+        110.5,
+        83.5
+      ],
+      "area": 26730
+    },
+    {
+      "index": 23,
+      "file": "socrates_face_23.png",
+      "label": "",
+      "x": 341,
+      "y": 666,
+      "w": 404,
+      "h": 326,
+      "pivot": [
+        202.0,
+        163.0
+      ],
+      "area": 87588
+    },
+    {
+      "index": 24,
+      "file": "socrates_face_24.png",
+      "label": "",
+      "x": 776,
+      "y": 665,
+      "w": 419,
+      "h": 331,
+      "pivot": [
+        209.5,
+        165.5
+      ],
+      "area": 85717
+    }
+  ]
+}

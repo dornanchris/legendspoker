@@ -1,0 +1,304 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "davy_jones_face_01.png",
+      "label": "",
+      "x": 11,
+      "y": 2,
+      "w": 501,
+      "h": 375,
+      "pivot": [
+        250.5,
+        187.5
+      ],
+      "area": 130952
+    },
+    {
+      "index": 2,
+      "file": "davy_jones_face_02.png",
+      "label": "",
+      "x": 477,
+      "y": 142,
+      "w": 173,
+      "h": 97,
+      "pivot": [
+        86.5,
+        48.5
+      ],
+      "area": 12820
+    },
+    {
+      "index": 3,
+      "file": "davy_jones_face_03.png",
+      "label": "",
+      "x": 654,
+      "y": 142,
+      "w": 166,
+      "h": 96,
+      "pivot": [
+        83.0,
+        48.0
+      ],
+      "area": 11975
+    },
+    {
+      "index": 4,
+      "file": "davy_jones_face_04.png",
+      "label": "",
+      "x": 824,
+      "y": 141,
+      "w": 171,
+      "h": 98,
+      "pivot": [
+        85.5,
+        49.0
+      ],
+      "area": 12745
+    },
+    {
+      "index": 5,
+      "file": "davy_jones_face_05.png",
+      "label": "",
+      "x": 1000,
+      "y": 142,
+      "w": 171,
+      "h": 97,
+      "pivot": [
+        85.5,
+        48.5
+      ],
+      "area": 12201
+    },
+    {
+      "index": 6,
+      "file": "davy_jones_face_06.png",
+      "label": "",
+      "x": 1175,
+      "y": 144,
+      "w": 169,
+      "h": 96,
+      "pivot": [
+        84.5,
+        48.0
+      ],
+      "area": 12288
+    },
+    {
+      "index": 7,
+      "file": "davy_jones_face_07.png",
+      "label": "",
+      "x": 1351,
+      "y": 144,
+      "w": 173,
+      "h": 97,
+      "pivot": [
+        86.5,
+        48.5
+      ],
+      "area": 12459
+    },
+    {
+      "index": 8,
+      "file": "davy_jones_face_08.png",
+      "label": "",
+      "x": 640,
+      "y": 258,
+      "w": 224,
+      "h": 87,
+      "pivot": [
+        112.0,
+        43.5
+      ],
+      "area": 13292
+    },
+    {
+      "index": 9,
+      "file": "davy_jones_face_09.png",
+      "label": "",
+      "x": 929,
+      "y": 267,
+      "w": 225,
+      "h": 88,
+      "pivot": [
+        112.5,
+        44.0
+      ],
+      "area": 14069
+    },
+    {
+      "index": 10,
+      "file": "davy_jones_face_10.png",
+      "label": "",
+      "x": 9,
+      "y": 390,
+      "w": 167,
+      "h": 225,
+      "pivot": [
+        83.5,
+        112.5
+      ],
+      "area": 28921
+    },
+    {
+      "index": 11,
+      "file": "davy_jones_face_11.png",
+      "label": "",
+      "x": 176,
+      "y": 390,
+      "w": 153,
+      "h": 226,
+      "pivot": [
+        76.5,
+        113.0
+      ],
+      "area": 27750
+    },
+    {
+      "index": 12,
+      "file": "davy_jones_face_12.png",
+      "label": "",
+      "x": 329,
+      "y": 392,
+      "w": 153,
+      "h": 224,
+      "pivot": [
+        76.5,
+        112.0
+      ],
+      "area": 27108
+    },
+    {
+      "index": 13,
+      "file": "davy_jones_face_13.png",
+      "label": "",
+      "x": 481,
+      "y": 390,
+      "w": 150,
+      "h": 223,
+      "pivot": [
+        75.0,
+        111.5
+      ],
+      "area": 26391
+    },
+    {
+      "index": 14,
+      "file": "davy_jones_face_14.png",
+      "label": "",
+      "x": 631,
+      "y": 390,
+      "w": 140,
+      "h": 225,
+      "pivot": [
+        70.0,
+        112.5
+      ],
+      "area": 25626
+    },
+    {
+      "index": 15,
+      "file": "davy_jones_face_15.png",
+      "label": "",
+      "x": 772,
+      "y": 390,
+      "w": 141,
+      "h": 224,
+      "pivot": [
+        70.5,
+        112.0
+      ],
+      "area": 25261
+    },
+    {
+      "index": 16,
+      "file": "davy_jones_face_16.png",
+      "label": "",
+      "x": 914,
+      "y": 391,
+      "w": 144,
+      "h": 219,
+      "pivot": [
+        72.0,
+        109.5
+      ],
+      "area": 25615
+    },
+    {
+      "index": 17,
+      "file": "davy_jones_face_17.png",
+      "label": "",
+      "x": 1056,
+      "y": 391,
+      "w": 149,
+      "h": 223,
+      "pivot": [
+        74.5,
+        111.5
+      ],
+      "area": 26025
+    },
+    {
+      "index": 18,
+      "file": "davy_jones_face_18.png",
+      "label": "",
+      "x": 1202,
+      "y": 390,
+      "w": 159,
+      "h": 228,
+      "pivot": [
+        79.5,
+        114.0
+      ],
+      "area": 28538
+    },
+    {
+      "index": 19,
+      "file": "davy_jones_face_19.png",
+      "label": "",
+      "x": 1360,
+      "y": 391,
+      "w": 166,
+      "h": 227,
+      "pivot": [
+        83.0,
+        113.5
+      ],
+      "area": 28858
+    },
+    {
+      "index": 20,
+      "file": "davy_jones_face_20.png",
+      "label": "",
+      "x": 142,
+      "y": 622,
+      "w": 507,
+      "h": 390,
+      "pivot": [
+        253.5,
+        195.0
+      ],
+      "area": 139395
+    },
+    {
+      "index": 21,
+      "file": "davy_jones_face_21.png",
+      "label": "",
+      "x": 758,
+      "y": 622,
+      "w": 535,
+      "h": 390,
+      "pivot": [
+        267.5,
+        195.0
+      ],
+      "area": 138076
+    }
+  ]
+}

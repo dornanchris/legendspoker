@@ -1,0 +1,94 @@
+{
+ "master": "lancelot_parts/lancelot_face/lancelot_face_01.png",
+ "pieces": "lancelot_parts/lancelot_face/lancelot_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 19,
+   "sigh": 20,
+   "smile": 21,
+   "proud": 22,
+   "set": 23
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     195,
+     100
+    ],
+    [
+     335,
+     100
+    ],
+    [
+     335,
+     138
+    ],
+    [
+     195,
+     138
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     195,
+     138
+    ],
+    [
+     335,
+     138
+    ],
+    [
+     335,
+     172
+    ],
+    [
+     195,
+     172
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     215,
+     195
+    ],
+    [
+     325,
+     195
+    ],
+    [
+     325,
+     255
+    ],
+    [
+     215,
+     255
+    ]
+   ]
+  }
+ }
+}

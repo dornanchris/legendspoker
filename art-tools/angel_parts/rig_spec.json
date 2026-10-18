@@ -1,0 +1,62 @@
+{
+ "kit": "angel_parts",
+ "id": "pravuil",
+ "name": "Pravuil, the Recording Angel",
+ "note": "Polygons in the rest pose (A1) pixels. The finale's dealer while Death plays: front-on, never mirrored; 'near' is the hand on the LEFT of the picture (flat on the felt), 'far' the one on the right (on the deck, the deck with it). The master is the rest pose's own head, the face layers on it (eyes, two mouths). Every pose but rest a whole-figure frame with its own drawn head. No tells: he is the house.",
+ "what": {
+  "A1": "Rest: one hand flat on the felt, the other on the deck",
+  "A2": "Thumbing the top card off the deck",
+  "A3": "Pitching a card to the left of the picture",
+  "A4": "Sliding a card toward the viewer",
+  "A5": "Pitching a card to the right of the picture",
+  "A6": "Burning a card beside the deck",
+  "B1": "Laying the flop",
+  "B2": "Turning a card face up",
+  "B3": "Riffle shuffle",
+  "B4": "Squaring the deck",
+  "B5": "Cutting the deck",
+  "B6": "Raking the bets in",
+  "C1": "Pushing the pot to the left of the picture",
+  "C2": "Pushing the pot toward the viewer",
+  "C3": "Pushing the pot to the right of the picture",
+  "C4": "Taking the quill from behind his ear",
+  "C5": "The folded wings settling, a small shrug (motion strokes beside the wings: dropped)",
+  "C6": "Leaning in, hands clasped, watching"
+ },
+ "prop": null,
+ "frames": {
+  "thumb": "A2", "pitch_left": "A3", "slide": "A4", "pitch_right": "A5", "burn": "A6",
+  "flop": "B1", "turn": "B2", "riffle": "B3", "square": "B4", "cut": "B5", "rake": "B6",
+  "push_left": "C1", "push_you": "C2", "push_right": "C3", "quill": "C4", "wings": "C5", "steeple": "C6"
+ },
+ "common": {
+  "table_y": 372, "scale": 1.0, "origin_x": 300,
+  "register_box": [150, 220, 350, 340], "register_span": 40,
+  "collar_y": 200, "neck": [230, 198], "frame_margin": 60,
+  "stock_box": [195, 200, 300, 265]
+ },
+ "cut_below": 200,
+ "keep_poly": [[110, 0], [312, 0], [312, 110], [300, 140], [276, 176], [262, 198], [198, 198], [176, 176], [160, 140], [110, 92]],
+ "shoulder_y": 205,
+ "arms": {
+  "near": {
+   "elbow": [40, 340], "extend": 0, "rest": "rest",
+   "upper": [[10, 290], [100, 290], [100, 340], [10, 350]],
+   "assets": {"rest": {"pose": "A1", "what": "the hand on the left of the picture, flat on the felt, with its sleeve",
+     "poly": [[10, 330], [60, 320], [110, 330], [150, 355], [190, 385], [212, 420], [212, 472], [160, 476], [110, 452], [60, 412], [10, 402]]}}
+  },
+  "far": {
+   "elbow": [452, 330], "extend": 0, "rest": "rest",
+   "upper": [[400, 290], [492, 290], [492, 330], [400, 330]],
+   "assets": {"rest": {"pose": "A1", "what": "the hand on the right of the picture, on the deck (the deck with it)",
+     "poly": [[305, 380], [330, 368], [350, 345], [380, 335], [420, 320], [462, 320], [492, 350], [482, 396], [420, 402], [398, 442], [330, 442], [305, 426]],
+     "props": [[[305, 378], [382, 378], [382, 442], [305, 442]]]}}
+  }
+ },
+ "filters": {
+  "felt_lines": 3, "no_peel": true, "drop_rail": 30, "rail_band": [45, 90], "rail_blue": 40,
+  "felt_holes": true, "felt_teal": true, "back_strip": 6, "wood_rows_only": true, "rail_holes": [30, 20]
+ },
+ "frame_extra": {"wings": {"biggest": true}},
+ "no_prop": []
+}

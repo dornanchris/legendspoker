@@ -1,0 +1,27 @@
+{
+ "roosevelt_parts/roosevelt/roosevelt_01.png <- roosevelt_parts/roosevelt/roosevelt_02.png": [
+  -9,
+  1,
+  0.99
+ ],
+ "roosevelt_parts/roosevelt/roosevelt_01.png <- roosevelt_parts/roosevelt/roosevelt_03.png": [
+  -3,
+  -3,
+  1.03
+ ],
+ "roosevelt_parts/roosevelt/roosevelt_01.png <- roosevelt_parts/roosevelt/roosevelt_04.png": [
+  -2,
+  -4,
+  1.04
+ ],
+ "roosevelt_parts/roosevelt/roosevelt_01.png <- roosevelt_parts/roosevelt/roosevelt_05.png": [
+  0,
+  -5,
+  1.05
+ ],
+ "roosevelt_parts/roosevelt/roosevelt_01.png <- roosevelt_parts/roosevelt/roosevelt_06.png": [
+  0,
+  -4,
+  1.05
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "master": "cyclops_parts/cyclops_face/cyclops_face_01.png",
+ "pieces": "cyclops_parts/cyclops_face/cyclops_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "up": 6,
+   "narrow": 7,
+   "wide": 8
+  },
+  "brows": {
+   "raised": 9,
+   "down": 10
+  },
+  "mouth": {
+   "rest": 11,
+   "ah": 12,
+   "ee": 13,
+   "oh": 14,
+   "oo": 15,
+   "m": 16,
+   "f": 17,
+   "l": 18,
+   "growl": 19,
+   "grin": 20,
+   "sniff": 21
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     175,
+     70
+    ],
+    [
+     300,
+     70
+    ],
+    [
+     300,
+     122
+    ],
+    [
+     175,
+     122
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     175,
+     122
+    ],
+    [
+     300,
+     122
+    ],
+    [
+     300,
+     185
+    ],
+    [
+     175,
+     185
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     200,
+     188
+    ],
+    [
+     310,
+     185
+    ],
+    [
+     310,
+     262
+    ],
+    [
+     200,
+     265
+    ]
+   ]
+  }
+ }
+}

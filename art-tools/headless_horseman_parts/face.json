@@ -1,0 +1,40 @@
+{
+ "note": "The master is the rest pose's own pumpkin. He has no face to move: the candle's light is his face. Speech brightens his own carved mouth's glow (glow.py writes glow_01-03, a little brighter to brightest, from the master, so the carving never changes); no blinks, no glances. The face sheet's pieces are unused: its glowing mouths are carved differently, and the tells (brighter, guttering) and a lost pot's dimmed light are whole-figure frames.",
+ "master": "headless_horseman_parts/headless_horseman_face/headless_horseman_master.png",
+ "pieces": "headless_horseman_parts/headless_horseman_face/glow_%02d.png",
+ "layers": {
+  "mouth": {
+   "ah": 3,
+   "oh": 2,
+   "ee": 2,
+   "l": 2,
+   "oo": 1,
+   "m": 1,
+   "f": 1
+  }
+ },
+ "regions": {
+  "mouth": {
+   "keep": [
+    [
+     215,
+     72
+    ],
+    [
+     340,
+     72
+    ],
+    [
+     340,
+     160
+    ],
+    [
+     215,
+     160
+    ]
+   ],
+   "outline": 1,
+   "fade": 2
+  }
+ }
+}

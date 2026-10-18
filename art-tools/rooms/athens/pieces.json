@@ -1,0 +1,16 @@
+{
+  "note": "Athens's room pieces, cut from sources/pieces.png by room_web.py. Placement is in the screen's design space (1600x900): x is the piece's centre, bottom its foot, h its height. The backdrop's own couch and empty stand fell behind seat 2's figure, so the cup's stand stands in the gap by the doorway's left pillar instead, where it shows.",
+  "sheet": "sources/pieces.png",
+  "pieces": {
+    "cup_full":    { "box": [10, 100, 345, 880], "x": 618, "bottom": 548, "h": 189 },
+    "cup_drained": { "box": [360, 130, 680, 880], "x": 618, "bottom": 548, "h": 181 },
+    "flame_1":     { "box": [730, 110, 845, 335] },
+    "flame_2":     { "box": [875, 40, 1005, 335] },
+    "flame_3":     { "box": [1040, 45, 1150, 335] }
+  },
+  "presence": { "before": "cup_full", "after": "cup_drained" },
+  "loops": [
+    { "frames": ["flame_1", "flame_2", "flame_3"], "every": [0.11, 0.24],
+      "spots": [[21, 268, 54], [1600, 265, 52]] }
+  ]
+}

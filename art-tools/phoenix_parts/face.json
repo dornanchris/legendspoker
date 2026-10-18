@@ -1,0 +1,68 @@
+{
+ "note": "The master is the rest pose's own head. The face sheet drew whole upper heads (2-7: eyes half, closed, wide, to the side, down, narrowed) and three beaks (9 closed, 10 open a little, 11 open wide), fitted onto the master and limited to the eye and the beak; the crest pieces (12-14) and the heads 1 and 8 are unused: the crest's tells are whole-figure frames.",
+ "master": "phoenix_parts/phoenix_face/phoenix_master.png",
+ "pieces": "phoenix_parts/phoenix_face/phoenix_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "wide": 4,
+   "side": 5,
+   "down": 6,
+   "narrow": 7
+  },
+  "mouth": {
+   "m": 9,
+   "f": 9,
+   "oo": 10,
+   "ee": 10,
+   "l": 10,
+   "oh": 11,
+   "ah": 11
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     228,
+     100
+    ],
+    [
+     310,
+     100
+    ],
+    [
+     310,
+     160
+    ],
+    [
+     228,
+     160
+    ]
+   ],
+   "match": false
+  },
+  "mouth": {
+   "keep": [
+    [
+     235,
+     130
+    ],
+    [
+     368,
+     130
+    ],
+    [
+     368,
+     248
+    ],
+    [
+     235,
+     248
+    ]
+   ],
+   "match": false
+  }
+ }
+}

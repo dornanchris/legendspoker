@@ -1,0 +1,1018 @@
+{
+ "id": "blackbeard",
+ "name": "Blackbeard",
+ "note": "Polygons in the rest pose (A1) pixels. As Athens: every pose but rest a whole-figure frame with its own drawn head. His drawings fill their cells and hide most of the rail, so each is placed ('reg') by the bottom-left corner of its drawn felt panel (the cell's own edge).",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    13,
+    2,
+    488,
+    486
+   ],
+   "what": "at rest, hands apart, smoke under the hat"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    518,
+    17,
+    493,
+    471
+   ],
+   "reg": [
+    1.0,
+    0,
+    15
+   ],
+   "what": "peeking at his cards"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1029,
+    8,
+    494,
+    480
+   ],
+   "reg": [
+    1.0,
+    1,
+    6
+   ],
+   "what": "checking"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    14,
+    507,
+    487,
+    488
+   ],
+   "reg": [
+    1.0,
+    1,
+    -2
+   ],
+   "what": "calling"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    519,
+    509,
+    492,
+    486
+   ],
+   "reg": [
+    1.0,
+    1,
+    0
+   ],
+   "what": "betting, a stack slammed down"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1029,
+    506,
+    494,
+    489
+   ],
+   "reg": [
+    1.0,
+    0,
+    -3
+   ],
+   "what": "folding"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    14,
+    11,
+    488,
+    478
+   ],
+   "reg": [
+    1.0,
+    0,
+    8
+   ],
+   "what": "all in"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    520,
+    17,
+    496,
+    472
+   ],
+   "reg": [
+    1.0,
+    1,
+    14
+   ],
+   "what": "showing his cards"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1033,
+    13,
+    490,
+    476
+   ],
+   "reg": [
+    1.0,
+    1,
+    10
+   ],
+   "what": "collecting the pot"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    14,
+    506,
+    493,
+    489
+   ],
+   "reg": [
+    1.0,
+    0,
+    -3
+   ],
+   "what": "strokes his beard (TELL)"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    520,
+    510,
+    496,
+    485
+   ],
+   "reg": [
+    1.0,
+    1,
+    1
+   ],
+   "what": "twists a braid ribbon (decoy)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1032,
+    508,
+    489,
+    487
+   ],
+   "reg": [
+    1.0,
+    1,
+    -1
+   ],
+   "what": "goes very still (TELL)"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    16,
+    19,
+    497,
+    469
+   ],
+   "reg": [
+    1.0,
+    1,
+    17
+   ],
+   "what": "stares down the nearest man (decoy)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    523,
+    0,
+    490,
+    488
+   ],
+   "reg": [
+    1.0,
+    0,
+    -2
+   ],
+   "what": "the matches smoulder brighter (TELL)"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1027,
+    13,
+    494,
+    475
+   ],
+   "reg": [
+    1.0,
+    1,
+    11
+   ],
+   "what": "the matches smoke as usual (decoy)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    16,
+    504,
+    494,
+    491
+   ],
+   "reg": [
+    1.0,
+    1,
+    -4
+   ],
+   "what": "sets a pistol on the felt"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    519,
+    505,
+    496,
+    490
+   ],
+   "reg": [
+    1.0,
+    -3,
+    -3
+   ],
+   "what": "tucks the pistol back"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1027,
+    492,
+    494,
+    503
+   ],
+   "reg": [
+    1.0,
+    0,
+    -17
+   ],
+   "what": "laughs too loud"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    9,
+    9,
+    498,
+    479
+   ],
+   "reg": [
+    1.0,
+    -6,
+    7
+   ],
+   "what": "talking, a finger jabbing"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    522,
+    13,
+    492,
+    475
+   ],
+   "reg": [
+    1.0,
+    0,
+    11
+   ],
+   "what": "facing a big bet: a dangerous grin"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1003,
+    12,
+    524,
+    476
+   ],
+   "reg": [
+    1.0,
+    1,
+    10
+   ],
+   "what": "lost a pot: a roar"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    11,
+    501,
+    530,
+    488
+   ],
+   "reg": [
+    1.0,
+    -3,
+    -2
+   ],
+   "what": "won a pot: arms wide"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    521,
+    503,
+    498,
+    487
+   ],
+   "reg": [
+    1.0,
+    1,
+    0
+   ],
+   "what": "heads up: on both fists"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1027,
+    501,
+    505,
+    489
+   ],
+   "reg": [
+    1.0,
+    -2,
+    -2
+   ],
+   "what": "knocked out: a mocking bow"
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    6,
+    132,
+    630,
+    637
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.6905,
+    37.0,
+    3.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    594,
+    47,
+    754,
+    722
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.6905,
+    -2.4,
+    -19.8
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1303,
+    213,
+    634,
+    556
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.6905,
+    37.7,
+    85.2
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 365,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  230,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 220,
+ "neck": [
+  275,
+  215
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  220,
+  215,
+  340,
+  280
+ ],
+ "master": {
+  "piece": "blackbeard_parts/blackbeard_face/blackbeard_face_01.png",
+  "cut_below": 327,
+  "face": "blackbeard_parts/face.json",
+  "file": "blackbeard_parts/blackbeard_rig/master.png",
+  "layers": "blackbeard_parts/blackbeard_rig/face",
+  "head_box": [
+   75,
+   0,
+   420,
+   220
+  ],
+  "fit": [
+   0.5,
+   1.0
+  ],
+  "replace_head": true,
+  "heads": {
+   "smoulder": "blackbeard_parts/blackbeard_face/blackbeard_face_21.png",
+   "viewer": "blackbeard_parts/blackbeard_face/blackbeard_face_22.png"
+  },
+  "cloth": [
+   25,
+   120
+  ],
+  "fill_poly": [
+   [
+    [
+     75,
+     190
+    ],
+    [
+     145,
+     178
+    ],
+    [
+     145,
+     220
+    ],
+    [
+     75,
+     220
+    ]
+   ],
+   [
+    [
+     350,
+     195
+    ],
+    [
+     420,
+     195
+    ],
+    [
+     420,
+     220
+    ],
+    [
+     350,
+     220
+    ]
+   ]
+  ],
+  "shoulder_y": 190
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    30,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     5,
+     280
+    ],
+    [
+     80,
+     280
+    ],
+    [
+     80,
+     320
+    ],
+    [
+     5,
+     325
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and hand",
+     "poly": [
+      [
+       5,
+       310
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       110,
+       330
+      ],
+      [
+       150,
+       360
+      ],
+      [
+       200,
+       375
+      ],
+      [
+       235,
+       410
+      ],
+      [
+       240,
+       468
+      ],
+      [
+       120,
+       468
+      ],
+      [
+       60,
+       430
+      ],
+      [
+       20,
+       410
+      ],
+      [
+       5,
+       380
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    470,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     430,
+     280
+    ],
+    [
+     488,
+     280
+    ],
+    [
+     488,
+     318
+    ],
+    [
+     430,
+     315
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and hand",
+     "poly": [
+      [
+       295,
+       420
+      ],
+      [
+       300,
+       390
+      ],
+      [
+       340,
+       370
+      ],
+      [
+       380,
+       350
+      ],
+      [
+       420,
+       320
+      ],
+      [
+       465,
+       300
+      ],
+      [
+       488,
+       320
+      ],
+      [
+       488,
+       425
+      ],
+      [
+       440,
+       432
+      ],
+      [
+       415,
+       468
+      ],
+      [
+       300,
+       468
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      166,
+      373
+     ],
+     [
+      266,
+      373
+     ],
+     [
+      266,
+      480
+     ],
+     [
+      166,
+      480
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      176,
+      325
+     ],
+     [
+      286,
+      325
+     ],
+     [
+      286,
+      482
+     ],
+     [
+      176,
+      482
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      185,
+      373
+     ],
+     [
+      445,
+      373
+     ],
+     [
+      445,
+      490
+     ],
+     [
+      185,
+      490
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      196,
+      335
+     ],
+     [
+      456,
+      335
+     ],
+     [
+      456,
+      492
+     ],
+     [
+      196,
+      492
+     ]
+    ]
+   ]
+  },
+  "stroke": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "ribbon": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "still": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "stare": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "smoulder": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "smoke": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "pistol_down": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      6,
+      361
+     ],
+     [
+      306,
+      361
+     ],
+     [
+      306,
+      478
+     ],
+     [
+      6,
+      478
+     ]
+    ]
+   ]
+  },
+  "pistol_up": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "laugh": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110,
+   "except": [
+    [
+     [
+      478,
+      -60
+     ],
+     [
+      560,
+      -60
+     ],
+     [
+      560,
+      560
+     ],
+     [
+      478,
+      560
+     ]
+    ]
+   ]
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "except": [
+    [
+     [
+      500,
+      -60
+     ],
+     [
+      560,
+      -60
+     ],
+     [
+      560,
+      560
+     ],
+     [
+      500,
+      560
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "except": [
+    [
+     [
+      -60,
+      -60
+     ],
+     [
+      28,
+      -60
+     ],
+     [
+      28,
+      300
+     ],
+     [
+      -60,
+      300
+     ]
+    ]
+   ]
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true,
+   "props": [
+    [
+     [
+      -400,
+      -600
+     ],
+     [
+      888,
+      -600
+     ],
+     [
+      888,
+      357
+     ],
+     [
+      -400,
+      357
+     ]
+    ]
+   ]
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true,
+   "props": [
+    [
+     [
+      -400,
+      -600
+     ],
+     [
+      888,
+      -600
+     ],
+     [
+      888,
+      357
+     ],
+     [
+      -400,
+      357
+     ]
+    ]
+   ],
+   "except": [
+    [
+     [
+      -600,
+      -600
+     ],
+     [
+      -15,
+      -600
+     ],
+     [
+      -15,
+      900
+     ],
+     [
+      -600,
+      900
+     ]
+    ]
+   ]
+  }
+ },
+ "runtime": "../web/art/blackbeard",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  10,
+  75
+ ],
+ "wood_rows_only": true,
+ "felt_teal": true,
+ "felt_holes": true
+}

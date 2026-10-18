@@ -1,0 +1,892 @@
+{
+ "id": "odysseus",
+ "name": "Odysseus",
+ "note": "Polygons in the rest pose (A1) pixels. As the rest of Athens: every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the apex of its drawn rail. Of the owner's two takes, sheet B and D are the second (the ring on the right hand where it should be); the others are sources/*_alt.png.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    12,
+    9,
+    498,
+    479
+   ],
+   "what": "at rest, hands apart, the ring on his right hand"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    519,
+    13,
+    496,
+    475
+   ],
+   "reg": [
+    1.0,
+    5,
+    4
+   ],
+   "what": "peeking at his cards"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1025,
+    12,
+    498,
+    476
+   ],
+   "reg": [
+    1.0,
+    5,
+    3
+   ],
+   "what": "checking"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    12,
+    499,
+    498,
+    480
+   ],
+   "reg": [
+    1.0,
+    -2,
+    10
+   ],
+   "what": "calling"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    519,
+    499,
+    496,
+    480
+   ],
+   "reg": [
+    1.0,
+    12,
+    8
+   ],
+   "what": "betting"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1025,
+    499,
+    498,
+    480
+   ],
+   "reg": [
+    1.0,
+    1,
+    8
+   ],
+   "what": "folding"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    13,
+    11,
+    493,
+    483
+   ],
+   "reg": [
+    1.0,
+    1,
+    4
+   ],
+   "what": "all in"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    517,
+    13,
+    500,
+    481
+   ],
+   "reg": [
+    1.0,
+    -5,
+    6
+   ],
+   "what": "showing his cards"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1029,
+    14,
+    495,
+    480
+   ],
+   "reg": [
+    1.0,
+    -6,
+    6
+   ],
+   "what": "collecting the pot"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    13,
+    507,
+    493,
+    479
+   ],
+   "reg": [
+    1.0,
+    3,
+    -6
+   ],
+   "what": "twists the ring (TELL)"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    518,
+    508,
+    499,
+    478
+   ],
+   "reg": [
+    1.0,
+    -2,
+    -18
+   ],
+   "what": "admires the ring (decoy)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1030,
+    509,
+    494,
+    477
+   ],
+   "reg": [
+    1.0,
+    18,
+    -3
+   ],
+   "what": "looks toward the door (TELL)"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    11,
+    3,
+    494,
+    484
+   ],
+   "reg": [
+    1.0,
+    2,
+    -16
+   ],
+   "what": "counts the exits (decoy)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    499,
+    18,
+    517,
+    469
+   ],
+   "reg": [
+    1.0,
+    1,
+    -1
+   ],
+   "what": "leans back, satisfied (TELL)"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    961,
+    18,
+    564,
+    469
+   ],
+   "reg": [
+    1.0,
+    14,
+    10
+   ],
+   "what": "stretches (decoy)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    11,
+    491,
+    504,
+    490
+   ],
+   "reg": [
+    1.0,
+    20,
+    -27
+   ],
+   "what": "wrings sea water from his cloak"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    517,
+    496,
+    499,
+    485
+   ],
+   "reg": [
+    1.0,
+    24,
+    -19
+   ],
+   "what": "rubs an old scar"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1027,
+    496,
+    498,
+    485
+   ],
+   "reg": [
+    1.0,
+    7,
+    -16
+   ],
+   "what": "smiles at no one"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    12,
+    15,
+    495,
+    475
+   ],
+   "reg": [
+    1.0,
+    22,
+    -14
+   ],
+   "what": "talking"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    522,
+    25,
+    490,
+    465
+   ],
+   "reg": [
+    1.0,
+    -52,
+    12
+   ],
+   "what": "facing a big bet"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1027,
+    16,
+    497,
+    474
+   ],
+   "reg": [
+    1.0,
+    18,
+    -13
+   ],
+   "what": "lost a pot: fair enough"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    12,
+    501,
+    495,
+    481
+   ],
+   "reg": [
+    1.0,
+    21,
+    -6
+   ],
+   "what": "won a pot: a wink"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    522,
+    500,
+    490,
+    482
+   ],
+   "reg": [
+    1.0,
+    16,
+    -34
+   ],
+   "what": "arrives, soaking wet"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1027,
+    494,
+    497,
+    500
+   ],
+   "reg": [
+    1.0,
+    -12,
+    -39
+   ],
+   "what": "knocked out: sets his cap straight"
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    9,
+    121,
+    596,
+    629
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.7792,
+    57.0,
+    1.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    528,
+    115,
+    866,
+    637
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.7792,
+    -57.2,
+    -7.6
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1338,
+    180,
+    597,
+    570
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.7792,
+    54.3,
+    29.8
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 362,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  230,
+  350,
+  340
+ ],
+ "register_span": 40,
+ "collar_y": 225,
+ "neck": [
+  270,
+  220
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  220,
+  225,
+  340,
+  280
+ ],
+ "master": {
+  "piece": "odysseus_parts/odysseus_face/odysseus_face_01.png",
+  "cut_below": 394,
+  "face": "odysseus_parts/face.json",
+  "file": "odysseus_parts/odysseus_rig/master.png",
+  "layers": "odysseus_parts/odysseus_rig/face",
+  "head_box": [
+   150,
+   0,
+   372,
+   225
+  ],
+  "fit": [
+   0.5,
+   1.0
+  ],
+  "replace_head": true,
+  "heads": {
+   "door": "odysseus_parts/odysseus_face/odysseus_face_21.png",
+   "viewer": "odysseus_parts/odysseus_face/odysseus_face_22.png"
+  },
+  "cloth": [
+   30,
+   130
+  ],
+  "fill_poly": [
+   [
+    [
+     150,
+     175
+    ],
+    [
+     215,
+     175
+    ],
+    [
+     215,
+     225
+    ],
+    [
+     150,
+     225
+    ]
+   ],
+   [
+    [
+     340,
+     190
+    ],
+    [
+     372,
+     190
+    ],
+    [
+     372,
+     225
+    ],
+    [
+     340,
+     225
+    ]
+   ]
+  ],
+  "shoulder_y": 180
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    30,
+    335
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     300
+    ],
+    [
+     70,
+     300
+    ],
+    [
+     75,
+     335
+    ],
+    [
+     0,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and the ringed hand",
+     "poly": [
+      [
+       0,
+       335
+      ],
+      [
+       40,
+       322
+      ],
+      [
+       90,
+       330
+      ],
+      [
+       140,
+       345
+      ],
+      [
+       190,
+       370
+      ],
+      [
+       230,
+       400
+      ],
+      [
+       245,
+       440
+      ],
+      [
+       235,
+       478
+      ],
+      [
+       150,
+       478
+      ],
+      [
+       120,
+       455
+      ],
+      [
+       90,
+       420
+      ],
+      [
+       50,
+       395
+      ],
+      [
+       0,
+       395
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    460,
+    325
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     430,
+     300
+    ],
+    [
+     498,
+     300
+    ],
+    [
+     498,
+     325
+    ],
+    [
+     430,
+     322
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and hand",
+     "poly": [
+      [
+       300,
+       420
+      ],
+      [
+       310,
+       395
+      ],
+      [
+       350,
+       370
+      ],
+      [
+       400,
+       345
+      ],
+      [
+       440,
+       320
+      ],
+      [
+       470,
+       318
+      ],
+      [
+       498,
+       330
+      ],
+      [
+       498,
+       400
+      ],
+      [
+       460,
+       420
+      ],
+      [
+       440,
+       460
+      ],
+      [
+       400,
+       478
+      ],
+      [
+       310,
+       478
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      228,
+      385
+     ],
+     [
+      343,
+      385
+     ],
+     [
+      343,
+      488
+     ],
+     [
+      228,
+      488
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      227,
+      363
+     ],
+     [
+      347,
+      363
+     ],
+     [
+      347,
+      486
+     ],
+     [
+      227,
+      486
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      221,
+      324
+     ],
+     [
+      371,
+      324
+     ],
+     [
+      371,
+      482
+     ],
+     [
+      221,
+      482
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      224,
+      336
+     ],
+     [
+      364,
+      336
+     ],
+     [
+      364,
+      484
+     ],
+     [
+      224,
+      484
+     ]
+    ]
+   ]
+  },
+  "twist": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "admire": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "door": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "exits": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "lean_back": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "stretch": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "wring": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "scar": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "smile": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110
+  },
+  "arrive": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
+  }
+ },
+ "runtime": "../web/art/odysseus",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  10,
+  75
+ ],
+ "wood_rows_only": true,
+ "felt_teal": true,
+ "felt_holes": true
+}

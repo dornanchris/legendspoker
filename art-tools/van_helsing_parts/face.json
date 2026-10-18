@@ -1,0 +1,13 @@
+{
+ "note": "The master is the rest pose's own head (spectacles on). Eyes 2-5 wear the spectacles (6 and 7 were drawn without them and are unused; 8 repeats 5). Mouths 9-19 (15 is the front-on head, unused, as is head 1). No brow pieces were drawn: brows move only in whole-figure frames.",
+ "master": "van_helsing_parts/van_helsing_face/van_helsing_master.png",
+ "pieces": "van_helsing_parts/van_helsing_face/van_helsing_face_%02d.png",
+ "layers": {
+  "eyes": {"half": 2, "closed": 3, "viewer": 4, "side": 5},
+  "mouth": {"rest": 9, "ah": 10, "ee": 11, "oh": 12, "oo": 13, "m": 14, "f": 16, "l": 17, "smile": 18, "down": 19}
+ },
+ "regions": {
+  "eyes": {"keep": [[205, 88], [365, 88], [365, 132], [205, 132]]},
+  "mouth": {"keep": [[245, 132], [340, 132], [340, 190], [245, 190]]}
+ }
+}

@@ -1,0 +1,910 @@
+{
+ "id": "davy_jones",
+ "name": "Davy Jones",
+ "note": "Polygons in the rest pose (A1) pixels. As Kidd and Silver: every pose but rest a whole-figure frame with its own drawn head, placed ('reg') by the bottom-left corner of its drawn felt panel. His head is swapped above a line through his beard (collar_y), as Blackbeard's is.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    12,
+    8,
+    499,
+    484
+   ],
+   "what": "at rest, hands apart, a thin drip from his right sleeve"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    515,
+    32,
+    501,
+    460
+   ],
+   "what": "peeking",
+   "reg": [
+    1.0,
+    -4,
+    24
+   ]
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1024,
+    10,
+    499,
+    482
+   ],
+   "what": "checking",
+   "reg": [
+    1.0,
+    1,
+    2
+   ]
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    13,
+    502,
+    499,
+    477
+   ],
+   "what": "calling",
+   "reg": [
+    1.0,
+    1,
+    7
+   ]
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    515,
+    503,
+    501,
+    476
+   ],
+   "what": "betting, slow and calm",
+   "reg": [
+    1.0,
+    -4,
+    8
+   ]
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1024,
+    503,
+    499,
+    476
+   ],
+   "what": "folding",
+   "reg": [
+    1.0,
+    1,
+    8
+   ]
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    11,
+    3,
+    500,
+    490
+   ],
+   "what": "all in",
+   "reg": [
+    1.0,
+    0,
+    -5
+   ]
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    506,
+    12,
+    510,
+    481
+   ],
+   "what": "showing",
+   "reg": [
+    1.0,
+    4,
+    4
+   ]
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1016,
+    3,
+    510,
+    490
+   ],
+   "what": "collecting",
+   "reg": [
+    1.0,
+    -7,
+    -5
+   ]
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    12,
+    500,
+    499,
+    479
+   ],
+   "what": "water drips hard from his sleeve (TELL)",
+   "reg": [
+    1.0,
+    1,
+    5
+   ]
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    511,
+    503,
+    505,
+    476
+   ],
+   "what": "wrings out his beard (decoy)",
+   "reg": [
+    1.0,
+    -6,
+    8
+   ]
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1023,
+    503,
+    501,
+    476
+   ],
+   "what": "drums like rain on a deck (TELL)",
+   "reg": [
+    1.0,
+    0,
+    8
+   ]
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    6,
+    2,
+    505,
+    490
+   ],
+   "what": "hums a shanty, fingers still (decoy)",
+   "reg": [
+    1.0,
+    -6,
+    -6
+   ]
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    514,
+    2,
+    502,
+    490
+   ],
+   "what": "his face sinks into shadow (TELL)",
+   "reg": [
+    1.0,
+    -5,
+    -6
+   ]
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1019,
+    1,
+    505,
+    491
+   ],
+   "what": "lifts his face into the light (decoy)",
+   "reg": [
+    1.0,
+    -4,
+    -7
+   ]
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    5,
+    495,
+    508,
+    484
+   ],
+   "what": "a crab climbs out of his pocket",
+   "reg": [
+    1.0,
+    -7,
+    1
+   ]
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    517,
+    495,
+    499,
+    484
+   ],
+   "what": "the haze of low tide",
+   "reg": [
+    1.0,
+    -2,
+    1
+   ]
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1019,
+    500,
+    514,
+    479
+   ],
+   "what": "tips water off his hat brim",
+   "reg": [
+    1.0,
+    -4,
+    6
+   ]
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    5,
+    1,
+    507,
+    492
+   ],
+   "what": "talking, a quiet word",
+   "reg": [
+    1.0,
+    -7,
+    -8
+   ]
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    515,
+    7,
+    501,
+    486
+   ],
+   "what": "facing a big bet: the eyes fixed",
+   "reg": [
+    1.0,
+    -4,
+    -2
+   ]
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1023,
+    16,
+    500,
+    477
+   ],
+   "what": "lost a pot: a slow nod",
+   "reg": [
+    1.0,
+    0,
+    7
+   ]
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    12,
+    500,
+    488,
+    480
+   ],
+   "what": "won a pot: the faintest smile, chips drawn in",
+   "reg": [
+    1.0,
+    -1,
+    5
+   ]
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    500,
+    500,
+    533,
+    480
+   ],
+   "what": "heads up: leaning in",
+   "reg": [
+    1.0,
+    -15,
+    5
+   ]
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1033,
+    500,
+    490,
+    480
+   ],
+   "what": "knocked out: rises, streaming, turns away",
+   "reg": [
+    1.0,
+    0,
+    5
+   ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    11,
+    162,
+    615,
+    608
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.7472,
+    42.0,
+    -2.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    532,
+    15,
+    837,
+    755
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.7472,
+    -49.9,
+    -83.4
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1307,
+    270,
+    630,
+    500
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.7472,
+    42.0,
+    74.2
+   ]
+  }
+ },
+ "rest": "A1",
+ "table_y": 348,
+ "scale": 1.0,
+ "origin_x": 305,
+ "register_box": [
+  150,
+  230,
+  350,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 215,
+ "neck": [
+  280,
+  210
+ ],
+ "frame_margin": 113,
+ "stock_box": [
+  220,
+  210,
+  340,
+  270
+ ],
+ "master": {
+  "piece": "davy_jones_parts/davy_jones_face/davy_jones_face_01.png",
+  "cut_below": 330,
+  "face": "davy_jones_parts/face.json",
+  "file": "davy_jones_parts/davy_jones_rig/master.png",
+  "layers": "davy_jones_parts/davy_jones_rig/face",
+  "head_box": [
+   90,
+   0,
+   420,
+   215
+  ],
+  "place": [
+   -44,
+   3,
+   0.77
+  ],
+  "replace_head": true,
+  "heads": {
+   "shadow": "davy_jones_parts/davy_jones_face/davy_jones_face_20.png",
+   "viewer": "davy_jones_parts/davy_jones_face/davy_jones_face_21.png"
+  },
+  "cloth": [
+   10,
+   110
+  ],
+  "fill_poly": [
+   [
+    [
+     90,
+     165
+    ],
+    [
+     205,
+     160
+    ],
+    [
+     205,
+     215
+    ],
+    [
+     90,
+     215
+    ]
+   ],
+   [
+    [
+     350,
+     175
+    ],
+    [
+     420,
+     175
+    ],
+    [
+     420,
+     215
+    ],
+    [
+     350,
+     215
+    ]
+   ]
+  ],
+  "shoulder_y": 180,
+  "drop_white": [
+   60,
+   160,
+   130,
+   230
+  ]
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    40,
+    330
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     10,
+     280
+    ],
+    [
+     80,
+     280
+    ],
+    [
+     80,
+     310
+    ],
+    [
+     10,
+     315
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm, wet sleeve and hand",
+     "poly": [
+      [
+       0,
+       310
+      ],
+      [
+       60,
+       300
+      ],
+      [
+       120,
+       330
+      ],
+      [
+       170,
+       355
+      ],
+      [
+       230,
+       380
+      ],
+      [
+       252,
+       420
+      ],
+      [
+       246,
+       470
+      ],
+      [
+       110,
+       470
+      ],
+      [
+       60,
+       450
+      ],
+      [
+       20,
+       440
+      ],
+      [
+       0,
+       420
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    465,
+    320
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     420,
+     280
+    ],
+    [
+     499,
+     280
+    ],
+    [
+     499,
+     310
+    ],
+    [
+     420,
+     310
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm, sleeve and hand",
+     "poly": [
+      [
+       318,
+       430
+      ],
+      [
+       330,
+       400
+      ],
+      [
+       370,
+       380
+      ],
+      [
+       380,
+       350
+      ],
+      [
+       420,
+       330
+      ],
+      [
+       470,
+       312
+      ],
+      [
+       499,
+       330
+      ],
+      [
+       499,
+       410
+      ],
+      [
+       460,
+       420
+      ],
+      [
+       450,
+       470
+      ],
+      [
+       318,
+       470
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      200,
+      366
+     ],
+     [
+      310,
+      366
+     ],
+     [
+      310,
+      492
+     ],
+     [
+      200,
+      492
+     ]
+    ]
+   ]
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      175,
+      340
+     ],
+     [
+      275,
+      340
+     ],
+     [
+      275,
+      492
+     ],
+     [
+      175,
+      492
+     ]
+    ]
+   ]
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110,
+   "biggest": true,
+   "props": [
+    [
+     [
+      215,
+      350
+     ],
+     [
+      435,
+      350
+     ],
+     [
+      435,
+      492
+     ],
+     [
+      215,
+      492
+     ]
+    ]
+   ]
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "collect": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110,
+   "props": [
+    [
+     [
+      215,
+      345
+     ],
+     [
+      375,
+      345
+     ],
+     [
+      375,
+      492
+     ],
+     [
+      215,
+      492
+     ]
+    ]
+   ]
+  },
+  "drip": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110
+  },
+  "wring": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "drum": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "hum": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "shadow": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "light": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "crab": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "haze": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "hat_water": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "won_pot": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110,
+   "biggest": true,
+   "props": [
+    [
+     [
+      190,
+      360
+     ],
+     [
+      305,
+      360
+     ],
+     [
+      305,
+      492
+     ],
+     [
+      190,
+      492
+     ]
+    ]
+   ]
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "knocked_out": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
+  }
+ },
+ "runtime": "../web/art/davy_jones",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  10,
+  75
+ ],
+ "wood_rows_only": true,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_dark_teal": true
+}

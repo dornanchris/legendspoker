@@ -5,7 +5,7 @@
   "name": "Transylvania",
   "seats": [
     "van_helsing",
-    "monster",
+    "jekyll",
     "wolf_man",
     "headless_horseman"
   ],
@@ -36,5 +36,5 @@
     "hooves pacing in the courtyard"
   ],
   "presence": "The chair by the fire is not empty.",
-  "writer_notes": "No dial looks wrong to me. Two small flags. (1) The Horseman's tells assume a candle in his pumpkin. Irving never lights it; it is our addition and it works, but the art must keep it a plain candle, not Disney's flaming grin. (2) The Monster and the Wolf Man both carry berserk. That rhymes nicely for the pair who never asked to be what they are, but it puts two all-in shovers at one table; if playtests find it swingy, move one to 'committed' rather than cutting the tilt."
+  "writer_notes": "No dial looks wrong to me. Two small flags. (1) The Horseman's tells assume a candle in his pumpkin. Irving never lights it; it is our addition and it works, but the art must keep it a plain candle, not Disney's flaming grin. (2) Seat 2 is Jekyll OR Hyde, 50/50 per sitting (`other` in their character files); once Dracula has sat down and that one is knocked out, the other walks back in when the player wins holding the ranks that beat him. Frankenstein's Monster held this chair until the owner's call (his gothic sheet read as a handsome actor)."
 }

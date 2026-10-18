@@ -1,0 +1,71 @@
+{
+ "note": "The master is the rest pose's own head and wreath (caesar_master.png, cut from pose A1), as the Pope's is: no seam.",
+ "master": "caesar_parts/caesar_face/caesar_master.png",
+ "pieces": "caesar_parts/caesar_face/caesar_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7,
+   "raised": 8,
+   "hard": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 17,
+   "smile": 18,
+   "tight": 19
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     222,
+     84
+    ],
+    [
+     328,
+     84
+    ],
+    [
+     328,
+     136
+    ],
+    [
+     222,
+     136
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     212,
+     146
+    ],
+    [
+     328,
+     146
+    ],
+    [
+     328,
+     216
+    ],
+    [
+     212,
+     216
+    ]
+   ]
+  }
+ }
+}

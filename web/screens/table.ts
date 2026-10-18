@@ -12,7 +12,9 @@ import * as store from '../store.js'
 import { h, go, sleep, formatChips, ordinal } from '../dom.js'
 import * as sound from '../sound.js'
 import { fly as launch, flipOver as turnOver, centre, chipDisc, flightColours, drawPile, chipCount, type Pt } from '../fx.js'
-import { setResult } from './results.js'
+import { setResult, curtainCall, type Sitting } from './results.js'
+import { ROOMS, PUPPETS, RETURNED } from '../puppet/cast.js'
+import { Stage, PRIO, DEALER as DEATH, type Prio, type SeatSpot } from '../puppet/stage.js'
 import { markTitle } from './shared.js'
 
 /**
@@ -43,14 +45,14 @@ const FF_SCALE = 0.12
 const THINKING_LONG_MS = 25000
 
 const SUIT = { clubs: '♣', diamonds: '♦', hearts: '♥', spades: '♠' } as const
-const isRed = (c: Card) => c.suit === 'hearts' || c.suit === 'diamonds'
 const cardKey = (c: Card) => `${c.rank}${c.suit[0]}`
 const cardText = (c: Card) => `${c.rank === 'T' ? '10' : c.rank}${SUIT[c.suit]}`
 const handText = (cards: Card[]) => cards.map(cardText).join(' ')
 
 export function cardEl(c: Card | null, size: '' | 'small' | 'tiny' = ''): HTMLElement {
   const d = h('div', {
-    class: `card${size ? ' ' + size : ''}${c && isRed(c) ? ' red' : ''}${c ? '' : ' back'}`,
+    // a four-colour deck (spades black, hearts red, diamonds blue, clubs green): no suit is mistaken for its twin
+    class: `card${size ? ' ' + size : ''}${c ? ' ' + c.suit : ' back'}`,
   })
   if (c) {
     d.append(h('span', { class: 'rank' }, c.rank === 'T' ? '10' : c.rank), h('span', { class: 'suit' }, SUIT[c.suit]))
@@ -143,6 +145,22 @@ export function tableScreen(root: HTMLElement): () => void {
   /** Resolves once everything in flight has landed -- or after 1.5s, whatever happens. */
   const landed = () => Promise.race([Promise.all([...moving]), sleep(1500)])
 
+  // ------------------------------------------------------------ the room
+  //
+  // A table whose room is drawn, with a puppet for everyone dealt in, is
+  // STAGED: the room and the figures on a canvas under the felt, the game's
+  // plates, cards and chips laid over them where the figures sit. Anywhere
+  // else (a room not drawn yet, someone without a puppet) keeps the plain
+  // table. Everything here is presentation; the figures only ever act out what
+  // the screen already says.
+
+  // ?room=<id> stages this table in another drawn room: a preview of a room
+  // before its own cast has puppets (like ?pace, a knob for looking, not a setting)
+  const room = ROOMS[new URLSearchParams(location.search).get('room') ?? table.id]
+  const staged = !!room && Stage.fits(room, active.seats.length) && active.seats.every((id) => !!PUPPETS[id])
+  /** The player is drawn in their own chair (the finale): their figure acts out what they do, as the others' do. */
+  const youSeen = staged && !!room?.data.you
+
   // ------------------------------------------------------------ DOM
 
   const els = {
@@ -156,7 +174,7 @@ export function tableScreen(root: HTMLElement): () => void {
     board: h('div', { class: 'board', 'aria-label': 'Community cards' }),
     pot: h('span', { class: 'pot-value' }, '0'),
     potPile: h('span', { class: 'pile', 'aria-hidden': 'true' }),
-    dealerName: h('span', { class: 'dealer-name' }, 'Death'),
+    dealerName: h('span', { class: 'dealer-name' }, room?.data.dealerName ?? 'Death'),
     fx: h('div', { class: 'fx', 'aria-hidden': 'true' }),
     youBet: betSpot(),
     youName: h('span', { class: 'you-name' }),
@@ -175,7 +193,12 @@ export function tableScreen(root: HTMLElement): () => void {
     log: h('ol', { class: 'log', 'aria-live': 'polite' }),
     logPanel: h('aside', { class: 'log-panel', 'aria-label': 'Hand log' }),
     logToggle: h('button', { type: 'button', class: 'ghost small' }, 'Log'),
+    dealer: h('div', { class: 'dealer' }),
+    stageCanvas: h('canvas', { class: 'stage', 'aria-hidden': 'true' }) as HTMLCanvasElement,
+    /** Where Death's deck lies: cards fly out of it, and back into it. */
+    deck: h('span', { class: 'deck-spot', 'aria-hidden': 'true' }),
   }
+  els.dealer.append(els.dealerName, h('span', { class: 'dealer-role' }, 'deals'), els.dealerLine)
   els.raiseRow.append(els.quick, els.slider, els.raiseValue, els.raiseConfirm, els.raiseCancel)
   els.logPanel.append(h('h2', null, 'Log'), els.log)
   // On a phone held sideways the log would sit on top of a seat, so there it
@@ -184,8 +207,9 @@ export function tableScreen(root: HTMLElement): () => void {
   if (!settings.showLog || narrow) els.logPanel.classList.add('collapsed')
 
   const leave = h('button', { type: 'button', class: 'ghost small', onclick: () => go('/') }, '‹ Leave')
-  root.append(
-    h('div', { class: 'table-screen' },
+  const screenEl = h('div', { class: 'table-screen' })
+  root.append(screenEl)
+  screenEl.append(
       h('header', { class: 'table-bar' },
         leave,
         h('div', { class: 'where' },
@@ -194,9 +218,11 @@ export function tableScreen(root: HTMLElement): () => void {
           ' · ', els.hand, ' · ', els.blinds),
         els.ff,
         els.logToggle),
-      h('main', { class: 'felt', dataset: { table: table.id } },
+      h('main', { class: `felt${staged ? ' staged' : ''}`, dataset: { table: table.id } },
+        staged ? els.stageCanvas : null,
         els.opponents,
-        h('div', { class: 'dealer' }, els.dealerName, h('span', { class: 'dealer-role' }, 'deals'), els.dealerLine),
+        els.dealer,
+        staged ? els.deck : null,
         h('section', { class: 'middle' },
           els.presence, els.board,
           h('div', { class: 'pot' }, els.potPile, h('span', { class: 'label' }, 'POT'), ' ', els.pot)),
@@ -207,7 +233,7 @@ export function tableScreen(root: HTMLElement): () => void {
         els.narration,
         els.toasts,
         els.fx),
-      els.logPanel),
+      els.logPanel,
   )
   els.logToggle.addEventListener('click', () => {
     els.logPanel.classList.toggle('collapsed')
@@ -273,6 +299,115 @@ export function tableScreen(root: HTMLElement): () => void {
   const nameOf = (seat: number) =>
     seat === HUMAN_SEAT ? 'You' : CHARACTERS[seatIds[seat] ?? '']?.short ?? '—'
 
+  // ------------------------------------------------------------ the figures
+
+  let stage = staged ? new Stage(els.stageCanvas, room!, active.seats.length) : null
+  let stageReady = false
+
+  /**
+   * The cards, chips and plates were sized for a phone, where they are big
+   * enough; on a monitor they were specks (the owner: "hard to see"). So the
+   * game's pieces grow with the screen's height: --s, for the cards and the
+   * chips, is 1 up to a phone's 385 px, about 2.8 at 1080 and 4 (the owner's
+   * figure) from 1540 up; --s2, for the plates and their type, grows half as
+   * fast, so they never swamp the figures. A straight 4x at 1080 laid the
+   * board over your own cards and the plates over one another.
+   */
+  let plateScale = 1
+  function scaleGame() {
+    const s = Math.max(1, Math.min(4, window.innerHeight / 385))
+    plateScale = 1 + (s - 1) / 2
+    screenEl.style.setProperty('--s', s.toFixed(3))
+    screenEl.style.setProperty('--s2', plateScale.toFixed(3))
+  }
+
+  /**
+   * Lay the plates, Death's plate, his deck and the middle of the table over
+   * the room as it is drawn at this size. Each plate sits on the felt just in
+   * front of its figure; --lift is the height from the plate up to the top of
+   * the head, where that seat's speech goes.
+   */
+  function layoutStage() {
+    scaleGame()
+    if (!stage) return
+    const g = stage.geometry()
+    // plates as wide as the chairs are apart allows, and never off the screen
+    const xs = [...g.seats.entries()].filter(([i]) => i !== DEATH && i !== HUMAN_SEAT).map(([, s]) => s.x).sort((a, b) => a - b)
+    const gap = Math.min(...xs.slice(1).map((x, i) => x - xs[i]))
+    const plate = Math.max(104, Math.min(158 * plateScale, gap - 10))
+    const width = els.stageCanvas.clientWidth
+    els.opponents.style.setProperty('--plate', `${plate}px`)
+    const place = (el: HTMLElement, at: SeatSpot, below: number) => {
+      const top = at.line + below * g.k
+      const x = el === els.dealer ? at.x : Math.max(plate / 2 + 4, Math.min(width - plate / 2 - 4, at.x))
+      el.style.left = `${x}px`
+      el.style.top = `${top}px`
+      el.style.setProperty('--lift', `${Math.max(0, top - at.head)}px`)
+      el.dataset.side = at.side
+    }
+    for (const [i, ui] of seatUI) {
+      const at = g.seats.get(i)
+      if (at) place(ui.root, at, 18)
+    }
+    const d = g.seats.get(DEATH)!
+    place(els.dealer, d, 64)
+    const mid = els.dealer.parentElement?.querySelector<HTMLElement>('.middle')
+    // the board under the dealer's plate, however tall the plate has grown
+    const below = els.dealer.offsetTop + els.dealer.offsetHeight + 6 * plateScale
+    if (mid) { mid.style.left = `${d.x}px`; mid.style.top = `${Math.max(d.line + 128 * g.k, below)}px` }
+    els.deck.style.left = `${g.deck.x}px`
+    els.deck.style.top = `${g.deck.y}px`
+  }
+
+  /** Everyone in the chair the engine says they are in; the chairs of those who are out empty. */
+  /** Who sits in a chair as the stage draws them: the changed figure of someone who came back. */
+  const changed = new Map<number, string>()
+  function figureAt(seat: number): string {
+    if (seat === HUMAN_SEAT) return youSeen ? room?.data.youAs ?? 'stranger' : ''
+    const id = changed.get(seat) ?? seatIds[seat] ?? ''
+    return room?.data.cast?.[id] ?? id
+  }
+
+  function syncStage() {
+    if (!stage || !stageReady) return
+    for (let i = 1; i < seatIds.length; i++) {
+      const id = out.has(i) ? null : figureAt(i)
+      if (stage.idAt(i) !== id && !(id && !PUPPETS[id] && stage.idAt(i) === null)) void stage.seat(i, id)
+    }
+  }
+
+  /** The art did not load: the plain table, as at a room not drawn yet. */
+  function unstage() {
+    stage?.destroy()
+    stage = null
+    stageReady = false
+    els.stageCanvas.remove()
+    els.deck.remove()
+    els.opponents.parentElement?.classList.remove('staged')
+    for (const el of [els.dealer, ...[...seatUI.values()].map((u) => u.root)]) el.removeAttribute('style')
+    els.opponents.parentElement?.querySelector<HTMLElement>('.middle')?.removeAttribute('style')
+  }
+
+  /**
+   * A clip on someone's figure. Live only, and never under fast-forward: half
+   * a gesture reads as a glitch, the way half a spoken line does. Clips run
+   * on the presentation clock's pace; faces and idles keep their own.
+   */
+  function cue(seat: number, clip: string, prio: Prio = PRIO.act) {
+    if (!stage || !stageReady || replaying || ff) return
+    stage.cue(seat, clip, prio)
+  }
+
+  /** Lips for a spoken line (stage directions are not spoken). Cut under fast-forward, like the voice will be. */
+  function speak(seat: number, text: string) {
+    if (!stage || !stageReady || replaying || ff) return
+    stage.face(seat)?.say(text)
+  }
+
+  /** The clip a character's tell or idle is acted with, by its words (anim.json "cues"). */
+  const cueFor = (seat: number, text: string): string | undefined =>
+    PUPPETS[figureAt(seat)]?.anim.cues?.[text]
+
   function buildSeat(i: number) {
     const id = seatIds[i]!
     const c = CHARACTERS[id]
@@ -302,11 +437,34 @@ export function tableScreen(root: HTMLElement): () => void {
     if (old) old.root.replaceWith(ui.root)
     else els.opponents.append(ui.root)
     seatUI.set(i, ui)
+    layoutStage()
     return ui
   }
 
   for (let i = 1; i < seatIds.length; i++) buildSeat(i)
   if (table.presence && active.mode === 'tour' && table.arrival) els.presence.textContent = table.presence
+  if (stage) {
+    stage.setStill(settings.reduceMotion)
+    stage.speed = paceScale > 0 ? Math.min(2, Math.max(0.5, 1 / paceScale)) : 2
+    // the room's story piece (Athens: the cup poured for Odysseus) stands until the late champion comes
+    stage.setPresence(active.mode === 'tour' && table.arrival ? 'before' : null)
+    stage.onReady = () => {
+      stageReady = true
+      syncStage()
+      layoutStage()
+      if (active.mode === 'tour' && table.arrival) stage?.preload(table.arrival.character)
+      for (const id of seatIds) if (id && RETURNED[id]) stage?.preload(RETURNED[id])
+      // the other half of a two-man chair, so he is ready if he walks back in
+      for (const id of seatIds) { const o = id ? CHARACTERS[id]?.other?.character : undefined; if (o) stage?.preload(o) }
+    }
+    layoutStage()
+    stage.accent = settings.accent
+    stage.load(seatIds).catch(unstage)
+    ;(window as any).__stage = stage
+  }
+  const resized = new ResizeObserver(() => layoutStage())
+  resized.observe(els.stageCanvas)
+  window.addEventListener('resize', scaleGame)
 
   /** The stacks as drawn. Chips landing from a pot add to these until the engine's figure arrives. */
   let shownStacks: number[] = []
@@ -335,6 +493,8 @@ export function tableScreen(root: HTMLElement): () => void {
   // can never leave a wrong number on the felt.
 
   const felt = () => els.fx.parentElement as HTMLElement
+  /** Where cards come from: Death's deck where he is drawn, else his name. */
+  const dealFrom = (): HTMLElement => (stage ? els.deck : els.dealerName)
   const chipsAt = {
     /** Chips each seat had when the hand began, blinds included. */
     handStart: [] as number[],
@@ -392,7 +552,7 @@ export function tableScreen(root: HTMLElement): () => void {
   function muckCards(seat: number, ms: number) {
     const box = cardBox(seat)
     if (!box) return
-    const to = centre(els.dealerName, felt())
+    const to = centre(dealFrom(), felt())
     for (const card of [...box.children]) {
       if (ms > 0) {
         void fly(els.fx, cardEl(null, cardSize(seat)), centre(card, felt()), to, ms,
@@ -450,6 +610,9 @@ export function tableScreen(root: HTMLElement): () => void {
     els.youName.title = n ? `The table calls you ${n}` : 'The table does not address you'
   }
 
+  /** Until when the table is watching someone's gesture: no new ambient one starts (see the scheduler). */
+  let quietUntil = 0
+
   function showTell(seat: number, text: string, real: boolean) {
     const ui = seatUI.get(seat)
     if (!ui) return
@@ -457,8 +620,11 @@ export function tableScreen(root: HTMLElement): () => void {
     ui.tell.classList.remove('fade')
     void ui.tell.offsetWidth
     ui.tell.classList.add('fade')
-    if (real) ui.tellUntil = Date.now() + 2600
+    if (real) ui.tellUntil = Date.now() + 3600
+    quietUntil = Date.now() + 3600
     if (!replaying) store.sawHabit(ui.id, text)
+    const clip = cueFor(seat, text)
+    if (clip) cue(seat, clip, real ? PRIO.tell : PRIO.idle)
   }
 
   function toast(title: string, body: string, cls = '') {
@@ -480,7 +646,9 @@ export function tableScreen(root: HTMLElement): () => void {
     step(() => {
       log(logText, `say${speaker === 'death' ? ' death' : ''}${b.stage ? ' stage' : ''}`)
       if (ff) return
-      if (speaker === 'death') {
+      // where Death plays (the finale) he speaks from his chair, like anyone seated
+      if (speaker === 'death' && !seatIds.includes('death')) {
+        speak(DEATH, b.text)
         els.dealerLine.textContent = `“${b.text}”`
         els.dealerLine.classList.remove('show')
         void els.dealerLine.offsetWidth
@@ -494,6 +662,10 @@ export function tableScreen(root: HTMLElement): () => void {
         const seat = seatIds.indexOf(speaker)
         const ui = seatUI.get(seat)
         if (ui) {
+          if (!b.stage) {
+            speak(seat, b.text)
+            cue(seat, 'talk', PRIO.tell)
+          }
           ui.say.textContent = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
           ui.say.classList.toggle('stage', b.stage)
           ui.say.classList.remove('show')
@@ -539,6 +711,7 @@ export function tableScreen(root: HTMLElement): () => void {
       const el = ui.root.querySelector<HTMLElement>('.callout') ?? h('div', { class: 'callout', 'aria-hidden': 'true' })
       if (!el.parentElement) ui.root.append(el)
       const text = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
+      if (!b.stage) speak(seatIds.indexOf(b.speaker), b.text)
       const ms = Math.round(calloutTime(text) * paceScale)
       el.textContent = text
       el.classList.toggle('stage', b.stage)
@@ -592,13 +765,18 @@ export function tableScreen(root: HTMLElement): () => void {
     // Chair changes must reach the screen even for hands replayed silently.
     if (e.type === 'arrival') {
       seatIds[e.seat] = e.id
+      if (e.replaces === e.id && RETURNED[e.id] && PUPPETS[RETURNED[e.id]]) changed.set(e.seat, RETURNED[e.id])
+      else changed.delete(e.seat)
       out.delete(e.seat)
       buildSeat(e.seat)
+      syncStage()
       // A chair that changed hands without emptying says nothing about a
       // champion who is still to come.
       if (e.cause !== 'banishment') els.presence.textContent = ''
+      if (table.arrival && e.id === table.arrival.character && active!.mode === 'tour') stage?.setPresence('after')
     } else if (e.type === 'eliminated') {
       out.add(e.seat)
+      stage?.leave(e.seat)
       if (e.seat === HUMAN_SEAT) humanPlace = e.place
       seatUI.get(e.seat)?.root.classList.add('out')
       // Their last fidget goes with them rather than lingering on an empty chair.
@@ -612,14 +790,41 @@ export function tableScreen(root: HTMLElement): () => void {
     }
   }
 
+  /**
+   * The sitting as the curtain call tells it (results.ts): the player's best
+   * moments and who fell around them. Counted from the events, live and in a
+   * resume's catch-up alike, so a resumed sitting still has its whole story.
+   * Presentation only: nothing here touches the game.
+   */
+  const sitting: Sitting = { potsWon: 0, biggestPot: 0, best: null, knockouts: [], fallen: [], bustedBy: null }
+  function count(e: HandEvent) {
+    if (e.type === 'result' && e.seat === HUMAN_SEAT && e.delta > 0) {
+      sitting.potsWon++
+      sitting.biggestPot = Math.max(sitting.biggestPot, e.delta)
+    } else if (e.type === 'eliminated' && e.seat !== HUMAN_SEAT) {
+      sitting.fallen.push({ id: e.id, place: e.place })
+    } else if (e.type === 'handEnd') {
+      const sum = run.lastSummary
+      if (!sum) return
+      sitting.knockouts.push(...sum.knockouts)
+      if (sum.bustedBy.length) sitting.bustedBy = sum.bustedBy[0]
+      for (const w of sum.showdownWins) {
+        if (!sitting.best || w.rank > sitting.best.rank || (w.rank === sitting.best.rank && w.amount > sitting.best.amount)) {
+          sitting.best = { rank: w.rank, cards: w.cards, amount: w.amount }
+        }
+      }
+    }
+  }
+
   function onEvent(e: HandEvent) {
     const beats = run.onEvent(e)
+    count(e)
     // The uninvited guest is met the moment he sits down, live OR in a resume
     // replay, and off the presentation clock: his ledger page and his mark
     // hang off `met`, and career marks are checked when this hand's record is
     // written, before the queue gets round to showing him. Meeting someone
     // twice changes nothing, so a replay cannot double-count it.
-    if (e.type === 'arrival' && e.cause === 'banishment') store.meet(e.id)
+    if (e.type === 'arrival' && (e.cause === 'banishment' || CHARACTERS[e.id]?.role === 'guest')) store.meet(e.id)
     if (e.type === 'arrival' || e.type === 'eliminated' || e.type === 'level') {
       if (replaying) applyStructural(e)
     }
@@ -667,6 +872,8 @@ export function tableScreen(root: HTMLElement): () => void {
     const loud = !instant
     /** Room for motion in a step's delay; under reduced motion a short beat instead. */
     const room = (ms: number, still = 0) => t(settings.reduceMotion ? still : ms)
+    /** A figure's clip, for what is happening live (never in a resume's catch-up). */
+    const act = (seat: number, clip: string, prio: Prio = PRIO.act) => { if (!instant) cue(seat, clip, prio) }
 
     switch (e.type) {
       case 'hand': {
@@ -723,9 +930,17 @@ export function tableScreen(root: HTMLElement): () => void {
           }
           const flight = move(MOVE.dealFlight)
           if (flight > 0) for (const backs of slots.values()) for (const b of backs) b.style.visibility = 'hidden'
-          const from = centre(els.dealerName, felt())
+          const from = centre(dealFrom(), felt())
           const lead = move(MOVE.shuffle)
           if (loud && !ff) sound.shuffle()
+          act(DEATH, 'deal_left')
+          act(DEATH, 'deal_right')
+          // each of them looks at what they were dealt, in their own time
+          if (!instant) {
+            for (const seat of seated) {
+              if (seat !== HUMAN_SEAT || youSeen) later(() => cue(seat, 'peek', PRIO.tell), (dealTime + 300 + Math.random() * 1600) * paceScale)
+            }
+          }
           order.forEach((seat, k) => {
             const target = slots.get(seat)?.[k < round.length ? 0 : 1]
             if (!target || flight <= 0) return
@@ -768,6 +983,11 @@ export function tableScreen(root: HTMLElement): () => void {
             })
             setStacks(e.stacks)
             els.pot.textContent = formatChips(blinds.reduce((a, b) => a + b, 0))
+            // A blind can put you all in, and then you are never asked to act.
+            if (blinds[HUMAN_SEAT] > 0 && e.stacks[HUMAN_SEAT] === 0) {
+              humanAllIn = true
+              updateFF()
+            }
           }, room(MOVE.chips))
           break
         }
@@ -779,6 +999,7 @@ export function tableScreen(root: HTMLElement): () => void {
           log(`— ${e.street} —`, 'street')
           for (const ui of seatUI.values()) if (Date.now() > ui.tellUntil) ui.tell.textContent = ''
           dealBoard(fresh)
+          if (fresh.length) act(DEATH, fresh.length >= 3 ? 'flop' : 'turn')
         }, room(boardTime(fresh.length), BASE.street))
         break
       }
@@ -789,9 +1010,9 @@ export function tableScreen(root: HTMLElement): () => void {
       case 'action': {
         const you = e.seat === HUMAN_SEAT
         const ui = seatUI.get(e.seat)
-        const act = e.decision.action
+        const decision = e.decision.action
         const inFront = (chipsAt.handStart[e.seat] ?? 0) - (e.stacks[e.seat] ?? 0) - (chipsAt.swept[e.seat] ?? 0)
-        const added = act === 'fold' || act === 'check' ? 0 : inFront - (chipsAt.bets[e.seat] ?? 0)
+        const added = decision === 'fold' || decision === 'check' ? 0 : inFront - (chipsAt.bets[e.seat] ?? 0)
         if (added > 0) chipsAt.bets[e.seat] = inFront
         step(() => {
           for (const u of seatUI.values()) u.root.classList.remove('acting')
@@ -799,13 +1020,17 @@ export function tableScreen(root: HTMLElement): () => void {
             ui.root.classList.add('acting')
             ui.last.textContent = describe(e.decision)
           }
-          if (act === 'fold') {
+          if (!you || youSeen) {
+            act(e.seat, decision === 'fold' ? 'fold' : decision === 'check' ? 'check'
+              : e.stacks[e.seat] === 0 ? 'all_in' : decision === 'call' ? 'call' : 'bet')
+          }
+          if (decision === 'fold') {
             folded.add(e.seat)
             ui?.root.classList.add('folded')
             // Mucked cards are gone, not face-down: backs read as "still in".
             muckCards(e.seat, move(MOVE.muck))
             if (loud) sound.muck()
-          } else if (act === 'check') {
+          } else if (decision === 'check') {
             if (loud) sound.knock()
           } else if (added > 0) {
             shown.bets[e.seat] = inFront
@@ -819,7 +1044,7 @@ export function tableScreen(root: HTMLElement): () => void {
           setStacks(e.stacks)
           els.pot.textContent = formatChips(e.pot)
           log(`${nameOf(e.seat)} ${describe(e.decision, you)}`, you ? 'you' : '')
-          if (you && act !== 'fold' && e.stacks[HUMAN_SEAT] === 0) humanAllIn = true
+          if (you && decision !== 'fold' && e.stacks[HUMAN_SEAT] === 0) humanAllIn = true
           updateFF()
         }, t(you ? 220 : BASE.action))
         break
@@ -842,6 +1067,7 @@ export function tableScreen(root: HTMLElement): () => void {
               }
               const box = cardBox(seat)
               if (!box) continue
+              act(seat, 'show')
               const backs = [...box.children] as HTMLElement[]
               hole.forEach((c, i) => {
                 const face = cardEl(c, 'small')
@@ -870,13 +1096,30 @@ export function tableScreen(root: HTMLElement): () => void {
           const cards = rest.slice(at, at + n)
           at += n
           if (!cards.length) break
-          step(() => dealBoard(cards), room(boardTime(cards.length) + MOVE.runout, BASE.street))
+          step(() => {
+            dealBoard(cards)
+            act(DEATH, cards.length >= 3 ? 'flop' : 'turn')
+          }, room(boardTime(cards.length) + MOVE.runout, BASE.street))
         }
         // Beat two, once per pot: light the five cards that won it, and push
         // the chips to whoever won them. A bet nobody could call goes back
         // first, and quietly: it was never won, so it is not called a pot.
         const real = e.pots.filter((p) => !p.returned)
         const ordered = [...e.pots.filter((p) => p.returned), ...real]
+        // Each winner reacts once, to all they won: a nod for an ordinary pot,
+        // the big win when it was most of what they sat down to the hand with.
+        const wonBy = new Map<number, number>()
+        for (const p of real) for (const w of p.winners) wonBy.set(w, (wonBy.get(w) ?? 0) + p.amount / p.winners.length)
+        const reacted = new Set<number>()
+        const winClip = (w: number) => {
+          const win = PUPPETS[figureAt(w)]?.anim.win
+          const big = (wonBy.get(w) ?? 0) >= 0.6 * Math.max(1, chipsAt.handStart[w] ?? 0)
+          return (big ? win?.big : win?.small) ?? 'won_pot'
+        }
+        const loseClip = (s: number, amount: number) => {
+          const lose = PUPPETS[figureAt(s)]?.anim.lose
+          return (amount >= Math.max(1, chipsAt.handStart[s] ?? 0) ? lose?.big : lose?.small) ?? 'lost_pot'
+        }
         ordered.forEach((pot) => {
           chipsAt.pot = Math.max(0, chipsAt.pot - pot.amount)
           const left = chipsAt.pot
@@ -907,6 +1150,20 @@ export function tableScreen(root: HTMLElement): () => void {
               }
             }
             for (const w of pot.winners) seatUI.get(w)?.root.classList.add('winner')
+            // Death pushes it over and the chips fly; the winner reacts (never
+            // a hand raking the pot in: that is the chips' job); at a
+            // showdown, the ones who lost the main pot take it as they take it.
+            const to = pot.winners[0]
+            const side = to === HUMAN_SEAT && !youSeen ? 'you' : stage?.geometry().seats.get(to)?.side === 'r' ? 'right' : 'left'
+            act(DEATH, `push_${side}`)
+            for (const w of pot.winners) {
+              if ((w !== HUMAN_SEAT || youSeen) && !reacted.has(w)) { reacted.add(w); act(w, winClip(w)) }
+            }
+            if (contested && i === 0) {
+              for (const { seat } of e.revealed) {
+                if ((seat !== HUMAN_SEAT || youSeen) && !pot.winners.includes(seat)) act(seat, loseClip(seat, pot.amount), PRIO.tell)
+              }
+            }
             const label = real.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
             const withWhat = pot.ranking
               ? ` with ${pot.ranking}${pot.cards ? ` — ${handText(pot.cards)}` : ''}`
@@ -954,8 +1211,15 @@ export function tableScreen(root: HTMLElement): () => void {
       }
       case 'eliminated': {
         step(() => {
+          if (e.seat !== HUMAN_SEAT) act(e.seat, 'knocked_out')
           applyStructural(e)
           log(`${nameOf(e.seat)} ${e.seat === HUMAN_SEAT ? 'are' : 'is'} out (${ordinal(e.place)})`, 'big')
+          // down to two: the last of them leans in, and Death watches
+          const left = seatIds.map((_, i) => i).filter((i) => i !== HUMAN_SEAT && seatIds[i] && !out.has(i))
+          if (left.length === 1 && !out.has(HUMAN_SEAT)) {
+            act(left[0], 'heads_up', PRIO.tell)
+            act(DEATH, 'steeple', PRIO.tell)
+          }
         }, t(BASE.result))
         break
       }
@@ -967,6 +1231,7 @@ export function tableScreen(root: HTMLElement): () => void {
           ui?.root.classList.add('arriving')
           if (ui) ui.stack.textContent = formatChips(e.stack)
           const who = CHARACTERS[e.id]?.short ?? e.id
+          act(e.seat, 'arrive', PRIO.tell)
           log(e.replaces === e.id
             ? `${who} is back, and takes the old chair again with ${formatChips(e.stack)} chips.`
             : `${who} takes the empty chair with ${formatChips(e.stack)} chips.`, 'big')
@@ -994,7 +1259,7 @@ export function tableScreen(root: HTMLElement): () => void {
       if (!cards.length) return
       const flight = move(MOVE.boardFlight)
       const flipMs = move(MOVE.flip)
-      const from = centre(els.dealerName, felt())
+      const from = centre(dealFrom(), felt())
       const backs = cards.map(() => cardEl(null))
       els.board.append(...backs)
       if (flight <= 0) {
@@ -1070,12 +1335,15 @@ export function tableScreen(root: HTMLElement): () => void {
         ui.tell.textContent = ''
       }
       if (leaving) log(`${leaving} is shown out of the Invitational. The chips stay where they are.`, 'big')
+      if (!instant) cue(DEATH, 'way_out')
+      stage?.leave(e.seat)
     }, t(BASE.result))
     step(() => {
       applyStructural(e)
       const ui = seatUI.get(e.seat)
       ui?.root.classList.add('arriving')
       if (ui) ui.stack.textContent = formatChips(e.stack)
+      if (!instant) cue(e.seat, 'arrive', PRIO.tell)
       log(`${CHARACTERS[e.id]?.short ?? e.id} is sitting in the chair, behind the same ${formatChips(e.stack)} chips.`, 'big')
     }, t(BASE.level))
   }
@@ -1104,6 +1372,10 @@ export function tableScreen(root: HTMLElement): () => void {
    */
   const ambient = setInterval(() => {
     if (!alive || replaying || document.hidden) return
+    // One gesture at a time (the owner: too much moving at once to tell what
+    // is what): while anyone's tell, idle or fidget is showing, nobody else
+    // starts one. A real tell still plays when it happens; it is never queued.
+    if (Date.now() < quietUntil) return
     for (const [i, ui] of seatUI) {
       if (out.has(i) || Date.now() < ui.tellUntil) continue
       const c = CHARACTERS[ui.id]
@@ -1111,8 +1383,21 @@ export function tableScreen(root: HTMLElement): () => void {
       const vocab = [...c.idles, ...c.tells.map((t) => t.text)]
       if (!vocab.length || Math.random() > c.dials.noise * 0.3) continue
       showTell(i, vocab[Math.floor(Math.random() * vocab.length)], false)
-      ui.tellUntil = Date.now() + 2200
+      ui.tellUntil = Date.now() + 3200
+      return
     }
+    // Where they are drawn, the figures also fidget without words: small
+    // business, and the decoys drawn beside each tell (MOTION-SPEC), so that
+    // a gesture alone means nothing. Death only ever looks weary.
+    if (!stage) return
+    for (const i of [...seatUI.keys(), ...(youSeen ? [HUMAN_SEAT] : [])]) {
+      const fidgets = PUPPETS[figureAt(i)]?.anim.fidgets ?? []
+      if (out.has(i) || !fidgets.length || Math.random() > 0.022) continue
+      cue(i, fidgets[Math.floor(Math.random() * fidgets.length)], PRIO.idle)
+      quietUntil = Date.now() + 3200
+      break
+    }
+    if (Math.random() < 0.012) cue(DEATH, Math.random() < 0.5 ? 'weary' : 'look_up', PRIO.idle)
   }, 1300)
 
   // ------------------------------------------------------------ your turn
@@ -1190,7 +1475,7 @@ export function tableScreen(root: HTMLElement): () => void {
     }
     const raise: Action | null = view.legal.includes('raise') ? 'raise' : view.legal.includes('bet') ? 'bet' : null
     if (raise && view.maxRaise >= view.minRaise) {
-      b.append(button(raise === 'bet' ? 'Bet…' : 'Raise…', '', 'r', () => openRaise(view, raise)))
+      b.append(button(raise === 'bet' ? 'Bet…' : 'Raise…', '', 'r', () => openRaise(view)))
     }
     els.raiseConfirm.onclick = () => {
       if (!raise) return
@@ -1217,7 +1502,7 @@ export function tableScreen(root: HTMLElement): () => void {
     els.buttons.hidden = false
   }
 
-  function openRaise(view: TurnView, raise: Action) {
+  function openRaise(view: TurnView) {
     els.raiseRow.hidden = false
     els.buttons.hidden = true
     const s = els.slider
@@ -1225,10 +1510,11 @@ export function tableScreen(root: HTMLElement): () => void {
     s.max = String(view.maxRaise)
     s.step = '1'
     const clamp = (v: number) => Math.min(view.maxRaise, Math.max(view.minRaise, Math.round(v)))
-    // Sizes are "raise TO", as the engine takes them: call first, then add a
-    // share of the pot as it would stand after the call.
-    const to = (frac: number) =>
-      clamp(raise === 'bet' ? view.pot * frac : view.toCall + frac * (view.pot + view.toCall))
+    // Sizes are "raise TO", as the engine takes them (decide's raiseTo): what
+    // is already in front of you, the call, then a share of the pot as it
+    // would stand after the call. Leaving out the chips in front made Pot from
+    // the big blind a min-raise.
+    const to = (frac: number) => clamp(view.bet + view.toCall + frac * (view.pot + view.toCall))
     const sizes: [string, number][] = [['½ pot', to(0.5)], ['Pot', to(1)], ['All in', view.maxRaise]]
     s.value = String(to(0.6))
     const sync = () => {
@@ -1368,13 +1654,18 @@ export function tableScreen(root: HTMLElement): () => void {
       s.active = null
     })
     flushTime()
-    setResult({ outcome, effects: effects!, marks: newMarks, facts, name: run.earnedName() })
+    const result = { outcome, effects: effects!, marks: newMarks, facts, name: run.earnedName(), sitting }
+    setResult(result)
     els.prompt.textContent = won ? 'You hold every chip.' : 'You are out.'
     log(won ? 'You win the table.' : 'You are out.', 'big')
     void settled().then(() => {
       if (!alive) return
+      // The curtain call comes down over the table: the room keeps breathing
+      // behind it, and the felt where it happened stays in view.
       els.buttons.replaceChildren(
         h('button', { type: 'button', class: 'primary', onclick: () => go('/results') }, 'Continue'))
+      const veil = curtainCall(result, () => veil.remove())
+      root.append(veil)
     })
   }
 
@@ -1383,6 +1674,9 @@ export function tableScreen(root: HTMLElement): () => void {
   return () => {
     alive = false
     clearInterval(ambient)
+    stage?.destroy()
+    resized.disconnect()
+    window.removeEventListener('resize', scaleGame)
     for (const t of timers) clearTimeout(t)
     if (keyHandler) window.removeEventListener('keydown', keyHandler)
     store.flush()

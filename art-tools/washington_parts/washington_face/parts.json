@@ -1,0 +1,346 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "washington_face_01.png",
+      "label": "",
+      "x": 22,
+      "y": 16,
+      "w": 346,
+      "h": 360,
+      "pivot": [
+        173.0,
+        180.0
+      ],
+      "area": 89619
+    },
+    {
+      "index": 2,
+      "file": "washington_face_02.png",
+      "label": "",
+      "x": 372,
+      "y": 89,
+      "w": 196,
+      "h": 144,
+      "pivot": [
+        98.0,
+        72.0
+      ],
+      "area": 21942
+    },
+    {
+      "index": 3,
+      "file": "washington_face_03.png",
+      "label": "",
+      "x": 580,
+      "y": 89,
+      "w": 200,
+      "h": 145,
+      "pivot": [
+        100.0,
+        72.5
+      ],
+      "area": 22949
+    },
+    {
+      "index": 4,
+      "file": "washington_face_04.png",
+      "label": "",
+      "x": 804,
+      "y": 89,
+      "w": 219,
+      "h": 140,
+      "pivot": [
+        109.5,
+        70.0
+      ],
+      "area": 24233
+    },
+    {
+      "index": 5,
+      "file": "washington_face_05.png",
+      "label": "",
+      "x": 1057,
+      "y": 90,
+      "w": 218,
+      "h": 143,
+      "pivot": [
+        109.0,
+        71.5
+      ],
+      "area": 24885
+    },
+    {
+      "index": 6,
+      "file": "washington_face_06.png",
+      "label": "",
+      "x": 1309,
+      "y": 87,
+      "w": 212,
+      "h": 148,
+      "pivot": [
+        106.0,
+        74.0
+      ],
+      "area": 24812
+    },
+    {
+      "index": 7,
+      "file": "washington_face_07.png",
+      "label": "",
+      "x": 798,
+      "y": 241,
+      "w": 237,
+      "h": 134,
+      "pivot": [
+        118.5,
+        67.0
+      ],
+      "area": 25775
+    },
+    {
+      "index": 8,
+      "file": "washington_face_08.png",
+      "label": "",
+      "x": 1073,
+      "y": 247,
+      "w": 229,
+      "h": 133,
+      "pivot": [
+        114.5,
+        66.5
+      ],
+      "area": 24224
+    },
+    {
+      "index": 9,
+      "file": "washington_face_09.png",
+      "label": "",
+      "x": 29,
+      "y": 400,
+      "w": 206,
+      "h": 134,
+      "pivot": [
+        103.0,
+        67.0
+      ],
+      "area": 20292
+    },
+    {
+      "index": 10,
+      "file": "washington_face_10.png",
+      "label": "",
+      "x": 261,
+      "y": 398,
+      "w": 205,
+      "h": 141,
+      "pivot": [
+        102.5,
+        70.5
+      ],
+      "area": 20801
+    },
+    {
+      "index": 11,
+      "file": "washington_face_11.png",
+      "label": "",
+      "x": 485,
+      "y": 397,
+      "w": 183,
+      "h": 134,
+      "pivot": [
+        91.5,
+        67.0
+      ],
+      "area": 17975
+    },
+    {
+      "index": 12,
+      "file": "washington_face_12.png",
+      "label": "",
+      "x": 689,
+      "y": 398,
+      "w": 192,
+      "h": 138,
+      "pivot": [
+        96.0,
+        69.0
+      ],
+      "area": 19478
+    },
+    {
+      "index": 13,
+      "file": "washington_face_13.png",
+      "label": "",
+      "x": 900,
+      "y": 399,
+      "w": 196,
+      "h": 138,
+      "pivot": [
+        98.0,
+        69.0
+      ],
+      "area": 19867
+    },
+    {
+      "index": 14,
+      "file": "washington_face_14.png",
+      "label": "",
+      "x": 1110,
+      "y": 401,
+      "w": 196,
+      "h": 132,
+      "pivot": [
+        98.0,
+        66.0
+      ],
+      "area": 19279
+    },
+    {
+      "index": 15,
+      "file": "washington_face_15.png",
+      "label": "",
+      "x": 1322,
+      "y": 398,
+      "w": 189,
+      "h": 139,
+      "pivot": [
+        94.5,
+        69.5
+      ],
+      "area": 19570
+    },
+    {
+      "index": 16,
+      "file": "washington_face_16.png",
+      "label": "",
+      "x": 157,
+      "y": 544,
+      "w": 201,
+      "h": 135,
+      "pivot": [
+        100.5,
+        67.5
+      ],
+      "area": 20412
+    },
+    {
+      "index": 17,
+      "file": "washington_face_17.png",
+      "label": "",
+      "x": 393,
+      "y": 542,
+      "w": 194,
+      "h": 134,
+      "pivot": [
+        97.0,
+        67.0
+      ],
+      "area": 19438
+    },
+    {
+      "index": 18,
+      "file": "washington_face_18.png",
+      "label": "",
+      "x": 630,
+      "y": 545,
+      "w": 203,
+      "h": 126,
+      "pivot": [
+        101.5,
+        63.0
+      ],
+      "area": 19079
+    },
+    {
+      "index": 19,
+      "file": "washington_face_19.png",
+      "label": "",
+      "x": 919,
+      "y": 543,
+      "w": 195,
+      "h": 132,
+      "pivot": [
+        97.5,
+        66.0
+      ],
+      "area": 19376
+    },
+    {
+      "index": 20,
+      "file": "washington_face_20.png",
+      "label": "",
+      "x": 1183,
+      "y": 543,
+      "w": 197,
+      "h": 135,
+      "pivot": [
+        98.5,
+        67.5
+      ],
+      "area": 19614
+    },
+    {
+      "index": 21,
+      "file": "washington_face_21.png",
+      "label": "",
+      "x": 1364,
+      "y": 590,
+      "w": 112,
+      "h": 83,
+      "pivot": [
+        56.0,
+        41.5
+      ],
+      "area": 4708
+    },
+    {
+      "index": 22,
+      "file": "washington_face_22.png",
+      "label": "",
+      "x": 53,
+      "y": 671,
+      "w": 329,
+      "h": 327,
+      "pivot": [
+        164.5,
+        163.5
+      ],
+      "area": 80594
+    },
+    {
+      "index": 23,
+      "file": "washington_face_23.png",
+      "label": "",
+      "x": 493,
+      "y": 671,
+      "w": 326,
+      "h": 335,
+      "pivot": [
+        163.0,
+        167.5
+      ],
+      "area": 74840
+    },
+    {
+      "index": 24,
+      "file": "washington_face_24.png",
+      "label": "",
+      "x": 1003,
+      "y": 671,
+      "w": 322,
+      "h": 333,
+      "pivot": [
+        161.0,
+        166.5
+      ],
+      "area": 72613
+    }
+  ]
+}

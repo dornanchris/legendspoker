@@ -1,0 +1,70 @@
+{
+ "note": "The master is the rest pose's own head (sherlock_master.png, cut from pose A1), as Nemo's and Javert's are. Every eye piece carries its brows.",
+ "master": "sherlock_parts/sherlock_face/sherlock_master.png",
+ "pieces": "sherlock_parts/sherlock_face/sherlock_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 6,
+   "narrow": 7,
+   "wide": 8
+  },
+  "mouth": {
+   "rest": 9,
+   "ah": 10,
+   "ee": 11,
+   "oh": 12,
+   "oo": 13,
+   "m": 14,
+   "f": 16,
+   "l": 17,
+   "irritated": 18,
+   "pleased": 19
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     255,
+     75
+    ],
+    [
+     352,
+     75
+    ],
+    [
+     352,
+     115
+    ],
+    [
+     255,
+     115
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     262,
+     135
+    ],
+    [
+     345,
+     135
+    ],
+    [
+     345,
+     175
+    ],
+    [
+     262,
+     175
+    ]
+   ]
+  }
+ }
+}

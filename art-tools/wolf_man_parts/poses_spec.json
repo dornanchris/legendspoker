@@ -1,0 +1,182 @@
+{
+ "style_lock": true,
+ "title": "The Wolf Man",
+ "name": "the Wolf Man",
+ "him": "him",
+ "style_ref": "the Headless Horseman, from the same table",
+ "style_sheet": "the Headless Horseman's sheet",
+ "extremity": "the tips of his tall ears",
+ "same": "wolf's head with tall pointed ears and tired amber eyes, grey-brown fur, furred clawed hands, and the torn white shirt and dark waistcoat",
+ "recap": "the werewolf of European folklore: a big man with a real wolf's head on his shoulders, a long muzzle, a black nose, TALL pointed ears standing straight up, a shaggy grey-brown ruff at the neck, tired, kindly amber eyes with whites; big furred hands with dark claws; the remains of a good white shirt and a dark brown waistcoat, split at the seams over his broad shoulders, the shirt sleeves torn off below the elbow so his furred forearms show",
+ "keep": " His TALL pointed ears stand straight up unless the pose says otherwise: they are his biggest moving shape. His head is a REAL WOLF'S HEAD with a long muzzle and a black nose, NOT a man's face covered in hair. Nothing from any werewolf film: no silver-headed cane, no pentagram, no torn plaid shirt, no muscle-bound monster. HIS FUR: a bold dark outline; the fur shown by a few chunky tufts on the outline at the cheeks, the ruff and the ears, with soft strokes inside them in the shadows only, never hair by hair. Grey-brown, with the warm candlelit rim light along the ruff and the ears.",
+ "no": "No silver cane, no pentagram, no moon on any clothing, no plaid shirt, no human face, no chair, no text, no cards, no chips.",
+ "intro": "Transylvania's seat 3 (right of the dealer): drawn facing the viewer's right and MIRRORED by the game to face the table's centre. Built the way Van Helsing is (`art-tools/pose_rig.py`): a man's body, so his forearms rest on the table as the others' do.\n\nHis look, from his character file: the folklore werewolf, a real wolf's head on a big man's shoulders, in the remains of a good shirt and waistcoat split at the seams; grey-brown fur and a man's tired eyes. The ears are the tell surface and the biggest moving shape he has: up, back, flat. Drawn GOTHIC, from Transylvania on (the owner): the Headless Horseman's approved sheet is the style image. His first sheets, in Cerberus's flat animal style, are kept in `sources/old_style/` and were never built.\n\nRuled out (his character file and ASSETS.md): everything of Universal's The Wolf Man (1941) and its lore: no Larry Talbot, no silver-headed cane, no pentagram, no fortune-teller's verse, and above all no hairy-faced human makeup: a wolf's head, not a man's face. ('The Wolf Man' stays his display name: the owner.) Layout from Lancelot's character sheet, style from the Headless Horseman's character sheet.\n\nTags (MOTION-SPEC.md): his three tells, each beside the idle it hides among: sniffing at the pot (strong) beside growling at a draught (the muzzle both times); his ears flattening (weak) beside scratching behind one ear; his claws scraping the felt (tilted) beside shedding on the tablecloth (a hand on the felt both times). 'Glances at the window and the moon' is C4. B3 and D4 are the big win and the crushing loss; his hands are empty in every pose (the game moves the cards and chips); knocked out, he says his line and fades from the chair.",
+ "table": [
+  [
+   "A1",
+   "Rest: forearms on the table's edge, hands apart, ears up",
+   "IDLE"
+  ],
+  [
+   "A2",
+   "Peeking at his cards (right hand)",
+   "MECH"
+  ],
+  [
+   "A3",
+   "Check: one clawed finger taps the felt",
+   "MECH"
+  ],
+  [
+   "A4",
+   "Call: right hand pushes forward along the felt",
+   "MECH"
+  ],
+  [
+   "A5",
+   "Bet: leans in, right hand pushed well forward",
+   "MECH"
+  ],
+  [
+   "A6",
+   "Fold: a gruff push of the hand toward the middle",
+   "MECH"
+  ],
+  [
+   "B1",
+   "All in: both hands push forward together",
+   "MECH"
+  ],
+  [
+   "B2",
+   "Show: right hand turns palm up",
+   "MECH"
+  ],
+  [
+   "B3",
+   "Big win: both fists raised, a joyful howl (`win_big`)",
+   "BEAT"
+  ],
+  [
+   "B4",
+   "Sniffs at the pot, muzzle stretched toward the middle",
+   "TELL"
+  ],
+  [
+   "B5",
+   "Growls at a draught (decoy for B4)",
+   "IDLE"
+  ],
+  [
+   "B6",
+   "His ears flatten",
+   "TELL"
+  ],
+  [
+   "C1",
+   "Scratches behind one ear (decoy for B6)",
+   "IDLE"
+  ],
+  [
+   "C2",
+   "His claws scrape the felt",
+   "TELL"
+  ],
+  [
+   "C3",
+   "Sheds on the tablecloth, brushing the fur away (decoy for C2)",
+   "IDLE"
+  ],
+  [
+   "C4",
+   "Glances at the window and the moon",
+   "IDLE"
+  ],
+  [
+   "C5",
+   "Looks at the viewer, ears pricked, a little sheepish",
+   "IDLE"
+  ],
+  [
+   "C6",
+   "Ears swivel back toward a sound behind him",
+   "IDLE"
+  ],
+  [
+   "D1",
+   "Talking: one clawed hand raised, apologetic",
+   "BEAT"
+  ],
+  [
+   "D2",
+   "Facing a big bet: hackles up, eyes narrowed",
+   "BEAT"
+  ],
+  [
+   "D3",
+   "Lost a pot: ears down, a low whine",
+   "BEAT"
+  ],
+  [
+   "D4",
+   "Crushing loss: ears flat, head hung low, a long whine (`lose_big`)",
+   "BEAT"
+  ],
+  [
+   "D5",
+   "Heads up: leaning in on both forearms, teeth showing",
+   "BEAT"
+  ],
+  [
+   "D6",
+   "A rough laugh, half a bark",
+   "BEAT"
+  ]
+ ],
+ "howto": "One fresh ChatGPT chat for all six. The first prompt attaches TWO images, in this order: Lancelot's character sheet (`art-tools/lancelot_parts/sources/lancelot_sheet.png`) for the layout, then the Headless Horseman's approved character sheet (`art-tools/headless_horseman_parts/sources/headless_horseman_sheet.png`) for the style. From the second prompt on, attach the Wolf Man's own character sheet, his pose sheet A once it exists, AND the Horseman's character sheet again, and nothing else.",
+ "character": "Character sheet for 2D animation rigging: the werewolf of European folklore (Petronius, Marie de France's Bisclavret, Gervase of Tilbury): a cursed man who turns wolf. Copy ONLY the LAYOUT of the FIRST attached sheet (what goes where): take NOTHING of its character. No plate armour, no gauntlets, no striped surcoat, no long hair. Take the STYLE from the SECOND attached image.\n\nThe Wolf Man: a big, broad-shouldered man with a REAL WOLF'S HEAD on his shoulders: a long muzzle, a black nose, TALL pointed ears standing straight up (his biggest shape: they must read at a tiny size), a shaggy grey-brown ruff at the neck, and tired, kindly amber eyes with whites, a man's eyes in a wolf's face. Grey-brown fur, paler on the muzzle and throat. Big furred hands with short dark claws. He wears the remains of a good white shirt and a dark brown waistcoat with brass buttons, split at the seams over his broad shoulders, the shirt sleeves torn off below the elbow so his furred forearms show. Polite, apologetic, barely holding it together. His head is a REAL WOLF'S HEAD with a long muzzle and a black nose, NOT a man's face covered in hair. Nothing from any werewolf film: no silver-headed cane, no pentagram, no torn plaid shirt, no muscle-bound monster. HIS FUR: a bold dark outline; the fur shown by a few chunky tufts on the outline at the cheeks, the ruff and the ears, with soft strokes inside them in the shadows only, never hair by hair. Grey-brown, with the warm candlelit rim light along the ruff and the ears.\n\nPure white background (#FFFFFF). Every piece separate, with a closed dark outline and a wide gap all round it; nothing touches or overlaps. No text, no labels, no frames, no cast shadows.\n\nThe angle: a gentle three-quarter view, turned about 25 degrees from front-on, facing the viewer's right. Both eyes, the whole muzzle and both shoulders clearly visible. NOT profile.\n\nDraw, all facing the viewer's right, at the same size:\n- Finished heads, each with the ears, the ruff and the top of the shirt collar: neutral, ears up; talking, jaws open mid-word; ears flat back against his head; sniffing, nose up, nostrils flared\n- The torso in the split waistcoat and torn shirt: no head, cut off straight below the waist, the upper arms down to the elbows; NO forearms, NO hands\n- Two furred forearms (the torn shirt sleeves ending just below the elbow) with big clawed hands, lying on a table, pointing toward its centre, open at the elbow end\n- Four seated reference poses, waist up behind the curved edge of a round green poker table, forearms resting on its edge, hands apart: neutral, ears up; muzzle stretched toward the middle of the table, sniffing; ears flat back; the claws of his right hand scraping the felt, three short scratch marks",
+ "sheets": {
+  "A": [
+   "At rest: both forearms lying along the table's edge, his hands resting on the felt in front of him, a hand's width apart, relaxed and NOT touching, NOT laced, NOT overlapping; ears straight up; a tired, polite look, jaws closed",
+   "Peeking at his cards: his right hand cupped low over the felt in front of him, one claw lifted a little, as if shielding something small; eyes down",
+   "Checking: one clawed finger of his right hand tapping the felt",
+   "Calling: his right hand flat, claws leading, pushing forward along the felt",
+   "Betting: leaning in, his right hand pushed well forward along the felt, ears forward",
+   "Folding: a gruff push of his right hand toward the middle of the table, palm down"
+  ],
+  "B": [
+   "All in: both hands pushing forward along the felt together, ears forward, teeth showing",
+   "Showing: his right hand turning palm up from the felt, as if turning something over",
+   "A big win: both furred fists raised high, muzzle up, jaws open in a joyful howl, ears straight up",
+   "Sniffing at the pot: his head and long muzzle stretched forward toward the middle of the table (the right of the picture), nose up and twitching, nostrils flared, eyes half closed; arms as at rest",
+   "Growling at a draught: head turned a little toward the left of the picture, lips curled back from his teeth, a low growl, ears up; arms as at rest",
+   "His ears flattened right back against his head, eyes wide, the rest of him very still; arms as at rest"
+  ],
+  "C": [
+   "Scratching behind his left ear with his right hand, head tipped toward it, one eye half closed",
+   "His claws scraping the felt: the fingers of his right hand curled, claws out, dragged across the felt, three short scratch marks behind them; left arm as at rest",
+   "Shedding on the tablecloth: his right hand brushing a few tufts of grey-brown fur off the felt, a little embarrassed; left arm as at rest",
+   "Glancing over his right shoulder at a window behind him, toward the left of the picture, ears up, eyes on the moon; arms as at rest",
+   "Looking straight at the viewer, ears pricked, a little sheepish; arms as at rest",
+   "Both ears swivelled back toward a sound behind him, eyes still on the table; arms as at rest"
+  ],
+  "D": [
+   "Talking: his right hand raised a little, palm open, claws in, apologetic, jaws open mid-word",
+   "Facing a big bet: the fur of his neck ruff standing up, eyes narrowed, ears forward; arms as at rest",
+   "Lost a pot: ears drooping down, eyes sad, a small whine; arms as at rest",
+   "A crushing loss: ears flat back, head hung low over the table, both clawed hands spread flat on the felt, a long low whine",
+   "Down to two players: leaning in on both forearms, ears forward, a few teeth showing",
+   "A short, rough laugh that comes out half a bark, muzzle tipped up, tongue showing, ears up"
+  ]
+ },
+ "face": "Character sheet for 2D animation rigging: the Wolf Man's face overlays, exactly matching the attached sheets' style, colours and line weight.\n\nEvery piece is drawn at EXACTLY the angle and size of his head in the at-rest pose (three-quarter, facing the viewer's right), so each one can be laid over that head: the eyes and the muzzle too are turned three-quarter, toward the viewer's right, NOT front-on and NOT symmetrical. Draw that head once, top left, with the tall ears, the ruff and the top of the shirt collar, as the reference, jaws closed. Then every piece separate, with a closed dark outline and a wide gap all round it; nothing touches. Pure white background (#FFFFFF). No text, no labels. HIS FUR: a bold dark outline; the fur shown by a few chunky tufts on the outline at the cheeks, the ruff and the ears, with soft strokes inside them in the shadows only, never hair by hair. Grey-brown, with the warm candlelit rim light along the ruff and the ears.\n\n- His eyes, each piece both eyes with the fur around them and the brow ridges: lids half closed; closed; looking toward the viewer; looking down at the table; looking to the side; narrowed; wide\n- Muzzle patches, each the front of the muzzle with the nose, the jaws and the fur around them, cut straight across just behind the nose and again below the chin: jaws closed at rest; open \"ah\"; wide, teeth showing \"ee\"; round \"oh\"; pursed \"oo\"; lips pressed \"m\"; \"f\"; tongue showing \"l\"; tongue lolling, happy; lips curled back, growling\n- His ears, as separate pieces: both ears up; both ears flat back\n- His head turned toward the viewer, nearly front-on",
+ "replace": [
+  [
+   "colours, line weight, flat cartoon style)",
+   "colours, line weight, gothic style)"
+  ]
+ ],
+ "style": "STYLE, the most important rule: match the SECOND attached image (the Headless Horseman, from the same table) exactly: a GOTHIC GRAPHIC-NOVEL style for a grown-up card game, halfway between a bright cartoon and a dark painted illustration. Take NOTHING of his character: no armour, no pumpkin, no cloak. Keep what the game needs: a bold dark outline round every shape, big clear readable shapes, a silhouette that reads at a tiny size. Adult, realistic proportions (never a big head, never chibi, never cute); shading in three or four tones with deep, dramatic shadows and a warm rim light from candlelight; rich but MUTED colour, nothing candy-bright; cloth with real weight and heavy folds; a little texture in the shadows only. Serious, weary and a little dangerous. NOT a children's cartoon, NOT cute, NOT toy-like, NOT round and bouncy, NOT photoreal, NOT muddy or murky.",
+ "style_short": "Keep the gothic graphic-novel style of the attached sheets and of the Headless Horseman's sheet: bold dark outlines, adult proportions, deep three- or four-tone shading, a warm candlelit rim light, rich muted colour; serious and sombre, NOT a children's cartoon, NOT cute.",
+ "empty_hands": true
+}

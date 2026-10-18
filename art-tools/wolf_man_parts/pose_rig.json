@@ -1,0 +1,740 @@
+{
+ "id": "wolf_man",
+ "name": "The Wolf Man",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (the Horseman's style). Transylvania's seat 3, drawn facing right and mirrored. The master is the rest pose's OWN head. Every pose but rest a whole-figure frame with its own drawn head. No prop: his ears and claws are the tell surface.",
+ "sheets": {
+  "A": "sources/poses_a.png",
+  "B": "sources/poses_b.png",
+  "C": "sources/poses_c.png",
+  "D": "sources/poses_d.png"
+ },
+ "poses": {
+  "A1": {
+   "sheet": "A",
+   "box": [
+    15,
+    6,
+    499,
+    482
+   ],
+   "what": "Rest: forearms on the table's edge, hands apart, ears up"
+  },
+  "A2": {
+   "sheet": "A",
+   "box": [
+    529,
+    43,
+    477,
+    445
+   ],
+   "reg": [
+    1.0,
+    1,
+    37
+   ],
+   "what": "Peeking at his cards (right hand)"
+  },
+  "A3": {
+   "sheet": "A",
+   "box": [
+    1018,
+    24,
+    502,
+    464
+   ],
+   "reg": [
+    1.0,
+    -1,
+    18
+   ],
+   "what": "Check: one clawed finger taps the felt"
+  },
+  "A4": {
+   "sheet": "A",
+   "box": [
+    16,
+    517,
+    498,
+    440
+   ],
+   "reg": [
+    1.0,
+    2,
+    41
+   ],
+   "what": "Call: right hand pushes forward along the felt"
+  },
+  "A5": {
+   "sheet": "A",
+   "box": [
+    528,
+    546,
+    478,
+    411
+   ],
+   "reg": [
+    1.0,
+    1,
+    70
+   ],
+   "what": "Bet: leans in, right hand pushed well forward"
+  },
+  "A6": {
+   "sheet": "A",
+   "box": [
+    1020,
+    529,
+    500,
+    428
+   ],
+   "reg": [
+    1.0,
+    2,
+    53
+   ],
+   "what": "Fold: a gruff push of the hand toward the middle"
+  },
+  "B1": {
+   "sheet": "B",
+   "box": [
+    17,
+    25,
+    497,
+    470
+   ],
+   "reg": [
+    1.0,
+    2,
+    11
+   ],
+   "what": "All in: both hands push forward together"
+  },
+  "B2": {
+   "sheet": "B",
+   "box": [
+    529,
+    40,
+    479,
+    455
+   ],
+   "reg": [
+    1.0,
+    2,
+    27
+   ],
+   "what": "Show: right hand turns palm up"
+  },
+  "B3": {
+   "sheet": "B",
+   "box": [
+    1008,
+    20,
+    514,
+    475
+   ],
+   "reg": [
+    1.0,
+    -14,
+    7
+   ],
+   "what": "Big win: both fists raised, a joyful howl (`win_big`)"
+  },
+  "B4": {
+   "sheet": "B",
+   "box": [
+    17,
+    513,
+    553,
+    436
+   ],
+   "reg": [
+    1.0,
+    2,
+    45
+   ],
+   "what": "Sniffs at the pot, muzzle stretched toward the middle"
+  },
+  "B5": {
+   "sheet": "B",
+   "box": [
+    528,
+    513,
+    481,
+    436
+   ],
+   "reg": [
+    1.0,
+    2,
+    45
+   ],
+   "what": "Growls at a draught (decoy for B4)"
+  },
+  "B6": {
+   "sheet": "B",
+   "box": [
+    1024,
+    597,
+    497,
+    352
+   ],
+   "reg": [
+    1.0,
+    2,
+    129
+   ],
+   "what": "His ears flatten"
+  },
+  "C1": {
+   "sheet": "C",
+   "box": [
+    15,
+    4,
+    497,
+    487
+   ],
+   "reg": [
+    1.0,
+    1,
+    -6
+   ],
+   "what": "Scratches behind one ear (decoy for B6)"
+  },
+  "C2": {
+   "sheet": "C",
+   "box": [
+    525,
+    17,
+    486,
+    474
+   ],
+   "reg": [
+    1.0,
+    2,
+    7
+   ],
+   "what": "His claws scrape the felt"
+  },
+  "C3": {
+   "sheet": "C",
+   "box": [
+    1015,
+    30,
+    506,
+    461
+   ],
+   "reg": [
+    1.0,
+    -8,
+    20
+   ],
+   "what": "Sheds on the tablecloth, brushing the fur away (decoy for C2)"
+  },
+  "C4": {
+   "sheet": "C",
+   "box": [
+    15,
+    497,
+    497,
+    473
+   ],
+   "reg": [
+    1.0,
+    1,
+    8
+   ],
+   "what": "Glances at the window and the moon"
+  },
+  "C5": {
+   "sheet": "C",
+   "box": [
+    525,
+    501,
+    486,
+    469
+   ],
+   "reg": [
+    1.0,
+    2,
+    12
+   ],
+   "what": "Looks at the viewer, ears pricked, a little sheepish"
+  },
+  "C6": {
+   "sheet": "C",
+   "box": [
+    1024,
+    580,
+    497,
+    390
+   ],
+   "reg": [
+    1.0,
+    1,
+    91
+   ],
+   "what": "Ears swivel back toward a sound behind him"
+  },
+  "D1": {
+   "sheet": "D",
+   "box": [
+    14,
+    10,
+    496,
+    480
+   ],
+   "reg": [
+    1.0,
+    2,
+    1
+   ],
+   "what": "Talking: one clawed hand raised, apologetic"
+  },
+  "D2": {
+   "sheet": "D",
+   "box": [
+    524,
+    11,
+    491,
+    480
+   ],
+   "reg": [
+    1.0,
+    2,
+    2
+   ],
+   "what": "Facing a big bet: hackles up, eyes narrowed"
+  },
+  "D3": {
+   "sheet": "D",
+   "box": [
+    1029,
+    79,
+    497,
+    412
+   ],
+   "reg": [
+    1.0,
+    2,
+    70
+   ],
+   "what": "Lost a pot: ears down, a low whine"
+  },
+  "D4": {
+   "sheet": "D",
+   "box": [
+    10,
+    588,
+    502,
+    372
+   ],
+   "reg": [
+    1.0,
+    -2,
+    110
+   ],
+   "what": "Crushing loss: ears flat, head hung low, a long whine (`lose_big`)"
+  },
+  "D5": {
+   "sheet": "D",
+   "box": [
+    526,
+    528,
+    495,
+    432
+   ],
+   "reg": [
+    1.0,
+    1,
+    50
+   ],
+   "what": "Heads up: leaning in on both forearms, teeth showing"
+  },
+  "D6": {
+   "sheet": "D",
+   "box": [
+    1033,
+    517,
+    493,
+    443
+   ],
+   "reg": [
+    1.0,
+    2,
+    38
+   ],
+   "what": "A rough laugh, half a bark"
+  }
+ },
+ "rest": "A1",
+ "table_y": 366,
+ "scale": 1.0,
+ "origin_x": 300,
+ "register_box": [
+  150,
+  240,
+  350,
+  330
+ ],
+ "register_span": 40,
+ "collar_y": 250,
+ "neck": [
+  262,
+  250
+ ],
+ "frame_margin": 60,
+ "stock_box": [
+  200,
+  220,
+  330,
+  280
+ ],
+ "master": {
+  "piece": "wolf_man_parts/wolf_man_face/wolf_man_master.png",
+  "cut_below": 265,
+  "face": "wolf_man_parts/face.json",
+  "file": "wolf_man_parts/wolf_man_rig/master.png",
+  "layers": "wolf_man_parts/wolf_man_rig/face",
+  "head_box": [
+   0,
+   0,
+   495,
+   320
+  ],
+  "place": [
+   0,
+   0,
+   1.0
+  ],
+  "replace_head": false,
+  "keep_poly": [
+   [
+    140,
+    0
+   ],
+   [
+    420,
+    0
+   ],
+   [
+    420,
+    230
+   ],
+   [
+    385,
+    252
+   ],
+   [
+    330,
+    268
+   ],
+   [
+    262,
+    275
+   ],
+   [
+    205,
+    258
+   ],
+   [
+    160,
+    215
+   ],
+   [
+    140,
+    130
+   ]
+  ],
+  "shoulder_y": 250
+ },
+ "arms": {
+  "near": {
+   "elbow": [
+    50,
+    345
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     0,
+     300
+    ],
+    [
+     110,
+     300
+    ],
+    [
+     110,
+     345
+    ],
+    [
+     0,
+     350
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his right forearm and clawed hand",
+     "poly": [
+      [
+       0,
+       335
+      ],
+      [
+       60,
+       330
+      ],
+      [
+       120,
+       345
+      ],
+      [
+       175,
+       360
+      ],
+      [
+       235,
+       380
+      ],
+      [
+       272,
+       420
+      ],
+      [
+       275,
+       470
+      ],
+      [
+       190,
+       476
+      ],
+      [
+       120,
+       470
+      ],
+      [
+       40,
+       440
+      ],
+      [
+       0,
+       420
+      ]
+     ]
+    }
+   }
+  },
+  "far": {
+   "elbow": [
+    455,
+    340
+   ],
+   "extend": 0,
+   "rest": "rest",
+   "upper": [
+    [
+     400,
+     300
+    ],
+    [
+     485,
+     300
+    ],
+    [
+     485,
+     340
+    ],
+    [
+     400,
+     340
+    ]
+   ],
+   "assets": {
+    "rest": {
+     "pose": "A1",
+     "what": "his left forearm and clawed hand",
+     "poly": [
+      [
+       315,
+       400
+      ],
+      [
+       350,
+       375
+      ],
+      [
+       395,
+       352
+      ],
+      [
+       445,
+       335
+      ],
+      [
+       490,
+       345
+      ],
+      [
+       492,
+       420
+      ],
+      [
+       455,
+       440
+      ],
+      [
+       420,
+       476
+      ],
+      [
+       330,
+       476
+      ],
+      [
+       312,
+       450
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "frames": {
+  "peek": {
+   "pose": "A2",
+   "head": "own",
+   "below": 110
+  },
+  "check": {
+   "pose": "A3",
+   "head": "own",
+   "below": 110
+  },
+  "call": {
+   "pose": "A4",
+   "head": "own",
+   "below": 110
+  },
+  "bet": {
+   "pose": "A5",
+   "head": "own",
+   "below": 110
+  },
+  "fold": {
+   "pose": "A6",
+   "head": "own",
+   "below": 110
+  },
+  "all_in": {
+   "pose": "B1",
+   "head": "own",
+   "below": 110
+  },
+  "show": {
+   "pose": "B2",
+   "head": "own",
+   "below": 110
+  },
+  "win_big": {
+   "pose": "B3",
+   "head": "own",
+   "below": 110
+  },
+  "sniff": {
+   "pose": "B4",
+   "head": "own",
+   "below": 110,
+   "biggest": true
+  },
+  "growl": {
+   "pose": "B5",
+   "head": "own",
+   "below": 110
+  },
+  "ears_flat": {
+   "pose": "B6",
+   "head": "own",
+   "below": 110
+  },
+  "scratch": {
+   "pose": "C1",
+   "head": "own",
+   "below": 110
+  },
+  "claws": {
+   "pose": "C2",
+   "head": "own",
+   "below": 110
+  },
+  "shed": {
+   "pose": "C3",
+   "head": "own",
+   "below": 110
+  },
+  "window": {
+   "pose": "C4",
+   "head": "own",
+   "below": 110
+  },
+  "sheepish": {
+   "pose": "C5",
+   "head": "own",
+   "below": 110
+  },
+  "ears_back": {
+   "pose": "C6",
+   "head": "own",
+   "below": 110
+  },
+  "talk": {
+   "pose": "D1",
+   "head": "own",
+   "below": 110
+  },
+  "big_bet": {
+   "pose": "D2",
+   "head": "own",
+   "below": 110
+  },
+  "lost_pot": {
+   "pose": "D3",
+   "head": "own",
+   "below": 110
+  },
+  "lose_big": {
+   "pose": "D4",
+   "head": "own",
+   "below": 110
+  },
+  "heads_up": {
+   "pose": "D5",
+   "head": "own",
+   "below": 110
+  },
+  "laugh": {
+   "pose": "D6",
+   "head": "own",
+   "below": 110
+  }
+ },
+ "runtime": "../web/art/wolf_man",
+ "felt_lines": 3,
+ "no_peel": true,
+ "drop_rail": 30,
+ "rail_band": [
+  45,
+  90
+ ],
+ "rail_blue": 40,
+ "felt_holes": true,
+ "felt_blue": true,
+ "felt_teal": true,
+ "felt_dark_teal": true,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "back_strip": 6,
+ "drop_wood": true
+}

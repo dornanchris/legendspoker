@@ -106,6 +106,14 @@
           { "id": "pc_kd_bb_04b", "speaker": "kidd", "text": "He called me a rogue." },
           { "id": "pc_kd_bb_04c", "speaker": "blackbeard", "text": "And?" },
           { "id": "pc_kd_bb_04d", "speaker": "kidd", "text": "It was a very heavy bucket.", "note": "True: Kidd struck his gunner William Moore with an iron-bound bucket in 1697 after an argument, and was hanged partly for it." }
+        ],
+        [
+          { "id": "pc_kd_bb_05a", "speaker": "kidd", "text": "Is that smoke coming out from under your hat?", "status": "draft" },
+          { "id": "pc_kd_bb_05b", "speaker": "blackbeard", "text": "Slow-match. Lit. Tucked under the brim.", "status": "draft" },
+          { "id": "pc_kd_bb_05c", "speaker": "kidd", "text": "Whatever for?", "status": "draft" },
+          { "id": "pc_kd_bb_05d", "speaker": "blackbeard", "text": "So every man on a prize thinks the devil has come aboard.", "status": "draft" },
+          { "id": "pc_kd_bb_05e", "speaker": "kidd", "text": "And do they?", "status": "draft" },
+          { "id": "pc_kd_bb_05f", "speaker": "blackbeard", "text": "They mostly surrender. Saves powder.", "status": "draft" }
         ]
       ],
       "needles": [
@@ -118,6 +126,10 @@
         [
           { "id": "pc_nd_02a", "speaker": "kidd", "to": "blackbeard", "text": "The great Blackbeard, folding. I'll have that entered in the log." },
           { "id": "pc_nd_02b", "speaker": "blackbeard", "text": "Write it small. Nobody reads a hanged man's log." }
+        ],
+        [
+          { "id": "pc_nd_12a", "speaker": "blackbeard", "to": "kidd", "text": "Folded to a real pirate, Kidd. How does it feel?", "status": "draft" },
+          { "id": "pc_nd_12b", "speaker": "kidd", "text": "Lawful. Entirely lawful.", "status": "draft" }
         ]
       ]
     },
@@ -247,6 +259,11 @@
           { "id": "pc_ls_kd_03b", "speaker": "silver", "text": "Set up gentleman. Ride in a coach. Sit in Parliament, maybe." },
           { "id": "pc_ls_kd_03c", "speaker": "kidd", "text": "Parliament hanged me." },
           { "id": "pc_ls_kd_03d", "speaker": "silver", "text": "Well, I'd have been on the other side of it, see.", "note": "Kidd was examined before the House of Commons in 1701. Silver means to \"set up gentleman in earnest\" after the voyage (Treasure Island, ch. 11)." }
+        ],
+        [
+          { "id": "pc_ls_kd_04a", "speaker": "silver", "text": "Flint's map had three red crosses on it, Captain. Where's yours?", "status": "draft" },
+          { "id": "pc_ls_kd_04b", "speaker": "kidd", "text": "Where nobody will ever find it.", "status": "draft" },
+          { "id": "pc_ls_kd_04c", "speaker": "silver", "text": "Ah. Same place as Flint's gold, then.", "status": "draft" }
         ]
       ],
       "needles": [

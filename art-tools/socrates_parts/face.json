@@ -1,0 +1,95 @@
+{
+ "master": "socrates_parts/socrates_face/socrates_face_01.png",
+ "pieces": "socrates_parts/socrates_face/socrates_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "up": 6,
+   "wide": 7
+  },
+  "brows": {
+   "raised": 8,
+   "frown": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "teeth": 17,
+   "l": 18,
+   "private": 19,
+   "smile": 20,
+   "laugh": 21,
+   "puzzled": 22
+  }
+ },
+ "regions": {
+  "brows": {
+   "keep": [
+    [
+     160,
+     55
+    ],
+    [
+     314,
+     48
+    ],
+    [
+     314,
+     108
+    ],
+    [
+     160,
+     112
+    ]
+   ]
+  },
+  "eyes": {
+   "keep": [
+    [
+     160,
+     110
+    ],
+    [
+     314,
+     106
+    ],
+    [
+     314,
+     152
+    ],
+    [
+     160,
+     154
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     185,
+     168
+    ],
+    [
+     324,
+     163
+    ],
+    [
+     324,
+     234
+    ],
+    [
+     185,
+     236
+    ]
+   ]
+  }
+ }
+}

@@ -1,0 +1,150 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "green_knight_face_01.png",
+      "label": "",
+      "x": 12,
+      "y": 11,
+      "w": 545,
+      "h": 424,
+      "pivot": [
+        272.5,
+        212.0
+      ],
+      "area": 147557
+    },
+    {
+      "index": 2,
+      "file": "green_knight_face_02.png",
+      "label": "",
+      "x": 529,
+      "y": 134,
+      "w": 306,
+      "h": 261,
+      "pivot": [
+        153.0,
+        130.5
+      ],
+      "area": 62482
+    },
+    {
+      "index": 3,
+      "file": "green_knight_face_03.png",
+      "label": "",
+      "x": 870,
+      "y": 134,
+      "w": 296,
+      "h": 261,
+      "pivot": [
+        148.0,
+        130.5
+      ],
+      "area": 60937
+    },
+    {
+      "index": 4,
+      "file": "green_knight_face_04.png",
+      "label": "",
+      "x": 1201,
+      "y": 136,
+      "w": 318,
+      "h": 263,
+      "pivot": [
+        159.0,
+        131.5
+      ],
+      "area": 66146
+    },
+    {
+      "index": 5,
+      "file": "green_knight_face_05.png",
+      "label": "",
+      "x": 31,
+      "y": 439,
+      "w": 327,
+      "h": 262,
+      "pivot": [
+        163.5,
+        131.0
+      ],
+      "area": 68162
+    },
+    {
+      "index": 6,
+      "file": "green_knight_face_06.png",
+      "label": "",
+      "x": 413,
+      "y": 440,
+      "w": 338,
+      "h": 258,
+      "pivot": [
+        169.0,
+        129.0
+      ],
+      "area": 68487
+    },
+    {
+      "index": 7,
+      "file": "green_knight_face_07.png",
+      "label": "",
+      "x": 794,
+      "y": 440,
+      "w": 335,
+      "h": 263,
+      "pivot": [
+        167.5,
+        131.5
+      ],
+      "area": 69744
+    },
+    {
+      "index": 8,
+      "file": "green_knight_face_08.png",
+      "label": "",
+      "x": 1174,
+      "y": 440,
+      "w": 341,
+      "h": 263,
+      "pivot": [
+        170.5,
+        131.5
+      ],
+      "area": 71452
+    },
+    {
+      "index": 9,
+      "file": "green_knight_face_09.png",
+      "label": "",
+      "x": 150,
+      "y": 707,
+      "w": 328,
+      "h": 270,
+      "pivot": [
+        164.0,
+        135.0
+      ],
+      "area": 69754
+    },
+    {
+      "index": 10,
+      "file": "green_knight_face_10.png",
+      "label": "",
+      "x": 506,
+      "y": 665,
+      "w": 497,
+      "h": 345,
+      "pivot": [
+        248.5,
+        172.5
+      ],
+      "area": 100979
+    }
+  ]
+}

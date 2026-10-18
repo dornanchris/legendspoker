@@ -1,0 +1,94 @@
+{
+ "note": "The master is the rest pose's own head. Eyes 2-7 (half, closed, toward you, down, narrowed, wide; no separate side glance came); brows 8 (one raised) and 9 (drawn down); mouths 10-23 (11 and 18 are spare closed mouths; 17 is the front-on head). Head 1 and the front head 17 are unused: his head turns in whole-figure frames.",
+ "master": "dracula_parts/dracula_face/dracula_master.png",
+ "pieces": "dracula_parts/dracula_face/dracula_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "narrow": 6,
+   "wide": 7
+  },
+  "brows": {
+   "raised": 8,
+   "down": 9
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 12,
+   "ee": 13,
+   "oh": 14,
+   "oo": 15,
+   "m": 16,
+   "f": 19,
+   "l": 20,
+   "smile": 21,
+   "fangs": 22,
+   "snarl": 23
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     232,
+     98
+    ],
+    [
+     350,
+     98
+    ],
+    [
+     350,
+     127
+    ],
+    [
+     232,
+     127
+    ]
+   ]
+  },
+  "brows": {
+   "keep": [
+    [
+     225,
+     68
+    ],
+    [
+     350,
+     68
+    ],
+    [
+     350,
+     98
+    ],
+    [
+     225,
+     98
+    ]
+   ]
+  },
+  "mouth": {
+   "keep": [
+    [
+     245,
+     143
+    ],
+    [
+     338,
+     143
+    ],
+    [
+     338,
+     186
+    ],
+    [
+     245,
+     186
+    ]
+   ]
+  }
+ }
+}

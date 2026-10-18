@@ -11,14 +11,48 @@
     "afterHands": 20,
     "stack": "average",
     "lines": [
-      { "id": "gk_return_n01", "speaker": "narration", "type": "stage_direction", "text": "[Hooves, somewhere outside. Then a laugh loud enough to rattle the cups.]" },
-      { "id": "gk_return_n02", "speaker": "narration", "type": "stage_direction", "text": "[The door bangs open on a gust of cold air and holly leaves. Somebody green ducks under the lintel.]" },
-      { "id": "gk_return_01", "speaker": "green_knight", "text": "Ha! A year and a day, as I promised. I have come for my blow." },
-      { "id": "gk_return_02", "speaker": "green_knight", "text": "Did you think that was the end of me? I said I would be back for my turn. I am always back for my turn." },
-      { "id": "gk_return_03", "speaker": "green_knight", "text": "Ha! I took the long way round. Deal me in. I am owed a blow, and I mean to collect it in chips." },
-      { "id": "gk_return_d01", "speaker": "death", "text": "Twenty hands. At this table, that is a year and a day. I checked. He had already checked." },
-      { "id": "gk_return_d02", "speaker": "death", "text": "I do not usually let anyone back in. He has a letter from Morgan le Fay, and I have learned not to argue with her paperwork." },
-      { "id": "gk_return_d03", "speaker": "death", "text": "Most people I see once. He keeps appointments." }
+      {
+        "id": "gk_return_n01",
+        "speaker": "narration",
+        "type": "stage_direction",
+        "text": "[Hooves outside, slow. The laughter in the hall stops before anyone knows why.]"
+      },
+      {
+        "id": "gk_return_n02",
+        "speaker": "narration",
+        "type": "stage_direction",
+        "text": "[The door swings open on cold air and a few dead holly leaves. He ducks under the lintel, bareheaded, a bandage at his throat, and does not smile.]"
+      },
+      {
+        "id": "gk_return_01",
+        "speaker": "green_knight",
+        "text": "A year and a day. I kept my word. Now someone at this table keeps theirs."
+      },
+      {
+        "id": "gk_return_02",
+        "speaker": "green_knight",
+        "text": "You took your blow. I felt it. I have come back for mine."
+      },
+      {
+        "id": "gk_return_03",
+        "speaker": "green_knight",
+        "text": "No more games for the hall. Deal me in."
+      },
+      {
+        "id": "gk_return_d01",
+        "speaker": "death",
+        "text": "Twenty hands. At this table, that is a year and a day. He counted every one."
+      },
+      {
+        "id": "gk_return_d02",
+        "speaker": "death",
+        "text": "I do not usually let anyone back in. He has a letter from Morgan le Fay, and he has stopped laughing. I would not argue with either."
+      },
+      {
+        "id": "gk_return_d03",
+        "speaker": "death",
+        "text": "Most people I see once. He keeps appointments. He is keeping one now."
+      }
     ]
   },
   "origin": "Legend",
@@ -77,7 +111,7 @@
       "A year on, Gawain keeps the bargain. On the way he is the guest of a lord who proposes another game — each evening they will exchange whatever they have won that day — and Gawain cheats once, keeping back a green girdle meant to save his life. At the Green Chapel the Knight feints twice and nicks him with the third blow, for the girdle. The host was the Green Knight all along. He loves a game with rules, and people who keep them."
     ],
     "at_the_table": "He accepts challenges. Small bets he simply calls — he will not fold to one, whatever he holds — and he plays a good many hands to see what happens. He rarely leads the betting and almost never bluffs; he would rather take your blow and then give you his. A big enough bet can still move him, which he seems to think is fair. Losing a pot only amuses him.",
-    "look": "Silhouette: enormous — a head taller than anyone seated, broad as a door, with a great bush of green beard and green hair to the shoulders. Green skin, green clothes worked with gold, and no armour: the poem says he came in peace. Face: green, grinning, bright-eyed. Prop: the holly branch at his side, a big dark spiky shape that rustles; the axe leans against the table.",
+    "look": "Silhouette: enormous, a head taller than anyone seated and broad as a door, in bright green plate edged with gold under a closed green great helm, his eyes bright in the visor slit. Knocked out, he takes the blow; when he comes back the helm is gone and he is beaten and colder: a pale, weathered, dark-bearded face, a bandage at his neck, dented plate and a torn mantle. Prop: the holly branch at his side, a big dark spiky shape that rustles; the head of his axe rests on the table's edge.",
     "prop": "A holly branch",
     "public_domain": "The poem (late 14th c.) is public domain, and so are old translations such as Jessie Weston's (1898); Tolkien's and Simon Armitage's are not, so quote neither. Avoid David Lowery's film The Green Knight (2021) and its bark-faced tree-man. Per the design doc, never show him holding his severed head: that image belongs to the Headless Horseman."
   },

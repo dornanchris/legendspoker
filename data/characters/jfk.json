@@ -1,0 +1,117 @@
+{
+  "id": "jfk",
+  "name": "John F. Kennedy",
+  "short": "Kennedy",
+  "epithet": "The Thirty-Fifth",
+  "pronoun": "he",
+  "table": null,
+  "role": "guest",
+  "arrives": false,
+  "origin": "History",
+  "era": "1917–1963 · 35th President of the United States",
+  "dials": {
+    "aggression": 0.62,
+    "tightness": 0.46,
+    "bluffFrequency": 0.3,
+    "tiltSensitivity": 0.15,
+    "adaptivity": 0.55,
+    "betRespect": 0.55,
+    "skill": 0.05,
+    "noise": 0.05
+  },
+  "quirks": [
+    {
+      "type": "steal",
+      "chance": 0.4,
+      "minEquity": 0.32
+    }
+  ],
+  "tells": [
+    {
+      "signal": "rocks_back",
+      "text": "rocks back in his chair, easy",
+      "correlate": "strong",
+      "reliability": 0.92
+    },
+    {
+      "signal": "straightens_tie",
+      "text": "straightens his tie",
+      "correlate": "bluffing",
+      "reliability": 0.9
+    },
+    {
+      "signal": "rubs_back",
+      "text": "presses a hand to the small of his back",
+      "correlate": "weak",
+      "reliability": 0.9
+    }
+  ],
+  "idles": [
+    "runs a hand through his hair",
+    "taps the coconut shell on the felt",
+    "chops the air with one hand, mid-thought",
+    "glances up at the portraits on the wall"
+  ],
+  "callouts": {
+    "fold": [
+      "Fold. Not this one.",
+      "Fold. There's always the next election.",
+      "I'll sit this one out."
+    ],
+    "check": [
+      "Check.",
+      "Check. Let's hear from the other side.",
+      "Check. Your move, Mr. Chairman."
+    ],
+    "call": [
+      "Call.",
+      "Call. I'll pay any price.",
+      "Call. Let's see where this goes."
+    ],
+    "bet": [
+      "Bet.",
+      "Bet. Let's get this country moving again.",
+      "Bet. A new frontier."
+    ],
+    "raise": [
+      "Raise. Not because it's easy.",
+      "Raise. Let's not negotiate out of fear.",
+      "Raise. Eyeball to eyeball."
+    ],
+    "reraised": [
+      "Thirteen days I can do. Thirteen seconds is nothing.",
+      "Pressure? I've been rammed by a destroyer."
+    ],
+    "all_in": [
+      "All in. We choose to.",
+      "Everything. The torch has been passed.",
+      "All in. Ask not."
+    ],
+    "win": [
+      "Ask not what the pot can do for you.",
+      "We choose to win this pot, and do the other things.",
+      "Ich bin ein Gewinner.",
+      "Not because it was easy. Because it was mine."
+    ],
+    "lose": [
+      "Victory has a hundred fathers. That pot's an orphan.",
+      "I'll take full responsibility.",
+      "Well. They can't all be the moon."
+    ],
+    "win_full_house": [
+      "A full house. Jackie will want to redecorate it."
+    ]
+  },
+  "profile": {
+    "ledger": "He came in on a three and a five, the youngest man ever elected to the chair he once held, and sat down as if the meeting had been called for him. I did not invite him. I have written him down anyway.",
+    "ledger_beaten": "Lost the hand, kept the grin. He has had longer odds than these.",
+    "history": [
+      "John Fitzgerald Kennedy, the thirty-fifth President of the United States and the youngest ever elected, at forty-three. In the Second World War he commanded the motor torpedo boat PT-109 in the Solomon Islands; when a Japanese destroyer ran it down in the dark in 1943, he towed an injured crewman miles to an island by a strap clenched in his teeth, and the crew were rescued after he cut a message into a coconut husk. He kept the coconut on his desk in the Oval Office as a paperweight.",
+      "He won the 1960 election by one of the narrowest margins of the century, after the first televised presidential debates. In office he set the country on its way to the Moon and, in October 1962, faced down the Cuban missile crisis, thirteen days in which both sides pushed their chips forward and neither showed its cards. He suffered from chronic back pain his whole adult life, and kept a rocking chair in the Oval Office for it. He wrote Profiles in Courage, a book about eight senators who voted against their own side."
+    ],
+    "at_the_table": "He plays a good many hands and plays them with confidence, and he will take a pot nobody is guarding. He bluffs more than the men in the portraits, and with more charm. Nobody at the White House hides less: when he is comfortable it shows, and when he is not, it shows in his back.",
+    "look": "Silhouette: a young, lean man in a narrow navy two-button suit, white shirt, thin dark tie, thick reddish-brown hair swept to one side, a broad, easy grin. No hat, no sunglasses, nothing in his mouth (FDR's holder is the table's one thing in a mouth). Prop: the PT-109 coconut shell paperweight, on the felt beside his chips. His tells are big shapes: rocking back in the chair, a hand to his tie, a hand to the small of his back.",
+    "prop": "The PT-109 coconut shell paperweight",
+    "public_domain": "A real person, died 1963: not a copyright question but a likeness one (the owner's call; see ASSETS.md). His public speeches as President are works of the US government and in the public domain; lines here paraphrase them. Nothing from any film or television portrayal (JFK, 1991; Thirteen Days, 2000; Jackie, 2016; any series), no likeness of any actor. Never refer to his death, or to anyone's assassination. Always 'thirty-five', never '3/5', which at a table with Washington and Lincoln reads as the Three-Fifths Clause."
+  }
+}

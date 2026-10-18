@@ -1,0 +1,17 @@
+{
+ "note": "Baker Street's room pieces, cut from sources/pieces.png by room_web.py. Spots are in the screen's design space (1600x900): [centre x, foot, height]. The backdrop is 1916x821, so design x = image x * 1.0962 - 250.2, y = image y * 1.0962. The two gas-lamp flames (27% and 73% across) are cut from the drawn lamps by brightness, the flame only, not the drawn shade, which is a different shape from the backdrop's chimneys. The coal fire is cut the same way from the drawn grates (the flames, not the brass) and flickers over the painted grate, left of Holmes's armchair; the fireplace is at 89% across, so it shows only on screens wider than 16:9. The two fog windows are not used: they are a different window from the backdrop's.",
+ "sheet": "sources/pieces.png",
+ "pieces": {
+  "fire_1": {"box": [16, 11, 503, 331], "bright": [235, 150]},
+  "fire_2": {"box": [513, 39, 1009, 332], "bright": [235, 150]},
+  "fire_3": {"box": [1033, 31, 1521, 332], "bright": [235, 150]},
+  "lamp_1": {"box": [288, 350, 458, 677], "bright": [250, 225]},
+  "lamp_2": {"box": [681, 350, 850, 679], "bright": [250, 225]},
+  "lamp_3": {"box": [1073, 350, 1242, 679], "bright": [250, 225]}
+ },
+ "presence": null,
+ "loops": [
+  {"frames": ["lamp_1", "lamp_2", "lamp_3"], "every": [0.18, 0.4], "spots": [[331, 172, 44], [1288, 173, 44]]},
+  {"frames": ["fire_1", "fire_2", "fire_3"], "every": [0.12, 0.25], "spots": [[1638, 576, 90]]}
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "sheet": "sources/lincoln_sheet.png",
+ "stem": "lincoln",
+ "split": [
+  [
+   450,
+   120
+  ],
+  [
+   60,
+   850
+  ],
+  [
+   520,
+   840
+  ],
+  [
+   1450,
+   840
+  ]
+ ]
+}

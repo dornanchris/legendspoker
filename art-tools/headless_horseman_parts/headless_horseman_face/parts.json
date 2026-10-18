@@ -1,0 +1,122 @@
+{
+  "source": "face_overlays.png",
+  "canvas": {
+    "w": 1536,
+    "h": 1024
+  },
+  "note": "x/y are the piece's position on the SOURCE canvas. Cut by cut_sheet.py from cut.json.",
+  "parts": [
+    {
+      "index": 1,
+      "file": "headless_horseman_face_01.png",
+      "label": "",
+      "x": 14,
+      "y": 102,
+      "w": 273,
+      "h": 360,
+      "pivot": [
+        136.5,
+        180.0
+      ],
+      "area": 59442
+    },
+    {
+      "index": 2,
+      "file": "headless_horseman_face_02.png",
+      "label": "",
+      "x": 298,
+      "y": 74,
+      "w": 754,
+      "h": 389,
+      "pivot": [
+        377.0,
+        194.5
+      ],
+      "area": 202645
+    },
+    {
+      "index": 3,
+      "file": "headless_horseman_face_03.png",
+      "label": "",
+      "x": 1063,
+      "y": 14,
+      "w": 230,
+      "h": 449,
+      "pivot": [
+        115.0,
+        224.5
+      ],
+      "area": 54826
+    },
+    {
+      "index": 4,
+      "file": "headless_horseman_face_04.png",
+      "label": "",
+      "x": 1303,
+      "y": 150,
+      "w": 227,
+      "h": 312,
+      "pivot": [
+        113.5,
+        156.0
+      ],
+      "area": 50378
+    },
+    {
+      "index": 5,
+      "file": "headless_horseman_face_05.png",
+      "label": "",
+      "x": 31,
+      "y": 521,
+      "w": 319,
+      "h": 413,
+      "pivot": [
+        159.5,
+        206.5
+      ],
+      "area": 82440
+    },
+    {
+      "index": 6,
+      "file": "headless_horseman_face_06.png",
+      "label": "",
+      "x": 391,
+      "y": 522,
+      "w": 322,
+      "h": 415,
+      "pivot": [
+        161.0,
+        207.5
+      ],
+      "area": 83518
+    },
+    {
+      "index": 7,
+      "file": "headless_horseman_face_07.png",
+      "label": "",
+      "x": 755,
+      "y": 522,
+      "w": 318,
+      "h": 413,
+      "pivot": [
+        159.0,
+        206.5
+      ],
+      "area": 81923
+    },
+    {
+      "index": 8,
+      "file": "headless_horseman_face_08.png",
+      "label": "",
+      "x": 1136,
+      "y": 515,
+      "w": 359,
+      "h": 428,
+      "pivot": [
+        179.5,
+        214.0
+      ],
+      "area": 93377
+    }
+  ]
+}

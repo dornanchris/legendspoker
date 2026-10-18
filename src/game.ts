@@ -5,6 +5,7 @@ import { decide, emitTell, betRange, readBet, readTell, type Action, type Decisi
 import { handStrength, preflopStrength, drawOuts, boardWetness, type Card } from './equity.js'
 import type { Personality } from './personality.js'
 import { seededShuffle } from './rng.js'
+import { assertPatchedEngine } from './engine-guard.js'
 
 export type Seat = {
   personality: Personality
@@ -213,6 +214,8 @@ export type TurnView = {
   board: Card[]
   pot: number
   toCall: number
+  /** What they already have in front of them this street. */
+  bet: number
   stack: number
   bigBlind: number
   street: 'preflop' | 'flop' | 'turn' | 'river'
@@ -237,8 +240,25 @@ export type Arrival = {
   personality: Personality
   /** Triggers once this many players have been eliminated... */
   afterEliminations?: number
-  /** ...or once this character is eliminated, taking their chair. */
+  /** ...or once this character is eliminated, taking their chair... */
   afterEliminationOf?: string
+  /**
+   * ...or once the human seat wins chips in a hand holding exactly these two
+   * ranks (any suits) WHILE a chair stands empty: a visitor (JFK at the White
+   * House, for a three and a five). With no empty chair the win does nothing,
+   * and a later one can still set it off. Never if they are already seated.
+   */
+  onHumanWin?: string[]
+  /**
+   * ...or, once this character has been knocked out, when the human seat
+   * wins chips holding the same two ranks (any suits) as the hand that
+   * knocked them out, WHILE a chair stands empty: the other half of a seat
+   * (Jekyll's Hyde, Hyde's Jekyll). The hand that beat them is whoever took
+   * the most chips in the hand they went out in. Never if already seated.
+   */
+  onHumanWinLike?: string
+  /** Not before this character has sat down at the table (a late champion). */
+  afterArrivalOf?: string
   /**
    * Hands to wait after the trigger. 0 seats them before the next hand, even
    * if the table would otherwise be over -- which is how the station's
@@ -349,10 +369,15 @@ export class Game {
   /** Every chip that has entered play, arrivals included. */
   private chipsTotal = 0
   private pending: { rule: Arrival; triggeredAt?: number; done: boolean }[] = []
+  /** The two ranks of the hand that knocked each character out, kept only when a rule asks (onHumanWinLike). */
+  private knockoutRanks = new Map<string, string[]>()
+  /** Everyone who has sat down after the deal began (late arrivals). */
+  private arrivedIds = new Set<string>()
   /** Set once the banishment rule has fired: it fires at most once a sitting. */
   private banishmentDone = false
 
   constructor(personalities: Personality[], opts: Partial<GameOptions> = {}) {
+    assertPatchedEngine()
     this.opts = {
       smallBlind: 10,
       bigBlind: 20,
@@ -493,8 +518,6 @@ export class Game {
     const tournament = mode === 'tournament'
     if (tournament && this.isComplete()) return
 
-    const bigBlind = this.bigBlind()
-
     if (tournament) {
       this.applyBlindLevel()
     } else {
@@ -505,6 +528,10 @@ export class Game {
         if (!occupied[i]) this.table.sitDown(i, buyIn)
       }
     }
+
+    // After the level is applied: read before it, the first hand of every
+    // level was played on the previous level's big blind.
+    const bigBlind = this.bigBlind()
 
     // Stacks going in, so a tournament hand can be settled against them.
     const before = this.stacks()
@@ -535,10 +562,17 @@ export class Game {
         if (hole) onEvent({ type: 'deal', seat: humanSeat, hole })
       }
     }
-    // Only the banishment rule wants these. Reading them draws nothing.
+    // Only the banishment rule, a visitor and an other half want these.
+    // Reading them draws nothing.
     const humanHole: Card[] | null =
-      tournament && this.opts.banishment && humanSeat !== undefined
+      tournament && humanSeat !== undefined &&
+      (this.opts.banishment || this.pending.some((p) => p.rule.onHumanWin || p.rule.onHumanWinLike))
         ? this.table.holeCards()[humanSeat] ?? null
+        : null
+    // Everyone's cards as dealt, to know the hand that knocks someone out.
+    const dealtHoles: (Card[] | null)[] | null =
+      tournament && this.pending.some((p) => !p.done && p.rule.onHumanWinLike)
+        ? this.table.holeCards().map((h: Card[] | null) => (h ? [...h] : null))
         : null
 
     // Cache equity per (seat, street, what they are facing) -- recomputing it
@@ -597,6 +631,15 @@ export class Game {
         }
 
         const seatState = this.table.seats()
+        // Put all in by posting a blind: nothing is left to decide. poker-ts
+        // still gives them a turn, and fold is always legal, so they (or the
+        // player) could fold chips already posted and bust without a
+        // showdown. A call moves no chips: everything they had is in.
+        if (seatState[seat].stack === 0) {
+          const legal: string[] = this.table.legalActions().actions
+          this.table.actionTaken(legal.includes('check') ? 'check' : 'call')
+          continue
+        }
         const board: Card[] = this.table.communityCards()
         const hole: Card[] = this.table.holeCards()[seat] ?? []
 
@@ -715,6 +758,7 @@ export class Game {
             board,
             pot,
             toCall,
+            bet: myBet,
             stack: seatState[seat].stack,
             bigBlind,
             street: street as any,
@@ -904,9 +948,9 @@ export class Game {
     }
 
     if (tournament) {
-      this.removeBustedPlayers(before)
+      this.removeBustedPlayers(before, dealtHoles)
       this.processBanishment(before, humanHole)
-      this.processArrivals()
+      this.processArrivals(before, humanHole)
     }
     onEvent?.({ type: 'handEnd', hand: this.handsPlayed, stacks: this.stacks() })
   }
@@ -917,7 +961,7 @@ export class Game {
    * sitting at the table with an empty stack. Guard on occupancy before
    * standing anyone up -- showdown may already have taken the seat.
    */
-  private removeBustedPlayers(before: number[]): void {
+  private removeBustedPlayers(before: number[], holes: (Card[] | null)[] | null = null): void {
     const seated = this.table.seats()
     const out: number[] = []
     for (let i = 0; i < this.seats.length; i++) {
@@ -938,6 +982,13 @@ export class Game {
       this.bustOrder.push(i)
       const id = this.seats[i].personality.id
       this.busts.push({ seat: i, id, hand: this.handsPlayed })
+      if (holes) {
+        // The hand that beat them: whoever took the most chips this hand.
+        const gain = this.stacks().map((c, k) => (k === i ? -Infinity : c - (before[k] ?? 0)))
+        const by = gain.indexOf(Math.max(...gain))
+        const h = holes[by]
+        if (h) this.knockoutRanks.set(id, h.map((c) => c.rank as string))
+      }
       const place = alive + (out.length - j)
       this.opts.onEvent?.({ type: 'eliminated', seat: i, id, place })
     })
@@ -949,7 +1000,7 @@ export class Game {
    * is the difference between "the Robot was the last to fall, so the ship
    * sits down" and "the table is over".
    */
-  private processArrivals(): void {
+  private processArrivals(before: number[] = [], hole: Card[] | null = null): void {
     // Once the player is out, the sitting is over. An arrival now would play
     // to an empty room -- and the first empty chair would be the player's
     // own: Caesar sat down in it at Rome and the player went on as him.
@@ -959,9 +1010,22 @@ export class Game {
       if (p.done) continue
       const { rule } = p
       if (p.triggeredAt === undefined) {
-        const hit = rule.afterEliminationOf
-          ? this.busts.some((b) => b.id === rule.afterEliminationOf)
-          : this.busts.length >= (rule.afterEliminations ?? Infinity)
+        if ((rule.onHumanWin || rule.onHumanWinLike) && this.seats.some((s) => s.personality.id === rule.personality.id)) {
+          p.done = true // already at the table: an open table dealt them in
+          continue
+        }
+        // A LATER win: the hand that knocked him out (the player's own, often) never counts.
+        const out = rule.onHumanWinLike ? this.busts.find((b) => b.id === rule.onHumanWinLike) : undefined
+        const like = out && out.hand < this.handsPlayed ? this.knockoutRanks.get(rule.onHumanWinLike!) : undefined
+        const hit = rule.onHumanWin
+          ? this.humanWonHolding(rule.onHumanWin, before, hole) && this.emptyChair() >= 0 &&
+            this.survivors().length > 1 // a visitor never reopens a table just won
+          : rule.onHumanWinLike
+            ? !!like && (!rule.afterArrivalOf || this.arrivedIds.has(rule.afterArrivalOf)) &&
+              this.humanWonHolding(like, before, hole) && this.emptyChair() >= 0 && this.survivors().length > 1
+          : rule.afterEliminationOf
+            ? this.busts.some((b) => b.id === rule.afterEliminationOf)
+            : this.busts.length >= (rule.afterEliminations ?? Infinity)
         if (hit) p.triggeredAt = this.handsPlayed
       }
       if (p.triggeredAt === undefined) continue
@@ -977,10 +1041,7 @@ export class Game {
         if (!seated[b.seat] && b.seat !== human) chair = b.seat
         replaces = rule.afterEliminationOf
       }
-      if (chair < 0) {
-        const empty = this.busts.find((b) => !seated[b.seat] && b.seat !== human)
-        if (empty) chair = empty.seat
-      }
+      if (chair < 0) chair = this.emptyChair()
       if (chair < 0) continue // no empty chair yet; try again next hand
 
       const live = this.survivors().map((i) => this.stacks()[i])
@@ -992,6 +1053,7 @@ export class Game {
       this.seatBusted[chair] = false
       this.table.sitDown(chair, stack)
       this.chipsTotal += stack
+      this.arrivedIds.add(rule.personality.id)
       p.done = true
       this.opts.onEvent?.({
         type: 'arrival',
@@ -1001,6 +1063,21 @@ export class Game {
         replaces,
       })
     }
+  }
+
+  /** The first chair a bust left empty (never the player's), or -1. */
+  private emptyChair(): number {
+    const seated = this.table.seats()
+    const human = this.opts.humanSeat
+    return this.busts.find((b) => !seated[b.seat] && b.seat !== human)?.seat ?? -1
+  }
+
+  /** The human seat won chips this hand holding exactly these ranks, any suits. */
+  private humanWonHolding(ranks: string[], before: number[], hole: Card[] | null): boolean {
+    const human = this.opts.humanSeat
+    if (human === undefined || !hole || this.seatBusted[human]) return false
+    if (this.stacks()[human] <= (before[human] ?? Infinity)) return false
+    return hole.map((c) => c.rank as string).sort().join() === [...ranks].sort().join()
   }
 
   /**

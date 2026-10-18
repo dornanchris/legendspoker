@@ -1,0 +1,68 @@
+{
+ "note": "The master is the rest pose's own three heads (cerberus_master.png, cut from pose A1), because the face sheet's three-head drawing is spaced differently. Every layer draws on the MIDDLE head only; the other two heads change only in whole-figure frames.",
+ "master": "cerberus_parts/cerberus_face/cerberus_master.png",
+ "pieces": "cerberus_parts/cerberus_face/cerberus_face_%02d.png",
+ "layers": {
+  "eyes": {
+   "half": 2,
+   "closed": 3,
+   "viewer": 4,
+   "down": 5,
+   "side": 7,
+   "narrow": 8
+  },
+  "mouth": {
+   "rest": 9,
+   "growl": 10,
+   "pant": 11,
+   "whine": 12,
+   "snarl": 13
+  }
+ },
+ "regions": {
+  "eyes": {
+   "keep": [
+    [
+     190,
+     68
+    ],
+    [
+     338,
+     68
+    ],
+    [
+     338,
+     124
+    ],
+    [
+     190,
+     124
+    ]
+   ],
+   "outline": 2,
+   "fade": 2,
+   "match": false
+  },
+  "mouth": {
+   "keep": [
+    [
+     200,
+     118
+    ],
+    [
+     352,
+     112
+    ],
+    [
+     352,
+     240
+    ],
+    [
+     200,
+     240
+    ]
+   ],
+   "match": false
+  }
+ }
+}

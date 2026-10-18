@@ -1,0 +1,82 @@
+{
+ "note": "Rome's room pieces, cut from sources/pieces.png by room_web.py. Spots are in the screen's design space (1600x900): [centre x, foot, height]. The backdrop (the redraw, with the braziers in the gaps between seats) is 1916x821, so design x = image x * 1.0962 - 250.2, y = image y * 1.0962. The fire is cut from each drawn brazier by brightness ('bright') and flickers over the two painted braziers, at 27% and 73% across. Caesar's laurel wreath waits on the painted cushion in the niche left of the door until he arrives and takes it; after, the painted cushion is empty. The three smoke wisps are not used: swapping three different shapes reads as a flicker, not smoke.",
+ "sheet": "sources/pieces.png",
+ "pieces": {
+  "fire_1": {
+   "box": [
+    80,
+    315,
+    310,
+    572
+   ],
+   "bright": [
+    220,
+    110
+   ]
+  },
+  "fire_2": {
+   "box": [
+    450,
+    315,
+    690,
+    572
+   ],
+   "bright": [
+    220,
+    110
+   ]
+  },
+  "fire_3": {
+   "box": [
+    815,
+    315,
+    1050,
+    572
+   ],
+   "bright": [
+    220,
+    110
+   ]
+  },
+  "wreath": {
+   "box": [
+    35,
+    30,
+    570,
+    325
+   ],
+   "x": 517,
+   "bottom": 480,
+   "h": 77
+  }
+ },
+ "presence": {
+  "before": "wreath",
+  "after": null
+ },
+ "loops": [
+  {
+   "frames": [
+    "fire_1",
+    "fire_2",
+    "fire_3"
+   ],
+   "every": [
+    0.12,
+    0.25
+   ],
+   "spots": [
+    [
+     331,
+     366,
+     150
+    ],
+    [
+     1291,
+     366,
+     146
+    ]
+   ]
+  }
+ ]
+}

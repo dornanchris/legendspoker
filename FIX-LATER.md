@@ -1,0 +1,165 @@
+# FIX-LATER.md — the list we come back to
+
+The owner's way of working: "make the next characters as we need them, then
+go back and fix the ones". This is where "the ones" are kept, so nothing is
+lost between threads. Add to it; strike an item through (or delete it) once it
+is done, and say so in the commit.
+
+## Art: redraws
+
+- **The gothic style, from Transylvania on** (the owner: "Gothic Style yes").
+  Transylvania and the Station are drawn in it (the Headless Horseman's
+  approved sheet is the style image; ART-PIPELINE.md). Already built in the
+  flat cartoon, to redraw in it later:
+  - ~~**Van Helsing**~~ DONE: redrawn gothic and built (his old sheets are in
+    `sources/old_style/`). His face sheet drew two eye pieces without his
+    spectacles, so he has no narrowed or wide eyes and no brows: redraw the
+    face sheet only if he looks stiff.
+  - ~~**The Wolf Man**~~ DONE: redrawn gothic and built.
+  - ~~**The Cheshire Cat**~~ DONE: redrawn gothic and built (old sheets in
+    `sources/old_style/`); he sits well enough beside Baker Street's flat
+    three. Left: where a leg crosses the drawn rail, a few frames keep small
+    bites in the far leg or a thin sliver of rail (his rim light and the rail
+    are the same orange; `cheshire_cat_parts/README.md`).
+- ~~**Reactions for the rest of the cast**~~ DONE: every puppet has the big
+  win and the crushing loss (reactions sheet E, `build/reactions_sheet.py`,
+  `build/rail_clean.py`, `build/reactions.py`; ART-PIPELINE.md). Left, a pixel or
+  two at table size: hairlines of the drawn rail's dark edge inside the prop boxes
+  (Nemo's pearl, Holmes's pipe), a nick in Medusa's lower bracelet, a sliver under
+  Scipio's elephant; Teddy's older frames (`bet` and others) still have small bites
+  at the shoulders (his suit is the wood's colour).
+- **Unwanted colours at the table** (the owner, playing: the Green Knight, both
+  looks, and specks in Lancelot's hair). Done for those three: the felt and rail
+  tests keep the Knight's gold (`green_knight_parts/README.md`), and
+  `build/paper_flecks.py` colours over the sheet's white caught in hair. Left:
+  bigger pockets of paper between the holly's twigs (over 120 px, so the fleck
+  pass leaves them), a few small orange stubs where a frame meets the drawn rail
+  at its ends, a nub of outline by the Knight's far rest gauntlet. Worth a
+  `paper_flecks.py --dry` across the cast, puppet by puppet, looked at before
+  it is applied.
+- **More drawn poses, less rigging** (the owner: "lean into the stop motion
+  stuff a bit more"). When a gesture looks stiff as a tweened arm, the fix is
+  another whole-figure drawing, not another bone.
+- **IK arms (rigging-parts sheets)** for everyone but Washington, as each
+  character comes up for a fix. Teddy's can come from his six Rive sheets
+  (`art-tools/roosevelt_parts/sources/rive_*.png`).
+- **JFK's and Loki's sheets drew a little more painted** than the presidents'
+  cartoon (soft shading). They read fine at the table; redraw only if they
+  stand out in play.
+
+## Online (when it is designed)
+
+- **Death and the Stranger as online avatars** (the owner: "I would much rather
+  have them and not need them"; the design doc: beating the game unlocks Death
+  as a playable avatar). Prompts written: `art-tools/death_avatar_parts/POSES.md`
+  (three-quarter, any chair, from his dealer sheet, no deck) and
+  `art-tools/avatar_parts/POSES.md` (the Stranger, redone in the later tables'
+  style, hands empty). Rule 3: an online avatar's moves have ZERO correlation
+  with its cards, so sheet C of each is cosmetic loops only (LOOP), and the game
+  side (which clips play online, and when) waits for online's design.
+  **The Stranger's sheets are drawn** (`art-tools/avatar_parts/sources/`:
+  the character sheet, poses A, B (and an alternate B) and C); its puppet is
+  not built. **Its accent is the player's to choose** (the owner: free, so
+  avatars differ a little until others are unlocked): the scarf, hat band
+  and glove cuffs are drawn teal, hue 175-202, apart from the blue rim light
+  and the felt, so `art-tools/avatar_parts/accent.py` recolours them by hue
+  (teal, crimson, gold, violet, ivory, emerald; `accents.png`). At build
+  time, bake a mask of those pixels per image and tint it at runtime, or
+  bake one set per accent: online's design decides which. **Both are now
+  built** for the finale (`stranger`, `death_player`), the Stranger with baked
+  masks tinted at load; online decides which clips play, and when.
+
+## The finale's new format (the owner's call; the design doc has it)
+
+- **DONE:** Pravuil, Death as a player and the Stranger are built; the Last
+  Crossing is restaged (the Stranger left in the player's colour, Death right,
+  Pravuil dealing); the entrance, the room, the bust and ending stage
+  directions and the ending's first line reworded; Death introduces him
+  ("Pravuil keeps the books. Someone has to witness this."). The ferryman stays
+  out on the river.
+- **Still open:** Pravuil never speaks, so the dealer's speech bubble is unused
+  at the finale; Death's lines show in his seat's bubble. The ending text keeps
+  "the ledger on the bench by the door" as Death's own (Pravuil's book goes
+  with him): the owner may want one or the other.
+- **Pravuil's rest head** keeps a faint grey edge along the hair inside the
+  halo (`angel_parts/halo.py` clears the sheet's white disc); invisible at
+  table size.
+
+## Room and puppet leftovers (the last build)
+
+- **The Phoenix:** a sliver of the drawn rail by its near wing at rest; its
+  knocked-out flame is cut straight a little below the table line; its open
+  beak is clipped by the head's outline (it reads as a little open).
+- **The Pyre's, the Last Crossing's and the Hall's pieces are not used yet**
+  (the nest, ash, dawn sky; the lamp, rain, boat, door): drawn at other sizes
+  than the backdrops' (each pieces.json says why). The rooms read without them.
+
+## The table screen (from the owner's screenshots)
+
+- **The Station's ceiling lens is cut off at 16:9.** The backdrop drew its
+  socket at the very top of the picture, so the open lens (the room watching)
+  shows only on windows taller than 16:9; at 16:9 just the socket's lower rim.
+  A redrawn plate with the socket lower, or the lens moved down, would fix it.
+- **The Station's wall lamps** sit at 23% and 77% across (the prompt asked 27%
+  and 73%), glowing just beside the end seats' heads. They read; nudge only if
+  they distract.
+- **The Grey's rest pose keeps two short stubs of the drawn rail's outline** by
+  its near elbow and far wrist, lying on the felt, and a soft smear where the
+  sheet's white was cut from between its arms and torso (just above the table
+  line). Small at table size; tighten its forearm polygons if they show.
+- **The Martian's tentacles lie behind its name plate** at seat 2 (it sits low:
+  its sheets put the table line high). Fine in play; move the plate only if it
+  hides a tell.
+- **The AI's tells are the lens only**: nothing on the ceiling plays while it
+  watches without a chair (its tells fire once it sits). The sheet's half and
+  narrowed lens pieces are cut but unused; the "lights dim" tell dims the lens,
+  not the room's lamps (the stage dims only loop pieces, and the Station has none).
+
+- **A wide screen cuts off the player's own seat:** the plate at the left
+  edge and the hole cards at the bottom (seen at the Pirate Cove).
+- **A bet's chip pile lands beside or over the board** when the seat's pile
+  spot is near the middle.
+- **Death's dealt cards fly over his own "DEATH deals" plate** as they leave
+  his hands: start the flights below the plate, or put the plate under them.
+- **Tell and idle text overlaps the name plates.**
+- From CLAUDE.md's staged-table gaps, still open: two speech
+  bubbles can overlap; Death's clips draw their own cards and chips over the
+  game's flights; a window narrower than 16:9 shows the room low; the top bar
+  is phone-sized on a monitor; Reduce motion hides the older speech bubbles.
+
+## Game and words (other threads)
+
+- ~~**Jekyll and Hyde take Frankenstein's Monster's seat at Transylvania**~~
+  DONE (ENGINE_VERSION 13; CLAUDE.md has how). Settled as proposed: ranks
+  only, the hand that beat him whoever played it, and only a LATER win (the
+  knockout itself never counts). Still open: Jekyll's exit line "If a small
+  man in my coat should come asking for my chair..." hints at the return;
+  cut it if the return should be a pure surprise. Hyde's sheets drew him
+  Jekyll's size (built at 0.88). Jekyll's B5 decoy drew one hairy hand
+  (it gives the tell away a little; reroll if it shows in play). The rules
+  as asked:
+  - **One seat, two men, 50/50 per sitting:** each sitting deals either Dr.
+    Jekyll or Mr. Hyde in seat 2. Pick it from the sitting's seed so a resume
+    replays the same man (never from the live game RNG after the deal starts).
+  - **The return is a trigger, not a timer:** once Dracula has arrived and
+    Jekyll/Hyde has been knocked out, the OTHER one comes back into an empty
+    chair when the player wins a pot holding the same two ranks as the hand
+    that knocked him out (knocked out by pocket aces: win again with pocket
+    aces). An Arrival like JFK's `onHumanWin`. Open questions for that thread:
+    ranks only or suits too (ranks: "pocket aces" is a rank pair); and what
+    counts when an AI, not the player, knocked him out (proposed: the same
+    ranks either way, the hand that beat him).
+  - Two character files (two dial sets: Jekyll tight and apologetic, Hyde
+    reckless and aggressive, the design doc's runner-up), the Monster's
+    dialogue replaced, an ENGINE_VERSION bump (a table's cast), a check script
+    like `check:visitor` that forces the return.
+- **How the player gets called names** (the owner: "We should reevaluate the
+  way we get called names here. It can wait."): the earned names by respect
+  tier (`src/tour.ts`, the dialogue's tiered lines), and the one line that
+  genders the player, `wh_p0_03` ("the look of a man who has read about
+  poker").
+- **Holmes's deerstalker as an earned skin** (the owner): once Holmes is
+  unlocked, beating him heads up earns the hat look. Game work, out of the art
+  thread's scope; the art (`#/puppet/sherlock_deerstalker`) is built.
+- **The human edit pass on the draft dialogue** (CLAUDE.md, owed before
+  Phase 5).

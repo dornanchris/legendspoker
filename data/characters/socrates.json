@@ -47,7 +47,7 @@
   ],
   "idles": [
     "sips from his cup and seems no drunker",
-    "rubs his bare feet together",
+    "stretches, and his cloak slips off one shoulder",
     "pulls his plain cloak tighter",
     "scratches his beard thoughtfully"
   ],
@@ -90,10 +90,32 @@
       "I raise. A better question.",
       "Raise. Let us see who knows what they think they know."
     ],
+    "reraised": [
+      "Ah, an objection! Wonderful. Let us continue.",
+      "You answer my question with a question. Good. Now mine."
+    ],
     "all_in": [
       "All in. I was always going to drink it.",
       "Everything. Pour the cup.",
       "All of it. Philosophy is practice for this."
+    ],
+    "win": [
+      "The unexamined pot is not worth winning. I examined it.",
+      "You see? We reached the answer together. Mostly I did.",
+      "I know that I know nothing. Except who won that.",
+      "A fine argument. Mine was finer."
+    ],
+    "lose": [
+      "The wisest man in Athens knows he knows nothing. Tonight I proved it.",
+      "An excellent refutation. I concede the point, and the pot.",
+      "I owe a rooster to Asclepius, and a stack to you.",
+      "Splendid! I was wrong. That is how one learns."
+    ],
+    "beat_leonidas": [
+      "You see, King? Sometimes the talkers win."
+    ],
+    "win_two_pair": [
+      "Two pair. Every good argument has two sides."
     ]
   }
 }

@@ -131,7 +131,7 @@ Tour order matters and is part of the lock. **32 characters total** — 8 tables
 | 2 | **Athens — The Symposium** — Greece | Socrates, Leonidas, Medusa, the Cyclops | **Odysseus** | Arrives ~10 hands after first elimination. Comic. Skippable (see below). |
 | 3 | **Pirate Cove** — Caribbean | Captain Kidd, Long John Silver, Davy Jones | **Blackbeard** | Seated from hand one. Dominates the room. |
 | 4 | **Camelot** — Britain | Merlin, Lancelot, the Green Knight | **King Arthur** | Seated from hand one. Gracious host. |
-| 5 | **Imperial Rome** — Italy | Spartacus, a Pope (TBD), Cerberus | **Julius Caesar** | Arrives after the first elimination. |
+| 5 | **Imperial Rome** — Italy | Spartacus, a Pope (TBD), Cerberus, Scipio Africanus | **Julius Caesar** | Arrives after the first elimination. |
 | 6 | **Baker Street** — London | Captain Nemo, Inspector Javert, Alice | **Sherlock Holmes** | Seated from hand one. Reveal = narrating YOUR tells. |
 | 7 | **Transylvania** — Romania | Van Helsing, Frankenstein's Monster, Wolf Man, Headless Horseman | **Dracula** | Watches from the fireplace, joins after two eliminations. **Predator.** |
 | 8 | **The Station** — sci-fi | Grey Alien, Martian, Robot, Astronaut | **The AI** | The room turns: lights fail, gravity glitches, the Robot stands up as something else. |
@@ -187,7 +187,25 @@ budget, and three of them were the same "watch, then join" move.
   Table is now **Spartacus** (the one person at the table who was *owned* by
   Rome), a **Pope** (Renaissance Rome; mitre and robes read nothing like a
   toga; pure scheming deception — Borgia/Alexander VI is the placeholder), and
-  **Cerberus**.
+  **Cerberus**. *[DECISION, owner] **Scipio Africanus** holds the fourth chair
+  (the "fourth NPC holding the chair" rule above): the general who beat
+  Hannibal, the Republic at its best, against the man who ended it. He is the
+  table's patient reader; an ivory elephant from Zama is his tell surface.*
+
+### [DECISION, owner] Two more hidden characters, and the online avatar
+
+- **JFK, the White House's hidden visitor.** Win a pot at the presidents'
+  table holding a three and a five (the thirty-fifth president) while a
+  chair is empty, and he sits down. A guest like Loki: invisible until met.
+  Always "thirty-five", never "3/5" (the Three-Fifths Clause, at a table
+  with Washington and Lincoln); never a word about his death.
+- **The Phoenix, the hidden grind.** Second place at every story table, then
+  a win at the eighth, and the Phoenix opens its table for one heads-up
+  sitting. Win: unlocked, the rarest thing in the game. Lose: the gauntlet
+  resets. Coming back from losing is the whole point of the bird.
+- **The Stranger, the default online avatar** (online is not designed yet):
+  faceless under a wide-brimmed hat, coat collar up, nothing that says man
+  or woman. Under non-negotiable #3 it has no tells, only a cosmetic loop.
 - **The Station:** Reptilian CUT, **Astronaut** IN — preserves the one honest
   human read at the table.
 
@@ -293,7 +311,8 @@ Four detectives blur. The table is now: Sherlock (analytical), Captain Nemo
 (mysterious intellectual), Inspector Javert (rigid, relentless) + one open
 seat. **The fourth must NOT be another stern man** — Nemo and Javert are both
 brooding intense types and it needs lightness/trickery.
-- **[DECISION] The fourth seat is ALICE.** Recognizable instantly, changes the
+- **[SUPERSEDED, the owner during the art pass: the Cheshire Cat took this seat;
+  see below.] The fourth seat was ALICE.** Recognizable instantly, changes the
   whole visual composition (three men in dark Victorian coats + a girl in a
   blue dress reads at a glance), and plays curious/unpredictable — calls
   strange bets to see what happens, unintimidated by Javert or Nemo.
@@ -306,6 +325,16 @@ brooding intense types and it needs lightness/trickery.
   leak. He doesn't contrast with the table, he opts out of its central
   mechanic. Save him for the Wonderland/Easter table where unreadability is
   the joke. Same objection killed the Invisible Man.
+  **[DECISION, the owner, during the art pass] The Cheshire Cat takes the
+  fourth seat after all**, ENGINE_VERSION 12. Two drawing attempts gave an
+  Alice that read as Disney's or as an anime knock-off, and the owner answered
+  the objection above: he is NOT unreadable, because his body gives him away a
+  piece at a time. His tells are the tail (the tip twitching), the eyes
+  (blinking one at a time) and Carroll's own vanishing, tail first and the
+  grin last. So he keeps Alice's job at the table, the one legible guest among
+  practised faces (reliability ~0.8), and the lightness and trickery the seat
+  needed: loose, aggressive, bluffs and pokes at pots for the fun of it
+  (`whim`, `needle`). A Wonderland table later would need another host.
 - **Jekyll/Hyde was the strongest runner-up** — one seat, two personalities,
   switching mid-session (tight and apologetic → reckless and aggressive) is a
   dial-set nobody else has and a real tells puzzle. **Cut on animation cost:**
@@ -512,6 +541,36 @@ oversight — recorded so it isn't rediscovered as a surprise.
 Remains in the design as the avatar payoff and the reason the unlock system
 exists, but there is **no netcode plan, no server, no cost estimate**. Not a
 beta problem; it is a "how does this ship" problem. Phase 10 at the earliest.
+
+---
+
+## [DECISION, owner] THE FINALE'S FORMAT — the Recording Angel deals, you are seen
+
+Death plays the finale, so he does not deal it. **The Recording Angel,
+Pravuil** (2 Enoch 22-23: the archangel who "wrote all the deeds of the
+Lord"; public domain, no screen baggage), does:
+the one whose work is to witness and write down, come to the dock house
+because this hand has to be witnessed ("Pravuil keeps the books. Someone has
+to witness this," Death says, and nothing more). Nobody doubts the honesty of the deal, and it hints
+at the sequel (other halls have an interest in a mortal among legends)
+without spending any of it: never named beyond its office, never explains,
+almost silent. A working angel, not a glorious one: a plain white robe,
+sleeves pushed up, a quill behind the ear, ink on the fingertips, wings folded
+and dusty, a thin halo, not glowing (the room has one lamp); nothing about it
+says man or woman. The room is not Heaven, as rejected above: the Angel is a
+visitor, and the ferryman's lantern stays out on the river.
+
+And the table is laid out once, differently: **the player is seen**, as the
+Stranger (the default avatar, in the accent colour the player chose), in the
+left chair; Death, as a player at three-quarter, in the right; the Angel
+between them at the back. It is the one time the camera pulls back, and it
+sets up the reward: having seen yourself as the Stranger, beating Death makes
+him your avatar.
+
+Rejected for the dealer's chair: Loki (spends the hidden cameo on everyone who
+finishes, and a trickster dealing the deciding hand reads as a rigged deck);
+Marley and Sisyphus ("keep it simple"); the Ferryman, drawn twice (an ochre
+oilskin read as a fisherman; in Death's colours, "unreasonably creepy").
 
 ---
 
