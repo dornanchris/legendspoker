@@ -54,8 +54,11 @@ export const SAVE_VERSION = 1
  * 12: the Cheshire Cat takes Alice's chair at Baker Street.
  * 13: Jekyll or Hyde (50/50 a sitting) takes the Monster's chair at
  *    Transylvania, and the other half can walk back in.
+ * 14: a player put all in by a blind is no longer asked to act (they could
+ *    fold chips already posted), and the first hand of a blind level is
+ *    played on that level's big blind, not the last one's.
  */
-export const ENGINE_VERSION = 13
+export const ENGINE_VERSION = 14
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 

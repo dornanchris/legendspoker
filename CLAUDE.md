@@ -85,6 +85,8 @@ src/
   decide.ts       THE shared decision function. Read this first.
   game.ts         loop over poker-ts; stats, tilt, events, late ARRIVALS
   rng.ts          the one seeded RNG; state() is what makes saves resumable
+  engine-guard.ts refuses to deal on an unpatched poker-ts (plays two
+                  stacked hands first; Game and the web boot both call it)
   content.ts      loads data/ and builds Personalities; the only file that
                   knows where content lives (explicit imports, see gotchas)
   tour.ts         pure tour rules: unlocks, respect tiers, earned names
@@ -1054,7 +1056,11 @@ new art against that layout.
   how a player's nut flush lost a main pot to a pair of tens at Camelot,
   weeks after the side-pot fix. Now postinstall runs with `--error-on-fail`
   and stamps node_modules with a digest of `patches/` (`web/patches.mjs`),
-  and `npm run web` refuses to build against any other stamp.
+  and `npm run web` refuses to build against any other stamp; and the game
+  itself refuses to deal on the wrong rules (`src/engine-guard.ts` plays two
+  stacked hands first). The cure is always: delete node_modules, `npm
+  install`, rebuild. If you change the patch, check the guard's two hands
+  still settle as it expects.
 
 ## NEXT MILESTONE
 

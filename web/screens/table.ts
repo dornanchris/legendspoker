@@ -983,6 +983,11 @@ export function tableScreen(root: HTMLElement): () => void {
             })
             setStacks(e.stacks)
             els.pot.textContent = formatChips(blinds.reduce((a, b) => a + b, 0))
+            // A blind can put you all in, and then you are never asked to act.
+            if (blinds[HUMAN_SEAT] > 0 && e.stacks[HUMAN_SEAT] === 0) {
+              humanAllIn = true
+              updateFF()
+            }
           }, room(MOVE.chips))
           break
         }
@@ -1470,7 +1475,7 @@ export function tableScreen(root: HTMLElement): () => void {
     }
     const raise: Action | null = view.legal.includes('raise') ? 'raise' : view.legal.includes('bet') ? 'bet' : null
     if (raise && view.maxRaise >= view.minRaise) {
-      b.append(button(raise === 'bet' ? 'Bet…' : 'Raise…', '', 'r', () => openRaise(view, raise)))
+      b.append(button(raise === 'bet' ? 'Bet…' : 'Raise…', '', 'r', () => openRaise(view)))
     }
     els.raiseConfirm.onclick = () => {
       if (!raise) return
@@ -1497,7 +1502,7 @@ export function tableScreen(root: HTMLElement): () => void {
     els.buttons.hidden = false
   }
 
-  function openRaise(view: TurnView, raise: Action) {
+  function openRaise(view: TurnView) {
     els.raiseRow.hidden = false
     els.buttons.hidden = true
     const s = els.slider
@@ -1505,10 +1510,11 @@ export function tableScreen(root: HTMLElement): () => void {
     s.max = String(view.maxRaise)
     s.step = '1'
     const clamp = (v: number) => Math.min(view.maxRaise, Math.max(view.minRaise, Math.round(v)))
-    // Sizes are "raise TO", as the engine takes them: call first, then add a
-    // share of the pot as it would stand after the call.
-    const to = (frac: number) =>
-      clamp(raise === 'bet' ? view.pot * frac : view.toCall + frac * (view.pot + view.toCall))
+    // Sizes are "raise TO", as the engine takes them (decide's raiseTo): what
+    // is already in front of you, the call, then a share of the pot as it
+    // would stand after the call. Leaving out the chips in front made Pot from
+    // the big blind a min-raise.
+    const to = (frac: number) => clamp(view.bet + view.toCall + frac * (view.pot + view.toCall))
     const sizes: [string, number][] = [['½ pot', to(0.5)], ['Pot', to(1)], ['All in', view.maxRaise]]
     s.value = String(to(0.6))
     const sync = () => {

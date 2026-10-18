@@ -829,3 +829,6 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .sitter figcaption { margin-top: 10px; }
   .curtain-panel .tally-col { max-height: calc(100vh - 20px); }
 }
+
+/* Shown instead of the game when poker-ts is unpatched (src/engine-guard.ts). */
+.engine-error { max-width: 40em; margin: 15vh auto; padding: 0 16px; font: 1.1rem/1.5 var(--serif); color: var(--ink); }
