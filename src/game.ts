@@ -495,8 +495,6 @@ export class Game {
     const tournament = mode === 'tournament'
     if (tournament && this.isComplete()) return
 
-    const bigBlind = this.bigBlind()
-
     if (tournament) {
       this.applyBlindLevel()
     } else {
@@ -507,6 +505,10 @@ export class Game {
         if (!occupied[i]) this.table.sitDown(i, buyIn)
       }
     }
+
+    // After the level is applied: read before it, the first hand of every
+    // level was played on the previous level's big blind.
+    const bigBlind = this.bigBlind()
 
     // Stacks going in, so a tournament hand can be settled against them.
     const before = this.stacks()
@@ -599,6 +601,15 @@ export class Game {
         }
 
         const seatState = this.table.seats()
+        // Put all in by posting a blind: nothing is left to decide. poker-ts
+        // still gives them a turn, and fold is always legal, so they (or the
+        // player) could fold chips already posted and bust without a
+        // showdown. A call moves no chips: everything they had is in.
+        if (seatState[seat].stack === 0) {
+          const legal: string[] = this.table.legalActions().actions
+          this.table.actionTaken(legal.includes('check') ? 'check' : 'call')
+          continue
+        }
         const board: Card[] = this.table.communityCards()
         const hole: Card[] = this.table.holeCards()[seat] ?? []
 

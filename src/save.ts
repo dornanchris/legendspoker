@@ -47,8 +47,11 @@ export const SAVE_VERSION = 1
  * 9: the `skill` dial -- reading bets in context, the particular bettor and
  *    tells -- set by table; tells drawn in every game, watched or not; the
  *    first three tables' tells sharpened.
+ * 10: a player put all in by a blind is no longer asked to act (they could
+ *    fold chips already posted), and the first hand of a blind level is
+ *    played on that level's big blind, not the last one's.
  */
-export const ENGINE_VERSION = 9
+export const ENGINE_VERSION = 10
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 
