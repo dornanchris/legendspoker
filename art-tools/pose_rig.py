@@ -775,8 +775,8 @@ def main(spec_path):
                     low = [l for l in low if sl[l - 1][0].start >= ty + FM - above and sl[l - 1][0].stop <= ty + FM + below_]
                 if spec.get('rail_min_w'):                 # only long thin pieces are rail: gold bands round a wrist that
                     sl = ndimage.find_objects(lab)          # crosses the rail are short arcs (the Green Knight's gauntlets)
-                    mw = spec['rail_min_w']
-                    low = [l for l in low if sl[l - 1][1].stop - sl[l - 1][1].start >= mw
+                    min_w = spec['rail_min_w']
+                    low = [l for l in low if sl[l - 1][1].stop - sl[l - 1][1].start >= min_w
                            and sl[l - 1][1].stop - sl[l - 1][1].start >= 3 * (sl[l - 1][0].stop - sl[l - 1][0].start)]
                 if spec.get('rail_long'):                  # embroidery the rail's colour (the Pope's cuffs): only long thin strips
                     sl = ndimage.find_objects(lab)          # at the table line are rail, whatever band they reach
