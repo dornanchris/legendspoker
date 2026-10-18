@@ -7,6 +7,7 @@ import { ledgerScreen } from './screens/ledger.js'
 import { settingsScreen, aboutScreen } from './screens/settings.js'
 import { endingScreen } from './screens/ending.js'
 import * as sound from './sound.js'
+import { assertPatchedEngine } from '../src/engine-guard.js'
 
 /**
  * The shell: one hash router over plain screens.
@@ -58,6 +59,17 @@ function route() {
 }
 
 function boot() {
+  // A game on the unpatched rules pays pots to the wrong player. Better not
+  // to open at all than to deal one hand of that.
+  try {
+    assertPatchedEngine()
+  } catch (err) {
+    const p = document.createElement('p')
+    p.className = 'engine-error'
+    p.textContent = (err as Error).message
+    document.getElementById('app')!.replaceChildren(p)
+    return
+  }
   store.load()
   store.applySettings()
   window.addEventListener('hashchange', route)

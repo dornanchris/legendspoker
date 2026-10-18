@@ -19,7 +19,7 @@
     "check": "npm run typecheck && npm run check:data && npm run check:pots && npm run check:hands && npm run check:replay && npm run check:loki",
     "build:web": "node web/build.mjs",
     "web": "node web/build.mjs && node web/serve.mjs",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package --error-on-fail"
   },
   "keywords": [],
   "author": "",

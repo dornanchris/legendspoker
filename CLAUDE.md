@@ -80,6 +80,8 @@ src/
   decide.ts       THE shared decision function. Read this first.
   game.ts         loop over poker-ts; stats, tilt, events, late ARRIVALS
   rng.ts          the one seeded RNG; state() is what makes saves resumable
+  engine-guard.ts refuses to deal on an unpatched poker-ts (plays two
+                  stacked hands first; Game and the web boot both call it)
   content.ts      loads data/ and builds Personalities; the only file that
                   knows where content lives (explicit imports, see gotchas)
   tour.ts         pure tour rules: unlocks, respect tiers, earned names
@@ -571,6 +573,14 @@ real device.
   and it is the only reason the poker-ts pot bug was found rather than shipped.
 - `patches/` is load-bearing. `npm install` runs `patch-package` via
   postinstall; if that step is ever skipped, chips start vanishing again.
+- **An OLD patch in node_modules blocks the new one, silently.** When the
+  patch file changes, patch-package cannot apply it over the previous
+  version already in node_modules; it printed an error mid-install and npm
+  still exited 0. A real table then paid an all-in's pot to a worse hand
+  (the side-pot bug, back). Now postinstall is `--error-on-fail`, and
+  `src/engine-guard.ts` refuses to start the game on the wrong rules. The
+  cure is always: delete node_modules, `npm install`, rebuild. If you
+  change the patch, check the guard's two hands still settle as it expects.
 - **Dev machine is Windows.** `new URL('.', import.meta.url).pathname` gives
   `/D:/...` there — a leading slash that path-joins into `\D:\...` and 404s
   everything. Use `fileURLToPath`. Node scripts must not assume POSIX paths or

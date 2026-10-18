@@ -5,6 +5,7 @@ import { decide, emitTell, betRange, readBet, readTell, type Action, type Decisi
 import { handStrength, preflopStrength, drawOuts, boardWetness, type Card } from './equity.js'
 import type { Personality } from './personality.js'
 import { seededShuffle } from './rng.js'
+import { assertPatchedEngine } from './engine-guard.js'
 
 export type Seat = {
   personality: Personality
@@ -353,6 +354,7 @@ export class Game {
   private banishmentDone = false
 
   constructor(personalities: Personality[], opts: Partial<GameOptions> = {}) {
+    assertPatchedEngine()
     this.opts = {
       smallBlind: 10,
       bigBlind: 20,
