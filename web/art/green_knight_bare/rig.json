@@ -94,7 +94,7 @@
   {
    "name": "head.rest",
    "img": "master.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -108,7 +108,7 @@
   {
    "name": "eyes.half",
    "img": "eyes_half.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -123,7 +123,7 @@
   {
    "name": "eyes.closed",
    "img": "eyes_closed.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -138,7 +138,7 @@
   {
    "name": "eyes.viewer",
    "img": "eyes_viewer.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -153,7 +153,7 @@
   {
    "name": "eyes.down",
    "img": "eyes_down.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -168,7 +168,7 @@
   {
    "name": "eyes.side",
    "img": "eyes_side.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -183,7 +183,7 @@
   {
    "name": "eyes.narrow",
    "img": "eyes_narrow.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -198,7 +198,7 @@
   {
    "name": "brows.raised",
    "img": "brows_raised.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -213,7 +213,7 @@
   {
    "name": "brows.down",
    "img": "brows_down.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -228,7 +228,7 @@
   {
    "name": "mouth.rest",
    "img": "mouth_rest.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -243,7 +243,7 @@
   {
    "name": "mouth.ah",
    "img": "mouth_ah.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -258,7 +258,7 @@
   {
    "name": "mouth.ee",
    "img": "mouth_ee.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -273,7 +273,7 @@
   {
    "name": "mouth.oh",
    "img": "mouth_oh.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -288,7 +288,7 @@
   {
    "name": "mouth.oo",
    "img": "mouth_oo.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -303,7 +303,7 @@
   {
    "name": "mouth.m",
    "img": "mouth_m.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -318,7 +318,7 @@
   {
    "name": "mouth.f",
    "img": "mouth_f.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -333,7 +333,7 @@
   {
    "name": "mouth.l",
    "img": "mouth_l.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -348,7 +348,7 @@
   {
    "name": "mouth.laugh",
    "img": "mouth_laugh.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,
@@ -363,7 +363,7 @@
   {
    "name": "mouth.cold",
    "img": "mouth_cold.png",
-   "cx": 558.66,
+   "cx": 396.62,
    "cy": 597.31,
    "rot": 0,
    "scale": 0.7625,

@@ -35,3 +35,12 @@ beside `moss`, `laugh` (bluffing) beside `grin`, `axe` (weak) beside
 ## Reactions sheet E
 
 `sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py green_knight`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py green_knight`. The fit reads low (61-73%) only because the holly branch is drawn differently; the body lines up.
+
+**Cleanup pass (both looks).** The felt test counts dark armour as felt unless
+`felt_bg` 0.7 (felt's blue is most of its green, his plate's is not; the
+felt's navy shadow under the rail counts as felt too); the rail tests take
+only long thin pieces (`rail_min_w` 60), so gold wrist bands crossing the rail
+stay, and `seam_fill` puts back a short run cut across an arm. The far rest
+gauntlet has a `restore` box where the rail runs into its gold band;
+`lost_pot` has an `inpaint` box over the white shock strokes on his chest;
+`rail_clean_w` 200 keeps rail_clean off his gauntlet bands in the reactions.

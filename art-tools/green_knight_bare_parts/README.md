@@ -32,3 +32,6 @@ he sits back down, `lost_pot` a fist on the table, `knocked_out` a curt nod.
 ## Reactions sheet E
 
 `sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py green_knight_bare`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py green_knight_bare`. The fit reads low (61-73%) only because the holly branch is drawn differently; the body lines up.
+
+Cleaned the same way as the helmed look (see green_knight_parts/README.md);
+its far rest gauntlet has its own `restore` box.

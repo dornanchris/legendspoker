@@ -53,7 +53,10 @@ cell's drawing reaching into its box). A frame takes its pose's placement unless
 another sheet at another size is placed by hand with its own "reg". Room
 round a frame is "frame_margin" (a hat raised high); "drop_wood" cuts the
 chair's red-brown wherever it is, and "back_strip" clears anything thin in
-the columns at his back (the chair's outline). "felt_lines": n drops anything
+the columns at his back (the chair's outline). "rail_min_w": n keeps drop_rail
+to pieces at least n px wide and 3x as wide as tall. "seam_fill": n puts back
+runs of up to n px of the drawing cut across an arm at the table line (frames).
+"felt_lines": n drops anything
 under about 2n pixels thick below the table line in frames (the drawn
 rail's outline curving across the felt). "drop_rail": n drops every
 rail-orange shape reaching within n rows of the table line in frames
@@ -95,7 +98,11 @@ wood-peeling off frames for a character dressed in the wood's brown. An arm asse
 piece is what differs from the rest pose there (auto_piece), for poses where
 only a hand moves; "drop_red" drops red chips as "drop_blue" drops card backs. "strip_thin": n drops strands
 under about 2n pixels wide from arm pieces (rail lines clinging to a hand);
-leave it off where fingers are that thin. An arm (or one of its assets) may
+leave it off where fingers are that thin. A frame's "inpaint" polygons (drawn on
+him only) fill the paper's white and the gaps in them with the nearest colour
+of him: effect strokes drawn across the figure. "restore": polygons on an arm asset
+where the drawing is put back (not felt, not the rail's deeper orange): a gold
+band the rail test took where the rail runs into it. An arm (or one of its assets) may
 give "register_box": that asset's pose is then placed by matching that box
 (its shoulder and sleeve) rather than the torso, so the seam lines up.
 
@@ -138,6 +145,9 @@ FELT_TEAL = False
 # "felt_blue" (spec): the felt is only the bluer green (her snakes are the felt's green otherwise)
 FELT_BLUE = False
 FELT_DARK_TEAL = False
+# "felt_bg" (spec): the felt's blue is at least this share of its green; green
+# cloth or armour in shadow is far less blue (the Green Knight: felt 0.85, plate 0.45)
+FELT_BG = None
 
 
 def poly_mask(shape, pts):
@@ -161,6 +171,11 @@ def table_colour(a, ty, with_wood=True):
         felt |= (g > r + 40) & (b > r + 30) & (g > b - 12) & (g > 85)   # not a dark teal cloth
     if FELT_BLUE:
         felt &= b > r + 25
+    if FELT_BG:
+        felt &= b > FELT_BG * g
+        shade = (r < 30) & (b > g + 10) & (b > 30)      # and the felt's navy shadow under the rail
+        shade[:max(0, ty - 8)] = False
+        felt |= shade
     if FELT_DARK_TEAL:                                  # the felt's shadows inside drawn ripples (blue as green)
         felt |= (r < 60) & (g > r + 15) & (b > r + 15)
     if NO_WOOD:                                         # no chair and a gold rail: dark red is his robe (the Pope)
@@ -178,6 +193,25 @@ def table_colour(a, ty, with_wood=True):
     edge[:, :2] = edge[:, -2:] = True
     outer = np.unique(lab[edge & wood])
     return (felt | np.isin(lab, outer[outer > 0])) if with_wood else felt
+
+
+def seam_fill(keep, drawn, ty, n, above=20, below=70):
+    """Pixels of the drawing cut away in short horizontal runs (at most n px)
+    with the figure kept at both ends, in the rows round the table line: a
+    gold band across a wrist taken for the drawn rail. The rail between two
+    arms is a far longer run, and stays cut."""
+    out = np.zeros_like(keep)
+    for y in range(max(0, ty - above), min(keep.shape[0], ty + below)):
+        row, d = keep[y], drawn[y]
+        xs = np.nonzero(row)[0]
+        if len(xs) < 2:
+            continue
+        gaps = np.nonzero(np.diff(xs) > 1)[0]
+        for g in gaps:
+            x0, x1 = xs[g] + 1, xs[g + 1]
+            if x1 - x0 <= n and d[x0:x1].all():
+                out[y, x0:x1] = True
+    return out
 
 
 def load_pose(sheet, box):
@@ -368,6 +402,8 @@ def main(spec_path):
     global FELT_BLUE, FELT_DARK_TEAL
     FELT_BLUE = bool(spec.get('felt_blue'))
     FELT_DARK_TEAL = bool(spec.get('felt_dark_teal'))
+    global FELT_BG
+    FELT_BG = spec.get('felt_bg')
     global WOOD_BLUE
     WOOD_BLUE = spec.get('wood_blue')
     kit = os.path.dirname(os.path.abspath(spec_path))
@@ -491,6 +527,13 @@ def main(spec_path):
                 for pp in a.get('props', []):
                     pr_ |= poly_mask(src.shape[:2], pp)
                 m &= ndimage.binary_dilation(ndimage.binary_opening(m, iterations=t), iterations=t) | pr_
+            if spec.get('seam_fill'):                      # a gold wrist band taken for the rail (as in the frames)
+                m |= seam_fill(m, (src[..., 3] > 128) & ~table_colour(src, ty, with_wood=False), ty, spec['seam_fill'])
+            for rp in a.get('restore', []):              # a gold band where the rail meets it, taken for the rail:
+                c = src[..., :3].astype(int)               # drawn, not felt, not the rail's own deeper orange
+                rail_hue = (c[..., 1] < 0.55 * c[..., 0]) & (c[..., 2] < 12) & (c[..., 0] > 60)
+                rail_hue |= (c.min(-1) > 230) & (np.ptp(c, axis=-1) < 20)   # (and never the sheet's white)
+                m |= poly_mask(src.shape[:2], rp) & (src[..., 3] > 128) & ~table_colour(src, ty, with_wood=False) & ~rail_hue
             m = biggest(m) | (m & props)                  # a prop lying apart from the hand (Holmes's pipe)
             m = ndimage.binary_fill_holes(m) & (src[..., 3] > 128) & ~(white & ~m)
             if spec.get('rail_holes'):                     # the drawn rail under and between the resting arms
@@ -730,6 +773,11 @@ def main(spec_path):
                     above, below_ = spec['rail_band']
                     sl = ndimage.find_objects(lab)
                     low = [l for l in low if sl[l - 1][0].start >= ty + FM - above and sl[l - 1][0].stop <= ty + FM + below_]
+                if spec.get('rail_min_w'):                 # only long thin pieces are rail: gold bands round a wrist that
+                    sl = ndimage.find_objects(lab)          # crosses the rail are short arcs (the Green Knight's gauntlets)
+                    mw = spec['rail_min_w']
+                    low = [l for l in low if sl[l - 1][1].stop - sl[l - 1][1].start >= mw
+                           and sl[l - 1][1].stop - sl[l - 1][1].start >= 3 * (sl[l - 1][0].stop - sl[l - 1][0].start)]
                 if spec.get('rail_long'):                  # embroidery the rail's colour (the Pope's cuffs): only long thin strips
                     sl = ndimage.find_objects(lab)          # at the table line are rail, whatever band they reach
                     r_ = spec['rail_long']
@@ -748,6 +796,9 @@ def main(spec_path):
             strip = np.zeros(fshape, bool)
             strip[:, :spec['back_strip'] + FM] = True
             fm &= ~strip | ndimage.binary_dilation(ndimage.binary_opening(fm, iterations=5), iterations=5)
+        if spec.get('seam_fill'):                          # a short run cut across an arm at the rail (a gold wrist band
+            fm |= seam_fill(fm, (F[..., 3] > 128) & ~table_colour(F, ty + FM, with_wood=False),   # the rail's colour):
+                            ty + FM, spec['seam_fill'])     # put back when the figure is kept on both sides
         lab, n = ndimage.label(fm)                          # crumbs of rail and felt go
         if n:
             sz = ndimage.sum(fm, lab, range(1, n + 1))
@@ -871,7 +922,17 @@ def main(spec_path):
         if n:
             sz = ndimage.sum(rgba[..., 3] > 0, lab, range(1, n + 1))
             rgba[..., 3] = np.where(np.isin(lab, 1 + np.nonzero(sz < 80)[0]) & ~props, 0, rgba[..., 3])
-        # "halo": [r, g, b], a glow drawn round him on the paper (the Horseman's
+        for box in fr.get('inpaint', []):                  # effect lines drawn across him (a shock's white strokes):
+            c = rgba[..., :3].astype(int)                  # the paper's white and the gaps it left, inside his outline,
+            inside = pm(box)                               # (drawn on him only: all of it is filled)
+            bad = inside & ((rgba[..., 3] < 128) | ((c.min(-1) > 170) & (np.ptp(c, axis=-1) < 50)))
+            bad = ndimage.binary_dilation(bad, iterations=1) & inside
+            good = (rgba[..., 3] > 128) & ~bad              # take the colour of the nearest of him
+            if bad.any() and good.any():
+                _, (iy, ix) = ndimage.distance_transform_edt(~good, return_indices=True)
+                rgba[..., :3] = np.where(bad[..., None], rgba[iy, ix, :3], rgba[..., :3])
+                rgba[..., 3] = np.where(bad, 255, rgba[..., 3])
+                # "halo": [r, g, b], a glow drawn round him on the paper (the Horseman's
         # candle burning brighter): the light pixels reaching the outside are
         # that colour laid over white, so each becomes the colour at the alpha
         # that mix needs, and the glow fades out instead of ending in a cream edge

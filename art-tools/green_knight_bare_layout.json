@@ -26,7 +26,7 @@
   {
    "file": "../web/art/green_knight_bare/master.png",
    "label": "head.rest",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -37,7 +37,7 @@
   {
    "file": "../web/art/green_knight_bare/eyes_half.png",
    "label": "eyes.half",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -48,7 +48,7 @@
   {
    "file": "../web/art/green_knight_bare/eyes_closed.png",
    "label": "eyes.closed",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -59,7 +59,7 @@
   {
    "file": "../web/art/green_knight_bare/eyes_viewer.png",
    "label": "eyes.viewer",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -70,7 +70,7 @@
   {
    "file": "../web/art/green_knight_bare/eyes_down.png",
    "label": "eyes.down",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -81,7 +81,7 @@
   {
    "file": "../web/art/green_knight_bare/eyes_side.png",
    "label": "eyes.side",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -92,7 +92,7 @@
   {
    "file": "../web/art/green_knight_bare/eyes_narrow.png",
    "label": "eyes.narrow",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -103,7 +103,7 @@
   {
    "file": "../web/art/green_knight_bare/brows_raised.png",
    "label": "brows.raised",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -114,7 +114,7 @@
   {
    "file": "../web/art/green_knight_bare/brows_down.png",
    "label": "brows.down",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -125,7 +125,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_rest.png",
    "label": "mouth.rest",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -136,7 +136,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_ah.png",
    "label": "mouth.ah",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -147,7 +147,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_ee.png",
    "label": "mouth.ee",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -158,7 +158,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_oh.png",
    "label": "mouth.oh",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -169,7 +169,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_oo.png",
    "label": "mouth.oo",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -180,7 +180,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_m.png",
    "label": "mouth.m",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -191,7 +191,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_f.png",
    "label": "mouth.f",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -202,7 +202,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_l.png",
    "label": "mouth.l",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -213,7 +213,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_laugh.png",
    "label": "mouth.laugh",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,
@@ -224,7 +224,7 @@
   {
    "file": "../web/art/green_knight_bare/mouth_cold.png",
    "label": "mouth.cold",
-   "x": 374,
+   "x": 212,
    "y": 456,
    "scale": 0.7625,
    "rot": 0,

@@ -727,6 +727,26 @@
        310,
        478
       ]
+     ],
+     "restore": [
+      [
+       [
+        355,
+        358
+       ],
+       [
+        445,
+        354
+       ],
+       [
+        445,
+        395
+       ],
+       [
+        355,
+        395
+       ]
+      ]
      ]
     }
    }
@@ -962,15 +982,24 @@
   }
  },
  "runtime": "../web/art/green_knight_bare",
- "felt_lines": 3,
+ "felt_lines": 6,
  "no_peel": true,
  "drop_rail": 30,
  "rail_band": [
-  10,
-  75
+  45,
+  90
  ],
  "wood_rows_only": true,
  "felt_holes": true,
  "felt_blue": true,
- "felt_teal": true
+ "felt_teal": true,
+ "felt_bg": 0.7,
+ "rail_min_w": 60,
+ "rail_orange": {
+  "red": 120,
+  "blue": 24
+ },
+ "seam_fill": 70,
+ "strip_thin": 4,
+ "rail_clean_w": 200
 }
