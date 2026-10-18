@@ -214,6 +214,8 @@ export type TurnView = {
   board: Card[]
   pot: number
   toCall: number
+  /** What they already have in front of them this street. */
+  bet: number
   stack: number
   bigBlind: number
   street: 'preflop' | 'flop' | 'turn' | 'river'
@@ -728,6 +730,7 @@ export class Game {
             board,
             pot,
             toCall,
+            bet: myBet,
             stack: seatState[seat].stack,
             bigBlind,
             street: street as any,
