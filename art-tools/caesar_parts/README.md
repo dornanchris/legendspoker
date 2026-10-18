@@ -34,3 +34,7 @@ call, bet, fold, all in, show, collect; tells `wreath` (bluffing) beside
 `temple`, `drum` (weak) beside `toga_border`, `votes` (strong) beside
 `suspicion`; idles `dictate`, `appraise`, `look_at_you`; beats arrive, talk,
 big bet, lost pot, won pot, heads up, knocked out.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py caesar`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py caesar`.

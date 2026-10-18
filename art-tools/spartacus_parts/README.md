@@ -35,3 +35,7 @@ peek, call, bet (hard), fold, all in, show, collect; tells `shoulders`
 beside `doors`; idles `table_weight`, `laugh`, `arms_folded`,
 `look_at_you`; beats talk, big bet, lost pot, won pot, heads up, knocked
 out. Every pose but rest is a whole-figure frame with its own drawn head.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py spartacus`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py spartacus`.

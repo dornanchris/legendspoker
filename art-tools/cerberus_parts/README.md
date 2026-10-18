@@ -42,3 +42,7 @@ tells `attention` (strong) beside `watch`, `yawn` (weak) beside `asleep`,
 `big_bet`, `lost_pot`, `won_pot`, `heads_up`, `knocked_out` (pads away).
 He never speaks: his lines are stage directions, so his mouth only moves in
 clips.
+
+## Reactions sheet E
+
+`sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py cerberus`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py cerberus`.

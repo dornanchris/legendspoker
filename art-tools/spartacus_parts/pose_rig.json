@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -363,6 +364,51 @@
     0,
     -3
    ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    15,
+    172,
+    614,
+    602
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.8205,
+    6.0,
+    -17.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    637,
+    9,
+    651,
+    765
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.8205,
+    -11.6,
+    -121.2
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1302,
+    247,
+    635,
+    527
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.8205,
+    -2.6,
+    38.8
+   ]
   }
  },
  "rest": "A1",
@@ -381,7 +427,7 @@
   230,
   190
  ],
- "frame_margin": 60,
+ "frame_margin": 151,
  "stock_box": [
   180,
   180,
@@ -875,6 +921,16 @@
      370
     ]
    ]
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "runtime": "../web/art/spartacus",

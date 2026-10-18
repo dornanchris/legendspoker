@@ -6,7 +6,8 @@
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
   "C": "sources/poses_c.png",
-  "D": "sources/poses_d.png"
+  "D": "sources/poses_d.png",
+  "E": "sources/poses_e.png"
  },
  "poses": {
   "A1": {
@@ -362,6 +363,51 @@
     1.0,
     0,
     -13
+   ]
+  },
+  "E1": {
+   "sheet": "E",
+   "box": [
+    16,
+    55,
+    600,
+    707
+   ],
+   "what": "the rest pose again, only to measure sheet E by",
+   "reg": [
+    0.703,
+    29.0,
+    -12.0
+   ]
+  },
+  "E2": {
+   "sheet": "E",
+   "box": [
+    601,
+    22,
+    755,
+    740
+   ],
+   "what": "a big win (reactions sheet E)",
+   "reg": [
+    0.703,
+    -9.7,
+    1.4
+   ]
+  },
+  "E3": {
+   "sheet": "E",
+   "box": [
+    1296,
+    152,
+    641,
+    610
+   ],
+   "what": "a crushing loss (reactions sheet E)",
+   "reg": [
+    0.703,
+    14.6,
+    78.7
    ]
   }
  },
@@ -966,6 +1012,16 @@
      388
     ]
    ]
+  },
+  "win_big": {
+   "pose": "E2",
+   "head": "own",
+   "biggest": true
+  },
+  "lose_big": {
+   "pose": "E3",
+   "head": "own",
+   "biggest": true
   }
  },
  "runtime": "../web/art/pope",
