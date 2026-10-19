@@ -138,6 +138,10 @@ web/
   shims/          browser stand-ins for the node builtins poker-ts needs
   build.mjs       esbuild -> web/bundle.js (gitignored, regenerate it)
   serve.mjs       dependency-free static server; Phase 4 replaces it with Vite
+  dist.mjs        assembles dist/ for the app: bundle, rooms, each puppet's
+                  half/ and portrait (~120 MB of web/'s ~800; no bench)
+ios/              the Capacitor iOS project (Xcode, Swift Package Manager);
+                  landscape only. capacitor.config.json is at the root
 ROSTER.md         GENERATED casting book: never edit by hand
 ART-PIPELINE.md   the art workflow, step by step, and the queue of characters
 FIX-LATER.md      what we go back to: redraws, layout bugs, owed decisions
@@ -413,8 +417,13 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   table.ts, presentation only). `#/curtain/won|lost/:table` previews it from
   made-up numbers; `#/results` is the same panel as a page.
 
-**Not started:** Rive integration, recorded audio and music, Capacitor + a
-real device.
+**Not started:** Rive integration, recorded audio and music, a real device.
+**Capacitor's iOS project is scaffolded** (the owner has a Mac now): `npm run
+build:app` builds `dist/`, `npx cap sync ios` copies it into `ios/`, and on
+the Mac `npx cap open ios` opens Xcode (signing: pick a Team in Signing &
+Capabilities and Xcode makes the profile). `npm run ios` does all three.
+The app has no bench: `#/puppet/<id>` needs the full-size images, which
+`dist/` leaves out.
 **Rive is shelved** (the owner: a hired animator is not affordable). The
 brief and parts prompts written for one stay as a record
 (`art-tools/roosevelt_parts/RIVE_PARTS.md`, `ANIMATION_BRIEF.md`, and his
@@ -1088,7 +1097,8 @@ new art against that layout.
 
 ## NEXT MILESTONE
 
-Phase 4 — the platform shell. What is left of it: Capacitor, a real device,
+Phase 4 — the platform shell. What is left of it: a real device (Capacitor
+is scaffolded for iOS; Android is `npx cap add android`),
 and checking the safe-area handling and the audio unlock on hardware (the
 unlock is built; iOS is where it breaks if it breaks).
 The screen shell and the save schema are done. **Vite + React is now a
@@ -1104,17 +1114,17 @@ Order within the phase, cheapest-risk first:
 1. ~~Seedable deck.~~ Done (patch).
 2. ~~Save schema, capturing MID-HAND state.~~ Done (seed + decision log;
    `npm run check:replay`).
-3. Capacitor scaffolding (and Vite/React only if they earn it), then the
-   device test.
+3. ~~Capacitor scaffolding~~ (iOS done; Vite/React only if they earn it),
+   then the device test.
 
 Also owed before Phase 5: a human edit pass on the draft dialogue. The
 naming decisions are settled (the owner): "The AI" stays the AI, the Pope is
 Alexander VI, "The Wolf Man" stays (ASSETS.md).
 
-**Dev machine is Windows, so iOS is not available** — Capacitor's iOS target
-needs a Mac with Xcode plus $99/yr. Android is $25 one-off and works from
-Windows. BUILD-PLAN section 1 already argues web-first on a $0 budget, so
-Phase 4 in practice means web + Android, with iOS deferred.
+**Dev machine is Windows; iOS builds happen on the owner's Mac** (Xcode
+only runs there). A free Apple ID installs to the owner's own iPhone for 7
+days at a time; TestFlight and the store need the $99/yr account. Android is
+$25 one-off and works from Windows.
 
 ## HOUSE STYLE
 

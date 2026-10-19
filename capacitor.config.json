@@ -1,0 +1,10 @@
+{
+  "appId": "com.dornanchris.legendspoker",
+  "appName": "Legends Poker",
+  "webDir": "dist",
+  "backgroundColor": "#0f0d0c",
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#0f0d0c"
+  }
+}
