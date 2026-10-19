@@ -19,7 +19,8 @@ A room may have pieces (art-tools/rooms/<room>/pieces.json): cut from a
 sheet on white, each the components wholly inside its box (or, with "crop",
 everything inside it, cut where the box cuts; with "bright": [r, g], only
 the bright fire inside it: Camelot's hearth frames drew the whole fireplace;
-"flip" mirrors it), written as PNGs
+"flip" mirrors it; "keep_box" keeps the whole box, so a loop's frames cut
+at one size line up; "feather" softens the edge by that many px), written as PNGs
 beside the backdrop, with where they stand in design space. `presence` names
 the piece shown until the table's late champion arrives and the one after;
 `loops` cycle frames (lamp flames) at each of their spots.
@@ -29,7 +30,7 @@ of the first once the presence is 'after'.
 """
 import json, os, shutil, sys
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 from scipy import ndimage as nd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -92,16 +93,21 @@ def cut_pieces():
         if p.get('crop'):                                  # all of it inside the box, cut where the box cuts (a
             mask = nd.binary_fill_holes(fg & inbox)        # candle's flame, without the candle under it)
         if 'bright' in p:                                  # only the fire in a drawn hearth: red and green above
-            rr, gg = p['bright']                           # these, in pieces of 200 px or more
-            s_ = sheet.astype(int)
-            hot = (s_[..., 0] > rr) & (s_[..., 1] > gg) & (s_[..., 2] < 200) & inbox   # (never the sheet's white)
+            rr, gg, bb = (list(p['bright']) + [200])[:3]   # these (and blue below the third, if given: never the
+            s_ = sheet.astype(int)                         # smoke over the Pyre's nest), in pieces of 200 px or more
+            hot = (s_[..., 0] > rr) & (s_[..., 1] > gg) & (s_[..., 2] < bb) & inbox   # (never the sheet's white)
             hl, hn = nd.label(hot)
             sizes = nd.sum(hot, hl, range(1, hn + 1))
             hot = np.isin(hl, 1 + np.nonzero(sizes >= 200)[0])
             mask = nd.binary_dilation(nd.binary_fill_holes(hot)) & inbox
         ys, xs = np.nonzero(mask)
         t, b_, l, r = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
-        rgba = np.dstack([sheet[t:b_, l:r], (mask[t:b_, l:r] * 255).astype('uint8')])
+        if p.get('keep_box'):                              # the whole box, not trimmed to what is in it: the
+            l, t, r, b_ = x0, y0, x1, y1                   # frames of a loop cut at one size line up (the Pyre's embers)
+        alpha = Image.fromarray((mask[t:b_, l:r] * 255).astype('uint8'))
+        if p.get('feather'):                               # a soft edge, for a glow laid over the backdrop's own
+            alpha = alpha.filter(ImageFilter.GaussianBlur(p['feather']))
+        rgba = np.dstack([sheet[t:b_, l:r], np.array(alpha)])
         if p.get('flip'):                                  # drawn facing the wrong way (Dracula's chair)
             rgba = rgba[:, ::-1]
         Image.fromarray(rgba, 'RGBA').save(os.path.join(OUT, name + '.png'), optimize=True)

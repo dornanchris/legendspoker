@@ -45,8 +45,9 @@ this file only gathers them. Strike an item through when it is done.
    gets wrong and the two real cases found. Small leftovers per puppet are
    listed there too (holly paper, rail stubs, the Phoenix's rail sliver,
    Pravuil's halo edge, the Grey's rail stubs).
-10. **The unused room pieces** of the Pyre, the Last Crossing and the Hall
-    (drawn at other sizes than their backdrops).
+10. **The unused room pieces**: the Pyre's nest now smoulders (its embers);
+    the rest of the Pyre's, the Last Crossing's and the Hall's pieces stay
+    unused (FIX-LATER.md says why: other sizes and angles, smoke on white).
 11. **IK arms** for anyone past Washington, each from a rigging-parts sheet,
     only where a drawn pose will not do (the owner: more drawn poses, less
     rigging).

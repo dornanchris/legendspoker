@@ -99,9 +99,15 @@ is done, and say so in the commit.
 - **The Phoenix:** a sliver of the drawn rail by its near wing at rest; its
   knocked-out flame is cut straight a little below the table line; its open
   beak is clipped by the head's outline (it reads as a little open).
-- **The Pyre's, the Last Crossing's and the Hall's pieces are not used yet**
-  (the nest, ash, dawn sky; the lamp, rain, boat, door): drawn at other sizes
-  than the backdrops' (each pieces.json says why). The rooms read without them.
+- **The Pyre's, the Last Crossing's and the Hall's pieces** (the nest, ash,
+  dawn sky; the lamp, rain, boat, door): the Pyre's nest now smoulders (the
+  sheet's three nests' fire only, cut by `room_web.py`'s `bright` with a blue
+  ceiling, `keep_box` and `feather`, flickering over the backdrop's own nest).
+  Tried and left: the whole altar pasted over the backdrop's (another angle,
+  and its smoke cannot be cut from the white). The rest is unused, each
+  pieces.json says why: the Last Crossing's window, door and boat pieces are
+  drawn at other sizes and its lamp stands on the felt (drawn behind the
+  table); the Hall of Doors has no pieces sheet. The rooms read without them.
 
 ## The table screen (from the owner's screenshots)
 
