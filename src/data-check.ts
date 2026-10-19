@@ -132,6 +132,12 @@ const TRIPWIRES = [
  */
 const SIX_SEVEN = /\b(six|6)\W*(seven|7)\b/i
 TRIPWIRES.push(SIX_SEVEN)
+/**
+ * No line takes a side between political parties, whatever its source (the
+ * owner). Profiles may keep their history (Teddy's third-party run); a line
+ * about Rome's Republic says "the Republic", not "Republican".
+ */
+TRIPWIRES.push(/\b(republicans?|democrats?|democratic party|GOP|whigs?|federalists?|tory|tories)\b/i)
 
 const ids = new Map<string, string>()
 function checkLine(l: Line, where: string, speakers: Set<string>, allow: RegExp[] = []) {

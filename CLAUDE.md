@@ -1120,5 +1120,9 @@ Phase 4 in practice means web + Android, with iOS deferred.
 
 - Small, readable, boring code. No frameworks we don't need.
 - Characters, dialogue, and rosters are **data**, not code.
+- **No line takes a side between political parties** (the owner), whatever
+  its source: no "Republican answer", no party names in anything said. A
+  profile's history may stay (Teddy's third-party run, Kidd's Whig backers).
+  check:data's tripwires hold it.
 - If a decision contradicts the design doc, stop and flag it rather than
   silently overriding — the doc records *why*, and the why usually matters.
