@@ -103,6 +103,7 @@ export class Stage {
   private gutters: number[][] = []
   private clock = 0
   private rimPath: Path2D
+  private aboveRim: Path2D
   /** Clips play at this rate (the presentation clock's pace); the face and idles never change speed. */
   speed = 1
   /** Reduce motion: no sway or breath. */
@@ -123,6 +124,13 @@ export class Stage {
     p.lineTo(xs[xs.length - 1], 5000)
     p.closePath()
     this.rimPath = p
+    // the region above the rim, wound the way a rect is, so the two add up
+    const q = new Path2D()
+    q.moveTo(xs[xs.length - 1], -5000)
+    for (let i = xs.length - 1; i >= 0; i--) q.lineTo(xs[i], r.y[i] ?? 5000)
+    q.lineTo(xs[0], -5000)
+    q.closePath()
+    this.aboveRim = q
   }
 
   /** The seats this room has chairs for: one spot per opponent at this count. */
@@ -431,13 +439,15 @@ export class Stage {
       set(D)
       ctx.drawImage(this.table, d.table.x, d.table.y, d.table.w, d.table.h)
     }
-    // each puppet above its own line, over the table
+    // each puppet above its own line, or above the rim where the rim runs below
+    // that line (near the table's ends), over the table: the table covers him
+    // only below both, or a hairline of the rail shows through a forearm
     order.forEach((a, i) => {
       ctx.save()
       set(D)
-      ctx.beginPath()
-      ctx.rect(-5000, -5000, 10000, a.line + 5000)
-      ctx.clip()
+      const above = new Path2D(this.aboveRim)
+      above.rect(-5000, -5000, 10000, a.line + 5000)
+      ctx.clip(above)
       ctx.globalAlpha = a.fade
       a.player.puppet.paint(ctx, views[i])
       ctx.restore()

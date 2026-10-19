@@ -44,3 +44,11 @@ stay, and `seam_fill` puts back a short run cut across an arm. The far rest
 gauntlet has a `restore` box where the rail runs into its gold band;
 `lost_pot` has an `inpaint` box over the white shock strokes on his chest;
 `rail_clean_w` 200 keeps rail_clean off his gauntlet bands in the reactions.
+
+**The helm and his shoulders.** The master helm comes from the face sheet,
+which drew his shoulders a little differently, so its lower edge made a seam
+through both roundels. The master keeps only the helm (`keep_poly`), and the
+body loses only the rest pose's own helm (`head_poly`, not the head box), so
+the shoulder plates are the body's own and whole. The holly drops the sheet's
+white and grey between its twigs (`drop_white`: 12, pieces that size or more,
+so a berry's highlight stays).

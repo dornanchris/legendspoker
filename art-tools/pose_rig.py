@@ -114,7 +114,7 @@ mouth), so a clip can tilt it; it is cut from the body and from frames' heads.
 shoulder); "saturated": n cuts it by colour inside its poly (her feathers,
 brighter than his coat, filled and grown by "outline" for her outline; or
 "redder": k, red above k times green: Merlin's staff against his robe;
-"drop_white" clears the sheet's white caught inside it; "close": n closes gaps
+"drop_white" clears the sheet's white caught inside it (a number: only pieces that big, so a berry's highlight stays); "close": n closes gaps
 of up to 2n pixels, the dark grooves of a twisted staff; "keep_skin" keeps
 colours the skin test would drop: its orange highlights), plus
 "also" polygons taken whatever their colour (her beak and feet).
@@ -649,6 +649,13 @@ def main(spec_path):
         prgba[..., 3] = np.where(pm_, src[..., 3], 0)
         if pr.get('drop_white'):                           # the sheet's white inside its loops (a knotted staff)
             wh = poly_mask(shape, pr['poly']) & (((c.min(-1) > 215)) | ((c.min(-1) > 175) & (np.ptp(c, axis=-1) < 25)))
+            if pr['drop_white'] is not True:               # a number: only pieces that big (a berry's highlight stays),
+                grey = ((c.min(-1) > 100) & (np.ptp(c, axis=-1) < 25)) | ((c.min(-1) > 45) & (np.ptp(c, axis=-1) < 14))
+                wh |= poly_mask(shape, pr['poly']) & grey  # its grey edge too
+                lab_, n_ = ndimage.label(wh)
+                if n_:
+                    wh = np.isin(lab_, 1 + np.nonzero(ndimage.sum(wh, lab_, range(1, n_ + 1)) >= pr['drop_white'])[0])
+                    wh = ndimage.binary_dilation(wh, iterations=1) & poly_mask(shape, pr['poly']) & ((c.min(-1) > 150) | grey)
             prgba[..., 3] = np.where(wh, 0, prgba[..., 3])
             body[..., 3] = np.where(wh, 0, body[..., 3])
         head_props[pname] = (prgba, ndimage.binary_dilation(pm_, iterations=2))
