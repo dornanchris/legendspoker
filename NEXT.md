@@ -39,10 +39,12 @@ this file only gathers them. Strike an item through when it is done.
 ## Art
 
 9. **Unwanted colours, cast-wide** (FIX-LATER.md): the Green Knight and
-   Lancelot are cleaned; run `art-tools/build/paper_flecks.py <id> --dry`
-   puppet by puppet, look, then apply. Small leftovers per puppet are listed
-   there (holly paper, rail stubs, the Phoenix's rail sliver, Pravuil's halo
-   edge, the Grey's rail stubs).
+   Lancelot are cleaned. The cast-wide `paper_flecks.py --dry` was run and
+   looked at: it would paint over drawn highlights (gloss, chainmail, chip
+   inserts, grey skin), so it was NOT applied; FIX-LATER.md lists what it
+   gets wrong and the two real cases found. Small leftovers per puppet are
+   listed there too (holly paper, rail stubs, the Phoenix's rail sliver,
+   Pravuil's halo edge, the Grey's rail stubs).
 10. **The unused room pieces** of the Pyre, the Last Crossing and the Hall
     (drawn at other sizes than their backdrops).
 11. **IK arms** for anyone past Washington, each from a rigging-parts sheet,

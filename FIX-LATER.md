@@ -34,9 +34,18 @@ is done, and say so in the commit.
   `build/paper_flecks.py` colours over the sheet's white caught in hair. Left:
   bigger pockets of paper between the holly's twigs (over 120 px, so the fleck
   pass leaves them), a few small orange stubs where a frame meets the drawn rail
-  at its ends, a nub of outline by the Knight's far rest gauntlet. Worth a
-  `paper_flecks.py --dry` across the cast, puppet by puppet, looked at before
-  it is applied.
+  at its ends, a nub of outline by the Knight's far rest gauntlet.
+  **The cast-wide `--dry` was run and looked at (do NOT apply it as it is):**
+  it would flag 45 of 46 puppets, and what it flags is mostly drawn light,
+  not paper: Blackbeard's beard gloss, Arthur's chainmail tops, Lincoln's
+  white chip inserts, Loki's grey robe and the white of one eye, the Grey's
+  whole grey skin (and so the Robot, the AI, the Martian, Pravuil). Its
+  "half paper" class (any neutral grey, min > 55, spread < 14) and its "hair"
+  ring test only hold for the Knight and Lancelot. Real paper seen on the
+  way: a white fringe down Blackbeard's forearm in `win_big` / `lose_big`,
+  a white streak between Lincoln's fingers in `win_big`. Fix those by hand
+  (or with a tool that looks only for a 1-2 px white rim on the silhouette)
+  if they show at the table.
 - **More drawn poses, less rigging** (the owner: "lean into the stop motion
   stuff a bit more"). When a gesture looks stiff as a tweened arm, the fix is
   another whole-figure drawing, not another bone.
