@@ -28,12 +28,12 @@ this file only gathers them. Strike an item through when it is done.
 6. **Holmes's deerstalker as an earned look**: once Holmes is unlocked,
    beating him heads up earns the hat. The puppet is built
    (`#/puppet/sherlock_deerstalker`); nothing seats it yet.
-7. **The staged table's gaps** (CLAUDE.md "The staged table (first pass) has
-   gaps", and FIX-LATER.md "The table screen"): overlapping bubbles, Death's
-   clips doubling the card flights, the top bar on a large monitor, a wide
-   screen cutting off the player's seat, tell text over the plates.
-8. **"Reduce motion" hides the older speech bubbles** (CLAUDE.md known gaps):
-   give `.say` and `.narration` the callouts' timer.
+7. ~~**The staged table's gaps**~~ DONE: overlapping bubbles, the deal clip,
+   the top bar, tells over the plates, bets on the board, the narrow
+   window's dark band. Left: "a wide screen cuts off the player's seat" was
+   not reproduced (FIX-LATER.md says what was tried).
+8. ~~**"Reduce motion" hides the older speech bubbles**~~ DONE: every bubble
+   is up on a timer as well as its animation.
 
 ## Art
 

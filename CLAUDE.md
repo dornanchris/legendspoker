@@ -774,15 +774,20 @@ new art against that layout.
   at Hyde's death.
 - **The staged table (first pass) has gaps.** Someone without a puppet who
   sits down mid-table would leave the chair empty, plate only (both guests,
-  JFK and Loki, now have puppets, and so does the Phoenix). Two speech bubbles can overlap (a seat's line under Death's). Death's
-  clips draw their own cards and chips, which double the game's flights for a
-  moment. A window narrower than 16:9 shows the room low with dark above.
-  The table bar at the top (Leave, the table's name, Log) is still
-  phone-sized on a large monitor.
-- **"Reduce motion" hides the older speech bubbles.** With it on, `.say`
-  and `.narration` only become visible through an animation the setting
-  switches off, so those lines reach only the log. Callouts use a timer and
-  are unaffected; the fix is the same timer for the older bubbles.
+  JFK and Loki, now have puppets, and so does the Phoenix). Death's `rake`
+  and `thumb` frames still draw chips and a card of their own; the deal now
+  plays ONE deal clip a hand (its side by turns), timed so the thumbed card
+  leaves as the first flight does, and the cards fly from just under his
+  plate, never across it. Fixed since: every bubble (lines, narration,
+  Death's line, callouts) is up on a timer as well as its animation, so
+  Reduce motion shows it still, and a new bubble takes down any it would
+  cover (`showBubble` in table.ts); tells get a two-line band under their
+  plate, as wide as the neighbours' plates allow, and bets lie below it,
+  moved out toward their own side where they would lie on the board
+  (`clearUnder`); the table bar grows with the screen; a phone-height
+  window keeps the log as a drawer however wide it is; a window narrower
+  than 16:9 carries the room's ceiling up into the dark (stage.ts); and
+  nothing is dealt until the room is drawn (5 s at most).
 - **Roster count is 36, not 32.** The v4 table lists 5 characters at Athens,
   Transylvania and the Station (4 seats + a late champion), and Rome now has
   them too: **Scipio Africanus holds Rome's fourth chair** (the owner's call,

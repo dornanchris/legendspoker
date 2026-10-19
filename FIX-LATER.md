@@ -116,16 +116,22 @@ is done, and say so in the commit.
   not the room's lamps (the stage dims only loop pieces, and the Station has none).
 
 - **A wide screen cuts off the player's own seat:** the plate at the left
-  edge and the hole cards at the bottom (seen at the Pirate Cove).
-- **A bet's chip pile lands beside or over the board** when the seat's pile
-  spot is near the middle.
-- **Death's dealt cards fly over his own "DEATH deals" plate** as they leave
-  his hands: start the flights below the plate, or put the plate under them.
-- **Tell and idle text overlaps the name plates.**
-- From CLAUDE.md's staged-table gaps, still open: two speech
-  bubbles can overlap; Death's clips draw their own cards and chips over the
-  game's flights; a window narrower than 16:9 shows the room low; the top bar
-  is phone-sized on a monitor; Reduce motion hides the older speech bubbles.
+  edge and the hole cards at the bottom (seen at the Pirate Cove). Not
+  reproduced at 1280x720 through 2560x1080, 21:9 or a 915x412 phone; what
+  was found and fixed is a wide PHONE (900 px or more across) opening the
+  log beside the table, which took a third of the felt (now a drawer at any
+  phone height). If it shows again, a screenshot with the window size.
+- ~~**A bet's chip pile lands beside or over the board**~~ DONE: moved out
+  toward its own side, never past its own plate (`clearUnder`, table.ts).
+- ~~**Death's dealt cards fly over his own "DEATH deals" plate**~~ DONE: they
+  leave from just under it.
+- ~~**Tell and idle text overlaps the name plates.**~~ DONE: a two-line band
+  under each plate, as wide as the neighbours' plates allow; the bet below it.
+- ~~From CLAUDE.md's staged-table gaps~~ DONE: bubbles no longer overlap; one
+  deal clip a hand (no card held up after the deal); a window narrower than
+  16:9 carries the ceiling up into the dark; the top bar grows with the
+  screen; Reduce motion shows every bubble. Left: Death's `thumb` frame is a
+  card in his hand for a moment before the first flight.
 
 ## Game and words (other threads)
 

@@ -366,15 +366,19 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   height: 100%; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr;
   position: relative;
 }
+/* The bar grows with the screen (--s2, from table.ts), more gently than the
+   plates: it was phone-sized on a monitor. --b is 1 on a phone, ~1.5 at 1080. */
 .table-bar {
-  grid-column: 1 / -1; display: flex; align-items: center; gap: 10px;
-  padding: 4px 10px; border-bottom: 1px solid var(--edge); background: #0c0b0a;
-  font-size: .85rem; color: var(--dim); min-height: 38px;
+  --b: calc(1 + (var(--s2, 1) - 1) * .6);
+  grid-column: 1 / -1; display: flex; align-items: center; gap: calc(10px * var(--b));
+  padding: calc(4px * var(--b)) calc(10px * var(--b)); border-bottom: 1px solid var(--edge); background: #0c0b0a;
+  font-size: calc(.85rem * var(--b)); color: var(--dim); min-height: calc(38px * var(--b));
 }
 .table-bar .where { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.table-bar .where b { color: var(--ink); font-family: var(--serif); font-size: .98rem; }
-.table-bar .tag { margin-left: 6px; font-size: .72rem; color: var(--gold); border: 1px solid #c9a22755; border-radius: 99px; padding: 0 6px; }
-.table-bar .ff { padding: .3em .8em; min-height: 30px; font-size: .85rem; }
+.table-bar .where b { color: var(--ink); font-family: var(--serif); font-size: 1.15em; }
+.table-bar .tag { margin-left: 6px; font-size: .85em; color: var(--gold); border: 1px solid #c9a22755; border-radius: 99px; padding: 0 6px; }
+.table-bar button.small { font-size: 1em; min-height: calc(30px * var(--b)); }
+.table-bar .ff { padding: .3em .8em; min-height: calc(30px * var(--b)); font-size: 1em; }
 .table-bar .ff.on { background: #c9a22733; border-color: var(--gold); color: var(--gold-soft); }
 
 .felt {
@@ -455,8 +459,11 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 /* Hidden by display, not opacity: the folded/out seat rules set opacity. */
 .seat .callout:not(.show) { display: none; }
 .seat .callout.show { animation: callout 1.8s ease-out both; }
-/* Reduce motion switches animations off: show it still, for as long as it is up. */
+/* Reduce motion switches animations off: show it still, for as long as it is up
+   (table.ts takes every bubble down on a timer, as well as by its animation). */
 :root.reduce-motion .seat .callout.show { opacity: 1; transform: translate(-50%, 0); }
+:root.reduce-motion .seat .say.show { opacity: 1; transform: none; }
+:root.reduce-motion .narration.show, :root.reduce-motion .felt.staged .dealer-line.show { opacity: 1; }
 @keyframes callout {
   0% { opacity: 0; transform: translate(-50%, 3px); } 10% { opacity: 1; transform: translate(-50%, 0); }
   80% { opacity: 1; transform: translate(-50%, 0); } 100% { opacity: 0; transform: translate(-50%, 0); }
@@ -600,14 +607,17 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .felt.staged .seat.out { background: #14111680; }
 .felt.staged .seat .hand-row { margin: 2px 0 0; min-height: 0; }
 .felt.staged .seat .cards { min-height: calc(31px * var(--s2, 1)); }
-/* this street's bet lies on the felt in front of the plate, toward the middle */
+/* this street's bet lies on the felt in front of the plate, toward the middle;
+   table.ts sets its top under the tell's band, and --bet-in moves it out
+   toward its own side where it would lie on the board */
 .felt.staged .seat .bet { position: absolute; top: calc(100% + 26px * var(--s2, 1)); }
-.felt.staged .seat[data-side="l"] .bet { left: 62%; }
-.felt.staged .seat[data-side="r"] .bet { right: 62%; flex-direction: row-reverse; }
+.felt.staged .seat[data-side="l"] .bet { left: calc(62% + var(--bet-in, 0px)); }
+.felt.staged .seat[data-side="r"] .bet { right: calc(62% + var(--bet-in, 0px)); flex-direction: row-reverse; }
 .felt.staged .seat .last { position: absolute; right: 8px; bottom: 6px; font-size: calc(.74rem * var(--s2, 1)); min-height: 0; }
+/* two lines under the plate, as wide as the neighbours allow (table.ts) */
 .felt.staged .seat .tell {
   position: absolute; left: 0; right: 0; top: calc(100% + 3px);
-  text-align: center; text-shadow: 0 1px 3px #000, 0 0 8px #000c; color: #e4d3b4;
+  text-align: center; text-wrap: balance; text-shadow: 0 1px 3px #000, 0 0 8px #000c; color: #e4d3b4;
 }
 /* speech goes over the head, not under the plate */
 .felt.staged .seat .say { top: auto; bottom: calc(100% + var(--lift, 160px) + 6px); left: 50%; right: auto; width: 210px; margin-left: -105px; }
@@ -627,6 +637,10 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .felt.staged .dealer-line.show { animation: deathsays 5.2s ease-out both; }
 @keyframes deathsays { 0% { opacity: 0; } 6% { opacity: 1; } 85% { opacity: 1; } 100% { opacity: 0; } }
 .felt.staged .middle { position: absolute; z-index: 2; transform: translateX(-50%); gap: 4px; }
+.felt.staged .presence {
+  font-size: calc(.82rem * var(--s2, 1)); max-width: min(32em, 56vw); text-align: center; text-wrap: balance;
+  text-shadow: 0 1px 3px #000, 0 0 8px #000c;
+}
 .felt.staged .pot { text-shadow: 0 1px 3px #000; }
 .felt.staged .you {
   /* bottom left, out from under the board, which grows with the screen */
@@ -660,6 +674,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .log-panel { position: absolute; right: 0; top: 38px; bottom: 0; z-index: 30; box-shadow: -10px 0 30px #000c; }
 }
 @media (max-height: 460px) {
+  /* a phone held sideways, however wide: the log is a drawer over the table, not a column beside it */
+  .log-panel { position: absolute; right: 0; top: 38px; bottom: 0; z-index: 30; box-shadow: -10px 0 30px #000c; }
   :root { font-size: 13px; }
   :root.large-text { font-size: 15px; }
   .screen { padding: 6px 14px 12px; }
@@ -679,8 +695,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .felt.staged .seat .last { right: 5px; bottom: 4px; font-size: .66rem; }
   .felt.staged .seat .tell { font-size: calc(.66rem * var(--s2, 1)); line-height: 1.2; }
   .felt.staged .seat .bet { top: calc(100% + 20px * var(--s2, 1)); }
-  .felt.staged .seat[data-side="l"] .bet { left: 75%; }
-  .felt.staged .seat[data-side="r"] .bet { right: 75%; }
+  .felt.staged .seat[data-side="l"] .bet { left: calc(75% + var(--bet-in, 0px)); }
+  .felt.staged .seat[data-side="r"] .bet { right: calc(75% + var(--bet-in, 0px)); }
   /* no room for Death's plate: his figure says who deals. His lines still go over his head. */
   .felt.staged .dealer { background: none; border: 0; box-shadow: none; padding: 0; }
   .felt.staged .dealer-name, .felt.staged .dealer-role { display: none; }
