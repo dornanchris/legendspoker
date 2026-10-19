@@ -20,7 +20,14 @@ a quarter bigger as the Cyclops is (`scale` 1.25, `origin_x` 225): the giant.
   talks with his helm: `speech.nod` in anim.json nods it on each open sound
   (`web/puppet/face.ts`).
 - **The holly branch** is a prop of the rest pose on the torso, drawn over
-  the master helm.
+  the master helm. Its outline's foot runs along the far shoulder plate's own
+  dark outline: cut across the plate, the plate tilted with the holly and the
+  cut showed as a jagged line.
+- **His helm is cut by an outline, not a box**, as his return's head is
+  (`master.head_poly`, `keep_poly` on the master helm, `head_keep` on the
+  face-on helm): the face sheet's own shoulder plates made a seam across his
+  collar. `fill_poly` fills the gap the narrower face-on helm leaves by his
+  near shoulder plate (hidden under the master helm).
 - **Felt**: `felt_blue` and `felt_teal` (this sheet's felt is the bluest
   yet; his armour is green, so the plain felt test would take it).
 - **Knocked out** (D6) shows the blow as a small red nick at his neck under

@@ -17,8 +17,9 @@ tells and idles.
     python3 art-tools/web_half.py green_knight_bare
 
 - **His head is cut by an outline, not a box** (`master.head_poly`, and
-  `keep_poly` on the master head): a box took a bite out of his shoulder
-  plate and the master head's own shoulders made a seam.
+  `keep_poly` on the master head, `head_keep` on the face-on head): a box
+  took a bite out of his shoulder plate and the master head's own shoulders
+  made a seam.
 - Pose sheet C drew C1 and C2 touching: split at x 505, each keeps its
   biggest piece. D6 stands with no felt: placed by hand (`reg` 0, 0).
 - **Face**: eyes half, closed, viewer, down, side, narrow; brows raised,

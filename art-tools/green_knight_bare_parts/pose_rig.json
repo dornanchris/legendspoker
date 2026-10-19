@@ -456,6 +456,50 @@
   "heads": {
    "viewer": "green_knight_bare_parts/green_knight_bare_face/green_knight_bare_face_20.png"
   },
+  "head_keep": {
+   "viewer": [
+    [
+     160,
+     -10
+    ],
+    [
+     520,
+     -10
+    ],
+    [
+     520,
+     215
+    ],
+    [
+     470,
+     225
+    ],
+    [
+     436,
+     240
+    ],
+    [
+     434,
+     322
+    ],
+    [
+     246,
+     322
+    ],
+    [
+     236,
+     240
+    ],
+    [
+     210,
+     222
+    ],
+    [
+     160,
+     215
+    ]
+   ]
+  },
   "cloth": [
    15,
    140

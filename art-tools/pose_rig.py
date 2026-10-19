@@ -82,6 +82,8 @@ by hand where the fit cannot find it (Silver: the parrot in the box).
 Master "head_poly" (rest-pose pixels) cuts the pose's own head by an outline
 instead of head_box, and "keep_poly" (master pixels) keeps only that much of
 the master head: the returned Green Knight's shoulder plates stay the body's.
+"head_keep" ({state: polygon in that head's own pixels}) does the same for
+the other "heads".
 "spare_red" leaves red cloth out of both (Arthur's mantle stays the body's).
 Master "biggest" keeps only the master head's largest piece (a sliver of the
 next piece on the face sheet caught at its edge).
@@ -392,6 +394,20 @@ def upscale(rgba, k):
     return np.dstack([np.clip(rgb, 0, 255), np.clip(big[..., 3:], 0, 255)]).astype(np.uint8)
 
 
+def keep_only(im, poly, m):
+    """Keep only poly of a head drawn on the face sheet (its own shoulders are
+    not the body's), less the sheet's white caught between curls."""
+    ma_ = np.array(im.convert('RGBA'))
+    ma_[..., 3] = np.where(poly_mask(ma_.shape[:2], poly), ma_[..., 3], 0)
+    if not m.get('keep_white'):                            # (not where white is drawn: the Martian's eye highlights)
+        ma_[..., 3] = np.where(ma_[..., :3].min(-1) > 225, 0, ma_[..., 3])
+    if m.get('spare_red'):
+        c_ = ma_[..., :3].astype(int)
+        red = (c_[..., 0] > 110) & (c_[..., 1] * 3 < c_[..., 0]) & (c_[..., 2] * 3 < c_[..., 0])
+        ma_[..., 3] = np.where(ndimage.binary_dilation(red, iterations=2), 0, ma_[..., 3])
+    return Image.fromarray(ma_)
+
+
 def main(spec_path):
     spec = json.load(open(spec_path))
     global WOOD_ROWS_ONLY, NO_WOOD
@@ -672,15 +688,7 @@ def main(spec_path):
             box_[..., 3] = np.where(box_[..., :3].min(-1) > 215, 0, box_[..., 3])
             mimg = Image.fromarray(ma_)
         if 'keep_poly' in m:                               # only the head and neck: its own shoulders are not the body's
-            ma_ = np.array(mimg.convert('RGBA'))
-            ma_[..., 3] = np.where(poly_mask(ma_.shape[:2], m['keep_poly']), ma_[..., 3], 0)
-            if not m.get('keep_white'):                    # (not where white is drawn: the Martian's eye highlights)
-                ma_[..., 3] = np.where(ma_[..., :3].min(-1) > 225, 0, ma_[..., 3])    # sheet white caught between curls
-            if m.get('spare_red'):
-                c_ = ma_[..., :3].astype(int)
-                red = (c_[..., 0] > 110) & (c_[..., 1] * 3 < c_[..., 0]) & (c_[..., 2] * 3 < c_[..., 0])
-                ma_[..., 3] = np.where(ndimage.binary_dilation(red, iterations=2), 0, ma_[..., 3])
-            mimg = Image.fromarray(ma_)
+            mimg = keep_only(mimg, m['keep_poly'], m)
         if m.get('biggest'):                               # a sliver of the next piece on the sheet: not him
             ma_ = np.array(mimg.convert('RGBA'))
             ma_[..., 3] = np.where(biggest(ma_[..., 3] > 0), ma_[..., 3], 0)
@@ -1032,7 +1040,10 @@ def main(spec_path):
             hs, (dx, dy) = 1.0, fit_by_collar(os.path.join(HERE, m['piece']), piece)
         dx, dy = dx + m.get('head_nudge', {}).get(state, [0, 0])[0], dy + m.get('head_nudge', {}).get(state, [0, 0])[1]
         f = f'head_{state}.png'
-        face_rig.cut_below(Image.open(piece), (m['cut_below'] - dy) / hs).save(os.path.join(HERE, m['layers'], f))
+        himg = face_rig.cut_below(Image.open(piece), (m['cut_below'] - dy) / hs)
+        if state in m.get('head_keep', {}):                # its own shoulders go too, as the master's do (keep_poly)
+            himg = keep_only(himg, m['head_keep'][state], m)
+        himg.save(os.path.join(HERE, m['layers'], f))
         head_files[f] = os.path.join(HERE, m['layers'], f)
         pw, ph = Image.open(piece).size
         x0, y0 = X(hb[0]) + mx, Y(hb[1]) + my
