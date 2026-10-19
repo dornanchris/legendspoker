@@ -771,7 +771,13 @@ new art against that layout.
   during a live hand — is Phase 7's cluster logic and needs the Rive rig.
 - **All content is draft.** Profiles, table text and dialogue were written to
   the design doc's rules and pass `check:data`, but no human has edited them.
-  Facts writers flagged to spot-check: Kidd's exclusion from the 1698 pardon,
+  The facts below were checked against the primary texts (Gutenberg,
+  Founders Online, Plutarch, Suetonius, the Eddas) and hold; four slips
+  were fixed (the Edinburgh doctor came after the trampling; Washington's
+  swearing order is 1775 as well as 1776; Caesar swam Alexandria's harbour;
+  the kernels' smell hung in the air). Unconfirmed only: JFK's "not the
+  Republican answer ... but the right answer" (secondary sources put it at
+  Loyola, Baltimore, 18 Feb 1958; the game line names no date). Flagged were: Kidd's exclusion from the 1698 pardon,
   Javert's mother as a "tireuse de cartes", the Transylvania references
   (Lucy's four transfusions, "King Laugh", Van Helsing's rifle). From the
   banter pass: Kidd's bucket, Silver's "immortal Hawke" (Treasure Island

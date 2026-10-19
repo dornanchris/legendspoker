@@ -199,7 +199,7 @@
           { "id": "c1_gw_bb_03b", "speaker": "washington", "text": "I did." },
           { "id": "c1_gw_bb_03c", "speaker": "blackbeard", "text": "Damn." },
           { "id": "c1_gw_bb_03d", "speaker": "washington", "text": "[looks at him]", "type": "stage_direction" },
-          { "id": "c1_gw_bb_03e", "speaker": "blackbeard", "text": "...Sorry, General.", "note": "True: Washington issued general orders against 'profane cursing, swearing and drunkenness' in the Continental Army (1776)." }
+          { "id": "c1_gw_bb_03e", "speaker": "blackbeard", "text": "...Sorry, General.", "note": "True: his General Orders of 4 July 1775 forbade 'profane cursing, swearing & drunkenness'; those of 3 Aug 1776 condemned 'the foolish, and wicked practice, of profane cursing and swearing'." }
         ]
       ],
       "needles": [
