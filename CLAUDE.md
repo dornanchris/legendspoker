@@ -775,9 +775,9 @@ new art against that layout.
   Founders Online, Plutarch, Suetonius, the Eddas) and hold; four slips
   were fixed (the Edinburgh doctor came after the trampling; Washington's
   swearing order is 1775 as well as 1776; Caesar swam Alexandria's harbour;
-  the kernels' smell hung in the air). Unconfirmed only: JFK's "not the
-  Republican answer ... but the right answer" (secondary sources put it at
-  Loyola, Baltimore, 18 Feb 1958; the game line names no date). Flagged were: Kidd's exclusion from the 1698 pardon,
+  the kernels' smell hung in the air). JFK's "not the Republican answer"
+  line was cut (the owner: no partisan lines about political parties, at all;
+  history in a profile, like Teddy's third-party run, is not a line). Flagged were: Kidd's exclusion from the 1698 pardon,
   Javert's mother as a "tireuse de cartes", the Transylvania references
   (Lucy's four transfusions, "King Laugh", Van Helsing's rifle). From the
   banter pass: Kidd's bucket, Silver's "immortal Hawke" (Treasure Island
