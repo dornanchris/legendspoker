@@ -418,6 +418,20 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   made-up numbers; `#/results` is the same panel as a page.
 
 **Not started:** Rive integration, recorded audio and music, a real device.
+**The table is laid out for a phone held sideways** (the owner, after the
+first device test: "it is meant to be a mobile game"). No log on screen (the
+owner; it survives only as a screen-reader live region, and the setting is
+gone). On a staged table the room runs edge to edge, under the notch and the
+home bar, and what the player touches keeps out of them (`--safe-*` in
+style.css, `safeProbe` in table.ts). At phone height (460 px and under) the
+bar floats over the ceiling, plates keep their height and are spread so none
+overlap, the board sits below the plates it would reach (with room for their
+tells), the pot beside it, inner seats' bets beside their plates. The raise
+panel is a narrow column at the bottom right at every size, the amount on its
+button ("Raise to 459"); while it is open the board slides left to stay
+clear. Spoken bubbles go up and come down on a timer, so Reduce motion shows
+them still instead of hiding them. The app turns off the web view's
+scrolling and zoom (capacitor.config.json, index.html, style.css).
 **Capacitor's iOS project is scaffolded** (the owner has a Mac now): `npm run
 build:app` builds `dist/`, `npx cap sync ios` copies it into `ios/`, and on
 the Mac `npx cap open ios` opens Xcode (signing: pick a Team in Signing &
@@ -809,10 +823,10 @@ new art against that layout.
   cover (`showBubble` in table.ts); tells get a two-line band under their
   plate, as wide as the neighbours' plates allow, and bets lie below it,
   moved out toward their own side where they would lie on the board
-  (`clearUnder`); the table bar grows with the screen; a phone-height
-  window keeps the log as a drawer however wide it is; a window narrower
+  (`clearUnder`); the table bar grows with the screen; a window narrower
   than 16:9 carries the room's ceiling up into the dark (stage.ts); and
-  nothing is dealt until the room is drawn (5 s at most).
+  nothing is dealt until the room is drawn (5 s at most). On the smallest
+  phone (667x375) the open raise panel covers the right-hand seat's tell line.
 - **Roster count is 36, not 32.** The v4 table lists 5 characters at Athens,
   Transylvania and the Station (4 seats + a late champion), and Rome now has
   them too: **Scipio Africanus holds Rome's fourth chair** (the owner's call,

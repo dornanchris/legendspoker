@@ -5,6 +5,8 @@
   "backgroundColor": "#0f0d0c",
   "ios": {
     "contentInset": "never",
-    "backgroundColor": "#0f0d0c"
+    "backgroundColor": "#0f0d0c",
+    "scrollEnabled": false,
+    "allowsLinkPreview": false
   }
 }

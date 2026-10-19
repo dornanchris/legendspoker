@@ -65,6 +65,7 @@ export type Pace = 'unhurried' | 'normal' | 'brisk'
 export type Settings = {
   /** Presentation clock only. Never reaches the game loop. */
   pace: Pace
+  /** Unused: the table no longer shows a log (kept so older saves still read). */
   showLog: boolean
   reduceMotion: boolean
   /** Offer the fast-forward control while you are out of a hand. */

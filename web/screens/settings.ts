@@ -15,7 +15,7 @@ export function settingsScreen(root: HTMLElement): void {
   const save = store.get()
   const s = save.settings
 
-  const toggle = (label: string, hint: string, key: 'showLog' | 'reduceMotion' | 'fastForward' | 'largeText' | 'sound') => {
+  const toggle = (label: string, hint: string, key: 'reduceMotion' | 'fastForward' | 'largeText' | 'sound') => {
     const input = h('input', { type: 'checkbox', checked: s[key] }) as HTMLInputElement
     input.addEventListener('change', () => {
       store.update((x) => { x.settings[key] = input.checked })
@@ -94,7 +94,6 @@ export function settingsScreen(root: HTMLElement): void {
       toggle('Sound', 'Cards dealt, chips pushed, the knock of a check.', 'sound'),
       h('label', { class: 'setting stacked' }, h('b', null, 'Volume'), volume),
       toggle('Fast-forward', 'Offer a fast-forward once you are out of a hand. Stops by itself at the showdown.', 'fastForward'),
-      toggle('Show the log', 'Every action and every word, written down beside the table.', 'showLog'),
       toggle('Larger text', 'Everything a size bigger.', 'largeText'),
       toggle('Reduce motion', 'No sliding, fading or glowing.', 'reduceMotion'),
       save.player ? h('div', { class: 'setting stacked danger-zone' }, h('b', null, 'Start over'),

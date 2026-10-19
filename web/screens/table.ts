@@ -188,30 +188,25 @@ export function tableScreen(root: HTMLElement): () => void {
     buttons: h('div', { class: 'buttons' }),
     raiseRow: h('div', { class: 'raise-row', hidden: true }),
     slider: h('input', { type: 'range', class: 'raise-slider', 'aria-label': 'Bet size' }) as HTMLInputElement,
-    raiseValue: h('output', { class: 'raise-value' }, '0'),
     quick: h('div', { class: 'quick-sizes' }),
     raiseConfirm: h('button', { type: 'button', class: 'primary' }, 'Confirm'),
-    raiseCancel: h('button', { type: 'button', class: 'ghost' }, 'Cancel'),
+    raiseCancel: h('button', { type: 'button', class: 'ghost', title: 'Cancel', 'aria-label': 'Cancel' }, '✕'),
     toasts: h('div', { class: 'toasts', 'aria-live': 'polite' }),
-    log: h('ol', { class: 'log', 'aria-live': 'polite' }),
-    logPanel: h('aside', { class: 'log-panel', 'aria-label': 'Hand log' }),
-    logToggle: h('button', { type: 'button', class: 'ghost small' }, 'Log'),
+    /** The play-by-play, for screen readers only: the screen itself shows no log (the owner). */
+    log: h('ol', { class: 'log sr-only', 'aria-live': 'polite', 'aria-label': 'Hand log' }),
     dealer: h('div', { class: 'dealer' }),
     stageCanvas: h('canvas', { class: 'stage', 'aria-hidden': 'true' }) as HTMLCanvasElement,
     /** Where Death's deck lies: cards fly out of it, and back into it. */
     deck: h('span', { class: 'deck-spot', 'aria-hidden': 'true' }),
   }
   els.dealer.append(els.dealerName, h('span', { class: 'dealer-role' }, 'deals'), els.dealerLine)
-  els.raiseRow.append(els.quick, els.slider, els.raiseValue, els.raiseConfirm, els.raiseCancel)
-  els.logPanel.append(h('h2', null, 'Log'), els.log)
-  // On a phone held sideways the log would sit on top of a seat, so there it
-  // starts closed and opens as a drawer. A wide phone too: beside the table
-  // it took a third of the felt.
-  const narrow = window.innerWidth < 900 || window.innerHeight <= 460
-  if (!settings.showLog || narrow) els.logPanel.classList.add('collapsed')
+  els.raiseRow.append(els.quick, els.slider, els.raiseConfirm, els.raiseCancel)
 
-  const leave = h('button', { type: 'button', class: 'ghost small', onclick: () => go('/') }, '‹ Leave')
-  const screenEl = h('div', { class: 'table-screen' })
+  const leave = h('button', { type: 'button', class: 'ghost small leave', onclick: () => go('/') }, '‹ Leave')
+  // staged: on a phone the bar floats over the room instead of taking a row (style.css)
+  const screenEl = h('div', { class: `table-screen${staged ? ' staged' : ''}` })
+  /** Measures the notch's share of each side (safe-area insets) in pixels. */
+  const safeProbe = h('div', { class: 'safe-probe', 'aria-hidden': 'true' })
   root.append(screenEl)
   screenEl.append(
       h('header', { class: 'table-bar' },
@@ -219,9 +214,8 @@ export function tableScreen(root: HTMLElement): () => void {
         h('div', { class: 'where' },
           h('b', null, table.name),
           active.mode === 'open' ? h('span', { class: 'tag' }, 'open table') : null,
-          ' · ', els.hand, ' · ', els.blinds),
-        els.ff,
-        els.logToggle),
+          h('span', { class: 'meta' }, els.hand, ' · ', els.blinds)),
+        els.ff),
       h('main', { class: `felt${staged ? ' staged' : ''}`, dataset: { table: table.id } },
         staged ? els.stageCanvas : null,
         els.opponents,
@@ -237,13 +231,9 @@ export function tableScreen(root: HTMLElement): () => void {
         els.narration,
         els.toasts,
         els.fx),
-      els.logPanel,
+      els.log,
+      safeProbe,
   )
-  els.logToggle.addEventListener('click', () => {
-    els.logPanel.classList.toggle('collapsed')
-    els.logPanel.scrollTop = els.logPanel.scrollHeight
-    if (!narrow) store.update((s) => { s.settings.showLog = !els.logPanel.classList.contains('collapsed') })
-  })
 
   // ------------------------------------------------------------ presentation queue
 
@@ -346,29 +336,47 @@ export function tableScreen(root: HTMLElement): () => void {
     const gap = Math.min(...xs.slice(1).map((x, i) => x - xs[i]))
     const plate = Math.max(104, Math.min(158 * plateScale, gap - 10))
     const width = els.stageCanvas.clientWidth
+    // the room runs under the notch; the plates stay out of it
+    const probe = getComputedStyle(safeProbe)
+    const safeL = parseFloat(probe.paddingLeft) || 0
+    const safeR = parseFloat(probe.paddingRight) || 0
     els.opponents.style.setProperty('--plate', `${plate}px`)
     const place = (el: HTMLElement, at: SeatSpot, below: number) => {
       const top = at.line + below * g.k
-      const x = el === els.dealer ? at.x : Math.max(plate / 2 + 4, Math.min(width - plate / 2 - 4, at.x))
-      el.style.left = `${x}px`
+      el.style.left = `${at.x}px`
       el.style.top = `${top}px`
       el.style.setProperty('--lift', `${Math.max(0, top - at.head)}px`)
       el.dataset.side = at.side
     }
-    for (const [i, ui] of seatUI) {
-      const at = g.seats.get(i)
-      if (at) place(ui.root, at, 18)
-    }
+    // Kept on screen, then spread so no two plates overlap: on a phone the
+    // end chairs' plates are pushed in from the notch toward their neighbours.
+    const lo = safeL + plate / 2 + 4
+    const hi = width - safeR - plate / 2 - 4
+    const row = [...seatUI.keys()].filter((i) => g.seats.has(i)).sort((a, b) => g.seats.get(a)!.x - g.seats.get(b)!.x)
+    const spread = row.map((i) => Math.max(lo, Math.min(hi, g.seats.get(i)!.x)))
+    for (let k = 1; k < spread.length; k++) spread[k] = Math.max(spread[k], spread[k - 1] + plate + 6)
+    if (spread.length) spread[spread.length - 1] = Math.min(spread[spread.length - 1], hi)
+    for (let k = spread.length - 2; k >= 0; k--) spread[k] = Math.min(spread[k], spread[k + 1] - plate - 6)
+    row.forEach((i, k) => place(seatUI.get(i)!.root, { ...g.seats.get(i)!, x: spread[k] }, 18))
     const d = g.seats.get(DEATH)!
     place(els.dealer, d, 64)
     const mid = els.dealer.parentElement?.querySelector<HTMLElement>('.middle')
     // the board under the dealer's plate, however tall the plate has grown
     const below = els.dealer.offsetTop + els.dealer.offsetHeight + 6 * plateScale
-    if (mid) { mid.style.left = `${d.x}px`; mid.style.top = `${Math.max(d.line + 128 * g.k, below)}px` }
+    // ... and under any plate it would reach, with room left for that seat's
+    // tell (two lines): on a phone the inner plates come close to the middle
+    const s = parseFloat(screenEl.style.getPropertyValue('--s')) || 1
+    const reach = 2.5 * ((window.innerHeight <= 460 ? 34 : 40) + 6) * s + plate / 2
+    let plates = 0
+    for (const ui of seatUI.values()) {
+      if (Math.abs(ui.root.offsetLeft - d.x) >= reach) continue
+      const line = parseFloat(getComputedStyle(ui.tell).lineHeight) || 14
+      plates = Math.max(plates, ui.root.offsetTop + ui.root.offsetHeight + 2 * line + 4)
+    }
+    if (mid) { mid.style.left = `${d.x}px`; mid.style.top = `${Math.max(d.line + 128 * g.k, below, plates)}px` }
     // Cards leave his deck from just under his plate, never across it (on a
     // short screen the plate is not drawn, and they leave his hands).
     els.deck.style.left = `${g.deck.x}px`
-    const s = Number(screenEl.style.getPropertyValue('--s')) || 1
     els.deck.style.top = `${Math.max(g.deck.y, els.dealer.offsetHeight > 12 ? below + 14 * s : 0)}px`
     if (mid) clearUnder(width, mid)
   }
@@ -460,6 +468,7 @@ export function tableScreen(root: HTMLElement): () => void {
     els.stageCanvas.remove()
     els.deck.remove()
     els.opponents.parentElement?.classList.remove('staged')
+    screenEl.classList.remove('staged')
     for (const el of [els.dealer, ...[...seatUI.values()].flatMap((u) => [u.root, u.tell, u.bet])]) el.removeAttribute('style')
     els.opponents.parentElement?.querySelector<HTMLElement>('.middle')?.removeAttribute('style')
   }
@@ -655,7 +664,7 @@ export function tableScreen(root: HTMLElement): () => void {
   function log(text: string, cls = '') {
     const li = h('li', cls ? { class: cls } : null, text)
     els.log.append(li)
-    els.logPanel.scrollTop = els.logPanel.scrollHeight
+    while (els.log.children.length > 60) els.log.firstElementChild!.remove()
   }
 
   function clearWin() {
@@ -1588,6 +1597,21 @@ export function tableScreen(root: HTMLElement): () => void {
   function closeRaise() {
     els.raiseRow.hidden = true
     els.buttons.hidden = false
+    clearOfRaise()
+  }
+
+  /**
+   * On a staged table the raise panel stands at the bottom right; while it is
+   * open, move the board and pot left just enough to stay clear of it (on a
+   * phone they would meet). Closed, they go back under Death.
+   */
+  function clearOfRaise() {
+    const mid = els.board.parentElement as HTMLElement | null
+    if (!mid || !stage) return
+    mid.style.marginLeft = ''
+    if (els.raiseRow.hidden) return
+    const over = mid.getBoundingClientRect().right - els.raiseRow.getBoundingClientRect().left + 8
+    if (over > 0) mid.style.marginLeft = `${-over}px`
   }
 
   function openRaise(view: TurnView) {
@@ -1605,14 +1629,17 @@ export function tableScreen(root: HTMLElement): () => void {
     const to = (frac: number) => clamp(view.bet + view.toCall + frac * (view.pot + view.toCall))
     const sizes: [string, number][] = [['½ pot', to(0.5)], ['Pot', to(1)], ['All in', view.maxRaise]]
     s.value = String(to(0.6))
+    // the amount is on the button that commits it
+    const verb = view.toCall > 0 || view.bet > 0 ? 'Raise to' : 'Bet'
     const sync = () => {
       const v = Number(s.value)
-      els.raiseValue.textContent = v >= view.maxRaise ? `${formatChips(v)} (all in)` : formatChips(v)
+      els.raiseConfirm.textContent = v >= view.maxRaise ? `All in ${formatChips(v)}` : `${verb} ${formatChips(v)}`
     }
     els.quick.replaceChildren(...sizes.map(([label, v]) =>
       h('button', { type: 'button', class: 'ghost small', onclick: () => { s.value = String(v); sync() } }, label)))
     s.oninput = sync
     sync()
+    clearOfRaise()
     s.focus()
   }
 
