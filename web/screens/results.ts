@@ -9,7 +9,7 @@ import * as sound from '../sound.js'
 import { h, go, ordinal, formatChips } from '../dom.js'
 import { medallion, startTable } from './shared.js'
 import { dealerLine, cardEl } from './table.js'
-import { PUPPETS } from '../puppet/cast.js'
+import { PUPPETS, LOOKS } from '../puppet/cast.js'
 
 /**
  * The sitting as the curtain call tells it: the player's best moments and who
@@ -104,8 +104,11 @@ function beat<T extends HTMLElement>(el: T, n: number): T {
 
 /** A character's own drawn head (art-tools/build/portraits.py), or their medallion where there is no art yet. */
 function portrait(c: CharacterData | undefined, stamp: string, cls: string, mine = false): HTMLElement {
-  const face = c && PUPPETS[c.id]
-    ? h('div', { class: `face t-${c.table}`, style: `background-image:url(${PUPPETS[c.id].base}portrait.webp)` })
+  // in the look the player has earned for them, if they have (Holmes's deerstalker)
+  const look = c && LOOKS[c.id]
+  const art = c && PUPPETS[look && store.get().marks[look.mark] && PUPPETS[look.puppet] ? look.puppet : c.id]
+  const face = c && art
+    ? h('div', { class: `face t-${c.table}`, style: `background-image:url(${art.base}portrait.webp)` })
     : medallion(c, 'met')
   return h('figure', { class: `sitter ${cls}` },
     face,
@@ -295,7 +298,7 @@ export function curtainPreview(root: HTMLElement, params: string[]): void {
     outcome: { table: table.id, mode: 'tour', won, place, hands: 47, sat: cast, missed: [], respectTier: 3, respectPoints: 20 },
     effects: { newlyBeaten: won ? cast.slice(0, 2) : [], firstClear: won, unlocked: null, phoenix: null },
     marks: won ? ['nice'] : [],
-    facts: { table: table.id, mode: 'tour', won, hands: 47, minStackBB: 12, neverBelowStart: false, missed: [], respectTier: 3 },
+    facts: { table: table.id, mode: 'tour', won, hands: 47, minStackBB: 12, neverBelowStart: false, missed: [], respectTier: 3, headsUpWith: null, beatenBefore: [] },
     name: 'the Croupier',
     sitting: {
       potsWon: 14, biggestPot: 3150,

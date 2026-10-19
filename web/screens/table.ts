@@ -13,7 +13,7 @@ import { h, go, sleep, formatChips, ordinal } from '../dom.js'
 import * as sound from '../sound.js'
 import { fly as launch, flipOver as turnOver, centre, chipDisc, flightColours, drawPile, chipCount, type Pt } from '../fx.js'
 import { setResult, curtainCall, type Sitting } from './results.js'
-import { ROOMS, PUPPETS, RETURNED } from '../puppet/cast.js'
+import { ROOMS, PUPPETS, RETURNED, LOOKS } from '../puppet/cast.js'
 import { Stage, PRIO, DEALER as DEATH, type Prio, type SeatSpot } from '../puppet/stage.js'
 import { markTitle } from './shared.js'
 
@@ -437,6 +437,9 @@ export function tableScreen(root: HTMLElement): () => void {
   function figureAt(seat: number): string {
     if (seat === HUMAN_SEAT) return youSeen ? room?.data.youAs ?? 'stranger' : ''
     const id = changed.get(seat) ?? seatIds[seat] ?? ''
+    // a look the player has earned for them (Holmes's deerstalker), worn from the next sitting on
+    const look = LOOKS[id]
+    if (look && save.marks[look.mark] && PUPPETS[look.puppet]) return look.puppet
     return room?.data.cast?.[id] ?? id
   }
 
@@ -533,7 +536,7 @@ export function tableScreen(root: HTMLElement): () => void {
     }
     layoutStage()
     stage.accent = settings.accent
-    stage.load(seatIds).catch(unstage)
+    stage.load(seatIds.map((id, i) => (i > 0 && id ? figureAt(i) : id))).catch(unstage)
     ;(window as any).__stage = stage
   }
   const resized = new ResizeObserver(() => layoutStage())
@@ -1665,6 +1668,7 @@ export function tableScreen(root: HTMLElement): () => void {
     earnedMarks: Object.keys(save.marks),
     buyIn: table.buyIn,
     uninvited: banishment ? UNINVITED : undefined,
+    beaten: Object.keys(save.characters).filter((id) => save.characters[id].beaten),
   })
 
   const game = new Game([HUMAN, ...active.seats.map(personality)], {

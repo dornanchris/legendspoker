@@ -25,9 +25,10 @@ this file only gathers them. Strike an item through when it is done.
 
 ## Game
 
-6. **Holmes's deerstalker as an earned look**: once Holmes is unlocked,
-   beating him heads up earns the hat. The puppet is built
-   (`#/puppet/sherlock_deerstalker`); nothing seats it yet.
+6. ~~**Holmes's deerstalker as an earned look**~~ DONE: the mark "The
+   Deerstalker" (beat him heads up once he is already beaten); then he wears
+   it at every table. The owner may want a different rule for "unlocked"
+   (here: beaten before the sitting began).
 7. ~~**The staged table's gaps**~~ DONE: overlapping bubbles, the deal clip,
    the top bar, tells over the plates, bets on the board, the narrow
    window's dark band. Left: "a wide screen cuts off the player's seat" was

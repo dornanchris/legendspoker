@@ -22,7 +22,8 @@
     "build:web": "node web/build.mjs",
     "web": "node web/build.mjs && node web/serve.mjs",
     "postinstall": "node web/patches.mjs install",
-    "check:other": "tsx src/other-check.ts"
+    "check:other": "tsx src/other-check.ts",
+    "check:look": "tsx src/look-check.ts"
   },
   "keywords": [],
   "author": "",

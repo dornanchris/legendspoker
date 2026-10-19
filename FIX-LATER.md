@@ -164,8 +164,8 @@ is done, and say so in the commit.
   tier (`src/tour.ts`, the dialogue's tiered lines), and the one line that
   genders the player, `wh_p0_03` ("the look of a man who has read about
   poker").
-- **Holmes's deerstalker as an earned skin** (the owner): once Holmes is
-  unlocked, beating him heads up earns the hat look. Game work, out of the art
-  thread's scope; the art (`#/puppet/sherlock_deerstalker`) is built.
+- ~~**Holmes's deerstalker as an earned skin**~~ DONE: the mark "The
+  Deerstalker" (beat him heads up once he is already beaten), then he wears it
+  (`LOOKS` in `web/puppet/cast.ts`; `npm run check:look`).
 - **The human edit pass on the draft dialogue** (CLAUDE.md, owed before
   Phase 5).

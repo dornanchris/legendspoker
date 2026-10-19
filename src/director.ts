@@ -88,6 +88,8 @@ export type RunOptions = {
    * nobody remarks on it.
    */
   uninvited?: UninvitedData
+  /** Who the player had already beaten when the sitting began (a rematch mark asks). */
+  beaten?: Iterable<string>
 }
 
 const HUMAN = 0
@@ -138,6 +140,9 @@ export class TableRun {
   private minStackBB = Infinity
   private neverBelowStart = true
   private eliminationOrder: string[] = []
+  /** The one opponent left at the last hand dealt, if it was heads up; else null. */
+  private headsUpWith: string | null = null
+  private beatenBefore: string[]
   private arrived = new Set<string>()
   private uninvited: UninvitedData | undefined
   /** The uninvited guest, once seated: who, since when, and what is left to say. */
@@ -165,6 +170,7 @@ export class TableRun {
     this.buyIn = o.buyIn
     this.earned = new Set(o.earnedMarks)
     this.uninvited = o.uninvited
+    this.beatenBefore = [...(o.beaten ?? [])]
     this.tier = Math.max(o.respectTier, o.table.respectStart)
     this.points = Math.max(o.respectPoints, RESPECT_THRESHOLDS[this.tier])
     // Offset so the director's stream never coincides with the game's.
@@ -384,6 +390,7 @@ export class TableRun {
 
     const opp = this.opponents()
     const headsUp = opp.length === 1 && this.seats[HUMAN] !== null
+    this.headsUpWith = headsUp ? opp[0] : null
     if (headsUp && !this.headsUpAnnounced && this.isChampionSeat(opp[0])) {
       this.headsUpAnnounced = true
       // At least tier 2: the last one standing has to take you seriously.
@@ -971,6 +978,8 @@ export class TableRun {
       neverBelowStart: this.neverBelowStart,
       missed: [],
       respectTier: this.tier,
+      headsUpWith: this.headsUpWith,
+      beatenBefore: this.beatenBefore,
     }
   }
 

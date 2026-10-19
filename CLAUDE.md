@@ -108,6 +108,7 @@ src/
   visitor-check.ts `npm run check:visitor` — JFK's three-five arrival, forced (spoilers)
   phoenix-check.ts `npm run check:phoenix` — the Phoenix's gauntlet rules (spoilers)
   other-check.ts  `npm run check:other` — Jekyll/Hyde: the 50/50 chair and the other half's return, forced
+  look-check.ts   `npm run check:look` — Holmes's deerstalker: earned by beating him heads up again, forced
   roster.ts       `npm run roster` — regenerates ROSTER.md from data/
   reads.ts        `npm run reads` — how each character reads a bet (a report)
   headsup.ts      `npm run headsup [matches] [ids]` — who beats whom one on one,
@@ -307,7 +308,7 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   The name flip is always announced (toast + the tier's first line).
 - **The Ledger:** character pages (history, how they play in Death's voice,
   what YOU have seen them do in words, habits noted), venues, account,
-  house rules, and **marks** — 46 achievements framed as Death's entries,
+  house rules, and **marks** — 49 achievements framed as Death's entries,
   including some for levity (six-nine is "Nice"; the owner's call, and the
   one meme-adjacent joke the tone rules allow). A `secret` mark is neither
   listed nor counted until earned; `hidden` (older) lists it as a blank.
@@ -506,8 +507,13 @@ bareheaded in his own sitting room (Javert asks about it, in banter). **His
 deerstalker look is built too** (`#/puppet/sherlock_deerstalker`, 24 clips,
 `"of": "sherlock"` in its anim.json, like `green_knight_bare`): the owner's
 unlockable second look: once Holmes is unlocked, beating him heads up earns
-the hat (the owner). Nothing seats it yet; that is game work, for another
-thread (FIX-LATER.md).
+the hat (the owner). Earning it is a mark, "The Deerstalker"
+(`table_won_heads_up` with `rematch`: the last hand dealt was heads up with
+him, the player won, and he was beaten before the sitting began; the director
+reports `headsUpWith` and `beatenBefore` in its TableFacts). Once it is in the
+ledger he wears it wherever he sits, curtain-call portrait included (`LOOKS` in
+`web/puppet/cast.ts`, by mark), from the next sitting on: presentation only, no
+ENGINE_VERSION bump. `npm run check:look` forces it.
 **The Cheshire Cat takes Alice's chair** (seat 3, mirrored; the owner's call,
 ENGINE_VERSION 12: the Alice sheets drew as Disney's). The design doc had
 rejected him as unreadable; his tells answer that: his tail, eyes blinking one
