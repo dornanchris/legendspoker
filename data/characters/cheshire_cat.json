@@ -99,6 +99,34 @@
       "All in. Grin and all.",
       "Everything. I'll leave the grin.",
       "All in. You'd have to be mad not to."
+    ],
+    "reraised": [
+      "Ah. So you do know where you want to get to.",
+      "Oh, good. I was about to vanish from sheer boredom."
+    ],
+    "win": [
+      "I told you you'd see me there.",
+      "I'm growling. That means I'm pleased.",
+      "A grin without a cat, and now a pot without you.",
+      "By-the-bye, what became of your chips? Oh, here they are."
+    ],
+    "lose": [
+      "Off with my head, then. If you can find the rest of me.",
+      "I'm wagging my tail now. You know what that means.",
+      "We're all mad here. Some of us are poorer, too.",
+      "Still grinning. It's always the last thing to go."
+    ],
+    "win_royal_flush": [
+      "A cat may look at a king. I have the whole court."
+    ],
+    "beat_javert": [
+      "Procedure, Inspector: first you must find the body."
+    ],
+    "beat_sherlock": [
+      "Deduce that, Mr Holmes. I'll wait. Well, the grin will."
+    ],
+    "beat_nemo": [
+      "Which way ought you to go from here, Captain? Down."
     ]
   }
 }

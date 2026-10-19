@@ -5,12 +5,12 @@ this file only gathers them. Strike an item through when it is done.
 
 ## Words
 
-1. **Showdown puns for the rest of the tour.** `win` / `lose` pools,
-   `win_<hand>` / `lose_<hand>` and `beat_<id>` lines (CLAUDE.md, "Showdown
-   lines") are written for the White House, Athens and the Pirate Cove.
-   Still to write: Camelot, Rome, Baker Street, Transylvania, the Station, the
-   champions (Odysseus, Davy Jones... wherever they sit again in the Hall of
-   Doors), the guests (JFK, Loki). The Phoenix is mute. Death stays dry.
+1. ~~**Showdown puns for the rest of the tour.**~~ DONE (draft, like the
+   rest): every speaking character has `win` / `lose`, `reraised`, hand
+   lines where one fits, and `beat_` lines for their tablemates and the
+   champions they meet again. For the edit pass: the Lancelot/Guinevere
+   hints, Hyde's cane, the Pope's "Lucrezia ... goes through husbands",
+   Dracula's "That makes twenty-four, Caesar".
 2. **The human edit pass on the draft dialogue** (owed before Phase 5;
    CLAUDE.md "All content is draft", with the facts flagged to spot-check).
 3. **How the player gets called names** (FIX-LATER.md, "Game and words"):

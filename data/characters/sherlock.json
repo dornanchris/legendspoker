@@ -101,6 +101,43 @@
       "All in. When you have eliminated the impossible...",
       "Everything. I have faked my own death for less.",
       "All in. A three-pipe problem, settled in one."
+    ],
+    "reraised": [
+      "Opposition! Excellent. My mind rebels at stagnation.",
+      "You interest me. Very few people do."
+    ],
+    "win": [
+      "You see, but you do not observe.",
+      "Elementary. I shall not insult you by explaining.",
+      "Watson will write this up with far too much romance.",
+      "A pretty little problem. I am obliged to you for it."
+    ],
+    "lose": [
+      "There is nothing more deceptive than an obvious fact.",
+      "That calls for the violin, I think. Late, and loudly.",
+      "I was not wrong. I was merely early.",
+      "You have taught me something. I shall not forgive you."
+    ],
+    "win_four_of_a_kind": [
+      "The sign of four. Watson will want it for a title."
+    ],
+    "beat_javert": [
+      "Scotland Yard sends for me, Inspector. Now you see why."
+    ],
+    "beat_nemo": [
+      "You were read after all, Captain. Not aloud."
+    ],
+    "beat_cheshire_cat": [
+      "The grin stays, I see. The chips do not."
+    ],
+    "beat_dracula": [
+      "Vampires in Transylvania. I shall amend the entry."
+    ],
+    "beat_caesar": [
+      "You should have read the note, Caesar."
+    ],
+    "beat_the_ai": [
+      "Record it, machine. I shall remember it better."
     ]
   }
 }

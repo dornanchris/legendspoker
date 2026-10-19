@@ -102,6 +102,40 @@
       "The die is cast.",
       "The Rubicon, then. All in.",
       "Everything. Caesar does nothing by halves."
+    ],
+    "reraised": [
+      "Resistance. Caesar has written whole books about it.",
+      "Opposed? Good. I prefer my enemies in the open."
+    ],
+    "win": [
+      "Veni, vidi, vici. I have nothing to add.",
+      "All Gaul is divided into three parts. This pot, into one.",
+      "My clemency: you keep your life. I keep the chips.",
+      "Another triumph. Clear the Via Sacra for Caesar."
+    ],
+    "lose": [
+      "Gergovia. Caesar prefers not to discuss Gergovia.",
+      "Caesar has had worse days in the Senate.",
+      "Like Britain. I will be back next summer.",
+      "I swam out of Alexandria with my papers dry. I will manage."
+    ],
+    "win_three_of_a_kind": [
+      "Three of a kind. A triumvirate. Caesar knows how those end."
+    ],
+    "beat_scipio": [
+      "A Scipio cannot be beaten in Africa. This is not Africa."
+    ],
+    "beat_pope": [
+      "Caesar or nothing. You have the nothing."
+    ],
+    "beat_cerberus": [
+      "Three heads. Caesar needed only one."
+    ],
+    "beat_sherlock": [
+      "Caesar guessed again, Mr Holmes. It worked out again."
+    ],
+    "beat_dracula": [
+      "Caesar meant to conquer Dacia next. Consider it done, Count."
     ]
   }
 }

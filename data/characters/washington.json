@@ -115,6 +115,27 @@
       "They were not wooden. The teeth. Since everyone is looking at me.",
       "Valley Forge was worse.",
       "I lost more battles than I won. I won the one that mattered."
+    ],
+    "beat_lincoln": [
+      "You tried, Mr. Lincoln."
+    ],
+    "beat_roosevelt": [
+      "Bully, Colonel."
+    ],
+    "beat_fdr": [
+      "You might have stopped at two, Mr. President."
+    ],
+    "beat_jfk": [
+      "Ask not, Mr. President."
+    ],
+    "beat_blackbeard": [
+      "Virginia sends its regards, Captain."
+    ],
+    "beat_arthur": [
+      "I declined a crown, Your Majesty. Not this."
+    ],
+    "beat_odysseus": [
+      "I did not get lost."
     ]
   }
 }

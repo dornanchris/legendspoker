@@ -98,6 +98,31 @@
       "All in. I do not let go.",
       "Everything. I pursued one man for twenty years. I can pursue a pot.",
       "All in. To the end of the road."
+    ],
+    "reraised": [
+      "Resisting. That is a further offence.",
+      "You obstruct an officer. I will remember it."
+    ],
+    "win": [
+      "Seized, in accordance with the law.",
+      "Confiscated. You may appeal. You will lose.",
+      "Justice is slow. It is also certain.",
+      "Everything in its proper place. Those chips, in mine."
+    ],
+    "lose": [
+      "This is irregular.",
+      "An error. I shall ask to be dismissed.",
+      "The law does not lose. I lose. It is not the same.",
+      "My mother told fortunes with cards. She never told me this."
+    ],
+    "beat_nemo": [
+      "You surfaced, Captain. I was waiting."
+    ],
+    "beat_sherlock": [
+      "An amateur, Monsieur Holmes. It shows."
+    ],
+    "beat_cheshire_cat": [
+      "Arrested. All of you, grin included."
     ]
   }
 }

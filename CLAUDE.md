@@ -294,10 +294,14 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   more readily (0.85). **`reraised`**: said calling or raising when one's own bet was
   just raised over on that street (Teddy's Panama ditch), a reply, so it
   may follow the raiser's words. Each joke comes from the character's own
-  legend, never a modern wink; Death stays dry. Written so far for the
-  White House (the owner's dial), Athens (new pairs: Medusa and the
-  Cyclops, Leonidas and the Cyclops, Socrates and Odysseus) and the Pirate
-  Cove (Blackbeard's "I'm on fire"). None of this needs an ENGINE_VERSION bump.
+  legend, never a modern wink; Death stays dry. Written for the whole tour:
+  the White House (the owner's dial), Athens (new pairs: Medusa and the
+  Cyclops, Leonidas and the Cyclops, Socrates and Odysseus), the Pirate
+  Cove (Blackbeard's "I'm on fire"), and since then Camelot, Rome, Baker
+  Street, Transylvania, the Station and the guests (Loki's "Once I had to be
+  a horse"), with `beat_` lines for the champions who meet again in the Hall
+  of Doors (Washington to Odysseus: "I did not get lost"). The Phoenix is
+  mute. All draft. None of this needs an ENGINE_VERSION bump.
 - **Respect:** per table, points from pots / showdowns / knockouts, tiers at
   4 / 10 / 18, heads-up with the champion forces tier 2, a win forces tier 3.
   The name flip is always announced (toast + the tier's first line).

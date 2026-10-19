@@ -102,6 +102,34 @@
       "All of it. Every penny of his.",
       "All in! Let the doctor pay for it in the morning.",
       "Everything. I never could stop at once."
+    ],
+    "reraised": [
+      "Get in my way, will you? People do. Once.",
+      "No gentleman wants a scene. Lucky I'm not one."
+    ],
+    "win": [
+      "Ha! Walked right over you. I do that.",
+      "Don't sulk. Send the bill to Harry. He always pays.",
+      "Ha! Everything comes to me in the end. Ask his lawyer.",
+      "Mine. And I didn't even need the cane."
+    ],
+    "lose": [
+      "Bah! The doctor will hear of this. He'll be ever so sorry.",
+      "Laugh, then. I never forget a face.",
+      "Somebody'll pay for that. Not me. It's never me.",
+      "Damn the cards. And damn the doctor's luck, too."
+    ],
+    "beat_van_helsing": [
+      "Write that down, Professor. Ha!"
+    ],
+    "beat_wolf_man": [
+      "Heel, dog."
+    ],
+    "beat_dracula": [
+      "Didn't need inviting, did I, Count?"
+    ],
+    "beat_headless_horseman": [
+      "Lost your chips as well, trooper? Ha!"
     ]
   },
   "other": {

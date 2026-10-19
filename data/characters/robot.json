@@ -94,6 +94,28 @@
       "All in. The instructions were very clear.",
       "All in. Please remain seated.",
       "All in. I have never done this before. It is on the last page."
+    ],
+    "reraised": [
+      "A raise on a raise. Turning to section five.",
+      "Unexpected input. Continuing."
+    ],
+    "win": [
+      "Pot received. Thank you. I will look after it.",
+      "Collecting the pot. Mind your fingers.",
+      "I have won. I do not know what to do with my arms.",
+      "Victory. I will log it in the correct column."
+    ],
+    "lose": [
+      "That was not in the instructions.",
+      "Oh. Oh dear. Is that the correct expression? Oh dear.",
+      "Please do not tell the station.",
+      "Loss recorded. Good game. Good game."
+    ],
+    "win_straight": [
+      "A straight. Everything in the correct order."
+    ],
+    "beat_astronaut": [
+      "Would you like a blanket now?"
     ]
   }
 }

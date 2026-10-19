@@ -102,6 +102,34 @@
       "All in. Win, and I'll have plenty. Lose, and I won't need any.",
       "Everything. Freedom or nothing.",
       "All in. No way back over the Alps."
+    ],
+    "reraised": [
+      "You push me? I broke out of Capua with kitchen knives.",
+      "Rome sent both consuls after me once. Come on, then."
+    ],
+    "win": [
+      "They had me trapped on Vesuvius too. Vines make good ladders.",
+      "Capua trained me to win with a crowd watching.",
+      "Spoils. I'll share them out at camp. Fairly.",
+      "Rome never learns. Free men fight harder."
+    ],
+    "lose": [
+      "Crassus again. There's always a Crassus.",
+      "Paid the pirates, and left on the beach. Again.",
+      "Rome wins. It usually does. Never cheaply.",
+      "Back in chains for a hand. Only a hand."
+    ],
+    "beat_caesar": [
+      "The man Rome owned beats the man who owned Rome."
+    ],
+    "beat_pope": [
+      "Not everything's for sale, Borgia."
+    ],
+    "beat_scipio": [
+      "You sent Hannibal home. Try sending me."
+    ],
+    "beat_cerberus": [
+      "Every door opens eventually, dog. I'd know."
     ]
   }
 }

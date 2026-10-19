@@ -95,6 +95,48 @@
       "All in. Every drop.",
       "Everything. I crossed the sea in a box of earth for less.",
       "All of it. Sunrise is a long way off."
+    ],
+    "reraised": [
+      "Ah. The guest has teeth.",
+      "You raise your host? How delightfully rude.",
+      "Very well. I have all night. You do not."
+    ],
+    "win": [
+      "Listen to them. The children of the night are applauding.",
+      "You may feel a little faint. It passes.",
+      "It is always sweeter when the guest offers.",
+      "The blood is the life. The chips are merely pleasant."
+    ],
+    "lose": [
+      "I was once undone by a solicitor. This is nothing.",
+      "I lost forty-nine boxes of earth in a week. This is a pot.",
+      "You have a strong heart. I shall remember where it is.",
+      "Enjoy it. Few guests leave this house richer."
+    ],
+    "win_full_house": [
+      "A full house, and every one of them invited me in."
+    ],
+    "beat_van_helsing": [
+      "You dropped your stake, Professor.",
+      "Do write it down, Professor. Every word."
+    ],
+    "beat_hyde": [
+      "Smaller still, Mr. Hyde. I did not think it possible."
+    ],
+    "beat_wolf_man": [
+      "Lie down. I am telling you."
+    ],
+    "beat_headless_horseman": [
+      "Your pay is docked, trooper."
+    ],
+    "beat_sherlock": [
+      "Do you believe in me now, Mr Holmes?"
+    ],
+    "beat_caesar": [
+      "That makes twenty-four, Caesar."
+    ],
+    "beat_the_ai": [
+      "No pulse, and now no chips."
     ]
   }
 }

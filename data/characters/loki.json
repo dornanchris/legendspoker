@@ -87,6 +87,38 @@
       "Everything. I once bet my head. These are only chips.",
       "All of it. What's the worst that could happen? Don't answer that.",
       "All in, even the parts that aren't mine."
+    ],
+    "reraised": [
+      "Ooh. Somebody's learned a trick.",
+      "Good. I hate a quiet feast.",
+      "Oh, now it's a story."
+    ],
+    "win": [
+      "Somewhere, two ravens just took note.",
+      "I didn't even cheat. That's the worrying part.",
+      "I'll tell this one at the next feast. Differently.",
+      "I've won harder than that. Once I had to be a horse."
+    ],
+    "lose": [
+      "You may have the head. Not one inch of the neck.",
+      "Caught in my own net. Again.",
+      "Don't tell the other halls. They'd enjoy it far too much.",
+      "Well. It makes a better story this way round."
+    ],
+    "win_straight": [
+      "A straight. That's a first for me."
+    ],
+    "beat_headless_horseman": [
+      "Nice horse. I gave birth to a better one."
+    ],
+    "beat_wolf_man": [
+      "Cute. My boy's a wolf as well. Rather bigger."
+    ],
+    "beat_cerberus": [
+      "My daughter keeps a dog at her door too. Better behaved."
+    ],
+    "beat_green_knight": [
+      "Holly? Sweet. I've always preferred mistletoe."
     ]
   },
   "profile": {

@@ -98,6 +98,25 @@
       "[sweeps everything into the pot at a gallop]",
       "[pushes it all in and points his sword toward the churchyard]",
       "[pushes everything in, then weighs the pumpkin in one hand]"
+    ],
+    "reraised": [
+      "[eases his sword an inch from its scabbard, and lets it slide back]",
+      "[turns his whole body toward whoever raised, and holds it there]"
+    ],
+    "win": [
+      "[holds out a gauntlet, palm up, until every chip is in it]",
+      "[outside, his horse whinnies once, as if it had been watching]",
+      "[salutes the table with the hilt of his sword, cavalry fashion]",
+      "[sets the pumpkin on top of the pot, as a trooper plants a flag]"
+    ],
+    "lose": [
+      "[lifts the pumpkin as if to hurl it, then thinks better of it]",
+      "[sheathes his sword, slowly, all the way to the hilt]",
+      "[looks under the table, as he looks under everything, every night]",
+      "[sits very still; out in the courtyard, his horse stamps]"
+    ],
+    "beat_wolf_man": [
+      "[turns the pumpkin to face the Wolf Man, and lets it grin at him]"
     ]
   }
 }

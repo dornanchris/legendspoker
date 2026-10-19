@@ -147,6 +147,35 @@
       "All in! Meet me at the Green Chapel.",
       "Everything! One stroke, and no flinching.",
       "All of it! A year and a day, all at once."
+    ],
+    "reraised": [
+      "Ha! A blow for my blow! Now we are playing.",
+      "You strike back? Good! I never liked anyone who flinches.",
+      "So. You strike back. I expected it."
+    ],
+    "win": [
+      "Ha! A Christmas game, and I have won it!",
+      "Bend your neck, friend! It is my turn to swing.",
+      "Ha! For once it is not my head on the floor!",
+      "A blow given, a blow returned. That was the bargain."
+    ],
+    "lose": [
+      "Ha! Well struck! I felt that one.",
+      "Only a nick. I have taken worse at New Year.",
+      "Ha! Now I owe you a blow. I always pay.",
+      "Keep it. For now."
+    ],
+    "win_full_house": [
+      "A full house, and silent! Like Camelot when I rode in."
+    ],
+    "beat_lancelot": [
+      "Brave in the hall, Lancelot. Now try the chapel."
+    ],
+    "beat_arthur": [
+      "Ha! You stood up at New Year, king. You may sit now."
+    ],
+    "beat_merlin": [
+      "Ha! Your pupil made me green, old man. Now I make you poor."
     ]
   }
 }

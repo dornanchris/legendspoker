@@ -96,6 +96,34 @@
       "All in. For the honour of the Table.",
       "Everything. For — for the King.",
       "All in. Unhorse me if you can."
+    ],
+    "reraised": [
+      "A challenger! I had begun to despair of this table.",
+      "You would joust with the best knight in the world? Bravely done."
+    ],
+    "win": [
+      "The best knight in the world. Did anyone doubt it?",
+      "Unhorsed. Do not take it hard. Everyone is, in the end.",
+      "I dedicate this pot to — to the Round Table. Naturally.",
+      "It is a burden, being the best. I bear it."
+    ],
+    "lose": [
+      "Forgive me. My mind was elsewhere.",
+      "That does not count. I was fighting in disguise.",
+      "Unhorsed. By a card. We shall not speak of it.",
+      "The best knight in the world, beaten. Write it small."
+    ],
+    "win_royal_flush": [
+      "A royal flush. I have always been very close to royalty."
+    ],
+    "beat_green_knight": [
+      "There, Green Knight. And I did not flinch."
+    ],
+    "beat_arthur": [
+      "Forgive me, sire. I never meant to take anything of yours."
+    ],
+    "beat_merlin": [
+      "You saw me coming before I was born. Did you see that?"
     ]
   }
 }

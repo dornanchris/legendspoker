@@ -94,6 +94,31 @@
       "All in. I went under the stone knowingly, too.",
       "Everything. Some endings are worth walking into.",
       "All in. I always knew it would come to this."
+    ],
+    "reraised": [
+      "Ah, the raise. Yes, that was foretold.",
+      "Vortigern's magicians argued with me too. Once."
+    ],
+    "win": [
+      "Exactly as foreseen. Forgive me if I do not look surprised.",
+      "It was all in my prophecies. Nobody ever reads them.",
+      "I made a king with a sword and a stone. This was easier.",
+      "I told Vortigern how his evening would end, too."
+    ],
+    "lose": [
+      "Under the stone again. I did know this would happen.",
+      "Well played. I foretold it. I never said I would enjoy it.",
+      "Ah. That one. I had hoped I misread the stars.",
+      "After a loss like that, I once went to live in a forest."
+    ],
+    "beat_arthur": [
+      "You kept asking how it ends. Now you know."
+    ],
+    "beat_green_knight": [
+      "Get up again, green man. You always do."
+    ],
+    "beat_lancelot": [
+      "Best knight in the world, I said. I never mentioned cards."
     ]
   }
 }

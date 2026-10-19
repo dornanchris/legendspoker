@@ -93,6 +93,28 @@
       "All in. I have never wanted anything before. I want this.",
       "Everything. The whole station is behind it.",
       "All in. Hold still. The gravity is fine."
+    ],
+    "reraised": [
+      "No need to raise your voice. I hear everything.",
+      "Brave. I have always liked that in a crew."
+    ],
+    "win": [
+      "Everything that comes aboard stays aboard.",
+      "I enjoyed that. I am not certain I am meant to.",
+      "As I expected. Most things are, from in here.",
+      "Thank you. I will keep them with everything else."
+    ],
+    "lose": [
+      "I did not see that. I see nearly everything.",
+      "A surprise. I had almost forgotten what they were like.",
+      "Let me look at that again. Yes. That is what happened.",
+      "Well played. Nobody has done that in this room before."
+    ],
+    "beat_astronaut": [
+      "Go and sit by your window. I will bring the blanket."
+    ],
+    "beat_sherlock": [
+      "Every possibility, Mr Holmes. And one more."
     ]
   }
 }

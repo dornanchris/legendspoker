@@ -103,6 +103,31 @@
       "All in. Zama, then.",
       "Everything. Across the lagoon at the ebb.",
       "All in. Rome, or nothing."
+    ],
+    "reraised": [
+      "You press. Good. I'd rather know where you are.",
+      "A counter-charge. I'd have done the same."
+    ],
+    "win": [
+      "Hannibal taught me that one. The hard way.",
+      "I tore up my accounts once. This one I'll keep.",
+      "They called my year in Sicily idle. This is what it was for.",
+      "Carthage paid in fifty instalments. You may settle now."
+    ],
+    "lose": [
+      "Neptune promised me that one. He was mistaken.",
+      "Well fought. Hannibal would have admired that.",
+      "A lost field. Not a lost war.",
+      "The Senate will want an audit of that."
+    ],
+    "beat_caesar": [
+      "You tore up the Republic. I only tore up my accounts."
+    ],
+    "beat_spartacus": [
+      "Rome sends its regards. Not Crassus, this time."
+    ],
+    "beat_pope": [
+      "Restraint, Borgia. You should try it sometime."
     ]
   }
 }
