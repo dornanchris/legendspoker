@@ -7,9 +7,8 @@ import { fillLine } from '../../src/tour.js'
 import * as store from '../store.js'
 import * as sound from '../sound.js'
 import { h, go, ordinal, formatChips } from '../dom.js'
-import { medallion, startTable } from './shared.js'
+import { medallion, portraitUrl, startTable } from './shared.js'
 import { dealerLine, cardEl } from './table.js'
-import { PUPPETS, LOOKS } from '../puppet/cast.js'
 
 /**
  * The sitting as the curtain call tells it: the player's best moments and who
@@ -104,11 +103,9 @@ function beat<T extends HTMLElement>(el: T, n: number): T {
 
 /** A character's own drawn head (art-tools/build/portraits.py), or their medallion where there is no art yet. */
 function portrait(c: CharacterData | undefined, stamp: string, cls: string, mine = false): HTMLElement {
-  // in the look the player has earned for them, if they have (Holmes's deerstalker)
-  const look = c && LOOKS[c.id]
-  const art = c && PUPPETS[look && store.get().marks[look.mark] && PUPPETS[look.puppet] ? look.puppet : c.id]
-  const face = c && art
-    ? h('div', { class: `face t-${c.table}`, style: `background-image:url(${art.base}portrait.webp)` })
+  const url = c && portraitUrl(c.id)
+  const face = url
+    ? h('div', { class: `face t-${c!.table}`, style: `background-image:url(${url})` })
     : medallion(c, 'met')
   return h('figure', { class: `sitter ${cls}` },
     face,
@@ -269,6 +266,7 @@ function panel(r: Result, lookAtTable: (() => void) | null): HTMLElement {
       h('button', { type: 'button', class: 'primary', onclick: again }, 'Rematch'),
       h('button', { type: 'button', onclick: () => go('/tour') }, 'Back to the map'))
   }
+  if (o.mode === 'open') actions.append(h('button', { type: 'button', onclick: () => go(`/intro/${o.table}/open`) }, 'Change the chairs'))
   actions.append(h('button', { type: 'button', class: 'ghost', onclick: () => go('/ledger') }, 'The Ledger'))
   if (lookAtTable) actions.append(h('button', { type: 'button', class: 'ghost', onclick: lookAtTable }, 'Look at the table'))
   left.append(actions)

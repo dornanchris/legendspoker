@@ -35,6 +35,10 @@ this file only gathers them. Strike an item through when it is done.
    not reproduced (FIX-LATER.md says what was tried).
 8. ~~**"Reduce motion" hides the older speech bubbles**~~ DONE: every bubble
    is up on a timer as well as its animation.
+8a. **A bonus mark for an open table played heads up** (the owner: "this
+   will be a bonus achievement later"). Open tables now let the player pick
+   one to four opponents (web/screens/open.ts); the mark and its condition
+   (data/marks.json, src/marks.ts) are owed.
 
 ## Art
 

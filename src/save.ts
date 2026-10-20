@@ -91,6 +91,8 @@ export type TableRecord = {
   cleared: boolean
   firstClearedAt: string | null
   fastestWin: number | null
+  /** The open table the player last set here: who sits in each of the room's chairs (null: empty). */
+  openChairs?: (string | null)[]
 }
 
 /**
@@ -135,10 +137,16 @@ export type SavedDecision = { action: Action; betSize?: number; thinkMs?: number
 
 export type ActiveTable = {
   table: string
-  /** 'open' is random play at a cleared table, with a drawn cast. */
+  /** 'open' is play at a cleared table, with a cast the player picked. */
   mode: 'tour' | 'open'
   /** Opponent ids in chair order; the player is always chair 0. */
   seats: string[]
+  /**
+   * Which of the room's chairs each opponent is drawn in (an open table: the
+   * chairs the player put them in, the ones left empty kept empty). The
+   * screen's only: the engine never reads it.
+   */
+  chairs?: number[]
   seed: number
   decisions: SavedDecision[]
   startedAt: string

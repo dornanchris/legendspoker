@@ -123,8 +123,9 @@ data/
 web/
   app.ts          boot + hash router (#/tour, #/ledger/..., works from file://)
   store.ts        the Save in localStorage, guarded; live-only persistence
-  screens/        title, invitation, map+intro, table, results, ledger,
-                  settings+about, ending. table.ts keeps the 3b presentation queue
+  screens/        title, invitation, map+intro, open (the open table's
+                  chairs), table, results, ledger, settings+about, ending.
+                  table.ts keeps the 3b presentation queue
   fx.ts           flights: cards out of Death's hands, chips across the felt
   puppet/         the puppet player: bones, clips, face (blink, gaze, brows,
                   speech, idle), table-rail layering; stage.ts draws a room
@@ -272,9 +273,20 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   missable. The Green Knight keeps his appointment: knocked out, he retakes
   his chair 20 hands later if the table is still going, at any table he sits
   at (`returns` in his character file; an Arrival whose `afterEliminationOf`
-  is himself, so the event has `replaces === id`). Open tables (random
-  play) unlock at cleared tables and seat a mix of anyone the player has
-  beaten, champions included, one chair kept for the room.
+  is himself, so the event has `replaces === id`). **Open tables** unlock
+  at cleared tables, and the PLAYER picks who sits (the owner: "mix and
+  match at each location"): `web/screens/open.ts`, the open intro, shows
+  the room's four chairs around Death, each a drawn portrait with arrows
+  through everyone the player has PLAYED AGAINST (`met`; the owner's words,
+  wider than the design doc's "beaten"; a never-met Odysseus is not there,
+  the Phoenix still has to be beaten), and under them every face by table,
+  tap to seat. One to four opponents; heads up against anyone is allowed;
+  never both Jekyll and Hyde (`isOpenCast` in tour.ts). "Deal me a table"
+  deals a full one at random, one chair kept for the room. The picks are
+  kept per table (`openChairs`), and the table is STAGED in its room with
+  everyone in the chair they were put in, empty ones left empty
+  (`chairs` in the active seat, `Stage.chairsFor`; presentation only, no
+  ENGINE_VERSION bump). Nobody is crowned at an open table.
 - **Dialogue system:** `src/director.ts` plays the established schema — intro,
   the one plant, pair banter, tiered player-directed lines, Death's asides,
   arrivals, heads-up, bust-outs, defeat — plus Holmes's `reads_you` (lines
