@@ -426,7 +426,12 @@ home bar, and what the player touches keeps out of them (`--safe-*` in
 style.css, `safeProbe` in table.ts). At phone height (460 px and under) the
 bar floats over the ceiling, plates keep their height and are spread so none
 overlap, the board sits below the plates it would reach (with room for their
-tells), the pot beside it, inner seats' bets beside their plates. The raise
+tells), the pot beside it, inner seats' bets beside their plates. A seat is a name pill, not a box (a
+box over the rim hid the table edge and read as an empty panel once its
+player folded): its cards and last action on the felt under it, its tell on
+a dark backing that a fold never fades, hanging toward the middle from the
+end chairs. Your own cards are a size up from the board's on a phone, and the
+turn prompt ("Check or bet") is hidden while the buttons say it. The raise
 panel is a narrow column at the bottom right at every size, the amount on its
 button ("Raise to 459"); while it is open the board slides left to stay
 clear. Spoken bubbles go up and come down on a timer, so Reduce motion shows

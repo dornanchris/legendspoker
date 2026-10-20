@@ -703,7 +703,8 @@ export function tableScreen(root: HTMLElement): () => void {
     const ui = seatUI.get(seat)
     if (!ui) return
     const line = tellLine(nameOf(seat), text)
-    ui.tell.textContent = line[0].toUpperCase() + line.slice(1)   // "the Cat blinks...": a line begins with a capital
+    // "the Cat blinks...": a line begins with a capital; in a span, so its backing hugs the words (style.css)
+    ui.tell.replaceChildren(h('span', null, line[0].toUpperCase() + line.slice(1)))
     ui.tell.classList.remove('fade')
     void ui.tell.offsetWidth
     ui.tell.classList.add('fade')
