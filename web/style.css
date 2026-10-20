@@ -713,8 +713,6 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .marks-list { grid-template-columns: 1fr; }
 }
 @media (max-height: 460px) {
-  /* a phone held sideways, however wide: the log is a drawer over the table, not a column beside it */
-  .log-panel { position: absolute; right: 0; top: 38px; bottom: 0; z-index: 30; box-shadow: -10px 0 30px #000c; }
   :root { font-size: 13px; }
   :root.large-text { font-size: 15px; }
   .screen { padding: 6px 14px 12px; }
