@@ -30,6 +30,10 @@ ASSETS = ROOT / 'ios/App/App/Assets.xcassets'
 DESIGNS = {
     'lincoln_laugh': {'frame': 'lincoln/frame_laugh.png', 'box': (0.0, 0.0, 1.0, 0.78), 'flip': True},
     'lincoln_tip': {'frame': 'lincoln/frame_hat_tip.png', 'box': (0.0, 0.0, 1.0, 0.8), 'flip': False},
+    'arthur_toast': {'frame': 'arthur/frame_cup.png', 'box': (0.0, 0.0, 1.0, 0.8), 'flip': True, 'height': 0.74, 'right': 0.0},
+    'arthur_cheer': {'frame': 'arthur/frame_win_big.png', 'box': (0.0, 0.0, 1.0, 0.95), 'flip': True, 'height': 0.9, 'right': -0.04},
+    'lancelot_cheer': {'frame': 'lancelot/frame_win_big.png', 'box': (0.0, 0.0, 1.0, 0.95), 'flip': True, 'height': 0.88, 'right': -0.05},
+    'lancelot_preen': {'frame': 'lancelot/frame_hair.png', 'box': (0.0, 0.0, 1.0, 0.75), 'flip': True},
     'teddy': {'frame': 'roosevelt/frame_win_big.png', 'box': (0.0, 0.0, 1.0, 0.9), 'flip': False, 'height': 0.88, 'right': -0.06},
 }
 CHOSEN = 'lincoln_laugh'

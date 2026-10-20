@@ -447,8 +447,9 @@ for one): Lincoln laughing, from his own drawn frame, on the green felt with
 a fan of the four-colour deck behind him, a gold ring, no words. The launch
 screen is the same icon small on the felt. `python3 art-tools/build/app_icon.py`
 writes both into the Xcode asset catalogue (`CHOSEN` picks the design;
-`--preview OUT` draws every design: Lincoln laughing, Lincoln tipping his
-hat, Teddy cheering).
+`--preview OUT` draws every design: Lincoln laughing or tipping his hat,
+Arthur's toast or cheer, Lancelot cheering or fixing his hair, Teddy
+cheering).
 **Rive is shelved** (the owner: a hired animator is not affordable). The
 brief and parts prompts written for one stay as a record
 (`art-tools/roosevelt_parts/RIVE_PARTS.md`, `ANIMATION_BRIEF.md`, and his
