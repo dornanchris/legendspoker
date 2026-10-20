@@ -442,12 +442,13 @@ build:app` builds `dist/`, `npx cap sync ios` copies it into `ios/`, and on
 the Mac `npx cap open ios` opens Xcode (signing: pick a Team in Signing &
 Capabilities and Xcode makes the profile). `npm run ios` does all three.
 The app has no bench: `#/puppet/<id>` needs the full-size images, which
-`dist/` leaves out. **The icon is Death's card back** (the owner's call, over
-a gold-crown casino icon), and the launch screen is the same card small on
-the same dark: `python3 art-tools/build/app_icon.py` writes both into the
-Xcode asset catalogue. The back exists only as a 103 x 156 cut
-(`death_props_38`), enlarged about 6x: sharp on the home screen, soft at the
-App Store's 1024; a full-size redraw replaces it one for one.
+`dist/` leaves out. **The icon is jovial** (the owner: Death's card back was "way too freaky"
+for one): Lincoln laughing, from his own drawn frame, on the green felt with
+a fan of the four-colour deck behind him, a gold ring, no words. The launch
+screen is the same icon small on the felt. `python3 art-tools/build/app_icon.py`
+writes both into the Xcode asset catalogue (`CHOSEN` picks the design;
+`--preview OUT` draws every design: Lincoln laughing, Lincoln tipping his
+hat, Teddy cheering).
 **Rive is shelved** (the owner: a hired animator is not affordable). The
 brief and parts prompts written for one stay as a record
 (`art-tools/roosevelt_parts/RIVE_PARTS.md`, `ANIMATION_BRIEF.md`, and his
