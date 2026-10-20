@@ -36,7 +36,7 @@ DESIGNS = {
     'lancelot_preen': {'frame': 'lancelot/frame_hair.png', 'box': (0.0, 0.0, 1.0, 0.75), 'flip': True},
     'teddy': {'frame': 'roosevelt/frame_win_big.png', 'box': (0.0, 0.0, 1.0, 0.9), 'flip': False, 'height': 0.88, 'right': -0.06},
 }
-CHOSEN = 'lincoln_laugh'
+CHOSEN = 'arthur_toast'
 
 FELT = (47, 128, 78)
 FELT_EDGE = (16, 66, 40)

@@ -443,8 +443,9 @@ the Mac `npx cap open ios` opens Xcode (signing: pick a Team in Signing &
 Capabilities and Xcode makes the profile). `npm run ios` does all three.
 The app has no bench: `#/puppet/<id>` needs the full-size images, which
 `dist/` leaves out. **The icon is jovial** (the owner: Death's card back was "way too freaky"
-for one): Lincoln laughing, from his own drawn frame, on the green felt with
-a fan of the four-colour deck behind him, a gold ring, no words. The launch
+for one): Arthur raising a toast (the owner's pick), from his own drawn
+frame, on the green felt with a fan of the four-colour deck behind him, a
+gold ring, no words. The launch
 screen is the same icon small on the felt. `python3 art-tools/build/app_icon.py`
 writes both into the Xcode asset catalogue (`CHOSEN` picks the design;
 `--preview OUT` draws every design: Lincoln laughing or tipping his hat,
