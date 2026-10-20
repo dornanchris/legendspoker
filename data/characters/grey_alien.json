@@ -94,6 +94,28 @@
       "We commit all of it.",
       "All. We have done this before.",
       "Everything. Come quietly."
+    ],
+    "reraised": [
+      "You resist. Most of them stop, eventually.",
+      "This one is awake. That was not planned."
+    ],
+    "win": [
+      "The examination is complete.",
+      "Thank you for your cooperation.",
+      "You have lost some time. And some chips.",
+      "We will be keeping this one."
+    ],
+    "lose": [
+      "Interesting. We did not predict that.",
+      "No one at home will believe us.",
+      "We will need to examine that more closely.",
+      "We will come back for it. We always come back."
+    ],
+    "beat_astronaut": [
+      "You breathed faster that time. We counted."
+    ],
+    "beat_martian": [
+      "That was quieter than your last visit."
     ]
   }
 }

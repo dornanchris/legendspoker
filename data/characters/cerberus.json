@@ -93,6 +93,31 @@
       "[sweeps every chip into the middle with his tail]",
       "[bays from all three throats and shoves everything in]",
       "[pushes the whole pile in with his chest]"
+    ],
+    "reraised": [
+      "[the middle head barks at the raiser; the other two agree]",
+      "[bares all three sets of teeth, and shoves the chips forward]"
+    ],
+    "win": [
+      "[drags the pot in with one paw and lies down on it]",
+      "[the three heads squabble over which of them won it]",
+      "[throws back all three heads and howls]",
+      "[wags his serpent tail; it hisses, pleased]"
+    ],
+    "lose": [
+      "[the left and right heads turn to glare at the middle one]",
+      "[the middle head sighs; the other two sigh a moment later]",
+      "[sniffs the winning cards with one head, and sneezes]",
+      "[gives the winner a long look from all six eyes]"
+    ],
+    "win_three_of_a_kind": [
+      "[each head noses one card of the three, very proudly]"
+    ],
+    "beat_spartacus": [
+      "[lies down between Spartacus and the door]"
+    ],
+    "beat_pope": [
+      "[sniffs the Pope's sleeve for honey cake, hopefully]"
     ]
   }
 }

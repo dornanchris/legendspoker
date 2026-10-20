@@ -102,6 +102,34 @@
       "All in! Arooo— sorry. Sorry.",
       "Everything. The moon's up.",
       "All in. Somebody lock the doors."
+    ],
+    "reraised": [
+      "Don't poke it. You're poking it.",
+      "Easy. Easy. I bite when I'm cornered."
+    ],
+    "win": [
+      "All the better to take your chips with. Sorry. Sorry.",
+      "I'll give it back. ...No. No, I won't. Sorry.",
+      "Mine! Oh, that feels good. That's a bad sign.",
+      "That's the wolf's pot, really. I'm just holding it for him."
+    ],
+    "lose": [
+      "Bad dog. I mean — bad luck.",
+      "Fine. I'll go and lick my wounds. Literally.",
+      "That's all right. I've woken up in worse places.",
+      "Grr— No. No. Good sport. I'm a good sport."
+    ],
+    "lose_full_house": [
+      "A full house. I could huff, and I could puff. I won't."
+    ],
+    "beat_dracula": [
+      "Sit, Count. Stay."
+    ],
+    "beat_hyde": [
+      "Good game, little fella. Please don't hit me."
+    ],
+    "beat_headless_horseman": [
+      "Sorry. I won't say it. Not one word about heads."
     ]
   }
 }

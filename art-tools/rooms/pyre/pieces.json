@@ -1,4 +1,80 @@
 {
- "note": "The Pyre: a heads-up table, Death at the centre and the Phoenix in the one chair, at seat 3's place (1130 of 1600 across), in front of the column at 66% of the backdrop: the rising sun (73%) stays beside it, not behind its head. The pieces (sources/pieces.png: the nest smouldering, ash, the dawn sky) are not used yet: the altar on the sheet is drawn at another size than the backdrop's, and the sky strips would need cutting to the gaps between the columns.",
- "seats": {"1": [[1130, 0.52, 2]]}
+ "note": "The Pyre: a heads-up table, Death at the centre and the Phoenix in the one chair, at seat 3's place (1130 of 1600 across), in front of the column at 66% of the backdrop: the rising sun (73%) stays beside it, not behind its head. The embers glowing in the nest are the sheet's three nests' fire only ('bright', each cut at one box size, 'keep_box'), laid over the backdrop's own nest and flickering slowly. The rest of the sheet (sources/pieces.png: the whole altar, ash, the dawn sky) is not used: the altar is drawn at another size and angle than the backdrop's (pasted over it, it shows), its smoke cannot be cut from the white, and the sky strips would need cutting to the gaps between the columns.",
+ "sheet": "sources/pieces.png",
+ "pieces": {
+  "ember_1": {
+   "box": [
+    185,
+    205,
+    365,
+    262
+   ],
+   "bright": [
+    200,
+    70,
+    120
+   ],
+   "keep_box": true,
+   "feather": 2
+  },
+  "ember_2": {
+   "box": [
+    701,
+    205,
+    881,
+    262
+   ],
+   "bright": [
+    200,
+    70,
+    120
+   ],
+   "keep_box": true,
+   "feather": 2
+  },
+  "ember_3": {
+   "box": [
+    1212,
+    205,
+    1392,
+    262
+   ],
+   "bright": [
+    200,
+    70,
+    120
+   ],
+   "keep_box": true,
+   "feather": 2
+  }
+ },
+ "loops": [
+  {
+   "frames": [
+    "ember_1",
+    "ember_2",
+    "ember_3"
+   ],
+   "every": [
+    0.35,
+    0.8
+   ],
+   "spots": [
+    [
+     158.6,
+     363.1,
+     65.0
+    ]
+   ]
+  }
+ ],
+ "seats": {
+  "1": [
+   [
+    1130,
+    0.52,
+    2
+   ]
+  ]
+ }
 }

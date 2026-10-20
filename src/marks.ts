@@ -51,6 +51,10 @@ export type TableFacts = {
   neverBelowStart: boolean
   missed: string[]
   respectTier: number
+  /** The one opponent left when the last hand was dealt, if it was heads up. */
+  headsUpWith: string | null
+  /** Who the player had beaten before this sitting began. */
+  beatenBefore: string[]
 }
 
 const rankIndex = (name: string) => RANKINGS.indexOf(name)
@@ -144,6 +148,9 @@ function tableCondition(w: MarkCondition, t: TableFacts): boolean {
       return t.won && t.hands <= w.maxHands
     case 'respect_tier':
       return t.respectTier >= w.tier
+    case 'table_won_heads_up':
+      // `rematch`: only once they were already beaten (unlocked) before this sitting
+      return t.won && t.headsUpWith === w.character && (!w.rematch || t.beatenBefore.includes(w.character))
     default:
       return false
   }
@@ -174,7 +181,7 @@ const HAND_TYPES = new Set([
 ])
 const TABLE_TYPES = new Set([
   'table_won', 'table_won_missing', 'table_won_from_short', 'table_won_leading',
-  'table_won_fast', 'respect_tier',
+  'table_won_fast', 'respect_tier', 'table_won_heads_up',
 ])
 const CAREER_TYPES = new Set(['hands_played', 'tour_complete', 'table_cleared', 'lost_to', 'beaten_roster', 'met'])
 

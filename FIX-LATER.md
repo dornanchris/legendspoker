@@ -34,9 +34,18 @@ is done, and say so in the commit.
   `build/paper_flecks.py` colours over the sheet's white caught in hair. Left:
   bigger pockets of paper between the holly's twigs (over 120 px, so the fleck
   pass leaves them), a few small orange stubs where a frame meets the drawn rail
-  at its ends, a nub of outline by the Knight's far rest gauntlet. Worth a
-  `paper_flecks.py --dry` across the cast, puppet by puppet, looked at before
-  it is applied.
+  at its ends, a nub of outline by the Knight's far rest gauntlet.
+  **The cast-wide `--dry` was run and looked at (do NOT apply it as it is):**
+  it would flag 45 of 46 puppets, and what it flags is mostly drawn light,
+  not paper: Blackbeard's beard gloss, Arthur's chainmail tops, Lincoln's
+  white chip inserts, Loki's grey robe and the white of one eye, the Grey's
+  whole grey skin (and so the Robot, the AI, the Martian, Pravuil). Its
+  "half paper" class (any neutral grey, min > 55, spread < 14) and its "hair"
+  ring test only hold for the Knight and Lancelot. Real paper seen on the
+  way: a white fringe down Blackbeard's forearm in `win_big` / `lose_big`,
+  a white streak between Lincoln's fingers in `win_big`. Fix those by hand
+  (or with a tool that looks only for a 1-2 px white rim on the silhouette)
+  if they show at the table.
 - **More drawn poses, less rigging** (the owner: "lean into the stop motion
   stuff a bit more"). When a gesture looks stiff as a tweened arm, the fix is
   another whole-figure drawing, not another bone.
@@ -90,9 +99,15 @@ is done, and say so in the commit.
 - **The Phoenix:** a sliver of the drawn rail by its near wing at rest; its
   knocked-out flame is cut straight a little below the table line; its open
   beak is clipped by the head's outline (it reads as a little open).
-- **The Pyre's, the Last Crossing's and the Hall's pieces are not used yet**
-  (the nest, ash, dawn sky; the lamp, rain, boat, door): drawn at other sizes
-  than the backdrops' (each pieces.json says why). The rooms read without them.
+- **The Pyre's, the Last Crossing's and the Hall's pieces** (the nest, ash,
+  dawn sky; the lamp, rain, boat, door): the Pyre's nest now smoulders (the
+  sheet's three nests' fire only, cut by `room_web.py`'s `bright` with a blue
+  ceiling, `keep_box` and `feather`, flickering over the backdrop's own nest).
+  Tried and left: the whole altar pasted over the backdrop's (another angle,
+  and its smoke cannot be cut from the white). The rest is unused, each
+  pieces.json says why: the Last Crossing's window, door and boat pieces are
+  drawn at other sizes and its lamp stands on the felt (drawn behind the
+  table); the Hall of Doors has no pieces sheet. The rooms read without them.
 
 ## The table screen (from the owner's screenshots)
 
@@ -116,16 +131,22 @@ is done, and say so in the commit.
   not the room's lamps (the stage dims only loop pieces, and the Station has none).
 
 - **A wide screen cuts off the player's own seat:** the plate at the left
-  edge and the hole cards at the bottom (seen at the Pirate Cove).
-- **A bet's chip pile lands beside or over the board** when the seat's pile
-  spot is near the middle.
-- **Death's dealt cards fly over his own "DEATH deals" plate** as they leave
-  his hands: start the flights below the plate, or put the plate under them.
-- **Tell and idle text overlaps the name plates.**
-- From CLAUDE.md's staged-table gaps, still open: two speech
-  bubbles can overlap; Death's clips draw their own cards and chips over the
-  game's flights; a window narrower than 16:9 shows the room low; the top bar
-  is phone-sized on a monitor; Reduce motion hides the older speech bubbles.
+  edge and the hole cards at the bottom (seen at the Pirate Cove). Not
+  reproduced at 1280x720 through 2560x1080, 21:9 or a 915x412 phone; what
+  was found and fixed is a wide PHONE (900 px or more across) opening the
+  log beside the table, which took a third of the felt (now a drawer at any
+  phone height). If it shows again, a screenshot with the window size.
+- ~~**A bet's chip pile lands beside or over the board**~~ DONE: moved out
+  toward its own side, never past its own plate (`clearUnder`, table.ts).
+- ~~**Death's dealt cards fly over his own "DEATH deals" plate**~~ DONE: they
+  leave from just under it.
+- ~~**Tell and idle text overlaps the name plates.**~~ DONE: a two-line band
+  under each plate, as wide as the neighbours' plates allow; the bet below it.
+- ~~From CLAUDE.md's staged-table gaps~~ DONE: bubbles no longer overlap; one
+  deal clip a hand (no card held up after the deal); a window narrower than
+  16:9 carries the ceiling up into the dark; the top bar grows with the
+  screen; Reduce motion shows every bubble. Left: Death's `thumb` frame is a
+  card in his hand for a moment before the first flight.
 
 ## Game and words (other threads)
 
@@ -158,8 +179,8 @@ is done, and say so in the commit.
   tier (`src/tour.ts`, the dialogue's tiered lines), and the one line that
   genders the player, `wh_p0_03` ("the look of a man who has read about
   poker").
-- **Holmes's deerstalker as an earned skin** (the owner): once Holmes is
-  unlocked, beating him heads up earns the hat look. Game work, out of the art
-  thread's scope; the art (`#/puppet/sherlock_deerstalker`) is built.
+- ~~**Holmes's deerstalker as an earned skin**~~ DONE: the mark "The
+  Deerstalker" (beat him heads up once he is already beaten), then he wears it
+  (`LOOKS` in `web/puppet/cast.ts`; `npm run check:look`).
 - **The human edit pass on the draft dialogue** (CLAUDE.md, owed before
   Phase 5).

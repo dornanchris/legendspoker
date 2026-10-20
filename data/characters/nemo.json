@@ -94,6 +94,31 @@
       "All in. Full ahead, and down.",
       "Everything. I have no flag to lose.",
       "All in. The sea takes all or nothing."
+    ],
+    "reraised": [
+      "The frigate Abraham Lincoln chased me for months. Do go on.",
+      "Then we shall go deeper."
+    ],
+    "win": [
+      "I take possession of this, as I did the South Pole.",
+      "I draw my gold from the wrecks of Vigo Bay. And from you.",
+      "Taken with every courtesy, I assure you.",
+      "The sea gives back what it takes. To me, mostly."
+    ],
+    "lose": [
+      "Aground, as in the Torres Strait. The tide will lift me.",
+      "Trapped under the ice again. I have known worse.",
+      "Into the Maelstrom, then. Calmly.",
+      "Then I shall go down, and not come up for some time."
+    ],
+    "beat_javert": [
+      "No one won, Inspector. Write it down."
+    ],
+    "beat_sherlock": [
+      "You read everything, Mr Holmes. You did not read that."
+    ],
+    "beat_cheshire_cat": [
+      "Which way now, Cat? Down. As I said."
     ]
   }
 }

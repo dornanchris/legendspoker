@@ -100,6 +100,38 @@
       "The whole stake. Into the heart of it.",
       "All in. At sunset, as it must be done.",
       "Everything. Somebody write it down."
+    ],
+    "reraised": [
+      "So. The patient resists the treatment.",
+      "Push, then. I have stood my ground in this house before."
+    ],
+    "win": [
+      "Knowledge is stronger than memory. I wrote it all down.",
+      "So. Daylight comes, as I said it would.",
+      "You see, my friends? Patience. And a little garlic.",
+      "The diagnosis was correct. It is not always so."
+    ],
+    "lose": [
+      "We learn from failure, not from success. I am learning a great deal.",
+      "Four transfusions, and I lost the patient. I can lose a pot.",
+      "I have been wrong in many languages. This one too.",
+      "So. I make a note of it, and we go on."
+    ],
+    "win_three_of_a_kind": [
+      "Three of a kind. There were three sisters in this house, once."
+    ],
+    "beat_dracula": [
+      "This time, Count, I did the work myself.",
+      "You took it back four times, Count. Tonight I take it back."
+    ],
+    "beat_jekyll": [
+      "A second opinion, Doctor. Mine."
+    ],
+    "beat_hyde": [
+      "Tell the doctor I was gentle with you, Mr. Hyde."
+    ],
+    "beat_headless_horseman": [
+      "Another Abraham. And this one did not need a pumpkin."
     ]
   }
 }

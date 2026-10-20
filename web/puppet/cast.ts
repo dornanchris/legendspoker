@@ -151,6 +151,15 @@ export type CastEntry = { rig: RigData; anim: AnimData; base: string; ik?: IkDat
  */
 export const RETURNED: Record<string, string> = { green_knight: 'green_knight_bare' }
 
+/**
+ * A look the player earns for someone, by a mark (data/marks.json): once the
+ * mark is in the ledger they wear it wherever they sit. Holmes's deerstalker,
+ * for beating him heads up once he is already beaten (the owner).
+ */
+export const LOOKS: Record<string, { mark: string; puppet: string }> = {
+  sherlock: { mark: 'the_deerstalker', puppet: 'sherlock_deerstalker' },
+}
+
 export const PUPPETS: Record<string, CastEntry> = {
   lincoln: { rig: lincolnRig as unknown as RigData, anim: lincolnAnim as unknown as AnimData, base: 'art/lincoln/' },
   washington: { rig: washingtonRig as unknown as RigData, anim: washingtonAnim as unknown as AnimData, base: 'art/washington/', ik: washingtonIk as unknown as IkData },

@@ -171,7 +171,7 @@
           { "id": "tv_hy_vh_02d", "speaker": "van_helsing", "text": "Then I shall look more carefully than he did." }
         ],
         [
-          { "id": "tv_hy_vh_03a", "speaker": "van_helsing", "text": "I am told a doctor saw you trample a child, Mr. Hyde, and went white with the wish to kill you." },
+          { "id": "tv_hy_vh_03a", "speaker": "van_helsing", "text": "I am told the doctor fetched to the child you trampled went white with the wish to kill you, Mr. Hyde." },
           { "id": "tv_hy_vh_03b", "speaker": "hyde", "text": "Some Sawbones from Edinburgh. About as emotional as a bagpipe." },
           { "id": "tv_hy_vh_03c", "speaker": "van_helsing", "text": "I am from Amsterdam. We are calmer. Do not test it.", "note": "Enfield's own description of the doctor who was fetched for the trampled child: 'about as emotional as a bagpipe'." }
         ],

@@ -94,6 +94,40 @@
       "All in. Let the barge wait.",
       "All in. For Camelot, and all it was.",
       "Everything. The Table stands or falls together."
+    ],
+    "reraised": [
+      "You raise the king? Good. At a round table, anyone may.",
+      "Fairly met. I would not have you hold back on my account."
+    ],
+    "win": [
+      "Fairly won, I think. Tell me if it was not.",
+      "The sword was a gift. This, at least, I earned.",
+      "Well fought, friend. I hope you will sit with us again.",
+      "A king may enjoy one, now and then. Allow me this."
+    ],
+    "lose": [
+      "Well played. Take it, with my blessing.",
+      "I have lost more than a pot at a round table.",
+      "Merlin will say I should have kept the scabbard.",
+      "Fairly beaten. I shall remember that hand kindly."
+    ],
+    "win_royal_flush": [
+      "A royal flush. It runs in the family, I am told."
+    ],
+    "beat_lancelot": [
+      "Forgive me, Lancelot. I have so rarely beaten you at anything."
+    ],
+    "beat_merlin": [
+      "You told me how it all ends, Merlin. Not this part."
+    ],
+    "beat_green_knight": [
+      "Your blow returned, Green Knight. As agreed."
+    ],
+    "beat_washington": [
+      "You refused a crown, General. I am afraid I kept mine."
+    ],
+    "beat_odysseus": [
+      "Ithaca will keep, Odysseus. Stay a little longer."
     ]
   }
 }

@@ -59,7 +59,7 @@
     "sniggers to himself"
   ],
   "profile": {
-    "ledger": "Came to me in another man's clothes, with the smell of kernels on his breath, his face still working. The smallest thing I ever collected, and the hardest to pick up.",
+    "ledger": "Came to me in another man's clothes, with the smell of kernels in the air, his face still working. The smallest thing I ever collected, and the hardest to pick up.",
     "ledger_beaten": "He kicked his chair on the way out and slammed the door. A little later somebody knocked on it, very politely, to apologise.",
     "history": [
       "Edward Hyde is the other half of Henry Jekyll in Robert Louis Stevenson's Strange Case of Dr Jekyll and Mr Hyde (1886): pale and dwarfish, smaller, slighter and younger than the doctor, with a husky, whispering, somewhat broken voice and a displeasing smile. He gives everyone who sees him an impression of deformity that nobody can name, and a loathing they cannot explain. Mr Enfield watched him trample a little girl at a street corner and walk on; to buy his way out of the crowd he paid a hundred pounds, ten in gold and the rest in a cheque on Coutts's signed with a respectable name. Later, on a moonlit night, he clubbed Sir Danvers Carew to death with a heavy cane, so hard that it broke; the lawyer Utterson knew the half that was left, for he had given that cane to Jekyll himself.",
@@ -102,6 +102,34 @@
       "All of it. Every penny of his.",
       "All in! Let the doctor pay for it in the morning.",
       "Everything. I never could stop at once."
+    ],
+    "reraised": [
+      "Get in my way, will you? People do. Once.",
+      "No gentleman wants a scene. Lucky I'm not one."
+    ],
+    "win": [
+      "Ha! Walked right over you. I do that.",
+      "Don't sulk. Send the bill to Harry. He always pays.",
+      "Ha! Everything comes to me in the end. Ask his lawyer.",
+      "Mine. And I didn't even need the cane."
+    ],
+    "lose": [
+      "Bah! The doctor will hear of this. He'll be ever so sorry.",
+      "Laugh, then. I never forget a face.",
+      "Somebody'll pay for that. Not me. It's never me.",
+      "Damn the cards. And damn the doctor's luck, too."
+    ],
+    "beat_van_helsing": [
+      "Write that down, Professor. Ha!"
+    ],
+    "beat_wolf_man": [
+      "Heel, dog."
+    ],
+    "beat_dracula": [
+      "Didn't need inviting, did I, Count?"
+    ],
+    "beat_headless_horseman": [
+      "Lost your chips as well, trooper? Ha!"
     ]
   },
   "other": {

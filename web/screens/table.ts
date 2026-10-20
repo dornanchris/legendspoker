@@ -13,7 +13,7 @@ import { h, go, sleep, formatChips, ordinal } from '../dom.js'
 import * as sound from '../sound.js'
 import { fly as launch, flipOver as turnOver, centre, chipDisc, flightColours, drawPile, chipCount, type Pt } from '../fx.js'
 import { setResult, curtainCall, type Sitting } from './results.js'
-import { ROOMS, PUPPETS, RETURNED } from '../puppet/cast.js'
+import { ROOMS, PUPPETS, RETURNED, LOOKS } from '../puppet/cast.js'
 import { Stage, PRIO, DEALER as DEATH, type Prio, type SeatSpot } from '../puppet/stage.js'
 import { markTitle } from './shared.js'
 
@@ -85,6 +85,9 @@ function readingTime(text: string): number {
 function calloutTime(text: string): number {
   return Math.max(1400, Math.min(3000, 700 + text.length * 40))
 }
+
+/** How long a spoken line, a narration and Death's line stay up: their animations' lengths in style.css. */
+const BUBBLE_MS = { say: 5200, narration: 6000, dealer: 5200 }
 
 type SeatUI = {
   id: string
@@ -202,8 +205,9 @@ export function tableScreen(root: HTMLElement): () => void {
   els.raiseRow.append(els.quick, els.slider, els.raiseValue, els.raiseConfirm, els.raiseCancel)
   els.logPanel.append(h('h2', null, 'Log'), els.log)
   // On a phone held sideways the log would sit on top of a seat, so there it
-  // starts closed and opens as a drawer.
-  const narrow = window.innerWidth < 900
+  // starts closed and opens as a drawer. A wide phone too: beside the table
+  // it took a third of the felt.
+  const narrow = window.innerWidth < 900 || window.innerHeight <= 460
   if (!settings.showLog || narrow) els.logPanel.classList.add('collapsed')
 
   const leave = h('button', { type: 'button', class: 'ghost small', onclick: () => go('/') }, '‹ Leave')
@@ -261,9 +265,15 @@ export function tableScreen(root: HTMLElement): () => void {
     void drain()
   }
 
+  // Nothing plays until the room is drawn (or 5 s have passed, whatever
+  // happens): the first hand was dealt over a black screen while the figures loaded.
+  let roomDrawn = () => {}
+  const roomUp = staged ? new Promise<void>((r) => { roomDrawn = r; setTimeout(r, 5000) }) : Promise.resolve()
+
   async function drain() {
     if (draining) return
     draining = true
+    await roomUp
     while (queue.length && alive) {
       const s = queue.shift()!
       // Fast-forward cancels itself at the showdown reveal and at a new deal:
@@ -355,8 +365,70 @@ export function tableScreen(root: HTMLElement): () => void {
     // the board under the dealer's plate, however tall the plate has grown
     const below = els.dealer.offsetTop + els.dealer.offsetHeight + 6 * plateScale
     if (mid) { mid.style.left = `${d.x}px`; mid.style.top = `${Math.max(d.line + 128 * g.k, below)}px` }
+    // Cards leave his deck from just under his plate, never across it (on a
+    // short screen the plate is not drawn, and they leave his hands).
     els.deck.style.left = `${g.deck.x}px`
-    els.deck.style.top = `${g.deck.y}px`
+    const s = Number(screenEl.style.getPropertyValue('--s')) || 1
+    els.deck.style.top = `${Math.max(g.deck.y, els.dealer.offsetHeight > 12 ? below + 14 * s : 0)}px`
+    if (mid) clearUnder(width, mid)
+  }
+
+  /**
+   * Under each plate: a band two lines deep for the words of a tell or an
+   * idle, wider than the plate where its neighbours' plates leave room (the
+   * long ones ran to three lines, over the bet and the next plate), and below
+   * that band the seat's bet, moved out toward its own side wherever it would
+   * lie on the board.
+   */
+  function clearUnder(width: number, mid: HTMLElement) {
+    const s = Number(screenEl.style.getPropertyValue('--s')) || 1
+    const plates = [...seatUI.values()].map((ui) => {
+      const w = ui.root.offsetWidth
+      const left = parseFloat(ui.root.style.left) - w / 2
+      return { ui, left, right: left + w, top: ui.root.offsetTop, bottom: ui.root.offsetTop + ui.root.offsetHeight }
+    })
+    // the board as wide as five cards, and the pot under it
+    const probe = cardEl(null)
+    els.board.append(probe)
+    const card = probe.offsetWidth
+    probe.remove()
+    const boardHalf = (5 * card + 4 * 6 * s) / 2 + 10
+    const mx = parseFloat(mid.style.left)
+    const boardTop = mid.offsetTop, boardBottom = mid.offsetTop + Math.max(mid.offsetHeight, card * 1.4 + 30 * s)
+    for (const p of plates) {
+      const lh = parseFloat(getComputedStyle(p.ui.tell).lineHeight) || 14
+      const y0 = p.bottom + 3, y1 = y0 + 2 * lh
+      const cx = (p.left + p.right) / 2
+      const want = (p.right - p.left) * 1.5
+      let lo = 4, hi = width - 4
+      for (const q of plates) {
+        if (q === p || q.bottom < y0 || q.top > y1) continue
+        if (q.right <= cx) lo = Math.max(lo, q.right + 6)
+        else if (q.left >= cx) hi = Math.min(hi, q.left - 6)
+      }
+      let l = Math.max(lo, cx - want / 2), r = Math.min(hi, cx + want / 2)
+      if (r - l < p.right - p.left) { l = p.left; r = p.right }
+      p.ui.tell.style.left = `${l - p.left}px`
+      p.ui.tell.style.width = `${r - l}px`
+      p.ui.tell.style.right = 'auto'
+      // the bet: below the band (from the plate's foot: a plate shrinks when its cards are mucked), and off the board
+      const top = y1 + 2
+      p.ui.bet.style.top = `calc(100% + ${top - p.bottom}px)`
+      // where the pile lies unmoved, as wide as two columns and a 5-figure amount
+      const bet = p.ui.bet
+      bet.style.setProperty('--bet-in', '0px')
+      const pile = 2 * 18 * s + 2 * s + 4 + 6 * 0.62 * 0.78 * 14 * s
+      const at = p.left + bet.offsetLeft
+      const [a, b] = p.ui.root.dataset.side === 'r' ? [at + bet.offsetWidth - pile, at + bet.offsetWidth] : [at, at + pile]
+      let shift = 0
+      if (top < boardBottom && top + 24 * s > boardTop) {
+        // never further out than its own plate, where the next seat's bet lies
+        shift = p.ui.root.dataset.side === 'r'
+          ? Math.max(b - (p.right - 4), Math.min(0, a - (mx + boardHalf)))
+          : Math.max(p.left + 4 - a, Math.min(0, mx - boardHalf - b))
+      }
+      bet.style.setProperty('--bet-in', `${shift}px`)
+    }
   }
 
   /** Everyone in the chair the engine says they are in; the chairs of those who are out empty. */
@@ -365,6 +437,9 @@ export function tableScreen(root: HTMLElement): () => void {
   function figureAt(seat: number): string {
     if (seat === HUMAN_SEAT) return youSeen ? room?.data.youAs ?? 'stranger' : ''
     const id = changed.get(seat) ?? seatIds[seat] ?? ''
+    // a look the player has earned for them (Holmes's deerstalker), worn from the next sitting on
+    const look = LOOKS[id]
+    if (look && save.marks[look.mark] && PUPPETS[look.puppet]) return look.puppet
     return room?.data.cast?.[id] ?? id
   }
 
@@ -378,13 +453,14 @@ export function tableScreen(root: HTMLElement): () => void {
 
   /** The art did not load: the plain table, as at a room not drawn yet. */
   function unstage() {
+    roomDrawn()
     stage?.destroy()
     stage = null
     stageReady = false
     els.stageCanvas.remove()
     els.deck.remove()
     els.opponents.parentElement?.classList.remove('staged')
-    for (const el of [els.dealer, ...[...seatUI.values()].map((u) => u.root)]) el.removeAttribute('style')
+    for (const el of [els.dealer, ...[...seatUI.values()].flatMap((u) => [u.root, u.tell, u.bet])]) el.removeAttribute('style')
     els.opponents.parentElement?.querySelector<HTMLElement>('.middle')?.removeAttribute('style')
   }
 
@@ -452,6 +528,7 @@ export function tableScreen(root: HTMLElement): () => void {
       stageReady = true
       syncStage()
       layoutStage()
+      roomDrawn()
       if (active.mode === 'tour' && table.arrival) stage?.preload(table.arrival.character)
       for (const id of seatIds) if (id && RETURNED[id]) stage?.preload(RETURNED[id])
       // the other half of a two-man chair, so he is ready if he walks back in
@@ -459,7 +536,7 @@ export function tableScreen(root: HTMLElement): () => void {
     }
     layoutStage()
     stage.accent = settings.accent
-    stage.load(seatIds).catch(unstage)
+    stage.load(seatIds.map((id, i) => (i > 0 && id ? figureAt(i) : id))).catch(unstage)
     ;(window as any).__stage = stage
   }
   const resized = new ResizeObserver(() => layoutStage())
@@ -616,7 +693,8 @@ export function tableScreen(root: HTMLElement): () => void {
   function showTell(seat: number, text: string, real: boolean) {
     const ui = seatUI.get(seat)
     if (!ui) return
-    ui.tell.textContent = tellLine(nameOf(seat), text)
+    const line = tellLine(nameOf(seat), text)
+    ui.tell.textContent = line[0].toUpperCase() + line.slice(1)   // "the Cat blinks...": a line begins with a capital
     ui.tell.classList.remove('fade')
     void ui.tell.offsetWidth
     ui.tell.classList.add('fade')
@@ -639,6 +717,28 @@ export function tableScreen(root: HTMLElement): () => void {
 
   // ------------------------------------------------------------ dialogue
 
+  /**
+   * Put a bubble up for `ms`, then take it down. On a timer as well as its
+   * animation, so Reduce motion (which switches animations off) still shows
+   * it, still, for as long. Any other bubble it would cover comes down first:
+   * two lines never sit one over the other (the log keeps both).
+   */
+  let bubbleToken = 0
+  function showBubble(el: HTMLElement, ms: number) {
+    el.classList.remove('show')
+    void el.offsetWidth
+    el.classList.add('show')
+    const r = el.getBoundingClientRect()
+    for (const o of screenEl.querySelectorAll<HTMLElement>('.say.show, .callout.show, .dealer-line.show, .narration.show')) {
+      if (o === el) continue
+      const q = o.getBoundingClientRect()
+      if (q.width && r.width && q.left < r.right && r.left < q.right && q.top < r.bottom && r.top < q.bottom) o.classList.remove('show')
+    }
+    const token = String(++bubbleToken)
+    el.dataset.token = token
+    later(() => { if (el.dataset.token === token) el.classList.remove('show') }, ms)
+  }
+
   function sayLine(b: Extract<Beat, { kind: 'line' }>) {
     const speaker = b.speaker
     const who = speaker === 'death' ? 'Death' : speaker === 'narration' ? '' : CHARACTERS[speaker]?.short ?? speaker
@@ -650,14 +750,10 @@ export function tableScreen(root: HTMLElement): () => void {
       if (speaker === 'death' && !seatIds.includes('death')) {
         speak(DEATH, b.text)
         els.dealerLine.textContent = `“${b.text}”`
-        els.dealerLine.classList.remove('show')
-        void els.dealerLine.offsetWidth
-        els.dealerLine.classList.add('show')
+        showBubble(els.dealerLine, BUBBLE_MS.dealer)
       } else if (speaker === 'narration') {
         els.narration.textContent = b.text.replace(/^\[|\]$/g, '')
-        els.narration.classList.remove('show')
-        void els.narration.offsetWidth
-        els.narration.classList.add('show')
+        showBubble(els.narration, BUBBLE_MS.narration)
       } else {
         const seat = seatIds.indexOf(speaker)
         const ui = seatUI.get(seat)
@@ -668,15 +764,11 @@ export function tableScreen(root: HTMLElement): () => void {
           }
           ui.say.textContent = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
           ui.say.classList.toggle('stage', b.stage)
-          ui.say.classList.remove('show')
-          void ui.say.offsetWidth
-          ui.say.classList.add('show')
+          showBubble(ui.say, BUBBLE_MS.say)
         } else {
           // Not seated (a watcher, or someone just knocked out): the room hears it.
           els.narration.textContent = b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`
-          els.narration.classList.remove('show')
-          void els.narration.offsetWidth
-          els.narration.classList.add('show')
+          showBubble(els.narration, BUBBLE_MS.narration)
         }
       }
     }, readingTime(b.text), { line: true })
@@ -701,7 +793,6 @@ export function tableScreen(root: HTMLElement): () => void {
    * waits for one. Cut, not sped up, while fast-forwarding. One on screen at
    * a time. The words go in the log just AFTER the action, where they read.
    */
-  let calloutToken = 0
   function showCallout(b: Extract<Beat, { kind: 'callout' }>) {
     step(() => {
       if (ff) return
@@ -719,14 +810,7 @@ export function tableScreen(root: HTMLElement): () => void {
       // Any line this seat said earlier has had its reading time: the queue
       // waited for it. Do not stack two bubbles on one chair.
       ui.say.classList.remove('show')
-      el.classList.remove('show')
-      void el.offsetWidth
-      el.classList.add('show')
-      // Taken down on the same clock, so it also goes away under reduce-motion,
-      // where there is no animation to fade it.
-      const token = String(++calloutToken)
-      el.dataset.token = token
-      later(() => { if (el.dataset.token === token) el.classList.remove('show') }, ms)
+      showBubble(el, ms)
     }, 0)
   }
 
@@ -928,13 +1012,17 @@ export function tableScreen(root: HTMLElement): () => void {
             box.replaceChildren(...backs)
             slots.set(seat, backs)
           }
+          // the plates have their cards again: lay out what lies under them
+          layoutStage()
           const flight = move(MOVE.dealFlight)
           if (flight > 0) for (const backs of slots.values()) for (const b of backs) b.style.visibility = 'hidden'
           const from = centre(dealFrom(), felt())
           const lead = move(MOVE.shuffle)
           if (loud && !ff) sound.shuffle()
-          act(DEATH, 'deal_left')
-          act(DEATH, 'deal_right')
+          // One pitch of the deal, its side by turns. The clip thumbs a card
+          // off his deck and pitches it as the first flight leaves; a second
+          // clip after it held up a card that never flew, beside the real ones.
+          act(DEATH, e.hand % 2 ? 'deal_left' : 'deal_right')
           // each of them looks at what they were dealt, in their own time
           if (!instant) {
             for (const seat of seated) {
@@ -1580,6 +1668,7 @@ export function tableScreen(root: HTMLElement): () => void {
     earnedMarks: Object.keys(save.marks),
     buyIn: table.buyIn,
     uninvited: banishment ? UNINVITED : undefined,
+    beaten: Object.keys(save.characters).filter((id) => save.characters[id].beaten),
   })
 
   const game = new Game([HUMAN, ...active.seats.map(personality)], {

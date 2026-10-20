@@ -379,14 +379,27 @@ export class Stage {
     ctx.imageSmoothingQuality = 'high'
 
     // the backdrop, standing on the floor; as wide as the screen asks, and
-    // above it (a tall window) dark, rather than a room blown up to fill it
+    // above it (a tall window) its ceiling fading into the dark, rather than
+    // a room blown up to fill it
     if (this.backdrop) {
       const s = Math.max(1, cw / k / d.backdrop.w)
       const bw = d.backdrop.w * s, bh = d.backdrop.h * s
       set(D)
       // after the turn (the champion has come) the room may be drawn again, lit otherwise
       const room = this.presence === 'after' && this.backdropAfter ? this.backdropAfter : this.backdrop
-      ctx.drawImage(room, d.design[0] / 2 - bw / 2, d.design[1] - bh, bw, bh)
+      const bx = d.design[0] / 2 - bw / 2, by = d.design[1] - bh
+      ctx.drawImage(room, bx, by, bw, bh)
+      // A window taller than the room: its ceiling carried on up and into the
+      // dark, rather than a bare black band over it.
+      const top = -oy / k
+      if (by > top + 0.5) {
+        ctx.drawImage(room, 0, 0, room.naturalWidth, room.naturalHeight * 0.02, bx, top, bw, by - top + 1)
+        const g = ctx.createLinearGradient(0, top, 0, by)
+        g.addColorStop(0, '#0b0a09')
+        g.addColorStop(1, 'rgba(11, 10, 9, 0)')
+        ctx.fillStyle = g
+        ctx.fillRect(bx, top, bw, by - top + 1)
+      }
       // the room's pieces, scaled with the backdrop about its foot
       set(mul(mul(mul(D, translate(d.design[0] / 2, d.design[1])), scale(s, s)), translate(-d.design[0] / 2, -d.design[1])))
       const piece = (name: string, x: number, bottom: number, h: number, alpha = 1) => {

@@ -101,6 +101,37 @@
       "All in. For Cesare. For Lucrezia. For me, mostly.",
       "Everything. Rome was bought before.",
       "All in. I was elected on less."
+    ],
+    "reraised": [
+      "A counter-offer! How refreshing. Most people simply pay.",
+      "Outbid me? That did not happen at my conclave."
+    ],
+    "win": [
+      "I divided the New World once. This is much simpler.",
+      "Another dowry for Lucrezia. She does go through husbands.",
+      "Have Pinturicchio paint this one. Plenty of gold leaf.",
+      "A family business, my children, and business is good."
+    ],
+    "lose": [
+      "An honest card. How very rare.",
+      "Somewhere, della Rovere is laughing.",
+      "The votes went against me. They so seldom do.",
+      "Cesare would take that personally. I merely remember it."
+    ],
+    "win_full_house": [
+      "A full house. Like the Vatican, once my family moved in."
+    ],
+    "beat_caesar": [
+      "My son wanted to be Caesar. I see now he aimed too low."
+    ],
+    "beat_spartacus": [
+      "Every man the same share, you said. I've taken all of them."
+    ],
+    "beat_scipio": [
+      "Restraint is admirable. It is also how one loses pots."
+    ],
+    "beat_cerberus": [
+      "Good dog. Next time, I'll bring a honey cake."
     ]
   }
 }

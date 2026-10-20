@@ -101,6 +101,28 @@
       "All in. The fighting-machines are walking.",
       "Everything. For the red planet.",
       "All in. Wash your hands first."
+    ],
+    "reraised": [
+      "Defiance. How very terrestrial.",
+      "Your species always fights back. Briefly."
+    ],
+    "win": [
+      "We no longer regard these with envious eyes.",
+      "Primitive, but satisfying.",
+      "Inevitable. Your species takes a while to accept that.",
+      "Your air is unbearable. Your chips are delightful."
+    ],
+    "lose": [
+      "Ulla. Ulla. Ulla.",
+      "First your bacteria. Now this.",
+      "We should have stayed in the cylinder.",
+      "Your gravity. It drags everything down."
+    ],
+    "win_three_of_a_kind": [
+      "Three of a kind. A tripod. How fitting."
+    ],
+    "beat_grey_alien": [
+      "We do not give things back."
     ]
   }
 }

@@ -99,6 +99,28 @@
       "All of it. God forgive me.",
       "Everything. I have nothing more to keep back.",
       "The whole of it. I had meant to keep a little back. I always do."
+    ],
+    "reraised": [
+      "Oh dear. I had so hoped we might keep this civil.",
+      "Please. I am trying very hard to remain myself."
+    ],
+    "win": [
+      "Forgive me. I shall try not to enjoy it.",
+      "I beg your pardon. That was entirely my own doing. I think.",
+      "It shall all go to charity. Most of it.",
+      "Not a word to Utterson, I beg you. He worries."
+    ],
+    "lose": [
+      "I can stop the moment I choose. I give you my hand upon it.",
+      "I shall write a full statement of the case. A long one.",
+      "Unscientific balderdash, Lanyon would say. He would be right.",
+      "Quite right. In the end, somebody always pays."
+    ],
+    "win_full_house": [
+      "A full house. I keep another, in Soho. For a relation."
+    ],
+    "beat_van_helsing": [
+      "A fool for a patient, Professor, but a lucky one."
     ]
   },
   "other": {

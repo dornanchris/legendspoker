@@ -108,6 +108,7 @@ src/
   visitor-check.ts `npm run check:visitor` — JFK's three-five arrival, forced (spoilers)
   phoenix-check.ts `npm run check:phoenix` — the Phoenix's gauntlet rules (spoilers)
   other-check.ts  `npm run check:other` — Jekyll/Hyde: the 50/50 chair and the other half's return, forced
+  look-check.ts   `npm run check:look` — Holmes's deerstalker: earned by beating him heads up again, forced
   roster.ts       `npm run roster` — regenerates ROSTER.md from data/
   reads.ts        `npm run reads` — how each character reads a bet (a report)
   headsup.ts      `npm run headsup [matches] [ids]` — who beats whom one on one,
@@ -294,16 +295,20 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   more readily (0.85). **`reraised`**: said calling or raising when one's own bet was
   just raised over on that street (Teddy's Panama ditch), a reply, so it
   may follow the raiser's words. Each joke comes from the character's own
-  legend, never a modern wink; Death stays dry. Written so far for the
-  White House (the owner's dial), Athens (new pairs: Medusa and the
-  Cyclops, Leonidas and the Cyclops, Socrates and Odysseus) and the Pirate
-  Cove (Blackbeard's "I'm on fire"). None of this needs an ENGINE_VERSION bump.
+  legend, never a modern wink; Death stays dry. Written for the whole tour:
+  the White House (the owner's dial), Athens (new pairs: Medusa and the
+  Cyclops, Leonidas and the Cyclops, Socrates and Odysseus), the Pirate
+  Cove (Blackbeard's "I'm on fire"), and since then Camelot, Rome, Baker
+  Street, Transylvania, the Station and the guests (Loki's "Once I had to be
+  a horse"), with `beat_` lines for the champions who meet again in the Hall
+  of Doors (Washington to Odysseus: "I did not get lost"). The Phoenix is
+  mute. All draft. None of this needs an ENGINE_VERSION bump.
 - **Respect:** per table, points from pots / showdowns / knockouts, tiers at
   4 / 10 / 18, heads-up with the champion forces tier 2, a win forces tier 3.
   The name flip is always announced (toast + the tier's first line).
 - **The Ledger:** character pages (history, how they play in Death's voice,
   what YOU have seen them do in words, habits noted), venues, account,
-  house rules, and **marks** — 46 achievements framed as Death's entries,
+  house rules, and **marks** — 49 achievements framed as Death's entries,
   including some for levity (six-nine is "Nice"; the owner's call, and the
   one meme-adjacent joke the tone rules allow). A `secret` mark is neither
   listed nor counted until earned; `hidden` (older) lists it as a blank.
@@ -502,8 +507,13 @@ bareheaded in his own sitting room (Javert asks about it, in banter). **His
 deerstalker look is built too** (`#/puppet/sherlock_deerstalker`, 24 clips,
 `"of": "sherlock"` in its anim.json, like `green_knight_bare`): the owner's
 unlockable second look: once Holmes is unlocked, beating him heads up earns
-the hat (the owner). Nothing seats it yet; that is game work, for another
-thread (FIX-LATER.md).
+the hat (the owner). Earning it is a mark, "The Deerstalker"
+(`table_won_heads_up` with `rematch`: the last hand dealt was heads up with
+him, the player won, and he was beaten before the sitting began; the director
+reports `headsUpWith` and `beatenBefore` in its TableFacts). Once it is in the
+ledger he wears it wherever he sits, curtain-call portrait included (`LOOKS` in
+`web/puppet/cast.ts`, by mark), from the next sitting on: presentation only, no
+ENGINE_VERSION bump. `npm run check:look` forces it.
 **The Cheshire Cat takes Alice's chair** (seat 3, mirrored; the owner's call,
 ENGINE_VERSION 12: the Alice sheets drew as Disney's). The design doc had
 rejected him as unreadable; his tells answer that: his tail, eyes blinking one
@@ -761,7 +771,13 @@ new art against that layout.
   during a live hand — is Phase 7's cluster logic and needs the Rive rig.
 - **All content is draft.** Profiles, table text and dialogue were written to
   the design doc's rules and pass `check:data`, but no human has edited them.
-  Facts writers flagged to spot-check: Kidd's exclusion from the 1698 pardon,
+  The facts below were checked against the primary texts (Gutenberg,
+  Founders Online, Plutarch, Suetonius, the Eddas) and hold; four slips
+  were fixed (the Edinburgh doctor came after the trampling; Washington's
+  swearing order is 1775 as well as 1776; Caesar swam Alexandria's harbour;
+  the kernels' smell hung in the air). JFK's "not the Republican answer"
+  line was cut (the owner: no partisan lines about political parties, at all;
+  history in a profile, like Teddy's third-party run, is not a line). Flagged were: Kidd's exclusion from the 1698 pardon,
   Javert's mother as a "tireuse de cartes", the Transylvania references
   (Lucy's four transfusions, "King Laugh", Van Helsing's rifle). From the
   banter pass: Kidd's bucket, Silver's "immortal Hawke" (Treasure Island
@@ -774,15 +790,20 @@ new art against that layout.
   at Hyde's death.
 - **The staged table (first pass) has gaps.** Someone without a puppet who
   sits down mid-table would leave the chair empty, plate only (both guests,
-  JFK and Loki, now have puppets, and so does the Phoenix). Two speech bubbles can overlap (a seat's line under Death's). Death's
-  clips draw their own cards and chips, which double the game's flights for a
-  moment. A window narrower than 16:9 shows the room low with dark above.
-  The table bar at the top (Leave, the table's name, Log) is still
-  phone-sized on a large monitor.
-- **"Reduce motion" hides the older speech bubbles.** With it on, `.say`
-  and `.narration` only become visible through an animation the setting
-  switches off, so those lines reach only the log. Callouts use a timer and
-  are unaffected; the fix is the same timer for the older bubbles.
+  JFK and Loki, now have puppets, and so does the Phoenix). Death's `rake`
+  and `thumb` frames still draw chips and a card of their own; the deal now
+  plays ONE deal clip a hand (its side by turns), timed so the thumbed card
+  leaves as the first flight does, and the cards fly from just under his
+  plate, never across it. Fixed since: every bubble (lines, narration,
+  Death's line, callouts) is up on a timer as well as its animation, so
+  Reduce motion shows it still, and a new bubble takes down any it would
+  cover (`showBubble` in table.ts); tells get a two-line band under their
+  plate, as wide as the neighbours' plates allow, and bets lie below it,
+  moved out toward their own side where they would lie on the board
+  (`clearUnder`); the table bar grows with the screen; a phone-height
+  window keeps the log as a drawer however wide it is; a window narrower
+  than 16:9 carries the room's ceiling up into the dark (stage.ts); and
+  nothing is dealt until the room is drawn (5 s at most).
 - **Roster count is 36, not 32.** The v4 table lists 5 characters at Athens,
   Transylvania and the Station (4 seats + a late champion), and Rome now has
   them too: **Scipio Africanus holds Rome's fourth chair** (the owner's call,
@@ -1099,5 +1120,9 @@ Phase 4 in practice means web + Android, with iOS deferred.
 
 - Small, readable, boring code. No frameworks we don't need.
 - Characters, dialogue, and rosters are **data**, not code.
+- **No line takes a side between political parties** (the owner), whatever
+  its source: no "Republican answer", no party names in anything said. A
+  profile's history may stay (Teddy's third-party run, Kidd's Whig backers).
+  check:data's tripwires hold it.
 - If a decision contradicts the design doc, stop and flag it rather than
   silently overriding — the doc records *why*, and the why usually matters.

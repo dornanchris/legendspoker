@@ -176,6 +176,13 @@
     "when": { "type": "table_won", "table": "baker_street", "mode": "tour" }
   },
   {
+    "id": "the_deerstalker",
+    "title": "The Deerstalker",
+    "text": "Holmes again, and the two of you alone at the table at the end. He took it well. He left the room and came back in the ear-flapped travelling cap he keeps for the country, and said the case had become interesting. He has worn it at my tables ever since.",
+    "hint": "Beat Holmes heads up, once you have beaten him before.",
+    "when": { "type": "table_won_heads_up", "character": "sherlock", "rematch": true }
+  },
+  {
     "id": "stake",
     "title": "Through the Heart",
     "text": "You put out the Count yourself. He will be back. They always come back. Not tonight.",
