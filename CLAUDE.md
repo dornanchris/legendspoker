@@ -138,6 +138,10 @@ web/
   shims/          browser stand-ins for the node builtins poker-ts needs
   build.mjs       esbuild -> web/bundle.js (gitignored, regenerate it)
   serve.mjs       dependency-free static server; Phase 4 replaces it with Vite
+  dist.mjs        assembles dist/ for the app: bundle, rooms, each puppet's
+                  half/ and portrait (~120 MB of web/'s ~800; no bench)
+ios/              the Capacitor iOS project (Xcode, Swift Package Manager);
+                  landscape only. capacitor.config.json is at the root
 ROSTER.md         GENERATED casting book: never edit by hand
 ART-PIPELINE.md   the art workflow, step by step, and the queue of characters
 FIX-LATER.md      what we go back to: redraws, layout bugs, owed decisions
@@ -413,8 +417,40 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   table.ts, presentation only). `#/curtain/won|lost/:table` previews it from
   made-up numbers; `#/results` is the same panel as a page.
 
-**Not started:** Rive integration, recorded audio and music, Capacitor + a
-real device.
+**Not started:** Rive integration, recorded audio and music, a real device.
+**The table is laid out for a phone held sideways** (the owner, after the
+first device test: "it is meant to be a mobile game"). No log on screen (the
+owner; it survives only as a screen-reader live region, and the setting is
+gone). On a staged table the room runs edge to edge, under the notch and the
+home bar, and what the player touches keeps out of them (`--safe-*` in
+style.css, `safeProbe` in table.ts). At phone height (460 px and under) the
+bar floats over the ceiling, plates keep their height and are spread so none
+overlap, the board sits below the plates it would reach (with room for their
+tells), the pot beside it, inner seats' bets beside their plates. A seat is a name pill, not a box (a
+box over the rim hid the table edge and read as an empty panel once its
+player folded): its cards and last action on the felt under it, its tell on
+a dark backing that a fold never fades, hanging toward the middle from the
+end chairs. Your own cards are a size up from the board's on a phone, and the
+turn prompt ("Check or bet") is hidden while the buttons say it. The raise
+panel is a narrow column at the bottom right at every size, the amount on its
+button ("Raise to 459"); while it is open the board slides left to stay
+clear. Spoken bubbles go up and come down on a timer, so Reduce motion shows
+them still instead of hiding them. The app turns off the web view's
+scrolling and zoom (capacitor.config.json, index.html, style.css).
+**Capacitor's iOS project is scaffolded** (the owner has a Mac now): `npm run
+build:app` builds `dist/`, `npx cap sync ios` copies it into `ios/`, and on
+the Mac `npx cap open ios` opens Xcode (signing: pick a Team in Signing &
+Capabilities and Xcode makes the profile). `npm run ios` does all three.
+The app has no bench: `#/puppet/<id>` needs the full-size images, which
+`dist/` leaves out. **The icon is jovial** (the owner: Death's card back was "way too freaky"
+for one): Arthur raising a toast (the owner's pick), from his own drawn
+frame, on the green felt with a fan of the four-colour deck behind him, a
+gold ring, no words. The launch
+screen is the same icon small on the felt. `python3 art-tools/build/app_icon.py`
+writes both into the Xcode asset catalogue (`CHOSEN` picks the design;
+`--preview OUT` draws every design: Lincoln laughing or tipping his hat,
+Arthur's toast or cheer, Lancelot cheering or fixing his hair, Teddy
+cheering).
 **Rive is shelved** (the owner: a hired animator is not affordable). The
 brief and parts prompts written for one stay as a record
 (`art-tools/roosevelt_parts/RIVE_PARTS.md`, `ANIMATION_BRIEF.md`, and his
@@ -800,10 +836,10 @@ new art against that layout.
   cover (`showBubble` in table.ts); tells get a two-line band under their
   plate, as wide as the neighbours' plates allow, and bets lie below it,
   moved out toward their own side where they would lie on the board
-  (`clearUnder`); the table bar grows with the screen; a phone-height
-  window keeps the log as a drawer however wide it is; a window narrower
+  (`clearUnder`); the table bar grows with the screen; a window narrower
   than 16:9 carries the room's ceiling up into the dark (stage.ts); and
-  nothing is dealt until the room is drawn (5 s at most).
+  nothing is dealt until the room is drawn (5 s at most). On the smallest
+  phone (667x375) the open raise panel covers the right-hand seat's tell line.
 - **Roster count is 36, not 32.** The v4 table lists 5 characters at Athens,
   Transylvania and the Station (4 seats + a late champion), and Rome now has
   them too: **Scipio Africanus holds Rome's fourth chair** (the owner's call,
@@ -1088,7 +1124,8 @@ new art against that layout.
 
 ## NEXT MILESTONE
 
-Phase 4 — the platform shell. What is left of it: Capacitor, a real device,
+Phase 4 — the platform shell. What is left of it: a real device (Capacitor
+is scaffolded for iOS; Android is `npx cap add android`),
 and checking the safe-area handling and the audio unlock on hardware (the
 unlock is built; iOS is where it breaks if it breaks).
 The screen shell and the save schema are done. **Vite + React is now a
@@ -1104,17 +1141,17 @@ Order within the phase, cheapest-risk first:
 1. ~~Seedable deck.~~ Done (patch).
 2. ~~Save schema, capturing MID-HAND state.~~ Done (seed + decision log;
    `npm run check:replay`).
-3. Capacitor scaffolding (and Vite/React only if they earn it), then the
-   device test.
+3. ~~Capacitor scaffolding~~ (iOS done; Vite/React only if they earn it),
+   then the device test.
 
 Also owed before Phase 5: a human edit pass on the draft dialogue. The
 naming decisions are settled (the owner): "The AI" stays the AI, the Pope is
 Alexander VI, "The Wolf Man" stays (ASSETS.md).
 
-**Dev machine is Windows, so iOS is not available** — Capacitor's iOS target
-needs a Mac with Xcode plus $99/yr. Android is $25 one-off and works from
-Windows. BUILD-PLAN section 1 already argues web-first on a $0 budget, so
-Phase 4 in practice means web + Android, with iOS deferred.
+**Dev machine is Windows; iOS builds happen on the owner's Mac** (Xcode
+only runs there). A free Apple ID installs to the owner's own iPhone for 7
+days at a time; TestFlight and the store need the $99/yr account. Android is
+$25 one-off and works from Windows.
 
 ## HOUSE STYLE
 

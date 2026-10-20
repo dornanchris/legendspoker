@@ -21,6 +21,8 @@
     "check": "npm run typecheck && npm run check:data && npm run check:pots && npm run check:hands && npm run check:replay && npm run check:loki",
     "build:web": "node web/build.mjs",
     "web": "node web/build.mjs && node web/serve.mjs",
+    "build:app": "node web/build.mjs && node web/dist.mjs",
+    "ios": "npm run build:app && cap sync ios && cap open ios",
     "postinstall": "node web/patches.mjs install",
     "check:other": "tsx src/other-check.ts",
     "check:look": "tsx src/look-check.ts"
@@ -29,10 +31,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/ios": "^8.5.3",
     "poker-ts": "^1.5.0",
     "pokersolver": "^2.1.4"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.3",
     "@types/node": "^26.1.2",
     "esbuild": "^0.28.2",
     "patch-package": "^8.0.1",

@@ -45,15 +45,34 @@ html, body {
   font: 1rem/1.45 var(--sans);
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
+  /* An app, not a page: nothing rubber-bands, nothing is selected or
+     long-pressed, a double tap is two taps (the app also turns off the web
+     view's own scrolling: capacitor.config.json). */
+  overscroll-behavior: none;
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
 }
+input, textarea { -webkit-user-select: text; user-select: text; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 #app {
   height: 100dvh;
   overflow-y: auto;
+  overscroll-behavior: contain;
   /* In landscape the notch and home indicator sit on the sides. */
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 #app[data-screen="table"], #app[data-screen="ledger"] { overflow: hidden; }
+/* A drawn room runs edge to edge, under the notch and the home bar; what the
+   player touches or reads keeps out of them (--safe-*, below). */
+#app:has(.table-screen.staged) { padding: 0; }
+.table-screen.staged {
+  --safe-l: env(safe-area-inset-left, 0px); --safe-r: env(safe-area-inset-right, 0px);
+  --safe-t: env(safe-area-inset-top, 0px); --safe-b: env(safe-area-inset-bottom, 0px);
+}
+.table-screen.staged .table-bar { padding-left: calc(10px + var(--safe-l)); padding-right: calc(10px + var(--safe-r)); padding-top: calc(4px + var(--safe-t)); }
+.safe-probe { position: absolute; visibility: hidden; pointer-events: none; padding: 0 env(safe-area-inset-right, 0px) 0 env(safe-area-inset-left, 0px); }
 
 h1, h2, h3, h4 { font-family: var(--serif); font-weight: 600; margin: 0; }
 p { margin: 0 0 .6em; }
@@ -363,7 +382,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 
 /* ---------------------------------------------------------------- the table */
 .table-screen {
-  height: 100%; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto 1fr;
+  height: 100%; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr;
   position: relative;
 }
 /* The bar grows with the screen (--s2, from table.ts), more gently than the
@@ -379,6 +398,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .table-bar .tag { margin-left: 6px; font-size: .85em; color: var(--gold); border: 1px solid #c9a22755; border-radius: 99px; padding: 0 6px; }
 .table-bar button.small { font-size: 1em; min-height: calc(30px * var(--b)); }
 .table-bar .ff { padding: .3em .8em; min-height: calc(30px * var(--b)); font-size: 1em; }
+.table-bar .meta::before { content: ' · '; }
 .table-bar .ff.on { background: #c9a22733; border-color: var(--gold); color: var(--gold-soft); }
 
 .felt {
@@ -403,7 +423,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .seat.winner { border-color: var(--gold); background: #c9a2271a; box-shadow: 0 0 18px rgba(201, 162, 39, .35); opacity: 1; }
 /* Fade the seat's contents, not the seat: a player who has just been knocked
    out still says their parting line, and it must stay readable. */
-.seat.folded > :not(.say) { opacity: .5; }
+.seat.folded > :not(.say):not(.tell) { opacity: .5; }
 .seat.out > :not(.say) { opacity: .28; }
 .seat.out { border-style: dashed; border-color: #2f2a2688; background: #00000030; }
 .seat.arriving { animation: arrive 1.4s ease-out; }
@@ -513,7 +533,6 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 /* One line at any landscape width: a second line pushes the player's cards
    over the pot on a phone, so the slider gives up width before anything wraps. */
 .raise-slider { width: clamp(90px, 22vw, 220px); accent-color: var(--gold); }
-.raise-value { color: var(--gold); font-variant-numeric: tabular-nums; min-width: 4.5em; text-align: right; }
 
 .toasts { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); display: grid; gap: 6px; z-index: 20; pointer-events: none; width: min(420px, 90%); }
 .toast {
@@ -525,23 +544,6 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .toast.mark { border-color: #e2c86a; }
 .toast.leaving { opacity: 0; transition: opacity .5s; }
 
-.log-panel {
-  width: 250px; border-left: 1px solid var(--edge); padding: 8px 10px;
-  overflow-y: auto; background: #0e0d0c; min-height: 0;
-}
-.log-panel.collapsed { display: none; }
-.log-panel h2 { font: 600 .7rem var(--sans); letter-spacing: .14em; color: var(--dim); margin: 0 0 6px; text-transform: uppercase; }
-.log { list-style: none; margin: 0; padding: 0; font-size: .78rem; }
-.log li { padding: 2px 0; border-bottom: 1px solid #ffffff08; color: #cbc2b6; }
-.log li.head { color: var(--gold); font-weight: 600; margin-top: 6px; }
-.log li.street { color: var(--dim); }
-.log li.you { color: var(--you); }
-.log li.big { color: #f0e0b0; }
-.log li.delta { color: var(--faint); }
-.log li.say { font-family: var(--serif); font-style: italic; color: #d8ccb2; }
-.log li.say.death { color: #e8dcc0; }
-.log li.say.callout { color: #b8ad9a; }
-.log li.respect, .log li.mark { color: var(--gold-soft); }
 
 /* ---------------------------------------------------------------- things that move
    Cards out of Death's hands, chips across the felt. Flights live in their
@@ -598,14 +600,25 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .felt.staged .deck-spot { position: absolute; width: 1px; height: 1px; pointer-events: none; }
 .felt.staged .opponents { position: absolute; inset: 0; display: block; z-index: 2; pointer-events: none; }
 .felt.staged .seat {
+  /* No box: a name pill, with the cards and the last action on the felt
+     under it. A box over the rim hid the hands and the table edge, and read
+     as an empty panel once its player had folded. */
   position: absolute; transform: translateX(-50%); width: var(--plate, 158px); max-width: none; font-size: calc(.86rem * var(--s2, 1));
-  padding: calc(3px * var(--s2, 1)) calc(8px * var(--s2, 1)) calc(4px * var(--s2, 1)); border-radius: 9px; border-color: #6d604f; background: #141116e0;
-  box-shadow: 0 4px 14px #0008; pointer-events: auto;
+  padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; pointer-events: auto;
+  display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "head head" "hand last";
+  row-gap: calc(3px * var(--s2, 1)); align-items: center;
 }
-.felt.staged .seat.champion { border-color: #c9a22788; }
-.felt.staged .seat.acting { border-color: var(--gold); }
-.felt.staged .seat.out { background: #14111680; }
-.felt.staged .seat .hand-row { margin: 2px 0 0; min-height: 0; }
+.felt.staged .seat-head {
+  grid-area: head; padding: calc(2px * var(--s2, 1)) calc(9px * var(--s2, 1)); border-radius: 99px;
+  border: 1px solid #6d604f; background: #141116e6; box-shadow: 0 3px 10px #0008;
+}
+.felt.staged .seat.champion .seat-head { border-color: #c9a22788; }
+.felt.staged .seat.acting, .felt.staged .seat.winner { background: none; box-shadow: none; }
+.felt.staged .seat.acting .seat-head { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset, 0 0 12px #c9a22766; }
+.felt.staged .seat.winner .seat-head { border-color: var(--gold); background: #2a2210ee; box-shadow: 0 0 16px rgba(201, 162, 39, .55); }
+.felt.staged .seat.out { background: none; }
+.felt.staged .seat.out .seat-head { border-style: dashed; background: #14111680; }
+.felt.staged .seat .hand-row { grid-area: hand; margin: 0; min-height: 0; padding-left: calc(4px * var(--s2, 1)); }
 .felt.staged .seat .cards { min-height: calc(31px * var(--s2, 1)); }
 /* this street's bet lies on the felt in front of the plate, toward the middle;
    table.ts sets its top under the tell's band, and --bet-in moves it out
@@ -613,7 +626,17 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .felt.staged .seat .bet { position: absolute; top: calc(100% + 26px * var(--s2, 1)); }
 .felt.staged .seat[data-side="l"] .bet { left: calc(62% + var(--bet-in, 0px)); }
 .felt.staged .seat[data-side="r"] .bet { right: calc(62% + var(--bet-in, 0px)); flex-direction: row-reverse; }
-.felt.staged .seat .last { position: absolute; right: 8px; bottom: 6px; font-size: calc(.74rem * var(--s2, 1)); min-height: 0; }
+.felt.staged .seat .last {
+  grid-area: last; justify-self: end; padding-right: calc(6px * var(--s2, 1));
+  font-size: calc(.74rem * var(--s2, 1)); min-height: 0; color: #e0d6c4; text-shadow: 0 1px 3px #000, 0 0 6px #000;
+}
+/* folded: no cards, so the word takes their place under the name */
+.felt.staged .seat.folded .last { grid-column: 1 / -1; justify-self: start; padding-left: calc(10px * var(--s2, 1)); }
+/* your turn: the buttons say it ("Call 20"), the prompt only repeated it */
+.felt.staged .controls:has(.buttons:not([hidden]) > button) .prompt { display: none; }
+/* a tell is the game: its words on a backing that hugs each line, so they
+   read over any felt or figure; never faded with a fold */
+.felt.staged .seat .tell span { background: #0b0a09b0; border-radius: 6px; padding: 1px 7px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 /* two lines under the plate, as wide as the neighbours allow (table.ts) */
 .felt.staged .seat .tell {
   position: absolute; left: 0; right: 0; top: calc(100% + 3px);
@@ -644,11 +667,28 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .felt.staged .pot { text-shadow: 0 1px 3px #000; }
 .felt.staged .you {
   /* bottom left, out from under the board, which grows with the screen */
-  position: absolute; z-index: 3; left: 8px; bottom: 8px;
+  position: absolute; z-index: 3; left: calc(8px + var(--safe-l, 0px)); bottom: calc(8px + var(--safe-b, 0px));
   padding: 4px 10px; border-radius: 10px; background: #14111699;
 }
-.felt.staged .controls { position: absolute; z-index: 5; right: 12px; bottom: 8px; min-height: 0; justify-items: end; }
+.felt.staged .controls { position: absolute; z-index: 5; right: calc(12px + var(--safe-r, 0px)); bottom: calc(8px + var(--safe-b, 0px)); min-height: 0; justify-items: end; }
 .felt.staged .prompt { text-shadow: 0 1px 3px #000; color: #e4d9c4; }
+
+/* The raise panel: a narrow column at the bottom right, clear of your cards
+   (a single row ran over them on every screen); table.ts moves the board and
+   pot out of its way while it is open. */
+.felt.staged .raise-row {
+  display: grid; width: min(calc(230px * var(--s2, 1)), 27vw); gap: calc(5px * var(--s2, 1));
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: "quick quick" "slider slider" "confirm cancel";
+  padding: calc(6px * var(--s2, 1)); border-radius: 10px; background: #141116e6; border: 1px solid #ffffff1a;
+}
+.felt.staged .raise-row[hidden] { display: none; }
+.felt.staged .quick-sizes { grid-area: quick; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.felt.staged .raise-slider { grid-area: slider; width: 100%; margin: 2px 0; }
+.felt.staged .raise-row > .primary { grid-area: confirm; }
+.felt.staged .raise-row > .ghost { grid-area: cancel; }
+.felt.staged .controls .raise-row button { min-width: 0; padding: .3em .6em; white-space: nowrap; }
+.felt.staged .controls .quick-sizes button { padding: .25em .2em; font-size: calc(.8rem * var(--s2, 1)); }
 
 /* The words grow with the plates (--s2, set by table.ts from the screen's
    height; 1 on a phone): tells, lines, callouts, Death's lines, your buttons. */
@@ -671,11 +711,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .tour-card .teaser { font-size: .8rem; }
   .ledger-book { grid-template-columns: 200px 1fr; }
   .marks-list { grid-template-columns: 1fr; }
-  .log-panel { position: absolute; right: 0; top: 38px; bottom: 0; z-index: 30; box-shadow: -10px 0 30px #000c; }
 }
 @media (max-height: 460px) {
-  /* a phone held sideways, however wide: the log is a drawer over the table, not a column beside it */
-  .log-panel { position: absolute; right: 0; top: 38px; bottom: 0; z-index: 30; box-shadow: -10px 0 30px #000c; }
   :root { font-size: 13px; }
   :root.large-text { font-size: 15px; }
   .screen { padding: 6px 14px 12px; }
@@ -690,9 +727,14 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .you-cards { min-height: calc(48px * var(--s, 1)); }
   .controls { min-height: 64px; }
   button { min-height: 34px; }
-  .felt.staged .seat { font-size: calc(.74rem * var(--s2, 1)); padding: 2px 5px 3px; }
-  .felt.staged .seat .cards { min-height: 0; }
-  .felt.staged .seat .last { right: 5px; bottom: 4px; font-size: .66rem; }
+  .felt.staged .seat { font-size: calc(.74rem * var(--s2, 1)); }
+  .felt.staged .seat-head { padding: 1px 7px; }
+  /* a plate keeps its height when its cards go, or the last action rides up over the name */
+  .felt.staged .seat .cards { min-height: calc(31px * var(--s2, 1)); }
+  .felt.staged .seat .last { font-size: .7rem; }
+  /* your own cards: the ones you look at most, a size up from the board's */
+  .felt.staged .you-cards { min-height: calc(56px * var(--s, 1)); }
+  .felt.staged .you-cards .card { width: calc(40px * var(--s, 1)); height: calc(56px * var(--s, 1)); font-size: calc(1.08rem * var(--s, 1)); }
   .felt.staged .seat .tell { font-size: calc(.66rem * var(--s2, 1)); line-height: 1.2; }
   .felt.staged .seat .bet { top: calc(100% + 20px * var(--s2, 1)); }
   .felt.staged .seat[data-side="l"] .bet { left: calc(75% + var(--bet-in, 0px)); }
@@ -700,12 +742,55 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   /* no room for Death's plate: his figure says who deals. His lines still go over his head. */
   .felt.staged .dealer { background: none; border: 0; box-shadow: none; padding: 0; }
   .felt.staged .dealer-name, .felt.staged .dealer-role { display: none; }
-  .felt.staged .you { padding: 2px 8px; bottom: 4px; }
-  .felt.staged .controls { bottom: 4px; right: 8px; }
+  .felt.staged .you { padding: 2px 8px; bottom: calc(4px + var(--safe-b, 0px)); }
+  .felt.staged .controls { bottom: calc(4px + var(--safe-b, 0px)); right: calc(8px + var(--safe-r, 0px)); }
   .page-head .medallion { width: 56px; height: 56px; font-size: 1.3rem; }
   .ledger-page { padding: 12px 18px 18px; }
   .title-block h1 { font-size: clamp(2rem, 5.4vw, 3.4rem); }
   .menu-item { padding: .5em 1em; }
+}
+
+/* ---------------------------------------------------------------- the phone
+   A phone held sideways (the game's real screen, ~667-932 x 375-430 before
+   the notch and home bar take their share): the room gets the whole height,
+   the bar floats over its ceiling, and nothing the player needs overlaps. */
+@media (max-height: 460px) {
+  .table-screen.staged { grid-template-rows: minmax(0, 1fr); }
+  .table-screen.staged .table-bar {
+    position: absolute; top: 0; left: 0; right: 0; z-index: 25;
+    border: 0; background: none; min-height: 0; gap: 6px;
+    padding: calc(4px + var(--safe-t)) calc(6px + var(--safe-r)) 4px calc(6px + var(--safe-l));
+    pointer-events: none;
+  }
+  .table-screen.staged .table-bar > * { pointer-events: auto; }
+  .table-screen.staged .table-bar .leave { background: #0b0a09b3; border-color: #ffffff26; min-height: 28px; padding: .2em .7em; }
+  .table-screen.staged .table-bar .where {
+    flex: 0 1 auto; margin-left: auto; pointer-events: none;
+    font-size: .74rem; color: #d8cdbb; text-shadow: 0 1px 3px #000, 0 0 6px #000;
+  }
+  .table-screen.staged .table-bar .where b { display: none; }
+  .table-screen.staged .table-bar .meta::before { content: none; }
+  .table-screen.staged .table-bar .ff { background: #0b0a09b3; min-height: 28px; padding: .2em .7em; }
+
+  /* the room shows what the presence line says (the wreath on its cushion) */
+  .felt.staged .presence { display: none; }
+  /* the plates nearest the middle put their bets beside them, toward Death */
+  .felt.staged .seat[data-near] .bet { top: 50%; transform: translateY(-50%); }
+  .felt.staged .seat[data-near][data-side="l"] .bet { left: calc(100% + 6px); }
+  .felt.staged .seat[data-near][data-side="r"] .bet { right: calc(100% + 6px); }
+  /* the pot beside the board, not under it: the felt is short */
+  .felt.staged .middle { grid-auto-flow: column; align-items: center; gap: 10px; }
+
+  /* you: name over stack, cards beside them */
+  .felt.staged .you { gap: 8px; padding: 3px 8px 3px 6px; left: calc(4px + var(--safe-l, 0px)); }
+  .felt.staged .you-info { display: grid; grid-template-columns: auto auto; justify-items: start; align-items: center; column-gap: 4px; row-gap: 0; }
+  .felt.staged .you-info .stack { grid-column: 1 / -1; }
+  .felt.staged .you .bet { min-width: 0; }
+
+  .felt.staged .controls { right: calc(4px + var(--safe-r, 0px)); }
+  /* raising: the panel says what you are doing, and the prompt would cover a seat's tell */
+  .felt.staged .controls:has(.raise-row:not([hidden])) .prompt { display: none; }
+  .felt.staged .buttons button { min-width: 84px; }
 }
 
 /* ---------------------------------------------------------------- puppet bench */
