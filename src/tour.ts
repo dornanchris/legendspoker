@@ -8,7 +8,7 @@
  * screen. What the player sees is what the table CALLS them, which changes
  * as they climb, and is announced explicitly when it flips.
  */
-import { TABLES, TOUR, TABLE_BY_ID, ROSTER, GUESTS, CHARACTERS, fullCast, type TableData } from './content.js'
+import { TABLES, TOUR, TABLE_BY_ID, ROSTER, GUESTS, CHARACTERS, fullCast, ledgerId, type TableData, type CharacterData } from './content.js'
 import { characterRecord, tableRecord, type Save } from './save.js'
 
 export type TableState = 'sealed' | 'open' | 'cleared'
@@ -119,39 +119,45 @@ function shuffled<T>(xs: T[], rng: () => number): T[] {
   return a
 }
 
-/** The other half of a two-man chair (Hyde for Jekyll), if any. */
-const otherHalf = (id: string) => CHARACTERS[id]?.other?.character
-
 /**
  * Who the player may seat at an open table (the owner: "characters that have
  * been played against at the tables"): everyone they have sat down with, from
  * any table, champions included once they have taken a chair -- so a late
  * champion never met (Odysseus, skipped) is not here. Each half of a two-man
- * chair counts on his own. A guest comes in by meeting him too, except the
- * Phoenix, which has to be beaten (unlockedBy). In tour order, table by table
- * and chair by chair, the guests last.
+ * chair counts on his own, and a second look (the Green Knight bare, Holmes in
+ * his deerstalker) comes in by his mark. A guest comes in by meeting him too,
+ * except the Phoenix, which has to be beaten (unlockedBy). In tour order,
+ * table by table and chair by chair, each look beside its man, guests last.
  */
 export function openTablePool(save: Save): string[] {
   const met = (id: string) => !!save.characters[id]?.met
+  const open = (c: CharacterData) =>
+    c.lookOf ? !!save.marks[c.lookOf.mark]
+      : c.role === 'guest' ? (c.unlockedBy === 'beaten' ? !!save.characters[c.id]?.beaten : met(c.id))
+      : c.role !== 'dealer' && met(c.id)
   const order: string[] = []
-  for (const t of TABLES) {
-    for (const id of fullCast(t)) for (const x of [id, otherHalf(id)]) if (x && !order.includes(x)) order.push(x)
+  const add = (id: string | undefined) => {
+    if (!id || order.includes(id)) return
+    order.push(id)
+    for (const l of CHARACTERS[id]?.looks ?? []) order.push(l.id)
   }
-  const onRoster = new Set(ROSTER.map((c) => c.id))
-  const roster = [...order.filter((id) => onRoster.has(id)), ...[...onRoster].filter((id) => !order.includes(id))]
-  const guests = GUESTS.filter((c) => (c.unlockedBy === 'beaten' ? !!save.characters[c.id]?.beaten : met(c.id))).map((c) => c.id)
-  return [...roster.filter(met), ...guests]
+  for (const t of TABLES) for (const id of fullCast(t)) { add(id); add(CHARACTERS[id]?.other?.character) }
+  for (const c of [...ROSTER, ...GUESTS]) add(c.id)
+  const pool = order.filter((id) => CHARACTERS[id] && open(CHARACTERS[id]))
+  const guest = (id: string) => CHARACTERS[id].role === 'guest'
+  return [...pool.filter((id) => !guest(id)), ...pool.filter(guest)]
 }
 
 /**
  * Whether these opponents can sit down together at an open table: one to
  * four of them (heads up against anyone is allowed), nobody twice, all from
- * the pool, and never both halves of one chair.
+ * the pool. Both halves of a two-man chair may sit at once, and a man beside
+ * his own second look (the owner: "that's all perfectly fine").
  */
 export function isOpenCast(save: Save, ids: string[]): boolean {
   const pool = openTablePool(save)
   return ids.length >= 1 && ids.length <= OPEN_TABLE_CHAIRS && new Set(ids).size === ids.length &&
-    ids.every((id) => pool.includes(id) && !ids.includes(otherHalf(id) ?? ''))
+    ids.every((id) => pool.includes(id))
 }
 
 /**
@@ -170,13 +176,7 @@ export function openTableCast(table: TableData, save: Save, rng: () => number): 
   const host = locals.slice(0, 1)
   const rest = shuffled(pool.filter((id) => !host.includes(id)), rng)
   for (const id of locals) if (!rest.includes(id) && !host.includes(id)) rest.push(id)
-  // One chair, two men: never both halves at one table.
-  const dealt = [...host]
-  for (const id of rest) {
-    if (dealt.length >= OPEN_TABLE_CHAIRS) break
-    if (!dealt.some((d) => d === otherHalf(id))) dealt.push(id)
-  }
-  return shuffled(dealt, rng)
+  return shuffled([...host, ...rest].slice(0, OPEN_TABLE_CHAIRS), rng)
 }
 
 export function canPlayOpenTable(save: Save, table: TableData): boolean {
@@ -284,7 +284,8 @@ export function applyOutcome(save: Save, o: TableOutcome, now = new Date().toISO
       rec.respectTier = Math.max(rec.respectTier, 3)
       rec.respectPoints = Math.max(rec.respectPoints, RESPECT_THRESHOLDS[3])
     }
-    for (const id of o.sat) {
+    // a second look's man is beaten under his own name (ledgerId)
+    for (const id of new Set(o.sat.map(ledgerId))) {
       const c = characterRecord(save, id)
       if (!c.beaten) {
         c.beaten = now

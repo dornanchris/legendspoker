@@ -446,9 +446,10 @@ export function tableScreen(root: HTMLElement): () => void {
   function figureAt(seat: number): string {
     if (seat === HUMAN_SEAT) return youSeen ? room?.data.youAs ?? 'stranger' : ''
     const id = changed.get(seat) ?? seatIds[seat] ?? ''
-    // a look the player has earned for them (Holmes's deerstalker), worn from the next sitting on
+    // a look the player has earned for them (Holmes's deerstalker), worn from the next sitting on;
+    // at an open table the player picked the look (the second looks sit as players of their own)
     const look = LOOKS[id]
-    if (look && save.marks[look.mark] && PUPPETS[look.puppet]) return look.puppet
+    if (look && active!.mode === 'tour' && save.marks[look.mark] && PUPPETS[look.puppet]) return look.puppet
     return room?.data.cast?.[id] ?? id
   }
 

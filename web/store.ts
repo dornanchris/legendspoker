@@ -11,7 +11,7 @@
  */
 import { freshSave, migrate, characterRecord, type Save } from '../src/save.js'
 import type { HandSummary } from '../src/director.js'
-import { CHARACTERS } from '../src/content.js'
+import { CHARACTERS, ledgerId } from '../src/content.js'
 import * as sound from './sound.js'
 
 const KEY = 'legends-poker/save'
@@ -76,9 +76,12 @@ export function erase(): void {
 
 const MAX_HABITS = 16
 
+/** Someone's record: a second look's is kept on the page of the one he is a look of (ledgerId). */
+const record = (id: string) => characterRecord(save, ledgerId(id))
+
 /** A character was seated at the player's table. */
 export function meet(id: string): void {
-  const c = characterRecord(save, id)
+  const c = record(id)
   if (!c.met) {
     c.met = new Date().toISOString()
     dirty = true
@@ -88,7 +91,7 @@ export function meet(id: string): void {
 /** The player watched someone do something. The ledger lists what was seen. */
 export function sawHabit(id: string, text: string): boolean {
   if (!CHARACTERS[id]) return false
-  const c = characterRecord(save, id)
+  const c = record(id)
   if (c.habits.includes(text) || c.habits.length >= MAX_HABITS) return false
   c.habits.push(text)
   dirty = true
@@ -113,7 +116,7 @@ export function recordHand(s: HandSummary, table: string): void {
     if (!r.bestHand || w.rank > r.bestHand.rank) r.bestHand = { rank: w.rank, cards: w.cards, table }
   }
   for (const [id, o] of Object.entries(s.observations)) {
-    const c = characterRecord(save, id)
+    const c = record(id)
     c.hands += o.hands
     c.vpip += o.vpip
     c.pfr += o.pfr
@@ -123,8 +126,8 @@ export function recordHand(s: HandSummary, table: string): void {
     c.foldsToBet += o.foldsToBet
     c.showdowns += o.showdowns
   }
-  for (const id of s.knockouts) characterRecord(save, id).youKnockedOut++
-  for (const id of s.bustedBy) characterRecord(save, id).knockedYouOut++
+  for (const id of s.knockouts) record(id).youKnockedOut++
+  for (const id of s.bustedBy) record(id).knockedYouOut++
 }
 
 export function earnMark(id: string, table: string | null): boolean {

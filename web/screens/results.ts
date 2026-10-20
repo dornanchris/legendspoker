@@ -102,8 +102,8 @@ function beat<T extends HTMLElement>(el: T, n: number): T {
 }
 
 /** A character's own drawn head (art-tools/build/portraits.py), or their medallion where there is no art yet. */
-function portrait(c: CharacterData | undefined, stamp: string, cls: string, mine = false): HTMLElement {
-  const url = c && portraitUrl(c.id)
+function portrait(c: CharacterData | undefined, stamp: string, cls: string, mine = false, worn = true): HTMLElement {
+  const url = c && portraitUrl(c.id, worn)
   const face = url
     ? h('div', { class: `face t-${c!.table}`, style: `background-image:url(${url})` })
     : medallion(c, 'met')
@@ -187,10 +187,10 @@ function panel(r: Result, lookAtTable: (() => void) | null): HTMLElement {
       if (!o.won && f.place < o.place) continue // after the player was gone: not theirs to count
       const c = CHARACTERS[f.id]
       const last = o.won && f.place === 2
-      row.append(beat(portrait(c, last ? 'Beaten' : o.won ? `Out ${ordinal(f.place)}` : 'Outlasted', last ? 'last' : '', mine.has(f.id)), n++))
+      row.append(beat(portrait(c, last ? 'Beaten' : o.won ? `Out ${ordinal(f.place)}` : 'Outlasted', last ? 'last' : '', mine.has(f.id), o.mode === 'tour'), n++))
     }
     if (!o.won && s.bustedBy) {
-      row.append(beat(portrait(CHARACTERS[s.bustedBy], 'Outlasted you', 'victor'), n++))
+      row.append(beat(portrait(CHARACTERS[s.bustedBy], 'Outlasted you', 'victor', false, o.mode === 'tour'), n++))
     }
     right.append(beat(h('h3', null, o.won ? 'They fell to you' : 'Around you'), n++), row)
   }

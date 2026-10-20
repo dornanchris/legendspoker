@@ -269,7 +269,6 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .pool-face:hover .pool-name { color: var(--ink); }
 .pool-face.seated .portrait, .pool-face.seated .medallion { box-shadow: 0 0 0 2px var(--gold-soft), 0 0 12px #c9a22777; }
 .pool-face.seated .pool-name { color: var(--gold-soft); }
-.pool-face.blocked { opacity: .45; }
 .pool-face .badge {
   position: absolute; top: -3px; right: 3px; min-width: 18px; height: 18px; border-radius: 9px;
   background: var(--gold); color: #1a1512; font: 700 .7rem/18px var(--sans); text-align: center;

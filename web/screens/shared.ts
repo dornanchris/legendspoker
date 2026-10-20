@@ -35,17 +35,18 @@ export function medallion(c: CharacterData | undefined, state: 'unmet' | 'met' |
 
 /**
  * A character's own drawn head (art-tools/build/portraits.py), in the look the
- * player has earned for them (Holmes's deerstalker), or null with no art.
+ * player has earned for them (Holmes's deerstalker) unless `worn` is false (an
+ * open table, where the player picks the look), or null with no art.
  */
-export function portraitUrl(id: string): string | null {
-  const look = LOOKS[id]
+export function portraitUrl(id: string, worn = true): string | null {
+  const look = worn ? LOOKS[id] : undefined
   const art = PUPPETS[look && store.get().marks[look.mark] && PUPPETS[look.puppet] ? look.puppet : id]
   return art ? `${art.base}portrait.webp` : null
 }
 
 /** Their drawn head in a round frame, or their medallion where there is no art (or nothing may be shown yet). */
-export function face(c: CharacterData | undefined, state: 'unmet' | 'met' | 'beaten' | 'hidden' = 'met'): HTMLElement {
-  const url = c && state !== 'hidden' ? portraitUrl(c.id) : null
+export function face(c: CharacterData | undefined, state: 'unmet' | 'met' | 'beaten' | 'hidden' = 'met', worn = true): HTMLElement {
+  const url = c && state !== 'hidden' ? portraitUrl(c.id, worn) : null
   if (!c || !url) return medallion(c, state)
   return h('div', { class: `portrait t-${c.table} ${state}`, style: `background-image:url(${url})`, 'aria-hidden': 'true' })
 }

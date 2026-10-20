@@ -1,12 +1,10 @@
-import { CHARACTERS, TABLE_BY_ID, type TableData } from '../../src/content.js'
+import { CHARACTERS, TABLE_BY_ID, ledgerId, type CharacterData, type TableData } from '../../src/content.js'
 import { openTablePool, openTableCast, isOpenCast, OPEN_TABLE_CHAIRS } from '../../src/tour.js'
 import * as store from '../store.js'
 import { h } from '../dom.js'
 import { face } from './shared.js'
 
 const COUNT = ['Seat at least one opponent.', 'Heads up.', 'Two opponents.', 'Three opponents.', 'A full table.']
-
-const half = (id: string) => CHARACTERS[id]?.other?.character
 
 export type ChairPicker = {
   el: HTMLElement
@@ -21,7 +19,9 @@ export type ChairPicker = {
  * arrows to go through everyone the player has played against, an empty
  * chair among them. Under them, everyone at once by the table they came
  * from: a tap seats them in the chair picked out, or stands them up again.
- * One to four opponents; heads up against anyone is allowed. The table seats
+ * One to four opponents; heads up against anyone is allowed, and so is
+ * anyone beside his other half or his own second look (Jekyll and Hyde, the
+ * Robot and the AI, two Green Knights, two Holmeses). The table seats
  * them in the chairs they were put in (Stage.chairsFor), and the picks are
  * kept for the next visit (TableRecord.openChairs).
  */
@@ -37,12 +37,10 @@ export function chairPicker(table: TableData, onChange: (chairs: (string | null)
     kept?.length === OPEN_TABLE_CHAIRS && isOpenCast(save, kept.filter((id) => !!id) as string[]) ? [...kept] : dealt()
   let focus = Math.max(0, chairs.indexOf(null))
 
-  /** Who may not sit in chair i: whoever sits elsewhere, and their other halves. */
-  const taken = (i: number) => {
-    const out = new Set<string>()
-    chairs.forEach((id, j) => { if (id && j !== i) { out.add(id); const o = half(id); if (o) out.add(o) } })
-    return out
-  }
+  /** Who may not sit in chair i: whoever sits elsewhere. */
+  const taken = (i: number) => new Set(chairs.filter((id, j) => id && j !== i) as string[])
+  /** Their portrait, in the look picked: at an open table the earned hat is a pick of its own. */
+  const pictured = (c: CharacterData) => face(c, save.characters[ledgerId(c.id)]?.beaten ? 'beaten' : 'met', false)
 
   // ---- the chairs, as they stand around the table
   const seats = chairs.map((_, i) => {
@@ -87,12 +85,9 @@ export function chairPicker(table: TableData, onChange: (chairs: (string | null)
   const faces = new Map<string, HTMLButtonElement>()
   const tap = (id: string) => {
     const at = chairs.indexOf(id)
-    const o = half(id)
     if (at >= 0) {                                         // seated: stand them up
       chairs[at] = null
       focus = at
-    } else if (o && chairs.includes(o)) {                  // the other half sits there: change places
-      chairs[chairs.indexOf(o)] = id
     } else {
       chairs[focus] = id
       // on to the next empty chair, going round to the right
@@ -107,7 +102,7 @@ export function chairPicker(table: TableData, onChange: (chairs: (string | null)
       h('div', { class: 'pool-faces' }, ids.map((id) => {
         const c = CHARACTERS[id]
         const b = h('button', { type: 'button', class: 'plain pool-face', onclick: () => tap(id) },
-          face(c, save.characters[id]?.beaten ? 'beaten' : 'met'),
+          pictured(c),
           h('span', { class: 'badge' }),
           h('span', { class: 'pool-name' }, c?.short ?? id))
         faces.set(id, b)
@@ -125,21 +120,19 @@ export function chairPicker(table: TableData, onChange: (chairs: (string | null)
       const c = chairs[i] ? CHARACTERS[chairs[i]!] : undefined
       s.root.classList.toggle('empty', !c)
       s.root.classList.toggle('focus', i === focus)
-      s.pic.replaceChildren(c ? face(c, save.characters[c.id]?.beaten ? 'beaten' : 'met') : h('span', { class: 'empty-chair' }))
+      s.pic.replaceChildren(c ? pictured(c) : h('span', { class: 'empty-chair' }))
       s.name.textContent = c ? c.short : 'An empty chair'
       s.epithet.textContent = c ? c.epithet : i === focus ? 'tap a face below' : ''
       s.stand.hidden = !c
       s.pick.setAttribute('aria-label', `Chair ${i + 1}: ${c ? c.short : 'empty'}${i === focus ? ', picked out' : ''}`)
       s.pick.setAttribute('aria-pressed', String(i === focus))
     })
-    const no = taken(-1)
     for (const [id, b] of faces) {
       const at = chairs.indexOf(id)
       b.classList.toggle('seated', at >= 0)
-      b.classList.toggle('blocked', at < 0 && no.has(id))
       b.querySelector('.badge')!.textContent = at >= 0 ? String(at + 1) : ''
       b.setAttribute('aria-pressed', String(at >= 0))
-      b.title = at >= 0 ? `${CHARACTERS[id]?.short}: chair ${at + 1}` : no.has(id) ? 'One chair, two men: they change places' : CHARACTERS[id]?.short ?? id
+      b.title = at >= 0 ? `${CHARACTERS[id]?.short}: chair ${at + 1}` : CHARACTERS[id]?.short ?? id
     }
     const n = chairs.filter(Boolean).length
     count.textContent = n === 1 ? `Heads up against ${CHARACTERS[chairs.find(Boolean)!]?.short}.` : COUNT[n]

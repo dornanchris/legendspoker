@@ -1,4 +1,4 @@
-import { CHARACTERS, DEALER, DIALOGUE, TABLES, TABLE_BY_ID, fullCast, type Line, type TableData } from '../../src/content.js'
+import { CHARACTERS, DEALER, DIALOGUE, TABLES, TABLE_BY_ID, fullCast, ledgerId, type Line, type TableData } from '../../src/content.js'
 import { tableState, isVisible, earnedName, canPlayOpenTable, fillLine } from '../../src/tour.js'
 import * as store from '../store.js'
 import { h, go } from '../dom.js'
@@ -135,7 +135,7 @@ export function introScreen(root: HTMLElement, params: string[]): void {
         const c = CHARACTERS[id]
         const hidden = mode === 'tour' && isArrivalHidden(id)
         return h('li', { class: hidden ? 'hidden' : '' },
-          face(c, hidden ? 'hidden' : save.characters[id]?.beaten ? 'beaten' : 'met'),
+          face(c, hidden ? 'hidden' : save.characters[ledgerId(id)]?.beaten ? 'beaten' : 'met', mode === 'tour'),
           h('span', null, hidden ? 'An empty chair' : c?.short ?? id))
       }))
 
