@@ -16,6 +16,7 @@ import { setResult, curtainCall, type Sitting } from './results.js'
 import { ROOMS, PUPPETS, RETURNED, LOOKS } from '../puppet/cast.js'
 import { Stage, PRIO, DEALER as DEATH, type Prio, type SeatSpot } from '../puppet/stage.js'
 import { markTitle } from './shared.js'
+import { toggleSetting, choiceSetting, PACES, DIALOGUE_LEVELS, DIALOGUE_HINT, LOG_HINT, canLog } from './settings.js'
 
 /**
  * THE TABLE.
@@ -128,7 +129,8 @@ export function tableScreen(root: HTMLElement): () => void {
   const playerName = save.player.name
   const settings = save.settings
   const urlPace = new URLSearchParams(location.search).get('pace')
-  const paceScale = urlPace !== null ? Math.max(0, Number(urlPace)) : PACE_BY_SETTING[settings.pace]
+  // the menu can change the pace mid-sitting (unless ?pace pins it)
+  let paceScale = urlPace !== null ? Math.max(0, Number(urlPace)) : PACE_BY_SETTING[settings.pace]
 
   let alive = true
   const timers = new Set<ReturnType<typeof setTimeout>>()
@@ -209,7 +211,8 @@ export function tableScreen(root: HTMLElement): () => void {
   els.raiseRow.append(els.quick, els.slider, els.raiseConfirm, els.raiseCancel)
   els.youPurse.append(els.youTower, els.youStack)
 
-  const leave = h('button', { type: 'button', class: 'ghost small leave', onclick: () => go('/') }, '‹ Leave')
+  const menuButton = h('button', { type: 'button', class: 'ghost small leave', 'aria-haspopup': 'dialog', onclick: () => openMenu() },
+    h('span', { class: 'burger', 'aria-hidden': 'true' }, h('i'), h('i'), h('i')), 'Menu')
   // staged: on a phone the bar floats over the room instead of taking a row (style.css)
   const screenEl = h('div', { class: `table-screen${staged ? ' staged' : ''}` })
   /** Measures the notch's share of each side (safe-area insets) in pixels. */
@@ -217,7 +220,7 @@ export function tableScreen(root: HTMLElement): () => void {
   root.append(screenEl)
   screenEl.append(
       h('header', { class: 'table-bar' },
-        leave,
+        menuButton,
         h('div', { class: 'where' },
           h('b', null, table.name),
           active.mode === 'open' ? h('span', { class: 'tag' }, 'open table') : null,
@@ -237,8 +240,8 @@ export function tableScreen(root: HTMLElement): () => void {
         h('section', { class: 'controls', 'aria-label': 'Your actions' }, els.prompt, els.buttons, els.raiseRow),
         els.narration,
         els.toasts,
-        els.fx),
-      els.log,
+        els.fx,
+        els.log),
       safeProbe,
   )
 
@@ -249,6 +252,9 @@ export function tableScreen(root: HTMLElement): () => void {
   let draining = false
   let waiters: (() => void)[] = []
   let ff = false
+  /** While the menu is open: the presentation waits on it (the engine is already ahead or waiting on you). */
+  let paused: Promise<void> | null = null
+  let unpause = () => {}
 
   function setFF(on: boolean) {
     ff = on
@@ -272,6 +278,9 @@ export function tableScreen(root: HTMLElement): () => void {
     draining = true
     await roomUp
     while (queue.length && alive) {
+      // the menu is open: the table waits for the player
+      if (paused) await paused
+      if (!queue.length || !alive) break
       const s = queue.shift()!
       // Fast-forward cancels itself at the showdown reveal and at a new deal:
       // the reveal is where reads come from, and a new hand is live again.
@@ -310,6 +319,11 @@ export function tableScreen(root: HTMLElement): () => void {
 
   let stage = staged ? new Stage(els.stageCanvas, room!, active.seats.length) : null
   let stageReady = false
+
+  /** The figures' clips follow the presentation clock's pace (2x at the quickest, half at the slowest). */
+  function applyPace() {
+    if (stage) stage.speed = paceScale > 0 ? Math.min(2, Math.max(0.5, 1 / paceScale)) : 2
+  }
 
   /**
    * The cards, chips and plates were sized for a phone, where they are big
@@ -576,7 +590,7 @@ export function tableScreen(root: HTMLElement): () => void {
   if (table.presence && active.mode === 'tour' && table.arrival) els.presence.textContent = table.presence
   if (stage) {
     stage.setStill(settings.reduceMotion)
-    stage.speed = paceScale > 0 ? Math.min(2, Math.max(0.5, 1 / paceScale)) : 2
+    applyPace()
     // the room's story piece (Athens: the cup poured for Odysseus) stands until the late champion comes
     stage.setPresence(active.mode === 'tour' && table.arrival ? 'before' : null)
     stage.onReady = () => {
@@ -718,10 +732,23 @@ export function tableScreen(root: HTMLElement): () => void {
     }
   }
 
+  /**
+   * The log: on a computer, if the player turns it on (the owner), the
+   * play-by-play in the corner of the room; otherwise it is for screen readers only.
+   */
+  let logShown = false
+  function applyLog() {
+    logShown = canLog() && !!store.get().settings.log
+    els.log.classList.toggle('sr-only', !logShown)
+    els.log.classList.toggle('table-log', logShown)
+    if (logShown) els.log.scrollTop = els.log.scrollHeight
+  }
+
   function log(text: string, cls = '') {
     const li = h('li', cls ? { class: cls } : null, text)
     els.log.append(li)
     while (els.log.children.length > 60) els.log.firstElementChild!.remove()
+    if (logShown) els.log.scrollTop = els.log.scrollHeight
   }
 
   function clearWin() {
@@ -773,7 +800,7 @@ export function tableScreen(root: HTMLElement): () => void {
     ui.tell.classList.remove('fade')
     void ui.tell.offsetWidth
     ui.tell.classList.add('fade')
-    if (stage && !replaying) log(said)
+    if (stage && !replaying) log(said, 'tell')
     const clip = cueFor(seat, text)
     const until = Date.now() + Math.max(3600, gestureMs(seat, clip) + 400)
     if (real) ui.tellUntil = until
@@ -897,6 +924,16 @@ export function tableScreen(root: HTMLElement): () => void {
     step(() => log(b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`, 'say callout'), 0)
   }
 
+  /**
+   * Whether this bit of table talk is shown: all of it, about a third of it,
+   * or none (story only). Presentation only, so Math.random: the director has
+   * said it either way, and nothing the game deals depends on it.
+   */
+  function hearChatter(): boolean {
+    const level = store.get().settings.dialogue ?? 'all'
+    return level === 'all' || (level === 'less' && Math.random() < 0.35)
+  }
+
   function presentBeat(b: Beat) {
     if (b.kind === 'callout') return logCallout(b)
     if (b.kind === 'line') return sayLine(b)
@@ -979,6 +1016,7 @@ export function tableScreen(root: HTMLElement): () => void {
   }
 
   function onEvent(e: HandEvent) {
+    if (conceded) return
     const beats = run.onEvent(e)
     count(e)
     // The uninvited guest is met the moment he sits down, live OR in a resume
@@ -998,9 +1036,13 @@ export function tableScreen(root: HTMLElement): () => void {
       for (const b of beats) if (b.kind === 'mark') store.earnMark(b.id, table.id)
       return
     }
-    for (const b of beats) if (b.kind === 'callout') showCallout(b)
+    // Table talk the player asked to hear less of (settings.dialogue): one
+    // draw for the event, so an exchange is heard whole or not at all
+    const talk = hearChatter()
+    const heard = beats.filter((b) => talk || !(b.kind === 'callout' || (b.kind === 'line' && b.chatter)))
+    for (const b of heard) if (b.kind === 'callout') showCallout(b)
     present(e, false)
-    for (const b of beats) presentBeat(b)
+    for (const b of heard) presentBeat(b)
     if (e.type === 'handEnd') recordLive()
   }
 
@@ -1537,7 +1579,7 @@ export function tableScreen(root: HTMLElement): () => void {
    * ever touch a hand.
    */
   const ambient = setInterval(() => {
-    if (!alive || replaying || document.hidden) return
+    if (!alive || replaying || document.hidden || paused) return
     // One gesture at a time (the owner: too much moving at once to tell what
     // is what): while anyone's tell, idle or fidget is showing, nobody else
     // starts one. A real tell still plays when it happens; it is never queued.
@@ -1652,7 +1694,7 @@ export function tableScreen(root: HTMLElement): () => void {
     turnStarted = performance.now()
     thinkingTimer = later(() => {
       const beat = run.thinkingLong()
-      if (beat) presentBeat(beat)
+      if (beat && hearChatter()) presentBeat(beat)
     }, THINKING_LONG_MS)
 
     return new Promise<Decision>((resolve) => { resolveTurn = resolve })
@@ -1716,7 +1758,10 @@ export function tableScreen(root: HTMLElement): () => void {
   }
 
   keyHandler = (ev: KeyboardEvent) => {
-    if (!resolveTurn || ev.metaKey || ev.ctrlKey || ev.altKey) return
+    if (ev.metaKey || ev.ctrlKey || ev.altKey) return
+    // Escape: closes the menu, or the raise panel, or opens the menu
+    if (ev.key === 'Escape' && (menu || els.raiseRow.hidden)) { if (menu) closeMenu(); else openMenu(); return }
+    if (menu || !resolveTurn) return
     if ((ev.target as HTMLElement)?.tagName === 'INPUT' && ev.key !== 'Enter' && ev.key !== 'Escape') return
     const k = ev.key.toLowerCase()
     if (k === 'enter' && !els.raiseRow.hidden) { els.raiseConfirm.click(); ev.preventDefault(); return }
@@ -1725,6 +1770,84 @@ export function tableScreen(root: HTMLElement): () => void {
     if (btn) { btn.click(); ev.preventDefault() }
   }
   window.addEventListener('keydown', keyHandler)
+
+  // ------------------------------------------------------------ the menu
+
+  /**
+   * The menu, in the Leave button's place (the owner: cleaner, and better on
+   * a phone): the settings that matter at the table, stepping away (the seat
+   * is kept, to the very hand, as Leave did) and quitting, which ends the
+   * sitting as a loss. While it is open the table waits.
+   */
+  let menu: HTMLElement | null = null
+  /** The player quit the table: nothing more of it is shown. */
+  let conceded = false
+
+  function openMenu() {
+    if (menu || !alive) return
+    paused = new Promise((r) => { unpause = r })
+    if (thinkingTimer) { clearTimeout(thinkingTimer); thinkingTimer = null }
+    const live = !conceded && !!store.get().active
+    const resume = h('button', { type: 'button', class: 'primary' }, live ? 'Back to the table' : 'Close')
+    resume.addEventListener('click', closeMenu)
+    const quitNote = h('small', null, 'End this sitting now. It counts as a loss, behind everyone still at the table.')
+    const quit = h('button', { type: 'button', class: 'danger', disabled: replaying }, 'Quit the table')
+    let armed = false
+    quit.addEventListener('click', () => {
+      if (!armed) {
+        armed = true
+        quit.textContent = 'Quit, and take the loss'
+        quitNote.textContent = 'Sure? The ledger will record it as a loss.'
+        return
+      }
+      closeMenu()
+      concede()
+    })
+    const panel = h('div', { class: 'menu-panel' },
+      h('header', { class: 'menu-head' },
+        h('h2', null, table.name),
+        h('button', { type: 'button', class: 'ghost small', 'aria-label': 'Close', onclick: closeMenu }, '✕')),
+      h('div', { class: 'menu-cols' },
+        h('section', { class: 'menu-settings', 'aria-label': 'Settings' },
+          toggleSetting('Sound', 'Cards dealt, chips pushed, the knock of a check.', 'sound', (on) => { if (on) sound.chips(3) }),
+          choiceSetting('Dialogue', DIALOGUE_HINT, 'dialogue', DIALOGUE_LEVELS),
+          choiceSetting('Table pace', '', 'pace', PACES, (v) => {
+            if (urlPace !== null) return
+            paceScale = PACE_BY_SETTING[v]
+            applyPace()
+          }),
+          canLog() ? toggleSetting('Log', LOG_HINT, 'log', applyLog) : null),
+        h('section', { class: 'menu-actions', 'aria-label': 'Leave' },
+          resume,
+          h('div', { class: 'menu-action' },
+            h('button', { type: 'button', onclick: () => go('/') }, live ? 'Step away' : 'Leave'),
+            h('small', null, live ? 'Your seat is kept. Come back to this very hand.' : 'Back to the title.')),
+          live ? h('div', { class: 'menu-action' }, quit, quitNote) : null)))
+    menu = h('div', { class: 'table-menu', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Menu' }, panel)
+    menu.addEventListener('click', (ev) => { if (ev.target === menu) closeMenu() })
+    screenEl.append(menu)
+    resume.focus()
+  }
+
+  function closeMenu() {
+    if (!menu) return
+    menu.remove()
+    menu = null
+    paused = null
+    unpause()
+    menuButton.focus()
+  }
+
+  /** Quit from the menu: the sitting ends here, as a loss. The hand in play is not shown out. */
+  function concede() {
+    if (conceded || !alive || !store.get().active) return
+    conceded = true
+    queue.length = 0
+    els.fx.replaceChildren()
+    if (thinkingTimer) { clearTimeout(thinkingTimer); thinkingTimer = null }
+    resolveTurn = null
+    finishTable(true)
+  }
 
   // ------------------------------------------------------------ replay
 
@@ -1798,26 +1921,27 @@ export function tableScreen(root: HTMLElement): () => void {
     if (replaying) {
       els.prompt.textContent = 'Death reshuffles, exactly as before…'
     }
-    while (!game.isComplete() && alive) {
+    while (!game.isComplete() && alive && !conceded) {
       await game.playHand()
       if (!replaying) await settled()
-      if (out.has(HUMAN_SEAT) || !alive) break
+      if (out.has(HUMAN_SEAT) || !alive || conceded) break
       if (!replaying) await sleep(450 * paceScale)
     }
-    if (!alive) return
+    if (!alive || conceded) return
     if (replaying) finishReplay()
     await settled()
     finishTable()
   }
 
-  function finishTable() {
+  /** `quit`: the player quit the table from the menu, and it ends here as a loss. */
+  function finishTable(quit = false) {
     els.buttons.replaceChildren()
     closeRaise()
     setFF(false)
     // The table is over: nothing left to fast-forward, and nobody's blind.
     els.ff.hidden = true
     setBlinds(-1, -1)
-    const won = game.survivors()[0] === HUMAN_SEAT && game.isComplete()
+    const won = !quit && game.survivors()[0] === HUMAN_SEAT && game.isComplete()
     const missed = game.missedArrivals()
     const { beats, facts } = run.finish(won, game.handCount(), missed)
     for (const b of beats) presentBeat(b)
@@ -1826,7 +1950,8 @@ export function tableScreen(root: HTMLElement): () => void {
       table: table.id,
       mode: active!.mode,
       won,
-      place: won ? 1 : humanPlace || game.getSeats().length,
+      // quitting, you finish behind everyone still sitting
+      place: won ? 1 : quit ? Math.max(2, game.survivors().length) : humanPlace || game.getSeats().length,
       hands: game.handCount(),
       sat: [...run.sat],
       missed,
@@ -1844,8 +1969,10 @@ export function tableScreen(root: HTMLElement): () => void {
     flushTime()
     const result = { outcome, effects: effects!, marks: newMarks, facts, name: run.earnedName(), sitting }
     setResult(result)
-    els.prompt.textContent = won ? 'You hold every chip.' : 'You are out.'
-    log(won ? 'You win the table.' : 'You are out.', 'big')
+    sitting.quit = quit
+    const said = won ? 'You hold every chip.' : quit ? 'You leave the table.' : 'You are out.'
+    els.prompt.textContent = said
+    log(won ? 'You win the table.' : said, 'big')
     void settled().then(() => {
       if (!alive) return
       // The curtain call comes down over the table: the room keeps breathing
@@ -1857,6 +1984,7 @@ export function tableScreen(root: HTMLElement): () => void {
     })
   }
 
+  applyLog()
   void main()
 
   return () => {

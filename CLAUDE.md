@@ -419,9 +419,21 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 
 **Not started:** Rive integration, recorded audio and music, a real device.
 **The table is laid out for a phone held sideways** (the owner, after the
-first device test: "it is meant to be a mobile game"). No log on screen (the
-owner; it survives only as a screen-reader live region, and the setting is
-gone). On a staged table the room runs edge to edge, under the notch and the
+first device test: "it is meant to be a mobile game"). **A Menu button, not
+Leave** (the owner: cleaner, better on a phone): it pauses the table (the
+presentation queue waits; the engine is ahead or waiting on you) and offers
+Sound, Dialogue (All of it / Less / Story only), Table pace, the Log (a
+computer only), Step away (the seat is kept, to the very hand) and Quit the
+table (asks twice; the sitting ends as a loss, placed behind everyone still
+seated, and the curtain call says you gave up your chair). Escape opens and
+closes it. **Dialogue** filters table talk at presentation only: the director
+marks asides, banter, needles and lines at the player `chatter` (Beat in
+director.ts), and callouts are chatter too; Less shows about a third, one draw
+per event so an exchange is heard whole; Story only shows none. **The log** is
+off by default and offered only with a mouse (`canLog` in settings.ts:
+`hover: hover` and `pointer: fine`); on, it sits in the room's top right
+corner. It never shows tells, which are poses (below); otherwise it is a
+screen-reader live region. On a staged table the room runs edge to edge, under the notch and the
 home bar, and what the player touches keeps out of them (`--safe-*` in
 style.css, `safeProbe` in table.ts). At phone height (460 px and under) the
 bar floats over the ceiling, plates keep their height and are spread so none

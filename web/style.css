@@ -547,6 +547,59 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .toast.leaving { opacity: 0; transition: opacity .5s; }
 
 
+/* ---------------------------------------------------------------- the table's menu
+   In the Leave button's place: settings that matter at the table, stepping
+   away, quitting. Two columns, so it fits a phone held sideways without a
+   scroll; the table waits behind it (table.ts). */
+.table-bar .leave { display: inline-flex; align-items: center; gap: .5em; }
+.burger { display: inline-grid; gap: 3px; width: 14px; }
+.burger i { display: block; height: 2px; border-radius: 1px; background: currentColor; }
+.table-menu {
+  position: absolute; inset: 0; z-index: 50; display: grid; place-items: center;
+  padding: calc(10px + var(--safe-t, 0px)) calc(12px + var(--safe-r, 0px)) calc(10px + var(--safe-b, 0px)) calc(12px + var(--safe-l, 0px));
+  background: #0b0a09b8; animation: reveal .18s ease-out both;
+}
+.menu-panel {
+  width: min(680px, 100%); max-height: 100%; overflow-y: auto; overscroll-behavior: contain;
+  background: var(--panel); border: 1px solid #c9a22755; border-radius: 12px; box-shadow: 0 18px 50px #000d;
+  padding: 12px 14px 14px; display: grid; gap: 10px;
+}
+.menu-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.menu-head h2 { margin: 0; font: 600 1.15rem var(--serif); color: var(--ink); }
+.menu-cols { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 14px; align-items: start; }
+.menu-settings, .menu-actions { display: grid; gap: 8px; }
+.menu-settings .setting { padding: 8px 10px; }
+.menu-settings .segmented { align-self: stretch; }
+.menu-settings .segmented button { padding-left: .4em; padding-right: .4em; white-space: nowrap; }
+.menu-actions > button, .menu-action > button { width: 100%; }
+.menu-action { display: grid; gap: 4px; }
+.menu-action small { color: var(--dim); font-size: .8rem; line-height: 1.3; }
+@media (max-height: 460px) {
+  .menu-panel { padding: 8px 12px 10px; gap: 6px; }
+  .menu-settings, .menu-actions { gap: 6px; }
+  .menu-settings .setting { padding: 5px 9px; }
+  .menu-settings .setting small { display: none; }
+}
+
+/* The log, on a computer when it is turned on (Settings, or the menu): the
+   play-by-play in the room's top right corner, over the ceiling. */
+.table-log {
+  position: absolute; z-index: 6; top: 8px; right: calc(8px + var(--safe-r, 0px));
+  width: min(320px, 28vw); max-height: 30%; overflow-y: auto; margin: 0; padding: 6px 10px;
+  list-style: none; font-size: .78rem; line-height: 1.35; color: #d9ccb4;
+  background: #0b0a09c4; border: 1px solid #ffffff14; border-radius: 8px;
+  scrollbar-width: thin;
+}
+.table-log li { padding: 1px 0; }
+/* tells are poses, not words (the owner): the visible log leaves them out; a screen reader still hears them */
+.table-log li.tell { display: none; }
+.table-log li.head { color: var(--gold-soft); margin-top: 4px; font-weight: 600; }
+.table-log li.street { color: var(--dim); }
+.table-log li.you { color: var(--you); }
+.table-log li.say { font-style: italic; color: #e8dcc4; }
+.table-log li.big { color: var(--gold-soft); font-weight: 600; }
+.table-log li.delta { color: var(--dim); }
+
 /* ---------------------------------------------------------------- things that move
    Cards out of Death's hands, chips across the felt. Flights live in their
    own layer over the felt so nothing that moves can shift the layout. */

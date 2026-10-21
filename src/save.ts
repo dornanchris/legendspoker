@@ -61,12 +61,20 @@ export const SAVE_VERSION = 1
 export const ENGINE_VERSION = 14
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
+export type DialogueLevel = 'all' | 'less' | 'story'
 
 export type Settings = {
   /** Presentation clock only. Never reaches the game loop. */
   pace: Pace
-  /** Unused: the table no longer shows a log (kept so older saves still read). */
+  /** Unused (kept so older saves still read): the log's switch is `log` now. */
   showLog: boolean
+  /** The play-by-play beside the table, on a computer only (the owner); off by default. */
+  log: boolean
+  /**
+   * How much table talk is shown: all of it, less of it, or only the lines
+   * the story needs (Beat.chatter in director.ts). Presentation only.
+   */
+  dialogue: DialogueLevel
   reduceMotion: boolean
   /** Offer the fast-forward control while you are out of a hand. */
   fastForward: boolean
@@ -170,6 +178,8 @@ export type Save = {
 export const defaultSettings = (): Settings => ({
   pace: 'normal',
   showLog: true,
+  log: false,
+  dialogue: 'all',
   reduceMotion: false,
   fastForward: true,
   largeText: false,

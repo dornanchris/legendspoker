@@ -27,6 +27,8 @@ export type Sitting = {
   fallen: { id: string; place: number }[]
   /** Who took the player's last chip, if anyone did. */
   bustedBy: string | null
+  /** The player quit the table from the menu. */
+  quit?: boolean
 }
 
 export type Result = {
@@ -136,6 +138,8 @@ function panel(r: Result, lookAtTable: (() => void) | null): HTMLElement {
   const fallenBefore = s ? s.fallen.filter((f) => f.place > o.place) : []
   const sub = o.won
     ? `You hold every chip. ${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}.`
+    : s?.quit
+      ? `You gave up your chair after ${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}.${fallenBefore.length ? ` You had outlasted ${listNames(fallenBefore.map((f) => f.id))}.` : ''}`
     : fallenBefore.length
       ? `You outlasted ${listNames(fallenBefore.map((f) => f.id))}. ${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}.`
       : `${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}. Every seat at this table has been the first to go at least once.`
