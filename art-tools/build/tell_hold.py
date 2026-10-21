@@ -1,6 +1,6 @@
 """Every gesture the table plays as something to READ holds its pose longer:
 
-    python3 art-tools/build/tell_hold.py [secs]      (default 0.9)
+    python3 art-tools/build/tell_hold.py [secs]      (default 2.5)
 
 The owner: the tells and decoys were too quick to see among everything else
 moving. Each puppet's cued clips (`cues`: its tells AND its idles, the clips
@@ -18,7 +18,7 @@ web/puppet/clip.ts.
 import glob, json, math, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SECS = float(sys.argv[1]) if len(sys.argv) > 1 else 0.9
+SECS = float(sys.argv[1]) if len(sys.argv) > 1 else 2.5
 EASE = {
     'linear': lambda u: u, 'in': lambda u: u ** 3, 'out': lambda u: 1 - (1 - u) ** 3,
     'inOut': lambda u: 0.5 - math.cos(math.pi * u) / 2,

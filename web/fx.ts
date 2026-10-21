@@ -146,6 +146,39 @@ export function drawPile(el: HTMLElement, amount: number, cols = 3, high = 7): v
     h('span', { class: 'col' }, ...Array.from({ length: Math.min(n, high) }, () => h('i', { class: `chip-side ${colour}` })))))
 }
 
+/**
+ * Someone's chips as a physical stack beside their name: how tall it stands
+ * says how much of the table's money they hold (the square root, so a short
+ * stack still shows and a chip leader towers without filling the felt). Sorted
+ * the way chips are kept: a column for each colour, shared out by what each
+ * colour is worth, the biggest first; at most `cols` columns of `high`.
+ */
+export function drawTower(el: HTMLElement, amount: number, total: number, cols = 4, high = 6): void {
+  const share = total > 0 ? Math.max(0, Math.min(1, amount / total)) : 0
+  const n = amount > 0 ? Math.max(1, Math.round(cols * high * Math.sqrt(share))) : 0
+  const worth = new Map<string, number>()
+  let left = Math.max(0, Math.round(amount))
+  for (const [v, colour] of DENOMS) {
+    const k = Math.floor(left / v)
+    if (k) worth.set(colour, k * v)
+    left -= k * v
+  }
+  // chips per colour by value (largest remainder), a colour too small for one chip left out
+  const want = [...worth].map(([colour, v]) => ({ colour, x: (n * v) / Math.max(1, amount) }))
+  const got = want.map((w) => Math.floor(w.x))
+  let spare = n - got.reduce((a, b) => a + b, 0)
+  for (const i of want.map((_, i) => i).sort((a, b) => (want[b].x % 1) - (want[a].x % 1))) {
+    if (spare-- <= 0) break
+    got[i]++
+  }
+  const columns: [string, number][] = []
+  want.forEach((w, i) => {
+    for (let k = got[i]; k > 0; k -= high) columns.push([w.colour, Math.min(high, k)])
+  })
+  el.replaceChildren(...columns.slice(0, cols).map(([colour, k]) =>
+    h('span', { class: 'col' }, ...Array.from({ length: k }, () => h('i', { class: `chip-side ${colour}` })))))
+}
+
 /** How many chips a flight of this size carries. Grows slowly: a shove pours, a blind ticks. */
 export function chipCount(amount: number, bigBlind: number): number {
   if (amount <= 0) return 0

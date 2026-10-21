@@ -16,6 +16,9 @@ import type { ClipData } from './clip.js'
  * and every playing clip add to it.
  */
 
+/** After a clip's hold (ClipData.hold), the rest of it plays this many times faster: the pose snaps back. */
+export const SNAP = 3
+
 /** `held`: seconds spent so far in the clip's hold (ClipData.hold). */
 type Playing = { name: string; clip: ClipData; t: number; loop: boolean; held: number }
 
@@ -107,7 +110,14 @@ export class PuppetPlayer {
   /** How long the clip played for a name lasts (seconds), or 0 without one. */
   duration(name: string): number {
     const clip = this.entry.anim.clips[this.resolve(name)]
-    return clip ? clip.duration + (clip.hold?.[1] ?? 0) : 0
+    if (!clip) return 0
+    const hold = clip.hold
+    return hold ? hold[0] + hold[1] + (clip.duration - hold[0]) / SNAP : clip.duration
+  }
+
+  /** The clip played for a name holds a pose (a gesture to read: ClipData.hold). */
+  holds(name: string): boolean {
+    return !!this.entry.anim.clips[this.resolve(name)]?.hold
   }
 
   get clipNames(): string[] {
@@ -182,6 +192,8 @@ export class PuppetPlayer {
           p.held += pause
           adv -= pause
         }
+        // the hold spent, the pose snaps back
+        if (hold && p.held >= hold[1] && p.t >= hold[0]) adv *= SNAP
         p.t += adv
         if (p.t >= p.clip.duration && p.loop) { p.t %= p.clip.duration; p.held = 0 }
       }

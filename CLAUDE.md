@@ -425,12 +425,22 @@ gone). On a staged table the room runs edge to edge, under the notch and the
 home bar, and what the player touches keeps out of them (`--safe-*` in
 style.css, `safeProbe` in table.ts). At phone height (460 px and under) the
 bar floats over the ceiling, plates keep their height and are spread so none
-overlap, the board sits below the plates it would reach (with room for their
-tells), the pot beside it, inner seats' bets beside their plates. A seat is a name pill, not a box (a
-box over the rim hid the table edge and read as an empty panel once its
-player folded): its cards and last action on the felt under it, its tell on
-a dark backing that a fold never fades, hanging toward the middle from the
-end chairs. Your own cards are a size up from the board's on a phone, and the
+overlap, the board sits below the plates it would reach, the pot beside it. **A seat is a
+name-tag banner, not a box** (the owner: the boxes were "big character
+blocks"; a box over the rim also hid the table edge and read as an empty
+panel once its player folded): a gilt-edged ribbon with the name (gold while
+they act), and under it their cards and their chips as a physical stack
+(`drawTower` in fx.ts: a column per colour, as tall as the square root of
+their share of the table's chips) with the count beside it, the last action
+under that. A plate is as wide as what lies under its banner, and spread so
+none overlap. Your own seat is the same at the bottom left, bigger: your
+banner over your stack, your two cards overlapping as a hand is held, well up
+from the board's (the board is a size up too); where your seat would reach
+the board on a short screen, the board moves right, and a bet that would lie
+on your cards slides out toward its own side (`layoutStage`, `clearUnder`).
+There are **no words for tells on the staged table** (the owner): the figure's
+pose, held, is the tell (below); the words go only to the screen reader's
+log. The plain table, where nobody is drawn, still shows them. The
 turn prompt ("Check or bet") is hidden while the buttons say it. The raise
 panel is a narrow column at the bottom right at every size, the amount on its
 button ("Raise to 459"); while it is open the board slides left to stay
@@ -720,14 +730,19 @@ heads-up lean; Death deals (from his
 deck: the card flights start there), lays the flop and turn, pushes each pot
 toward its winner, shows the guest out; lips move to callouts and lines; a
 tell or idle is acted by its WORDS (`cues` in anim.json, held to the
-character's data by check:data), real tell and ambient noise alike, held on
-their pose 0.9 s longer (`hold` in the clip, `art-tools/build/tell_hold.py`:
-every cued clip and fidget alike, never the tells alone, or length would be
-the tell), one at a time (no ambient gesture starts while another seat's is
-showing, and its words stay 3.6 s), plus
-wordless fidgets and decoys (`fidgets`). Clips run at the pace setting, are
-never started under fast-forward or in a resume's catch-up, and an idle
-never interrupts anything; Reduce motion stops sway and breath. **Every figure
+character's data by check:data), real tell and ambient noise alike, **held
+on their pose 2.5 s, then snapping back** (the owner: "held for a few seconds
+so that it's obvious he moved, then snap back, and if you miss it, oh well";
+`hold` in the clip, `art-tools/build/tell_hold.py`; after the hold the rest
+of the clip plays at `SNAP` = 3x, player.ts): every cued clip and fidget
+alike, never the tells alone, or length would be the tell. A held gesture is
+never cut short by the next action (`cue` in stage.ts: the action waits, and
+is dropped if stale), or the ones cut short would be the noise. One at a time
+(no ambient gesture starts while another seat's is playing), plus
+wordless fidgets and decoys (`fidgets`). Clips run at the pace setting and
+are never started in a resume's catch-up; an action's clip is never started
+under fast-forward, but a gesture is (`gesture` in table.ts: folded hands are
+when the table is watched, rule 6); an idle never interrupts anything; Reduce motion stops sway and breath. **Every figure
 is alive at rest** (the owner: "living figures"): blinks, glances, breathing
 (1.3% of the torso), head sway (1.1 degrees) and a slow weight shift of the
 whole upper body (0.45 degrees about the table line; `sway.body`), Death at
@@ -833,13 +848,14 @@ new art against that layout.
   plate, never across it. Fixed since: every bubble (lines, narration,
   Death's line, callouts) is up on a timer as well as its animation, so
   Reduce motion shows it still, and a new bubble takes down any it would
-  cover (`showBubble` in table.ts); tells get a two-line band under their
-  plate, as wide as the neighbours' plates allow, and bets lie below it,
-  moved out toward their own side where they would lie on the board
+  cover (`showBubble` in table.ts); bets lie under their plate, moved out
+  toward their own side where they would lie on the board or your cards
   (`clearUnder`); the table bar grows with the screen; a window narrower
   than 16:9 carries the room's ceiling up into the dark (stage.ts); and
   nothing is dealt until the room is drawn (5 s at most). On the smallest
-  phone (667x375) the open raise panel covers the right-hand seat's tell line.
+  phone (667x375) the board sits right of your cards, and at the river an
+  open raise panel covers the pot (the board slides left only as far as
+  your cards).
 - **Roster count is 36, not 32.** The v4 table lists 5 characters at Athens,
   Transylvania and the Station (4 seats + a late champion), and Rome now has
   them too: **Scipio Africanus holds Rome's fourth chair** (the owner's call,

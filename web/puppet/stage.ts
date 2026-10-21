@@ -35,6 +35,8 @@ export type Prio = (typeof PRIO)[keyof typeof PRIO]
 
 /** A clip that had to wait for another is dropped if it is this stale by then (ms). */
 const STALE = 2500
+/** ... and a gesture to read (a tell, an idle, a fidget: `keep`), this stale: it plays after the one before it. */
+const KEEP = 6000
 export const DEALER = -1
 
 type Actor = {
@@ -46,7 +48,7 @@ type Actor = {
   /** The table line, in design px: the rim at the seat's centre, plus its sink. */
   line: number
   current: { name: string; prio: Prio } | null
-  pending: { name: string; prio: Prio; at: number } | null
+  pending: { name: string; prio: Prio; at: number; keep: boolean } | null
   /** Out of the table: drawn until the clip it left on is over, then faded out (the owner: a line, then gone). */
   leaving: boolean
   /** 1 seated; falls to 0 once they have left and their last clip is over. */
@@ -94,7 +96,7 @@ export class Stage {
   private table: Img | null = null
   private pieces = new Map<string, Img>()
   private loading = new Map<string, Promise<PuppetPlayer>>()
-  private early = new Map<number, { name: string; prio: Prio; at: number }>()
+  private early = new Map<number, { name: string; prio: Prio; at: number; keep: boolean }>()
   /** Which presence piece stands in the room: before the late champion, after, or none. */
   private presence: 'before' | 'after' | null = null
   /** Each loop spot's frame and when it next changes (s). */
@@ -188,7 +190,7 @@ export class Stage {
     // a clip asked for before the figure was loaded (an arrival's entrance)
     const early = this.early.get(seat)
     this.early.delete(seat)
-    if (early && performance.now() - early.at < STALE * 2) this.cue(seat, early.name, early.prio)
+    if (early && performance.now() - early.at < STALE * 2) this.cue(seat, early.name, early.prio, early.keep)
   }
 
   /** The room's story piece: 'before' the late champion comes, 'after', or none (an open table). */
@@ -219,18 +221,25 @@ export class Stage {
    * Play a clip on someone. An idle never interrupts anything and is dropped
    * if they are busy; anything else cuts an idle short, or waits for the clip
    * playing to end (one waiting at most: the newest).
+   *
+   * A held gesture (a clip with a hold: a tell, an idle, a fidget) is never
+   * cut short, whatever its priority: if only the noise were ever cut off by
+   * the next action, the ones played through would be the tells (rule 2).
+   * `keep` marks a gesture: it waits longer, and nothing that is not a
+   * gesture takes its place in the queue.
    */
-  cue(seat: number, clip: string, prio: Prio): boolean {
+  cue(seat: number, clip: string, prio: Prio, keep = false): boolean {
     const a = this.actors.get(seat)
     if (!a && prio !== PRIO.idle) {                        // still loading: played when they sit down
-      this.early.set(seat, { name: clip, prio, at: performance.now() })
+      this.early.set(seat, { name: clip, prio, at: performance.now(), keep })
       return false
     }
     if (!a || a.leaving || !a.player.has(clip)) return false
     const busy = a.current !== null && a.player.timeOf(a.current.name) >= 0
     if (busy && prio === PRIO.idle) return false
-    if (busy && a.current!.prio !== PRIO.idle) {
-      a.pending = { name: clip, prio, at: performance.now() }
+    if (busy && (a.current!.prio !== PRIO.idle || a.player.holds(a.current!.name))) {
+      if (a.pending?.keep && !keep) return false
+      a.pending = { name: clip, prio, at: performance.now(), keep }
       return true
     }
     this.start(a, clip, prio)
@@ -350,7 +359,7 @@ export class Stage {
       if (!a.current && a.pending) {
         const p = a.pending
         a.pending = null
-        if (now - p.at < STALE) this.start(a, p.name, p.prio)
+        if (now - p.at < (p.keep ? KEEP : STALE)) this.start(a, p.name, p.prio)
       }
       a.player.update(dt)
     }
