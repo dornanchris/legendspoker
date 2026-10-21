@@ -422,14 +422,16 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 first device test: "it is meant to be a mobile game"). **A Menu button, not
 Leave** (the owner: cleaner, better on a phone): it pauses the table (the
 presentation queue waits; the engine is ahead or waiting on you) and offers
-Sound, Dialogue (All of it / Less / Story only), Table pace, the Log (a
+Sound, Dialogue (All / Less / Story / Off), Table pace, the Log (a
 computer only), Step away (the seat is kept, to the very hand) and Quit the
 table (asks twice; the sitting ends as a loss, placed behind everyone still
 seated, and the curtain call says you gave up your chair). Escape opens and
 closes it. **Dialogue** filters table talk at presentation only: the director
 marks asides, banter, needles and lines at the player `chatter` (Beat in
 director.ts), and callouts are chatter too; Less shows about a third, one draw
-per event so an exchange is heard whole; Story only shows none. **The log** is
+per event so an exchange is heard whole; Story shows none; Off shows no line
+at all, story lines included (arrivals and guests still take their chairs,
+unexplained). **The log** is
 off by default and offered only with a mouse (`canLog` in settings.ts:
 `hover: hover` and `pointer: fine`); on, it sits in the room's top right
 corner. It never shows tells, which are poses (below); otherwise it is a

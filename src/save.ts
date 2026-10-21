@@ -61,7 +61,7 @@ export const SAVE_VERSION = 1
 export const ENGINE_VERSION = 14
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
-export type DialogueLevel = 'all' | 'less' | 'story'
+export type DialogueLevel = 'all' | 'less' | 'story' | 'off'
 
 export type Settings = {
   /** Presentation clock only. Never reaches the game loop. */
@@ -71,8 +71,8 @@ export type Settings = {
   /** The play-by-play beside the table, on a computer only (the owner); off by default. */
   log: boolean
   /**
-   * How much table talk is shown: all of it, less of it, or only the lines
-   * the story needs (Beat.chatter in director.ts). Presentation only.
+   * How much table talk is shown: all of it, less of it, only the lines the
+   * story needs (Beat.chatter in director.ts), or none. Presentation only.
    */
   dialogue: DialogueLevel
   reduceMotion: boolean

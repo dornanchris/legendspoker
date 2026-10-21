@@ -926,8 +926,8 @@ export function tableScreen(root: HTMLElement): () => void {
 
   /**
    * Whether this bit of table talk is shown: all of it, about a third of it,
-   * or none (story only). Presentation only, so Math.random: the director has
-   * said it either way, and nothing the game deals depends on it.
+   * or none (story only, or off). Presentation only, so Math.random: the
+   * director has said it either way, and nothing the game deals depends on it.
    */
   function hearChatter(): boolean {
     const level = store.get().settings.dialogue ?? 'all'
@@ -936,7 +936,8 @@ export function tableScreen(root: HTMLElement): () => void {
 
   function presentBeat(b: Beat) {
     if (b.kind === 'callout') return logCallout(b)
-    if (b.kind === 'line') return sayLine(b)
+    // Dialogue off: nobody speaks, story lines included (the chairs still change)
+    if (b.kind === 'line') return (store.get().settings.dialogue ?? 'all') === 'off' ? undefined : sayLine(b)
     if (b.kind === 'respect') {
       step(() => {
         refreshName()

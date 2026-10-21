@@ -40,8 +40,8 @@ export function choiceSetting<K extends 'pace' | 'dialogue'>(
 }
 
 export const PACES: [Pace, string][] = [['unhurried', 'Unhurried'], ['normal', 'Normal'], ['brisk', 'Brisk']]
-export const DIALOGUE_LEVELS: [DialogueLevel, string][] = [['all', 'All of it'], ['less', 'Less'], ['story', 'Story only']]
-export const DIALOGUE_HINT = 'Table talk: banter, asides, the words that go in with the chips. Story only keeps what the tour needs.'
+export const DIALOGUE_LEVELS: [DialogueLevel, string][] = [['all', 'All'], ['less', 'Less'], ['story', 'Story'], ['off', 'Off']]
+export const DIALOGUE_HINT = 'Table talk: banter, asides, the words that go in with the chips. Story keeps only what the tour needs; Off says nothing at all.'
 export const LOG_HINT = 'The play-by-play beside the table.'
 
 /** A computer, not a phone: the log is offered only where there is a mouse and room for it. */
