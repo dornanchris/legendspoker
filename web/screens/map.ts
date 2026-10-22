@@ -1,8 +1,9 @@
-import { CHARACTERS, DEALER, DIALOGUE, TABLES, TABLE_BY_ID, fullCast, type Line, type TableData } from '../../src/content.js'
+import { CHARACTERS, DEALER, DIALOGUE, TABLES, TABLE_BY_ID, fullCast, ledgerId, type Line, type TableData } from '../../src/content.js'
 import { tableState, isVisible, earnedName, canPlayOpenTable, fillLine } from '../../src/tour.js'
 import * as store from '../store.js'
 import { h, go } from '../dom.js'
-import { header, medallion, startTable, isArrivalHidden } from './shared.js'
+import { header, face, startTable, isArrivalHidden } from './shared.js'
+import { chairPicker } from './open.js'
 
 const NUMERALS = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI']
 
@@ -121,20 +122,22 @@ export function introScreen(root: HTMLElement, params: string[]): void {
   else lines = d?.table_intro ?? []
 
   const quote = h('div', { class: 'intro-lines' })
-  const seat = h('button', { type: 'button', class: 'primary', onclick: () => startTable(table.id, mode) },
+  const seat = h('button', { type: 'button', class: 'primary', onclick: () => startTable(table.id, mode, picker?.chairs()) },
     resuming ? 'Return to your seat' : table.kind === 'finale' ? 'Sit down' : 'Take your seat')
+  // An open table: the player picks who sits where (open.ts); a seat already
+  // taken shows who is in it.
+  const picker = mode === 'open' && !resuming ? chairPicker(table, (chairs) => { seat.disabled = !chairs.some(Boolean) }) : null
 
-  const cast = mode === 'open' ? [] : fullCast(table)
-  const castRow = cast.length
-    ? h('ul', { class: 'cast-row', 'aria-label': 'At this table' },
+  const cast = mode === 'open' ? save.active?.seats ?? [] : fullCast(table)
+  const castRow = picker ? picker.el
+    : h('ul', { class: 'cast-row', 'aria-label': 'At this table' },
       cast.map((id) => {
         const c = CHARACTERS[id]
-        const hidden = isArrivalHidden(id) || (table.kind === 'finale' && !save.characters[id]?.met && false)
+        const hidden = mode === 'tour' && isArrivalHidden(id)
         return h('li', { class: hidden ? 'hidden' : '' },
-          medallion(c, hidden ? 'hidden' : save.characters[id]?.beaten ? 'beaten' : 'met'),
+          face(c, hidden ? 'hidden' : save.characters[ledgerId(id)]?.beaten ? 'beaten' : 'met', mode === 'tour'),
           h('span', null, hidden ? 'An empty chair' : c?.short ?? id))
       }))
-    : h('p', { class: 'dim' }, 'Anyone you have beaten may take a chair tonight, champions included. One is always kept for someone from this room; who fills the rest is up to the evening.')
 
   root.append(
     h('div', { class: `screen intro-screen t-${table.id}` },
@@ -145,8 +148,9 @@ export function introScreen(root: HTMLElement, params: string[]): void {
             .filter(Boolean).join(' · ')),
         text(table.era) ? h('p', { class: 'era' }, text(table.era)) : null,
         // Until there is a painted still, the room description stands in for
-        // it -- unless Death's intro already narrates the room itself.
-        text(table.room) && !lines.some((l) => l.speaker === 'narration') ? h('p', { class: 'room' }, text(table.room)) : null,
+        // it -- unless Death's intro already narrates the room itself. At an
+        // open table the room has been seen; the chairs take its place.
+        mode === 'tour' && text(table.room) && !lines.some((l) => l.speaker === 'narration') ? h('p', { class: 'room' }, text(table.room)) : null,
         quote,
         mode === 'tour' && text(table.hook) ? h('p', { class: 'hook' }, text(table.hook)) : null,
         castRow,

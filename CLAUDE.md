@@ -123,8 +123,9 @@ data/
 web/
   app.ts          boot + hash router (#/tour, #/ledger/..., works from file://)
   store.ts        the Save in localStorage, guarded; live-only persistence
-  screens/        title, invitation, map+intro, table, results, ledger,
-                  settings+about, ending. table.ts keeps the 3b presentation queue
+  screens/        title, invitation, map+intro, open (the open table's
+                  chairs), table, results, ledger, settings+about, ending.
+                  table.ts keeps the 3b presentation queue
   fx.ts           flights: cards out of Death's hands, chips across the felt
   puppet/         the puppet player: bones, clips, face (blink, gaze, brows,
                   speech, idle), table-rail layering; stage.ts draws a room
@@ -272,9 +273,31 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   missable. The Green Knight keeps his appointment: knocked out, he retakes
   his chair 20 hands later if the table is still going, at any table he sits
   at (`returns` in his character file; an Arrival whose `afterEliminationOf`
-  is himself, so the event has `replaces === id`). Open tables (random
-  play) unlock at cleared tables and seat a mix of anyone the player has
-  beaten, champions included, one chair kept for the room.
+  is himself, so the event has `replaces === id`). **Open tables** unlock
+  at cleared tables, and the PLAYER picks who sits (the owner: "mix and
+  match at each location"): `web/screens/open.ts`, the open intro, shows
+  the room's four chairs around Death, each a drawn portrait with arrows
+  through everyone the player has PLAYED AGAINST (`met`; the owner's words,
+  wider than the design doc's "beaten"; a never-met Odysseus is not there,
+  the Phoenix still has to be beaten), and under them every face by table,
+  tap to seat. One to four opponents; heads up against anyone is allowed;
+  so is a man beside his other half or his own second look (the owner:
+  Jekyll and Hyde, the Robot and the AI, two Green Knights, two Holmeses,
+  "perfectly fine"; `isOpenCast` in tour.ts). **Second looks** sit as
+  players of their own: `looks` in a character file (`LookData`) makes a
+  copy under the look's puppet id, with its own nameplate and a mark that
+  unlocks it -- the Green Knight unhelmed is **Bertilak** (his name in the
+  poem; "The Return Blow"), Holmes in the deerstalker is **Sherlock** ("The
+  Deerstalker"). Same dials, tells and callouts, no return or other half;
+  never on the ROSTER or a table's seats (check:data); his play and his
+  beating are kept on the original's ledger page (`ledgerId`). At an open
+  table the earned hat is not put on Holmes: the pick says who wears it.
+  "Deal me a table"
+  deals a full one at random, one chair kept for the room. The picks are
+  kept per table (`openChairs`), and the table is STAGED in its room with
+  everyone in the chair they were put in, empty ones left empty
+  (`chairs` in the active seat, `Stage.chairsFor`; presentation only, no
+  ENGINE_VERSION bump). Nobody is crowned at an open table.
 - **Dialogue system:** `src/director.ts` plays the established schema — intro,
   the one plant, pair banter, tiered player-directed lines, Death's asides,
   arrivals, heads-up, bust-outs, defeat — plus Holmes's `reads_you` (lines
@@ -573,7 +596,8 @@ him, the player won, and he was beaten before the sitting began; the director
 reports `headsUpWith` and `beatenBefore` in its TableFacts). Once it is in the
 ledger he wears it wherever he sits, curtain-call portrait included (`LOOKS` in
 `web/puppet/cast.ts`, by mark), from the next sitting on: presentation only, no
-ENGINE_VERSION bump. `npm run check:look` forces it.
+ENGINE_VERSION bump. At an open table he is bareheaded and the hat is a pick
+of its own ("Sherlock", a second look), so two Holmeses can sit at once. `npm run check:look` forces it.
 **The Cheshire Cat takes Alice's chair** (seat 3, mirrored; the owner's call,
 ENGINE_VERSION 12: the Alice sheets drew as Disney's). The design doc had
 rejected him as unreadable; his tells answer that: his tail, eyes blinking one
@@ -598,8 +622,8 @@ candelabrum's three flames at 39%.
 call, ENGINE_VERSION 13: the Monster's gothic sheet read as a handsome actor,
 kept in `monster_parts/sources/rejected/`). ONE chair, TWO men: each sitting
 deals Jekyll OR Hyde, 50/50, tossed once from the sitting's seed
-(`sittingSeats` in content.ts; the save keeps the seats it was dealt), and
-an open table never deals both. Once Dracula has sat down and the one dealt
+(`sittingSeats` in content.ts; the save keeps the seats it was dealt). At an
+open table the player picks, and may seat both. Once Dracula has sat down and the one dealt
 in is knocked out, the OTHER walks back in to an empty chair the next time
 the player WINS a pot holding the same two ranks as the hand that knocked him
 out, whoever's hand that was (the player's or an AI's; ranks, not suits; a

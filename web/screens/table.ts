@@ -166,7 +166,8 @@ export function tableScreen(root: HTMLElement): () => void {
   // ?room=<id> stages this table in another drawn room: a preview of a room
   // before its own cast has puppets (like ?pace, a knob for looking, not a setting)
   const room = ROOMS[new URLSearchParams(location.search).get('room') ?? table.id]
-  const staged = !!room && Stage.fits(room, active.seats.length) && active.seats.every((id) => !!PUPPETS[id])
+  // an open table: in the chairs the player put them in
+  const staged = !!room && Stage.fits(room, active.seats.length, active.chairs) && active.seats.every((id) => !!PUPPETS[id])
   /** The player is drawn in their own chair (the finale): their figure acts out what they do, as the others' do. */
   const youSeen = staged && !!room?.data.you
 
@@ -317,7 +318,7 @@ export function tableScreen(root: HTMLElement): () => void {
 
   // ------------------------------------------------------------ the figures
 
-  let stage = staged ? new Stage(els.stageCanvas, room!, active.seats.length) : null
+  let stage = staged ? new Stage(els.stageCanvas, room!, active.seats.length, active.chairs) : null
   let stageReady = false
 
   /** The figures' clips follow the presentation clock's pace (2x at the quickest, half at the slowest). */
@@ -486,9 +487,10 @@ export function tableScreen(root: HTMLElement): () => void {
   function figureAt(seat: number): string {
     if (seat === HUMAN_SEAT) return youSeen ? room?.data.youAs ?? 'stranger' : ''
     const id = changed.get(seat) ?? seatIds[seat] ?? ''
-    // a look the player has earned for them (Holmes's deerstalker), worn from the next sitting on
+    // a look the player has earned for them (Holmes's deerstalker), worn from the next sitting on;
+    // at an open table the player picked the look (the second looks sit as players of their own)
     const look = LOOKS[id]
-    if (look && save.marks[look.mark] && PUPPETS[look.puppet]) return look.puppet
+    if (look && active!.mode === 'tour' && save.marks[look.mark] && PUPPETS[look.puppet]) return look.puppet
     return room?.data.cast?.[id] ?? id
   }
 
@@ -554,7 +556,8 @@ export function tableScreen(root: HTMLElement): () => void {
   function buildSeat(i: number) {
     const id = seatIds[i]!
     const c = CHARACTERS[id]
-    const isChamp = table.champion === id || (table.kind === 'champions')
+    // an open table's champion defends nothing (Death: "They are only players again")
+    const isChamp = active!.mode === 'tour' && (table.champion === id || table.kind === 'champions')
     const ui: SeatUI = {
       id,
       root: h('div', { class: `seat${isChamp ? ' champion' : ''}`, dataset: { id } }),

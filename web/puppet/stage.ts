@@ -105,6 +105,8 @@ export class Stage {
   private gutters: number[][] = []
   private clock = 0
   private rimPath: Path2D
+  /** Each seat's chair, [centre x, scale, sink], seat 1 first. */
+  private chairs: [number, number, number][]
   /** Clips play at this rate (the presentation clock's pace); the face and idles never change speed. */
   speed = 1
   /** Reduce motion: no sway or breath. */
@@ -115,8 +117,9 @@ export class Stage {
   /** What each frame costs (update + draw, ms), for measuring (the IK prototype's test page). */
   readonly stats = { frames: 0, total: 0, max: 0 }
 
-  constructor(readonly canvas: HTMLCanvasElement, readonly room: RoomEntry, readonly seatCount: number) {
+  constructor(readonly canvas: HTMLCanvasElement, readonly room: RoomEntry, readonly seatCount: number, chairs?: number[]) {
     this.ctx = canvas.getContext('2d')!
+    this.chairs = Stage.chairsFor(room, seatCount, chairs)!
     const r = room.data.rim
     const p = new Path2D()
     const xs = r.y.map((_, i) => r.x0 + i * r.step)
@@ -127,9 +130,23 @@ export class Stage {
     this.rimPath = p
   }
 
-  /** The seats this room has chairs for: one spot per opponent at this count. */
-  static fits(room: RoomEntry, seatCount: number): boolean {
-    return !!room.data.seats[String(seatCount)]
+  /** Whether this room has chairs for this many opponents (or for these chairs of its own: see chairsFor). */
+  static fits(room: RoomEntry, seatCount: number, chairs?: number[]): boolean {
+    return !!Stage.chairsFor(room, seatCount, chairs)
+  }
+
+  /**
+   * Where each seat sits: the room's own spots for this many opponents, or,
+   * given `chairs` (an open table: the chairs the player put them in), those
+   * of its full set of chairs, the rest left empty. A count the room has no
+   * spots for sits in its first chairs. null if they do not fit.
+   */
+  static chairsFor(room: RoomEntry, seatCount: number, chairs?: number[]): [number, number, number][] | null {
+    const s = room.data.seats
+    if (!chairs && s[String(seatCount)]) return s[String(seatCount)]
+    const all = Object.values(s).reduce((a, b) => (b.length > a.length ? b : a), [])
+    const at = chairs ?? [...Array(seatCount).keys()]
+    return at.length === seatCount && new Set(at).size === at.length && at.every((i) => all[i]) ? at.map((i) => all[i]) : null
   }
 
   /**
@@ -181,7 +198,7 @@ export class Stage {
     if (!this.alive) return
     player.face.still = this.still
     const d = this.room.data
-    const [x, sc, sink] = seat === DEALER ? d.dealer : seat === 0 ? d.you! : d.seats[String(this.seatCount)][seat - 1]
+    const [x, sc, sink] = seat === DEALER ? d.dealer : seat === 0 ? d.you! : this.chairs[seat - 1]
     const [w] = this.room.data.design
     this.actors.set(seat, {
       id, player, x, scale: sc, flip: x > w / 2 + 1, line: this.rimAt(x) + sink,
@@ -331,7 +348,7 @@ export class Stage {
     }
     spot(DEALER, d.dealer)
     if (d.you) spot(0, d.you)
-    d.seats[String(this.seatCount)].forEach((s, i) => spot(i + 1, s))
+    this.chairs.forEach((s, i) => spot(i + 1, s))
     const dl = this.rimAt(d.dealer[0]) + d.dealer[2]
     return { k, seats, deck: { x: ox + (d.dealer[0] + d.deck[0]) * k, y: oy + (dl + d.deck[1]) * k } }
   }

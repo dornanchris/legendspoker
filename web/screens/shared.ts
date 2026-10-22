@@ -1,7 +1,8 @@
 import { CHARACTERS, MARKS, TABLE_BY_ID, sittingSeats, type CharacterData } from '../../src/content.js'
-import { applyOutcome, openTableCast } from '../../src/tour.js'
+import { applyOutcome, openTableCast, isOpenCast } from '../../src/tour.js'
 import { tableRecord, ENGINE_VERSION } from '../../src/save.js'
 import * as store from '../store.js'
+import { PUPPETS, LOOKS } from '../puppet/cast.js'
 import { h, go } from '../dom.js'
 
 export function markTitle(id: string): string {
@@ -30,6 +31,24 @@ export function medallion(c: CharacterData | undefined, state: 'unmet' | 'met' |
     .join('')
     .slice(0, 2)
   return h('div', { class: `medallion t-${c.table} ${state}`, 'aria-hidden': 'true' }, initials)
+}
+
+/**
+ * A character's own drawn head (art-tools/build/portraits.py), in the look the
+ * player has earned for them (Holmes's deerstalker) unless `worn` is false (an
+ * open table, where the player picks the look), or null with no art.
+ */
+export function portraitUrl(id: string, worn = true): string | null {
+  const look = worn ? LOOKS[id] : undefined
+  const art = PUPPETS[look && store.get().marks[look.mark] && PUPPETS[look.puppet] ? look.puppet : id]
+  return art ? `${art.base}portrait.webp` : null
+}
+
+/** Their drawn head in a round frame, or their medallion where there is no art (or nothing may be shown yet). */
+export function face(c: CharacterData | undefined, state: 'unmet' | 'met' | 'beaten' | 'hidden' = 'met', worn = true): HTMLElement {
+  const url = c && state !== 'hidden' ? portraitUrl(c.id, worn) : null
+  if (!c || !url) return medallion(c, state)
+  return h('div', { class: `portrait t-${c.table} ${state}`, style: `background-image:url(${url})`, 'aria-hidden': 'true' })
 }
 
 function randomSeed(): number {
@@ -69,14 +88,17 @@ export function forfeitActive(): void {
 
 /**
  * Take a seat. Returns false if the player declined to give up another table
- * already in progress.
+ * already in progress, or picked a cast that cannot sit down. An open table
+ * seats who the player put in the room's chairs (`picked`, null for an empty
+ * one), or whoever they set there last time, or a table dealt at random.
  */
-export function startTable(tableId: string, mode: 'tour' | 'open'): boolean {
+export function startTable(tableId: string, mode: 'tour' | 'open', picked?: (string | null)[]): boolean {
   const s = store.get()
   const table = TABLE_BY_ID[tableId]
   if (!table || !s.player) return false
+  if (picked && (mode !== 'open' || !isOpenCast(s, picked.filter((id) => !!id) as string[]))) return false
   if (s.active) {
-    if (s.active.table === tableId && s.active.mode === mode) {
+    if (s.active.table === tableId && s.active.mode === mode && !picked) {
       go('/table')
       return true
     }
@@ -85,20 +107,28 @@ export function startTable(tableId: string, mode: 'tour' | 'open'): boolean {
     forfeitActive()
   }
   const seed = randomSeed()
-  let seats = [...table.seats]
-  if (mode === 'open') {
-    let x = seed
-    const rng = () => ((x = (x * 1664525 + 1013904223) >>> 0) / 2 ** 32)
-    seats = openTableCast(table, s, rng)
-  }
-  // One chair, two men (Jekyll or Hyde): the coin is tossed once, here, and the save keeps it.
-  seats = sittingSeats(seats, seed)
   const rec = tableRecord(s, tableId)
+  let seats: string[]
+  let chairs: (string | null)[] | undefined
+  if (mode === 'open') {
+    chairs = picked ?? rec.openChairs
+    if (!chairs || !isOpenCast(s, chairs.filter((id) => !!id) as string[])) {
+      let x = seed
+      const rng = () => ((x = (x * 1664525 + 1013904223) >>> 0) / 2 ** 32)
+      chairs = openTableCast(table, s, rng)
+    }
+    seats = chairs.filter((id) => !!id) as string[]
+  } else {
+    // One chair, two men (Jekyll or Hyde): the coin is tossed once, here, and the save keeps it.
+    seats = sittingSeats([...table.seats], seed)
+  }
   store.update((st) => {
+    if (chairs) tableRecord(st, tableId).openChairs = chairs
     st.active = {
       table: tableId,
       mode,
       seats,
+      chairs: chairs?.flatMap((id, i) => (id ? [i] : [])),
       seed,
       decisions: [],
       startedAt: new Date().toISOString(),

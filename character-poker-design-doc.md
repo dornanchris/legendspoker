@@ -112,6 +112,14 @@ avatar-unlock tracker.
      anyone the player has already beaten, from any table, champions
      included, with one chair kept for someone from the room so its own
      banter still has a voice.*
+     *[DECISION, owner] And then **picked**: the player chooses who sits,
+     one to four opponents from everyone they have played against at the
+     tables (met, not only beaten), heads up against anyone if they like.
+     No chair is kept for the room any more; a table dealt at random still
+     keeps one. A heads-up open table is to earn a bonus mark later. Both
+     halves of a two-man chair may sit together (Jekyll and Hyde; the Robot
+     and the AI), and so may a man and his second look (the Green Knight
+     helmed and bare, Holmes with and without the deerstalker).*
 - After all eight: **two champion tiers** — Champions' Table for the first
   four bosses, then Champions' Table for the last four — played at Death's
   transcendent table.

@@ -122,6 +122,10 @@ export type CharacterData = {
   returns?: ReturnData
   /** One chair, two men: see OtherData. */
   other?: OtherData
+  /** His other looks, each a player of his own at an open table: see LookData. */
+  looks?: LookData[]
+  /** On a second look's entry only (SECOND_LOOKS): whose look it is, and the mark that unlocks it. */
+  lookOf?: { id: string; mark: string }
   /**
    * A guest is unlocked (dealt in at open tables) once MET -- unless this
    * says 'beaten': the Phoenix has to be beaten, heads up, at the end of its
@@ -151,6 +155,17 @@ export type CharacterData = {
    */
   callouts?: Callouts
 }
+
+/**
+ * Another look of someone, seated as a player of his own at an open table
+ * (the owner: two Green Knights at one table, helmed and bare, and Holmes
+ * with and without his deerstalker). The same man -- dials, quirks, tells,
+ * callouts -- under the look's id, which is its puppet's (web/art/<id>/), with
+ * a nameplate of his own so the two can be told apart, open to pick once the
+ * mark is in the ledger. Never on the ROSTER, never in a table's seats: the
+ * ledger records him as the one he is a look of (ledgerId).
+ */
+export type LookData = { id: string; short: string; epithet: string; mark: string }
 
 /**
  * A character who comes BACK after being knocked out: the Green Knight took
@@ -399,9 +414,24 @@ const dialogueList = [
   dTransylvania, dStation, dChampions1, dChampions2, dFinale, dPyre,
 ] as unknown as DialogueData[]
 
+/**
+ * The second looks as players (LookData): a copy of the one they are a look
+ * of, without his comings and goings (no return, no other half, no late
+ * arrival) -- at an open table he simply sits down.
+ */
+export const SECOND_LOOKS: CharacterData[] = characterList.flatMap((c) => (c.looks ?? []).map((l) => ({
+  ...c, id: l.id, short: l.short, epithet: l.epithet, lookOf: { id: c.id, mark: l.mark },
+  looks: undefined, returns: undefined, other: undefined, arrives: false,
+})))
+
 export const CHARACTERS: Record<string, CharacterData> = Object.fromEntries(
-  characterList.map((c) => [c.id, c]),
+  [...characterList, ...SECOND_LOOKS].map((c) => [c.id, c]),
 )
+
+/** Whose record (the ledger's page) someone's play is kept on: a second look's is the one he is a look of. */
+export function ledgerId(id: string): string {
+  return CHARACTERS[id]?.lookOf?.id ?? id
+}
 
 /** Every table in tour order. */
 export const TABLES: TableData[] = [...tableList].sort((a, b) => a.position - b.position)
