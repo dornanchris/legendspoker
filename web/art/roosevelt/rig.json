@@ -664,6 +664,34 @@
    "bone": "torso"
   },
   {
+   "name": "frame.talk",
+   "img": "frame_talk.png",
+   "cx": 548.0,
+   "cy": 769.0,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
+   "name": "frame.pump",
+   "img": "frame_pump.png",
+   "cx": 548.0,
+   "cy": 769.0,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 10,
+   "slot": "frame",
+   "visible": false,
+   "onTable": true,
+   "bone": "torso"
+  },
+  {
    "name": "arm_near.rest",
    "img": "arm_near_rest.png",
    "cx": 548.0,
@@ -995,7 +1023,7 @@
    ],
    "E3": [
     0.8072,
-    33.2,
+    -11.8,
     12.4
    ]
   }
@@ -1029,6 +1057,8 @@
   "push_specs": null,
   "moustache": null,
   "win_big": null,
-  "lose_big": null
+  "lose_big": null,
+  "talk": null,
+  "pump": null
  }
 }

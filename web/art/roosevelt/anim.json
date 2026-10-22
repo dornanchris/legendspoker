@@ -2091,27 +2091,27 @@
   },
   "talk": {
    "duration": 2.2,
-   "note": "BEAT: making a point, fist raised. Play beside a spoken line.",
+   "note": "BEAT: making a point, fist raised (a whole-figure frame with its own drawn head: the fist is at his face). Play beside a spoken line.",
    "tracks": {
-    "arm_near": {
-     "rot": [
+    "torso": {
+     "y": [
       [
        0,
        0
       ],
       [
-       0.21,
-       -14,
+       0.16,
+       1.5,
+       "in"
+      ],
+      [
+       0.28,
+       0,
        "out"
       ],
       [
-       0.4,
-       0,
-       "inOut"
-      ],
-      [
-       0.65,
-       -2,
+       0.6,
+       -1.5,
        "inOut"
       ],
       [
@@ -2120,45 +2120,110 @@
        "inOut"
       ],
       [
-       1.15,
-       -2,
+       1.2,
+       -1.5,
        "inOut"
       ],
       [
-       1.45,
+       1.5,
        0,
        "inOut"
       ],
       [
-       1.6,
+       1.9,
        0
       ],
       [
-       1.74,
-       -14,
-       "inOut"
-      ],
-      [
        1.92,
-       -0.4,
-       "inOut"
+       1.5,
+       "hold"
       ],
       [
-       1.98,
+       2.2,
        0,
-       "out"
+       "inOut"
       ]
      ]
     }
    },
    "swaps": {
+    "torso": [
+     [
+      0.16,
+      "-"
+     ],
+     [
+      1.9,
+      null
+     ]
+    ],
+    "torso_over": [
+     [
+      0.16,
+      "-"
+     ],
+     [
+      1.9,
+      null
+     ]
+    ],
     "arm_near": [
+     [
+      0.16,
+      "-"
+     ],
+     [
+      1.9,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.16,
+      "-"
+     ],
+     [
+      1.9,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.16,
+      "-"
+     ],
+     [
+      1.9,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.16,
+      "-"
+     ],
+     [
+      1.9,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.16,
+      "-"
+     ],
+     [
+      1.9,
+      null
+     ]
+    ],
+    "frame": [
      [
       0.16,
       "talk"
      ],
      [
-      1.8,
+      1.9,
       null
      ]
     ]
@@ -2488,32 +2553,32 @@
   },
   "won_pot": {
    "duration": 1.8,
-   "note": "BEAT: won a pot: a fist pumped once, delighted.",
+   "note": "BEAT: won a pot: a fist pumped once, delighted (a whole-figure frame with its own drawn head).",
    "tracks": {
-    "arm_near": {
-     "rot": [
+    "torso": {
+     "y": [
       [
        0,
        0
       ],
       [
-       0.19,
-       -14,
+       0.14,
+       1.5,
+       "in"
+      ],
+      [
+       0.26,
+       0,
        "out"
       ],
       [
-       0.38,
-       0,
-       "inOut"
-      ],
-      [
-       0.55,
+       0.45,
        -3,
        "out"
       ],
       [
-       0.75,
-       0.6,
+       0.7,
+       0.5,
        "inOut"
       ],
       [
@@ -2522,45 +2587,100 @@
        "inOut"
       ],
       [
-       1.2,
+       1.45,
        0
       ],
       [
-       1.34,
-       -14,
-       "inOut"
+       1.47,
+       1.5,
+       "hold"
       ],
       [
-       1.52,
-       -0.4,
-       "inOut"
-      ],
-      [
-       1.58,
+       1.75,
        0,
-       "out"
+       "inOut"
       ]
      ]
     }
    },
    "swaps": {
-    "arm_near": [
+    "torso": [
      [
       0.14,
-      "fist"
+      "-"
      ],
      [
-      1.4,
+      1.45,
       null
      ]
     ],
-    "mouth": [
+    "torso_over": [
      [
-      0.2,
-      "grin"
+      0.14,
+      "-"
      ],
      [
-      1.4,
+      1.45,
+      null
+     ]
+    ],
+    "arm_near": [
+     [
+      0.14,
+      "-"
+     ],
+     [
+      1.45,
+      null
+     ]
+    ],
+    "arm_far": [
+     [
+      0.14,
+      "-"
+     ],
+     [
+      1.45,
+      null
+     ]
+    ],
+    "upper_near": [
+     [
+      0.14,
+      "-"
+     ],
+     [
+      1.45,
+      null
+     ]
+    ],
+    "upper_far": [
+     [
+      0.14,
+      "-"
+     ],
+     [
+      1.45,
+      null
+     ]
+    ],
+    "head": [
+     [
+      0.14,
+      "-"
+     ],
+     [
+      1.45,
+      null
+     ]
+    ],
+    "frame": [
+     [
+      0.14,
+      "pump"
+     ],
+     [
+      1.45,
       null
      ]
     ]

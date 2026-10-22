@@ -86,3 +86,12 @@ artist as well, for the head's true shape.
 ## Reactions sheet E
 
 `sources/poses_e.png`, placed by `art-tools/build/reactions_sheet.py roosevelt`; frames `win_big` (E2) and `lose_big` (E3), clips from `art-tools/build/reactions.py roosevelt`. His brown suit is the wood colour: placed with `--keep-wood`.
+
+**Fixed after the owner's review.** The talk and won-pot fists were a cut-out
+forearm on the elbow that never joined his arm (a fist floating at his
+shoulder): they are now whole-figure frames from their own drawings (`talk`
+D2, `pump` D5), with their own drawn heads, since the fist is at his face.
+Reactions sheet E came out more saturated than the rest, so the big win and
+the crushing loss jumped in colour: `levels` in their frames (pose_rig.py)
+bring them to the rest pose's; the crushing loss sat 45 px right (E3's
+`reg`), and a wedge of the next cell was kept in the big win (`except`).
