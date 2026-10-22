@@ -264,7 +264,13 @@ order, at the owner's request.** This is Phase 4's "screen shell early"
 plus a first pass of Phase 7 and 9 *content*, all still without art:
 
 - **Screens:** title → invitation (sign your name; onboarding without a
-  tutorial) → tour map → table intro (Death's narration) → table → results →
+  tutorial) → tour map (**the owner's painted world map**, `web/art/map.webp`,
+  source in `art-tools/map/`: a marker per table at its place, nudged into the
+  sea with a thread where places crowd, off-map tables on the compass roses and
+  the Station over the Pacific; `SPOTS` in map.ts. Tap one for its card: where,
+  when, the hook, who sits there, your record, Take your seat / Open table /
+  In the ledger. On a phone only the numerals show until one is chosen; the bar's
+  right corner is kept for more modes, online, later) → table intro (Death's narration) → table → results →
   ledger / settings / about → ending. Hash-routed plain DOM, no framework.
 - **All 12 tables playable:** the 8 story tables, Champions' Tables I and II
   ("The Hall of Doors"), the finale ("The Last Crossing", hidden from the

@@ -178,35 +178,92 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .invitation .error { width: 100%; color: var(--blood); font-family: var(--sans); font-size: .85rem; margin: 0; min-height: 1em; }
 .corner { position: absolute; top: 10px; left: 12px; }
 
-/* ---- map ---- */
-.map-greeting { max-width: 760px; margin: 0 auto 10px; text-align: center; }
-.tour-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
-.beyond { font-size: 1rem; color: var(--dim); margin: 16px 0 8px; letter-spacing: .08em; text-transform: uppercase; font-family: var(--sans); font-weight: 600; }
-.tour-card {
-  position: relative; border: 1px solid var(--edge); border-radius: 8px;
-  padding: 10px 12px 12px; background: linear-gradient(160deg, #1d1916, #141110);
-  min-height: 120px; cursor: pointer; transition: border-color .15s, transform .15s;
+/* ---- map ----
+   The World Tour on the owner's painted map (map.ts): the picture covers the
+   screen, edge to edge under the notch; a marker per table, threads from the
+   markers nudged into the sea to the places they stand for, and the table's
+   card sliding in from the right when one is tapped. */
+#app:has(.map-screen) { padding: 0; overflow: hidden; }
+.map-screen { position: relative; height: 100dvh; max-width: none; padding: 0; overflow: hidden; background: #2a1a10; }
+.world-map { position: absolute; inset: 0; overflow: hidden; }
+.world-map-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; user-select: none; -webkit-user-drag: none; }
+.map-threads { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.map-threads line { stroke: #f3dc9a; stroke-width: 1.4; stroke-dasharray: 3 3; opacity: .85; }
+.map-threads circle { fill: #f3dc9a; stroke: #3a2410; stroke-width: 1; }
+.map-pins { position: absolute; inset: 0; pointer-events: none; }
+.map-pin {
+  position: absolute; transform: translate(-50%, -50%); pointer-events: auto;
+  display: grid; justify-items: center; gap: 2px; min-height: 0; padding: 0; border: 0; background: none;
 }
-.tour-card:hover { border-color: #c9a22788; transform: translateY(-1px); }
-.tour-card.sealed { cursor: default; opacity: .45; }
-.tour-card.sealed:hover { transform: none; border-color: var(--edge); }
-.tour-card.cleared { border-color: #c9a22755; }
-.tour-card.active { border-color: var(--live); box-shadow: 0 0 0 1px var(--live) inset; }
-.tour-card.kind-finale { background: linear-gradient(160deg, #10141a, #0b0c0e); border-color: #4a5b6b; }
-.card-top { display: flex; justify-content: space-between; align-items: baseline; }
+.map-pin:hover:not(:disabled) { background: none; }
+.pin-mark {
+  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+  font: 700 .82rem/1 var(--serif); color: #2a1a08;
+  background: radial-gradient(circle at 35% 30%, #fff2c0, #e0b54c 55%, #9c6d1c);
+  border: 2px solid #4a2e10; box-shadow: 0 3px 8px #000a, 0 0 0 2px #f3dc9a66;
+  transition: transform .15s ease-out, box-shadow .15s;
+}
+.pin-name {
+  font: 600 .74rem/1.1 var(--serif); color: #fdf3d8; white-space: nowrap; letter-spacing: .02em;
+  padding: 1px 7px; border-radius: 99px; background: #1d1208cc; box-shadow: 0 2px 6px #0008;
+}
+.map-pin.cleared .pin-mark { background: radial-gradient(circle at 35% 30%, #fffbe6, #f2cf63 50%, #b5801f); box-shadow: 0 3px 8px #000a, 0 0 12px #f6d77ccc; }
+.map-pin.cleared .pin-mark::after { content: '✓'; position: absolute; transform: translate(11px, -11px); font-size: .7rem; color: #fff; background: #3f7a55; border-radius: 50%; width: 15px; height: 15px; display: grid; place-items: center; border: 1px solid #1d3a2b; }
+.map-pin.sealed .pin-mark { background: radial-gradient(circle at 35% 30%, #c9bfa9, #7d7262 60%, #4a4236); color: #2b241c; filter: saturate(.4); }
+.map-pin.sealed .pin-name { color: #c9bfa9; background: #1d1208a6; }
+.map-pin.kind-finale .pin-mark { background: radial-gradient(circle at 35% 30%, #d6e2f0, #6f88a6 55%, #2c3c52); color: #f4f8ff; border-color: #18202c; }
+.map-pin.kind-hidden .pin-mark { background: radial-gradient(circle at 35% 30%, #fff1c2, #ff9c3a 50%, #b2400f); color: #fff6e0; }
+.map-pin.active .pin-mark { box-shadow: 0 3px 8px #000a, 0 0 0 3px var(--live), 0 0 14px #4a9e6dcc; animation: pin-live 1.6s ease-in-out infinite alternate; }
+@keyframes pin-live { from { transform: scale(1); } to { transform: scale(1.1); } }
+.map-pin:hover .pin-mark, .map-pin:focus-visible .pin-mark, .map-pin.chosen .pin-mark { transform: scale(1.18); }
+.map-pin.chosen .pin-name { background: #f3dc9a; color: #2a1a08; }
+.map-pin:focus-visible { outline: none; }
+.map-pin:focus-visible .pin-mark { box-shadow: 0 0 0 3px var(--gold), 0 3px 8px #000a; }
+
+.map-bar {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 5; pointer-events: none;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px;
+  padding: calc(8px + env(safe-area-inset-top)) calc(12px + env(safe-area-inset-right)) 8px calc(12px + env(safe-area-inset-left));
+}
+.map-bar > * { pointer-events: auto; }
+.map-bar button { background: #1d1208cc; border-color: #f3dc9a55; color: #fdf3d8; justify-self: start; }
+.map-bar h1 {
+  margin: 0; padding: 3px 18px; font: 600 1.15rem var(--serif); color: #fdf3d8; letter-spacing: .06em;
+  background: #1d1208cc; border: 1px solid #f3dc9a55; border-radius: 99px; text-shadow: 0 1px 2px #000;
+}
+.map-modes { justify-self: end; display: flex; gap: 6px; }
+
+.map-panel {
+  position: absolute; z-index: 6; top: calc(52px + env(safe-area-inset-top)); bottom: calc(12px + env(safe-area-inset-bottom));
+  right: calc(12px + env(safe-area-inset-right)); width: min(340px, 44vw); overflow-y: auto; overscroll-behavior: contain;
+  padding: 14px 16px 16px; border-radius: 12px;
+  background: linear-gradient(170deg, #2b1d12f2, #160f0af2); border: 1px solid #c9a22777; box-shadow: 0 14px 40px #000c;
+  animation: panel-in .2s ease-out both;
+}
+.map-panel[hidden] { display: none; }
+@keyframes panel-in { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+.map-panel .panel-close { position: absolute; top: 8px; right: 8px; min-height: 28px; }
+.map-panel .kicker { margin: 0; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-soft); }
+.map-panel h2 { margin: 2px 32px 2px 0; font: 600 1.35rem/1.15 var(--serif); color: #fdf3d8; }
+.map-panel .place { margin: 0; color: var(--dim); font-size: .85rem; }
+.map-panel .era { margin: 4px 0 0; color: #cbbfa9; font-size: .82rem; }
+.map-panel .teaser { margin: 10px 0 0; font: italic .95rem/1.4 var(--serif); color: #e8dcc4; }
+.map-panel .sealed-note { margin: 12px 0 0; color: #cbbfa9; font-style: italic; }
+.map-panel .panel-cast { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 12px 0 0; }
+.map-panel .panel-cast .portrait, .map-panel .panel-cast .medallion { width: 44px; height: 44px; font-size: .8rem; }
+.map-panel .called { margin: 10px 0 0; font-size: .85rem; color: var(--dim); }
+.map-panel .called b { color: var(--gold-soft); }
+.map-panel .record-line { margin: 4px 0 0; font-size: .8rem; color: var(--dim); }
+.map-panel .panel-actions { display: grid; gap: 6px; margin-top: 14px; }
+.map-panel .open-table { background: #2b4a5e; border-color: #4f7c96; }
+
+.map-greeting {
+  position: absolute; z-index: 7; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(560px, 86vw);
+  padding: 16px 20px; border-radius: 12px; text-align: center;
+  background: #160f0af0; border: 1px solid #c9a22777; box-shadow: 0 14px 40px #000c;
+}
+.map-greeting button { margin-top: 8px; }
 .numeral { font-family: var(--serif); color: var(--gold); font-size: 1.05rem; }
-.state { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
-.state.cleared { color: var(--gold-soft); }
-.state.open { color: var(--live); }
-.tour-card h3 { font-size: 1.08rem; margin: 4px 0 2px; line-height: 1.2; }
-.tour-card .place { color: var(--dim); font-size: .8rem; margin: 0 0 4px; }
-.tour-card .teaser { font-family: var(--serif); font-style: italic; color: #cbbfa9; font-size: .88rem; margin: 0; }
-.tour-card { display: flex; flex-direction: column; }
-.tour-card .teaser { flex: 1; }
-.card-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 6px; margin-top: 6px; }
-.tour-card .called { font-size: .78rem; color: var(--dim); margin: 0; min-width: 0; }
-.tour-card .called b { color: var(--gold-soft); }
-.tour-card .open-table { flex: none; }
 
 /* ---- intro ---- */
 .intro-screen .intro-body { max-width: 760px; margin: 0 auto; }
@@ -932,14 +989,19 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .raise-row { flex-wrap: nowrap; gap: 6px; }
   .raise-row button { padding-left: .7em; padding-right: .7em; }
   .title-screen { grid-template-columns: 1fr 1fr; }
-  .tour-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
-  .tour-card { padding: 8px 9px 10px; min-height: 104px; }
-  .tour-card h3 { font-size: .95rem; }
-  .tour-card .teaser { font-size: .8rem; }
   .ledger-book { grid-template-columns: 200px 1fr; }
   .marks-list { grid-template-columns: 1fr; }
 }
 @media (max-height: 460px) {
+  .pin-mark { width: 24px; height: 24px; font-size: .7rem; }
+  .pin-name { font-size: .64rem; padding: 0 5px; }
+  /* a phone: the numerals say which table; a name shows on the one chosen or in progress */
+  .map-pin:not(.chosen):not(.active):not(.kind-finale):not(.kind-hidden) .pin-name { display: none; }
+  .map-panel { top: calc(44px + env(safe-area-inset-top)); width: min(300px, 46vw); padding: 10px 12px 12px; }
+  .map-panel h2 { font-size: 1.1rem; }
+  .map-panel .teaser { font-size: .85rem; margin-top: 6px; }
+  .map-panel .panel-cast .portrait, .map-panel .panel-cast .medallion { width: 34px; height: 34px; }
+  .map-bar h1 { font-size: 1rem; padding: 2px 14px; }
   :root { font-size: 13px; }
   :root.large-text { font-size: 15px; }
   .screen { padding: 6px 14px 12px; }
