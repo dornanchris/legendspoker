@@ -198,7 +198,7 @@ export function tableScreen(root: HTMLElement): () => void {
     raiseRow: h('div', { class: 'raise-row', hidden: true }),
     slider: h('input', { type: 'range', class: 'raise-slider', 'aria-label': 'Bet size' }) as HTMLInputElement,
     quick: h('div', { class: 'quick-sizes' }),
-    raiseConfirm: h('button', { type: 'button', class: 'primary' }, 'Confirm'),
+    raiseConfirm: h('button', { type: 'button', class: 'act-bet' }, 'Confirm'),
     raiseCancel: h('button', { type: 'button', class: 'ghost', title: 'Cancel', 'aria-label': 'Cancel' }, '✕'),
     toasts: h('div', { class: 'toasts', 'aria-live': 'polite' }),
     /** The play-by-play, for screen readers only: the screen itself shows no log (the owner). */
@@ -1675,19 +1675,19 @@ export function tableScreen(root: HTMLElement): () => void {
 
     // Folding when a check is free is only ever a misclick, so it is not offered.
     if (view.legal.includes('fold') && !view.legal.includes('check')) {
-      b.append(button('Fold', 'danger', 'f', () => endTurn({ action: 'fold', reason: 'human' })))
+      b.append(button('Fold', 'act-fold', 'f', () => endTurn({ action: 'fold', reason: 'human' })))
     }
     if (view.legal.includes('check')) {
-      b.append(button('Check', '', 'c', () => endTurn({ action: 'check', reason: 'human' })))
+      b.append(button('Check', 'act-stay', 'c', () => endTurn({ action: 'check', reason: 'human' })))
     }
     if (view.legal.includes('call')) {
       const amount = Math.min(view.toCall, view.stack)
       const label = amount >= view.stack ? `Call all in (${formatChips(amount)})` : `Call ${formatChips(amount)}`
-      b.append(button(label, 'primary', 'c', () => endTurn({ action: 'call', reason: 'human' })))
+      b.append(button(label, 'act-stay', 'c', () => endTurn({ action: 'call', reason: 'human' })))
     }
     const raise: Action | null = view.legal.includes('raise') ? 'raise' : view.legal.includes('bet') ? 'bet' : null
     if (raise && view.maxRaise >= view.minRaise) {
-      b.append(button(raise === 'bet' ? 'Bet…' : 'Raise…', '', 'r', () => openRaise(view)))
+      b.append(button(raise === 'bet' ? 'Bet…' : 'Raise…', 'act-bet', 'r', () => openRaise(view)))
     }
     els.raiseConfirm.onclick = () => {
       if (!raise) return

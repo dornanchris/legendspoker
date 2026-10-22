@@ -591,6 +591,15 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .buttons { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 .buttons[hidden] { display: none; }
 .buttons button { min-width: 96px; }
+/* Your actions by colour (the owner): red gives the hand up, green stays in
+   it (check or call), gold puts chips in (bet, raise, all in). Lighter as
+   they go, so they read apart without the colour too. */
+.controls .act-fold { background: linear-gradient(#8e2f29, #6e211d); border-color: #b5483f; color: #fbe9e4; }
+.controls .act-fold:hover:not(:disabled) { background: linear-gradient(#a2362f, #7d2621); }
+.controls .act-stay { background: linear-gradient(#3a8456, #2a6340); border-color: #5aae78; color: #effaf2; }
+.controls .act-stay:hover:not(:disabled) { background: linear-gradient(#42935f, #2f6f48); }
+.controls .act-bet { background: linear-gradient(#ecc25a, #c08e2c); border-color: #f6d983; color: #2a1d06; font-weight: 700; text-shadow: 0 1px 0 #fff4; }
+.controls .act-bet:hover:not(:disabled) { background: linear-gradient(#f3cd6a, #cc9a34); }
 .raise-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
 .raise-row[hidden] { display: none; }
 .quick-sizes { display: flex; gap: 4px; }

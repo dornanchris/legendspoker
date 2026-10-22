@@ -482,7 +482,10 @@ on your cards slides out toward its own side (`layoutStage`, `clearUnder`).
 There are **no words for tells on the staged table** (the owner): the figure's
 pose, held, is the tell (below); the words go only to the screen reader's
 log. The plain table, where nobody is drawn, still shows them. The
-turn prompt ("Check or bet") is hidden while the buttons say it. The raise
+turn prompt ("Check or bet") is hidden while the buttons say it. **Your
+actions are colour-coded** (the owner): red gives the hand up (Fold), green
+stays in it (Check, Call), gold puts chips in (Bet, Raise, and the raise
+panel's confirm), lighter in that order so they read apart without colour. The raise
 panel is a narrow column at the bottom right at every size, the amount on its
 button ("Raise to 459"); while it is open the board slides left to stay
 clear. Spoken bubbles go up and come down on a timer, so Reduce motion shows
