@@ -167,6 +167,13 @@ export function shuffle(inSec = 0): void {
   hiss(c, t + riffle + 0.05, { filter: 'bandpass', freq: 1400, to: 3200, q: 0.7, gain: 0.16, attack: 0.05, decay: 0.2 })
 }
 
+/** The bet slider moving on a notch: one light chip tick. */
+export function tick(inSec = 0): void {
+  const c = live()
+  if (!c) return
+  clack(c, at(c, inSec), rand(0.22, 0.34))
+}
+
 /**
  * Chips hitting the felt. `n` is how many: the table scales it with the size
  * of the bet, so a min-raise ticks and a shove pours.

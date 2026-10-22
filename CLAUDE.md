@@ -487,7 +487,12 @@ actions are colour-coded** (the owner): red gives the hand up (Fold), green
 stays in it (Check, Call), gold puts chips in (Bet, Raise, and the raise
 panel's confirm), lighter in that order so they read apart without colour. The raise
 panel is a narrow column at the bottom right at every size, the amount on its
-button ("Raise to 459"); while it is open the board slides left to stay
+button ("Raise to 459"). **Its slider snaps to fives** (the owner; the least
+raise and all in stay reachable exactly; the arrow keys move five) and has
+some life: the bar fills green, through gold, to ember red as the bet nears
+all in, the handle is a chip of that colour with the amount riding over it,
+ticks mark ½ pot and pot, a light chip tick sounds as it moves (`sound.tick`),
+and at all in it glows and the confirm turns ember ("All in 2,000"); while it is open the board slides left to stay
 clear. Spoken bubbles go up and come down on a timer, so Reduce motion shows
 them still instead of hiding them. The app turns off the web view's
 scrolling and zoom (capacitor.config.json, index.html, style.css).

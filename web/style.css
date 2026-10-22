@@ -605,7 +605,66 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .quick-sizes { display: flex; gap: 4px; }
 /* One line at any landscape width: a second line pushes the player's cards
    over the pot on a phone, so the slider gives up width before anything wraps. */
-.raise-slider { width: clamp(90px, 22vw, 220px); accent-color: var(--gold); }
+.raise-slider-wrap { position: relative; width: clamp(90px, 22vw, 220px); }
+.felt.staged .raise-slider-wrap { width: 100%; }
+
+/* The bet slider, with some life: a bar that fills green, through gold, to
+   ember red as the bet nears all in (--fill and --p from table.ts), a poker
+   chip of that colour for a handle, the amount riding over it, ticks at the
+   quick sizes, and a glow at all in. */
+.raise-slider-wrap {
+  --p: 0%; --fill: hsl(140 62% 44%); --h: calc(10px * var(--s2, 1)); --chip: calc(30px * var(--s2, 1));
+  padding: calc(18px * var(--s2, 1)) calc(var(--chip) / 2) calc(6px * var(--s2, 1));
+}
+.raise-slider {
+  -webkit-appearance: none; appearance: none; display: block; width: 100%; height: var(--chip); margin: 0; background: none; cursor: pointer;
+  touch-action: none;
+}
+.raise-slider:focus-visible { outline: none; }
+.raise-slider::-webkit-slider-runnable-track {
+  height: var(--h); border-radius: 99px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--fill) 70%, #000) 0, var(--fill) var(--p), #241f1b var(--p));
+  box-shadow: inset 0 1px 3px #000a, 0 0 0 1px #ffffff14, 0 0 12px color-mix(in srgb, var(--fill) 45%, transparent);
+}
+.raise-slider::-moz-range-track {
+  height: var(--h); border-radius: 99px; background: #241f1b;
+  box-shadow: inset 0 1px 3px #000a, 0 0 0 1px #ffffff14;
+}
+.raise-slider::-moz-range-progress { height: var(--h); border-radius: 99px; background: var(--fill); box-shadow: 0 0 12px color-mix(in srgb, var(--fill) 45%, transparent); }
+.raise-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; width: var(--chip); height: var(--chip); border-radius: 50%; border: 0;
+  margin-top: calc((var(--h) - var(--chip)) / 2);
+  background:
+    radial-gradient(circle, var(--fill) 0 38%, #f6efe0 39% 45%, var(--fill) 46% 62%, transparent 63%),
+    repeating-conic-gradient(var(--fill) 0 30deg, #f6efe0 30deg 45deg);
+  box-shadow: 0 3px 6px #000b, 0 0 0 2px #0006, 0 0 14px color-mix(in srgb, var(--fill) 60%, transparent);
+  transition: transform .12s ease-out;
+}
+.raise-slider::-moz-range-thumb {
+  width: var(--chip); height: var(--chip); border-radius: 50%; border: 0;
+  background:
+    radial-gradient(circle, var(--fill) 0 38%, #f6efe0 39% 45%, var(--fill) 46% 62%, transparent 63%),
+    repeating-conic-gradient(var(--fill) 0 30deg, #f6efe0 30deg 45deg);
+  box-shadow: 0 3px 6px #000b, 0 0 0 2px #0006, 0 0 14px color-mix(in srgb, var(--fill) 60%, transparent);
+  transition: transform .12s ease-out;
+}
+.raise-slider:active::-webkit-slider-thumb, .raise-slider:focus-visible::-webkit-slider-thumb { transform: scale(1.15) rotate(20deg); }
+.raise-slider:active::-moz-range-thumb, .raise-slider:focus-visible::-moz-range-thumb { transform: scale(1.15) rotate(20deg); }
+/* the amount over the chip; the wrap's side padding is half a chip, so --f of the inner width is the chip's centre */
+.raise-tag {
+  position: absolute; top: 0; left: calc(var(--chip) / 2 + (100% - var(--chip)) * var(--f, 0));
+  transform: translateX(-50%); pointer-events: none; white-space: nowrap;
+  font-size: calc(.72rem * var(--s2, 1)); font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1;
+  padding: 2px 6px; border-radius: 99px; color: #1a1306; background: var(--fill); box-shadow: 0 2px 6px #0009;
+}
+.raise-ticks { position: absolute; left: calc(var(--chip) / 2); right: calc(var(--chip) / 2); bottom: calc(2px * var(--s2, 1)); height: 5px; pointer-events: none; }
+.raise-ticks i { position: absolute; top: 0; width: 2px; height: 5px; margin-left: -1px; border-radius: 1px; background: #ffffff55; }
+.raise-slider-wrap.all-in .raise-slider::-webkit-slider-runnable-track { animation: ember 1.1s ease-in-out infinite alternate; }
+.raise-slider-wrap.all-in .raise-slider::-moz-range-progress { animation: ember 1.1s ease-in-out infinite alternate; }
+.raise-slider-wrap.all-in .raise-tag { animation: ember 1.1s ease-in-out infinite alternate; }
+@keyframes ember { from { box-shadow: inset 0 1px 3px #000a, 0 0 6px #e0582a66; } to { box-shadow: inset 0 1px 3px #000a, 0 0 18px #ff6a2acc; } }
+.quick-sizes button.on { border-color: #f6d983; color: #f6d983; background: #c9a2271f; }
+.controls .act-bet.all-in { background: linear-gradient(#f0864a, #c04a22); border-color: #ffb07a; color: #fff6ef; text-shadow: 0 1px 0 #0004; }
 
 .toasts { position: absolute; top: 8px; left: 50%; transform: translateX(-50%); display: grid; gap: 6px; z-index: 20; pointer-events: none; width: min(420px, 90%); }
 .toast {
@@ -853,8 +912,8 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 }
 .felt.staged .raise-row[hidden] { display: none; }
 .felt.staged .quick-sizes { grid-area: quick; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.felt.staged .raise-slider { grid-area: slider; width: 100%; margin: 2px 0; }
-.felt.staged .raise-row > .primary { grid-area: confirm; }
+.felt.staged .raise-slider-wrap { grid-area: slider; }
+.felt.staged .raise-row > .act-bet { grid-area: confirm; }
 .felt.staged .raise-row > .ghost { grid-area: cancel; }
 .felt.staged .controls .raise-row button { min-width: 0; padding: .3em .6em; white-space: nowrap; }
 .felt.staged .controls .quick-sizes button { padding: .25em .2em; font-size: calc(.8rem * var(--s2, 1)); }

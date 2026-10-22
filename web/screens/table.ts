@@ -197,6 +197,10 @@ export function tableScreen(root: HTMLElement): () => void {
     buttons: h('div', { class: 'buttons' }),
     raiseRow: h('div', { class: 'raise-row', hidden: true }),
     slider: h('input', { type: 'range', class: 'raise-slider', 'aria-label': 'Bet size' }) as HTMLInputElement,
+    /** The slider, the ticks at the quick sizes under it and the amount riding over its chip. */
+    sliderWrap: h('div', { class: 'raise-slider-wrap' }),
+    sliderTicks: h('div', { class: 'raise-ticks', 'aria-hidden': 'true' }),
+    sliderTag: h('span', { class: 'raise-tag', 'aria-hidden': 'true' }),
     quick: h('div', { class: 'quick-sizes' }),
     raiseConfirm: h('button', { type: 'button', class: 'act-bet' }, 'Confirm'),
     raiseCancel: h('button', { type: 'button', class: 'ghost', title: 'Cancel', 'aria-label': 'Cancel' }, '✕'),
@@ -209,7 +213,8 @@ export function tableScreen(root: HTMLElement): () => void {
     deck: h('span', { class: 'deck-spot', 'aria-hidden': 'true' }),
   }
   els.dealer.append(els.dealerName, h('span', { class: 'dealer-role' }, 'deals'), els.dealerLine)
-  els.raiseRow.append(els.quick, els.slider, els.raiseConfirm, els.raiseCancel)
+  els.sliderWrap.append(els.sliderTicks, els.slider, els.sliderTag)
+  els.raiseRow.append(els.quick, els.sliderWrap, els.raiseConfirm, els.raiseCancel)
   els.youPurse.append(els.youTower, els.youStack)
 
   const menuButton = h('button', { type: 'button', class: 'ghost small leave', 'aria-haspopup': 'dialog', onclick: () => openMenu() },
@@ -1740,22 +1745,57 @@ export function tableScreen(root: HTMLElement): () => void {
     s.max = String(view.maxRaise)
     s.step = '1'
     const clamp = (v: number) => Math.min(view.maxRaise, Math.max(view.minRaise, Math.round(v)))
+    // The slider snaps to fives (the owner); the least you may raise and all in stay reachable exactly.
+    const snap = (v: number) => {
+      if (v >= view.maxRaise) return view.maxRaise
+      const r = Math.round(v / 5) * 5
+      return r < view.minRaise ? view.minRaise : r > view.maxRaise ? view.maxRaise : r
+    }
     // Sizes are "raise TO", as the engine takes them (decide's raiseTo): what
     // is already in front of you, the call, then a share of the pot as it
     // would stand after the call. Leaving out the chips in front made Pot from
     // the big blind a min-raise.
     const to = (frac: number) => clamp(view.bet + view.toCall + frac * (view.pot + view.toCall))
-    const sizes: [string, number][] = [['½ pot', to(0.5)], ['Pot', to(1)], ['All in', view.maxRaise]]
-    s.value = String(to(0.6))
+    const sizes: [string, number][] = [['½ pot', snap(to(0.5))], ['Pot', snap(to(1))], ['All in', view.maxRaise]]
+    s.value = String(snap(to(0.6)))
     // the amount is on the button that commits it
     const verb = view.toCall > 0 || view.bet > 0 ? 'Raise to' : 'Bet'
+    const span = Math.max(1, view.maxRaise - view.minRaise)
+    const at = (v: number) => (v - view.minRaise) / span
+    let last = Number(s.value)
+    let tickAt = 0
+    // Some life (the owner: "less stiff"): the bar fills green, through gold,
+    // to an ember red as the bet nears all in; the handle is a chip of that
+    // colour with the amount riding over it; a light chip tick as it moves.
     const sync = () => {
-      const v = Number(s.value)
+      const v = snap(Number(s.value))
+      s.value = String(v)
+      const p = at(v)
+      const hue = 140 - 125 * p
+      els.sliderWrap.style.setProperty('--p', `${(p * 100).toFixed(2)}%`)
+      els.sliderWrap.style.setProperty('--f', p.toFixed(4))
+      els.sliderWrap.style.setProperty('--fill', `hsl(${hue.toFixed(0)} 62% ${(44 + 8 * Math.sin(Math.PI * p)).toFixed(0)}%)`)
+      els.sliderWrap.classList.toggle('all-in', v >= view.maxRaise)
+      els.sliderTag.textContent = formatChips(v)
       els.raiseConfirm.textContent = v >= view.maxRaise ? `All in ${formatChips(v)}` : `${verb} ${formatChips(v)}`
+      els.raiseConfirm.classList.toggle('all-in', v >= view.maxRaise)
+      for (const b of els.quick.children) b.classList.toggle('on', Number((b as HTMLElement).dataset.v) === v)
+      if (v !== last && performance.now() - tickAt > 55) { sound.tick(); tickAt = performance.now() }
+      last = v
     }
     els.quick.replaceChildren(...sizes.map(([label, v]) =>
-      h('button', { type: 'button', class: 'ghost small', onclick: () => { s.value = String(v); sync() } }, label)))
+      h('button', { type: 'button', class: 'ghost small', dataset: { v: String(v) }, onclick: () => { s.value = String(v); sync() } }, label)))
+    els.sliderTicks.replaceChildren(...sizes.slice(0, 2).filter(([, v]) => v > view.minRaise && v < view.maxRaise)
+      .map(([, v]) => h('i', { style: `left:${(at(v) * 100).toFixed(2)}%` })))
     s.oninput = sync
+    // the arrow keys move a notch of five, not one (which the snap would undo)
+    s.onkeydown = (ev) => {
+      const d = ev.key === 'ArrowRight' || ev.key === 'ArrowUp' ? 5 : ev.key === 'ArrowLeft' || ev.key === 'ArrowDown' ? -5 : 0
+      if (!d) return
+      ev.preventDefault()
+      s.value = String(snap(Number(s.value) + d))
+      sync()
+    }
     sync()
     clearOfRaise()
     s.focus()
