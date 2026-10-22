@@ -297,7 +297,11 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   kept per table (`openChairs`), and the table is STAGED in its room with
   everyone in the chair they were put in, empty ones left empty
   (`chairs` in the active seat, `Stage.chairsFor`; presentation only, no
-  ENGINE_VERSION bump). Nobody is crowned at an open table.
+  ENGINE_VERSION bump). Nobody is crowned at an open table. Everything at
+  the tour tables works there too (checked with both Holmeses and both
+  halves seated, and with two chairs left empty): banners and chip stacks,
+  tells held as poses with each look's own cues, the Menu (quitting ends the
+  open sitting as a loss), the Dialogue setting.
 - **Dialogue system:** `src/director.ts` plays the established schema — intro,
   the one plant, pair banter, tiered player-directed lines, Death's asides,
   arrivals, heads-up, bust-outs, defeat — plus Holmes's `reads_you` (lines
