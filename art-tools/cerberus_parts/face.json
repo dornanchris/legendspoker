@@ -62,7 +62,9 @@
      240
     ]
    ],
-   "match": false
+   "match": false,
+   "outline": 1,
+   "fade": 1
   }
  }
 }

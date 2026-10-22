@@ -49,11 +49,11 @@
    "keep": [
     [
      165,
-     198
+     224
     ],
     [
      305,
-     198
+     224
     ],
     [
      305,
@@ -63,7 +63,28 @@
      165,
      305
     ]
+   ],
+   "fill": [
+    [
+     [
+      214,
+      227
+     ],
+     [
+      286,
+      227
+     ],
+     [
+      286,
+      245
+     ],
+     [
+      214,
+      245
+     ]
+    ]
    ]
   }
- }
+ },
+ "note": " The mouth region starts under the nose and paints his own mouth out as skin (fill) under each patch."
 }
