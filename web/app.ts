@@ -77,6 +77,7 @@ function boot() {
     p.className = 'engine-error'
     p.textContent = (err as Error).message
     document.getElementById('app')!.replaceChildren(p)
+    lift()
     return
   }
   store.load()
@@ -93,6 +94,28 @@ function boot() {
     window.addEventListener(ev, sound.unlock, { passive: true, capture: true })
   }
   route()
+  lift()
+}
+
+/** How long the launch screen stays at least: one shuffle of Death's, from the first paint. */
+const LAUNCH_MS = 2800
+
+/**
+ * Take the launch screen (index.html's #boot) down over the title, now that
+ * it is drawn: after one of Death's shuffles at the least, or at once on a tap.
+ */
+function lift() {
+  const el = document.getElementById('boot')
+  if (!el) return
+  let gone = false
+  const go = () => {
+    if (gone) return
+    gone = true
+    el.classList.add('lifting')
+    setTimeout(() => el.remove(), 700)
+  }
+  el.addEventListener('pointerdown', go)
+  setTimeout(go, Math.max(0, LAUNCH_MS - performance.now()))
 }
 
 boot()

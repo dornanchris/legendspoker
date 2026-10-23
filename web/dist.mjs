@@ -21,10 +21,11 @@ const copy = (rel) => cpSync(join(WEB, rel), join(OUT, rel), { recursive: true }
 for (const f of ['index.html', 'style.css', 'bundle.js']) copy(f)
 copy('art/rooms')
 copy('art/map.webp')   // the tour map
+copy('art/launch')     // the launch screen's figures
 // Each puppet: its half-size images (with the Stranger's accent masks) and
 // the curtain call's portrait. rig.json and anim.json are in the bundle.
 for (const id of readdirSync(join(WEB, 'art'))) {
-  if (id === 'rooms' || !statSync(join(WEB, 'art', id)).isDirectory()) continue
+  if (id === 'rooms' || id === 'launch' || !statSync(join(WEB, 'art', id)).isDirectory()) continue
   for (const rel of [`art/${id}/half`, `art/${id}/portrait.webp`]) {
     if (existsSync(join(WEB, rel))) copy(rel)
   }
