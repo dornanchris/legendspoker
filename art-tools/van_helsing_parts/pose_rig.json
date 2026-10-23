@@ -1,7 +1,7 @@
 {
  "id": "van_helsing",
  "name": "Abraham Van Helsing",
- "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (the Horseman's style), redrawn from the flat-cartoon kit (sources/old_style/). Transylvania's seat 1, drawn facing right. The master is the rest pose's OWN head (spectacles on); eyes and mouths are layers on it. Every pose but rest a whole-figure frame with its own drawn head. The doctor's bag stands on the felt by his left elbow (the left of the picture) in every pose: a props box in the near forearm's piece and every frame.",
+ "note": "Polygons in the rest pose (A1) pixels. Gothic sheets (the Horseman's style), redrawn from the flat-cartoon kit (sources/old_style/). Transylvania's seat 1, drawn facing right. The master is the rest pose's OWN head (spectacles on); eyes and mouths are layers on it. Every pose but rest a whole-figure frame with its own drawn head. The doctor's bag stands on the felt by his left elbow (the left of the picture) in every pose: a props box in the near forearm's piece and every frame. No drop_wood: there is no chair behind him, and it took his auburn hair in most frames. The diary's book and hands are a props box too (their brown was taken for the rail's).",
  "sheets": {
   "A": "sources/poses_a.png",
   "B": "sources/poses_b.png",
@@ -880,6 +880,24 @@
       0,
       448
      ]
+    ],
+    [
+     [
+      160,
+      300
+     ],
+     [
+      442,
+      300
+     ],
+     [
+      442,
+      412
+     ],
+     [
+      160,
+      412
+     ]
     ]
    ]
   },
@@ -1226,6 +1244,5 @@
   "red": 120,
   "blue": 24
  },
- "back_strip": 6,
- "drop_wood": true
+ "back_strip": 6
 }
