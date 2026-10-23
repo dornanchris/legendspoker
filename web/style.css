@@ -487,8 +487,41 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   background: radial-gradient(circle at 35% 30%, #c94a3a, #8e2b25 60%, #5a1612);
   box-shadow: 0 0 0 3px #8e2b2533, 0 3px 6px #0005, inset 0 -2px 4px #0005;
 }
-.mark-tile.open .mark-seal, .mark-card.open .mark-seal { background: none; color: #00000044; box-shadow: inset 0 0 0 2px #00000026; }
-.mark-tile.hidden .mark-seal, .mark-card.hidden .mark-seal { background: none; color: #00000033; box-shadow: inset 0 0 0 2px #0000001a; border: 1px dashed #0000002a; }
+/* Each mark's picture (mark-art.ts): a face, a room, cards, chips or an
+   emblem in a gilt ring, the wax seal pressed on its rim once it is written. */
+.mark-art {
+  --art: 68px; position: relative; display: grid; place-items: center; width: var(--art); height: var(--art);
+  border-radius: 50%; flex: none; color: #e2c271;
+  background: radial-gradient(circle at 38% 30%, #3b2f26, #1c1611 70%) center / cover no-repeat;
+  box-shadow: 0 0 0 2px #b8913a, 0 0 0 4px #5a431a, 0 4px 10px #0006;
+}
+.mark-art svg { width: 64%; height: 64%; filter: drop-shadow(0 1px 0 #0008); }
+.mark-art.k-face { background-size: 108% auto; background-position: 50% 6%; background-color: color-mix(in srgb, var(--tint, #3a332c) 55%, #16120f); }
+.mark-art.k-room, .mark-art.k-image { background-size: cover; background-position: 50% 42%; }
+.mark-art.k-cards, .mark-art.k-backs, .mark-art.k-chips { background: radial-gradient(circle at 40% 32%, #2f8051, #17482d 72%); }
+.mark-art.veiled { filter: grayscale(1) brightness(.4) blur(2px); }
+.mark-fan { position: relative; display: grid; place-items: center; width: 22px; height: 30px; }
+.mark-fan .card { position: absolute; inset: 0; box-shadow: 0 1px 3px #0008; transform-origin: 50% 120%; }
+.mark-fan.deck .card { transform-origin: 50% 50%; }
+.mark-art .pile { min-height: 0; gap: 1px; filter: drop-shadow(0 2px 2px #0009); }
+.mark-art .pile .chip-side { width: 11px; height: 3.5px; }
+.mark-art .pile.tower .chip-side { width: 13px; height: 4px; }
+.mark-name-tag {
+  max-width: 88%; padding: 3px 9px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font: 700 .66rem/1.1 var(--serif); color: #2a1d08; letter-spacing: .02em;
+  background: linear-gradient(#f3d98c, #c9a227); clip-path: polygon(0 0, 100% 0, 92% 50%, 100% 100%, 0 100%, 8% 50%);
+}
+.mark-q { font: 700 1.6rem/1 var(--serif); color: #00000040; }
+.mark-art.k-none { background: none; box-shadow: none; border: 2px dashed #00000030; }
+.mark-art .mark-seal {
+  position: absolute; right: -6px; bottom: -4px; width: 24px; height: 24px; font-size: .78rem;
+  box-shadow: 0 0 0 2px #8e2b2533, 0 2px 4px #0007, inset 0 -2px 3px #0005;
+}
+/* still to be written: the picture in grey, the seal not yet pressed */
+.mark-tile.open .mark-art:not(.k-none), .mark-card.open .mark-art:not(.k-none) { filter: grayscale(1) contrast(.8); opacity: .5; }
+.mark-tile.open .mark-art.veiled, .mark-card.open .mark-art.veiled { filter: grayscale(1) brightness(.4) blur(2px); }
+.mark-tile.earned:hover .mark-art { transform: rotate(-3deg) scale(1.04); }
+.mark-art { transition: transform .15s; }
 .mark-detail { position: absolute; inset: 0; z-index: 30; display: grid; place-items: center; background: #0b0a09b0; padding: 16px; }
 .mark-detail[hidden] { display: none; }
 .ledger-book { position: relative; }
@@ -498,7 +531,12 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   animation: reveal .18s ease-out both;
 }
 .mark-card .mark-close { position: absolute; top: 8px; right: 8px; color: var(--parchment-dim); }
-.mark-seal.big { width: 72px; height: 72px; font-size: 2rem; margin: 0 auto 8px; }
+.mark-card .mark-art { --art: 120px; margin: 4px auto 14px; }
+.mark-card .mark-art .mark-seal { width: 38px; height: 38px; font-size: 1.15rem; right: -4px; bottom: -2px; }
+.mark-card .mark-fan { transform: scale(1.7); }
+.mark-card .mark-art .pile { transform: scale(1.7); }
+.mark-card .mark-name-tag { font-size: 1rem; }
+.mark-card .mark-q { font-size: 2.6rem; }
 .mark-card h3 { margin: 0 0 6px; font: 600 1.3rem var(--serif); }
 .mark-card .mark-text { margin: 0; font: italic 1rem/1.45 var(--serif); }
 .mark-card .mark-when { margin: 10px 0 0; font-size: .8rem; color: var(--parchment-dim); font-family: var(--sans); }
@@ -1120,7 +1158,11 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .leaf-room { width: 54px; height: 34px; }
   .page-turn { width: 30px; height: 52px; }
   .marks-grid { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 7px; }
-  .mark-seal { width: 38px; height: 38px; font-size: 1.05rem; }
+  .mark-tile .mark-art { --art: 54px; }
+  .mark-tile .mark-art svg { width: 62%; height: 62%; }
+  .mark-tile .mark-fan { transform: scale(.85); }
+  .mark-tile .mark-art .mark-seal { width: 20px; height: 20px; font-size: .66rem; }
+  .mark-card .mark-art { --art: 92px; margin-bottom: 10px; }
   .ledger-page { padding: 12px 18px 18px; }
   .title-block h1 { font-size: clamp(2rem, 5.4vw, 3.4rem); }
   .menu-item { padding: .5em 1em; }

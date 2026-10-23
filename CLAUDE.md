@@ -348,7 +348,14 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   arrow keys), with a strip of faces or rooms along the top to jump with
   (`swiper` in ledger.ts); each character's page leads with their drawn
   portrait, each table's with its painted room (veiled while sealed). Marks are
-  a grid of wax seals, written ones first, each opening its entry on a card.
+  a grid of pictures, written ones first, each opening its entry on a card:
+  each mark has one (`web/screens/mark-art.ts`, the owner: "images or
+  something for each one"), made from art the game has: the face of whoever
+  it is about, the room it was won in, the cards it was won with, chips, or a
+  gold emblem (chair, skull, laurel, die...). A mark about a person or a
+  table works out its picture from its condition; the rest are listed by id.
+  Unwritten ones are grey; a face not yet met or a sealed room stays a
+  question mark or a veil; the wax seal is pressed on the rim once written.
   Character pages (history, how they play in Death's voice,
   what YOU have seen them do in words, habits noted), venues, account,
   house rules, and **marks** — 49 achievements framed as Death's entries,

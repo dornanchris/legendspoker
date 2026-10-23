@@ -8,6 +8,7 @@ import { h, go, formatDate, formatChips, ordinal } from '../dom.js'
 import { header, pronoun, face } from './shared.js'
 import { cardEl } from './table.js'
 import { text } from './map.js'
+import { markArt } from './mark-art.js'
 
 /**
  * THE LEDGER -- Death's record of the Invitational, and the game's notebook.
@@ -344,7 +345,7 @@ function marksTab(book: HTMLElement, selected?: string) {
     const hidden = !e && m.hidden
     detail.replaceChildren(h('div', { class: `mark-card ${e ? 'earned' : hidden ? 'hidden' : 'open'}` },
       h('button', { type: 'button', class: 'ghost small mark-close', 'aria-label': 'Close', onclick: close }, '✕'),
-      h('div', { class: 'mark-seal big' }, e ? m.title[0] : '?'),
+      markArt(m, e ? 'earned' : hidden ? 'hidden' : 'open'),
       h('h3', null, hidden ? '— — —' : m.title),
       h('p', { class: 'mark-text' }, e ? m.text : hidden ? 'An entry not yet written.' : m.hint),
       e ? h('p', { class: 'mark-when' }, 'Entered ' + [formatDate(e.at), where].filter(Boolean).join(' · '))
@@ -365,7 +366,7 @@ function marksTab(book: HTMLElement, selected?: string) {
       const hidden = !e && m.hidden
       return h('li', null, h('button', {
         type: 'button', class: `mark-tile ${e ? 'earned' : hidden ? 'hidden' : 'open'}`, onclick: () => open(m.id),
-      }, h('span', { class: 'mark-seal' }, e ? m.title[0] : '?'), h('span', { class: 'mark-name' }, hidden ? '— — —' : m.title)))
+      }, markArt(m, e ? 'earned' : hidden ? 'hidden' : 'open'), h('span', { class: 'mark-name' }, hidden ? '— — —' : m.title)))
     })))
   book.append(page, detail)
   if (selected) open(selected)
