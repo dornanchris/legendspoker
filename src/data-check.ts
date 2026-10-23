@@ -27,11 +27,13 @@ const TODO = (v: unknown) => v === 'TODO' || (Array.isArray(v) && v.includes('TO
 
 // ---------------------------------------------------------------- characters
 
+/** Everyone with a character file: the second looks (SECOND_LOOKS) are copies, checked on their own below. */
+const PEOPLE = Object.values(CHARACTERS).filter((c) => !c.lookOf)
 const DIALS = ['aggression', 'tightness', 'bluffFrequency', 'tiltSensitivity', 'adaptivity', 'betRespect', 'skill', 'noise'] as const
 const CORRELATES = new Set(['strong', 'weak', 'bluffing', 'tilted'])
 const PROFILE = ['ledger', 'ledger_beaten', 'history', 'at_the_table', 'look', 'prop', 'public_domain'] as const
 
-for (const c of Object.values(CHARACTERS)) {
+for (const c of PEOPLE) {
   const w = `character ${c.id}`
   if (c.role === 'guest') {
     // On a table, he would be on the map, in the intro and in the ledger.
@@ -282,7 +284,7 @@ const walk = (v: unknown): void => {
 Object.values(DIALOGUE).forEach(walk)
 
 let calloutCount = 0
-for (const c of Object.values(CHARACTERS)) {
+for (const c of PEOPLE) {
   const w = `character ${c.id} callouts`
   const co = c.callouts as Record<string, unknown> | undefined
   if (!co) { warn(`character ${c.id}`, 'no callouts: silent at the table'); continue }
@@ -340,7 +342,7 @@ if (TABLES.some((t) => (t.lessons ?? 0) > 0)) {
 
 // ---------------------------------------------------------------- returns
 
-for (const c of Object.values(CHARACTERS)) {
+for (const c of PEOPLE) {
   const r = c.returns
   if (!r) continue
   const w = `character ${c.id} returns`
@@ -352,7 +354,7 @@ for (const c of Object.values(CHARACTERS)) {
 
 // ---------------------------------------------------------------- one chair, two men
 
-for (const c of Object.values(CHARACTERS)) {
+for (const c of PEOPLE) {
   const o = c.other
   if (!o) continue
   const w = `character ${c.id} other`
@@ -462,9 +464,27 @@ for (const id of existsSync(art) ? readdirSync(art) : []) {
   for (const clip of anim.fidgets ?? []) if (!anim.clips?.[clip]) err(w, `fidget "${clip}" is not a clip`)
 }
 
+// ---------------------------------------------------------------- second looks
+//
+// A second look (LookData) sits at an open table as a player of his own: his
+// id is a puppet made for him (its anim.json says whose look it is), his
+// nameplate tells him apart, a mark unlocks him, and no table seats him.
+
+for (const c of PEOPLE) {
+  for (const l of c.looks ?? []) {
+    const w = `character ${c.id} look ${l.id}`
+    if (CHARACTERS[l.id]?.lookOf?.id !== c.id) { err(w, 'the id is someone else\'s'); continue }
+    if (!MARKS.some((m) => m.id === l.mark)) err(w, `unlocked by "${l.mark}", which is not a mark`)
+    const file = `${art}${l.id}/anim.json`
+    if (!existsSync(file) || JSON.parse(readFileSync(file, 'utf8')).of !== c.id) err(w, `needs a puppet, web/art/${l.id}/, whose anim.json says "of": "${c.id}"`)
+    if (Object.values(CHARACTERS).some((x) => x.id !== l.id && x.short === l.short)) err(w, `nameplate "${l.short}" is someone else's`)
+    for (const t of TABLES) if (fullCast(t).includes(l.id)) err(w, `seated at ${t.id}: a second look sits only at open tables`)
+  }
+}
+
 // ---------------------------------------------------------------- report
 
-const cast = Object.values(CHARACTERS)
+const cast = PEOPLE
 console.log(`${cast.length} characters, ${TABLES.length} tables, ${ids.size} lines of dialogue, ${calloutCount} callouts, ${MARKS.length} marks.`)
 for (const x of warnings) console.log(`  warn  ${x}`)
 for (const x of errors) console.log(`  ERROR ${x}`)

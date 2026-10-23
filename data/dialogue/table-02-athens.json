@@ -266,12 +266,6 @@
           { "id": "at_le_od_01b", "speaker": "odysseus", "text": "I went to Troy because someone put my son in front of my plough. The queen was Menelaus's idea." },
           { "id": "at_le_od_01c", "speaker": "leonidas", "text": "You pretended to be mad." },
           { "id": "at_le_od_01d", "speaker": "odysseus", "text": "I pretended very well." }
-        ],
-        [
-          { "id": "at_le_od_02a", "speaker": "odysseus", "text": "Ten years at Troy, and we got in with a wooden horse. What would Sparta have done?" },
-          { "id": "at_le_od_02b", "speaker": "leonidas", "text": "Knocked on the gate." },
-          { "id": "at_le_od_02c", "speaker": "odysseus", "text": "For ten years?" },
-          { "id": "at_le_od_02d", "speaker": "leonidas", "text": "Harder." }
         ]
       ],
       "needles": [

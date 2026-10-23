@@ -948,6 +948,14 @@ def main(spec_path):
             a *= np.clip(ndimage.distance_transform_edt(rgba[..., 3] > 0) / 14, 0, 1)   # and feathered
             rgba[..., :3] = np.where(halo[..., None], hc, rgba[..., :3]).astype(np.uint8)
             rgba[..., 3] = np.where(halo, a * 255, rgba[..., 3]).astype(np.uint8)
+        # "levels": [[k, add], [k, add], [k, add]] per channel, a drawing made
+        # in another sheet's colours brought to the rest pose's (Roosevelt's
+        # reactions sheet E came out more saturated: a swap to it jumped)
+        if fr.get('levels'):
+            c = rgba[..., :3].astype(float)
+            for i, (kk, add) in enumerate(fr['levels']):
+                c[..., i] = c[..., i] * kk + add
+            rgba[..., :3] = np.clip(c, 0, 255).astype(np.uint8)
         # "body_under": where a prop the game draws itself was cut out (cards
         # held up), his body from the rest pose shows instead of a hole
         for poly in fr.get('body_under', []):

@@ -17,6 +17,7 @@ Built from a short `rig_spec.json` (the Wolf Man's way):
     python3 art-tools/build/corner_regs.py art-tools/cheshire_cat_parts
     python3 art-tools/build/rig_from_spec.py art-tools/cheshire_cat_parts/rig_spec.json
     python3 art-tools/pose_rig.py art-tools/cheshire_cat_parts/pose_rig.json
+    python3 art-tools/cheshire_cat_parts/grin.py
     python3 art-tools/build/frames_sheet.py cheshire_cat
     python3 art-tools/cheshire_cat_parts/clips.py
     python3 art-tools/build/win_small.py; python3 art-tools/build/fallback_clips.py
@@ -44,7 +45,10 @@ Built from a short `rig_spec.json` (the Wolf Man's way):
 - **Vanishing** is drawn as plain white, which the frames clear: the fade (B4)
   loses his belly, the drift (B5) shows a gap at the neck. The grin alone (C5)
   was drawn larger and centred: placed by hand (`reg` [0.7, 171.5, 135.6])
-  onto his mouth at rest and cut to the grin (`poly`); the big win cuts the
+  onto his mouth at rest and cut to the grin (`poly`), then turned to his
+  face by `grin.py` (the owner: his face is at an angle, the grin was level):
+  warped onto the fade frame's own mouth line, corners and lowest point, from
+  the level copy kept in `sources/grin_only_flat.png`; the big win cuts the
   drawn rail below him (`except`), and `call` the strip between his legs.
 - **Left as is (FIX-LATER.md):** where a leg crosses the drawn rail, a few
   frames keep small bites in the far leg or a thin sliver of rail (rim light

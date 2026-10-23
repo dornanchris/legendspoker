@@ -7,9 +7,8 @@ import { fillLine } from '../../src/tour.js'
 import * as store from '../store.js'
 import * as sound from '../sound.js'
 import { h, go, ordinal, formatChips } from '../dom.js'
-import { medallion, startTable } from './shared.js'
+import { medallion, portraitUrl, startTable } from './shared.js'
 import { dealerLine, cardEl } from './table.js'
-import { PUPPETS, LOOKS } from '../puppet/cast.js'
 
 /**
  * The sitting as the curtain call tells it: the player's best moments and who
@@ -27,6 +26,8 @@ export type Sitting = {
   fallen: { id: string; place: number }[]
   /** Who took the player's last chip, if anyone did. */
   bustedBy: string | null
+  /** The player quit the table from the menu. */
+  quit?: boolean
 }
 
 export type Result = {
@@ -103,12 +104,10 @@ function beat<T extends HTMLElement>(el: T, n: number): T {
 }
 
 /** A character's own drawn head (art-tools/build/portraits.py), or their medallion where there is no art yet. */
-function portrait(c: CharacterData | undefined, stamp: string, cls: string, mine = false): HTMLElement {
-  // in the look the player has earned for them, if they have (Holmes's deerstalker)
-  const look = c && LOOKS[c.id]
-  const art = c && PUPPETS[look && store.get().marks[look.mark] && PUPPETS[look.puppet] ? look.puppet : c.id]
-  const face = c && art
-    ? h('div', { class: `face t-${c.table}`, style: `background-image:url(${art.base}portrait.webp)` })
+function portrait(c: CharacterData | undefined, stamp: string, cls: string, mine = false, worn = true): HTMLElement {
+  const url = c && portraitUrl(c.id, worn)
+  const face = url
+    ? h('div', { class: `face t-${c!.table}`, style: `background-image:url(${url})` })
     : medallion(c, 'met')
   return h('figure', { class: `sitter ${cls}` },
     face,
@@ -136,6 +135,8 @@ function panel(r: Result, lookAtTable: (() => void) | null): HTMLElement {
   const fallenBefore = s ? s.fallen.filter((f) => f.place > o.place) : []
   const sub = o.won
     ? `You hold every chip. ${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}.`
+    : s?.quit
+      ? `You gave up your chair after ${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}.${fallenBefore.length ? ` You had outlasted ${listNames(fallenBefore.map((f) => f.id))}.` : ''}`
     : fallenBefore.length
       ? `You outlasted ${listNames(fallenBefore.map((f) => f.id))}. ${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}.`
       : `${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}. Every seat at this table has been the first to go at least once.`
@@ -190,10 +191,10 @@ function panel(r: Result, lookAtTable: (() => void) | null): HTMLElement {
       if (!o.won && f.place < o.place) continue // after the player was gone: not theirs to count
       const c = CHARACTERS[f.id]
       const last = o.won && f.place === 2
-      row.append(beat(portrait(c, last ? 'Beaten' : o.won ? `Out ${ordinal(f.place)}` : 'Outlasted', last ? 'last' : '', mine.has(f.id)), n++))
+      row.append(beat(portrait(c, last ? 'Beaten' : o.won ? `Out ${ordinal(f.place)}` : 'Outlasted', last ? 'last' : '', mine.has(f.id), o.mode === 'tour'), n++))
     }
     if (!o.won && s.bustedBy) {
-      row.append(beat(portrait(CHARACTERS[s.bustedBy], 'Outlasted you', 'victor'), n++))
+      row.append(beat(portrait(CHARACTERS[s.bustedBy], 'Outlasted you', 'victor', false, o.mode === 'tour'), n++))
     }
     right.append(beat(h('h3', null, o.won ? 'They fell to you' : 'Around you'), n++), row)
   }
@@ -269,6 +270,7 @@ function panel(r: Result, lookAtTable: (() => void) | null): HTMLElement {
       h('button', { type: 'button', class: 'primary', onclick: again }, 'Rematch'),
       h('button', { type: 'button', onclick: () => go('/tour') }, 'Back to the map'))
   }
+  if (o.mode === 'open') actions.append(h('button', { type: 'button', onclick: () => go(`/intro/${o.table}/open`) }, 'Change the chairs'))
   actions.append(h('button', { type: 'button', class: 'ghost', onclick: () => go('/ledger') }, 'The Ledger'))
   if (lookAtTable) actions.append(h('button', { type: 'button', class: 'ghost', onclick: lookAtTable }, 'Look at the table'))
   left.append(actions)

@@ -1091,7 +1091,7 @@
    }
   },
   "fade": {
-   "duration": 4.0,
+   "duration": 4.6,
    "note": "TELL: fades away tail first (tail and body to mid-chest gone), then only the grin is left, then the cat comes back, grin first (Carroll's order).",
    "tracks": {
     "torso": {
@@ -1131,96 +1131,115 @@
     "torso": [
      [
       0.2,
-      "-"
+      "-",
+      0.9
      ],
      [
       3.5,
-      null
+      null,
+      0.9
      ]
     ],
     "torso_over": [
      [
       0.2,
-      "-"
+      "-",
+      0.9
      ],
      [
       3.5,
-      null
+      null,
+      0.9
      ]
     ],
     "arm_near": [
      [
       0.2,
-      "-"
+      "-",
+      0.9
      ],
      [
       3.5,
-      null
+      null,
+      0.9
      ]
     ],
     "arm_far": [
      [
       0.2,
-      "-"
+      "-",
+      0.9
      ],
      [
       3.5,
-      null
+      null,
+      0.9
      ]
     ],
     "upper_near": [
      [
       0.2,
-      "-"
+      "-",
+      0.9
      ],
      [
       3.5,
-      null
+      null,
+      0.9
      ]
     ],
     "upper_far": [
      [
       0.2,
-      "-"
+      "-",
+      0.9
      ],
      [
       3.5,
-      null
+      null,
+      0.9
      ]
     ],
     "frame": [
      [
       0.2,
-      "fade"
+      "fade",
+      0.9
      ],
      [
-      1.4,
-      "grin_only"
+      1.1,
+      "grin_only",
+      0.9
      ],
      [
-      2.8,
-      "fade"
+      2.6,
+      "fade",
+      0.9
      ],
      [
       3.5,
-      null
+      null,
+      0.9
      ]
     ],
     "head": [
      [
       0.2,
-      "-"
+      "-",
+      0.9
      ],
      [
       3.5,
-      null
+      null,
+      0.9
      ]
     ]
    },
    "hold": [
-    1.85,
-    0.9
-   ]
+    2.09,
+    2.5
+   ],
+   "snap": 1
   },
   "drift": {
    "duration": 2.4,
@@ -1343,7 +1362,7 @@
    },
    "hold": [
     1.07,
-    0.9
+    2.5
    ]
   },
   "blink": {
@@ -1477,7 +1496,7 @@
    },
    "hold": [
     0.7,
-    0.9
+    2.5
    ]
   },
   "wash": {
@@ -1601,7 +1620,7 @@
    },
    "hold": [
     1.22,
-    0.9
+    2.5
    ]
   },
   "twitch": {
@@ -1725,7 +1744,7 @@
    },
    "hold": [
     0.67,
-    0.9
+    2.5
    ]
   },
   "sway": {
@@ -1849,7 +1868,7 @@
    },
    "hold": [
     1.2,
-    0.9
+    2.5
    ]
   },
   "grin_dealer": {
@@ -1973,7 +1992,7 @@
    },
    "hold": [
     1.11,
-    0.9
+    2.5
    ]
   },
   "knowing": {
@@ -2097,7 +2116,7 @@
    },
    "hold": [
     1.11,
-    0.9
+    2.5
    ]
   },
   "talk": {
@@ -2871,7 +2890,7 @@
    },
    "hold": [
     0.92,
-    0.9
+    2.5
    ]
   },
   "win_small": {

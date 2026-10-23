@@ -152,6 +152,7 @@ def bake(master, patch, at, region=None, clear=None, outline=5, fade=4):
             avg = ndimage.uniform_filter(fill, size=(5, 5, 1))
             fill[hole] = avg[hole]
         a = np.array(m.filter(ImageFilter.GaussianBlur(2))).astype(float)
+        a = np.minimum(a, H[..., 3])                                     # never past the head either
         under = np.dstack([fill, a])
         top = L.copy()                                                   # the patch over the fill
         ta, ua = top[..., 3:] / 255, under[..., 3:] / 255

@@ -6,6 +6,7 @@ character sheet), built by `art-tools/pose_rig.py` the way Van Helsing is:
 
     python3 art-tools/cut_sheet.py art-tools/jfk_parts/cut_face.json
     python3 art-tools/build/own_master.py art-tools/jfk_parts jfk 320
+    python3 art-tools/jfk_parts/eyes.py   # (after face_rig has fitted once: it reads jfk_rig/face/fits.json)
     python3 art-tools/build/pose_boxes.py art-tools/jfk_parts
     python3 art-tools/build/corner_regs.py art-tools/jfk_parts
     python3 art-tools/build/rig_from_spec.py art-tools/jfk_parts/rig_spec.json
@@ -17,8 +18,11 @@ character sheet), built by `art-tools/pose_rig.py` the way Van Helsing is:
     python3 art-tools/web_half.py jfk
 
 - **The master is the rest pose's own head** (`jfk_face/jfk_master.png`).
-- **Face** (`face.json`): eyes half 2, closed 3, viewer 4, down 5, up 6,
-  narrow 7; mouths rest 10, ah 11, ee 12, oh 13, oo 14, m 15, f 16, l 18,
+- **Face** (`face.json`): eyes 21-26, which `eyes.py` makes from the sheet's
+  half 2, closed 3, viewer 4, down 5, up 6, narrow 7: the fit had put four of
+  them below the eye region (he never blinked or glanced), and the sheet
+  coloured the irises blue and brown (his are grey-green). The eye region
+  starts under his brows, so his own stay; mouths rest 10, ah 11, ee 12, oh 13, oo 14, m 15, f 16, l 18,
   grin 19 (his small win), half_smile 20. Brows 8-9, head 1 and the front
   head 17 are unused.
 - **The coconut shell** is a props box in the near forearm's piece and every

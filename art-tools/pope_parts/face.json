@@ -1,5 +1,5 @@
 {
- "note": "The master is the rest pose's own head (pope_master.png, cut from pose A1): the face sheet's head has a wider mitre and did not fit it.",
+ "note": "The master is the rest pose's own head (pope_master.png, cut from pose A1): the face sheet's head has a wider mitre and did not fit it. The mouth and brow regions paint the master's own mouth and brows out as skin (fill) under each patch, or the master's showed beside them; the mouth region stays below the nose.",
  "master": "pope_parts/pope_face/pope_master.png",
  "pieces": "pope_parts/pope_face/pope_face_%02d.png",
  "layers": {
@@ -47,25 +47,79 @@
      205,
      168
     ]
-   ]
+   ],
+   "fill": [
+    [
+     [
+      226,
+      145
+     ],
+     [
+      298,
+      145
+     ],
+     [
+      298,
+      165
+     ],
+     [
+      226,
+      165
+     ]
+    ]
+   ],
+   "outline": 1,
+   "fade": 2
   },
   "eyes": {
    "keep": [
     [
      205,
-     150
+     163
+    ],
+    [
+     292,
+     163
+    ],
+    [
+     296,
+     157
     ],
     [
      312,
-     150
+     157
     ],
     [
      312,
-     196
+     198
     ],
     [
      205,
-     196
+     198
+    ]
+   ],
+   "except": [
+    [
+     [
+      279,
+      177
+     ],
+     [
+      296,
+      170
+     ],
+     [
+      312,
+      177
+     ],
+     [
+      312,
+      198
+     ],
+     [
+      279,
+      198
+     ]
     ]
    ]
   },
@@ -76,8 +130,16 @@
      198
     ],
     [
-     314,
+     262,
      198
+    ],
+    [
+     264,
+     206
+    ],
+    [
+     314,
+     206
     ],
     [
      314,
@@ -86,6 +148,30 @@
     [
      192,
      272
+    ]
+   ],
+   "fill": [
+    [
+     [
+      236,
+      204
+     ],
+     [
+      284,
+      204
+     ],
+     [
+      292,
+      208
+     ],
+     [
+      292,
+      223
+     ],
+     [
+      236,
+      223
+     ]
     ]
    ]
   }

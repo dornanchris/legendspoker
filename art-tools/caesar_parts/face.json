@@ -1,5 +1,5 @@
 {
- "note": "The master is the rest pose's own head and wreath (caesar_master.png, cut from pose A1), as the Pope's is: no seam.",
+ "note": "The master is the rest pose's own head and wreath (caesar_master.png, cut from pose A1), as the Pope's is: no seam. The mouth region paints his own mouth out as skin (fill) under each patch, and stays below the nose.",
  "master": "caesar_parts/caesar_face/caesar_master.png",
  "pieces": "caesar_parts/caesar_face/caesar_face_%02d.png",
  "layers": {
@@ -54,8 +54,16 @@
      146
     ],
     [
-     328,
+     276,
      146
+    ],
+    [
+     278,
+     162
+    ],
+    [
+     328,
+     162
     ],
     [
      328,
@@ -64,6 +72,26 @@
     [
      212,
      216
+    ]
+   ],
+   "fill": [
+    [
+     [
+      254,
+      165
+     ],
+     [
+      300,
+      165
+     ],
+     [
+      300,
+      183
+     ],
+     [
+      254,
+      183
+     ]
     ]
    ]
   }

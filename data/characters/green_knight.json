@@ -7,6 +7,9 @@
   "table": "camelot",
   "role": "seat",
   "arrives": false,
+  "looks": [
+    { "id": "green_knight_bare", "short": "Bertilak", "epithet": "The Green Knight, Unhelmed", "mark": "the_return_blow" }
+  ],
   "returns": {
     "afterHands": 20,
     "stack": "average",

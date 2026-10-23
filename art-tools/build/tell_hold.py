@@ -1,6 +1,6 @@
 """Every gesture the table plays as something to READ holds its pose longer:
 
-    python3 art-tools/build/tell_hold.py [secs]      (default 0.9)
+    python3 art-tools/build/tell_hold.py [secs]      (default 2.5)
 
 The owner: the tells and decoys were too quick to see among everything else
 moving. Each puppet's cued clips (`cues`: its tells AND its idles, the clips
@@ -12,13 +12,14 @@ would be read by its length (rule 2).
 
 `at` is where the clip is most still while its pose is fully showing: inside
 the span its swapped pieces are on (or the middle 70% without any), the moment
-the bones and arms move least, nearest the middle on a tie. Sampling follows
-web/puppet/clip.ts.
+the bones and arms move least, nearest the middle on a tie, and never while a
+swap is fading in (a third number on the swap: the Cheshire Cat's). Sampling
+follows web/puppet/clip.ts.
 """
 import glob, json, math, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SECS = float(sys.argv[1]) if len(sys.argv) > 1 else 0.9
+SECS = float(sys.argv[1]) if len(sys.argv) > 1 else 2.5
 EASE = {
     'linear': lambda u: u, 'in': lambda u: u ** 3, 'out': lambda u: 1 - (1 - u) ** 3,
     'inOut': lambda u: 0.5 - math.cos(math.pi * u) / 2,
@@ -45,9 +46,10 @@ def sample(keys, t):
 def hold_at(c):
     d = c['duration']
     swaps = list(c.get('swaps', {}).values()) + list(c.get('ikSwaps', {}).values())
-    ons = [t for s in swaps for t, v in s if v is not None]
-    offs = [t for s in swaps for t, v in s if v is None]
-    changes = [t for s in swaps for t, _ in s]
+    ons = [k[0] for s in swaps for k in s if k[1] is not None]
+    offs = [k[0] for s in swaps for k in s if k[1] is None]
+    # a change, and how long it takes: a cut is instant, a fading swap takes its seconds
+    changes = [(k[0], k[2] if len(k) > 2 else 0) for s in swaps for k in s]
     lo = min(ons) if ons else 0.15 * d
     hi = max(offs) if offs else 0.85 * d
     chans = [k for group in list(c.get('tracks', {}).values()) + list(c.get('ik', {}).values()) for k in group.values()]
@@ -56,9 +58,9 @@ def hold_at(c):
         n = 0
         for s in swaps:
             cur = None
-            for t0, v in s:
-                if t0 <= t:
-                    cur = v
+            for k in s:
+                if k[0] <= t:
+                    cur = k[1]
             n += cur is not None
         return n
 
@@ -66,7 +68,7 @@ def hold_at(c):
     best, score = (lo + hi) / 2, math.inf
     t = lo + 0.06
     while t <= hi - 0.06:
-        if not any(abs(t0 - t) < 0.08 for t0 in changes) and showing(t) >= most:
+        if not any(t0 - 0.08 < t < t0 + f + 0.08 for t0, f in changes) and showing(t) >= most:
             move = sum(abs(sample(k, t + 0.04) - sample(k, t - 0.04)) for k in chans)
             s = move + 0.002 * abs(t - (lo + hi) / 2)
             if s < score:

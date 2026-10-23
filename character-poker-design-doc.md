@@ -112,6 +112,14 @@ avatar-unlock tracker.
      anyone the player has already beaten, from any table, champions
      included, with one chair kept for someone from the room so its own
      banter still has a voice.*
+     *[DECISION, owner] And then **picked**: the player chooses who sits,
+     one to four opponents from everyone they have played against at the
+     tables (met, not only beaten), heads up against anyone if they like.
+     No chair is kept for the room any more; a table dealt at random still
+     keeps one. A heads-up open table is to earn a bonus mark later. Both
+     halves of a two-man chair may sit together (Jekyll and Hyde; the Robot
+     and the AI), and so may a man and his second look (the Green Knight
+     helmed and bare, Holmes with and without the deerstalker).*
 - After all eight: **two champion tiers** — Champions' Table for the first
   four bosses, then Champions' Table for the last four — played at Death's
   transcendent table.
@@ -208,6 +216,20 @@ budget, and three of them were the same "watch, then join" move.
   or woman. Under non-negotiable #3 it has no tells, only a cosmetic loop.
 - **The Station:** Reptilian CUT, **Astronaut** IN — preserves the one honest
   human read at the table.
+
+### [DECISION, owner] The player is seen heads up, as a figure of their choosing
+
+The finale was to be "the one time the camera pulls back". The owner widened
+it: every heads-up sitting is laid out the finale's way, the player seen in
+the left chair, the one opponent in the right, Death dealing between them.
+That is the finale, the Phoenix's Pyre (an easter egg on the rarest table),
+and an open table where the player picks a single opponent; an open table with
+two or more opponents plays as before, the player unseen. In Your Account the
+player chooses who they are drawn as: the Stranger (in their colour), or
+anyone they have beaten, Death once the finale is won (the multiplayer rule
+below, "avatars are unlocked by beating them", brought forward into
+single-player). The figure acts out the player's own actions and fidgets at
+random; it never plays a tell (non-negotiable #3's spirit).
 
 ### [DECISION] Cerberus — the non-speaking seat
 
@@ -964,7 +986,8 @@ woven into how a character sits while thinking has to be learned.
 
 ## MULTIPLAYER
 
-- You **never see your own avatar** in single-player. In multiplayer you
+- You **never see your own avatar** in single-player, except heads up (the
+  owner's later call, above: the finale, the Pyre, a one-opponent open table). In multiplayer you
   **choose** an avatar — e.g. play as Blackbeard.
 - **Avatars are unlocked by beating them in the single-player tour.** The
   gauntlet is the unlock engine; the two modes feed each other rather than

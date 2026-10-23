@@ -61,12 +61,20 @@ export const SAVE_VERSION = 1
 export const ENGINE_VERSION = 14
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
+export type DialogueLevel = 'all' | 'less' | 'story' | 'off'
 
 export type Settings = {
   /** Presentation clock only. Never reaches the game loop. */
   pace: Pace
-  /** Unused: the table no longer shows a log (kept so older saves still read). */
+  /** Unused (kept so older saves still read): the log's switch is `log` now. */
   showLog: boolean
+  /** The play-by-play beside the table, on a computer only (the owner); off by default. */
+  log: boolean
+  /**
+   * How much table talk is shown: all of it, less of it, only the lines the
+   * story needs (Beat.chatter in director.ts), or none. Presentation only.
+   */
+  dialogue: DialogueLevel
   reduceMotion: boolean
   /** Offer the fast-forward control while you are out of a hand. */
   fastForward: boolean
@@ -78,6 +86,13 @@ export type Settings = {
   volume: number
   /** The player's colour (web/puppet/accent.ts): presentation only. */
   accent: string
+  /**
+   * Who the player is drawn as where they are seen (a heads-up table, the
+   * finale): 'stranger', or anyone they have beaten (the design doc: avatars
+   * are unlocked by beating them; Death once the finale is won). Presentation
+   * only: the figure acts out the player's own actions, never a tell.
+   */
+  avatar: string
 }
 
 export type TableRecord = {
@@ -91,6 +106,8 @@ export type TableRecord = {
   cleared: boolean
   firstClearedAt: string | null
   fastestWin: number | null
+  /** The open table the player last set here: who sits in each of the room's chairs (null: empty). */
+  openChairs?: (string | null)[]
 }
 
 /**
@@ -135,10 +152,16 @@ export type SavedDecision = { action: Action; betSize?: number; thinkMs?: number
 
 export type ActiveTable = {
   table: string
-  /** 'open' is random play at a cleared table, with a drawn cast. */
+  /** 'open' is play at a cleared table, with a cast the player picked. */
   mode: 'tour' | 'open'
   /** Opponent ids in chair order; the player is always chair 0. */
   seats: string[]
+  /**
+   * Which of the room's chairs each opponent is drawn in (an open table: the
+   * chairs the player put them in, the ones left empty kept empty). The
+   * screen's only: the engine never reads it.
+   */
+  chairs?: number[]
   seed: number
   decisions: SavedDecision[]
   startedAt: string
@@ -170,12 +193,15 @@ export type Save = {
 export const defaultSettings = (): Settings => ({
   pace: 'normal',
   showLog: true,
+  log: false,
+  dialogue: 'all',
   reduceMotion: false,
   fastForward: true,
   largeText: false,
   sound: true,
   volume: 0.8,
   accent: 'teal',
+  avatar: 'stranger',
 })
 
 export const newTableRecord = (): TableRecord => ({

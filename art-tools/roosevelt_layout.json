@@ -475,6 +475,30 @@
    "on_table": true
   },
   {
+   "file": "../web/art/roosevelt/frame_talk.png",
+   "label": "frame.talk",
+   "x": 130,
+   "y": 365,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
+   "file": "../web/art/roosevelt/frame_pump.png",
+   "label": "frame.pump",
+   "x": 130,
+   "y": 365,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 10,
+   "visible": false,
+   "slot": "frame",
+   "on_table": true
+  },
+  {
    "file": "../web/art/roosevelt/arm_near_rest.png",
    "label": "arm_near.rest",
    "x": 300,

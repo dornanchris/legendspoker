@@ -7,6 +7,9 @@
   "table": "baker_street",
   "role": "champion",
   "arrives": false,
+  "looks": [
+    { "id": "sherlock_deerstalker", "short": "Sherlock", "epithet": "Holmes, in the Deerstalker", "mark": "the_deerstalker" }
+  ],
   "origin": "Literature",
   "era": "The Holmes stories (Conan Doyle, 1887–1927)",
   "dials": {

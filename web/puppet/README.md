@@ -71,7 +71,11 @@ on screen, for the DOM laid over them. `cue(seat, clip, prio)`: an idle
 gives way to anything and is dropped when they are busy; anything else cuts
 an idle short or waits (one at a time, the newest, dropped if 2.5 s stale)
 for what is playing to end, so a tell is never cut off by the action after
-it. The stage loads `half/`, the half-size images (`art-tools/web_half.py`;
+it. A clip with a `hold` (a gesture to read: a tell, an idle, a fidget) is
+never cut short at all, whatever its priority, or the gestures cut off would
+be the noise; a gesture waiting (`keep`) waits up to 6 s and is not displaced
+by an action. After its hold a clip snaps back (the rest at `SNAP` times
+speed, player.ts). The stage loads `half/`, the half-size images (`art-tools/web_half.py`;
 rerun it after rebuilding a puppet), and scales them back up.
 
 A room's **pieces** (`pieces` in room.json, cut by room_web.py from a sheet

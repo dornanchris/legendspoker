@@ -7,6 +7,7 @@
 <title>Legends Poker — Death’s Invitational</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230f0d0c'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23c9a227' font-family='Georgia,serif'%3E%E2%99%A0%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="art/launch/launch.css">
 </head>
 <body>
 
@@ -16,7 +17,47 @@
 
 <div id="app"></div>
 
+<!-- The launch screen: Death shuffling at his table, two guests waiting, from
+     the first frame the web view paints. It is plain HTML and CSS sprite
+     sheets (art-tools/build/launch_frames.cjs), so it moves while the game's
+     script is still being read; app.ts lifts it once the title is ready. -->
+<div id="boot" aria-hidden="true">
+  <div class="boot-stage">
+    <div class="boot-fig s-c lf-death"></div>
+    <div class="boot-fig s-l"></div>
+    <div class="boot-fig s-r"></div>
+    <img class="boot-table" src="art/rooms/table.webp" alt="">
+    <div class="boot-title">
+      <p class="brand">Legends Poker</p>
+      <p class="boot-name">Death’s Invitational</p>
+      <p class="boot-wait">Shuffling up<i>.</i><i>.</i><i>.</i></p>
+    </div>
+  </div>
+</div>
+
 <noscript><p class="noscript">Legends Poker needs JavaScript.</p></noscript>
-<script src="bundle.js"></script>
+<script>
+  // Two guests at the table, different each launch; none at all when opening
+  // straight onto a screen other than the title (the bench, a reload in play).
+  (function () {
+    var boot = document.getElementById('boot')
+    if (/^#\/./.test(location.hash) || /[?&]boot=0/.test(location.search)) boot.remove()
+    else {
+      var guests = ['lincoln', 'arthur', 'blackbeard', 'cheshire_cat', 'socrates', 'dracula', 'cyclops', 'medusa']
+      var a = guests.splice(Math.floor(Math.random() * guests.length), 1)[0]
+      var b = guests[Math.floor(Math.random() * guests.length)]
+      boot.querySelector('.s-l').classList.add('lf-' + a)
+      boot.querySelector('.s-r').classList.add('lf-' + b)
+    }
+    // the game's script after the first paint, so the launch screen is up while it is read
+    requestAnimationFrame(function () {
+      setTimeout(function () {
+        var s = document.createElement('script')
+        s.src = 'bundle.js'
+        document.body.appendChild(s)
+      }, 0)
+    })
+  })()
+</script>
 </body>
 </html>

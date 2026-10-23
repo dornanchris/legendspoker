@@ -42,7 +42,12 @@ import { handRank, marksForHand, marksForTable, type HandFacts, type TableFacts 
 import { Chatter, HAND_NAMES, type CalloutBeat } from './chatter.js'
 
 export type Beat =
-  | { kind: 'line'; id: string; speaker: string; text: string; stage: boolean }
+  /**
+   * `chatter`: table talk the story does not need (asides, banter, needles,
+   * lines at the player), which the player may ask to hear less of
+   * (settings.dialogue). Presentation only: the director says it either way.
+   */
+  | { kind: 'line'; id: string; speaker: string; text: string; stage: boolean; chatter?: boolean }
   /** The table's name for you just changed. Always announced. */
   | { kind: 'respect'; tier: number; name: string | null }
   | { kind: 'mark'; id: string }
@@ -245,7 +250,7 @@ export class TableRun {
       this.mode === 'tour' && !!a.watching
   }
 
-  private say(l: Line): Beat {
+  private say(l: Line, chatter = false): Beat {
     this.used.add(l.id)
     return {
       kind: 'line',
@@ -253,6 +258,7 @@ export class TableRun {
       speaker: l.speaker,
       text: fillLine(l.text, this.dialogue.earned_names, this.playerName),
       stage: l.type === 'stage_direction' || l.speaker === 'narration',
+      ...(chatter ? { chatter } : {}),
     }
   }
 
@@ -269,7 +275,7 @@ export class TableRun {
     // Draw only when there is something to say, so an exhausted trigger
     // costs no randomness and cannot shift what is said later.
     if (chance < 1 && this.rng() > chance) return []
-    return [this.say(line)]
+    return [this.say(line, true)]
   }
 
   /**
@@ -422,7 +428,7 @@ export class TableRun {
         const line = this.readYou()
         if (line) {
           this.lastOptionalHand = e.hand
-          return [...beats, this.say(line)]
+          return [...beats, this.say(line, true)]
         }
       }
     }
@@ -432,7 +438,7 @@ export class TableRun {
         const line = this.pick(this.dialogue.champion_headsup, (l) => !l.trigger && (l.speaker === opp[0] || l.speaker === 'death'))
         if (line) {
           this.lastOptionalHand = e.hand
-          beats.push(this.say(line))
+          beats.push(this.say(line, true))
         }
       }
       return beats
@@ -442,7 +448,7 @@ export class TableRun {
       const line = this.pick(this.dialogue.player_directed?.[`tier_${this.tier}`])
       if (line) {
         this.lastOptionalHand = e.hand
-        beats.push(this.say(line))
+        beats.push(this.say(line, true))
       }
     }
     return beats
@@ -707,7 +713,7 @@ export class TableRun {
     if (net > 0 && this.headsUpAnnounced && opp.length === 1 && this.isChampionSeat(opp[0])) {
       const line = this.pick(this.dialogue.champion_headsup,
         (l) => l.trigger === 'player_wins_pot' && (l.speaker === opp[0] || l.speaker === 'death'))
-      if (line && this.rng() < 0.4) beats.push(this.say(line))
+      if (line && this.rng() < 0.4) beats.push(this.say(line, true))
     }
 
     // --- banter, between hands, from the two who just fought over a pot
@@ -880,7 +886,7 @@ export class TableRun {
     const x = pool[Math.floor(this.rng() * pool.length)]
     this.lastBanterHand = hand
     this.lastOptionalHand = hand
-    return x.map((l) => this.say(l))
+    return x.map((l) => this.say(l, true))
   }
 
   // ------------------------------------------------------------ chatter
@@ -944,7 +950,7 @@ export class TableRun {
     const x = this.chatter.needle(hand, offered)
     if (!x) return []
     this.lastOptionalHand = hand
-    return x.map((l) => this.say(l))
+    return x.map((l) => this.say(l, true))
   }
 
   /**
@@ -965,6 +971,7 @@ export class TableRun {
       speaker: l.speaker,
       text: fillLine(l.text, this.dialogue.earned_names, this.playerName),
       stage: false,
+      chatter: true,
     }
   }
 

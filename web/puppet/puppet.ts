@@ -1,5 +1,5 @@
 import { type LoadedRig, type Mat, type Pic, IDENTITY, mul, translate, rotate, scale, picSize } from './rig.js'
-import { type ClipData, type Channel, sample, swapAt } from './clip.js'
+import { type ClipData, type Channel, sample, swapAt, fadeAt } from './clip.js'
 import { type IkPose, type IkPartData, IkChain, ikRest } from './ik.js'
 
 /** A rig's IK chains with their images loaded (`up`: the images are that many times smaller than the rig). */
@@ -21,6 +21,10 @@ export class Puppet {
   readonly pose = new Map<string, BonePose>()
   /** Slot -> state shown this frame (the part `${slot}.${state}`); null is none. */
   readonly slots = new Map<string, string | null>()
+  /** A slot fading in this frame: how far (0-1) what it shows has come. */
+  private alphas = new Map<string, number>()
+  /** A slot fading out this frame: what it showed before (null rest, "-" none) and how much of it is left. */
+  private ghosts = new Map<string, { state: string | null; a: number }>()
   private bySlot = new Map<string, string[]>()
 
   /** Each bone's direction (unit x, y) and length, to its first child bone. */
@@ -49,6 +53,8 @@ export class Puppet {
   reset(): void {
     for (const b of this.rig.bones) this.pose.set(b.name, { rot: 0, x: 0, y: 0, sx: 0, sy: 0, len: 0 })
     this.slots.clear()
+    this.alphas.clear()
+    this.ghosts.clear()
     for (const c of this.ik?.chains ?? []) this.ikPose.set(c.data.chain, { x: 0, y: 0, rot: 0, state: null })
   }
 
@@ -70,6 +76,11 @@ export class Puppet {
     for (const [slot, swaps] of Object.entries(clip.swaps ?? {})) {
       const s = swapAt(swaps, t)
       if (s !== null) this.show(slot, s === '-' ? null : s)
+      const f = fadeAt(swaps, t)
+      if (f) {
+        this.alphas.set(slot, f.u)
+        this.ghosts.set(slot, { state: f.from, a: 1 - f.u })
+      }
     }
     for (const [chain, chans] of Object.entries(clip.ik ?? {})) {
       const p = this.ikPose.get(chain)
@@ -126,15 +137,25 @@ export class Puppet {
     return { parts, frame }
   }
 
-  /** The parts drawn this frame, back to front. */
+  /** The parts drawn this frame, back to front, each with how much of it shows (a fading swap's two parts are both drawn). */
   visibleParts() {
     const shown = this.rig.parts.filter((p) => {
       if (!this.slots.has(p.slot)) return p.visible
       const s = this.slots.get(p.slot)
       return s !== null && p.name === `${p.slot}.${s}`
-    })
-    const names = new Set(shown.map((p) => p.name))
-    return shown.filter((p) => !p.with || names.has(p.with)).sort((a, b) => a.z - b.z)
+    }).map((p) => ({ ...p, alpha: this.alphas.get(p.slot) ?? 1 }))
+    for (const [slot, g] of this.ghosts) {
+      if (g.state === '-') continue
+      for (const p of this.rig.parts) {
+        if (p.slot !== slot) continue
+        if (g.state === null ? p.visible : p.name === `${slot}.${g.state}`) shown.push({ ...p, alpha: g.a })
+      }
+    }
+    // a part that rides on another (eyes on a head) fades with it
+    const alpha = new Map(shown.map((p) => [p.name, p.alpha]))
+    return shown.filter((p) => !p.with || alpha.has(p.with))
+      .map((p) => (p.with ? { ...p, alpha: Math.min(p.alpha, alpha.get(p.with)!) } : p))
+      .sort((a, b) => a.z - b.z)
   }
 
   /**
@@ -165,12 +186,15 @@ export class Puppet {
    * `onTable`, only the parts that rest on the table, to be drawn again over it.
    */
   paint(ctx: CanvasRenderingContext2D, view: Mat, onTable = false): void {
+    const base = ctx.globalAlpha                 // the stage's own fade (a figure leaving its chair)
     for (const d of this.drawables()) {
       if (onTable && !d.onTable) continue
       const m = mul(view, d.m)
       ctx.setTransform(m[0], m[1], m[2], m[3], m[4], m[5])
+      ctx.globalAlpha = base * d.alpha
       ctx.drawImage(d.img, 0, 0)
     }
+    ctx.globalAlpha = base
   }
 
   /**
@@ -178,21 +202,21 @@ export class Puppet {
    * pixels -> posed rig pixels). An IK chain showing a hand stands in for its
    * slots (the rig's own forearm piece and upper-arm patch) with its three images.
    */
-  drawables(): { img: Pic; m: Mat; z: number; onTable: boolean }[] {
+  drawables(): { img: Pic; m: Mat; z: number; onTable: boolean; alpha: number }[] {
     const bones = this.boneMatrices()
     // a chain shows while it has a hand, unless a clip has emptied its slots (a whole-figure frame hides the arms)
     const emptied = (slot: string) => this.slots.has(slot) && this.slots.get(slot) === null
     const active = this.ik ? this.ik.chains.filter((c) => this.ikPose.get(c.data.chain)?.state && !c.data.hides.some(emptied)) : []
     const hidden = new Set(active.flatMap((c) => c.data.hides))
     const out = this.visibleParts().filter((p) => !hidden.has(p.slot)).map((p) => ({
-      img: this.rig.images.get(p.img)!, m: mul(bones.get(p.bone)!, this.rig.rest.get(p.name)!), z: p.z, onTable: p.onTable,
+      img: this.rig.images.get(p.img)!, m: mul(bones.get(p.bone)!, this.rig.rest.get(p.name)!), z: p.z, onTable: p.onTable, alpha: p.alpha,
     }))
     for (const c of active) {
       const pose = this.ikPose.get(c.data.chain)!
       const ms = c.matrices(pose, bones.get(c.data.bone)!)
       const hand = c.data.parts.hands[pose.state!]
       const add = (part: IkPartData | undefined, m: Mat) => {
-        if (part) out.push({ img: this.ik!.images.get(part.img)!, m: mul(m, ikRest(part, this.ik!.up)), z: part.z, onTable: part.onTable })
+        if (part) out.push({ img: this.ik!.images.get(part.img)!, m: mul(m, ikRest(part, this.ik!.up)), z: part.z, onTable: part.onTable, alpha: 1 })
       }
       add(c.data.parts.under, bones.get(c.data.bone)!)
       add(c.data.parts.upper, ms.upper)

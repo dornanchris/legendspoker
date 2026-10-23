@@ -18,16 +18,23 @@
  * shows nothing there (a whole-figure frame hides the body and arms). A clip
  * that ends where it began (every channel 0, every slot null) leaves the
  * puppet exactly in its rest pose.
+ *
+ * Swaps cut: shapes swap, never cross-fade (no mouth ghosts). A swap with a
+ * third number fades instead, over that many seconds: what the slot showed
+ * goes as the new part comes, so a figure can phase out of its chair and back
+ * (the Cheshire Cat: [0.2, "fade", 0.5]).
  */
 
 export type Ease = 'linear' | 'in' | 'out' | 'inOut' | 'outBack' | 'hold'
 export type Key = [number, number, Ease?]
 export type Channel = 'rot' | 'x' | 'y' | 'sx' | 'sy' | 'len'
+/** [time s, part state (null rest, "-" none), seconds to fade in over (none: a cut)] */
+export type Swap = [number, string | null, number?]
 export type ClipData = {
   duration: number
   note?: string
   tracks: Record<string, Partial<Record<Channel, Key[]>>>
-  swaps?: Record<string, [number, string | null][]>
+  swaps?: Record<string, Swap[]>
   /**
    * IK chains (web/puppet/ik.ts; a rig with an ik.json): the wrist's offset
    * from rest, x and y in rig pixels, and the hand's turn about it, rot in
@@ -39,12 +46,15 @@ export type ClipData = {
   /** Seconds a clip takes to hand back to rest if it is cut short (IK puppets only; default 0.15). */
   release?: number
   /**
-   * [at, secs]: the clip stops at `at` and holds that pose for `secs` before
-   * going on (the tells, their decoys and every other gesture the table cues
-   * from words, all alike, so the player has time to see them;
-   * art-tools/build/tell_hold.ts).
+   * [at, secs]: the clip stops at `at` and holds that pose for `secs`, then
+   * snaps back (the rest of the clip at SNAP times its speed, player.ts): the
+   * tells, their decoys and every other gesture the table cues from words, all
+   * alike, held long enough that the move is plain, and missed if you look
+   * away (art-tools/build/tell_hold.py).
    */
   hold?: [number, number]
+  /** How much faster than itself the clip plays once its hold is spent (default SNAP, player.ts; 1 plays it at its own pace). */
+  snap?: number
 }
 
 export const EASE: Record<Ease, (u: number) => number> = {
@@ -72,8 +82,21 @@ export function sample(keys: Key[], t: number): number {
 }
 
 /** Which part a slot shows at time t: a state name, or null for rest. */
-export function swapAt(swaps: [number, string | null][], t: number): string | null {
+export function swapAt(swaps: Swap[], t: number): string | null {
   let s: string | null = null
   for (const [t0, v] of swaps) if (t >= t0) s = v
   return s
+}
+
+/**
+ * A fading swap's state at time t, while it fades: what the slot showed
+ * before (null rest, "-" none), and how far the new part has come in (0-1).
+ * Null when no swap is fading.
+ */
+export function fadeAt(swaps: Swap[], t: number): { from: string | null; u: number } | null {
+  let i = -1
+  for (let k = 0; k < swaps.length; k++) if (t >= swaps[k][0]) i = k
+  const secs = i >= 0 ? swaps[i][2] : undefined
+  if (!secs || t >= swaps[i][0] + secs) return null
+  return { from: i > 0 ? swaps[i - 1][1] : null, u: (t - swaps[i][0]) / secs }
 }

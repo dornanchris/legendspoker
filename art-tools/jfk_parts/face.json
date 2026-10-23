@@ -1,13 +1,71 @@
 {
- "note": "The master is the rest pose's own head. Eyes 2-7; the separate brows 8-9 are unused; mouths 10-20 (17 is the front-on head, unused, as is head 1).",
+ "note": "The master is the rest pose's own head. Eyes 21-26 are 2-7 mended by eyes.py (refitted: four had landed below the eye region, so he never blinked; irises recoloured to his grey-green); the separate brows 8-9 are unused; mouths 10-20 (17 is the front-on head, unused, as is head 1). The eye region starts under the brows, so his own stay.",
  "master": "jfk_parts/jfk_face/jfk_master.png",
  "pieces": "jfk_parts/jfk_face/jfk_face_%02d.png",
  "layers": {
-  "eyes": {"half": 2, "closed": 3, "viewer": 4, "down": 5, "up": 6, "narrow": 7},
-  "mouth": {"rest": 10, "ah": 11, "ee": 12, "oh": 13, "oo": 14, "m": 15, "f": 16, "l": 18, "grin": 19, "half_smile": 20}
+  "eyes": {
+   "half": 21,
+   "closed": 22,
+   "viewer": 23,
+   "down": 24,
+   "up": 25,
+   "narrow": 26
+  },
+  "mouth": {
+   "rest": 10,
+   "ah": 11,
+   "ee": 12,
+   "oh": 13,
+   "oo": 14,
+   "m": 15,
+   "f": 16,
+   "l": 18,
+   "grin": 19,
+   "half_smile": 20
+  }
  },
  "regions": {
-  "eyes": {"keep": [[235, 95], [318, 95], [318, 130], [235, 130]]},
-  "mouth": {"keep": [[240, 140], [312, 140], [312, 190], [240, 190]]}
+  "eyes": {
+   "keep": [
+    [
+     235,
+     108
+    ],
+    [
+     316,
+     108
+    ],
+    [
+     316,
+     131
+    ],
+    [
+     235,
+     131
+    ]
+   ],
+   "outline": 2,
+   "fade": 2
+  },
+  "mouth": {
+   "keep": [
+    [
+     240,
+     140
+    ],
+    [
+     312,
+     140
+    ],
+    [
+     312,
+     190
+    ],
+    [
+     240,
+     190
+    ]
+   ]
+  }
  }
 }
