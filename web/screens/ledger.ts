@@ -81,95 +81,116 @@ export function ledgerScreen(root: HTMLElement, params: string[]): () => void {
   return () => { if (done) done() }
 }
 
-// ---------------------------------------------------------------- swiping through pages
+// ---------------------------------------------------------------- one entry at a time
 
-type Leaf = { id: string; thumb: HTMLElement; label: string; cls?: string }
+/** Fills one entry's two halves: its picture and title, and what it says. */
+type Spread = (side: HTMLElement, body: HTMLElement, id: string) => string | void
+
+type Viewer = { el: HTMLElement; open: (id: string) => void; cleanup: () => void }
 
 /**
- * Pages to swipe through, left and right (the owner: no scrolling index down
- * the side): a strip of faces along the top to jump with, the page under it,
- * arrows either side of it, the arrow keys on a computer. Turning a page
- * keeps the address in step (#/ledger/<tab>/<id>) without rebuilding the screen.
+ * An entry over the whole screen (the owner: the ledger was "small and hard to
+ * read"), chosen from the sea of faces, rooms or marks under it and then turned
+ * left and right without going back: a swipe, the arrows at its sides, the
+ * arrow keys. Its picture and title on the left, what it says on the right,
+ * scrolling on its own. The address follows (#/ledger/<tab>/<id>), so an entry
+ * can be linked to and the back button closes it. `spread` may return a class
+ * for the card (a mark's state).
  */
-function swiper(book: HTMLElement, tab: string, leaves: Leaf[], start: string | undefined,
-  render: (page: HTMLElement, id: string) => void, count: string): () => void {
-  let at = Math.max(0, leaves.findIndex((l) => l.id === start))
-  const strip = h('div', { class: 'leaf-strip', role: 'tablist' })
-  const buttons = leaves.map((l, i) => h('button', {
-    type: 'button', class: `leaf ${l.cls ?? ''}`, title: l.label, 'aria-label': l.label, onclick: () => show(i),
-  }, l.thumb))
-  strip.append(...buttons)
-  const page = h('article', { class: 'ledger-page swipe-page' })
-  const prev = h('button', { type: 'button', class: 'page-turn prev', 'aria-label': 'Previous', onclick: () => show(at - 1) }, '‹')
-  const next = h('button', { type: 'button', class: 'page-turn next', 'aria-label': 'Next', onclick: () => show(at + 1) }, '›')
-  const where = h('span', { class: 'leaf-where' })
-  book.append(h('div', { class: 'leaf-head' }, h('p', { class: 'count' }, count), where), strip,
-    h('div', { class: 'leaf-stage' }, prev, page, next))
+function viewer(tab: string, ids: string[], kind: string, spread: Spread): Viewer {
+  let at = -1
+  const side = h('div', { class: 'lv-side' })
+  const body = h('div', { class: 'lv-body' })
+  const card = h('article', { class: `lv-card lv-${kind}` }, side, body)
+  const where = h('span', { class: 'lv-where' })
+  const prev = h('button', { type: 'button', class: 'lv-turn prev', 'aria-label': 'Previous', onclick: () => show(at - 1) }, '‹')
+  const next = h('button', { type: 'button', class: 'lv-turn next', 'aria-label': 'Next', onclick: () => show(at + 1) }, '›')
+  const shut = h('button', { type: 'button', class: 'ghost small lv-close', 'aria-label': 'Close', onclick: () => close() }, '✕ Close')
+  const el = h('div', { class: 'leaf-view', hidden: true, role: 'dialog', 'aria-modal': 'true' },
+    h('div', { class: 'lv-top' }, where, shut), prev, card, next)
+  el.addEventListener('click', (e) => { if (e.target === el) close() })
 
-  function show(i: number, first = false) {
-    if (!leaves.length) return
-    const n = Math.max(0, Math.min(leaves.length - 1, i))
-    if (n === at && !first) return
-    const dir = n > at ? 'from-right' : 'from-left'
-    at = n
-    page.replaceChildren()
-    render(page, leaves[at].id)
-    page.scrollTop = 0
-    if (!first) { page.classList.remove('from-right', 'from-left'); void page.offsetWidth; page.classList.add(dir) }
-    buttons.forEach((b, k) => { b.classList.toggle('on', k === at); b.setAttribute('aria-selected', String(k === at)) })
-    buttons[at].scrollIntoView({ inline: 'center', block: 'nearest', behavior: first ? 'auto' : 'smooth' })
+  function show(i: number) {
+    if (i < 0 || i >= ids.length || i === at) return
+    const dir = at < 0 ? '' : i > at ? 'from-right' : 'from-left'
+    at = i
+    side.replaceChildren()
+    body.replaceChildren()
+    card.className = `lv-card lv-${kind} ${spread(side, body, ids[at]) ?? ''}`
+    body.scrollTop = 0
+    side.scrollTop = 0
+    if (dir) { void card.offsetWidth; card.classList.add(dir) }
     prev.disabled = at === 0
-    next.disabled = at === leaves.length - 1
-    where.textContent = `${at + 1} of ${leaves.length}`
-    history.replaceState(null, '', `#/ledger/${tab}/${encodeURIComponent(leaves[at].id)}`)
+    next.disabled = at === ids.length - 1
+    where.textContent = `${at + 1} of ${ids.length}`
+    history.replaceState(null, '', `#/ledger/${tab}/${encodeURIComponent(ids[at])}`)
+  }
+  function open(id: string) {
+    const i = ids.indexOf(id)
+    if (i < 0) return
+    el.hidden = false
+    show(i)
+    shut.focus()
+  }
+  function close() {
+    el.hidden = true
+    at = -1
+    history.replaceState(null, '', `#/ledger/${tab}`)
   }
 
-  // a swipe: mostly sideways, far enough; up and down still scroll the page
+  // a swipe: mostly sideways and far enough; up and down still scroll the page
   let x0 = 0, y0 = 0, down = false
-  page.addEventListener('pointerdown', (e) => { down = true; x0 = e.clientX; y0 = e.clientY })
-  page.addEventListener('pointerup', (e) => {
+  card.addEventListener('pointerdown', (e) => { down = true; x0 = e.clientX; y0 = e.clientY })
+  card.addEventListener('pointerup', (e) => {
     if (!down) return
     down = false
     const dx = e.clientX - x0, dy = e.clientY - y0
     if (Math.abs(dx) > 50 && Math.abs(dx) > 1.6 * Math.abs(dy)) show(at + (dx < 0 ? 1 : -1))
   })
-  page.addEventListener('pointercancel', () => { down = false })
+  card.addEventListener('pointercancel', () => { down = false })
   const key = (e: KeyboardEvent) => {
+    if (el.hidden) return
     if (e.key === 'ArrowRight') show(at + 1)
     else if (e.key === 'ArrowLeft') show(at - 1)
+    else if (e.key === 'Escape') { e.stopPropagation(); close() }
   }
   window.addEventListener('keydown', key)
-  at = Math.max(0, leaves.findIndex((l) => l.id === start))
-  requestAnimationFrame(() => show(at, true))
-  return () => window.removeEventListener('keydown', key)
+  return { el, open, cleanup: () => window.removeEventListener('keydown', key) }
 }
 
 // ---------------------------------------------------------------- the invited
 
 function invited(book: HTMLElement, selected?: string): () => void {
   const save = store.get()
-  const groups: { table: TableData | null; title?: string; ids: string[] }[] = TOUR.map((t) => ({ table: t, ids: fullCast(t) }))
-  groups.push({ table: null, ids: ['death'] })
+  const groups: { title: string; numeral?: string; ids: string[] }[] = TOUR.map((t) => ({ title: t.name, numeral: String(t.position), ids: fullCast(t) }))
+  groups.push({ title: 'The dealer', ids: ['death'] })
   // No heading, no "unknown" row, nothing, until one of them has been met.
   const guests = GUESTS.map((c) => c.id).filter((id) => visibility(CHARACTERS[id]) !== 'hidden')
-  if (guests.length) groups.push({ table: null, title: 'Uninvited', ids: guests })
+  if (guests.length) groups.push({ title: 'Uninvited', ids: guests })
 
-  const firstVisible = groups.flatMap((g) => g.ids).find((id) => visibility(CHARACTERS[id]) !== 'hidden')
-  const current = selected && CHARACTERS[selected] && visibility(CHARACTERS[selected]) !== 'hidden'
-    ? selected : firstVisible
+  const order = groups.flatMap((g) => g.ids).filter((id) => visibility(CHARACTERS[id]) !== 'hidden')
+  const view = viewer('invited', order, 'person', (side, body, id) => characterPage(side, body, CHARACTERS[id]))
 
-  const leaves: Leaf[] = groups.flatMap((g) => g.ids
-    .filter((id) => visibility(CHARACTERS[id]) !== 'hidden')
-    .map((id) => {
+  // Everyone at once, by table: a face to touch for each, a blank for a
+  // chair at a sealed table. A late arrival is not even a blank until met.
+  const sea = h('div', { class: 'sea' }, groups.map((g) => {
+    const faces = g.ids.flatMap((id) => {
       const c = CHARACTERS[id]
       const v = visibility(c)
-      return { id, label: c.short, cls: v, thumb: face(c, v) }
-    }))
-  return swiper(book, 'invited', leaves, current, (page, id) => characterPage(page, CHARACTERS[id]),
-    `${beatenCount(save)} of ${ROSTER.length} beaten`)
+      if (v === 'hidden') return c.arrives ? [] : [h('li', { class: 'sea-face hidden' }, face(c, 'hidden'), h('span', null, 'Unknown'))]
+      return [h('li', { class: `sea-face ${v}` }, h('button', { type: 'button', class: 'plain', onclick: () => view.open(id) },
+        face(c, v), h('span', null, c.short)))]
+    })
+    return h('section', { class: 'sea-group' },
+      h('h3', null, g.numeral ? h('span', { class: 'numeral' }, g.numeral) : null, g.title),
+      h('ul', { class: 'sea-faces' }, faces))
+  }))
+  book.append(h('p', { class: 'sea-count' }, `${beatenCount(save)} of ${ROSTER.length} beaten. Touch a face to read their page.`), sea, view.el)
+  if (selected) view.open(selected)
+  return view.cleanup
 }
 
-function characterPage(page: HTMLElement, c: CharacterData) {
+function characterPage(side: HTMLElement, page: HTMLElement, c: CharacterData) {
   const save = store.get()
   const rec = save.characters[c.id]
   const v = visibility(c)
@@ -178,14 +199,12 @@ function characterPage(page: HTMLElement, c: CharacterData) {
   const role = c.role === 'dealer' ? 'The dealer' : c.role === 'champion' ? 'Champion' : c.role === 'guest' ? 'Uninvited' : 'Seated'
   const tableName = c.role === 'dealer' ? 'Every table' : c.role === 'guest' ? 'Not on the tour' : table?.name ?? ''
 
-  page.append(
-    h('header', { class: 'page-head' },
-      h('div', { class: `page-face ${v}` }, face(c, v === 'hidden' ? 'hidden' : v)),
-      h('div', null,
-        h('h2', null, c.name),
-        text(c.epithet) ? h('p', { class: 'epithet' }, c.epithet) : null,
-        h('p', { class: 'meta' }, `${role} · ${tableName}`),
-        h('p', { class: 'meta dim' }, [c.origin, c.era].filter(Boolean).join(' · ')))),
+  side.append(
+    h('div', { class: `page-face ${v}` }, face(c, v === 'hidden' ? 'hidden' : v)),
+    h('h2', null, c.name),
+    ...(text(c.epithet) ? [h('p', { class: 'epithet' }, c.epithet)] : []),
+    h('p', { class: 'meta' }, `${role} · ${tableName}`),
+    h('p', { class: 'meta dim' }, [c.origin, c.era].filter(Boolean).join(' · ')),
   )
 
   let status: string
@@ -197,7 +216,7 @@ function characterPage(page: HTMLElement, c: CharacterData) {
     status = `Never sat down: the table was over before ${pronoun(c)} arrived. Play it again to meet ${obj}.`
   }
   else status = 'You have not sat with them yet.'
-  page.append(h('p', { class: `status ${v}` }, status))
+  side.append(h('p', { class: `status ${v}` }, status))
 
   if (text(p.ledger)) page.append(h('blockquote', { class: 'ledger-entry' }, text(p.ledger)))
   if (v === 'beaten' && text(p.ledger_beaten)) page.append(h('blockquote', { class: 'ledger-entry beaten' }, text(p.ledger_beaten)))
@@ -263,39 +282,42 @@ function tendencies(r: CharacterRecord, c: CharacterData): string[] {
 function tourTab(book: HTMLElement, selected?: string): () => void {
   const save = store.get()
   const visible = TABLES.filter((t) => isVisible(save, t.id))
-  const current = selected && TABLE_BY_ID[selected] && isVisible(save, selected) ? selected : visible[0]?.id
-  const leaves: Leaf[] = visible.map((t) => {
+  const view = viewer('tour', visible.map((t) => t.id), 'venue', (side, body, id) => venuePage(side, body, TABLE_BY_ID[id]))
+  // every table open to the book, as its painted room: touch one to read it
+  const sea = h('ul', { class: 'sea-rooms' }, visible.map((t) => {
     const st = tableState(save, t.id)
-    return {
-      id: t.id, cls: st, label: st === 'sealed' && t.kind !== 'tour' ? 'Sealed' : t.name,
-      thumb: h('span', { class: 'leaf-room', style: `background-image:url(${roomImage(t.id)})` },
-        h('span', { class: 'numeral' }, t.kind === 'tour' ? String(t.position) : t.kind === 'finale' ? '✦' : t.kind === 'hidden' ? '☼' : '◆')),
-    }
-  })
-  return swiper(book, 'tour', leaves, current, (page, id) => venuePage(page, TABLE_BY_ID[id]),
-    `${TOUR.filter((t) => save.tables[t.id]?.cleared).length} of ${TOUR.length} tables cleared`)
+    const veiled = st === 'sealed' && t.kind !== 'tour'
+    const mark = t.kind === 'tour' ? String(t.position) : t.kind === 'finale' ? '✦' : t.kind === 'hidden' ? '☼' : '◆'
+    return h('li', null, h('button', { type: 'button', class: `sea-room ${st}${veiled ? ' veiled' : ''}`, onclick: () => view.open(t.id) },
+      h('span', { class: 'sea-room-img', style: `background-image:url(${roomImage(t.id)})` }),
+      h('span', { class: 'sea-room-label' },
+        h('span', { class: 'numeral' }, mark),
+        h('b', null, veiled ? 'Sealed' : t.name),
+        h('small', null, veiled ? 'Beyond the tour' : st === 'cleared' ? 'Cleared' : st === 'open' ? 'Open' : 'Sealed'))))
+  }))
+  book.append(h('p', { class: 'sea-count' }, `${TOUR.filter((t) => save.tables[t.id]?.cleared).length} of ${TOUR.length} tables cleared. Touch a room to read about it.`), sea, view.el)
+  if (selected && isVisible(save, selected)) view.open(selected)
+  return view.cleanup
 }
 
 /** A table's painted room (web/art/rooms/<id>/backdrop.webp): every table has one. */
 const roomImage = (id: string) => `art/rooms/${id}/backdrop.webp`
 
-function venuePage(page: HTMLElement, t: TableData) {
+function venuePage(side: HTMLElement, page: HTMLElement, t: TableData) {
   const save = store.get()
   const st = tableState(save, t.id)
   const rec = save.tables[t.id]
   const sealedBeyond = st === 'sealed' && t.kind !== 'tour'
-  page.append(
+  side.append(
     h('div', { class: `venue-plate ${st}${sealedBeyond ? ' veiled' : ''}`, style: `background-image:url(${roomImage(t.id)})`, role: 'img', 'aria-label': sealedBeyond ? 'A sealed room' : `The room at ${t.name}` }),
-    h('header', { class: 'page-head venue' },
-      h('div', null,
-        h('p', { class: 'kicker' }, t.kind === 'tour' ? `Table ${t.position} of 8` : t.kind === 'champions' ? 'Beyond the tour' : t.kind === 'hidden' ? 'Off the map' : 'The end of the line'),
-        h('h2', null, sealedBeyond ? 'Sealed' : t.name),
-        h('p', { class: 'meta' }, sealedBeyond ? '' : [text(t.place), text(t.region)].filter(Boolean).join(' · ')),
-        text(t.era) && !sealedBeyond ? h('p', { class: 'meta dim' }, text(t.era)) : null)),
+    h('p', { class: 'kicker' }, t.kind === 'tour' ? `Table ${t.position} of 8` : t.kind === 'champions' ? 'Beyond the tour' : t.kind === 'hidden' ? 'Off the map' : 'The end of the line'),
+    h('h2', null, sealedBeyond ? 'Sealed' : t.name),
+    ...(sealedBeyond ? [] : [h('p', { class: 'meta' }, [text(t.place), text(t.region)].filter(Boolean).join(' · '))]),
+    ...(text(t.era) && !sealedBeyond ? [h('p', { class: 'meta dim' }, text(t.era))] : []),
     h('p', { class: `status ${st}` },
       st === 'cleared' ? `Cleared ${formatDate(rec?.firstClearedAt)}.` : st === 'open' ? 'Open. A chair is waiting.' : 'Sealed. Clear the table before it.'),
   )
-  if (sealedBeyond) return
+  if (sealedBeyond) { page.append(h('p', { class: 'dim' }, 'Nothing is written here yet. Clear the tables before it.')); return }
   if (text(t.room)) page.append(h('h3', null, 'The room'), h('p', null, text(t.room)))
   if (st !== 'sealed' && text(t.hook)) page.append(h('h3', null, 'Why you are here'), h('p', null, text(t.hook)))
 

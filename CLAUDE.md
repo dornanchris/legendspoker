@@ -345,11 +345,16 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 - **Respect:** per table, points from pots / showdowns / knockouts, tiers at
   4 / 10 / 18, heads-up with the champion forces tier 2, a win forces tier 3.
   The name flip is always announced (toast + the tier's first line).
-- **The Ledger:** swiped through, not scrolled (the owner): the Invited and the
-  Tour are pages turned left and right (a swipe, the arrows beside the page, the
-  arrow keys), with a strip of faces or rooms along the top to jump with
-  (`swiper` in ledger.ts); each character's page leads with their drawn
-  portrait, each table's with its painted room (veiled while sealed). Marks are
+- **The Ledger:** chosen from a sea, read over the whole screen (the owner:
+  the swiped pages were "small and hard to read"; "like how the marks work").
+  The Invited is every face at once, a group per table (a row per table on a
+  phone), a blank for a chair at a sealed table, a late arrival not even that
+  until met; the Tour is every room as a painted tile. A touch opens the entry
+  in `viewer` (ledger.ts): a card over the whole screen, its portrait or room,
+  name and status on the left, what it says on the right in type a size up,
+  scrolling on its own; turned left and right by a swipe, the arrows at its
+  sides or the arrow keys, closed by Close, Escape or the backdrop. The address
+  follows (#/ledger/<tab>/<id> opens it). Marks are
   a grid of pictures, written ones first, each opening its entry on a card:
   each mark has one (`web/screens/mark-art.ts`, the owner: "images or
   something for each one"), made from art the game has: the face of whoever
