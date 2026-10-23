@@ -660,7 +660,8 @@ Cerberus-style sheets are in `sources/old_style/`), with the big win and the
 crushing loss; vanished parts are drawn as plain white, the grin left alone is
 placed where his mouth is at rest, and he talks through the grin. He
 PHASES out and back in (the owner: like a figure leaving its chair), his
-`fade` clip's swaps fading over half a second each, the grin held clear of
+`fade` clip's swaps fading 0.9 s each, back to back (the owner: no sitting
+in the half-vanished drawing between them), the grin held clear of
 the fades (tell_hold.py skips a fading swap), and played back at his own pace
 after the hold (`snap: 1`):
 **Baker Street is complete on the real table screen.**

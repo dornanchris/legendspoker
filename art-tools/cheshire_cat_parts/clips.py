@@ -33,9 +33,11 @@ C['fold'] = frame('fold', 1.3, 0.18, 0.9, 'A lazy flick of a paw toward the midd
 C['all_in'] = frame('all_in', 2.0, 0.2, 1.6, 'Both paws push forward together, eyes bright.', lead=3)
 C['show'] = frame('show', 1.8, 0.2, 1.4, 'A paw turns palm up (the game turns the cards).')
 C['win_big'] = frame('win_big', 2.4, 0.2, 2.0, 'BEAT: a big pot won: both front paws thrown up, the grin bigger than ever.', lead=-2)
-C['fade'] = frame('fade', 4.0, 0.2, 3.5, 'TELL: fades away tail first (tail and body to mid-chest gone), '
+# the fades run back to back (0.9 s each: the owner's 0.2 s more either side of
+# the first 0.5), so the half-vanished drawing is passed through, never sat in
+C['fade'] = frame('fade', 4.6, 0.2, 3.5, 'TELL: fades away tail first (tail and body to mid-chest gone), '
                   'then only the grin is left, then the cat comes back, grin first (Carroll\'s order).',
-                  lead=0, seq=[[1.4, 'grin_only'], [2.8, 'fade']], fade=0.5)
+                  lead=0, seq=[[1.1, 'grin_only'], [2.6, 'fade']], fade=0.9)
 C['fade']['snap'] = 1   # he phases back in at his own pace: not snapped back like the other gestures
 C['drift'] = frame('drift', 2.4, 0.25, 1.9, 'IDLE (decoy for the fade): his head drifts a little way off his shoulders, and back.', lead=0)
 C['blink'] = frame('blink', 1.8, 0.15, 0.85, 'TELL: blinks one eye (the drawn wink), then the other: the sheets drew no '
