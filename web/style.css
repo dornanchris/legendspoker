@@ -613,6 +613,17 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .mark-card h3 { margin: 0 0 6px; font: 600 1.3rem var(--serif); }
 .mark-card .mark-text { margin: 0; font: italic 1rem/1.45 var(--serif); }
 .mark-card .mark-when { margin: 10px 0 0; font-size: .8rem; color: var(--parchment-dim); font-family: var(--sans); }
+/* Your figure (ledger.ts figurePicker): the Stranger and everyone beaten, one chosen. */
+.figure-row { list-style: none; margin: 6px 0 4px; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 8px; }
+.figure { display: grid; justify-items: center; gap: 4px; width: 76px; text-align: center; font-family: var(--sans); font-size: .8rem; color: var(--parchment-dim); }
+.figure .portrait { width: 60px; height: 60px; background-color: #3a332c; transition: transform .15s; }
+.figure:hover .portrait { transform: scale(1.06); }
+.figure.on { color: var(--parchment-ink); font-weight: 600; }
+.figure.on .portrait { box-shadow: 0 0 0 3px #c9a227, 0 0 12px #c9a22788, 0 3px 8px #0008; }
+.figure-colour p { margin: 6px 0 4px; }
+.figure-colour .segmented { background: transparent; border-color: #0000001f; box-shadow: none; }
+.figure-colour .segmented button { background: #00000008; color: var(--parchment-ink); border-color: #0000001a; font-family: var(--sans); font-size: .85rem; }
+.figure-colour .segmented button.on { background: #8a6a1426; color: var(--parchment-ink); border-color: #8a6a14; font-weight: 700; }
 .ledger-page .dim, .ledger-page .meta.dim, .lv-card .dim, .lv-card .meta.dim { color: var(--parchment-dim); }
 .page-head { display: flex; gap: 16px; align-items: center; margin-bottom: 10px; }
 .page-head .medallion { width: 72px; height: 72px; font-size: 1.6rem; }

@@ -15,7 +15,7 @@ import { fly as launch, flipOver as turnOver, centre, chipDisc, flightColours, d
 import { setResult, curtainCall, type Sitting } from './results.js'
 import { ROOMS, PUPPETS, RETURNED, LOOKS } from '../puppet/cast.js'
 import { Stage, PRIO, DEALER as DEATH, type Prio, type SeatSpot } from '../puppet/stage.js'
-import { markTitle } from './shared.js'
+import { markTitle, avatarPuppet } from './shared.js'
 import { toggleSetting, choiceSetting, PACES, DIALOGUE_LEVELS, DIALOGUE_HINT, LOG_HINT, canLog } from './settings.js'
 
 /**
@@ -166,10 +166,20 @@ export function tableScreen(root: HTMLElement): () => void {
   // ?room=<id> stages this table in another drawn room: a preview of a room
   // before its own cast has puppets (like ?pace, a knob for looking, not a setting)
   const room = ROOMS[new URLSearchParams(location.search).get('room') ?? table.id]
+  // Heads up, the finale's way (the owner): the player is seen in the left
+  // chair, as the figure they chose (Your Account), the one opponent in the
+  // right, Death dealing between them. The finale and the Pyre; an open table
+  // with one opponent picked (more than one plays as normal, unseen).
+  const headsUp = active.seats.length === 1
+  const chairsAll = room ? Object.values(room.data.seats).reduce((a, b) => (b.length > a.length ? b : a), []) : []
+  // a room with its own heads-up chair keeps it; elsewhere the third of its four chairs, across from the player
+  const chairs = headsUp ? (room?.data.seats['1'] ? undefined : [2]) : active.chairs
+  const youAt: [number, number, number] | null = room?.data.you ?? (headsUp ? chairsAll[1] ?? null : null)
   // an open table: in the chairs the player put them in
-  const staged = !!room && Stage.fits(room, active.seats.length, active.chairs) && active.seats.every((id) => !!PUPPETS[id])
-  /** The player is drawn in their own chair (the finale): their figure acts out what they do, as the others' do. */
-  const youSeen = staged && !!room?.data.you
+  const staged = !!room && Stage.fits(room, active.seats.length, chairs) && active.seats.every((id) => !!PUPPETS[id])
+  /** The player is drawn in their own chair: their figure acts out what they do, as the others' do (never a tell). */
+  const youSeen = staged && !!youAt
+  const avatar = avatarPuppet(save)
 
   // ------------------------------------------------------------ DOM
 
@@ -323,7 +333,7 @@ export function tableScreen(root: HTMLElement): () => void {
 
   // ------------------------------------------------------------ the figures
 
-  let stage = staged ? new Stage(els.stageCanvas, room!, active.seats.length, active.chairs) : null
+  let stage = staged ? new Stage(els.stageCanvas, room!, active.seats.length, chairs) : null
   let stageReady = false
 
   /** The figures' clips follow the presentation clock's pace (2x at the quickest, half at the slowest). */
@@ -490,7 +500,7 @@ export function tableScreen(root: HTMLElement): () => void {
   /** Who sits in a chair as the stage draws them: the changed figure of someone who came back. */
   const changed = new Map<number, string>()
   function figureAt(seat: number): string {
-    if (seat === HUMAN_SEAT) return youSeen ? room?.data.youAs ?? 'stranger' : ''
+    if (seat === HUMAN_SEAT) return youSeen ? avatar : ''
     const id = changed.get(seat) ?? seatIds[seat] ?? ''
     // a look the player has earned for them (Holmes's deerstalker), worn from the next sitting on;
     // at an open table the player picked the look (the second looks sit as players of their own)
@@ -613,6 +623,8 @@ export function tableScreen(root: HTMLElement): () => void {
     }
     layoutStage()
     stage.accent = settings.accent
+    stage.youAt = youSeen ? youAt : null
+    stage.youAs = avatar
     stage.load(seatIds.map((id, i) => (i > 0 && id ? figureAt(i) : id))).catch(unstage)
     ;(window as any).__stage = stage
   }

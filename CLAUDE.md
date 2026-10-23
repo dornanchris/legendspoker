@@ -310,6 +310,18 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   halves seated, and with two chairs left empty): banners and chip stacks,
   tells held as poses with each look's own cues, the Menu (quitting ends the
   open sitting as a loss), the Dialogue setting.
+  **Heads up, the player is SEEN** (the owner): pick ONE opponent and the
+  table is laid out the finale's way, the player's figure in the left chair
+  (the room's second of four), the opponent across in the third, Death
+  dealing; the Pyre the same (an easter egg); two or more opponents play as
+  before. `headsUp` in table.ts, `youAt`/`youAs` on the Stage (the finale's
+  `you` from its room.json, or the heads-up chair). **Your figure** is chosen
+  in the Ledger's Your Account (`figurePicker`, `settings.avatar`): the
+  Stranger in the player's colour, or anyone beaten, Death (as
+  `death_player`) once the finale is won (`avatarChoices`/`avatarPuppet` in
+  shared.ts; a choice no longer earned falls back to the Stranger). It shows
+  wherever the player is seen, the finale included; it acts out the player's
+  actions and random fidgets, never a tell. Presentation only.
 - **Dialogue system:** `src/director.ts` plays the established schema — intro,
   the one plant, pair banter, tiered player-directed lines, Death's asides,
   arrivals, heads-up, bust-outs, defeat — plus Holmes's `reads_you` (lines
@@ -658,7 +670,9 @@ dialogue replaced hers line for line; draft like the rest. **He is built**
 (`#/puppet/cheshire_cat`, 24 clips), redrawn gothic the Wolf Man's way (his
 Cerberus-style sheets are in `sources/old_style/`), with the big win and the
 crushing loss; vanished parts are drawn as plain white, the grin left alone is
-placed where his mouth is at rest, and he talks through the grin. He
+placed where his mouth is at rest, warped onto his three-quarter face's own
+mouth line (`grin.py`, the owner: the face was at an angle, the grin level),
+and he talks through the grin. He
 PHASES out and back in (the owner: like a figure leaving its chair), his
 `fade` clip's swaps fading 0.9 s each, back to back (the owner: no sitting
 in the half-vanished drawing between them), the grin held clear of

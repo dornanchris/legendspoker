@@ -86,6 +86,13 @@ export type Settings = {
   volume: number
   /** The player's colour (web/puppet/accent.ts): presentation only. */
   accent: string
+  /**
+   * Who the player is drawn as where they are seen (a heads-up table, the
+   * finale): 'stranger', or anyone they have beaten (the design doc: avatars
+   * are unlocked by beating them; Death once the finale is won). Presentation
+   * only: the figure acts out the player's own actions, never a tell.
+   */
+  avatar: string
 }
 
 export type TableRecord = {
@@ -194,6 +201,7 @@ export const defaultSettings = (): Settings => ({
   sound: true,
   volume: 0.8,
   accent: 'teal',
+  avatar: 'stranger',
 })
 
 export const newTableRecord = (): TableRecord => ({

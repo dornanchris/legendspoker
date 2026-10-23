@@ -113,6 +113,13 @@ export class Stage {
   still = false
   /** The player's colour (web/puppet/accent.ts), for the figure that is them: set before load. */
   accent: string | undefined
+  /**
+   * Where the player is seen, [centre x, scale, sink], and as whom: the room's
+   * own (the finale's `you`), or a heads-up sitting's (table.ts); null where
+   * the player is not drawn. Set before load.
+   */
+  youAt: [number, number, number] | null
+  youAs: string
   onReady: (() => void) | null = null
   /** What each frame costs (update + draw, ms), for measuring (the IK prototype's test page). */
   readonly stats = { frames: 0, total: 0, max: 0 }
@@ -120,6 +127,8 @@ export class Stage {
   constructor(readonly canvas: HTMLCanvasElement, readonly room: RoomEntry, readonly seatCount: number, chairs?: number[]) {
     this.ctx = canvas.getContext('2d')!
     this.chairs = Stage.chairsFor(room, seatCount, chairs)!
+    this.youAt = room.data.you ?? null
+    this.youAs = room.data.youAs ?? 'stranger'
     const r = room.data.rim
     const p = new Path2D()
     const xs = r.y.map((_, i) => r.x0 + i * r.step)
@@ -151,7 +160,7 @@ export class Stage {
 
   /**
    * Load the room and whoever is seated. Index 0 is the player, who has no
-   * figure except where the room seats them (the finale's `you`).
+   * figure except where they are seen (`youAt`: the finale, a heads-up table).
    */
   async load(seatIds: (string | null)[]): Promise<void> {
     const base = this.room.base
@@ -167,7 +176,7 @@ export class Stage {
     const d = this.room.data
     await Promise.all([
       this.seat(DEALER, d.dealerId ?? 'death'),
-      d.you ? this.seat(0, d.youAs ?? 'stranger') : null,
+      this.youAt ? this.seat(0, this.youAs) : null,
       ...seatIds.map((id, i) => (i > 0 && id ? this.seat(i, this.figure(id)) : null)),
     ])
     if (!this.alive) return
@@ -198,7 +207,7 @@ export class Stage {
     if (!this.alive) return
     player.face.still = this.still
     const d = this.room.data
-    const [x, sc, sink] = seat === DEALER ? d.dealer : seat === 0 ? d.you! : this.chairs[seat - 1]
+    const [x, sc, sink] = seat === DEALER ? d.dealer : seat === 0 ? this.youAt! : this.chairs[seat - 1]
     const [w] = this.room.data.design
     this.actors.set(seat, {
       id, player, x, scale: sc, flip: x > w / 2 + 1, line: this.rimAt(x) + sink,
@@ -347,7 +356,7 @@ export class Stage {
       })
     }
     spot(DEALER, d.dealer)
-    if (d.you) spot(0, d.you)
+    if (this.youAt) spot(0, this.youAt)
     this.chairs.forEach((s, i) => spot(i + 1, s))
     const dl = this.rimAt(d.dealer[0]) + d.dealer[2]
     return { k, seats, deck: { x: ox + (d.dealer[0] + d.deck[0]) * k, y: oy + (dl + d.deck[1]) * k } }

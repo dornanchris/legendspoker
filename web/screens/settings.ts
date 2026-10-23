@@ -74,20 +74,7 @@ export function settingsScreen(root: HTMLElement): void {
     sound.chips(3)
   })
 
-  // the player's colour: free to choose, so their own figure is a little their own
-  const colour = h('div', { class: 'segmented swatches', role: 'radiogroup', 'aria-label': 'Your colour' },
-    (Object.entries(ACCENTS) as [AccentName, (typeof ACCENTS)[AccentName]][]).map(([v, a]) => {
-      const on = (s.accent ?? 'teal') === v
-      const b = h('button', { type: 'button', role: 'radio', 'aria-checked': String(on), class: on ? 'on' : '', title: a.label },
-        h('i', { class: 'swatch', style: `background:${a.swatch}` }), a.label)
-      b.addEventListener('click', () => {
-        store.update((x) => { x.settings.accent = v })
-        for (const o of colour.children) { o.classList.remove('on'); o.setAttribute('aria-checked', 'false') }
-        b.classList.add('on')
-        b.setAttribute('aria-checked', 'true')
-      })
-      return b
-    }))
+  const colour = colourPicker()
 
   const nameInput = h('input', { type: 'text', maxlength: '24', value: save.player?.name ?? '', 'aria-label': 'Your name' }) as HTMLInputElement
   nameInput.addEventListener('change', () => {
@@ -139,4 +126,24 @@ export function aboutScreen(root: HTMLElement): void {
         h('li', null, h('b', null, 'poker-ts'), ' — the rules of the table. © 2021 Claudijo Borovic, MIT licence.'),
         h('li', null, h('b', null, 'pokersolver'), ' — hand evaluation. © 2016 James Simpson and GoldFire Studios, Inc., MIT licence.')),
       h('p', { class: 'dim small' }, 'Full licence texts ship in node_modules/poker-ts/LICENSE and node_modules/pokersolver/LICENSE.md.'))))
+}
+
+/** The player's colour: free to choose, so their own figure is a little their own (Settings, and Your Account beside the figure). */
+export function colourPicker(onPick?: () => void): HTMLElement {
+  const s = store.get().settings
+  const colour = h('div', { class: 'segmented swatches', role: 'radiogroup', 'aria-label': 'Your colour' },
+    (Object.entries(ACCENTS) as [AccentName, (typeof ACCENTS)[AccentName]][]).map(([v, a]) => {
+      const on = (s.accent ?? 'teal') === v
+      const b = h('button', { type: 'button', role: 'radio', 'aria-checked': String(on), class: on ? 'on' : '', title: a.label },
+        h('i', { class: 'swatch', style: `background:${a.swatch}` }), a.label)
+      b.addEventListener('click', () => {
+        store.update((x) => { x.settings.accent = v })
+        for (const o of colour.children) { o.classList.remove('on'); o.setAttribute('aria-checked', 'false') }
+        b.classList.add('on')
+        b.setAttribute('aria-checked', 'true')
+        onPick?.()
+      })
+      return b
+    }))
+  return colour
 }

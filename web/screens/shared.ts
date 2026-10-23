@@ -44,6 +44,25 @@ export function portraitUrl(id: string, worn = true): string | null {
   return art ? `${art.base}portrait.webp` : null
 }
 
+/**
+ * The figures the player may be drawn as: the Stranger, and everyone they have
+ * beaten who has a puppet (Death as a player, once beaten). Character ids,
+ * 'stranger' first.
+ */
+export function avatarChoices(save = store.get()): string[] {
+  const beaten = Object.keys(CHARACTERS).filter((id) => save.characters[id]?.beaten && PUPPETS[avatarPuppetOf(id)])
+  return ['stranger', ...beaten]
+}
+
+/** The puppet a choice is drawn as (Death sits as a player, not as the dealer). */
+export const avatarPuppetOf = (id: string): string => (id === 'death' ? 'death_player' : id)
+
+/** The puppet the player is drawn as: their choice while it still stands, else the Stranger. */
+export function avatarPuppet(save = store.get()): string {
+  const id = save.settings.avatar ?? 'stranger'
+  return avatarChoices(save).includes(id) ? avatarPuppetOf(id) : 'stranger'
+}
+
 /** Their drawn head in a round frame, or their medallion where there is no art (or nothing may be shown yet). */
 export function face(c: CharacterData | undefined, state: 'unmet' | 'met' | 'beaten' | 'hidden' = 'met', worn = true): HTMLElement {
   const url = c && state !== 'hidden' ? portraitUrl(c.id, worn) : null

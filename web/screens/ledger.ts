@@ -5,7 +5,8 @@ import type { CharacterRecord } from '../../src/save.js'
 import type { Card } from '../../src/equity.js'
 import * as store from '../store.js'
 import { h, go, formatDate, formatChips, ordinal } from '../dom.js'
-import { header, pronoun, face } from './shared.js'
+import { header, pronoun, face, portraitUrl, avatarChoices, avatarPuppet, avatarPuppetOf } from './shared.js'
+import { colourPicker } from './settings.js'
 import { cardEl } from './table.js'
 import { text } from './map.js'
 import { markArt } from './mark-art.js'
@@ -422,6 +423,7 @@ function account(book: HTMLElement) {
     h('header', { class: 'page-head' }, h('div', null,
       h('h2', null, save.player!.name),
       h('p', { class: 'meta' }, `Signed the invitation ${formatDate(save.player!.invitedAt)}.`))),
+    h('h3', null, 'Your figure'), figurePicker(),
     h('h3', null, 'Echoes of your journey'), echoes,
     h('h3', null, 'The account'),
     h('dl', { class: 'record' }, rows.flatMap(([k, v]) => [h('dt', null, k), h('dd', null, v)])),
@@ -430,6 +432,37 @@ function account(book: HTMLElement) {
       h('p', null, `${cap(RANKINGS[best.rank])}${TABLE_BY_ID[best.table] ? `, at ${TABLE_BY_ID[best.table].name}` : ''}.`),
       h('div', { class: 'cards-row' }, best.cards.map((c: Card) => cardEl(c, 'small')))) : null,
   ))
+}
+
+/**
+ * Who the player sits as where they are seen (a heads-up table, the last one):
+ * the Stranger, or anyone they have beaten (the design doc: avatars are won by
+ * beating them). The Stranger wears the player's colour.
+ */
+function figurePicker(): HTMLElement {
+  const choices = avatarChoices()
+  const name = (id: string) => (id === 'stranger' ? 'The Stranger' : CHARACTERS[id]?.short ?? id)
+  const colour = h('div', { class: 'figure-colour' },
+    h('p', { class: 'dim' }, 'The Stranger’s scarf, hat band and cuffs:'), colourPicker())
+  const row = h('ul', { class: 'figure-row', role: 'radiogroup', 'aria-label': 'Your figure' })
+  const draw = () => {
+    const now = avatarPuppet()
+    colour.hidden = now !== 'stranger'
+    row.replaceChildren(...choices.map((id) => {
+      const on = avatarPuppetOf(id) === now
+      const url = portraitUrl(avatarPuppetOf(id), false)
+      return h('li', null, h('button', {
+        type: 'button', role: 'radio', 'aria-checked': String(on), class: `plain figure${on ? ' on' : ''}`,
+        onclick: () => { store.update((x) => { x.settings.avatar = id }); draw() },
+      }, h('span', { class: 'portrait', style: url ? `background-image:url(${url})` : '' }), h('span', null, name(id))))
+    }))
+  }
+  draw()
+  return h('div', { class: 'figure-picker' },
+    h('p', { class: 'dim' }, choices.length > 1
+      ? 'Where you are seen, across a heads-up table and at the last one, you sit as this.'
+      : 'Where you are seen, across a heads-up table and at the last one, you sit as the Stranger. Beat someone to sit as them.'),
+    row, colour)
 }
 
 const cap = (s: string) => s.replace(/^a /, '').replace(/^./, (m) => m.toUpperCase())
