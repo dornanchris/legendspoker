@@ -429,6 +429,79 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   font-family: var(--serif); font-size: 1.02rem; line-height: 1.55;
 }
 .ledger-page.wide { grid-column: 1 / -1; }
+/* Swiping through the Invited and the Tour (ledger.ts swiper): a strip of
+   faces to jump with, the page between two arrows, sideways swipes. */
+.ledger-book.tab-invited, .ledger-book.tab-tour { display: flex; flex-direction: column; gap: 6px; }
+.leaf-head { display: flex; justify-content: space-between; align-items: baseline; padding: 0 4px; }
+.leaf-head .count, .leaf-where { margin: 0; color: var(--dim); font-size: .8rem; }
+.leaf-strip {
+  display: flex; gap: 6px; overflow-x: auto; overscroll-behavior-x: contain; padding: 4px 4px 8px;
+  scrollbar-width: none; flex: none; -webkit-overflow-scrolling: touch;
+}
+.leaf-strip::-webkit-scrollbar { display: none; }
+.leaf { flex: none; min-height: 0; padding: 2px; border-radius: 50%; background: none; border: 2px solid transparent; transition: transform .15s; }
+.leaf:hover:not(:disabled) { background: none; }
+.leaf .portrait, .leaf .medallion { width: 40px; height: 40px; font-size: .8rem; }
+.leaf.unmet .portrait { filter: grayscale(.85) brightness(.75); }
+.leaf.on { border-color: var(--gold); transform: scale(1.12); }
+.leaf-room {
+  display: grid; place-items: end start; width: 64px; height: 40px; border-radius: 7px;
+  background-size: cover; background-position: 50% 40%; box-shadow: 0 0 0 1px #c9a22744, 0 3px 8px #0008;
+}
+.tab-tour .leaf { border-radius: 9px; }
+.leaf-room .numeral { font-size: .75rem; color: #fdf3d8; background: #1d1208cc; padding: 0 5px; border-radius: 0 5px 0 6px; }
+.leaf.sealed .leaf-room { filter: grayscale(.9) brightness(.5) blur(1px); }
+.leaf-stage { flex: 1; min-height: 0; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 8px; align-items: stretch; }
+.page-turn {
+  align-self: center; min-height: 0; width: 38px; height: 64px; padding: 0; border-radius: 10px;
+  font: 600 1.8rem/1 var(--serif); color: var(--gold-soft); background: #1d1916; border-color: #c9a22744;
+}
+.page-turn:disabled { opacity: .2; }
+.swipe-page { touch-action: pan-y; overflow-y: auto; }
+.swipe-page.from-right { animation: leaf-right .22s ease-out both; }
+.swipe-page.from-left { animation: leaf-left .22s ease-out both; }
+@keyframes leaf-right { from { opacity: .3; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+@keyframes leaf-left { from { opacity: .3; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
+.page-face .portrait, .page-face .medallion { width: 132px; height: 132px; font-size: 2.4rem; box-shadow: 0 0 0 3px #8a6a14, 0 6px 16px #0006; }
+.page-face.unmet .portrait { filter: grayscale(.85) brightness(.8); }
+.page-face.beaten .portrait { box-shadow: 0 0 0 3px #c9a227, 0 0 18px #c9a22788, 0 6px 16px #0006; }
+.venue-plate {
+  height: 150px; margin: -4px -4px 12px; border-radius: 8px; background-size: cover; background-position: 50% 38%;
+  box-shadow: inset 0 0 0 1px #0003, 0 4px 12px #0004;
+}
+.venue-plate.sealed { filter: grayscale(.7) brightness(.7); }
+.venue-plate.veiled { filter: grayscale(1) brightness(.35) blur(6px); }
+
+/* Marks as entries to open: a seal and a title each, a card on a touch. */
+.marks-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.mark-tile {
+  width: 100%; height: 100%; min-height: 0; display: grid; justify-items: center; gap: 6px; padding: 10px 6px;
+  border-radius: 10px; background: #00000008; border: 1px solid #0000001a; color: var(--parchment-dim); text-align: center;
+}
+.mark-tile:hover:not(:disabled) { background: #8a6a1412; border-color: #8a6a1455; }
+.mark-tile .mark-name { font: 600 .9rem/1.2 var(--serif); }
+.mark-tile.earned { color: var(--parchment-ink); background: #8a6a140f; border-color: #8a6a1444; }
+.mark-seal {
+  display: grid; place-items: center; width: 46px; height: 46px; border-radius: 50%;
+  font: 700 1.25rem/1 var(--serif); color: #fff3d0;
+  background: radial-gradient(circle at 35% 30%, #c94a3a, #8e2b25 60%, #5a1612);
+  box-shadow: 0 0 0 3px #8e2b2533, 0 3px 6px #0005, inset 0 -2px 4px #0005;
+}
+.mark-tile.open .mark-seal, .mark-card.open .mark-seal { background: none; color: #00000044; box-shadow: inset 0 0 0 2px #00000026; }
+.mark-tile.hidden .mark-seal, .mark-card.hidden .mark-seal { background: none; color: #00000033; box-shadow: inset 0 0 0 2px #0000001a; border: 1px dashed #0000002a; }
+.mark-detail { position: absolute; inset: 0; z-index: 30; display: grid; place-items: center; background: #0b0a09b0; padding: 16px; }
+.mark-detail[hidden] { display: none; }
+.ledger-book { position: relative; }
+.mark-card {
+  position: relative; width: min(420px, 100%); padding: 22px 22px 18px; border-radius: 12px; text-align: center;
+  background: var(--parchment); color: var(--parchment-ink); border: 1px solid var(--parchment-edge); box-shadow: 0 16px 40px #000c;
+  animation: reveal .18s ease-out both;
+}
+.mark-card .mark-close { position: absolute; top: 8px; right: 8px; color: var(--parchment-dim); }
+.mark-seal.big { width: 72px; height: 72px; font-size: 2rem; margin: 0 auto 8px; }
+.mark-card h3 { margin: 0 0 6px; font: 600 1.3rem var(--serif); }
+.mark-card .mark-text { margin: 0; font: italic 1rem/1.45 var(--serif); }
+.mark-card .mark-when { margin: 10px 0 0; font-size: .8rem; color: var(--parchment-dim); font-family: var(--sans); }
 .ledger-page .dim, .ledger-page .meta.dim { color: var(--parchment-dim); }
 .page-head { display: flex; gap: 16px; align-items: center; margin-bottom: 10px; }
 .page-head .medallion { width: 72px; height: 72px; font-size: 1.6rem; }
@@ -1041,6 +1114,13 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
   .felt.staged .you { padding: 4px 10px; gap: 10px; bottom: calc(4px + var(--safe-b, 0px)); }
   .felt.staged .controls { bottom: calc(4px + var(--safe-b, 0px)); right: calc(8px + var(--safe-r, 0px)); }
   .page-head .medallion { width: 56px; height: 56px; font-size: 1.3rem; }
+  .page-face .portrait, .page-face .medallion { width: 88px; height: 88px; }
+  .venue-plate { height: 96px; }
+  .leaf .portrait, .leaf .medallion { width: 34px; height: 34px; }
+  .leaf-room { width: 54px; height: 34px; }
+  .page-turn { width: 30px; height: 52px; }
+  .marks-grid { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 7px; }
+  .mark-seal { width: 38px; height: 38px; font-size: 1.05rem; }
   .ledger-page { padding: 12px 18px 18px; }
   .title-block h1 { font-size: clamp(2rem, 5.4vw, 3.4rem); }
   .menu-item { padding: .5em 1em; }

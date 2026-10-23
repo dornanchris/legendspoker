@@ -5,7 +5,7 @@ import type { CharacterRecord } from '../../src/save.js'
 import type { Card } from '../../src/equity.js'
 import * as store from '../store.js'
 import { h, go, formatDate, formatChips, ordinal } from '../dom.js'
-import { header, medallion, pronoun } from './shared.js'
+import { header, pronoun, face } from './shared.js'
 import { cardEl } from './table.js'
 import { text } from './map.js'
 
@@ -54,9 +54,9 @@ function visibility(c: CharacterData): Visibility {
   return state === 'sealed' ? 'hidden' : 'unmet'
 }
 
-export function ledgerScreen(root: HTMLElement, params: string[]): void {
+export function ledgerScreen(root: HTMLElement, params: string[]): () => void {
   const save = store.get()
-  if (!save.player) { go('/invite'); return }
+  if (!save.player) { go('/invite'); return () => {} }
   const tab = (TABS.some(([t]) => t === params[0]) ? params[0] : 'invited') as Tab
   const id = params[1]
 
@@ -66,21 +66,86 @@ export function ledgerScreen(root: HTMLElement, params: string[]): void {
       onclick: () => go(`/ledger/${t}`),
     }, label)))
 
-  const book = h('div', { class: 'ledger-book' })
-  if (tab === 'invited') invited(book, id)
-  else if (tab === 'tour') tourTab(book, id)
-  else if (tab === 'marks') marksTab(book)
+  const book = h('div', { class: `ledger-book tab-${tab}` })
+  let done: (() => void) | void = undefined
+  if (tab === 'invited') done = invited(book, id)
+  else if (tab === 'tour') done = tourTab(book, id)
+  else if (tab === 'marks') marksTab(book, id)
   else if (tab === 'account') account(book)
   else rules(book)
 
   root.append(h('div', { class: 'screen ledger-screen' },
     header('The Ledger', '/', h('span', { class: 'ledger-sub' }, 'Death’s record of the Invitational')),
     nav, book))
+  return () => { if (done) done() }
+}
+
+// ---------------------------------------------------------------- swiping through pages
+
+type Leaf = { id: string; thumb: HTMLElement; label: string; cls?: string }
+
+/**
+ * Pages to swipe through, left and right (the owner: no scrolling index down
+ * the side): a strip of faces along the top to jump with, the page under it,
+ * arrows either side of it, the arrow keys on a computer. Turning a page
+ * keeps the address in step (#/ledger/<tab>/<id>) without rebuilding the screen.
+ */
+function swiper(book: HTMLElement, tab: string, leaves: Leaf[], start: string | undefined,
+  render: (page: HTMLElement, id: string) => void, count: string): () => void {
+  let at = Math.max(0, leaves.findIndex((l) => l.id === start))
+  const strip = h('div', { class: 'leaf-strip', role: 'tablist' })
+  const buttons = leaves.map((l, i) => h('button', {
+    type: 'button', class: `leaf ${l.cls ?? ''}`, title: l.label, 'aria-label': l.label, onclick: () => show(i),
+  }, l.thumb))
+  strip.append(...buttons)
+  const page = h('article', { class: 'ledger-page swipe-page' })
+  const prev = h('button', { type: 'button', class: 'page-turn prev', 'aria-label': 'Previous', onclick: () => show(at - 1) }, '‹')
+  const next = h('button', { type: 'button', class: 'page-turn next', 'aria-label': 'Next', onclick: () => show(at + 1) }, '›')
+  const where = h('span', { class: 'leaf-where' })
+  book.append(h('div', { class: 'leaf-head' }, h('p', { class: 'count' }, count), where), strip,
+    h('div', { class: 'leaf-stage' }, prev, page, next))
+
+  function show(i: number, first = false) {
+    if (!leaves.length) return
+    const n = Math.max(0, Math.min(leaves.length - 1, i))
+    if (n === at && !first) return
+    const dir = n > at ? 'from-right' : 'from-left'
+    at = n
+    page.replaceChildren()
+    render(page, leaves[at].id)
+    page.scrollTop = 0
+    if (!first) { page.classList.remove('from-right', 'from-left'); void page.offsetWidth; page.classList.add(dir) }
+    buttons.forEach((b, k) => { b.classList.toggle('on', k === at); b.setAttribute('aria-selected', String(k === at)) })
+    buttons[at].scrollIntoView({ inline: 'center', block: 'nearest', behavior: first ? 'auto' : 'smooth' })
+    prev.disabled = at === 0
+    next.disabled = at === leaves.length - 1
+    where.textContent = `${at + 1} of ${leaves.length}`
+    history.replaceState(null, '', `#/ledger/${tab}/${encodeURIComponent(leaves[at].id)}`)
+  }
+
+  // a swipe: mostly sideways, far enough; up and down still scroll the page
+  let x0 = 0, y0 = 0, down = false
+  page.addEventListener('pointerdown', (e) => { down = true; x0 = e.clientX; y0 = e.clientY })
+  page.addEventListener('pointerup', (e) => {
+    if (!down) return
+    down = false
+    const dx = e.clientX - x0, dy = e.clientY - y0
+    if (Math.abs(dx) > 50 && Math.abs(dx) > 1.6 * Math.abs(dy)) show(at + (dx < 0 ? 1 : -1))
+  })
+  page.addEventListener('pointercancel', () => { down = false })
+  const key = (e: KeyboardEvent) => {
+    if (e.key === 'ArrowRight') show(at + 1)
+    else if (e.key === 'ArrowLeft') show(at - 1)
+  }
+  window.addEventListener('keydown', key)
+  at = Math.max(0, leaves.findIndex((l) => l.id === start))
+  requestAnimationFrame(() => show(at, true))
+  return () => window.removeEventListener('keydown', key)
 }
 
 // ---------------------------------------------------------------- the invited
 
-function invited(book: HTMLElement, selected?: string) {
+function invited(book: HTMLElement, selected?: string): () => void {
   const save = store.get()
   const groups: { table: TableData | null; title?: string; ids: string[] }[] = TOUR.map((t) => ({ table: t, ids: fullCast(t) }))
   groups.push({ table: null, ids: ['death'] })
@@ -92,31 +157,15 @@ function invited(book: HTMLElement, selected?: string) {
   const current = selected && CHARACTERS[selected] && visibility(CHARACTERS[selected]) !== 'hidden'
     ? selected : firstVisible
 
-  const index = h('aside', { class: 'ledger-index' },
-    h('p', { class: 'count' }, `${beatenCount(save)} of ${ROSTER.length} beaten`),
-    groups.map((g) => {
-      const sealed = g.table ? tableState(save, g.table.id) === 'sealed' : false
-      const shown = g.ids.filter((id) => visibility(CHARACTERS[id]) !== 'hidden')
-      return h('section', { class: 'index-group' },
-        h('h4', null, g.title ?? (g.table ? (sealed ? 'A sealed table' : g.table.name) : 'The House')),
-        h('ul', null,
-          shown.map((id) => {
-            const c = CHARACTERS[id]
-            const v = visibility(c)
-            return h('li', null, h('button', {
-              type: 'button', class: `index-entry ${v}${id === current ? ' on' : ''}`,
-              onclick: () => go(`/ledger/invited/${id}`),
-            }, medallion(c, v === 'hidden' ? 'hidden' : v), h('span', null, c.short),
-              v === 'beaten' ? h('span', { class: 'tick', title: 'Beaten' }, '✓') : null))
-          }),
-          // Only the chairs that are there from the start: counting a late
-          // arrival would give the arrival away.
-          sealed ? h('li', { class: 'more' }, `${g.table!.seats.length} unknown`) : null))
+  const leaves: Leaf[] = groups.flatMap((g) => g.ids
+    .filter((id) => visibility(CHARACTERS[id]) !== 'hidden')
+    .map((id) => {
+      const c = CHARACTERS[id]
+      const v = visibility(c)
+      return { id, label: c.short, cls: v, thumb: face(c, v) }
     }))
-
-  const page = h('article', { class: 'ledger-page' })
-  if (current) characterPage(page, CHARACTERS[current])
-  book.append(index, page)
+  return swiper(book, 'invited', leaves, current, (page, id) => characterPage(page, CHARACTERS[id]),
+    `${beatenCount(save)} of ${ROSTER.length} beaten`)
 }
 
 function characterPage(page: HTMLElement, c: CharacterData) {
@@ -130,7 +179,7 @@ function characterPage(page: HTMLElement, c: CharacterData) {
 
   page.append(
     h('header', { class: 'page-head' },
-      medallion(c, v === 'hidden' ? 'hidden' : v),
+      h('div', { class: `page-face ${v}` }, face(c, v === 'hidden' ? 'hidden' : v)),
       h('div', null,
         h('h2', null, c.name),
         text(c.epithet) ? h('p', { class: 'epithet' }, c.epithet) : null,
@@ -210,27 +259,24 @@ function tendencies(r: CharacterRecord, c: CharacterData): string[] {
 
 // ---------------------------------------------------------------- the tour
 
-function tourTab(book: HTMLElement, selected?: string) {
+function tourTab(book: HTMLElement, selected?: string): () => void {
   const save = store.get()
   const visible = TABLES.filter((t) => isVisible(save, t.id))
   const current = selected && TABLE_BY_ID[selected] && isVisible(save, selected) ? selected : visible[0]?.id
-
-  const index = h('aside', { class: 'ledger-index' },
-    h('p', { class: 'count' }, `${TOUR.filter((t) => save.tables[t.id]?.cleared).length} of ${TOUR.length} tables cleared`),
-    h('ul', null, visible.map((t) => {
-      const st = tableState(save, t.id)
-      return h('li', null, h('button', {
-        type: 'button', class: `index-entry ${st}${t.id === current ? ' on' : ''}`,
-        onclick: () => go(`/ledger/tour/${t.id}`),
-      }, h('span', { class: 'numeral' }, String(t.position)),
-        h('span', null, st === 'sealed' && t.kind !== 'tour' ? 'Sealed' : t.name),
-        st === 'cleared' ? h('span', { class: 'tick' }, '✓') : null))
-    })))
-
-  const page = h('article', { class: 'ledger-page' })
-  if (current) venuePage(page, TABLE_BY_ID[current])
-  book.append(index, page)
+  const leaves: Leaf[] = visible.map((t) => {
+    const st = tableState(save, t.id)
+    return {
+      id: t.id, cls: st, label: st === 'sealed' && t.kind !== 'tour' ? 'Sealed' : t.name,
+      thumb: h('span', { class: 'leaf-room', style: `background-image:url(${roomImage(t.id)})` },
+        h('span', { class: 'numeral' }, t.kind === 'tour' ? String(t.position) : t.kind === 'finale' ? '✦' : t.kind === 'hidden' ? '☼' : '◆')),
+    }
+  })
+  return swiper(book, 'tour', leaves, current, (page, id) => venuePage(page, TABLE_BY_ID[id]),
+    `${TOUR.filter((t) => save.tables[t.id]?.cleared).length} of ${TOUR.length} tables cleared`)
 }
+
+/** A table's painted room (web/art/rooms/<id>/backdrop.webp): every table has one. */
+const roomImage = (id: string) => `art/rooms/${id}/backdrop.webp`
 
 function venuePage(page: HTMLElement, t: TableData) {
   const save = store.get()
@@ -238,6 +284,7 @@ function venuePage(page: HTMLElement, t: TableData) {
   const rec = save.tables[t.id]
   const sealedBeyond = st === 'sealed' && t.kind !== 'tour'
   page.append(
+    h('div', { class: `venue-plate ${st}${sealedBeyond ? ' veiled' : ''}`, style: `background-image:url(${roomImage(t.id)})`, role: 'img', 'aria-label': sealedBeyond ? 'A sealed room' : `The room at ${t.name}` }),
     h('header', { class: 'page-head venue' },
       h('div', null,
         h('p', { class: 'kicker' }, t.kind === 'tour' ? `Table ${t.position} of 8` : t.kind === 'champions' ? 'Beyond the tour' : t.kind === 'hidden' ? 'Off the map' : 'The end of the line'),
@@ -258,7 +305,7 @@ function venuePage(page: HTMLElement, t: TableData) {
       const v = visibility(c)
       return h('li', { class: v },
         h('button', { type: 'button', class: 'plain', disabled: v === 'hidden', onclick: () => go(`/ledger/invited/${id}`) },
-          medallion(c, v === 'hidden' ? 'hidden' : v),
+          face(c, v === 'hidden' ? 'hidden' : v),
           h('span', null, v === 'hidden' ? (c.arrives ? 'An empty chair' : 'Unknown') : c.short)))
     })))
 
@@ -278,28 +325,50 @@ function venuePage(page: HTMLElement, t: TableData) {
 
 // ---------------------------------------------------------------- marks
 
-function marksTab(book: HTMLElement) {
+function marksTab(book: HTMLElement, selected?: string) {
   const save = store.get()
   // A secret mark is not in the book, or in its total, until it is written.
   const listed = MARKS.filter((m) => !m.secret || save.marks[m.id])
   const earned = listed.filter((m) => save.marks[m.id])
-  const page = h('article', { class: 'ledger-page wide' },
+  const detail = h('div', { class: 'mark-detail', hidden: true, role: 'dialog', 'aria-modal': 'true' })
+  const close = () => { detail.hidden = true; history.replaceState(null, '', '#/ledger/marks') }
+  detail.addEventListener('click', (e) => { if (e.target === detail) close() })
+
+  // A mark is an entry to open (the owner: clickable achievements): its seal
+  // on the grid, and what it says, when and where, on a card.
+  function open(id: string) {
+    const m = MARKS.find((x) => x.id === id)
+    if (!m || (m.secret && !save.marks[m.id])) return
+    const e = save.marks[m.id]
+    const where = e?.table ? TABLE_BY_ID[e.table]?.name : null
+    const hidden = !e && m.hidden
+    detail.replaceChildren(h('div', { class: `mark-card ${e ? 'earned' : hidden ? 'hidden' : 'open'}` },
+      h('button', { type: 'button', class: 'ghost small mark-close', 'aria-label': 'Close', onclick: close }, '✕'),
+      h('div', { class: 'mark-seal big' }, e ? m.title[0] : '?'),
+      h('h3', null, hidden ? '— — —' : m.title),
+      h('p', { class: 'mark-text' }, e ? m.text : hidden ? 'An entry not yet written.' : m.hint),
+      e ? h('p', { class: 'mark-when' }, 'Entered ' + [formatDate(e.at), where].filter(Boolean).join(' · '))
+        : h('p', { class: 'mark-when' }, 'Not yet written.')))
+    detail.hidden = false
+    history.replaceState(null, '', `#/ledger/marks/${encodeURIComponent(id)}`)
+    detail.querySelector<HTMLElement>('.mark-close')?.focus()
+  }
+
+  const page = h('article', { class: 'ledger-page wide marks-page' },
     h('header', { class: 'page-head' }, h('div', null,
       h('h2', null, 'Marks'),
       h('p', { class: 'meta' }, `${earned.length} entries written of ${listed.length}.`),
-      h('p', { class: 'dim' }, 'What Death saw fit to write down about you. Not a trophy cabinet: a record.'))),
-    h('ol', { class: 'marks-list' }, listed.map((m) => {
+      h('p', { class: 'dim' }, 'What Death saw fit to write down about you. Not a trophy cabinet: a record. Touch one to read it.'))),
+    // the ones written first: what you have earned leads, what is still to come follows
+    h('ol', { class: 'marks-grid' }, [...earned, ...listed.filter((m) => !save.marks[m.id])].map((m) => {
       const e = save.marks[m.id]
-      if (e) {
-        const where = e.table ? TABLE_BY_ID[e.table]?.name : null
-        return h('li', { class: 'mark earned' },
-          h('b', null, m.title), h('span', { class: 'mark-text' }, m.text),
-          h('small', null, [formatDate(e.at), where].filter(Boolean).join(' · ')))
-      }
-      if (m.hidden) return h('li', { class: 'mark hidden' }, h('b', null, '— — —'), h('span', { class: 'mark-text' }, 'An entry not yet written.'))
-      return h('li', { class: 'mark' }, h('b', null, m.title), h('span', { class: 'mark-text' }, m.hint))
+      const hidden = !e && m.hidden
+      return h('li', null, h('button', {
+        type: 'button', class: `mark-tile ${e ? 'earned' : hidden ? 'hidden' : 'open'}`, onclick: () => open(m.id),
+      }, h('span', { class: 'mark-seal' }, e ? m.title[0] : '?'), h('span', { class: 'mark-name' }, hidden ? '— — —' : m.title)))
     })))
-  book.append(page)
+  book.append(page, detail)
+  if (selected) open(selected)
 }
 
 // ---------------------------------------------------------------- account

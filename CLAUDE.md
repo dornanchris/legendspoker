@@ -343,7 +343,13 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
 - **Respect:** per table, points from pots / showdowns / knockouts, tiers at
   4 / 10 / 18, heads-up with the champion forces tier 2, a win forces tier 3.
   The name flip is always announced (toast + the tier's first line).
-- **The Ledger:** character pages (history, how they play in Death's voice,
+- **The Ledger:** swiped through, not scrolled (the owner): the Invited and the
+  Tour are pages turned left and right (a swipe, the arrows beside the page, the
+  arrow keys), with a strip of faces or rooms along the top to jump with
+  (`swiper` in ledger.ts); each character's page leads with their drawn
+  portrait, each table's with its painted room (veiled while sealed). Marks are
+  a grid of wax seals, written ones first, each opening its entry on a card.
+  Character pages (history, how they play in Death's voice,
   what YOU have seen them do in words, habits noted), venues, account,
   house rules, and **marks** — 49 achievements framed as Death's entries,
   including some for levity (six-nine is "Nice"; the owner's call, and the
