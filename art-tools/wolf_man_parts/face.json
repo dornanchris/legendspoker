@@ -1,5 +1,5 @@
 {
- "note": "The master is the rest pose's own head. Eyes 2-8; mouths 9-18 (muzzle patches: 17 tongue lolling, 18 growling). The ear pieces 20-21, head 1 and the front head 19 are unused: his ears move in whole-figure frames.",
+ "note": "The master is the rest pose's own head. Eyes 2-8; mouths 9-18 (muzzle patches: 17 tongue lolling, 18 growling). The ear pieces 20-21, head 1 and the front head 19 are unused: his ears move in whole-figure frames. Mouths are refitted by the snout (refit.py: the matcher had them at five sizes, a second nose and whisker dots beside his own); the mouth region stays off the nose and whisker pad and paints his own lip line out under each patch (fill). m and l use the rest mouth (9): the sheet's 14 and 16 did not lie on his lip line.",
  "master": "wolf_man_parts/wolf_man_face/wolf_man_master.png",
  "pieces": "wolf_man_parts/wolf_man_face/wolf_man_face_%02d.png",
  "layers": {
@@ -18,9 +18,9 @@
    "ee": 11,
    "oh": 12,
    "oo": 13,
-   "m": 14,
+   "m": 9,
    "f": 15,
-   "l": 16,
+   "l": 9,
    "happy": 17,
    "growl": 18
   }
@@ -50,21 +50,84 @@
    "keep": [
     [
      290,
-     185
+     200
+    ],
+    [
+     336,
+     200
+    ],
+    [
+     344,
+     211
+    ],
+    [
+     376,
+     220
+    ],
+    [
+     386,
+     219
+    ],
+    [
+     386,
+     214
+    ],
+    [
+     400,
+     222
     ],
     [
      420,
-     185
+     222
     ],
     [
      420,
-     250
+     262
     ],
     [
      290,
-     250
+     262
     ]
-   ]
+   ],
+   "fill": [
+    [
+     [
+      308,
+      202
+     ],
+     [
+      330,
+      204
+     ],
+     [
+      360,
+      214
+     ],
+     [
+      388,
+      221
+     ],
+     [
+      388,
+      232
+     ],
+     [
+      360,
+      228
+     ],
+     [
+      330,
+      218
+     ],
+     [
+      308,
+      216
+     ]
+    ]
+   ],
+   "match": false,
+   "outline": 2,
+   "fade": 2
   }
  }
 }
