@@ -193,7 +193,7 @@ export class PuppetPlayer {
           adv -= pause
         }
         // the hold spent, the pose snaps back
-        if (hold && p.held >= hold[1] && p.t >= hold[0]) adv *= SNAP
+        if (hold && p.held >= hold[1] && p.t >= hold[0]) adv *= p.clip.snap ?? SNAP
         p.t += adv
         if (p.t >= p.clip.duration && p.loop) { p.t %= p.clip.duration; p.held = 0 }
       }

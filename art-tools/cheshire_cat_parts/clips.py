@@ -11,12 +11,14 @@ rig = json.load(open(R + 'rig.json')); spec = json.load(open(K + 'pose_rig.json'
 kidd = json.load(open(ROOT + 'web/art/kidd/anim.json'))
 N = None
 BODY = ['torso', 'torso_over', 'arm_near', 'arm_far', 'upper_near', 'upper_far']
-def frame(name, dur, t_in, t_out, note, lead=1.5, seq=None):
+def frame(name, dur, t_in, t_out, note, lead=1.5, seq=None, fade=None):
     """One whole-figure frame from t_in to t_out; `seq` swaps further frames in
-    between ([[t, name], ...]), for a tell told in stages."""
-    sw = {s: [[t_in, '-'], [t_out, N]] for s in BODY}
-    sw['frame'] = [[t_in, name]] + (seq or []) + [[t_out, N]]
-    sw['head'] = [[t_in, '-'], [t_out, N]]
+    between ([[t, name], ...]), for a tell told in stages. With `fade`, every
+    swap fades over that many seconds instead of cutting (clip.ts)."""
+    f = lambda k: k + [fade] if fade else k
+    sw = {s: [f([t_in, '-']), f([t_out, N])] for s in BODY}
+    sw['frame'] = [f([t_in, name])] + [f(list(k)) for k in seq or []] + [f([t_out, N])]
+    sw['head'] = [f([t_in, '-']), f([t_out, N])]
     for n in [name] + [f for _, f in seq or []]:
         assert rig['frames'][n] is None
     tracks = {'torso': {'y': [[0, 0], [t_in, lead, 'in'], [t_in + 0.12, 0, 'out'], [t_out, 0],
@@ -33,7 +35,8 @@ C['show'] = frame('show', 1.8, 0.2, 1.4, 'A paw turns palm up (the game turns th
 C['win_big'] = frame('win_big', 2.4, 0.2, 2.0, 'BEAT: a big pot won: both front paws thrown up, the grin bigger than ever.', lead=-2)
 C['fade'] = frame('fade', 4.0, 0.2, 3.5, 'TELL: fades away tail first (tail and body to mid-chest gone), '
                   'then only the grin is left, then the cat comes back, grin first (Carroll\'s order).',
-                  lead=0, seq=[[1.4, 'grin_only'], [2.8, 'fade']])
+                  lead=0, seq=[[1.4, 'grin_only'], [2.8, 'fade']], fade=0.5)
+C['fade']['snap'] = 1   # he phases back in at his own pace: not snapped back like the other gestures
 C['drift'] = frame('drift', 2.4, 0.25, 1.9, 'IDLE (decoy for the fade): his head drifts a little way off his shoulders, and back.', lead=0)
 C['blink'] = frame('blink', 1.8, 0.15, 0.85, 'TELL: blinks one eye (the drawn wink), then the other: the sheets drew no '
                    'far-eye wink, so the second is a whole blink on the rest pose.', lead=0)

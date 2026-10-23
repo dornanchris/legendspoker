@@ -658,7 +658,11 @@ dialogue replaced hers line for line; draft like the rest. **He is built**
 (`#/puppet/cheshire_cat`, 24 clips), redrawn gothic the Wolf Man's way (his
 Cerberus-style sheets are in `sources/old_style/`), with the big win and the
 crushing loss; vanished parts are drawn as plain white, the grin left alone is
-placed where his mouth is at rest, and he talks through the grin:
+placed where his mouth is at rest, and he talks through the grin. He
+PHASES out and back in (the owner: like a figure leaving its chair), his
+`fade` clip's swaps fading over half a second each, the grin held clear of
+the fades (tell_hold.py skips a fading swap), and played back at his own pace
+after the hold (`snap: 1`):
 **Baker Street is complete on the real table screen.**
 **Transylvania has begun: Van Helsing is built** (`#/puppet/van_helsing`, 25
 clips, seat 1), redrawn gothic like the rest of his table (his flat-cartoon
@@ -767,7 +771,9 @@ cigar (he did not smoke; FDR's holder is the table's one thing in a mouth).
 **Animation has started: Lincoln (approved by the owner), then Washington.** `web/puppet/` is a generic canvas puppet
 player: the pose is rebuilt from rest every frame and the face and each clip
 add to it, so face and arms are independent and a clip that ends at zero
-returns exactly to rest. Shapes swap, never cross-fade (no mouth ghosts);
+returns exactly to rest. Shapes swap, never cross-fade (no mouth ghosts),
+unless a swap asks to fade (a third number: the seconds it takes; the
+Cheshire Cat phasing out of his chair, clip.ts);
 limbs rotate about elbow and wrist and may only foreshorten, never stretch.
 Lincoln has blinks, gaze, brows, letter-driven speech, idle sway and breath,
 and 26 clips: every poker action, his three tells beside their decoys
