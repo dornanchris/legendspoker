@@ -76,6 +76,9 @@ function betSpot(): HTMLElement {
   return h('div', { class: 'bet empty' }, h('span', { class: 'pile' }), h('span', { class: 'amt' }))
 }
 
+/** A name on a plate begins with a capital ("the Cat" is written for the middle of a sentence). */
+const capital = (s: string) => s[0].toUpperCase() + s.slice(1)
+
 const nudge = (p: Pt, by: number): Pt => ({ x: p.x + (Math.random() * 2 - 1) * by, y: p.y + (Math.random() * 2 - 1) * by })
 
 function readingTime(text: string): number {
@@ -192,6 +195,8 @@ export function tableScreen(root: HTMLElement): () => void {
     narration: h('div', { class: 'narration', 'aria-live': 'polite' }),
     presence: h('div', { class: 'presence' }),
     board: h('div', { class: 'board', 'aria-label': 'Community cards' }),
+    /** The winning hand, named on the felt at a showdown (it was only in the log). */
+    handName: h('div', { class: 'hand-name', 'aria-hidden': 'true' }),
     pot: h('span', { class: 'pot-value' }, '0'),
     potPile: h('span', { class: 'pile', 'aria-hidden': 'true' }),
     dealerName: h('span', { class: 'dealer-name' }, room?.data.dealerName ?? 'Death'),
@@ -248,7 +253,7 @@ export function tableScreen(root: HTMLElement): () => void {
         els.dealer,
         staged ? els.deck : null,
         h('section', { class: 'middle' },
-          els.presence, els.board,
+          els.presence, els.board, els.handName,
           h('div', { class: 'pot' }, els.potPile, h('span', { class: 'label' }, 'POT'), ' ', els.pot)),
         h('section', { class: 'you' },
           h('div', { class: 'you-info' }, h('div', { class: 'you-tag banner' }, els.youBlind, els.youName), els.youPurse),
@@ -541,10 +546,32 @@ export function tableScreen(root: HTMLElement): () => void {
     stage.cue(seat, clip, prio)
   }
 
-  /** Lips for a spoken line (stage directions are not spoken). Cut under fast-forward, like the voice will be. */
-  function speak(seat: number, text: string) {
+  /**
+   * A seat's bubble is centred over its figure, and an end seat's ran off the
+   * edge of a phone, or under the Menu (seat 1 at the White House). Move it
+   * sideways into view; its pointer stays over the speaker (--shift, style.css).
+   */
+  function keepInView(el: HTMLElement) {
+    el.style.removeProperty('--shift')
+    const r = el.getBoundingClientRect()
+    const box = screenEl.getBoundingClientRect()
+    const pad = 8
+    let dx = 0
+    if (r.left < box.left + pad) dx = box.left + pad - r.left
+    else if (r.right > box.right - pad) dx = box.right - pad - r.right
+    const m = menuButton.getBoundingClientRect()
+    if (m.width && r.top < m.bottom + pad && r.left + dx < m.right + pad && r.right + dx > m.left) dx = m.right + pad - r.left
+    if (dx) el.style.setProperty('--shift', `${Math.round(dx)}px`)
+  }
+
+  /**
+   * Lips for a spoken line (stage directions are not spoken). Cut under
+   * fast-forward, like the voice will be. The mouth stops when the line's
+   * bubble comes down (`ms`): it used to talk on for a second or more.
+   */
+  function speak(seat: number, text: string, ms: number) {
     if (!stage || !stageReady || replaying || ff) return
-    stage.face(seat)?.say(text)
+    stage.face(seat)?.say(text, ms / 1000)
   }
 
   /**
@@ -576,7 +603,7 @@ export function tableScreen(root: HTMLElement): () => void {
     const ui: SeatUI = {
       id,
       root: h('div', { class: `seat${isChamp ? ' champion' : ''}`, dataset: { id } }),
-      name: h('span', { class: 'seat-name' }, c?.short ?? id),
+      name: h('span', { class: 'seat-name' }, capital(c?.short ?? id)),
       stack: h('span', { class: 'stack' }, '0'),
       tower: h('span', { class: 'pile tower', 'aria-hidden': 'true' }),
       purse: h('div', { class: 'purse' }),
@@ -772,6 +799,8 @@ export function tableScreen(root: HTMLElement): () => void {
   }
 
   function clearWin() {
+    els.handName.textContent = ''
+    els.handName.classList.remove('show')
     for (const el of root.querySelectorAll('.card.win')) el.classList.remove('win')
     for (const el of root.querySelectorAll('.seat.winner')) el.classList.remove('winner')
   }
@@ -795,7 +824,8 @@ export function tableScreen(root: HTMLElement): () => void {
 
   function refreshName() {
     const n = run.earnedName()
-    els.youName.textContent = n ?? 'You'
+    // a name on a banner, capitalised like the others ("tenderfoot" is said mid-sentence)
+    els.youName.textContent = n ? n[0].toUpperCase() + n.slice(1) : 'You'
     els.youName.classList.toggle('earned', !!n)
     els.youName.title = n ? `The table calls you ${n}` : 'The table does not address you'
   }
@@ -820,7 +850,8 @@ export function tableScreen(root: HTMLElement): () => void {
     ui.tell.classList.remove('fade')
     void ui.tell.offsetWidth
     ui.tell.classList.add('fade')
-    if (stage && !replaying) log(said, 'tell')
+    // The log is read with no seat beside it: "His ears flatten" says whose.
+    if (stage && !replaying) log(said.startsWith(nameOf(seat)) ? said : `${nameOf(seat)}: ${said}`, 'tell')
     const clip = cueFor(seat, text)
     const until = Date.now() + Math.max(3600, gestureMs(seat, clip) + 400)
     if (real) ui.tellUntil = until
@@ -853,6 +884,7 @@ export function tableScreen(root: HTMLElement): () => void {
     el.classList.remove('show')
     void el.offsetWidth
     el.classList.add('show')
+    if (staged && el.closest('.seat')) keepInView(el)
     const r = el.getBoundingClientRect()
     for (const o of screenEl.querySelectorAll<HTMLElement>('.say.show, .callout.show, .dealer-line.show, .narration.show')) {
       if (o === el) continue
@@ -873,7 +905,7 @@ export function tableScreen(root: HTMLElement): () => void {
       if (ff) return
       // where Death plays (the finale) he speaks from his chair, like anyone seated
       if (speaker === 'death' && !seatIds.includes('death')) {
-        speak(DEATH, b.text)
+        speak(DEATH, b.text, BUBBLE_MS.dealer)
         els.dealerLine.textContent = `“${b.text}”`
         showBubble(els.dealerLine, BUBBLE_MS.dealer)
       } else if (speaker === 'narration') {
@@ -884,8 +916,13 @@ export function tableScreen(root: HTMLElement): () => void {
         const ui = seatUI.get(seat)
         if (ui) {
           if (!b.stage) {
-            speak(seat, b.text)
-            cue(seat, 'talk', PRIO.tell)
+            speak(seat, b.text, BUBBLE_MS.say)
+            // A talking gesture drawn as a whole figure brings a head of its
+            // own, which cannot move its mouth: for most of the cast it hid
+            // the moving one for most of the line. A face that talks reads
+            // better than a hand that does; the gesture waits for a redraw
+            // with the moving head riding on it (Lincoln's `talk`).
+            if (!stage?.player(seat)?.hidesMouth('talk')) cue(seat, 'talk', PRIO.tell)
           }
           ui.say.textContent = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
           ui.say.classList.toggle('stage', b.stage)
@@ -927,8 +964,10 @@ export function tableScreen(root: HTMLElement): () => void {
       const el = ui.root.querySelector<HTMLElement>('.callout') ?? h('div', { class: 'callout', 'aria-hidden': 'true' })
       if (!el.parentElement) ui.root.append(el)
       const text = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
-      if (!b.stage) speak(seatIds.indexOf(b.speaker), b.text)
       const ms = Math.round(calloutTime(text) * paceScale)
+      // It rides on the action, whose drawing may hide the moving head: the
+      // mouth waits for the head to come back (Face.heldBack), within the bubble's time.
+      if (!b.stage) speak(seatIds.indexOf(b.speaker), b.text, ms)
       el.textContent = text
       el.classList.toggle('stage', b.stage)
       el.style.animationDuration = `${ms}ms`
@@ -1023,6 +1062,12 @@ export function tableScreen(root: HTMLElement): () => void {
       sitting.biggestPot = Math.max(sitting.biggestPot, e.delta)
     } else if (e.type === 'eliminated' && e.seat !== HUMAN_SEAT) {
       sitting.fallen.push({ id: e.id, place: e.place })
+    } else if (e.type === 'arrival' && e.cause !== 'banishment') {
+      // The field grew: everyone already out finishes a place lower, so no two
+      // share one ("Spartacus out 5th, Cerberus out 5th" once Caesar sat down).
+      // Someone coming back (the Green Knight) is not out after all.
+      sitting.fallen = sitting.fallen.filter((f) => f.id !== e.id)
+      for (const f of sitting.fallen) f.place++
     } else if (e.type === 'handEnd') {
       const sum = run.lastSummary
       if (!sum) return
@@ -1392,6 +1437,11 @@ export function tableScreen(root: HTMLElement): () => void {
               for (const { seat } of e.revealed) {
                 if ((seat !== HUMAN_SEAT || youSeen) && !pot.winners.includes(seat)) act(seat, loseClip(seat, pot.amount), PRIO.tell)
               }
+            }
+            if (pot.ranking && contested) {
+              const who = pot.winners.length > 1 ? 'Split' : nameOf(pot.winners[0])
+              els.handName.textContent = `${who}: ${pot.ranking.replace(/^(a|an) /, '')}`
+              els.handName.classList.add('show')
             }
             const label = real.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
             const withWhat = pot.ranking

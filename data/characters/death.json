@@ -26,11 +26,6 @@
       "chance": 0.5
     },
     {
-      "type": "heads_up_pressure",
-      "minEquity": 0.6,
-      "chance": 0.35
-    },
-    {
       "type": "punish_passivity",
       "foldRate": 0.55,
       "chance": 0.5,

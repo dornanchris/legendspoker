@@ -63,6 +63,31 @@ export class Puppet {
     if (p) p[ch] += v
   }
 
+  /**
+   * Whether the mouth can be seen this frame: the mouth shapes ride on one
+   * head (`with`, "head.rest"), and a whole-figure frame drawn with a head of
+   * its own hides it. A puppet with no mouth shapes has nothing to hide.
+   */
+  mouthVisible(): boolean {
+    const on = this.mouthOn
+    if (!on) return true
+    const [slot, state] = on
+    if (!this.slots.has(slot)) return this.rig.parts.some((p) => p.name === `${slot}.${state}` && p.visible)
+    return this.slots.get(slot) === state
+  }
+
+  /** The slot and state of the head the mouth shapes are drawn on, if any. */
+  get mouthOn(): [string, string] | null {
+    if (this.mouthAt === undefined) {
+      const w = this.rig.parts.find((p) => p.slot === 'mouth')?.with
+      const dot = w ? w.indexOf('.') : -1
+      this.mouthAt = w && dot > 0 ? [w.slice(0, dot), w.slice(dot + 1)] : null
+    }
+    return this.mouthAt
+  }
+
+  private mouthAt: [string, string] | null | undefined = undefined
+
   /** Show `${slot}.${state}` in a slot; null shows nothing there. */
   show(slot: string, state: string | null): void {
     this.slots.set(slot, state)

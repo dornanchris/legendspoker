@@ -10,13 +10,13 @@
   "origin": "History",
   "era": "d. 1718 · Edward Teach, pirate captain",
   "dials": {
-    "aggression": 0.78,
+    "aggression": 0.68,
     "tightness": 0.6,
-    "bluffFrequency": 0.24,
+    "bluffFrequency": 0.18,
     "tiltSensitivity": 0.15,
     "adaptivity": 0.35,
     "betRespect": 0.5,
-    "skill": 0.35,
+    "skill": 0.45,
     "noise": 0.15
   },
   "quirks": [

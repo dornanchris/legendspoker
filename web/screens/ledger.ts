@@ -381,7 +381,7 @@ function marksTab(book: HTMLElement, selected?: string) {
   const page = h('article', { class: 'ledger-page wide marks-page' },
     h('header', { class: 'page-head' }, h('div', null,
       h('h2', null, 'Marks'),
-      h('p', { class: 'meta' }, `${earned.length} entries written of ${listed.length}.`),
+      h('p', { class: 'meta' }, `${earned.length} ${earned.length === 1 ? 'entry' : 'entries'} written of ${listed.length}.`),
       h('p', { class: 'dim' }, 'What Death saw fit to write down about you. Not a trophy cabinet: a record. Touch one to read it.'))),
     // the ones written first: what you have earned leads, what is still to come follows
     h('ol', { class: 'marks-grid' }, [...earned, ...listed.filter((m) => !save.marks[m.id])].map((m) => {

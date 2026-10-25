@@ -1,7 +1,7 @@
 import { STORY } from '../../src/content.js'
 import type { Pace, DialogueLevel, Settings } from '../../src/save.js'
 import * as store from '../store.js'
-import { h, go } from '../dom.js'
+import { h, go, ask } from '../dom.js'
 import { header } from './shared.js'
 import * as sound from '../sound.js'
 import { ACCENTS, type AccentName } from '../puppet/accent.js'
@@ -84,8 +84,8 @@ export function settingsScreen(root: HTMLElement): void {
   })
 
   const erase = h('button', { type: 'button', class: 'danger' }, 'Forget everything')
-  erase.addEventListener('click', () => {
-    if (!confirm('Erase your whole Invitational — every table, every name, every line in the ledger? This cannot be undone.')) return
+  erase.addEventListener('click', async () => {
+    if (!await ask('Erase your whole Invitational — every table, every name, every line in the ledger? This cannot be undone.', 'Forget everything')) return
     store.erase()
     go('/')
   })

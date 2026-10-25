@@ -53,6 +53,14 @@ export class Face {
   private nod = 0
   private speech: Beat[] = []
   private speechAt = 0
+  /** When the line must be done by, whatever held it back (the bubble's time). */
+  private speechUntil = Infinity
+  /**
+   * The head the mouth is drawn on is not showing (a whole-figure frame with
+   * its own drawn head, mid-gesture): the line waits for it, rather than be
+   * spoken by a face that cannot move. Set by the player each frame.
+   */
+  heldBack = false
   onSpeechEnd: (() => void) | null = null
 
   constructor(readonly cfg: FaceConfig) {}
@@ -63,8 +71,12 @@ export class Face {
     this.blinkAt = this.time
   }
 
-  /** Lip shapes for a line of text, from its letters (until there is recorded audio). */
-  say(text: string): void {
+  /**
+   * Lip shapes for a line of text, from its letters (until there is recorded
+   * audio). `maxSecs`: the line's time on screen; the mouth stops when its
+   * bubble comes down, and a long line is cut there rather than outlast it.
+   */
+  say(text: string, maxSecs = Infinity): void {
     const s = this.cfg.speech
     const beats: Beat[] = []
     let t = 0
@@ -83,8 +95,11 @@ export class Face {
       last = shape
     }
     beats.push({ t, shape: null })
+    const cut = beats.findIndex((b) => b.t >= maxSecs)
+    if (cut >= 0) beats.splice(cut, beats.length, { t: maxSecs, shape: null })
     this.speech = beats
     this.speechAt = this.time
+    this.speechUntil = this.time + maxSecs
   }
 
   get speaking(): boolean {
@@ -115,7 +130,9 @@ export class Face {
       const open = this.speaking && ['ah', 'oh', 'ee', 'oo'].includes(this.shapeNow() ?? '')
       this.nod += ((open ? c.speech.nod : 0) - this.nod) * (1 - Math.exp(-14 * dt))
     }
-    if (this.speech.length && this.time - this.speechAt > this.speech[this.speech.length - 1].t) {
+    // Held back, the line waits: its clock stands still while the head is away.
+    if (this.speech.length && this.heldBack) this.speechAt += dt
+    if (this.speech.length && (this.time - this.speechAt > this.speech[this.speech.length - 1].t || this.time > this.speechUntil)) {
       this.speech = []
       this.onSpeechEnd?.()
     }

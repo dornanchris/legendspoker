@@ -240,3 +240,32 @@ export function handStrength(
   if (board.length === 0 && range >= 1) return preflopStrength(hole)
   return equityVs(hole, board, numOpponents, rollouts, rng, range)
 }
+
+/**
+ * How good a hand turned over at showdown was: its equity against one random
+ * hand on the final board. Sampled with its own fixed generator, never the
+ * game's, so reading a showdown changes no card: the same cards on the same
+ * board always score the same.
+ */
+export function shownStrength(hole: Card[], board: Card[], samples = 120): number {
+  const known = new Set([...hole, ...board].map(toStr))
+  const deck: string[] = []
+  for (const r of RANKS) for (const s of SUITS) {
+    const c = r + SUIT_CHAR[s]
+    if (!known.has(c)) deck.push(c)
+  }
+  const mine = Hand.solve([...hole, ...board].map(toStr))
+  const b = board.map(toStr)
+  let x = 0x9e3779b9
+  const next = () => ((x = (Math.imul(x, 1664525) + 1013904223) >>> 0) / 2 ** 32)
+  let won = 0
+  for (let i = 0; i < samples; i++) {
+    const a = Math.floor(next() * deck.length)
+    let c = Math.floor(next() * (deck.length - 1))
+    if (c >= a) c++
+    const theirs = Hand.solve([deck[a], deck[c], ...b])
+    const w = Hand.winners([mine, theirs])
+    won += w.length === 2 ? 0.5 : w[0] === mine ? 1 : 0
+  }
+  return won / samples
+}

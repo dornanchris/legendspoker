@@ -56,3 +56,32 @@ export const ordinal = (n: number) => {
   const v = n % 100
   return `${n}${s[(v - 20) % 10] ?? s[v] ?? s[0]}`
 }
+
+/**
+ * Ask before something that cannot be undone, in the game's own panel (the
+ * Menu's): the browser's confirm() was the only native dialog in the game,
+ * and in the app it shows the app's name over the felt. Resolves true for yes.
+ */
+export function ask(question: string, yes: string, no = 'Not now'): Promise<boolean> {
+  return new Promise((done) => {
+    const close = (answer: boolean) => {
+      veil.remove()
+      window.removeEventListener('keydown', onKey, true)
+      done(answer)
+    }
+    const onKey = (ev: KeyboardEvent) => {
+      if (ev.key === 'Escape') { ev.stopPropagation(); close(false) }
+    }
+    const keep = h('button', { type: 'button', class: 'primary', onclick: () => close(false) }, no)
+    const veil = h('div', { class: 'table-menu ask', role: 'alertdialog', 'aria-modal': 'true', 'aria-label': question },
+      h('div', { class: 'menu-panel' },
+        h('p', null, question),
+        h('div', { class: 'ask-actions' },
+          keep,
+          h('button', { type: 'button', class: 'danger', onclick: () => close(true) }, yes))))
+    veil.addEventListener('click', (ev) => { if (ev.target === veil) close(false) })
+    window.addEventListener('keydown', onKey, true)
+    document.body.append(veil)
+    keep.focus()
+  })
+}

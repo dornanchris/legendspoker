@@ -99,11 +99,15 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
     summary: 'Once a share of the stack is in the pot, will not fold a hand with a real chance.',
     // Stubborn, not suicidal: the floor is what keeps a busted 8-3 out. Until
     // the game loop counted chips put in correctly this never fired at all.
+    // And not blind to the price: Leonidas called 69bb on the river with no
+    // chance at all. A little worse than the price is stubborn; far worse is
+    // throwing the stack away.
     make: ({ fraction = 0.35, minEquity = 0.2 }) => (ctx) => {
       if (ctx.toCall === 0) return null
       const invested = ctx.committed / Math.max(1, ctx.committed + ctx.stack)
       if (invested < fraction) return null
-      if (ctx.equity < minEquity) return null
+      const price = ctx.toCall / (ctx.pot + ctx.toCall)
+      if (ctx.equity < Math.max(minEquity, price - 0.05)) return null
       if (!ctx.legal.includes('call')) return null
       return { action: 'call', reason: 'committed: will not back down' }
     },
@@ -234,13 +238,15 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
 
   patient: {
     summary: 'Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.',
-    make: ({ minEquity = 0.6, maxAllInCost = 0.1, openBB = 2 }) => (ctx) => {
+    make: ({ minEquity = 0.6, maxAllInCost = 0.1, openBB = 4 }) => (ctx) => {
       if (ctx.street !== 'preflop') return null
       // Only a real raise: more than openBB big blinds to call. An ordinary
-      // 2.5-3bb open costs the big blind 1.5-2bb, and defending a pot it is
-      // already in is not a test of patience. While every AI raise was a
-      // min-raise this read "more than one big blind", which let the blind
-      // defend; with real opens it would fold every blind to every open.
+      // open of up to five big blinds costs the big blind four at most, and
+      // defending a pot it is already in is not a test of patience. While
+      // every AI raise was a min-raise this read "more than one big blind",
+      // which let the blind defend; at two, the patient folded their big
+      // blind 93-99% of the time to a four-big-blind raise, and stealing it
+      // was free. Re-raises and big raises still test them.
       if (ctx.toCall <= ctx.bigBlind * openBB) return null
       if (ctx.strength >= minEquity) return null
       if (ctx.effectiveStackBB < 12) return null // patience ends when the stack does

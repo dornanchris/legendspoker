@@ -58,6 +58,8 @@ export class PuppetPlayer {
   /** Pause clips and hold their time (for scrubbing); the face runs on. */
   hold = false
   private playing: Playing[] = []
+  /** Whether last frame's pose showed the head the mouth is drawn on. */
+  private mouthSeen = true
   private releases: Release[] = []
   /** Clips stand in for their `_ik` versions (an IK puppet, with the prototype on). */
   useIk = false
@@ -101,6 +103,17 @@ export class PuppetPlayer {
   decodedBytes(): number {
     const ims = [...this.puppet.rig.images.values(), ...(this.puppet.ik?.images.values() ?? [])]
     return ims.reduce((n, im) => n + picSize(im)[0] * picSize(im)[1] * 4, 0)
+  }
+
+  /**
+   * The clip swaps out the head the mouth is drawn on (a talking gesture
+   * drawn as a whole figure, with its own still head): played beside a line,
+   * the line would be spoken by a face that cannot move.
+   */
+  hidesMouth(name: string): boolean {
+    const clip = this.entry.anim.clips[this.resolve(name)]
+    const on = this.puppet.mouthOn
+    return !!clip && !!on && (clip.swaps?.[on[0]] ?? []).some(([, state]) => state !== null && state !== on[1])
   }
 
   has(name: string): boolean {
@@ -181,6 +194,7 @@ export class PuppetPlayer {
   }
 
   update(dt: number): void {
+    this.face.heldBack = !this.mouthSeen
     this.face.update(dt)
     if (!this.hold) {
       for (const p of this.playing) {
@@ -205,6 +219,7 @@ export class PuppetPlayer {
     pup.reset()
     this.face.apply(pup)
     for (const p of this.playing) pup.applyClip(p.clip, p.t)
+    this.mouthSeen = pup.mouthVisible()
     for (const r of this.releases) {
       const k = 1 - EASE.inOut(Math.min(1, r.t / r.dur))
       for (const [bone, ch, v] of r.bones) pup.add(bone, ch as Channel, v * k)

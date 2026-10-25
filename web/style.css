@@ -399,6 +399,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .results h3 { font-size: 1rem; color: var(--gold); margin: 14px 0 6px; font-family: var(--sans); letter-spacing: .08em; text-transform: uppercase; }
 .beaten-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 12px; }
 .beaten-list li { display: flex; gap: 8px; align-items: center; }
+.beaten-list .portrait { width: 44px; height: 44px; flex: none; }
 .beaten-list span { display: grid; }
 .beaten-list small { color: var(--dim); }
 .marks-earned { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
@@ -1105,9 +1106,11 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .felt.staged .seat .tell { display: none; }
 /* speech goes over the head, not under the plate */
 .felt.staged .seat .say { top: auto; bottom: calc(100% + var(--lift, 160px) + 6px); left: 50%; right: auto; width: 210px; margin-left: -105px; }
-.felt.staged .seat .say::before { top: auto; bottom: -6px; left: 50%; margin-left: -6px; border-bottom: 0; border-top: 6px solid var(--parchment); }
+/* --shift: table.ts moves a bubble that would leave the screen or sit under
+   the Menu back into view; its pointer stays over the speaker. */
+.felt.staged .seat .say::before { top: auto; bottom: -6px; left: 50%; margin-left: calc(-6px - var(--shift, 0px)); border-bottom: 0; border-top: 6px solid var(--parchment); }
 .felt.staged .seat .say.stage::before { border-top-color: #2a2622; }
-.felt.staged .seat .callout { top: auto; bottom: calc(100% + var(--lift, 160px) + 4px); max-width: 200px; }
+.felt.staged .seat .callout { top: auto; bottom: calc(100% + var(--lift, 160px) + 4px); max-width: 200px; margin-left: var(--shift, 0px); }
 .felt.staged .dealer {
   position: absolute; z-index: 2; transform: translateX(-50%); margin: 0; flex-direction: column; align-items: center; gap: 0;
   padding: 3px 14px 4px; border: 1px solid #6d604f; border-radius: 9px; background: #141116e0; box-shadow: 0 4px 14px #0008;
@@ -1172,7 +1175,7 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 
 /* The words grow with the plates (--s2, set by table.ts from the screen's
    height; 1 on a phone): tells, lines, callouts, Death's lines, your buttons. */
-.felt.staged .seat .say { font-size: calc(.86rem * var(--s2, 1)); width: calc(210px * var(--s2, 1)); margin-left: calc(-105px * var(--s2, 1)); }
+.felt.staged .seat .say { font-size: calc(.86rem * var(--s2, 1)); width: calc(210px * var(--s2, 1)); margin-left: calc(-105px * var(--s2, 1) + var(--shift, 0px)); }
 .felt.staged .seat .callout { font-size: calc(.8rem * var(--s2, 1)); max-width: calc(200px * var(--s2, 1)); }
 .felt.staged .dealer-line { font-size: calc(.85rem * var(--s2, 1)); }
 .felt.staged .controls, .felt.staged .prompt { font-size: calc(.85rem * var(--s2, 1)); }
@@ -1446,3 +1449,14 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 
 /* Shown instead of the game when poker-ts is unpatched (src/engine-guard.ts). */
 .engine-error { max-width: 40em; margin: 15vh auto; padding: 0 16px; font: 1.1rem/1.5 var(--serif); color: var(--ink); }
+
+/* The winning hand, named under the board at a showdown: "FDR: three of a kind". */
+.hand-name { min-height: 1.3em; font-family: var(--serif); font-size: calc(.95rem * var(--s2, 1)); color: #f3d98a; text-shadow: 0 1px 3px #000c; text-align: center; opacity: 0; transition: opacity .2s; text-transform: none; }
+.hand-name.show { opacity: 1; }
+.hand-name::first-letter { text-transform: uppercase; }
+
+/* ask() (dom.ts): a yes-or-no over the whole screen, in the Menu's panel */
+.table-menu.ask { position: fixed; }
+.table-menu.ask .menu-panel { width: min(460px, 100%); }
+.table-menu.ask p { margin: 0; color: var(--ink); font-family: var(--serif); line-height: 1.4; }
+.ask-actions { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
