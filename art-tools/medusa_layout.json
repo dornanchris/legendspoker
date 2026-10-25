@@ -526,6 +526,17 @@
    "on_table": true
   },
   {
+   "file": "../web/art/medusa/frame_over_talk.png",
+   "label": "frame_over.talk",
+   "x": 158,
+   "y": 360,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 21,
+   "visible": false,
+   "slot": "frame_over"
+  },
+  {
    "file": "../web/art/medusa/frame_big_bet.png",
    "label": "frame.big_bet",
    "x": 158,

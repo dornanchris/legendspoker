@@ -372,6 +372,17 @@
    "on_table": true
   },
   {
+   "file": "../web/art/green_knight/frame_over_talk.png",
+   "label": "frame_over.talk",
+   "x": 66,
+   "y": 269,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 21,
+   "visible": false,
+   "slot": "frame_over"
+  },
+  {
    "file": "../web/art/green_knight/frame_big_bet.png",
    "label": "frame.big_bet",
    "x": 66,

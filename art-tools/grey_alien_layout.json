@@ -361,6 +361,17 @@
    "on_table": true
   },
   {
+   "file": "../web/art/grey_alien/frame_over_talk.png",
+   "label": "frame_over.talk",
+   "x": 220,
+   "y": 438,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 21,
+   "visible": false,
+   "slot": "frame_over"
+  },
+  {
    "file": "../web/art/grey_alien/frame_big_bet.png",
    "label": "frame.big_bet",
    "x": 220,

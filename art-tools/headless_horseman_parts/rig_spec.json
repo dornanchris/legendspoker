@@ -343,6 +343,10 @@
   },
   "win_big": {
    "biggest": true
+  },
+  "talk": {
+   "head": null,
+   "head_match": "face"
   }
  },
  "no_prop": [

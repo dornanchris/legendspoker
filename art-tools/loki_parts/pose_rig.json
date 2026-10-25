@@ -1177,7 +1177,7 @@
   },
   "talk": {
    "pose": "D1",
-   "head": "own",
+   "head": null,
    "below": 110,
    "props": [
     [
@@ -1206,7 +1206,8 @@
       412
      ]
     ]
-   ]
+   ],
+   "head_match": "face"
   },
   "big_bet": {
    "pose": "D2",

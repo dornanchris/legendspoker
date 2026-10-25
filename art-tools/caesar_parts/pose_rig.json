@@ -843,8 +843,8 @@
   },
   "talk": {
    "pose": "D1",
-   "head": "own",
-   "below": 110
+   "below": 110,
+   "head_match": "face"
   },
   "big_bet": {
    "pose": "D2",

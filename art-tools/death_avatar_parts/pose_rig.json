@@ -591,8 +591,9 @@
   },
   "talk": {
    "pose": "B6",
-   "head": "own",
-   "below": 110
+   "head": null,
+   "below": 110,
+   "head_match": "face"
   },
   "hood": {
    "pose": "C1",

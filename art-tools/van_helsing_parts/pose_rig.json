@@ -1078,7 +1078,7 @@
   },
   "talk": {
    "pose": "D1",
-   "head": "own",
+   "head": null,
    "below": 110,
    "props": [
     [
@@ -1099,7 +1099,8 @@
       448
      ]
     ]
-   ]
+   ],
+   "cut_head": true
   },
   "big_bet": {
    "pose": "D2",

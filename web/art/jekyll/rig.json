@@ -600,6 +600,20 @@
    "bone": "torso"
   },
   {
+   "name": "frame_over.talk",
+   "img": "frame_over_talk.png",
+   "cx": 551.5,
+   "cy": 743.0,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
    "name": "frame.big_bet",
    "img": "frame_big_bet.png",
    "cx": 551.5,
@@ -869,7 +883,10 @@
   "door": null,
   "kind_smile": null,
   "arrive": null,
-  "talk": null,
+  "talk": [
+   4.0,
+   4.0
+  ],
   "big_bet": null,
   "lost_pot": null,
   "lose_big": null,

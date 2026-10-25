@@ -381,6 +381,10 @@
      ]
     ]
    ]
+  },
+  "talk": {
+   "head": null,
+   "head_match": "face"
   }
  }
 }

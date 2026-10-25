@@ -381,6 +381,10 @@
      ]
     ]
    ]
+  },
+  "talk": {
+   "head": null,
+   "cut_head": true
   }
  },
  "no_prop": []
