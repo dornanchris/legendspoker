@@ -65,8 +65,13 @@ export const SAVE_VERSION = 1
  *    defends the blind against ordinary opens; `committed` minds the price;
  *    AI bets come in round numbers; Death, the Phoenix, Blackbeard and Caesar
  *    re-dialled.
+ * 16: Death made very hard. A skilled reader takes the share of bluffs in
+ *    the player's range from what they show down (not a flat fifth), narrow
+ *    ranges are drawn from enough hands to be narrow, and skill 0.75 and up
+ *    counts with more rollouts; Death and the Phoenix believe that read in
+ *    full (betRespect 1), Death aggression 0.75, bluffs 0.1, adaptivity 1.
  */
-export const ENGINE_VERSION = 15
+export const ENGINE_VERSION = 16
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 export type DialogueLevel = 'all' | 'less' | 'story' | 'off'

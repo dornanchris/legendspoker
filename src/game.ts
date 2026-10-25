@@ -2,7 +2,7 @@
 import pokerPkg from 'poker-ts'
 const { Table: Poker } = pokerPkg as any
 import { decide, emitTell, betRange, readBet, readTell, type Action, type Decision } from './decide.js'
-import { handStrength, preflopStrength, equityVs, shownStrength, drawOuts, boardWetness, type Card } from './equity.js'
+import { handStrength, preflopStrength, equityVs, shownStrength, drawOuts, boardWetness, RANGE_LOOSE, type Card } from './equity.js'
 import type { Personality } from './personality.js'
 import { seededShuffle } from './rng.js'
 import { assertPatchedEngine } from './engine-guard.js'
@@ -702,6 +702,8 @@ export class Game {
         }
         const facingAllIn = bettor >= 0 && seatState[bettor].stack === 0
         let oppRange = 1
+        /** The share of that range that is bluffs and draws (see equityVs). */
+        let loose = RANGE_LOOSE
         if (!isHuman && bettor >= 0) {
           let base = betRange({
             street,
@@ -749,23 +751,32 @@ export class Game {
               // look loose.
               const seen = this.read(bettor, skill)
               const a = skill * s.personality.adaptivity
+              const air = street === 'preflop' ? seen.raiseAir / (1 - SHOWN_RAISE) : seen.air / (1 - SHOWN_BET)
               const k = street === 'preflop'
-                ? Math.pow(seen.pfr / PFR, a) * Math.pow(seen.raiseAir / (1 - SHOWN_RAISE), 2 * a)
-                : Math.pow(seen.betFreq / BET_FREQ, a) * Math.pow(seen.air / (1 - SHOWN_BET), 2 * a)
+                ? Math.pow(seen.pfr / PFR, a) * Math.pow(air, 2 * a)
+                : Math.pow(seen.betFreq / BET_FREQ, a) * Math.pow(air, 2 * a)
               base = Math.pow(base, 1 / k)
+              // and how much of that range is bluffs: a player whose bets have
+              // always been real hands has few. The plain fifth of every range
+              // let Death five-bet 6-6 into a four-bet as a 62% favourite.
+              loose = Math.max(0.02, Math.min(0.5, RANGE_LOOSE * Math.pow(air, 2 * a)))
             }
             base = Math.max(0.05, Math.min(1, base))
           }
           // In steps of 5%, so a street's equity is worked out a few times at most.
           oppRange = Math.round((1 - s.personality.betRespect * (1 - base)) * 20) / 20
         }
-        const key = `${seat}:${street}:${oppRange}`
+        const key = `${seat}:${street}:${oppRange}:${loose.toFixed(2)}`
         let equity = 0
         if (!isHuman) {
           const cached = equityCache.get(key)
           if (cached === undefined) {
             const opponents = Math.max(1, this.table.numActivePlayers() - 1)
-            equity = handStrength(hole, board, opponents, rollouts, rng, oppRange)
+            // The most skilled count more carefully: 60 rollouts are worth
+            // +-6%, and a marginal call is decided inside that. Up to four
+            // times as many at skill 1 (Death), none extra below 0.75.
+            const careful = Math.round(rollouts * (1 + 12 * Math.max(0, s.personality.skill - 0.75)))
+            equity = handStrength(hole, board, opponents, careful, rng, oppRange, Math.round(loose * 50) / 50)
             // Heads up before the flop with only the blind to call, the
             // strength score undersells most hands: it rates 40% of them below
             // 0.30, yet most of those win over 40% against one random hand,
@@ -774,7 +785,7 @@ export class Game {
             // their equity moves from the score toward the real figure.
             const skill = s.personality.skill
             if (skill > 0 && dealtIn === 2 && board.length === 0 && oppRange >= 1) {
-              equity += skill * (equityVs(hole, board, 1, rollouts, rng, 1) - equity)
+              equity += skill * (equityVs(hole, board, 1, careful, rng, 1) - equity)
             }
             equityCache.set(key, equity)
           } else {
