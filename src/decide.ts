@@ -41,6 +41,8 @@ export type DecisionContext = {
   street: 'preflop' | 'flop' | 'turn' | 'river'
   legal: Action[]
   numOpponents: number
+  /** Players dealt into this hand: 2 is a heads-up hand from the first card. */
+  dealtIn: number
   /** 0..1, decays over hands. Set by the game loop after bad beats. */
   tilt: number
   /** Observed fold-to-aggression rate of the table, for adaptivity. */
@@ -220,10 +222,12 @@ export function decide(ctx: DecisionContext): Decision {
   // shortness is a reason to shove wider, not to call with rags. Capped so
   // the tightest can still play a small pair (0.35) or A-9.
   //
-  // Heads up the floor is a different question -- one opponent, and a blind
-  // to defend every hand -- and a skilled player knows it: there it falls
-  // away with skill. Death folded a third of his small blinds to half a bet.
-  const headsUp = ctx.numOpponents === 1 ? 1 - p.skill : 1
+  // Dealt heads up the floor is a different question -- one opponent, and a
+  // blind to defend every hand -- and a skilled player knows it: there it
+  // falls away with skill. Death folded a third of his small blinds to half
+  // a bet. (Not when a full table folds round to the blinds: that moved the
+  // cast's styles by up to twelve points of VPIP.)
+  const headsUp = ctx.dealtIn === 2 ? 1 - p.skill : 1
   const entryFloor = headsUp * Math.min(0.33, Math.max(0, (p.tightness - tiltEffect * 0.6 - 0.5) * 1.3))
   if (
     ctx.street === 'preflop' && ctx.toCall > 0 && !ctx.facingAllIn &&

@@ -604,6 +604,11 @@ export class Game {
         ? this.table.holeCards().map((h: Card[] | null) => (h ? [...h] : null))
         : null
 
+    // How many were dealt in: a hand dealt to two is heads up from the start
+    // (the finale, the Pyre, the end of a sitting); one folded round to the
+    // blinds at a full table is not, and is not played like one.
+    const dealtIn = this.table.holeCards().filter(Boolean).length
+
     // Cache equity per (seat, street, what they are facing) -- recomputing it
     // on every action is where a naive implementation burns all its time.
     const equityCache = new Map<string, number>()
@@ -768,7 +773,7 @@ export class Game {
             // skilled player knows what any two cards are worth one on one:
             // their equity moves from the score toward the real figure.
             const skill = s.personality.skill
-            if (skill > 0 && opponents === 1 && board.length === 0 && oppRange >= 1) {
+            if (skill > 0 && dealtIn === 2 && board.length === 0 && oppRange >= 1) {
               equity += skill * (equityVs(hole, board, 1, rollouts, rng, 1) - equity)
             }
             equityCache.set(key, equity)
@@ -843,6 +848,7 @@ export class Game {
             street: street as any,
             legal,
             numOpponents: Math.max(1, this.table.numActivePlayers() - 1),
+            dealtIn,
             tilt: s.tilt,
             opponentFoldRate: this.foldRateFacing(seat, inHand, s.personality.skill),
             committed: contributed[seat],

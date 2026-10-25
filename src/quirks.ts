@@ -238,15 +238,16 @@ export const QUIRKS: Record<string, { summary: string; make: Factory }> = {
 
   patient: {
     summary: 'Folds to any raise before the flop without a premium hand, unless it is an ordinary open against the big blind or an all-in that costs next to nothing.',
-    make: ({ minEquity = 0.6, maxAllInCost = 0.1, openBB = 4 }) => (ctx) => {
+    make: ({ minEquity = 0.6, maxAllInCost = 0.1, openBB = 3 }) => (ctx) => {
       if (ctx.street !== 'preflop') return null
       // Only a real raise: more than openBB big blinds to call. An ordinary
-      // open of up to five big blinds costs the big blind four at most, and
+      // open of up to four big blinds costs the big blind three at most, and
       // defending a pot it is already in is not a test of patience. While
       // every AI raise was a min-raise this read "more than one big blind",
       // which let the blind defend; at two, the patient folded their big
       // blind 93-99% of the time to a four-big-blind raise, and stealing it
-      // was free. Re-raises and big raises still test them.
+      // was free (at four the patient stopped being patient: Javert's VPIP
+      // went from 25 to 38). Re-raises and big raises still test them.
       if (ctx.toCall <= ctx.bigBlind * openBB) return null
       if (ctx.strength >= minEquity) return null
       if (ctx.effectiveStackBB < 12) return null // patience ends when the stack does
