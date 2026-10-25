@@ -188,9 +188,10 @@ check:look); the cast's styles were checked with `npm run sim 3000 all`.
    skill a postflop defence floor against a player who bets too often, and
    let the showdown read also widen a player seen bluffing on the river. Use
    the probe bots on 600+ finales to judge any change; 100 is ±5 points.
-   On the bot-vs-bot ladder he is no longer clearly first (see CLAUDE.md):
-   `heads_up_pressure` won against the cast's bots and lost against a solid
-   player, and the player is who he has to beat.
+   On the bot-vs-bot ladder he is still first, at 58% (was 64%; `npm run
+   headsup 16` over the champions and five others): `heads_up_pressure` won
+   against the cast's bots and lost against a solid player, and the player
+   is who he has to beat.
 7. **Sittings are long for a phone**: 42-50 hands at a table, 65 (p90 93) at
    the finale, which starts 250bb deep; 20-35 minutes at normal pace, with
    banter holding the next deal for up to ~15 s. Consider a shallower finale,

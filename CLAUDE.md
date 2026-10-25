@@ -472,7 +472,8 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
      0.12 (was 0.24), aggression 0.65; Blackbeard 0.68 / 0.18 / skill 0.45,
      Caesar bluffs 0.18, skill 0.65.
   Result (first places per 100, TAG / TAG + tells): the finale 46/49 ->
-  42/38 (300 each), the Pyre 49/69 -> 53/48, Baker Street 36/22 -> 16/22, the Station
+  42/38 (300 each), Death still first on the heads-up ladder (58%, was
+  64%), the Pyre 49/69 -> 53/48, Baker Street 36/22 -> 16/22, the Station
   7/12, the rest 13-29. The Pyre is still about even for a solid player.
   On the table screen: **speech waits for the moving head** (`Face.heldBack`
   from `Puppet.mouthVisible()`: a whole-figure frame with its own drawn head
