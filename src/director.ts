@@ -114,6 +114,9 @@ const ASIDE_CHANCE: Record<string, number> = {
   blinds_up: 0.35,
 }
 
+/** How often Death remarks on a comeback when there is one (once a sitting at most). */
+const COMEBACK_CHANCE = 0.5
+
 const median = (xs: number[]) => {
   if (!xs.length) return 0
   const s = [...xs].sort((a, b) => a - b)
@@ -138,6 +141,8 @@ export class TableRun {
   private seats: (string | null)[] = []
   private buyIn: number
   private headsUpAnnounced = false
+  /** Death has remarked on a comeback this sitting (DEALER.comeback): once is enough. */
+  private comebackSaid = false
   private firstElimDone = false
   private plantDone = false
   private lastBanterHand = 0
@@ -691,7 +696,19 @@ export class TableRun {
     }
 
     // --- Death's asides on what just happened
-    if (knockouts.length) beats.push(...this.aside('player_eliminates'))
+    // A comeback first (the owner: "a rise from the ashes comment every once
+    // in a while"): the player sat down to the hand far behind -- 40% of the
+    // biggest stack or less -- and at least doubled. Half the time, once a
+    // sitting, and never over the end of it.
+    const started = h.startStacks[HUMAN] ?? 0
+    const biggest = Math.max(0, ...h.startStacks.filter((_, i) => i !== HUMAN))
+    const ended = h.busted.some((b) => b.seat === HUMAN) || e.stacks.filter((c) => c > 0).length <= 1
+    const risen = started > 0 && started <= 0.4 * biggest && net >= started && net >= 10 * bb && !ended
+    const comeback = risen && !this.comebackSaid ? this.pick(DEALER.comeback) : null
+    if (comeback && this.rng() < COMEBACK_CHANCE) {
+      this.comebackSaid = true
+      beats.push(this.say(comeback, true))
+    } else if (knockouts.length) beats.push(...this.aside('player_eliminates'))
     else if (net >= 40 * bb) beats.push(...this.aside('player_wins_big_pot'))
     if (lostShowdownRank !== null && lostShowdownRank >= RANKINGS.indexOf('two pair')) {
       beats.push(...this.aside('player_bad_beat'))

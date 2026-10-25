@@ -900,40 +900,77 @@ export function tableScreen(root: HTMLElement): () => void {
     const speaker = b.speaker
     const who = speaker === 'death' ? 'Death' : speaker === 'narration' ? '' : CHARACTERS[speaker]?.short ?? speaker
     const logText = speaker === 'narration' ? b.text.replace(/^\[|\]$/g, '') : b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`
+    // Table talk (b.chatter: asides, banter, needles, lines at the player)
+    // never holds the game up: it goes on a track of its own and is said over
+    // the next deal, as people talk at a table (the owner: "banter shouldn't
+    // slow play"; a four-line exchange after a showdown held the next hand
+    // ~15 s). What the story needs still waits for its reading time.
+    if (b.chatter) {
+      step(() => {
+        log(logText, `say${speaker === 'death' ? ' death' : ''}${b.stage ? ' stage' : ''}`)
+        if (ff) return
+        talk.push(b)
+        void talkOn()
+      }, 0, { line: true })
+      return
+    }
     step(() => {
       log(logText, `say${speaker === 'death' ? ' death' : ''}${b.stage ? ' stage' : ''}`)
       if (ff) return
-      // where Death plays (the finale) he speaks from his chair, like anyone seated
-      if (speaker === 'death' && !seatIds.includes('death')) {
-        speak(DEATH, b.text, BUBBLE_MS.dealer)
-        els.dealerLine.textContent = `“${b.text}”`
-        showBubble(els.dealerLine, BUBBLE_MS.dealer)
-      } else if (speaker === 'narration') {
-        els.narration.textContent = b.text.replace(/^\[|\]$/g, '')
-        showBubble(els.narration, BUBBLE_MS.narration)
-      } else {
-        const seat = seatIds.indexOf(speaker)
-        const ui = seatUI.get(seat)
-        if (ui) {
-          if (!b.stage) {
-            speak(seat, b.text, BUBBLE_MS.say)
-            // A talking gesture drawn as a whole figure brings a head of its
-            // own, which cannot move its mouth: for most of the cast it hid
-            // the moving one for most of the line. A face that talks reads
-            // better than a hand that does; the gesture waits for a redraw
-            // with the moving head riding on it (Lincoln's `talk`).
-            if (!stage?.player(seat)?.hidesMouth('talk')) cue(seat, 'talk', PRIO.tell)
-          }
-          ui.say.textContent = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
-          ui.say.classList.toggle('stage', b.stage)
-          showBubble(ui.say, BUBBLE_MS.say)
-        } else {
-          // Not seated (a watcher, or someone just knocked out): the room hears it.
-          els.narration.textContent = b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`
-          showBubble(els.narration, BUBBLE_MS.narration)
-        }
-      }
+      showLine(b)
     }, readingTime(b.text), { line: true })
+  }
+
+  /** A spoken line or stage direction, up on the screen (its words already in the log). */
+  function showLine(b: Extract<Beat, { kind: 'line' }>) {
+    const speaker = b.speaker
+    const who = speaker === 'death' ? 'Death' : speaker === 'narration' ? '' : CHARACTERS[speaker]?.short ?? speaker
+    // where Death plays (the finale) he speaks from his chair, like anyone seated
+    if (speaker === 'death' && !seatIds.includes('death')) {
+      speak(DEATH, b.text, BUBBLE_MS.dealer)
+      els.dealerLine.textContent = `“${b.text}”`
+      showBubble(els.dealerLine, BUBBLE_MS.dealer)
+    } else if (speaker === 'narration') {
+      els.narration.textContent = b.text.replace(/^\[|\]$/g, '')
+      showBubble(els.narration, BUBBLE_MS.narration)
+    } else {
+      const seat = seatIds.indexOf(speaker)
+      const ui = seatUI.get(seat)
+      if (ui) {
+        if (!b.stage) {
+          speak(seat, b.text, BUBBLE_MS.say)
+          // A talking gesture drawn as a whole figure brings a head of its
+          // own, which cannot move its mouth: for most of the cast it hid
+          // the moving one for most of the line. A face that talks reads
+          // better than a hand that does; the gesture waits for a redraw
+          // with the moving head riding on it (Lincoln's `talk`).
+          if (!stage?.player(seat)?.hidesMouth('talk')) cue(seat, 'talk', PRIO.tell)
+        }
+        ui.say.textContent = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
+        ui.say.classList.toggle('stage', b.stage)
+        showBubble(ui.say, BUBBLE_MS.say)
+      } else {
+        // Not seated (a watcher, or someone just knocked out): the room hears it.
+        els.narration.textContent = b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`
+        showBubble(els.narration, BUBBLE_MS.narration)
+      }
+    }
+  }
+
+  /** Table talk waiting to be said, one line at a time, on its own clock (see sayLine). */
+  const talk: Extract<Beat, { kind: 'line' }>[] = []
+  let talking = false
+  async function talkOn() {
+    if (talking) return
+    talking = true
+    while (talk.length && alive) {
+      if (paused) await paused
+      const b = talk.shift()!
+      if (ff || !alive) continue                 // cut, not sped up, while fast-forwarding
+      showLine(b)
+      await sleep(readingTime(b.text) * paceScale)
+    }
+    talking = false
   }
 
   /** Marks the director awarded that are not yet written to the save. */
