@@ -41,8 +41,16 @@ export class Face {
   autoBlink = true
   /** No sway and no breath (Reduce motion); blinks, looks and speech go on. */
   still = false
+  /**
+   * Holding perfectly still (a line that says nobody moves): no blink, no
+   * glance, the sway and the breath stopped where they are, so letting go
+   * picks them up again without a jump. Speech goes on.
+   */
+  frozen = false
 
   private time = 0
+  /** The sway and breath's own clock, which stops while frozen. */
+  private swayTime = 0
   private nextBlink = 1.5
   private blinkAt = -1
   private blinkFrames: [string, number][] = []
@@ -108,12 +116,13 @@ export class Face {
 
   update(dt: number): void {
     this.time += dt
+    if (!this.frozen) this.swayTime += dt
     const c = this.cfg
-    if (this.idle && this.autoBlink && this.time >= this.nextBlink && this.blinkAt < 0) {
+    if (this.idle && !this.frozen && this.autoBlink && this.time >= this.nextBlink && this.blinkAt < 0) {
       this.blink(Math.random() < c.blink.double)
       this.nextBlink = this.time + rand(...c.blink.every)
     }
-    if (this.idle && this.time >= this.nextGlance) {
+    if (this.idle && !this.frozen && this.time >= this.nextGlance) {
       // a glance somewhere else, then back to rest; a look changes on a blink
       // more often than not, as eyes do
       let r = Math.random()
@@ -177,7 +186,7 @@ export class Face {
     p.add('head', 'y', this.tilt[2])
     if (this.idle && !this.still) {
       const [pr, px, py] = c.sway.periods
-      const t = this.time
+      const t = this.swayTime
       p.add('head', 'rot', c.sway.rot * Math.sin((2 * Math.PI * t) / pr))
       p.add('head', 'x', c.sway.x * Math.sin((2 * Math.PI * t) / px + 1.3))
       p.add('head', 'y', c.sway.y * Math.sin((2 * Math.PI * t) / py + 0.7))

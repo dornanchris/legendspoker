@@ -3005,6 +3005,23 @@
   "cloak",
   "still"
  ],
+ "acts": {
+  "check.1": "@still",
+  "lose.3": "@still",
+  "win.0": "show",
+  "reraised.0": "sword",
+  "lose.1": "sword",
+  "reraised.1": "turn",
+  "tv_hh_01b": "sword",
+  "tv_hh_03d": "settle",
+  "tv_hh_06b": [
+   "@still",
+   "call"
+  ],
+  "tv_hh_07b": "call",
+  "tv_nd_24a": "nod",
+  "tv_p1_03": "turn"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

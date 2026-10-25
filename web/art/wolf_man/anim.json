@@ -3096,6 +3096,13 @@
   "ears_back",
   "look_at_you"
  ],
+ "acts": {
+  "tv_nd_12b": [
+   "growl",
+   "sheepish"
+  ],
+  "tv_elim_wm_01": "sheepish"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

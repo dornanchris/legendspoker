@@ -3018,6 +3018,9 @@
   "turn",
   "fingers"
  ],
+ "acts": {
+  "st_gr_as_03b": "fingers"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

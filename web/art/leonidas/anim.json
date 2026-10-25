@@ -3363,6 +3363,11 @@
   "breathe_in",
   "look_at_you"
  ],
+ "acts": {
+  "lose.2": "won_pot",
+  "reraised.2": "@still",
+  "at_p0_05": "disdain"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

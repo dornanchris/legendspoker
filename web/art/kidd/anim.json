@@ -3375,6 +3375,9 @@
   "cravat",
   "look_at_you"
  ],
+ "acts": {
+  "pc_ls_kd_02d": "neck"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

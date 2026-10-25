@@ -494,6 +494,19 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   player who doubled up from far behind; 37 of 41 `talk` frames rebuilt with
   the master head riding on them (the Cyclops, the Pope and Roosevelt still
   skip the gesture); ACT-OUT.md is the shot list of stage directions to act out.
+  **What the art already had is wired** (the rows marked _wired_ there): a
+  line or callout that says someone does something plays it, from `acts` in
+  their anim.json (a line id or a callout's `pool.n` to clips in order;
+  `@still` holds still, `name~` plays a held pose briskly; a callout's acts
+  replace its action's clip; a parting line is acted before the chair
+  empties; never a tell's clip: check:data). Death shuffles before the first
+  hand dealt live; a lesson is his `watch_that` and then the tell again (the
+  `lesson` on the line Beat). Rooms turn live (`turn` and `acts` in room.json,
+  passed through by room_web.py; `Stage.setPresence(state, live)`): the
+  Station's lights fail and come up amber, every pile of chips floats and
+  falls (`weightless` in table.ts), and the room is itself again once the AI
+  is out; Transylvania's fire sinks to a glow and "Nobody at the table moves"
+  freezes the table (`Face.frozen`, `Stage.freeze`). Presentation only.
   On the table screen: **speech waits for the moving head** (`Face.heldBack`
   from `Puppet.mouthVisible()`: a whole-figure frame with its own drawn head
   hid the mouth for a third of every line), the mouth stops with its bubble,

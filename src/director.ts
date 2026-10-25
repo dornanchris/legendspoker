@@ -47,7 +47,11 @@ export type Beat =
    * lines at the player), which the player may ask to hear less of
    * (settings.dialogue). Presentation only: the director says it either way.
    */
-  | { kind: 'line'; id: string; speaker: string; text: string; stage: boolean; chatter?: boolean }
+  | {
+      kind: 'line'; id: string; speaker: string; text: string; stage: boolean; chatter?: boolean
+      /** A lesson: the seat whose tell it points out, and the tell's words (the cards are face up by now). */
+      lesson?: { seat: number; tell: string }
+    }
   /** The table's name for you just changed. Always announced. */
   | { kind: 'respect'; tier: number; name: string | null }
   | { kind: 'mark'; id: string }
@@ -255,7 +259,7 @@ export class TableRun {
       this.mode === 'tour' && !!a.watching
   }
 
-  private say(l: Line, chatter = false): Beat {
+  private say(l: Line, chatter = false): Extract<Beat, { kind: 'line' }> {
     this.used.add(l.id)
     return {
       kind: 'line',
@@ -307,7 +311,7 @@ export class TableRun {
       if (this.rng() > chance) return []
       this.taught.add(`${id}|${t.text}`)
       const name = CHARACTERS[id]?.short ?? id
-      return [this.say({ ...line, text: line.text.replaceAll('{tell}', tellLine(name, t.text)) })]
+      return [{ ...this.say({ ...line, text: line.text.replaceAll('{tell}', tellLine(name, t.text)) }), lesson: { seat, tell: t.text } }]
     }
     return []
   }

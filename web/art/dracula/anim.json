@@ -3048,6 +3048,13 @@
   "turn",
   "swirl"
  ],
+ "acts": {
+  "tv_vh_dr_02d": "fingernail",
+  "tv_p1_04": [
+   "pulse",
+   "turn"
+  ]
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

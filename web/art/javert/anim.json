@@ -3363,6 +3363,13 @@
   "bicorne",
   "look_at_you"
  ],
+ "acts": {
+  "bs_plant_03": "notebook",
+  "bs_nm_jv_01c": "notebook",
+  "bs_ch_jv_02d": "notebook",
+  "bs_sh_jv_05e": "bicorne",
+  "bs_out_javert_02": "bicorne"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

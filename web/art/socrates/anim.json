@@ -3424,6 +3424,9 @@
   "look_at_you",
   "laugh"
  ],
+ "acts": {
+  "at_plant_04": "sip"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

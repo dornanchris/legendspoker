@@ -3103,6 +3103,9 @@
   "grin",
   "look_at_you"
  ],
+ "acts": {
+  "wh_jfk_out_02": "portraits"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

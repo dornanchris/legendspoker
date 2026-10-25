@@ -3370,6 +3370,9 @@
   "hat_water",
   "look_at_you"
  ],
+ "acts": {
+  "win.2": "collect"
+ },
  "gutter": [
   "shadow"
  ],

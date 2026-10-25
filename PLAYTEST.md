@@ -199,18 +199,17 @@ check:look); the cast's styles were checked with `npm run sim 3000 all`.
    the wordless (Cerberus, the Phoenix, the Horseman's horse, the Grey, the
    Robot), then ~40 key Death lines recorded yourself. Give callouts stable
    ids first, or nothing can be matched to a recording.
-3. **Telling, not showing. ACT-OUT.md is the shot list**: 139 actions, 52
-   NEW, 44 PARTIAL, 43 that EXIST as built clips and only need cueing (a
-   stage direction in dialogue plays no clip today: `showLine` in table.ts
-   shows only the words; a `stage` map in anim.json, like `cues`, would wire
-   them). 76 stage directions in the dialogue have no
-   animation at all (`pc_p0_05` "[sets a pistol on the table]" while
-   Blackbeard's `pistol_up`/`pistol_down` are built and unused); 134 built
-   clips are never cued (`big_bet` on 41 puppets, `laugh` on 10, Death's
-   `watch_that`, Pravuil's `quill`). A line-to-clip map in anim.json,
-   checked by `check:data`, would let a line play its business. Cue
-   `watch_that` (and light the seat) on Death's lessons, `big_bet` on everyone
-   still in when someone shoves (public, so rule 2 holds).
+3. **Telling, not showing. ACT-OUT.md is the shot list**: 139 actions.
+   ~~Wire what the art already has~~ DONE: 58 rows play now (_wired_ in
+   ACT-OUT.md): `acts` in anim.json maps a line id or a callout to clips
+   (Blackbeard sets his pistol down at `pc_p0_05`, FDR laughs and settles his
+   cape on the way out, Cerberus whines, sniffs, pants and lies down), Death
+   shuffles before the first hand and points at the tell in a lesson, and the
+   two rooms with a turn play it (the Station's lights and floating chips,
+   Transylvania's fire). Left: the rows still NEW need drawings (Cerberus's
+   tail and barks, the Horseman's sword and pumpkin, the Phoenix's beak),
+   `look_toward` needs a gaze that can aim at a seat, and `big_bet` on
+   everyone still in when someone shoves is unwired.
 4. **Repetition.** 97 of 101 `beat_` pools hold one line and fire at 0.85
    (Merlin's `beat_green_knight` 1.4 times a sitting); every `reraised` pool has
    2; Death has 3 callouts per action at the finale (the table replayed most).

@@ -3760,6 +3760,26 @@
   "smile",
   "look_at_you"
  ],
+ "acts": {
+  "check.0": "tap~",
+  "fold.1": [
+   "square~",
+   "fold"
+  ],
+  "win.3": "collect",
+  "lose.0": "won_pot",
+  "reraised.1": "won_pot",
+  "wh_gw_04b": "won_pot",
+  "wh_nd_07a": "won_pot",
+  "c1_nd_09c": "won_pot",
+  "wh_p1_04": "look_at_you",
+  "wh_p0_05": "window",
+  "c1_p0_02": "@still",
+  "wh_jfk_in_05": [
+   "window",
+   "won_pot"
+  ]
+ },
  "win": {
   "small": "win_small",
   "big": "win_big"

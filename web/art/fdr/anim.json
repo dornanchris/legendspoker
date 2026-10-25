@@ -2881,6 +2881,12 @@
   "holder_out",
   "look_at_you"
  ],
+ "acts": {
+  "wh_fdr_out_02": [
+   "laugh",
+   "cape"
+  ]
+ },
  "win": {
   "small": "win_small",
   "big": "win_big"

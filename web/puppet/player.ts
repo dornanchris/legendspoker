@@ -18,9 +18,12 @@ import type { ClipData } from './clip.js'
 
 /** After a clip's hold (ClipData.hold), the rest of it plays this many times faster: the pose snaps back. */
 export const SNAP = 3
+/** A held pose played briskly is held this long (s). */
+export const BRISK = 0.5
 
 /** `held`: seconds spent so far in the clip's hold (ClipData.hold). */
-type Playing = { name: string; clip: ClipData; t: number; loop: boolean; held: number }
+/** `holdFor`: how long its held pose is held (s), the clip's own hold unless played briskly. */
+type Playing = { name: string; clip: ClipData; t: number; loop: boolean; held: number; holdFor: number }
 
 /**
  * A clip cut short, handing back to rest (IK puppets only): what it had added
@@ -137,13 +140,18 @@ export class PuppetPlayer {
     return Object.keys(this.entry.anim.clips)
   }
 
-  /** Start a clip from its beginning (a clip already playing restarts). */
-  play(name: string, loop = false): void {
+  /**
+   * Start a clip from its beginning (a clip already playing restarts).
+   * `brisk`: its held pose is held only BRISK seconds (an act in place of a
+   * poker action, which must not keep the table waiting).
+   */
+  play(name: string, loop = false, brisk = false): void {
     const clip = this.entry.anim.clips[this.resolve(name)]
     if (!clip) throw new Error(`no clip "${name}"`)
     this.release(this.playing.filter((p) => p.name === name))
     this.playing = this.playing.filter((p) => p.name !== name)
-    this.playing.push({ name, clip, t: 0, loop, held: 0 })
+    const hold = clip.hold?.[1] ?? 0
+    this.playing.push({ name, clip, t: 0, loop, held: 0, holdFor: brisk ? Math.min(hold, BRISK) : hold })
   }
 
   stop(name?: string): void {
@@ -200,14 +208,14 @@ export class PuppetPlayer {
       for (const p of this.playing) {
         let adv = dt * this.speed
         const hold = p.clip.hold
-        if (hold && p.held < hold[1] && p.t + adv > hold[0]) {
+        if (hold && p.held < p.holdFor && p.t + adv > hold[0]) {
           // reach the held pose, then stay there until the hold is spent
-          const pause = Math.min(adv - Math.max(0, hold[0] - p.t), hold[1] - p.held)
+          const pause = Math.min(adv - Math.max(0, hold[0] - p.t), p.holdFor - p.held)
           p.held += pause
           adv -= pause
         }
         // the hold spent, the pose snaps back
-        if (hold && p.held >= hold[1] && p.t >= hold[0]) adv *= p.clip.snap ?? SNAP
+        if (hold && p.held >= p.holdFor && p.t >= hold[0]) adv *= p.clip.snap ?? SNAP
         p.t += adv
         if (p.t >= p.clip.duration && p.loop) { p.t %= p.clip.duration; p.held = 0 }
       }

@@ -2575,6 +2575,10 @@
    }
   }
  },
+ "acts": {
+  "fn_bust_04": "shuffle",
+  "fn_end_05": "quill"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "thumb": "ref_thumb.png",

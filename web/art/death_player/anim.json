@@ -2391,6 +2391,9 @@
   "flex",
   "clock"
  ],
+ "acts": {
+  "fn_p0_01": "clock"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

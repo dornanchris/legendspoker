@@ -3375,6 +3375,9 @@
   "proud",
   "look_at_you"
  ],
+ "acts": {
+  "cm_ar_la_02c": "chair"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

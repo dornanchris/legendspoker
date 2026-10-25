@@ -3508,6 +3508,9 @@
   "ribbon",
   "look_at_you"
  ],
+ "acts": {
+  "pc_p0_05": "pistol_down"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

@@ -1460,3 +1460,18 @@ blockquote cite { display: block; font-style: normal; font-family: var(--sans); 
 .table-menu.ask .menu-panel { width: min(460px, 100%); }
 .table-menu.ask p { margin: 0; color: var(--ink); font-family: var(--serif); line-height: 1.4; }
 .ask-actions { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+
+/*
+ * The Station's turn: the gravity lets go, every pile of chips lifts off
+ * the felt, hangs, and falls back (table.ts weightless). Each pile has its
+ * own height, drift, tilt and start (--wh, --wx in px at --s 1, --wr, --wd).
+ */
+.weightless .pile { animation: weightless 2.9s var(--wd, 0s) both; }
+@keyframes weightless {
+  0% { transform: none; animation-timing-function: cubic-bezier(0.3, 0, 0.4, 1); }
+  45% { transform: translate(calc(var(--wx) * 1px * var(--s, 1)), calc(var(--wh) * -1px * var(--s, 1))) rotate(var(--wr)); animation-timing-function: linear; }
+  72% { transform: translate(calc(var(--wx) * 1.4px * var(--s, 1)), calc(var(--wh) * -1.12px * var(--s, 1))) rotate(calc(var(--wr) * 1.3)); animation-timing-function: cubic-bezier(0.55, 0, 1, 0.6); }
+  84% { transform: none; animation-timing-function: ease-out; }
+  90% { transform: translateY(calc(-3px * var(--s, 1))); animation-timing-function: ease-in; }
+  100% { transform: none; }
+}

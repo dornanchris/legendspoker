@@ -3376,6 +3376,11 @@
  "fidgets": [
   "polish"
  ],
+ "acts": {
+  "st_elim_ai_02": "lose_big",
+  "c2_ai_out_01": "lose_big",
+  "c2_p0_02": "head_turn"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",
