@@ -81,8 +81,11 @@ hands (the top 5% was three of them). Now a skilled reader takes the bluff
 share of the PLAYER's range from what they have shown down, narrow ranges are
 drawn from enough hands to be narrow, skill 0.75 and up counts with more
 rollouts (four times at skill 1), and Death and the Phoenix believe the read
-in full (`betRespect` 1). Death's dials were then searched against the
-probes (600 finales a setting): aggression 0.75, bluffs 0.1, adaptivity 1.
+in full: a skilled reader believes their read of the player as far as their
+skill (`max(betRespect, skill)`; the cast, known only by reputation, keep
+their own `betRespect`: full belief in everyone sank Death to 8th against the
+bluffing cast). Death's dials were then searched against the probes (600
+finales a setting): aggression 0.75, bluffs 0.1, adaptivity 1.
 
 | against Death | before the playtest | ENGINE 15 | **ENGINE 16** |
 |---|---|---|---|
@@ -93,8 +96,10 @@ probes (600 finales a setting): aggression 0.75, bluffs 0.1, adaptivity 1.
 
 (Against a player who shoves every hand ~31% is about the floor: at equal
 stacks the first called all-in decides it.) The Phoenix: TAG + tells 51% →
-**~36%**. The cast's own styles held (VPIP within ~1.5 points at the White
-House, Camelot and the Station). Against a player
+**~41%**. On the bot-vs-bot ladder (`npm run headsup 16`) Death is 55%, the
+Phoenix 57%: the two at the top, within the ladder's noise (about ±3). The
+cast's own styles held (VPIP within ~1.5 points at the White House, Camelot
+and the Station). Against a player
 who shoves every hand 34-36% is about the floor: at equal stacks the first
 called all-in decides the match, and any two cards win ~40% of those.
 The Phoenix (same treatment, bluffs 0.24 → 0.12, aggression 0.74 → 0.65):
@@ -223,8 +228,9 @@ check:look); the cast's styles were checked with `npm run sim 3000 all`.
    the finale, which starts 250bb deep; 20-35 minutes at normal pace, with
    banter holding the next deal for up to ~15 s. Consider a shallower finale,
    faster levels once heads up, banter that plays over the next deal.
-8. ~~**The Phoenix is still about even**~~ DONE (ENGINE 16): ~36% for a
-   solid player, second only to Death.
+8. ~~**The Phoenix is still about even**~~ DONE (ENGINE 16): ~41% for a
+   solid player, second only to Death. Skill 1 for the Phoenix would make it
+   harder for the player, and stronger than Death on the bot ladder.
 9. **The difficulty curve after this pass** (TAG / TAG + tells, first
    places per 100; par 20, 17 where a sixth player arrives, 50 heads up):
    White House 23/27, Athens 21/23, Pirate Cove 29/25, Camelot 16/19, Rome

@@ -481,11 +481,14 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   (`loose` in Game, `equityVs(..., loose)`; it was a flat `RANGE_LOOSE`
   fifth), narrow ranges are drawn from enough candidates (`12 / range`, up to
   400), skill 0.75+ counts with more rollouts (`careful`: x4 at skill 1), and
-  Death and the Phoenix believe the read in full (`betRespect` 1). Death
-  0.75 / tightness 0.7 / bluffs 0.1 / adaptivity 1, picked against the probes
-  on 600 finales a setting. A solid TAG now wins ~25% of finales (a nit or
-  station 3%, a maniac or an every-hand shover ~31%, about the floor at even
-  stacks); the Phoenix ~36%. The cast's styles held.
+  a skilled reader believes their read of the PLAYER as far as their skill
+  (`belief = max(betRespect, skill)` for the player's bets; the cast keep
+  `betRespect`, or full belief sank Death to 8th against the bluffing cast).
+  Death 0.75 / tightness 0.7 / bluffs 0.1 / adaptivity 1, picked against the
+  probes on 600 finales a setting. A solid TAG now wins ~25% of finales (a nit
+  or station 3%, a maniac or an every-hand shover ~31%, about the floor at
+  even stacks); the Phoenix ~41%; the ladder: the Phoenix 57%, Death 55%
+  (within noise). The cast's styles held.
   Also since: table talk (`chatter`) plays on its own track over the next
   deal (`talkOn` in table.ts); Death's `comeback` line (dealer.json) for a
   player who doubled up from far behind; 37 of 41 `talk` frames rebuilt with

@@ -68,8 +68,9 @@ export const SAVE_VERSION = 1
  * 16: Death made very hard. A skilled reader takes the share of bluffs in
  *    the player's range from what they show down (not a flat fifth), narrow
  *    ranges are drawn from enough hands to be narrow, and skill 0.75 and up
- *    counts with more rollouts; Death and the Phoenix believe that read in
- *    full (betRespect 1), Death aggression 0.75, bluffs 0.1, adaptivity 1.
+ *    counts with more rollouts; a skilled reader believes their read of the
+ *    player as far as their skill; Death aggression 0.75, bluffs 0.1,
+ *    adaptivity 1.
  */
 export const ENGINE_VERSION = 16
 

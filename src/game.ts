@@ -764,7 +764,12 @@ export class Game {
             base = Math.max(0.05, Math.min(1, base))
           }
           // In steps of 5%, so a street's equity is worked out a few times at most.
-          oppRange = Math.round((1 - s.personality.betRespect * (1 - base)) * 20) / 20
+          // The player has been READ (above), and a skilled reader believes
+          // that read as far as their skill; the cast are known only by
+          // reputation, and believed as far as `betRespect` says. Full belief
+          // in everyone sank Death against the cast, who bluff.
+          const belief = bettor === humanSeat ? Math.max(s.personality.betRespect, s.personality.skill) : s.personality.betRespect
+          oppRange = Math.round((1 - belief * (1 - base)) * 20) / 20
         }
         const key = `${seat}:${street}:${oppRange}:${loose.toFixed(2)}`
         let equity = 0
