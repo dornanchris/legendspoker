@@ -71,7 +71,30 @@ early tables (skill 0) play exactly as before:
 
 Result, 300-600 finales per measurement: the TAG bot 46% → **42%**, TAG +
 tells 49% → **38%** (about 40% together, over 600 finales; 100 is ±5), a
-maniac 33% → 31%, a nit 22% → 17%. Better, not done: see What next. Against a player
+maniac 33% → 31%, a nit 22% → 17%.
+
+**Then the owner: "Death needs to be very hard" (ENGINE_VERSION 16).** The
+transcripts showed where the rest went: raise wars. Death five-bet 6-6, 8-8
+and A-5 for 150bb+ believing 57-66%, because every range carried a flat 20%
+of weaker hands "for the bluffs", and a narrow range was drawn from 60 random
+hands (the top 5% was three of them). Now a skilled reader takes the bluff
+share of the PLAYER's range from what they have shown down, narrow ranges are
+drawn from enough hands to be narrow, skill 0.75 and up counts with more
+rollouts (four times at skill 1), and Death and the Phoenix believe the read
+in full (`betRespect` 1). Death's dials were then searched against the
+probes (600 finales a setting): aggression 0.75, bluffs 0.1, adaptivity 1.
+
+| against Death | before the playtest | ENGINE 15 | **ENGINE 16** |
+|---|---|---|---|
+| TAG + TAG with tells | 46-49% | ~40% | **~25%** |
+| maniac | 33% | 31% | 31% |
+| shoves every hand | 34% | 36% | 31% |
+| nit / station | 22% / 8% | 17% / 4% | **3% / 3%** |
+
+(Against a player who shoves every hand ~31% is about the floor: at equal
+stacks the first called all-in decides it.) The Phoenix: TAG + tells 51% →
+**~36%**. The cast's own styles held (VPIP within ~1.5 points at the White
+House, Camelot and the Station). Against a player
 who shoves every hand 34-36% is about the floor: at equal stacks the first
 called all-in decides the match, and any two cards win ~40% of those.
 The Phoenix (same treatment, bluffs 0.24 → 0.12, aggression 0.74 → 0.65):
@@ -153,17 +176,29 @@ check:look); the cast's styles were checked with `npm run sim 3000 all`.
 ## What to change next, by how often a player will feel it
 
 ### Every hand
-1. **The talk gestures need redrawing with the moving head.** 41 puppets now
-   simply don't gesture while they speak. Lincoln's way (`frames.talk`: the
-   master head riding on the drawn frame) is the fix, per puppet; or a plain
-   head-bob clip as a stopgap.
+1. ~~**The talk gestures need redrawing with the moving head.**~~ DONE for 37
+   of 41: rebuilt from the same drawings with `pose_rig.py`, Lincoln's way
+   (the frame's drawn head cut away or covered, the master head riding on
+   it). Left: the Cyclops, the Pope and Roosevelt, whose talk drawings put a
+   fist or a turned head where the master head goes; they still skip the
+   gesture (`hidesMouth`). Each needs a talk pose redrawn. The same treatment
+   would help the ACTION frames (call, bet...) that callouts ride on.
+1a. ~~**Banter slows play.**~~ DONE: table talk plays on its own track over
+   the next deal (`talkOn` in table.ts); story lines still wait.
+1b. ~~**A rise-from-the-ashes line.**~~ DONE: Death's `comeback` pool
+   (dealer.json), half the time and once a sitting, when the player sat down
+   to a hand with 40% of the biggest stack or less and at least doubled.
 2. **Voice.** ~2,955 spoken lines, 25.3k words. At $0: Web Audio "barks"
    (Animal Crossing-style gibberish driven by the beats `Face.say()` already
    makes, pitch and timbre per character in anim.json), creature sounds for
    the wordless (Cerberus, the Phoenix, the Horseman's horse, the Grey, the
    Robot), then ~40 key Death lines recorded yourself. Give callouts stable
    ids first, or nothing can be matched to a recording.
-3. **Telling, not showing.** 76 stage directions in the dialogue have no
+3. **Telling, not showing. ACT-OUT.md is the shot list**: 139 actions, 52
+   NEW, 44 PARTIAL, 43 that EXIST as built clips and only need cueing (a
+   stage direction in dialogue plays no clip today: `showLine` in table.ts
+   shows only the words; a `stage` map in anim.json, like `cues`, would wire
+   them). 76 stage directions in the dialogue have no
    animation at all (`pc_p0_05` "[sets a pistol on the table]" while
    Blackbeard's `pistol_up`/`pistol_down` are built and unused); 134 built
    clips are never cued (`big_bet` on 41 puppets, `laugh` on 10, Death's
@@ -181,24 +216,15 @@ check:look); the cast's styles were checked with `npm run sim 3000 all`.
 6. **Brows** exist on 19 puppets and are only ever moved on the bench.
 
 ### Every sitting
-6a. **Death is better, not yet hard.** A solid player still beats him about
-   40% of the time (par heads up is 50%). His remaining leaks are in the
-   decision model itself: equity against a range, with no sense of position
-   or of playing a hand on later streets. The cheapest next steps: give
-   skill a postflop defence floor against a player who bets too often, and
-   let the showdown read also widen a player seen bluffing on the river. Use
-   the probe bots on 600+ finales to judge any change; 100 is ±5 points.
-   On the bot-vs-bot ladder he is still first, at 58% (was 64%; `npm run
-   headsup 16` over the champions and five others): `heads_up_pressure` won
-   against the cast's bots and lost against a solid player, and the player
-   is who he has to beat.
+6a. ~~**Death is better, not yet hard.**~~ DONE in ENGINE_VERSION 16 (above):
+   a solid player wins about one finale in four. Judge any later change on
+   600+ finales with the probe bots; 100 is ±5 points.
 7. **Sittings are long for a phone**: 42-50 hands at a table, 65 (p90 93) at
    the finale, which starts 250bb deep; 20-35 minutes at normal pace, with
    banter holding the next deal for up to ~15 s. Consider a shallower finale,
    faster levels once heads up, banter that plays over the next deal.
-8. **The Phoenix is still about even** for a solid player (50%), and the
-   Pyre is the reward for the game's hardest grind. Give it Death's
-   treatment in its own dials (or skill 1).
+8. ~~**The Phoenix is still about even**~~ DONE (ENGINE 16): ~36% for a
+   solid player, second only to Death.
 9. **The difficulty curve after this pass** (TAG / TAG + tells, first
    places per 100; par 20, 17 where a sixth player arrives, 50 heads up):
    White House 23/27, Athens 21/23, Pirate Cove 29/25, Camelot 16/19, Rome

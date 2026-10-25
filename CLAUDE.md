@@ -149,6 +149,7 @@ ROSTER.md         GENERATED casting book: never edit by hand
 ART-PIPELINE.md   the art workflow, step by step, and the queue of characters
 FIX-LATER.md      what we go back to: redraws, layout bugs, owed decisions
 PLAYTEST.md       the October 2026 playthrough: what was fixed, what is next
+ACT-OUT.md        the shot list: every stage direction the game tells and could show
 art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   cut_sheet.py    split_parts plus each kit's fixes as data (<id>_parts/cut.json):
@@ -475,6 +476,21 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   42/38 (300 each), Death still first on the heads-up ladder (58%, was
   64%), the Pyre 49/69 -> 53/48, Baker Street 36/22 -> 16/22, the Station
   7/12, the rest 13-29. The Pyre is still about even for a solid player.
+  **Then ENGINE_VERSION 16, "Death needs to be very hard" (the owner):**
+  the bluff share of the player's range is read from their showdowns
+  (`loose` in Game, `equityVs(..., loose)`; it was a flat `RANGE_LOOSE`
+  fifth), narrow ranges are drawn from enough candidates (`12 / range`, up to
+  400), skill 0.75+ counts with more rollouts (`careful`: x4 at skill 1), and
+  Death and the Phoenix believe the read in full (`betRespect` 1). Death
+  0.75 / tightness 0.7 / bluffs 0.1 / adaptivity 1, picked against the probes
+  on 600 finales a setting. A solid TAG now wins ~25% of finales (a nit or
+  station 3%, a maniac or an every-hand shover ~31%, about the floor at even
+  stacks); the Phoenix ~36%. The cast's styles held.
+  Also since: table talk (`chatter`) plays on its own track over the next
+  deal (`talkOn` in table.ts); Death's `comeback` line (dealer.json) for a
+  player who doubled up from far behind; 37 of 41 `talk` frames rebuilt with
+  the master head riding on them (the Cyclops, the Pope and Roosevelt still
+  skip the gesture); ACT-OUT.md is the shot list of stage directions to act out.
   On the table screen: **speech waits for the moving head** (`Face.heldBack`
   from `Puppet.mouthVisible()`: a whole-figure frame with its own drawn head
   hid the mouth for a third of every line), the mouth stops with its bubble,
