@@ -313,6 +313,10 @@
  "frame_extra": {
   "sniff": {
    "biggest": true
+  },
+  "talk": {
+   "head": null,
+   "cut_head": true
   }
  },
  "no_prop": [

@@ -148,6 +148,8 @@ ios/              the Capacitor iOS project (Xcode, Swift Package Manager);
 ROSTER.md         GENERATED casting book: never edit by hand
 ART-PIPELINE.md   the art workflow, step by step, and the queue of characters
 FIX-LATER.md      what we go back to: redraws, layout bugs, owed decisions
+PLAYTEST.md       the October 2026 playthrough: what was fixed, what is next
+ACT-OUT.md        the shot list: every stage direction the game tells and could show
 art-tools/
   split_parts.py  cuts an AI-generated parts sheet into layers + parts.json
   cut_sheet.py    split_parts plus each kit's fixes as data (<id>_parts/cut.json):
@@ -443,6 +445,77 @@ plus a first pass of Phase 7 and 9 *content*, all still without art:
   player in your chair who reads tells and bets like a skilled character,
   100 tables each: wins 33% at the White House, 15% at the Station (one in
   five is par).
+- **The playtest (ENGINE_VERSION 15; PLAYTEST.md has the whole of it).** A
+  bot played the tour through the real UI and beat Death on its first try, in
+  13 hands; probe bots in the player's seat (tag, tag + tells, maniac,
+  pusher, station, nit; ~5,000 sittings) found why. Fixed, all scaled by
+  `skill` so the White House (skill 0) plays as it did:
+  1. **Reading the player by what they show down** (`Game.read`): what their
+     bets after the flop turned out to be (`shownStrength` in equity.ts,
+     against the cast's 0.627, `SHOWN_BET`) and, before the flop, how often
+     they raise and what their raises showed (`PFR` 0.228, `SHOWN_RAISE`
+     0.417). The cast bluffs, so the plain read paid a player who only bets
+     real hands off. Widening for a loose player is a power, not a multiple.
+  2. `readBet` narrows preflop re-raises (x0.6 a raise after the first).
+  3. In a hand DEALT heads up (`dealtIn` 2), with only the blind to call, a
+     skilled player's equity moves from the strength score toward real
+     heads-up equity, and the tight entry floor falls away with skill. Not
+     when a full table folds round to the blinds: that loosened the cast by
+     up to twelve points of VPIP.
+  4. **Tells show on `TELL_RATE` (35%) of decisions, whatever the hand**
+     (emitTell). They fired on every decision: a parade of poses, and a
+     character with no "weak" tell gave himself away by keeping still.
+  5. A hand over the value bar is always bet on the river; `patient` tests
+     only raises over 3bb to call (at 4 Javert's VPIP went 25 -> 38); `committed` minds the price; AI bet
+     sizes are rounded (fives, then 25s and 50s) in Game, not in decide().
+  6. Death and the Phoenix lost `heads_up_pressure` (every extra bit of
+     pressure made Death worse against a solid player); the Phoenix bluffs
+     0.12 (was 0.24), aggression 0.65; Blackbeard 0.68 / 0.18 / skill 0.45,
+     Caesar bluffs 0.18, skill 0.65.
+  Result (first places per 100, TAG / TAG + tells): the finale 46/49 ->
+  42/38 (300 each), Death still first on the heads-up ladder (58%, was
+  64%), the Pyre 49/69 -> 53/48, Baker Street 36/22 -> 16/22, the Station
+  7/12, the rest 13-29. The Pyre is still about even for a solid player.
+  **Then ENGINE_VERSION 16, "Death needs to be very hard" (the owner):**
+  the bluff share of the player's range is read from their showdowns
+  (`loose` in Game, `equityVs(..., loose)`; it was a flat `RANGE_LOOSE`
+  fifth), narrow ranges are drawn from enough candidates (`12 / range`, up to
+  400), skill 0.75+ counts with more rollouts (`careful`: x4 at skill 1), and
+  a skilled reader believes their read of the PLAYER as far as their skill
+  (`belief = max(betRespect, skill)` for the player's bets; the cast keep
+  `betRespect`, or full belief sank Death to 8th against the bluffing cast).
+  Death 0.75 / tightness 0.7 / bluffs 0.1 / adaptivity 1, picked against the
+  probes on 600 finales a setting. A solid TAG now wins ~25% of finales (a nit
+  or station 3%, a maniac or an every-hand shover ~31%, about the floor at
+  even stacks); the Phoenix ~41%; the ladder: the Phoenix 57%, Death 55%
+  (within noise). The cast's styles held.
+  Also since: table talk (`chatter`) plays on its own track over the next
+  deal (`talkOn` in table.ts); Death's `comeback` line (dealer.json) for a
+  player who doubled up from far behind; 37 of 41 `talk` frames rebuilt with
+  the master head riding on them (the Cyclops, the Pope and Roosevelt still
+  skip the gesture); ACT-OUT.md is the shot list of stage directions to act out.
+  **What the art already had is wired** (the rows marked _wired_ there): a
+  line or callout that says someone does something plays it, from `acts` in
+  their anim.json (a line id or a callout's `pool.n` to clips in order;
+  `@still` holds still, `name~` plays a held pose briskly; a callout's acts
+  replace its action's clip; a parting line is acted before the chair
+  empties; never a tell's clip: check:data). Death shuffles before the first
+  hand dealt live; a lesson is his `watch_that` and then the tell again (the
+  `lesson` on the line Beat). Rooms turn live (`turn` and `acts` in room.json,
+  passed through by room_web.py; `Stage.setPresence(state, live)`): the
+  Station's lights fail and come up amber, every pile of chips floats and
+  falls (`weightless` in table.ts), and the room is itself again once the AI
+  is out; Transylvania's fire sinks to a glow and "Nobody at the table moves"
+  freezes the table (`Face.frozen`, `Stage.freeze`). Presentation only.
+  On the table screen: **speech waits for the moving head** (`Face.heldBack`
+  from `Puppet.mouthVisible()`: a whole-figure frame with its own drawn head
+  hid the mouth for a third of every line), the mouth stops with its bubble,
+  and a `talk` gesture that would hide the mouth is skipped (`hidesMouth`;
+  41 of 44 do: they wait for a redraw with the moving head riding on the
+  frame, Lincoln's way). Bubbles keep on screen and clear of the Menu
+  (`keepInView`); the winning hand is named on the felt; heads-up losses no
+  longer say "Second place"; places stop repeating when someone sits down
+  mid-table; `ask()` in dom.ts replaces `confirm()`.
 - **Fast-forward:** offered when folded / all in; presentation clock only;
   lines are cut, not sped; cancels at the showdown reveal and new deals.
 - **Table motion and sound (an early slice of Phase 6):** Death shuffles and
@@ -926,8 +999,8 @@ new art against that layout.
 
 ## KNOWN GAPS AND SIMPLIFICATIONS
 
-- **The tell model is still one-signal-per-decision** (`emitTell`) plus
-  ambient noise. The design doc's real model — meaning only in COMBINATIONS
+- **The tell model is still one signal per decision** (`emitTell`, on
+  `TELL_RATE` of them since ENGINE_VERSION 15) plus ambient noise. The design doc's real model — meaning only in COMBINATIONS
   during a live hand — is Phase 7's cluster logic and needs the Rive rig.
 - **All content is draft.** Profiles, table text and dialogue were written to
   the design doc's rules and pass `check:data`, but no human has edited them.

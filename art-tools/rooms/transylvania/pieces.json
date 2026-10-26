@@ -15,5 +15,7 @@
   {"frames": ["fire_1", "fire_2", "fire_3"], "every": [0.12, 0.25], "spots": [[1750, 543, 230]]},
   {"frames": ["flame_1", "flame_2", "flame_3"], "every": [0.11, 0.24],
    "spots": [[532, 294, 30], [569, 272, 34], [602, 293, 28]]}
- ]
+ ],
+ "turn": {"embers": 0},
+ "acts": {"tv_arrive_03": "freeze"}
 }

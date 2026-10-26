@@ -292,6 +292,20 @@
    "bone": "torso"
   },
   {
+   "name": "frame_over.talk",
+   "img": "frame_over_talk.png",
+   "cx": 550.0,
+   "cy": 758.0,
+   "rot": 0,
+   "scale": 1.0,
+   "flip": false,
+   "z": 21,
+   "slot": "frame_over",
+   "visible": false,
+   "onTable": false,
+   "bone": "torso"
+  },
+  {
    "name": "frame.hood",
    "img": "frame_hood.png",
    "cx": 550.0,
@@ -552,7 +566,10 @@
   "win_big": null,
   "lose_big": null,
   "heads_up": null,
-  "talk": null,
+  "talk": [
+   36.0,
+   19.0
+  ],
   "hood": null,
   "brooch": null,
   "ash": null,

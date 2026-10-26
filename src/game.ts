@@ -2,7 +2,7 @@
 import pokerPkg from 'poker-ts'
 const { Table: Poker } = pokerPkg as any
 import { decide, emitTell, betRange, readBet, readTell, type Action, type Decision } from './decide.js'
-import { handStrength, preflopStrength, drawOuts, boardWetness, type Card } from './equity.js'
+import { handStrength, preflopStrength, equityVs, shownStrength, drawOuts, boardWetness, RANGE_LOOSE, type Card } from './equity.js'
 import type { Personality } from './personality.js'
 import { seededShuffle } from './rng.js'
 import { assertPatchedEngine } from './engine-guard.js'
@@ -27,6 +27,14 @@ export type Stats = {
   facedAggression: number
   wins: number
   showdowns: number
+  /** Hands turned over at showdown after betting or raising after the flop... */
+  shownBets: number
+  /** ...and their strength summed (shownStrength): what this seat's bets have been seen to mean. */
+  shownBetStrength: number
+  /** Hands turned over at showdown after raising before the flop... */
+  shownRaises: number
+  /** ...and their strength scores summed (preflopStrength). */
+  shownRaiseStrength: number
 }
 
 export const newStats = (): Stats => ({
@@ -42,6 +50,10 @@ export const newStats = (): Stats => ({
   facedAggression: 0,
   wins: 0,
   showdowns: 0,
+  shownBets: 0,
+  shownBetStrength: 0,
+  shownRaises: 0,
+  shownRaiseStrength: 0,
 })
 
 /**
@@ -54,6 +66,23 @@ export const newStats = (): Stats => ({
 const BET_FREQ = 0.22
 const FOLD_RATE = 0.4
 const READ_PRIOR = 30
+/**
+ * What a hand turned over at showdown is worth (shownStrength) when its player
+ * bet or raised after the flop: the cast's average, 0.627 (ENGINE_VERSION 15,
+ * the eight story tables, ~2,000 such showdowns; the same on every street).
+ * SHOWN_PRIOR is how many showdowns of evidence the average is worth to an
+ * unskilled reader; skill shrinks it, as READ_PRIOR.
+ */
+const SHOWN_BET = 0.627
+const SHOWN_PRIOR = 10
+/**
+ * Before the flop the same two reads, on the preflop raise alone: how often a
+ * player raises (PFR, a share of hands dealt) and the strength score of the
+ * raises turned over at showdown. The cast's: 0.228 and 0.417 (ENGINE_VERSION
+ * 15, the eight story tables, ~1,500 showdowns).
+ */
+const PFR = 0.228
+const SHOWN_RAISE = 0.417
 
 export type BlindLevel = { smallBlind: number; bigBlind: number; ante?: number }
 
@@ -575,6 +604,11 @@ export class Game {
         ? this.table.holeCards().map((h: Card[] | null) => (h ? [...h] : null))
         : null
 
+    // How many were dealt in: a hand dealt to two is heads up from the start
+    // (the finale, the Pyre, the end of a sitting); one folded round to the
+    // blinds at a full table is not, and is not played like one.
+    const dealtIn = this.table.holeCards().filter(Boolean).length
+
     // Cache equity per (seat, street, what they are facing) -- recomputing it
     // on every action is where a naive implementation burns all its time.
     const equityCache = new Map<string, number>()
@@ -592,6 +626,8 @@ export class Game {
     // How a skilled player reads a bet in context (see readBet).
     let raisesThisStreet = 0
     const handBets: number[] = this.seats.map(() => 0)
+    /** Seats that bet or raised after the flop this hand: a showdown says what those bets meant. */
+    const betPostflop = new Set<number>()
     /** The tell each seat showed as they last acted this hand, if any. */
     const shownTell: ({ correlate: string; reliability: number } | null)[] = this.seats.map(() => null)
     let initiative = -1
@@ -666,6 +702,8 @@ export class Game {
         }
         const facingAllIn = bettor >= 0 && seatState[bettor].stack === 0
         let oppRange = 1
+        /** The share of that range that is bluffs and draws (see equityVs). */
+        let loose = RANGE_LOOSE
         if (!isHuman && bettor >= 0) {
           let base = betRange({
             street,
@@ -698,27 +736,62 @@ export class Game {
             })
             base *= Math.pow(context, skill)
             if (bettor === humanSeat) {
-              const often = this.read(bettor, skill).betFreq / BET_FREQ
-              base *= Math.pow(often, skill * s.personality.adaptivity)
+              // Someone who bets more than most widens their range; someone
+              // who bets less narrows it. As a power, not a multiple: a player
+              // who shoves every hand is shoving any two cards, and multiplying
+              // a deep shove's 12% by a few still called it a top-40% hand, so
+              // the champions folded most hands to a player who shoved every
+              // one; a power opens a narrow range far more than a wide one.
+              // Before the flop, how often they raise and what their raises have
+              // been at showdown; after it, how often they bet at all and what
+              // those bets turned out to be. A player who bets only real hands
+              // is believed (the cast bluffs, so the plain read paid such a
+              // player off), one seen bluffing is called down. Kept apart: a
+              // tight player's continuation bets made their preflop raises
+              // look loose.
+              const seen = this.read(bettor, skill)
+              const a = skill * s.personality.adaptivity
+              const air = street === 'preflop' ? seen.raiseAir / (1 - SHOWN_RAISE) : seen.air / (1 - SHOWN_BET)
+              const k = street === 'preflop'
+                ? Math.pow(seen.pfr / PFR, a) * Math.pow(air, 2 * a)
+                : Math.pow(seen.betFreq / BET_FREQ, a) * Math.pow(air, 2 * a)
+              base = Math.pow(base, 1 / k)
+              // and how much of that range is bluffs: a player whose bets have
+              // always been real hands has few. The plain fifth of every range
+              // let Death five-bet 6-6 into a four-bet as a 62% favourite.
+              loose = Math.max(0.02, Math.min(0.5, RANGE_LOOSE * Math.pow(air, 2 * a)))
             }
             base = Math.max(0.05, Math.min(1, base))
           }
           // In steps of 5%, so a street's equity is worked out a few times at most.
-          oppRange = Math.round((1 - s.personality.betRespect * (1 - base)) * 20) / 20
+          // The player has been READ (above), and a skilled reader believes
+          // that read as far as their skill; the cast are known only by
+          // reputation, and believed as far as `betRespect` says. Full belief
+          // in everyone sank Death against the cast, who bluff.
+          const belief = bettor === humanSeat ? Math.max(s.personality.betRespect, s.personality.skill) : s.personality.betRespect
+          oppRange = Math.round((1 - belief * (1 - base)) * 20) / 20
         }
-        const key = `${seat}:${street}:${oppRange}`
+        const key = `${seat}:${street}:${oppRange}:${loose.toFixed(2)}`
         let equity = 0
         if (!isHuman) {
           const cached = equityCache.get(key)
           if (cached === undefined) {
-            equity = handStrength(
-              hole,
-              board,
-              Math.max(1, this.table.numActivePlayers() - 1),
-              rollouts,
-              rng,
-              oppRange,
-            )
+            const opponents = Math.max(1, this.table.numActivePlayers() - 1)
+            // The most skilled count more carefully: 60 rollouts are worth
+            // +-6%, and a marginal call is decided inside that. Up to four
+            // times as many at skill 1 (Death), none extra below 0.75.
+            const careful = Math.round(rollouts * (1 + 12 * Math.max(0, s.personality.skill - 0.75)))
+            equity = handStrength(hole, board, opponents, careful, rng, oppRange, Math.round(loose * 50) / 50)
+            // Heads up before the flop with only the blind to call, the
+            // strength score undersells most hands: it rates 40% of them below
+            // 0.30, yet most of those win over 40% against one random hand,
+            // and a small blind that folded them gave the blinds away. A
+            // skilled player knows what any two cards are worth one on one:
+            // their equity moves from the score toward the real figure.
+            const skill = s.personality.skill
+            if (skill > 0 && dealtIn === 2 && board.length === 0 && oppRange >= 1) {
+              equity += skill * (equityVs(hole, board, 1, careful, rng, 1) - equity)
+            }
             equityCache.set(key, equity)
           } else {
             equity = cached
@@ -791,6 +864,7 @@ export class Game {
             street: street as any,
             legal,
             numOpponents: Math.max(1, this.table.numActivePlayers() - 1),
+            dealtIn,
             tilt: s.tilt,
             opponentFoldRate: this.foldRateFacing(seat, inHand, s.personality.skill),
             committed: contributed[seat],
@@ -801,6 +875,14 @@ export class Game {
             wet: boardWetness(board),
             rng,
           })
+
+          // A person bets in round numbers: "raises to 49" and "bets 72" read
+          // as a machine's. Fives at the first levels, then a unit that grows
+          // with the blind; the least raise and all in stay exact.
+          if (decision.betSize !== undefined && decision.betSize > minRaise && decision.betSize < maxRaise) {
+            const unit = bigBlind >= 400 ? 50 : bigBlind >= 100 ? 25 : bigBlind >= 20 ? 5 : 1
+            decision.betSize = Math.max(minRaise, Math.min(maxRaise, Math.round(decision.betSize / unit) * unit))
+          }
 
           // The tell precedes the action: it is a leak about the decision
           // already made, which is what makes it readable at all. Drawn
@@ -841,6 +923,7 @@ export class Game {
           aggressor = seat
           raisesThisStreet++
           handBets[seat]++
+          if (street !== 'preflop') betPostflop.add(seat)
           if (street === 'preflop') {
             putMoneyIn.add(seat)
             raisedPreflop.add(seat)
@@ -875,6 +958,16 @@ export class Game {
           if (hole[i] && !foldedSeats.has(i)) {
             wentToShowdown.add(i)
             revealed.push({ seat: i, hole: hole[i]! })
+            // Public: the cards are face up. Only the player is read this way
+            // (see the bettor's read above), so only theirs is worked out.
+            if (i === humanSeat && betPostflop.has(i) && finalBoard.length === 5) {
+              this.seats[i].stats.shownBets++
+              this.seats[i].stats.shownBetStrength += shownStrength(hole[i]!, finalBoard)
+            }
+            if (i === humanSeat && raisedPreflop.has(i)) {
+              this.seats[i].stats.shownRaises++
+              this.seats[i].stats.shownRaiseStrength += preflopStrength(hole[i]!)
+            }
           }
         }
         // What each seat put in this hand: every bet has been collected by
@@ -1155,13 +1248,20 @@ export class Game {
    * their mind sooner: the average is worth 30 actions at skill 0, 6 at 1.
    * The human seat is read like anyone else.
    */
-  private read(seat: number, skill: number): { betFreq: number; foldRate: number } {
+  private read(seat: number, skill: number): { betFreq: number; foldRate: number; air: number; pfr: number; raiseAir: number } {
     const st = this.seats[seat].stats
     const acts = st.bets + st.calls + st.checks + st.folds
     const prior = READ_PRIOR * (1 - 0.8 * skill)
+    const shown = SHOWN_PRIOR * (1 - 0.8 * skill)
     return {
       betFreq: (st.bets + BET_FREQ * prior) / (acts + prior),
       foldRate: (st.foldsToAggression + FOLD_RATE * prior) / (st.facedAggression + prior),
+      /** How far short of the nuts their bets after the flop have been seen to be, at showdown. */
+      air: Math.max(0.05, 1 - (st.shownBetStrength + SHOWN_BET * shown) / (st.shownBets + shown)),
+      /** How often they raise before the flop, a share of hands dealt. */
+      pfr: (st.pfr + PFR * prior) / (st.hands + prior),
+      /** How far short of the best start their preflop raises have been seen to be. */
+      raiseAir: Math.max(0.05, 1 - (st.shownRaiseStrength + SHOWN_RAISE * shown) / (st.shownRaises + shown)),
     }
   }
 

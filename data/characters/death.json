@@ -10,11 +10,11 @@
   "origin": "Archetype",
   "era": "Always",
   "dials": {
-    "aggression": 0.65,
+    "aggression": 0.75,
     "tightness": 0.7,
-    "bluffFrequency": 0.06,
+    "bluffFrequency": 0.1,
     "tiltSensitivity": 0,
-    "adaptivity": 0.85,
+    "adaptivity": 1.0,
     "betRespect": 0.9,
     "skill": 1,
     "noise": 0
@@ -24,11 +24,6 @@
       "type": "check_raise",
       "minEquity": 0.75,
       "chance": 0.5
-    },
-    {
-      "type": "heads_up_pressure",
-      "minEquity": 0.6,
-      "chance": 0.35
     },
     {
       "type": "punish_passivity",

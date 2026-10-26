@@ -329,6 +329,10 @@
  "frame_extra": {
   "lose_big": {
    "props": []
+  },
+  "talk": {
+   "head": null,
+   "head_match": "face"
   }
  },
  "no_prop": []

@@ -33,6 +33,19 @@ const FADE = 0.8
 export const PRIO = { idle: 0, tell: 1, act: 2 } as const
 export type Prio = (typeof PRIO)[keyof typeof PRIO]
 
+/**
+ * In a sequence (Stage.cue), a pause in which the figure holds perfectly still
+ * (a line that says they do not move): no clip, no blink, no sway.
+ */
+export const STILL = '@still'
+/** A clip named with this after it plays briskly: its held pose held only a moment (PuppetPlayer.play). */
+export const BRISKLY = '~'
+const bare = (n: string) => (n.endsWith(BRISKLY) ? n.slice(0, -1) : n)
+const STILL_SECS = 2.2
+/** The room's lights failing and coming up again (the Station's turn), and a fire sinking to embers (s). */
+const LIGHTS = { dark: 0.12, hold: 0.95, up: 1.5 }
+const EMBERS = 2.8
+
 /** A clip that had to wait for another is dropped if it is this stale by then (ms). */
 const STALE = 2500
 /** ... and a gesture to read (a tell, an idle, a fidget: `keep`), this stale: it plays after the one before it. */
@@ -48,7 +61,14 @@ type Actor = {
   /** The table line, in design px: the rim at the seat's centre, plus its sink. */
   line: number
   current: { name: string; prio: Prio } | null
-  pending: { name: string; prio: Prio; at: number; keep: boolean } | null
+  pending: Cued | null
+  /** The rest of a sequence being played, in order. */
+  after: string[]
+  afterPrio: Prio
+  /** Busy holding still until this time (stage clock, s): a STILL in a sequence. */
+  waitUntil: number
+  /** Frozen until this time: no blink, no glance, no sway (Face.frozen), and no fidget starts. */
+  stillUntil: number
   /** Out of the table: drawn until the clip it left on is over, then faded out (the owner: a line, then gone). */
   leaving: boolean
   /** 1 seated; falls to 0 once they have left and their last clip is over. */
@@ -74,6 +94,7 @@ export type Geometry = {
 }
 
 type Img = HTMLImageElement
+type Cued = { names: string[]; prio: Prio; at: number; keep: boolean }
 
 function image(src: string): Promise<Img> {
   return new Promise((ok, fail) => {
@@ -96,9 +117,12 @@ export class Stage {
   private table: Img | null = null
   private pieces = new Map<string, Img>()
   private loading = new Map<string, Promise<PuppetPlayer>>()
-  private early = new Map<number, { name: string; prio: Prio; at: number; keep: boolean }>()
+  private early = new Map<number, Cued>()
   /** Which presence piece stands in the room: before the late champion, after, or none. */
   private presence: 'before' | 'after' | null = null
+  /** The presence before its last change, and when that change was seen happening (live; -Infinity on a resume). */
+  private wasPresence: 'before' | 'after' | null = null
+  private turnAt = -Infinity
   /** Each loop spot's frame and when it next changes (s). */
   private flicker: { frame: number; next: number }[][] = []
   /** Each loop spot guttering until this time (s): a lamp dimming beside a tell. */
@@ -211,17 +235,34 @@ export class Stage {
     const [w] = this.room.data.design
     this.actors.set(seat, {
       id, player, x, scale: sc, flip: x > w / 2 + 1, line: this.rimAt(x) + sink,
-      current: null, pending: null, leaving: false, fade: 1,
+      current: null, pending: null, after: [], afterPrio: PRIO.act, waitUntil: 0, stillUntil: 0, leaving: false, fade: 1,
     })
     // a clip asked for before the figure was loaded (an arrival's entrance)
     const early = this.early.get(seat)
     this.early.delete(seat)
-    if (early && performance.now() - early.at < STALE * 2) this.cue(seat, early.name, early.prio, early.keep)
+    if (early && performance.now() - early.at < STALE * 2) this.cue(seat, early.names, early.prio, early.keep)
   }
 
-  /** The room's story piece: 'before' the late champion comes, 'after', or none (an open table). */
-  setPresence(state: 'before' | 'after' | null): void {
+  /**
+   * The room's story piece: 'before' the late champion comes, 'after', or
+   * none (an open table). `live`: the change is happening now, in front of
+   * the player, so the room plays its turn (room.json `turn`: the Station's
+   * lights failing, Transylvania's fire sinking); otherwise (a resume, the
+   * first draw) the room is simply as it is by then.
+   */
+  setPresence(state: 'before' | 'after' | null, live = false): void {
+    if (state === this.presence) return
+    this.wasPresence = this.presence
     this.presence = state
+    this.turnAt = live ? this.clock : -Infinity
+  }
+
+  /**
+   * Everyone holds perfectly still for a while (a line that says nobody at
+   * the table moves), but those in `except`: no blink, no sway, no fidget.
+   */
+  freeze(secs: number, except: number[] = []): void {
+    for (const [seat, a] of this.actors) if (!except.includes(seat)) a.stillUntil = Math.max(a.stillUntil, this.clock + secs)
   }
 
   /** Who is drawn in a chair (null: nobody, or someone with no puppet). */
@@ -254,41 +295,75 @@ export class Stage {
    * `keep` marks a gesture: it waits longer, and nothing that is not a
    * gesture takes its place in the queue.
    */
-  cue(seat: number, clip: string, prio: Prio, keep = false): boolean {
+  cue(seat: number, clip: string | string[], prio: Prio, keep = false): boolean {
     const a = this.actors.get(seat)
+    const asked = Array.isArray(clip) ? clip : [clip]
     if (!a && prio !== PRIO.idle) {                        // still loading: played when they sit down
-      this.early.set(seat, { name: clip, prio, at: performance.now(), keep })
+      this.early.set(seat, { names: asked, prio, at: performance.now(), keep })
       return false
     }
-    if (!a || a.leaving || !a.player.has(clip)) return false
-    const busy = a.current !== null && a.player.timeOf(a.current.name) >= 0
+    if (!a || a.leaving) return false
+    // a sequence plays what this figure has of it (`clip` may be several, in order: see `after`)
+    const names = asked.filter((n) => n === STILL || a.player.has(bare(n)))
+    if (!names.length) return false
+    // holding still, a figure starts no fidget of its own
+    if (prio === PRIO.idle && this.clock < a.stillUntil) return false
+    const busy = this.isBusy(a) || a.after.length > 0
     if (busy && prio === PRIO.idle) return false
-    if (busy && (a.current!.prio !== PRIO.idle || a.player.holds(a.current!.name))) {
+    if (busy && (!a.current || a.current.prio !== PRIO.idle || a.player.holds(a.current.name) || a.after.length)) {
       if (a.pending?.keep && !keep) return false
-      a.pending = { name: clip, prio, at: performance.now(), keep }
+      a.pending = { names, prio, at: performance.now(), keep }
       return true
     }
-    this.start(a, clip, prio)
+    a.pending = null
+    this.begin(a, names, prio)
     return true
   }
 
   busy(seat: number): boolean {
     const a = this.actors.get(seat)
-    return !!a && a.current !== null && a.player.timeOf(a.current.name) >= 0
+    return !!a && this.isBusy(a)
   }
 
-  /** They have left the table: finish what they are doing, then the chair is empty. */
-  leave(seat: number): void {
+  private isBusy(a: Actor): boolean {
+    return (a.current !== null && a.player.timeOf(a.current.name) >= 0) || this.clock < a.waitUntil
+  }
+
+  /**
+   * They have left the table: finish what they are doing, play `clips` (their
+   * way out, in order), then the chair is empty.
+   */
+  leave(seat: number, clips: string[] = []): void {
     const a = this.actors.get(seat)
-    if (a) { a.leaving = true; a.pending = null }
+    if (!a) return
+    a.pending = null
+    const names = clips.filter((n) => n === STILL || a.player.has(bare(n)))
+    if (names.length && (this.isBusy(a) || a.after.length)) a.after.push(...names)
+    else if (names.length) this.begin(a, names, PRIO.act)
+    a.leaving = true
   }
 
-  private start(a: Actor, clip: string, prio: Prio) {
+  /** Start a sequence: its first clip now, the rest as each one ends. */
+  private begin(a: Actor, names: string[], prio: Prio) {
+    a.after = names.slice(1)
+    a.afterPrio = prio
+    this.next(a, names[0], prio)
+  }
+
+  private next(a: Actor, name: string, prio: Prio) {
+    if (name !== STILL) return this.start(a, name, prio)
+    a.player.stop()
+    a.current = null
+    a.waitUntil = this.clock + STILL_SECS / (this.speed || 1)
+    a.stillUntil = Math.max(a.stillUntil, a.waitUntil)
+  }
+
+  private start(a: Actor, named: string, prio: Prio) {
+    const clip = bare(named)
     a.player.stop()
     a.player.speed = this.speed
-    a.player.play(clip)
+    a.player.play(clip, false, clip !== named)
     a.current = { name: clip, prio }
-    a.pending = null
     const anim = PUPPETS[a.id]?.anim
     if (anim?.gutter?.includes(clip)) this.gutter(a.x, a.player.duration(clip) / (this.speed || 1))
   }
@@ -378,15 +453,18 @@ export class Stage {
     }))
     for (const [seat, a] of this.actors) {
       if (a.current && a.player.timeOf(a.current.name) < 0) a.current = null
-      if (!a.current && a.leaving) {
+      // the rest of a sequence, then their way out, then what was waiting
+      if (!this.isBusy(a) && a.after.length) this.next(a, a.after.shift()!, a.afterPrio)
+      if (!this.isBusy(a) && a.leaving) {
         a.fade -= this.still ? 1 : (dt * (this.speed || 1)) / FADE
         if (a.fade <= 0) { this.actors.delete(seat); continue }
       }
-      if (!a.current && a.pending) {
+      if (!this.isBusy(a) && a.pending) {
         const p = a.pending
         a.pending = null
-        if (now - p.at < (p.keep ? KEEP : STALE)) this.start(a, p.name, p.prio)
+        if (now - p.at < (p.keep ? KEEP : STALE)) this.begin(a, p.names, p.prio)
       }
+      a.player.face.frozen = this.clock < a.stillUntil
       a.player.update(dt)
     }
     this.draw()
@@ -420,8 +498,13 @@ export class Stage {
       const s = Math.max(1, cw / k / d.backdrop.w)
       const bw = d.backdrop.w * s, bh = d.backdrop.h * s
       set(D)
-      // after the turn (the champion has come) the room may be drawn again, lit otherwise
-      const room = this.presence === 'after' && this.backdropAfter ? this.backdropAfter : this.backdrop
+      // after the turn (the champion has come) the room may be drawn again,
+      // lit otherwise; where the lights fail first, the room as it was until
+      // the dark is complete
+      const turn = d.turn
+      const since = this.clock - this.turnAt
+      const shows = turn?.lights && since < LIGHTS.dark ? this.wasPresence : this.presence
+      const room = shows === 'after' && this.backdropAfter ? this.backdropAfter : this.backdrop
       const bx = d.design[0] / 2 - bw / 2, by = d.design[1] - bh
       ctx.drawImage(room, bx, by, bw, bh)
       // A window taller than the room: its ceiling carried on up and into the
@@ -445,15 +528,19 @@ export class Stage {
         ctx.drawImage(im, x - w / 2, bottom - h, w, h)
         ctx.globalAlpha = 1
       }
-      const story = this.presence && d.presence?.[this.presence]
+      const story = shows && d.presence?.[shows]
       const sp = story ? d.pieces?.[story] : undefined
       if (story && sp?.x !== undefined) piece(story, sp.x, sp.bottom!, sp.h!)
       // a guttering lamp sinks low and stutters (only dims under Reduce motion)
       const dim = (until: number) => until <= this.clock ? 1
         : this.still ? 0.4 : 0.15 + 0.5 * Math.abs(Math.sin(this.clock * 31) * Math.sin(this.clock * 17))
+      // a fire sunk to embers since the champion came (Transylvania): its
+      // flames fade out over EMBERS seconds, and a low glow is left
+      const sunk = turn?.embers !== undefined && this.presence === 'after' ? Math.min(1, Math.max(0, since / EMBERS)) : 0
       ;(d.loops ?? []).forEach((l, i) => l.spots.forEach(([x, bottom, h], j) => {
-        const a = dim(this.gutters[i]?.[j] ?? 0)
-        piece(l.frames[this.flicker[i]?.[j]?.frame ?? 0], x, bottom, h, a)
+        const low = i === turn?.embers ? sunk : 0
+        const a = dim(this.gutters[i]?.[j] ?? 0) * (1 - low)
+        if (a > 0) piece(l.frames[this.flicker[i]?.[j]?.frame ?? 0], x, bottom, h, a)
         if (a < 1) {                                     // the flame painted on the backdrop goes dark with it
           const g = ctx.createRadialGradient(x, bottom - h / 2, 0, x, bottom - h / 2, h * 1.1)
           g.addColorStop(0, `rgba(8, 6, 5, ${0.85 * (1 - a)})`)
@@ -461,6 +548,7 @@ export class Stage {
           ctx.fillStyle = g
           ctx.fillRect(x - h * 1.1, bottom - h / 2 - h * 1.1, h * 2.2, h * 2.2)
         }
+        if (low > 0) this.embers(x, bottom, h, low)
       }))
     }
 
@@ -495,6 +583,59 @@ export class Stage {
     set(D)
     ctx.clip(this.rimPath)
     order.forEach((a, i) => { ctx.globalAlpha = a.fade; a.player.puppet.paint(ctx, views[i], true) })
+    ctx.restore()
+
+    // the lights failing: the whole room goes dark, sputters, and comes up again in its other light
+    const dark = this.lightsDark()
+    if (dark > 0) {
+      ctx.setTransform(1, 0, 0, 1, 0, 0)
+      ctx.fillStyle = `rgba(4, 4, 6, ${dark})`
+      ctx.fillRect(0, 0, c.width, c.height)
+    }
+  }
+
+  /** How dark the room is (0-1) while its lights fail and come up again (room.json `turn.lights`). */
+  private lightsDark(): number {
+    if (!this.room.data.turn?.lights) return 0
+    const t = this.clock - this.turnAt
+    const { dark, hold, up } = LIGHTS
+    if (t < 0 || t >= dark + hold + up) return 0
+    if (t < dark) return 0.94 * (t / dark)
+    if (t < dark + hold) {
+      // a lamp trying to catch, twice (a steady dark under Reduce motion)
+      const u = t - dark
+      if (!this.still && ((u > 0.38 && u < 0.45) || (u > 0.56 && u < 0.6))) return 0.6
+      return 0.94
+    }
+    const u = (t - dark - hold) / up
+    return 0.94 * (1 - u * u * (3 - 2 * u))
+  }
+
+  /**
+   * What is left of a fire (`k`, 0-1, as it sinks): the light it threw on
+   * the stone gone with it, and a low red glow on the grate, breathing.
+   */
+  private embers(x: number, bottom: number, h: number, k: number) {
+    const ctx = this.ctx
+    const r0 = h * 1.6, cy0 = bottom - h * 0.6
+    const shade = ctx.createRadialGradient(x, cy0, 0, x, cy0, r0)
+    shade.addColorStop(0, `rgba(10, 6, 5, ${0.6 * k})`)
+    shade.addColorStop(0.6, `rgba(10, 6, 5, ${0.35 * k})`)
+    shade.addColorStop(1, 'rgba(10, 6, 5, 0)')
+    ctx.fillStyle = shade
+    ctx.fillRect(x - r0, cy0 - r0, 2 * r0, 2 * r0)
+    const breath = this.still ? 0.8 : 0.72 + 0.18 * Math.sin(this.clock * 1.7) + 0.1 * Math.sin(this.clock * 4.3 + 1)
+    const cy = bottom - h * 0.1
+    ctx.save()
+    ctx.translate(x, cy)
+    ctx.scale(1, 0.32)
+    const r = h * 0.62
+    const g = ctx.createRadialGradient(0, 0, 0, 0, 0, r)
+    g.addColorStop(0, `rgba(255, 120, 40, ${0.75 * k * breath})`)
+    g.addColorStop(0.35, `rgba(200, 50, 15, ${0.5 * k * breath})`)
+    g.addColorStop(1, 'rgba(120, 20, 5, 0)')
+    ctx.fillStyle = g
+    ctx.fillRect(-r, -r, 2 * r, 2 * r)
     ctx.restore()
   }
 

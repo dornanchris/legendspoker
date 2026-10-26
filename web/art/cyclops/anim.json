@@ -3330,6 +3330,11 @@
   "club",
   "look_at_you"
  ],
+ "acts": {
+  "reraised.1": "heads_up",
+  "at_cy_od_01c": "shift",
+  "at_cy_od_05d": "shift"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

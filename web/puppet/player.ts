@@ -18,9 +18,12 @@ import type { ClipData } from './clip.js'
 
 /** After a clip's hold (ClipData.hold), the rest of it plays this many times faster: the pose snaps back. */
 export const SNAP = 3
+/** A held pose played briskly is held this long (s). */
+export const BRISK = 0.5
 
 /** `held`: seconds spent so far in the clip's hold (ClipData.hold). */
-type Playing = { name: string; clip: ClipData; t: number; loop: boolean; held: number }
+/** `holdFor`: how long its held pose is held (s), the clip's own hold unless played briskly. */
+type Playing = { name: string; clip: ClipData; t: number; loop: boolean; held: number; holdFor: number }
 
 /**
  * A clip cut short, handing back to rest (IK puppets only): what it had added
@@ -58,6 +61,8 @@ export class PuppetPlayer {
   /** Pause clips and hold their time (for scrubbing); the face runs on. */
   hold = false
   private playing: Playing[] = []
+  /** Whether last frame's pose showed the head the mouth is drawn on. */
+  private mouthSeen = true
   private releases: Release[] = []
   /** Clips stand in for their `_ik` versions (an IK puppet, with the prototype on). */
   useIk = false
@@ -103,6 +108,17 @@ export class PuppetPlayer {
     return ims.reduce((n, im) => n + picSize(im)[0] * picSize(im)[1] * 4, 0)
   }
 
+  /**
+   * The clip swaps out the head the mouth is drawn on (a talking gesture
+   * drawn as a whole figure, with its own still head): played beside a line,
+   * the line would be spoken by a face that cannot move.
+   */
+  hidesMouth(name: string): boolean {
+    const clip = this.entry.anim.clips[this.resolve(name)]
+    const on = this.puppet.mouthOn
+    return !!clip && !!on && (clip.swaps?.[on[0]] ?? []).some(([, state]) => state !== null && state !== on[1])
+  }
+
   has(name: string): boolean {
     return this.resolve(name) in this.entry.anim.clips
   }
@@ -124,13 +140,18 @@ export class PuppetPlayer {
     return Object.keys(this.entry.anim.clips)
   }
 
-  /** Start a clip from its beginning (a clip already playing restarts). */
-  play(name: string, loop = false): void {
+  /**
+   * Start a clip from its beginning (a clip already playing restarts).
+   * `brisk`: its held pose is held only BRISK seconds (an act in place of a
+   * poker action, which must not keep the table waiting).
+   */
+  play(name: string, loop = false, brisk = false): void {
     const clip = this.entry.anim.clips[this.resolve(name)]
     if (!clip) throw new Error(`no clip "${name}"`)
     this.release(this.playing.filter((p) => p.name === name))
     this.playing = this.playing.filter((p) => p.name !== name)
-    this.playing.push({ name, clip, t: 0, loop, held: 0 })
+    const hold = clip.hold?.[1] ?? 0
+    this.playing.push({ name, clip, t: 0, loop, held: 0, holdFor: brisk ? Math.min(hold, BRISK) : hold })
   }
 
   stop(name?: string): void {
@@ -181,19 +202,20 @@ export class PuppetPlayer {
   }
 
   update(dt: number): void {
+    this.face.heldBack = !this.mouthSeen
     this.face.update(dt)
     if (!this.hold) {
       for (const p of this.playing) {
         let adv = dt * this.speed
         const hold = p.clip.hold
-        if (hold && p.held < hold[1] && p.t + adv > hold[0]) {
+        if (hold && p.held < p.holdFor && p.t + adv > hold[0]) {
           // reach the held pose, then stay there until the hold is spent
-          const pause = Math.min(adv - Math.max(0, hold[0] - p.t), hold[1] - p.held)
+          const pause = Math.min(adv - Math.max(0, hold[0] - p.t), p.holdFor - p.held)
           p.held += pause
           adv -= pause
         }
         // the hold spent, the pose snaps back
-        if (hold && p.held >= hold[1] && p.t >= hold[0]) adv *= p.clip.snap ?? SNAP
+        if (hold && p.held >= p.holdFor && p.t >= hold[0]) adv *= p.clip.snap ?? SNAP
         p.t += adv
         if (p.t >= p.clip.duration && p.loop) { p.t %= p.clip.duration; p.held = 0 }
       }
@@ -205,6 +227,7 @@ export class PuppetPlayer {
     pup.reset()
     this.face.apply(pup)
     for (const p of this.playing) pup.applyClip(p.clip, p.t)
+    this.mouthSeen = pup.mouthVisible()
     for (const r of this.releases) {
       const k = 1 - EASE.inOut(Math.min(1, r.t / r.dur))
       for (const [bone, ch, v] of r.bones) pup.add(bone, ch as Channel, v * k)

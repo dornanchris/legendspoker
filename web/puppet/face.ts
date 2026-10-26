@@ -41,8 +41,16 @@ export class Face {
   autoBlink = true
   /** No sway and no breath (Reduce motion); blinks, looks and speech go on. */
   still = false
+  /**
+   * Holding perfectly still (a line that says nobody moves): no blink, no
+   * glance, the sway and the breath stopped where they are, so letting go
+   * picks them up again without a jump. Speech goes on.
+   */
+  frozen = false
 
   private time = 0
+  /** The sway and breath's own clock, which stops while frozen. */
+  private swayTime = 0
   private nextBlink = 1.5
   private blinkAt = -1
   private blinkFrames: [string, number][] = []
@@ -53,6 +61,14 @@ export class Face {
   private nod = 0
   private speech: Beat[] = []
   private speechAt = 0
+  /** When the line must be done by, whatever held it back (the bubble's time). */
+  private speechUntil = Infinity
+  /**
+   * The head the mouth is drawn on is not showing (a whole-figure frame with
+   * its own drawn head, mid-gesture): the line waits for it, rather than be
+   * spoken by a face that cannot move. Set by the player each frame.
+   */
+  heldBack = false
   onSpeechEnd: (() => void) | null = null
 
   constructor(readonly cfg: FaceConfig) {}
@@ -63,8 +79,12 @@ export class Face {
     this.blinkAt = this.time
   }
 
-  /** Lip shapes for a line of text, from its letters (until there is recorded audio). */
-  say(text: string): void {
+  /**
+   * Lip shapes for a line of text, from its letters (until there is recorded
+   * audio). `maxSecs`: the line's time on screen; the mouth stops when its
+   * bubble comes down, and a long line is cut there rather than outlast it.
+   */
+  say(text: string, maxSecs = Infinity): void {
     const s = this.cfg.speech
     const beats: Beat[] = []
     let t = 0
@@ -83,8 +103,11 @@ export class Face {
       last = shape
     }
     beats.push({ t, shape: null })
+    const cut = beats.findIndex((b) => b.t >= maxSecs)
+    if (cut >= 0) beats.splice(cut, beats.length, { t: maxSecs, shape: null })
     this.speech = beats
     this.speechAt = this.time
+    this.speechUntil = this.time + maxSecs
   }
 
   get speaking(): boolean {
@@ -93,12 +116,13 @@ export class Face {
 
   update(dt: number): void {
     this.time += dt
+    if (!this.frozen) this.swayTime += dt
     const c = this.cfg
-    if (this.idle && this.autoBlink && this.time >= this.nextBlink && this.blinkAt < 0) {
+    if (this.idle && !this.frozen && this.autoBlink && this.time >= this.nextBlink && this.blinkAt < 0) {
       this.blink(Math.random() < c.blink.double)
       this.nextBlink = this.time + rand(...c.blink.every)
     }
-    if (this.idle && this.time >= this.nextGlance) {
+    if (this.idle && !this.frozen && this.time >= this.nextGlance) {
       // a glance somewhere else, then back to rest; a look changes on a blink
       // more often than not, as eyes do
       let r = Math.random()
@@ -115,7 +139,9 @@ export class Face {
       const open = this.speaking && ['ah', 'oh', 'ee', 'oo'].includes(this.shapeNow() ?? '')
       this.nod += ((open ? c.speech.nod : 0) - this.nod) * (1 - Math.exp(-14 * dt))
     }
-    if (this.speech.length && this.time - this.speechAt > this.speech[this.speech.length - 1].t) {
+    // Held back, the line waits: its clock stands still while the head is away.
+    if (this.speech.length && this.heldBack) this.speechAt += dt
+    if (this.speech.length && (this.time - this.speechAt > this.speech[this.speech.length - 1].t || this.time > this.speechUntil)) {
       this.speech = []
       this.onSpeechEnd?.()
     }
@@ -160,7 +186,7 @@ export class Face {
     p.add('head', 'y', this.tilt[2])
     if (this.idle && !this.still) {
       const [pr, px, py] = c.sway.periods
-      const t = this.time
+      const t = this.swayTime
       p.add('head', 'rot', c.sway.rot * Math.sin((2 * Math.PI * t) / pr))
       p.add('head', 'x', c.sway.x * Math.sin((2 * Math.PI * t) / px + 1.3))
       p.add('head', 'y', c.sway.y * Math.sin((2 * Math.PI * t) / py + 0.7))

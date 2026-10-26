@@ -5,6 +5,7 @@ import type { Card } from '../../src/equity.js'
 import { mulberry32 } from '../../src/rng.js'
 import { CHARACTERS, DIALOGUE, DEALER, TABLE_BY_ID, UNINVITED, personality, arrivalRules, banishmentFor, tellLine, type Line } from '../../src/content.js'
 import { TableRun, type Beat } from '../../src/director.js'
+import { CALLOUT_ACTIONS, RERAISED } from '../../src/chatter.js'
 import { applyOutcome, fillLine, type TableOutcome } from '../../src/tour.js'
 import { tableRecord, ENGINE_VERSION } from '../../src/save.js'
 import { marksForCareer } from '../../src/marks.js'
@@ -43,6 +44,10 @@ const MOVE = {
 }
 /** Fast-forward scales the presentation clock by this. Never the game loop. */
 const FF_SCALE = 0.12
+/** Death's shuffle before the first hand dealt in front of the player (ms, his `shuffle` clip at pace 1). */
+const SHUFFLE_MS = 2200
+/** A line that says nobody at the table moves holds them still this long (s, at pace 1). */
+const FREEZE_SECS = 3.2
 const THINKING_LONG_MS = 25000
 
 const SUIT = { clubs: '♣', diamonds: '♦', hearts: '♥', spades: '♠' } as const
@@ -75,6 +80,9 @@ function blindChip(): HTMLElement {
 function betSpot(): HTMLElement {
   return h('div', { class: 'bet empty' }, h('span', { class: 'pile' }), h('span', { class: 'amt' }))
 }
+
+/** A name on a plate begins with a capital ("the Cat" is written for the middle of a sentence). */
+const capital = (s: string) => s[0].toUpperCase() + s.slice(1)
 
 const nudge = (p: Pt, by: number): Pt => ({ x: p.x + (Math.random() * 2 - 1) * by, y: p.y + (Math.random() * 2 - 1) * by })
 
@@ -192,6 +200,8 @@ export function tableScreen(root: HTMLElement): () => void {
     narration: h('div', { class: 'narration', 'aria-live': 'polite' }),
     presence: h('div', { class: 'presence' }),
     board: h('div', { class: 'board', 'aria-label': 'Community cards' }),
+    /** The winning hand, named on the felt at a showdown (it was only in the log). */
+    handName: h('div', { class: 'hand-name', 'aria-hidden': 'true' }),
     pot: h('span', { class: 'pot-value' }, '0'),
     potPile: h('span', { class: 'pile', 'aria-hidden': 'true' }),
     dealerName: h('span', { class: 'dealer-name' }, room?.data.dealerName ?? 'Death'),
@@ -248,7 +258,7 @@ export function tableScreen(root: HTMLElement): () => void {
         els.dealer,
         staged ? els.deck : null,
         h('section', { class: 'middle' },
-          els.presence, els.board,
+          els.presence, els.board, els.handName,
           h('div', { class: 'pot' }, els.potPile, h('span', { class: 'label' }, 'POT'), ' ', els.pot)),
         h('section', { class: 'you' },
           h('div', { class: 'you-info' }, h('div', { class: 'you-tag banner' }, els.youBlind, els.youName), els.youPurse),
@@ -536,15 +546,37 @@ export function tableScreen(root: HTMLElement): () => void {
    * a gesture reads as a glitch, the way half a spoken line does. Clips run
    * on the presentation clock's pace; faces and idles keep their own.
    */
-  function cue(seat: number, clip: string, prio: Prio = PRIO.act) {
+  function cue(seat: number, clip: string | string[], prio: Prio = PRIO.act) {
     if (!stage || !stageReady || replaying || ff) return
     stage.cue(seat, clip, prio)
   }
 
-  /** Lips for a spoken line (stage directions are not spoken). Cut under fast-forward, like the voice will be. */
-  function speak(seat: number, text: string) {
+  /**
+   * A seat's bubble is centred over its figure, and an end seat's ran off the
+   * edge of a phone, or under the Menu (seat 1 at the White House). Move it
+   * sideways into view; its pointer stays over the speaker (--shift, style.css).
+   */
+  function keepInView(el: HTMLElement) {
+    el.style.removeProperty('--shift')
+    const r = el.getBoundingClientRect()
+    const box = screenEl.getBoundingClientRect()
+    const pad = 8
+    let dx = 0
+    if (r.left < box.left + pad) dx = box.left + pad - r.left
+    else if (r.right > box.right - pad) dx = box.right - pad - r.right
+    const m = menuButton.getBoundingClientRect()
+    if (m.width && r.top < m.bottom + pad && r.left + dx < m.right + pad && r.right + dx > m.left) dx = m.right + pad - r.left
+    if (dx) el.style.setProperty('--shift', `${Math.round(dx)}px`)
+  }
+
+  /**
+   * Lips for a spoken line (stage directions are not spoken). Cut under
+   * fast-forward, like the voice will be. The mouth stops when the line's
+   * bubble comes down (`ms`): it used to talk on for a second or more.
+   */
+  function speak(seat: number, text: string, ms: number) {
     if (!stage || !stageReady || replaying || ff) return
-    stage.face(seat)?.say(text)
+    stage.face(seat)?.say(text, ms / 1000)
   }
 
   /**
@@ -553,7 +585,7 @@ export function tableScreen(root: HTMLElement): () => void {
    * folded hands are when the table is watched (rule 6), and on the staged
    * table the gesture is all there is to see. Never in a resume's catch-up.
    */
-  function gesture(seat: number, clip: string, prio: Prio) {
+  function gesture(seat: number, clip: string | string[], prio: Prio) {
     if (!stage || !stageReady || replaying) return
     stage.cue(seat, clip, prio, true)
   }
@@ -568,6 +600,30 @@ export function tableScreen(root: HTMLElement): () => void {
   const cueFor = (seat: number, text: string): string | undefined =>
     PUPPETS[figureAt(seat)]?.anim.cues?.[text]
 
+  /**
+   * What a figure acts for a line, by its id, or a callout, by `<pool>.<n>`
+   * (anim.json "acts"): the clips, in order, that show what the words say.
+   */
+  function actsFor(seat: number, key: string): string[] | undefined {
+    const id = stage?.idAt(seat)
+    const a = id ? PUPPETS[id]?.anim.acts?.[key] : undefined
+    return a === undefined ? undefined : Array.isArray(a) ? a : [a]
+  }
+
+  /** A callout's key in "acts": its pool and its place in the speaker's own list of them. */
+  function calloutKey(b: Extract<Beat, { kind: 'callout' }>): string | null {
+    const lines = (CHARACTERS[b.speaker]?.callouts as Record<string, string[] | undefined> | undefined)?.[b.action]
+    const n = lines?.indexOf(b.text) ?? -1
+    return n < 0 ? null : `${b.action}.${n}`
+  }
+
+  /** What a callout with an action of its own puts in place of that action's clip (the next 'action' step). */
+  const actNext = new Map<number, string[]>()
+  /** A way out acted by the parting line (FDR laughs and settles his cape), in place of `knocked_out`. */
+  const exitActs = new Map<number, string[]>()
+  /** Lines already acted (an exit, by the seat leaving), so they are not acted twice. */
+  const actedLines = new Set<string>()
+
   function buildSeat(i: number) {
     const id = seatIds[i]!
     const c = CHARACTERS[id]
@@ -576,7 +632,7 @@ export function tableScreen(root: HTMLElement): () => void {
     const ui: SeatUI = {
       id,
       root: h('div', { class: `seat${isChamp ? ' champion' : ''}`, dataset: { id } }),
-      name: h('span', { class: 'seat-name' }, c?.short ?? id),
+      name: h('span', { class: 'seat-name' }, capital(c?.short ?? id)),
       stack: h('span', { class: 'stack' }, '0'),
       tower: h('span', { class: 'pile tower', 'aria-hidden': 'true' }),
       purse: h('div', { class: 'purse' }),
@@ -772,6 +828,8 @@ export function tableScreen(root: HTMLElement): () => void {
   }
 
   function clearWin() {
+    els.handName.textContent = ''
+    els.handName.classList.remove('show')
     for (const el of root.querySelectorAll('.card.win')) el.classList.remove('win')
     for (const el of root.querySelectorAll('.seat.winner')) el.classList.remove('winner')
   }
@@ -795,7 +853,8 @@ export function tableScreen(root: HTMLElement): () => void {
 
   function refreshName() {
     const n = run.earnedName()
-    els.youName.textContent = n ?? 'You'
+    // a name on a banner, capitalised like the others ("tenderfoot" is said mid-sentence)
+    els.youName.textContent = n ? n[0].toUpperCase() + n.slice(1) : 'You'
     els.youName.classList.toggle('earned', !!n)
     els.youName.title = n ? `The table calls you ${n}` : 'The table does not address you'
   }
@@ -820,7 +879,8 @@ export function tableScreen(root: HTMLElement): () => void {
     ui.tell.classList.remove('fade')
     void ui.tell.offsetWidth
     ui.tell.classList.add('fade')
-    if (stage && !replaying) log(said, 'tell')
+    // The log is read with no seat beside it: "His ears flatten" says whose.
+    if (stage && !replaying) log(said.startsWith(nameOf(seat)) ? said : `${nameOf(seat)}: ${said}`, 'tell')
     const clip = cueFor(seat, text)
     const until = Date.now() + Math.max(3600, gestureMs(seat, clip) + 400)
     if (real) ui.tellUntil = until
@@ -853,6 +913,7 @@ export function tableScreen(root: HTMLElement): () => void {
     el.classList.remove('show')
     void el.offsetWidth
     el.classList.add('show')
+    if (staged && el.closest('.seat')) keepInView(el)
     const r = el.getBoundingClientRect()
     for (const o of screenEl.querySelectorAll<HTMLElement>('.say.show, .callout.show, .dealer-line.show, .narration.show')) {
       if (o === el) continue
@@ -868,35 +929,100 @@ export function tableScreen(root: HTMLElement): () => void {
     const speaker = b.speaker
     const who = speaker === 'death' ? 'Death' : speaker === 'narration' ? '' : CHARACTERS[speaker]?.short ?? speaker
     const logText = speaker === 'narration' ? b.text.replace(/^\[|\]$/g, '') : b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`
+    // Table talk (b.chatter: asides, banter, needles, lines at the player)
+    // never holds the game up: it goes on a track of its own and is said over
+    // the next deal, as people talk at a table (the owner: "banter shouldn't
+    // slow play"; a four-line exchange after a showdown held the next hand
+    // ~15 s). What the story needs still waits for its reading time.
+    if (b.chatter) {
+      step(() => {
+        log(logText, `say${speaker === 'death' ? ' death' : ''}${b.stage ? ' stage' : ''}`)
+        if (ff) return
+        talk.push(b)
+        void talkOn()
+      }, 0, { line: true })
+      return
+    }
     step(() => {
       log(logText, `say${speaker === 'death' ? ' death' : ''}${b.stage ? ' stage' : ''}`)
       if (ff) return
-      // where Death plays (the finale) he speaks from his chair, like anyone seated
-      if (speaker === 'death' && !seatIds.includes('death')) {
-        speak(DEATH, b.text)
-        els.dealerLine.textContent = `“${b.text}”`
-        showBubble(els.dealerLine, BUBBLE_MS.dealer)
-      } else if (speaker === 'narration') {
-        els.narration.textContent = b.text.replace(/^\[|\]$/g, '')
-        showBubble(els.narration, BUBBLE_MS.narration)
-      } else {
-        const seat = seatIds.indexOf(speaker)
-        const ui = seatUI.get(seat)
-        if (ui) {
-          if (!b.stage) {
-            speak(seat, b.text)
-            cue(seat, 'talk', PRIO.tell)
-          }
-          ui.say.textContent = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
-          ui.say.classList.toggle('stage', b.stage)
-          showBubble(ui.say, BUBBLE_MS.say)
-        } else {
-          // Not seated (a watcher, or someone just knocked out): the room hears it.
-          els.narration.textContent = b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`
-          showBubble(els.narration, BUBBLE_MS.narration)
-        }
-      }
+      showLine(b)
     }, readingTime(b.text), { line: true })
+  }
+
+  /** A spoken line or stage direction, up on the screen (its words already in the log). */
+  function showLine(b: Extract<Beat, { kind: 'line' }>) {
+    const speaker = b.speaker
+    const who = speaker === 'death' ? 'Death' : speaker === 'narration' ? '' : CHARACTERS[speaker]?.short ?? speaker
+    // where Death plays (the finale) he speaks from his chair, like anyone seated
+    if (speaker === 'death' && !seatIds.includes('death')) {
+      speak(DEATH, b.text, BUBBLE_MS.dealer)
+      els.dealerLine.textContent = `“${b.text}”`
+      showBubble(els.dealerLine, BUBBLE_MS.dealer)
+      const own = actsFor(DEATH, b.id)
+      if (own) gesture(DEATH, own, PRIO.tell)
+      if (b.lesson) lesson(b.lesson.seat, b.lesson.tell)
+    } else if (speaker === 'narration') {
+      els.narration.textContent = b.text.replace(/^\[|\]$/g, '')
+      showBubble(els.narration, BUBBLE_MS.narration)
+      // what the narration says someone does, they do; and what it says the room does
+      for (const seat of [DEATH, ...seatIds.keys()]) {
+        const own = actsFor(seat, b.id)
+        if (own) gesture(seat, own, PRIO.tell)
+      }
+      if (stage && stageReady && stage.room.data.acts?.[b.id] === 'freeze') stage.freeze(FREEZE_SECS / (stage.speed || 1))
+    } else {
+      const seat = seatIds.indexOf(speaker)
+      const ui = seatUI.get(seat)
+      if (ui) {
+        // what the line says they do (anim.json "acts"), in place of talking with their hands
+        const own = actedLines.has(b.id) ? undefined : actsFor(seat, b.id)
+        if (own) gesture(seat, own, PRIO.tell)
+        if (!b.stage) {
+          speak(seat, b.text, BUBBLE_MS.say)
+          // A talking gesture drawn as a whole figure brings a head of its
+          // own, which cannot move its mouth: for most of the cast it hid
+          // the moving one for most of the line. A face that talks reads
+          // better than a hand that does; the gesture waits for a redraw
+          // with the moving head riding on it (Lincoln's `talk`).
+          if (!own && !stage?.player(seat)?.hidesMouth('talk')) cue(seat, 'talk', PRIO.tell)
+        }
+        ui.say.textContent = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
+        ui.say.classList.toggle('stage', b.stage)
+        showBubble(ui.say, BUBBLE_MS.say)
+      } else {
+        // Not seated (a watcher, or someone just knocked out): the room hears it.
+        els.narration.textContent = b.stage ? `${who} ${b.text.replace(/^\[|\]$/g, '')}` : `${who}: “${b.text}”`
+        showBubble(els.narration, BUBBLE_MS.narration)
+      }
+    }
+  }
+
+  /**
+   * Death points out a tell that told the truth (a lesson): his open hand
+   * toward them, and they do it again, now that the cards say what it meant.
+   */
+  function lesson(seat: number, tell: string) {
+    if (!stage || !stageReady || replaying || ff) return
+    gesture(DEATH, 'watch_that', PRIO.tell)
+    const clip = cueFor(seat, tell)
+    if (clip) later(() => gesture(seat, clip, PRIO.tell), 650 * paceScale)
+  }
+
+  /** Table talk waiting to be said, one line at a time, on its own clock (see sayLine). */
+  const talk: Extract<Beat, { kind: 'line' }>[] = []
+  let talking = false
+  async function talkOn() {
+    if (talking) return
+    talking = true
+    while (talk.length && alive) {
+      if (paused) await paused
+      const b = talk.shift()!
+      if (ff || !alive) continue                 // cut, not sped up, while fast-forwarding
+      showLine(b)
+      await sleep(readingTime(b.text) * paceScale)
+    }
+    talking = false
   }
 
   /** Marks the director awarded that are not yet written to the save. */
@@ -927,8 +1053,18 @@ export function tableScreen(root: HTMLElement): () => void {
       const el = ui.root.querySelector<HTMLElement>('.callout') ?? h('div', { class: 'callout', 'aria-hidden': 'true' })
       if (!el.parentElement) ui.root.append(el)
       const text = b.stage ? b.text.replace(/^\[|\]$/g, '') : `“${b.text}”`
-      if (!b.stage) speak(seatIds.indexOf(b.speaker), b.text)
       const ms = Math.round(calloutTime(text) * paceScale)
+      // It rides on the action, whose drawing may hide the moving head: the
+      // mouth waits for the head to come back (Face.heldBack), within the bubble's time.
+      const seat = seatIds.indexOf(b.speaker)
+      if (!b.stage) speak(seat, b.text, ms)
+      // What the words say they do (anim.json "acts"): with an action, in
+      // place of that action's clip (the step after this one); a showdown's,
+      // after whatever they are doing.
+      const key = calloutKey(b)
+      const own = key ? actsFor(seat, key) : undefined
+      if (own && (CALLOUT_ACTIONS as string[]).concat(RERAISED).includes(b.action)) actNext.set(seat, own)
+      else if (own) gesture(seat, own, PRIO.tell)
       el.textContent = text
       el.classList.toggle('stage', b.stage)
       el.style.animationDuration = `${ms}ms`
@@ -977,11 +1113,37 @@ export function tableScreen(root: HTMLElement): () => void {
 
   // ------------------------------------------------------------ engine events
 
+  /** Death has shuffled for the first hand dealt in front of the player. */
+  let shuffledLive = false
+
+  /**
+   * The gravity lets go (the Station's turn, room.json turn.float): every
+   * pile of chips on the felt lifts, drifts and falls back with a clatter.
+   * The piles themselves, not their columns, which are redrawn whenever a
+   * count changes. The chips' places are untouched: presentation only, and
+   * skipped under Reduce motion.
+   */
+  function weightless() {
+    if (settings.reduceMotion || ff) return
+    for (const c of screenEl.querySelectorAll<HTMLElement>('.pile')) {
+      c.style.setProperty('--wh', String(Math.round(10 + Math.random() * 16)))
+      c.style.setProperty('--wx', String(Math.round((Math.random() - 0.5) * 12)))
+      c.style.setProperty('--wr', `${Math.round((Math.random() - 0.5) * 30)}deg`)
+      c.style.setProperty('--wd', `${Math.round(250 + Math.random() * 400)}ms`)
+    }
+    screenEl.classList.remove('weightless')
+    void screenEl.offsetWidth
+    screenEl.classList.add('weightless')
+    later(() => screenEl.classList.remove('weightless'), 3600)
+    sound.chips(16, 2.75)
+  }
+
   let replaying = active.decisions.length > 0
   let replayBuffer: HandEvent[] = []
   let humanPlace = 0
 
-  function applyStructural(e: HandEvent) {
+  /** `live`: happening in front of the player (the room's turn plays); `going`: the clips a seat leaves on. */
+  function applyStructural(e: HandEvent, live = false, going: string[] = []) {
     // Chair changes must reach the screen even for hands replayed silently.
     if (e.type === 'arrival') {
       seatIds[e.seat] = e.id
@@ -993,10 +1155,15 @@ export function tableScreen(root: HTMLElement): () => void {
       // A chair that changed hands without emptying says nothing about a
       // champion who is still to come.
       if (e.cause !== 'banishment') els.presence.textContent = ''
-      if (table.arrival && e.id === table.arrival.character && active!.mode === 'tour') stage?.setPresence('after')
+      if (table.arrival && e.id === table.arrival.character && active!.mode === 'tour') {
+        stage?.setPresence('after', live)
+        if (live && stage?.room.data.turn?.float) weightless()
+      }
     } else if (e.type === 'eliminated') {
       out.add(e.seat)
-      stage?.leave(e.seat)
+      stage?.leave(e.seat, going)
+      // the room is itself again once its champion is out (the Station)
+      if (table.arrival && e.id === table.arrival.character && active!.mode === 'tour' && stage?.room.data.turn?.undo) stage.setPresence(null, live)
       if (e.seat === HUMAN_SEAT) humanPlace = e.place
       seatUI.get(e.seat)?.root.classList.add('out')
       // Their last fidget goes with them rather than lingering on an empty chair.
@@ -1023,6 +1190,12 @@ export function tableScreen(root: HTMLElement): () => void {
       sitting.biggestPot = Math.max(sitting.biggestPot, e.delta)
     } else if (e.type === 'eliminated' && e.seat !== HUMAN_SEAT) {
       sitting.fallen.push({ id: e.id, place: e.place })
+    } else if (e.type === 'arrival' && e.cause !== 'banishment') {
+      // The field grew: everyone already out finishes a place lower, so no two
+      // share one ("Spartacus out 5th, Cerberus out 5th" once Caesar sat down).
+      // Someone coming back (the Green Knight) is not out after all.
+      sitting.fallen = sitting.fallen.filter((f) => f.id !== e.id)
+      for (const f of sitting.fallen) f.place++
     } else if (e.type === 'handEnd') {
       const sum = run.lastSummary
       if (!sum) return
@@ -1062,6 +1235,14 @@ export function tableScreen(root: HTMLElement): () => void {
     const talk = hearChatter()
     const heard = beats.filter((b) => talk || !(b.kind === 'callout' || (b.kind === 'line' && b.chatter)))
     for (const b of heard) if (b.kind === 'callout') showCallout(b)
+    // A parting line that says how they go is acted as their way out (see 'eliminated')
+    if (e.type === 'eliminated' && (store.get().settings.dialogue ?? 'all') !== 'off') {
+      for (const b of heard) {
+        if (b.kind !== 'line' || b.speaker !== e.id) continue
+        const own = actsFor(e.seat, b.id)
+        if (own) { exitActs.set(e.seat, own); actedLines.add(b.id) }
+      }
+    }
     present(e, false)
     for (const b of heard) presentBeat(b)
     if (e.type === 'handEnd') recordLive()
@@ -1098,7 +1279,7 @@ export function tableScreen(root: HTMLElement): () => void {
     /** Room for motion in a step's delay; under reduced motion a short beat instead. */
     const room = (ms: number, still = 0) => t(settings.reduceMotion ? still : ms)
     /** A figure's clip, for what is happening live (never in a resume's catch-up). */
-    const act = (seat: number, clip: string, prio: Prio = PRIO.act) => { if (!instant) cue(seat, clip, prio) }
+    const act = (seat: number, clip: string | string[], prio: Prio = PRIO.act) => { if (!instant) cue(seat, clip, prio) }
 
     switch (e.type) {
       case 'hand': {
@@ -1110,7 +1291,11 @@ export function tableScreen(root: HTMLElement): () => void {
         // The blinds as poker-ts posts them: the two seats after the button,
         // except heads-up, where the button is the small blind.
         const [sb, bb] = round.length === 2 ? [round[1], round[0]] : [round[0], round[1]]
-        const dealTime = MOVE.shuffle + (order.length - 1) * MOVE.dealGap + MOVE.dealFlight
+        // The first hand dealt in front of the player, Death shuffles the deck before he deals.
+        const opening = !instant && staged && !shuffledLive
+        if (opening) shuffledLive = true
+        const shuffleLead = opening ? SHUFFLE_MS : 0
+        const dealTime = shuffleLead + MOVE.shuffle + (order.length - 1) * MOVE.dealGap + MOVE.dealFlight
         chipsAt.handStart = e.stacks.slice()
         chipsAt.swept = e.stacks.map(() => 0)
         chipsAt.bets = e.stacks.map(() => 0)
@@ -1118,6 +1303,7 @@ export function tableScreen(root: HTMLElement): () => void {
         chipsAt.board = 0
         step(() => {
           folded.clear()
+          actNext.clear()
           clearWin()
           els.fx.replaceChildren()
           humanInHand = e.seats[HUMAN_SEAT] !== null
@@ -1158,12 +1344,13 @@ export function tableScreen(root: HTMLElement): () => void {
           const flight = move(MOVE.dealFlight)
           if (flight > 0) for (const backs of slots.values()) for (const b of backs) b.style.visibility = 'hidden'
           const from = centre(dealFrom(), felt())
-          const lead = move(MOVE.shuffle)
+          const lead = move(MOVE.shuffle + shuffleLead)
           if (loud && !ff) sound.shuffle()
           // One pitch of the deal, its side by turns. The clip thumbs a card
           // off his deck and pitches it as the first flight leaves; a second
           // clip after it held up a card that never flew, beside the real ones.
-          act(DEATH, e.hand % 2 ? 'deal_left' : 'deal_right')
+          const deal = e.hand % 2 ? 'deal_left' : 'deal_right'
+          act(DEATH, shuffleLead ? ['shuffle', deal] : deal)
           // each of them looks at what they were dealt, in their own time
           if (!instant) {
             for (const seat of seated) {
@@ -1249,7 +1436,10 @@ export function tableScreen(root: HTMLElement): () => void {
             ui.root.classList.add('acting')
             ui.last.textContent = describe(e.decision)
           }
-          if (!you || youSeen) {
+          const own = actNext.get(e.seat)
+          actNext.delete(e.seat)
+          if (own) act(e.seat, own)
+          else if (!you || youSeen) {
             act(e.seat, decision === 'fold' ? 'fold' : decision === 'check' ? 'check'
               : e.stacks[e.seat] === 0 ? 'all_in' : decision === 'call' ? 'call' : 'bet')
           }
@@ -1393,6 +1583,11 @@ export function tableScreen(root: HTMLElement): () => void {
                 if ((seat !== HUMAN_SEAT || youSeen) && !pot.winners.includes(seat)) act(seat, loseClip(seat, pot.amount), PRIO.tell)
               }
             }
+            if (pot.ranking && contested) {
+              const who = pot.winners.length > 1 ? 'Split' : nameOf(pot.winners[0])
+              els.handName.textContent = `${who}: ${pot.ranking.replace(/^(a|an) /, '')}`
+              els.handName.classList.add('show')
+            }
             const label = real.length === 1 ? 'the pot' : i === 0 ? 'the main pot' : `side pot ${i}`
             const withWhat = pot.ranking
               ? ` with ${pot.ranking}${pot.cards ? ` — ${handText(pot.cards)}` : ''}`
@@ -1440,8 +1635,13 @@ export function tableScreen(root: HTMLElement): () => void {
       }
       case 'eliminated': {
         step(() => {
-          if (e.seat !== HUMAN_SEAT) act(e.seat, 'knocked_out')
-          applyStructural(e)
+          // their way out: what their parting line says, then out of the chair
+          // (knocked_out, where there is one); finished before the chair empties
+          const exit = exitActs.get(e.seat)
+          exitActs.delete(e.seat)
+          const live = !instant && !!stage && stageReady && !replaying && !ff
+          const going = live && e.seat !== HUMAN_SEAT ? [...(exit ?? []), ...(exit?.includes('knocked_out') ? [] : ['knocked_out'])] : []
+          applyStructural(e, live, going)
           log(`${nameOf(e.seat)} ${e.seat === HUMAN_SEAT ? 'are' : 'is'} out (${ordinal(e.place)})`, 'big')
           // down to two: the last of them leans in, and Death watches
           const left = seatIds.map((_, i) => i).filter((i) => i !== HUMAN_SEAT && seatIds[i] && !out.has(i))
@@ -1455,7 +1655,7 @@ export function tableScreen(root: HTMLElement): () => void {
       case 'arrival': {
         if (e.cause === 'banishment') { presentGuestArrival(e, instant); break }
         step(() => {
-          applyStructural(e)
+          applyStructural(e, !instant && !!stage && stageReady && !ff)
           const ui = seatUI.get(e.seat)
           ui?.root.classList.add('arriving')
           if (ui) drawStack(e.seat, e.stack)

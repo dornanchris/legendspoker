@@ -26,7 +26,10 @@ the piece shown until the table's late champion arrives and the one after;
 `loops` cycle frames (lamp flames) at each of their spots.
 "after_backdrop" names a second backdrop, the same room drawn after the champion
 has come (the Station's turn: lamps off, amber emergency light), drawn in place
-of the first once the presence is 'after'.
+of the first once the presence is 'after'. "turn" is what the room does as the
+champion comes, seen live (lights failing, chips floating, a loop sinking to
+embers, undone when the champion goes out), and "acts" the lines the whole room
+acts (a freeze): both are passed through to room.json (RoomData in cast.ts).
 """
 import json, os, shutil, sys
 import numpy as np
@@ -116,6 +119,9 @@ def cut_pieces():
             piece.update(x=p['x'], bottom=p['bottom'], h=p['h'])
         out[name] = piece
     res = {'pieces': out, 'presence': spec.get('presence'), 'loops': spec.get('loops', [])}
+    for key in ('turn', 'acts'):                          # what the room does as its champion comes, and lines it acts
+        if spec.get(key):
+            res[key] = spec[key]
     if spec.get('after_backdrop'):                         # the same room once the champion has come (the Station's turn)
         shutil.copyfile(os.path.join(SRC, spec['after_backdrop']), os.path.join(OUT, spec['after_backdrop']))
         res['backdropAfter'] = spec['after_backdrop']

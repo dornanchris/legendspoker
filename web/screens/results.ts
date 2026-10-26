@@ -7,7 +7,7 @@ import { fillLine } from '../../src/tour.js'
 import * as store from '../store.js'
 import * as sound from '../sound.js'
 import { h, go, ordinal, formatChips } from '../dom.js'
-import { medallion, portraitUrl, startTable } from './shared.js'
+import { face, medallion, portraitUrl, startTable } from './shared.js'
 import { dealerLine, cardEl } from './table.js'
 
 /**
@@ -129,8 +129,12 @@ function panel(r: Result, lookAtTable: (() => void) | null): HTMLElement {
   let n = 0
 
   // ---- the verdict
+  // One across the table (the finale, the Pyre, a heads-up open table): there
+  // is no "second place" of two, and nobody else to have gone first.
+  const alone = o.sat.length === 1 ? CHARACTERS[o.sat[0]] : null
   const headline = o.won
     ? finale ? 'The last hand is yours' : o.mode === 'open' ? 'The house game is yours' : 'Table cleared'
+    : alone ? `${alone.short[0].toUpperCase()}${alone.short.slice(1)} holds every chip`
     : `${HEADLINE_LOST[o.place] ?? ordinal(o.place)} place`
   const fallenBefore = s ? s.fallen.filter((f) => f.place > o.place) : []
   const sub = o.won
@@ -139,7 +143,9 @@ function panel(r: Result, lookAtTable: (() => void) | null): HTMLElement {
       ? `You gave up your chair after ${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}.${fallenBefore.length ? ` You had outlasted ${listNames(fallenBefore.map((f) => f.id))}.` : ''}`
     : fallenBefore.length
       ? `You outlasted ${listNames(fallenBefore.map((f) => f.id))}. ${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}.`
-      : `${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}. Every seat at this table has been the first to go at least once.`
+      : alone
+        ? `Heads up, ${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}.`
+        : `${o.hands} ${o.hands === 1 ? 'hand' : 'hands'}. Every seat at this table has been the first to go at least once.`
 
   let deathLine: string | null = null
   const d = DIALOGUE[table.id]
@@ -218,7 +224,7 @@ function panel(r: Result, lookAtTable: (() => void) | null): HTMLElement {
       h('ul', { class: 'beaten-list' },
         effects.newlyBeaten.map((id) => {
           const c = CHARACTERS[id]
-          return h('li', null, medallion(c, 'beaten'),
+          return h('li', null, face(c, 'beaten'),
             h('span', null, h('b', null, c?.name ?? id), h('small', null, c?.epithet ?? '')))
         }))), n++))
   }

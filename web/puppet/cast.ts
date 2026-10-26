@@ -130,6 +130,16 @@ export type AnimData = {
   /** Clips with no words: fidgets and the decoys drawn beside each tell, played as ambient noise. */
   fidgets?: string[]
   /**
+   * What the figure does when a line or a callout says it does something
+   * ("[sets a pistol on the table]"): by the line's id (data/dialogue) or the
+   * callout's pool and place (`check.0` is callouts.check[0]), a clip or
+   * clips played in order; `@still` holds perfectly still a while (Stage
+   * STILL). A callout's acts take the place of its action's clip. Never a
+   * clip that acts out one of the character's tells: a public line must not
+   * play the tell's drawing (rule 2). check:data holds the keys and clips.
+   */
+  acts?: Record<string, string | string[]>
+  /**
    * What a winner plays: `small` for an ordinary pot, `big` for one worth most
    * of the stack they began the hand with (art-tools/build/win_small.py).
    */
@@ -245,6 +255,17 @@ export type RoomData = {
   presence?: { before?: string; after?: string } | null
   /** Frames cycled at each spot ([centre x, foot, height]): lamp flames. */
   loops?: { frames: string[]; every: [number, number]; spots: [number, number, number][] }[]
+  /**
+   * What the room does as its late champion comes, seen live (Stage.setPresence):
+   * `lights` fail and come up again in the after backdrop's light (the
+   * Station), every chip on the felt lifts and falls back (`float`, the
+   * table screen), the loop at index `embers` sinks to a glow (Transylvania's
+   * fire), and with `undo` the room is itself again once that champion is
+   * out (the Station: "the room is only a room again").
+   */
+  turn?: { lights?: boolean; float?: boolean; embers?: number; undo?: boolean }
+  /** A line (by id) the whole room acts: `freeze`, nobody at the table moves for a while (Transylvania). */
+  acts?: Record<string, 'freeze'>
 }
 
 export type RoomEntry = { data: RoomData; base: string }

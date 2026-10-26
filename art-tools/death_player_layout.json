@@ -211,6 +211,17 @@
    "on_table": true
   },
   {
+   "file": "../web/art/death_player/frame_over_talk.png",
+   "label": "frame_over.talk",
+   "x": 240,
+   "y": 460,
+   "scale": 1.0,
+   "rot": 0,
+   "z": 21,
+   "visible": false,
+   "slot": "frame_over"
+  },
+  {
    "file": "../web/art/death_player/frame_hood.png",
    "label": "frame.hood",
    "x": 240,

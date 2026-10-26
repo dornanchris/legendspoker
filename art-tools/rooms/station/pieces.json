@@ -20,5 +20,6 @@
   "before": "lens_open",
   "after": null
  },
- "loops": []
+ "loops": [],
+ "turn": {"lights": true, "float": true, "undo": true}
 }

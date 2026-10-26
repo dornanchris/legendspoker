@@ -50,6 +50,16 @@
     { "id": "dl_won_02", "speaker": "death", "text": "All the chips. Enjoy them. They do not travel." },
     { "id": "dl_won_03", "speaker": "death", "text": "The table is yours for tonight. It will want you back. They always do." }
   ],
+  "comeback": [
+    { "id": "dl_comeback_01", "speaker": "death", "text": "From the ashes, then. I have seen it done. Not often, and never by anyone who was trying." },
+    { "id": "dl_comeback_02", "speaker": "death", "text": "A moment ago I had a chair in mind for you, nearer the door. I will keep it warm." },
+    { "id": "dl_comeback_03", "speaker": "death", "text": "There is a bird at a temple in Heliopolis that does exactly that. It is very proud of it." },
+    { "id": "dl_comeback_04", "speaker": "death", "text": "Dust to dust, the saying goes. Nobody ever says it the other way round. You just did." },
+    { "id": "dl_comeback_05", "speaker": "death", "text": "I had already written your name. I will have to rule a line through it." },
+    { "id": "dl_comeback_06", "speaker": "death", "text": "Ash rises too, if the fire under it is hot enough." },
+    { "id": "dl_comeback_07", "speaker": "death", "text": "You were nearly mine a hand ago. Nearly is the word I hear most." },
+    { "id": "dl_comeback_08", "speaker": "death", "text": "Some people have to be almost gone before they start to play. You are one of them." }
+  ],
   "lessons": [
     { "id": "dl_lesson_s1", "speaker": "death", "correlate": "strong", "text": "{tell}. Then the decision, and now the cards. Put the three together." },
     { "id": "dl_lesson_s2", "speaker": "death", "correlate": "strong", "text": "Did you see it? {tell}, a moment before acting. There was the reason." },

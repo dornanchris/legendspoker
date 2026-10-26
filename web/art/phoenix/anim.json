@@ -1111,6 +1111,56 @@
        "inOut"
       ]
      ]
+    },
+    "head": {
+     "x": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0
+      ],
+      [
+       0.221,
+       1.0,
+       "hold"
+      ],
+      [
+       1.8,
+       1.0
+      ],
+      [
+       1.801,
+       0,
+       "hold"
+      ]
+     ],
+     "y": [
+      [
+       0,
+       0
+      ],
+      [
+       0.22,
+       0
+      ],
+      [
+       0.221,
+       0.0,
+       "hold"
+      ],
+      [
+       1.8,
+       0.0
+      ],
+      [
+       1.801,
+       0,
+       "hold"
+      ]
+     ]
     }
    },
    "swaps": {
@@ -1184,10 +1234,10 @@
       null
      ]
     ],
-    "head": [
+    "frame_over": [
      [
       0.22,
-      "-"
+      "talk"
      ],
      [
       1.8,
@@ -2986,6 +3036,31 @@
   "sing",
   "spread"
  ],
+ "acts": {
+  "check.2": "sing",
+  "bet.2": [
+   "sing~",
+   "bet"
+  ],
+  "raise.1": [
+   "sing~",
+   "bet"
+  ],
+  "all_in.1": [
+   "sing~",
+   "all_in"
+  ],
+  "raise.0": [
+   "spread~",
+   "bet"
+  ],
+  "all_in.0": [
+   "spread~",
+   "all_in"
+  ],
+  "py_hu_01": "spread",
+  "py_p2_01": "eye"
+ },
  "reference": {
   "rest": "ref_rest.png",
   "peek": "ref_peek.png",

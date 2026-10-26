@@ -3,7 +3,7 @@ import { applyOutcome, openTableCast, isOpenCast } from '../../src/tour.js'
 import { tableRecord, ENGINE_VERSION } from '../../src/save.js'
 import * as store from '../store.js'
 import { PUPPETS, LOOKS } from '../puppet/cast.js'
-import { h, go } from '../dom.js'
+import { h, go, ask } from '../dom.js'
 
 export function markTitle(id: string): string {
   return MARKS.find((m) => m.id === id)?.title ?? id
@@ -122,8 +122,12 @@ export function startTable(tableId: string, mode: 'tour' | 'open', picked?: (str
       return true
     }
     const name = TABLE_BY_ID[s.active.table]?.name ?? 'another table'
-    if (!confirm(`You still have a seat at ${name}. Give it up? The ledger will record it as a loss.`)) return false
-    forfeitActive()
+    void ask(`You still have a seat at ${name}. Give it up? The ledger will record it as a loss.`, 'Give it up').then((yes) => {
+      if (!yes) return
+      forfeitActive()
+      startTable(tableId, mode, picked)
+    })
+    return false
   }
   const seed = randomSeed()
   const rec = tableRecord(s, tableId)

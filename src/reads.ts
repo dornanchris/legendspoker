@@ -48,7 +48,7 @@ for (const id of ids) {
   const ctx = (o: Partial<DecisionContext>): DecisionContext => ({
     personality: p, equity: 0, strength: 0, pot: 0, toCall: 0, stack: 0, bigBlind: 20,
     effectiveStackBB: 0, minRaise: 0, maxRaise: 0, street: 'preflop', legal: ['fold', 'call'],
-    numOpponents: 1, tilt: 0, opponentFoldRate: 0.4, committed: 0, facingAllIn: false, bet: 0, initiative: false, outs: 0, wet: 0, rng, ...o,
+    numOpponents: 1, dealtIn: 5, tilt: 0, opponentFoldRate: 0.4, committed: 0, facingAllIn: false, bet: 0, initiative: false, outs: 0, wet: 0, rng, ...o,
   })
   let shove = 0
   let seen = 0

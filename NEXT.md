@@ -3,6 +3,12 @@
 The short list after the art build. Details live where each item points;
 this file only gathers them. Strike an item through when it is done.
 
+**Read PLAYTEST.md first** (October 2026): a full playthrough, what it fixed
+(Death as a final boss, tells on a share of decisions, mouths that move) and a
+ranked list of what to change next (talk gestures redrawn with the moving
+head, voice "barks", stage directions acted out, repetition, sitting length,
+the Phoenix).
+
 ## Words
 
 1. ~~**Showdown puns for the rest of the tour.**~~ DONE (draft, like the

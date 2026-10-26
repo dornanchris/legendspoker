@@ -361,6 +361,10 @@
  "frame_extra": {
   "phial": {
    "props": []
+  },
+  "talk": {
+   "head": null,
+   "head_match": "face"
   }
  }
 }

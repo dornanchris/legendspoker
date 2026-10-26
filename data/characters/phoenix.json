@@ -11,9 +11,9 @@
   "origin": "Myth",
   "era": "Herodotus, Ovid and Pliny · once in five hundred years",
   "dials": {
-    "aggression": 0.74,
+    "aggression": 0.65,
     "tightness": 0.58,
-    "bluffFrequency": 0.24,
+    "bluffFrequency": 0.12,
     "tiltSensitivity": 0.0,
     "adaptivity": 0.85,
     "betRespect": 0.7,
@@ -21,10 +21,6 @@
     "noise": 0.2
   },
   "quirks": [
-    {
-      "type": "heads_up_pressure",
-      "chance": 0.55
-    },
     {
       "type": "overbet",
       "minEquity": 0.78,

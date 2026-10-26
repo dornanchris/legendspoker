@@ -321,6 +321,10 @@
   },
   "knocked_out": {
    "below": 45
+  },
+  "talk": {
+   "head": null,
+   "head_match": "face"
   }
  },
  "no_prop": [

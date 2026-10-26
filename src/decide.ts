@@ -41,6 +41,8 @@ export type DecisionContext = {
   street: 'preflop' | 'flop' | 'turn' | 'river'
   legal: Action[]
   numOpponents: number
+  /** Players dealt into this hand: 2 is a heads-up hand from the first card. */
+  dealtIn: number
   /** 0..1, decays over hands. Set by the game loop after bad beats. */
   tilt: number
   /** Observed fold-to-aggression rate of the table, for adaptivity. */
@@ -128,6 +130,8 @@ export function betRange(b: {
  *    were lost: the plain read put a 4-bet on the same hands as a bet.
  *  - Overbets (1.1 pots and up) and all-ins after the flop are stronger
  *    than their size alone.
+ *  - Before the flop, a three-bet is x0.6 and every raise after it x0.6
+ *    again (ENGINE_VERSION 15).
  *
  * Returned as a multiplier; the game loop applies it by the reader's skill.
  */
@@ -141,7 +145,11 @@ export function readBet(b: {
   overbet: boolean
   allIn: boolean
 }): number {
-  if (b.street === 'preflop') return 1
+  // Before the flop, each raise after the first narrows the range again: a
+  // four-bet is not an open. The plain read floors every big raise at the
+  // same 12%, so a skilled player five-bet jacks into a four-bet as if it
+  // were a steal.
+  if (b.street === 'preflop') return Math.pow(0.6, Math.max(0, b.raises - 1))
   let m = b.raises <= 1
     ? { flop: 1.07, turn: 1.55, river: 2 }[b.street]! * Math.pow(0.7, Math.max(0, b.bettorBets - 1))
     : { flop: 0.46, turn: 1, river: 1 }[b.street]! * Math.pow(0.7, b.raises - 2)
@@ -213,7 +221,14 @@ export function decide(ctx: DecisionContext): Decision {
   // Tilt loosens it -- that is character -- but a stack of 12-20bb does not:
   // shortness is a reason to shove wider, not to call with rags. Capped so
   // the tightest can still play a small pair (0.35) or A-9.
-  const entryFloor = Math.min(0.33, Math.max(0, (p.tightness - tiltEffect * 0.6 - 0.5) * 1.3))
+  //
+  // Dealt heads up the floor is a different question -- one opponent, and a
+  // blind to defend every hand -- and a skilled player knows it: there it
+  // falls away with skill. Death folded a third of his small blinds to half
+  // a bet. (Not when a full table folds round to the blinds: that moved the
+  // cast's styles by up to twelve points of VPIP.)
+  const headsUp = ctx.dealtIn === 2 ? 1 - p.skill : 1
+  const entryFloor = headsUp * Math.min(0.33, Math.max(0, (p.tightness - tiltEffect * 0.6 - 0.5) * 1.3))
   if (
     ctx.street === 'preflop' && ctx.toCall > 0 && !ctx.facingAllIn &&
     ctx.effectiveStackBB >= 12 && ctx.strength < entryFloor
@@ -242,7 +257,12 @@ export function decide(ctx: DecisionContext): Decision {
   // --- Strong: value bet or raise -----------------------------------------
   const bar = valueBar(ctx, required, margin, effectiveAggression)
   if (ctx.equity > bar) {
-    if (canRaise && ctx.rng() < effectiveAggression) {
+    // On the river with nothing to call, a hand worth betting is bet: there is
+    // no later street to trap on, and a check behind ends the hand. Jekyll,
+    // Lincoln, Dracula, the Green Knight and Merlin checked the nuts on the
+    // river six times in ten; how passive a player is shows in the size.
+    const lastChance = ctx.street === 'river' && ctx.toCall === 0
+    if (canRaise && (lastChance || ctx.rng() < effectiveAggression)) {
       return {
         action: raiseAction,
         betSize: sizeBet(ctx, effectiveAggression),
@@ -407,6 +427,13 @@ const pct = (n: number) => `${Math.round(n * 100)}%`
  * not authored separately. `reliability` is how often the signal is honest;
  * the rest of the time it fires anyway and misleads.
  *
+ * A tell shows on a share of decisions (TELL_RATE), the same share whatever
+ * the hand: when it fired on every decision that had one, the table was a
+ * parade of poses, a character with no tell for weakness gave himself away by
+ * staying still (silence meant "not strong", every time), and one look at
+ * anyone's weak tell told the player all they needed (rule 2). Now silence
+ * says next to nothing: most strong hands are silent too.
+ *
  * Design note: in the real build these should be *idle variants*, not
  * triggered one-shots. A tell that fires on cue can't be missed.
  *
@@ -420,6 +447,7 @@ export function emitTell(
   ctx: { equity: number; decision: Decision; tilt: number },
   rng: () => number,
 ): { tell: Tell; honest: boolean } | null {
+  if (!p.tells.length || rng() >= TELL_RATE) return null
   const state = ctx.tilt > 0.5
     ? 'tilted'
     : ctx.decision.reason.startsWith('bluff')
@@ -428,15 +456,19 @@ export function emitTell(
         ? 'strong'
         : 'weak'
 
+  // A state with no tell of its own shows nothing. Silence can no longer give
+  // it away: a tell shows on only TELL_RATE of decisions in every state.
   const honest = p.tells.filter((t) => t.correlate === state)
-  if (honest.length === 0) return null
-
+  if (!honest.length) return null
   const tell = honest[Math.floor(rng() * honest.length)]
   if (rng() < tell.reliability) return { tell, honest: true }
 
-  // Unreliable: fire a different tell instead, misleading the player.
-  const others = p.tells.filter((t) => t !== tell)
+  // Unreliable: a different tell instead, misleading the player.
+  const others = p.tells.filter((t) => t.correlate !== state)
   if (!others.length) return null
   const other = others[Math.floor(rng() * others.length)]
-  return { tell: other, honest: other.correlate === state }
+  return { tell: other, honest: false }
 }
+
+/** The share of decisions a tell shows on, whatever the hand (see emitTell). */
+export const TELL_RATE = 0.35

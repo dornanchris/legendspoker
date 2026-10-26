@@ -362,6 +362,10 @@
  "frame_extra": {
   "game_piece": {
    "props": []
+  },
+  "talk": {
+   "head": null,
+   "head_match": "face"
   }
  }
 }

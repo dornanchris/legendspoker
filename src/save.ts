@@ -57,8 +57,22 @@ export const SAVE_VERSION = 1
  * 14: a player put all in by a blind is no longer asked to act (they could
  *    fold chips already posted), and the first hand of a blind level is
  *    played on that level's big blind, not the last one's.
+ * 15: the playtest's fixes (PLAYTEST.md). Tells show on a share of decisions,
+ *    the same whatever the hand (TELL_RATE); skilled players read heads-up
+ *    blinds by real equity, drop the entry floor heads up, narrow re-raises
+ *    before the flop, and read the player by their raise rate and by what
+ *    their bets show down; a hand worth betting is bet on the river; `patient`
+ *    defends the blind against ordinary opens; `committed` minds the price;
+ *    AI bets come in round numbers; Death, the Phoenix, Blackbeard and Caesar
+ *    re-dialled.
+ * 16: Death made very hard. A skilled reader takes the share of bluffs in
+ *    the player's range from what they show down (not a flat fifth), narrow
+ *    ranges are drawn from enough hands to be narrow, and skill 0.75 and up
+ *    counts with more rollouts; a skilled reader believes their read of the
+ *    player as far as their skill; Death aggression 0.75, bluffs 0.1,
+ *    adaptivity 1.
  */
-export const ENGINE_VERSION = 14
+export const ENGINE_VERSION = 16
 
 export type Pace = 'unhurried' | 'normal' | 'brisk'
 export type DialogueLevel = 'all' | 'less' | 'story' | 'off'

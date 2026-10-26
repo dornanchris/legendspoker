@@ -442,6 +442,25 @@ for (const p of [...(STORY?.invitation?.body ?? []), ...(STORY?.ending?.paragrap
 // "cues"). Reword a tell and the figure would silently stop acting it out.
 
 const art = fileURLToPath(new URL('../web/art/', import.meta.url))
+/**
+ * What a figure acts for a line or a callout ("acts"): every key a line id or
+ * one of the character's own callouts (`check.0`), every clip one it has (or
+ * a STILL), and never the drawing of one of its tells: a public line playing
+ * a tell's clip would teach the player to discount the real one (rule 2).
+ */
+function checkActs(anim: any, w: string, c: (typeof CHARACTERS)[string] | undefined) {
+  const tellClips = new Set((c?.tells ?? []).map((t) => anim.cues?.[t.text]).filter(Boolean))
+  for (const [key, val] of Object.entries(anim.acts ?? {}) as [string, string | string[]][]) {
+    const m = key.match(/^(.+)\.(\d+)$/)
+    const pool = m ? (c?.callouts as Record<string, string[] | undefined> | undefined)?.[m[1]] : undefined
+    if (m ? !pool?.[Number(m[2])] : !ids.has(key)) err(w, `acts "${key}": no such ${m ? 'callout' : 'line'}`)
+    for (const clip of Array.isArray(val) ? val : [val]) {
+      const name = clip.replace(/~$/, '')          // "~": played briskly (web/puppet/stage.ts BRISKLY)
+      if (clip !== '@still' && !anim.clips?.[name]) err(w, `acts "${key}" plays "${clip}", which is not a clip`)
+      if (tellClips.has(name)) err(w, `acts "${key}" plays "${clip}", the drawing of a tell (rule 2)`)
+    }
+  }
+}
 for (const id of existsSync(art) ? readdirSync(art) : []) {
   const file = `${art}${id}/anim.json`
   if (!existsSync(file)) continue
@@ -455,13 +474,14 @@ for (const id of existsSync(art) ? readdirSync(art) : []) {
     continue
   }
   if (!c && (anim.cues || anim.fidgets)) { err(w, 'cues for someone who is not a character'); continue }
-  if (!c) continue
+  if (!c) { checkActs(anim, w, undefined); continue }
   const words = new Set([...c.tells.map((t) => t.text), ...c.idles])
   for (const [text, clip] of Object.entries(anim.cues ?? {}) as [string, string][]) {
     if (!words.has(text)) err(w, `cue "${text}" is none of ${anim.of ?? id}'s tells or idles`)
     if (!anim.clips?.[clip]) err(w, `cue "${text}" plays "${clip}", which is not a clip`)
   }
   for (const clip of anim.fidgets ?? []) if (!anim.clips?.[clip]) err(w, `fidget "${clip}" is not a clip`)
+  checkActs(anim, w, c)
 }
 
 // ---------------------------------------------------------------- second looks

@@ -115,7 +115,7 @@ export function boardWetness(board: Card[]): number {
  * without holding anything yet. Without it, a range is all made hands and a
  * flush-draw bet reads as a monster.
  */
-const RANGE_LOOSE = 0.2
+export const RANGE_LOOSE = 0.2
 
 /**
  * Equity by Monte Carlo: deal opponent hands and runouts, count how often we
@@ -140,6 +140,12 @@ export function equityVs(
    */
   rng: () => number = Math.random,
   range = 1,
+  /**
+   * The share of the range that is weaker hands let through: the bettor's
+   * bluffs and draws. RANGE_LOOSE unless the player has been seen at
+   * showdown (Game.read): a player who never bluffs has none.
+   */
+  loose = RANGE_LOOSE,
 ): number {
   const known = new Set([...hole, ...board].map(toStr))
   const deck: string[] = []
@@ -173,7 +179,9 @@ export function equityVs(
   // through as the bluffs and draws a real bettor also has.
   let pool: string[][] | null = null
   if (range < 1 && numOpponents > 0) {
-    const size = Math.max(40, rollouts)
+    // Enough candidates that even a narrow range is more than a handful of
+    // hands: from 60, "the top 5%" was three hands and a lot of noise.
+    const size = Math.min(400, Math.max(40, rollouts, Math.ceil(12 / Math.max(range, 0.01))))
     const strength = (oc: string[]) =>
       board.length === 0 ? preflopStrength(oc.map(fromStr)) : score(Hand.solve([...oc, ...boardStr]))
     const candidates: { oc: string[]; s: number }[] = []
@@ -184,7 +192,7 @@ export function equityVs(
     }
     candidates.sort((a, b) => b.s - a.s)
     const keep = Math.max(1, Math.round(size * range))
-    const strong = Math.max(1, Math.round(keep * (1 - RANGE_LOOSE)))
+    const strong = Math.max(1, Math.round(keep * (1 - loose)))
     pool = candidates.slice(0, strong).map((c) => c.oc)
     const rest = candidates.slice(strong)
     shuffleFront(rest, Math.min(rest.length, keep - strong))
@@ -236,7 +244,37 @@ export function handStrength(
   rollouts = 60,
   rng: () => number = Math.random,
   range = 1,
+  loose = RANGE_LOOSE,
 ): number {
   if (board.length === 0 && range >= 1) return preflopStrength(hole)
-  return equityVs(hole, board, numOpponents, rollouts, rng, range)
+  return equityVs(hole, board, numOpponents, rollouts, rng, range, loose)
+}
+
+/**
+ * How good a hand turned over at showdown was: its equity against one random
+ * hand on the final board. Sampled with its own fixed generator, never the
+ * game's, so reading a showdown changes no card: the same cards on the same
+ * board always score the same.
+ */
+export function shownStrength(hole: Card[], board: Card[], samples = 120): number {
+  const known = new Set([...hole, ...board].map(toStr))
+  const deck: string[] = []
+  for (const r of RANKS) for (const s of SUITS) {
+    const c = r + SUIT_CHAR[s]
+    if (!known.has(c)) deck.push(c)
+  }
+  const mine = Hand.solve([...hole, ...board].map(toStr))
+  const b = board.map(toStr)
+  let x = 0x9e3779b9
+  const next = () => ((x = (Math.imul(x, 1664525) + 1013904223) >>> 0) / 2 ** 32)
+  let won = 0
+  for (let i = 0; i < samples; i++) {
+    const a = Math.floor(next() * deck.length)
+    let c = Math.floor(next() * (deck.length - 1))
+    if (c >= a) c++
+    const theirs = Hand.solve([deck[a], deck[c], ...b])
+    const w = Hand.winners([mine, theirs])
+    won += w.length === 2 ? 0.5 : w[0] === mine ? 1 : 0
+  }
+  return won / samples
 }

@@ -360,5 +360,10 @@
    "max_h": 30
   }
  },
- "frame_extra": {}
+ "frame_extra": {
+  "talk": {
+   "head": null,
+   "head_match": "face"
+  }
+ }
 }
