@@ -1349,7 +1349,8 @@ Alexander VI, "The Wolf Man" stays (ASSETS.md).
 
 **Dev machine is Windows; iOS builds happen on the owner's Mac** (Xcode
 only runs there). A free Apple ID installs to the owner's own iPhone for 7
-days at a time; TestFlight and the store need the $99/yr account. Android is
+days at a time; TestFlight and the store need the $99/yr account
+(`TESTFLIGHT.md`: enrol, pick the team, Archive, upload). Android is
 $25 one-off and works from Windows.
 
 ## HOUSE STYLE
