@@ -148,6 +148,7 @@ ios/              the Capacitor iOS project (Xcode, Swift Package Manager);
 ROSTER.md         GENERATED casting book: never edit by hand
 ART-PIPELINE.md   the art workflow, step by step, and the queue of characters
 FIX-LATER.md      what we go back to: redraws, layout bugs, owed decisions
+TESTFLIGHT.md     getting the iOS app onto TestFlight, step by step
 PLAYTEST.md       the October 2026 playthrough: what was fixed, what is next
 ACT-OUT.md        the shot list: every stage direction the game tells and could show
 art-tools/
