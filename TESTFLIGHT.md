@@ -45,9 +45,11 @@ npx cap open ios
 2. **Product > Archive.** The first one also fetches the Capacitor package;
    it takes a few minutes.
 3. The Organizer opens on the new archive: **Distribute App > TestFlight &
-   App Store** (or "TestFlight Internal Only" if you never want this build
-   on the store) > Distribute. Let it manage the version and build number:
-   every upload needs a build number higher than the last, and Xcode bumps it.
+   App Store** > Distribute. Not "TestFlight Internal Only": a build sent
+   that way can never be given to external testers or the store, only to
+   people on the App Store Connect team. Let it manage the version and build
+   number: every upload needs a build number higher than the last, and Xcode
+   bumps it.
 4. Apple processes the build (10-30 minutes) and emails when it is done.
 
 ## Testing it
